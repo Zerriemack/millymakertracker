@@ -1,3 +1,4 @@
+
 # dependencies
 node_modules/
 
@@ -16,3 +17,9 @@ dist/
 
 # editor
 .vscode/
+
+node_modules/
+dist/
+.astro/
+.DS_Store
+.env
