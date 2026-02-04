@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getSlates } from "../../lib/data";
+
+const slates = getSlates()
+  .filter((s) => s.sport === "CFB")
+  .sort((a, b) => (a.date > b.date ? -1 : 1));
+---
+
+<Layout title="CFB | MillyMakerTracker">
+  <main class="container">
+    <h1>CFB</h1>
+    <p>Tracking DraftKings CFB Milly Maker winning lineups by slate.</p>
+
+    {slates.length === 0 ? (
+      <p>No slates yet.</p>
+    ) : (
+      <ul>
+        {slates.map((s) => (
+          <li>
+            <strong>
+              {s.season}
+              {typeof s.week === "number" ? ` Week ${s.week}` : ""}
+            </strong>
+            {" • "}
+            {s.slateName ?? "Slate"}
+            {" • "}
+            {s.date}
+            {" • "}
+            {s.contest.name}
+            {s.winners?.[0] ? (
+              <div>
+                Winner: {s.winners[0].username} ({s.winners[0].points} pts)
+              </div>
+            ) : null}
+          </li>
+        ))}
+      </ul>
+    )}
+  </main>
+</Layout>

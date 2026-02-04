@@ -1,0 +1,37 @@
+[
+  {
+    "id": "nfl-2025-wk01-main-sun",
+    "sport": "NFL",
+    "season": 2025,
+    "week": 1,
+    "slateName": "Main Slate",
+    "date": "2025-09-07",
+    "site": "DraftKings",
+    "contest": {
+      "name": "NFL $1M Milly Maker",
+      "type": "Classic",
+      "entryFee": 20,
+      "entrants": 0,
+      "contestId": ""
+    },
+    "winners": [
+      {
+        "place": 1,
+        "username": "example_user",
+        "points": 0,
+        "lineup": [
+          { "pos": "QB", "name": "QB Name", "team": "TEAM", "salary": 0 },
+          { "pos": "RB", "name": "RB Name", "team": "TEAM", "salary": 0 },
+          { "pos": "RB", "name": "RB Name 2", "team": "TEAM", "salary": 0 },
+          { "pos": "WR", "name": "WR Name", "team": "TEAM", "salary": 0 },
+          { "pos": "WR", "name": "WR Name 2", "team": "TEAM", "salary": 0 },
+          { "pos": "WR", "name": "WR Name 3", "team": "TEAM", "salary": 0 },
+          { "pos": "TE", "name": "TE Name", "team": "TEAM", "salary": 0 },
+          { "pos": "FLEX", "name": "FLEX Name", "team": "TEAM", "salary": 0 },
+          { "pos": "DST", "name": "DST Name", "team": "TEAM", "salary": 0 }
+        ]
+      }
+    ],
+    "notes": "Seed data. Replace with real slates as you ingest."
+  }
+]
