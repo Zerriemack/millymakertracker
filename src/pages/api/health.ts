@@ -25,6 +25,7 @@ export async function GET({ url }: { url: URL }) {
       JSON.stringify({
         ok: true,
         contests,
+        commit: process.env.VERCEL_GIT_COMMIT_SHA ?? null,
         db: debug ? safeDbInfo() : undefined,
       }),
       { status: 200, headers: { "content-type": "application/json" } }
@@ -37,14 +38,8 @@ export async function GET({ url }: { url: URL }) {
           name: e?.name ?? null,
           message: e?.message ?? String(e),
         },
+        commit: process.env.VERCEL_GIT_COMMIT_SHA ?? null,
         db: debug ? safeDbInfo() : undefined,
-        env: debug
-          ? {
-              hasDatabaseUrl: Boolean(process.env.DATABASE_URL),
-              hasDirectUrl: Boolean(process.env.DIRECT_URL),
-              nodeEnv: process.env.NODE_ENV ?? null,
-            }
-          : undefined,
       }),
       { status: 500, headers: { "content-type": "application/json" } }
     );
