@@ -1,0 +1,24 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 11,
+  "slateType": "MAIN",
+  "slateDate": "2025-01-01T00:00:00Z",
+  "contest": { "site": "DraftKings", "contestName": "NFL Milly Maker" },
+  "winner": { "username": "Dpac2", "points": 248.98, "maxEntries": 44 },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 248.98,
+    "items": [
+      { "rosterSpot": "QB", "name": "J. Brissett", "position": "QB", "team": "SF", "salary": 4900, "points": 26.88, "ownership": 14.8 },
+      { "rosterSpot": "RB", "name": "B. Robinson", "position": "RB", "team": "ATL", "salary": 8300, "points": 33.3, "ownership": 11.7 },
+      { "rosterSpot": "RB", "name": "A. Jones Sr.", "position": "RB", "team": "MIN", "salary": 5500, "points": 11.1, "ownership": 10.3 },
+      { "rosterSpot": "WR", "name": "M. Wilson", "position": "WR", "team": "ARI", "salary": 3800, "points": 36.5, "ownership": 23.8 },
+      { "rosterSpot": "WR", "name": "G. Dortch", "position": "WR", "team": "ARI", "salary": 3300, "points": 18.6, "ownership": 8.8 },
+      { "rosterSpot": "WR", "name": "T. McMillan", "position": "WR", "team": "CAR", "salary": 5600, "points": 36.0, "ownership": 2.7 },
+      { "rosterSpot": "TE", "name": "T. McBride", "position": "TE", "team": "ARI", "salary": 6300, "points": 30.5, "ownership": 33.7 },
+      { "rosterSpot": "FLEX", "name": "C. McCaffrey", "position": "RB", "team": "SF", "salary": 9000, "points": 35.1, "ownership": 22.0 },
+      { "rosterSpot": "DST", "name": "Steelers", "position": "DST", "team": "PIT", "salary": 3300, "points": 21.0, "ownership": 2.9 }
+    ]
+  }
+}

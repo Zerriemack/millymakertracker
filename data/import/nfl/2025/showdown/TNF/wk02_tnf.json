@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 2,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-11",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK02_TNF_SHOWDOWN_2025-09-11_commanders_packers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 5907143,
+    "totalOwnershipBp": 27980
+  },
+  "winner": {
+    "username": "boomanbro",
+    "points": 129.28,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 47500,
+    "totalPoints": 129.28,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "T. Kraft",
+        "position": "TE",
+        "team": "GB",
+        "salary": 8100,
+        "points": 41.1,
+        "ownershipPercent": 4.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Daniels",
+        "position": "QB",
+        "team": "WAS",
+        "salary": 11000,
+        "points": 19.7,
+        "ownershipPercent": 86.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Love",
+        "position": "QB",
+        "team": "GB",
+        "salary": 10000,
+        "points": 20.88,
+        "ownershipPercent": 61.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Samuel Sr.",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 8600,
+        "points": 17.4,
+        "ownershipPercent": 48.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Z. Ertz",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 5800,
+        "points": 18.4,
+        "ownershipPercent": 31.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Doubs",
+        "position": "WR",
+        "team": "GB",
+        "salary": 4000,
+        "points": 11.8,
+        "ownershipPercent": 48.1
+      }
+    ]
+  }
+}

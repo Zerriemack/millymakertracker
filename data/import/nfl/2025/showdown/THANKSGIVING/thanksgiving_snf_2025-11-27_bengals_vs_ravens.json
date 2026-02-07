@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 13,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-27",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "Thanksgiving SNF Showdown",
+    "siteContestId": "NFL_2025_WK13_THANKSGIVING_SNF_SHOWDOWN_2025-11-27_bengals_ravens",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 6062500,
+    "totalOwnershipBp": 14840
+  },
+  "winner": {
+    "username": "oxenduck",
+    "points": 118.54,
+    "maxEntries": 85
+  },
+  "lineup": {
+    "salaryUsed": 47500,
+    "totalPoints": 118.54,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Chase",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 16500,
+        "points": 31.5,
+        "ownershipPercent": 18.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Burrow",
+        "position": "QB",
+        "team": "CIN",
+        "salary": 10400,
+        "points": 19.24,
+        "ownershipPercent": 45.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Brown",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 9600,
+        "points": 18.3,
+        "ownershipPercent": 31.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "E. McPherson",
+        "position": "K",
+        "team": "CIN",
+        "salary": 5200,
+        "points": 24.0,
+        "ownershipPercent": 16.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Bengals",
+        "position": "DST",
+        "team": "CIN",
+        "salary": 3200,
+        "points": 12.0,
+        "ownershipPercent": 5.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "I. Likely",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 2600,
+        "points": 13.5,
+        "ownershipPercent": 31.7
+      }
+    ]
+  }
+}

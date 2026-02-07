@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 6,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-12",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK06_SNF_SHOWDOWN_2025-10-12_chiefs_lions",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 7392857,
+    "totalOwnershipBp": 18280
+  },
+  "winner": {
+    "username": "Zeechamp",
+    "points": 128.19,
+    "maxEntries": 10
+  },
+  "lineup": {
+    "salaryUsed": 46200,
+    "totalPoints": 128.19,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "P. Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 15000,
+        "points": 47.07,
+        "ownershipPercent": 25.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Goff",
+        "position": "QB",
+        "team": "DET",
+        "salary": 9600,
+        "points": 16.82,
+        "ownershipPercent": 50.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "S. LaPorta",
+        "position": "TE",
+        "team": "DET",
+        "salary": 7600,
+        "points": 16.5,
+        "ownershipPercent": 23.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Williams",
+        "position": "WR",
+        "team": "DET",
+        "salary": 5800,
+        "points": 18.6,
+        "ownershipPercent": 30.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "H. Brown",
+        "position": "WR",
+        "team": "KC",
+        "salary": 5400,
+        "points": 20.5,
+        "ownershipPercent": 27.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Smith-Schuster",
+        "position": "WR",
+        "team": "KC",
+        "salary": 2800,
+        "points": 8.7,
+        "ownershipPercent": 24.9
+      }
+    ]
+  }
+}

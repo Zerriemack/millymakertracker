@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 15,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-14",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK15_SNF_SHOWDOWN_2025-12-14_vikings_cowboys",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 10750000,
+    "totalOwnershipBp": 26100
+  },
+  "winner": {
+    "username": "mortyk14",
+    "points": 116.91,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 48700,
+    "totalPoints": 116.91,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Nailor",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 4500,
+        "points": 29.25,
+        "ownershipPercent": 0.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 10400,
+        "points": 11.96,
+        "ownershipPercent": 72.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 10000,
+        "points": 20.1,
+        "ownershipPercent": 54.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Williams",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 9400,
+        "points": 15.1,
+        "ownershipPercent": 45.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. McCarthy",
+        "position": "QB",
+        "team": "MIN",
+        "salary": 9000,
+        "points": 24.5,
+        "ownershipPercent": 46.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Aubrey",
+        "position": "K",
+        "team": "DAL",
+        "salary": 5400,
+        "points": 16.0,
+        "ownershipPercent": 41.7
+      }
+    ]
+  }
+}

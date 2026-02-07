@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 11,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-13",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK11_TNF_SHOWDOWN_2025-11-13_jets_patriots",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 12000000,
+    "totalOwnershipBp": 19910
+  },
+  "winner": {
+    "username": "Grex123",
+    "points": 126.53,
+    "maxEntries": 27
+  },
+  "lineup": {
+    "salaryUsed": 48700,
+    "totalPoints": 126.53,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "T. Henderson",
+        "position": "RB",
+        "team": "NE",
+        "salary": 15900,
+        "points": 48.45,
+        "ownershipPercent": 20.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Maye",
+        "position": "QB",
+        "team": "NE",
+        "salary": 12000,
+        "points": 15.44,
+        "ownershipPercent": 89.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "S. Diggs",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 9800,
+        "points": 22.5,
+        "ownershipPercent": 41.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Fields",
+        "position": "QB",
+        "team": "NYJ",
+        "salary": 9400,
+        "points": 20.34,
+        "ownershipPercent": 39.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Metchie III",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 1000,
+        "points": 13.5,
+        "ownershipPercent": 4.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Ruckert",
+        "position": "TE",
+        "team": "NYJ",
+        "salary": 600,
+        "points": 6.3,
+        "ownershipPercent": 3.4
+      }
+    ]
+  }
+}

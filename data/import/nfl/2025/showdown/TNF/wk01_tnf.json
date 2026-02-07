@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 1,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-04",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK01_TNF_SHOWDOWN_2025-09-04_cowboys_eagles",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 12190000,
+    "totalOwnershipBp": 21970
+  },
+  "winner": {
+    "username": "wjneli99",
+    "points": 114.18,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 49100,
+    "totalPoints": 114.18,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Williams",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 8100,
+        "points": 30.6,
+        "ownershipPercent": 4.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "S. Barkley",
+        "position": "RB",
+        "team": "PHI",
+        "salary": 11200,
+        "points": 18.4,
+        "ownershipPercent": 68.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Hurts",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 11000,
+        "points": 24.28,
+        "ownershipPercent": 74.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 10800,
+        "points": 21.0,
+        "ownershipPercent": 40.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Aubrey",
+        "position": "K",
+        "team": "DAL",
+        "salary": 4800,
+        "points": 11.0,
+        "ownershipPercent": 27.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Dotson",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 3200,
+        "points": 8.9,
+        "ownershipPercent": 5.8
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 2,
+  "slateType": "MAIN",
+  "slateDate": "2025-09-14T17:00:00.000Z",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "entryFeeCents": 2000,
+    "topPrizeCents": 100000000
+  },
+  "winner": {
+    "username": "kjk003",
+    "points": 260.2,
+    "maxEntries": 13
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 260.2,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "R. Wilson",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 5100,
+        "points": 34.3,
+        "ownership": 0.9
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Taylor",
+        "position": "RB",
+        "team": "IND",
+        "salary": 6700,
+        "points": 32.5,
+        "ownership": 7.1
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "C. McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 7500,
+        "points": 22.7,
+        "ownership": 38.6
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "M. Nabers",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 7100,
+        "points": 40.7,
+        "ownership": 8.2
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A. St. Brown",
+        "position": "WR",
+        "team": "DET",
+        "salary": 7000,
+        "points": 42.2,
+        "ownership": 5.7
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "R. Odunze",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 4800,
+        "points": 34.8,
+        "ownership": 9.2
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "J. Ferguson",
+        "position": "TE",
+        "team": "DAL",
+        "salary": 3800,
+        "points": 16.8,
+        "ownership": 12.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "W. Robinson",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 4400,
+        "points": 31.2,
+        "ownership": 1.2
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "49ers",
+        "position": "DST",
+        "team": "SF",
+        "salary": 3600,
+        "points": 5.0,
+        "ownership": 2.3
+      }
+    ]
+  }
+}

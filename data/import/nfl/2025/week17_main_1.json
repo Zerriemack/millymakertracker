@@ -1,0 +1,34 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 17,
+  "slateType": "MAIN",
+  "slateDate": "2025-12-28T00:00:00.000Z",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "Milly Maker",
+    "entryFeeCents": 2000,
+    "topPrizeCents": 100000000,
+    "siteContestId": "NFL_2025_17_CLASSIC_main_20251228__nfl_millionaire_maker"
+  },
+  "winner": {
+    "username": "furrmaster",
+    "points": 218.24,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 49600,
+    "totalPoints": 218.24,
+    "items": [
+      { "rosterSpot": "QB", "name": "D. Maye", "position": "QB", "team": "NE", "salary": 6800, "points": 32.44, "ownership": 11.1 },
+      { "rosterSpot": "RB", "name": "C. Brown", "position": "RB", "team": "ARI", "salary": 7400, "points": 32.1, "ownership": 20.9 },
+      { "rosterSpot": "RB", "name": "R. Stevenson", "position": "RB", "team": "NE", "salary": 5900, "points": 27.2, "ownership": 4.4 },
+      { "rosterSpot": "WR", "name": "M. Wilson", "position": "WR", "team": "ARI", "salary": 6400, "points": 19.9, "ownership": 7.2 },
+      { "rosterSpot": "WR", "name": "S. Diggs", "position": "WR", "team": "NE", "salary": 5800, "points": 25.1, "ownership": 26.0 },
+      { "rosterSpot": "WR", "name": "P. Washington", "position": "WR", "team": "JAX", "salary": 4800, "points": 22.0, "ownership": 11.9 },
+      { "rosterSpot": "TE", "name": "T. McBride", "position": "TE", "team": "ARI", "salary": 7500, "points": 23.6, "ownership": 34.5 },
+      { "rosterSpot": "FLEX", "name": "M. Mayer", "position": "TE", "team": "NYG", "salary": 2500, "points": 17.9, "ownership": 19.1 },
+      { "rosterSpot": "DST", "name": "Giants", "position": "DST", "team": "NYG", "salary": 2900, "points": 18.0, "ownership": 8.3 }
+    ]
+  }
+}

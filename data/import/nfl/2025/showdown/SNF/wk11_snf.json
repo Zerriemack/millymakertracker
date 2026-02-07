@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 11,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-16",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK11_SNF_SHOWDOWN_2025-11-16_lions_eagles",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 75000,
+    "totalOwnershipBp": 21320
+  },
+  "winner": {
+    "username": "AdamShulman",
+    "points": 97.55,
+    "maxEntries": 56
+  },
+  "lineup": {
+    "salaryUsed": 49200,
+    "totalPoints": 97.55,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Williams",
+        "position": "WR",
+        "team": "DET",
+        "salary": 11400,
+        "points": 29.55,
+        "ownershipPercent": 7.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Gibbs",
+        "position": "RB",
+        "team": "DET",
+        "salary": 10600,
+        "points": 22.6,
+        "ownershipPercent": 47.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Hurts",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 10400,
+        "points": 14.5,
+        "ownershipPercent": 78.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Brown",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 8000,
+        "points": 11.9,
+        "ownershipPercent": 44.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Elliott",
+        "position": "K",
+        "team": "PHI",
+        "salary": 4800,
+        "points": 11.0,
+        "ownershipPercent": 19.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Eagles",
+        "position": "DST",
+        "team": "PHI",
+        "salary": 4000,
+        "points": 8.0,
+        "ownershipPercent": 16.2
+      }
+    ]
+  }
+}

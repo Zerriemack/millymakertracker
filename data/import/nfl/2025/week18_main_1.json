@@ -1,0 +1,34 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 18,
+  "slateType": "MAIN",
+  "slateDate": "2026-01-04T00:00:00.000Z",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "Milly Maker",
+    "entryFeeCents": 2000,
+    "topPrizeCents": 100000000,
+    "siteContestId": "NFL_2025_18_CLASSIC_main_20260104__nfl_millionaire_maker"
+  },
+  "winner": {
+    "username": "futbalfanatic",
+    "points": 227.5,
+    "maxEntries": 4
+  },
+  "lineup": {
+    "salaryUsed": 49600,
+    "totalPoints": 227.5,
+    "items": [
+      { "rosterSpot": "QB", "name": "T. Lawrence", "position": "QB", "team": "JAX", "salary": 6400, "points": 23.3, "ownership": 20.3 },
+      { "rosterSpot": "RB", "name": "R. Davis", "position": "RB", "team": "BUF", "salary": 4900, "points": 28.4, "ownership": 1.3 },
+      { "rosterSpot": "RB", "name": "T. Tracy Jr.", "position": "RB", "team": "DAL", "salary": 5500, "points": 31.9, "ownership": 7.3 },
+      { "rosterSpot": "WR", "name": "A. St. Brown", "position": "WR", "team": "DET", "salary": 7700, "points": 27.9, "ownership": 6.1 },
+      { "rosterSpot": "WR", "name": "M. Wilson", "position": "WR", "team": "ARI", "salary": 6600, "points": 20.9, "ownership": 30.8 },
+      { "rosterSpot": "WR", "name": "P. Washington", "position": "WR", "team": "JAX", "salary": 5100, "points": 19.7, "ownership": 17.2 },
+      { "rosterSpot": "TE", "name": "C. Loveland", "position": "TE", "team": "DET", "salary": 3900, "points": 25.1, "ownership": 14.0 },
+      { "rosterSpot": "FLEX", "name": "R. Stevenson", "position": "RB", "team": "NE", "salary": 5600, "points": 38.3, "ownership": 6.3 },
+      { "rosterSpot": "DST", "name": "Patriots", "position": "DST", "team": "NE", "salary": 3900, "points": 12.0, "ownership": 3.4 }
+    ]
+  }
+}

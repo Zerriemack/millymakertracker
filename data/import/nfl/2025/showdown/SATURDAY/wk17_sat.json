@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 17,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-27",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "Saturday Showdown",
+    "siteContestId": "NFL_2025_WK17_SAT_SHOWDOWN_2025-12-27_ravens_packers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2450000,
+    "totalOwnershipBp": 19140
+  },
+  "winner": {
+    "username": "chris41658",
+    "points": 158.8,
+    "maxEntries": 104
+  },
+  "lineup": {
+    "salaryUsed": 49600,
+    "totalPoints": 158.8,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "D. Henry",
+        "position": "RB",
+        "team": "BAL",
+        "salary": 16800,
+        "points": 72.9,
+        "ownershipPercent": 18.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Willis",
+        "position": "QB",
+        "team": "GB",
+        "salary": 9000,
+        "points": 32.52,
+        "ownershipPercent": 68.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Huntley",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 8800,
+        "points": 14.28,
+        "ownershipPercent": 51.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Watson",
+        "position": "WR",
+        "team": "GB",
+        "salary": 8000,
+        "points": 25.3,
+        "ownershipPercent": 23.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Loop",
+        "position": "K",
+        "team": "BAL",
+        "salary": 4600,
+        "points": 11,
+        "ownershipPercent": 25.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Ali",
+        "position": "RB",
+        "team": "BAL",
+        "salary": 2400,
+        "points": 2.8,
+        "ownershipPercent": 3.5
+      }
+    ]
+  }
+}

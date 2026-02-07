@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 10,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-06",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK10_TNF_SHOWDOWN_2025-11-06_raiders_broncos",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 6027778,
+    "totalOwnershipBp": 20640
+  },
+  "winner": {
+    "username": "Rayvenz",
+    "points": 79.0,
+    "maxEntries": 110
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 79.0,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "T. Franklin",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 11400,
+        "points": 22.5,
+        "ownershipPercent": 9.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Nix",
+        "position": "QB",
+        "team": "DEN",
+        "salary": 10600,
+        "points": 7.8,
+        "ownershipPercent": 85.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Jeanty",
+        "position": "RB",
+        "team": "LV",
+        "salary": 10200,
+        "points": 15.3,
+        "ownershipPercent": 33.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Dobbins",
+        "position": "RB",
+        "team": "LV",
+        "salary": 8600,
+        "points": 9.4,
+        "ownershipPercent": 36.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Broncos",
+        "position": "DST",
+        "team": "DEN",
+        "salary": 5400,
+        "points": 14.0,
+        "ownershipPercent": 36.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Raiders",
+        "position": "DST",
+        "team": "LV",
+        "salary": 3600,
+        "points": 10.0,
+        "ownershipPercent": 6.3
+      }
+    ]
+  }
+}

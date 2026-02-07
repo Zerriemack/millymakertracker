@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 9,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-02",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK09_SNF_SHOWDOWN_2025-11-02_commanders_seahawks",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 16250000,
+    "totalOwnershipBp": 24710
+  },
+  "winner": {
+    "username": "Awesemo",
+    "points": 133.32,
+    "maxEntries": 84
+  },
+  "lineup": {
+    "salaryUsed": 35900,
+    "totalPoints": 133.32,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "S. Darnold",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 15900,
+        "points": 46.8,
+        "ownershipPercent": 7.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Smith-Njigba",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 12000,
+        "points": 25,
+        "ownershipPercent": 85.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Daniels",
+        "position": "QB",
+        "team": "WAS",
+        "salary": 11600,
+        "points": 16.22,
+        "ownershipPercent": 73
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Horton",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 3200,
+        "points": 20.8,
+        "ownershipPercent": 35.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Barner",
+        "position": "TE",
+        "team": "SEA",
+        "salary": 3000,
+        "points": 11.5,
+        "ownershipPercent": 39.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. White",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 200,
+        "points": 13,
+        "ownershipPercent": 6.1
+      }
+    ]
+  }
+}

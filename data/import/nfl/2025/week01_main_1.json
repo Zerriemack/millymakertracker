@@ -1,0 +1,104 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 1,
+  "slateType": "MAIN",
+  "slateDate": "2025-09-07T00:00:00.000Z",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker",
+    "topPrizeCents": 100000000
+  },
+  "winner": {
+    "username": "rotomwash",
+    "points": 193.92,
+    "maxEntries": 52
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 193.92,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "J. Fields",
+        "position": "QB",
+        "team": "NYJ",
+        "salary": 5400,
+        "points": 29.52,
+        "ownership": 1.8
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "B. Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 8000,
+        "points": 27.4,
+        "ownership": 10.7
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "D. Achane",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 6900,
+        "points": 16.5,
+        "ownership": 15.6
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "P. Nacua",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 7600,
+        "points": 26.1,
+        "ownership": 6.3
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "R. Pearsall",
+        "position": "WR",
+        "team": "SF",
+        "salary": 4500,
+        "points": 17.8,
+        "ownership": 12.6
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "E. Egbuka",
+        "position": "WR",
+        "team": "TB",
+        "salary": 4600,
+        "points": 23.6,
+        "ownership": 25.9
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "J. Johnson",
+        "position": "TE",
+        "team": "NO",
+        "salary": 3300,
+        "points": 15.6,
+        "ownership": 0.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Smith-Njigba",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 5800,
+        "points": 23.4,
+        "ownership": 7.5
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Broncos",
+        "position": "DST",
+        "team": "DEN",
+        "salary": 3800,
+        "points": 14.0,
+        "ownership": 16.8
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 12,
+  "slateType": "MAIN",
+  "slateDate": "2025-01-01T00:00:00Z",
+  "contest": { "site": "DraftKings", "contestName": "NFL Milly Maker" },
+  "winner": { "username": "jbgigglesworth", "points": 277.04, "maxEntries": 25 },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 277.04,
+    "items": [
+      { "rosterSpot": "QB", "name": "J. Winston", "position": "QB", "team": "NYG", "salary": 4600, "points": 36.24, "ownership": 4.0 },
+      { "rosterSpot": "RB", "name": "J. Gibbs", "position": "RB", "team": "DET", "salary": 8300, "points": 58.4, "ownership": 38.8 },
+      { "rosterSpot": "RB", "name": "E. Wilson", "position": "RB", "team": "GB", "salary": 5300, "points": 29.5, "ownership": 23.3 },
+      { "rosterSpot": "WR", "name": "D. Smith", "position": "WR", "team": "PHI", "salary": 5600, "points": 14.9, "ownership": 20.5 },
+      { "rosterSpot": "WR", "name": "A. St. Brown", "position": "WR", "team": "DET", "salary": 8000, "points": 32.9, "ownership": 23.1 },
+      { "rosterSpot": "WR", "name": "W. Robinson", "position": "WR", "team": "NYG", "salary": 5500, "points": 33.6, "ownership": 7.7 },
+      { "rosterSpot": "TE", "name": "H. Henry", "position": "TE", "team": "NE", "salary": 3900, "points": 27.5, "ownership": 13.3 },
+      { "rosterSpot": "FLEX", "name": "A. Brown", "position": "WR", "team": "PHI", "salary": 5900, "points": 28.0, "ownership": 13.9 },
+      { "rosterSpot": "DST", "name": "Browns", "position": "DST", "team": "CLE", "salary": 2900, "points": 16.0, "ownership": 28.4 }
+    ]
+  }
+}

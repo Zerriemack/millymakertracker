@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 10,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-09",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK10_SNF_SHOWDOWN_2025-11-09_chargers_steelers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 12166667,
+    "totalOwnershipBp": 16670
+  },
+  "winner": {
+    "username": "stoniner",
+    "points": 108.55,
+    "maxEntries": 16
+  },
+  "lineup": {
+    "salaryUsed": 45700,
+    "totalPoints": 108.55,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "L. McConkey",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 14100,
+        "points": 35.55,
+        "ownershipPercent": 9.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Herbert",
+        "position": "QB",
+        "team": "LAC",
+        "salary": 10600,
+        "points": 14.7,
+        "ownershipPercent": 88.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Vidal",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 8800,
+        "points": 17.8,
+        "ownershipPercent": 23.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Dicker",
+        "position": "K",
+        "team": "LAC",
+        "salary": 5400,
+        "points": 14,
+        "ownershipPercent": 26.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chargers",
+        "position": "DST",
+        "team": "LAC",
+        "salary": 4800,
+        "points": 15,
+        "ownershipPercent": 12.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Wilson",
+        "position": "QB",
+        "team": "PIT",
+        "salary": 2000,
+        "points": 11.5,
+        "ownershipPercent": 6.2
+      }
+    ]
+  }
+}

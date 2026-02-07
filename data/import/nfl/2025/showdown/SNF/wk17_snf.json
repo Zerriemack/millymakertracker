@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 17,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-28",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK17_SNF_SHOWDOWN_2025-12-28_bears_49ers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2975000,
+    "totalOwnershipBp": 28590
+  },
+  "winner": {
+    "username": "Loutru222",
+    "points": 180.52,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 48400,
+    "totalPoints": 180.52,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "L. Burden III",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 10200,
+        "points": 46.2,
+        "ownershipPercent": 6.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 11800,
+        "points": 31.1,
+        "ownershipPercent": 82.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Purdy",
+        "position": "QB",
+        "team": "SF",
+        "salary": 10600,
+        "points": 40.92,
+        "ownershipPercent": 72.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Swift",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 8000,
+        "points": 21.9,
+        "ownershipPercent": 36.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Loveland",
+        "position": "TE",
+        "team": "CHI",
+        "salary": 4800,
+        "points": 21.4,
+        "ownershipPercent": 41.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Tonges",
+        "position": "TE",
+        "team": "SF",
+        "salary": 3000,
+        "points": 19.0,
+        "ownershipPercent": 46.9
+      }
+    ]
+  }
+}

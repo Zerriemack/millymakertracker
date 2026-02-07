@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 7,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-19",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK07_SNF_SHOWDOWN_2025-10-19_49ers_falcons",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 8800220,
+    "totalOwnershipBp": 17370
+  },
+  "winner": {
+    "username": "werewolvesofl",
+    "points": 120.89,
+    "maxEntries": 30
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 120.89,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "C. McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 18000,
+        "points": 63.15,
+        "ownershipPercent": 17.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 12200,
+        "points": 21.2,
+        "ownershipPercent": 70.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Penix Jr.",
+        "position": "QB",
+        "team": "ATL",
+        "salary": 9400,
+        "points": 13.24,
+        "ownershipPercent": 30.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Pitts Sr.",
+        "position": "TE",
+        "team": "ATL",
+        "salary": 5800,
+        "points": 13.2,
+        "ownershipPercent": 36.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "49ers",
+        "position": "DST",
+        "team": "SF",
+        "salary": 4000,
+        "points": 8,
+        "ownershipPercent": 15.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "L. Farrell",
+        "position": "TE",
+        "team": "SF",
+        "salary": 600,
+        "points": 2.1,
+        "ownershipPercent": 4.7
+      }
+    ]
+  }
+}

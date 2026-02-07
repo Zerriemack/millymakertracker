@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 5,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-05",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK05_SNF_SHOWDOWN_2025-10-05_bills_patriots",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 25000000,
+    "totalOwnershipBp": 21610
+  },
+  "winner": {
+    "username": "xmalachi",
+    "points": 122.32,
+    "maxEntries": 16
+  },
+  "lineup": {
+    "salaryUsed": 48700,
+    "totalPoints": 122.32,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "S. Diggs",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 11700,
+        "points": 41.4,
+        "ownershipPercent": 7.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 12000,
+        "points": 21.42,
+        "ownershipPercent": 87.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Shakir",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 8200,
+        "points": 11,
+        "ownershipPercent": 24.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Kincaid",
+        "position": "TE",
+        "team": "BUF",
+        "salary": 7400,
+        "points": 19.8,
+        "ownershipPercent": 32.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Stevenson",
+        "position": "RB",
+        "team": "NE",
+        "salary": 4800,
+        "points": 15.7,
+        "ownershipPercent": 32.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Borregales",
+        "position": "K",
+        "team": "NE",
+        "salary": 4600,
+        "points": 13,
+        "ownershipPercent": 11
+      }
+    ]
+  }
+}

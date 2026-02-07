@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 7,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-16",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK07_TNF_SHOWDOWN_2025-10-16_steelers_bengals",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 11142857,
+    "totalOwnershipBp": 24480
+  },
+  "winner": {
+    "username": "Jamie27",
+    "points": 181.09,
+    "maxEntries": 46
+  },
+  "lineup": {
+    "salaryUsed": 49100,
+    "totalPoints": 181.09,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "P. Freiermuth",
+        "position": "TE",
+        "team": "PIT",
+        "salary": 4500,
+        "points": 46.65,
+        "ownershipPercent": 0.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Chase",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 12000,
+        "points": 41.1,
+        "ownershipPercent": 69.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Rodgers",
+        "position": "QB",
+        "team": "PIT",
+        "salary": 9800,
+        "points": 24.56,
+        "ownershipPercent": 58.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Flacco",
+        "position": "QB",
+        "team": "CIN",
+        "salary": 9400,
+        "points": 28.98,
+        "ownershipPercent": 50.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Warren",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 8400,
+        "points": 22.8,
+        "ownershipPercent": 52.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "E. McPherson",
+        "position": "K",
+        "team": "CIN",
+        "salary": 5000,
+        "points": 17.0,
+        "ownershipPercent": 14.0
+      }
+    ]
+  }
+}

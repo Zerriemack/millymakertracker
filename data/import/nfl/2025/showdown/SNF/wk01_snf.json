@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 1,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-07",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK01_SNF_SHOWDOWN_2025-09-07_bills_ravens",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 8333334,
+    "totalOwnershipBp": 21480
+  },
+  "winner": {
+    "username": "expansionc",
+    "points": 176.16,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49300,
+    "totalPoints": 176.16,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "K. Coleman",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 9900,
+        "points": 42.3,
+        "ownershipPercent": 3.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 11000,
+        "points": 41.76,
+        "ownershipPercent": 83.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Henry",
+        "position": "RB",
+        "team": "BAL",
+        "salary": 10200,
+        "points": 33.2,
+        "ownershipPercent": 51.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Z. Flowers",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 8200,
+        "points": 31.1,
+        "ownershipPercent": 31.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Kincaid",
+        "position": "TE",
+        "team": "BUF",
+        "salary": 5600,
+        "points": 14.8,
+        "ownershipPercent": 24
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Loop",
+        "position": "K",
+        "team": "BAL",
+        "salary": 4600,
+        "points": 13,
+        "ownershipPercent": 19.7
+      }
+    ]
+  }
+}

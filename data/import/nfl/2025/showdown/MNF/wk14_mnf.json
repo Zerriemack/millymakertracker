@@ -1,0 +1,33 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 14,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-08",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK14_MNF_SHOWDOWN_2025-12-08_eagles_chargers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 20000000,
+    "totalOwnershipBp": 20360
+  },
+  "winner": {
+    "username": "TheDogSays",
+    "points": 117.76,
+    "maxEntries": 13
+  },
+  "lineup": {
+    "salaryUsed": 48600,
+    "totalPoints": 117.76,
+    "items": [
+      { "rosterSpot": "CAPTAIN", "name": "S. Barkley", "position": "RB", "team": "PHI", "salary": 14400, "points": 31.8, "ownershipPercent": 17.4 },
+      { "rosterSpot": "FLEX", "name": "J. Herbert", "position": "QB", "team": "LAC", "salary": 10000, "points": 14.16, "ownershipPercent": 44.0 },
+      { "rosterSpot": "FLEX", "name": "A. Brown", "position": "WR", "team": "PHI", "salary": 9000, "points": 19.0, "ownershipPercent": 44.5 },
+      { "rosterSpot": "FLEX", "name": "D. Goedert", "position": "TE", "team": "PHI", "salary": 5400, "points": 15.8, "ownershipPercent": 34.6 },
+      { "rosterSpot": "FLEX", "name": "C. Dicker", "position": "K", "team": "LAC", "salary": 5000, "points": 20.0, "ownershipPercent": 41.4 },
+      { "rosterSpot": "FLEX", "name": "J. Elliott", "position": "K", "team": "PHI", "salary": 4800, "points": 17.0, "ownershipPercent": 21.7 }
+    ]
+  }
+}

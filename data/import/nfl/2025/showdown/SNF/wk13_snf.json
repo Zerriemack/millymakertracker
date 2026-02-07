@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 13,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-30",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK13_SNF_SHOWDOWN_2025-11-30_broncos_commanders",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 4400000,
+    "totalOwnershipBp": 22480
+  },
+  "winner": {
+    "username": "Grex123",
+    "points": 131.6,
+    "maxEntries": 132
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 131.6,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Z. Ertz",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 10500,
+        "points": 35.4,
+        "ownershipPercent": 2.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Nix",
+        "position": "QB",
+        "team": "DEN",
+        "salary": 11000,
+        "points": 20.44,
+        "ownershipPercent": 83.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Mariota",
+        "position": "QB",
+        "team": "WAS",
+        "salary": 10200,
+        "points": 24.26,
+        "ownershipPercent": 46.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Harvey",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 8400,
+        "points": 21.2,
+        "ownershipPercent": 64.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. McLaurin",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 8000,
+        "points": 22.6,
+        "ownershipPercent": 23.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Trautman",
+        "position": "TE",
+        "team": "DEN",
+        "salary": 1600,
+        "points": 7.7,
+        "ownershipPercent": 3.5
+      }
+    ]
+  }
+}

@@ -1,10 +1,21 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getSlates } from "../../lib/data";
+import { prisma } from "../../lib/db";
 
-const slates = getSlates()
-  .filter((s) => s.sport === "NFL")
-  .sort((a, b) => (a.date > b.date ? -1 : 1));
+const slates = await prisma.slate.findMany({
+  where: {
+    season: { sport: "NFL", year: 2025 }
+  },
+  orderBy: [{ week: "asc" }, { slateType: "asc" }],
+  include: {
+    season: true,
+    contests: {
+      include: {
+        winners: true
+      }
+    }
+  }
+});
 ---
 
 <Layout title="NFL | MillyMakerTracker">
@@ -15,20 +26,29 @@ const slates = getSlates()
     {slates.length === 0 ? (
       <p>No slates yet.</p>
     ) : (
-      <ul>
-        {slates.map((s) => (
-          <li>
-            <strong>{s.season}{typeof s.week === "number" ? ` Week ${s.week}` : ""}</strong>
-            {" "}• {s.slateName ?? "Slate"}
-            {" "}• {s.date}
-            {" "}• {s.contest.name}
-            {s.winners?.[0] ? (
-              <div>
-                Winner: {s.winners[0].username} ({s.winners[0].points} pts)
+      <ul style="list-style:none; padding:0; margin:0; max-width: 720px;">
+        {slates.map((s) => {
+          const contest = s.contests[0];
+          const winner = contest?.winners?.[0];
+
+          return (
+            <li style="padding: 18px 0; border-bottom: 1px solid #eaeaea;">
+              <div style="font-weight:700; font-size: 18px;">
+                {s.season.year} Week {s.week} · {s.slateType} ·{" "}
+                {new Date(s.slateDate).toLocaleDateString()}
               </div>
-            ) : null}
-          </li>
-        ))}
+
+              <div style="margin-top: 6px; color: #555;">
+                Contest: {contest ? contest.contestName : "TBD"}
+              </div>
+
+              <div style="margin-top: 6px; color: #555;">
+                Winner: {winner ? winner.username : "TBD"}{" "}
+                ({winner ? winner.points : "—"} pts)
+              </div>
+            </li>
+          );
+        })}
       </ul>
     )}
   </main>

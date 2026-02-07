@@ -1,0 +1,24 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 6,
+  "slateType": "MAIN",
+  "slateDate": "2025-01-01T00:00:00Z",
+  "contest": { "site": "DraftKings", "contestName": "NFL Milly Maker" },
+  "winner": { "username": "brwntwn4", "points": 227.14, "maxEntries": 5 },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 227.14,
+    "items": [
+      { "rosterSpot": "QB", "name": "D. Maye", "position": "QB", "team": "NE", "salary": 5900, "points": 27.24, "ownership": 12.0 },
+      { "rosterSpot": "RB", "name": "J. Jacobs", "position": "RB", "team": "GB", "salary": 7300, "points": 32.0, "ownership": 29.8 },
+      { "rosterSpot": "RB", "name": "K. Williams", "position": "RB", "team": "LAR", "salary": 6300, "points": 16.7, "ownership": 23.7 },
+      { "rosterSpot": "WR", "name": "J. Smith-Njigba", "position": "WR", "team": "SEA", "salary": 7600, "points": 33.2, "ownership": 25.2 },
+      { "rosterSpot": "WR", "name": "G. Pickens", "position": "WR", "team": "DAL", "salary": 6800, "points": 34.8, "ownership": 9.5 },
+      { "rosterSpot": "WR", "name": "K. Boutte", "position": "WR", "team": "NE", "salary": 3800, "points": 26.3, "ownership": 1.2 },
+      { "rosterSpot": "TE", "name": "M. Mayer", "position": "TE", "team": "LV", "salary": 3100, "points": 16.0, "ownership": 4.8 },
+      { "rosterSpot": "FLEX", "name": "R. Dowdle", "position": "RB", "team": "CAR", "salary": 5800, "points": 36.9, "ownership": 37.6 },
+      { "rosterSpot": "DST", "name": "Colts", "position": "DST", "team": "IND", "salary": 3300, "points": 4.0, "ownership": 13.7 }
+    ]
+  }
+}

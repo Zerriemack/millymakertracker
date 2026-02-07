@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 14,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-04",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK14_TNF_SHOWDOWN_2025-12-04_cowboys_lions",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2394000,
+    "totalOwnershipBp": 25530
+  },
+  "winner": {
+    "username": "phatbundles",
+    "points": 166.09,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 166.09,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "R. Flournoy",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 5100,
+        "points": 44.25,
+        "ownershipPercent": 0.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Gibbs",
+        "position": "RB",
+        "team": "DET",
+        "salary": 11000,
+        "points": 37.0,
+        "ownershipPercent": 65.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 10400,
+        "points": 23.44,
+        "ownershipPercent": 65.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 9600,
+        "points": 21.1,
+        "ownershipPercent": 51.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Williams",
+        "position": "WR",
+        "team": "DET",
+        "salary": 8400,
+        "points": 17.3,
+        "ownershipPercent": 46.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Aubrey",
+        "position": "K",
+        "team": "DAL",
+        "salary": 5400,
+        "points": 23.0,
+        "ownershipPercent": 26.3
+      }
+    ]
+  }
+}

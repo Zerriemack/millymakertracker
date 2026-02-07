@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 12,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-23",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK12_SNF_SHOWDOWN_2025-11-23_buccaneers_rams",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2996667,
+    "totalOwnershipBp": 22320
+  },
+  "winner": {
+    "username": "csk2022",
+    "points": 118.82,
+    "maxEntries": 23
+  },
+  "lineup": {
+    "salaryUsed": 48500,
+    "totalPoints": 118.82,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "D. Adams",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 14700,
+        "points": 34.8,
+        "ownershipPercent": 11.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "P. Nacua",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 11800,
+        "points": 16.7,
+        "ownershipPercent": 64.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Stafford",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 10800,
+        "points": 22.92,
+        "ownershipPercent": 68.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Rams",
+        "position": "DST",
+        "team": "LAR",
+        "salary": 4800,
+        "points": 18.0,
+        "ownershipPercent": 16.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Johnson",
+        "position": "WR",
+        "team": "TB",
+        "salary": 4000,
+        "points": 12.3,
+        "ownershipPercent": 31.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Parkinson",
+        "position": "TE",
+        "team": "LAR",
+        "salary": 2400,
+        "points": 14.1,
+        "ownershipPercent": 30.4
+      }
+    ]
+  }
+}

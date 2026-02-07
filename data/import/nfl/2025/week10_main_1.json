@@ -1,0 +1,24 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 10,
+  "slateType": "MAIN",
+  "slateDate": "2025-01-01T00:00:00Z",
+  "contest": { "site": "DraftKings", "contestName": "NFL Milly Maker" },
+  "winner": { "username": "Standish", "points": 239.62, "maxEntries": 150 },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 239.62,
+    "items": [
+      { "rosterSpot": "QB", "name": "B. Mayfield", "position": "QB", "team": "TB", "salary": 6200, "points": 22.92, "ownership": 5.7 },
+      { "rosterSpot": "RB", "name": "D. Achane", "position": "RB", "team": "MIA", "salary": 7400, "points": 43.5, "ownership": 25.2 },
+      { "rosterSpot": "RB", "name": "T. Henderson", "position": "RB", "team": "NE", "salary": 5600, "points": 31.0, "ownership": 14.6 },
+      { "rosterSpot": "WR", "name": "J. Jennings", "position": "WR", "team": "SF", "salary": 4600, "points": 18.1, "ownership": 18.1 },
+      { "rosterSpot": "WR", "name": "E. Egbuka", "position": "WR", "team": "NE", "salary": 7000, "points": 26.5, "ownership": 16.4 },
+      { "rosterSpot": "WR", "name": "T. Johnson", "position": "WR", "team": "NE", "salary": 4500, "points": 20.2, "ownership": 12.3 },
+      { "rosterSpot": "TE", "name": "C. Otton", "position": "TE", "team": "TB", "salary": 3900, "points": 17.2, "ownership": 10.3 },
+      { "rosterSpot": "FLEX", "name": "J. Gibbs", "position": "RB", "team": "DET", "salary": 8000, "points": 41.2, "ownership": 12.3 },
+      { "rosterSpot": "DST", "name": "Jets", "position": "DST", "team": "NYJ", "salary": 2800, "points": 19.0, "ownership": 3.6 }
+    ]
+  }
+}

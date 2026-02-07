@@ -1,0 +1,83 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 1,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-05T00:00:00.000Z",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown",
+    "siteContestId": "NFL_2025_WK01_BLACK_FRIDAY_SHOWDOWN_2025-09-05_chiefs_chargers",
+    "topPrizeCents": 50000000
+  },
+  "winner": {
+    "username": "nonameboy",
+    "points": 148.0
+  },
+  "lineup": {
+    "salaryUsed": 47100,
+    "totalPoints": 148.0,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Herbert",
+        "position": "QB",
+        "team": "LAC",
+        "salary": 14700,
+        "points": 46.38,
+        "ownershipCaptainPct": 9.7,
+        "ownershipFlexPct": 65.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "P. Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 10000,
+        "points": 26.02,
+        "ownershipCaptainPct": 16.4,
+        "ownershipFlexPct": 76.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 6400,
+        "points": 19.8,
+        "ownershipCaptainPct": 5.7,
+        "ownershipFlexPct": 33.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "H. Brown",
+        "position": "WR",
+        "team": "KC",
+        "salary": 5800,
+        "points": 19.9,
+        "ownershipCaptainPct": 4.9,
+        "ownershipFlexPct": 27.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Q. Johnston",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 5400,
+        "points": 24.9,
+        "ownershipCaptainPct": 1.9,
+        "ownershipFlexPct": 15.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "H. Butker",
+        "position": "K",
+        "team": "KC",
+        "salary": 4800,
+        "points": 11.0,
+        "ownershipCaptainPct": 1.0,
+        "ownershipFlexPct": 21.4
+      }
+    ]
+  }
+}
