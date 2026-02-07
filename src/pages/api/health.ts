@@ -7,7 +7,7 @@ export async function GET() {
       status: 200,
       headers: { "content-type": "application/json" },
     });
-  } catch (e) {
+  } catch {
     return new Response(JSON.stringify({ ok: false }), {
       status: 500,
       headers: { "content-type": "application/json" },
