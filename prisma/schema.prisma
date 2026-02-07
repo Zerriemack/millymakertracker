@@ -1,0 +1,184 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum Sport {
+  NFL
+  CFB
+}
+
+enum LineupType {
+  CLASSIC
+  SHOWDOWN
+}
+
+enum SlateType {
+  MAIN
+  SHOWDOWN
+  TNF
+  SNF
+  MNF
+  OTHER
+}
+
+enum RosterSpot {
+  QB
+  RB
+  WR
+  TE
+  FLEX
+  DST
+  CAPTAIN
+}
+
+model Season {
+  id     String  @id @default(cuid())
+  year   Int
+  sport  Sport
+  slates Slate[]
+
+  @@unique([year, sport])
+}
+
+model Slate {
+  id        String    @id @default(cuid())
+  seasonId  String
+  week      Int?
+  slateType SlateType
+  slateDate DateTime
+
+  lineupType     LineupType
+  salaryCapCents Int?
+  gamesCount     Int?
+  dayOfWeek      Int?
+  isMain         Boolean    @default(false)
+
+  slateKey   String  @unique
+  slateName  String?
+  slateTag   String?
+  slateGroup String?
+
+  contests Contest[]
+  season   Season    @relation(fields: [seasonId], references: [id])
+
+  @@index([seasonId])
+  @@index([seasonId, week])
+  @@index([seasonId, lineupType])
+  @@index([slateTag])
+  @@index([slateGroup])
+}
+
+model Contest {
+  id            String  @id @default(cuid())
+  slateId       String
+  site          String
+  siteContestId String?
+  contestName   String
+  entryFeeCents Int?
+  entries       Int?
+  topPrizeCents Int?
+
+  totalOwnershipBp Int?
+
+  winners Winner[]
+  slate   Slate    @relation(fields: [slateId], references: [id])
+
+  @@unique([site, siteContestId])
+  @@index([slateId])
+  @@index([site])
+}
+
+model Winner {
+  id         String  @id @default(cuid())
+  contestId  String
+  username   String
+  points     Float
+  maxEntries Int?
+  lineup     Lineup?
+
+  contest Contest @relation(fields: [contestId], references: [id])
+
+  @@unique([contestId, username])
+  @@index([contestId])
+  @@index([username])
+}
+
+model Team {
+  id           String   @id @default(cuid())
+  sport        Sport
+  abbreviation String
+  name         String
+  players      Player[]
+
+  @@unique([sport, abbreviation])
+}
+
+model Player {
+  id         String @id @default(cuid())
+  sport      Sport
+  name       String
+  position   String
+  teamId     String
+  dkPlayerId Int?
+
+  team        Team         @relation(fields: [teamId], references: [id])
+  lineupItems LineupItem[]
+
+  @@unique([sport, dkPlayerId])
+  @@unique([sport, name, position, teamId])
+  @@index([teamId])
+  @@index([sport])
+}
+
+model Lineup {
+  id          String       @id @default(cuid())
+  winnerId    String       @unique
+  lineupType  LineupType
+  salaryUsed  Int?
+  totalPoints Float?
+
+  totalOwnershipBp Int?
+
+  items  LineupItem[]
+  winner Winner @relation(fields: [winnerId], references: [id])
+
+  @@index([lineupType])
+}
+
+model LineupItem {
+  id         String     @id @default(cuid())
+  lineupId   String
+  playerId   String
+  rosterSpot RosterSpot
+  slotIndex  Int        @default(0)
+
+  salary Int?
+  points Float?
+
+  // existing fields (leave them for now so nothing breaks)
+  ownership   Float?
+  ownershipBp Int?
+
+  // NEW: store only the relevant ownership depending on lineup type + slot
+  ownershipCaptainBp Int?
+  ownershipFlexBp    Int?
+  ownershipClassicBp Int?
+
+  lineup Lineup @relation(fields: [lineupId], references: [id])
+  player Player @relation(fields: [playerId], references: [id])
+
+  @@unique([lineupId, rosterSpot, slotIndex])
+  @@index([lineupId])
+  @@index([playerId])
+
+  // OPTIONAL indexes
+  @@index([ownershipClassicBp])
+  @@index([ownershipCaptainBp])
+  @@index([ownershipFlexBp])
+}
