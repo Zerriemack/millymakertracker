@@ -1,14 +1,10 @@
-import { config } from "dotenv";
-config({ path: ".env.local" });
-
-import { defineConfig, env } from "prisma/config";
+import 'dotenv/config'
+import { defineConfig, env } from 'prisma/config'
 
 export default defineConfig({
-  schema: "prisma/schema.prisma",
-  migrations: {
-    path: "prisma/migrations",
-  },
+  schema: 'prisma/schema.prisma',
   datasource: {
-    url: env("DATABASE_URL"),
+    // Use DIRECT connection for Prisma CLI (migrations/generate in CI)
+    url: env('DIRECT_URL'),
   },
-});
+})
