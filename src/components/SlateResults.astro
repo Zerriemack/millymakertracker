@@ -1,0 +1,62 @@
+---
+const { slates = [] } = Astro.props;
+
+function getContest(s) {
+  return s?.contests?.[0];
+}
+
+function getWinner(c) {
+  return c?.winners?.[0];
+}
+
+function fmtDate(d) {
+  try {
+    return new Date(d).toLocaleDateString();
+  } catch {
+    return "";
+  }
+}
+---
+
+{slates.length === 0 ? (
+  <p>No matching slates.</p>
+) : (
+  <ul style="list-style:none; padding:0; margin:0; max-width: 900px;">
+    {slates.map((s) => {
+      const contest = getContest(s);
+      const winner = getWinner(contest);
+      const slateKey = contest?.siteContestId;
+
+      return (
+        <li style="padding: 14px 0; border-bottom: 1px solid #eaeaea;">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+            <div>
+              <div style="font-weight:700; font-size: 16px;">
+                {s.season.year} Week {s.week} · {s.slateType} · {fmtDate(s.slateDate)}
+              </div>
+
+              <div style="margin-top: 6px; color: #555;">
+                Contest: {contest ? contest.contestName : "TBD"}
+              </div>
+
+              <div style="margin-top: 6px; color: #555;">
+                Winner: {winner ? winner.username : "TBD"} ({winner ? winner.points : "—"} pts)
+              </div>
+            </div>
+
+            {slateKey ? (
+              <a
+                href={`/nfl/${encodeURIComponent(slateKey)}`}
+                style="display:inline-block; padding:10px 12px; border:1px solid #eaeaea; border-radius:10px; text-decoration:none;"
+              >
+                View
+              </a>
+            ) : (
+              <span style="color:#999;">No key</span>
+            )}
+          </div>
+        </li>
+      );
+    })}
+  </ul>
+)}

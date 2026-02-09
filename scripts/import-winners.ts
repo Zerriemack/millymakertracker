@@ -127,12 +127,17 @@ type ImportFile = {
 /* ---------------------------- Slate detection --------------------------- */
 
 function detectSlateTypeFromPath(filePath: string): SlateType | null {
-  const normalized = filePath.replace(/\\\\/g, "/").toUpperCase();
+  const normalized = filePath.replace(/\\/g, "/").toUpperCase();
+
+  // must be before /SHOWDOWN/ because the path contains /showdown/
+  if (normalized.includes("/SUPER BOWL/") || normalized.includes("/SUPER_BOWL/")) return SlateType.SUPER_BOWL;
+
   if (normalized.includes("/MNF/")) return SlateType.MNF;
   if (normalized.includes("/TNF/")) return SlateType.TNF;
   if (normalized.includes("/SNF/")) return SlateType.SNF;
   if (normalized.includes("/SHOWDOWN/")) return SlateType.SHOWDOWN;
   if (normalized.includes("/MAIN/")) return SlateType.MAIN;
+
   return null;
 }
 

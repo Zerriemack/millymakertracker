@@ -1,16 +1,28 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="Milly Maker Tracker">
-  <main>
-    <h1>Milly Maker Tracker</h1>
-    <p>
-      A running archive of DraftKings NFL Milly Maker winning lineups, organized by slate.
-    </p>
+<Layout title="NFL | MillyMakerTracker">
+  <main class="container">
+    <h1>NFL</h1>
+    <p>Choose a slate group.</p>
 
-    <p>
-      Start here: <a href="/winners">browse winners</a> or <a href="/slates">pick a slate</a>.
-    </p>
+    <div style="display:grid; gap:12px; max-width:720px;">
+      <a
+        href="/nfl/classic"
+        style="display:block; padding:16px; border:1px solid #eaeaea; border-radius:10px; text-decoration:none;"
+      >
+        <div style="font-weight:700; font-size:18px;">Classic</div>
+        <div style="margin-top:6px; color:#555;">Main slates.</div>
+      </a>
+
+      <a
+        href="/nfl/showdown"
+        style="display:block; padding:16px; border:1px solid #eaeaea; border-radius:10px; text-decoration:none;"
+      >
+        <div style="font-weight:700; font-size:18px;">Showdown</div>
+        <div style="margin-top:6px; color:#555;">MNF, TNF, SNF, Playoffs, Super Bowl.</div>
+      </a>
+    </div>
   </main>
 </Layout>

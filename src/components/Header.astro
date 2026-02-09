@@ -9,18 +9,22 @@ import HeaderLink from './HeaderLink.astro';
       <a href="/">Home</a>
       <a href="/winners">Winners</a>
       <a href="/slates">Slates</a>
-      <a href="/nfl">NFL</a>
+      <div class="nav-dropdown">
+  <a class="nav-link" href="/nfl">NFL</a>
+  <div class="nav-dropdown-menu">
+    <a class="nav-dropdown-item" href="/nfl/classic">Classic</a>
+    <a class="nav-dropdown-item" href="/nfl/showdown">Showdown</a>
+  </div>
+</div>
       <a href="/cfb">CFB</a>
       <a href="/analysis">After Slate</a>
       <a href="/subscribe">Subscribe</a>
       <a href="/about">About</a>
     </div>
 
-    <div class="social-links">
 
 
 
-		</div>
 		<div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
 				<span class="sr-only">Follow Astro on Mastodon</span>
@@ -96,4 +100,44 @@ import HeaderLink from './HeaderLink.astro';
 			display: none;
 		}
 	}
+	.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-dropdown .nav-link {
+  display: inline-block;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 8px;
+  z-index: 50;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-item {
+  display: block;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: var(--black);
+  border-radius: 8px;
+  border-bottom: 0;
+}
+
+.nav-dropdown-item:hover {
+  background: #f5f5f5;
+}
 </style>

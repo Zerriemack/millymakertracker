@@ -1,0 +1,34 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SlateFilterBar from "../../components/SlateFilterBar.astro";
+import SlateResults from "../../components/SlateResults.astro";
+import { prisma } from "../../lib/db";
+import { filterSlates } from "../../lib/slateFilters";
+
+const q = Astro.url.searchParams.get("q") ?? "";
+
+const slates = await prisma.slate.findMany({
+  where: {
+    season: { sport: "NFL", year: 2025 },
+    slateType: "MAIN"
+  },
+  orderBy: [{ week: "asc" }, { slateType: "asc" }],
+  include: {
+    season: true,
+    contests: { include: { winners: true } }
+  }
+});
+
+const filtered = filterSlates(slates, { q });
+---
+
+<Layout title="NFL Classic | MillyMakerTracker">
+  <main class="container">
+    <h1>NFL Classic</h1>
+    <p>Main slates only.</p>
+
+    <SlateFilterBar mode="classic" currentQ={q} />
+
+    <SlateResults slates={filtered} />
+  </main>
+</Layout>

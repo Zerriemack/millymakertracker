@@ -1,0 +1,63 @@
+---
+const { mode = "classic", currentQ = "", currentTag = "" } = Astro.props;
+
+const showdownTags = [
+  { label: "All", value: "" },
+  { label: "MNF", value: "MNF" },
+  { label: "TNF", value: "TNF" },
+  { label: "SNF", value: "SNF" },
+  { label: "Sat", value: "SAT" },
+  { label: "Thanksgiving", value: "THANKSGIVING" },
+  { label: "Black Friday", value: "BLACK_FRIDAY" },
+  { label: "Playoffs", value: "PLAYOFFS" },
+  { label: "Super Bowl", value: "SUPER_BOWL" },
+  { label: "Other", value: "OTHER" }
+];
+
+function buildHref(tagValue) {
+  const params = new URLSearchParams();
+  if (currentQ) params.set("q", currentQ);
+  if (tagValue) params.set("tag", tagValue);
+  const qs = params.toString();
+  return qs ? `?${qs}` : "";
+}
+---
+
+<form method="get" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; max-width:900px; margin: 14px 0;">
+  <input
+    type="text"
+    name="q"
+    value={currentQ}
+    placeholder="Search week, teams, winner, contest..."
+    style="flex: 1; min-width: 260px; padding:10px 12px; border:1px solid #eaeaea; border-radius:10px;"
+  />
+  {mode === "showdown" ? (
+    <input type="hidden" name="tag" value={currentTag} />
+  ) : null}
+  <button
+    type="submit"
+    style="padding:10px 12px; border:1px solid #eaeaea; border-radius:10px; background:#fff; cursor:pointer;"
+  >
+    Search
+  </button>
+
+  {(currentQ || currentTag) ? (
+    <a href="?" style="color:#555; text-decoration:none; padding:10px 0;">Clear</a>
+  ) : null}
+</form>
+
+{mode === "showdown" ? (
+  <div style="display:flex; flex-wrap:wrap; gap:8px; max-width:900px; margin-bottom: 16px;">
+    {showdownTags.map((t) => {
+      const active = t.value === currentTag;
+      return (
+        <a
+          href={buildHref(t.value)}
+          style={`display:inline-block; padding:8px 10px; border:1px solid #eaeaea; border-radius:999px; text-decoration:none; color:#111; background:${active ? "#f5f5f5" : "#fff"};`}
+        >
+          {t.label}
+        </a>
+      );
+    })}
+  </div>
+) : null}

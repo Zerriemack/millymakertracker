@@ -331,5 +331,11 @@
 { "sport": "NFL", "name": "D. Prescott", "position": "QB", "teamAbbreviation": "DAL" },
 { "sport": "NFL", "name": "C. Lamb", "position": "WR", "teamAbbreviation": "DAL" },
 { "sport": "NFL", "name": "J. Williams", "position": "WR", "teamAbbreviation": "DET" },
-{ "sport": "NFL", "name": "B. Aubrey", "position": "K", "teamAbbreviation": "DAL" }
+{ "sport": "NFL", "name": "B. Aubrey", "position": "K", "teamAbbreviation": "DAL" },
+{ "sport": "NFL", "name": "Seahawks", "position": "DST", "teamAbbreviation": "SEA" },
+{ "sport": "NFL", "name": "D. Maye", "position": "QB", "teamAbbreviation": "NE" },
+{ "sport": "NFL", "name": "K. Walker III", "position": "RB", "teamAbbreviation": "SEA" },
+{ "sport": "NFL", "name": "R. Stevenson", "position": "RB", "teamAbbreviation": "NE" },
+{ "sport": "NFL", "name": "J. Myers", "position": "K", "teamAbbreviation": "SEA" },
+{ "sport": "NFL", "name": "M. Hollins", "position": "WR", "teamAbbreviation": "NE" }
 ]

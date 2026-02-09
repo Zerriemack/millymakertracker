@@ -6,6 +6,7 @@ datasource db {
   provider = "postgresql"
 }
 
+
 enum Sport {
   NFL
   CFB
@@ -20,6 +21,7 @@ enum SlateType {
   MAIN
   SHOWDOWN
   TNF
+  SUPER_BOWL
   SNF
   MNF
   OTHER
