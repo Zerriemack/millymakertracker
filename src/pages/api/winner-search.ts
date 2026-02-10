@@ -1,3 +1,4 @@
+cat > src/pages/api/winner-search.ts <<'EOF'
 import type { APIRoute } from "astro";
 import { prisma } from "../../lib/prisma";
 
@@ -63,7 +64,7 @@ export const GET: APIRoute = async ({ url }) => {
     const rows = await prisma.contest.findMany({
       where,
       take: limit,
-      orderBy: [{ slate: { slateDate: "desc" } }],
+      orderBy: { slate: { slateDate: "desc" } },
       select: {
         contestName: true,
         siteContestId: true,
@@ -114,30 +115,16 @@ export const GET: APIRoute = async ({ url }) => {
       headers: { "content-type": "application/json" },
     });
   } catch (err: any) {
-    const props = Object.getOwnPropertyNames(err ?? {});
-    const details = (() => {
-      try {
-        return JSON.stringify(err, props, 2);
-      } catch {
-        return String(err);
-      }
-    })();
-
     console.error("[winner-search] error:", err);
-
     return new Response(
-      JSON.stringify(
-        {
-          error: "winner-search failed",
-          name: err?.name ?? null,
-          message: err?.message ?? String(err),
-          details,
-          stack: err?.stack ?? null,
-        },
-        null,
-        2
-      ),
+      JSON.stringify({
+        error: "winner-search failed",
+        name: err?.name ?? null,
+        message: err?.message ?? String(err),
+        stack: err?.stack ?? null,
+      }),
       { status: 500, headers: { "content-type": "application/json" } }
     );
   }
 };
+EOF

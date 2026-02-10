@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const url = new URL(Astro.request.url);
+
+const sport = (url.searchParams.get("sport") || "NFL").toUpperCase();
+const year = url.searchParams.get("year") || "2025";
+const lineupType = (url.searchParams.get("lineupType") || "").toUpperCase();
+const slateType = (url.searchParams.get("slateType") || "").toUpperCase();
+const week = url.searchParams.get("week") || "";
+const q = url.searchParams.get("q") || "";
+
+// Build API URL safely for SSR
+const api = new URL("/api/slates", Astro.url.origin);
+api.searchParams.set("sport", sport);
+api.searchParams.set("year", year);
+api.searchParams.set("take", "200");
+if (lineupType) api.searchParams.set("lineupType", lineupType);
+if (slateType) api.searchParams.set("slateType", slateType);
+if (week) api.searchParams.set("week", week);
+if (q) api.searchParams.set("q", q);
+
+const res = await fetch(api);
+const data = res.ok ? await res.json() : { slates: [] };
+const slates = data.slates ?? [];
+
+function tagText(s) {
+  return String(s.slateTag ?? s.slateType ?? "")
+    .replace(/_/g, " ")
+    .toUpperCase();
+}
+
+// IMPORTANT: adjust this to your real slate detail route
+// If your actual page is /nfl/2025/slate/[id], keep this.
+function slateHref(s) {
+  return `/${sport.toLowerCase()}/${year}/slate/${s.id}`;
+}
+
+function imgUrl(s) {
+  return `/slates/${sport.toLowerCase()}/${year}/${s.slateKey}.jpg`;
+}
+---
+
+<Layout title="Slates" description={`Browse ${sport} ${year} slates`}>
+  <main class="page">
+    <header class="hero">
+      <h1 class="h1">Slates</h1>
+      <p class="sub">
+        {sport} · {year}{lineupType ? ` · ${lineupType}` : ""}
+      </p>
+    </header>
+
+    <div class="grid">
+      {slates.map((s) => (
+        <a class="card" href={slateHref(s)}>
+          <div class="top">
+            <span class="pill">{tagText(s)}</span>
+            <span class="date">
+              {new Date(s.slateDate).toLocaleDateString("en-US", {
+                month: "short",
+                day: "2-digit",
+                year: "numeric",
+              })}
+            </span>
+          </div>
+
+          <div class="title">{(s.slateName || "").trim() || s.slateKey}</div>
+          <div class="meta">
+            <span>Week {s.week ?? "—"}</span>
+            <span>{String(s.lineupType).toUpperCase()}</span>
+          </div>
+
+          <img
+            class="img"
+            src={imgUrl(s)}
+            alt="Slate screenshot"
+            loading="lazy"
+            onerror="this.style.display='none'"
+          />
+        </a>
+      ))}
+    </div>
+  </main>
+
+  <style>
+    .page { max-width: 1050px; margin: 0 auto; padding: 40px 16px 64px; }
+    .hero { margin-bottom: 18px; }
+    .h1 { font-size: 38px; margin: 0 0 8px; letter-spacing: -0.02em; }
+    .sub { margin: 0; opacity: 0.7; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+    .card { display: block; text-decoration: none; color: inherit; background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 14px; }
+    .card:hover { border-color: rgba(0,0,0,0.14); }
+    .top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .pill { font-size: 12px; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(0,0,0,0.10); opacity: 0.85; }
+    .date { font-size: 12px; opacity: 0.7; }
+    .title { font-weight: 600; line-height: 1.2; margin-bottom: 6px; }
+    .meta { display: flex; gap: 10px; font-size: 13px; opacity: 0.7; }
+    .img { margin-top: 12px; width: 100%; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08); }
+  </style>
+</Layout>

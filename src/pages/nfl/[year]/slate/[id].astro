@@ -1,0 +1,125 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+
+const { year, id } = Astro.params;
+
+const res = await fetch(`${Astro.url.origin}/api/slate/${id}`);
+if (!res.ok) {
+  throw new Error(`Slate not found: ${id}`);
+}
+
+const { slate } = await res.json();
+const season = slate.season;
+
+const title =
+  (slate.slateName || "").trim() ||
+  `${season.sport} ${season.year} ${String(slate.slateTag ?? slate.slateType).toUpperCase()}`;
+
+const imgUrl = `/slates/${season.sport.toLowerCase()}/${season.year}/${slate.slateKey}.jpg`;
+---
+
+<Layout title={title}>
+  <main class="page">
+    <header class="hero">
+      <h1 class="h1">{title}</h1>
+      <div class="meta">
+        <span>Week {slate.week ?? "—"}</span>
+        <span>{slate.lineupType}</span>
+        <span>{String(slate.slateType).toUpperCase()}</span>
+        <span>
+          {new Date(slate.slateDate).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "2-digit",
+          })}
+        </span>
+      </div>
+      <div class="key">{slate.slateKey}</div>
+
+      <img
+        class="slateImg"
+        src={imgUrl}
+        alt="Slate screenshot"
+        loading="lazy"
+        onerror="this.style.display='none'"
+      />
+    </header>
+
+    {slate.contests?.map((c) => (
+      <section class="card">
+        <div class="cardTop">
+          <h2 class="h2">{c.contestName}</h2>
+          <div class="muted">{c.site}</div>
+        </div>
+
+        {c.winners?.length ? (
+          c.winners.map((w) => (
+            <div class="winner">
+              <div class="winnerTop">
+                <div class="winnerName">{w.username}</div>
+                <div class="winnerRight">
+                  <span>{w.points}</span>
+                  {w.maxEntries ? <span>· {w.maxEntries} max</span> : null}
+                </div>
+              </div>
+
+              {w.lineup?.items?.length ? (
+                <div class="tableWrap">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Spot</th>
+                        <th>Player</th>
+                        <th>Pos</th>
+                        <th>Team</th>
+                        <th>Salary</th>
+                        <th>Pts</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {w.lineup.items.map((it) => (
+                        <tr>
+                          <td>{it.rosterSpot}</td>
+                          <td>{it.player?.name ?? ""}</td>
+                          <td>{it.player?.position ?? ""}</td>
+                          <td>{it.player?.team?.abbreviation ?? ""}</td>
+                          <td>{it.salary ?? ""}</td>
+                          <td>{it.points ?? ""}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div class="muted">No lineup items saved for this winner.</div>
+              )}
+            </div>
+          ))
+        ) : (
+          <div class="muted">No winners saved for this contest yet.</div>
+        )}
+      </section>
+    ))}
+  </main>
+
+  <style>
+    .page { max-width: 1050px; margin: 0 auto; padding: 40px 16px 64px; }
+    .hero { margin-bottom: 18px; }
+    .h1 { font-size: 38px; margin: 0 0 10px; letter-spacing: -0.02em; }
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; opacity: 0.75; font-size: 13px; }
+    .key { margin-top: 6px; opacity: 0.65; font-size: 12px; }
+    .slateImg { margin-top: 16px; width: 100%; border-radius: 14px; border: 1px solid rgba(0,0,0,0.08); }
+    .card { margin: 14px 0; background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 14px; }
+    .cardTop { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .h2 { margin: 0; font-size: 18px; }
+    .muted { opacity: 0.7; font-size: 13px; }
+    .winner { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.06); }
+    .winnerTop { display: flex; justify-content: space-between; gap: 12px; }
+    .winnerName { font-weight: 600; }
+    .winnerRight { opacity: 0.75; font-size: 13px; }
+    .tableWrap { overflow-x: auto; margin-top: 10px; }
+    .table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; padding: 8px; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 13px; }
+    th { opacity: 0.75; font-weight: 600; }
+  </style>
+</Layout>
