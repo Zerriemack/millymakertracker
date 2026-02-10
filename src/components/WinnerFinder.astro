@@ -1,0 +1,238 @@
+---
+// src/components/WinnerFinder.astro
+const defaultSport = "NFL";
+---
+
+<section class="wf">
+  <h1 class="wf__title">Milly Maker Tracker</h1>
+  <p class="wf__sub">Search winners fast.</p>
+
+  <form class="wf__form" id="winnerFinderForm">
+    <div class="wf__row">
+      <label class="wf__label">
+        Sport
+        <select name="sport" class="wf__select">
+          <option value="NFL" selected={defaultSport === "NFL"}>NFL</option>
+          <option value="CFB" selected={defaultSport === "CFB"}>CFB</option>
+        </select>
+      </label>
+
+      <label class="wf__label">
+        Season
+        <input name="year" class="wf__input" inputmode="numeric" placeholder="2025" />
+      </label>
+
+      <label class="wf__label">
+        Week
+        <input name="week" class="wf__input" inputmode="numeric" placeholder="7" />
+      </label>
+
+      <label class="wf__label">
+        Slate type
+        <select name="slateType" class="wf__select">
+          <option value="">Any</option>
+          <option value="CLASSIC">Classic</option>
+          <option value="SHOWDOWN">Showdown</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="wf__row">
+      <label class="wf__label wf__grow">
+        Search
+        <input
+          name="q"
+          class="wf__input"
+          placeholder="username, player name, team, contest name"
+          autocomplete="off"
+        />
+      </label>
+
+      <button class="wf__btn" type="submit">Search</button>
+    </div>
+
+    <div class="wf__row wf__small">
+      <button class="wf__linkBtn" type="button" data-preset="latest">Latest</button>
+      <button class="wf__linkBtn" type="button" data-preset="nflClassic">NFL Classic</button>
+      <button class="wf__linkBtn" type="button" data-preset="nflShowdown">NFL Showdown</button>
+      <button class="wf__linkBtn" type="button" data-preset="winners">All Winners</button>
+    </div>
+  </form>
+
+  <div class="wf__results" id="winnerFinderResults" hidden>
+    <div class="wf__resultsHeader">
+      <div id="winnerFinderMeta" class="wf__meta"></div>
+      <a id="winnerFinderOpen" class="wf__open" href="/winners">Open page</a>
+    </div>
+    <div id="winnerFinderList" class="wf__list"></div>
+  </div>
+
+  <div class="wf__hint">
+    Tip: Searches update the URL so users can share a link to the exact filters.
+  </div>
+</section>
+
+<script type="module">
+  const form = document.getElementById("winnerFinderForm");
+  const resultsWrap = document.getElementById("winnerFinderResults");
+  const list = document.getElementById("winnerFinderList");
+  const meta = document.getElementById("winnerFinderMeta");
+  const openLink = document.getElementById("winnerFinderOpen");
+
+  function buildParams(values) {
+    const p = new URLSearchParams();
+    for (const [k, v] of Object.entries(values)) {
+      const val = String(v ?? "").trim();
+      if (val) p.set(k, val);
+    }
+    return p;
+  }
+
+  function setFormFromUrl() {
+    const url = new URL(window.location.href);
+    const p = url.searchParams;
+    for (const el of form.elements) {
+      if (!el.name) continue;
+      if (p.has(el.name)) el.value = p.get(el.name);
+    }
+  }
+
+  function setUrl(params) {
+    const url = new URL(window.location.href);
+    url.search = params.toString();
+    window.history.replaceState({}, "", url.toString());
+  }
+
+  function renderRows(rows) {
+    list.innerHTML = "";
+    const frag = document.createDocumentFragment();
+
+    for (const r of rows) {
+      const a = document.createElement("a");
+      a.className = "wf__rowCard";
+      a.href = r.href;
+
+      a.innerHTML = `
+        <div class="wf__rowTop">
+          <div class="wf__rowTitle">${r.title}</div>
+          <div class="wf__rowRight">${r.right ?? ""}</div>
+        </div>
+        <div class="wf__rowBottom">
+          <div class="wf__rowLine">${r.line1 ?? ""}</div>
+          <div class="wf__rowLine wf__muted">${r.line2 ?? ""}</div>
+        </div>
+      `;
+
+      frag.appendChild(a);
+    }
+
+    list.appendChild(frag);
+  }
+
+  async function runSearch(values) {
+    const params = buildParams(values);
+    setUrl(params);
+
+    const apiUrl = `/api/winner-search?${params.toString()}`;
+    openLink.href = values.sport === "CFB" ? "/cfb" : "/nfl";
+
+    const res = await fetch(apiUrl, { headers: { "accept": "application/json" } });
+    if (!res.ok) {
+      resultsWrap.hidden = false;
+      meta.textContent = `Search failed (${res.status}). Check /api/winner-search.`;
+      list.innerHTML = "";
+      return;
+    }
+
+    const data = await res.json();
+    resultsWrap.hidden = false;
+    meta.textContent = `${data.count} result(s)`;
+
+    renderRows(data.items);
+  }
+
+  function readValues() {
+    const fd = new FormData(form);
+    return {
+      sport: fd.get("sport") || "",
+      year: fd.get("year") || "",
+      week: fd.get("week") || "",
+      slateType: fd.get("slateType") || "",
+      q: fd.get("q") || "",
+      limit: "25",
+    };
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    runSearch(readValues());
+  });
+
+  form.querySelectorAll("[data-preset]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const preset = btn.getAttribute("data-preset");
+      const base = { sport: "NFL", year: "", week: "", slateType: "", q: "", limit: "25" };
+
+      if (preset === "latest") {
+        runSearch({ ...base });
+        return;
+      }
+      if (preset === "nflClassic") {
+        runSearch({ ...base, sport: "NFL", slateType: "CLASSIC" });
+        return;
+      }
+      if (preset === "nflShowdown") {
+        runSearch({ ...base, sport: "NFL", slateType: "SHOWDOWN" });
+        return;
+      }
+      if (preset === "winners") {
+        window.location.href = "/winners";
+      }
+    });
+  });
+
+  setFormFromUrl();
+  const hasAny = new URL(window.location.href).searchParams.toString().length > 0;
+  if (hasAny) runSearch(readValues());
+</script>
+
+<style>
+  .wf { max-width: 980px; margin: 0 auto; padding: 48px 16px 64px; }
+  .wf__title { font-size: 42px; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .wf__sub { margin: 0 0 24px; opacity: 0.75; }
+  .wf__form { background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 16px; }
+  .wf__row { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; }
+  .wf__label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; opacity: 0.85; }
+  .wf__grow { flex: 1; min-width: 260px; }
+  .wf__input, .wf__select {
+    height: 40px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.12);
+    padding: 0 12px; font-size: 14px; background: white;
+  }
+  .wf__btn {
+    height: 40px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.12);
+    padding: 0 14px; font-size: 14px; cursor: pointer; background: rgba(0,0,0,0.04);
+  }
+  .wf__small { margin-top: 10px; }
+  .wf__linkBtn {
+    border: 0; background: transparent; cursor: pointer; padding: 6px 10px;
+    border-radius: 10px; font-size: 13px; opacity: 0.85;
+  }
+  .wf__linkBtn:hover { background: rgba(0,0,0,0.04); }
+  .wf__results { margin-top: 18px; }
+  .wf__resultsHeader { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; }
+  .wf__meta { font-size: 13px; opacity: 0.75; }
+  .wf__open { font-size: 13px; }
+  .wf__list { display: grid; gap: 10px; }
+  .wf__rowCard {
+    display: block; text-decoration: none; color: inherit;
+    border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 12px 14px;
+    background: white;
+  }
+  .wf__rowTop { display: flex; justify-content: space-between; gap: 12px; }
+  .wf__rowTitle { font-weight: 600; }
+  .wf__rowRight { opacity: 0.75; font-size: 13px; }
+  .wf__rowBottom { margin-top: 6px; }
+  .wf__rowLine { font-size: 13px; }
+  .wf__muted { opacity: 0.65; }
+  .wf__hint { margin-top: 12px; font-size: 12px; opacity: 0.65; }
+</style>
