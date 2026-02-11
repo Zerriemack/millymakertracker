@@ -1,5 +1,5 @@
 ---
-export const prerender = true;
+export const prerender = false;
 
 const { slateKey } = Astro.params;
 return Astro.redirect(`/slate/${slateKey}`, 301);
