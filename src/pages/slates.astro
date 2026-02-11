@@ -1,4 +1,22 @@
 ---
 export const prerender = true;
-return Astro.redirect("/nfl/2025", 301);
+
+const url = Astro.url;
+
+const sport = (url.searchParams.get("sport") || "").toUpperCase();
+const year = url.searchParams.get("year") || "";
+const lineupType = (url.searchParams.get("lineupType") || "").toUpperCase();
+
+let dest = "/nfl";
+
+if (sport === "NFL") dest = year ? `/nfl/${year}` : "/nfl";
+if (sport === "CFB") dest = year ? `/cfb/${year}` : "/cfb";
+
+if (lineupType) {
+  const qp = new URLSearchParams();
+  qp.set("lineupType", lineupType);
+  dest = `${dest}?${qp.toString()}`;
+}
+
+return Astro.redirect(dest, 301);
 ---

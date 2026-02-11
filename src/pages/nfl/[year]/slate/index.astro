@@ -1,0 +1,42 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+
+const { year } = Astro.params;
+
+const lineupType = (Astro.url.searchParams.get("lineupType") || "").toUpperCase();
+
+const params = new URLSearchParams();
+params.set("sport", "NFL");
+params.set("year", String(year));
+
+if (lineupType === "CLASSIC" || lineupType === "SHOWDOWN") {
+  params.set("lineupType", lineupType);
+}
+
+const res = await fetch(`${Astro.url.origin}/api/slates?${params.toString()}`);
+const data = await res.json();
+const slates = data.slates ?? [];
+---
+
+<Layout title={`NFL ${year} Slates | MillyMakerTracker`}>
+  <main class="container">
+    <h1>Slates</h1>
+    <p>NFL · {year}</p>
+
+    <div style="display:grid; gap:12px;">
+      {slates.map((s) => (
+        <a
+          href={`/nfl/${year}/slate/${s.id}`}
+          style="display:block; padding:16px; border:1px solid #eaeaea; border-radius:10px; text-decoration:none;"
+        >
+          <div style="font-weight:700; font-size:18px;">
+            {(s.slateName || "Showdown").trim() || "Showdown"}
+          </div>
+          <div style="margin-top:6px; color:#555;">
+            Week {s.week ?? "—"} · {String(s.slateType).toUpperCase()} · {s.lineupType}
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+</Layout>

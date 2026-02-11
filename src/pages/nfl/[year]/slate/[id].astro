@@ -1,47 +1,148 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
 
-const { year, id } = Astro.params;
+const { id } = Astro.params;
 
 const res = await fetch(`${Astro.url.origin}/api/slate/${id}`);
-if (!res.ok) {
-  throw new Error(`Slate not found: ${id}`);
-}
+if (!res.ok) throw new Error(`Slate not found: ${id}`);
 
 const { slate } = await res.json();
 const season = slate.season;
 
-const title =
-  (slate.slateName || "").trim() ||
-  `${season.sport} ${season.year} ${String(slate.slateTag ?? slate.slateType).toUpperCase()}`;
+const pad2 = (n: number) => String(n ?? "").padStart(2, "0");
 
-const imgUrl = `/slates/${season.sport.toLowerCase()}/${season.year}/${slate.slateKey}.jpg`;
+function tagTitle(raw: string) {
+  const t = String(raw ?? "").toUpperCase();
+  const map: Record<string, string> = {
+    SUPER_BOWL: "Super Bowl",
+    MNF: "MNF",
+    TNF: "TNF",
+    SNF: "SNF",
+    SATURDAY: "Saturday",
+    THANKSGIVING: "Thanksgiving",
+    BLACK_FRIDAY: "Black Friday",
+    PLAYOFFS: "Playoffs",
+    MAIN: "Main",
+    SHOWDOWN: "Showdown",
+  };
+  return map[t] ?? t.replace(/_/g, " ").toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function parseTeamsFromKey(key: string) {
+  // expects last chunk like NE_SEA, DAL_PHI, etc.
+  const parts = String(key ?? "").split("_").filter(Boolean);
+  const last = parts[parts.length - 1] ?? "";
+  const m = last.match(/^([A-Z0-9]{2,3})_([A-Z0-9]{2,3})$/);
+  if (!m) return null;
+  return `${m[1]} vs ${m[2]}`;
+}
+
+function formatSlateDate(v: unknown) {
+  const s = String(v ?? "").trim();
+  if (!s) return null;
+
+  // If it’s YYYY-MM-DD, force noon local time so it never shifts to the prior day.
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const d = m ? new Date(`${s}T12:00:00`) : new Date(s);
+
+  if (Number.isNaN(d.getTime())) return null;
+
+  return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" });
+}
+
+function moneyFromCents(v: unknown) {
+  if (v == null) return null;
+  const n = Number(v);
+  if (!Number.isFinite(n)) return null;
+  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n / 100);
+}
+
+// totalOwnershipBp is basis points: 21030 => 210.30%
+function pctFromBp(bp: unknown) {
+  if (bp == null) return null;
+  const n = Number(bp);
+  if (!Number.isFinite(n)) return null;
+  return `${(n / 100).toFixed(2)}%`;
+}
+
+function pct(v: unknown) {
+  if (v == null) return null;
+  const n = Number(v);
+  if (!Number.isFinite(n)) return null;
+  return `${n.toFixed(1)}%`;
+}
+
+function sortShowdownItems(items: any[]) {
+  const order: Record<string, number> = { CAPTAIN: 0, FLEX: 1 };
+  return [...items].sort((a, b) => {
+    const ao = order[a.rosterSpot] ?? 9;
+    const bo = order[b.rosterSpot] ?? 9;
+    if (ao !== bo) return ao - bo;
+    const as = Number(a.salary ?? 0);
+    const bs = Number(b.salary ?? 0);
+    if (bs !== as) return bs - as;
+    const ap = Number(a.points ?? 0);
+    const bp = Number(b.points ?? 0);
+    return bp - ap;
+  });
+}
+
+const sportSlug = String(season.sport ?? "").toLowerCase();
+const seasonYear = season.year;
+const week2 = pad2(slate.week);
+
+const slateKey = String(slate.slateKey ?? "");
+const isClassic = slateKey.includes("_CLASSIC_") || String(slate.lineupType ?? "").toUpperCase() === "CLASSIC";
+
+// folder tag: prefer slateTag, otherwise slateType
+const tag = String(slate.slateTag ?? slate.slateType ?? "").toUpperCase();
+const tagLabel = tagTitle(tag);
+
+const keyTeams = parseTeamsFromKey(slateKey);
+
+// showdown filename
+let showdownFile = `wk${week2}`;
+const looksWildCard = /(^|_)WC(_|$)|WILD/i.test(slateKey);
+if (tag === "PLAYOFFS" && looksWildCard) showdownFile = `wk${week2}_wc`;
+
+const imgBase = isClassic
+  ? `/slates/${sportSlug}/${seasonYear}/classic/week${week2}`
+  : `/slates/${sportSlug}/${seasonYear}/showdown/${tag}/${showdownFile}`;
+
+const imgPng = `${imgBase}.png`;
+const imgJpg = `${imgBase}.jpg`;
+
+// Display title (no raw slateKey)
+const pageTitle =
+  (String(slate.slateName ?? "").trim()) ||
+  (isClassic ? `Week ${slate.week} Classic` : `${tagLabel} Showdown`);
+
+const metaWeek = slate.week != null ? `Week ${slate.week}` : null;
+const metaType = isClassic ? "Classic" : "Showdown";
+const metaTag = !isClassic && tagLabel ? tagLabel : null;
+const metaDate = formatSlateDate(slate.slateDate);
 ---
 
-<Layout title={title}>
+<Layout title={pageTitle}>
   <main class="page">
     <header class="hero">
-      <h1 class="h1">{title}</h1>
+      <h1 class="h1">{pageTitle}</h1>
+
       <div class="meta">
-        <span>Week {slate.week ?? "—"}</span>
-        <span>{slate.lineupType}</span>
-        <span>{String(slate.slateType).toUpperCase()}</span>
-        <span>
-          {new Date(slate.slateDate).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "2-digit",
-          })}
-        </span>
+        {metaWeek ? <span>{metaWeek}</span> : null}
+        <span>{metaType}</span>
+        {!isClassic && metaTag ? <span>{metaTag}</span> : null}
+        {metaDate ? <span>{metaDate}</span> : null}
       </div>
-      <div class="key">{slate.slateKey}</div>
+
+      {keyTeams ? <div class="matchup">{keyTeams}</div> : null}
 
       <img
         class="slateImg"
-        src={imgUrl}
+        src={imgPng}
         alt="Slate screenshot"
         loading="lazy"
-        onerror="this.style.display='none'"
+        onerror={`this.onerror=null; this.src='${imgJpg}';`}
       />
     </header>
 
@@ -52,15 +153,37 @@ const imgUrl = `/slates/${season.sport.toLowerCase()}/${season.year}/${slate.sla
           <div class="muted">{c.site}</div>
         </div>
 
+        <div class="contestMeta">
+          {c.topPrizeCents != null ? (
+            <div><span class="label">Top prize</span> {moneyFromCents(c.topPrizeCents)}</div>
+          ) : null}
+          {c.totalOwnershipBp != null ? (
+            <div><span class="label">Total ownership</span> {pctFromBp(c.totalOwnershipBp)}</div>
+          ) : null}
+          {c.entryFeeCents != null ? (
+            <div><span class="label">Entry fee</span> {moneyFromCents(c.entryFeeCents)}</div>
+          ) : null}
+        </div>
+
         {c.winners?.length ? (
           c.winners.map((w) => (
             <div class="winner">
               <div class="winnerTop">
                 <div class="winnerName">{w.username}</div>
+
                 <div class="winnerRight">
                   <span>{w.points}</span>
-                  {w.maxEntries ? <span>· {w.maxEntries} max</span> : null}
+                  {/* removed “150 max” / maxEntries */}
                 </div>
+              </div>
+
+              <div class="winnerMeta">
+                {w.lineup?.salaryUsed != null ? (
+                  <div><span class="label">Salary used</span> {w.lineup.salaryUsed}</div>
+                ) : null}
+                {w.lineup?.totalPoints != null ? (
+                  <div><span class="label">Total points</span> {w.lineup.totalPoints}</div>
+                ) : null}
               </div>
 
               {w.lineup?.items?.length ? (
@@ -74,10 +197,11 @@ const imgUrl = `/slates/${season.sport.toLowerCase()}/${season.year}/${slate.sla
                         <th>Team</th>
                         <th>Salary</th>
                         <th>Pts</th>
+                        <th>Own%</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {w.lineup.items.map((it) => (
+                      {sortShowdownItems(w.lineup.items).map((it) => (
                         <tr>
                           <td>{it.rosterSpot}</td>
                           <td>{it.player?.name ?? ""}</td>
@@ -85,6 +209,7 @@ const imgUrl = `/slates/${season.sport.toLowerCase()}/${season.year}/${slate.sla
                           <td>{it.player?.team?.abbreviation ?? ""}</td>
                           <td>{it.salary ?? ""}</td>
                           <td>{it.points ?? ""}</td>
+                          <td>{pct(it.ownershipPercent)}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -107,16 +232,23 @@ const imgUrl = `/slates/${season.sport.toLowerCase()}/${season.year}/${slate.sla
     .hero { margin-bottom: 18px; }
     .h1 { font-size: 38px; margin: 0 0 10px; letter-spacing: -0.02em; }
     .meta { display: flex; gap: 10px; flex-wrap: wrap; opacity: 0.75; font-size: 13px; }
-    .key { margin-top: 6px; opacity: 0.65; font-size: 12px; }
-    .slateImg { margin-top: 16px; width: 100%; border-radius: 14px; border: 1px solid rgba(0,0,0,0.08); }
+    .matchup { margin-top: 6px; font-size: 13px; opacity: 0.8; }
+    .slateImg { margin-top: 16px; width: 100%; border-radius: 14px; border: 1px solid rgba(0,0,0,0.08); background: rgba(0,0,0,0.02); }
+
     .card { margin: 14px 0; background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 14px; }
     .cardTop { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
     .h2 { margin: 0; font-size: 18px; }
     .muted { opacity: 0.7; font-size: 13px; }
+
+    .contestMeta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; font-size: 13px; opacity: 0.85; }
+    .winnerMeta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; font-size: 13px; opacity: 0.85; }
+    .label { opacity: 0.7; margin-right: 6px; }
+
     .winner { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.06); }
     .winnerTop { display: flex; justify-content: space-between; gap: 12px; }
     .winnerName { font-weight: 600; }
     .winnerRight { opacity: 0.75; font-size: 13px; }
+
     .tableWrap { overflow-x: auto; margin-top: 10px; }
     .table { width: 100%; border-collapse: collapse; }
     th, td { text-align: left; padding: 8px; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 13px; }
