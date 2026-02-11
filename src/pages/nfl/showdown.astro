@@ -1,35 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import SlateFilterBar from "../../components/SlateFilterBar.astro";
-import SlateResults from "../../components/SlateResults.astro";
-import { prisma } from "../../lib/db";
-import { filterSlates } from "../../lib/slateFilters";
+export const prerender = true;
 
-const q = Astro.url.searchParams.get("q") ?? "";
-const tag = Astro.url.searchParams.get("tag") ?? "";
-
-const slates = await prisma.slate.findMany({
-  where: {
-    season: { sport: "NFL", year: 2025 },
-    slateType: "SHOWDOWN"
-  },
-  orderBy: [{ week: "asc" }, { slateType: "asc" }],
-  include: {
-    season: true,
-    contests: { include: { winners: true } }
-  }
-});
-
-const filtered = filterSlates(slates, { q, tag });
+// pick the year you want as default
+return Astro.redirect("/nfl/2025?lineupType=SHOWDOWN", 301);
 ---
-
-<Layout title="NFL Showdown | MillyMakerTracker">
-  <main class="container">
-    <h1>NFL Showdown</h1>
-    <p>MNF, TNF, SNF, holidays, playoffs.</p>
-
-    <SlateFilterBar mode="showdown" currentQ={q} currentTag={tag} />
-
-    <SlateResults slates={filtered} />
-  </main>
-</Layout>
