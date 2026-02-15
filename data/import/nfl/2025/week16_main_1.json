@@ -9,7 +9,8 @@
     "contestName": "Milly Maker",
     "entryFeeCents": 2000,
     "topPrizeCents": 100000000,
-    "siteContestId": "NFL_2025_16_CLASSIC_main_20251221__nfl_millionaire_maker"
+    "siteContestId": "NFL_2025_16_CLASSIC_main_20251221__nfl_millionaire_maker",
+    "totalOwnershipBp": 5540
   },
   "winner": {
     "username": "BoangTao33",
@@ -20,15 +21,87 @@
     "salaryUsed": 50000,
     "totalPoints": 218.2,
     "items": [
-      { "rosterSpot": "QB", "name": "J. Herbert", "position": "QB", "team": "LAC", "salary": 6000, "points": 33.2, "ownership": 7.0 },
-      { "rosterSpot": "RB", "name": "J. Cook III", "position": "RB", "team": "BUF", "salary": 7700, "points": 29.4, "ownership": 13.2 },
-      { "rosterSpot": "RB", "name": "C. Brown", "position": "RB", "team": "CIN", "salary": 6900, "points": 32.9, "ownership": 6.1 },
-      { "rosterSpot": "WR", "name": "C. Olave", "position": "WR", "team": "NO", "salary": 6500, "points": 39.8, "ownership": 12.3 },
-      { "rosterSpot": "WR", "name": "Q. Johnston", "position": "WR", "team": "LAC", "salary": 4900, "points": 23.4, "ownership": 1.5 },
-      { "rosterSpot": "WR", "name": "K. Allen", "position": "WR", "team": "LAC", "salary": 4800, "points": 9.4, "ownership": 8.5 },
-      { "rosterSpot": "TE", "name": "B. Bowers", "position": "TE", "team": "LV", "salary": 5600, "points": 14.3, "ownership": 2.1 },
-      { "rosterSpot": "FLEX", "name": "A. Jeanty", "position": "RB", "team": "LV", "salary": 5600, "points": 34.8, "ownership": 2.0 },
-      { "rosterSpot": "DST", "name": "Raiders", "position": "DST", "team": "LV", "salary": 2000, "points": 1.0, "ownership": 2.7 }
+      {
+        "rosterSpot": "QB",
+        "name": "J. Herbert",
+        "position": "QB",
+        "team": "LAC",
+        "salary": 6000,
+        "points": 33.2,
+        "ownership": 7.0
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Cook III",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 7700,
+        "points": 29.4,
+        "ownership": 13.2
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "C. Brown",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 6900,
+        "points": 32.9,
+        "ownership": 6.1
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "C. Olave",
+        "position": "WR",
+        "team": "NO",
+        "salary": 6500,
+        "points": 39.8,
+        "ownership": 12.3
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Q. Johnston",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 4900,
+        "points": 23.4,
+        "ownership": 1.5
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "K. Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 4800,
+        "points": 9.4,
+        "ownership": 8.5
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "B. Bowers",
+        "position": "TE",
+        "team": "LV",
+        "salary": 5600,
+        "points": 14.3,
+        "ownership": 2.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Jeanty",
+        "position": "RB",
+        "team": "LV",
+        "salary": 5600,
+        "points": 34.8,
+        "ownership": 2.0
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Raiders",
+        "position": "DST",
+        "team": "LV",
+        "salary": 2000,
+        "points": 1.0,
+        "ownership": 2.7
+      }
     ]
   }
 }

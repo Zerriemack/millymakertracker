@@ -1,29 +1,32 @@
 /* scripts/seed-teams.ts
  *
- * Seeds Team rows from a JSON array.
- * Upserts by @@unique([sport, abbreviation]).
+ * Seeds Teams from a JSON file.
+ * Uses the same Prisma adapter setup as import-winners.ts (NO Accelerate).
  *
  * Usage:
- * dotenv_config_path=.env.local node -r dotenv/config node_modules/.bin/tsx scripts/seed-teams.ts --path data/seed/teams.json
+ * dotenv_config_path=.env.local node -r dotenv/config node_modules/.bin/tsx scripts/seed-teams.ts data/seeds/nfl_teams_seed.json
  */
 
 import fs from "fs";
 import path from "path";
 import { PrismaClient, Sport } from "@prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
+import { Pool } from "pg";
 
-const ACCEL_URL = process.env.PRISMA_ACCELERATE_URL || process.env.ACCELERATE_URL;
-if (!ACCEL_URL) {
+/* ------------------------- Prisma client (adapter) ------------------------- */
+
+const DATABASE_URL = process.env.DATABASE_URL;
+if (!DATABASE_URL) {
   throw new Error(
-    "Missing PRISMA_ACCELERATE_URL (or ACCELERATE_URL). Add it to .env.local. Prisma Client in this repo requires Accelerate or an adapter."
+    "DATABASE_URL is missing. Ensure dotenv_config_path=.env.local and .env.local contains DATABASE_URL."
   );
 }
 
-const prisma = new PrismaClient({ accelerateUrl: ACCEL_URL });
-type TeamSeedRow = {
-  sport: string;
-  abbreviation: string;
-  name: string;
-};
+const pool = new Pool({ connectionString: DATABASE_URL });
+const adapter = new PrismaPg(pool);
+const prisma = new PrismaClient({ adapter });
+
+/* ------------------------------ CLI parsing ------------------------------ */
 
 function getArgValue(flag: string): string | null {
   const idx = process.argv.indexOf(flag);
@@ -33,13 +36,17 @@ function getArgValue(flag: string): string | null {
   return val;
 }
 
-function requirePathArg(): string {
-  const p = getArgValue("--path");
+function requireSeedPath(): string {
+  // Allow either positional arg OR --path
+  const byFlag = getArgValue("--path");
+  const positional = process.argv[2];
+  const p = byFlag ?? positional;
+
   if (!p) {
     throw new Error(
-      "Missing required argument --path\n" +
+      "Missing seed file path.\n" +
         "Example:\n" +
-        "dotenv_config_path=.env.local node -r dotenv/config node_modules/.bin/tsx scripts/seed-teams.ts --path data/seed/teams.json"
+        "dotenv_config_path=.env.local node -r dotenv/config node_modules/.bin/tsx scripts/seed-teams.ts data/seeds/nfl_teams_seed.json"
     );
   }
   return p;
@@ -54,39 +61,48 @@ function readJsonFile<T>(filePath: string): T {
   }
 }
 
-function parseSport(s: string): Sport {
-  const up = String(s).toUpperCase().trim();
-  if (up !== "NFL" && up !== "CFB") throw new Error(`Invalid sport "${s}" (expected NFL or CFB)`);
-  return up as Sport;
-}
+/* ------------------------------- Types ----------------------------------- */
+
+type TeamSeed = {
+  sport: "NFL" | "CFB";
+  abbreviation: string;
+  name: string;
+};
 
 async function main() {
-  const filePath = requirePathArg();
+  const filePath = requireSeedPath();
   const absPath = path.isAbsolute(filePath) ? filePath : path.join(process.cwd(), filePath);
 
-  const rows = readJsonFile<TeamSeedRow[]>(absPath);
-  if (!Array.isArray(rows) || rows.length === 0) throw new Error("Seed file must be a non-empty JSON array");
+  const teams = readJsonFile<TeamSeed[]>(absPath);
 
-  let upserts = 0;
+  let created = 0;
+  let updated = 0;
 
-  for (const row of rows) {
-    const sport = parseSport(row.sport);
-    const abbreviation = String(row.abbreviation).toUpperCase().trim();
-    const name = String(row.name).trim();
+  for (const t of teams) {
+    const sport = String(t.sport).toUpperCase().trim();
+    if (sport !== "NFL" && sport !== "CFB") {
+      throw new Error(`Invalid sport "${t.sport}" in team seed. Expected NFL or CFB.`);
+    }
 
-    if (!abbreviation) throw new Error("Team seed row missing abbreviation");
-    if (!name) throw new Error(`Team seed row missing name for ${sport} ${abbreviation}`);
+    const abbreviation = String(t.abbreviation).toUpperCase().trim();
+    const name = String(t.name).trim();
 
-    await prisma.team.upsert({
-      where: { sport_abbreviation: { sport, abbreviation } },
-      create: { sport, abbreviation, name },
+    if (!abbreviation) throw new Error("Team seed missing abbreviation.");
+    if (!name) throw new Error(`Team seed missing name for ${abbreviation}.`);
+
+    const result = await prisma.team.upsert({
+      where: { sport_abbreviation: { sport: sport as Sport, abbreviation } },
+      create: { sport: sport as Sport, abbreviation, name },
       update: { name },
+      select: { id: true },
     });
 
-    upserts += 1;
+    // We can’t directly know created vs updated from upsert without extra queries,
+    // so keep it simple and count as "upserted"
+    if (result?.id) updated++;
   }
 
-  console.log(JSON.stringify({ ok: true, upserts }, null, 2));
+  console.log(JSON.stringify({ ok: true, file: filePath, upserted: updated, created, updated }, null, 2));
 }
 
 main()
@@ -96,4 +112,5 @@ main()
   })
   .finally(async () => {
     await prisma.$disconnect();
+    await pool.end();
   });

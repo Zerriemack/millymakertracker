@@ -3,22 +3,105 @@
   "year": 2025,
   "week": 5,
   "slateType": "MAIN",
-  "slateDate": "2025-01-01T00:00:00Z",
-  "contest": { "site": "DraftKings", "contestName": "NFL Milly Maker" },
-  "winner": { "username": "pickedtheright...", "points": 246.82, "maxEntries": 12 },
+  "slateDate": "2025-10-05T17:00:00.000Z",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Milly Maker",
+    "siteContestId": "NFL_2025_WK05_MAIN_2025-10-05T17:00:00.000Z_DK_MAIN_MILLY",
+    "totalOwnershipBp": 19130
+  },
+  "winner": {
+    "username": "pickedtheright...",
+    "points": 246.82,
+    "maxEntries": 12
+  },
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 246.82,
     "items": [
-      { "rosterSpot": "QB", "name": "J. Fields", "position": "QB", "team": "NYJ", "salary": 5600, "points": 25.92, "ownership": 31.5 },
-      { "rosterSpot": "RB", "name": "J. Taylor", "position": "RB", "team": "IND", "salary": 8000, "points": 31.6, "ownership": 23.1 },
-      { "rosterSpot": "RB", "name": "B. Hall", "position": "RB", "team": "NYJ", "salary": 5600, "points": 21.5, "ownership": 30.3 },
-      { "rosterSpot": "WR", "name": "J. Smith-Njigba", "position": "WR", "team": "SEA", "salary": 7100, "points": 30.2, "ownership": 22.7 },
-      { "rosterSpot": "WR", "name": "E. Egbuka", "position": "WR", "team": "TB", "salary": 6900, "points": 34.3, "ownership": 7.1 },
-      { "rosterSpot": "WR", "name": "J. Waddle", "position": "WR", "team": "MIA", "salary": 5400, "points": 26.0, "ownership": 12.8 },
-      { "rosterSpot": "TE", "name": "J. Ferguson", "position": "TE", "team": "DAL", "salary": 4800, "points": 23.9, "ownership": 30.0 },
-      { "rosterSpot": "FLEX", "name": "R. Dowdle", "position": "RB", "team": "CAR", "salary": 4300, "points": 35.4, "ownership": 18.0 },
-      { "rosterSpot": "DST", "name": "Saints", "position": "DST", "team": "NO", "salary": 2200, "points": 18.0, "ownership": 15.8 }
+      {
+        "rosterSpot": "QB",
+        "name": "J. Fields",
+        "position": "QB",
+        "team": "NYJ",
+        "salary": 5600,
+        "points": 25.92,
+        "ownership": 31.5
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Taylor",
+        "position": "RB",
+        "team": "IND",
+        "salary": 8000,
+        "points": 31.6,
+        "ownership": 23.1
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "B. Hall",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 5600,
+        "points": 21.5,
+        "ownership": 30.3
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "J. Smith-Njigba",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 7100,
+        "points": 30.2,
+        "ownership": 22.7
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "E. Egbuka",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6900,
+        "points": 34.3,
+        "ownership": 7.1
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "J. Waddle",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 5400,
+        "points": 26,
+        "ownership": 12.8
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "J. Ferguson",
+        "position": "TE",
+        "team": "DAL",
+        "salary": 4800,
+        "points": 23.9,
+        "ownership": 30
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Dowdle",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 4300,
+        "points": 35.4,
+        "ownership": 18
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Saints",
+        "position": "DST",
+        "team": "NO",
+        "salary": 2200,
+        "points": 18,
+        "ownership": 15.8
+      }
     ]
-  }
+  },
+  "lineupType": "CLASSIC",
+  "slateKey": "NFL_2025_WK05_MAIN_2025-10-05T17:00:00.000Z"
 }

@@ -29,7 +29,6 @@ function tagTitle(raw: string) {
 }
 
 function parseTeamsFromKey(key: string) {
-  // expects last chunk like NE_SEA, DAL_PHI, etc.
   const parts = String(key ?? "").split("_").filter(Boolean);
   const last = parts[parts.length - 1] ?? "";
   const m = last.match(/^([A-Z0-9]{2,3})_([A-Z0-9]{2,3})$/);
@@ -41,7 +40,6 @@ function formatSlateDate(v: unknown) {
   const s = String(v ?? "").trim();
   if (!s) return null;
 
-  // If it’s YYYY-MM-DD, force noon local time so it never shifts to the prior day.
   const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
   const d = m ? new Date(`${s}T12:00:00`) : new Date(s);
 
@@ -57,7 +55,6 @@ function moneyFromCents(v: unknown) {
   return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n / 100);
 }
 
-// totalOwnershipBp is basis points: 21030 => 210.30%
 function pctFromBp(bp: unknown) {
   if (bp == null) return null;
   const n = Number(bp);
@@ -72,19 +69,40 @@ function pct(v: unknown) {
   return `${n.toFixed(1)}%`;
 }
 
+// basis points -> percent string (2471 => "24.71%")
+function pctBp(bp: unknown) {
+  if (bp == null) return null;
+  const n = Number(bp);
+  if (!Number.isFinite(n)) return null;
+  return `${(n / 100).toFixed(2)}%`;
+}
+
+// For classic, ordering matches DK roster order:
+// QB, RB, RB, WR, WR, WR, TE, FLEX, DST
+function sortClassicItems(items: any[]) {
+  const order: Record<string, number> = { QB: 1, RB: 2, WR: 3, TE: 4, FLEX: 5, DST: 6 };
+  return [...items].sort((a, b) => {
+    const ao = order[a.rosterSpot] ?? 9;
+    const bo = order[b.rosterSpot] ?? 9;
+    if (ao !== bo) return ao - bo;
+    return Number(a.slotIndex ?? 0) - Number(b.slotIndex ?? 0);
+  });
+}
+
+// For showdown, DK order is CAPTAIN first, then FLEX.
 function sortShowdownItems(items: any[]) {
   const order: Record<string, number> = { CAPTAIN: 0, FLEX: 1 };
   return [...items].sort((a, b) => {
     const ao = order[a.rosterSpot] ?? 9;
     const bo = order[b.rosterSpot] ?? 9;
     if (ao !== bo) return ao - bo;
-    const as = Number(a.salary ?? 0);
-    const bs = Number(b.salary ?? 0);
-    if (bs !== as) return bs - as;
-    const ap = Number(a.points ?? 0);
-    const bp = Number(b.points ?? 0);
-    return bp - ap;
+    return Number(a.slotIndex ?? 0) - Number(b.slotIndex ?? 0);
   });
+}
+
+function ownForItem(it: any, isClassic: boolean) {
+  if (isClassic) return pctBp(it.ownershipClassicBp);
+  return pctBp(it.rosterSpot === "CAPTAIN" ? it.ownershipCaptainBp : it.ownershipFlexBp);
 }
 
 const sportSlug = String(season.sport ?? "").toLowerCase();
@@ -94,13 +112,11 @@ const week2 = pad2(slate.week);
 const slateKey = String(slate.slateKey ?? "");
 const isClassic = slateKey.includes("_CLASSIC_") || String(slate.lineupType ?? "").toUpperCase() === "CLASSIC";
 
-// folder tag: prefer slateTag, otherwise slateType
 const tag = String(slate.slateTag ?? slate.slateType ?? "").toUpperCase();
 const tagLabel = tagTitle(tag);
 
 const keyTeams = parseTeamsFromKey(slateKey);
 
-// showdown filename
 let showdownFile = `wk${week2}`;
 const looksWildCard = /(^|_)WC(_|$)|WILD/i.test(slateKey);
 if (tag === "PLAYOFFS" && looksWildCard) showdownFile = `wk${week2}_wc`;
@@ -112,7 +128,6 @@ const imgBase = isClassic
 const imgPng = `${imgBase}.png`;
 const imgJpg = `${imgBase}.jpg`;
 
-// Display title (no raw slateKey)
 const pageTitle =
   (String(slate.slateName ?? "").trim()) ||
   (isClassic ? `Week ${slate.week} Classic` : `${tagLabel} Showdown`);
@@ -173,7 +188,6 @@ const metaDate = formatSlateDate(slate.slateDate);
 
                 <div class="winnerRight">
                   <span>{w.points}</span>
-                  {/* removed “150 max” / maxEntries */}
                 </div>
               </div>
 
@@ -201,7 +215,7 @@ const metaDate = formatSlateDate(slate.slateDate);
                       </tr>
                     </thead>
                     <tbody>
-                      {sortShowdownItems(w.lineup.items).map((it) => (
+                      {(isClassic ? sortClassicItems(w.lineup.items) : sortShowdownItems(w.lineup.items)).map((it) => (
                         <tr>
                           <td>{it.rosterSpot}</td>
                           <td>{it.player?.name ?? ""}</td>
@@ -209,7 +223,7 @@ const metaDate = formatSlateDate(slate.slateDate);
                           <td>{it.player?.team?.abbreviation ?? ""}</td>
                           <td>{it.salary ?? ""}</td>
                           <td>{it.points ?? ""}</td>
-                          <td>{pct(it.ownershipPercent)}</td>
+                          <td>{ownForItem(it, isClassic) ?? "0.00%"}</td>
                         </tr>
                       ))}
                     </tbody>

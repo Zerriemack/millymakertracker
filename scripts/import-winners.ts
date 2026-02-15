@@ -9,8 +9,9 @@
  * We use @prisma/adapter-pg + pg Pool.
  *
  * Ownership rules (must stay exact):
- * - If rosterSpot is CAPTAIN, store captain ownership only
- * - If rosterSpot is FLEX, store flex ownership only
+ * - SHOWDOWN: If rosterSpot is CAPTAIN, store captain ownership only
+ * - SHOWDOWN: If rosterSpot is FLEX, store flex ownership only
+ * - CLASSIC: store classic ownership only
  * - Do NOT store both.
  */
 
@@ -129,12 +130,12 @@ type ImportFile = {
 function detectSlateTypeFromPath(filePath: string): SlateType | null {
   const normalized = filePath.replace(/\\/g, "/").toUpperCase();
 
-  // must be before /SHOWDOWN/ because the path contains /showdown/
   if (normalized.includes("/SUPER BOWL/") || normalized.includes("/SUPER_BOWL/")) return SlateType.SUPER_BOWL;
 
   if (normalized.includes("/MNF/")) return SlateType.MNF;
   if (normalized.includes("/TNF/")) return SlateType.TNF;
   if (normalized.includes("/SNF/")) return SlateType.SNF;
+
   if (normalized.includes("/SHOWDOWN/")) return SlateType.SHOWDOWN;
   if (normalized.includes("/MAIN/")) return SlateType.MAIN;
 
@@ -231,11 +232,26 @@ function pctToBp(pct: number): number {
   return Math.round(pct * 100);
 }
 
-function extractRelevantOwnership(item: ImportLineupItem, rosterSpot: RosterSpot): { pct: number | null; bp: number | null } {
+// CLASSIC: read from FLEX_KEYS/GENERIC_KEYS (ownershipPercent is usually here)
+// SHOWDOWN: CAPTAIN from CAPTAIN_KEYS (fallback to ownershipPercent), FLEX from FLEX_KEYS
+function extractRelevantOwnership(
+  item: ImportLineupItem,
+  rosterSpot: RosterSpot,
+  lineupType: LineupType
+): { pct: number | null; bp: number | null } {
   const anyObj = item as any;
 
+  if (lineupType === LineupType.CLASSIC) {
+    const pct = pickFirstPct(anyObj, FLEX_KEYS) ?? pickFirstPct(anyObj, GENERIC_KEYS);
+    return { pct, bp: pct === null ? null : pctToBp(pct) };
+  }
+
   if (rosterSpot === RosterSpot.CAPTAIN) {
-    const pct = pickFirstPct(anyObj, CAPTAIN_KEYS) ?? pickFirstPct(anyObj, GENERIC_KEYS);
+    const pct =
+      pickFirstPct(anyObj, CAPTAIN_KEYS) ??
+      pickFirstPct(anyObj, ["ownershipPercent", "ownershipPct"] as const) ??
+      pickFirstPct(anyObj, GENERIC_KEYS);
+
     return { pct, bp: pct === null ? null : pctToBp(pct) };
   }
 
@@ -290,8 +306,8 @@ async function main() {
 
   const slateTypeFromPath = detectSlateTypeFromPath(filePath);
   const slateTypeFromJson = parseSlateType(data.slateType ?? null);
-  const slateType: SlateType = slateTypeFromPath ?? slateTypeFromJson ?? SlateType.SHOWDOWN;
 
+  const slateType: SlateType = slateTypeFromPath ?? slateTypeFromJson ?? SlateType.SHOWDOWN;
   const lineupType = slateTypeToLineupType(slateType);
 
   const teamAbbrs = data.lineup.items.map((i) => String(i.team).toUpperCase().trim()).filter(Boolean);
@@ -303,9 +319,12 @@ async function main() {
     update: {},
   });
 
-  const slateDbType: SlateType = slateType === SlateType.MAIN ? SlateType.MAIN : SlateType.SHOWDOWN;
+  const slateDbType: SlateType = slateType;
   const slateTag = String(slateType).toLowerCase();
-  const slateName = slateType === SlateType.MAIN ? (data.contest?.contestName ?? null) : ` Showdown`;
+
+  const slateName =
+    data.contest?.contestName?.trim() ||
+    (slateType === SlateType.MAIN ? "Main" : `${String(slateType).replace(/_/g, " ")} Showdown`);
 
   const slate = await prisma.slate.upsert({
     where: { slateKey },
@@ -318,7 +337,7 @@ async function main() {
       slateKey,
       slateName,
       slateTag,
-      slateGroup: `_`,
+      slateGroup: "_",
       isMain: slateDbType === SlateType.MAIN,
     },
     update: {
@@ -328,7 +347,7 @@ async function main() {
       lineupType,
       slateName,
       slateTag,
-      slateGroup: `_`,
+      slateGroup: "_",
       isMain: slateDbType === SlateType.MAIN,
     },
   });
@@ -397,7 +416,7 @@ async function main() {
     },
   });
 
-  // ---- Path A resolve Teams and Players ----
+  /* -------------------- Path A resolve Teams and Players -------------------- */
 
   const missingTeams: MissingTeam[] = [];
   const missingPlayers: MissingPlayer[] = [];
@@ -469,7 +488,9 @@ async function main() {
     });
   }
 
-  const dkIds = Array.from(new Set(candidates.map((c) => c.dkPlayerId).filter((v): v is number => typeof v === "number")));
+  const dkIds = Array.from(
+    new Set(candidates.map((c) => c.dkPlayerId).filter((v): v is number => typeof v === "number"))
+  );
   const playersByDkId = new Map<number, string>();
 
   if (dkIds.length > 0) {
@@ -517,7 +538,13 @@ async function main() {
     if (c.dkPlayerId !== null) {
       missingPlayers.push({ mode: "DK_ID", sport, dkPlayerId: c.dkPlayerId });
     } else {
-      missingPlayers.push({ mode: "NAME_POS_TEAM", sport, name: c.name, position: c.position, teamAbbreviation: c.teamAbbr });
+      missingPlayers.push({
+        mode: "NAME_POS_TEAM",
+        sport,
+        name: c.name,
+        position: c.position,
+        teamAbbreviation: c.teamAbbr,
+      });
     }
   }
 
@@ -526,7 +553,6 @@ async function main() {
   }
 
   const slotCounters2: Record<string, number> = {};
-  let totalOwnershipBp: number | null = null;
 
   for (let i = 0; i < items.length; i++) {
     const it = items[i];
@@ -538,41 +564,48 @@ async function main() {
     const playerId = resolvedPlayerIdByIndex.get(i);
     if (!playerId) throw new Error(`Internal error: playerId not resolved for lineup.items[${i}]`);
 
-    const { pct, bp } = extractRelevantOwnership(it, rosterSpot);
+   const { bp } = extractRelevantOwnership(it, rosterSpot);
 
-    const ownershipCaptainBp = rosterSpot === RosterSpot.CAPTAIN ? bp : null;
-    const ownershipFlexBp = rosterSpot === RosterSpot.FLEX ? bp : null;
+const isClassic = lineupType === LineupType.CLASSIC;
 
-    const legacyOwnership = pct;
-    const legacyOwnershipBp = bp;
+// Showdown stores spot specific
+const ownershipCaptainBp = !isClassic && rosterSpot === RosterSpot.CAPTAIN ? bp : null;
+const ownershipFlexBp = !isClassic && rosterSpot === RosterSpot.FLEX ? bp : null;
 
-    const li = await prisma.lineupItem.upsert({
-      where: { lineupId_rosterSpot_slotIndex: { lineupId: lineup.id, rosterSpot, slotIndex } },
-      create: {
-        lineupId: lineup.id,
-        playerId,
-        rosterSpot,
-        slotIndex,
-        salary: it.salary ?? null,
-        points: it.points ?? null,
-        ownership: legacyOwnership ?? null,
-        ownershipBp: legacyOwnershipBp ?? null,
-        ownershipCaptainBp,
-        ownershipFlexBp,
-        ownershipClassicBp: null,
-      },
-      update: {
-        playerId,
-        salary: it.salary ?? null,
-        points: it.points ?? null,
-        ownership: legacyOwnership ?? null,
-        ownershipBp: legacyOwnershipBp ?? null,
-        ownershipCaptainBp,
-        ownershipFlexBp,
-        ownershipClassicBp: null,
-      },
-      select: { ownershipBp: true },
-    });  }
+// Classic stores everything into ownershipClassicBp
+const ownershipClassicBp = isClassic ? bp : null;
+
+// Legacy columns stay unused
+const legacyOwnership = null;
+const legacyOwnershipBp = null;
+
+await prisma.lineupItem.upsert({
+  where: { lineupId_rosterSpot_slotIndex: { lineupId: lineup.id, rosterSpot, slotIndex } },
+  create: {
+    lineupId: lineup.id,
+    playerId,
+    rosterSpot,
+    slotIndex,
+    salary: it.salary ?? null,
+    points: it.points ?? null,
+    ownership: legacyOwnership,
+    ownershipBp: legacyOwnershipBp,
+    ownershipCaptainBp,
+    ownershipFlexBp,
+    ownershipClassicBp,
+  },
+  update: {
+    playerId,
+    salary: it.salary ?? null,
+    points: it.points ?? null,
+    ownership: legacyOwnership,
+    ownershipBp: legacyOwnershipBp,
+    ownershipCaptainBp,
+    ownershipFlexBp,
+    ownershipClassicBp,
+  },
+});
+  }
 
   const totalOwnershipBpFromJson = data.contest.totalOwnershipBp ?? null;
   await prisma.lineup.update({ where: { id: lineup.id }, data: { totalOwnershipBp: totalOwnershipBpFromJson } });
@@ -584,7 +617,7 @@ async function main() {
         ok: true,
         file: filePath,
         slateKey,
-        slateType: SlateType.SHOWDOWN,
+        slateType,
         lineupType,
         seasonId: season.id,
         slateId: slate.id,
@@ -592,7 +625,8 @@ async function main() {
         winnerId: winner.id,
         lineupId: lineup.id,
         lineupItemCount: items.length,
-        totalOwnershipBp: totalOwnershipBpFromJson,      },
+        totalOwnershipBp: totalOwnershipBpFromJson,
+      },
       null,
       2
     )
@@ -610,7 +644,9 @@ main()
         lines.push("Missing Teams (seed these first):");
         const uniq = new Map<string, MissingTeam>();
         for (const t of err.missingTeams) uniq.set(`${t.sport}:${t.abbreviation}`, t);
-        for (const t of Array.from(uniq.values()).sort((a, b) => `${a.sport}:${a.abbreviation}`.localeCompare(`${b.sport}:${b.abbreviation}`))) {
+        for (const t of Array.from(uniq.values()).sort((a, b) =>
+          `${a.sport}:${a.abbreviation}`.localeCompare(`${b.sport}:${b.abbreviation}`)
+        )) {
           lines.push(`  - (${t.sport}, ${t.abbreviation})`);
         }
         lines.push("");

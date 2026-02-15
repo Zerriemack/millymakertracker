@@ -7,7 +7,9 @@
   "contest": {
     "site": "DraftKings",
     "contestName": "NFL Millionaire Maker",
-    "topPrizeCents": 100000000
+    "topPrizeCents": 100000000,
+    "siteContestId": "NFL_2025_WK01_MAIN_2025-09-07T00:00:00.000Z_DK_MAIN_MILLY",
+    "totalOwnershipBp": 9800
   },
   "winner": {
     "username": "rotomwash",
@@ -96,7 +98,7 @@
         "position": "DST",
         "team": "DEN",
         "salary": 3800,
-        "points": 14.0,
+        "points": 14,
         "ownership": 16.8
       }
     ]

@@ -9,7 +9,8 @@
     "contestName": "Milly Maker",
     "entryFeeCents": 2000,
     "topPrizeCents": 100000000,
-    "siteContestId": "NFL_2025_13_CLASSIC_main_20251130__nfl_millionaire_maker"
+    "siteContestId": "NFL_2025_13_CLASSIC_main_20251130__nfl_millionaire_maker",
+    "totalOwnershipBp": 12050
   },
   "winner": {
     "username": "bmozley24",
@@ -20,15 +21,87 @@
     "salaryUsed": 49900,
     "totalPoints": 205.44,
     "items": [
-      { "rosterSpot": "QB", "name": "J. Brissett", "position": "QB", "team": "ARI", "salary": 5800, "points": 23.64, "ownership": 17.2 },
-      { "rosterSpot": "RB", "name": "K. Vidal", "position": "RB", "team": "LV", "salary": 5700, "points": 23.7, "ownership": 16.1 },
-      { "rosterSpot": "RB", "name": "B. Robinson", "position": "RB", "team": "ATL", "salary": 8500, "points": 33.3, "ownership": 14.4 },
-      { "rosterSpot": "WR", "name": "N. Collins", "position": "WR", "team": "HOU", "salary": 6700, "points": 21.5, "ownership": 21.4 },
-      { "rosterSpot": "WR", "name": "T. McMillan", "position": "WR", "team": "LAR", "salary": 6100, "points": 11.3, "ownership": 9.0 },
-      { "rosterSpot": "WR", "name": "A. Mitchell", "position": "WR", "team": "ATL", "salary": 3600, "points": 27.2, "ownership": 7.7 },
-      { "rosterSpot": "TE", "name": "D. Schultz", "position": "TE", "team": "HOU", "salary": 3800, "points": 12.5, "ownership": 10.6 },
-      { "rosterSpot": "FLEX", "name": "B. Bowers", "position": "TE", "team": "LV", "salary": 5800, "points": 22.3, "ownership": 10.0 },
-      { "rosterSpot": "DST", "name": "Seahawks", "position": "DST", "team": "SEA", "salary": 3900, "points": 30.0, "ownership": 14.1 }
+      {
+        "rosterSpot": "QB",
+        "name": "J. Brissett",
+        "position": "QB",
+        "team": "ARI",
+        "salary": 5800,
+        "points": 23.64,
+        "ownership": 17.2
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "K. Vidal",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 5700,
+        "points": 23.7,
+        "ownership": 16.1
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "B. Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 8500,
+        "points": 33.3,
+        "ownership": 14.4
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "N. Collins",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 6700,
+        "points": 21.5,
+        "ownership": 21.4
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "T. McMillan",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 6100,
+        "points": 11.3,
+        "ownership": 9.0
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A. Mitchell",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 3600,
+        "points": 27.2,
+        "ownership": 7.7
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "D. Schultz",
+        "position": "TE",
+        "team": "HOU",
+        "salary": 3800,
+        "points": 12.5,
+        "ownership": 10.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Bowers",
+        "position": "TE",
+        "team": "LV",
+        "salary": 5800,
+        "points": 22.3,
+        "ownership": 10.0
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Seahawks",
+        "position": "DST",
+        "team": "SEA",
+        "salary": 3900,
+        "points": 30.0,
+        "ownership": 14.1
+      }
     ]
   }
 }

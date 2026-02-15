@@ -3,22 +3,105 @@
   "year": 2025,
   "week": 8,
   "slateType": "MAIN",
-  "slateDate": "2025-01-01T00:00:00Z",
-  "contest": { "site": "DraftKings", "contestName": "NFL Milly Maker" },
-  "winner": { "username": "Bsgolfer7", "points": 230.66, "maxEntries": 146 },
+  "slateDate": "2025-10-26T17:00:00.000Z",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Milly Maker",
+    "siteContestId": "NFL_2025_WK08_MAIN_2025-10-26T17:00:00.000Z_DK_MAIN_MILLY",
+    "totalOwnershipBp": 7700
+  },
+  "winner": {
+    "username": "Bsgolfer7",
+    "points": 230.66,
+    "maxEntries": 146
+  },
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 230.66,
     "items": [
-      { "rosterSpot": "QB", "name": "T. Tagovailoa", "position": "QB", "team": "MIA", "salary": 4800, "points": 24.2, "ownership": 0.4 },
-      { "rosterSpot": "RB", "name": "J. Cook III", "position": "RB", "team": "BUF", "salary": 6700, "points": 36.6, "ownership": 10.9 },
-      { "rosterSpot": "RB", "name": "B. Hall", "position": "RB", "team": "NYJ", "salary": 6100, "points": 35.86, "ownership": 6.4 },
-      { "rosterSpot": "WR", "name": "M. Pittman Jr.", "position": "WR", "team": "IND", "salary": 5600, "points": 23.5, "ownership": 9.4 },
-      { "rosterSpot": "WR", "name": "J. Waddle", "position": "WR", "team": "MIA", "salary": 5700, "points": 20.9, "ownership": 4.7 },
-      { "rosterSpot": "WR", "name": "X. Hutchinson", "position": "WR", "team": "HOU", "salary": 3700, "points": 17.9, "ownership": 1.9 },
-      { "rosterSpot": "TE", "name": "G. Kittle", "position": "TE", "team": "SF", "salary": 4500, "points": 14.3, "ownership": 7.3 },
-      { "rosterSpot": "FLEX", "name": "J. Taylor", "position": "RB", "team": "IND", "salary": 9500, "points": 40.4, "ownership": 33.1 },
-      { "rosterSpot": "DST", "name": "Bills", "position": "DST", "team": "BUF", "salary": 3300, "points": 17.0, "ownership": 2.9 }
+      {
+        "rosterSpot": "QB",
+        "name": "T. Tagovailoa",
+        "position": "QB",
+        "team": "MIA",
+        "salary": 4800,
+        "points": 24.2,
+        "ownership": 0.4
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Cook III",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 6700,
+        "points": 36.6,
+        "ownership": 10.9
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "B. Hall",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 6100,
+        "points": 35.86,
+        "ownership": 6.4
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "M. Pittman Jr.",
+        "position": "WR",
+        "team": "IND",
+        "salary": 5600,
+        "points": 23.5,
+        "ownership": 9.4
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "J. Waddle",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 5700,
+        "points": 20.9,
+        "ownership": 4.7
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "X. Hutchinson",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 3700,
+        "points": 17.9,
+        "ownership": 1.9
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "G. Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 4500,
+        "points": 14.3,
+        "ownership": 7.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Taylor",
+        "position": "RB",
+        "team": "IND",
+        "salary": 9500,
+        "points": 40.4,
+        "ownership": 33.1
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bills",
+        "position": "DST",
+        "team": "BUF",
+        "salary": 3300,
+        "points": 17,
+        "ownership": 2.9
+      }
     ]
-  }
+  },
+  "lineupType": "CLASSIC",
+  "slateKey": "NFL_2025_WK08_MAIN_2025-10-26T17:00:00.000Z"
 }

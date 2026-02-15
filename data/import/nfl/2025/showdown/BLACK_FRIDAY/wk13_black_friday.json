@@ -3,19 +3,23 @@
   "year": 2025,
   "week": 13,
   "slateType": "SHOWDOWN",
-  "slateDate": "2025-11-28T00:00:00.000Z",
+  "slateDate": "2025-11-28",
   "contest": {
     "site": "DraftKings",
-    "contestName": "NFL Showdown",
+    "contestName": "Black Friday Showdown",
     "siteContestId": "NFL_2025_WK13_BLACK_FRIDAY_SHOWDOWN_2025-11-28_bears_eagles",
-    "topPrizeCents": 12166667
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 12166667,
+    "totalOwnershipBp": 19060
   },
   "winner": {
     "username": "dfs_ads",
-    "points": 143.8
+    "points": 143.8,
+    "maxEntries": 21
   },
   "lineup": {
-    "salaryUsed": 0,
+    "salaryUsed": 49200,
     "totalPoints": 143.8,
     "items": [
       {
@@ -25,8 +29,7 @@
         "team": "PHI",
         "salary": 14400,
         "points": 57.3,
-        "ownershipCaptainPct": 7.7,
-        "ownershipFlexPct": 36.6
+        "ownershipPercent": 7.7
       },
       {
         "rosterSpot": "FLEX",
@@ -35,8 +38,7 @@
         "team": "PHI",
         "salary": 11600,
         "points": 18.3,
-        "ownershipCaptainPct": 22.7,
-        "ownershipFlexPct": 80.7
+        "ownershipPercent": 80.7
       },
       {
         "rosterSpot": "FLEX",
@@ -45,18 +47,16 @@
         "team": "PHI",
         "salary": 8600,
         "points": 9.8,
-        "ownershipCaptainPct": 7.4,
-        "ownershipFlexPct": 41.6
+        "ownershipPercent": 41.6
       },
       {
         "rosterSpot": "FLEX",
         "name": "D. Swift",
         "position": "RB",
-        "team": "PHI",
+        "team": "CHI",
         "salary": 6600,
         "points": 23.8,
-        "ownershipCaptainPct": 3.7,
-        "ownershipFlexPct": 28.6
+        "ownershipPercent": 28.6
       },
       {
         "rosterSpot": "FLEX",
@@ -65,8 +65,7 @@
         "team": "CHI",
         "salary": 5600,
         "points": 22.0,
-        "ownershipCaptainPct": 2.6,
-        "ownershipFlexPct": 22.4
+        "ownershipPercent": 22.4
       },
       {
         "rosterSpot": "FLEX",
@@ -75,8 +74,7 @@
         "team": "CHI",
         "salary": 2400,
         "points": 12.6,
-        "ownershipCaptainPct": 0.3,
-        "ownershipFlexPct": 9.6
+        "ownershipPercent": 9.6
       }
     ]
   }

@@ -2,30 +2,32 @@ import type { APIRoute } from "astro";
 import { prisma } from "../../../lib/prisma";
 
 export const GET: APIRoute = async ({ params }) => {
-  const id = params.id;
+  try {
+    const id = params.id;
 
-  if (!id) {
-    return new Response(JSON.stringify({ error: "Missing slate id" }), {
-      status: 400,
-      headers: { "content-type": "application/json" },
-    });
-  }
+    if (!id) {
+      return new Response(JSON.stringify({ error: "Missing slate id" }), {
+        status: 400,
+        headers: { "content-type": "application/json" },
+      });
+    }
 
-  const slate = await prisma.slate.findUnique({
-    where: { id },
-    include: {
-      season: true,
-      contests: {
-        orderBy: { contestName: "asc" },
-        include: {
-          winners: {
-            orderBy: { points: "desc" },
-            include: {
-              lineup: {
-                include: {
-                  items: {
-                    orderBy: [{ rosterSpot: "asc" }, { slotIndex: "asc" }],
-                    include: { player: { include: { team: true } } },
+    const slate = await prisma.slate.findUnique({
+      where: { id },
+      include: {
+        season: true,
+        contests: {
+          orderBy: { contestName: "asc" },
+          include: {
+            winners: {
+              orderBy: { points: "desc" },
+              include: {
+                lineup: {
+                  include: {
+                    items: {
+                      orderBy: [{ rosterSpot: "asc" }, { slotIndex: "asc" }],
+                      include: { player: { include: { team: true } } },
+                    },
                   },
                 },
               },
@@ -33,17 +35,28 @@ export const GET: APIRoute = async ({ params }) => {
           },
         },
       },
-    },
-  });
+    });
 
-  if (!slate) {
-    return new Response(JSON.stringify({ error: "Not found" }), {
-      status: 404,
+    if (!slate) {
+      return new Response(JSON.stringify({ error: "Not found" }), {
+        status: 404,
+        headers: { "content-type": "application/json" },
+      });
+    }
+
+    return new Response(JSON.stringify({ slate }), {
+      status: 200,
       headers: { "content-type": "application/json" },
     });
+  } catch (err: any) {
+    return new Response(
+      JSON.stringify({
+        error: "slate api failed",
+        name: err?.name ?? null,
+        message: err?.message ?? String(err),
+        stack: err?.stack ?? null,
+      }),
+      { status: 500, headers: { "content-type": "application/json" } }
+    );
   }
-
-  return new Response(JSON.stringify({ slate }), {
-    headers: { "content-type": "application/json" },
-  });
 };

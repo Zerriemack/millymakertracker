@@ -3,22 +3,105 @@
   "year": 2025,
   "week": 7,
   "slateType": "MAIN",
-  "slateDate": "2025-01-01T00:00:00Z",
-  "contest": { "site": "DraftKings", "contestName": "NFL Milly Maker" },
-  "winner": { "username": "alexandercole4", "points": 249.6, "maxEntries": 49 },
+  "slateDate": "2025-10-19T17:00:00.000Z",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Milly Maker",
+    "siteContestId": "NFL_2025_WK07_MAIN_2025-10-19T17:00:00.000Z_DK_MAIN_MILLY",
+    "totalOwnershipBp": 14040
+  },
+  "winner": {
+    "username": "alexandercole4",
+    "points": 249.6,
+    "maxEntries": 49
+  },
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 249.6,
     "items": [
-      { "rosterSpot": "QB", "name": "J. Herbert", "position": "QB", "team": "LAC", "salary": 6400, "points": 32.9, "ownership": 6.0 },
-      { "rosterSpot": "RB", "name": "J. Williams", "position": "RB", "team": "WAS", "salary": 6700, "points": 21.8, "ownership": 22.3 },
-      { "rosterSpot": "RB", "name": "J. Taylor", "position": "RB", "team": "IND", "salary": 8800, "points": 34.2, "ownership": 28.6 },
-      { "rosterSpot": "WR", "name": "K. Allen", "position": "WR", "team": "LAC", "salary": 5500, "points": 31.9, "ownership": 6.2 },
-      { "rosterSpot": "WR", "name": "R. Rice", "position": "WR", "team": "KC", "salary": 5600, "points": 23.2, "ownership": 37.0 },
-      { "rosterSpot": "WR", "name": "C. Olave", "position": "WR", "team": "NO", "salary": 5400, "points": 26.8, "ownership": 16.4 },
-      { "rosterSpot": "TE", "name": "O. Gadsden II", "position": "TE", "team": "LAC", "salary": 3300, "points": 32.4, "ownership": 1.4 },
-      { "rosterSpot": "FLEX", "name": "T. McBride", "position": "TE", "team": "ARI", "salary": 5700, "points": 29.4, "ownership": 14.0 },
-      { "rosterSpot": "DST", "name": "Panthers", "position": "DST", "team": "CAR", "salary": 2500, "points": 17.0, "ownership": 8.5 }
+      {
+        "rosterSpot": "QB",
+        "name": "J. Herbert",
+        "position": "QB",
+        "team": "LAC",
+        "salary": 6400,
+        "points": 32.9,
+        "ownership": 6
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Williams",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 6700,
+        "points": 21.8,
+        "ownership": 22.3
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Taylor",
+        "position": "RB",
+        "team": "IND",
+        "salary": 8800,
+        "points": 34.2,
+        "ownership": 28.6
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "K. Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 5500,
+        "points": 31.9,
+        "ownership": 6.2
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "R. Rice",
+        "position": "WR",
+        "team": "KC",
+        "salary": 5600,
+        "points": 23.2,
+        "ownership": 37
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "C. Olave",
+        "position": "WR",
+        "team": "NO",
+        "salary": 5400,
+        "points": 26.8,
+        "ownership": 16.4
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "O. Gadsden II",
+        "position": "TE",
+        "team": "LAC",
+        "salary": 3300,
+        "points": 32.4,
+        "ownership": 1.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. McBride",
+        "position": "TE",
+        "team": "ARI",
+        "salary": 5700,
+        "points": 29.4,
+        "ownership": 14
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Panthers",
+        "position": "DST",
+        "team": "CAR",
+        "salary": 2500,
+        "points": 17,
+        "ownership": 8.5
+      }
     ]
-  }
+  },
+  "lineupType": "CLASSIC",
+  "slateKey": "NFL_2025_WK07_MAIN_2025-10-19T17:00:00.000Z"
 }

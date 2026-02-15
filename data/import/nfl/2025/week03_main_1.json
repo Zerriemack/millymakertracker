@@ -2,79 +2,104 @@
   "sport": "NFL",
   "year": 2025,
   "week": 3,
-  "slateType": "SHOWDOWN",
-  "slateDate": "2025-09-21",
+  "slateType": "MAIN",
+  "slateDate": "2025-09-21T17:00:00.000Z",
   "contest": {
     "site": "DraftKings",
-    "contestName": "SNF Showdown",
-    "siteContestId": "NFL_2025_WK03_SNF_SHOWDOWN_2025-09-21_giants_chiefs",
-    "entryFeeCents": null,
-    "entries": null,
-    "topPrizeCents": 17500550,
-    "totalOwnershipBp": 23270
+    "contestName": "NFL Milly Maker",
+    "siteContestId": "NFL_2025_WK03_MAIN_2025-09-21T17:00:00.000Z_DK_MAIN_MILLY",
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11950
   },
   "winner": {
-    "username": "TeeJayOrTj",
-    "points": 95.71,
-    "maxEntries": 50
+    "username": "Philnomenon",
+    "points": 231.06,
+    "maxEntries": 6
   },
   "lineup": {
-    "salaryUsed": 46000,
-    "totalPoints": 95.71,
+    "salaryUsed": 50000,
+    "totalPoints": 231.06,
     "items": [
       {
-        "rosterSpot": "CAPTAIN",
-        "name": "C. Skattebo",
-        "position": "RB",
-        "team": "NYG",
-        "salary": 9600,
-        "points": 36.15,
-        "ownershipPercent": 3.5
-      },
-      {
-        "rosterSpot": "FLEX",
-        "name": "M. Nabers",
-        "position": "WR",
-        "team": "NYG",
-        "salary": 11000,
-        "points": 3.3,
-        "ownershipPercent": 74.8
-      },
-      {
-        "rosterSpot": "FLEX",
-        "name": "P. Mahomes",
+        "rosterSpot": "QB",
+        "name": "G. Smith",
         "position": "QB",
-        "team": "KC",
-        "salary": 10400,
-        "points": 13.16,
-        "ownershipPercent": 83.5
-      },
-      {
-        "rosterSpot": "FLEX",
-        "name": "H. Butker",
-        "position": "K",
-        "team": "KC",
-        "salary": 5400,
-        "points": 13,
-        "ownershipPercent": 23.9
-      },
-      {
-        "rosterSpot": "FLEX",
-        "name": "Chiefs",
-        "position": "DST",
-        "team": "KC",
+        "team": "LV",
         "salary": 5200,
-        "points": 12,
-        "ownershipPercent": 13.9
+        "points": 26.06,
+        "ownership": 1.1
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Taylor",
+        "position": "RB",
+        "team": "IND",
+        "salary": 7200,
+        "points": 35.8,
+        "ownership": 24.1
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Mason",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 5400,
+        "points": 26.6,
+        "ownership": 35.5
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "R. Pearsall",
+        "position": "WR",
+        "team": "SF",
+        "salary": 5500,
+        "points": 22.7,
+        "ownership": 11.0
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "D. Metcalf",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 5700,
+        "points": 12.2,
+        "ownership": 9.3
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "T. Tucker",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 3400,
+        "points": 43.9,
+        "ownership": 0.6
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "B. Bowers",
+        "position": "TE",
+        "team": "LV",
+        "salary": 6000,
+        "points": 9.8,
+        "ownership": 7.8
       },
       {
         "rosterSpot": "FLEX",
-        "name": "T. Thornton",
-        "position": "WR",
-        "team": "KC",
-        "salary": 4400,
-        "points": 18.1,
-        "ownershipPercent": 33.1
+        "name": "C. McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 8200,
+        "points": 24.0,
+        "ownership": 25.5
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Vikings",
+        "position": "DST",
+        "team": "MIN",
+        "salary": 3400,
+        "points": 30.0,
+        "ownership": 4.6
       }
     ]
   }

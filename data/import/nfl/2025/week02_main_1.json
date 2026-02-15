@@ -8,7 +8,9 @@
     "site": "DraftKings",
     "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
     "entryFeeCents": 2000,
-    "topPrizeCents": 100000000
+    "topPrizeCents": 100000000,
+    "siteContestId": "NFL_2025_WK02_MAIN_2025-09-14T17:00:00.000Z_DK_MAIN_MILLY",
+    "totalOwnershipBp": 8540
   },
   "winner": {
     "username": "kjk003",
@@ -23,7 +25,7 @@
         "rosterSpot": "QB",
         "name": "R. Wilson",
         "position": "QB",
-        "team": "DAL",
+        "team": "NYG",
         "salary": 5100,
         "points": 34.3,
         "ownership": 0.9
@@ -97,7 +99,7 @@
         "position": "DST",
         "team": "SF",
         "salary": 3600,
-        "points": 5.0,
+        "points": 5,
         "ownership": 2.3
       }
     ]

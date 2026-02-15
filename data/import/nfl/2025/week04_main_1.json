@@ -3,22 +3,105 @@
   "year": 2025,
   "week": 4,
   "slateType": "MAIN",
-  "slateDate": "2025-01-01T00:00:00Z",
-  "contest": { "site": "DraftKings", "contestName": "NFL Milly Maker" },
-  "winner": { "username": "sayhey56", "points": 239.9, "maxEntries": 6 },
+  "slateDate": "2025-09-28T17:00:00.000Z",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Milly Maker",
+    "siteContestId": "NFL_2025_WK04_MAIN_2025-09-28T17:00:00.000Z_DK_MAIN_MILLY",
+    "totalOwnershipBp": 11940
+  },
+  "winner": {
+    "username": "sayhey56",
+    "points": 239.9,
+    "maxEntries": 6
+  },
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 239.9,
     "items": [
-      { "rosterSpot": "QB", "name": "P. Mahomes", "position": "QB", "team": "KC", "salary": 6000, "points": 27.3, "ownership": 7.3 },
-      { "rosterSpot": "RB", "name": "A. Jeanty", "position": "RB", "team": "CHI", "salary": 6200, "points": 37.5, "ownership": 13.6 },
-      { "rosterSpot": "RB", "name": "W. Marks", "position": "RB", "team": "HOU", "salary": 4400, "points": 27.9, "ownership": 0.9 },
-      { "rosterSpot": "WR", "name": "R. Odunze", "position": "WR", "team": "CHI", "salary": 6300, "points": 16.9, "ownership": 29.5 },
-      { "rosterSpot": "WR", "name": "P. Nacua", "position": "WR", "team": "LAR", "salary": 7900, "points": 39.0, "ownership": 38.3 },
-      { "rosterSpot": "WR", "name": "D. London", "position": "WR", "team": "ATL", "salary": 5700, "points": 28.0, "ownership": 14.3 },
-      { "rosterSpot": "TE", "name": "J. Tonges", "position": "TE", "team": "SF", "salary": 3100, "points": 14.8, "ownership": 0.5 },
-      { "rosterSpot": "FLEX", "name": "B. Irving", "position": "RB", "team": "TB", "salary": 6900, "points": 29.5, "ownership": 5.2 },
-      { "rosterSpot": "DST", "name": "Lions", "position": "DST", "team": "DET", "salary": 3500, "points": 19.0, "ownership": 9.8 }
+      {
+        "rosterSpot": "QB",
+        "name": "P. Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 6000,
+        "points": 27.3,
+        "ownership": 7.3
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "A. Jeanty",
+        "position": "RB",
+        "team": "LV",
+        "salary": 6200,
+        "points": 37.5,
+        "ownership": 13.6
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "W. Marks",
+        "position": "RB",
+        "team": "HOU",
+        "salary": 4400,
+        "points": 27.9,
+        "ownership": 0.9
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "R. Odunze",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 6300,
+        "points": 16.9,
+        "ownership": 29.5
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "P. Nacua",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 7900,
+        "points": 39,
+        "ownership": 38.3
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "D. London",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 5700,
+        "points": 28,
+        "ownership": 14.3
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "J. Tonges",
+        "position": "TE",
+        "team": "SF",
+        "salary": 3100,
+        "points": 14.8,
+        "ownership": 0.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Irving",
+        "position": "RB",
+        "team": "TB",
+        "salary": 6900,
+        "points": 29.5,
+        "ownership": 5.2
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Lions",
+        "position": "DST",
+        "team": "DET",
+        "salary": 3500,
+        "points": 19,
+        "ownership": 9.8
+      }
     ]
-  }
+  },
+  "lineupType": "CLASSIC",
+  "slateKey": "NFL_2025_WK04_MAIN_2025-09-28T17:00:00.000Z"
 }

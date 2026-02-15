@@ -9,7 +9,8 @@
     "contestName": "Milly Maker",
     "entryFeeCents": 2000,
     "topPrizeCents": 100000000,
-    "siteContestId": "NFL_2025_14_CLASSIC_main_20251207__nfl_millionaire_maker"
+    "siteContestId": "NFL_2025_14_CLASSIC_main_20251207__nfl_millionaire_maker",
+    "totalOwnershipBp": 11540
   },
   "winner": {
     "username": "melvco",
@@ -20,15 +21,87 @@
     "salaryUsed": 50000,
     "totalPoints": 239.34,
     "items": [
-      { "rosterSpot": "QB", "name": "J. Allen", "position": "QB", "team": "BUF", "salary": 7700, "points": 37.84, "ownership": 14.2 },
-      { "rosterSpot": "RB", "name": "J. Jacobs", "position": "RB", "team": "GB", "salary": 6800, "points": 17.2, "ownership": 18.5 },
-      { "rosterSpot": "RB", "name": "T. Pollard", "position": "RB", "team": "TEN", "salary": 4900, "points": 31.1, "ownership": 0.3 },
-      { "rosterSpot": "WR", "name": "P. Nacua", "position": "WR", "team": "LAR", "salary": 8700, "points": 38.7, "ownership": 14.9 },
-      { "rosterSpot": "WR", "name": "M. Wilson", "position": "WR", "team": "LAR", "salary": 5600, "points": 40.2, "ownership": 42.0 },
-      { "rosterSpot": "WR", "name": "D. Metcalf", "position": "WR", "team": "PIT", "salary": 5400, "points": 24.8, "ownership": 4.6 },
-      { "rosterSpot": "TE", "name": "D. Kincaid", "position": "TE", "team": "BUF", "salary": 4300, "points": 14.1, "ownership": 7.7 },
-      { "rosterSpot": "FLEX", "name": "H. Fannin Jr.", "position": "TE", "team": "TEN", "salary": 3700, "points": 28.4, "ownership": 5.2 },
-      { "rosterSpot": "DST", "name": "Titans", "position": "DST", "team": "TEN", "salary": 2900, "points": 7.0, "ownership": 8.0 }
+      {
+        "rosterSpot": "QB",
+        "name": "J. Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 7700,
+        "points": 37.84,
+        "ownership": 14.2
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Jacobs",
+        "position": "RB",
+        "team": "GB",
+        "salary": 6800,
+        "points": 17.2,
+        "ownership": 18.5
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "T. Pollard",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 4900,
+        "points": 31.1,
+        "ownership": 0.3
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "P. Nacua",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 8700,
+        "points": 38.7,
+        "ownership": 14.9
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "M. Wilson",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 5600,
+        "points": 40.2,
+        "ownership": 42.0
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "D. Metcalf",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 5400,
+        "points": 24.8,
+        "ownership": 4.6
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "D. Kincaid",
+        "position": "TE",
+        "team": "BUF",
+        "salary": 4300,
+        "points": 14.1,
+        "ownership": 7.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "H. Fannin Jr.",
+        "position": "TE",
+        "team": "CLE",
+        "salary": 3700,
+        "points": 28.4,
+        "ownership": 5.2
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Titans",
+        "position": "DST",
+        "team": "TEN",
+        "salary": 2900,
+        "points": 7.0,
+        "ownership": 8.0
+      }
     ]
   }
 }

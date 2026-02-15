@@ -3,22 +3,105 @@
   "year": 2025,
   "week": 9,
   "slateType": "MAIN",
-  "slateDate": "2025-01-01T00:00:00Z",
-  "contest": { "site": "DraftKings", "contestName": "NFL Milly Maker" },
-  "winner": { "username": "ikeyser21", "points": 264.7, "maxEntries": 65 },
+  "slateDate": "2025-11-02T17:00:00.000Z",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Milly Maker",
+    "siteContestId": "NFL_2025_WK09_MAIN_2025-11-02T17:00:00.000Z_DK_MAIN_MILLY",
+    "totalOwnershipBp": 15850
+  },
+  "winner": {
+    "username": "ikeyser21",
+    "points": 264.7,
+    "maxEntries": 65
+  },
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 264.7,
     "items": [
-      { "rosterSpot": "QB", "name": "C. Williams", "position": "QB", "team": "CHI", "salary": 5700, "points": 38.7, "ownership": 9.8 },
-      { "rosterSpot": "RB", "name": "C. McCaffrey", "position": "RB", "team": "SF", "salary": 8800, "points": 37.3, "ownership": 33.0 },
-      { "rosterSpot": "RB", "name": "J. Warren", "position": "RB", "team": "PIT", "salary": 5500, "points": 16.9, "ownership": 8.2 },
-      { "rosterSpot": "WR", "name": "J. Chase", "position": "WR", "team": "CIN", "salary": 8400, "points": 20.1, "ownership": 28.4 },
-      { "rosterSpot": "WR", "name": "D. London", "position": "WR", "team": "ATL", "salary": 6400, "points": 41.8, "ownership": 4.2 },
-      { "rosterSpot": "WR", "name": "O. Zaccheaus", "position": "WR", "team": "CHI", "salary": 3300, "points": 17.8, "ownership": 4.9 },
-      { "rosterSpot": "TE", "name": "B. Bowers", "position": "TE", "team": "LV", "salary": 5000, "points": 46.3, "ownership": 13.9 },
-      { "rosterSpot": "FLEX", "name": "K. Monangai", "position": "RB", "team": "CHI", "salary": 4600, "points": 25.8, "ownership": 54.7 },
-      { "rosterSpot": "DST", "name": "Titans", "position": "DST", "team": "TEN", "salary": 2300, "points": 20.0, "ownership": 1.4 }
+      {
+        "rosterSpot": "QB",
+        "name": "C. Williams",
+        "position": "QB",
+        "team": "CHI",
+        "salary": 5700,
+        "points": 38.7,
+        "ownership": 9.8
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "C. McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 8800,
+        "points": 37.3,
+        "ownership": 33
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Warren",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 5500,
+        "points": 16.9,
+        "ownership": 8.2
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "J. Chase",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 8400,
+        "points": 20.1,
+        "ownership": 28.4
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "D. London",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 6400,
+        "points": 41.8,
+        "ownership": 4.2
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "O. Zaccheaus",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 3300,
+        "points": 17.8,
+        "ownership": 4.9
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "B. Bowers",
+        "position": "TE",
+        "team": "LV",
+        "salary": 5000,
+        "points": 46.3,
+        "ownership": 13.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Monangai",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 4600,
+        "points": 25.8,
+        "ownership": 54.7
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Titans",
+        "position": "DST",
+        "team": "TEN",
+        "salary": 2300,
+        "points": 20,
+        "ownership": 1.4
+      }
     ]
-  }
+  },
+  "lineupType": "CLASSIC",
+  "slateKey": "NFL_2025_WK09_MAIN_2025-11-02T17:00:00.000Z"
 }
