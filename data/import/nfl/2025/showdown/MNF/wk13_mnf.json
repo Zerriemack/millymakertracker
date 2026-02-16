@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 13,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-01",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK13_MNF_SHOWDOWN_2025-12-01_giants_patriots",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 30000000,
+    "totalOwnershipBp": 15490
+  },
+  "winner": {
+    "username": "NxtWrldChamp",
+    "points": 103.58,
+    "maxEntries": 36
+  },
+  "lineup": {
+    "salaryUsed": 48500,
+    "totalPoints": 103.58,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "D. Maye",
+        "position": "QB",
+        "team": "NE",
+        "salary": 17700,
+        "points": 30.72,
+        "ownershipPercent": 14.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Dart",
+        "position": "QB",
+        "team": "NYG",
+        "salary": 10000,
+        "points": 13.56,
+        "ownershipPercent": 69.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Slayton",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 6400,
+        "points": 14.1,
+        "ownershipPercent": 13.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Stevenson",
+        "position": "RB",
+        "team": "NE",
+        "salary": 5000,
+        "points": 11,
+        "ownershipPercent": 20.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Borregales",
+        "position": "K",
+        "team": "NE",
+        "salary": 4800,
+        "points": 15,
+        "ownershipPercent": 26
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Singletary",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 4600,
+        "points": 19.2,
+        "ownershipPercent": 11.2
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This build wins by turning a popular captain into a leverage tool instead of a duplication trap. Maye at captain is not contrarian, yet the lineup still gets separation because the flex mix avoids the obvious Maye double stack path. The lineup accepts Dart mega ownership, which reads wrong at first, yet it fits a game where New England gets ahead and New York is forced into volume. In Showdown, a lineup can profit from a quarterback who looks bad on the field, since sacks and stalled drives can still coexist with enough attempts to produce fantasy points.\n\nThe more interesting angle is how the lineup allocates New England scoring. It does not chase a second Patriots pass catcher. It takes Stevenson and Borregales, which narrows New England fantasy points into rushing and kicking. When a team scores 33 without spreading touchdowns across multiple receivers, a captain QB can remain optimal while the flex slots lean toward the secondary scoring routes. Borregales is a quiet way to capture sustained drives and red zone stalls, and Stevenson covers the portion of the offense that can stay strong even when passing production concentrates in one player.\n\nOn the Giants side, Dart plus Slayton creates a two man bet on where the comeback production lands. Many entries will pair Dart with a different receiver or add a second Giants skill piece. This lineup keeps the bring back narrow, then uses Singletary as the off angle. A running back can post a tournament score in a losing script through receiving and late volume, even when the offense is pass heavy overall. The construction reads mixed, yet the pieces all point to one story. New England controls the scoreboard, New York pushes volume, and the scoring distribution stays concentrated enough for one captain QB and a kicker to both matter.",
+    "uniquenessNotes": "There is a counterintuitive detail in the ownership profile. Dart at 69.2 percent forces duplication pressure, so the lineup has to earn uniqueness elsewhere. The path is the Patriots secondary pieces. Stevenson and Borregales are not rare individually, yet the trio of Maye captain plus Stevenson plus Borregales is a narrower combination than Maye captain plus two pass catchers, which is where many lineups drift.\n\nLeaving salary on the table adds a small duplication break, but the larger leverage comes from refusing to mirror the field's stacking habits. The lineup uses one Giants receiver with Dart and stops, then uses Singletary as the final flex. Singletary at modest ownership pairs well with Dart because it captures scoring through a different channel than the chalk receiver cluster.\n\nIf you replay this slate, the lesson is not to fear chalk. The lesson is to decide where you will agree with the field, then get different in how points could be distributed inside the same game outcome. A quarterback captain can win without the standard two receiver build if the team reaches its score through rushing, kicking, short fields, and a single dominant passing connection.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "D. Maye", "position": "QB", "team": "NE" },
+        "teamSplit": "3-3",
+        "buildType": "Chalk captain with non standard flex pairing",
+        "includesQBs": true
+      },
+      "primaryLever": "Using a popular captain while avoiding the field’s most duplicated flex combinations",
+      "secondaryLever": "Kicker plus RB on the favorite to capture drives and points without needing multiple pass catchers"
+    }
+  }
+}

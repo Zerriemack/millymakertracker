@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 17,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-29",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK17_MNF_SHOWDOWN_2025-12-29_rams_falcons",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 12000000,
+    "totalOwnershipBp": 14220
+  },
+  "winner": {
+    "username": "SlimBoMangler",
+    "points": 137.51,
+    "maxEntries": 37
+  },
+  "lineup": {
+    "salaryUsed": 49500,
+    "totalPoints": 137.51,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "B. Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 17700,
+        "points": 64.35,
+        "ownershipPercent": 12.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Stafford",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 10800,
+        "points": 15.76,
+        "ownershipPercent": 62.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Williams",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 9600,
+        "points": 16,
+        "ownershipPercent": 27.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Z. Gonzalez",
+        "position": "K",
+        "team": "ATL",
+        "salary": 4800,
+        "points": 13,
+        "ownershipPercent": 15.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Ferguson",
+        "position": "TE",
+        "team": "LAR",
+        "salary": 3400,
+        "points": 13.4,
+        "ownershipPercent": 17.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Falcons",
+        "position": "DST",
+        "team": "ATL",
+        "salary": 3200,
+        "points": 15,
+        "ownershipPercent": 6.7
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is built around one thing. Bijan breaks the slate at captain. Once that happens, the rest of the lineup is not trying to match Bijan’s ceiling. It is trying to avoid missing the remaining scoring in a way that forces you out of first.\n\nThe lineup lands on a 3-3 split with Atlanta’s production captured through Bijan plus kicker plus defense, while the Rams side is captured through Stafford, Kyren, and a low cost tight end who likely provided a single high value play. That structure fits a one score game where Los Angeles moves the ball through its volume pieces, yet the touchdowns do not have to funnel through a single expensive wide receiver.\n\nStafford being extremely popular while scoring modestly is a common Showdown outcome in close games where a quarterback stays in play through attempts and yardage, but the scoring ends up split across the run game and auxiliary pass catchers. Pairing Stafford with Kyren and Ferguson covers multiple Rams scoring routes without betting on a specific receiver outcome.\n\nOn the Atlanta side, the kicker and defense look unusual alongside a captain eruption, yet it makes sense if Atlanta sustains drives and the Rams keep pushing possessions late. A defense can post a strong score in a game total near 50 if it produces sacks and turnovers, and a kicker can stay relevant when a team reaches scoring range repeatedly even if it does not finish every trip with a touchdown.",
+    "uniquenessNotes": "The leverage is not Stafford. It is how the lineup handles Stafford. Most entries pair him with a wide receiver because it feels structurally correct. This build pairs him with Kyren and Ferguson, which matches a scoring distribution where the Rams production is real but not concentrated in one receiver.\n\nThe other leverage is the Atlanta concentration. Bijan captain plus Atlanta defense is an uncomfortable pairing for many people, yet it is viable when the defense produces impact plays and the offense still scores enough to keep the opponent aggressive. The roster does not need six separate ceiling events. Bijan provides the ceiling and the remaining slots are chosen to capture points from the most likely remaining channels on both teams.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "B. Robinson", "position": "RB", "team": "ATL" },
+        "teamSplit": "3-3",
+        "buildType": "RB captain eruption with balanced team capture and a non standard Stafford pairing",
+        "includesQBs": true
+      },
+      "primaryLever": "Slate breaking captain score paired with a roster shape that does not mirror common Stafford stacks",
+      "secondaryLever": "Using a cheap tight end to cover a touchdown path without forcing an expensive wideout"
+    }
+  }
+}

@@ -29,7 +29,7 @@
         "team": "ARI",
         "salary": 12900,
         "points": 37.26,
-        "ownershipPercent": 14.0
+        "ownershipPercent": 14
       },
       {
         "rosterSpot": "FLEX",
@@ -64,7 +64,7 @@
         "position": "DST",
         "team": "DAL",
         "salary": 3800,
-        "points": 13.0,
+        "points": 13,
         "ownershipPercent": 10.6
       },
       {
@@ -73,9 +73,24 @@
         "position": "DST",
         "team": "ARI",
         "salary": 3400,
-        "points": 12.0,
+        "points": 12,
         "ownershipPercent": 4.3
       }
     ]
+  },
+  "analysis": {
+    "stackSummary": "Brissett captain wins because the slate produced two simultaneous truths. Dallas scored enough for Prescott and Lamb to remain useful, yet the game still featured pressure and mistakes that elevated both defenses. Many builds treat DST points as a signal to abandon quarterback exposure. This roster treats DST points as additive, not exclusive. Sacks and a defensive touchdown can coexist with a quarterback reaching value, especially when scoring comes from a few concentrated events rather than sustained efficiency.\n\nThe construction is also a bet on concentrated Arizona offense. Brissett captain paired with Harrison captures the most direct ceiling channel. Arizona reaching 27 without a wide distribution of touchdowns creates an environment where quarterback plus one receiver can do enough, and the captain slot amplifies it.\n\nThe double DST piece is the unusual part. It forces a game script where both lines disrupt, drives stall, and field position swings. A back and forth contest can still create that profile if both teams allow pressure. In those games, the field often over-corrects toward pure offense, leaving double defense builds underrepresented.",
+    "uniquenessNotes": "The chalk in this lineup sits in Dallas pieces, especially Prescott. The separation comes from the captain choice and the decision to roster both defenses while still keeping both quarterbacks represented through Brissett and Prescott.\n\nThis is one of those Showdown outcomes where correlation feels messy. Defensive scores and quarterback points often appear as opposites in lineup builders’ heads, but DraftKings scoring allows overlap through sacks, short fields, and a single defensive touchdown.\n\nA repeatable takeaway: when both defenses can pressure, double DST becomes viable even with quarterbacks present, as long as the offensive stacks remain narrow.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "J. Brissett", "position": "QB", "team": "ARI" },
+        "teamSplit": "3-3",
+        "buildType": "QB captain with double DST and concentrated receiver pairing",
+        "includesQBs": true
+      },
+      "primaryLever": "Double DST in a slate where most builds prioritize pure offense",
+      "secondaryLever": "Narrow Arizona stack via Brissett plus Harrison instead of multiple mid-tier Cardinals"
+    }
   }
 }

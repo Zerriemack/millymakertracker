@@ -77,5 +77,20 @@
         "ownershipPercent": 14.4
       }
     ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins with a chalky center and a contrarian edge in how Washington production gets represented. Mahomes captain plus Rice sits near the field’s default, yet the build stays alive in first because it refuses to pay the tax of a Washington quarterback. Many entries assume a competitive script requires both quarterbacks. This winner takes a narrower stance: Washington generates enough fantasy points through one receiver and one back, while Kansas City accounts for most of the high end outcomes.\n\nKelce plus Rice beside Mahomes is a concentrated bet on where the passing touchdowns land. It is also a bet against the idea of needing three Chiefs pass catchers to win. Hunt adds an alternative touchdown channel. In a slate where Kansas City reaches 28, two receiving scores plus one rushing score can outpace a spread-out distribution, and the captain multiplier makes the concentration even more valuable.\n\nMcNichols is the quiet piece. His score suggests snaps and touches in the portions of the game most lineups ignore, including late possessions and short-area work. Pairing him with McLaurin covers two very different paths for Washington. If the offense sputters, a running back can still get there through small receptions and a short touchdown. If the offense produces in chunks, McLaurin captures the explosive portion. Together, they replace the quarterback slot while keeping salary flexible.",
+    "uniquenessNotes": "This is a slate where duplication pressure comes from playing the correct players in the correct roles. The lineup embraces Rice chalk, yet gains separation by skipping the Washington quarterback and still taking two Commanders.\n\nThe roster also limits the number of mid-tier Kansas City receivers. Many builds add another wideout and end up sharing similar salary shapes. Using Kelce and Hunt as the secondary Chiefs pieces gives a different profile, since both score in ways correlated with red zone trips but not reliant on a specific deep shot.\n\nA repeatable idea: when a favorite can dominate scoring, a two piece bring back can be enough, even without the underdog quarterback, as long as the bring backs cover two distinct scoring routes.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "P. Mahomes", "position": "QB", "team": "KC" },
+        "teamSplit": "4-2",
+        "buildType": "Favorite heavy with condensed KC pass tree and underdog production without QB",
+        "includesQBs": false
+      },
+      "primaryLever": "Skipping the underdog quarterback while still capturing Washington points through two different roles",
+      "secondaryLever": "Condensed Chiefs touchdown capture via Rice, Kelce, and Hunt"
+    }
   }
 }

@@ -26,7 +26,7 @@
         "rosterSpot": "CAPTAIN",
         "name": "G. Pickens",
         "position": "WR",
-        "team": "DAL",
+        "team": "PIT",
         "salary": 13500,
         "points": 48.6,
         "ownershipPercent": 8.4
@@ -77,5 +77,20 @@
         "ownershipPercent": 2.3
       }
     ]
+  },
+  "analysis": {
+    "stackSummary": "This is a slate where the captain slot carries the win. Pickens captain at modest ownership produces a score high enough to outrun the chalk captain cluster, which forces the rest of the lineup into a simple job: avoid mistakes and stay correlated with the scoring environment.\n\nDallas pieces remain chalky for good reason. Prescott plus Lamb captures the most bankable connection on the slate. The lineup does not overthink Dallas beyond that pairing. Instead, it uses Luepke as the micro-leverage piece. A $400 role player scoring 7.1 rarely feels necessary, but in Showdown it can be perfect. It frees salary, reduces duplication, and still stays connected to Dallas touchdown sequences through goal line snaps, short receptions, or cleanup carries.\n\nThe Raiders side is a clean two piece response. Bowers provides volume and red zone access, Tucker provides a secondary receiver who can spike without needing massive target share. The build assumes Las Vegas produces enough to keep Dallas throwing, while Pickens captain represents the slate breaking single player outcome. Even without a Steelers quarterback present, a receiver captain can win when production comes from explosive plays and concentrated touchdowns.",
+    "uniquenessNotes": "The uniqueness is not a full contrarian lineup, it is a specific kind of risk. The captain slot takes the aggressive stance, while the flex slots lean into stability and correlation.\n\nLuepke is the most instructive inclusion. Many builds chase a mid-tier flex who projects better, then end up sharing salary shapes. A cheap player with a real role can outperform a thin mid-tier option on a single touchdown or a few touches, and the salary savings can keep the rest of the lineup optimal.\n\nA repeatable takeaway: when you land a slate breaking captain, you do not need six contrarian plays. You need five pieces that fit the game story and avoid the most duplicated salary patterns.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "G. Pickens", "position": "WR", "team": "PIT" },
+        "teamSplit": "3-2-1",
+        "buildType": "Contrarian WR captain with chalk DAL core and cheap salary release",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain slot separates the lineup from the field’s common builds",
+      "secondaryLever": "A very low salary flex creates a less duplicated salary shape while staying connected to scoring"
+    }
   }
 }

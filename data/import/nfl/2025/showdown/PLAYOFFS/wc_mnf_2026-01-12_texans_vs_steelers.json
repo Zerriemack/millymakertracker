@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 19,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2026-01-12",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "WC MNF Showdown",
+    "siteContestId": "NFL_2025_WK19_WC_MNF_SHOWDOWN_2026-01-12_texans_steelers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 22500000,
+    "totalOwnershipBp": 23200
+  },
+  "winner": {
+    "username": "ourobrabos",
+    "points": 121.9,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 40500,
+    "totalPoints": 121.9,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "C. Kirk",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 3900,
+        "points": 47.1,
+        "ownershipPercent": 80.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Stroud",
+        "position": "QB",
+        "team": "HOU",
+        "salary": 10200,
+        "points": 11.0,
+        "ownershipPercent": 71.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Gainwell",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 8800,
+        "points": 8.6,
+        "ownershipPercent": 59.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "W. Marks",
+        "position": "RB",
+        "team": "HOU",
+        "salary": 8200,
+        "points": 20.2,
+        "ownershipPercent": 28.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Fairbairn",
+        "position": "K",
+        "team": "HOU",
+        "salary": 4800,
+        "points": 8.0,
+        "ownershipPercent": 39.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Texans",
+        "position": "DST",
+        "team": "HOU",
+        "salary": 4600,
+        "points": 27.0,
+        "ownershipPercent": 32.7
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This is a 5-1 onslaught built around one idea: Houston controls the game so thoroughly that you can stack their scoring through every channel and only carry one Pittsburgh piece to satisfy the Showdown requirement. The lineup spends the captain slot on a WR and then refuses to chase a second Houston pass catcher. Instead it captures the slate through pressure and field position. Texans DST plus Fairbairn is the signal. It assumes short fields, stalled drives, and repeated scoring opportunities that do not require clean touchdown distribution across multiple receivers.\n\nThe salary used is only 40,500, which means 9,500 is left on the table. In Showdown, that is not a small discount. It is a deliberate way to step away from the chalky salary trees where most rosters cluster. Kirk at captain fits the same theme. When captain salary is this low, the build gains freedom to roster defense, kicker, and a control RB without being forced into the most common high salary captain builds.\n\nStroud at 71.2 percent ownership usually screams duplication risk, but the roster does not follow the standard Stroud constructions. It pairs him with DST and a kicker, then lets Marks carry the ground production. Stroud can post a modest score and still be part of the optimal because the defense and field goals do the heavy lifting.\n\nThe bring back is Gainwell for Pittsburgh. In a game where the Steelers struggle, the opposing slot is less about matching ceiling and more about surviving the slate. A running back can reach enough touches to keep the roster afloat while the onslaught side provides the separation.",
+    "uniquenessNotes": "The uniqueness comes from two forces working together. First, the captain choice is off the main path, and it changes the roster’s entire salary shape. Second, the lineup leaves 9,500 salary unused, which knocks it out of the duplicate heavy constructions built around expensive captains and double stacks.\n\nThis roster still includes major chalk. Stroud is massive ownership, and several Houston pieces are popular. The escape is construction, not six contrarian clicks. DST plus kicker plus a control RB is a narrow combination in the lineups that also jam a chalk QB. It is a bet on how points arrive, not a bet on random low owned players.\n\nThe 5-1 split matters here. With at least one opposing player required, the onslaught is still a true team crush build. It keeps the story clean, then uses the single Pittsburgh slot on a player who can get touches even when the offense is not producing explosive plays.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "C. Kirk", "position": "WR", "team": "HOU" },
+        "teamSplit": "5-1",
+        "buildType": "5-1 onslaught with WR captain, DST plus K, and control RB",
+        "includesQBs": true
+      },
+      "primaryLever": "Low salary captain and extreme salary left to break away from duplicate heavy builds",
+      "secondaryLever": "DST plus K to capture field position, short fields, and stalled red zone drives"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 14,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-08",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK14_MNF_SHOWDOWN_2025-12-08_eagles_chargers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 20000000,
+    "totalOwnershipBp": 20360
+  },
+  "winner": {
+    "username": "TheDogSays",
+    "points": 117.76,
+    "maxEntries": 13
+  },
+  "lineup": {
+    "salaryUsed": 48600,
+    "totalPoints": 117.76,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "S. Barkley",
+        "position": "RB",
+        "team": "PHI",
+        "salary": 14400,
+        "points": 31.8,
+        "ownershipPercent": 17.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Herbert",
+        "position": "QB",
+        "team": "LAC",
+        "salary": 10000,
+        "points": 14.16,
+        "ownershipPercent": 44
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Brown",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 9000,
+        "points": 19,
+        "ownershipPercent": 44.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Goedert",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 5400,
+        "points": 15.8,
+        "ownershipPercent": 34.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Dicker",
+        "position": "K",
+        "team": "LAC",
+        "salary": 5000,
+        "points": 20,
+        "ownershipPercent": 41.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Elliott",
+        "position": "K",
+        "team": "PHI",
+        "salary": 4800,
+        "points": 17,
+        "ownershipPercent": 21.7
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins with a game environment that frustrates most Showdown builders. It is not a wide open passing shootout, and it is not a pure defensive slug. It sits in the middle where drives regularly reach scoring range, then finish through a blend of rushing, stalled red zone trips, and field goals. Two kickers in a first place lineup is rarely an accident. It signals repeated possessions ending inside the forty, plus enough overall pace to create extra attempts.\n\nBarkley captain frames the slate as Eagles control through efficiency and sustained drives. The lineup then takes Philadelphia pass production through one receiver plus the tight end, which is a deliberate concentration bet. Many Barkley captain builds try to add the quarterback or chase a second wideout. This build skips that, meaning it is comfortable with Barkley scoring without needing a quarterback ceiling game.\n\nOn the Chargers side, Herbert is included even with a modest point total. This is a classic Showdown trap for the field. People expect the opposing quarterback to smash for the lineup to win. In reality, a quarterback can remain useful through volume and a few concentrated plays while the rest of the scoring flows through kickers and single receivers. Dicker at 41.4 percent confirms Los Angeles had enough offense to set up points, even if they did not finish drives with passing touchdowns. The lineup captures both teams' scoring shape without forcing an artificial stack rule.",
+    "uniquenessNotes": "The uniqueness comes from accepting high owned kickers while still landing first. Kickers usually increase duplication risk, so the lineup has to be correct about two things. First, touchdowns are limited enough for kickers to rival mid tier skill players. Second, the skill player points are concentrated, so Brown and Goedert cover most of Philadelphia receiving production.\n\nBarkley captain at 17.4 percent is popular, yet the lineup avoids the standard Philadelphia quarterback partner. That choice matters in large fields because it blocks common five man patterns built around a captain and his quarterback. The build also uses Herbert without a direct Chargers receiver. This feels wrong to many people, but it can be right when the quarterback's points come from spread production, rushing, or late volume, while the actual touchdown scoring is not captured by a single pass catcher.\n\nIf you want a repeatable takeaway, it is to treat kickers as game environment indicators, not desperation plays. When both offenses can move the ball but red zone finishing is messy, double kicker builds can sit directly in the optimal zone.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "S. Barkley", "position": "RB", "team": "PHI" },
+        "teamSplit": "4-2",
+        "buildType": "RB captain with double kicker and concentrated Eagles receiving",
+        "includesQBs": true
+      },
+      "primaryLever": "Double kicker in a drive heavy game where finishing comes through field goals",
+      "secondaryLever": "Captain RB without pairing his quarterback, reducing common duplication patterns"
+    }
+  }
+}

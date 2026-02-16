@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 16,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-22",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK16_MNF_SHOWDOWN_2025-12-22_49ers_colts",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 30000000,
+    "totalOwnershipBp": 21910
+  },
+  "winner": {
+    "username": "colt004500",
+    "points": 154.2,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 154.2,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "A. Pierce",
+        "position": "WR",
+        "team": "IND",
+        "salary": 10500,
+        "points": 36.9,
+        "ownershipPercent": 0.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 11800,
+        "points": 35.6,
+        "ownershipPercent": 72.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Purdy",
+        "position": "QB",
+        "team": "SF",
+        "salary": 10400,
+        "points": 31.9,
+        "ownershipPercent": 58.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "G. Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 8400,
+        "points": 27.5,
+        "ownershipPercent": 58.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "49ers",
+        "position": "DST",
+        "team": "SF",
+        "salary": 4800,
+        "points": 12,
+        "ownershipPercent": 18.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Robinson",
+        "position": "WR",
+        "team": "SF",
+        "salary": 4000,
+        "points": 10.3,
+        "ownershipPercent": 9.5
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is a clean example of how you can be extremely conventional in five slots and still land on a first place outcome if the captain choice nails a rare ceiling distribution. The SF core is exactly what the field wants when a team hangs 48. McCaffrey plus Purdy plus Kittle is the cleanest way to cover most touchdown paths without guessing which mid tier receiver gets there. The defense adds a second way to benefit from forced volume and pressure, even in a game where the opponent still scores.\n\nThe leverage is A. Pierce at captain. When the favorite keeps scoring, the underdog cannot sit in balanced play calling. It has to push. A single receiver can end up owning the valuable parts of the comeback because he gets the end zone looks and the high leverage third down targets. The captain spot is not predicting Indianapolis wins. It is predicting Indianapolis concentrates its best production in one player while SF forces the game into repeated dropbacks.\n\nSwitching D. Robinson to SF matters because it clarifies the roster intent. This is not a balanced 4 2 build. It is a 5 1 with the captain as the lone opposing piece. That is a sharper statement. The lineup is saying San Francisco is the scoring engine and Indianapolis produces one player with a slate shifting role. Robinson functions as a low salary way to stay attached to the same SF avalanche without needing a second expensive receiver. In a game where the main trio hits, the last slot does not need to be pretty. It needs to avoid a zero and keep the roster unique enough to hold the top spot.",
+    "uniquenessNotes": "The lineup is rare because most entrants cannot commit to a 5 1 shape when the captain comes from the trailing team. They either captain the favorite or they build a 4 2 or 3 3 because it feels safer. This build accepts the uncomfortable truth of Showdown. The favorite can dominate the box score while the best single fantasy score still comes from the team chasing.\n\nThe other subtle point is how the lineup chooses to be different. It does not fight the field on the SF studs. It fights the field on captain allocation. That is a better place to take risk in a top heavy contest because the captain spot controls the payout profile. If Pierce does not hit, you are dead anyway. If he does hit, you do not need to be quirky everywhere else. You just need the right core and one workable value slot.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "A. Pierce", "position": "WR", "team": "IND" },
+        "teamSplit": "5-1",
+        "buildType": "Underdog captain with a heavy favorite stack",
+        "includesQBs": true
+      },
+      "primaryLever": "Extremely low owned captain from the trailing team with a target funnel ceiling",
+      "secondaryLever": "Popular SF core for stability while the captain provides separation"
+    }
+  }
+}

@@ -15,12 +15,12 @@
   },
   "winner": {
     "username": "Neupmann45",
-    "points": 96.0,
+    "points": 96,
     "maxEntries": null
   },
   "lineup": {
     "salaryUsed": 48200,
-    "totalPoints": 96.0,
+    "totalPoints": 96,
     "items": [
       {
         "rosterSpot": "CAPTAIN",
@@ -55,7 +55,7 @@
         "position": "K",
         "team": "SF",
         "salary": 5000,
-        "points": 9.0,
+        "points": 9,
         "ownershipPercent": 24.4
       },
       {
@@ -64,8 +64,8 @@
         "position": "DST",
         "team": "SF",
         "salary": 4600,
-        "points": 9.0,
-        "ownershipPercent": 18.0
+        "points": 9,
+        "ownershipPercent": 18
       },
       {
         "rosterSpot": "FLEX",
@@ -77,5 +77,20 @@
         "ownershipPercent": 7.7
       }
     ]
+  },
+  "analysis": {
+    "stackSummary": "This is a heavyweight favorite build executed with discipline. McCaffrey captain plus three more 49ers pieces looks aggressive, yet it fits a game where San Francisco controls pace and Carolina fails to push back. The lineup treats the 49ers scoring as multi-layered. McCaffrey captures the touchdown and receiving core, Kittle and Jennings capture the passing portion, and Gay captures drives ending in stalled red zone trips or long possessions finishing in field goals.\n\nThe defense inclusion aligns with the same story. A 20 to 9 type outcome can produce a usable DST score without needing a defensive touchdown. Pressure, turnovers, and short fields raise both DST and kicker value while keeping the quarterback slate muted.\n\nHubbard is the one concession to Carolina. It is not a bet on the Panthers winning, it is a bet on touches surviving a losing game. Running backs can remain viable through checkdowns and late drive volume, even when the offense fails to finish drives. In a slate where San Francisco pieces dominate, the opposing back can function as the lone bring back without requiring a Carolina quarterback or receiver to succeed.",
+    "uniquenessNotes": "The field tends to over-stack the underdog when searching for uniqueness. This lineup does the opposite. It leans into the favorite and gets different through role selection: kicker plus defense alongside multiple pass catchers.\n\nMany CMC captain builds force a single pass catcher and then chase Carolina pieces for balance. Here, the roster accepts a lopsided reality and tries to capture every San Francisco scoring channel: rushing, passing, kicking, and defensive pressure.\n\nA repeatable takeaway: when you believe the favorite can win comfortably, pairing the captain stud with kicker and DST can cover drive outcomes most lineups ignore, especially when touchdowns do not fully replace field goals.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "C. McCaffrey", "position": "RB", "team": "SF" },
+        "teamSplit": "5-1",
+        "buildType": "Favorite onslaught with RB captain plus kicker and DST",
+        "includesQBs": false
+      },
+      "primaryLever": "Lopsided favorite build capturing multiple scoring channels beyond touchdowns",
+      "secondaryLever": "Underdog bring back limited to a touch-based RB instead of a QB stack"
+    }
   }
 }

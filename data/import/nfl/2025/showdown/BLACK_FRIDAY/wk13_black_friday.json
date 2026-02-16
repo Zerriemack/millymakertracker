@@ -2,7 +2,7 @@
   "sport": "NFL",
   "year": 2025,
   "week": 13,
-  "slateType": "SHOWDOWN",
+  "slateType": "BLACK_FRIDAY",
   "slateDate": "2025-11-28",
   "contest": {
     "site": "DraftKings",
@@ -64,7 +64,7 @@
         "position": "RB",
         "team": "CHI",
         "salary": 5600,
-        "points": 22.0,
+        "points": 22,
         "ownershipPercent": 22.4
       },
       {
@@ -77,5 +77,20 @@
         "ownershipPercent": 9.6
       }
     ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins by pairing a concentrated Philadelphia ceiling with a Chicago comeback package that is built around touches, not target guessing. A.J. Brown at captain is the bet that the Eagles passing production funnels through one player in the ways that matter most for Showdown: chunk plays and end-zone targets. Hurts in flex is the stabilizer. Even when the touchdowns consolidate through Brown, Hurts can remain optimal through raw yardage, red-zone involvement, and the simple fact that the Eagles are scoring enough for their quarterback to stay relevant.\n\nThe interesting decision is how the Bears are handled. Instead of forcing a Bears quarterback or a wide receiver bring-back, the lineup plays two Chicago running backs plus Kmet. It reads strange until you think about what a trailing team actually does in a high-scoring game. Drives accelerate, checkdowns become first reads, and running back usage can spike in both rushing attempts and short-area targets. That is how you can get strong running back scores even if the offense is losing.\n\nSwift being on the Bears adds a sharper angle. A revenge-game narrative is not a strategy by itself, but it can be a clue about usage concentration. Coaches tend to trust players they know in high-leverage moments, and a player with extra motivation is more likely to stay involved near the goal line and in two-minute situations. In Showdown, any small tilt in red-zone touches or late-game snaps matters more than it does in classic.\n\nDeVonta Smith is the glue piece on the Eagles side. He does not need a touchdown to justify his slot when Brown captain is already capturing the spike. He just needs enough receptions and yards to keep the Eagles passing tree from becoming a one-man show. The lineup fits a game where Philadelphia gets the lead through explosive plays, then Chicago is forced to keep answering, with its production coming through the safest channels: running backs and a tight end, not fragile deep-shot variance.",
+    "uniquenessNotes": "Hurts at 80.7 percent ownership creates heavy overlap, so the lineup has to separate through structure rather than through a full chalk fade. The separation comes from two places. First, Brown captain is the main leverage point because it is a ceiling captain that is still uncomfortable for a lot of entries due to the salary and the fear of spreading touchdowns. Second, the Bears side is built around a double-RB construction.\n\nMost lineups that captain an Eagles receiver will bring back a Bears receiver or quarterback because it feels clean. This roster accepts a messier story where Chicago scores in ways that do not require a wideout to hit a long touchdown. Swift and Monangai can both get there through sustained involvement, and Kmet can capture the red-zone and chain-moving role without needing the Bears passing game to be efficient.\n\nThe result is a 3-3 build that stays correlated to a high-scoring script while avoiding the most copied pairing patterns. It is a good example of winning by choosing one clear ceiling decision, then filling the remaining slots with pieces that reflect how the game can actually distribute points when one team is playing from ahead.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "A. Brown", "position": "WR", "team": "PHI" },
+        "teamSplit": "3-3",
+        "buildType": "Receiver captain with QB flex and double-RB bring-back",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain ceiling through a single concentrated receiver outcome paired with a non-traditional bring-back structure",
+      "secondaryLever": "Chicago production captured through touch certainty and late-game usage rather than volatile wide receiver scoring"
+    }
   }
 }

@@ -2,7 +2,7 @@
   "sport": "NFL",
   "year": 2025,
   "week": 1,
-  "slateType": "SHOWDOWN",
+  "slateType": "BLACK_FRIDAY",
   "slateDate": "2025-09-05",
   "contest": {
     "site": "DraftKings",
@@ -15,12 +15,12 @@
   },
   "winner": {
     "username": "nonameboy",
-    "points": 148.0,
+    "points": 148,
     "maxEntries": 1
   },
   "lineup": {
     "salaryUsed": 47100,
-    "totalPoints": 148.0,
+    "totalPoints": 148,
     "items": [
       {
         "rosterSpot": "CAPTAIN",
@@ -65,7 +65,7 @@
         "team": "LAC",
         "salary": 5400,
         "points": 24.9,
-        "ownershipPercent": 15.0
+        "ownershipPercent": 15
       },
       {
         "rosterSpot": "FLEX",
@@ -73,9 +73,24 @@
         "position": "K",
         "team": "KC",
         "salary": 4800,
-        "points": 11.0,
+        "points": 11,
         "ownershipPercent": 21.4
       }
     ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins by letting the game stay honest. Herbert captain signals a Chargers passing ceiling, but the construction refuses the usual assumption that a quarterback captain demands a heavy onslaught of his pass catchers. Instead, it uses one direct receiver attachment in Keenan Allen, then it spends the remaining slots on the pieces that best reflect how a shootout actually scores across four quarters.\n\nMahomes at massive ownership looks awkward next to a Herbert captain, yet it makes sense in a game where both offenses trade long drives and scoring stays efficient. The quarterback slot in Showdown can function as a volume sponge. Even a relatively quiet Mahomes stat line by his standards can remain optimal when paired with the highest raw-point captain. This lineup does not need Mahomes to outscore Herbert. It needs Mahomes to keep pace enough to block the most common alternatives.\n\nThe middle of the build captures scoring concentration without overfitting to one team. Allen serves as the clean Herbert partner. Quentin Johnston acts as the leverage receiver because his scoring can come in fewer, higher value plays, which matters when Herbert already carries the multiplier. On the Chiefs side, Hollywood Brown functions as the bring-back that benefits most from sustained passing without needing to predict a specific red-zone touchdown distribution.\n\nButker is the nuance piece. In a game with multiple touchdowns, a kicker can still matter when drives finish with a mix of touchdowns and stalls. He also pairs well with a chalk quarterback because he benefits from offensive competence without requiring a narrow target tree. The salary left behind reinforces the idea. This lineup was not trying to spend every dollar. It was trying to land the right shape of scoring.",
+    "uniquenessNotes": "The leverage does not come from fading popular players. It comes from fading popular lineup logic. Most builds around Herbert captain lean into a second Chargers receiver or a tight end, then force a strict bring-back rule. This build stays thinner on both sides, then uses Johnston as the secondary Chargers piece instead of chasing a more commonly clicked attachment.\n\nMahomes ownership creates duplication pressure, so the uniqueness has to live in the combinations around him. Allen plus Johnston together is less common than the Allen plus other receiver patterns, and adding Butker instead of a second Chiefs skill player changes the duplication landscape.\n\nThis is a strong example of Showdown tension. You can play a chalk quarterback and still win first if the rest of the lineup reflects a scoring map the field under-uses. Here, the map is two quarterbacks, three wideouts split 2 to 1 across teams, plus a kicker, with the captain carrying the true ceiling.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "J. Herbert", "position": "QB", "team": "LAC" },
+        "teamSplit": "3-3",
+        "buildType": "QB captain with two-QB flex and a kicker",
+        "includesQBs": true
+      },
+      "primaryLever": "Herbert captain paired with a thin Chargers stack and a non-receiver scoring piece on the opposing side",
+      "secondaryLever": "Duplication relief through lineup shape and salary left behind, not through full chalk avoidance"
+    }
   }
 }

@@ -14,7 +14,7 @@
     "totalOwnershipBp": 14420
   },
   "winner": {
-    "username": "needlunchmon",
+    "username": "needlunchmon...",
     "points": 85.85,
     "maxEntries": 67
   },
@@ -64,7 +64,7 @@
         "position": "DST",
         "team": "GB",
         "salary": 4000,
-        "points": 6.0,
+        "points": 6,
         "ownershipPercent": 16.4
       },
       {
@@ -73,9 +73,24 @@
         "position": "DST",
         "team": "PHI",
         "salary": 3800,
-        "points": 11.0,
+        "points": 11,
         "ownershipPercent": 21.7
       }
     ]
+  },
+  "analysis": {
+    "stackSummary": "This winner is a classic Showdown reminder: optimal can come from a mid-scoring game when points cluster in a few roles and the slate lacks a single runaway receiver score. Jacobs captain anchors Green Bay’s touchdown equity and receiving work, which matters in games where the offense functions but still leaves points on the table through stalled drives or turnovers.\n\nThe roster uses both defenses without fully fading offensive pieces. Philadelphia production gets represented through Barkley and Smith rather than a quarterback. That choice implies Eagles scoring arrived through a mix of rushing, short passing, and broken plays instead of a clean aerial stack. Barkley at high ownership works here because his role can survive poor efficiency. Even in a lower scoring finish, he can accumulate enough touches and receptions to remain necessary.\n\nOn the Packers side, Wicks plays the part of the low-cost receiver who can cash one meaningful connection while Jacobs and the defenses do most of the lifting. Two DSTs alongside two running backs creates a build oriented around drive disruption, field position, and a limited number of explosive plays. It is not a low scoring punt fest, it is a concentrated scoring distribution.",
+    "uniquenessNotes": "Many lineups chase quarterback pairs when they see an Eagles versus Packers matchup. This build avoids that route entirely, which reduces duplication even with popular pieces such as Barkley.\n\nDouble DST is the other separator. It is difficult for many players to click both defenses because it feels negative correlation with star skill players. In practice, a defense score can coexist with a running back captain and one receiver value, especially when the quarterback slate stays muted.\n\nA repeatable takeaway: when the best raw ceilings fail to separate, a captain running back plus two defenses can win by capturing the game’s disruption and short field scoring.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "J. Jacobs", "position": "RB", "team": "GB" },
+        "teamSplit": "3-3",
+        "buildType": "RB captain with double DST and no QB rostered",
+        "includesQBs": false
+      },
+      "primaryLever": "No quarterback rostered in a slate where many builds expect QB points",
+      "secondaryLever": "Double DST paired with RB captain to capture disruption and short field outcomes"
+    }
   }
 }

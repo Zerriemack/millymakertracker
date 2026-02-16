@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 15,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-15",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK15_MNF_SHOWDOWN_2025-12-15_dolphins_steelers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 3586666,
+    "totalOwnershipBp": 23460
+  },
+  "winner": {
+    "username": "lou3562",
+    "points": 121.48,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 48600,
+    "totalPoints": 121.48,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "D. Waller",
+        "position": "TE",
+        "team": "MIA",
+        "salary": 6600,
+        "points": 38.4,
+        "ownershipPercent": 5.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Achane",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 12800,
+        "points": 18.7,
+        "ownershipPercent": 81.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Rodgers",
+        "position": "QB",
+        "team": "PIT",
+        "salary": 9800,
+        "points": 16.96,
+        "ownershipPercent": 50.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Tagovailoa",
+        "position": "QB",
+        "team": "MIA",
+        "salary": 9600,
+        "points": 17.22,
+        "ownershipPercent": 31.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Gainwell",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 7000,
+        "points": 19.6,
+        "ownershipPercent": 56.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Smith",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 2800,
+        "points": 10.6,
+        "ownershipPercent": 9.5
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This is a classic example of why Showdown does not reward tidy narratives. The slate winner captains a tight end at modest ownership, then still eats the chalkiest flex on the board. Achane at 81.4 percent would scare most people away from first place equity due to duplication, yet the captain choice flips the entire combinatorics of the lineup. The build is not trying to be different in every slot. It is trying to be correct in how the game allocates ceiling.\n\nWaller at captain suggests Miami's spike plays flowed through tight end usage near the end zone, plus enough volume to pile receptions. That is not the default assumption in many builds, so the captain becomes the leverage point. The lineup then keeps both quarterbacks, which often looks contradictory when a non quarterback captain wins. It is not contradictory if the game stays functional for fantasy while still concentrating touchdowns through one unexpected player. Quarterbacks can deliver mid range totals through yardage, rushing, and spread touchdowns while a tight end captures the most valuable plays.\n\nThe Pittsburgh side is built in a narrow, efficient way. Rodgers plus Gainwell plus a cheap receiver suggests the Steelers points were not monopolized by an expensive wideout. Gainwell at 19.6 while Rodgers sits below 17 is a perfect Showdown quirk. A running back can absorb both red zone scoring and receiving, which can surpass the quarterback if the touchdowns are on the ground or come through short targets with limited passing yardage bonus.\n\nThe cheap J. Smith slot is doing strategic work. It enables two quarterbacks and Achane while still keeping Waller captain. It also creates a different roster shape than the field's typical mid salary receiver build, which matters in a top heavy payout structure.",
+    "uniquenessNotes": "This lineup survives massive ownership because it avoids the common captain archetypes. If Achane is on the slate, many people captain Achane or captain a quarterback and force Achane into a standard stack. Captaining Waller takes a different route. It requires a specific scoring distribution where the tight end gets the multi touchdown role and the rest of the production stays spread.\n\nThe construction also dodges the temptation to pair Rodgers with an expensive receiver. Instead it uses a cheaper receiver and a running back who can score without needing deep passing. That is a subtle uniqueness lever because it changes how the Steelers points are represented. Many lineups will be trapped into an expensive pass catcher who underperforms relative to salary, while this lineup captures the touchdowns through Gainwell and keeps exposure to the quarterback's floor through Rodgers.\n\nWhen you are looking for repeatable edges, the takeaway is to separate player popularity from lineup popularity. Achane is popular, yet the lineup around him can still be rare if the captain and roster shape are uncommon.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "D. Waller", "position": "TE", "team": "MIA" },
+        "teamSplit": "3-3",
+        "buildType": "TE captain with both QBs and chalk RB flex",
+        "includesQBs": true
+      },
+      "primaryLever": "Non standard captain creates separation even with extreme chalk in flex",
+      "secondaryLever": "Steelers points captured through RB plus value WR instead of an expensive receiver"
+    }
+  }
+}

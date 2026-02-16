@@ -55,7 +55,7 @@
         "position": "WR",
         "team": "KC",
         "salary": 5200,
-        "points": 12.0,
+        "points": 12,
         "ownershipPercent": 14.6
       },
       {
@@ -77,5 +77,20 @@
         "ownershipPercent": 6.9
       }
     ]
+  },
+  "analysis": {
+    "stackSummary": "Mahomes captain reads obvious, yet this build avoids the common duplication lane by narrowing Kansas City exposure to Kelce plus a single wideout, then letting Hunt carry the rest of the Chiefs scoring. Many Mahomes captain lineups lean into a two pass catcher core and hope the touchdowns concentrate. This winner accepts a different scoring map: one primary target soaks up volume, the second receiver slot stays thin, and drives still turn into points through rushing in close or short field finishes.\n\nLawrence in flex at high ownership feels uncomfortable when turnovers show up, yet Showdown rewards volume even in messy games. A quarterback can reach a strong score while losing the real life battle, especially with rushing and a steady stream of dropbacks. The key is pairing Lawrence with only one Jaguar. Instead of trying to guess a spread tree, the lineup chooses one cheap receiver who can ride efficiency, then lets Lawrence points stand on attempts and rushing.\n\nThe roster also keeps salary low enough to sidestep the most saturated constructions. Thornton is not a random punt in context. He represents a bet on a single explosive play or a short touchdown in a game where defenses allocate attention to Kelce and the perimeter alphas. One connected spike plus Mahomes ceiling creates the separation, even while the rest of the lineup sits inside popular ranges.",
+    "uniquenessNotes": "This first place build shows a subtle form of leverage. It does not fight ownership at quarterback, it fights assumptions about how touchdowns distribute. Mahomes captain plus Kelce invites a double stack expectation from much of the field. Cutting the second premium pass catcher, then adding Hunt, produces a Chiefs scoring portfolio less common than it looks.\n\nThe Jaguars side stays restrained. Lawrence chalk usually pairs with two receivers or with an expensive bring back who forces tighter salary. Washington keeps the Jaguars exposure cheap and fragile on purpose. If Jacksonville fantasy production funnels through Lawrence rushing, one touchdown, and scattered receptions, a single low salary receiver can be enough.\n\nA repeatable takeaway: when a captain quarterback becomes popular, differentiation can come from building a believable non receiver path for the favorite, then keeping the underdog narrow instead of chasing every possible scorer.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "P. Mahomes", "position": "QB", "team": "KC" },
+        "teamSplit": "4-2",
+        "buildType": "Chalk QB captain with condensed KC pass game and RB scoring capture",
+        "includesQBs": true
+      },
+      "primaryLever": "Avoiding the most duplicated Mahomes captain receiver pairings by using Hunt as the secondary Chiefs scoring route",
+      "secondaryLever": "Narrow Jaguars bring back with a cheap receiver while still using Lawrence volume"
+    }
   }
 }

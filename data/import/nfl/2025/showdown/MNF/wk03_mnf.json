@@ -77,5 +77,20 @@
         "ownershipPercent": 41.8
       }
     ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is a strong reminder that Showdown is often decided by how touchdowns are distributed, not by who scores the most raw points in the flex pool. Detroit put up 38, yet the captain is a Baltimore tight end. The captain decision is a bet on touchdown concentration. Two Andrews scores create a scenario where the Ravens can lose and still produce the top captain outcome because tight end touchdowns are high leverage events on DraftKings.\n\nThe build uses Lamar as a popular stabilizer, but it does not treat him as the centerpiece. Lamar’s stat line can produce a good score even when the Ravens fall short, since passing touchdowns and rushing yards are volume driven. Andrews at captain turns the Ravens scoring into a narrower funnel, then Bateman acts as the cheap attachment to the same passing environment. It is a bet that Baltimore’s aerial production is not spread evenly.\n\nOn the Detroit side, the lineup does something most entries avoid when a team scores 38. It plays both running backs with Amon Ra instead of chasing a second wide receiver. Gibbs and Montgomery together signal a very specific game texture. Detroit is scoring in multiple ways, and the red zone workload is not reserved for one back. Amon Ra still matters because he captures the steady target volume that keeps drives alive and creates more scoring chances. This is not a build predicting one long bomb receiver game. It is a build capturing sustained offense plus concentrated touchdown equity.\n\nThe 3 3 split is important here. A lot of lineups drift toward 4 2 when one side hits 38. This roster stays balanced because it expects Baltimore to remain functional enough to support a ceiling pass catcher while Detroit’s points are carried by core usage players rather than fringe scorers. The slate breaks when the Ravens touchdowns land in a tight end bucket and Detroit’s scoring lands in the backfield and primary target bucket, which is a distribution many people do not build for on purpose.",
+    "uniquenessNotes": "The uniqueness is almost entirely driven by captain allocation. Andrews at 3.4 percent captain is low enough to separate in a large field without forcing thin value plays elsewhere. The rest of the lineup is chalky on purpose. Lamar is massive ownership, and Gibbs and Amon Ra are common building blocks. The differentiation comes from deciding that Baltimore’s best fantasy output comes from a tight end touchdown path rather than from Lamar at captain or from a Detroit captain.\n\nThere is also a subtle correlation advantage. Many entries pairing Lamar will attach a wide receiver and move on. This lineup attaches Andrews and Bateman, which captures two different routes to Lamar points. Andrews captures the touchdown spikes, Bateman captures the yardage and secondary scoring. That combination can outscore a single receiver pairing even if neither wideout posts a slate leading game.\n\nDetroit double RB is another separator. It looks redundant to many entrants, yet it is a clean way to capture a high scoring team when rushing attempts and red zone touches are split. If Detroit’s touchdowns are not concentrated in one receiver, the double RB route can outpace the popular receiver clusters. The build accepts duplication risk in the flex spots, then escapes it by being on the right side of the captain decision.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "M. Andrews", "position": "TE", "team": "BAL" },
+        "teamSplit": "3-3",
+        "buildType": "Underdog pass catcher captain with a double RB on the high scoring favorite",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain touchdown concentration on the losing team",
+      "secondaryLever": "Detroit backfield capture instead of chasing a second wide receiver outcome"
+    }
   }
 }
