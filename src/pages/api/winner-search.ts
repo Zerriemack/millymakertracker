@@ -1,4 +1,3 @@
-cat > src/pages/api/winner-search.ts <<'EOF'
 import type { APIRoute } from "astro";
 import { prisma } from "../../lib/prisma";
 
@@ -69,6 +68,15 @@ export const GET: APIRoute = async ({ url }) => {
         contestName: true,
         siteContestId: true,
         topPrizeCents: true,
+
+        // NEW: analysis fields (optional)
+        analysis: {
+          select: {
+            stackSummary: true,
+            uniquenessNotes: true,
+          },
+        },
+
         slate: {
           select: {
             slateKey: true,
@@ -107,6 +115,10 @@ export const GET: APIRoute = async ({ url }) => {
         right: [dollars, points].filter(Boolean).join(" • "),
         line1: `${r.slate.season.sport} ${r.slate.season.year}${weekPart} ${r.slate.slateType}`,
         line2: w?.username ? `Winner: ${w.username}` : "",
+
+        // NEW: pass-through for UI
+        analysisStackSummary: r.analysis?.stackSummary ?? null,
+        analysisUniquenessNotes: r.analysis?.uniquenessNotes ?? null,
       };
     });
 
@@ -127,4 +139,3 @@ export const GET: APIRoute = async ({ url }) => {
     );
   }
 };
-EOF

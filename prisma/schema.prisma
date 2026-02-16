@@ -6,7 +6,6 @@ datasource db {
   provider = "postgresql"
 }
 
-
 enum Sport {
   NFL
   CFB
@@ -86,12 +85,31 @@ model Contest {
 
   totalOwnershipBp Int?
 
-  winners Winner[]
-  slate   Slate    @relation(fields: [slateId], references: [id])
+  winners  Winner[]
+  slate    Slate           @relation(fields: [slateId], references: [id])
+
+  // NEW
+  analysis ContestAnalysis?
 
   @@unique([site, siteContestId])
   @@index([slateId])
   @@index([site])
+}
+
+model ContestAnalysis {
+  id String @id @default(cuid())
+
+  contestId String  @unique
+  contest   Contest @relation(fields: [contestId], references: [id], onDelete: Cascade)
+
+  stackSummary    String?
+  uniquenessNotes String?
+  stackMeta       Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([contestId])
 }
 
 model Winner {
@@ -161,11 +179,11 @@ model LineupItem {
   salary Int?
   points Float?
 
-  // existing fields (leave them for now so nothing breaks)
+  // legacy fields
   ownership   Float?
   ownershipBp Int?
 
-  // NEW: store only the relevant ownership depending on lineup type + slot
+  // slot-specific ownership bps
   ownershipCaptainBp Int?
   ownershipFlexBp    Int?
   ownershipClassicBp Int?
@@ -177,7 +195,6 @@ model LineupItem {
   @@index([lineupId])
   @@index([playerId])
 
-  // OPTIONAL indexes
   @@index([ownershipClassicBp])
   @@index([ownershipCaptainBp])
   @@index([ownershipFlexBp])

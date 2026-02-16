@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 9,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-03",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK09_MNF_SHOWDOWN_2025-11-03_cardinals_cowboys",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 15000000,
+    "totalOwnershipBp": 17920
+  },
+  "winner": {
+    "username": "109stairs",
+    "points": 116.76,
+    "maxEntries": 26
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 116.76,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Brissett",
+        "position": "QB",
+        "team": "ARI",
+        "salary": 12900,
+        "points": 37.26,
+        "ownershipPercent": 14.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 10800,
+        "points": 15.5,
+        "ownershipPercent": 52.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 10400,
+        "points": 16.4,
+        "ownershipPercent": 70.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Harrison Jr.",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 8400,
+        "points": 22.6,
+        "ownershipPercent": 26.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cowboys",
+        "position": "DST",
+        "team": "DAL",
+        "salary": 3800,
+        "points": 13.0,
+        "ownershipPercent": 10.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 3400,
+        "points": 12.0,
+        "ownershipPercent": 4.3
+      }
+    ]
+  }
+}

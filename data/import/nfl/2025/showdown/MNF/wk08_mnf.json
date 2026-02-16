@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 8,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-27",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK08_MNF_SHOWDOWN_2025-10-27_commanders_chiefs",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 6196153,
+    "totalOwnershipBp": 18970
+  },
+  "winner": {
+    "username": "kjhanson_chi",
+    "points": 128.24,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 48900,
+    "totalPoints": 128.24,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "P. Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 16500,
+        "points": 37.44,
+        "ownershipPercent": 35.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Rice",
+        "position": "WR",
+        "team": "KC",
+        "salary": 9600,
+        "points": 25.5,
+        "ownershipPercent": 71.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. McLaurin",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 8400,
+        "points": 14.4,
+        "ownershipPercent": 21.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 8000,
+        "points": 21.9,
+        "ownershipPercent": 36.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. McNichols",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 3400,
+        "points": 11.8,
+        "ownershipPercent": 10.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Hunt",
+        "position": "RB",
+        "team": "KC",
+        "salary": 3000,
+        "points": 17.2,
+        "ownershipPercent": 14.4
+      }
+    ]
+  }
+}

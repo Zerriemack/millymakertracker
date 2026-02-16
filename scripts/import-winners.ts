@@ -110,6 +110,12 @@ type ImportLineupItem = {
   flex_ownership_pct?: number | string | null;
 };
 
+type ImportAnalysis = {
+  stackSummary?: string | null;
+  uniquenessNotes?: string | null;
+  stackMeta?: any | null;
+};
+
 type ImportFile = {
   sport: string;
   year: number;
@@ -123,6 +129,7 @@ type ImportFile = {
     totalPoints?: number | null;
     items: ImportLineupItem[];
   };
+  analysis?: ImportAnalysis | null;
 };
 
 /* ---------------------------- Slate detection --------------------------- */
@@ -232,8 +239,6 @@ function pctToBp(pct: number): number {
   return Math.round(pct * 100);
 }
 
-// CLASSIC: read from FLEX_KEYS/GENERIC_KEYS (ownershipPercent is usually here)
-// SHOWDOWN: CAPTAIN from CAPTAIN_KEYS (fallback to ownershipPercent), FLEX from FLEX_KEYS
 function extractRelevantOwnership(
   item: ImportLineupItem,
   rosterSpot: RosterSpot,
@@ -382,6 +387,23 @@ async function main() {
       totalOwnershipBp: data.contest.totalOwnershipBp ?? null,
     },
   });
+
+  if (data.analysis) {
+    await prisma.contestAnalysis.upsert({
+      where: { contestId: contest.id },
+      create: {
+        contestId: contest.id,
+        stackSummary: data.analysis.stackSummary ?? null,
+        uniquenessNotes: data.analysis.uniquenessNotes ?? null,
+        stackMeta: data.analysis.stackMeta ?? null,
+      },
+      update: {
+        stackSummary: data.analysis.stackSummary ?? null,
+        uniquenessNotes: data.analysis.uniquenessNotes ?? null,
+        stackMeta: data.analysis.stackMeta ?? null,
+      },
+    });
+  }
 
   if (!data.winner || !data.winner.username || typeof data.winner.points !== "number") {
     throw new Error("JSON missing winner.username or winner.points");
@@ -564,47 +586,44 @@ async function main() {
     const playerId = resolvedPlayerIdByIndex.get(i);
     if (!playerId) throw new Error(`Internal error: playerId not resolved for lineup.items[${i}]`);
 
-   const { bp } = extractRelevantOwnership(it, rosterSpot);
+    const { bp } = extractRelevantOwnership(it, rosterSpot, lineupType);
 
-const isClassic = lineupType === LineupType.CLASSIC;
+    const isClassic = lineupType === LineupType.CLASSIC;
 
-// Showdown stores spot specific
-const ownershipCaptainBp = !isClassic && rosterSpot === RosterSpot.CAPTAIN ? bp : null;
-const ownershipFlexBp = !isClassic && rosterSpot === RosterSpot.FLEX ? bp : null;
+    const ownershipCaptainBp = !isClassic && rosterSpot === RosterSpot.CAPTAIN ? bp : null;
+    const ownershipFlexBp = !isClassic && rosterSpot === RosterSpot.FLEX ? bp : null;
 
-// Classic stores everything into ownershipClassicBp
-const ownershipClassicBp = isClassic ? bp : null;
+    const ownershipClassicBp = isClassic ? bp : null;
 
-// Legacy columns stay unused
-const legacyOwnership = null;
-const legacyOwnershipBp = null;
+    const legacyOwnership = null;
+    const legacyOwnershipBp = null;
 
-await prisma.lineupItem.upsert({
-  where: { lineupId_rosterSpot_slotIndex: { lineupId: lineup.id, rosterSpot, slotIndex } },
-  create: {
-    lineupId: lineup.id,
-    playerId,
-    rosterSpot,
-    slotIndex,
-    salary: it.salary ?? null,
-    points: it.points ?? null,
-    ownership: legacyOwnership,
-    ownershipBp: legacyOwnershipBp,
-    ownershipCaptainBp,
-    ownershipFlexBp,
-    ownershipClassicBp,
-  },
-  update: {
-    playerId,
-    salary: it.salary ?? null,
-    points: it.points ?? null,
-    ownership: legacyOwnership,
-    ownershipBp: legacyOwnershipBp,
-    ownershipCaptainBp,
-    ownershipFlexBp,
-    ownershipClassicBp,
-  },
-});
+    await prisma.lineupItem.upsert({
+      where: { lineupId_rosterSpot_slotIndex: { lineupId: lineup.id, rosterSpot, slotIndex } },
+      create: {
+        lineupId: lineup.id,
+        playerId,
+        rosterSpot,
+        slotIndex,
+        salary: it.salary ?? null,
+        points: it.points ?? null,
+        ownership: legacyOwnership,
+        ownershipBp: legacyOwnershipBp,
+        ownershipCaptainBp,
+        ownershipFlexBp,
+        ownershipClassicBp,
+      },
+      update: {
+        playerId,
+        salary: it.salary ?? null,
+        points: it.points ?? null,
+        ownership: legacyOwnership,
+        ownershipBp: legacyOwnershipBp,
+        ownershipCaptainBp,
+        ownershipFlexBp,
+        ownershipClassicBp,
+      },
+    });
   }
 
   const totalOwnershipBpFromJson = data.contest.totalOwnershipBp ?? null;
@@ -626,6 +645,7 @@ await prisma.lineupItem.upsert({
         lineupId: lineup.id,
         lineupItemCount: items.length,
         totalOwnershipBp: totalOwnershipBpFromJson,
+        analysisSaved: Boolean(data.analysis),
       },
       null,
       2

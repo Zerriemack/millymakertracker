@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 3,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-22",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK03_MNF_SHOWDOWN_2025-09-22_lions_ravens",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 39066667,
+    "totalOwnershipBp": 23560
+  },
+  "winner": {
+    "username": "PetrGibbons",
+    "points": 164.97,
+    "maxEntries": 15
+  },
+  "lineup": {
+    "salaryUsed": 49600,
+    "totalPoints": 164.97,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "M. Andrews",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 6600,
+        "points": 40.65,
+        "ownershipPercent": 3.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "L. Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 11800,
+        "points": 27.02,
+        "ownershipPercent": 82.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Gibbs",
+        "position": "RB",
+        "team": "DET",
+        "salary": 10600,
+        "points": 26.9,
+        "ownershipPercent": 45.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. St. Brown",
+        "position": "WR",
+        "team": "DET",
+        "salary": 10400,
+        "points": 20.7,
+        "ownershipPercent": 38.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Montgomery",
+        "position": "RB",
+        "team": "DET",
+        "salary": 6200,
+        "points": 32.4,
+        "ownershipPercent": 24.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Bateman",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 4000,
+        "points": 17.3,
+        "ownershipPercent": 41.8
+      }
+    ]
+  }
+}

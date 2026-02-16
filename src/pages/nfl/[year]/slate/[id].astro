@@ -1,4 +1,6 @@
 ---
+import fs from "node:fs";
+import path from "node:path";
 import Layout from "../../../../layouts/Layout.astro";
 
 const { id } = Astro.params;
@@ -9,263 +11,508 @@ if (!res.ok) throw new Error(`Slate not found: ${id}`);
 const { slate } = await res.json();
 const season = slate.season;
 
-const pad2 = (n: number) => String(n ?? "").padStart(2, "0");
-
-function tagTitle(raw: string) {
-  const t = String(raw ?? "").toUpperCase();
-  const map: Record<string, string> = {
-    SUPER_BOWL: "Super Bowl",
-    MNF: "MNF",
-    TNF: "TNF",
-    SNF: "SNF",
-    SATURDAY: "Saturday",
-    THANKSGIVING: "Thanksgiving",
-    BLACK_FRIDAY: "Black Friday",
-    PLAYOFFS: "Playoffs",
-    MAIN: "Main",
-    SHOWDOWN: "Showdown",
-  };
-  return map[t] ?? t.replace(/_/g, " ").toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+function pad2(n: number) {
+  return String(n).padStart(2, "0");
 }
 
-function parseTeamsFromKey(key: string) {
-  const parts = String(key ?? "").split("_").filter(Boolean);
-  const last = parts[parts.length - 1] ?? "";
-  const m = last.match(/^([A-Z0-9]{2,3})_([A-Z0-9]{2,3})$/);
-  if (!m) return null;
-  return `${m[1]} vs ${m[2]}`;
+function safeUpper(v: any) {
+  return String(v || "").trim().toUpperCase();
 }
 
-function formatSlateDate(v: unknown) {
-  const s = String(v ?? "").trim();
-  if (!s) return null;
+function parseSlateKey(keyRaw: string) {
+  const key = String(keyRaw || "").trim();
+  const parts = key.split("_");
 
-  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-  const d = m ? new Date(`${s}T12:00:00`) : new Date(s);
+  const wkPart = parts.find((p) => p.startsWith("WK")) || "";
+  const week = wkPart ? Number(wkPart.replace("WK", "")) : null;
 
-  if (Number.isNaN(d.getTime())) return null;
+  const datePart = parts.find((p) => /^\d{4}-\d{2}-\d{2}$/.test(p)) || "";
+  const away = parts.length >= 2 ? parts[parts.length - 2] : "";
+  const home = parts.length >= 1 ? parts[parts.length - 1] : "";
 
-  return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" });
+  const tag =
+    parts.includes("MNF")
+      ? "MNF"
+      : parts.includes("TNF")
+        ? "TNF"
+        : parts.includes("SNF")
+          ? "SNF"
+          : parts.includes("THANKSGIVING")
+            ? "THANKSGIVING"
+            : parts.includes("SUPER")
+              ? "SUPER BOWL"
+              : "";
+
+  return { week, datePart, away, home, tag };
 }
 
-function moneyFromCents(v: unknown) {
-  if (v == null) return null;
-  const n = Number(v);
-  if (!Number.isFinite(n)) return null;
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n / 100);
+function formatDateHuman(isoOrDate: any) {
+  if (!isoOrDate) return "";
+  const d = new Date(isoOrDate);
+  if (Number.isNaN(d.getTime())) return String(isoOrDate);
+  return new Intl.DateTimeFormat("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  }).format(d);
 }
 
-function pctFromBp(bp: unknown) {
-  if (bp == null) return null;
-  const n = Number(bp);
-  if (!Number.isFinite(n)) return null;
-  return `${(n / 100).toFixed(2)}%`;
+function formatPercent(v: number | null | undefined) {
+  if (v === null || v === undefined) return "—";
+  return `${Number(v).toFixed(1)}%`;
 }
 
-function pct(v: unknown) {
-  if (v == null) return null;
-  const n = Number(v);
-  if (!Number.isFinite(n)) return null;
-  return `${n.toFixed(1)}%`;
+function formatBpTotalOwnership(v: number | null | undefined) {
+  if (v === null || v === undefined) return "—";
+  return `${(v / 100).toFixed(2)}%`;
 }
 
-// basis points -> percent string (2471 => "24.71%")
-function pctBp(bp: unknown) {
-  if (bp == null) return null;
-  const n = Number(bp);
-  if (!Number.isFinite(n)) return null;
-  return `${(n / 100).toFixed(2)}%`;
+function rosterOrder(spot: string) {
+  const s = safeUpper(spot);
+  if (s === "CAPTAIN") return 0;
+  if (s === "FLEX") return 1;
+  return 9;
 }
 
-// For classic, ordering matches DK roster order:
-// QB, RB, RB, WR, WR, WR, TE, FLEX, DST
-function sortClassicItems(items: any[]) {
-  const order: Record<string, number> = { QB: 1, RB: 2, WR: 3, TE: 4, FLEX: 5, DST: 6 };
-  return [...items].sort((a, b) => {
-    const ao = order[a.rosterSpot] ?? 9;
-    const bo = order[b.rosterSpot] ?? 9;
-    if (ao !== bo) return ao - bo;
-    return Number(a.slotIndex ?? 0) - Number(b.slotIndex ?? 0);
-  });
+function classicRosterOrder(spot: string) {
+  const s = safeUpper(spot);
+  if (s === "QB") return 0;
+  if (s === "RB") return 1;
+  if (s === "WR") return 2;
+  if (s === "TE") return 3;
+  if (s === "FLEX") return 4;
+  if (s === "DST") return 5;
+  return 9;
 }
 
-// For showdown, DK order is CAPTAIN first, then FLEX.
-function sortShowdownItems(items: any[]) {
-  const order: Record<string, number> = { CAPTAIN: 0, FLEX: 1 };
-  return [...items].sort((a, b) => {
-    const ao = order[a.rosterSpot] ?? 9;
-    const bo = order[b.rosterSpot] ?? 9;
-    if (ao !== bo) return ao - bo;
-    return Number(a.slotIndex ?? 0) - Number(b.slotIndex ?? 0);
-  });
+function pickFirstExistingPublicPath(candidates: string[]) {
+  const publicDir = path.join(process.cwd(), "public");
+  for (const p of candidates) {
+    const rel = p.startsWith("/") ? p.slice(1) : p;
+    const abs = path.join(publicDir, rel);
+    if (fs.existsSync(abs)) return p;
+  }
+  return null;
 }
 
-function ownForItem(it: any, isClassic: boolean) {
-  if (isClassic) return pctBp(it.ownershipClassicBp);
-  return pctBp(it.rosterSpot === "CAPTAIN" ? it.ownershipCaptainBp : it.ownershipFlexBp);
+function toFolderTag(tag: string) {
+  return safeUpper(tag).replace(/\s+/g, "_");
 }
 
-const sportSlug = String(season.sport ?? "").toLowerCase();
-const seasonYear = season.year;
-const week2 = pad2(slate.week);
+const slateKey = String(slate.slateKey || "").trim();
+const slateTag = safeUpper(slate.slateTag || slate.slateType);
+const slateTagFolder = toFolderTag(slateTag);
+const weekNum = Number(slate.week ?? 0);
 
-const slateKey = String(slate.slateKey ?? "");
-const isClassic = slateKey.includes("_CLASSIC_") || String(slate.lineupType ?? "").toUpperCase() === "CLASSIC";
+const lineupTypeUpper = safeUpper((slate as any)?.lineupType);
+const slateTypeUpper = safeUpper((slate as any)?.slateType);
+const isShowdown = lineupTypeUpper === "SHOWDOWN" || slateTypeUpper === "SHOWDOWN";
 
-const tag = String(slate.slateTag ?? slate.slateType ?? "").toUpperCase();
-const tagLabel = tagTitle(tag);
+const parsed = parseSlateKey(slateKey);
+const matchupAbbr =
+  isShowdown && parsed.away && parsed.home ? `${parsed.away} at ${parsed.home}` : "";
 
-const keyTeams = parseTeamsFromKey(slateKey);
+const slateDateIso = slate.slateDate || parsed.datePart || "";
+const slateDateHuman = formatDateHuman(slateDateIso);
 
-let showdownFile = `wk${week2}`;
-const looksWildCard = /(^|_)WC(_|$)|WILD/i.test(slateKey);
-if (tag === "PLAYOFFS" && looksWildCard) showdownFile = `wk${week2}_wc`;
+const contest = slate.contest || null;
+const winner = contest?.winner || null;
+const lineup = winner?.lineup || null;
+const analysis = contest?.analysis || null;
 
-const imgBase = isClassic
-  ? `/slates/${sportSlug}/${seasonYear}/classic/week${week2}`
-  : `/slates/${sportSlug}/${seasonYear}/showdown/${tag}/${showdownFile}`;
+const contestName = String(contest?.contestName || "").trim();
 
-const imgPng = `${imgBase}.png`;
-const imgJpg = `${imgBase}.jpg`;
+const headerTitleParts: string[] = [];
+if (contestName) headerTitleParts.push(contestName);
+if (matchupAbbr) headerTitleParts.push(matchupAbbr);
+const headerTitle = headerTitleParts.join(" · ").trim() || "Slate";
 
-const pageTitle =
-  (String(slate.slateName ?? "").trim()) ||
-  (isClassic ? `Week ${slate.week} Classic` : `${tagLabel} Showdown`);
+const headerSubParts: string[] = [];
+if (season?.sport && season?.year) headerSubParts.push(`${season.sport} ${season.year}`);
+if (parsed.week) headerSubParts.push(`Week ${parsed.week}`);
+if (slateDateHuman) headerSubParts.push(slateDateHuman);
+if (slateTag) headerSubParts.push(slateTag);
+const headerSub = headerSubParts.join(" | ");
 
-const metaWeek = slate.week != null ? `Week ${slate.week}` : null;
-const metaType = isClassic ? "Classic" : "Showdown";
-const metaTag = !isClassic && tagLabel ? tagLabel : null;
-const metaDate = formatSlateDate(slate.slateDate);
+const pageTitle = headerTitle;
+
+const sportLower = String(season.sport).toLowerCase();
+
+const screenshotCandidates: string[] = isShowdown
+  ? [
+      `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${pad2(weekNum)}.png`,
+      `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${pad2(weekNum)}.jpg`,
+      `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${weekNum}.png`,
+      `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${weekNum}.jpg`,
+      `/slates/${sportLower}/${season.year}/${slateKey}.png`,
+      `/slates/${sportLower}/${season.year}/${slateKey}.jpg`,
+    ]
+  : [
+      `/slates/${sportLower}/${season.year}/classic/week${pad2(weekNum)}.png`,
+      `/slates/${sportLower}/${season.year}/classic/week${pad2(weekNum)}.jpg`,
+      `/slates/${sportLower}/${season.year}/${slateKey}.png`,
+      `/slates/${sportLower}/${season.year}/${slateKey}.jpg`,
+    ];
+
+const screenshotUrl = pickFirstExistingPublicPath(screenshotCandidates);
+
+const items = Array.isArray(lineup?.items) ? [...lineup.items] : [];
+items.sort((a, b) => {
+  const ao = isShowdown ? rosterOrder(a.rosterSpot) : classicRosterOrder(a.rosterSpot);
+  const bo = isShowdown ? rosterOrder(b.rosterSpot) : classicRosterOrder(b.rosterSpot);
+  if (ao !== bo) return ao - bo;
+
+  const ai = Number.isFinite(a.slotIndex) ? a.slotIndex : 999;
+  const bi = Number.isFinite(b.slotIndex) ? b.slotIndex : 999;
+  return ai - bi;
+});
+
+const classicFlex = !isShowdown ? items.find((it) => safeUpper(it.rosterSpot) === "FLEX") : null;
+const classicFlexPos = classicFlex ? safeUpper(classicFlex.position) : "";
+const classicFlexValue = classicFlex
+  ? `${classicFlexPos} · ${classicFlex.name} · ${formatPercent(classicFlex.ownershipPercent ?? null)}`
+  : "—";
+
+const classicQBs = !isShowdown
+  ? items.filter((it) => safeUpper(it.rosterSpot) === "QB" || safeUpper(it.position) === "QB")
+  : [];
+
+const classicStackSummaryFromJson =
+  !isShowdown ? String((analysis as any)?.classicStackSummary || "").trim() : "";
+
+const classicStackQuick =
+  classicStackSummaryFromJson ||
+  (classicQBs.length
+    ? `QB: ${classicQBs.map((q) => q.name).join(", ")}`
+    : "—");
+
+const stackSummary = String(analysis?.stackSummary || "").trim();
+const uniquenessNotes = String(analysis?.uniquenessNotes || "").trim();
+const meta = analysis?.stackMeta || null;
+
+const metaTeamSplit = meta?.construction?.teamSplit ? String(meta.construction.teamSplit) : "";
+const metaBuildType = meta?.construction?.buildType ? String(meta.construction.buildType) : "";
+const metaIncludesQBs =
+  typeof meta?.construction?.includesQBs === "boolean"
+    ? meta.construction.includesQBs
+      ? "Yes"
+      : "No"
+    : "";
+const metaCaptain = meta?.construction?.captain
+  ? `${meta.construction.captain.team} ${meta.construction.captain.position} (${meta.construction.captain.name})`
+  : "";
+const metaPrimaryLever = meta?.primaryLever ? String(meta.primaryLever) : "";
+const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : "";
 ---
 
 <Layout title={pageTitle}>
   <main class="page">
     <header class="hero">
-      <h1 class="h1">{pageTitle}</h1>
-
-      <div class="meta">
-        {metaWeek ? <span>{metaWeek}</span> : null}
-        <span>{metaType}</span>
-        {!isClassic && metaTag ? <span>{metaTag}</span> : null}
-        {metaDate ? <span>{metaDate}</span> : null}
-      </div>
-
-      {keyTeams ? <div class="matchup">{keyTeams}</div> : null}
-
-      <img
-        class="slateImg"
-        src={imgPng}
-        alt="Slate screenshot"
-        loading="lazy"
-        onerror={`this.onerror=null; this.src='${imgJpg}';`}
-      />
+      <h1 class="h1">{headerTitle}</h1>
+      <p class="sub">{headerSub}</p>
     </header>
 
-    {slate.contests?.map((c) => (
-      <section class="card">
-        <div class="cardTop">
-          <h2 class="h2">{c.contestName}</h2>
-          <div class="muted">{c.site}</div>
+    <section class="topGrid">
+      <div class="shotCard">
+        <div class="shotHeader">
+          <div class="shotTitle">{headerTitle}</div>
         </div>
 
-        <div class="contestMeta">
-          {c.topPrizeCents != null ? (
-            <div><span class="label">Top prize</span> {moneyFromCents(c.topPrizeCents)}</div>
-          ) : null}
-          {c.totalOwnershipBp != null ? (
-            <div><span class="label">Total ownership</span> {pctFromBp(c.totalOwnershipBp)}</div>
-          ) : null}
-          {c.entryFeeCents != null ? (
-            <div><span class="label">Entry fee</span> {moneyFromCents(c.entryFeeCents)}</div>
-          ) : null}
-        </div>
-
-        {c.winners?.length ? (
-          c.winners.map((w) => (
-            <div class="winner">
-              <div class="winnerTop">
-                <div class="winnerName">{w.username}</div>
-
-                <div class="winnerRight">
-                  <span>{w.points}</span>
-                </div>
-              </div>
-
-              <div class="winnerMeta">
-                {w.lineup?.salaryUsed != null ? (
-                  <div><span class="label">Salary used</span> {w.lineup.salaryUsed}</div>
-                ) : null}
-                {w.lineup?.totalPoints != null ? (
-                  <div><span class="label">Total points</span> {w.lineup.totalPoints}</div>
-                ) : null}
-              </div>
-
-              {w.lineup?.items?.length ? (
-                <div class="tableWrap">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>Spot</th>
-                        <th>Player</th>
-                        <th>Pos</th>
-                        <th>Team</th>
-                        <th>Salary</th>
-                        <th>Pts</th>
-                        <th>Own%</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {(isClassic ? sortClassicItems(w.lineup.items) : sortShowdownItems(w.lineup.items)).map((it) => (
-                        <tr>
-                          <td>{it.rosterSpot}</td>
-                          <td>{it.player?.name ?? ""}</td>
-                          <td>{it.player?.position ?? ""}</td>
-                          <td>{it.player?.team?.abbreviation ?? ""}</td>
-                          <td>{it.salary ?? ""}</td>
-                          <td>{it.points ?? ""}</td>
-                          <td>{ownForItem(it, isClassic) ?? "0.00%"}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              ) : (
-                <div class="muted">No lineup items saved for this winner.</div>
-              )}
-            </div>
-          ))
+        {screenshotUrl ? (
+          <a class="shotLink" href={screenshotUrl} target="_blank" rel="noreferrer">
+            <img class="shotImg" src={screenshotUrl} alt={headerTitle} loading="eager" />
+          </a>
         ) : (
-          <div class="muted">No winners saved for this contest yet.</div>
+          <div class="shotMissing">
+            <div class="shotMissingTitle">Screenshot not available</div>
+            <div class="shotMissingSub">Add a PNG or JPG using your naming pattern.</div>
+          </div>
         )}
-      </section>
-    ))}
+      </div>
+
+      <aside class="sideCard">
+        <div class="sideTitle">At a glance</div>
+
+        <div class="facts">
+          <div class="k">Winner</div>
+          <div class="v">{winner?.username ?? "—"}</div>
+
+          <div class="k">Score</div>
+          <div class="v">{winner?.points ?? "—"}</div>
+
+          <div class="k">Salary used</div>
+          <div class="v">{lineup?.salaryUsed ?? "—"}</div>
+
+          <div class="k">Total ownership</div>
+          <div class="v">{formatBpTotalOwnership(contest?.totalOwnershipBp ?? null)}</div>
+
+          <div class="k">Matchup</div>
+          <div class="v">{matchupAbbr || "—"}</div>
+
+          <div class="k">Date</div>
+          <div class="v">{slateDateHuman || "—"}</div>
+
+          {isShowdown ? (
+            <>
+              <div class="k">Team split</div>
+              <div class="v">{metaTeamSplit || "—"}</div>
+
+              <div class="k">Captain</div>
+              <div class="v">{metaCaptain || "—"}</div>
+
+              <div class="k">Primary lever</div>
+              <div class="v">{metaPrimaryLever || "—"}</div>
+
+              <div class="k">Secondary lever</div>
+              <div class="v">{metaSecondaryLever || "—"}</div>
+
+              <div class="k">Build type</div>
+              <div class="v">{metaBuildType || "—"}</div>
+
+              <div class="k">Includes QBs</div>
+              <div class="v">{metaIncludesQBs || "—"}</div>
+            </>
+          ) : (
+            <>
+              <div class="k">Flex</div>
+              <div class="v">{classicFlexValue}</div>
+
+              <div class="k">Stack</div>
+              <div class="v">{classicStackQuick}</div>
+
+              <div class="k">Slate</div>
+              <div class="v">{slateTag || "—"}</div>
+            </>
+          )}
+        </div>
+
+        <div class="mini">
+          <div class="miniTitle">Stack summary</div>
+          <div class="miniText">{stackSummary || "—"}</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="block">
+      <h2 class="h2">Winning lineup</h2>
+
+      <div class="tableWrap">
+        <table class="lineupTable">
+          <thead>
+            <tr>
+              <th class="colPos">POS</th>
+              <th>PLAYER</th>
+              <th class="colOwn">OWN</th>
+              <th class="colSal">SAL</th>
+              <th class="colPts">PTS</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((it) => (
+              <tr>
+                <td class="colPos">{it.rosterSpot}</td>
+                <td class="playerCell">
+                  <div class="playerName">{it.name}</div>
+                  <div class="playerMeta">{it.team} {it.position}</div>
+                </td>
+                <td class="colOwn">{formatPercent(it.ownershipPercent ?? null)}</td>
+                <td class="colSal">{it.salary ?? "—"}</td>
+                <td class="colPts">{it.points ?? "—"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="h2">Analysis</h2>
+
+      {analysis ? (
+        <div class="analysisGrid">
+          <div class="analysisCard">
+            <div class="analysisLabel">Uniqueness notes</div>
+            <div class="analysisText">{uniquenessNotes || "—"}</div>
+          </div>
+
+          <div class="analysisCard">
+            <div class="analysisLabel">Build details</div>
+            <div class="analysisText">
+              {metaTeamSplit ? `Team split: ${metaTeamSplit}\n` : ""}
+              {metaBuildType ? `Build type: ${metaBuildType}\n` : ""}
+              {metaIncludesQBs ? `Includes QBs: ${metaIncludesQBs}\n` : ""}
+              {metaPrimaryLever ? `Primary lever: ${metaPrimaryLever}\n` : ""}
+              {metaSecondaryLever ? `Secondary lever: ${metaSecondaryLever}\n` : ""}
+              {!metaTeamSplit && !metaBuildType && !metaIncludesQBs && !metaPrimaryLever && !metaSecondaryLever ? "—" : ""}
+            </div>
+          </div>
+        </div>
+      ) : (
+        <p class="muted">No analysis saved for this slate.</p>
+      )}
+    </section>
   </main>
-
-  <style>
-    .page { max-width: 1050px; margin: 0 auto; padding: 40px 16px 64px; }
-    .hero { margin-bottom: 18px; }
-    .h1 { font-size: 38px; margin: 0 0 10px; letter-spacing: -0.02em; }
-    .meta { display: flex; gap: 10px; flex-wrap: wrap; opacity: 0.75; font-size: 13px; }
-    .matchup { margin-top: 6px; font-size: 13px; opacity: 0.8; }
-    .slateImg { margin-top: 16px; width: 100%; border-radius: 14px; border: 1px solid rgba(0,0,0,0.08); background: rgba(0,0,0,0.02); }
-
-    .card { margin: 14px 0; background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 14px; }
-    .cardTop { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-    .h2 { margin: 0; font-size: 18px; }
-    .muted { opacity: 0.7; font-size: 13px; }
-
-    .contestMeta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; font-size: 13px; opacity: 0.85; }
-    .winnerMeta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; font-size: 13px; opacity: 0.85; }
-    .label { opacity: 0.7; margin-right: 6px; }
-
-    .winner { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.06); }
-    .winnerTop { display: flex; justify-content: space-between; gap: 12px; }
-    .winnerName { font-weight: 600; }
-    .winnerRight { opacity: 0.75; font-size: 13px; }
-
-    .tableWrap { overflow-x: auto; margin-top: 10px; }
-    .table { width: 100%; border-collapse: collapse; }
-    th, td { text-align: left; padding: 8px; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 13px; }
-    th { opacity: 0.75; font-weight: 600; }
-  </style>
 </Layout>
+
+<style>
+  .page {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 18px 24px;
+  }
+
+  .hero { margin-bottom: 14px; }
+  .h1 { margin: 0; font-size: 32px; line-height: 1.15; font-weight: 900; }
+  .sub { margin: 8px 0 0; color: #666; line-height: 1.35; }
+
+  /* Big left panel + tall right panel */
+  .topGrid {
+    display: grid;
+    grid-template-columns: 3fr 1.4fr;
+    gap: 18px;
+    align-items: stretch;
+  }
+
+  .shotCard, .sideCard {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  /* This is the key: give the left card a real height so the image can grow */
+  .shotCard {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 220px);
+  }
+
+  .shotHeader { padding: 12px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .shotTitle { font-weight: 900; }
+
+  .shotLink {
+  flex: 1 1 auto;
+  display: flex;
+  padding: 10px;
+  background: rgba(0,0,0,0.02);
+  cursor: zoom-in;
+
+  /* keep layout the same, just control how the image sits */
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* replace your current .shotImg */
+.shotImg {
+  max-width: 85%;
+  max-height: 85%;
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center top;
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* optional: give it a max visual height so it never feels oversized */
+.shotCard {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 220px);
+  max-height: calc(100vh - 220px);
+}
+
+  .shotMissing { padding: 22px 14px; }
+  .shotMissingTitle { font-weight: 800; }
+  .shotMissingSub { margin-top: 6px; color: #666; }
+
+  /* Right side fills the column height */
+  .sideCard {
+    padding: 14px;
+    position: sticky;
+    top: 14px;
+    height: calc(100vh - 28px);
+    overflow: auto;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sideTitle { font-weight: 900; margin-bottom: 0; }
+
+  .facts {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 8px 10px;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 12px;
+    background: rgba(0,0,0,0.02);
+  }
+
+  .k { color: #666; font-size: 13px; }
+  .v { font-weight: 900; }
+
+  .mini { padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.06); }
+  .miniTitle { font-size: 12px; color: #666; font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; }
+  .miniText { margin-top: 6px; line-height: 1.45; white-space: pre-wrap; }
+
+  .block { margin-top: 18px; }
+  .h2 { margin: 0 0 10px; font-size: 20px; font-weight: 900; }
+
+  .tableWrap {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .lineupTable { width: 100%; border-collapse: collapse; }
+  .lineupTable th, .lineupTable td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,0.06); vertical-align: top; }
+  .lineupTable thead th { background: rgba(0,0,0,0.03); text-align: left; font-size: 12px; color: #555; letter-spacing: 0.02em; }
+
+  .colPos { width: 110px; }
+  .colOwn, .colSal, .colPts { width: 90px; }
+
+  .playerName { font-weight: 900; }
+  .playerMeta { font-size: 12px; color: #666; margin-top: 2px; }
+
+  .analysisGrid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 12px;
+  }
+
+  .analysisCard {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    background: #fff;
+    padding: 12px 14px;
+  }
+
+  .analysisLabel {
+    font-size: 12px;
+    color: #666;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+
+  .analysisText { line-height: 1.5; white-space: pre-wrap; }
+  .muted { color: #777; }
+
+  @media (max-width: 980px) {
+    .topGrid { grid-template-columns: 1fr; align-items: start; }
+    .sideCard { position: static; height: auto; overflow: visible; }
+    .shotCard { min-height: 0; }
+    .shotLink { padding: 8px; }
+    .shotImg { height: auto; object-fit: contain; }
+    .analysisGrid { grid-template-columns: 1fr; }
+    .page { padding: 16px 14px; }
+  }
+</style>

@@ -4,24 +4,26 @@ import { prisma } from "../../lib/db";
 
 const slateKey = Astro.params.slateKey;
 
-const slate = await prisma.slate.findFirst({
-  where: {
-    contests: {
-      some: { siteContestId: slateKey }
-    }
-  },
+const slate = await prisma.slate.findUnique({
+  where: { slateKey },
   include: {
     season: true,
     contests: {
+      orderBy: [{ topPrizeCents: "desc" }],
       include: {
-        winners: true
-      }
-    }
-  }
+        analysis: true,
+        winners: {
+          take: 1,
+          orderBy: { points: "desc" },
+        },
+      },
+    },
+  },
 });
 
-const contest = slate?.contests?.[0];
-const winner = contest?.winners?.[0];
+const contest = slate?.contests?.[0] ?? null;
+const winner = contest?.winners?.[0] ?? null;
+const analysis = contest?.analysis ?? null;
 ---
 
 <Layout title="Slate | MillyMakerTracker">
@@ -29,7 +31,7 @@ const winner = contest?.winners?.[0];
     {!slate ? (
       <>
         <h1>Slate not found</h1>
-        <p>Key: {slateKey}</p>
+        <p>slateKey: {slateKey}</p>
       </>
     ) : (
       <>
@@ -43,17 +45,30 @@ const winner = contest?.winners?.[0];
 
         <div style="margin-top:14px; padding:14px; border:1px solid #eaeaea; border-radius:10px; max-width:900px;">
           <div><strong>Contest</strong>: {contest?.contestName ?? "TBD"}</div>
+
           <div style="margin-top:6px;">
             <strong>Winner</strong>: {winner?.username ?? "TBD"} ({winner?.points ?? "—"} pts)
           </div>
+
           <div style="margin-top:6px; color:#555;">
             <strong>Site Contest Id</strong>: {contest?.siteContestId ?? "—"}
           </div>
-        </div>
 
-        <p style="margin-top:18px; color:#555;">
-          Next step is adding lineup rows and optional JPEG.
-        </p>
+          {analysis?.stackSummary ? (
+            <div style="margin-top:12px;">
+              <div><strong>Stack</strong>: {analysis.stackSummary}</div>
+            </div>
+          ) : null}
+
+          {analysis?.uniquenessNotes ? (
+            <div style="margin-top:12px;">
+              <div style="font-weight:600;">Why it won</div>
+              <pre style="white-space:pre-wrap; margin:6px 0 0; color:#555; font-family:inherit;">
+{analysis.uniquenessNotes}
+              </pre>
+            </div>
+          ) : null}
+        </div>
       </>
     )}
   </main>

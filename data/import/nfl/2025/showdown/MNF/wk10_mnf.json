@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 10,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-10",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK10_MNF_SHOWDOWN_2025-11-10_eagles_packers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 14420
+  },
+  "winner": {
+    "username": "needlunchmon",
+    "points": 85.85,
+    "maxEntries": 67
+  },
+  "lineup": {
+    "salaryUsed": 47900,
+    "totalPoints": 85.85,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Jacobs",
+        "position": "RB",
+        "team": "GB",
+        "salary": 15900,
+        "points": 31.05,
+        "ownershipPercent": 13.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "S. Barkley",
+        "position": "RB",
+        "team": "PHI",
+        "salary": 10800,
+        "points": 13.1,
+        "ownershipPercent": 45.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Smith",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 9000,
+        "points": 16.9,
+        "ownershipPercent": 31.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Wicks",
+        "position": "WR",
+        "team": "GB",
+        "salary": 4400,
+        "points": 7.8,
+        "ownershipPercent": 14.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Packers",
+        "position": "DST",
+        "team": "GB",
+        "salary": 4000,
+        "points": 6.0,
+        "ownershipPercent": 16.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Eagles",
+        "position": "DST",
+        "team": "PHI",
+        "salary": 3800,
+        "points": 11.0,
+        "ownershipPercent": 21.7
+      }
+    ]
+  }
+}

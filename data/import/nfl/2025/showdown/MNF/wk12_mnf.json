@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 12,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-24",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK12_MNF_SHOWDOWN_2025-11-24_panthers_49ers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 15000000,
+    "totalOwnershipBp": 16320
+  },
+  "winner": {
+    "username": "Neupmann45",
+    "points": 96.0,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 48200,
+    "totalPoints": 96.0,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "C. McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 18600,
+        "points": 40.8,
+        "ownershipPercent": 33.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "G. Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 8600,
+        "points": 13.8,
+        "ownershipPercent": 48.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Jennings",
+        "position": "WR",
+        "team": "SF",
+        "salary": 7000,
+        "points": 15.1,
+        "ownershipPercent": 30.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Gay",
+        "position": "K",
+        "team": "SF",
+        "salary": 5000,
+        "points": 9.0,
+        "ownershipPercent": 24.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "49ers",
+        "position": "DST",
+        "team": "SF",
+        "salary": 4600,
+        "points": 9.0,
+        "ownershipPercent": 18.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Hubbard",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 4400,
+        "points": 8.3,
+        "ownershipPercent": 7.7
+      }
+    ]
+  }
+}

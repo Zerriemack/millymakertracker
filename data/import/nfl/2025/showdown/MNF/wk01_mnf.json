@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 1,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-08",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK01_MNF_SHOWDOWN_2025-09-08_vikings_bears",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 4986000,
+    "totalOwnershipBp": 27910
+  },
+  "winner": {
+    "username": "futurehendrix1",
+    "points": 110.12,
+    "maxEntries": 12
+  },
+  "lineup": {
+    "salaryUsed": 49500,
+    "totalPoints": 110.12,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Bears",
+        "position": "DST",
+        "team": "CHI",
+        "salary": 5100,
+        "points": 16.5,
+        "ownershipPercent": 1.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 10800,
+        "points": 14.8,
+        "ownershipPercent": 66.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Williams",
+        "position": "QB",
+        "team": "CHI",
+        "salary": 9200,
+        "points": 24.2,
+        "ownershipPercent": 68.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. McCarthy",
+        "position": "QB",
+        "team": "MIN",
+        "salary": 9000,
+        "points": 23.22,
+        "ownershipPercent": 54.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Odunze",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 8000,
+        "points": 15.7,
+        "ownershipPercent": 34.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Jones Sr.",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 7400,
+        "points": 15.7,
+        "ownershipPercent": 53.1
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is built around a defensive captain, which is one of the least intuitive but most powerful ways to win a large-field Showdown. Putting the Bears defense in the captain spot is a bet that Chicago controls the game through sacks, turnovers, or even a defensive touchdown. What confuses newer players is that this kind of captain choice does not automatically mean you must fade the Bears quarterback. In reality, a defensive captain can still win with the opposing or same-team quarterback in the lineup because DraftKings scoring allows multiple paths to a top finish. If the Bears defense scores well while Caleb Williams still produces enough points through volume or late-game passing, both outcomes can be true at the same time.\n\nThe 3-3 team split is a balanced approach that works when the game environment stays competitive and both offenses remain active. This build captures Minnesota’s most reliable ceiling piece in Justin Jefferson while still acknowledging Chicago’s scoring routes through Williams and Odunze. It is a lineup that assumes the game has fantasy production, but the tournament leverage comes from how the points are concentrated. The field heavily favored the popular flex pieces, and this lineup accepts that popularity instead of fighting it. The difference maker is placing the low-owned defense at captain, which changes the entire payout profile if the defense hits its ceiling outcome.",
+    "uniquenessNotes": "The captain choice is doing the heavy lifting. A Bears defense captain at 1.5% is the type of decision that creates separation in a top-heavy tournament because most entries do not use a defense at captain unless they can picture a very specific game script. The script here is Chicago generating pressure and turnovers, and ideally adding a short-field score or a defensive touchdown. When that happens, the defense can outscore the expensive skill players on a points-per-dollar basis, and the captain multiplier turns a good defensive game into a tournament-winning score.\n\nWhat makes this lineup less obvious is the inclusion of both quarterbacks. Many players assume a defensive captain requires an extreme low-scoring game or a total fade of passing. That is not always true. A defense can score well through sacks and turnovers even if the opposing quarterback still piles up yards and touchdowns. A quarterback can also get there through volume, especially if his team is playing from behind, even while taking sacks or throwing an interception. That combination feels contradictory, but it is one of the reasons defensive captains can produce unique first-place builds.\n\nThe pass catchers reinforce a clear, beginner-friendly correlation. Williams is paired with Odunze, and McCarthy is paired with Jefferson. That pairing matters because quarterback points are often connected to one or two receivers doing damage. Instead of trying to guess every scorer, this lineup focuses on capturing the most direct routes to passing production on both sides.\n\nLeaving $500 of salary is not the main story, but it helps reduce the chance of sharing the exact same lineup with many other entries. The larger point is ownership distribution. The flex spots are popular for a reason because they project well and are easy to click. This lineup does not try to be different everywhere. It chooses one spot to be different in a way that can realistically win first, then it uses stable, high-scoring pieces around it.\n\nIf you are trying to turn this into a repeatable idea, the lesson is not to force defensive captains every slate. The lesson is to identify when the field is likely to over-focus on offensive captains and ignore a defensive ceiling outcome. When you can justify a defense captain with a believable path to impact plays, you can still keep strong offensive pieces and let the captain choice create the leverage.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "Bears", "position": "DST", "team": "CHI" },
+        "teamSplit": "3-3",
+        "buildType": "Defense at captain with both quarterbacks included",
+        "includesQBs": true
+      },
+      "primaryLever": "A low-owned captain that can outscore expensive players if the defense creates turnovers, sacks, or a touchdown",
+      "secondaryLever": "Popular flex plays for stability, plus a small salary gap to reduce lineup duplication"
+    }
+  }
+}

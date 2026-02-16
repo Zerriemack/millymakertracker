@@ -1,0 +1,81 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 11,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-17",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2025_WK11_MNF_SHOWDOWN_2025-11-17_cowboys_raiders",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2932500,
+    "totalOwnershipBp": 21990
+  },
+  "winner": {
+    "username": "sspencer06",
+    "points": 127.52,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 127.52,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "G. Pickens",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 13500,
+        "points": 48.6,
+        "ownershipPercent": 8.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 11000,
+        "points": 17.6,
+        "ownershipPercent": 52.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 10400,
+        "points": 25.32,
+        "ownershipPercent": 64.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Bowers",
+        "position": "TE",
+        "team": "LV",
+        "salary": 8000,
+        "points": 14.2,
+        "ownershipPercent": 62.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Tucker",
+        "position": "WR",
+        "team": "LV",
+        "salary": 6600,
+        "points": 14.7,
+        "ownershipPercent": 29.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "H. Luepke",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 400,
+        "points": 7.1,
+        "ownershipPercent": 2.3
+      }
+    ]
+  }
+}

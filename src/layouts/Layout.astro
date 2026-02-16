@@ -13,7 +13,7 @@ const { title = "Milly Maker Tracker" } = Astro.props;
   </head>
   <body>
     <Header />
-    <main class="container">
+    <main class="shell">
       <slot />
     </main>
     <Footer />
@@ -21,9 +21,9 @@ const { title = "Milly Maker Tracker" } = Astro.props;
 </html>
 
 <style>
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 1.25rem;
+  .shell {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 </style>
