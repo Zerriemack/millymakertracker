@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 17,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-27",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "Saturday Showdown",
+    "siteContestId": "NFL_2025_WK17_SAT_SHOWDOWN_2025-12-27_ravens_packers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2450000,
+    "totalOwnershipBp": 19140
+  },
+  "winner": {
+    "username": "chris41658(104)",
+    "points": 158.8,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49600,
+    "totalPoints": 158.8,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "D. Henry",
+        "position": "RB",
+        "team": "BAL",
+        "salary": 16800,
+        "points": 72.9,
+        "ownershipPercent": 18.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Willis",
+        "position": "QB",
+        "team": "GB",
+        "salary": 9000,
+        "points": 32.52,
+        "ownershipPercent": 68.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Huntley",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 8800,
+        "points": 14.28,
+        "ownershipPercent": 51.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Watson",
+        "position": "WR",
+        "team": "GB",
+        "salary": 8000,
+        "points": 25.3,
+        "ownershipPercent": 23.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Loop",
+        "position": "K",
+        "team": "BAL",
+        "salary": 4600,
+        "points": 11,
+        "ownershipPercent": 25.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Ali",
+        "position": "RB",
+        "team": "BAL",
+        "salary": 2400,
+        "points": 2.8,
+        "ownershipPercent": 3.5
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins because it treated the game as one story and then captured every scoring lane inside that story.\n\nBaltimore controlled the slate through Derrick Henry at captain. Four rushing touchdowns plus 200 plus rushing yards created a score gap no balanced build could keep up with. Once Henry did that, the lineup did not waste salary chasing a second spike on Baltimore. It grabbed the remaining Baltimore points in the most repeatable ways: the quarterback for baseline production, the kicker for extra points and short field goals, and a cheap running back who stayed on the field enough to keep the roster legal while still being attached to the run heavy game plan.\n\nGreen Bay was handled as a team playing from behind but still producing. Malik Willis carried enough volume through passing yards, rushing, and at least one passing touchdown to be unavoidable in the flex. Christian Watson functioned as the concentrated payoff piece, so the build captured the Packers scoring through the quarterback plus the main downfield receiver who converted one of the limited touchdown chances.\n\nThe roster also left 400 salary unused, which matters in Showdown because it reduces the number of duplicated lineups without forcing a sacrifice at any slot.",
+    "uniquenessNotes": "The difference maker was not finding a hidden player. The difference maker was choosing the correct shape once Henry broke the slate.\n\nMany entries build around a ceiling captain and then add more expensive teammates from the same side, which can double count the same points and create salary pressure. This build avoided that trap. It paired Henry with the Baltimore kicker instead of a second expensive skill player, which matched how 41 points can happen through long drives, red zone stops, and extra points.\n\nThe low owned punt was Rasheen Ali. His score was small, yet his presence let the lineup keep both quarterbacks and still afford Watson. In a Ravens blowout, a cheap Baltimore back does not need a touchdown to be useful if the rest of the lineup is correctly capturing the touchdowns elsewhere.\n\nOwnership was high on the quarterbacks, so the lineup needed Henry captain to separate. Once Henry hit, the rest of the roster was built to avoid missing any remaining scoring channel rather than trying to guess an extra ceiling event.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "D. Henry", "position": "RB", "team": "BAL" },
+        "teamSplit": "4-2",
+        "buildType": "Run dominant captain eruption with both quarterbacks, one Packers receiver payoff, Ravens kicker as scoring glue, and a low salary Ravens punt",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain score created separation, then the flex choices captured every remaining route to points without paying for redundant Baltimore skill positions",
+      "secondaryLever": "Kicker plus unused salary reduced duplication while staying aligned with how 41 points can be produced"
+    }
+  }
+}

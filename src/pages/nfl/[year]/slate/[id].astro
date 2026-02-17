@@ -111,7 +111,7 @@ const isShowdown = lineupTypeUpper === "SHOWDOWN" || slateTypeUpper === "SHOWDOW
 
 const parsed = parseSlateKey(slateKey);
 const matchupAbbr =
-  isShowdown && parsed.away && parsed.home ? `${parsed.away} at ${parsed.home}` : "";
+  isShowdown && parsed.away && parsed.home ? `${parsed.away} vs ${parsed.home}` : "";
 
 const slateDateIso = slate.slateDate || parsed.datePart || "";
 const slateDateHuman = formatDateHuman(slateDateIso);

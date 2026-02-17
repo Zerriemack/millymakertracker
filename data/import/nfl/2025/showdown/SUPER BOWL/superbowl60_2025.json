@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 22,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2026-02-08",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "Super Bowl 60 Showdown",
+    "siteContestId": "NFL_2025_WK22_SUPER_BOWL_SHOWDOWN_2026-02-08_patriots_seahawks",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 57500000,
+    "totalOwnershipBp": 21030
+  },
+  "winner": {
+    "username": "yayysportsball",
+    "points": 128.7,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 45200,
+    "totalPoints": 128.7,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Seahawks",
+        "position": "DST",
+        "team": "SEA",
+        "salary": 6600,
+        "points": 33,
+        "ownershipPercent": 5.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Maye",
+        "position": "QB",
+        "team": "NE",
+        "salary": 11000,
+        "points": 20.5,
+        "ownershipPercent": 61.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Walker III",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 9800,
+        "points": 21.1,
+        "ownershipPercent": 56.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Stevenson",
+        "position": "RB",
+        "team": "NE",
+        "salary": 8800,
+        "points": 17.3,
+        "ownershipPercent": 34.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Myers",
+        "position": "K",
+        "team": "SEA",
+        "salary": 5400,
+        "points": 19,
+        "ownershipPercent": 26.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Hollins",
+        "position": "WR",
+        "team": "NE",
+        "salary": 3600,
+        "points": 17.8,
+        "ownershipPercent": 25.4
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins because it correctly understood how a defense can dominate a slate while the opposing quarterback still scores enough to matter.\n\nSeattle’s defense did not get there on yardage suppression alone. It produced points through events that stack together in Showdown: sacks, takeaways, and a defensive touchdown. Those are not isolated plays. They are often chained to the same game script. Once Seattle gets ahead and starts winning early downs, New England is forced into more dropbacks and longer down and distance situations. That pushes the defense into more pass rush snaps and more chances for pressure to turn into mistakes.\n\nDrake Maye still makes the optimal lineup because volume can survive mistakes. He threw for 295 yards and two passing touchdowns and added rushing. The turnovers helped Seattle’s defense, but they did not erase Maye’s yardage and touchdown points. In Showdown, a quarterback can be simultaneously bad for real life and still usable for DFS when the offense keeps getting the ball back and keeps throwing.\n\nThe rest of the roster stays consistent with that story instead of fighting it. Seattle exposure is taken through Walker and Myers rather than a Seattle quarterback and pass catchers. Walker covers a steady share of the offense in a winning script, and Myers benefits when drives reach scoring range but do not always finish with touchdowns. On the New England side, Stevenson and Hollins cover two different ways points can show up when playing from behind: running back involvement and a single receiver who converts a touchdown plus solid yardage.\n\nThe salary left on the table matters here. This build did not need to spend up to be correct. It needed to be aligned. Leaving 4,800 unused reduces duplication and avoids forcing in extra pieces that do not match how the game produced points.",
+    "uniquenessNotes": "The interesting part is the pairing of Seattle DST captain with the opposing quarterback.\n\nMany people treat those as mutually exclusive because it feels wrong to roster a quarterback against a captain defense. In reality they can rise together when the defense score comes from pressure events and a defensive touchdown, while the quarterback score comes from dropback volume and late game throwing. The defense benefits from more attempts, and the quarterback benefits from more attempts. The link is game script.\n\nThis roster also avoids the common instinct to bring Seattle pass catchers along with the defense. When a defense scores and the running game plus kicker do the rest, the passing tree can be thin or spread out. By skipping that tree, the lineup stays cleaner and avoids paying for points that never concentrated.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "Seahawks", "position": "DST", "team": "SEA" },
+        "teamSplit": "3-3",
+        "buildType": "DST captain eruption with opposing QB volume kept in flex and scoring captured through RB plus K on the winning side",
+        "includesQBs": true
+      },
+      "primaryLever": "Seattle DST captain produced a defensive touchdown plus pressure events while Maye stayed viable through yardage and touchdowns",
+      "secondaryLever": "Seattle scoring was captured through Walker and Myers instead of forcing Seattle receivers, plus 4,800 salary left unused to reduce duplication"
+    }
+  }
+}

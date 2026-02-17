@@ -209,17 +209,21 @@ function parsePctValue(value: unknown): number | null {
 
   if (typeof value === "number") {
     if (!Number.isFinite(value)) return null;
-    if (value > 0 && value <= 1) return value * 100;
-    return value;
+    return value; // 0.8 stays 0.8 (meaning 0.8%)
   }
 
   if (typeof value === "string") {
-    const cleaned = value.trim().replace("%", "");
+    const s = value.trim();
+    if (!s) return null;
+
+    const hasPct = s.includes("%");
+    const cleaned = s.replace("%", "").trim();
     if (!cleaned) return null;
+
     const num = Number(cleaned);
     if (!Number.isFinite(num)) return null;
-    if (num > 0 && num <= 1) return num * 100;
-    return num;
+
+    return num; // "80.0%" becomes 80, "0.8" stays 0.8
   }
 
   return null;

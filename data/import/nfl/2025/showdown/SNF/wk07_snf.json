@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 7,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-19",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK07_SNF_SHOWDOWN_2025-10-19_falcons_49ers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 8800220,
+    "totalOwnershipBp": 17370
+  },
+  "winner": {
+    "username": "werewolvesofl...",
+    "points": 120.89,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 120.89,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "C. McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 18000,
+        "points": 63.15,
+        "ownershipPercent": 17.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 12200,
+        "points": 21.2,
+        "ownershipPercent": 70.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Penix Jr.",
+        "position": "QB",
+        "team": "ATL",
+        "salary": 9400,
+        "points": 13.24,
+        "ownershipPercent": 30.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Pitts Sr.",
+        "position": "TE",
+        "team": "ATL",
+        "salary": 5800,
+        "points": 13.2,
+        "ownershipPercent": 36.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "49ers",
+        "position": "DST",
+        "team": "SF",
+        "salary": 4000,
+        "points": 8,
+        "ownershipPercent": 15.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "L. Farrell",
+        "position": "TE",
+        "team": "SF",
+        "salary": 600,
+        "points": 2.1,
+        "ownershipPercent": 4.7
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This is a McCaffrey captain slate where the captain actually ends the contest. 63.15 is not a normal captain win. It is a slate takeover. Once that happens, the goal shifts to surviving the rest of the scoring without getting cute.\n\nThe Falcons side is built around a narrow target. Penix plus Bijan plus Pitts is a bet that Atlanta’s production funnels through the quarterback and the two most direct skill players, rather than requiring multiple wide receivers. Bijan being extremely popular does not matter because he is part of the correct game story. Atlanta scores just enough to keep San Francisco engaged and to keep McCaffrey’s volume intact.\n\nThe 49ers defense is a subtle piece. In a 20 to 10 final, it can be correct even without a massive point total. It benefits from protecting a lead, creating pressure, and forcing Atlanta into uncomfortable downs.\n\nThe punt tight end is not there for points. It is there because McCaffrey’s captain salary is enormous. Farrell allows the roster to fit the core pieces while still giving a path to a small reception based score. In a slate where the captain does the heavy lifting, a 2 point punt can be enough if it buys you the correct mid tier pieces elsewhere.",
+    "uniquenessNotes": "The leverage is accepting a tiny final slot to keep the exact construction intact. Many builds will try to upgrade the punt and accidentally lose the correct combination.\n\nThe second leverage is the Falcons stack choice. It does not chase a full Atlanta passing tree. It stays focused on Penix plus Pitts, which captures tight end volume and red zone involvement without requiring perfect wide receiver guessing.\n\nThis lineup is not trying to be contrarian everywhere. It is contrarian in the one place that matters: the willingness to punt aggressively once the captain score is large enough.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "C. McCaffrey", "position": "RB", "team": "SF" },
+        "teamSplit": "3-3",
+        "buildType": "True slate breaking RB captain with Falcons points captured through QB plus primary skill pieces, plus SF DST",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain score so large the rest of the lineup can prioritize fit and correlation over raw ceiling",
+      "secondaryLever": "Aggressive punt to preserve the correct core combination"
+    }
+  }
+}

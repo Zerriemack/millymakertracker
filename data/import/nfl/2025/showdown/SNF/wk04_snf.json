@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 4,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-28",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK04_SNF_SHOWDOWN_2025-09-28_packers_cowboys",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 6535871,
+    "totalOwnershipBp": 24890
+  },
+  "winner": {
+    "username": "Tkcarls88",
+    "points": 179.63,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 179.63,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "E. Wilson",
+        "position": "RB",
+        "team": "GB",
+        "salary": 3600,
+        "points": 16.65,
+        "ownershipPercent": 0.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Jacobs",
+        "position": "RB",
+        "team": "GB",
+        "salary": 10800,
+        "points": 32.7,
+        "ownershipPercent": 63.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Love",
+        "position": "QB",
+        "team": "GB",
+        "salary": 10000,
+        "points": 30.12,
+        "ownershipPercent": 72.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "G. Pickens",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 9800,
+        "points": 36.4,
+        "ownershipPercent": 32.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 9400,
+        "points": 33.96,
+        "ownershipPercent": 45.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Doubs",
+        "position": "WR",
+        "team": "GB",
+        "salary": 6400,
+        "points": 29.8,
+        "ownershipPercent": 35.1
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This is a shootout winner where the captain is being used as a structural weapon, not as the top scorer. The game ends 40 to 40 and both quarterbacks post tournament winning totals. The problem is that the obvious build gets duplicated because everyone can see the same core pieces.\n\nE. Wilson at captain solves that duplication problem. His points are real enough to avoid sinking the lineup, but the real value is the salary relief and the roster shape it creates. It allows the lineup to play the five players who mattered most in a 40 point game without giving up one of them to pay for a typical captain.\n\nOn Green Bay’s side, Love plus Jacobs is the correct way to capture a high scoring offense when the running back is involved in scoring and the quarterback keeps piling up volume. Doubs provides the second pass catcher ceiling without forcing an expensive, more duplicated option.\n\nOn Dallas, the roster uses the cleanest shootout pair: Prescott plus the primary receiver ceiling. In a game where points are coming in chunks, this lineup does not try to guess minor role players. It locks in the concentrated production and lets the captain slot do the uniqueness work.",
+    "uniquenessNotes": "The leverage is accepting a cheap captain in order to keep the full shootout core intact.\n\nMany entries try to get different by fading one quarterback or by swapping a top receiver. This lineup stays on the most correct game environment pieces and uses the captain slot to separate instead.\n\nSpending the full cap does not mean it is common. The captain selection changes the entire roster frequency profile.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "E. Wilson", "position": "RB", "team": "GB" },
+        "teamSplit": "4-2",
+        "buildType": "Ultra low owned cheap RB captain to unlock double QB shootout core",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain as the uniqueness lever while keeping the highest scoring shootout pieces",
+      "secondaryLever": "Using Jacobs with Love to capture Green Bay scoring through both passing and rushing lanes"
+    }
+  }
+}

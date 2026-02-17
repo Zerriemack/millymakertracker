@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 1,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-04",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK01_TNF_SHOWDOWN_2025-09-04_cowboys_eagles",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 12190000,
+    "totalOwnershipBp": 21970
+  },
+  "winner": {
+    "username": "wjnel99",
+    "points": 114.18,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49100,
+    "totalPoints": 114.18,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Williams",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 8100,
+        "points": 30.6,
+        "ownershipPercent": 4.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "S. Barkley",
+        "position": "RB",
+        "team": "PHI",
+        "salary": 11200,
+        "points": 18.4,
+        "ownershipPercent": 68.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Hurts",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 11000,
+        "points": 24.28,
+        "ownershipPercent": 74.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 10800,
+        "points": 21.0,
+        "ownershipPercent": 40.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Aubrey",
+        "position": "K",
+        "team": "DAL",
+        "salary": 4800,
+        "points": 11.0,
+        "ownershipPercent": 27.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Dotson",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 3200,
+        "points": 8.9,
+        "ownershipPercent": 5.8
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This build wins by pairing a low owned captain with the safest, most obvious flex anchors. Javonte at captain creates the separation. Hurts and Barkley supply floor plus touchdown access, so the lineup stays alive even if captain does not post an extreme score.\n\nDallas scoring gets captured through three channels. Javonte handles the touchdown path. Lamb handles yardage and volume. Aubrey cleans up drives that stall. Philadelphia scoring gets captured through Hurts plus Barkley, which covers rushing touchdowns, passing yards, and red zone outcomes without needing a second Eagle pass catcher.\n\nThe construction behaves well in a game where both offenses move the ball and the final points spread across drives instead of a single receiver dominating. The lineup does not chase a fragile double stack. It buys the whole scoring surface on each side.",
+    "uniquenessNotes": "Ownership tells the story. The flex portion is popular by design, so first place comes from captain choice. A 4.0 percent captain attached to a stable flex core creates a path where many rosters tie five spots and lose on the one decision.\n\nThe kicker slot matters here. Many builds skip kicker when paying for Hurts, Barkley, Lamb. Aubrey fits because Dallas drives still produce points even when touchdowns do not appear on every trip. Dotson adds one cheap, low owned completion route that can beat other salary savers.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "J. Williams", "position": "RB", "team": "DAL" },
+        "teamSplit": "3-3",
+        "buildType": "Low owned RB captain with chalk flex anchors and a kicker capture",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain leverage against common Hurts and Barkley builds",
+      "secondaryLever": "Kicker plus one cheap receiver to finish salary without sacrificing drive based scoring"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 11,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-13",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK11_TNF_SHOWDOWN_2025-11-13_jets_patriots",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 12000000,
+    "totalOwnershipBp": 19910
+  },
+  "winner": {
+    "username": "Grex123",
+    "points": 126.53,
+    "maxEntries": 27
+  },
+  "lineup": {
+    "salaryUsed": 48700,
+    "totalPoints": 126.53,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "T. Henderson",
+        "position": "RB",
+        "team": "NE",
+        "salary": 15900,
+        "points": 48.45,
+        "ownershipPercent": 20.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Maye",
+        "position": "QB",
+        "team": "NE",
+        "salary": 12000,
+        "points": 15.44,
+        "ownershipPercent": 89.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "S. Diggs",
+        "position": "WR",
+        "team": "NE",
+        "salary": 9800,
+        "points": 22.5,
+        "ownershipPercent": 41.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Fields",
+        "position": "QB",
+        "team": "NYJ",
+        "salary": 9400,
+        "points": 20.34,
+        "ownershipPercent": 39.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Metchie III",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 1000,
+        "points": 13.5,
+        "ownershipPercent": 4.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Ruckert",
+        "position": "TE",
+        "team": "NYJ",
+        "salary": 600,
+        "points": 6.3,
+        "ownershipPercent": 3.4
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is built around a Patriots running back carrying the entire touchdown load. Henderson reaches a slate level score through three touchdowns plus steady receiving, and captain makes those points impossible to replicate with any balanced build.\n\nOnce Henderson is captain, the rest of the roster is about catching every other reliable scoring lane without paying for outcomes that never arrive. New England is covered through Maye and Diggs. Maye does not need to be a ceiling quarterback because Henderson is already doing the damage, so Maye’s job in the lineup is to prevent a Patriots passing touchdown from knocking the build out of first. Diggs adds a yardage bonus style score, which matters in Showdown because it provides a strong floor without needing to predict the exact red zone target.\n\nThe Jets side is handled with a quarterback plus two cheap pass catchers. Fields brings rushing and a touchdown path by himself, and the salary relief pieces tell you what kind of Jets game this was. Volume and one high value play show up in the cheap receivers, while the expensive Jets options fail to separate. Metchie’s touchdown at a low salary is the hinge that lets the lineup afford the New England pieces and still cover the Jets scoring.\n\nThe 3-3 split is not a neutral choice here. It is a way to stay live to both teams while the captain selection already created separation. The build accepts a messy box score from Fields because the Patriots side is locked in through the captain eruption.",
+    "uniquenessNotes": "The leverage is how the Jets are represented. Most builds chase one or two obvious Jets names. This roster uses Fields plus a low cost touchdown receiver and a low cost tight end. That combination captures the Jets points without paying the premium pricing that many lineups needed to justify.\n\nThe other leverage is treating Maye as protection, not as the engine. With a running back captain scoring three times, Maye only has to exist in the build so a passing touchdown does not force a different roster shape into first. That is a different decision than a standard quarterback captain construction.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "T. Henderson", "position": "RB", "team": "NE" },
+        "teamSplit": "3-3",
+        "buildType": "RB captain touchdown monopoly with QB safety and low salary Jets scoring capture",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain score comes from a single player owning the touchdowns, then the roster covers remaining scoring with minimal wasted spend",
+      "secondaryLever": "Jets salary relief pieces reflect where the production actually landed, which let the build fit both Patriots passing exposure and Fields"
+    }
+  }
+}

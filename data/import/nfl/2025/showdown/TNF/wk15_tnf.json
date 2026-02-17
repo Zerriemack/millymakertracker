@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 15,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-11",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK15_TNF_SHOWDOWN_2025-12-11_falcons_buccaneers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 6027778,
+    "totalOwnershipBp": 17660
+  },
+  "winner": {
+    "username": "brbloomy",
+    "points": 183.32,
+    "maxEntries": 72
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 183.32,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "K. Pitts Sr.",
+        "position": "TE",
+        "team": "ATL",
+        "salary": 9600,
+        "points": 72.9,
+        "ownershipPercent": 10.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 11200,
+        "points": 30.5,
+        "ownershipPercent": 77.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 9000,
+        "points": 22.2,
+        "ownershipPercent": 19.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Cousins",
+        "position": "QB",
+        "team": "ATL",
+        "salary": 8800,
+        "points": 29.92,
+        "ownershipPercent": 28.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Godwin Jr.",
+        "position": "WR",
+        "team": "TB",
+        "salary": 8400,
+        "points": 14.0,
+        "ownershipPercent": 28.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Sills V",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 3000,
+        "points": 13.8,
+        "ownershipPercent": 12.9
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is a perfect example of what happens when a tight end becomes the true engine of the slate. Pitts captain posts a score you rarely see. Three touchdowns plus 166 yards plus 11 catches is a full offensive takeover. When a player hits that profile, the rest of the lineup is about capturing the remaining production without overthinking it.\n\nAtlanta is represented through Pitts, Bijan, Cousins, and Sills. Pitts and Cousins together show that the touchdowns flowed through the pass game, and Cousins still scored enough to stay optimal even without being captain. Bijan adds stability through his own workload and the receiving component. Even with a fumble, he remained part of the scoring.\n\nTampa Bay is captured through Evans and Godwin. This is the cleanest way to play the opposing team in a shootout. It avoids guessing secondary pieces. Evans provides the high yardage receiver outcome. Godwin provides a smaller role score that stays relevant because the total slate score is enormous.\n\nSills is the salary relief, yet he still produced. That matters in a slate where you are paying for Bijan and where Pitts captain salary is not cheap. A cheap receiver with 13.8 points is how you keep all the correct expensive pieces.",
+    "uniquenessNotes": "The main separator is embracing a tight end captain. Many entries will captain the quarterback in a game with this many points. This roster captains the player who absorbed the touchdowns and the yardage.\n\nThe second separator is how the roster treats Tampa. It does not try to match Atlanta slot for slot. It takes two receivers and moves on. That aligns with a game where Atlanta provided the slate breaker and Tampa provided enough passing volume to keep the game competitive.\n\nThis roster also shows how to survive extreme chalk. Bijan at 77.7 percent flex ownership is massive. The roster still wins because Pitts captain creates enough gap that you can eat chalk in the flex. The uniqueness comes from the player who actually broke the slate, not from forcing contrarian pieces in every slot.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "K. Pitts Sr.", "position": "TE", "team": "ATL" },
+        "teamSplit": "4-2",
+        "buildType": "TE captain slate breaker with QB pairing and two opposing WRs to capture comeback volume",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain aligned to the single player who absorbed the touchdowns and yardage",
+      "secondaryLever": "Cheap Atlanta WR score enabled three high salary Atlanta pieces without a dead punt"
+    }
+  }
+}

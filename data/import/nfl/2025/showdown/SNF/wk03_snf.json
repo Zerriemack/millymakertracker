@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 3,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-21",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK03_SNF_SHOWDOWN_2025-09-21_chiefs_giants",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 17500550,
+    "totalOwnershipBp": 23270
+  },
+  "winner": {
+    "username": "TeeJayOrTj",
+    "points": 95.71,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 46000,
+    "totalPoints": 95.71,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "C. Skattebo",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 9600,
+        "points": 36.15,
+        "ownershipPercent": 3.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Nabers",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 11000,
+        "points": 3.3,
+        "ownershipPercent": 74.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "P. Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 10400,
+        "points": 13.16,
+        "ownershipPercent": 83.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "H. Butker",
+        "position": "K",
+        "team": "KC",
+        "salary": 5400,
+        "points": 13,
+        "ownershipPercent": 23.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chiefs",
+        "position": "DST",
+        "team": "KC",
+        "salary": 5200,
+        "points": 12,
+        "ownershipPercent": 13.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Thornton",
+        "position": "WR",
+        "team": "KC",
+        "salary": 4400,
+        "points": 18.1,
+        "ownershipPercent": 33.1
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is uncomfortable in a way that matters. The most popular Giant on the slate does nothing, and the build still wins. That tells you the roster is built around what actually scored, not what felt safest.\n\nSkattebo at captain is the entire decision point. He produces through multiple channels, including real receiving work, so his ceiling is not locked behind goal line carries. Once he hits, the rest of the lineup is about avoiding zeroes in a game where Kansas City wins but does not need Mahomes to break the slate.\n\nMahomes is there as a floor piece in a Chiefs win, not as a ceiling stack. The kicker and defense being paired with Mahomes makes sense in this exact type of outcome: the Chiefs move the ball, points come in chunks, and the defense adds just enough pressure plays to matter. Thornton is the one receiver selection, which keeps the lineup from needing to guess the entire distribution.\n\nThe wild part is Nabers. He is included despite doing nothing because his ownership is massive. This is a roster built to survive a chalk landmine. It accepts the dead spot because Skattebo’s captain score plus the correct Kansas City scoring mix is enough to win first anyway.",
+    "uniquenessNotes": "The primary leverage is captain selection. A low owned captain who scores through both rushing and receiving flips the slate.\n\nThe secondary leverage is refusing to chase a Giants quarterback or additional Giants pass catchers. The build says the Giants can have one meaningful scorer and still force Kansas City to keep producing.\n\nThe roster also spends down enough to avoid the most common salary shapes while still playing the popular Kansas City pieces in the spots where they retain value.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "C. Skattebo", "position": "RB", "team": "NYG" },
+        "teamSplit": "2-4",
+        "buildType": "Low owned Giants RB captain with Chiefs scoring captured through QB, K, DST, plus one WR",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain hits from a low owned player who has multiple scoring paths",
+      "secondaryLever": "Using chalk Nabers as a survivability piece rather than chasing a perfect Giants stack"
+    }
+  }
+}

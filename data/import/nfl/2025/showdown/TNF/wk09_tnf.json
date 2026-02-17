@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 9,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-30",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK09_TNF_SHOWDOWN_2025-10-30_ravens_dolphins",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 1489286,
+    "totalOwnershipBp": 20850
+  },
+  "winner": {
+    "username": "GDDC4",
+    "points": 112.54,
+    "maxEntries": 67
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 112.54,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "L. Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 17700,
+        "points": 38.34,
+        "ownershipPercent": 22.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Achane",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 11400,
+        "points": 16.6,
+        "ownershipPercent": 65.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Henry",
+        "position": "RB",
+        "team": "BAL",
+        "salary": 11000,
+        "points": 16.1,
+        "ownershipPercent": 56.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Andrews",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 5000,
+        "points": 16.6,
+        "ownershipPercent": 40.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Ravens",
+        "position": "DST",
+        "team": "BAL",
+        "salary": 4000,
+        "points": 15.0,
+        "ownershipPercent": 15.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "G. Dulcich",
+        "position": "TE",
+        "team": "MIA",
+        "salary": 600,
+        "points": 9.9,
+        "ownershipPercent": 8.2
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This slate is a classic example of a game where the scoreboard looks lopsided, yet the optimal lineup still wants pieces from the losing side because volume does not disappear.\n\nJackson captain is not a pure rushing captain outcome. His score is driven by four passing touchdowns plus added rushing. When a quarterback produces through touchdowns while the rest of his offense spreads out, captain becomes a way to capture the full team scoring without guessing which receiver got the red zone work.\n\nBaltimore is captured through Jackson plus Henry plus Andrews plus the Ravens defense. That combination tells a clear story. Baltimore controlled the game, scored in multiple ways, and the defense added points through pressure and turnovers while Miami struggled. Henry and Andrews do not need ceiling games when the quarterback captain soaks up the touchdowns.\n\nMiami still matters through Achane and a stone minimum tight end. Achane keeps a role through targets even when his team loses badly. Dulcich is the type of salary relief piece that enters the optimal when the slate demands one cheap player and the game forces short passes. Five catches for 49 yards does not win a slate by itself. It gives the lineup salary flexibility while still returning a usable score.",
+    "uniquenessNotes": "The first edge is accepting a defense from the same team as the quarterback captain. Many people treat that pairing as uncomfortable. It plays when the defense produces impact plays while the offense builds a lead that forces the opponent into mistake prone dropbacks.\n\nThe second edge is how Miami is handled. Instead of forcing the Miami quarterback or a big name receiver, the lineup uses Achane for touch volume plus a low cost tight end for salary relief. The roster does not need Miami to be efficient. It needs Miami to keep running plays.\n\nThis roster also avoids an ownership trap. Achane is extremely popular, and Jackson captain is popular, yet the exact last slot at 600 salary is the separator. When the slate has a wide range of viable cheap players, the correct cheap choice becomes the difference between a strong lineup and a first place lineup.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "L. Jackson", "position": "QB", "team": "BAL" },
+        "teamSplit": "4-2",
+        "buildType": "QB captain with same team defense and one minimum salary pass catcher for flexibility",
+        "includesQBs": true
+      },
+      "primaryLever": "Quarterback captain captures passing touchdowns without guessing the receiving distribution",
+      "secondaryLever": "One minimum salary player allows four expensive pieces without sacrificing a live scoring slot"
+    }
+  }
+}

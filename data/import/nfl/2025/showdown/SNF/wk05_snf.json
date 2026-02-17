@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 5,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-05",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK05_SNF_SHOWDOWN_2025-10-05_patriots_bills",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 25000000,
+    "totalOwnershipBp": 19620
+  },
+  "winner": {
+    "username": "xmalachi",
+    "points": 122.32,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 48700,
+    "totalPoints": 122.32,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "S. Diggs",
+        "position": "WR",
+        "team": "NE",
+        "salary": 11700,
+        "points": 41.4,
+        "ownershipPercent": 7.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 12000,
+        "points": 21.42,
+        "ownershipPercent": 87.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Shakir",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 8200,
+        "points": 11.0,
+        "ownershipPercent": 24.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Kincaid",
+        "position": "TE",
+        "team": "BUF",
+        "salary": 7400,
+        "points": 19.8,
+        "ownershipPercent": 32.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Stevenson",
+        "position": "RB",
+        "team": "NE",
+        "salary": 4800,
+        "points": 15.7,
+        "ownershipPercent": 32.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Borregales",
+        "position": "K",
+        "team": "NE",
+        "salary": 4600,
+        "points": 13.0,
+        "ownershipPercent": 11.0
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner treats the game as a Bills favored environment where Buffalo still puts up enough points to keep Allen and two pass catchers viable, but the slate breaker comes from the Patriots side.\n\nDiggs at captain is the decision. A Patriots wide receiver reaching the yardage bonus and double digit catches means New England’s offense is concentrated through one player. When that happens, the safest way to capture it is to captain the receiver rather than trying to guess the quarterback plus a receiver combination.\n\nThe Bills side is built to capture stable production rather than chasing a single boom receiver. Allen is included because Buffalo’s points usually flow through him, but the build does not need Allen to be the highest scorer. Kincaid and Shakir cover two different Buffalo drive outcomes: one where scoring comes through tight end routes and red zone usage, and another where shorter targets and receptions accumulate.\n\nStevenson and Borregales complete the Patriots story. Stevenson provides the touchdown path if New England reaches the red zone, while the kicker captures drives that stall. That matters in a game where the captain receiver can pile up volume between the 20s even if the Patriots do not finish every possession with a touchdown.",
+    "uniquenessNotes": "The leverage is captaining the Patriots receiver instead of forcing a Buffalo captain in a game where Buffalo pieces are likely popular.\n\nThe second leverage is building New England scoring through roles that fit a trailing script: a target hog wide receiver, an all purpose running back, and a kicker who benefits when drives stall.\n\nLeaving salary unused reduces overlap with builds that spend up at every slot.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "S. Diggs", "position": "WR", "team": "NE" },
+        "teamSplit": "3-3",
+        "buildType": "Patriots WR captain volume eruption with Bills passing capture and Patriots RB plus K",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain aligned with a concentrated Patriots passing distribution",
+      "secondaryLever": "Patriots points captured through volume receiver plus kicker instead of chasing multiple NE pass catchers"
+    }
+  }
+}

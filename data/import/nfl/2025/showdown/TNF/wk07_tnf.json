@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 7,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-16",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK07_TNF_SHOWDOWN_2025-10-16_steelers_bengals",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 11142857,
+    "totalOwnershipBp": 24480
+  },
+  "winner": {
+    "username": "Jamie27",
+    "points": 181.09,
+    "maxEntries": 46
+  },
+  "lineup": {
+    "salaryUsed": 49100,
+    "totalPoints": 181.09,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "P. Freiermuth",
+        "position": "TE",
+        "team": "PIT",
+        "salary": 4500,
+        "points": 46.65,
+        "ownershipPercent": 0.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Chase",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 12000,
+        "points": 41.1,
+        "ownershipPercent": 69.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Rodgers",
+        "position": "QB",
+        "team": "PIT",
+        "salary": 9800,
+        "points": 24.56,
+        "ownershipPercent": 58.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Flacco",
+        "position": "QB",
+        "team": "CIN",
+        "salary": 9400,
+        "points": 28.98,
+        "ownershipPercent": 50.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Warren",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 8400,
+        "points": 22.8,
+        "ownershipPercent": 52.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "E. McPherson",
+        "position": "K",
+        "team": "CIN",
+        "salary": 5000,
+        "points": 17.0,
+        "ownershipPercent": 14.0
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This slate turns into a rare two story lineup. The captain is a low salary tight end who posts a true slate breaking outcome, and the rest of the roster stays disciplined by capturing the most stable scoring lanes from both teams.\n\nFreiermuth at captain works because his points are touchdown plus yardage plus volume. When a tight end hits 40 plus in captain, it is usually tied to a game script where red zone targets and chunk plays both land. The roster treats his eruption as the only event that must be unique. Everything else is selected to avoid missing the major production on either side.\n\nThe flex core is shaped around Cincinnati production through Chase, plus both quarterbacks, plus Warren, plus the Bengals kicker. The double QB choice signals a pass heavy game with sustained drives for both teams. Even with interceptions, a quarterback can stay optimal when yards and touchdowns spread across multiple pass catchers. Chase covers the one player on Cincinnati most likely to convert high yardage and a touchdown into a ceiling.\n\nThe last two slots explain how the lineup stayed alive when the game flowed through passing. Warren provides a rushing plus receiving floor that fits a Steelers offense trying to keep pace. McPherson provides points when Cincinnati reaches scoring range repeatedly but does not finish every drive with a touchdown. In a 33 to 31 type game, a kicker can matter when the scoring comes in waves and possessions end inside the 35.",
+    "uniquenessNotes": "The separation comes from accepting a captain outcome most rosters never access. Freiermuth captain at 0.4 percent captain ownership is the entire hinge. Once that hits, the rest of the lineup does not need to be weird.\n\nThe second separator is structural restraint. Many Chase lineups chase extra correlation by forcing in another Cincinnati receiver at the expense of stability. This roster keeps both quarterbacks and uses Warren as the bring back piece for Pittsburgh. It also uses McPherson instead of adding a second Bengals skill player. That choice fits a game where Cincinnati points include field goals and extra points tied to long drives.\n\nThis is also a slate where high total ownership does not mean duplicated. The combination of both quarterbacks, Chase, and Warren will be common. The captain choice is so far off the main path that duplication becomes a non issue even with popular flex pieces.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "P. Freiermuth", "position": "TE", "team": "PIT" },
+        "teamSplit": "3-3",
+        "buildType": "Low salary TE captain eruption with double QB stability and one kicker to capture drive finishes",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain selection provides nearly all uniqueness while the flex core stays anchored to predictable volume roles",
+      "secondaryLever": "Kicker choice fits a high scoring game where one team converts multiple drives into field goals"
+    }
+  }
+}

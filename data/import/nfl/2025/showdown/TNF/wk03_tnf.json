@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 3,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-18",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK03_TNF_SHOWDOWN_2025-09-18_dolphins_bills",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 20510
+  },
+  "winner": {
+    "username": "DukeNasty",
+    "points": 113.42,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 113.42,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "D. Kincaid",
+        "position": "TE",
+        "team": "BUF",
+        "salary": 8100,
+        "points": 26.4,
+        "ownershipPercent": 3.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 12400,
+        "points": 23.02,
+        "ownershipPercent": 82.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Cook III",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 10600,
+        "points": 23.8,
+        "ownershipPercent": 60.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Hill",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 9800,
+        "points": 15.9,
+        "ownershipPercent": 32.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Shakir",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 6600,
+        "points": 14.5,
+        "ownershipPercent": 24.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "O. Gordon II",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 2200,
+        "points": 9.8,
+        "ownershipPercent": 2.1
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Kincaid at captain is the separator. He is low owned at captain and supplies a touchdown plus yardage game, which allows Allen to stay in flex without needing Allen captain.\n\nBuffalo is a 4 piece side. Allen plus Cook covers rushing and passing touchdowns. Kincaid and Shakir cover the receiving tree without paying for the most expensive receiver slot. Miami gets represented through Hill plus a punt running back. Hill keeps the lineup alive if Miami scores fast, while Gordon allows salary to fit Buffalo ceiling outcomes.\n\nThis build matches a game where Buffalo controls scoring and distributes production across multiple players. Captain is not the quarterback. Captain is the receiver who captured the highest value plays.",
+    "uniquenessNotes": "The field often pairs Allen with one expensive receiver and calls it done. This roster pairs Allen with a tight end captain and a mid priced wideout, then uses Cook to cover touchdown variance.\n\nGordon is the salary release. He is not random. He is the cheapest path to Miami points, so the roster can keep Hill while still stacking Buffalo in four slots.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "D. Kincaid", "position": "TE", "team": "BUF" },
+        "teamSplit": "4-2",
+        "buildType": "Receiver captain leverage on the favorite with QB in flex and a punt bring back",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain ceiling from tight end while chalk quarterback stays flex",
+      "secondaryLever": "Cheap bring back to keep Hill without breaking Buffalo stack"
+    }
+  }
+}

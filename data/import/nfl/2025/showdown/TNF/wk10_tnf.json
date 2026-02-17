@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 10,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-06",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK10_TNF_SHOWDOWN_2025-11-06_raiders_broncos",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 6027778,
+    "totalOwnershipBp": 20640
+  },
+  "winner": {
+    "username": "Rayvenz",
+    "points": 79.0,
+    "maxEntries": 110
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 79.0,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "T. Franklin",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 11400,
+        "points": 22.5,
+        "ownershipPercent": 9.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Nix",
+        "position": "QB",
+        "team": "DEN",
+        "salary": 10600,
+        "points": 7.8,
+        "ownershipPercent": 85.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Jeanty",
+        "position": "RB",
+        "team": "LV",
+        "salary": 10200,
+        "points": 15.3,
+        "ownershipPercent": 33.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Dobbins",
+        "position": "RB",
+        "team": "LV",
+        "salary": 8600,
+        "points": 9.4,
+        "ownershipPercent": 36.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Broncos",
+        "position": "DST",
+        "team": "DEN",
+        "salary": 5400,
+        "points": 14.0,
+        "ownershipPercent": 36.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Raiders",
+        "position": "DST",
+        "team": "LV",
+        "salary": 3600,
+        "points": 10.0,
+        "ownershipPercent": 6.3
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This slate is defined by one thing. The quarterback position fails. When the highest owned flex on the slate posts a single digit score, the optimal lineup is no longer about perfect stacking. It becomes about finding points in the few places they actually existed.\n\nFranklin captain reflects the only true ceiling among skill players. A single touchdown with five catches and 40 yards is not normally captain worthy. In a slate where overall scoring is suppressed, that score becomes captain viable because it clears the field at a position where most players did not separate.\n\nThe rest of the roster is a response to the scoring environment. Two running backs from the Raiders shows how the lineup captured the only stable accumulation available on the losing team. They do not have monster scores, yet they provide enough points to keep the roster afloat while the quarterback chalk fails.\n\nThe double defense piece explains the rest. When both teams produce sacks and turnovers, both defenses can land in the optimal because they score in a way unrelated to offensive efficiency. This roster accepts a low total game by taking the defensive scoring as a primary source of points rather than an afterthought.",
+    "uniquenessNotes": "The biggest separator is psychological. Most entries cannot click a wide receiver captain in a low scoring game unless the receiver clearly broke the slate. This roster did it because it understood the slate did not require a 60 point captain. It required a captain who outscored the other captain options in a weak environment.\n\nThe second separator is committing to both defenses. Many lineups will pick one defense and move on. This roster takes both because the game script supported it. Low scoring, short fields, and negative quarterback plays create more defensive fantasy points for both sides.\n\nThis is also a slate where high ownership does not equal safety. Nix at 85.7 percent flex ownership is the perfect example. The roster survives that because it finds separation through captain and through the second defense slot, where most rosters would force an offensive piece with no path to outscoring a defense.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "T. Franklin", "position": "WR", "team": "DEN" },
+        "teamSplit": "3-3",
+        "buildType": "Low scoring slate with WR captain and double DST to capture non offensive points",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain choice aligned to a slate where no player truly separated",
+      "secondaryLever": "Double defense captured the most reliable points in a game where quarterbacks failed"
+    }
+  }
+}

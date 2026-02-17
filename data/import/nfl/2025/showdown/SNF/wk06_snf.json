@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 6,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-12",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK06_SNF_SHOWDOWN_2025-10-12_lions_chiefs",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 7392857,
+    "totalOwnershipBp": 18280
+  },
+  "winner": {
+    "username": "Zeechamp",
+    "points": 128.19,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 46200,
+    "totalPoints": 128.19,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "P. Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 15000,
+        "points": 47.07,
+        "ownershipPercent": 25.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Goff",
+        "position": "QB",
+        "team": "DET",
+        "salary": 9600,
+        "points": 16.82,
+        "ownershipPercent": 50.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "S. LaPorta",
+        "position": "TE",
+        "team": "DET",
+        "salary": 7600,
+        "points": 16.5,
+        "ownershipPercent": 23.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Williams",
+        "position": "WR",
+        "team": "DET",
+        "salary": 5800,
+        "points": 18.6,
+        "ownershipPercent": 30.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "H. Brown",
+        "position": "WR",
+        "team": "KC",
+        "salary": 5400,
+        "points": 20.5,
+        "ownershipPercent": 27.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Smith-Schuster",
+        "position": "WR",
+        "team": "KC",
+        "salary": 2800,
+        "points": 8.7,
+        "ownershipPercent": 24.9
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This is a quarterback captain slate, but it wins because the roster understands where the points came from after the quarterbacks. Mahomes at captain is the raw ceiling, and the lineup accepts the ownership because 47 at captain is hard to beat.\n\nThe rest of the build is where it gets sharp. It does not over invest in Kansas City pass catchers. It uses two receivers, but both are priced in a range where they can pay off without needing a perfect multi touchdown game. The bigger commitment is to Detroit’s side through Goff plus two targets. That is a bet on Detroit keeping pace through the air and spreading production across two primary options.\n\nLaPorta and Jameson Williams together cover two different Detroit scoring shapes: one built on chain moving routes and red zone involvement, and one built on explosive plays. Pairing them with Goff makes the lineup resilient. If Detroit scores through either type of drive, the roster still benefits.\n\nThe final piece is the cheap Kansas City receiver. It is not a point chase. It is a salary and structure choice that keeps the lineup from turning into a common Mahomes captain build while still giving access to Kansas City passing production.",
+    "uniquenessNotes": "The leverage is not fading chalk. It is choosing the correct bring backs and the correct price points.\n\nMany Mahomes captain builds force a heavy KC double stack with expensive receivers. This roster instead leans into Detroit’s passing volume as the main correlation engine and uses Kansas City receivers as supportive pieces.\n\nThe remaining salary also shows restraint. It does not pay for a third premium pass catcher just because the cap allows it.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "P. Mahomes", "position": "QB", "team": "KC" },
+        "teamSplit": "4-2",
+        "buildType": "QB captain ceiling with the opposing pass game used as the main correlation core",
+        "includesQBs": true
+      },
+      "primaryLever": "Using the opponent passing distribution to keep pace with the captain ceiling",
+      "secondaryLever": "KC pass catchers chosen by salary and role rather than forcing the highest priced pairing"
+    }
+  }
+}

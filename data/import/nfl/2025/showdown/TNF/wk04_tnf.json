@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 4,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-25",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK04_TNF_SHOWDOWN_2025-09-25_seahawks_cardinals",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 15265
+  },
+  "winner": {
+    "username": "DraftKings",
+    "points": 110,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 47200,
+    "totalPoints": 81.42,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Kyler Murray",
+        "position": "QB",
+        "team": "ARI",
+        "salary": 16200,
+        "points": 31.01,
+        "ownershipPercent": 12.68
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Sam Darnold",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 10000,
+        "points": 17.1,
+        "ownershipPercent": 51.25
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Harrison Jr.",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 7800,
+        "points": 11.25,
+        "ownershipPercent": 27.58
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Z. Charbonnet",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 5400,
+        "points": 9.79,
+        "ownershipPercent": 27.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jason Myers",
+        "position": "K",
+        "team": "SEA",
+        "salary": 5000,
+        "points": 7.7,
+        "ownershipPercent": 21.25
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. J. Barner",
+        "position": "TE",
+        "team": "SEA",
+        "salary": 2800,
+        "points": 4.57,
+        "ownershipPercent": 12.69
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "No roster matched the true optimal, so this entry uses the optimizer lineup as the stored lineup while the winner record is set to a placeholder. The build is a quarterback captain with both quarterbacks included, which captures both passing environments in a low scoring slate where raw points were spread thin.\n\nArizona scoring is condensed through Murray plus Harrison. Seattle scoring is captured through Darnold plus a three piece drive capture group of Charbonnet, Myers, and Barner. That trio covers short yardage usage, stalled drive points, and a cheap touchdown path without needing an expensive Seattle receiver outcome.",
+    "uniquenessNotes": "Leaving 2800 unused while still playing both quarterbacks avoids a large portion of duplicated builds and reflects how this slate did not produce a clean, obvious optimal construction.\n\nSeattle kicker plus cheap tight end is a narrow scoring bet. It assumes multiple scoring range trips with at least one finishing through a non wide receiver.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "Kyler Murray", "position": "QB", "team": "ARI" },
+        "teamSplit": "2-4",
+        "buildType": "QB captain with both QBs and Seattle drive capture through RB, K, TE",
+        "includesQBs": true
+      },
+      "primaryLever": "Dual QB base with captain on the side most likely to condense points",
+      "secondaryLever": "Kicker plus cheap tight end to cover low cost touchdown routes"
+    }
+  }
+}

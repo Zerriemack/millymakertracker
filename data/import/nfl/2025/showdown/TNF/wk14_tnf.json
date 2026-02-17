@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 14,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-04",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK14_TNF_SHOWDOWN_2025-12-04_cowboys_lions",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2394000,
+    "totalOwnershipBp": 25530
+  },
+  "winner": {
+    "username": "phatbundles",
+    "points": 166.09,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 166.09,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "R. Flournoy",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 5100,
+        "points": 44.25,
+        "ownershipPercent": 0.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Gibbs",
+        "position": "RB",
+        "team": "DET",
+        "salary": 11000,
+        "points": 37.0,
+        "ownershipPercent": 65.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 10400,
+        "points": 23.44,
+        "ownershipPercent": 65.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 9600,
+        "points": 21.1,
+        "ownershipPercent": 51.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Ja. Williams",
+        "position": "WR",
+        "team": "DET",
+        "salary": 8400,
+        "points": 17.3,
+        "ownershipPercent": 46.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Aubrey",
+        "position": "K",
+        "team": "DAL",
+        "salary": 5400,
+        "points": 23.0,
+        "ownershipPercent": 26.3
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins because it reacts to a mid game reality change. When CeeDee Lamb gets hurt, Dallas does not stop throwing. The target tree compresses. Flournoy becomes the player absorbing the routes and opportunities that were originally priced and owned through Lamb.\n\nCaptain Flournoy is a direct bet on that consolidation. The score at captain is not a thin dart. It is the result of a role takeover at a low salary. Once Flournoy becomes the main pass game outlet, Prescott remains fully viable because his production can be created through whoever inherits Lamb’s work. The lineup captures that with Prescott plus Flournoy, while still keeping Lamb because he already banked enough points before leaving to matter in the final total.\n\nDetroit is represented through the clearest scoring source. Gibbs covers the Lions touchdowns and yardage at a level where one Lion can account for most of the team’s DFS value. Ja. Williams plays the secondary role. He adds a meaningful chunk of production without forcing the lineup to guess which expensive Detroit pass catcher would hit.\n\nAubrey is the glue. Dallas moved the ball and created repeated scoring chances, but the finishing sequence produced multiple kicking opportunities. That is how a kicker reaches 23 and why the roster can lean into Dallas pieces even with Detroit winning the game. The build is less about predicting a clean game script and more about capturing where points actually accumulated once Lamb left and possessions kept flowing.",
+    "uniquenessNotes": "The leverage starts with understanding the injury effect. Many lineups get trapped because their captain choice is locked to pre game assumptions. This build treats the slate as dynamic. Lamb exits, Flournoy becomes the new focal point, and captain becomes the highest impact slot to express that shift.\n\nThe second leverage is how the lineup stacks Dallas without chasing extra touchdown dependent receivers. Prescott plus Aubrey captures Dallas drive quality from two different angles. Prescott covers yards and passing scores. Aubrey covers the stalled drive points that spike when the offense is functional but disrupted.\n\nThe final shape works because Detroit scoring is concentrated. Gibbs can be the only Lion you truly need when he owns touchdowns and adds receiving. Ja. Williams adds a complementary slice, while the core of the lineup is built around the Dallas production rerouting through Flournoy after the Lamb injury.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "R. Flournoy", "position": "WR", "team": "DAL" },
+        "teamSplit": "4-2",
+        "buildType": "Injury driven role consolidation captain with Dallas drive capture and Detroit scoring concentration through Gibbs",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain expresses the post injury target consolidation while preserving the remaining high probability scoring channels",
+      "secondaryLever": "Kicker plus quarterback pairing matches repeated scoring range trips where field goals became a major point source"
+    }
+  }
+}

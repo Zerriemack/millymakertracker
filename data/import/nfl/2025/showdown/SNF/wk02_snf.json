@@ -1,0 +1,100 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 2,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-09-14",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK02_SNF_SHOWDOWN_2025-09-14_falcons_vikings",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 25000000,
+    "totalOwnershipBp": 15280
+  },
+  "winner": {
+    "username": "sullybrochill",
+    "points": 107.0,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 46800,
+    "totalPoints": 107.0,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "B. Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 18000,
+        "points": 34.2,
+        "ownershipPercent": 12.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 11800,
+        "points": 11.1,
+        "ownershipPercent": 53.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Pitts Sr.",
+        "position": "TE",
+        "team": "ATL",
+        "salary": 5800,
+        "points": 7.7,
+        "ownershipPercent": 32.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Romo",
+        "position": "K",
+        "team": "ATL",
+        "salary": 4600,
+        "points": 18.0,
+        "ownershipPercent": 19.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Falcons",
+        "position": "DST",
+        "team": "ATL",
+        "salary": 3600,
+        "points": 21.0,
+        "ownershipPercent": 13.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Allgeier",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 3000,
+        "points": 15.0,
+        "ownershipPercent": 22.6
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is a full Atlanta control bet. The captain is Bijan because the game stays in a script where his volume never disappears. The second Atlanta running back is there to capture the late game carries that show up once the lead is protected.\n\nRomo belongs to Atlanta in this story because the Falcons repeatedly create scoring opportunities. The kicker score fits a night where Atlanta reaches scoring range often and converts points even when drives do not end in touchdowns.\n\nThe Falcons defense confirms Minnesota never stabilizes. Impact plays show up when an offense is behind, predictable, and forced into dropbacks. That is why the defense pairs well with the captain and the second running back.\n\nJefferson is included as a protection piece because his ownership is heavy, but the lineup wins because Minnesota’s offense never produces a ceiling outcome. He becomes a tax, not a driver. Pitts is similar. He is a low cost attachment to Atlanta’s passing game, not the main reason Atlanta scores.",
+    "uniquenessNotes": "The leverage is the commitment to a one sided game. Many entries try to balance exposure across both teams. This build takes the actual final seriously and avoids chasing Minnesota passing production.\n\nThe two Atlanta running backs are the clean way to capture all rushing volume when a team leads for most of the game.\n\nThe kicker being Atlanta, not Minnesota, keeps the scoring story consistent with Atlanta controlling possessions.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "B. Robinson",
+          "position": "RB",
+          "team": "ATL"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Atlanta control script with RB captain, double ATL RB, ATL K, and ATL DST",
+        "includesQBs": false
+      },
+      "primaryLever": "Building around a lopsided script instead of a balanced game",
+      "secondaryLever": "Atlanta kicker to capture repeated scoring range drives"
+    }
+  }
+}

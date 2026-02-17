@@ -1,0 +1,100 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 13,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-27",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK13_THANKSGIVING_SNF_SHOWDOWN_2025-11-27_bengals_ravens",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 6062500,
+    "totalOwnershipBp": 14840
+  },
+  "winner": {
+    "username": "oxenduck",
+    "points": 118.54,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 47500,
+    "totalPoints": 118.54,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Chase",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 16500,
+        "points": 31.5,
+        "ownershipPercent": 18.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Burrow",
+        "position": "QB",
+        "team": "CIN",
+        "salary": 10400,
+        "points": 19.24,
+        "ownershipPercent": 45.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Brown",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 9600,
+        "points": 18.3,
+        "ownershipPercent": 31
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "E. McPherson",
+        "position": "K",
+        "team": "CIN",
+        "salary": 5200,
+        "points": 24,
+        "ownershipPercent": 16.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Bengals",
+        "position": "DST",
+        "team": "CIN",
+        "salary": 3200,
+        "points": 12,
+        "ownershipPercent": 5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "I. Likely",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 2600,
+        "points": 13.5,
+        "ownershipPercent": 31.7
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This is a Bengals heavy build built for a game where Cincinnati controls the night from start to finish. The captain choice tells the story. Chase posts a slate defining receiving line with the yardage bonus and a touchdown, so the lineup starts by taking the biggest single scoring event and then making sure it does not miss how the rest of the Bengals points were created.\n\nBurrow is included because a Chase ceiling game usually has the quarterback attached. The roster then adds Chase Brown to cover the other way a team wins a 32 to 14 game. When the lead is real, running back volume and late game rushing production become a direct path to points.\n\nMcPherson plus Bengals defense looks aggressive, but it fits the shape of this final. The defense score indicates pressure plays and turnovers. The kicker score indicates Cincinnati repeatedly reached scoring range, even when drives did not always finish in the end zone. Together they capture a version of dominance where the opponent is forced into mistakes and Cincinnati keeps stacking points on the board through multiple possessions.\n\nThe one Ravens piece is not there to tell a balanced game story. It is there because even in a Bengals win, Baltimore still produces some concentrated production. Likely provides it at a low salary, which lets this lineup leave 2,500 on the table. In a slate where many people spend close to the cap, that unused salary helps separate duplicates without sacrificing the lineup’s point sources.",
+    "uniquenessNotes": "The leverage is the 5 to 1 construction paired with the specific Bengals pieces. Many entries chase the same captain idea but spread the remaining slots across Baltimore players to feel safer. This lineup stays committed to the actual final score path by taking Cincinnati’s passing ceiling, Cincinnati’s game control rushing, and then adding the two roles that benefit when an offense keeps creating scoring chances across the entire game.\n\nMcPherson and the Bengals defense are the two decisions most builds avoid because they feel awkward next to an explosive captain. Here they make sense because the scoring is not limited to one long touchdown. Cincinnati keeps producing possessions, and the defense produces enough impact plays to matter.\n\nLikely is a practical bring back rather than a storytelling bring back. He provides real production at a low cost, and the leftover salary reduces the chances of landing on the most common salary patterns.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "J. Chase",
+          "position": "WR",
+          "team": "CIN"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Bengals control script with an explosive captain, paired QB, plus run game and possession based scoring capture",
+        "includesQBs": true
+      },
+      "primaryLever": "A captain eruption paired with a full Bengals game script bet instead of spreading exposure across both teams",
+      "secondaryLever": "Kicker plus defense to capture repeated drives and impact plays, with 2,500 salary left unused to avoid common builds"
+    }
+  }
+}

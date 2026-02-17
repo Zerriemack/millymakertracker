@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 5,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-02",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK05_TNF_SHOWDOWN_2025-10-02_49ers_rams",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 9843750,
+    "totalOwnershipBp": 22670
+  },
+  "winner": {
+    "username": "gfriedmann",
+    "points": 166.91,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49100,
+    "totalPoints": 166.91,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "K. Williams",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 13500,
+        "points": 48.15,
+        "ownershipPercent": 12.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 11400,
+        "points": 27.9,
+        "ownershipPercent": 77.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Stafford",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 10400,
+        "points": 29.56,
+        "ownershipPercent": 57.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "E. Pineiro",
+        "position": "K",
+        "team": "LAR",
+        "salary": 5000,
+        "points": 17.0,
+        "ownershipPercent": 16.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Bourne",
+        "position": "WR",
+        "team": "SF",
+        "salary": 4600,
+        "points": 27.2,
+        "ownershipPercent": 33.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Tonges",
+        "position": "TE",
+        "team": "SF",
+        "salary": 4200,
+        "points": 17.1,
+        "ownershipPercent": 30.2
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This slate breaks through Kyren captain plus a rare Rams kicker ceiling game. Kyren supplies the captain spike, Stafford supplies steady quarterback production, and Pineiro turns multiple drives into points even without touchdowns.\n\nSan Francisco gets captured through McCaffrey plus two mid range pass catchers. McCaffrey supplies a ceiling floor hybrid. Bourne and Tonges capture the touchdown and chain moving routes without paying for the top wide receiver salary tier.\n\nThe roster is not trying to guess a single receiver breakout for Stafford. It takes Stafford as a points base, then lets Kyren and the kicker handle the high value scoring events. On the other side, it assumes San Francisco points spread across McCaffrey and secondary targets.",
+    "uniquenessNotes": "The kicker is the leverage. Many builds with a high scoring running back captain still force a second premium receiver. This roster uses the kicker to capture drive value and keeps salary flexible for the San Francisco bring backs.\n\nTonges at tight end is a sharp finishing piece because tight end routes concentrate near the end zone. A mid salary tight end with a touchdown can outscore wide receivers priced above him while keeping roster duplication lower.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "K. Williams", "position": "RB", "team": "LAR" },
+        "teamSplit": "3-3",
+        "buildType": "RB captain eruption with QB plus kicker capture and balanced bring backs",
+        "includesQBs": true
+      },
+      "primaryLever": "Kicker ceiling paired with captain spike instead of forcing a second expensive receiver",
+      "secondaryLever": "Mid salary tight end to access red zone scoring at lower cost"
+    }
+  }
+}

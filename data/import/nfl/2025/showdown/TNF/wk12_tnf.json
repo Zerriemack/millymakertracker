@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 12,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-20",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK12_TNF_SHOWDOWN_2025-11-20_bills_texans",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 30000000,
+    "totalOwnershipBp": 15220
+  },
+  "winner": {
+    "username": "scout326",
+    "points": 113.67,
+    "maxEntries": 92
+  },
+  "lineup": {
+    "salaryUsed": 48700,
+    "totalPoints": 113.67,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Cook III",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 17100,
+        "points": 37.35,
+        "ownershipPercent": 10.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Mills",
+        "position": "QB",
+        "team": "HOU",
+        "salary": 9600,
+        "points": 14.52,
+        "ownershipPercent": 39.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Shakir",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 8000,
+        "points": 21.0,
+        "ownershipPercent": 28.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Fairbairn",
+        "position": "K",
+        "team": "HOU",
+        "salary": 5000,
+        "points": 12.0,
+        "ownershipPercent": 31.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Higgins",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 4600,
+        "points": 13.8,
+        "ownershipPercent": 22.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Texans",
+        "position": "DST",
+        "team": "HOU",
+        "salary": 4400,
+        "points": 15.0,
+        "ownershipPercent": 18.5
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster shows how a running back captain can win without needing a 50 point captain score, as long as the rest of the lineup captures every other dependable scoring channel.\n\nCook captain combines rushing touchdowns with receiving usage and a 100 yard bonus. The key is the reception and yardage mix. It means his points were not fragile. Even if the Bills had scored differently, his workload kept him involved.\n\nBuffalo scoring is then rounded out with Shakir and Higgins. Shakir provides the high yardage and catch volume receiver profile, while Higgins provides a cheaper touchdown path. This pairing is the lineup saying Buffalo produced through more than one pass catcher and you needed exposure to both price points.\n\nHouston is captured through Mills, Fairbairn, and the Texans defense. This is not a typical quarterback stack. It is a game shape where the quarterback is useful through yardage and drives, the kicker benefits from stalled possessions, and the defense contributes through sacks and turnovers. Those three pieces can coexist when the offense is moving enough to create attempts, yet still fails in the red zone enough to keep the kicker relevant.",
+    "uniquenessNotes": "The captain choice is strong, yet the separation comes from how Houston is handled. Many rosters would pair Mills with a receiver and call it a stack. This roster uses Mills as a volume piece, then pairs him with Fairbairn and the defense, which aligns to the actual ways points are scored when an offense is inconsistent.\n\nThe second separator is using a second Bills receiver at mid salary instead of forcing an additional Houston skill player. It is a bet on Buffalo converting their scoring through multiple receivers, which is common when a running back also scores. Touchdowns and yardage get spread.\n\nThis roster also keeps total ownership controlled without relying on a single extreme punt. Every slot is live. The cheapest player is still a player who scored. That matters in Showdown because dead salary relief usually destroys first place equity.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "J. Cook III", "position": "RB", "team": "BUF" },
+        "teamSplit": "3-3",
+        "buildType": "RB captain workload with two Bills receivers plus QB, K, and DST from the opposing side",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain score came from workload plus bonus rather than a single long touchdown",
+      "secondaryLever": "Opposing team points captured through QB volume plus kicker and defense instead of receiver guessing"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 6,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-09",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "TNF Showdown",
+    "siteContestId": "NFL_2025_WK06_TNF_SHOWDOWN_2025-10-09_eagles_giants",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 7975000,
+    "totalOwnershipBp": 21130
+  },
+  "winner": {
+    "username": "jbwilliams3",
+    "points": 150.62,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 150.62,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "C. Skattebo",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 15000,
+        "points": 46.5,
+        "ownershipPercent": 5.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Hurts",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 11000,
+        "points": 21.62,
+        "ownershipPercent": 78.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Dart",
+        "position": "QB",
+        "team": "NYG",
+        "salary": 10200,
+        "points": 23.6,
+        "ownershipPercent": 42.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "W. Robinson",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 7200,
+        "points": 20.4,
+        "ownershipPercent": 35.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Goedert",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 6400,
+        "points": 29.0,
+        "ownershipPercent": 40.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "L. Humphrey",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 200,
+        "points": 9.5,
+        "ownershipPercent": 9.5
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This is a Giants onslaught with a contrarian captain. Skattebo at captain provides the separation at 5.8 percent, and the rest of the roster captures New York volume through quarterback plus two receivers.\n\nHurts and Goedert are the controlled Eagles exposure. Hurts stays in because quarterback points remain viable even in a loss. Goedert captures the tight end scoring channel, which can concentrate when wide receiver production spreads.\n\nThe 200 salary punt changes roster math. It allows full salary use while still paying for two quarterbacks and two high end skill players. A punt slot also blocks common mid range receivers many rosters use, which reduces shared builds.",
+    "uniquenessNotes": "Most entries captain Hurts or a top Eagle. This roster flips captain to the Giants side and still keeps Hurts in flex, so it benefits if Hurts scores enough to stay optimal while New York controls the slate outcome.\n\nThe roster builds New York scoring in layers. Dart plus Robinson handles passing volume. Humphrey functions as the cheap completion route that can add points without stealing captain value.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "C. Skattebo", "position": "RB", "team": "NYG" },
+        "teamSplit": "4-2",
+        "buildType": "Contrarian RB captain onslaught with opposing QB kept for floor",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain leverage on the winning side while keeping opposing QB in flex",
+      "secondaryLever": "Extreme punt to unlock two QB structure at full salary"
+    }
+  }
+}
