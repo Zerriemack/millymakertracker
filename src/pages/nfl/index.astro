@@ -1,28 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+export const prerender = true;
+
+// pick the season year you want as the default landing page for NFL
+return Astro.redirect("/nfl/2025/slate", 301);
 ---
-
-<Layout title="NFL | MillyMakerTracker">
-  <main class="container">
-    <h1>NFL</h1>
-    <p>Choose a slate group.</p>
-
-    <div style="display:grid; gap:12px; max-width:720px;">
-      <a
-        href="/nfl/2025/slate?lineupType=CLASSIC"
-        style="display:block; padding:16px; border:1px solid #eaeaea; border-radius:10px; text-decoration:none;"
-      >
-        <div style="font-weight:700; font-size:18px;">Classic</div>
-        <div style="margin-top:6px; color:#555;">Main slates.</div>
-      </a>
-
-      <a
-        href="/nfl/2025/slate?lineupType=SHOWDOWN"
-        style="display:block; padding:16px; border:1px solid #eaeaea; border-radius:10px; text-decoration:none;"
-      >
-        <div style="font-weight:700; font-size:18px;">Showdown</div>
-        <div style="margin-top:6px; color:#555;">MNF, TNF, SNF, Playoffs, Super Bowl.</div>
-      </a>
-    </div>
-  </main>
-</Layout>
