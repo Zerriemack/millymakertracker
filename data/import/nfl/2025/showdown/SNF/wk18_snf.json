@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 18,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2026-01-04",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK18_SNF_SHOWDOWN_2026-01-04_ravens_steelers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 4245454,
+    "totalOwnershipBp": 19520
+  },
+  "winner": {
+    "username": "Rayyenz",
+    "points": 136.88,
+    "maxEntries": 112
+  },
+  "lineup": {
+    "salaryUsed": 49200,
+    "totalPoints": 136.88,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Z. Flowers",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 13800,
+        "points": 49.2,
+        "ownershipPercent": 12.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "L. Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 11600,
+        "points": 21.42,
+        "ownershipPercent": 66.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Rodgers",
+        "position": "QB",
+        "team": "PIT",
+        "salary": 10000,
+        "points": 17.76,
+        "ownershipPercent": 39.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Gainwell",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 8800,
+        "points": 21.4,
+        "ownershipPercent": 55.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Austin III",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 3800,
+        "points": 14.5,
+        "ownershipPercent": 18.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Walker",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 1200,
+        "points": 12.6,
+        "ownershipPercent": 3.0
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins by treating the slate as two separate scoring problems. First, it identifies the one player whose output can outpace every other captain option: Flowers. His captain score is driven by two touchdowns and a full PPR reception load, which means the captain slot is doing most of the heavy lifting.\n\nSecond, it refuses to get dragged into guessing extra Ravens pass catchers. Lamar is included because Baltimore’s points flow through him even when the receiving distribution condenses into one primary piece. If Flowers is the finisher, Lamar is the valve that keeps the build aligned with how those points arrived.\n\nOn the Steelers side, the build captures the entire counterpunch without forcing a Steelers quarterback into the lineup. Rodgers plus Gainwell plus Austin is a bet that Pittsburgh’s scoring comes from efficiency and scoring events, not a single massive yardage spike. Gainwell’s role matters because it adds points through receptions and a rushing touchdown, which lets the Steelers keep pace while still leaving room for Baltimore’s captain to clear the slate.\n\nThe final slot is where the lineup separates from the crowd. Walker is a true salary release, but he is not a dead piece. A low owned receiver can get there on one touchdown and a couple of catches. When the captain already posted an elite score, the last spot only needs to avoid a zero while protecting the rest of the construction.",
+    "uniquenessNotes": "Most builds that land on Flowers captain will try to pay up for a second Baltimore piece and end up sacrificing the exact Steelers trio that fits the game result. This lineup keeps Pittsburgh’s scoring intact while staying disciplined about Baltimore’s secondary options.\n\nThe leverage is structural. It uses a cheap Baltimore receiver to preserve a full Steelers response, which creates a build that feels uncomfortable because it mixes a slate breaking captain with a punt from the same team. The payoff is that it does not need a perfect mid tier swap to win.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "Z. Flowers", "position": "WR", "team": "BAL" },
+        "teamSplit": "3-3",
+        "buildType": "Ravens WR captain paired with QB, Steelers bring back built through QB plus RB plus WR, plus a low owned Ravens punt WR",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain score large enough to prioritize fit and scoring routes over upgrading the final slot",
+      "secondaryLever": "Steelers production captured without over committing to a full Pittsburgh passing tree"
+    }
+  }
+}

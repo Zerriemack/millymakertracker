@@ -1,0 +1,1716 @@
+
+IMPORT data/import/nfl/2025/showdown/BLACK_FRIDAY/wk01_black_friday.json
+(node:46776) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/BLACK_FRIDAY/wk01_black_friday.json",
+  "slateKey": "NFL_2025_WK01_SHOWDOWN_2025-09-05_KC_LAC",
+  "slateType": "SHOWDOWN",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7xqnw00006lit6ubyrxb1",
+  "contestId": "cmln7xqpa00016lit9nqidrec",
+  "winnerId": "cmln7xqqq00026litee6hb0el",
+  "lineupId": "cmln7xqrz00036lits57rd7k1",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 18420,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/BLACK_FRIDAY/wk13_black_friday.json
+(node:46785) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/BLACK_FRIDAY/wk13_black_friday.json",
+  "slateKey": "NFL_2025_WK13_SHOWDOWN_2025-11-28_CHI_PHI",
+  "slateType": "SHOWDOWN",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7yvg80000dtitwxaltrhr",
+  "contestId": "cmln7yvhi0001dtithocwlmlu",
+  "winnerId": "cmln7yviq0002dtitfznw413z",
+  "lineupId": "cmln7yvjy0003dtit9tuofslg",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 19060,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk01_mnf.json
+(node:46797) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk01_mnf.json",
+  "slateKey": "NFL_2025_WK01_MNF_2025-09-08_CHI_MIN",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlo58mkb00009tit9b8qtvh9",
+  "contestId": "cmlo58mm300019titpxono7d1",
+  "winnerId": "cmlo58mpv00029titytt2js7d",
+  "lineupId": "cmlo58mrb00039titqm1nw20a",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 27910,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk03_mnf.json
+(node:46807) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk03_mnf.json",
+  "slateKey": "NFL_2025_WK03_MNF_2025-09-22_BAL_DET",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlo5cy2b0000nbitgdyc7iax",
+  "contestId": "cmlo5cy3k0001nbity6fg49t2",
+  "winnerId": "cmlo5cy4s0002nbithrvnzgax",
+  "lineupId": "cmlo5cy5z0003nbit1ult0st6",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 23560,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk05_mnf.json
+(node:46814) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk05_mnf.json",
+  "slateKey": "NFL_2025_WK05_MNF_2025-10-06_JAX_KC",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlo63lfi00001titshnz3kz1",
+  "contestId": "cmlo63lh100011titptp3t9p0",
+  "winnerId": "cmlo63lid00021titfdu10cza",
+  "lineupId": "cmlo63llm00031titbw6zcj9l",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 15710,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk08_mnf.json
+(node:46826) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk08_mnf.json",
+  "slateKey": "NFL_2025_WK08_MNF_2025-10-27_KC_WAS",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlo65hqf0000epitbuvkn3sx",
+  "contestId": "cmlo65hrq0001epitxwf0bcbz",
+  "winnerId": "cmlo65ht20002epitbj4cusic",
+  "lineupId": "cmlo65hua0003epit0qz6qw30",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 18970,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk09_mnf.json
+(node:46835) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk09_mnf.json",
+  "slateKey": "NFL_2025_WK09_MNF_2025-11-03_ARI_DAL",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlo67eyw0000rpit16ptos9t",
+  "contestId": "cmlo67f090001rpit3doit8ak",
+  "winnerId": "cmlo67f1k0002rpitg8ieaci2",
+  "lineupId": "cmlo67f2r0003rpitflftw66d",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 17920,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk10_mnf.json
+(node:46842) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk10_mnf.json",
+  "slateKey": "NFL_2025_WK10_MNF_2025-11-10_GB_PHI",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlo6882h0000ymitdt8qzjjx",
+  "contestId": "cmlo6883p0001ymitukeufk84",
+  "winnerId": "cmloiv9o000033iitpyztdqzk",
+  "lineupId": "cmloiv9pf00043iitvp2ylefs",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 14420,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk11_mnf.json
+(node:46855) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk11_mnf.json",
+  "slateKey": "NFL_2025_WK11_MNF_2025-11-17_DAL_LV_PIT",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmloivys70000a4ithbk67hcr",
+  "contestId": "cmlo693i200015bitdv8oj9j3",
+  "winnerId": "cmlo693jc00025bitrtups22h",
+  "lineupId": "cmlo693kl00035bitpysol9qb",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 21990,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk12_mnf.json
+(node:46865) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk12_mnf.json",
+  "slateKey": "NFL_2025_WK12_MNF_2025-11-24_CAR_SF",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlo6aq720000bxitwf798bg7",
+  "contestId": "cmlo6aq8c0001bxitenesa2n1",
+  "winnerId": "cmlo6aq9k0002bxitzbk75vg2",
+  "lineupId": "cmlo6aqar0003bxitd9zzc43v",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 16320,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk13_mnf.json
+(node:46872) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk13_mnf.json",
+  "slateKey": "NFL_2025_WK13_MNF_2025-12-01_NE_NYG",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlohhejn0000e3iteaf0n480",
+  "contestId": "cmlohhel50001e3it1u70p4nw",
+  "winnerId": "cmlohhep50003e3itk7s2ejpc",
+  "lineupId": "cmlohheqg0004e3it7ekms1ed",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 15490,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk14_mnf.json
+(node:46884) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk14_mnf.json",
+  "slateKey": "NFL_2025_WK14_MNF_2025-12-08_LAC_PHI",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlohj9cy0000qtit8xw845od",
+  "contestId": "cmlohj9e80001qtit4kqt2b59",
+  "winnerId": "cmlohj9gr0003qtit7kqz88l7",
+  "lineupId": "cmlohj9hx0004qtit7t7uq8r8",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 20360,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk15_mnf.json
+(node:46893) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk15_mnf.json",
+  "slateKey": "NFL_2025_WK15_MNF_2025-12-15_MIA_PIT",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlohl25i00003hitt04wotzo",
+  "contestId": "cmlohl26p00013hitkaod9nde",
+  "winnerId": "cmlohl29h00033hit0sbw7hjf",
+  "lineupId": "cmlohl2an00043hitoxp93lc0",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 23460,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk16_mnf.json
+(node:46900) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk16_mnf.json",
+  "slateKey": "NFL_2025_WK16_MNF_2025-12-22_IND_SF",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlohrdta0000i6it4kis032h",
+  "contestId": "cmlohrdum0001i6it6xt6lyha",
+  "winnerId": "cmlohrdxm0003i6ittbwxpef2",
+  "lineupId": "cmlohrdyu0004i6itntvwgja6",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 21910,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/MNF/wk17_mnf.json
+(node:46912) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/MNF/wk17_mnf.json",
+  "slateKey": "NFL_2025_WK17_MNF_2025-12-29_ATL_LAR",
+  "slateType": "MNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmloht7yp0000uzitazyfqpq5",
+  "contestId": "cmloht7zz0001uzitx3hg8ndv",
+  "winnerId": "cmloht84w0003uzitzgk9198i",
+  "lineupId": "cmloht8620004uzitv1vpqen7",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 14220,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/PLAYOFFS/wc_mnf_2026-01-12_texans_vs_steelers.json
+(node:46921) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/PLAYOFFS/wc_mnf_2026-01-12_texans_vs_steelers.json",
+  "slateKey": "NFL_2025_WK19_SHOWDOWN_2026-01-12_HOU_PIT",
+  "slateType": "SHOWDOWN",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlojhlrm0000jbitp24klcsp",
+  "contestId": "cmlojcbz50001bciti59lvl7l",
+  "winnerId": "cmlojcc270003bcitxgf620tp",
+  "lineupId": "cmlojcc3f0004bcitsby6nmem",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 23200,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SATURDAY/wk17_sat.json
+(node:46928) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SATURDAY/wk17_sat.json",
+  "slateKey": "NFL_2025_WK17_SHOWDOWN_2025-12-27_BAL_GB",
+  "slateType": "SHOWDOWN",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlppjs0o0000neitb506d2g0",
+  "contestId": "cmlppjs2m0001neit2i31mqo0",
+  "winnerId": "cmlppjs7d0003neithdqpfhx3",
+  "lineupId": "cmlppjs8v0004neit1z2ntkrt",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 19140,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk01_snf.json
+(node:46940) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk01_snf.json",
+  "slateKey": "NFL_2025_WK01_SNF_2025-09-07_BAL_BUF",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpsda0h00000fits5guhnxi",
+  "contestId": "cmlpsda1r00010fitzw2eq7rv",
+  "winnerId": "cmlpsda4j00030fit805v7pod",
+  "lineupId": "cmlpsda5s00040fitd5gs9xvt",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 21480,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk02_snf.json
+(node:46949) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk02_snf.json",
+  "slateKey": "NFL_2025_WK02_SNF_2025-09-14_ATL_MIN",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpsjqxu0000ecit09a5dheq",
+  "contestId": "cmlpsjqz40001ecity6nao6x8",
+  "winnerId": "cmlpsjr1t0003ecit5uv1giid",
+  "lineupId": "cmlpsjr320004ecityv63dr3s",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 15280,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk03_snf.json
+(node:46956) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk03_snf.json",
+  "slateKey": "NFL_2025_WK03_SNF_2025-09-21_KC_NYG",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpt0v0u00001aitoktrxg6n",
+  "contestId": "cmlpt0v2b00011aitaw5rc4wc",
+  "winnerId": "cmlpt0v5800031ait3qfh4i29",
+  "lineupId": "cmlpt0v6e00041aityhef5mw7",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 23270,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk04_snf.json
+(node:46968) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk04_snf.json",
+  "slateKey": "NFL_2025_WK04_SNF_2025-09-28_DAL_GB",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpsxzst0000hwitl660qtok",
+  "contestId": "cmlpsxzx60001hwit1n3ueay3",
+  "winnerId": "cmlpsxzzx0003hwitpi0tk09q",
+  "lineupId": "cmlpsy0130004hwitwgll2bym",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 24890,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk05_snf.json
+(node:46977) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk05_snf.json",
+  "slateKey": "NFL_2025_WK05_SNF_2025-10-05_BUF_NE",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpsp34j0000s0iteog5uac7",
+  "contestId": "cmlpsp3630001s0it97ju02xc",
+  "winnerId": "cmlpsp38u0003s0itirnbuujo",
+  "lineupId": "cmlpsp3a30004s0it5viun7v2",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 19620,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk06_snf.json
+(node:46986) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk06_snf.json",
+  "slateKey": "NFL_2025_WK06_SNF_2025-10-12_DET_KC",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpstmwk000055it2o3yzjof",
+  "contestId": "cmlpstmxv000155itcpfiqn0v",
+  "winnerId": "cmlpstn0c000355it6wzn5v0i",
+  "lineupId": "cmlpstn1h000455itzztrsgyz",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 18280,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk07_snf.json
+(node:46999) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk07_snf.json",
+  "slateKey": "NFL_2025_WK07_SNF_2025-10-19_ATL_SF",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpss9qj0000ymitihfq8etx",
+  "contestId": "cmlpss9rr0001ymitr3f05nde",
+  "winnerId": "cmlpss9vr0003ymit6jw7bpau",
+  "lineupId": "cmlpss9ze0004ymitpahw42bm",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 17370,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk08_snf.json
+(node:47008) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk08_snf.json",
+  "slateKey": "NFL_2025_WK08_SNF_2025-10-26_GB_PIT",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr34zsn000049it8275u32q",
+  "contestId": "cmlr34zuq000149itjnbw5if5",
+  "winnerId": "cmlr34zy0000349ituv94hpw3",
+  "lineupId": "cmlr34zzg000449it267xh4tx",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 20690,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk09_snf.json
+(node:47015) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk09_snf.json",
+  "slateKey": "NFL_2025_WK09_SNF_2025-11-02_SEA_WAS",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr351bc00004dit5pndw1we",
+  "contestId": "cmlr351co00014dit5emcfsxa",
+  "winnerId": "cmlr351fb00034dit7kv8drvw",
+  "lineupId": "cmlr351gq00044diti74ydfgb",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 24710,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk10_snf.json
+(node:47027) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk10_snf.json",
+  "slateKey": "NFL_2025_WK10_SNF_2025-11-09_LAC_PIT",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr352nw00004fitnbe0otj3",
+  "contestId": "cmlr352p500014fit0h8zjb1z",
+  "winnerId": "cmlr352rs00034fitxgwic4t7",
+  "lineupId": "cmlr352sx00044fit35lj8he4",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 16670,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk11_snf.json
+(node:47036) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk11_snf.json",
+  "slateKey": "NFL_2025_WK11_SNF_2025-11-16_DET_PHI",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr3542200004jit11obmn8x",
+  "contestId": "cmlr3545600014jitzaulvgt2",
+  "winnerId": "cmlr3547x00034jit8dtqcq17",
+  "lineupId": "cmlr3549b00044jithpbeyd8t",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 21320,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk12_snf.json
+(node:47043) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk12_snf.json",
+  "slateKey": "NFL_2025_WK12_SNF_2025-11-23_LAR_TB",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr355fa00004littozjh3e9",
+  "contestId": "cmlr355gn00014lit7q1vmxnj",
+  "winnerId": "cmlr355jm00034litphdtco1e",
+  "lineupId": "cmlr355kt00044litq18di830",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 22320,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk13_snf.json
+(node:47057) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk13_snf.json",
+  "slateKey": "NFL_2025_WK13_SNF_2025-11-30_DEN_WAS",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr356pb00004nitutmo33j0",
+  "contestId": "cmlr356qj00014nit98mp614e",
+  "winnerId": "cmlr356t900034nit74xt3278",
+  "lineupId": "cmlr356uf00044nitt8kjmeov",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 22480,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk14_snf.json
+(node:47064) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk14_snf.json",
+  "slateKey": "NFL_2025_WK14_SNF_2025-12-07_HOU_KC",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr3582800004ritk4qz6usk",
+  "contestId": "cmlr3583h00014ritecrlan3r",
+  "winnerId": "cmlr3588600034rit34urmobp",
+  "lineupId": "cmlr3589d00044ritwlypokyt",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 16430,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk15_snf.json
+(node:47071) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk15_snf.json",
+  "slateKey": "NFL_2025_WK15_SNF_2025-12-14_DAL_MIN",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr359fu00004tityn7spm5t",
+  "contestId": "cmlr359h300014titwykfkqs3",
+  "winnerId": "cmlr359jv00034titxik40s7r",
+  "lineupId": "cmlr359l100044titofvpuc3q",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 26100,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk17_snf.json
+(node:47085) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk17_snf.json",
+  "slateKey": "NFL_2025_WK17_SNF_2025-12-28_CHI_SF",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr35ar500004vit9b543wcc",
+  "contestId": "cmlr35ash00014vit7f2dxijy",
+  "winnerId": "cmlr35awk00034vit7z4f9rvd",
+  "lineupId": "cmlr35axp00044vit8k2n4yqc",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 28590,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SNF/wk18_snf.json
+(node:47093) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk18_snf.json",
+  "slateKey": "NFL_2025_WK18_SNF_2026-01-04_BAL_PIT",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr3bvok0000hvit05fjfucz",
+  "contestId": "cmlr3bvpz0001hvitckgm8eu5",
+  "winnerId": "cmlr3bvty0003hvitiftgyupo",
+  "lineupId": "cmlr3bvv60004hvit5mdb06ab",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 19520,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/SUPER BOWL/superbowl60_2025.json
+(node:47104) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SUPER BOWL/superbowl60_2025.json",
+  "slateKey": "NFL_2025_WK22_SUPER_BOWL_2026-02-08_NE_SEA",
+  "slateType": "SUPER_BOWL",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpqdaln0000jditk9j86gh5",
+  "contestId": "cmlpqdanc0001jdity5y0k27f",
+  "winnerId": "cmlpqdaql0003jditons9kz6c",
+  "lineupId": "cmlpqdas10004jditdyy1hvi8",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 21030,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/THANKSGIVING/thanksgiving_snf_2025-11-27_bengals_vs_ravens.json
+(node:47114) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/THANKSGIVING/thanksgiving_snf_2025-11-27_bengals_vs_ravens.json",
+  "slateKey": "NFL_2025_WK13_SHOWDOWN_2025-11-27_BAL_CIN",
+  "slateType": "SHOWDOWN",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpqvvfw0000ybit7jy0kz32",
+  "contestId": "cmlpqvvhk0001ybitcfikvxnb",
+  "winnerId": "cmlpqvvkk0003ybitwdrtt5of",
+  "lineupId": "cmlpqvvn20004ybit5ziuopjt",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 14840,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk01_tnf.json
+(node:47121) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk01_tnf.json",
+  "slateKey": "NFL_2025_WK01_TNF_2025-09-04_DAL_PHI",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpu8zzh0000iaitq01eo14n",
+  "contestId": "cmlpu902b0001iaitnibpcsba",
+  "winnerId": "cmlpu905m0003iaitpk9x7hue",
+  "lineupId": "cmlpu906y0004iait5shhhc0w",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 21970,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk02_tnf.json
+(node:47132) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk02_tnf.json",
+  "slateKey": "NFL_2025_WK02_TNF_2025-09-11_GB_WAS",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpuakrj0000utity28vszy5",
+  "contestId": "cmlpuaksv0001utitaa5n4hwh",
+  "winnerId": "cmlpuakvl0003utitg6q145ym",
+  "lineupId": "cmlpuakwp0004utitlpdbadpn",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 27980,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk03_tnf.json
+(node:47142) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk03_tnf.json",
+  "slateKey": "NFL_2025_WK03_TNF_2025-09-18_BUF_MIA",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpuc4xs00007citry9wfm5l",
+  "contestId": "cmlpuc4zc00017citcznfy5av",
+  "winnerId": "cmlpuc52600037citf5y75694",
+  "lineupId": "cmlpuc53f00047citli84fg5j",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 20510,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk04_tnf.json
+(node:47149) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk04_tnf.json",
+  "slateKey": "NFL_2025_WK04_TNF_2025-09-25_ARI_SEA",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpudfxs0000jzitk68qh7eb",
+  "contestId": "cmlpudfz10001jzitn8bqp6n7",
+  "winnerId": "cmlpuh4ee0003qtitant6ldff",
+  "lineupId": "cmlpuh4fl0004qtitdp87tgm5",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 15265,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk05_tnf.json
+(node:47160) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk05_tnf.json",
+  "slateKey": "NFL_2025_WK05_TNF_2025-10-02_LAR_SF",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpuixgd00003kitlmm4o0dd",
+  "contestId": "cmlpuixhq00013kitjxwgruo4",
+  "winnerId": "cmlpuixkh00033kitsrjw48u6",
+  "lineupId": "cmlpuixlo00043kit6ty8vd0w",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 22670,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk06_tnf.json
+(node:47170) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk06_tnf.json",
+  "slateKey": "NFL_2025_WK06_TNF_2025-10-09_NYG_PHI",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpukwng0000grith5nkagbm",
+  "contestId": "cmlpukwoo0001gritr5cbzqot",
+  "winnerId": "cmlpukws10003grit1rqbybgy",
+  "lineupId": "cmlpukwt70004gritwz32cy85",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 21130,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk07_tnf.json
+(node:47177) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk07_tnf.json",
+  "slateKey": "NFL_2025_WK07_TNF_2025-10-16_CIN_PIT",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpvd09r00003titv4mto8l4",
+  "contestId": "cmlpvd0bl00013tit1ek4g5y6",
+  "winnerId": "cmlpvd0eu00033titm0isy64w",
+  "lineupId": "cmlpvd0ga00043titj4rv801u",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 24480,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk09_tnf.json
+(node:47188) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk09_tnf.json",
+  "slateKey": "NFL_2025_WK09_TNF_2025-10-30_BAL_MIA",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpve2kp0000aeit7l5pije9",
+  "contestId": "cmlpve2o90001aeitca92n9v9",
+  "winnerId": "cmlpve2r90003aeitaak113fo",
+  "lineupId": "cmlpve2sg0004aeitynwmrzlj",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 20850,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk10_tnf.json
+(node:47198) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk10_tnf.json",
+  "slateKey": "NFL_2025_WK10_TNF_2025-11-06_DEN_LV",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpvevf90000i4it5rumuii6",
+  "contestId": "cmlpvevgh0001i4itxq2a66yq",
+  "winnerId": "cmlpvevj40003i4itpoopfqkk",
+  "lineupId": "cmlpvevkc0004i4itjxttafqk",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 20640,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk11_tnf.json
+(node:47205) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk11_tnf.json",
+  "slateKey": "NFL_2025_WK11_TNF_2025-11-13_NE_NYJ",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr1kf3400005uit38eaef92",
+  "contestId": "cmlr1kf4g00015uit6gy3lgsb",
+  "winnerId": "cmlr1kf9k00035uitiyi4up0p",
+  "lineupId": "cmlr1kfay00045uiteigncy7r",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 19910,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk12_tnf.json
+(node:47216) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk12_tnf.json",
+  "slateKey": "NFL_2025_WK12_TNF_2025-11-20_BUF_HOU",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr1kggq000062it6lv72mwu",
+  "contestId": "cmlr1kghz000162itno0zi5js",
+  "winnerId": "cmlr1kgks000362iterhdmpbt",
+  "lineupId": "cmlr1kgm0000462itr8fdpt8i",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 15220,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk14_tnf.json
+(node:47226) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk14_tnf.json",
+  "slateKey": "NFL_2025_WK14_TNF_2025-12-04_DAL_DET",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpvr4ne00003sit6mv3tddm",
+  "contestId": "cmlpvr4qw00013sitk13mezji",
+  "winnerId": "cmlpvr4u900033sitkvxfoltm",
+  "lineupId": "cmlpvr4vo00043sitsklkjdh9",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 25530,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/showdown/TNF/wk15_tnf.json
+(node:47233) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/TNF/wk15_tnf.json",
+  "slateKey": "NFL_2025_WK15_TNF_2025-12-11_ATL_TB",
+  "slateType": "TNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlpvgl4v0000pmitm2rb6dba",
+  "contestId": "cmlpvgl640001pmit4rjwhp5c",
+  "winnerId": "cmlpvglai0003pmitay1uvap9",
+  "lineupId": "cmlpvglbs0004pmit589u58dk",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 17660,
+  "analysisSaved": true
+}
+
+IMPORT data/import/nfl/2025/week01_main_1.json
+(node:47244) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week01_main_1.json",
+  "slateKey": "NFL_2025_WK01_MAIN_2025-09-07_ATL_DEN_LAR_MIA_NO_NYJ_SEA_SF_TB",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7fda50001qfitffxjxuvn",
+  "contestId": "cmln7fdbi0002qfith4z1mx37",
+  "winnerId": "cmln7fdct0003qfitiz17455n",
+  "lineupId": "cmln7fde30004qfit3y188jwg",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 9800,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week02_main_1.json
+(node:47254) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week02_main_1.json",
+  "slateKey": "NFL_2025_WK02_MAIN_2025-09-14_CHI_DAL_DET_IND_NYG_SF",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7fepy0000qjit1agaa2cm",
+  "contestId": "cmln7ferc0001qjit3xjboq83",
+  "winnerId": "cmln7fesn0002qjit6l3r535x",
+  "lineupId": "cmln7fetv0003qjit48qax8q0",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 8540,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week03_main_1.json
+(node:47261) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week03_main_1.json",
+  "slateKey": "NFL_2025_WK03_MAIN_2025-09-21_IND_LV_MIN_PIT_SF_WAS",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7fg6o0000qlitsnj8ujdo",
+  "contestId": "cmln7fg800001qlitw2igyid1",
+  "winnerId": "cmln7fgat0002qlitpuxs8x32",
+  "lineupId": "cmln7fgc10003qlitccfy4l98",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 11950,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week04_main_1.json
+(node:47275) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week04_main_1.json",
+  "slateKey": "NFL_2025_WK04_MAIN_2025-09-28_ATL_CHI_DET_HOU_KC_LAR_LV_SF_TB",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7fhm30000qpitbahw9ovn",
+  "contestId": "cmln7fhng0001qpitz7mjzwdj",
+  "winnerId": "cmln7fhos0002qpitkmh5gy3k",
+  "lineupId": "cmln7fhq20003qpitxsi828yu",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 11940,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week05_main_1.json
+(node:47282) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week05_main_1.json",
+  "slateKey": "NFL_2025_WK05_MAIN_2025-10-05_CAR_DAL_IND_MIA_NO_NYJ_SEA_TB",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7fj4y0000qritbs4c6a8p",
+  "contestId": "cmln7fj6f0001qritsncegeu3",
+  "winnerId": "cmln7fj7s0002qritatk057j7",
+  "lineupId": "cmln7fj940003qrita1mkxdk0",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 19130,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week06_main_1.json
+(node:47289) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week06_main_1.json",
+  "slateKey": "NFL_2025_WK06_MAIN_2025-10-12_CAR_DAL_GB_IND_LAR_LV_NE_SEA",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7fkly0000qtitj4g3gydj",
+  "contestId": "cmln7fknb0001qtit8z5g8db1",
+  "winnerId": "cmln7fkr20002qtitr4f42k7i",
+  "lineupId": "cmln7fksd0003qtitgi7n7sfv",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 15750,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week07_main_1.json
+(node:47303) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week07_main_1.json",
+  "slateKey": "NFL_2025_WK07_MAIN_2025-10-19_ARI_CAR_DAL_IND_KC_LAC_NO",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7fm3l0000qxitnu6pe7rd",
+  "contestId": "cmln7fm4v0001qxity39px7zd",
+  "winnerId": "cmln7fm680002qxiteyi6p1v2",
+  "lineupId": "cmln7fm7j0003qxiti2vm7dvg",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 14040,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week08_main_1.json
+(node:47310) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week08_main_1.json",
+  "slateKey": "NFL_2025_WK08_MAIN_2025-10-26_BUF_HOU_IND_MIA_NYJ_SF",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7fnm90000r0ityqtrpbma",
+  "contestId": "cmln7fno70001r0itwi23n7ap",
+  "winnerId": "cmln7fnpj0002r0its50cbaud",
+  "lineupId": "cmln7fnqu0003r0itzs0f4jod",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 7700,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week09_main_1.json
+(node:47320) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week09_main_1.json",
+  "slateKey": "NFL_2025_WK09_MAIN_2025-11-02_ATL_CHI_CIN_LV_PIT_SF_TEN",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7fp2u0000r4iteq1etad9",
+  "contestId": "cmln7fp450001r4it4e175y4m",
+  "winnerId": "cmln7fp770002r4itv8dtha3e",
+  "lineupId": "cmln7fp8n0003r4itr6sqifmy",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 15850,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week10_main_1.json
+(node:47331) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week10_main_1.json",
+  "slateKey": "NFL_2025_WK10_MAIN_2025-11-09_DET_MIA_NE_NYJ_SF_TB",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7fqiq0000r6ittybxx6y8",
+  "contestId": "cmln7fqk20001r6it6nc2ygcy",
+  "winnerId": "cmln7fqlc0002r6its51syi0q",
+  "lineupId": "cmln7fqn00003r6itshnh00ju",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 11850,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week11_main_1.json
+(node:47338) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week11_main_1.json",
+  "slateKey": "NFL_2025_WK11_MAIN_2025-11-16_ARI_ATL_CAR_MIN_PIT_SF",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7ot0r0000x7itrs1m3oc4",
+  "contestId": "cmln7ot260001x7ita6dspugk",
+  "winnerId": "cmln7ot3k0002x7itf0i3tnd7",
+  "lineupId": "cmln7ot4v0003x7itxlyenlug",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 13070,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week12_main_1.json
+(node:47353) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week12_main_1.json",
+  "slateKey": "NFL_2025_WK12_MAIN_2025-11-23_CLE_DET_GB_NE_NYG_PHI",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7oujb0000x9itenv20mok",
+  "contestId": "cmln7oukm0001x9itw1x9elt2",
+  "winnerId": "cmln7ouly0002x9itcw23weij",
+  "lineupId": "cmln7ouna0003x9it8yi3qw0p",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 17300,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week13_main_1.json
+(node:47360) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week13_main_1.json",
+  "slateKey": "NFL_2025_WK13_MAIN_2025-11-30_ARI_ATL_CAR_HOU_LAC_LV_NYJ_SEA",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7ovzh0000xditz84448co",
+  "contestId": "cmln7ow0t0001xditlrep3ijt",
+  "winnerId": "cmln7ow460002xdita8vdrfj3",
+  "lineupId": "cmln7ow5g0003xditnhk3roh5",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 12050,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week14_main_1.json
+(node:47367) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week14_main_1.json",
+  "slateKey": "NFL_2025_WK14_MAIN_2025-12-07_ARI_BUF_CLE_GB_LAR_PIT_TEN",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7oxft0000xfit23fq37ee",
+  "contestId": "cmln7oxhb0001xfitsxeu9ip5",
+  "winnerId": "cmln7oxip0002xfitiinqgae7",
+  "lineupId": "cmln7oxk10003xfitvu565iy8",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 11540,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week16_main_1.json
+(node:47376) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week16_main_1.json",
+  "slateKey": "NFL_2025_WK16_MAIN_2025-12-21_BUF_CIN_LAC_LV_NO",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7oyya0000xhitnmwora29",
+  "contestId": "cmln7oyzk0001xhitj2yd61nw",
+  "winnerId": "cmln7oz0u0002xhitb4phcits",
+  "lineupId": "cmln7oz250003xhit1mq12n0g",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 5540,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week17_main_1.json
+(node:47383) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week17_main_1.json",
+  "slateKey": "NFL_2025_WK17_MAIN_2025-12-28_ARI_CIN_JAX_LV_NE_NYG",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7p0fp0000xlit5voi0dts",
+  "contestId": "cmln7p0h90001xlitvnay5z17",
+  "winnerId": "cmln7p0kl0002xlitsdfi42y7",
+  "lineupId": "cmln7p0lu0003xlit5i34gr6k",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 14340,
+  "analysisSaved": false
+}
+
+IMPORT data/import/nfl/2025/week18_main_1.json
+(node:47390) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/week18_main_1.json",
+  "slateKey": "NFL_2025_WK18_MAIN_2026-01-04_ARI_BUF_CHI_DAL_DET_JAX_NE",
+  "slateType": "MAIN",
+  "lineupType": "CLASSIC",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmln7p1vs0000xnityzv7tslv",
+  "contestId": "cmln7p1x70001xnitmvtvkjgi",
+  "winnerId": "cmln7p1yl0002xnitvfusn2r1",
+  "lineupId": "cmln7p1zy0003xnittr1z11sv",
+  "lineupItemCount": 9,
+  "totalOwnershipBp": 10670,
+  "analysisSaved": false
+}

@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 13,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-30",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK13_SNF_SHOWDOWN_2025-11-30_broncos_commanders",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 4400000,
+    "totalOwnershipBp": 22480
+  },
+  "winner": {
+    "username": "Grex123",
+    "points": 131.6,
+    "maxEntries": 132
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 131.6,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Z. Ertz",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 10500,
+        "points": 35.4,
+        "ownershipPercent": 2.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Nix",
+        "position": "QB",
+        "team": "DEN",
+        "salary": 11000,
+        "points": 20.44,
+        "ownershipPercent": 83.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Mariota",
+        "position": "QB",
+        "team": "WAS",
+        "salary": 10200,
+        "points": 24.26,
+        "ownershipPercent": 46.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Harvey",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 8400,
+        "points": 21.2,
+        "ownershipPercent": 64.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. McLaurin",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 8000,
+        "points": 22.6,
+        "ownershipPercent": 23.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Trautman",
+        "position": "TE",
+        "team": "DEN",
+        "salary": 1600,
+        "points": 7.7,
+        "ownershipPercent": 3.5
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This game finishes as a one point outcome, which keeps both quarterbacks in play. The lineup leans into that by taking Nix and Mariota together, then selecting the scoring hubs each team funnels through.\n\nErtz captain is the separating decision. A tight end captain at 2.4 percent works when the position absorbs both volume and touchdown equity. Ten receptions plus the bonus pushes him past many receiver captains, and it does so at a salary point that lets the roster keep both quarterbacks.\n\nHarvey and McLaurin round out how each offense actually scores. Harvey covers Denver’s touchdown plus passing involvement, McLaurin captures Washington’s perimeter production. Trautman is the final structural piece. He is not a projection choice, he is a salary choice that keeps the correct five slots intact while still offering a path to points through a single short score or a few catches.",
+    "uniquenessNotes": "Double QB builds can get duplicated when they spend evenly. Ertz captain breaks the symmetry and changes the salary map.\n\nThe roster keeps the core scoring pieces from both teams while refusing to chase secondary wideouts.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "Z. Ertz", "position": "TE", "team": "WAS" },
+        "teamSplit": "3-3",
+        "buildType": "TE captain leverage in a close game, supported by both QBs and each team’s primary scoring pieces",
+        "includesQBs": true
+      },
+      "primaryLever": "Low owned TE captain with true volume and touchdown access",
+      "secondaryLever": "Punt TE keeps both QBs plus correct mid tier pieces"
+    }
+  }
+}

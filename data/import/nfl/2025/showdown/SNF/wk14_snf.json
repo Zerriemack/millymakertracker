@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 14,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-07",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK14_SNF_SHOWDOWN_2025-12-07_texans_chiefs",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2070455,
+    "totalOwnershipBp": 16430
+  },
+  "winner": {
+    "username": "oxenduck",
+    "points": 85.87,
+    "maxEntries": 7
+  },
+  "lineup": {
+    "salaryUsed": 48300,
+    "totalPoints": 85.87,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "N. Collins",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 14700,
+        "points": 28.65,
+        "ownershipPercent": 13.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Stroud",
+        "position": "QB",
+        "team": "HOU",
+        "salary": 9400,
+        "points": 12.62,
+        "ownershipPercent": 48.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "W. Marks",
+        "position": "RB",
+        "team": "HOU",
+        "salary": 8400,
+        "points": 15.6,
+        "ownershipPercent": 20.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Hunt",
+        "position": "RB",
+        "team": "KC",
+        "salary": 7400,
+        "points": 9,
+        "ownershipPercent": 24.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "K. Fairbairn",
+        "position": "K",
+        "team": "HOU",
+        "salary": 4800,
+        "points": 8,
+        "ownershipPercent": 33.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Texans",
+        "position": "DST",
+        "team": "HOU",
+        "salary": 3600,
+        "points": 12,
+        "ownershipPercent": 23.6
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This slate is won by identifying that Kansas City’s offense fails to produce a quarterback ceiling. A 20 to 10 finish shifts value toward defense, kicker, and one primary receiving score rather than chasing a full back and forth shootout shape.\n\nCollins at captain works because Houston’s passing points are concentrated through him. Pairing Stroud preserves the direct connection to the captain output, while Marks adds the rushing touchdown component that often appears in lower total wins.\n\nFairbairn and the Texans defense complete the Houston control angle. Drives become field goals, and defensive pressure rises once Kansas City falls behind. Hunt is the only Chiefs slot because he can still score without the Chiefs passing environment turning profitable. The roster avoids paying for Kansas City passing pieces that never arrive and instead banks on Houston owning the game state.",
+    "uniquenessNotes": "Most builds treat this matchup as Mahomes driven. This win treats it as Houston driven.\n\nKicker plus defense from the same team works because the scoreboard stays constrained and Houston keeps producing usable drive outcomes.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "N. Collins", "position": "WR", "team": "HOU" },
+        "teamSplit": "5-1",
+        "buildType": "Houston control build with WR captain, QB pairing, plus DST and K, minimal KC exposure",
+        "includesQBs": true
+      },
+      "primaryLever": "Fade KC passing ceiling, build around Houston game control",
+      "secondaryLever": "Defense plus kicker captures the score range where touchdowns are limited"
+    }
+  }
+}

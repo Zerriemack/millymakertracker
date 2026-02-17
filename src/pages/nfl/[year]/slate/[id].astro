@@ -5,7 +5,7 @@ import Layout from "../../../../layouts/Layout.astro";
 
 const { id } = Astro.params;
 
-const res = await fetch(`${Astro.url.origin}/api/slate/${id}`);
+const res = await fetch(`${Astro.url.origin}/api/slate/${id}`, { cache: "no-store" });
 if (!res.ok) throw new Error(`Slate not found: ${id}`);
 
 const { slate } = await res.json();
@@ -100,6 +100,24 @@ function toFolderTag(tag: string) {
   return safeUpper(tag).replace(/\s+/g, "_");
 }
 
+function normalizeAnalysis(raw: any) {
+  if (!raw) return null;
+
+  if (typeof raw === "string") {
+    const s = raw.trim();
+    if (!s) return null;
+    try {
+      return JSON.parse(s);
+    } catch {
+      return { stackSummary: s };
+    }
+  }
+
+  if (typeof raw === "object") return raw;
+
+  return null;
+}
+
 const slateKey = String(slate.slateKey || "").trim();
 const slateTag = safeUpper(slate.slateTag || slate.slateType);
 const slateTagFolder = toFolderTag(slateTag);
@@ -119,7 +137,9 @@ const slateDateHuman = formatDateHuman(slateDateIso);
 const contest = slate.contest || null;
 const winner = contest?.winner || null;
 const lineup = winner?.lineup || null;
-const analysis = contest?.analysis || null;
+
+const analysisRaw = contest?.analysis ?? null;
+const analysis = normalizeAnalysis(analysisRaw);
 
 const contestName = String(contest?.contestName || "").trim();
 
@@ -183,13 +203,11 @@ const classicStackSummaryFromJson =
 
 const classicStackQuick =
   classicStackSummaryFromJson ||
-  (classicQBs.length
-    ? `QB: ${classicQBs.map((q) => q.name).join(", ")}`
-    : "—");
+  (classicQBs.length ? `QB: ${classicQBs.map((q) => q.name).join(", ")}` : "—");
 
-const stackSummary = String(analysis?.stackSummary || "").trim();
-const uniquenessNotes = String(analysis?.uniquenessNotes || "").trim();
-const meta = analysis?.stackMeta || null;
+const stackSummary = String((analysis as any)?.stackSummary || "").trim();
+const uniquenessNotes = String((analysis as any)?.uniquenessNotes || "").trim();
+const meta = (analysis as any)?.stackMeta || null;
 
 const metaTeamSplit = meta?.construction?.teamSplit ? String(meta.construction.teamSplit) : "";
 const metaBuildType = meta?.construction?.buildType ? String(meta.construction.buildType) : "";
@@ -332,6 +350,11 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
       {analysis ? (
         <div class="analysisGrid">
           <div class="analysisCard">
+            <div class="analysisLabel">Stack summary</div>
+            <div class="analysisText">{stackSummary || "—"}</div>
+          </div>
+
+          <div class="analysisCard">
             <div class="analysisLabel">Uniqueness notes</div>
             <div class="analysisText">{uniquenessNotes || "—"}</div>
           </div>
@@ -344,7 +367,13 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
               {metaIncludesQBs ? `Includes QBs: ${metaIncludesQBs}\n` : ""}
               {metaPrimaryLever ? `Primary lever: ${metaPrimaryLever}\n` : ""}
               {metaSecondaryLever ? `Secondary lever: ${metaSecondaryLever}\n` : ""}
-              {!metaTeamSplit && !metaBuildType && !metaIncludesQBs && !metaPrimaryLever && !metaSecondaryLever ? "—" : ""}
+              {!metaTeamSplit &&
+              !metaBuildType &&
+              !metaIncludesQBs &&
+              !metaPrimaryLever &&
+              !metaSecondaryLever
+                ? "—"
+                : ""}
             </div>
           </div>
         </div>
@@ -367,7 +396,6 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
   .h1 { margin: 0; font-size: 32px; line-height: 1.15; font-weight: 900; }
   .sub { margin: 8px 0 0; color: #666; line-height: 1.35; }
 
-  /* Big left panel + tall right panel */
   .topGrid {
     display: grid;
     grid-template-columns: 3fr 1.4fr;
@@ -382,54 +410,42 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
     overflow: hidden;
   }
 
-  /* This is the key: give the left card a real height so the image can grow */
   .shotCard {
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - 220px);
+    max-height: calc(100vh - 220px);
   }
 
   .shotHeader { padding: 12px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); }
   .shotTitle { font-weight: 900; }
 
   .shotLink {
-  flex: 1 1 auto;
-  display: flex;
-  padding: 10px;
-  background: rgba(0,0,0,0.02);
-  cursor: zoom-in;
+    flex: 1 1 auto;
+    display: flex;
+    padding: 10px;
+    background: rgba(0,0,0,0.02);
+    cursor: zoom-in;
+    justify-content: center;
+    align-items: flex-start;
+  }
 
-  /* keep layout the same, just control how the image sits */
-  justify-content: center;
-  align-items: flex-start;
-}
-
-/* replace your current .shotImg */
-.shotImg {
-  max-width: 85%;
-  max-height: 85%;
-  width: auto;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  object-position: center top;
-  background: #fff;
-  border-radius: 10px;
-}
-
-/* optional: give it a max visual height so it never feels oversized */
-.shotCard {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 220px);
-  max-height: calc(100vh - 220px);
-}
+  .shotImg {
+    max-width: 85%;
+    max-height: 85%;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center top;
+    background: #fff;
+    border-radius: 10px;
+  }
 
   .shotMissing { padding: 22px 14px; }
   .shotMissingTitle { font-weight: 800; }
   .shotMissingSub { margin-top: 6px; color: #666; }
 
-  /* Right side fills the column height */
   .sideCard {
     padding: 14px;
     position: sticky;
@@ -453,6 +469,8 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
     border-radius: 12px;
     background: rgba(0,0,0,0.02);
   }
+
+  .factsTight { margin-top: 8px; }
 
   .k { color: #666; font-size: 13px; }
   .v { font-weight: 900; }
@@ -509,7 +527,7 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
   @media (max-width: 980px) {
     .topGrid { grid-template-columns: 1fr; align-items: start; }
     .sideCard { position: static; height: auto; overflow: visible; }
-    .shotCard { min-height: 0; }
+    .shotCard { min-height: 0; max-height: none; }
     .shotLink { padding: 8px; }
     .shotImg { height: auto; object-fit: contain; }
     .analysisGrid { grid-template-columns: 1fr; }

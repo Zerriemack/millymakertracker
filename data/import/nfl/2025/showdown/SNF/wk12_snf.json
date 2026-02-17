@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 12,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-23",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK12_SNF_SHOWDOWN_2025-11-23_buccaneers_rams",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2996667,
+    "totalOwnershipBp": 22320
+  },
+  "winner": {
+    "username": "csk2022",
+    "points": 118.82,
+    "maxEntries": 23
+  },
+  "lineup": {
+    "salaryUsed": 48500,
+    "totalPoints": 118.82,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "D. Adams",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 14700,
+        "points": 34.8,
+        "ownershipPercent": 11.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "P. Nacua",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 11800,
+        "points": 16.7,
+        "ownershipPercent": 64.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "M. Stafford",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 10800,
+        "points": 22.92,
+        "ownershipPercent": 68.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Rams",
+        "position": "DST",
+        "team": "LAR",
+        "salary": 4800,
+        "points": 18,
+        "ownershipPercent": 16.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tez Johnson",
+        "position": "WR",
+        "team": "TB",
+        "salary": 4000,
+        "points": 12.3,
+        "ownershipPercent": 31.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Parkinson",
+        "position": "TE",
+        "team": "LAR",
+        "salary": 2400,
+        "points": 14.1,
+        "ownershipPercent": 30.4
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "A 34 to 7 finish pushes the slate toward Rams dominance, and this lineup leans into it without wasting salary on Tampa pieces with no path. Stafford plus Adams plus Nacua secures the passing production, while Rams defense captures the game tipping further out of reach.\n\nParkinson accounts for red zone scoring without requiring a third expensive Rams wideout. Tight end points tend to appear when a team scores four times and spreads targets.\n\nThe lone Buccaneers slot is chosen for function. Tez Johnson provides a cheap access point to the only Tampa touchdown path that shows up, while still allowing the roster to remain a Rams heavy build. The roster wins because it accepts that a blowout often produces one usable bringback, not three.",
+    "uniquenessNotes": "Adams captain separates from Stafford captain builds while remaining tied to the same Rams scoring.\n\nParkinson plus Rams DST prevents the roster from needing a second Tampa player to remain competitive.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "D. Adams", "position": "WR", "team": "LAR" },
+        "teamSplit": "5-1",
+        "buildType": "Rams blowout capture through QB plus two primary receivers, reinforced by DST and TE",
+        "includesQBs": true
+      },
+      "primaryLever": "Treat the slate as Rams concentrated scoring",
+      "secondaryLever": "Single cheap bringback covers the only Tampa path without sacrificing Rams structure"
+    }
+  }
+}

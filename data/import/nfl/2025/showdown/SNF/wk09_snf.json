@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 9,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-02",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK09_SNF_SHOWDOWN_2025-11-02_seahawks_commanders",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 16250000,
+    "totalOwnershipBp": 24710
+  },
+  "winner": {
+    "username": "Awesemo",
+    "points": 133.32,
+    "maxEntries": 84
+  },
+  "lineup": {
+    "salaryUsed": 45900,
+    "totalPoints": 133.32,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "S. Darnold",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 15900,
+        "points": 46.8,
+        "ownershipPercent": 7.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Smith-Njigba",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 12000,
+        "points": 25,
+        "ownershipPercent": 85.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Daniels",
+        "position": "QB",
+        "team": "WAS",
+        "salary": 11600,
+        "points": 16.22,
+        "ownershipPercent": 73.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T. Horton",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 3200,
+        "points": 20.8,
+        "ownershipPercent": 35.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Barner",
+        "position": "TE",
+        "team": "SEA",
+        "salary": 3000,
+        "points": 11.5,
+        "ownershipPercent": 39.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. White",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 200,
+        "points": 13,
+        "ownershipPercent": 6.1
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Darnold at captain is a direct bet on the Seattle passing box score being both large and concentrated. Four passing scores plus the 300 yard bonus can win captain without needing rushing production, but it demands correct attachment pieces.\n\nSeattle stacks are built through a tight selection: Smith-Njigba as the primary volume receiver, then secondary points captured through cheap, specific roles. Horton covers a single high value receiving score, Barner covers tight end scoring without paying for a full receiver tree.\n\nDaniels functions as the runback because Washington still produces enough offense to keep Seattle pressing. His rushing yards prevent the slate from turning into a pure Seattle onslaught roster. The final slot is the structural key. A $200 player exists to keep the Darnold captain configuration intact while still returning usable points. The roster wins because it refuses to compromise the core to chase a safer last name.",
+    "uniquenessNotes": "Quarterback captain builds often force awkward mid tier cuts. This version keeps the key Seattle attachments and pays for them with the punt, not with a weaker captain.\n\nSeattle scoring is captured through two receivers plus tight end, which reduces the need to guess multiple wideouts correctly.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "S. Darnold", "position": "QB", "team": "SEA" },
+        "teamSplit": "5-1",
+        "buildType": "QB captain with concentrated SEA pass catching, plus opposing QB as stabilizer",
+        "includesQBs": true
+      },
+      "primaryLever": "QB captain ceiling paired with correct, specific pass catcher attachments",
+      "secondaryLever": "Extreme punt preserves the exact build instead of forcing a different captain or dropping a key receiver"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "slateId": "cmln7fepy0000qjit1agaa2cm",
+  "siteContestId": "NFL_2025_WK02_MAIN_2025-09-14T17:00:00.000Z_DK_MAIN_MILLY",
+  "slateKey": "NFL_2025_WK02_MAIN_2025-09-14_CHI_DAL_DET_IND_NYG_SF",
+  "slateType": "MAIN",
+  "slateDate": "2025-09-14T17:00:00",
+  "winner": {
+    "id": "cmln7fesn0002qjit6l3r535x",
+    "username": "kjk003",
+    "points": 260.2,
+    "maxEntries": 13
+  },
+  "lineup": {
+    "lineupType": "CLASSIC",
+    "salaryUsed": 50000,
+    "salaryLeft": 0,
+    "totalPoints": 260.2,
+    "totalOwnershipPct": 85.4,
+    "captain": null,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "R. Wilson",
+        "position": null,
+        "team": null,
+        "salary": 5100,
+        "points": 34.3,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Taylor",
+        "position": null,
+        "team": null,
+        "salary": 6700,
+        "points": 32.5,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "C. McCaffrey",
+        "position": null,
+        "team": null,
+        "salary": 7500,
+        "points": 22.7,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "M. Nabers",
+        "position": null,
+        "team": null,
+        "salary": 7100,
+        "points": 40.7,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A. St. Brown",
+        "position": null,
+        "team": null,
+        "salary": 7000,
+        "points": 42.2,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "R. Odunze",
+        "position": null,
+        "team": null,
+        "salary": 4800,
+        "points": 34.8,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "J. Ferguson",
+        "position": null,
+        "team": null,
+        "salary": 3800,
+        "points": 16.8,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "W. Robinson",
+        "position": null,
+        "team": null,
+        "salary": 4400,
+        "points": 31.2,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "49ers",
+        "position": null,
+        "team": null,
+        "salary": 3600,
+        "points": 5.0,
+        "ownershipPercent": null
+      }
+    ]
+  },
+  "tags": {
+    "archetype": null
+  },
+  "generatedAt": "2026-02-17T18:24:02.049273Z"
+}

@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "file": "data/import/nfl/2025/showdown/SNF/wk08_snf.json",
+  "slateKey": "NFL_2025_WK08_SNF_2025-10-26_GB_PIT",
+  "slateType": "SNF",
+  "lineupType": "SHOWDOWN",
+  "seasonId": "cmln7fd660000qfitpdj5bg3c",
+  "slateId": "cmlr34zsn000049it8275u32q",
+  "contestId": "cmlr34zuq000149itjnbw5if5",
+  "winnerId": "cmlr34zy0000349ituv94hpw3",
+  "lineupId": "cmlr34zzg000449it267xh4tx",
+  "lineupItemCount": 6,
+  "totalOwnershipBp": 20690,
+  "analysisSaved": true
+}

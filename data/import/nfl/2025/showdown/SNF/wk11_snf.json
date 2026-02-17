@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 11,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-11-16",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK11_SNF_SHOWDOWN_2025-11-16_lions_eagles",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 75000,
+    "totalOwnershipBp": 21320
+  },
+  "winner": {
+    "username": "AdamShulman",
+    "points": 97.55,
+    "maxEntries": 56
+  },
+  "lineup": {
+    "salaryUsed": 49200,
+    "totalPoints": 97.55,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Ja. Williams",
+        "position": "WR",
+        "team": "DET",
+        "salary": 11400,
+        "points": 29.55,
+        "ownershipPercent": 7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Gibbs",
+        "position": "RB",
+        "team": "DET",
+        "salary": 10600,
+        "points": 22.6,
+        "ownershipPercent": 47.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Hurts",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 10400,
+        "points": 14.5,
+        "ownershipPercent": 78.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Brown",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 8000,
+        "points": 11.9,
+        "ownershipPercent": 44.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Elliott",
+        "position": "K",
+        "team": "PHI",
+        "salary": 4800,
+        "points": 11,
+        "ownershipPercent": 19.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Eagles",
+        "position": "DST",
+        "team": "PHI",
+        "salary": 4000,
+        "points": 8,
+        "ownershipPercent": 16.2
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This slate wins by treating the game as a compressed scoring environment. Philadelphia wins 16 to 9, which shifts value away from chasing extra pass catchers and toward pieces that benefit from limited touchdowns.\n\nJa. Williams at captain captures Detroit’s highest impact skill play output without needing Detroit to win. Gibbs pairs with him to cover how Detroit generates yards, while the Eagles side is built through Hurts and Brown as the direct route to whatever passing production exists.\n\nElliott and the Eagles defense complete the Philadelphia story. Field goals matter more in this score range, and the defense adds points while also suppressing Detroit’s ability to force an expensive bringback. The roster is built to win a game where one or two skill players decide the slate and the rest is scoreboard mechanics.",
+    "uniquenessNotes": "Captain choice sits on a player whose points come from explosive plays plus added rushing, which separates from safer volume captains.\n\nUsing both Eagles DST and kicker reduces the need to guess secondary Eagles receivers in a game with limited touchdown total.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "Ja. Williams", "position": "WR", "team": "DET" },
+        "teamSplit": "2-4",
+        "buildType": "Low touchdown environment captured through Eagles control pieces plus Detroit’s top two skill outputs",
+        "includesQBs": true
+      },
+      "primaryLever": "Treat low scoring as a feature, not a problem",
+      "secondaryLever": "Kicker plus DST reduces dependency on guessing secondary pass catchers"
+    }
+  }
+}

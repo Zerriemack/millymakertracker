@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 17,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-28",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK17_SNF_SHOWDOWN_2025-12-28_bears_49ers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2975000,
+    "totalOwnershipBp": 28590
+  },
+  "winner": {
+    "username": "Loutru222",
+    "points": 180.52,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 48400,
+    "totalPoints": 180.52,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "L. Burden III",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 10200,
+        "points": 46.2,
+        "ownershipPercent": 6.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 11800,
+        "points": 31.1,
+        "ownershipPercent": 82.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Purdy",
+        "position": "QB",
+        "team": "SF",
+        "salary": 10600,
+        "points": 40.92,
+        "ownershipPercent": 72.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Swift",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 8000,
+        "points": 21.9,
+        "ownershipPercent": 36
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Loveland",
+        "position": "TE",
+        "team": "CHI",
+        "salary": 4800,
+        "points": 21.4,
+        "ownershipPercent": 41.2
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Tonges",
+        "position": "TE",
+        "team": "SF",
+        "salary": 3000,
+        "points": 19,
+        "ownershipPercent": 46.9
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This slate is a pure shootout, but the roster still makes a sharp structural choice: Burden captain without the Chicago quarterback. Burden supplies the highest leverage outcome, a huge yardage line plus touchdown, while the roster uses Swift and Loveland to cover additional Chicago scoring without paying for full quarterback attachment.\n\nSan Francisco is captured through Purdy and McCaffrey, which locks in the core of a 42 point team. Tonges adds a tight end touchdown layer and prevents the roster from needing to guess a second expensive 49ers wide receiver.\n\nThe result is a 3-3 build that still behaves differently from the common shootout construction. Instead of QB plus two receivers on both sides, it uses one captain receiver spike, a running back capture for Chicago, and a tight end capture for San Francisco. In a game where both teams clear 35, alternate capture routes can beat the standard stacking approach when the touchdowns land in fewer, specific places.",
+    "uniquenessNotes": "Burden captain at 6.9 percent wins because his yardage bonus plus touchdown beats many higher owned captains.\n\nFading the Bears quarterback avoids a common duplication path in shootouts, while Swift and Loveland still keep Chicago production present.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "L. Burden III", "position": "WR", "team": "CHI" },
+        "teamSplit": "3-3",
+        "buildType": "WR captain spike without CHI QB, paired with SF QB+RB core and TE touchdown capture",
+        "includesQBs": true
+      },
+      "primaryLever": "Shootout captured through non standard attachment paths",
+      "secondaryLever": "Two tight ends soak up touchdown distribution without chasing extra wideouts"
+    }
+  }
+}

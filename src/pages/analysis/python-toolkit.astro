@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const title = "Python Toolkit";
+---
+
+<Layout title={title}>
+  <main class="page">
+    <header class="hero">
+      <h1 class="h1">Python toolkit</h1>
+      <p class="sub">How the analytics layer turns your tracker into a research engine.</p>
+    </header>
+
+    <section class="block">
+      <h2 class="h2">Python, NumPy, Pandas</h2>
+      <p>
+        You pull slate, lineup, and player tables out of Postgres, then treat them as film cutups.
+        Pandas becomes your spreadsheet on steroids.
+      </p>
+      <h3 class="h3">DFS examples</h3>
+      <ul class="list">
+        <li><strong>Slate archetypes:</strong> bucket slates by winner construction and quantify hit rates.</li>
+        <li><strong>Ownership leverage math:</strong> compute leverage instead of eyeballing uniqueness.</li>
+        <li><strong>Salary and construction rules:</strong> distributions of salary left by slate type.</li>
+        <li><strong>Bring back and correlation checks:</strong> measure tendencies across seasons.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="h2">Charts</h2>
+      <p>Turn patterns into visuals that teach in seconds.</p>
+      <ul class="list">
+        <li><strong>Salary left histogram:</strong> where winners actually live.</li>
+        <li><strong>Ownership vs points scatter:</strong> total ownership plotted against score.</li>
+        <li><strong>Construction heatmaps:</strong> captain and flex usage by game script bucket.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="h2">Web scraping and validation</h2>
+      <p>Scale data collection and stop seed errors before Prisma ever sees them.</p>
+      <ul class="list">
+        <li><strong>Contest metadata:</strong> entry fee, prize, entries, ids, dates.</li>
+        <li><strong>Player validation:</strong> teams, positions, name formatting.</li>
+        <li><strong>Context fields:</strong> injury, snaps, routes, targets for writeups with receipts.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="h2">Stats, the notebook way</h2>
+      <p>Measure edges, update them as new slates come in, and stop relying on memory.</p>
+      <ul class="list">
+        <li><strong>Rule testing:</strong> compare hit rates across the dataset.</li>
+        <li><strong>Confidence intervals:</strong> ranges on win rates, not vibes.</li>
+        <li><strong>Regression style questions:</strong> what predicts top finishes using your variables.</li>
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page { max-width: 980px; margin: 0 auto; padding: 24px 16px; }
+  .hero { margin-bottom: 18px; }
+  .h1 { margin: 0; font-size: 34px; font-weight: 900; }
+  .sub { margin: 10px 0 0; color: #666; line-height: 1.4; }
+  .block { margin-top: 22px; padding: 16px; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; background: #fff; }
+  .h2 { margin: 0 0 10px; font-size: 18px; font-weight: 900; }
+  .h3 { margin: 14px 0 8px; font-size: 14px; font-weight: 900; color: #444; }
+  .list { margin: 10px 0 0 18px; }
+  .list li { margin: 8px 0; line-height: 1.45; }
+</style>

@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 8,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-10-26",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK08_SNF_SHOWDOWN_2025-10-26_packers_steelers",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 25000000,
+    "totalOwnershipBp": 20690
+  },
+  "winner": {
+    "username": "ckk-244ayk",
+    "points": 149.31,
+    "maxEntries": 30
+  },
+  "lineup": {
+    "salaryUsed": 48400,
+    "totalPoints": 149.31,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "T. Kraft",
+        "position": "TE",
+        "team": "GB",
+        "salary": 12600,
+        "points": 54.45,
+        "ownershipPercent": 11.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Love",
+        "position": "QB",
+        "team": "GB",
+        "salary": 10000,
+        "points": 31.3,
+        "ownershipPercent": 67.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A. Rodgers",
+        "position": "QB",
+        "team": "PIT",
+        "salary": 9800,
+        "points": 16.76,
+        "ownershipPercent": 58.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Doubs",
+        "position": "WR",
+        "team": "GB",
+        "salary": 7600,
+        "points": 9.4,
+        "ownershipPercent": 45.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Boswell",
+        "position": "K",
+        "team": "PIT",
+        "salary": 5200,
+        "points": 20,
+        "ownershipPercent": 23.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Wilson",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 3200,
+        "points": 17.4,
+        "ownershipPercent": 1.7
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This build treats Kraft as the scoring choke point instead of forcing an alpha wideout captain. Two receiving scores plus the yardage bonus creates a captain total high enough to let the rest of the lineup focus on capturing how points were produced on both sides.\n\nThe double quarterback decision matters in this game script. Green Bay scores 35, but Pittsburgh still reaches 25, which keeps Rodgers viable even in a loss. Rodgers does not need to win the game, he needs the Steelers to stay active through the air long enough to post two passing scores.\n\nBoswell and Wilson finish the Pittsburgh story without paying for extra Steelers volume that never arrives. Boswell converts drives into points, Wilson captures a single high impact play at tiny ownership. That single slot changes the roster from a common 2QB shell into a version that survives duplication pressure.",
+    "uniquenessNotes": "Kraft captain avoids the common wide receiver captain path, yet still lands a slate breaking captain score.\n\nThe lineup accepts chalk at QB, then buys uniqueness with a one play wide receiver and a kicker who benefits from stalled drives. That pairing blocks many popular upgrade attempts.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "T. Kraft", "position": "TE", "team": "GB" },
+        "teamSplit": "3-3",
+        "buildType": "TE captain ceiling paired with 2QB game capture, then closed with PIT kicker plus low owned WR",
+        "includesQBs": true
+      },
+      "primaryLever": "Captain score large enough to prioritize game capture and duplication control",
+      "secondaryLever": "Kicker plus one play WR creates a different PIT scoring capture than typical double stack builds"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 15,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2025-12-14",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "SNF Showdown",
+    "siteContestId": "NFL_2025_WK15_SNF_SHOWDOWN_2025-12-14_vikings_cowboys",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 10750000,
+    "totalOwnershipBp": 26100
+  },
+  "winner": {
+    "username": "mortyk14",
+    "points": 116.91,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 48700,
+    "totalPoints": 116.91,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Nailor",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 4500,
+        "points": 29.25,
+        "ownershipPercent": 0.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D. Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 10400,
+        "points": 11.96,
+        "ownershipPercent": 72.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C. Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 10000,
+        "points": 20.1,
+        "ownershipPercent": 54.6
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. Williams",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 9400,
+        "points": 15.1,
+        "ownershipPercent": 45.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J. McCarthy",
+        "position": "QB",
+        "team": "MIN",
+        "salary": 9000,
+        "points": 24.5,
+        "ownershipPercent": 46.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Aubrey",
+        "position": "K",
+        "team": "DAL",
+        "salary": 5400,
+        "points": 16,
+        "ownershipPercent": 41.7
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This win is built around a punt captain with a real ceiling outcome, not a dead slot. Nailor at captain is 0.7 percent ownership, yet he supplies two touchdowns plus enough yardage to beat many expensive captains. Once that happens, the rest of the roster becomes a salary allocation exercise.\n\nThe build spends on both quarterbacks because the game reaches 60 total points. McCarthy captures Minnesota’s passing and his rushing add on. Prescott is included even with a modest fantasy total because Dallas still sustains drives and spreads production through Lamb and the run game.\n\nAubrey matters because Dallas points are not cleanly concentrated into one skill player beyond Lamb. Field goals and long distance kicks can outscore a secondary receiver in this specific shape. The roster wins because it uses the punt captain savings to buy the two QB framework and the correct Dallas scoring capture without forcing extra receiver guesses.",
+    "uniquenessNotes": "Punt captain wins are rare when the captain is dead. This is the opposite. The captain is the spike outcome.\n\nThe remaining slots lean into scoreboard driven pieces: both QBs, the alpha receiver, and the kicker tied to sustained drives.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "J. Nailor", "position": "WR", "team": "MIN" },
+        "teamSplit": "2-4",
+        "buildType": "Ultra low owned punt WR captain enabling double QB and Dallas scoring capture through Lamb plus kicker",
+        "includesQBs": true
+      },
+      "primaryLever": "Punt captain with true two touchdown outcome creates a unique salary map",
+      "secondaryLever": "Kicker chosen as a Dallas points container in a drive heavy game"
+    }
+  }
+}
