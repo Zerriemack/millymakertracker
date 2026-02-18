@@ -1,0 +1,1002 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+
+const apiUrl = `${Astro.url.origin}/api/analysis/nfl/2025/showdown`;
+const res = await fetch(apiUrl);
+
+if (!res.ok) {
+  throw new Error(`Analysis API failed: ${res.status} ${res.statusText} (${apiUrl})`);
+}
+
+const data = await res.json();
+const rowsRaw = Array.isArray(data?.rows) ? data.rows : Array.isArray(data?.items) ? data.items : [];
+
+function n(v: any) {
+  const x = Number(v);
+  return Number.isFinite(x) ? x : null;
+}
+
+function fmtDate(iso: any) {
+  const s = String(iso || "");
+  if (!s) return "—";
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return s;
+  return new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit" }).format(d);
+}
+
+function moneyCents(v: any) {
+  const x = n(v);
+  if (x === null) return "—";
+  return `$${(x / 100).toLocaleString("en-US")}`;
+}
+
+function median(vals: number[]) {
+  if (!vals.length) return null;
+  const a = [...vals].sort((x, y) => x - y);
+  const mid = Math.floor(a.length / 2);
+  return a.length % 2 ? a[mid] : (a[mid - 1] + a[mid]) / 2;
+}
+
+function mode(vals: number[]) {
+  if (!vals.length) return null;
+  const m = new Map<number, number>();
+  for (const v of vals) m.set(v, (m.get(v) || 0) + 1);
+  let best: number | null = null;
+  let bestC = 0;
+  for (const [k, c] of m.entries()) {
+    if (c > bestC) {
+      bestC = c;
+      best = k;
+    }
+  }
+  return best;
+}
+
+function minMax(vals: number[]) {
+  if (!vals.length) return { min: null as number | null, max: null as number | null };
+  let mn = vals[0];
+  let mx = vals[0];
+  for (const v of vals) {
+    if (v < mn) mn = v;
+    if (v > mx) mx = v;
+  }
+  return { min: mn, max: mx };
+}
+
+function countsByKey(list: any[], key: string) {
+  const m = new Map<string, number>();
+  for (const it of list) {
+    const k = String((it as any)[key] || "").trim();
+    if (!k) continue;
+    m.set(k, (m.get(k) || 0) + 1);
+  }
+  return m;
+}
+
+function mostLeast(map: Map<string, number>) {
+  const entries = Array.from(map.entries());
+  if (!entries.length) return { most: null as any, least: null as any };
+  let most = entries[0];
+  let least = entries[0];
+  for (const e of entries) {
+    if (e[1] > most[1]) most = e;
+    if (e[1] < least[1]) least = e;
+  }
+  return { most, least };
+}
+
+const rows = rowsRaw
+  .map((r: any) => {
+    const slateId = String(r.slateId ?? r.id ?? r.slate?.id ?? "");
+    const week = Number(r.week ?? r.slate?.week ?? null);
+    const slateType = String(r.slateType ?? r.slate?.slateType ?? "");
+
+    const slateDate = String(r.slateDate ?? r.slate?.slateDate ?? r.date ?? "");
+    const link = String(r.link ?? r.url ?? (slateId ? `/nfl/2025/slate/${slateId}` : ""));
+
+    // YEAR: future-proof. If API later provides r.year, use it. Otherwise default from this route.
+    const year =
+      typeof r.year === "number"
+        ? r.year
+        : typeof r.slate?.season?.year === "number"
+          ? r.slate.season.year
+          : 2025;
+
+    const salaryUsed = typeof r.salaryUsed === "number" ? r.salaryUsed : n(r.lineup?.salaryUsed);
+    const salaryLeft =
+      typeof r.salaryLeft === "number"
+        ? r.salaryLeft
+        : typeof salaryUsed === "number"
+          ? 50000 - salaryUsed
+          : null;
+
+    const ownPct =
+      typeof r.totalOwnershipPct === "number"
+        ? r.totalOwnershipPct
+        : typeof r.totalOwnershipBp === "number"
+          ? r.totalOwnershipBp / 100
+          : typeof r.contest?.totalOwnershipBp === "number"
+            ? r.contest.totalOwnershipBp / 100
+            : null;
+
+    const pts =
+      typeof r.points === "number"
+        ? r.points
+        : typeof r.winnerPoints === "number"
+          ? r.winnerPoints
+          : typeof r.winner?.points === "number"
+            ? r.winner.points
+            : typeof r.totalPoints === "number"
+              ? r.totalPoints
+              : null;
+
+    const topPrizeCents =
+      typeof r.topPrizeCents === "number"
+        ? r.topPrizeCents
+        : typeof r.contest?.topPrizeCents === "number"
+          ? r.contest.topPrizeCents
+          : null;
+
+    const teamSplit = String(r.teamSplit ?? r.split ?? r.construction?.teamSplit ?? "");
+    const captainPos = String(
+      r.captainPos ?? r.captainPosition ?? r.captain?.position ?? r.construction?.captainPos ?? ""
+    );
+
+    return {
+      slateId,
+      year,
+      week,
+      slateType,
+      slateDate,
+      link,
+      teamSplit,
+      captainPos,
+      salaryLeft,
+      ownPct,
+      pts,
+      topPrizeCents,
+    };
+  })
+  .filter((r: any) => r.slateId);
+
+const salaryLeftVals = rows.map((r) => n(r.salaryLeft)).filter((v): v is number => v !== null);
+const ownPctVals = rows.map((r) => n(r.ownPct)).filter((v): v is number => v !== null);
+const ptsVals = rows.map((r) => n(r.pts)).filter((v): v is number => v !== null);
+
+const salaryLeftMM = minMax(salaryLeftVals);
+const ownPctMM = minMax(ownPctVals);
+const ptsMM = minMax(ptsVals);
+
+const salaryLeftMedian = median(salaryLeftVals);
+const ownMedian = median(ownPctVals);
+const ptsMedian = median(ptsVals);
+
+const salaryLeftMode = mode(salaryLeftVals);
+
+const splitCounts = countsByKey(rows, "teamSplit");
+const capPosCounts = countsByKey(rows, "captainPos");
+
+const splitML = mostLeast(splitCounts);
+const capPosML = mostLeast(capPosCounts);
+
+const capPosLines = Array.from(capPosCounts.entries()).length
+  ? Array.from(capPosCounts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([k, v]) => ({ k, v }))
+  : [];
+
+const pageTitle = "NFL Showdown Review (2025)";
+---
+
+<Layout title={pageTitle}>
+  <main class="page">
+    <header class="topbar">
+      <div class="titleBlock">
+        <h1 class="h1">{pageTitle}</h1>
+        <div class="sub">
+          Rows: <span id="shownCount">{rows.length}</span> / {rows.length}
+        </div>
+      </div>
+
+      <div class="searchWrap">
+        <label class="srOnly" for="q">Search</label>
+        <input id="q" class="search" type="text" placeholder="Search: LAR, 4-2, WR, MNF, etc" />
+        <button id="resetAllTop" class="resetAll" type="button">Reset all</button>
+      </div>
+    </header>
+
+    <section class="grid">
+      <aside class="sidebar">
+        <div class="card">
+          <div class="cardTitle">Distribution</div>
+          <div class="kv">
+            <div class="k">Salary left</div>
+            <div class="v mono">
+              <div>Median: {salaryLeftMedian === null ? "—" : salaryLeftMedian.toFixed(0)}</div>
+              <div>Most: {salaryLeftMM.max === null ? "—" : salaryLeftMM.max.toFixed(0)}</div>
+              <div>Least: {salaryLeftMM.min === null ? "—" : salaryLeftMM.min.toFixed(0)}</div>
+              <div>Mode: {salaryLeftMode === null ? "—" : String(salaryLeftMode)}</div>
+            </div>
+
+            <div class="k">Total ownership</div>
+            <div class="v mono">
+              <div>Median: {ownMedian === null ? "—" : `${ownMedian.toFixed(2)}%`}</div>
+              <div>Most: {ownPctMM.max === null ? "—" : `${ownPctMM.max.toFixed(2)}%`}</div>
+              <div>Least: {ownPctMM.min === null ? "—" : `${ownPctMM.min.toFixed(2)}%`}</div>
+            </div>
+
+            <div class="k">Winner points</div>
+            <div class="v mono">
+              <div>Median: {ptsMedian === null ? "—" : ptsMedian.toFixed(2)}</div>
+              <div>Most: {ptsMM.max === null ? "—" : ptsMM.max.toFixed(2)}</div>
+              <div>Least: {ptsMM.min === null ? "—" : ptsMM.min.toFixed(2)}</div>
+            </div>
+
+            <div class="note">
+              Median is the middle row after sorting. Most and least are the season high and season low.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">Construction</div>
+          <div class="kv">
+            <div class="k">Team splits</div>
+            <div class="v mono">
+              <div>3-3: {splitCounts.get("3-3") ?? 0}</div>
+              <div>4-2: {splitCounts.get("4-2") ?? 0}</div>
+              <div>5-1: {splitCounts.get("5-1") ?? 0}</div>
+              <div class="spacer"></div>
+              <div>Most: {splitML.most ? `${splitML.most[0]} (${splitML.most[1]})` : "—"}</div>
+              <div>Least: {splitML.least ? `${splitML.least[0]} (${splitML.least[1]})` : "—"}</div>
+            </div>
+
+            <div class="k">Captain position</div>
+            <div class="v mono">
+              {capPosLines.length ? (
+                <div class="lines">
+                  {capPosLines.map((x) => (
+                    <div>{x.k}: {x.v}</div>
+                  ))}
+                </div>
+              ) : (
+                <div>—</div>
+              )}
+              <div class="spacer"></div>
+              <div>Most: {capPosML.most ? `${capPosML.most[0]} (${capPosML.most[1]})` : "—"}</div>
+              <div>Least: {capPosML.least ? `${capPosML.least[0]} (${capPosML.least[1]})` : "—"}</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="main">
+        <div class="tableWrap">
+          <table id="t">
+            <thead>
+              <tr>
+                <th class="colYear"><button class="thBtn" type="button" data-col="year">YEAR</button></th>
+                <th class="colWk"><button class="thBtn" type="button" data-col="week">WK</button></th>
+                <th class="colType"><button class="thBtn" type="button" data-col="type">TYPE</button></th>
+                <th class="colDate"><button class="thBtn" type="button" data-col="date">DATE</button></th>
+                <th class="colSplit"><button class="thBtn" type="button" data-col="split">SPLIT</button></th>
+                <th class="colCap"><button class="thBtn" type="button" data-col="captain">CAPTAIN</button></th>
+                <th class="colLeft"><button class="thBtn" type="button" data-col="left">LEFT</button></th>
+                <th class="colOwn"><button class="thBtn" type="button" data-col="own">OWN</button></th>
+                <th class="colPts"><button class="thBtn" type="button" data-col="pts">PTS</button></th>
+                <th class="colPrize"><button class="thBtn" type="button" data-col="top">TOP</button></th>
+                <th class="colLink"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {rows.map((r) => {
+                const year = Number.isFinite(r.year) ? String(r.year) : "";
+                const wk = Number.isFinite(r.week) ? String(r.week) : "";
+                const left = n(r.salaryLeft);
+                const own = n(r.ownPct);
+                const pts = n(r.pts);
+                const top = n(r.topPrizeCents);
+
+                return (
+                  <tr
+                    data-year={year}
+                    data-week={wk}
+                    data-type={r.slateType || ""}
+                    data-dateiso={r.slateDate || ""}
+                    data-date={fmtDate(r.slateDate)}
+                    data-split={r.teamSplit || ""}
+                    data-captain={r.captainPos || ""}
+                    data-left={left === null ? "" : String(left)}
+                    data-own={own === null ? "" : String(own)}
+                    data-pts={pts === null ? "" : String(pts)}
+                    data-top={top === null ? "" : String(top)}
+                  >
+                    <td class="mono">{year || "—"}</td>
+                    <td class="mono">{wk || "—"}</td>
+                    <td class="mono">{r.slateType || "—"}</td>
+                    <td class="mono">{fmtDate(r.slateDate)}</td>
+                    <td class="mono">{r.teamSplit || "—"}</td>
+                    <td class="capCell"><div class="capMain">{r.captainPos || "—"}</div></td>
+                    <td class="mono">{left === null ? "—" : left.toFixed(0)}</td>
+                    <td class="mono">{own === null ? "—" : `${own.toFixed(2)}%`}</td>
+                    <td class="mono">{pts === null ? "—" : pts.toFixed(2)}</td>
+                    <td class="mono">{moneyCents(r.topPrizeCents)}</td>
+                    <td class="mono">
+                      {r.link ? (
+                        <a class="link" href={r.link} target="_blank" rel="noreferrer">View</a>
+                      ) : (
+                        "—"
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+
+          <div id="colMenu" class="menu" style="display:none;">
+            <div class="menuTitle" id="menuTitle">Column</div>
+
+            <div class="menuRow">
+              <button class="menuBtn" type="button" data-action="sortAsc">Sort</button>
+              <button class="menuBtn" type="button" data-action="sortDesc">Sort</button>
+            </div>
+
+            <div class="menuBlock" id="menuFilterBlock"></div>
+
+            <div class="menuRow">
+              <button class="menuBtn secondary" type="button" data-action="clearCol">Clear column</button>
+              <button class="menuBtn secondary" type="button" data-action="clearAll">Clear all</button>
+            </div>
+          </div>
+
+          <script is:inline>
+            function byId(id) { return document.getElementById(id); }
+            function numOrNull(v) {
+              if (v === "" || v == null) return null;
+              const x = Number(v);
+              return Number.isFinite(x) ? x : null;
+            }
+            function text(v) { return String(v == null ? "" : v).trim(); }
+
+            const q = byId("q");
+            const shownCount = byId("shownCount");
+            const resetAllTop = byId("resetAllTop");
+
+            const tbody = document.querySelector("#t tbody");
+            const menu = byId("colMenu");
+            const menuTitle = byId("menuTitle");
+            const menuFilterBlock = byId("menuFilterBlock");
+
+            const thButtons = Array.from(document.querySelectorAll(".thBtn"));
+            const trs = tbody ? Array.from(tbody.querySelectorAll("tr")) : [];
+
+            const state = {
+              q: "",
+              filters: {
+                year: "",
+                week: "",
+                type: "",
+                split: "",
+                captain: "",
+                dateStart: "",
+                dateEnd: "",
+                leftMin: "",
+                leftMax: "",
+                ownMin: "",
+                ownMax: "",
+                ptsMin: "",
+                ptsMax: "",
+                topMin: "",
+                topMax: ""
+              },
+              sort: { col: "", dir: "" }
+            };
+
+ const colMeta = {
+  year: { kind: "catNum", label: "YEAR", key: "year" },
+  week: { kind: "catNum", label: "WK", key: "week" },
+  type: { kind: "cat", label: "TYPE", key: "type" },
+  date: { kind: "date", label: "DATE", key: "dateiso" },
+  split: { kind: "splitCat", label: "SPLIT", key: "split" },
+  captain: { kind: "cat", label: "CAPTAIN", key: "captain" },
+  left: { kind: "num", label: "LEFT", key: "left" },
+  own: { kind: "num", label: "OWN", key: "own" },
+  pts: { kind: "num", label: "PTS", key: "pts" },
+  top: { kind: "num", label: "TOP", key: "top" }
+};
+
+
+            function uniqueValues(colKey) {
+              const set = new Set();
+              for (const tr of trs) {
+                const v = text(tr.dataset[colKey]);
+                if (v) set.add(v);
+              }
+              return Array.from(set).sort((a, b) => {
+                const na = Number(a), nb = Number(b);
+                if (Number.isFinite(na) && Number.isFinite(nb)) return na - nb;
+                return a.localeCompare(b);
+              });
+            }
+
+            function withinNum(v, minStr, maxStr) {
+              const x = numOrNull(v);
+              if (x == null) return false;
+              const minV = numOrNull(minStr);
+              const maxV = numOrNull(maxStr);
+              if (minV != null && x < minV) return false;
+              if (maxV != null && x > maxV) return false;
+              return true;
+            }
+
+            function withinDate(iso, startStr, endStr) {
+              const s = text(iso);
+              if (!s) return false;
+              const t = new Date(s).getTime();
+              if (!Number.isFinite(t)) return false;
+
+              if (startStr) {
+                const st = new Date(startStr).getTime();
+                if (Number.isFinite(st) && t < st) return false;
+              }
+              if (endStr) {
+                const et = new Date(endStr).getTime();
+                if (Number.isFinite(et) && t > et) return false;
+              }
+              return true;
+            }
+
+            function hay(tr) {
+              const parts = [
+                tr.dataset.year, tr.dataset.week, tr.dataset.type, tr.dataset.date, tr.dataset.split,
+                tr.dataset.captain, tr.dataset.left, tr.dataset.own, tr.dataset.pts, tr.dataset.top
+              ];
+              return parts.map((x) => text(x).toLowerCase()).join(" ");
+            }
+
+            function passesFilters(tr) {
+              const f = state.filters;
+
+              if (f.year && text(tr.dataset.year) !== f.year) return false;
+              if (f.week && text(tr.dataset.week) !== f.week) return false;
+              if (f.type && text(tr.dataset.type) !== f.type) return false;
+              if (f.split && text(tr.dataset.split) !== f.split) return false;
+              if (f.captain && text(tr.dataset.captain) !== f.captain) return false;
+
+              if (f.dateStart || f.dateEnd) {
+                if (!withinDate(tr.dataset.dateiso, f.dateStart, f.dateEnd)) return false;
+              }
+
+              if (f.leftMin || f.leftMax) {
+                if (!withinNum(tr.dataset.left, f.leftMin, f.leftMax)) return false;
+              }
+              if (f.ownMin || f.ownMax) {
+                if (!withinNum(tr.dataset.own, f.ownMin, f.ownMax)) return false;
+              }
+              if (f.ptsMin || f.ptsMax) {
+                if (!withinNum(tr.dataset.pts, f.ptsMin, f.ptsMax)) return false;
+              }
+              if (f.topMin || f.topMax) {
+                if (!withinNum(tr.dataset.top, f.topMin, f.topMax)) return false;
+              }
+
+              return true;
+            }
+
+            function splitRank(s) {
+  const v = text(s);
+  if (!v) return -Infinity;
+  const parts = v.split("-").map((x) => Number(x));
+  if (parts.length !== 2 || !Number.isFinite(parts[0]) || !Number.isFinite(parts[1])) return -Infinity;
+  // rank by bigger side first, then smaller side
+  return parts[0] * 10 + parts[1];
+}
+
+function splitRank(s) {
+  const v = text(s);
+  if (!v) return -Infinity;
+  const parts = v.split("-").map((x) => Number(x));
+  if (parts.length !== 2 || !Number.isFinite(parts[0]) || !Number.isFinite(parts[1])) return -Infinity;
+  return parts[0] * 10 + parts[1]; // 3-3=33, 4-2=42, 5-1=51
+}
+
+function compare(trA, trB, col, dir) {
+  const meta = colMeta[col];
+  if (!meta) return 0;
+
+  const a = trA.dataset[meta.key];
+  const b = trB.dataset[meta.key];
+
+  // SPLIT numeric pair ordering
+  if (meta.kind === "splitCat") {
+    const aa = splitRank(a);
+    const bb = splitRank(b);
+    return dir === "asc" ? aa - bb : bb - aa;
+  }
+
+  // numeric sorting but still filter as dropdown
+  if (meta.kind === "catNum" || meta.kind === "num") {
+    const av = numOrNull(a);
+    const bv = numOrNull(b);
+    const aa = av == null ? -Infinity : av;
+    const bb = bv == null ? -Infinity : bv;
+    return dir === "asc" ? aa - bb : bb - aa;
+  }
+
+  if (meta.kind === "date") {
+    const at = new Date(text(a)).getTime();
+    const bt = new Date(text(b)).getTime();
+    const aa = Number.isFinite(at) ? at : 0;
+    const bb = Number.isFinite(bt) ? bt : 0;
+    return dir === "asc" ? aa - bb : bb - aa;
+  }
+
+  const as = text(a).toLowerCase();
+  const bs = text(b).toLowerCase();
+  if (as < bs) return dir === "asc" ? -1 : 1;
+  if (as > bs) return dir === "asc" ? 1 : -1;
+  return 0;
+}
+
+
+            function applyAll() {
+              const qv = state.q;
+              let shown = 0;
+
+              for (const tr of trs) {
+                let ok = true;
+                if (qv) {
+                  if (!hay(tr).includes(qv)) ok = false;
+                }
+                if (ok && !passesFilters(tr)) ok = false;
+
+                tr.style.display = ok ? "" : "none";
+                if (ok) shown += 1;
+              }
+
+              if (shownCount) shownCount.textContent = String(shown);
+
+              if (tbody && state.sort.col && state.sort.dir) {
+                const visible = trs.filter((tr) => tr.style.display !== "none");
+                visible.sort((a, b) => compare(a, b, state.sort.col, state.sort.dir));
+                for (const tr of visible) tbody.appendChild(tr);
+              }
+            }
+
+            let activeCol = "";
+
+            function closeMenu() {
+              if (menu) menu.style.display = "none";
+              if (menuFilterBlock) menuFilterBlock.innerHTML = "";
+              activeCol = "";
+            }
+
+            function positionMenu(anchorEl) {
+              if (!menu) return;
+              const r = anchorEl.getBoundingClientRect();
+              const top = Math.round(r.bottom + 8);
+              const left = Math.round(Math.min(window.innerWidth - 340, Math.max(12, r.left)));
+              menu.style.top = top + "px";
+              menu.style.left = left + "px";
+            }
+
+function buildFilterUI(col) {
+  const meta = colMeta[col];
+  if (!meta || !menuFilterBlock) return;
+
+  // dropdown filters (including numeric categories)
+  if (meta.kind === "cat" || meta.kind === "catNum" || meta.kind === "splitCat") {
+    const values = uniqueValues(meta.key);
+    const current = state.filters[col] || "";
+
+    menuFilterBlock.innerHTML =
+      '<div class="menuLabel">Filter</div>' +
+      '<select id="menuSelect" class="menuInput">' +
+      '<option value="">All</option>' +
+      values.map((v) => '<option value="' + v + '">' + v + "</option>").join("") +
+      "</select>";
+
+    const sel = byId("menuSelect");
+    if (sel) {
+      sel.value = current;
+      sel.addEventListener("change", () => {
+        state.filters[col] = sel.value;
+        applyAll();
+      });
+    }
+    return;
+  }
+
+  if (meta.kind === "date") {
+    const start = state.filters.dateStart || "";
+    const end = state.filters.dateEnd || "";
+    menuFilterBlock.innerHTML =
+      '<div class="menuLabel">Range</div>' +
+      '<div class="menuGrid2">' +
+      '<div><div class="mini">Start</div><input id="menuDateStart" class="menuInput" type="date" value="' + start + '" /></div>' +
+      '<div><div class="mini">End</div><input id="menuDateEnd" class="menuInput" type="date" value="' + end + '" /></div>' +
+      "</div>";
+
+    const a = byId("menuDateStart");
+    const b = byId("menuDateEnd");
+    if (a) a.addEventListener("change", () => { state.filters.dateStart = a.value; applyAll(); });
+    if (b) b.addEventListener("change", () => { state.filters.dateEnd = b.value; applyAll(); });
+    return;
+  }
+
+  if (meta.kind === "num") {
+    const map = {
+      left: ["leftMin", "leftMax"],
+      own: ["ownMin", "ownMax"],
+      pts: ["ptsMin", "ptsMax"],
+      top: ["topMin", "topMax"]
+    };
+    const pair = map[col];
+    if (!pair) return;
+
+    const minKey = pair[0];
+    const maxKey = pair[1];
+
+    const minVal = state.filters[minKey] || "";
+    const maxVal = state.filters[maxKey] || "";
+
+    menuFilterBlock.innerHTML =
+      '<div class="menuLabel">Range</div>' +
+      '<div class="menuGrid2">' +
+      '<div><div class="mini">Min</div><input id="menuNumMin" class="menuInput" type="number" step="any" value="' + minVal + '" /></div>' +
+      '<div><div class="mini">Max</div><input id="menuNumMax" class="menuInput" type="number" step="any" value="' + maxVal + '" /></div>' +
+      "</div>";
+
+    const minEl = byId("menuNumMin");
+    const maxEl = byId("menuNumMax");
+
+    function sync() {
+      state.filters[minKey] = minEl ? minEl.value : "";
+      state.filters[maxKey] = maxEl ? maxEl.value : "";
+      applyAll();
+    }
+
+    if (minEl) minEl.addEventListener("input", sync);
+    if (maxEl) maxEl.addEventListener("input", sync);
+  }
+}
+
+
+            function updateSortButtonLabels(col) {
+              const meta = colMeta[col];
+              const ascBtn = menu ? menu.querySelector('[data-action="sortAsc"]') : null;
+              const descBtn = menu ? menu.querySelector('[data-action="sortDesc"]') : null;
+              if (!ascBtn || !descBtn) return;
+
+             if (meta && (meta.kind === "num" || meta.kind === "split")) {
+                ascBtn.textContent = "Sort Low → High";
+                descBtn.textContent = "Sort High → Low";
+                return;
+              }
+
+              if (meta && meta.kind === "date") {
+                ascBtn.textContent = "Sort Old → New";
+                descBtn.textContent = "Sort New → Old";
+                return;
+              }
+
+              ascBtn.textContent = "Sort A → Z";
+              descBtn.textContent = "Sort Z → A";
+            }
+
+            function openMenuFor(col, anchorEl) {
+              if (!menu || !menuTitle) return;
+              activeCol = col;
+              const meta = colMeta[col];
+              menuTitle.textContent = meta ? meta.label : "Column";
+              buildFilterUI(col);
+              updateSortButtonLabels(col);
+              positionMenu(anchorEl);
+              menu.style.display = "block";
+            }
+
+            function clearColumn(col) {
+              if (col === "year") state.filters.year = "";
+              if (col === "week") state.filters.week = "";
+              if (col === "type") state.filters.type = "";
+              if (col === "split") state.filters.split = "";
+              if (col === "captain") state.filters.captain = "";
+              if (col === "date") { state.filters.dateStart = ""; state.filters.dateEnd = ""; }
+              if (col === "left") { state.filters.leftMin = ""; state.filters.leftMax = ""; }
+              if (col === "own") { state.filters.ownMin = ""; state.filters.ownMax = ""; }
+              if (col === "pts") { state.filters.ptsMin = ""; state.filters.ptsMax = ""; }
+              if (col === "top") { state.filters.topMin = ""; state.filters.topMax = ""; }
+              applyAll();
+            }
+
+            function clearAll() {
+              state.q = "";
+              for (const k in state.filters) state.filters[k] = "";
+              state.sort.col = "";
+              state.sort.dir = "";
+              if (q) q.value = "";
+              applyAll();
+            }
+
+            for (const btn of thButtons) {
+              btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const col = btn.dataset.col;
+                if (!col) return;
+                openMenuFor(col, btn);
+              });
+            }
+
+            if (q) {
+              q.addEventListener("input", () => {
+                state.q = q.value.trim().toLowerCase();
+                applyAll();
+              });
+            }
+
+            if (resetAllTop) {
+              resetAllTop.addEventListener("click", () => {
+                clearAll();
+                closeMenu();
+              });
+            }
+
+            if (menu) {
+              menu.addEventListener("click", (e) => {
+                const t = e.target;
+                if (!t || !t.dataset) return;
+                const action = t.dataset.action;
+                if (!action) return;
+
+                if (action === "sortAsc" && activeCol) {
+                  state.sort.col = activeCol;
+                  state.sort.dir = "asc";
+                  applyAll();
+                  closeMenu();
+                  return;
+                }
+
+                if (action === "sortDesc" && activeCol) {
+                  state.sort.col = activeCol;
+                  state.sort.dir = "desc";
+                  applyAll();
+                  closeMenu();
+                  return;
+                }
+
+                if (action === "clearCol" && activeCol) {
+                  clearColumn(activeCol);
+                  buildFilterUI(activeCol);
+                  updateSortButtonLabels(activeCol);
+                  return;
+                }
+
+                if (action === "clearAll") {
+                  clearAll();
+                  closeMenu();
+                  return;
+                }
+              });
+            }
+
+            document.addEventListener("click", (e) => {
+              const target = e.target;
+              if (!target) return;
+              if (menu && menu.contains(target)) return;
+              if (target.classList && target.classList.contains("thBtn")) return;
+              closeMenu();
+            });
+
+            applyAll();
+          </script>
+        </div>
+      </section>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page { width: 100%; max-width: 100%; padding: 18px 18px; }
+
+  .topbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .titleBlock { min-width: 320px; }
+
+  .h1 { margin: 0; font-size: 28px; font-weight: 900; line-height: 1.1; }
+
+  .sub { margin-top: 6px; color: #777; font-size: 13px; }
+
+  .searchWrap {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .search {
+    width: min(520px, 100%);
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .resetAll {
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.14);
+    background: rgba(0,0,0,0.04);
+    font-weight: 900;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .srOnly { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  .grid { display: grid; grid-template-columns: 370px 1fr; gap: 12px; min-height: 0; }
+
+  .sidebar { overflow: auto; padding-right: 4px; }
+
+  .main { min-height: 0; display: flex; flex-direction: column; }
+
+  .card {
+    border: 1px solid rgba(0,0,0,0.10);
+    border-radius: 14px;
+    background: #fff;
+    padding: 12px 12px;
+    margin-bottom: 10px;
+  }
+
+  .cardTitle { font-weight: 900; margin-bottom: 10px; }
+
+  .kv { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; align-items: start; }
+
+  .k { color: #666; font-size: 12px; }
+
+  .v { font-weight: 900; }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 700;
+  }
+
+  .mono .spacer { height: 10px; }
+
+  .note {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    color: #777;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .tableWrap {
+    border: 1px solid rgba(0,0,0,0.10);
+    border-radius: 14px;
+    overflow: auto;
+    background: #fff;
+  }
+
+  table { width: 100%; border-collapse: collapse; }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.03);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 10px 10px;
+    z-index: 2;
+    text-align: left;
+  }
+
+  tbody td {
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 10px 10px;
+    vertical-align: top;
+    font-size: 13px;
+  }
+
+  .capCell .capMain { font-weight: 900; }
+
+  .link { font-weight: 900; text-decoration: none; }
+
+  .thBtn {
+    width: 100%;
+    text-align: left;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-size: 11px;
+    color: #555;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .menu {
+    position: fixed;
+    width: 320px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.14);
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    padding: 12px;
+    z-index: 9999;
+  }
+
+  .menuTitle { font-weight: 900; margin-bottom: 10px; }
+
+  .menuRow { display: flex; gap: 8px; margin-bottom: 10px; }
+
+  .menuBtn {
+    flex: 1 1 auto;
+    padding: 9px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.14);
+    background: rgba(0,0,0,0.04);
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 13px;
+  }
+
+  .menuBtn.secondary { background: #fff; }
+
+  .menuBlock { margin-bottom: 10px; }
+
+  .menuLabel {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .menuInput {
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: #fff;
+    font-size: 13px;
+    outline: none;
+  }
+
+  .menuGrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: end; }
+
+  .mini { font-size: 11px; color: #666; margin-bottom: 6px; font-weight: 900; }
+
+  .colYear { width: 78px; }
+  .colWk { width: 56px; }
+  .colType { width: 90px; }
+  .colDate { width: 90px; }
+  .colSplit { width: 72px; }
+  .colCap { width: 120px; }
+  .colLeft { width: 80px; }
+  .colOwn { width: 90px; }
+  .colPts { width: 90px; }
+  .colPrize { width: 110px; }
+  .colLink { width: 70px; }
+
+  @media (max-width: 1200px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 900px) {
+    .topbar { flex-direction: column; align-items: stretch; }
+    .searchWrap { justify-content: stretch; }
+    .search { width: 100%; }
+  }
+</style>
