@@ -4,8 +4,10 @@ const defaultSport = "NFL";
 ---
 
 <section class="wf">
-  <h1 class="wf__title">Milly Maker Tracker</h1>
-  <p class="wf__sub">Search Milly Maker winning lineups.</p>
+  <div class="wf__hero">
+    <h1 class="wf__title">Milly Maker Tracker</h1>
+    <p class="wf__sub">Search Milly Maker winning lineups.</p>
+  </div>
 
   <form class="wf__form" id="winnerFinderForm">
     <div class="wf__row">
@@ -28,11 +30,17 @@ const defaultSport = "NFL";
       </label>
 
       <label class="wf__label">
-        Slate type
+        Filter
         <select name="slateType" class="wf__select">
-          <option value="">Any</option>
+          <option value="ANY">Any</option>
           <option value="CLASSIC">Classic</option>
           <option value="SHOWDOWN">Showdown</option>
+          <option value="MAIN">Main</option>
+          <option value="TNF">TNF</option>
+          <option value="SNF">SNF</option>
+          <option value="MNF">MNF</option>
+          <option value="SUPER_BOWL">Super Bowl</option>
+          <option value="OTHER">Other</option>
         </select>
       </label>
     </div>
@@ -43,7 +51,7 @@ const defaultSport = "NFL";
         <input
           name="q"
           class="wf__input"
-          placeholder="username, player name, team, contest name"
+          placeholder="username, contest name, siteContestId"
           autocomplete="off"
         />
       </label>
@@ -64,7 +72,13 @@ const defaultSport = "NFL";
       <div id="winnerFinderMeta" class="wf__meta"></div>
       <a id="winnerFinderOpen" class="wf__open" href="/winners">Open page</a>
     </div>
+
     <div id="winnerFinderList" class="wf__list"></div>
+
+    <div id="winnerFinderEmpty" class="wf__empty" hidden>
+      <div class="wf__emptyTitle">No results</div>
+      <div class="wf__emptySub">Try removing a filter or searching fewer words.</div>
+    </div>
   </div>
 
   <div class="wf__hint">Tip: Searches update the URL so users can share a link to the exact filters.</div>
@@ -76,6 +90,7 @@ const defaultSport = "NFL";
   const list = document.getElementById("winnerFinderList");
   const meta = document.getElementById("winnerFinderMeta");
   const openLink = document.getElementById("winnerFinderOpen");
+  const empty = document.getElementById("winnerFinderEmpty");
 
   function buildParams(values) {
     const p = new URLSearchParams();
@@ -120,66 +135,65 @@ const defaultSport = "NFL";
     return out.join(" ");
   }
 
-  function pickYear(valuesYear, s) {
-    const y1 = String(valuesYear || "").trim();
-    if (y1) return y1;
-
-    const y2 = String(s?.season?.year ?? "").trim();
-    if (y2) return y2;
-
-    const y3 = String(s?.year ?? "").trim();
-    if (y3) return y3;
-
-    const y4 = String(s?.seasonYear ?? "").trim();
-    if (y4) return y4;
-
-    return "";
+  function parseRight(right) {
+    const raw = String(right ?? "").trim();
+    if (!raw) return { prize: "", pts: "" };
+    const parts = raw.split("•").map((x) => x.trim()).filter(Boolean);
+    const prize = parts[0] && parts[0].startsWith("$") ? parts[0] : "";
+    const pts = parts.find((p) => p.toLowerCase().includes("pts")) || "";
+    return { prize, pts };
   }
 
-  function normalizeToRows(data, values) {
-    if (data && Array.isArray(data.items) && data.items.length && data.items[0].href) {
-      return data.items;
+  function parseLine1(line1) {
+    const raw = String(line1 ?? "").trim();
+    const out = { sport: "", year: "", week: "", slateType: "" };
+    if (!raw) return out;
+
+    const mSport = raw.match(/^(NFL|CFB)\b/i);
+    if (mSport) out.sport = mSport[1].toUpperCase();
+
+    const mYear = raw.match(/\b(20\d{2})\b/);
+    if (mYear) out.year = mYear[1];
+
+    const mWeek = raw.match(/\bWeek\s+(\d+)\b/i);
+    if (mWeek) out.week = mWeek[1];
+
+    const toks = raw.split(/\s+/);
+    const last = toks[toks.length - 1] || "";
+    out.slateType = last.toUpperCase();
+
+    return out;
+  }
+
+  function normalizeToRows(data) {
+    if (data && Array.isArray(data.items)) return data.items;
+    if (data && Array.isArray(data.rows)) return data.rows;
+    return [];
+  }
+
+  function renderSkeleton(n = 8) {
+    list.innerHTML = "";
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < n; i++) {
+      const d = document.createElement("div");
+      d.className = "wf__card wf__card--skeleton";
+      d.innerHTML = `
+        <div class="wf__skTop">
+          <div class="wf__skTitle wf__sk"></div>
+          <div class="wf__skMeta wf__sk"></div>
+        </div>
+        <div class="wf__skBadges">
+          <div class="wf__skPill wf__sk"></div>
+          <div class="wf__skPill wf__sk"></div>
+          <div class="wf__skPill wf__sk"></div>
+        </div>
+        <div class="wf__skBot">
+          <div class="wf__skSub wf__sk"></div>
+        </div>
+      `;
+      frag.appendChild(d);
     }
-
-    const slates = data?.slates || data?.items || data?.data || [];
-    if (!Array.isArray(slates)) return [];
-
-    const sport = String(values.sport || "NFL").toUpperCase();
-
-    return slates.map((s) => {
-      const id = s.id || s.slateId || s.slug || s.slateKey;
-      const year = pickYear(values.year, s);
-
-      const base = sport === "CFB" ? `/cfb/${year}/slate` : `/nfl/${year}/slate`;
-      const href = year && id ? `${base}/${id}` : sport === "CFB" ? "/cfb" : "/nfl";
-
-      const contestName = s.contestName || s.contest?.contestName || s.name || "Slate";
-      const week = s.week ?? s.seasonWeek ?? "";
-      const slateType = s.slateType || s.type || "";
-      const slateTag = s.slateTag || "";
-      const winner = s.winnerUsername || s.winner?.username || "";
-      const points = s.points || s.winnerPoints || s.winner?.points || "";
-      const topPrize = s.topPrizeCents || s.contest?.topPrizeCents || s.topPrize || null;
-
-      const prizeText =
-        typeof topPrize === "number" ? `$${Math.round(topPrize / 100).toLocaleString()}` : "";
-
-      const right = [prizeText, points ? `${Number(points).toFixed(2)} pts` : ""]
-        .filter(Boolean)
-        .join(" • ");
-
-      const line1 = [sport, year ? year : "", week !== "" ? `Week ${week}` : ""]
-        .filter(Boolean)
-        .join(" ");
-
-      const line2Parts = [];
-      if (slateType) line2Parts.push(String(slateType).toUpperCase());
-      if (slateTag) line2Parts.push(String(slateTag).toUpperCase());
-      if (winner) line2Parts.push(`Winner: ${winner}`);
-      const line2 = line2Parts.join(" ");
-
-      return { href, title: contestName, right, line1, line2 };
-    });
+    list.appendChild(frag);
   }
 
   function renderRows(rows) {
@@ -189,23 +203,38 @@ const defaultSport = "NFL";
     for (const r of rows) {
       const a = document.createElement("a");
       a.className = "wf__card";
-      a.href = r.href;
+      a.href = r.href || "/winners";
 
-      const title = cleanDupWords(r.title);
-      const right = cleanDupWords(r.right ?? "");
-      const line1 = cleanDupWords(r.line1 ?? "");
-      const line2 = cleanDupWords(r.line2 ?? "");
+      const title = cleanDupWords(r.title || "Contest");
+      const line2 = cleanDupWords(r.line2 || "");
+      const { prize, pts } = parseRight(r.right || "");
+      const p = parseLine1(r.line1 || "");
+
+      const badge1 = [p.sport, p.year].filter(Boolean).join(" ");
+      const badge2 = p.week ? `Week ${p.week}` : "";
+      const badge3 = p.slateType ? p.slateType : "";
 
       a.innerHTML = `
-        <div class="wf__cardTop">
-          <div class="wf__cardTitle">${esc(title)}</div>
-          <div class="wf__cardMeta">${esc(right)}</div>
-        </div>
-        <div class="wf__cardMid">
-          <div class="wf__pill">${esc(line1)}</div>
-        </div>
-        <div class="wf__cardBot">
-          <div class="wf__subLine">${esc(line2)}</div>
+        <div class="wf__cardGrid">
+          <div class="wf__main">
+            <div class="wf__hrow">
+              <div class="wf__cardTitle">${esc(title)}</div>
+              <div class="wf__right">
+                ${prize ? `<span class="wf__money">${esc(prize)}</span>` : ""}
+                ${pts ? `<span class="wf__pts">${esc(pts)}</span>` : ""}
+              </div>
+            </div>
+
+            <div class="wf__badges">
+              ${badge1 ? `<span class="wf__badge">${esc(badge1)}</span>` : ""}
+              ${badge2 ? `<span class="wf__badge">${esc(badge2)}</span>` : ""}
+              ${badge3 ? `<span class="wf__badge wf__badge--strong">${esc(badge3)}</span>` : ""}
+            </div>
+
+            ${line2 ? `<div class="wf__winner">${esc(line2)}</div>` : ""}
+          </div>
+
+          <div class="wf__chev" aria-hidden="true">›</div>
         </div>
       `;
 
@@ -218,59 +247,61 @@ const defaultSport = "NFL";
   function setOpenLink(values) {
     const sport = String(values.sport || "NFL").toUpperCase();
     const year = String(values.year || "").trim();
-
     const sp = new URLSearchParams();
-    sp.set("view", "LIST");
-
-    const st = String(values.slateType || "").toUpperCase();
-    if (st === "CLASSIC" || st === "SHOWDOWN") sp.set("lineupType", st);
-
-    if (sport === "CFB") {
-      openLink.href = year ? `/cfb/${year}/slate?${sp.toString()}` : `/cfb?${sp.toString()}`;
-    } else {
-      openLink.href = year ? `/nfl/${year}/slate?${sp.toString()}` : `/nfl?${sp.toString()}`;
-    }
+    if (sport) sp.set("sport", sport);
+    if (year) sp.set("year", year);
+    openLink.href = `/winners?${sp.toString()}`;
   }
 
   async function runSearch(values) {
     const params = buildParams(values);
     setUrl(params);
-
-    const apiUrl = `/api/slates?${params.toString()}`;
-
     setOpenLink(values);
+
+    resultsWrap.hidden = false;
+    empty.hidden = true;
+    meta.textContent = "Searching…";
+    renderSkeleton(8);
+
+    const apiUrl = `/api/winner-search?${params.toString()}`;
 
     const res = await fetch(apiUrl, { headers: { accept: "application/json" } });
     if (!res.ok) {
-      resultsWrap.hidden = false;
-      meta.textContent = `Search failed (${res.status}). Check /api/slates.`;
       list.innerHTML = "";
+      empty.hidden = true;
+      meta.textContent = `Search failed (${res.status}). Check /api/winner-search.`;
       return;
     }
 
     const data = await res.json();
-    const rows = normalizeToRows(data, values);
-
-    resultsWrap.hidden = false;
+    const rows = normalizeToRows(data);
 
     const count =
       typeof data?.count === "number"
         ? data.count
-        : Array.isArray(data?.slates)
-          ? data.slates.length
-          : rows.length;
+        : Array.isArray(rows)
+          ? rows.length
+          : 0;
 
     meta.textContent = `${count} result(s)`;
+
+    if (!rows.length) {
+      list.innerHTML = "";
+      empty.hidden = false;
+      return;
+    }
+
+    empty.hidden = true;
     renderRows(rows);
   }
 
   function readValues() {
     const fd = new FormData(form);
     return {
-      sport: fd.get("sport") || "",
+      sport: fd.get("sport") || "NFL",
       year: fd.get("year") || "",
       week: fd.get("week") || "",
-      slateType: fd.get("slateType") || "",
+      slateType: fd.get("slateType") || "ANY",
       q: fd.get("q") || "",
       limit: "25",
     };
@@ -284,7 +315,7 @@ const defaultSport = "NFL";
   form.querySelectorAll("[data-preset]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const preset = btn.getAttribute("data-preset");
-      const base = { sport: "NFL", year: "", week: "", slateType: "", q: "", limit: "25" };
+      const base = { sport: "NFL", year: "", week: "", slateType: "ANY", q: "", limit: "25" };
 
       if (preset === "latest") return runSearch({ ...base });
       if (preset === "nflClassic") return runSearch({ ...base, sport: "NFL", slateType: "CLASSIC" });
@@ -298,30 +329,51 @@ const defaultSport = "NFL";
   if (hasAny) runSearch(readValues());
 </script>
 
-<style>
+<style is:global>
   .wf { max-width: 980px; margin: 0 auto; padding: 48px 16px 64px; }
-  .wf__title { font-size: 42px; margin: 0 0 8px; letter-spacing: -0.02em; }
-  .wf__sub { margin: 0 0 24px; opacity: 0.75; }
+  .wf__hero { margin-bottom: 18px; }
+  .wf__title { font-size: 44px; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .wf__sub { margin: 0; opacity: 0.75; }
 
-  .wf__form { background: white; border: 1px solid rgba(0,0,0,0.08); border-radius: 14px; padding: 16px; }
+  .wf__form {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 16px;
+  }
   .wf__row { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; }
   .wf__label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; opacity: 0.85; }
   .wf__grow { flex: 1; min-width: 260px; }
 
   .wf__input, .wf__select {
-    height: 40px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.12);
-    padding: 0 12px; font-size: 14px; background: white;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 0 12px;
+    font-size: 14px;
+    background: white;
   }
 
   .wf__btn {
-    height: 40px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.12);
-    padding: 0 14px; font-size: 14px; cursor: pointer; background: rgba(0,0,0,0.04);
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    padding: 0 14px;
+    font-size: 14px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.04);
   }
+  .wf__btn:hover { background: rgba(0,0,0,0.06); }
 
   .wf__small { margin-top: 10px; }
   .wf__linkBtn {
-    border: 0; background: transparent; cursor: pointer; padding: 6px 10px;
-    border-radius: 10px; font-size: 13px; opacity: 0.85;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0.85;
   }
   .wf__linkBtn:hover { background: rgba(0,0,0,0.04); }
 
@@ -332,34 +384,32 @@ const defaultSport = "NFL";
 
   .wf__list { display: grid; gap: 12px; margin-top: 12px; }
 
-  a.wf__card {
-    display: block !important;
-    text-decoration: none !important;
-    color: inherit !important;
-    border: 1px solid rgba(0,0,0,0.08) !important;
-    border-radius: 16px !important;
-    padding: 14px 16px !important;
-    background: white !important;
-    transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease !important;
-  }
-
-  a.wf__card * {
-    color: inherit !important;
-    text-decoration: none !important;
+  a.wf__card, .wf__card--skeleton {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 14px 16px;
+    background: white;
+    transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
   }
 
   a.wf__card:hover {
-    transform: translateY(-1px) !important;
-    border-color: rgba(0,0,0,0.14) !important;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.08) !important;
+    transform: translateY(-1px);
+    border-color: rgba(0,0,0,0.14);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
   }
 
-  .wf__cardTop { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-  .wf__cardTitle { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
-  .wf__cardMeta { font-size: 13px; opacity: 0.75; white-space: nowrap; }
+  .wf__cardGrid { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; }
+  .wf__hrow { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .wf__cardTitle { font-weight: 750; font-size: 15px; letter-spacing: -0.01em; }
+  .wf__right { display: inline-flex; gap: 10px; align-items: baseline; white-space: nowrap; }
+  .wf__money { font-size: 13px; opacity: 0.9; }
+  .wf__pts { font-size: 13px; opacity: 0.7; }
 
-  .wf__cardMid { margin-top: 10px; }
-  .wf__pill {
+  .wf__badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .wf__badge {
     display: inline-flex;
     align-items: center;
     padding: 6px 10px;
@@ -369,9 +419,31 @@ const defaultSport = "NFL";
     font-size: 12.5px;
     opacity: 0.9;
   }
+  .wf__badge--strong { background: rgba(0,0,0,0.06); }
 
-  .wf__cardBot { margin-top: 8px; }
-  .wf__subLine { font-size: 13px; opacity: 0.7; line-height: 1.35; }
+  .wf__winner { margin-top: 10px; font-size: 13px; opacity: 0.75; line-height: 1.35; }
+
+  .wf__chev {
+    font-size: 22px;
+    opacity: 0.35;
+    line-height: 1;
+    transform: translateY(-1px);
+  }
+
+  .wf__empty { margin-top: 10px; padding: 14px 4px; }
+  .wf__emptyTitle { font-weight: 750; }
+  .wf__emptySub { opacity: 0.7; margin-top: 4px; }
 
   .wf__hint { margin-top: 12px; font-size: 12px; opacity: 0.65; }
+
+  /* Skeleton */
+  .wf__card--skeleton { pointer-events: none; background: rgba(0,0,0,0.02); }
+  .wf__sk { background: rgba(0,0,0,0.08); border-radius: 999px; }
+  .wf__skTop { display: flex; justify-content: space-between; gap: 12px; }
+  .wf__skTitle { width: 60%; height: 12px; }
+  .wf__skMeta { width: 26%; height: 12px; }
+  .wf__skBadges { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .wf__skPill { width: 92px; height: 22px; }
+  .wf__skBot { margin-top: 12px; }
+  .wf__skSub { width: 78%; height: 10px; }
 </style>
