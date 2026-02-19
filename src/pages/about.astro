@@ -1,63 +1,229 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<Layout title="About | Milly Maker Tracker">
+  <main class="page">
+    <section class="hero" aria-label="About hero">
+      <div class="hero-overlay"></div>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+      <div class="hero-inner">
+        <div class="hero-textbox">
+          <p class="eyebrow">About</p>
+          <h1 class="hero-title">Milly Maker Tracker</h1>
+          <p class="hero-sub">
+            Milly Maker Tracker is a searchable archive of DraftKings Milly Maker winning lineups and slate results, built for DFS players who want the full record in one place.
+          </p>
+        </div>
+      </div>
+    </section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+    <section class="wrap">
+      <div class="content">
+        <section class="block">
+          <h2>What this site does</h2>
+          <p>
+            Milly Maker Tracker preserves contest results and organizes them so you can actually study them. You can open a slate, see who finished first, view the winning lineup, and review the slate context without chasing screenshots, stale links, or missing pages.
+          </p>
+          <p>
+            Winning lineups are the clearest form of feedback DFS gives you. This site keeps that history in one consistent place so patterns can be reviewed across weeks, slates, and seasons.
+          </p>
+        </section>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+        <section class="grid">
+          <div class="card">
+            <h3>What you can learn here</h3>
+            <p>
+              This site is built for the part of DFS most people skip, the part where you slow down and study what actually won. You can compare roster construction across slates, see how salary was allocated, and review ownership context without relying on memory or guesswork.
+            </p>
+            <p>
+              Over time, the archive becomes a reference point for what tends to repeat, what changes when slate context shifts, and what builds only show up when the game environment forces it.
+            </p>
+          </div>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
+          <div class="card">
+            <h3>Why this exists</h3>
+            <p>
+              Contest history should be easy to access, but it often is not. Even with support involved, requests for past results can require an exact contest, and broad requests can hit limits.
+            </p>
+            <p>
+              This project exists so the history does not depend on one email exchange, one bookmarked page, or one platform decision. The goal is a clean archive that stays available and stays organized.
+            </p>
+          </div>
+        </section>
+
+        <section class="block">
+          <h2>Why I built it</h2>
+          <p>
+            I love DFS, and I genuinely enjoy seeing the lineups that win. In a peer to peer game, it is fun to see the usernames at the top, then dig into how the roster got there. Some winning builds feel obvious in hindsight. Other builds look strange until you understand the scoring path and the way the game unfolded.
+          </p>
+          <p>
+            I wanted a place where the record stays clean, where the story of each slate is easy to revisit, and where studying winners feels fun instead of tedious.
+          </p>
+        </section>
+
+        <section class="block">
+          <h2>What this site is not</h2>
+          <p>
+            This site does not sell picks, and it does not promise results. It is an archive and an analysis hub meant to support your own process and your own decision making.
+          </p>
+        </section>
+
+        <section class="fineprint">
+          <h2>Notes and attribution</h2>
+          <p>
+            DraftKings is a trademark of DraftKings Inc. Milly Maker Tracker is independent and not affiliated with DraftKings.
+          </p>
+          <p>
+            Results are preserved for research and educational use so players can review contest history over time.
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  :global(body) { background: #fff; }
+
+  .page { width: 100%; }
+
+  .hero {
+    position: relative;
+    min-height: 62vh;
+    display: grid;
+    align-items: end;
+
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+    background-image: url("/images/about/hero.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.88));
+  }
+
+  .hero-inner {
+    position: relative;
+    width: min(1080px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 44px 0 56px;
+    color: #fff;
+  }
+
+  .hero-textbox {
+    display: inline-block;
+    max-width: 760px;
+    padding: 14px 16px 16px;
+    border-radius: 14px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .eyebrow {
+    margin: 0 0 10px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.95;
+  }
+
+  .hero-title {
+    margin: 0;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.65);
+  }
+
+  .hero-sub {
+    margin: 14px 0 0;
+    max-width: 74ch;
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.98;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.6);
+  }
+
+  .wrap {
+    width: min(1080px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 44px 0 68px;
+  }
+
+  .content { display: grid; gap: 28px; }
+
+  .block h2 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+
+  .block p {
+    margin: 0 0 12px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #111827;
+  }
+
+  .block p:last-child { margin-bottom: 0; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media (min-width: 900px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .card {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+
+  .card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+  }
+
+  .card p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #111827;
+  }
+
+  .card p:last-child { margin-bottom: 0; }
+
+  .fineprint {
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .fineprint h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+  }
+
+  .fineprint p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #374151;
+  }
+
+  .fineprint p:last-child { margin-bottom: 0; }
+</style>

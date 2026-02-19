@@ -1,13 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 
 const cards = [
   {
     title: "NFL Showdown Review (2025)",
+    desc:
+      "A season level view of Showdown winners with filters and quick context on what the winning builds did.",
     href: "/analysis/nfl/2025/showdown",
   },
   {
     title: "NFL Classic Review (2025)",
+    desc:
+      "A season level view of Classic winners with stack tags, salary left, ownership, and points so you can compare weeks fast.",
     href: "/analysis/nfl/2025/classic",
   },
 ];
@@ -26,8 +30,18 @@ const cards = [
       {cards.map((c) => (
         <a class="card" href={c.href}>
           <h2 class="card-title">{c.title}</h2>
+          <p class="card-desc">{c.desc}</p>
+          <span class="card-cta">Open</span>
         </a>
       ))}
+    </section>
+
+    <section class="note">
+      <h2 class="note-title">The Tilt</h2>
+      <p class="note-desc">
+        The journal lives here. This is where I post slate notes, builds worth saving, and anything I want to remember before I build again.
+      </p>
+      <a class="note-link" href="/tilt">Go to The Tilt</a>
     </section>
   </main>
 </Layout>
@@ -67,5 +81,20 @@ const cards = [
     box-shadow: 0 14px 34px rgba(0,0,0,0.08);
   }
 
-  .card-title { margin: 0; font-size: 18px; }
+  .card-title { margin: 0 0 8px; font-size: 18px; }
+  .card-desc { margin: 0 0 12px; color: #374151; line-height: 1.65; }
+  .card-cta { font-weight: 700; color: var(--accent); }
+
+  .note {
+    margin-top: 18px;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 18px;
+    background: #fff;
+  }
+
+  .note-title { margin: 0 0 8px; font-size: 18px; }
+  .note-desc { margin: 0 0 10px; color: #374151; line-height: 1.65; }
+  .note-link { color: var(--accent); font-weight: 700; text-decoration: none; }
+  .note-link:hover { text-decoration: underline; }
 </style>

@@ -1,0 +1,98 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const posts = [
+  {
+    title: "Welcome to Full Tilt",
+    date: "Coming soon",
+    desc:
+      "This is the home for slate notes and journal entries. I will post quick reads here after I review what won, what failed, and what I want to test next.",
+  },
+];
+
+const ideas = [
+  "Slate notes after results lock in",
+  "Lineups worth saving with the reason they worked",
+  "Build rules that earned a permanent spot",
+  "Mistakes I do not want to repeat",
+];
+---
+
+<Layout title="Full Tilt | Milly Maker Tracker">
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Journal</p>
+      <h1 class="title">Full Tilt</h1>
+      <p class="sub">
+        A running notebook for DFS. This is where I keep the thoughts that matter after the slate, then bring them back when I build again.
+      </p>
+    </header>
+
+    <section class="two">
+      <section class="panel">
+        <h2 class="h2">Latest</h2>
+
+        {posts.map((p) => (
+          <article class="post">
+            <div class="meta">{p.date}</div>
+            <div class="post-title">{p.title}</div>
+            <p class="post-desc">{p.desc}</p>
+          </article>
+        ))}
+      </section>
+
+      <section class="panel">
+        <h2 class="h2">What I post here</h2>
+        <ul class="list">
+          {ideas.map((t) => (
+            <li>{t}</li>
+          ))}
+        </ul>
+
+        <div class="cta">
+          When you are ready, we can convert this into real posts driven by files or database entries. For now, this page gives you a clean landing spot and a stable route.
+        </div>
+      </section>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page { max-width: 1100px; margin: 0 auto; padding: 26px 16px 60px; }
+
+  .hero { margin: 6px 0 18px; }
+  .eyebrow { margin: 0 0 6px; color: #6b7280; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .title { margin: 0; font-size: 40px; letter-spacing: -0.02em; }
+  .sub { margin: 10px 0 0; max-width: 80ch; color: #4b5563; line-height: 1.7; }
+
+  .two { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 18px; }
+  @media (min-width: 900px) { .two { grid-template-columns: 1.15fr 0.85fr; } }
+
+  .panel {
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 18px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+
+  .h2 { margin: 0 0 12px; font-size: 18px; }
+
+  .post { padding: 12px 0; border-top: 1px solid rgba(0,0,0,0.06); }
+  .post:first-of-type { border-top: 0; padding-top: 0; }
+  .meta { color: #6b7280; font-size: 13px; margin-bottom: 6px; }
+  .post-title { font-weight: 800; margin-bottom: 8px; }
+  .post-desc { margin: 0; color: #374151; line-height: 1.7; }
+
+  .list { margin: 0; padding-left: 18px; color: #111827; line-height: 1.75; }
+  .list li { margin: 8px 0; }
+
+  .cta {
+    margin-top: 14px;
+    padding: 12px 12px;
+    border-radius: 14px;
+    background: rgba(0,0,0,0.04);
+    color: #374151;
+    line-height: 1.7;
+  }
+</style>
