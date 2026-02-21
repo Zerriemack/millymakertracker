@@ -1,6 +1,6 @@
 // src/pages/api/analysis/nfl/classic.ts
 import type { APIRoute } from "astro";
-import { prisma } from "../../../../lib/prisma";
+import { prisma } from "../../../../../lib/prisma";
 
 function isNum(v: any): v is number {
   return typeof v === "number" && Number.isFinite(v);
