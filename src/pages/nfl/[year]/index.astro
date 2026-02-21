@@ -236,20 +236,74 @@ function lineupBadgeClass(kind: any) {
   </main>
 
   <style>
-    .wrap{max-width:1320px;margin:0 auto;padding:28px 16px 56px}
-    .back{display:inline-block;margin-bottom:14px;text-decoration:none;opacity:.8}
-    .back:hover{opacity:1;text-decoration:underline}
+    :root{
+      --surface:#1f1f1f;
+      --surface2:#181818;
+      --surface3:#141414;
+      --border:rgba(255,255,255,.10);
+      --border2:rgba(255,255,255,.12);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.70);
+      --muted2:rgba(255,255,255,.62);
+      --shadow:0 18px 55px rgba(0,0,0,.55);
+      --shadowSoft:0 12px 30px rgba(0,0,0,.40);
+    }
+
+    .wrap{max-width:1320px;margin:0 auto;padding:28px 16px 70px;color:var(--text)}
+    .back{display:inline-block;margin-bottom:14px;text-decoration:none;color:rgba(255,255,255,.78);font-weight:850}
+    .back:hover{color:rgba(255,255,255,.92);text-decoration:underline}
 
     .head{margin:6px 0 10px}
-    .head h1{margin:0;font-size:34px}
-    .sub{opacity:.7;margin-top:6px}
+    .head h1{margin:0;font-size:34px;font-weight:950;letter-spacing:-.01em}
+    .sub{color:var(--muted);margin-top:6px;font-weight:650}
 
     .stickyBar{position:sticky;top:10px;z-index:5;margin:14px 0 18px}
-    .pillBar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px;border-radius:16px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(10px);border:1px solid rgba(0,0,0,.06)}
-    .pill{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.14);background:#fff;text-decoration:none;font-weight:800;font-size:14px;line-height:1}
-    .pill:hover{border-color:rgba(0,0,0,.28)}
-    .pillActive{border-color:rgba(35,55,255,.55);box-shadow:0 0 0 3px rgba(35,55,255,.10)}
-    .pillCount{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:22px;padding:0 8px;border-radius:999px;font-size:12px;font-weight:900;border:1px solid rgba(0,0,0,.10);background:rgba(0,0,0,.03);opacity:.9}
+    .pillBar{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:10px;
+      border-radius:16px;
+      background:var(--surface);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid var(--border2);
+      background:var(--surface2);
+      text-decoration:none;
+      font-weight:850;
+      font-size:14px;
+      line-height:1;
+      color:var(--text);
+      transition:background .12s ease, border-color .12s ease, transform .12s ease;
+    }
+    .pill:hover{background:#232323;border-color:rgba(255,255,255,.18);transform:translateY(-1px)}
+    .pillActive{
+      border-color:rgba(255,255,255,.24);
+      background:#232323;
+      box-shadow:0 0 0 3px rgba(255,255,255,.06);
+    }
+    .pillCount{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:28px;
+      height:22px;
+      padding:0 8px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.06);
+      color:rgba(255,255,255,.82);
+    }
 
     .weeks{
       display:grid;
@@ -262,12 +316,14 @@ function lineupBadgeClass(kind: any) {
     @media (max-width:720px){.stickyBar{top:6px}}
 
     details.week{
-      border:1px solid rgba(0,0,0,.06);
+      border:1px solid var(--border);
       border-radius:18px;
-      background:#fff;
+      background:var(--surface);
       overflow:hidden;
       align-self:start;
+      box-shadow:var(--shadowSoft);
     }
+    details.week[open]{box-shadow:var(--shadow)}
     details.week[open] .wkChevron{transform:rotate(180deg)}
     summary.weekSummary{
       list-style:none;
@@ -277,37 +333,39 @@ function lineupBadgeClass(kind: any) {
       align-items:center;
       gap:12px;
       padding:14px 16px;
-      background:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,0));
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
     }
     summary.weekSummary::-webkit-details-marker{display:none}
     .wkLeft{display:flex;flex-direction:column;gap:4px}
-    .wkTitle{font-weight:900}
-    .wkMeta{font-size:12px;opacity:.7}
-    .wkChevron{font-size:14px;opacity:.6;transition:transform .18s ease}
+    .wkTitle{font-weight:950;letter-spacing:-.01em}
+    .wkMeta{font-size:12px;color:rgba(255,255,255,.66);font-weight:650}
+    .wkChevron{font-size:14px;color:rgba(255,255,255,.55);transition:transform .18s ease}
 
     .rows{padding:12px;display:flex;flex-direction:column;gap:10px}
 
     .slateCard{
       display:block;
       padding:10px 10px 9px;
-      border:1px solid rgba(0,0,0,.08);
+      border:1px solid var(--border);
       border-radius:16px;
-      background:#fff;
+      background:var(--surface2);
       text-decoration:none;
-      box-shadow:0 8px 22px rgba(0,0,0,.04);
-      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      color:var(--text);
+      box-shadow:0 8px 22px rgba(0,0,0,.22);
+      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
     }
     .slateCard:hover{
-      border-color:rgba(0,0,0,.18);
+      border-color:rgba(255,255,255,.16);
       transform:translateY(-1px);
-      box-shadow:0 12px 28px rgba(0,0,0,.07);
+      background:#232323;
+      box-shadow:0 14px 34px rgba(0,0,0,.40);
     }
 
     .isHidden{display:none}
 
     .slateTop{display:flex;align-items:center;justify-content:space-between;gap:10px}
     .slateChips{display:flex;align-items:center;gap:6px;min-width:0;flex-wrap:nowrap;overflow:hidden}
-    .date{font-weight:900;white-space:nowrap;opacity:.75;font-size:12px}
+    .date{font-weight:900;white-space:nowrap;color:rgba(255,255,255,.72);font-size:12px}
 
     .badge,
     .chip{
@@ -318,13 +376,17 @@ function lineupBadgeClass(kind: any) {
       border-radius:999px;
       font-size:12px;
       font-weight:900;
-      border:1px solid rgba(0,0,0,.10);
-      background:rgba(0,0,0,.02);
-      opacity:.9;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.06);
+      color:rgba(255,255,255,.84);
       flex:0 0 auto;
     }
-    .badgeClassic{border-color:rgba(0,0,0,.16)}
-    .badgeShowdown{border-color:rgba(35,55,255,.35);box-shadow:0 0 0 2px rgba(35,55,255,.06) inset}
+    .badgeClassic{border-color:rgba(255,255,255,.16)}
+    .badgeShowdown{
+      border-color:rgba(255,255,255,.22);
+      box-shadow:0 0 0 2px rgba(255,255,255,.06) inset;
+      background:rgba(255,255,255,.08);
+    }
 
     .matchup{
       margin-top:7px;
@@ -333,28 +395,36 @@ function lineupBadgeClass(kind: any) {
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
+      letter-spacing:-.01em;
     }
 
     .moreBtn{
       appearance:none;
-      border:1px solid rgba(0,0,0,.12);
-      background:rgba(0,0,0,.02);
+      border:1px solid var(--border2);
+      background:var(--surface3);
       border-radius:12px;
       padding:10px 12px;
       font-weight:900;
       cursor:pointer;
       text-align:center;
+      color:rgba(255,255,255,.86);
+      transition:background .12s ease, border-color .12s ease, transform .12s ease;
     }
-    .moreBtn:hover{border-color:rgba(0,0,0,.22)}
+    .moreBtn:hover{
+      background:#232323;
+      border-color:rgba(255,255,255,.18);
+      transform:translateY(-1px);
+    }
 
     .empty{
-      border:1px solid rgba(0,0,0,.08);
+      border:1px solid var(--border);
       border-radius:16px;
       padding:18px;
-      background:#fff;
-      box-shadow:0 10px 30px rgba(0,0,0,.06);
-      color:#4b5563;
+      background:var(--surface);
+      box-shadow:var(--shadowSoft);
+      color:rgba(255,255,255,.72);
       margin-top:14px;
+      font-weight:650;
     }
     .emptyLinks{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
     .emptyLink{
@@ -363,12 +433,21 @@ function lineupBadgeClass(kind: any) {
       justify-content:center;
       padding:8px 12px;
       border-radius:999px;
-      border:1px solid rgba(0,0,0,.12);
-      background:rgba(0,0,0,.02);
+      border:1px solid var(--border2);
+      background:var(--surface3);
       text-decoration:none;
       font-weight:900;
-      color:inherit;
+      color:rgba(255,255,255,.86);
+      transition:background .12s ease, border-color .12s ease, transform .12s ease;
     }
-    .emptyLink:hover{border-color:rgba(0,0,0,.22)}
+    .emptyLink:hover{
+      background:#232323;
+      border-color:rgba(255,255,255,.18);
+      transform:translateY(-1px);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .pill,.slateCard,.moreBtn,.wkChevron,.emptyLink{transition:none}
+    }
   </style>
 </Layout>

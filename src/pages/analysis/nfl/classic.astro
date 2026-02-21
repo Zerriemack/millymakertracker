@@ -768,9 +768,9 @@ const pageTitle = "NFL Classic Review";
 
   .titleBlock { min-width: 320px; }
 
-  .h1 { margin: 0; font-size: 28px; font-weight: 900; line-height: 1.1; }
+  .h1 { margin: 0; font-size: 28px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; }
 
-  .sub { margin-top: 6px; color: #777; font-size: 13px; }
+  .sub { margin-top: 6px; color: rgba(255,255,255,0.55); font-size: 13px; }
 
   .searchWrap {
     flex: 1 1 auto;
@@ -780,37 +780,44 @@ const pageTitle = "NFL Classic Review";
     align-items: center;
   }
 
-  .toggle {
-    padding: 10px 12px;
-    border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.14);
-    background: rgba(0,0,0,0.04);
-    font-weight: 900;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
   .search {
     width: min(520px, 100%);
     padding: 10px 12px;
     border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.12);
-    background: #fff;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #141414;
+    color: rgba(255,255,255,0.92);
     font-size: 14px;
     outline: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+
+  .search::placeholder { color: rgba(255,255,255,0.45); }
+
+  .search:focus {
+    border-color: rgba(255,255,255,0.18);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.10), 0 12px 32px rgba(0,0,0,0.45);
   }
 
   .resetAll {
     padding: 10px 12px;
     border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.14);
-    background: rgba(0,0,0,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #1f1f1f;
+    color: rgba(255,255,255,0.88);
     font-weight: 900;
     cursor: pointer;
     white-space: nowrap;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
   }
 
+  .resetAll:hover { background: #232323; border-color: rgba(255,255,255,0.14); transform: translateY(-1px); }
+  .resetAll:active { transform: translateY(0px); }
+
   .srOnly { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  main.page > section.grid { background: transparent; border: 0; box-shadow: none; border-radius: 0; padding: 0; }
 
   .grid { display: grid; grid-template-columns: 370px 1fr; gap: 12px; min-height: 0; }
 
@@ -819,20 +826,21 @@ const pageTitle = "NFL Classic Review";
   .main { min-height: 0; display: flex; flex-direction: column; }
 
   .card {
-    border: 1px solid rgba(0,0,0,0.10);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
-    background: #fff;
+    background: #1f1f1f;
     padding: 12px 12px;
     margin-bottom: 10px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
   }
 
-  .cardTitle { font-weight: 900; margin-bottom: 10px; }
+  .cardTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
 
   .kv { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; align-items: start; }
 
-  .k { color: #666; font-size: 12px; }
+  .k { color: rgba(255,255,255,0.55); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; }
 
-  .v { font-weight: 900; }
+  .v { font-weight: 900; color: rgba(255,255,255,0.88); }
 
   .mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -844,16 +852,19 @@ const pageTitle = "NFL Classic Review";
   .note {
     grid-column: 1 / -1;
     margin-top: 8px;
-    color: #777;
+    color: rgba(255,255,255,0.55);
     font-size: 12px;
     line-height: 1.35;
   }
 
+  .lines { max-height: 220px; overflow: auto; padding-right: 4px; }
+
   .tableWrap {
-    border: 1px solid rgba(0,0,0,0.10);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
     overflow: auto;
-    background: #fff;
+    background: #1f1f1f;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
   }
 
   table { width: 100%; border-collapse: collapse; }
@@ -861,23 +872,31 @@ const pageTitle = "NFL Classic Review";
   thead th {
     position: sticky;
     top: 0;
-    background: rgba(0,0,0,0.03);
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    background: #181818;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     padding: 10px 10px;
     z-index: 2;
     text-align: left;
   }
 
   tbody td {
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
     padding: 10px 10px;
     vertical-align: top;
     font-size: 13px;
+    color: rgba(255,255,255,0.88);
   }
 
-  .capCell .capMain { font-weight: 900; }
+  tbody tr:hover td { background: #232323; }
 
-  .link { font-weight: 900; text-decoration: none; }
+  .capCell .capMain { font-weight: 900; color: rgba(255,255,255,0.92); }
+
+  .link {
+    font-weight: 900;
+    text-decoration: none;
+    color: rgba(255,255,255,0.88);
+  }
+  .link:hover { color: #fff; }
 
   .thBtn {
     width: 100%;
@@ -886,25 +905,27 @@ const pageTitle = "NFL Classic Review";
     background: transparent;
     padding: 0;
     font-size: 11px;
-    color: #555;
+    color: rgba(255,255,255,0.62);
     font-weight: 900;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     cursor: pointer;
   }
+  .thBtn:hover { color: rgba(255,255,255,0.88); }
 
   .menu {
     position: fixed;
     width: 320px;
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.14);
+    background: #181818;
+    border: 1px solid rgba(255,255,255,0.10);
     border-radius: 14px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    box-shadow: 0 18px 44px rgba(0,0,0,0.55);
     padding: 12px;
     z-index: 9999;
+    color: rgba(255,255,255,0.88);
   }
 
-  .menuTitle { font-weight: 900; margin-bottom: 10px; }
+  .menuTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
 
   .menuRow { display: flex; gap: 8px; margin-bottom: 10px; }
 
@@ -912,20 +933,25 @@ const pageTitle = "NFL Classic Review";
     flex: 1 1 auto;
     padding: 9px 10px;
     border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.14);
-    background: rgba(0,0,0,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #1f1f1f;
+    color: rgba(255,255,255,0.88);
     font-weight: 900;
     cursor: pointer;
     font-size: 13px;
+    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
   }
 
-  .menuBtn.secondary { background: #fff; }
+  .menuBtn:hover { background: #232323; border-color: rgba(255,255,255,0.14); transform: translateY(-1px); }
+  .menuBtn:active { transform: translateY(0px); }
+
+  .menuBtn.secondary { background: #141414; }
 
   .menuBlock { margin-bottom: 10px; }
 
   .menuLabel {
     font-size: 11px;
-    color: #666;
+    color: rgba(255,255,255,0.55);
     margin-bottom: 6px;
     font-weight: 900;
     text-transform: uppercase;
@@ -936,15 +962,21 @@ const pageTitle = "NFL Classic Review";
     width: 100%;
     padding: 9px 10px;
     border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.12);
-    background: #fff;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #141414;
+    color: rgba(255,255,255,0.92);
     font-size: 13px;
     outline: none;
   }
 
+  .menuInput:focus {
+    border-color: rgba(255,255,255,0.16);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+  }
+
   .menuGrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: end; }
 
-  .mini { font-size: 11px; color: #666; margin-bottom: 6px; font-weight: 900; }
+  .mini { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; }
 
   .colYear { width: 78px; }
   .colWk { width: 56px; }

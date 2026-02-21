@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 
 const cards = [
   { title: "NFL Showdown Review", href: "/analysis/nfl/showdown" },
-  { title: "NFL Classic Review (All Years)", href: "/analysis/nfl/classic" },
+  { title: "NFL Classic Review", href: "/analysis/nfl/classic" },
 ];
 ---
 
@@ -12,7 +12,7 @@ const cards = [
     <header class="hero">
       <h1 class="title">Review</h1>
       <p class="sub">
-        This section is the season wide view. It is built for scanning patterns, spotting repeats, and drilling into the slates that need a second look.
+        Use this section to review slates by season and format. It is built for scanning results and opening slates for deeper review.
       </p>
     </header>
 
@@ -27,39 +27,77 @@ const cards = [
 </Layout>
 
 <style>
-  .page { max-width: 1100px; margin: 0 auto; padding: 26px 16px 60px; }
-
-  .hero { margin: 6px 0 18px; }
-  .title { margin: 0; font-size: 38px; letter-spacing: -0.02em; }
-  .sub { margin: 10px 0 0; max-width: 78ch; color: #4b5563; line-height: 1.65; }
-
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-top: 18px;
+  :root{
+    --surface:#1f1f1f;
+    --surface2:#181818;
+    --border:rgba(255,255,255,.10);
+    --border2:rgba(255,255,255,.12);
+    --text:rgba(255,255,255,.92);
+    --muted:rgba(255,255,255,.70);
+    --shadow:0 18px 55px rgba(0,0,0,.55);
+    --shadowSoft:0 12px 30px rgba(0,0,0,.40);
   }
 
-  @media (min-width: 900px) {
-    .grid { grid-template-columns: 1fr 1fr; }
+  .page{
+    max-width:1100px;
+    margin:0 auto;
+    padding:26px 16px 70px;
+    color:var(--text);
   }
 
-  .card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 16px;
-    padding: 18px;
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    transition: transform 120ms ease, box-shadow 120ms ease;
+  .hero{margin:10px 0 18px}
+  .title{margin:0;font-size:44px;letter-spacing:-0.02em;font-weight:950}
+  .sub{margin:10px 0 0;max-width:78ch;color:var(--muted);line-height:1.65;font-weight:650}
+
+  /* hard reset so the wrapper never looks like a "big pill" */
+  main.page > section.grid{
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 22px 0 0;
   }
 
-  .card:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 14px 34px rgba(0,0,0,0.08);
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+    align-items:start;
   }
 
-  .card-title { margin: 0; font-size: 18px; }
+  @media (min-width: 900px){
+    .grid{grid-template-columns:1fr 1fr}
+  }
+
+  /* bigger pills */
+  .card{
+    display:block;
+    text-decoration:none;
+    color:var(--text);
+    border:1px solid var(--border2);
+    border-radius:18px;
+    padding:24px;
+    background:var(--surface);
+    box-shadow:var(--shadowSoft);
+    transition:transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease, background 120ms ease;
+  }
+
+  .card:hover{
+    transform:translateY(-1px);
+    border-color:rgba(255,255,255,.16);
+    background:#232323;
+    box-shadow:var(--shadow);
+  }
+
+  .card-title{
+    margin:0;
+    font-size:20px;
+    font-weight:950;
+    letter-spacing:-0.01em;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .card{transition:none}
+  }
 </style>

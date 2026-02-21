@@ -94,7 +94,6 @@ const rows = rowsRaw
     const slateDate = String(r.slateDate ?? r.slate?.slateDate ?? r.date ?? "");
     const link = String(r.link ?? r.url ?? (slateId ? `/nfl/${r.year ?? 2025}/slate/${slateId}` : ""));
 
-    // YEAR: future-proof. If API later provides r.year, use it. Otherwise default from this route.
     const year =
       typeof r.year === "number"
         ? r.year
@@ -394,19 +393,18 @@ const pageTitle = "NFL Showdown Review";
               sort: { col: "", dir: "" }
             };
 
- const colMeta = {
-  year: { kind: "catNum", label: "YEAR", key: "year" },
-  week: { kind: "catNum", label: "WK", key: "week" },
-  type: { kind: "cat", label: "TYPE", key: "type" },
-  date: { kind: "date", label: "DATE", key: "dateiso" },
-  split: { kind: "splitCat", label: "SPLIT", key: "split" },
-  captain: { kind: "cat", label: "CAPTAIN", key: "captain" },
-  left: { kind: "num", label: "LEFT", key: "left" },
-  own: { kind: "num", label: "OWN", key: "own" },
-  pts: { kind: "num", label: "PTS", key: "pts" },
-  top: { kind: "num", label: "TOP", key: "top" }
-};
-
+            const colMeta = {
+              year: { kind: "catNum", label: "YEAR", key: "year" },
+              week: { kind: "catNum", label: "WK", key: "week" },
+              type: { kind: "cat", label: "TYPE", key: "type" },
+              date: { kind: "date", label: "DATE", key: "dateiso" },
+              split: { kind: "splitCat", label: "SPLIT", key: "split" },
+              captain: { kind: "cat", label: "CAPTAIN", key: "captain" },
+              left: { kind: "num", label: "LEFT", key: "left" },
+              own: { kind: "num", label: "OWN", key: "own" },
+              pts: { kind: "num", label: "PTS", key: "pts" },
+              top: { kind: "num", label: "TOP", key: "top" }
+            };
 
             function uniqueValues(colKey) {
               const set = new Set();
@@ -486,60 +484,48 @@ const pageTitle = "NFL Showdown Review";
             }
 
             function splitRank(s) {
-  const v = text(s);
-  if (!v) return -Infinity;
-  const parts = v.split("-").map((x) => Number(x));
-  if (parts.length !== 2 || !Number.isFinite(parts[0]) || !Number.isFinite(parts[1])) return -Infinity;
-  // rank by bigger side first, then smaller side
-  return parts[0] * 10 + parts[1];
-}
+              const v = text(s);
+              if (!v) return -Infinity;
+              const parts = v.split("-").map((x) => Number(x));
+              if (parts.length !== 2 || !Number.isFinite(parts[0]) || !Number.isFinite(parts[1])) return -Infinity;
+              return parts[0] * 10 + parts[1];
+            }
 
-function splitRank(s) {
-  const v = text(s);
-  if (!v) return -Infinity;
-  const parts = v.split("-").map((x) => Number(x));
-  if (parts.length !== 2 || !Number.isFinite(parts[0]) || !Number.isFinite(parts[1])) return -Infinity;
-  return parts[0] * 10 + parts[1]; // 3-3=33, 4-2=42, 5-1=51
-}
+            function compare(trA, trB, col, dir) {
+              const meta = colMeta[col];
+              if (!meta) return 0;
 
-function compare(trA, trB, col, dir) {
-  const meta = colMeta[col];
-  if (!meta) return 0;
+              const a = trA.dataset[meta.key];
+              const b = trB.dataset[meta.key];
 
-  const a = trA.dataset[meta.key];
-  const b = trB.dataset[meta.key];
+              if (meta.kind === "splitCat") {
+                const aa = splitRank(a);
+                const bb = splitRank(b);
+                return dir === "asc" ? aa - bb : bb - aa;
+              }
 
-  // SPLIT numeric pair ordering
-  if (meta.kind === "splitCat") {
-    const aa = splitRank(a);
-    const bb = splitRank(b);
-    return dir === "asc" ? aa - bb : bb - aa;
-  }
+              if (meta.kind === "catNum" || meta.kind === "num") {
+                const av = numOrNull(a);
+                const bv = numOrNull(b);
+                const aa = av == null ? -Infinity : av;
+                const bb = bv == null ? -Infinity : bv;
+                return dir === "asc" ? aa - bb : bb - aa;
+              }
 
-  // numeric sorting but still filter as dropdown
-  if (meta.kind === "catNum" || meta.kind === "num") {
-    const av = numOrNull(a);
-    const bv = numOrNull(b);
-    const aa = av == null ? -Infinity : av;
-    const bb = bv == null ? -Infinity : bv;
-    return dir === "asc" ? aa - bb : bb - aa;
-  }
+              if (meta.kind === "date") {
+                const at = new Date(text(a)).getTime();
+                const bt = new Date(text(b)).getTime();
+                const aa = Number.isFinite(at) ? at : 0;
+                const bb = Number.isFinite(bt) ? bt : 0;
+                return dir === "asc" ? aa - bb : bb - aa;
+              }
 
-  if (meta.kind === "date") {
-    const at = new Date(text(a)).getTime();
-    const bt = new Date(text(b)).getTime();
-    const aa = Number.isFinite(at) ? at : 0;
-    const bb = Number.isFinite(bt) ? bt : 0;
-    return dir === "asc" ? aa - bb : bb - aa;
-  }
-
-  const as = text(a).toLowerCase();
-  const bs = text(b).toLowerCase();
-  if (as < bs) return dir === "asc" ? -1 : 1;
-  if (as > bs) return dir === "asc" ? 1 : -1;
-  return 0;
-}
-
+              const as = text(a).toLowerCase();
+              const bs = text(b).toLowerCase();
+              if (as < bs) return dir === "asc" ? -1 : 1;
+              if (as > bs) return dir === "asc" ? 1 : -1;
+              return 0;
+            }
 
             function applyAll() {
               const qv = state.q;
@@ -582,87 +568,85 @@ function compare(trA, trB, col, dir) {
               menu.style.left = left + "px";
             }
 
-function buildFilterUI(col) {
-  const meta = colMeta[col];
-  if (!meta || !menuFilterBlock) return;
+            function buildFilterUI(col) {
+              const meta = colMeta[col];
+              if (!meta || !menuFilterBlock) return;
 
-  // dropdown filters (including numeric categories)
-  if (meta.kind === "cat" || meta.kind === "catNum" || meta.kind === "splitCat") {
-    const values = uniqueValues(meta.key);
-    const current = state.filters[col] || "";
+              if (meta.kind === "cat" || meta.kind === "catNum" || meta.kind === "splitCat") {
+                const values = uniqueValues(meta.key);
+                const current = state.filters[col] || "";
 
-    menuFilterBlock.innerHTML =
-      '<div class="menuLabel">Filter</div>' +
-      '<select id="menuSelect" class="menuInput">' +
-      '<option value="">All</option>' +
-      values.map((v) => '<option value="' + v + '">' + v + "</option>").join("") +
-      "</select>";
+                menuFilterBlock.innerHTML =
+                  '<div class="menuLabel">Filter</div>' +
+                  '<select id="menuSelect" class="menuInput">' +
+                  '<option value="">All</option>' +
+                  values.map((v) => '<option value="' + v + '">' + v + "</option>").join("") +
+                  "</select>";
 
-    const sel = byId("menuSelect");
-    if (sel) {
-      sel.value = current;
-      sel.addEventListener("change", () => {
-        state.filters[col] = sel.value;
-        applyAll();
-      });
-    }
-    return;
-  }
+                const sel = byId("menuSelect");
+                if (sel) {
+                  sel.value = current;
+                  sel.addEventListener("change", () => {
+                    state.filters[col] = sel.value;
+                    applyAll();
+                  });
+                }
+                return;
+              }
 
-  if (meta.kind === "date") {
-    const start = state.filters.dateStart || "";
-    const end = state.filters.dateEnd || "";
-    menuFilterBlock.innerHTML =
-      '<div class="menuLabel">Range</div>' +
-      '<div class="menuGrid2">' +
-      '<div><div class="mini">Start</div><input id="menuDateStart" class="menuInput" type="date" value="' + start + '" /></div>' +
-      '<div><div class="mini">End</div><input id="menuDateEnd" class="menuInput" type="date" value="' + end + '" /></div>' +
-      "</div>";
+              if (meta.kind === "date") {
+                const start = state.filters.dateStart || "";
+                const end = state.filters.dateEnd || "";
+                menuFilterBlock.innerHTML =
+                  '<div class="menuLabel">Range</div>' +
+                  '<div class="menuGrid2">' +
+                  '<div><div class="mini">Start</div><input id="menuDateStart" class="menuInput" type="date" value="' + start + '" /></div>' +
+                  '<div><div class="mini">End</div><input id="menuDateEnd" class="menuInput" type="date" value="' + end + '" /></div>' +
+                  "</div>";
 
-    const a = byId("menuDateStart");
-    const b = byId("menuDateEnd");
-    if (a) a.addEventListener("change", () => { state.filters.dateStart = a.value; applyAll(); });
-    if (b) b.addEventListener("change", () => { state.filters.dateEnd = b.value; applyAll(); });
-    return;
-  }
+                const a = byId("menuDateStart");
+                const b = byId("menuDateEnd");
+                if (a) a.addEventListener("change", () => { state.filters.dateStart = a.value; applyAll(); });
+                if (b) b.addEventListener("change", () => { state.filters.dateEnd = b.value; applyAll(); });
+                return;
+              }
 
-  if (meta.kind === "num") {
-    const map = {
-      left: ["leftMin", "leftMax"],
-      own: ["ownMin", "ownMax"],
-      pts: ["ptsMin", "ptsMax"],
-      top: ["topMin", "topMax"]
-    };
-    const pair = map[col];
-    if (!pair) return;
+              if (meta.kind === "num") {
+                const map = {
+                  left: ["leftMin", "leftMax"],
+                  own: ["ownMin", "ownMax"],
+                  pts: ["ptsMin", "ptsMax"],
+                  top: ["topMin", "topMax"]
+                };
+                const pair = map[col];
+                if (!pair) return;
 
-    const minKey = pair[0];
-    const maxKey = pair[1];
+                const minKey = pair[0];
+                const maxKey = pair[1];
 
-    const minVal = state.filters[minKey] || "";
-    const maxVal = state.filters[maxKey] || "";
+                const minVal = state.filters[minKey] || "";
+                const maxVal = state.filters[maxKey] || "";
 
-    menuFilterBlock.innerHTML =
-      '<div class="menuLabel">Range</div>' +
-      '<div class="menuGrid2">' +
-      '<div><div class="mini">Min</div><input id="menuNumMin" class="menuInput" type="number" step="any" value="' + minVal + '" /></div>' +
-      '<div><div class="mini">Max</div><input id="menuNumMax" class="menuInput" type="number" step="any" value="' + maxVal + '" /></div>' +
-      "</div>";
+                menuFilterBlock.innerHTML =
+                  '<div class="menuLabel">Range</div>' +
+                  '<div class="menuGrid2">' +
+                  '<div><div class="mini">Min</div><input id="menuNumMin" class="menuInput" type="number" step="any" value="' + minVal + '" /></div>' +
+                  '<div><div class="mini">Max</div><input id="menuNumMax" class="menuInput" type="number" step="any" value="' + maxVal + '" /></div>' +
+                  "</div>";
 
-    const minEl = byId("menuNumMin");
-    const maxEl = byId("menuNumMax");
+                const minEl = byId("menuNumMin");
+                const maxEl = byId("menuNumMax");
 
-    function sync() {
-      state.filters[minKey] = minEl ? minEl.value : "";
-      state.filters[maxKey] = maxEl ? maxEl.value : "";
-      applyAll();
-    }
+                function sync() {
+                  state.filters[minKey] = minEl ? minEl.value : "";
+                  state.filters[maxKey] = maxEl ? maxEl.value : "";
+                  applyAll();
+                }
 
-    if (minEl) minEl.addEventListener("input", sync);
-    if (maxEl) maxEl.addEventListener("input", sync);
-  }
-}
-
+                if (minEl) minEl.addEventListener("input", sync);
+                if (maxEl) maxEl.addEventListener("input", sync);
+              }
+            }
 
             function updateSortButtonLabels(col) {
               const meta = colMeta[col];
@@ -670,7 +654,7 @@ function buildFilterUI(col) {
               const descBtn = menu ? menu.querySelector('[data-action="sortDesc"]') : null;
               if (!ascBtn || !descBtn) return;
 
-             if (meta && (meta.kind === "num" || meta.kind === "split")) {
+              if (meta && (meta.kind === "num" || meta.kind === "splitCat")) {
                 ascBtn.textContent = "Sort Low → High";
                 descBtn.textContent = "Sort High → Low";
                 return;
@@ -810,9 +794,9 @@ function buildFilterUI(col) {
 
   .titleBlock { min-width: 320px; }
 
-  .h1 { margin: 0; font-size: 28px; font-weight: 900; line-height: 1.1; }
+  .h1 { margin: 0; font-size: 28px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; }
 
-  .sub { margin-top: 6px; color: #777; font-size: 13px; }
+  .sub { margin-top: 6px; color: rgba(255,255,255,0.55); font-size: 13px; }
 
   .searchWrap {
     flex: 1 1 auto;
@@ -826,23 +810,40 @@ function buildFilterUI(col) {
     width: min(520px, 100%);
     padding: 10px 12px;
     border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.12);
-    background: #fff;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #141414;
+    color: rgba(255,255,255,0.92);
     font-size: 14px;
     outline: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+
+  .search::placeholder { color: rgba(255,255,255,0.45); }
+
+  .search:focus {
+    border-color: rgba(255,255,255,0.18);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.10), 0 12px 32px rgba(0,0,0,0.45);
   }
 
   .resetAll {
     padding: 10px 12px;
     border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.14);
-    background: rgba(0,0,0,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #1f1f1f;
+    color: rgba(255,255,255,0.88);
     font-weight: 900;
     cursor: pointer;
     white-space: nowrap;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
   }
 
+  .resetAll:hover { background: #232323; border-color: rgba(255,255,255,0.14); transform: translateY(-1px); }
+  .resetAll:active { transform: translateY(0px); }
+
   .srOnly { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  main.page > section.grid { background: transparent; border: 0; box-shadow: none; border-radius: 0; padding: 0; }
 
   .grid { display: grid; grid-template-columns: 370px 1fr; gap: 12px; min-height: 0; }
 
@@ -851,20 +852,21 @@ function buildFilterUI(col) {
   .main { min-height: 0; display: flex; flex-direction: column; }
 
   .card {
-    border: 1px solid rgba(0,0,0,0.10);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
-    background: #fff;
+    background: #1f1f1f;
     padding: 12px 12px;
     margin-bottom: 10px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
   }
 
-  .cardTitle { font-weight: 900; margin-bottom: 10px; }
+  .cardTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
 
   .kv { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; align-items: start; }
 
-  .k { color: #666; font-size: 12px; }
+  .k { color: rgba(255,255,255,0.55); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; }
 
-  .v { font-weight: 900; }
+  .v { font-weight: 900; color: rgba(255,255,255,0.88); }
 
   .mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -876,16 +878,19 @@ function buildFilterUI(col) {
   .note {
     grid-column: 1 / -1;
     margin-top: 8px;
-    color: #777;
+    color: rgba(255,255,255,0.55);
     font-size: 12px;
     line-height: 1.35;
   }
 
+  .lines { max-height: 220px; overflow: auto; padding-right: 4px; }
+
   .tableWrap {
-    border: 1px solid rgba(0,0,0,0.10);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
     overflow: auto;
-    background: #fff;
+    background: #1f1f1f;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
   }
 
   table { width: 100%; border-collapse: collapse; }
@@ -893,23 +898,31 @@ function buildFilterUI(col) {
   thead th {
     position: sticky;
     top: 0;
-    background: rgba(0,0,0,0.03);
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    background: #181818;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     padding: 10px 10px;
     z-index: 2;
     text-align: left;
   }
 
   tbody td {
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
     padding: 10px 10px;
     vertical-align: top;
     font-size: 13px;
+    color: rgba(255,255,255,0.88);
   }
 
-  .capCell .capMain { font-weight: 900; }
+  tbody tr:hover td { background: #232323; }
 
-  .link { font-weight: 900; text-decoration: none; }
+  .capCell .capMain { font-weight: 900; color: rgba(255,255,255,0.92); }
+
+  .link {
+    font-weight: 900;
+    text-decoration: none;
+    color: rgba(255,255,255,0.88);
+  }
+  .link:hover { color: #fff; }
 
   .thBtn {
     width: 100%;
@@ -918,25 +931,27 @@ function buildFilterUI(col) {
     background: transparent;
     padding: 0;
     font-size: 11px;
-    color: #555;
+    color: rgba(255,255,255,0.62);
     font-weight: 900;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     cursor: pointer;
   }
+  .thBtn:hover { color: rgba(255,255,255,0.88); }
 
   .menu {
     position: fixed;
     width: 320px;
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.14);
+    background: #181818;
+    border: 1px solid rgba(255,255,255,0.10);
     border-radius: 14px;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    box-shadow: 0 18px 44px rgba(0,0,0,0.55);
     padding: 12px;
     z-index: 9999;
+    color: rgba(255,255,255,0.88);
   }
 
-  .menuTitle { font-weight: 900; margin-bottom: 10px; }
+  .menuTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
 
   .menuRow { display: flex; gap: 8px; margin-bottom: 10px; }
 
@@ -944,20 +959,25 @@ function buildFilterUI(col) {
     flex: 1 1 auto;
     padding: 9px 10px;
     border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.14);
-    background: rgba(0,0,0,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #1f1f1f;
+    color: rgba(255,255,255,0.88);
     font-weight: 900;
     cursor: pointer;
     font-size: 13px;
+    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
   }
 
-  .menuBtn.secondary { background: #fff; }
+  .menuBtn:hover { background: #232323; border-color: rgba(255,255,255,0.14); transform: translateY(-1px); }
+  .menuBtn:active { transform: translateY(0px); }
+
+  .menuBtn.secondary { background: #141414; }
 
   .menuBlock { margin-bottom: 10px; }
 
   .menuLabel {
     font-size: 11px;
-    color: #666;
+    color: rgba(255,255,255,0.55);
     margin-bottom: 6px;
     font-weight: 900;
     text-transform: uppercase;
@@ -968,15 +988,21 @@ function buildFilterUI(col) {
     width: 100%;
     padding: 9px 10px;
     border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.12);
-    background: #fff;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #141414;
+    color: rgba(255,255,255,0.92);
     font-size: 13px;
     outline: none;
   }
 
+  .menuInput:focus {
+    border-color: rgba(255,255,255,0.16);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+  }
+
   .menuGrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: end; }
 
-  .mini { font-size: 11px; color: #666; margin-bottom: 6px; font-weight: 900; }
+  .mini { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; }
 
   .colYear { width: 78px; }
   .colWk { width: 56px; }
@@ -996,7 +1022,7 @@ function buildFilterUI(col) {
 
   @media (max-width: 900px) {
     .topbar { flex-direction: column; align-items: stretch; }
-    .searchWrap { justify-content: stretch; }
+    .searchWrap { justify-content: stretch; flex-wrap: wrap; }
     .search { width: 100%; }
   }
 </style>
