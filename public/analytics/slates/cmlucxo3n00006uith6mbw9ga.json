@@ -1,0 +1,89 @@
+{
+  "slateId": "cmlucxo3n00006uith6mbw9ga",
+  "siteContestId": "NFL_2018_WK22_SUPER_BOWL_SHOWDOWN_2019-02-03_NE_LAR",
+  "slateKey": "NFL_2018_WK22_SUPER_BOWL_2019-02-03_LAR_NE",
+  "slateType": "SUPER_BOWL",
+  "slateDate": "2019-02-03T00:00:00",
+  "winner": {
+    "id": "cmlucxoaw00036uit4ys45jto",
+    "username": "Courtjesters",
+    "points": 120.45,
+    "maxEntries": 150
+  },
+  "lineup": {
+    "lineupType": "SHOWDOWN",
+    "salaryUsed": 47800,
+    "salaryLeft": 2200,
+    "totalPoints": 120.45,
+    "totalOwnershipPct": 225.5,
+    "captain": {
+      "rosterSpot": "CAPTAIN",
+      "name": "J. Edelman",
+      "position": null,
+      "team": null,
+      "salary": 16200,
+      "points": 41.85,
+      "ownershipPercent": null
+    },
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Edelman",
+        "position": null,
+        "team": null,
+        "salary": 16200,
+        "points": 41.85,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Patriots",
+        "position": null,
+        "team": null,
+        "salary": 2800,
+        "points": 13.0,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Cooks",
+        "position": null,
+        "team": null,
+        "salary": 8200,
+        "points": 23.0,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Gronkowski",
+        "position": null,
+        "team": null,
+        "salary": 6000,
+        "points": 14.7,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "S. Michel",
+        "position": null,
+        "team": null,
+        "salary": 6800,
+        "points": 15.4,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Woods",
+        "position": null,
+        "team": null,
+        "salary": 7800,
+        "points": 12.5,
+        "ownershipPercent": null
+      }
+    ]
+  },
+  "tags": {
+    "archetype": null
+  },
+  "generatedAt": "2026-02-20T03:59:42.732495Z"
+}

@@ -1,0 +1,125 @@
+{
+  "sport": "NFL",
+  "year": 2025,
+  "week": 15,
+  "slateType": "MAIN",
+  "slateDate": "2025-12-14",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $2.5M Fantasy Football Millionaire ($1M to 1st)",
+    "siteContestId": "NFL_2025_WK15_MAIN_2025-12-14_DK_MAIN_MILLY",
+    "entryFeeCents": null,
+    "entries": 147058,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9380
+  },
+  "winner": {
+    "username": "giantsandwarfs",
+    "points": 236.02,
+    "maxEntries": 33
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 236.02,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "J. Goff",
+        "position": "QB",
+        "team": "DET",
+        "salary": 6100,
+        "points": 28.52,
+        "ownershipPercent": 3.7
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "T. Henderson",
+        "position": "RB",
+        "team": "NE",
+        "salary": 6100,
+        "points": 33.1,
+        "ownershipPercent": 6.6
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "D. Swift",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 5700,
+        "points": 22.6,
+        "ownershipPercent": 3.3
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "P. Nacua",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 8700,
+        "points": 30.9,
+        "ownershipPercent": 38.8
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A. St. Brown",
+        "position": "WR",
+        "team": "DET",
+        "salary": 7900,
+        "points": 44.4,
+        "ownershipPercent": 13.2
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "J. Williams",
+        "position": "WR",
+        "team": "DET",
+        "salary": 6100,
+        "points": 29.4,
+        "ownershipPercent": 15.3
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "C. Parkinson",
+        "position": "TE",
+        "team": "LAR",
+        "salary": 3200,
+        "points": 24.5,
+        "ownershipPercent": 7.3
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Sinnott",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 2700,
+        "points": 4.6,
+        "ownershipPercent": 0.8
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bears",
+        "position": "DST",
+        "team": "CHI",
+        "salary": 3500,
+        "points": 18,
+        "ownershipPercent": 4.8
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins because it treats Week 15 as a slate where one game provided the ceiling and the rest of the build simply refused to miss. The core is Detroit. Goff with St. Brown and J. Williams captures a passing blow up where the points consolidate through the primary target earner plus the volatile deep threat. That pairing creates a two lane path to 30 plus outcomes. St. Brown covers the high volume, chain moving role that keeps drives alive. Williams captures the low catch, high value scoring that breaks tournaments when it lands.\n\nThe Rams bring back is clean and intentional. Nacua plus Parkinson is a tight, efficient way to stay attached to the same game environment without needing a full secondary stack. Nacua is the obvious ceiling piece, but Parkinson being the tight end instead of a second receiver matters because it matches how touchdown equity can get distributed in a concentrated passing offense. If Nacua draws volume and defensive attention, the tight end can still get paid in the red zone and on broken coverage.\n\nThe rest of the roster is where the lineup avoids landmines. Henderson and Swift are not luxury pieces. They are workload bets that stay viable in most scripts. Swift gives you access to a Chicago offense that can score without being efficient, because running back production can come through touches and short area usage. Henderson gives a similar floor with access to multi touchdown upside when his team controls scoring opportunities.\n\nSinnott is the salary valve. He is not there to compete with the ceiling pieces. He is there to make the rest of the structure possible while still offering a path to not being dead. This is the type of classic build that wins when the top end hits and the value slot simply does not zero.",
+    "uniquenessNotes": "The uniqueness here is not about fading the most popular player. Nacua is extremely owned and still makes the lineup because he is the correct piece in the highest scoring environment. The separation comes from how Detroit is stacked. Many lineups will pair St. Brown with a different Detroit secondary, or they will use Detroit pieces without fully committing to the quarterback. Using Goff plus both St. Brown and J. Williams forces a specific story where Detroit passing accounts for the tournament winning ceiling.\n\nParkinson as the second Ram changes duplication pressure because it is a narrower, less copied attachment than using another receiver or forcing a bring back from a different game. Henderson and Swift sit in the mid range salary band and keep the lineup from becoming a stars and scrubs copy paste.\n\nSinnott is the real differentiator. A sub one percent tight end at flex is how you keep a chalk star such as Nacua while still landing on a unique lineup. The lineup is a mix of one obvious ceiling decision and one uncomfortable value decision, which is usually what first place looks like in classic.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "construction": {
+        "teamStacks": [
+          { "team": "DET", "players": ["J. Goff", "A. St. Brown", "J. Williams"] },
+          { "team": "LAR", "players": ["P. Nacua", "C. Parkinson"] }
+        ],
+        "primaryGame": "DET-LAR",
+        "buildType": "QB triple stack with correlated bring back and a secondary pass catcher attachment"
+      },
+      "primaryLever": "Detroit passing ceiling captured through QB plus two receivers with different scoring profiles",
+      "secondaryLever": "Duplication relief through a low owned value flex while still eating a high owned superstar"
+    }
+  }
+}

@@ -1,0 +1,605 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { prisma } from "../lib/prisma";
+
+function safeUpper(v: any) {
+  return String(v || "").trim().toUpperCase();
+}
+
+function titleCase(v: any) {
+  const s = String(v || "").trim().toLowerCase();
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : "";
+}
+
+function fmtDateShort(iso: any) {
+  const s = String(iso || "");
+  if (!s) return "—";
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return s;
+  return new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit", year: "numeric" }).format(d);
+}
+
+function fmtMoney(cents: any) {
+  const n = Number(cents);
+  if (!Number.isFinite(n) || n <= 0) return "—";
+  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n / 100);
+}
+
+function chipLabel(v: any) {
+  const s = safeUpper(v);
+  if (!s) return "";
+  if (s === "THURSDAY_NIGHT_FOOTBALL" || s === "TNF") return "TNF";
+  if (s === "SUNDAY_NIGHT_FOOTBALL" || s === "SNF") return "SNF";
+  if (s === "MONDAY_NIGHT_FOOTBALL" || s === "MNF") return "MNF";
+  if (s === "SUPER_BOWL") return "Super Bowl";
+  return titleCase(s);
+}
+
+function slateHref(sport: string, year: number, slateId: string) {
+  const sp = safeUpper(sport);
+  if (sp === "NFL") return `/nfl/${year}/slate/${slateId}`;
+  if (sp === "CFB") return `/cfb/${year}/slate/${slateId}`;
+  return `/slate/${slateId}`;
+}
+
+const url = Astro.url;
+
+// optional filters
+const sportRaw = safeUpper(url.searchParams.get("sport"));
+const sport = sportRaw === "NFL" || sportRaw === "CFB" ? sportRaw : "ALL";
+
+const lineupTypeRaw = safeUpper(url.searchParams.get("lineupType"));
+const lineupType = lineupTypeRaw === "CLASSIC" || lineupTypeRaw === "SHOWDOWN" ? lineupTypeRaw : "ALL";
+
+// pull winners with enough join data to build a fun page
+const winnersRaw = await prisma.winner.findMany({
+  select: {
+    username: true,
+    points: true,
+    contest: {
+      select: {
+        contestName: true,
+        topPrizeCents: true,
+        slate: {
+          select: {
+            id: true,
+            week: true,
+            slateType: true,
+            lineupType: true,
+            slateDate: true,
+            season: { select: { year: true, sport: true } },
+          },
+        },
+      },
+    },
+  },
+  orderBy: [{ contest: { slate: { slateDate: "desc" } } }],
+});
+
+type WinRow = (typeof winnersRaw)[number];
+
+const rows = winnersRaw.filter((r) => {
+  const sp = safeUpper(r.contest?.slate?.season?.sport);
+  const lt = safeUpper(r.contest?.slate?.lineupType);
+  if (sport !== "ALL" && sp !== sport) return false;
+  if (lineupType !== "ALL" && lt !== lineupType) return false;
+  return true;
+});
+
+type WinnerAgg = {
+  username: string;
+  wins: number;
+  bestPoints: number | null;
+  lastWinDate: string | null;
+  totalTopPrizeCents: number;
+  sports: Set<string>;
+  lineupTypes: Set<string>;
+  recent: Array<{
+    sport: string;
+    year: number;
+    slateId: string;
+    slateType: string;
+    lineupType: string;
+    week: number | null;
+    slateDate: string;
+    points: number;
+    topPrizeCents: number | null;
+    contestName: string;
+  }>;
+};
+
+const map = new Map<string, WinnerAgg>();
+
+for (const r of rows) {
+  const username = String(r.username || "").trim() || "Unknown";
+  const s = r.contest?.slate;
+  const season = s?.season;
+  const sp = safeUpper(season?.sport);
+  const yr = Number(season?.year ?? NaN);
+  const lt = safeUpper(s?.lineupType);
+  const slateType = safeUpper(s?.slateType);
+  const week = s?.week ?? null;
+  const slateDateIso = s?.slateDate ? new Date(s.slateDate as any).toISOString() : "";
+  const points = Number(r.points);
+  const topPrizeCents = r.contest?.topPrizeCents ?? null;
+
+  if (!map.has(username)) {
+    map.set(username, {
+      username,
+      wins: 0,
+      bestPoints: null,
+      lastWinDate: null,
+      totalTopPrizeCents: 0,
+      sports: new Set<string>(),
+      lineupTypes: new Set<string>(),
+      recent: [],
+    });
+  }
+
+  const agg = map.get(username)!;
+  agg.wins += 1;
+
+  if (Number.isFinite(points)) {
+    agg.bestPoints = agg.bestPoints == null ? points : Math.max(agg.bestPoints, points);
+  }
+
+  if (slateDateIso) {
+    agg.lastWinDate = !agg.lastWinDate ? slateDateIso : (agg.lastWinDate < slateDateIso ? slateDateIso : agg.lastWinDate);
+  }
+
+  if (Number.isFinite(Number(topPrizeCents))) {
+    agg.totalTopPrizeCents += Number(topPrizeCents);
+  }
+
+  if (sp) agg.sports.add(sp);
+  if (lt) agg.lineupTypes.add(lt);
+
+  if (sp && Number.isFinite(yr) && s?.id) {
+    agg.recent.push({
+      sport: sp,
+      year: yr,
+      slateId: s.id,
+      slateType,
+      lineupType: lt,
+      week,
+      slateDate: slateDateIso,
+      points: Number.isFinite(points) ? points : 0,
+      topPrizeCents,
+      contestName: r.contest?.contestName || "",
+    });
+  }
+}
+
+// keep only top 3 recent wins per user
+const winnersAgg = [...map.values()].map((w) => {
+  w.recent.sort((a, b) => (b.slateDate || "").localeCompare(a.slateDate || ""));
+  w.recent = w.recent.slice(0, 3);
+  return w;
+});
+
+winnersAgg.sort((a, b) => {
+  if (b.wins !== a.wins) return b.wins - a.wins;
+  const bp = b.bestPoints ?? -1;
+  const ap = a.bestPoints ?? -1;
+  if (bp !== ap) return bp - ap;
+  return a.username.localeCompare(b.username);
+});
+
+const totalWins = rows.length;
+const uniqueWinners = winnersAgg.length;
+
+const top10 = winnersAgg.slice(0, 10);
+const recentGlobal = rows
+  .slice(0, 12)
+  .map((r) => {
+    const s = r.contest?.slate;
+    const season = s?.season;
+    const sp = safeUpper(season?.sport);
+    const yr = Number(season?.year ?? NaN);
+    const slateId = s?.id || "";
+    const slateDateIso = s?.slateDate ? new Date(s.slateDate as any).toISOString() : "";
+    return {
+      username: String(r.username || "").trim(),
+      sport: sp,
+      year: yr,
+      slateId,
+      slateType: safeUpper(s?.slateType),
+      lineupType: safeUpper(s?.lineupType),
+      week: s?.week ?? null,
+      date: slateDateIso,
+      points: r.points,
+      topPrizeCents: r.contest?.topPrizeCents ?? null,
+    };
+  })
+  .filter((x) => x.username && x.sport && Number.isFinite(x.year) && x.slateId);
+---
+
+<Layout title="Winners | Milly Maker Tracker">
+  <main class="wrap">
+    <header class="hero">
+      <h1>Winners</h1>
+      <p class="sub">
+        Every winner we have tracked so far. Search a username to see their history.
+      </p>
+    </header>
+
+    <div class="summary">
+      <div class="stat">
+        <div class="label">Wins tracked</div>
+        <div class="value">{totalWins}</div>
+      </div>
+      <div class="stat">
+        <div class="label">Unique usernames</div>
+        <div class="value">{uniqueWinners}</div>
+      </div>
+      <div class="stat">
+        <div class="label">Filters</div>
+        <div class="value">{sport} / {lineupType}</div>
+      </div>
+    </div>
+
+    <div class="stickyBar">
+      <div class="pillBar" role="tablist" aria-label="Filters">
+        <a class={sport === "ALL" ? "pill pillActive" : "pill"} href={`/winners?${new URLSearchParams({ lineupType: lineupType === "ALL" ? "" : lineupType }).toString()}`.replace(/=&|=$/g, "")}>
+          <span>All sports</span>
+        </a>
+        <a class={sport === "NFL" ? "pill pillActive" : "pill"} href={`/winners?${new URLSearchParams({ sport: "NFL", lineupType: lineupType === "ALL" ? "" : lineupType }).toString()}`.replace(/=&|=$/g, "")}>
+          <span>NFL</span>
+        </a>
+        <a class={sport === "CFB" ? "pill pillActive" : "pill"} href={`/winners?${new URLSearchParams({ sport: "CFB", lineupType: lineupType === "ALL" ? "" : lineupType }).toString()}`.replace(/=&|=$/g, "")}>
+          <span>CFB</span>
+        </a>
+        <span class="sep" aria-hidden="true"></span>
+        <a class={lineupType === "ALL" ? "pill pillActive" : "pill"} href={`/winners?${new URLSearchParams({ sport: sport === "ALL" ? "" : sport }).toString()}`.replace(/=&|=$/g, "")}>
+          <span>All lineups</span>
+        </a>
+        <a class={lineupType === "CLASSIC" ? "pill pillActive" : "pill"} href={`/winners?${new URLSearchParams({ sport: sport === "ALL" ? "" : sport, lineupType: "CLASSIC" }).toString()}`.replace(/=&|=$/g, "")}>
+          <span>Classic</span>
+        </a>
+        <a class={lineupType === "SHOWDOWN" ? "pill pillActive" : "pill"} href={`/winners?${new URLSearchParams({ sport: sport === "ALL" ? "" : sport, lineupType: "SHOWDOWN" }).toString()}`.replace(/=&|=$/g, "")}>
+          <span>Showdown</span>
+        </a>
+      </div>
+
+      <div class="searchRow">
+        <input id="winnerSearch" class="search" type="search" placeholder="Search username (example: zerriemack)" autocomplete="off" />
+        <div class="searchMeta">
+          <span id="matchCount">{winnersAgg.length}</span> shown
+        </div>
+      </div>
+    </div>
+
+    <section class="twoCol">
+      <div class="panel">
+        <h2 class="panelTitle">Top winners</h2>
+        <div class="cards" id="leaderboard">
+          {top10.map((w) => {
+            const sportsText = [...w.sports].join(", ");
+            const ltText = [...w.lineupTypes].join(", ");
+            const last = w.recent[0];
+            const lastHref = last ? slateHref(last.sport, last.year, last.slateId) : "#";
+            return (
+              <article class="winnerCard" data-username={w.username.toLowerCase()}>
+                <div class="wcTop">
+                  <div class="name">{w.username}</div>
+                  <div class="wins">{w.wins} wins</div>
+                </div>
+
+                <div class="wcMeta">
+                  <span class="mini">{sportsText || "—"}</span>
+                  <span class="mini">{ltText || "—"}</span>
+                  <span class="mini">Best: {w.bestPoints == null ? "—" : w.bestPoints.toFixed(2)}</span>
+                </div>
+
+                {last ? (
+                  <a class="lastLink" href={lastHref}>
+                    Last win: {fmtDateShort(last.slateDate)} • Week {last.week ?? "—"} • {chipLabel(last.slateType)}
+                  </a>
+                ) : (
+                  <div class="lastLink muted">No linked slate yet</div>
+                )}
+
+                {w.recent.length ? (
+                  <div class="recent">
+                    {w.recent.map((x) => (
+                      <a class="recentItem" href={slateHref(x.sport, x.year, x.slateId)}>
+                        <span class="tag">{x.year}</span>
+                        <span class="tag">{titleCase(x.lineupType)}</span>
+                        <span class="tag">{chipLabel(x.slateType)}</span>
+                        <span class="tag">{fmtDateShort(x.slateDate)}</span>
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
+              </article>
+            );
+          })}
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 class="panelTitle">Recent wins</h2>
+        <div class="recentGrid">
+          {recentGlobal.map((r) => (
+            <a class="recentWin" href={slateHref(r.sport, r.year, r.slateId)} data-username={r.username.toLowerCase()}>
+              <div class="rwTop">
+                <div class="rwName">{r.username}</div>
+                <div class="rwPrize">{fmtMoney(r.topPrizeCents)}</div>
+              </div>
+              <div class="rwMeta">
+                <span class="pillMini">{r.year}</span>
+                <span class="pillMini">{titleCase(r.lineupType)}</span>
+                <span class="pillMini">{chipLabel(r.slateType)}</span>
+                <span class="pillMini">Week {r.week ?? "—"}</span>
+              </div>
+              <div class="rwBottom">
+                <span>{fmtDateShort(r.date)}</span>
+                <span class="rwPts">{Number(r.points).toFixed(2)} pts</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="panel full">
+      <h2 class="panelTitle">All winners</h2>
+      <div class="tableWrap">
+        <table class="tbl" id="allWinnersTable">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Wins</th>
+              <th>Best pts</th>
+              <th>Last win</th>
+              <th>Total top prizes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {winnersAgg.map((w) => (
+              <tr data-username={w.username.toLowerCase()}>
+                <td class="u">{w.username}</td>
+                <td>{w.wins}</td>
+                <td>{w.bestPoints == null ? "—" : w.bestPoints.toFixed(2)}</td>
+                <td>{w.lastWinDate ? fmtDateShort(w.lastWinDate) : "—"}</td>
+                <td>{fmtMoney(w.totalTopPrizeCents)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <script is:inline>
+      {`
+        (() => {
+          const input = document.getElementById("winnerSearch");
+          const count = document.getElementById("matchCount");
+          const cards = Array.from(document.querySelectorAll("[data-username]"));
+
+          function apply() {
+            const q = String(input?.value || "").trim().toLowerCase();
+            let shown = 0;
+
+            for (const el of cards) {
+              const u = String(el.getAttribute("data-username") || "");
+              const ok = !q || u.includes(q);
+              el.style.display = ok ? "" : "none";
+              if (ok) shown += 1;
+            }
+
+            if (count) count.textContent = String(shown);
+          }
+
+          if (input) {
+            input.addEventListener("input", apply);
+          }
+        })();
+      `}
+    </script>
+  </main>
+
+  <style>
+    .wrap{max-width:1320px;margin:0 auto;padding:26px 16px 60px}
+
+    .hero{margin:6px 0 14px;text-align:center}
+    .hero h1{margin:0;font-size:54px;letter-spacing:-.02em}
+    .sub{margin:10px auto 0;max-width:80ch;color:#4b5563;line-height:1.65}
+
+    .summary{
+      margin:18px auto 10px;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      max-width:980px;
+    }
+    .stat{
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:16px;
+      background:#fff;
+      padding:14px 14px;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+      text-align:left;
+    }
+    .label{font-size:12px;opacity:.65;font-weight:900}
+    .value{margin-top:6px;font-size:20px;font-weight:950}
+
+    .stickyBar{position:sticky;top:10px;z-index:5;margin:14px 0 18px}
+    .pillBar{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:10px;
+      border-radius:16px;
+      background:rgba(255,255,255,.85);
+      backdrop-filter:saturate(180%) blur(10px);
+      border:1px solid rgba(0,0,0,.06);
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,.14);
+      background:#fff;
+      text-decoration:none;
+      font-weight:800;
+      font-size:14px;
+      line-height:1;
+      color:inherit;
+    }
+    .pill:hover{border-color:rgba(0,0,0,.28)}
+    .pillActive{border-color:rgba(35,55,255,.55);box-shadow:0 0 0 3px rgba(35,55,255,.10)}
+    .sep{width:1px;height:26px;background:rgba(0,0,0,.10);margin:0 2px}
+
+    .searchRow{
+      margin-top:10px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      justify-content:space-between;
+    }
+    .search{
+      width:100%;
+      max-width:520px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(0,0,0,.10);
+      background:#fff;
+      box-shadow:0 10px 26px rgba(0,0,0,.05);
+      font-weight:800;
+      outline:none;
+    }
+    .search:focus-visible{border-color:rgba(35,55,255,.45);box-shadow:0 0 0 4px rgba(35,55,255,.14), 0 10px 26px rgba(0,0,0,.05)}
+    .searchMeta{font-size:12px;opacity:.7;font-weight:900;white-space:nowrap}
+
+    .twoCol{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:14px;
+      margin-top:10px;
+    }
+    @media (max-width: 980px){
+      .summary{grid-template-columns:1fr}
+      .twoCol{grid-template-columns:1fr}
+      .sep{display:none}
+      .searchRow{flex-direction:column;align-items:stretch}
+      .search{max-width:none}
+    }
+
+    .panel{
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:18px;
+      background:#fff;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+      padding:14px;
+    }
+    .panel.full{margin-top:14px}
+    .panelTitle{margin:2px 2px 10px;font-size:16px;font-weight:950}
+
+    .cards{display:grid;grid-template-columns:1fr;gap:10px}
+    .winnerCard{
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:16px;
+      padding:12px;
+      background:linear-gradient(180deg, rgba(35,55,255,.05), rgba(0,0,0,0));
+    }
+    .wcTop{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+    .name{font-weight:950;font-size:16px}
+    .wins{font-weight:950;opacity:.7}
+
+    .wcMeta{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
+    .mini{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(0,0,0,.02);
+      opacity:.9;
+    }
+
+    .lastLink{
+      display:block;
+      margin-top:10px;
+      font-size:12px;
+      font-weight:900;
+      color:inherit;
+      opacity:.75;
+      text-decoration:none;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .lastLink:hover{opacity:1;text-decoration:underline}
+    .lastLink.muted{opacity:.55}
+
+    .recent{margin-top:10px;display:flex;flex-direction:column;gap:8px}
+    .recentItem{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      text-decoration:none;
+      color:inherit;
+      padding:8px 10px;
+      border:1px solid rgba(0,0,0,.07);
+      border-radius:14px;
+      background:#fff;
+    }
+    .recentItem:hover{border-color:rgba(0,0,0,.16)}
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(0,0,0,.02);
+      opacity:.9;
+    }
+
+    .recentGrid{display:grid;grid-template-columns:1fr;gap:10px}
+    .recentWin{
+      display:block;
+      text-decoration:none;
+      color:inherit;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:16px;
+      padding:12px;
+      background:#fff;
+    }
+    .recentWin:hover{border-color:rgba(0,0,0,.18)}
+    .rwTop{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+    .rwName{font-weight:950}
+    .rwPrize{font-weight:950;opacity:.7}
+    .rwMeta{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
+    .pillMini{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(0,0,0,.02);
+      opacity:.9;
+    }
+    .rwBottom{margin-top:10px;display:flex;justify-content:space-between;gap:10px;font-size:12px;opacity:.75;font-weight:900}
+    .rwPts{opacity:.9}
+
+    .tableWrap{overflow:auto;border-radius:14px;border:1px solid rgba(0,0,0,.07)}
+    .tbl{width:100%;border-collapse:separate;border-spacing:0;background:#fff}
+    .tbl th,.tbl td{padding:12px 12px;border-bottom:1px solid rgba(0,0,0,.06);text-align:left}
+    .tbl th{font-size:12px;opacity:.75;font-weight:950;background:rgba(0,0,0,.02)}
+    .tbl tr:last-child td{border-bottom:none}
+    .u{font-weight:950}
+  </style>
+</Layout>

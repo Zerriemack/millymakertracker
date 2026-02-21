@@ -1,4 +1,6 @@
 ---
-export const prerender = true;
-return Astro.redirect("/nfl/2025/slate/showdown", 301);
+const url = new URL(Astro.request.url);
+const y = url.searchParams.get("year");
+const dest = y ? `/nfl/${y}?view=LIST&lineupType=SHOWDOWN` : `/nfl?view=LIST&lineupType=SHOWDOWN`;
+return Astro.redirect(dest, 301);
 ---

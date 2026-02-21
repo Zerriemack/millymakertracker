@@ -1,0 +1,96 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 22,
+  "slateType": "SUPER_BOWL",
+  "slateDate": "2019-02-03",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "Super Bowl LIII Showdown",
+    "siteContestId": "NFL_2018_WK22_SUPER_BOWL_SHOWDOWN_2019-02-03_NE_LAR",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 22550
+  },
+  "winner": {
+    "username": "Courtjesters",
+    "points": 120.45,
+    "maxEntries": 150
+  },
+  "lineup": {
+    "salaryUsed": 47800,
+    "totalPoints": 120.45,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "J. Edelman",
+        "position": "WR",
+        "team": "NE",
+        "salary": 16200,
+        "points": 41.85,
+        "ownershipPercent": 57.0
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 2800,
+        "points": 13.0,
+        "ownershipPercent": 6.7
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Cooks",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 8200,
+        "points": 23.0,
+        "ownershipPercent": 38.1
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Gronkowski",
+        "position": "TE",
+        "team": "NE",
+        "salary": 6000,
+        "points": 14.7,
+        "ownershipPercent": 38.9
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "S. Michel",
+        "position": "RB",
+        "team": "NE",
+        "salary": 6800,
+        "points": 15.4,
+        "ownershipPercent": 47.8
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Woods",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 7800,
+        "points": 12.5,
+        "ownershipPercent": 37.0
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins because it built for a Super Bowl game environment where points came in short bursts, drives ended early, and one offense controlled possession without producing a fantasy friendly box score for quarterbacks.\n\nCaptain Julian Edelman carried the slate through volume. New England did not need explosive plays to feed him. It needed first downs. Edelman kept chains moving, stacked catches, and reached a 100 yard bonus. In a low scoring game, a heavy reception role becomes the cleanest path to separation because every catch adds points even when touchdowns stay scarce.\n\nThe Patriots side is constructed around control plus leverage. Sony Michel provides the single touchdown plus steady rushing production in a positive script. Rob Gronkowski adds concentrated yardage on limited attempts, which matters when the passing tree narrows and a few high leverage completions decide who keeps drives alive.\n\nNew England DST is the glue. A defense does not need a touchdown to matter when the opposing offense fails to finish drives and takes sacks. The Rams offense stalled, which gave the defense both floor and ceiling through stops, pressure, and field position.\n\nThe Rams bring back focuses on raw opportunity rather than guessing a Rams touchdown. Brandin Cooks reached the 100 yard bonus, which kept him relevant even without scoring. Robert Woods added enough yardage and receptions to stay in the optimal, but he did it without requiring a shootout. Two Rams pass catchers cover the team exposure without paying for a quarterback score that never arrived.\n\nThe missing quarterbacks are the point. This slate did not produce a quarterback who could keep up with a high volume captain receiver plus a defense. When both offenses play tight and scoring stays low, quarterback salary becomes a trap. The build stayed aligned with how fantasy points showed up instead of forcing traditional Showdown rules.",
+    "uniquenessNotes": "The lineup is interesting because it blends a popular captain with a less common overall structure.\n\nEdelman at captain drew heavy ownership, so duplication risk rises immediately. The pivot came from how the rest of the roster handled the game. New England DST carried low ownership compared to the skill players, yet the game environment favored it. Pairing Edelman with Patriots DST and Michel creates a cohesive story where New England controls the game, grinds drives, and keeps the opponent limited.\n\nAnother differentiator is the decision to roster two Rams receivers without using a Rams quarterback. Many entries chase quarterback points in Showdown out of habit. This roster treated Los Angeles production as yardage driven, which matched the actual game. Cooks reached the bonus without a touchdown, and Woods stayed viable through steady involvement.\n\nLeaving 2,200 salary unused also lowers overlap. A build with a high owned captain needs a second lever to break ties. Salary left serves as one of those levers while still keeping every slot correlated to the same game script.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": { "name": "J. Edelman", "position": "WR", "team": "NE" },
+        "teamSplit": "4-2",
+        "buildType": "Low total game build with high volume WR captain, Patriots control pieces, and a yardage based Rams bring back",
+        "includesQBs": false
+      },
+      "primaryLever": "Edelman reception volume plus 100 yard bonus carried a slate where touchdowns were scarce and quarterbacks failed to separate",
+      "secondaryLever": "Patriots DST benefited from Rams struggles, two Rams receivers captured yardage without a QB slot, and 2,200 salary left reduced duplication"
+    }
+  }
+}

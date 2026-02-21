@@ -160,7 +160,8 @@ export const GET: APIRoute = async () => {
           slateType: true,
           slateDate: true,
           slateKey: true,
-        },
+                    season: { select: { year: true } },
+},
       },
       analysis: true,
       winners: {
@@ -226,7 +227,8 @@ export const GET: APIRoute = async () => {
       slateType: c.slate.slateType,
       slateDate: c.slate.slateDate,
       slateKey: c.slate.slateKey,
-      link: `/nfl/2025/slate/${c.slate.id}`,
+      link: `/nfl/${c.slate.season.year}/slate/${c.slate.id}`,
+      year: c.slate.season.year,
 
       salaryUsed,
       salaryLeft,

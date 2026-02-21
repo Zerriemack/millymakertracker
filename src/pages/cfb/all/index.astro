@@ -1,0 +1,337 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { prisma } from "../../../lib/prisma";
+
+function safeUpper(v: any) {
+  return String(v || "").trim().toUpperCase();
+}
+function titleCase(v: any) {
+  const s = String(v || "").trim().toLowerCase();
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : "";
+}
+function fmtDateShort(iso: any) {
+  const s = String(iso || "");
+  if (!s) return "—";
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return s;
+  return new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit" }).format(d);
+}
+function parseTeamsFromSlateKey(slateKeyRaw: any) {
+  const key = String(slateKeyRaw || "").trim();
+  const parts = key.split("_").filter(Boolean);
+  if (parts.length < 2) return { away: null, home: null };
+
+  const home = safeUpper(parts[parts.length - 1]);
+  const away = safeUpper(parts[parts.length - 2]);
+
+  const isTeam = (s: string) => /^[A-Z]{2,4}$/.test(s);
+  return { away: isTeam(away) ? away : null, home: isTeam(home) ? home : null };
+}
+
+const url = Astro.url;
+const lineupTypeRaw = safeUpper(url.searchParams.get("lineupType"));
+const lineupType = lineupTypeRaw === "CLASSIC" || lineupTypeRaw === "SHOWDOWN" ? lineupTypeRaw : null;
+
+const where: any = { season: { sport: "CFB" } };
+if (lineupType) where.lineupType = lineupType;
+
+const slates = await prisma.slate.findMany({
+  where,
+  orderBy: [
+    { week: "asc" },
+    { season: { year: "desc" } },
+    { slateDate: "asc" },
+    { id: "asc" }
+  ],
+  select: {
+    id: true,
+    week: true,
+    slateType: true,
+    lineupType: true,
+    slateDate: true,
+    slateKey: true,
+    season: { select: { year: true } }
+  },
+});
+
+type SlateRow = (typeof slates)[number];
+
+function groupByWeekAll(rows: SlateRow[]) {
+  const m = new Map<number, SlateRow[]>();
+  for (const r of rows) {
+    const wk = Number(r.week ?? 0);
+    if (!m.has(wk)) m.set(wk, []);
+    m.get(wk)!.push(r);
+  }
+  return [...m.entries()].sort((a, b) => a[0] - b[0]);
+}
+
+const weeks = groupByWeekAll(slates);
+
+const allCount = await prisma.slate.count({ where: { season: { sport: "CFB" } } });
+const classicCount = await prisma.slate.count({ where: { season: { sport: "CFB" }, lineupType: "CLASSIC" } });
+const showdownCount = await prisma.slate.count({ where: { season: { sport: "CFB" }, lineupType: "SHOWDOWN" } });
+
+const baseList = "/cfb/all";
+const hrefAll = baseList;
+const hrefClassic = `${baseList}?lineupType=CLASSIC`;
+const hrefShowdown = `${baseList}?lineupType=SHOWDOWN`;
+
+function chipLabel(v: any) {
+  const s = safeUpper(v);
+  if (!s) return "";
+  if (s === "THURSDAY_NIGHT_FOOTBALL" || s === "TNF") return "TNF";
+  if (s === "SUNDAY_NIGHT_FOOTBALL" || s === "SNF") return "SNF";
+  if (s === "MONDAY_NIGHT_FOOTBALL" || s === "MNF") return "MNF";
+  if (s === "SUPER_BOWL") return "Super Bowl";
+  return titleCase(s);
+}
+
+function showLineupBadge() {
+  return !lineupType;
+}
+
+function lineupBadgeClass(kind: any) {
+  const k = safeUpper(kind);
+  if (k === "CLASSIC") return "badge badgeClassic";
+  if (k === "SHOWDOWN") return "badge badgeShowdown";
+  return "badge";
+}
+
+const PREVIEW_LIMIT = 8;
+---
+
+<Layout title="CFB All Years">
+  <main class="wrap">
+    <a class="back" href="/cfb">Back to CFB</a>
+
+    <div class="head">
+      <h1>CFB All Years</h1>
+      <div class="sub">
+        {lineupType ? `${titleCase(lineupType)} slates` : "All slates"}: {slates.length}
+      </div>
+    </div>
+
+    <div class="stickyBar">
+      <div class="pillBar" role="tablist" aria-label="Lineup type filter">
+        <a class={!lineupType ? "pill pillActive" : "pill"} href={hrefAll} role="tab" aria-selected={!lineupType}>
+          <span>All</span><span class="pillCount">{allCount}</span>
+        </a>
+        <a class={lineupType === "CLASSIC" ? "pill pillActive" : "pill"} href={hrefClassic} role="tab" aria-selected={lineupType === "CLASSIC"}>
+          <span>Classic</span><span class="pillCount">{classicCount}</span>
+        </a>
+        <a class={lineupType === "SHOWDOWN" ? "pill pillActive" : "pill"} href={hrefShowdown} role="tab" aria-selected={lineupType === "SHOWDOWN"}>
+          <span>Showdown</span><span class="pillCount">{showdownCount}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="weeks" id="weeksGrid">
+      {weeks.map(([wk, rows]) => (
+        <details class="week" data-week={wk}>
+          <summary class="weekSummary">
+            <div class="wkLeft">
+              <div class="wkTitle">Week {wk}</div>
+              <div class="wkMeta">{rows.length} slates</div>
+            </div>
+            <div class="wkChevron" aria-hidden="true">▾</div>
+          </summary>
+
+          <div class="rows">
+            {rows.map((s, i) => {
+              const yr = Number(s.season?.year ?? 0);
+              const t = parseTeamsFromSlateKey(s.slateKey);
+              const matchup = t.away && t.home ? `${t.away} vs ${t.home}` : "Matchup TBD";
+              const href = `/cfb/${yr}/slate/${s.id}`;
+
+              const hidden = i >= PREVIEW_LIMIT;
+
+              return (
+                <a class={`slateCard ${hidden ? "isHidden" : ""}`} href={href}>
+                  <div class="slateTop">
+                    <div class="slateChips">
+                      <span class="yr">{yr}</span>
+                      {showLineupBadge() ? (
+                        <span class={lineupBadgeClass(s.lineupType)}>{titleCase(s.lineupType)}</span>
+                      ) : null}
+                      <span class="chip">{chipLabel(s.slateType)}</span>
+                    </div>
+                    <div class="date">{fmtDateShort(s.slateDate)}</div>
+                  </div>
+
+                  <div class="matchup">{matchup}</div>
+                </a>
+              );
+            })}
+
+            {rows.length > PREVIEW_LIMIT ? (
+              <button class="moreBtn" type="button" data-more="1">
+                Show more ({rows.length - PREVIEW_LIMIT})
+              </button>
+            ) : null}
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <script is:inline>
+      {`
+        (() => {
+          const grid = document.getElementById("weeksGrid");
+          if (!grid) return;
+
+          const weeks = Array.from(grid.querySelectorAll("details.week"));
+
+          weeks.forEach((d) => {
+            d.addEventListener("toggle", () => {
+              if (!d.open) return;
+              for (const o of weeks) {
+                if (o !== d) o.open = false;
+              }
+            });
+          });
+
+          weeks.forEach((week) => {
+            const btn = week.querySelector("button.moreBtn");
+            if (!btn) return;
+
+            btn.addEventListener("click", () => {
+              const isExpanded = btn.getAttribute("data-expanded") === "1";
+              const cards = Array.from(week.querySelectorAll(".slateCard"));
+
+              if (!isExpanded) {
+                cards.forEach((el) => el.classList.remove("isHidden"));
+                btn.textContent = "Show less";
+                btn.setAttribute("data-expanded", "1");
+              } else {
+                cards.forEach((el, idx) => {
+                  if (idx >= ${PREVIEW_LIMIT}) el.classList.add("isHidden");
+                  else el.classList.remove("isHidden");
+                });
+
+                const total = cards.length;
+                const more = Math.max(0, total - ${PREVIEW_LIMIT});
+                btn.textContent = more > 0 ? "Show more (" + more + ")" : "Show more";
+                btn.setAttribute("data-expanded", "0");
+              }
+            });
+          });
+        })();
+      `}
+    </script>
+  </main>
+
+  <style>
+    .wrap{max-width:1320px;margin:0 auto;padding:28px 16px 56px}
+    .back{display:inline-block;margin-bottom:14px;text-decoration:none;opacity:.8}
+    .back:hover{opacity:1;text-decoration:underline}
+
+    .head{margin:6px 0 10px}
+    .head h1{margin:0;font-size:34px}
+    .sub{opacity:.7;margin-top:6px}
+
+    .stickyBar{position:sticky;top:10px;z-index:5;margin:14px 0 18px}
+    .pillBar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px;border-radius:16px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(10px);border:1px solid rgba(0,0,0,.06)}
+    .pill{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.14);background:#fff;text-decoration:none;font-weight:800;font-size:14px;line-height:1}
+    .pill:hover{border-color:rgba(0,0,0,.28)}
+    .pillActive{border-color:rgba(35,55,255,.55);box-shadow:0 0 0 3px rgba(35,55,255,.10)}
+    .pillCount{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:22px;padding:0 8px;border-radius:999px;font-size:12px;font-weight:900;border:1px solid rgba(0,0,0,.10);background:rgba(0,0,0,.03);opacity:.9}
+
+    .weeks{
+      display:grid;
+      gap:14px;
+      margin-top:6px;
+      align-items:start;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    @media (max-width:720px){.stickyBar{top:6px}}
+
+    details.week{
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:18px;
+      background:#fff;
+      overflow:hidden;
+      align-self:start;
+    }
+    details.week[open] .wkChevron{transform:rotate(180deg)}
+    summary.weekSummary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:14px 16px;
+      background:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,0));
+    }
+    summary.weekSummary::-webkit-details-marker{display:none}
+    .wkLeft{display:flex;flex-direction:column;gap:4px}
+    .wkTitle{font-weight:900}
+    .wkMeta{font-size:12px;opacity:.7}
+    .wkChevron{font-size:14px;opacity:.6;transition:transform .18s ease}
+
+    .rows{padding:12px;display:flex;flex-direction:column;gap:10px}
+
+    .slateCard{
+      display:block;
+      padding:10px 10px 9px;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:16px;
+      background:#fff;
+      text-decoration:none;
+      box-shadow:0 8px 22px rgba(0,0,0,.04);
+      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .slateCard:hover{
+      border-color:rgba(0,0,0,.18);
+      transform:translateY(-1px);
+      box-shadow:0 12px 28px rgba(0,0,0,.07);
+    }
+
+    .isHidden{display:none}
+
+    .slateTop{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .slateChips{display:flex;align-items:center;gap:6px;min-width:0;flex-wrap:nowrap;overflow:hidden}
+    .date{font-weight:900;white-space:nowrap;opacity:.75;font-size:12px}
+
+    .yr,
+    .badge,
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:4px 9px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(0,0,0,.02);
+      opacity:.9;
+      flex:0 0 auto;
+    }
+    .badgeClassic{border-color:rgba(0,0,0,.16)}
+    .badgeShowdown{border-color:rgba(35,55,255,.35);box-shadow:0 0 0 2px rgba(35,55,255,.06) inset}
+
+    .matchup{
+      margin-top:7px;
+      font-size:14px;
+      font-weight:950;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .moreBtn{
+      appearance:none;
+      border:1px solid rgba(0,0,0,.12);
+      background:rgba(0,0,0,.02);
+      border-radius:12px;
+      padding:10px 12px;
+      font-weight:900;
+      cursor:pointer;
+      text-align:center;
+    }
+    .moreBtn:hover{border-color:rgba(0,0,0,.22)}
+  </style>
+</Layout>

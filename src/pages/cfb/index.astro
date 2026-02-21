@@ -1,41 +1,106 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getSlates } from "../../lib/data";
+import { prisma } from "../../lib/prisma";
 
-const slates = getSlates()
-  .filter((s) => s.sport === "CFB")
-  .sort((a, b) => (a.date > b.date ? -1 : 1));
+const seasons = await prisma.season.findMany({
+  where: { sport: "CFB" },
+  select: { year: true },
+  orderBy: { year: "desc" },
+});
+
+const existing = new Set(seasons.map((s) => s.year));
+
+const startYear = 2016;
+const endYear = 2026;
+const years: number[] = [];
+for (let y = endYear; y >= startYear; y--) years.push(y);
+
+const cards = [
+  { title: "All", href: "/cfb/all", note: "Every slate across every season" },
+  ...years.map((y) => ({
+    title: String(y),
+    href: `/cfb/${y}`,
+    note: existing.has(y) ? "" : "Not loaded",
+  })),
+];
 ---
 
-<Layout title="CFB | MillyMakerTracker">
-  <main class="container">
-    <h1>CFB</h1>
-    <p>Tracking DraftKings CFB Milly Maker winning lineups by slate.</p>
+<Layout title="CFB">
+  <main class="page">
+    <header class="hero">
+      <h1 class="title">CFB</h1>
+      <p class="sub">Select a season</p>
+    </header>
 
-    {slates.length === 0 ? (
-      <p>No slates yet.</p>
-    ) : (
-      <ul>
-        {slates.map((s) => (
-          <li>
-            <strong>
-              {s.season}
-              {typeof s.week === "number" ? ` Week ${s.week}` : ""}
-            </strong>
-            {" • "}
-            {s.slateName ?? "Slate"}
-            {" • "}
-            {s.date}
-            {" • "}
-            {s.contest.name}
-            {s.winners?.[0] ? (
-              <div>
-                Winner: {s.winners[0].username} ({s.winners[0].points} pts)
-              </div>
-            ) : null}
-          </li>
-        ))}
-      </ul>
-    )}
+    <section class="grid" aria-label="CFB seasons">
+      {cards.map((c) => (
+        <a class="card" href={c.href} aria-label={c.title}>
+          <div class="cardRow">
+            <h2 class="card-title">{c.title}</h2>
+            {c.note ? <span class="note">{c.note}</span> : null}
+          </div>
+        </a>
+      ))}
+    </section>
   </main>
 </Layout>
+
+<style>
+  .page { max-width: 1100px; margin: 0 auto; padding: 26px 16px 60px; }
+
+  .hero { margin: 6px 0 18px; text-align: center; }
+  .title { margin: 0; font-size: 108px; letter-spacing: 0.02em; line-height: 1; }
+  .sub { margin: 12px 0 0; color: #4b5563; line-height: 1.65; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  @media (min-width: 900px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 18px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: transform 120ms ease, box-shadow 120ms ease;
+  }
+
+  .card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.08);
+  }
+
+  .cardRow{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+
+  .card-title { margin: 0; font-size: 18px; font-weight: 900; }
+
+  .note{
+    font-size:12px;
+    font-weight:800;
+    padding:6px 10px;
+    border-radius:999px;
+    border:1px solid rgba(0,0,0,.10);
+    background:rgba(0,0,0,.03);
+    opacity:.75;
+    white-space:nowrap;
+  }
+
+  @media (max-width: 720px){
+    .title{ font-size: 72px; }
+  }
+</style>

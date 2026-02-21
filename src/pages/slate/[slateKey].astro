@@ -1,4 +1,10 @@
 ---
+
+const __slateKey = String(Astro.params.slateKey ?? "").trim();
+if (/^[0-9]{4}$/.test(__slateKey)) {
+  return Astro.redirect(`/nfl/${__slateKey}?view=LIST`, 307);
+}
+
 import Layout from "../../layouts/Layout.astro";
 import { prisma } from "../../lib/db";
 
@@ -35,7 +41,7 @@ const analysis = contest?.analysis ?? null;
       </>
     ) : (
       <>
-        <a href="/nfl/showdown" style="text-decoration:none;">Back</a>
+        <a href="/nfl" style="text-decoration:none;">Back</a>
 
         <h1 style="margin-top:10px;">
           {slate.season.year} Week {slate.week} · {slate.slateType}

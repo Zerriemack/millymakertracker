@@ -1,0 +1,125 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 1,
+  "slateType": "MAIN",
+  "slateDate": "2018-09-09",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker ($1M to 1st)",
+    "siteContestId": "NFL_2018_WK01_MAIN_2018-09-09_DK_MAIN_MILLY",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 13420
+  },
+  "winner": {
+    "username": "Chalk",
+    "points": 301.18,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 301.18,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "R. Fitzpatrick",
+        "position": "QB",
+        "team": "TB",
+        "salary": 5000,
+        "points": 45.28,
+        "ownershipPercent": 1.3
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Conner",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 4500,
+        "points": 38.2,
+        "ownershipPercent": 25.5
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "A. Kamara",
+        "position": "RB",
+        "team": "NO",
+        "salary": 8500,
+        "points": 46.1,
+        "ownershipPercent": 33.5
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "M. Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6700,
+        "points": 30.7,
+        "ownershipPercent": 2.8
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "D. Jackson",
+        "position": "WR",
+        "team": "TB",
+        "salary": 4600,
+        "points": 34.6,
+        "ownershipPercent": 0.9
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "M. Thomas",
+        "position": "WR",
+        "team": "NO",
+        "salary": 7800,
+        "points": 42,
+        "ownershipPercent": 19.1
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "J. Reed",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 4000,
+        "points": 14.8,
+        "ownershipPercent": 12.5
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "E. Sanders",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 5000,
+        "points": 32.5,
+        "ownershipPercent": 18.2
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Ravens",
+        "position": "DST",
+        "team": "BAL",
+        "salary": 3800,
+        "points": 17,
+        "ownershipPercent": 20.4
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Week 1 is decided by one game going off the rails and this lineup stays glued to it without wasting spots. Tampa Bay at New Orleans produces a box score that looks fake, and Fitzpatrick at 5k is the access point. Pairing him with Evans and DeSean is the bet that the production will not funnel through one receiver. Evans brings the steady target role, DeSean brings the downfield scoring, and together they capture most of the passing value without needing to guess which archetype gets paid.\n\nThe Saints side is handled cleanly. Kamara plus Michael Thomas avoids the trap of guessing a secondary pass catcher. Kamara gets there with touchdowns and receiving work, Thomas gets there with volume that stays intact even when the game state gets weird. This is two different scoring paths attached to the same environment.\n\nEverything outside that game is built to avoid a dead slot. Conner is the salary relief that still carries real workload, and he lands the kind of multi score game that keeps the build from being one game and a prayer. Sanders is another high volume receiver in a separate matchup who can win on targets and yardage without needing a perfect touchdown guess. Reed is the modest part of the build, but he does enough to keep the structure stable.\n\nRavens DST is the final support beam. It adds defensive scoring without forcing a low ceiling punt elsewhere, and it fits a roster that already has the slate’s ceiling game covered.",
+    "uniquenessNotes": "The separation comes from how the Tampa side is played. Many builds will choose one Buccaneer receiver and move on, or they will chase New Orleans pieces without fully committing to the shootout. Fitzpatrick plus Evans plus DeSean is a specific story about how the points arrive, and it is uncomfortable because it spends three roster spots on a team people did not treat as reliable.\n\nThe rest of the roster avoids obvious duplication levers. Conner was popular, Kamara was popular, but the lineup is not trying to be different everywhere. It eats the right volume and then differentiates through the exact way the game stack is constructed and which complementary pieces are used around it.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "construction": {
+        "teamStacks": [
+          { "team": "TB", "players": ["R. Fitzpatrick", "M. Evans", "D. Jackson"] },
+          { "team": "NO", "players": ["A. Kamara", "M. Thomas"] }
+        ],
+        "primaryGame": "TB-NO",
+        "buildType": "QB double stack with an aggressive opposing bring back plus a second correlated bring back"
+      },
+      "primaryLever": "Cheap QB paired with both a volume receiver and a deep threat in the slate’s highest scoring environment",
+      "secondaryLever": "Game environment capture without guessing ancillary pieces, supported by stable workload plays elsewhere"
+    }
+  }
+}

@@ -1,5 +1,6 @@
+// src/pages/api/analysis/nfl/classic.ts
 import type { APIRoute } from "astro";
-import { prisma } from "../../../../../lib/prisma";
+import { prisma } from "../../../../lib/prisma";
 
 function isNum(v: any): v is number {
   return typeof v === "number" && Number.isFinite(v);
@@ -67,19 +68,14 @@ function bucketCount(nums: number[], edges: number[]) {
   return counts;
 }
 
-function ownershipPctFromItem(it: any) {
-  const bp =
-    it?.ownershipClassicBp ?? it?.ownershipBp ?? null;
-
-  return isNum(bp) ? bp / 100 : null;
-}
-
 function qbStackLabelFromItems(items: any[]) {
   const qbs = (items || []).filter((it) => String(it?.player?.position || "").toUpperCase() === "QB");
   const qb = qbs[0] ?? null;
 
   const qbTeam = String(qb?.player?.team?.abbreviation || "").toUpperCase();
-  if (!qb || !qbTeam) return { qbStack: "NO QB", qbTeam: null as string | null, qbName: null as string | null, qbPlus: null as number | null };
+  if (!qb || !qbTeam) {
+    return { qbStack: "NO QB", qbTeam: null as string | null, qbName: null as string | null, qbPlus: null as number | null };
+  }
 
   const qbName = qb?.player?.name ?? null;
 
@@ -91,8 +87,8 @@ function qbStackLabelFromItems(items: any[]) {
   });
 
   const plus = passCatchers.length;
-
   const qbStack = plus === 0 ? `${qbTeam} QB NAKED` : `${qbTeam} QB+${plus}`;
+
   return { qbStack, qbTeam, qbName, qbPlus: plus };
 }
 
@@ -111,17 +107,14 @@ function teamStatsFromItems(items: any[]) {
     if (maxFromTeam == null || v > maxFromTeam) maxFromTeam = v;
   }
 
-  return {
-    uniqueTeams: teams.length,
-    maxFromTeam
-  };
+  return { uniqueTeams: teams.length, maxFromTeam };
 }
 
 export const GET: APIRoute = async () => {
   const contests = await prisma.contest.findMany({
     where: {
       slate: {
-        season: { sport: "NFL", year: 2025 },
+        season: { sport: "NFL" },
         lineupType: "CLASSIC",
       },
     },
@@ -136,6 +129,7 @@ export const GET: APIRoute = async () => {
           slateType: true,
           slateDate: true,
           slateKey: true,
+          season: { select: { year: true } },
         },
       },
       analysis: true,
@@ -170,7 +164,7 @@ export const GET: APIRoute = async () => {
         },
       },
     },
-    orderBy: [{ slate: { week: "asc" } }, { id: "asc" }],
+    orderBy: [{ slate: { season: { year: "desc" } } }, { slate: { week: "asc" } }, { id: "asc" }],
   });
 
   const rows = contests.map((c) => {
@@ -187,14 +181,18 @@ export const GET: APIRoute = async () => {
     const qbStackInfo = qbStackLabelFromItems(items);
     const teamStats = teamStatsFromItems(items);
 
+    const year = c.slate.season?.year ?? null;
+    const link = year ? `/nfl/${year}/slate/${c.slate.id}` : "";
+
     return {
       slateId: c.slate.id,
       contestId: c.id,
+      year,
       week: c.slate.week,
       slateType: c.slate.slateType,
       slateDate: c.slate.slateDate,
       slateKey: c.slate.slateKey,
-      link: `/nfl/2025/slate/${c.slate.id}`,
+      link,
 
       salaryUsed,
       salaryLeft,

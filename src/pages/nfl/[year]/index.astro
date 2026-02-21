@@ -1,0 +1,374 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { prisma } from "../../../lib/prisma";
+
+function safeUpper(v: any) {
+  return String(v || "").trim().toUpperCase();
+}
+function titleCase(v: any) {
+  const s = String(v || "").trim().toLowerCase();
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : "";
+}
+function fmtDateShort(iso: any) {
+  const s = String(iso || "");
+  if (!s) return "—";
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return s;
+  return new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit" }).format(d);
+}
+function parseTeamsFromSlateKey(slateKeyRaw: any) {
+  const key = String(slateKeyRaw || "").trim();
+  const parts = key.split("_").filter(Boolean);
+  if (parts.length < 2) return { away: null, home: null };
+
+  const home = safeUpper(parts[parts.length - 1]);
+  const away = safeUpper(parts[parts.length - 2]);
+
+  const isTeam = (s: string) => /^[A-Z]{2,4}$/.test(s);
+  return { away: isTeam(away) ? away : null, home: isTeam(home) ? home : null };
+}
+
+const yearParam = Number(Astro.params.year);
+if (!Number.isFinite(yearParam)) throw new Error(`Invalid year: ${Astro.params.year}`);
+
+const url = Astro.url;
+const lineupTypeRaw = safeUpper(url.searchParams.get("lineupType"));
+const lineupType = lineupTypeRaw === "CLASSIC" || lineupTypeRaw === "SHOWDOWN" ? lineupTypeRaw : null;
+
+const season = await prisma.season.findFirst({
+  where: { sport: "NFL", year: yearParam },
+  select: { id: true },
+});
+
+const PREVIEW_LIMIT = 8;
+
+let slates: any[] = [];
+let weeks: [number, any[]][] = [];
+
+let allCount = 0;
+let classicCount = 0;
+let showdownCount = 0;
+
+if (season) {
+  const where: any = { seasonId: season.id };
+  if (lineupType) where.lineupType = lineupType;
+
+  slates = await prisma.slate.findMany({
+    where,
+    orderBy: [{ week: "asc" }, { slateDate: "asc" }, { id: "asc" }],
+    select: { id: true, week: true, slateType: true, lineupType: true, slateDate: true, slateKey: true },
+  });
+
+  type SlateRow = (typeof slates)[number];
+
+  function groupByWeek(rows: SlateRow[]) {
+    const m = new Map<number, SlateRow[]>();
+    for (const r of rows) {
+      const wk = Number(r.week ?? 0);
+      if (!m.has(wk)) m.set(wk, []);
+      m.get(wk)!.push(r);
+    }
+    return [...m.entries()].sort((a, b) => a[0] - b[0]);
+  }
+
+  weeks = groupByWeek(slates as any);
+
+  allCount = await prisma.slate.count({ where: { seasonId: season.id } });
+  classicCount = await prisma.slate.count({ where: { seasonId: season.id, lineupType: "CLASSIC" } });
+  showdownCount = await prisma.slate.count({ where: { seasonId: season.id, lineupType: "SHOWDOWN" } });
+}
+
+const baseList = `/nfl/${yearParam}`;
+const hrefAll = baseList;
+const hrefClassic = `${baseList}?lineupType=CLASSIC`;
+const hrefShowdown = `${baseList}?lineupType=SHOWDOWN`;
+
+function chipLabel(v: any) {
+  const s = safeUpper(v);
+  if (!s) return "";
+  if (s === "THURSDAY_NIGHT_FOOTBALL" || s === "TNF") return "TNF";
+  if (s === "SUNDAY_NIGHT_FOOTBALL" || s === "SNF") return "SNF";
+  if (s === "MONDAY_NIGHT_FOOTBALL" || s === "MNF") return "MNF";
+  if (s === "SUPER_BOWL") return "Super Bowl";
+  return titleCase(s);
+}
+
+function showLineupBadge() {
+  return !lineupType;
+}
+
+function lineupBadgeClass(kind: any) {
+  const k = safeUpper(kind);
+  if (k === "CLASSIC") return "badge badgeClassic";
+  if (k === "SHOWDOWN") return "badge badgeShowdown";
+  return "badge";
+}
+---
+
+<Layout title={`NFL ${yearParam}`}>
+  <main class="wrap">
+    <a class="back" href="/nfl">Back to NFL</a>
+
+    <div class="head">
+      <h1>NFL {yearParam}</h1>
+      <div class="sub">
+        {season ? (lineupType ? `${titleCase(lineupType)} slates` : "All slates") : "Season not loaded"}:{" "}
+        {season ? slates.length : 0}
+      </div>
+    </div>
+
+    {season ? (
+      <>
+        <div class="stickyBar">
+          <div class="pillBar" role="tablist" aria-label="Lineup type filter">
+            <a class={!lineupType ? "pill pillActive" : "pill"} href={hrefAll} role="tab" aria-selected={!lineupType}>
+              <span>All</span><span class="pillCount">{allCount}</span>
+            </a>
+            <a class={lineupType === "CLASSIC" ? "pill pillActive" : "pill"} href={hrefClassic} role="tab" aria-selected={lineupType === "CLASSIC"}>
+              <span>Classic</span><span class="pillCount">{classicCount}</span>
+            </a>
+            <a class={lineupType === "SHOWDOWN" ? "pill pillActive" : "pill"} href={hrefShowdown} role="tab" aria-selected={lineupType === "SHOWDOWN"}>
+              <span>Showdown</span><span class="pillCount">{showdownCount}</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="weeks" id="weeksGrid">
+          {weeks.map(([wk, rows]) => (
+            <details class="week" data-week={wk}>
+              <summary class="weekSummary">
+                <div class="wkLeft">
+                  <div class="wkTitle">Week {wk}</div>
+                  <div class="wkMeta">{rows.length} slates</div>
+                </div>
+                <div class="wkChevron" aria-hidden="true">▾</div>
+              </summary>
+
+              <div class="rows">
+                {rows.map((s, i) => {
+                  const t = parseTeamsFromSlateKey(s.slateKey);
+                  const matchup = t.away && t.home ? `${t.away} vs ${t.home}` : "Matchup TBD";
+                  const href = `/nfl/${yearParam}/slate/${s.id}`;
+                  const hidden = i >= PREVIEW_LIMIT;
+
+                  return (
+                    <a class={`slateCard ${hidden ? "isHidden" : ""}`} href={href}>
+                      <div class="slateTop">
+                        <div class="slateChips">
+                          {showLineupBadge() ? (
+                            <span class={lineupBadgeClass(s.lineupType)}>{titleCase(s.lineupType)}</span>
+                          ) : null}
+                          <span class="chip">{chipLabel(s.slateType)}</span>
+                        </div>
+                        <div class="date">{fmtDateShort(s.slateDate)}</div>
+                      </div>
+
+                      <div class="matchup">{matchup}</div>
+                    </a>
+                  );
+                })}
+
+                {rows.length > PREVIEW_LIMIT ? (
+                  <button class="moreBtn" type="button" data-more="1">
+                    Show more ({rows.length - PREVIEW_LIMIT})
+                  </button>
+                ) : null}
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <script is:inline>
+          {`
+            (() => {
+              const grid = document.getElementById("weeksGrid");
+              if (!grid) return;
+
+              const weeks = Array.from(grid.querySelectorAll("details.week"));
+
+              weeks.forEach((d) => {
+                d.addEventListener("toggle", () => {
+                  if (!d.open) return;
+                  for (const o of weeks) {
+                    if (o !== d) o.open = false;
+                  }
+                });
+              });
+
+              weeks.forEach((week) => {
+                const btn = week.querySelector("button.moreBtn");
+                if (!btn) return;
+
+                btn.addEventListener("click", () => {
+                  const isExpanded = btn.getAttribute("data-expanded") === "1";
+                  const cards = Array.from(week.querySelectorAll(".slateCard"));
+
+                  if (!isExpanded) {
+                    cards.forEach((el) => el.classList.remove("isHidden"));
+                    btn.textContent = "Show less";
+                    btn.setAttribute("data-expanded", "1");
+                  } else {
+                    cards.forEach((el, idx) => {
+                      if (idx >= ${PREVIEW_LIMIT}) el.classList.add("isHidden");
+                      else el.classList.remove("isHidden");
+                    });
+
+                    const total = cards.length;
+                    const more = Math.max(0, total - ${PREVIEW_LIMIT});
+                    btn.textContent = more > 0 ? "Show more (" + more + ")" : "Show more";
+                    btn.setAttribute("data-expanded", "0");
+                  }
+                });
+              });
+            })();
+          `}
+        </script>
+      </>
+    ) : (
+      <div class="empty">
+        Season data for NFL {yearParam} is not in the database yet.
+        <div class="emptyLinks">
+          <a class="emptyLink" href="/nfl">Go back</a>
+          <a class="emptyLink" href="/nfl/all">View all years</a>
+        </div>
+      </div>
+    )}
+  </main>
+
+  <style>
+    .wrap{max-width:1320px;margin:0 auto;padding:28px 16px 56px}
+    .back{display:inline-block;margin-bottom:14px;text-decoration:none;opacity:.8}
+    .back:hover{opacity:1;text-decoration:underline}
+
+    .head{margin:6px 0 10px}
+    .head h1{margin:0;font-size:34px}
+    .sub{opacity:.7;margin-top:6px}
+
+    .stickyBar{position:sticky;top:10px;z-index:5;margin:14px 0 18px}
+    .pillBar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px;border-radius:16px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(10px);border:1px solid rgba(0,0,0,.06)}
+    .pill{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid rgba(0,0,0,.14);background:#fff;text-decoration:none;font-weight:800;font-size:14px;line-height:1}
+    .pill:hover{border-color:rgba(0,0,0,.28)}
+    .pillActive{border-color:rgba(35,55,255,.55);box-shadow:0 0 0 3px rgba(35,55,255,.10)}
+    .pillCount{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:22px;padding:0 8px;border-radius:999px;font-size:12px;font-weight:900;border:1px solid rgba(0,0,0,.10);background:rgba(0,0,0,.03);opacity:.9}
+
+    .weeks{
+      display:grid;
+      gap:14px;
+      margin-top:6px;
+      align-items:start;
+      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    @media (max-width:720px){.stickyBar{top:6px}}
+
+    details.week{
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:18px;
+      background:#fff;
+      overflow:hidden;
+      align-self:start;
+    }
+    details.week[open] .wkChevron{transform:rotate(180deg)}
+    summary.weekSummary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:14px 16px;
+      background:linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,0));
+    }
+    summary.weekSummary::-webkit-details-marker{display:none}
+    .wkLeft{display:flex;flex-direction:column;gap:4px}
+    .wkTitle{font-weight:900}
+    .wkMeta{font-size:12px;opacity:.7}
+    .wkChevron{font-size:14px;opacity:.6;transition:transform .18s ease}
+
+    .rows{padding:12px;display:flex;flex-direction:column;gap:10px}
+
+    .slateCard{
+      display:block;
+      padding:10px 10px 9px;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:16px;
+      background:#fff;
+      text-decoration:none;
+      box-shadow:0 8px 22px rgba(0,0,0,.04);
+      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .slateCard:hover{
+      border-color:rgba(0,0,0,.18);
+      transform:translateY(-1px);
+      box-shadow:0 12px 28px rgba(0,0,0,.07);
+    }
+
+    .isHidden{display:none}
+
+    .slateTop{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .slateChips{display:flex;align-items:center;gap:6px;min-width:0;flex-wrap:nowrap;overflow:hidden}
+    .date{font-weight:900;white-space:nowrap;opacity:.75;font-size:12px}
+
+    .badge,
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:4px 9px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      border:1px solid rgba(0,0,0,.10);
+      background:rgba(0,0,0,.02);
+      opacity:.9;
+      flex:0 0 auto;
+    }
+    .badgeClassic{border-color:rgba(0,0,0,.16)}
+    .badgeShowdown{border-color:rgba(35,55,255,.35);box-shadow:0 0 0 2px rgba(35,55,255,.06) inset}
+
+    .matchup{
+      margin-top:7px;
+      font-size:14px;
+      font-weight:950;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .moreBtn{
+      appearance:none;
+      border:1px solid rgba(0,0,0,.12);
+      background:rgba(0,0,0,.02);
+      border-radius:12px;
+      padding:10px 12px;
+      font-weight:900;
+      cursor:pointer;
+      text-align:center;
+    }
+    .moreBtn:hover{border-color:rgba(0,0,0,.22)}
+
+    .empty{
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:16px;
+      padding:18px;
+      background:#fff;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+      color:#4b5563;
+      margin-top:14px;
+    }
+    .emptyLinks{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .emptyLink{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,.12);
+      background:rgba(0,0,0,.02);
+      text-decoration:none;
+      font-weight:900;
+      color:inherit;
+    }
+    .emptyLink:hover{border-color:rgba(0,0,0,.22)}
+  </style>
+</Layout>

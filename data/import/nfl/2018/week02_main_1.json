@@ -1,0 +1,124 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 2,
+  "slateType": "MAIN",
+  "slateDate": "2018-09-16",
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker ($1M to 1st)",
+    "siteContestId": "NFL_2018_WK02_MAIN_2018-09-16_DK_MAIN_MILLY",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 6350
+  },
+  "winner": {
+    "username": "JEREMYHEIN",
+    "points": 237.84,
+    "maxEntries": 26
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 237.84,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "P. Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 6100,
+        "points": 41.84,
+        "ownershipPercent": 11.9
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "K. Hunt",
+        "position": "RB",
+        "team": "KC",
+        "salary": 6200,
+        "points": 15,
+        "ownershipPercent": 8.6
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "C. McCaffrey",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 7000,
+        "points": 30.9,
+        "ownershipPercent": 13.2
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "S. Diggs",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 6900,
+        "points": 38.9,
+        "ownershipPercent": 3.4
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "J. Smith-Schuster",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 6400,
+        "points": 34.1,
+        "ownershipPercent": 13.8
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "S. Watkins",
+        "position": "WR",
+        "team": "KC",
+        "salary": 4600,
+        "points": 22.1,
+        "ownershipPercent": 2.5
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "T. Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 5900,
+        "points": 32.9,
+        "ownershipPercent": 4.4
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "P. Lindsay",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 4400,
+        "points": 15.1,
+        "ownershipPercent": 3.1
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Buccaneers",
+        "position": "DST",
+        "team": "TB",
+        "salary": 2200,
+        "points": 7,
+        "ownershipPercent": 2.6
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This week is a slate where Kansas City pulls the scoring into a tight circle, and the build makes sure it is standing in the middle of it. Mahomes is the driver, but the roster construction is about how the touchdowns are distributed. Kelce gives you the red zone and third down role, Watkins gives you the splash play access, and Hunt keeps you connected to any scoring that comes through the backfield. The stack is not chasing a single narrow outcome. It covers multiple ways the Chiefs can hang 40.\n\nThe rest of the lineup is built around direct, high end performances from a few players who win their roles outright. Diggs posts a ceiling game without needing Minnesota to be perfect all day. McCaffrey gets there through receiving volume plus efficiency, which travels well across game scripts.\n\nLindsay at flex is not a headline play, but it keeps the salary structure flexible while still offering a path to points through touches and a score. Buccaneers DST is the cheapest spot, and it is there to free the rest of the build without forcing a fragile punt at a skill position.",
+    "uniquenessNotes": "The main duplication release is how the Chiefs exposure is allocated. Many rosters will play Mahomes with one pass catcher, or they will take a single Chiefs receiver and hope they guessed right. Using Mahomes with Kelce and Watkins spreads the bet across two different receiver archetypes. Adding Hunt pushes the build into a more specific Kansas City story where nearly every touchdown path is covered.\n\nDiggs is the other separator. He is a lower owned ceiling outcome at receiver, and he does it at a salary tier where many players chase more comfortable names. The cheap defense keeps the roster from having to sacrifice any of the ceiling pieces.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "construction": {
+        "teamStacks": [
+          { "team": "KC", "players": ["P. Mahomes", "T. Kelce", "S. Watkins", "K. Hunt"] }
+        ],
+        "primaryGame": "KC-PIT",
+        "buildType": "QB stack with primary pass catcher plus secondary receiver and an onslaught style RB attachment"
+      },
+      "primaryLever": "Kansas City scoring concentrated through QB plus tight end plus receiver with RB attached for any rushing or receiving TDs",
+      "secondaryLever": "Ceiling receiver points from a lower owned option paired with a high volume RB profile"
+    }
+  }
+}

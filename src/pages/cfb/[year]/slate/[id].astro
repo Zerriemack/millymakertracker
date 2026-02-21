@@ -1,0 +1,58 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+
+const { id, year } = Astro.params;
+
+const res = await fetch(`${Astro.url.origin}/api/slate/${id}`);
+if (!res.ok) throw new Error(`Slate not found: ${id}`);
+
+const { slate } = await res.json();
+
+const yearParam = Number(year);
+const sport = String(slate?.season?.sport || "").toUpperCase();
+const seasonYear = Number(slate?.season?.year ?? NaN);
+
+if (sport && sport !== "CFB") {
+  throw new Error(`Slate sport mismatch. Expected CFB, got ${sport}`);
+}
+if (Number.isFinite(yearParam) && Number.isFinite(seasonYear) && yearParam !== seasonYear) {
+  throw new Error(`Year mismatch. URL year ${yearParam} but slate season year ${seasonYear}`);
+}
+
+const title = `CFB ${seasonYear || yearParam} Slate`;
+---
+
+<Layout title={title}>
+  <main class="wrap">
+    <a class="back" href={`/cfb/${seasonYear || yearParam}`}>Back to CFB {seasonYear || yearParam}</a>
+
+    <div class="head">
+      <h1>{title}</h1>
+      <div class="sub">{slate?.slateKey || id}</div>
+    </div>
+
+    <div class="note">
+      This page is wired and ready. When you want, we mirror the full NFL slate detail view here.
+    </div>
+  </main>
+
+  <style>
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 16px 56px}
+    .back{display:inline-block;margin-bottom:14px;text-decoration:none;opacity:.8}
+    .back:hover{opacity:1;text-decoration:underline}
+
+    .head{margin:6px 0 10px}
+    .head h1{margin:0;font-size:34px}
+    .sub{opacity:.7;margin-top:6px}
+
+    .note{
+      margin-top:18px;
+      padding:18px;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:16px;
+      background:#fff;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+      color:#4b5563;
+    }
+  </style>
+</Layout>

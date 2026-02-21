@@ -1,0 +1,108 @@
+{
+  "slateId": "cmlu8hz3x0000k0itdxzu88pj",
+  "siteContestId": "NFL_2018_WK01_MAIN_2018-09-09_DK_MAIN_MILLY",
+  "slateKey": "NFL_2018_WK01_MAIN_2018-09-09_BAL_DEN_NO_PIT_TB_WAS",
+  "slateType": "MAIN",
+  "slateDate": "2018-09-09T00:00:00",
+  "winner": {
+    "id": "cmlu8hz7x0003k0itjx1avicl",
+    "username": "Chalk",
+    "points": 301.18,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "lineupType": "CLASSIC",
+    "salaryUsed": 49900,
+    "salaryLeft": 100,
+    "totalPoints": 301.18,
+    "totalOwnershipPct": 134.2,
+    "captain": null,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "R. Fitzpatrick",
+        "position": null,
+        "team": null,
+        "salary": 5000,
+        "points": 45.28,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Conner",
+        "position": null,
+        "team": null,
+        "salary": 4500,
+        "points": 38.2,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "A. Kamara",
+        "position": null,
+        "team": null,
+        "salary": 8500,
+        "points": 46.1,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "M. Evans",
+        "position": null,
+        "team": null,
+        "salary": 6700,
+        "points": 30.7,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "D. Jackson",
+        "position": null,
+        "team": null,
+        "salary": 4600,
+        "points": 34.6,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "M. Thomas",
+        "position": null,
+        "team": null,
+        "salary": 7800,
+        "points": 42.0,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "J. Reed",
+        "position": null,
+        "team": null,
+        "salary": 4000,
+        "points": 14.8,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "E. Sanders",
+        "position": null,
+        "team": null,
+        "salary": 5000,
+        "points": 32.5,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Ravens",
+        "position": null,
+        "team": null,
+        "salary": 3800,
+        "points": 17.0,
+        "ownershipPercent": null
+      }
+    ]
+  },
+  "tags": {
+    "archetype": null
+  },
+  "generatedAt": "2026-02-20T01:54:02.279067Z"
+}

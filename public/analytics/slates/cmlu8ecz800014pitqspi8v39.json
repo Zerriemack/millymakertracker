@@ -1,0 +1,108 @@
+{
+  "slateId": "cmlu8ecz800014pitqspi8v39",
+  "siteContestId": "NFL_2018_WK02_MAIN_2018-09-16_DK_MAIN_MILLY",
+  "slateKey": "NFL_2018_WK02_MAIN_2018-09-16_CAR_DEN_KC_MIN_PIT_TB",
+  "slateType": "MAIN",
+  "slateDate": "2018-09-16T00:00:00",
+  "winner": {
+    "id": "cmlu8ed4e00044pitlrv2h35g",
+    "username": "JEREMYHEIN",
+    "points": 237.84,
+    "maxEntries": 26
+  },
+  "lineup": {
+    "lineupType": "CLASSIC",
+    "salaryUsed": 49700,
+    "salaryLeft": 300,
+    "totalPoints": 237.84,
+    "totalOwnershipPct": 63.5,
+    "captain": null,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "P. Mahomes",
+        "position": null,
+        "team": null,
+        "salary": 6100,
+        "points": 41.84,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "K. Hunt",
+        "position": null,
+        "team": null,
+        "salary": 6200,
+        "points": 15.0,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "C. McCaffrey",
+        "position": null,
+        "team": null,
+        "salary": 7000,
+        "points": 30.9,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "S. Diggs",
+        "position": null,
+        "team": null,
+        "salary": 6900,
+        "points": 38.9,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "J. Smith-Schuster",
+        "position": null,
+        "team": null,
+        "salary": 6400,
+        "points": 34.1,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "S. Watkins",
+        "position": null,
+        "team": null,
+        "salary": 4600,
+        "points": 22.1,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "T. Kelce",
+        "position": null,
+        "team": null,
+        "salary": 5900,
+        "points": 32.9,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "P. Lindsay",
+        "position": null,
+        "team": null,
+        "salary": 4400,
+        "points": 15.1,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Buccaneers",
+        "position": null,
+        "team": null,
+        "salary": 2200,
+        "points": 7.0,
+        "ownershipPercent": null
+      }
+    ]
+  },
+  "tags": {
+    "archetype": null
+  },
+  "generatedAt": "2026-02-20T01:53:36.122107Z"
+}

@@ -1,0 +1,108 @@
+{
+  "slateId": "cmlu373uk0000spitrb78uccw",
+  "siteContestId": "NFL_2025_WK15_MAIN_2025-12-14_DK_MAIN_MILLY",
+  "slateKey": "NFL_2025_WK15_MAIN_2025-12-14_CHI_DET_LAR_NE_WAS",
+  "slateType": "MAIN",
+  "slateDate": "2025-12-14T00:00:00",
+  "winner": {
+    "id": "cmlu3741i0003spit8voaym6q",
+    "username": "giantsandwarfs",
+    "points": 236.02,
+    "maxEntries": 33
+  },
+  "lineup": {
+    "lineupType": "CLASSIC",
+    "salaryUsed": 50000,
+    "salaryLeft": 0,
+    "totalPoints": 236.02,
+    "totalOwnershipPct": 93.8,
+    "captain": null,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "J. Goff",
+        "position": null,
+        "team": null,
+        "salary": 6100,
+        "points": 28.52,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "T. Henderson",
+        "position": null,
+        "team": null,
+        "salary": 6100,
+        "points": 33.1,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "D. Swift",
+        "position": null,
+        "team": null,
+        "salary": 5700,
+        "points": 22.6,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "P. Nacua",
+        "position": null,
+        "team": null,
+        "salary": 8700,
+        "points": 30.9,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A. St. Brown",
+        "position": null,
+        "team": null,
+        "salary": 7900,
+        "points": 44.4,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "J. Williams",
+        "position": null,
+        "team": null,
+        "salary": 6100,
+        "points": 29.4,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "C. Parkinson",
+        "position": null,
+        "team": null,
+        "salary": 3200,
+        "points": 24.5,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Sinnott",
+        "position": null,
+        "team": null,
+        "salary": 2700,
+        "points": 4.6,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bears",
+        "position": null,
+        "team": null,
+        "salary": 3500,
+        "points": 18.0,
+        "ownershipPercent": null
+      }
+    ]
+  },
+  "tags": {
+    "archetype": null
+  },
+  "generatedAt": "2026-02-19T23:26:39.776513Z"
+}
