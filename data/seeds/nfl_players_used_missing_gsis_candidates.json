@@ -1,0 +1,1135 @@
+[
+  {
+    "id": "cmln7erjc0011hjit15npml1b",
+    "team": "PHI",
+    "position": "WR",
+    "name": "A. Brown",
+    "key": "WR|a|brown",
+    "candidateCount": 7,
+    "candidates": [
+      {
+        "gsisId": "00-0024629",
+        "name": "aaron brown"
+      },
+      {
+        "gsisId": "00-0039511",
+        "name": "ahmarean brown"
+      },
+      {
+        "gsisId": "BRO253368",
+        "name": "andre brown"
+      },
+      {
+        "gsisId": "00-0021425",
+        "name": "antonio brown"
+      },
+      {
+        "gsisId": "00-0027793",
+        "name": "antonio brown"
+      },
+      {
+        "gsisId": "00-0035676",
+        "name": "aj brown"
+      },
+      {
+        "gsisId": "00-0036963",
+        "name": "amon-ra st brown"
+      }
+    ]
+  },
+  {
+    "id": "cmlpud95900addwit85bguqa1",
+    "team": "SEA",
+    "position": "TE",
+    "name": "A. J. Barner",
+    "key": "TE|a|barner",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0039793",
+        "name": "aj barner"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc003rhjit1nuwkb9m",
+    "team": "MIN",
+    "position": "RB",
+    "name": "A. Jones Sr.",
+    "key": "RB|a|jones",
+    "candidateCount": 4,
+    "candidates": [
+      {
+        "gsisId": "00-0033293",
+        "name": "aaron jones"
+      },
+      {
+        "gsisId": "JON033220",
+        "name": "andrew jones"
+      },
+      {
+        "gsisId": "JON053152",
+        "name": "aj jones"
+      },
+      {
+        "gsisId": "JON066440",
+        "name": "arrington jones"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc003thjitr44evbey",
+    "team": "DET",
+    "position": "WR",
+    "name": "A. St. Brown",
+    "key": "WR|a|brown",
+    "candidateCount": 7,
+    "candidates": [
+      {
+        "gsisId": "00-0024629",
+        "name": "aaron brown"
+      },
+      {
+        "gsisId": "00-0039511",
+        "name": "ahmarean brown"
+      },
+      {
+        "gsisId": "BRO253368",
+        "name": "andre brown"
+      },
+      {
+        "gsisId": "00-0021425",
+        "name": "antonio brown"
+      },
+      {
+        "gsisId": "00-0027793",
+        "name": "antonio brown"
+      },
+      {
+        "gsisId": "00-0035676",
+        "name": "aj brown"
+      },
+      {
+        "gsisId": "00-0036963",
+        "name": "amon-ra st brown"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc003uhjitzvw3tm5o",
+    "team": "NYJ",
+    "position": "RB",
+    "name": "B. Hall",
+    "key": "RB|b|hall",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0038120",
+        "name": "breece hall"
+      },
+      {
+        "gsisId": "00-0025917",
+        "name": "bruce hall"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc001lhjiti22nsodu",
+    "team": "ATL",
+    "position": "RB",
+    "name": "B. Robinson",
+    "key": "RB|b|robinson",
+    "candidateCount": 3,
+    "candidates": [
+      {
+        "gsisId": "00-0038542",
+        "name": "bijan robinson"
+      },
+      {
+        "gsisId": "00-0037746",
+        "name": "brian robinson"
+      },
+      {
+        "gsisId": "ROB650016",
+        "name": "bo robinson"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc001hhjitb5orxx63",
+    "team": "PIT",
+    "position": "WR",
+    "name": "C. Austin III",
+    "key": "WR|c|austin",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0037837",
+        "name": "calvin austin iii"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc003nhjitzysokftm",
+    "team": "CIN",
+    "position": "RB",
+    "name": "C. Brown",
+    "key": "RB|c|brown",
+    "candidateCount": 4,
+    "candidates": [
+      {
+        "gsisId": "00-0038597",
+        "name": "chase brown"
+      },
+      {
+        "gsisId": "00-0022092",
+        "name": "chris brown"
+      },
+      {
+        "gsisId": "BRO351900",
+        "name": "clay brown"
+      },
+      {
+        "gsisId": "BRO361284",
+        "name": "curtis brown"
+      }
+    ]
+  },
+  {
+    "id": "cmlpv950500buxjitls8xtrbt",
+    "team": "TB",
+    "position": "WR",
+    "name": "C. Godwin Jr.",
+    "key": "WR|c|godwin",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0033921",
+        "name": "chris godwin jr"
+      }
+    ]
+  },
+  {
+    "id": "cmlu89tea00e3maitllirxz6r",
+    "team": "CAR",
+    "position": "RB",
+    "name": "C. McCaffrey",
+    "key": "RB|c|mccaffrey",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0033280",
+        "name": "christian mccaffrey"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc003chjit94pkl3zn",
+    "team": "SEA",
+    "position": "WR",
+    "name": "C. White",
+    "key": "WR|c|white",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0035891",
+        "name": "cody white"
+      },
+      {
+        "gsisId": "WHI149312",
+        "name": "craig white"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc002zhjitgqyu58pq",
+    "team": "LAR",
+    "position": "WR",
+    "name": "D. Adams",
+    "key": "WR|d|adams",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0028746",
+        "name": "darvin adams"
+      },
+      {
+        "gsisId": "00-0031381",
+        "name": "davante adams"
+      }
+    ]
+  },
+  {
+    "id": "cmlu89tea00dwmait9y2aq4x4",
+    "team": "TB",
+    "position": "WR",
+    "name": "D. Jackson",
+    "key": "WR|d|jackson",
+    "candidateCount": 4,
+    "candidates": [
+      {
+        "gsisId": "00-0019663",
+        "name": "darrell jackson"
+      },
+      {
+        "gsisId": "JAC126392",
+        "name": "david jackson"
+      },
+      {
+        "gsisId": "00-0026189",
+        "name": "desean jackson"
+      },
+      {
+        "gsisId": "00-0026198",
+        "name": "dexter jackson"
+      }
+    ]
+  },
+  {
+    "id": "cmlpv950500bvxjitvtbgt3vo",
+    "team": "ATL",
+    "position": "WR",
+    "name": "D. Sills V",
+    "key": "WR|d|sills",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0035359",
+        "name": "david sills"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc0008hjit2rj1afid",
+    "team": "PHI",
+    "position": "WR",
+    "name": "D. Smith",
+    "key": "WR|d|smith",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0036912",
+        "name": "devonta smith"
+      },
+      {
+        "gsisId": "00-0031934",
+        "name": "devin smith"
+      }
+    ]
+  },
+  {
+    "id": "cmlpuir1q00ahxfitdao1ond6",
+    "team": "LAR",
+    "position": "K",
+    "name": "E. Pineiro",
+    "key": "K|e|pineiro",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0034173",
+        "name": "eddy pineiro"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc004ahjitqkzv1zup",
+    "team": "DAL",
+    "position": "WR",
+    "name": "G. Pickens",
+    "key": "WR|g|pickens",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0037247",
+        "name": "george pickens"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc002lhjit090632qx",
+    "team": "KC",
+    "position": "WR",
+    "name": "H. Brown",
+    "key": "WR|h|brown",
+    "candidateCount": 0,
+    "candidates": []
+  },
+  {
+    "id": "cmln7erjc0025hjit3nakq7k4",
+    "team": "BUF",
+    "position": "RB",
+    "name": "J. Cook III",
+    "key": "RB|j|cook",
+    "candidateCount": 3,
+    "candidates": [
+      {
+        "gsisId": "00-0029834",
+        "name": "jamaine cook"
+      },
+      {
+        "gsisId": "00-0020391",
+        "name": "jameel cook"
+      },
+      {
+        "gsisId": "00-0037248",
+        "name": "james cook"
+      }
+    ]
+  },
+  {
+    "id": "cmlpv950500bixjitk8ehyg7f",
+    "team": "BUF",
+    "position": "WR",
+    "name": "J. Higgins",
+    "key": "WR|j|higgins",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0040130",
+        "name": "jayden higgins"
+      },
+      {
+        "gsisId": "00-0025486",
+        "name": "johnnie lee higgins"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc0027hjitgo9x61s1",
+    "team": "MIN",
+    "position": "WR",
+    "name": "J. Jefferson",
+    "key": "WR|j|jefferson",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "JEF259555",
+        "name": "john jefferson"
+      },
+      {
+        "gsisId": "00-0036322",
+        "name": "justin jefferson"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc004hhjitgm249bed",
+    "team": "NO",
+    "position": "TE",
+    "name": "J. Johnson",
+    "key": "TE|j|johnson",
+    "candidateCount": 3,
+    "candidates": [
+      {
+        "gsisId": "00-0008538",
+        "name": "jimmie johnson"
+      },
+      {
+        "gsisId": "00-0035092",
+        "name": "justin johnson"
+      },
+      {
+        "gsisId": "00-0036040",
+        "name": "juwan johnson"
+      }
+    ]
+  },
+  {
+    "id": "cmlpsxsws009gbtitgf13ir2d",
+    "team": "GB",
+    "position": "QB",
+    "name": "J. Love",
+    "key": "QB|j|love",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0036264",
+        "name": "jordan love"
+      },
+      {
+        "gsisId": "LOV131275",
+        "name": "josh love"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc0028hjit4tpajog1",
+    "team": "MIN",
+    "position": "QB",
+    "name": "J. McCarthy",
+    "key": "QB|j|mccarthy",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "MCC199320",
+        "name": "john mccarthy"
+      },
+      {
+        "gsisId": "00-0039923",
+        "name": "jj mccarthy"
+      }
+    ]
+  },
+  {
+    "id": "cmlpv950500bcxjitiromu5f8",
+    "team": "NYJ",
+    "position": "WR",
+    "name": "J. Metchie III",
+    "key": "WR|j|metchie",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0037614",
+        "name": "john metchie iii"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc003ehjitwwzjxtq6",
+    "team": "SEA",
+    "position": "K",
+    "name": "J. Myers",
+    "key": "K|j|myers",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0031492",
+        "name": "jason myers"
+      }
+    ]
+  },
+  {
+    "id": "cmlpsjkbx008t8ditfx2ojomw",
+    "team": "ATL",
+    "position": "K",
+    "name": "J. Romo",
+    "key": "K|j|romo",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0037542",
+        "name": "john parker romo"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc001khjitqr05dyfw",
+    "team": "PIT",
+    "position": "WR",
+    "name": "J. Smith",
+    "key": "WR|j|smith",
+    "candidateCount": 10,
+    "candidates": [
+      {
+        "gsisId": "00-0040769",
+        "name": "jaden smith"
+      },
+      {
+        "gsisId": "SMI345796",
+        "name": "jim smith"
+      },
+      {
+        "gsisId": "00-0035121",
+        "name": "jaylen smith"
+      },
+      {
+        "gsisId": "00-0035510",
+        "name": "jeff smith"
+      },
+      {
+        "gsisId": "00-0015218",
+        "name": "jimmy smith"
+      },
+      {
+        "gsisId": "00-0015221",
+        "name": "joey smith"
+      },
+      {
+        "gsisId": "SMI431520",
+        "name": "john smith"
+      },
+      {
+        "gsisId": "SMI441960",
+        "name": "jt smith"
+      },
+      {
+        "gsisId": "00-0022664",
+        "name": "jonathan smith"
+      },
+      {
+        "gsisId": "SMI443120",
+        "name": "joseph smith"
+      }
+    ]
+  },
+  {
+    "id": "cmlu89tea00e5maitkpp9vl2i",
+    "team": "PIT",
+    "position": "WR",
+    "name": "J. Smith-Schuster",
+    "key": "WR|j|smith-schuster",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0033857",
+        "name": "juju smith-schuster"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc004ihjit8v73vwlt",
+    "team": "IND",
+    "position": "RB",
+    "name": "J. Taylor",
+    "key": "RB|j|taylor",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0036096",
+        "name": "jj taylor"
+      },
+      {
+        "gsisId": "00-0036223",
+        "name": "jonathan taylor"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc002ehjit7j9tn2ts",
+    "team": "DET",
+    "position": "WR",
+    "name": "J. Williams",
+    "key": "WR|j|williams",
+    "candidateCount": 5,
+    "candidates": [
+      {
+        "gsisId": "00-0019491",
+        "name": "james williams"
+      },
+      {
+        "gsisId": "00-0034113",
+        "name": "jimmy williams"
+      },
+      {
+        "gsisId": "00-0037240",
+        "name": "jameson williams"
+      },
+      {
+        "gsisId": "00-0027596",
+        "name": "jeremy williams"
+      },
+      {
+        "gsisId": "00-0034894",
+        "name": "julian williams"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc004lhjitv4rvk62x",
+    "team": "DAL",
+    "position": "RB",
+    "name": "J. Williams",
+    "key": "RB|j|williams",
+    "candidateCount": 11,
+    "candidates": [
+      {
+        "gsisId": "00-0033948",
+        "name": "jamaal williams"
+      },
+      {
+        "gsisId": "WIL332647",
+        "name": "jim williams"
+      },
+      {
+        "gsisId": "00-0033348",
+        "name": "jarveon williams"
+      },
+      {
+        "gsisId": "00-0027141",
+        "name": "javarris williams"
+      },
+      {
+        "gsisId": "00-0036997",
+        "name": "javonte williams"
+      },
+      {
+        "gsisId": "00-0017829",
+        "name": "jermaine williams"
+      },
+      {
+        "gsisId": "WIL374796",
+        "name": "john williams"
+      },
+      {
+        "gsisId": "00-0032975",
+        "name": "jonathan williams"
+      },
+      {
+        "gsisId": "WIL384560",
+        "name": "jon williams"
+      },
+      {
+        "gsisId": "00-0033286",
+        "name": "joe williams"
+      },
+      {
+        "gsisId": "00-0040429",
+        "name": "josh williams"
+      }
+    ]
+  },
+  {
+    "id": "cmlpvqvvm00boxsitkrh6el0b",
+    "team": "DET",
+    "position": "WR",
+    "name": "Ja. Williams",
+    "key": "WR|j|williams",
+    "candidateCount": 5,
+    "candidates": [
+      {
+        "gsisId": "00-0019491",
+        "name": "james williams"
+      },
+      {
+        "gsisId": "00-0034113",
+        "name": "jimmy williams"
+      },
+      {
+        "gsisId": "00-0037240",
+        "name": "jameson williams"
+      },
+      {
+        "gsisId": "00-0027596",
+        "name": "jeremy williams"
+      },
+      {
+        "gsisId": "00-0034894",
+        "name": "julian williams"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc004ohjit6v5v2dyh",
+    "team": "LAC",
+    "position": "WR",
+    "name": "K. Allen",
+    "key": "WR|k|allen",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0038830",
+        "name": "kazmeir allen"
+      },
+      {
+        "gsisId": "00-0030279",
+        "name": "keenan allen"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc004qhjitp4yqpwyj",
+    "team": "CHI",
+    "position": "RB",
+    "name": "K. Monangai",
+    "key": "RB|k|monangai",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0032283",
+        "name": "kevin monangai"
+      },
+      {
+        "gsisId": "00-0040236",
+        "name": "kyle monangai"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc001nhjit1jeibz7f",
+    "team": "ATL",
+    "position": "TE",
+    "name": "K. Pitts Sr.",
+    "key": "TE|k|pitts",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0036970",
+        "name": "kyle pitts"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc002xhjit1xwalptb",
+    "team": "LAR",
+    "position": "RB",
+    "name": "K. Williams",
+    "key": "RB|k|williams",
+    "candidateCount": 6,
+    "candidates": [
+      {
+        "gsisId": "00-0032152",
+        "name": "karlos williams"
+      },
+      {
+        "gsisId": "00-0027214",
+        "name": "keiland williams"
+      },
+      {
+        "gsisId": "WIL403875",
+        "name": "keith williams"
+      },
+      {
+        "gsisId": "00-0030117",
+        "name": "kerwynn williams"
+      },
+      {
+        "gsisId": "WIL407427",
+        "name": "kevin williams"
+      },
+      {
+        "gsisId": "00-0037840",
+        "name": "kyren williams"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc001vhjitlp8oi57a",
+    "team": "BAL",
+    "position": "TE",
+    "name": "M. Andrews",
+    "key": "TE|m|andrews",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0034753",
+        "name": "mark andrews"
+      },
+      {
+        "gsisId": "AND709030",
+        "name": "mitch andrews"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc0003hjitzm2hzv7d",
+    "team": "ARI",
+    "position": "WR",
+    "name": "M. Harrison Jr.",
+    "key": "WR|m|harrison",
+    "candidateCount": 3,
+    "candidates": [
+      {
+        "gsisId": "00-0030439",
+        "name": "mark harrison"
+      },
+      {
+        "gsisId": "00-0007024",
+        "name": "marvin harrison"
+      },
+      {
+        "gsisId": "00-0039849",
+        "name": "marvin harrison jr"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc004uhjit7dxk1ow4",
+    "team": "IND",
+    "position": "WR",
+    "name": "M. Pittman Jr.",
+    "key": "WR|m|pittman",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0036252",
+        "name": "michael pittman"
+      }
+    ]
+  },
+  {
+    "id": "cmlu89tea00dxmaitvabq779h",
+    "team": "NO",
+    "position": "WR",
+    "name": "M. Thomas",
+    "key": "WR|m|thomas",
+    "candidateCount": 4,
+    "candidates": [
+      {
+        "gsisId": "00-0024798",
+        "name": "marco thomas"
+      },
+      {
+        "gsisId": "00-0027076",
+        "name": "mike thomas"
+      },
+      {
+        "gsisId": "00-0032765",
+        "name": "michael thomas"
+      },
+      {
+        "gsisId": "00-0033114",
+        "name": "mike thomas"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc004vhjituubt3t96",
+    "team": "ARI",
+    "position": "WR",
+    "name": "M. Wilson",
+    "key": "WR|m|wilson",
+    "candidateCount": 3,
+    "candidates": [
+      {
+        "gsisId": "00-0030047",
+        "name": "marquess wilson"
+      },
+      {
+        "gsisId": "00-0038559",
+        "name": "michael wilson"
+      },
+      {
+        "gsisId": "WIL755838",
+        "name": "mike wilson"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc0052hjitg0ehs4ah",
+    "team": "BUF",
+    "position": "RB",
+    "name": "R. Davis",
+    "key": "RB|r|davis",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0039875",
+        "name": "ray davis"
+      },
+      {
+        "gsisId": "DAV725754",
+        "name": "russell davis"
+      }
+    ]
+  },
+  {
+    "id": "cmlpv950500bkxjitpccl3kuy",
+    "team": "DAL",
+    "position": "WR",
+    "name": "R. Flournoy",
+    "key": "WR|r|flournoy",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0039410",
+        "name": "ryan flournoy"
+      }
+    ]
+  },
+  {
+    "id": "cmlr2zb8x00c1tuitp01obahr",
+    "team": "PIT",
+    "position": "WR",
+    "name": "R. Wilson",
+    "key": "WR|r|wilson",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0018056",
+        "name": "robert wilson"
+      },
+      {
+        "gsisId": "00-0039739",
+        "name": "roman wilson"
+      }
+    ]
+  },
+  {
+    "id": "cmlucit4a00efidityqmdihw0",
+    "team": "LAR",
+    "position": "WR",
+    "name": "R. Woods",
+    "key": "WR|r|woods",
+    "candidateCount": 3,
+    "candidates": [
+      {
+        "gsisId": "00-0022892",
+        "name": "rashaun woods"
+      },
+      {
+        "gsisId": "00-0030431",
+        "name": "robert woods"
+      },
+      {
+        "gsisId": "WOO568269",
+        "name": "robert woods"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc0038hjit7t8eh657",
+    "team": "SEA",
+    "position": "QB",
+    "name": "S. Darnold",
+    "key": "QB|s|darnold",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0034869",
+        "name": "sam darnold"
+      }
+    ]
+  },
+  {
+    "id": "cmlu89tea00e4maitx2idr043",
+    "team": "MIN",
+    "position": "WR",
+    "name": "S. Diggs",
+    "key": "WR|s|diggs",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "DIG207645",
+        "name": "shelton diggs"
+      },
+      {
+        "gsisId": "00-0031588",
+        "name": "stefon diggs"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc0026hjittlakjkjn",
+    "team": "NE",
+    "position": "WR",
+    "name": "S. Diggs",
+    "key": "WR|s|diggs",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "DIG207645",
+        "name": "shelton diggs"
+      },
+      {
+        "gsisId": "00-0031588",
+        "name": "stefon diggs"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc005bhjitq7mjkqra",
+    "team": "NE",
+    "position": "RB",
+    "name": "T. Henderson",
+    "key": "RB|t|henderson",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "00-0024010",
+        "name": "taurean henderson"
+      },
+      {
+        "gsisId": "00-0040734",
+        "name": "treveyon henderson"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc0018hjitu3mttdzg",
+    "team": "MIA",
+    "position": "WR",
+    "name": "T. Hill",
+    "key": "WR|t|hill",
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "gsisId": "HIL489423",
+        "name": "tony hill"
+      },
+      {
+        "gsisId": "00-0033040",
+        "name": "tyreek hill"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc005chjitz7n9zlto",
+    "team": "NE",
+    "position": "WR",
+    "name": "T. Johnson",
+    "key": "WR|t|johnson",
+    "candidateCount": 7,
+    "candidates": [
+      {
+        "gsisId": "00-0040237",
+        "name": "tez johnson"
+      },
+      {
+        "gsisId": "00-0026874",
+        "name": "taurus johnson"
+      },
+      {
+        "gsisId": "JOH704265",
+        "name": "troy johnson"
+      },
+      {
+        "gsisId": "JOH709122",
+        "name": "trumaine johnson"
+      },
+      {
+        "gsisId": "00-0036427",
+        "name": "tyler johnson"
+      },
+      {
+        "gsisId": "00-0035457",
+        "name": "tyron johnson"
+      },
+      {
+        "gsisId": "00-0008645",
+        "name": "tyrone johnson"
+      }
+    ]
+  },
+  {
+    "id": "cmlps98j5008pnfit0b85j2dh",
+    "team": "BUF",
+    "position": "K",
+    "name": "T. Loop",
+    "key": "K|t|loop",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0040074",
+        "name": "tyler loop"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc005rhjittsuqkss0",
+    "team": "WAS",
+    "position": "WR",
+    "name": "T. Tucker",
+    "key": "WR|t|tucker",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0038563",
+        "name": "tre tucker"
+      }
+    ]
+  },
+  {
+    "id": "cmln7erjc005khjitjbk7mtbb",
+    "team": "HOU",
+    "position": "RB",
+    "name": "W. Marks",
+    "key": "RB|w|marks",
+    "candidateCount": 1,
+    "candidates": [
+      {
+        "gsisId": "00-0040583",
+        "name": "woody marks"
+      }
+    ]
+  }
+]

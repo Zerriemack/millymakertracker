@@ -1,0 +1,13 @@
+[
+  { "teamAbbreviation": "LAR", "seasonYear": 2017, "homeIsIndoor": false },
+  { "teamAbbreviation": "LAR", "seasonYear": 2018, "homeIsIndoor": false },
+  { "teamAbbreviation": "LAR", "seasonYear": 2019, "homeIsIndoor": false },
+
+  { "teamAbbreviation": "LAC", "seasonYear": 2017, "homeIsIndoor": false },
+  { "teamAbbreviation": "LAC", "seasonYear": 2018, "homeIsIndoor": false },
+  { "teamAbbreviation": "LAC", "seasonYear": 2019, "homeIsIndoor": false },
+
+  { "teamAbbreviation": "LV", "seasonYear": 2017, "homeIsIndoor": false },
+  { "teamAbbreviation": "LV", "seasonYear": 2018, "homeIsIndoor": false },
+  { "teamAbbreviation": "LV", "seasonYear": 2019, "homeIsIndoor": false }
+]

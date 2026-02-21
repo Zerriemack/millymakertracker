@@ -390,11 +390,39 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
     max-width: 1700px;
     margin: 0 auto;
     padding: 18px 24px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.88);
   }
 
+  .sub,
+  .miniText,
+  .analysisText,
+  .shotMissingSub,
+  .k,
+  .playerMeta,
+  .muted { font-weight: 700; }
+
+  .h1,
+  .h2,
+  .sideTitle,
+  .shotTitle,
+  .playerName,
+  .analysisLabel,
+  .miniTitle { font-weight: 900; }
+
+  .lineupTable td { font-weight: 700; }
+
+  .v { font-weight: 900; }
+
   .hero { margin-bottom: 14px; }
-  .h1 { margin: 0; font-size: 32px; line-height: 1.15; font-weight: 900; }
-  .sub { margin: 8px 0 0; color: #666; line-height: 1.35; }
+  .h1 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: rgba(255,255,255,0.94);
+  }
+  .sub { margin: 8px 0 0; color: rgba(255,255,255,0.62); line-height: 1.35; }
 
   .topGrid {
     display: grid;
@@ -404,10 +432,11 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
   }
 
   .shotCard, .sideCard {
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
-    background: #fff;
+    background: #1f1f1f;
     overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
   }
 
   .shotCard {
@@ -417,14 +446,14 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
     max-height: calc(100vh - 220px);
   }
 
-  .shotHeader { padding: 12px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); }
-  .shotTitle { font-weight: 900; }
+  .shotHeader { padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .shotTitle { color: rgba(255,255,255,0.92); }
 
   .shotLink {
     flex: 1 1 auto;
     display: flex;
     padding: 10px;
-    background: rgba(0,0,0,0.02);
+    background: #141414;
     cursor: zoom-in;
     justify-content: center;
     align-items: flex-start;
@@ -438,13 +467,14 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
     display: block;
     object-fit: contain;
     object-position: center top;
-    background: #fff;
+    background: #141414;
     border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
   }
 
   .shotMissing { padding: 22px 14px; }
-  .shotMissingTitle { font-weight: 800; }
-  .shotMissingSub { margin-top: 6px; color: #666; }
+  .shotMissingTitle { font-weight: 900; color: rgba(255,255,255,0.92); }
+  .shotMissingSub { margin-top: 6px; color: rgba(255,255,255,0.62); }
 
   .sideCard {
     padding: 14px;
@@ -458,46 +488,61 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
     gap: 12px;
   }
 
-  .sideTitle { font-weight: 900; margin-bottom: 0; }
+  .sideTitle { margin-bottom: 0; color: rgba(255,255,255,0.92); }
 
   .facts {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 8px 10px;
     padding: 10px;
-    border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 12px;
-    background: rgba(0,0,0,0.02);
+    background: #141414;
   }
 
-  .factsTight { margin-top: 8px; }
+  .k { color: rgba(255,255,255,0.55); font-size: 13px; }
+  .v { color: rgba(255,255,255,0.88); }
 
-  .k { color: #666; font-size: 13px; }
-  .v { font-weight: 900; }
-
-  .mini { padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.06); }
-  .miniTitle { font-size: 12px; color: #666; font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; }
-  .miniText { margin-top: 6px; line-height: 1.45; white-space: pre-wrap; }
+  .mini { padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .miniTitle { font-size: 12px; color: rgba(255,255,255,0.62); text-transform: uppercase; letter-spacing: 0.02em; }
+  .miniText { margin-top: 6px; line-height: 1.45; white-space: pre-wrap; color: rgba(255,255,255,0.78); }
 
   .block { margin-top: 18px; }
-  .h2 { margin: 0 0 10px; font-size: 20px; font-weight: 900; }
+  .h2 { margin: 0 0 10px; font-size: 20px; color: rgba(255,255,255,0.92); }
 
   .tableWrap {
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
     overflow: hidden;
-    background: #fff;
+    background: #1f1f1f;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
   }
 
   .lineupTable { width: 100%; border-collapse: collapse; }
-  .lineupTable th, .lineupTable td { padding: 10px 12px; border-bottom: 1px solid rgba(0,0,0,0.06); vertical-align: top; }
-  .lineupTable thead th { background: rgba(0,0,0,0.03); text-align: left; font-size: 12px; color: #555; letter-spacing: 0.02em; }
+  .lineupTable th, .lineupTable td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    vertical-align: top;
+    color: rgba(255,255,255,0.88);
+  }
+
+  .lineupTable thead th {
+    background: #181818;
+    text-align: left;
+    font-size: 12px;
+    color: rgba(255,255,255,0.62);
+    letter-spacing: 0.02em;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .lineupTable tbody tr:hover td { background: #232323; }
 
   .colPos { width: 110px; }
   .colOwn, .colSal, .colPts { width: 90px; }
 
-  .playerName { font-weight: 900; }
-  .playerMeta { font-size: 12px; color: #666; margin-top: 2px; }
+  .playerName { color: rgba(255,255,255,0.92); }
+  .playerMeta { font-size: 12px; color: rgba(255,255,255,0.62); margin-top: 2px; }
 
   .analysisGrid {
     display: grid;
@@ -506,23 +551,24 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
   }
 
   .analysisCard {
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
-    background: #fff;
+    background: #1f1f1f;
     padding: 12px 14px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
   }
 
   .analysisLabel {
     font-size: 12px;
-    color: #666;
-    font-weight: 900;
+    color: rgba(255,255,255,0.62);
     text-transform: uppercase;
     letter-spacing: 0.02em;
     margin-bottom: 6px;
   }
 
-  .analysisText { line-height: 1.5; white-space: pre-wrap; }
-  .muted { color: #777; }
+  .analysisText { line-height: 1.5; white-space: pre-wrap; color: rgba(255,255,255,0.78); }
+
+  .muted { color: rgba(255,255,255,0.62); }
 
   @media (max-width: 980px) {
     .topGrid { grid-template-columns: 1fr; align-items: start; }

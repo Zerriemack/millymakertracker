@@ -36,11 +36,21 @@ enum RosterSpot {
   CAPTAIN
 }
 
+enum GameWindow {
+  EARLY
+  LATE
+  PRIME
+  OTHER
+}
+
 model Season {
   id     String  @id @default(cuid())
   year   Int
   sport  Sport
   slates Slate[]
+  games  Game[]
+
+  weekForms PlayerWeekForm[]
 
   @@unique([year, sport])
 }
@@ -56,7 +66,7 @@ model Slate {
   salaryCapCents Int?
   gamesCount     Int?
   dayOfWeek      Int?
-  isMain         Boolean    @default(false)
+  isMain         Boolean @default(false)
 
   slateKey   String  @unique
   slateName  String?
@@ -64,7 +74,7 @@ model Slate {
   slateGroup String?
 
   contests Contest[]
-  season   Season    @relation(fields: [seasonId], references: [id])
+  season   Season @relation(fields: [seasonId], references: [id])
 
   @@index([seasonId])
   @@index([seasonId, week])
@@ -81,14 +91,15 @@ model Contest {
   contestName   String
   entryFeeCents Int?
   entries       Int?
+
+  // treated as "winner payout" in your workflow
   topPrizeCents Int?
 
   totalOwnershipBp Int?
 
-  winners  Winner[]
-  slate    Slate           @relation(fields: [slateId], references: [id])
+  winners Winner[]
+  slate   Slate @relation(fields: [slateId], references: [id])
 
-  // NEW
   analysis ContestAnalysis?
 
   @@unique([site, siteContestId])
@@ -128,16 +139,40 @@ model Winner {
 }
 
 model Team {
-  id           String   @id @default(cuid())
+  id           String @id @default(cuid())
   sport        Sport
   abbreviation String
   name         String
-  players      Player[]
+
+  // stadium proxy for home games (current default)
+  homeIsIndoor Boolean @default(false)
+
+  players Player[]
+  seasons TeamSeason[]
+
+  opponentLineupItems LineupItem[] @relation("LineupItemOpponentTeam")
+
+  homeGames Game[] @relation("HomeTeamGames")
+  awayGames Game[] @relation("AwayTeamGames")
 
   @@unique([sport, abbreviation])
 }
 
+model TeamSeason {
+  id           String  @id @default(cuid())
+  teamId       String
+  seasonYear   Int
+  homeIsIndoor Boolean @default(false)
+
+  team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
+
+  @@unique([teamId, seasonYear])
+  @@index([seasonYear])
+  @@index([teamId])
+}
+
 model Player {
+  gsisId     String?
   id         String @id @default(cuid())
   sport      Sport
   name       String
@@ -148,15 +183,77 @@ model Player {
   team        Team         @relation(fields: [teamId], references: [id])
   lineupItems LineupItem[]
 
+  opponentStartingQbFor LineupItem[] @relation("LineupItemOpponentQb")
+
+  homeStartingQbGames Game[] @relation("HomeStartingQb")
+  awayStartingQbGames Game[] @relation("AwayStartingQb")
+
+  weekForms PlayerWeekForm[]
+
   @@unique([sport, dkPlayerId])
   @@unique([sport, name, position, teamId])
+  @@unique([sport, gsisId])
   @@index([teamId])
   @@index([sport])
 }
 
+model Game {
+  id       String @id @default(cuid())
+  seasonId String
+  week     Int?
+  sport    Sport
+
+  kickoffTimeUtc DateTime
+  window         GameWindow
+
+  homeTeamId String
+  awayTeamId String
+
+  homeStartingQbPlayerId String?
+  awayStartingQbPlayerId String?
+
+  season Season @relation(fields: [seasonId], references: [id])
+
+  homeTeam Team @relation("HomeTeamGames", fields: [homeTeamId], references: [id])
+  awayTeam Team @relation("AwayTeamGames", fields: [awayTeamId], references: [id])
+
+  homeStartingQb Player? @relation("HomeStartingQb", fields: [homeStartingQbPlayerId], references: [id])
+  awayStartingQb Player? @relation("AwayStartingQb", fields: [awayStartingQbPlayerId], references: [id])
+
+  lineupItems LineupItem[]
+
+  @@unique([seasonId, homeTeamId, awayTeamId, kickoffTimeUtc])
+  @@index([seasonId])
+  @@index([seasonId, week])
+  @@index([homeTeamId])
+  @@index([awayTeamId])
+  @@index([kickoffTimeUtc])
+  @@index([window])
+}
+
+model PlayerWeekForm {
+  id       String @id @default(cuid())
+  seasonId String
+  week     Int
+  playerId String
+
+  season Season @relation(fields: [seasonId], references: [id])
+  player Player @relation(fields: [playerId], references: [id])
+
+  // flexible storage for your "steady tells"
+  metrics Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([seasonId, week, playerId])
+  @@index([seasonId, week])
+  @@index([playerId])
+}
+
 model Lineup {
-  id          String       @id @default(cuid())
-  winnerId    String       @unique
+  id          String    @id @default(cuid())
+  winnerId    String    @unique
   lineupType  LineupType
   salaryUsed  Int?
   totalPoints Float?
@@ -188,8 +285,46 @@ model LineupItem {
   ownershipFlexBp    Int?
   ownershipClassicBp Int?
 
+  // universal context
+  gameId         String?
+  opponentTeamId String?
+
+  // QB outcome fields
+  passYds Int?
+  passTd  Int?
+  passInt Int?
+  rushYds Int?
+  rushTd  Int?
+
+  // RB outcome fields
+  rushAtt   Int?
+  rushYdsRb Int?
+  rushTdRb  Int?
+  targetsRb Int?
+  recRb     Int?
+  recYdsRb  Int?
+  recTdRb   Int?
+
+  // WR/TE outcome fields
+  targets Int?
+  rec     Int?
+  recYds  Int?
+  recTd   Int?
+
+  // DST outcome fields
+  opponentStartingQbPlayerId String?
+  pointsAllowedBucket        Int?
+  defensiveTdCount           Int?
+  sacks                      Int?
+  takeaways                  Int?
+
   lineup Lineup @relation(fields: [lineupId], references: [id])
   player Player @relation(fields: [playerId], references: [id])
+
+  game Game? @relation(fields: [gameId], references: [id])
+
+  opponentTeam       Team?   @relation("LineupItemOpponentTeam", fields: [opponentTeamId], references: [id])
+  opponentStartingQb Player? @relation("LineupItemOpponentQb", fields: [opponentStartingQbPlayerId], references: [id])
 
   @@unique([lineupId, rosterSpot, slotIndex])
   @@index([lineupId])
@@ -198,4 +333,9 @@ model LineupItem {
   @@index([ownershipClassicBp])
   @@index([ownershipCaptainBp])
   @@index([ownershipFlexBp])
+
+  @@index([gameId])
+  @@index([opponentTeamId])
+  @@index([opponentStartingQbPlayerId])
+  @@index([pointsAllowedBucket])
 }

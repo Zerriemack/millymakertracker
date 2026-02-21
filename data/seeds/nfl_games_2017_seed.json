@@ -1,0 +1,2306 @@
+[
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-08T00:30:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "KC",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-10T17:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "NYJ",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-10T17:00:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "ATL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-10T17:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "BAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-10T17:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "PIT",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-10T17:00:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "ARI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-10T17:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "JAX",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-10T17:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "OAK",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-10T17:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "PHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-10T20:05:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "IND",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-10T20:25:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "SEA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-10T20:25:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "CAR",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-11T00:30:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "NYG",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-11T23:10:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "NO",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 1,
+    "kickoffTimeUtc": "2017-09-12T02:20:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "LAC",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-15T00:25:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "HOU",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T17:00:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T17:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "BUF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T17:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "ARI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T17:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "TEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T17:00:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "PHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T17:00:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "NE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T17:00:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "MIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T17:00:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T20:05:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "MIA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T20:05:00.000Z",
+    "homeTeam": "OAK",
+    "awayTeam": "NYJ",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T20:25:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "DAL",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T20:25:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "WAS",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-17T20:25:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "SF",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-18T00:30:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "GB",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 2,
+    "kickoffTimeUtc": "2017-09-19T00:30:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "DET",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-22T00:25:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "LA",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T17:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "DEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T17:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "NO",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T17:00:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "PIT",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T17:00:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "ATL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T17:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T17:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "TB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T17:00:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "HOU",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T17:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "MIA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T17:00:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "NYG",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T20:05:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "SEA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T20:25:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "CIN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-24T20:25:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "KC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-25T00:30:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "OAK",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-25T01:30:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "BAL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 3,
+    "kickoffTimeUtc": "2017-09-26T00:30:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "DAL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-09-29T00:25:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "CHI",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T17:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "BUF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T17:00:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "PIT",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T17:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "CIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T17:00:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "LA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T17:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "TEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T17:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T17:00:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "CAR",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T17:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "JAX",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T20:05:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "SF",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T20:05:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "PHI",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T20:05:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "NYG",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-01T20:25:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "OAK",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-02T00:30:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "IND",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-02T01:30:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "NO",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 4,
+    "kickoffTimeUtc": "2017-10-03T00:30:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "WAS",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-06T00:25:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "NE",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-08T17:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "BUF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-08T17:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "NYJ",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-08T17:00:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "CAR",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-08T17:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "SF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-08T17:00:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "TEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-08T17:00:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "LAC",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-08T17:00:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "ARI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-08T17:00:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "JAX",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-08T20:05:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "SEA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-08T20:05:00.000Z",
+    "homeTeam": "OAK",
+    "awayTeam": "BAL",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-08T20:25:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "GB",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-09T00:30:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "KC",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 5,
+    "kickoffTimeUtc": "2017-10-10T00:30:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "MIN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-13T00:25:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "PHI",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-15T17:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "MIA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-15T17:00:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-15T17:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-15T17:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "GB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-15T17:00:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-15T17:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "NE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-15T17:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "SF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-15T20:05:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "TB",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-15T20:05:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "LA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-15T20:25:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "PIT",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-15T20:25:00.000Z",
+    "homeTeam": "OAK",
+    "awayTeam": "LAC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-16T00:30:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "NYG",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 6,
+    "kickoffTimeUtc": "2017-10-17T00:30:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "IND",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-20T00:25:00.000Z",
+    "homeTeam": "OAK",
+    "awayTeam": "KC",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T17:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "TB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T17:00:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "CAR",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T17:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "TEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T17:00:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "NO",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T17:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "JAX",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T17:00:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "ARI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T17:00:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "NYJ",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T17:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "BAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T20:05:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "DAL",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T20:25:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "DEN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T20:25:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "SEA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-22T20:25:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "CIN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-23T00:30:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "ATL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 7,
+    "kickoffTimeUtc": "2017-10-24T00:30:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "WAS",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-27T00:25:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "MIA",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-29T17:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "OAK",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-29T17:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "IND",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-29T17:00:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "LAC",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-29T17:00:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-29T17:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "ATL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-29T17:00:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "SF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-29T17:00:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "CAR",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-29T20:05:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "HOU",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-29T20:25:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "DAL",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-30T00:30:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "PIT",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-30T01:30:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "MIN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 8,
+    "kickoffTimeUtc": "2017-10-31T00:30:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "DEN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-03T00:25:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "BUF",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-05T18:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "ATL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-05T18:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "IND",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-05T18:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "CIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-05T18:00:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "TB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-05T18:00:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "LA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-05T18:00:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "DEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-05T18:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "BAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-05T21:05:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "WAS",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-05T21:05:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "ARI",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-05T21:25:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "KC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-06T01:30:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "OAK",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 9,
+    "kickoffTimeUtc": "2017-11-07T01:30:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "DET",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-10T01:25:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "SEA",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-12T18:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "NO",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-12T18:00:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "GB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-12T18:00:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-12T18:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "PIT",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-12T18:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "LAC",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-12T18:00:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "NYJ",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-12T18:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "CIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-12T18:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "MIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-12T21:05:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "HOU",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-12T21:25:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "DAL",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-12T21:25:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "NYG",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-13T01:30:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "NE",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 10,
+    "kickoffTimeUtc": "2017-11-14T01:30:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "MIA",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-17T01:25:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "TEN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-19T18:00:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-19T18:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "JAX",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-19T18:00:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "BAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-19T18:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "ARI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-19T18:00:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "TB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-19T18:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "LA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-19T18:00:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "WAS",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-19T18:00:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "KC",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-19T21:05:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "BUF",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-19T21:25:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "CIN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-19T21:25:00.000Z",
+    "homeTeam": "OAK",
+    "awayTeam": "NE",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-20T01:30:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "PHI",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 11,
+    "kickoffTimeUtc": "2017-11-21T01:30:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "ATL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-23T17:30:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "MIN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-23T21:30:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "LAC",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-24T01:30:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "NYG",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-26T18:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "TB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-26T18:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-26T18:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "TEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-26T18:00:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "BUF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-26T18:00:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "MIA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-26T18:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "CAR",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-26T18:00:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-26T21:05:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "SEA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-26T21:25:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "JAX",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-26T21:25:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "NO",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-26T21:25:00.000Z",
+    "homeTeam": "OAK",
+    "awayTeam": "DEN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-27T01:30:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "GB",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 12,
+    "kickoffTimeUtc": "2017-11-28T01:30:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "HOU",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-01T01:25:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "WAS",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T18:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "MIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T18:00:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T18:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "NE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T18:00:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "SF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T18:00:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "TB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T18:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "IND",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T18:00:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "DEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T18:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "KC",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T18:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "HOU",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T21:05:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "CLE",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T21:25:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "LA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T21:25:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "CAR",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-03T21:25:00.000Z",
+    "homeTeam": "OAK",
+    "awayTeam": "NYG",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-04T01:30:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "PHI",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 13,
+    "kickoffTimeUtc": "2017-12-05T01:30:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "PIT",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-08T01:25:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "NO",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T18:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "IND",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T18:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "MIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T18:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T18:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "GB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T18:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "SF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T18:00:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "OAK",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T18:00:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "DAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T18:00:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T21:05:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "TEN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T21:05:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "NYJ",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T21:05:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "WAS",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T21:25:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "SEA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-10T21:25:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "PHI",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-11T01:30:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "BAL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 14,
+    "kickoffTimeUtc": "2017-12-12T01:30:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "NE",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-15T01:25:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "DEN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-16T21:30:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "CHI",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T01:25:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "LAC",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T18:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "MIA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T18:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "GB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T18:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "BAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T18:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "HOU",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T18:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "CIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T18:00:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "NYJ",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T18:00:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "PHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T18:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "ARI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T21:05:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "LA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T21:25:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "NE",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-17T21:25:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "TEN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-18T01:30:00.000Z",
+    "homeTeam": "OAK",
+    "awayTeam": "DAL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 15,
+    "kickoffTimeUtc": "2017-12-19T01:30:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "ATL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-23T21:30:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "IND",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T01:30:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "MIN",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T18:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "TB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T18:00:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T18:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T18:00:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "MIA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T18:00:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "BUF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T18:00:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "ATL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T18:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "LAC",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T18:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "LA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T18:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "DEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T21:05:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "JAX",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T21:25:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "NYG",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-24T21:25:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "SEA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-25T21:30:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "PIT",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 16,
+    "kickoffTimeUtc": "2017-12-26T01:30:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "OAK",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T18:00:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "GB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T18:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "HOU",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T18:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T18:00:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "NYJ",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T18:00:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "WAS",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T18:00:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "DAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T18:00:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T21:25:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "CAR",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T21:25:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "CIN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T21:25:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "KC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T21:25:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "SF",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T21:25:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "OAK",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T21:25:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "BUF",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T21:25:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "ARI",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T21:25:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "NO",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2017,
+    "week": 17,
+    "kickoffTimeUtc": "2017-12-31T21:25:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "JAX",
+    "window": "LATE"
+  }
+]

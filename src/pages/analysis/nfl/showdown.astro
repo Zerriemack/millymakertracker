@@ -1,4 +1,5 @@
 ---
+// src/pages/analysis/nfl/showdown.astro
 import Layout from "../../../layouts/Layout.astro";
 
 const apiUrl = `${Astro.url.origin}/api/analysis/nfl/showdown`;
@@ -90,23 +91,28 @@ const rows = rowsRaw
     const slateId = String(r.slateId ?? r.id ?? r.slate?.id ?? "");
     const week = Number(r.week ?? r.slate?.week ?? null);
     const slateType = String(r.slateType ?? r.slate?.slateType ?? "");
-
     const slateDate = String(r.slateDate ?? r.slate?.slateDate ?? r.date ?? "");
-    const link = String(r.link ?? r.url ?? (slateId ? `/nfl/${r.year ?? 2025}/slate/${slateId}` : ""));
 
     const year =
       typeof r.year === "number"
         ? r.year
         : typeof r.slate?.season?.year === "number"
           ? r.slate.season.year
-          : 2025;
+          : null;
+
+    const salaryCap =
+      typeof r.salaryCapCents === "number"
+        ? r.salaryCapCents
+        : typeof r.slate?.salaryCapCents === "number"
+          ? r.slate.salaryCapCents
+          : 50000;
 
     const salaryUsed = typeof r.salaryUsed === "number" ? r.salaryUsed : n(r.lineup?.salaryUsed);
     const salaryLeft =
       typeof r.salaryLeft === "number"
         ? r.salaryLeft
-        : typeof salaryUsed === "number"
-          ? 50000 - salaryUsed
+        : typeof salaryUsed === "number" && typeof salaryCap === "number"
+          ? salaryCap - salaryUsed
           : null;
 
     const ownPct =
@@ -116,7 +122,9 @@ const rows = rowsRaw
           ? r.totalOwnershipBp / 100
           : typeof r.contest?.totalOwnershipBp === "number"
             ? r.contest.totalOwnershipBp / 100
-            : null;
+            : typeof r.lineup?.totalOwnershipBp === "number"
+              ? r.lineup.totalOwnershipBp / 100
+              : null;
 
     const pts =
       typeof r.points === "number"
@@ -127,7 +135,9 @@ const rows = rowsRaw
             ? r.winner.points
             : typeof r.totalPoints === "number"
               ? r.totalPoints
-              : null;
+              : typeof r.lineup?.totalPoints === "number"
+                ? r.lineup.totalPoints
+                : null;
 
     const topPrizeCents =
       typeof r.topPrizeCents === "number"
@@ -137,9 +147,19 @@ const rows = rowsRaw
           : null;
 
     const teamSplit = String(r.teamSplit ?? r.split ?? r.construction?.teamSplit ?? "");
-    const captainPos = String(
-      r.captainPos ?? r.captainPosition ?? r.captain?.position ?? r.construction?.captainPos ?? ""
-    );
+    const captainPos = String(r.captainPos ?? r.captainPosition ?? r.captain?.position ?? r.construction?.captainPos ?? "");
+
+    const tag = String(r.slateTag ?? r.slate?.slateTag ?? "");
+    const group = String(r.slateGroup ?? r.slate?.slateGroup ?? "");
+
+    const link =
+      typeof r.link === "string" && r.link
+        ? r.link
+        : typeof r.url === "string" && r.url
+          ? r.url
+          : slateId && year
+            ? `/nfl/${year}/slate/${slateId}`
+            : "";
 
     return {
       slateId,
@@ -150,6 +170,8 @@ const rows = rowsRaw
       link,
       teamSplit,
       captainPos,
+      tag,
+      group,
       salaryLeft,
       ownPct,
       pts,
@@ -174,12 +196,25 @@ const salaryLeftMode = mode(salaryLeftVals);
 
 const splitCounts = countsByKey(rows, "teamSplit");
 const capPosCounts = countsByKey(rows, "captainPos");
+const typeCounts = countsByKey(rows, "slateType");
 
 const splitML = mostLeast(splitCounts);
 const capPosML = mostLeast(capPosCounts);
 
+const splitLines = Array.from(splitCounts.entries()).length
+  ? Array.from(splitCounts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([k, v]) => ({ k, v }))
+  : [];
+
 const capPosLines = Array.from(capPosCounts.entries()).length
   ? Array.from(capPosCounts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([k, v]) => ({ k, v }))
+  : [];
+
+const typeLines = Array.from(typeCounts.entries()).length
+  ? Array.from(typeCounts.entries())
       .sort((a, b) => b[1] - a[1])
       .map(([k, v]) => ({ k, v }))
   : [];
@@ -199,7 +234,12 @@ const pageTitle = "NFL Showdown Review";
 
       <div class="searchWrap">
         <label class="srOnly" for="q">Search</label>
-        <input id="q" class="search" type="text" placeholder="Search: LAR, 4-2, WR, MNF, etc" />
+        <input
+          id="q"
+          class="search"
+          type="text"
+          placeholder="Search: 2019, WK 2, 4-2, WR, MNF, TAG, GROUP"
+        />
         <button id="resetAllTop" class="resetAll" type="button">Reset all</button>
       </div>
     </header>
@@ -232,7 +272,7 @@ const pageTitle = "NFL Showdown Review";
             </div>
 
             <div class="note">
-              Median is the middle row after sorting. Most and least are the season high and season low.
+              Filters are per column. Use YEAR to isolate a season, then filter CAPTAIN and SPLIT.
             </div>
           </div>
         </div>
@@ -242,9 +282,15 @@ const pageTitle = "NFL Showdown Review";
           <div class="kv">
             <div class="k">Team splits</div>
             <div class="v mono">
-              <div>3-3: {splitCounts.get("3-3") ?? 0}</div>
-              <div>4-2: {splitCounts.get("4-2") ?? 0}</div>
-              <div>5-1: {splitCounts.get("5-1") ?? 0}</div>
+              {splitLines.length ? (
+                <div class="lines">
+                  {splitLines.map((x) => (
+                    <div>{x.k}: {x.v}</div>
+                  ))}
+                </div>
+              ) : (
+                <div>—</div>
+              )}
               <div class="spacer"></div>
               <div>Most: {splitML.most ? `${splitML.most[0]} (${splitML.most[1]})` : "—"}</div>
               <div>Least: {splitML.least ? `${splitML.least[0]} (${splitML.least[1]})` : "—"}</div>
@@ -265,6 +311,19 @@ const pageTitle = "NFL Showdown Review";
               <div>Most: {capPosML.most ? `${capPosML.most[0]} (${capPosML.most[1]})` : "—"}</div>
               <div>Least: {capPosML.least ? `${capPosML.least[0]} (${capPosML.least[1]})` : "—"}</div>
             </div>
+
+            <div class="k">Slate types</div>
+            <div class="v mono">
+              {typeLines.length ? (
+                <div class="lines">
+                  {typeLines.map((x) => (
+                    <div>{x.k}: {x.v}</div>
+                  ))}
+                </div>
+              ) : (
+                <div>—</div>
+              )}
+            </div>
           </div>
         </div>
       </aside>
@@ -284,18 +343,23 @@ const pageTitle = "NFL Showdown Review";
                 <th class="colOwn"><button class="thBtn" type="button" data-col="own">OWN</button></th>
                 <th class="colPts"><button class="thBtn" type="button" data-col="pts">PTS</button></th>
                 <th class="colPrize"><button class="thBtn" type="button" data-col="top">TOP</button></th>
+                <th class="colTag"><button class="thBtn" type="button" data-col="tag">TAG</button></th>
+                <th class="colGroup"><button class="thBtn" type="button" data-col="group">GROUP</button></th>
                 <th class="colLink"></th>
               </tr>
             </thead>
 
             <tbody>
               {rows.map((r) => {
-                const year = Number.isFinite(r.year) ? String(r.year) : "";
-                const wk = Number.isFinite(r.week) ? String(r.week) : "";
+                const year = Number.isFinite(r.year as any) ? String(r.year) : "";
+                const wk = Number.isFinite(r.week as any) ? String(r.week) : "";
                 const left = n(r.salaryLeft);
                 const own = n(r.ownPct);
                 const pts = n(r.pts);
                 const top = n(r.topPrizeCents);
+
+                const tag = String(r.tag || "").trim();
+                const group = String(r.group || "").trim();
 
                 return (
                   <tr
@@ -310,6 +374,8 @@ const pageTitle = "NFL Showdown Review";
                     data-own={own === null ? "" : String(own)}
                     data-pts={pts === null ? "" : String(pts)}
                     data-top={top === null ? "" : String(top)}
+                    data-tag={tag}
+                    data-group={group}
                   >
                     <td class="mono">{year || "—"}</td>
                     <td class="mono">{wk || "—"}</td>
@@ -321,6 +387,8 @@ const pageTitle = "NFL Showdown Review";
                     <td class="mono">{own === null ? "—" : `${own.toFixed(2)}%`}</td>
                     <td class="mono">{pts === null ? "—" : pts.toFixed(2)}</td>
                     <td class="mono">{moneyCents(r.topPrizeCents)}</td>
+                    <td class="mono">{tag || "—"}</td>
+                    <td class="mono">{group || "—"}</td>
                     <td class="mono">
                       {r.link ? (
                         <a class="link" href={r.link} target="_blank" rel="noreferrer">View</a>
@@ -379,6 +447,8 @@ const pageTitle = "NFL Showdown Review";
                 type: "",
                 split: "",
                 captain: "",
+                tag: "",
+                group: "",
                 dateStart: "",
                 dateEnd: "",
                 leftMin: "",
@@ -403,7 +473,9 @@ const pageTitle = "NFL Showdown Review";
               left: { kind: "num", label: "LEFT", key: "left" },
               own: { kind: "num", label: "OWN", key: "own" },
               pts: { kind: "num", label: "PTS", key: "pts" },
-              top: { kind: "num", label: "TOP", key: "top" }
+              top: { kind: "num", label: "TOP", key: "top" },
+              tag: { kind: "cat", label: "TAG", key: "tag" },
+              group: { kind: "cat", label: "GROUP", key: "group" }
             };
 
             function uniqueValues(colKey) {
@@ -448,8 +520,10 @@ const pageTitle = "NFL Showdown Review";
 
             function hay(tr) {
               const parts = [
-                tr.dataset.year, tr.dataset.week, tr.dataset.type, tr.dataset.date, tr.dataset.split,
-                tr.dataset.captain, tr.dataset.left, tr.dataset.own, tr.dataset.pts, tr.dataset.top
+                tr.dataset.year, tr.dataset.week, tr.dataset.type, tr.dataset.date,
+                tr.dataset.split, tr.dataset.captain,
+                tr.dataset.left, tr.dataset.own, tr.dataset.pts, tr.dataset.top,
+                tr.dataset.tag, tr.dataset.group
               ];
               return parts.map((x) => text(x).toLowerCase()).join(" ");
             }
@@ -462,6 +536,8 @@ const pageTitle = "NFL Showdown Review";
               if (f.type && text(tr.dataset.type) !== f.type) return false;
               if (f.split && text(tr.dataset.split) !== f.split) return false;
               if (f.captain && text(tr.dataset.captain) !== f.captain) return false;
+              if (f.tag && text(tr.dataset.tag) !== f.tag) return false;
+              if (f.group && text(tr.dataset.group) !== f.group) return false;
 
               if (f.dateStart || f.dateEnd) {
                 if (!withinDate(tr.dataset.dateiso, f.dateStart, f.dateEnd)) return false;
@@ -687,6 +763,8 @@ const pageTitle = "NFL Showdown Review";
               if (col === "type") state.filters.type = "";
               if (col === "split") state.filters.split = "";
               if (col === "captain") state.filters.captain = "";
+              if (col === "tag") state.filters.tag = "";
+              if (col === "group") state.filters.group = "";
               if (col === "date") { state.filters.dateStart = ""; state.filters.dateEnd = ""; }
               if (col === "left") { state.filters.leftMin = ""; state.filters.leftMax = ""; }
               if (col === "own") { state.filters.ownMin = ""; state.filters.ownMax = ""; }
@@ -1014,6 +1092,8 @@ const pageTitle = "NFL Showdown Review";
   .colOwn { width: 90px; }
   .colPts { width: 90px; }
   .colPrize { width: 110px; }
+  .colTag { width: 100px; }
+  .colGroup { width: 120px; }
   .colLink { width: 70px; }
 
   @media (max-width: 1200px) {

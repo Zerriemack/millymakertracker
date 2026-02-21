@@ -1,0 +1,2306 @@
+[
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-11T00:20:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "HOU",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T17:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "SEA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T17:00:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T17:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "NYJ",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T17:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "LV",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T17:00:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T17:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "IND",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T17:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "GB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T17:00:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "MIA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T17:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "PHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T20:05:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "LAC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T20:25:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "TB",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-13T20:25:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "ARI",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-14T00:20:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "DAL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-14T23:15:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "PIT",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 1,
+    "kickoffTimeUtc": "2020-09-15T02:10:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "TEN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-18T00:20:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "CIN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T17:00:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "NYG",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T17:00:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "ATL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T17:00:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T17:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "MIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T17:00:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "BUF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T17:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "SF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T17:00:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "LA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T17:00:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "DEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T17:00:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "CAR",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T17:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "JAX",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T20:05:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "WAS",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T20:25:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "BAL",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-20T20:25:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "KC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-21T00:20:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "NE",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 2,
+    "kickoffTimeUtc": "2020-09-22T00:15:00.000Z",
+    "homeTeam": "LV",
+    "awayTeam": "NO",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-25T00:20:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "MIA",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T17:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T17:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "LA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T17:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "WAS",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T17:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "TEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T17:00:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "LV",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T17:00:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "SF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T17:00:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "CIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T17:00:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "HOU",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T20:05:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "NYJ",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T20:05:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "CAR",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T20:25:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "DET",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T20:25:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "TB",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-27T20:25:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "DAL",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-28T00:20:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "GB",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 3,
+    "kickoffTimeUtc": "2020-09-29T00:15:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "KC",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-02T00:20:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "DEN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-04T17:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "ARI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-04T17:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "JAX",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-04T17:00:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-04T17:00:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "NO",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-04T17:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "MIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-04T17:00:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "SEA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-04T17:00:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "LAC",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-04T17:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "BAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-04T20:05:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "NYG",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-04T20:25:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "IND",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-04T20:25:00.000Z",
+    "homeTeam": "LV",
+    "awayTeam": "BUF",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-05T00:20:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "PHI",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-05T23:05:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "NE",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 4,
+    "kickoffTimeUtc": "2020-10-06T01:00:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "ATL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-09T00:20:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "TB",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-11T17:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "CAR",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-11T17:00:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "CIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-11T17:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "JAX",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-11T17:00:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "LV",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-11T17:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "ARI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-11T17:00:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "PHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-11T17:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "LA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-11T20:05:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "MIA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-11T20:25:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "IND",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-11T20:25:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "NYG",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-12T00:20:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "MIN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-13T00:15:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "LAC",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 5,
+    "kickoffTimeUtc": "2020-10-13T23:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "BUF",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-18T17:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-18T17:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "CIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-18T17:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-18T17:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "ATL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-18T17:00:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "DEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-18T17:00:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "WAS",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-18T17:00:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "BAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-18T17:00:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-18T17:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "HOU",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-18T20:05:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "NYJ",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-18T20:25:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "GB",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-19T00:20:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "LA",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-19T21:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "KC",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 6,
+    "kickoffTimeUtc": "2020-10-20T00:15:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "ARI",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-23T00:20:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "NYG",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-25T17:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-25T17:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-25T17:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "GB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-25T17:00:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "CAR",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-25T17:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "BUF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-25T17:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "PIT",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-25T17:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "DAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-25T20:05:00.000Z",
+    "homeTeam": "LV",
+    "awayTeam": "TB",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-25T20:25:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "KC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-25T20:25:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "JAX",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-25T20:25:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "SF",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-26T00:20:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "SEA",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 7,
+    "kickoffTimeUtc": "2020-10-27T00:15:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "CHI",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-10-30T00:20:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "ATL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-01T18:00:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "PIT",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-01T18:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "NE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-01T18:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "TEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-01T18:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "LV",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-01T18:00:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "IND",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-01T18:00:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "MIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-01T18:00:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "NYJ",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-01T18:00:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "LA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-01T21:05:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "LAC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-01T21:25:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "NO",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-01T21:25:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "SF",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-02T01:20:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "DAL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 8,
+    "kickoffTimeUtc": "2020-11-03T01:15:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "TB",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-06T01:20:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "GB",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-08T18:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "DEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-08T18:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "SEA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-08T18:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "BAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-08T18:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "HOU",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-08T18:00:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "CAR",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-08T18:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-08T18:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-08T18:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "NYG",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-08T21:05:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "LV",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-08T21:25:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "MIA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-08T21:25:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "PIT",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-09T01:20:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "NO",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 9,
+    "kickoffTimeUtc": "2020-11-10T01:15:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "NE",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-13T01:20:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "IND",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-15T18:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "TB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-15T18:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "HOU",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-15T18:00:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "WAS",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-15T18:00:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "JAX",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-15T18:00:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "PHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-15T21:05:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "BUF",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-15T21:05:00.000Z",
+    "homeTeam": "LV",
+    "awayTeam": "DEN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-15T21:05:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "LAC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-15T21:25:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "SEA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-15T21:25:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "SF",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-15T21:25:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "CIN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-16T01:20:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "BAL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 10,
+    "kickoffTimeUtc": "2020-11-17T01:15:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "MIN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-20T01:20:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "ARI",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-22T18:00:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "TEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-22T18:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-22T18:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "PHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-22T18:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "NE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-22T18:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "PIT",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-22T18:00:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "ATL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-22T18:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "CIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-22T21:05:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "MIA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-22T21:05:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "NYJ",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-22T21:25:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "GB",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-22T21:25:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "DAL",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-23T01:20:00.000Z",
+    "homeTeam": "LV",
+    "awayTeam": "KC",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 11,
+    "kickoffTimeUtc": "2020-11-24T01:15:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "LA",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-26T17:30:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "HOU",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-26T21:30:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "WAS",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-29T18:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "LV",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-29T18:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "LAC",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-29T18:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "NYG",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-29T18:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "TEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-29T18:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-29T18:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "CAR",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-29T18:00:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "ARI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-29T18:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "MIA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-29T21:05:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "NO",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-29T21:05:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "SF",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-29T21:25:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "KC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-11-30T01:20:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "CHI",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-12-01T01:15:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "SEA",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 12,
+    "kickoffTimeUtc": "2020-12-02T20:40:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "BAL",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-06T18:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "NO",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-06T18:00:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-06T18:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "IND",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-06T18:00:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "CIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-06T18:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "JAX",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-06T18:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "LV",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-06T18:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-06T21:05:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "LA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-06T21:05:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "NYG",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-06T21:25:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "PHI",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-06T21:25:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "NE",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-07T01:20:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "DEN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-07T22:00:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "WAS",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-08T01:15:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "BUF",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 13,
+    "kickoffTimeUtc": "2020-12-09T01:05:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "DAL",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-11T01:20:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "NE",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T18:00:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "DEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T18:00:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "HOU",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T18:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "DAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T18:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "TEN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T18:00:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "KC",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T18:00:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "ARI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T18:00:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "MIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T21:05:00.000Z",
+    "homeTeam": "LV",
+    "awayTeam": "IND",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T21:05:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "NYJ",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T21:25:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "GB",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T21:25:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "ATL",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T21:25:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "NO",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-13T21:25:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "WAS",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-14T01:20:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "PIT",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 14,
+    "kickoffTimeUtc": "2020-12-15T01:15:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "BAL",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-18T01:20:00.000Z",
+    "homeTeam": "LV",
+    "awayTeam": "LAC",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-19T21:30:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "BUF",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T01:15:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "CAR",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T18:00:00.000Z",
+    "homeTeam": "ATL",
+    "awayTeam": "TB",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T18:00:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "JAX",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T18:00:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "SF",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T18:00:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "HOU",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T18:00:00.000Z",
+    "homeTeam": "MIA",
+    "awayTeam": "NE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T18:00:00.000Z",
+    "homeTeam": "MIN",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T18:00:00.000Z",
+    "homeTeam": "TEN",
+    "awayTeam": "DET",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T18:00:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "SEA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T21:05:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "PHI",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T21:05:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "NYJ",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-20T21:25:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "KC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-21T01:20:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "CLE",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 15,
+    "kickoffTimeUtc": "2020-12-22T01:15:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "PIT",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-25T21:30:00.000Z",
+    "homeTeam": "NO",
+    "awayTeam": "MIN",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-26T18:00:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "TB",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-26T21:30:00.000Z",
+    "homeTeam": "ARI",
+    "awayTeam": "SF",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-27T01:15:00.000Z",
+    "homeTeam": "LV",
+    "awayTeam": "MIA",
+    "window": "OTHER"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-27T18:00:00.000Z",
+    "homeTeam": "BAL",
+    "awayTeam": "NYG",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-27T18:00:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "CIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-27T18:00:00.000Z",
+    "homeTeam": "JAX",
+    "awayTeam": "CHI",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-27T18:00:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "ATL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-27T18:00:00.000Z",
+    "homeTeam": "NYJ",
+    "awayTeam": "CLE",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-27T18:00:00.000Z",
+    "homeTeam": "PIT",
+    "awayTeam": "IND",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-27T21:05:00.000Z",
+    "homeTeam": "LAC",
+    "awayTeam": "DEN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-27T21:05:00.000Z",
+    "homeTeam": "WAS",
+    "awayTeam": "CAR",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-27T21:25:00.000Z",
+    "homeTeam": "DAL",
+    "awayTeam": "PHI",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-27T21:25:00.000Z",
+    "homeTeam": "SEA",
+    "awayTeam": "LA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-28T01:20:00.000Z",
+    "homeTeam": "GB",
+    "awayTeam": "TEN",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 16,
+    "kickoffTimeUtc": "2020-12-29T01:15:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "BUF",
+    "window": "PRIME"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T18:00:00.000Z",
+    "homeTeam": "BUF",
+    "awayTeam": "MIA",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T18:00:00.000Z",
+    "homeTeam": "CIN",
+    "awayTeam": "BAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T18:00:00.000Z",
+    "homeTeam": "CLE",
+    "awayTeam": "PIT",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T18:00:00.000Z",
+    "homeTeam": "DET",
+    "awayTeam": "MIN",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T18:00:00.000Z",
+    "homeTeam": "NE",
+    "awayTeam": "NYJ",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T18:00:00.000Z",
+    "homeTeam": "NYG",
+    "awayTeam": "DAL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T18:00:00.000Z",
+    "homeTeam": "TB",
+    "awayTeam": "ATL",
+    "window": "EARLY"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T21:25:00.000Z",
+    "homeTeam": "CAR",
+    "awayTeam": "NO",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T21:25:00.000Z",
+    "homeTeam": "CHI",
+    "awayTeam": "GB",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T21:25:00.000Z",
+    "homeTeam": "DEN",
+    "awayTeam": "LV",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T21:25:00.000Z",
+    "homeTeam": "HOU",
+    "awayTeam": "TEN",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T21:25:00.000Z",
+    "homeTeam": "IND",
+    "awayTeam": "JAX",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T21:25:00.000Z",
+    "homeTeam": "KC",
+    "awayTeam": "LAC",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T21:25:00.000Z",
+    "homeTeam": "LA",
+    "awayTeam": "ARI",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-03T21:25:00.000Z",
+    "homeTeam": "SF",
+    "awayTeam": "SEA",
+    "window": "LATE"
+  },
+  {
+    "sport": "NFL",
+    "seasonYear": 2020,
+    "week": 17,
+    "kickoffTimeUtc": "2021-01-04T01:20:00.000Z",
+    "homeTeam": "PHI",
+    "awayTeam": "WAS",
+    "window": "PRIME"
+  }
+]

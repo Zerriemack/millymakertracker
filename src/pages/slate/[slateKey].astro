@@ -1,5 +1,4 @@
 ---
-
 const __slateKey = String(Astro.params.slateKey ?? "").trim();
 if (/^[0-9]{4}$/.test(__slateKey)) {
   return Astro.redirect(`/nfl/${__slateKey}?view=LIST`, 307);
@@ -30,52 +29,203 @@ const slate = await prisma.slate.findUnique({
 const contest = slate?.contests?.[0] ?? null;
 const winner = contest?.winners?.[0] ?? null;
 const analysis = contest?.analysis ?? null;
+
+function fmtDateLong(iso: any) {
+  const s = String(iso || "");
+  if (!s) return "—";
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return s;
+  return new Intl.DateTimeFormat("en-US", { year: "numeric", month: "short", day: "2-digit" }).format(d);
+}
+
+function moneyCents(v: any) {
+  const x = Number(v);
+  if (!Number.isFinite(x)) return "—";
+  return `$${(x / 100).toLocaleString("en-US")}`;
+}
+
+const pageTitle = slate ? `${slate.season.year} Week ${slate.week} ${slate.slateType}` : "Slate";
 ---
 
-<Layout title="Slate | MillyMakerTracker">
-  <main class="container">
+<Layout title={`Slate | Milly Maker Tracker`}>
+  <main class="page">
     {!slate ? (
-      <>
-        <h1>Slate not found</h1>
-        <p>slateKey: {slateKey}</p>
-      </>
+      <section class="card">
+        <h1 class="h1">Slate not found</h1>
+        <p class="muted mono">slateKey: {slateKey}</p>
+        <a class="back" href="/nfl">Back</a>
+      </section>
     ) : (
       <>
-        <a href="/nfl" style="text-decoration:none;">Back</a>
+        <header class="top">
+          <a class="back" href="/nfl">Back</a>
 
-        <h1 style="margin-top:10px;">
-          {slate.season.year} Week {slate.week} · {slate.slateType}
-        </h1>
-
-        <p>{new Date(slate.slateDate).toLocaleDateString()}</p>
-
-        <div style="margin-top:14px; padding:14px; border:1px solid #eaeaea; border-radius:10px; max-width:900px;">
-          <div><strong>Contest</strong>: {contest?.contestName ?? "TBD"}</div>
-
-          <div style="margin-top:6px;">
-            <strong>Winner</strong>: {winner?.username ?? "TBD"} ({winner?.points ?? "—"} pts)
+          <div class="titleBlock">
+            <h1 class="h1">{slate.season.year} Week {slate.week} <span class="dot">·</span> {slate.slateType}</h1>
+            <p class="sub mono">{fmtDateLong(slate.slateDate)}</p>
           </div>
+        </header>
 
-          <div style="margin-top:6px; color:#555;">
-            <strong>Site Contest Id</strong>: {contest?.siteContestId ?? "—"}
-          </div>
-
-          {analysis?.stackSummary ? (
-            <div style="margin-top:12px;">
-              <div><strong>Stack</strong>: {analysis.stackSummary}</div>
+        <section class="grid">
+          <section class="card">
+            <div class="row">
+              <div class="label">Contest</div>
+              <div class="value">{contest?.contestName ?? "TBD"}</div>
             </div>
-          ) : null}
 
-          {analysis?.uniquenessNotes ? (
-            <div style="margin-top:12px;">
-              <div style="font-weight:600;">Why it won</div>
-              <pre style="white-space:pre-wrap; margin:6px 0 0; color:#555; font-family:inherit;">
-{analysis.uniquenessNotes}
-              </pre>
+            <div class="row">
+              <div class="label">Top prize</div>
+              <div class="value mono">{moneyCents(contest?.topPrizeCents)}</div>
             </div>
-          ) : null}
-        </div>
+
+            <div class="row">
+              <div class="label">Winner</div>
+              <div class="value">
+                <span class="mono">{winner?.username ?? "TBD"}</span>
+                <span class="muted"> </span>
+                <span class="mono muted">({winner?.points ?? "—"} pts)</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="label">Site contest id</div>
+              <div class="value mono muted">{contest?.siteContestId ?? "—"}</div>
+            </div>
+
+            {analysis?.stackSummary ? (
+              <div class="section">
+                <div class="sectionTitle">Stack</div>
+                <div class="mono">{analysis.stackSummary}</div>
+              </div>
+            ) : null}
+
+            {analysis?.uniquenessNotes ? (
+              <div class="section">
+                <div class="sectionTitle">Why it won</div>
+                <pre class="notes">{analysis.uniquenessNotes}</pre>
+              </div>
+            ) : null}
+          </section>
+        </section>
       </>
     )}
   </main>
 </Layout>
+
+<style>
+  .page { width: 100%; max-width: 100%; padding: 18px 18px; }
+
+  .top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .titleBlock { min-width: 0; }
+
+  .h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: rgba(255,255,255,0.94);
+  }
+
+  .dot { color: rgba(255,255,255,0.45); }
+
+  .sub {
+    margin: 8px 0 0;
+    color: rgba(255,255,255,0.62);
+    font-size: 13px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    background: #1f1f1f;
+    padding: 14px 14px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
+    max-width: 980px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 12px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .row:first-of-type { border-top: 0; padding-top: 0; }
+
+  .label {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .value { color: rgba(255,255,255,0.88); font-weight: 800; }
+
+  .section { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+
+  .sectionTitle {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+    margin-bottom: 8px;
+  }
+
+  .notes {
+    margin: 0;
+    padding: 12px 12px;
+    border-radius: 12px;
+    background: #141414;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.78);
+    white-space: pre-wrap;
+    line-height: 1.65;
+    font-family: inherit;
+  }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 700;
+  }
+
+  .muted { color: rgba(255,255,255,0.62); }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #1f1f1f;
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    font-weight: 900;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+    white-space: nowrap;
+  }
+
+  .back:hover { background: #232323; border-color: rgba(255,255,255,0.14); transform: translateY(-1px); }
+  .back:active { transform: translateY(0px); }
+
+  @media (max-width: 720px) {
+    .top { flex-direction: column; align-items: stretch; }
+    .row { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>

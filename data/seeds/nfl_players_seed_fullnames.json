@@ -1,0 +1,3122 @@
+[
+  {
+    "sport": "NFL",
+    "name": "Jacoby Brissett",
+    "position": "QB",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "CeeDee Lamb",
+    "position": "WR",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dak Prescott",
+    "position": "QB",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "M. Harrison Jr.",
+    "position": "WR",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cowboys",
+    "position": "DST",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cardinals",
+    "position": "DST",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Josh Jacobs",
+    "position": "RB",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Saquon Barkley",
+    "position": "RB",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "D. Smith",
+    "position": "WR",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dontayvion Wicks",
+    "position": "WR",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Packers",
+    "position": "DST",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Eagles",
+    "position": "DST",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "George Pickens",
+    "position": "WR",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Brock Bowers",
+    "position": "TE",
+    "teamAbbreviation": "LV"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tre Tucker",
+    "position": "WR",
+    "teamAbbreviation": "LV"
+  },
+  {
+    "sport": "NFL",
+    "name": "Hunter Luepke",
+    "position": "RB",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Christian McCaffrey",
+    "position": "RB",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Brock Purdy",
+    "position": "QB",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "George Kittle",
+    "position": "TE",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jauan Jennings",
+    "position": "WR",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "49ers",
+    "position": "DST",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Eddy Pineiro",
+    "position": "K",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Chuba Hubbard",
+    "position": "RB",
+    "teamAbbreviation": "CAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Drake Maye",
+    "position": "QB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rhamondre Stevenson",
+    "position": "RB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Andy Borregales",
+    "position": "K",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jaxson Dart",
+    "position": "QB",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Darius Slayton",
+    "position": "WR",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Devin Singletary",
+    "position": "RB",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Malik Nabers",
+    "position": "WR",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cam Skattebo",
+    "position": "RB",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Wan'Dale Robinson",
+    "position": "WR",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Justin Herbert",
+    "position": "QB",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ladd McConkey",
+    "position": "WR",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kimani Vidal",
+    "position": "RB",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cameron Dicker",
+    "position": "K",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Chargers",
+    "position": "DST",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "A. Brown",
+    "position": "WR",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jalen Hurts",
+    "position": "QB",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dallas Goedert",
+    "position": "TE",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jake Elliott",
+    "position": "K",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jahan Dotson",
+    "position": "WR",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "De'Von Achane",
+    "position": "RB",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tua Tagovailoa",
+    "position": "QB",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "T. Hill",
+    "position": "WR",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ollie Gordon II",
+    "position": "RB",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Greg Dulcich",
+    "position": "TE",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Darren Waller",
+    "position": "TE",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Aaron Rodgers",
+    "position": "QB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Russell Wilson",
+    "position": "QB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Pat Freiermuth",
+    "position": "TE",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jaylen Warren",
+    "position": "RB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Chris Boswell",
+    "position": "K",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "C. Austin III",
+    "position": "WR",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Devontez Walker",
+    "position": "WR",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kenneth Gainwell",
+    "position": "RB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Smith",
+    "position": "WR",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "B. Robinson",
+    "position": "RB",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tyler Allgeier",
+    "position": "RB",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "K. Pitts Sr.",
+    "position": "TE",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Michael Penix Jr.",
+    "position": "QB",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kirk Cousins",
+    "position": "QB",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Zane Gonzalez",
+    "position": "K",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Falcons",
+    "position": "DST",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Derrick Henry",
+    "position": "RB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Lamar Jackson",
+    "position": "QB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Zay Flowers",
+    "position": "WR",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "M. Andrews",
+    "position": "TE",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Isaiah Likely",
+    "position": "TE",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rasheen Ali",
+    "position": "RB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tyler Huntley",
+    "position": "QB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tyler Loop",
+    "position": "K",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ravens",
+    "position": "DST",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Keon Coleman",
+    "position": "WR",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Josh Allen",
+    "position": "QB",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dalton Kincaid",
+    "position": "TE",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Khalil Shakir",
+    "position": "WR",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Cook III",
+    "position": "RB",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "S. Diggs",
+    "position": "WR",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Jefferson",
+    "position": "WR",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. McCarthy",
+    "position": "QB",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jalen Nailor",
+    "position": "WR",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Williams",
+    "position": "RB",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "John Parker Romo",
+    "position": "K",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jared Goff",
+    "position": "QB",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Sam LaPorta",
+    "position": "TE",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Williams",
+    "position": "WR",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jahmyr Gibbs",
+    "position": "RB",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ryan Flournoy",
+    "position": "WR",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Patrick Mahomes",
+    "position": "QB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Travis Kelce",
+    "position": "TE",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kareem Hunt",
+    "position": "RB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Harrison Butker",
+    "position": "K",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "H. Brown",
+    "position": "WR",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "JuJu Smith-Schuster",
+    "position": "WR",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Woody Marks",
+    "position": "RB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Chiefs",
+    "position": "DST",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Nico Collins",
+    "position": "WR",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "C.J. Stroud",
+    "position": "QB",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Davis Mills",
+    "position": "QB",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ka'imi Fairbairn",
+    "position": "K",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Higgins",
+    "position": "WR",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Texans",
+    "position": "DST",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Christian Kirk",
+    "position": "WR",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Matthew Stafford",
+    "position": "QB",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "K. Williams",
+    "position": "RB",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Puka Nacua",
+    "position": "WR",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "D. Adams",
+    "position": "WR",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Colby Parkinson",
+    "position": "TE",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Terrance Ferguson",
+    "position": "TE",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rams",
+    "position": "DST",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jayden Daniels",
+    "position": "QB",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Terry McLaurin",
+    "position": "WR",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Zach Ertz",
+    "position": "TE",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Marcus Mariota",
+    "position": "QB",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Deebo Samuel Sr.",
+    "position": "WR",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Sam Darnold",
+    "position": "QB",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jaxon Smith-Njigba",
+    "position": "WR",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tory Horton",
+    "position": "WR",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "AJ Barner",
+    "position": "TE",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "C. White",
+    "position": "WR",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kenneth Walker III",
+    "position": "RB",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jason Myers",
+    "position": "K",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Seahawks",
+    "position": "DST",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Bo Nix",
+    "position": "QB",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Troy Franklin",
+    "position": "WR",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "RJ Harvey",
+    "position": "RB",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Adam Trautman",
+    "position": "TE",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Broncos",
+    "position": "DST",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ja'Marr Chase",
+    "position": "WR",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Joe Burrow",
+    "position": "QB",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "C. Brown",
+    "position": "RB",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Evan McPherson",
+    "position": "K",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Bengals",
+    "position": "DST",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ashton Jeanty",
+    "position": "RB",
+    "teamAbbreviation": "LV"
+  },
+  {
+    "sport": "NFL",
+    "name": "A. Jones Sr.",
+    "position": "RB",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Adonai Mitchell",
+    "position": "WR",
+    "teamAbbreviation": "NYJ"
+  },
+  {
+    "sport": "NFL",
+    "name": "A. St. Brown",
+    "position": "WR",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "B. Hall",
+    "position": "RB",
+    "teamAbbreviation": "NYJ"
+  },
+  {
+    "sport": "NFL",
+    "name": "Bucky Irving",
+    "position": "RB",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Bills",
+    "position": "DST",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Browns",
+    "position": "DST",
+    "teamAbbreviation": "CLE"
+  },
+  {
+    "sport": "NFL",
+    "name": "C. Brown",
+    "position": "RB",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Colston Loveland",
+    "position": "TE",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Chris Olave",
+    "position": "WR",
+    "teamAbbreviation": "NO"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cade Otton",
+    "position": "TE",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Caleb Williams",
+    "position": "QB",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Colts",
+    "position": "DST",
+    "teamAbbreviation": "IND"
+  },
+  {
+    "sport": "NFL",
+    "name": "Drake London",
+    "position": "WR",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "DK Metcalf",
+    "position": "WR",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dalton Schultz",
+    "position": "TE",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Emeka Egbuka",
+    "position": "WR",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Emanuel Wilson",
+    "position": "RB",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Greg Dortch",
+    "position": "WR",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "George Pickens",
+    "position": "WR",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Giants",
+    "position": "DST",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Harold Fannin Jr.",
+    "position": "TE",
+    "teamAbbreviation": "CLE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Hunter Henry",
+    "position": "TE",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jacoby Brissett",
+    "position": "QB",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jake Ferguson",
+    "position": "TE",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Justin Fields",
+    "position": "QB",
+    "teamAbbreviation": "NYJ"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Johnson",
+    "position": "TE",
+    "teamAbbreviation": "NO"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Taylor",
+    "position": "RB",
+    "teamAbbreviation": "IND"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jake Tonges",
+    "position": "TE",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jaylen Waddle",
+    "position": "WR",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Williams",
+    "position": "RB",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jameis Winston",
+    "position": "QB",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jets",
+    "position": "DST",
+    "teamAbbreviation": "NYJ"
+  },
+  {
+    "sport": "NFL",
+    "name": "K. Allen",
+    "position": "WR",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kayshon Boutte",
+    "position": "WR",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "K. Monangai",
+    "position": "RB",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kimani Vidal",
+    "position": "RB",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Lions",
+    "position": "DST",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Michael Mayer",
+    "position": "TE",
+    "teamAbbreviation": "LV"
+  },
+  {
+    "sport": "NFL",
+    "name": "M. Pittman Jr.",
+    "position": "WR",
+    "teamAbbreviation": "IND"
+  },
+  {
+    "sport": "NFL",
+    "name": "M. Wilson",
+    "position": "WR",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Oronde Gadsden II",
+    "position": "TE",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Olamide Zaccheaus",
+    "position": "WR",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Parker Washington",
+    "position": "WR",
+    "teamAbbreviation": "JAX"
+  },
+  {
+    "sport": "NFL",
+    "name": "Panthers",
+    "position": "DST",
+    "teamAbbreviation": "CAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Patriots",
+    "position": "DST",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Quentin Johnston",
+    "position": "WR",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "R. Davis",
+    "position": "RB",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rico Dowdle",
+    "position": "RB",
+    "teamAbbreviation": "CAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rome Odunze",
+    "position": "WR",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ricky Pearsall",
+    "position": "WR",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rashee Rice",
+    "position": "WR",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Russell Wilson",
+    "position": "QB",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Raiders",
+    "position": "DST",
+    "teamAbbreviation": "LV"
+  },
+  {
+    "sport": "NFL",
+    "name": "Saints",
+    "position": "DST",
+    "teamAbbreviation": "NO"
+  },
+  {
+    "sport": "NFL",
+    "name": "Steelers",
+    "position": "DST",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "T. Henderson",
+    "position": "RB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "T. Johnson",
+    "position": "WR",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Trevor Lawrence",
+    "position": "QB",
+    "teamAbbreviation": "JAX"
+  },
+  {
+    "sport": "NFL",
+    "name": "Trey McBride",
+    "position": "TE",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tetairoa McMillan",
+    "position": "WR",
+    "teamAbbreviation": "CAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tony Pollard",
+    "position": "RB",
+    "teamAbbreviation": "TEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tyquan Thornton",
+    "position": "WR",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tyrone Tracy Jr.",
+    "position": "RB",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Titans",
+    "position": "DST",
+    "teamAbbreviation": "TEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Woody Marks",
+    "position": "RB",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Xavier Hutchinson",
+    "position": "WR",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Geno Smith",
+    "position": "QB",
+    "teamAbbreviation": "LV"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Taylor",
+    "position": "RB",
+    "teamAbbreviation": "IND"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jordan Mason",
+    "position": "RB",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ricky Pearsall",
+    "position": "WR",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "DK Metcalf",
+    "position": "WR",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tre Tucker",
+    "position": "WR",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Brock Bowers",
+    "position": "TE",
+    "teamAbbreviation": "LV"
+  },
+  {
+    "sport": "NFL",
+    "name": "Christian McCaffrey",
+    "position": "RB",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Vikings",
+    "position": "DST",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Baker Mayfield",
+    "position": "QB",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "A. Brown",
+    "position": "WR",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jalen Hurts",
+    "position": "QB",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "D. Smith",
+    "position": "WR",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "D'Andre Swift",
+    "position": "RB",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "K. Monangai",
+    "position": "RB",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cole Kmet",
+    "position": "TE",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Bears",
+    "position": "DST",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Jefferson",
+    "position": "WR",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Caleb Williams",
+    "position": "QB",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. McCarthy",
+    "position": "QB",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rome Odunze",
+    "position": "WR",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "A. Jones Sr.",
+    "position": "RB",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "M. Andrews",
+    "position": "TE",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Lamar Jackson",
+    "position": "QB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jahmyr Gibbs",
+    "position": "RB",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "A. St. Brown",
+    "position": "WR",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "David Montgomery",
+    "position": "RB",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rashod Bateman",
+    "position": "WR",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Patrick Mahomes",
+    "position": "QB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Trevor Lawrence",
+    "position": "QB",
+    "teamAbbreviation": "JAX"
+  },
+  {
+    "sport": "NFL",
+    "name": "Travis Kelce",
+    "position": "TE",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tyquan Thornton",
+    "position": "WR",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kareem Hunt",
+    "position": "RB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Parker Washington",
+    "position": "WR",
+    "teamAbbreviation": "JAX"
+  },
+  {
+    "sport": "NFL",
+    "name": "Patrick Mahomes",
+    "position": "QB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rashee Rice",
+    "position": "WR",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Terry McLaurin",
+    "position": "WR",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Travis Kelce",
+    "position": "TE",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jeremy McNichols",
+    "position": "RB",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kareem Hunt",
+    "position": "RB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jacoby Brissett",
+    "position": "QB",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "CeeDee Lamb",
+    "position": "WR",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dak Prescott",
+    "position": "QB",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "M. Harrison Jr.",
+    "position": "WR",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cowboys",
+    "position": "DST",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cardinals",
+    "position": "DST",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Christian McCaffrey",
+    "position": "RB",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "George Kittle",
+    "position": "TE",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jauan Jennings",
+    "position": "WR",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Matt Gay",
+    "position": "K",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "49ers",
+    "position": "DST",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Chuba Hubbard",
+    "position": "RB",
+    "teamAbbreviation": "CAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Drake Maye",
+    "position": "QB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jaxson Dart",
+    "position": "QB",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Darius Slayton",
+    "position": "WR",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rhamondre Stevenson",
+    "position": "RB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Andy Borregales",
+    "position": "K",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Devin Singletary",
+    "position": "RB",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Saquon Barkley",
+    "position": "RB",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Justin Herbert",
+    "position": "QB",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "A. Brown",
+    "position": "WR",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dallas Goedert",
+    "position": "TE",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cameron Dicker",
+    "position": "K",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jake Elliott",
+    "position": "K",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Darren Waller",
+    "position": "TE",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "De'Von Achane",
+    "position": "RB",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Aaron Rodgers",
+    "position": "QB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tua Tagovailoa",
+    "position": "QB",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kenneth Gainwell",
+    "position": "RB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Smith",
+    "position": "WR",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Alec Pierce",
+    "position": "WR",
+    "teamAbbreviation": "IND"
+  },
+  {
+    "sport": "NFL",
+    "name": "Christian McCaffrey",
+    "position": "RB",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Brock Purdy",
+    "position": "QB",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "George Kittle",
+    "position": "TE",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "49ers",
+    "position": "DST",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Demarcus Robinson",
+    "position": "WR",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "B. Robinson",
+    "position": "RB",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Matthew Stafford",
+    "position": "QB",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "K. Williams",
+    "position": "RB",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Zane Gonzalez",
+    "position": "K",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Terrance Ferguson",
+    "position": "TE",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Falcons",
+    "position": "DST",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Derrick Henry",
+    "position": "RB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Malik Willis",
+    "position": "QB",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tyler Huntley",
+    "position": "QB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Christian Watson",
+    "position": "WR",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tyler Loop",
+    "position": "K",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rasheen Ali",
+    "position": "RB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Seahawks",
+    "position": "DST",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Drake Maye",
+    "position": "QB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kenneth Walker III",
+    "position": "RB",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rhamondre Stevenson",
+    "position": "RB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jason Myers",
+    "position": "K",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Mack Hollins",
+    "position": "WR",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ja'Marr Chase",
+    "position": "WR",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Joe Burrow",
+    "position": "QB",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "C. Brown",
+    "position": "RB",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Evan McPherson",
+    "position": "K",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Bengals",
+    "position": "DST",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Isaiah Likely",
+    "position": "TE",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ja'Marr Chase",
+    "position": "WR",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Joe Burrow",
+    "position": "QB",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "C. Brown",
+    "position": "RB",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Evan McPherson",
+    "position": "K",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Bengals",
+    "position": "DST",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Isaiah Likely",
+    "position": "TE",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Keon Coleman",
+    "position": "WR",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Josh Allen",
+    "position": "QB",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Derrick Henry",
+    "position": "RB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Zay Flowers",
+    "position": "WR",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dalton Kincaid",
+    "position": "TE",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tyler Loop",
+    "position": "K",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "B. Robinson",
+    "position": "RB",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Jefferson",
+    "position": "WR",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "K. Pitts Sr.",
+    "position": "TE",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "John Parker Romo",
+    "position": "K",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Falcons",
+    "position": "DST",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tyler Allgeier",
+    "position": "RB",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Christian McCaffrey",
+    "position": "RB",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "B. Robinson",
+    "position": "RB",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Michael Penix Jr.",
+    "position": "QB",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "K. Pitts Sr.",
+    "position": "TE",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "49ers",
+    "position": "DST",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Luke Farrell",
+    "position": "TE",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Patrick Mahomes",
+    "position": "QB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jared Goff",
+    "position": "QB",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Sam LaPorta",
+    "position": "TE",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Williams",
+    "position": "WR",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "H. Brown",
+    "position": "WR",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "JuJu Smith-Schuster",
+    "position": "WR",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "S. Diggs",
+    "position": "WR",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Josh Allen",
+    "position": "QB",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Khalil Shakir",
+    "position": "WR",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dalton Kincaid",
+    "position": "TE",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rhamondre Stevenson",
+    "position": "RB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Andy Borregales",
+    "position": "K",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Emanuel Wilson",
+    "position": "RB",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Josh Jacobs",
+    "position": "RB",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Love",
+    "position": "QB",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "George Pickens",
+    "position": "WR",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dak Prescott",
+    "position": "QB",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Romeo Doubs",
+    "position": "WR",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cam Skattebo",
+    "position": "RB",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Malik Nabers",
+    "position": "WR",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Patrick Mahomes",
+    "position": "QB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Harrison Butker",
+    "position": "K",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Chiefs",
+    "position": "DST",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tyquan Thornton",
+    "position": "WR",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Williams",
+    "position": "RB",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Saquon Barkley",
+    "position": "RB",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jalen Hurts",
+    "position": "QB",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "CeeDee Lamb",
+    "position": "WR",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Brandon Aubrey",
+    "position": "K",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jahan Dotson",
+    "position": "WR",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tucker Kraft",
+    "position": "TE",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jayden Daniels",
+    "position": "QB",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Love",
+    "position": "QB",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Deebo Samuel Sr.",
+    "position": "WR",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Zach Ertz",
+    "position": "TE",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Romeo Doubs",
+    "position": "WR",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dalton Kincaid",
+    "position": "TE",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Josh Allen",
+    "position": "QB",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Cook III",
+    "position": "RB",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "T. Hill",
+    "position": "WR",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Khalil Shakir",
+    "position": "WR",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ollie Gordon II",
+    "position": "RB",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kyler Murray",
+    "position": "QB",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Sam Darnold",
+    "position": "QB",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "M. Harrison Jr.",
+    "position": "WR",
+    "teamAbbreviation": "ARI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Zach Charbonnet",
+    "position": "RB",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jason Myers",
+    "position": "K",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "AJ Barner",
+    "position": "TE",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "K. Williams",
+    "position": "RB",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Christian McCaffrey",
+    "position": "RB",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Matthew Stafford",
+    "position": "QB",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Eddy Pineiro",
+    "position": "K",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kendrick Bourne",
+    "position": "WR",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jake Tonges",
+    "position": "TE",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cam Skattebo",
+    "position": "RB",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jalen Hurts",
+    "position": "QB",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jaxson Dart",
+    "position": "QB",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Wan'Dale Robinson",
+    "position": "WR",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dallas Goedert",
+    "position": "TE",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Lil'Jordan Humphrey",
+    "position": "WR",
+    "teamAbbreviation": "NYG"
+  },
+  {
+    "sport": "NFL",
+    "name": "Pat Freiermuth",
+    "position": "TE",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ja'Marr Chase",
+    "position": "WR",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Aaron Rodgers",
+    "position": "QB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Joe Flacco",
+    "position": "QB",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jaylen Warren",
+    "position": "RB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Evan McPherson",
+    "position": "K",
+    "teamAbbreviation": "CIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Lamar Jackson",
+    "position": "QB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "De'Von Achane",
+    "position": "RB",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Derrick Henry",
+    "position": "RB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "M. Andrews",
+    "position": "TE",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ravens",
+    "position": "DST",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Greg Dulcich",
+    "position": "TE",
+    "teamAbbreviation": "MIA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Troy Franklin",
+    "position": "WR",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Bo Nix",
+    "position": "QB",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ashton Jeanty",
+    "position": "RB",
+    "teamAbbreviation": "LV"
+  },
+  {
+    "sport": "NFL",
+    "name": "J.K. Dobbins",
+    "position": "RB",
+    "teamAbbreviation": "LV"
+  },
+  {
+    "sport": "NFL",
+    "name": "Broncos",
+    "position": "DST",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Raiders",
+    "position": "DST",
+    "teamAbbreviation": "LV"
+  },
+  {
+    "sport": "NFL",
+    "name": "T. Henderson",
+    "position": "RB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Drake Maye",
+    "position": "QB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "S. Diggs",
+    "position": "WR",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Justin Fields",
+    "position": "QB",
+    "teamAbbreviation": "NYJ"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Metchie III",
+    "position": "WR",
+    "teamAbbreviation": "NYJ"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jeremy Ruckert",
+    "position": "TE",
+    "teamAbbreviation": "NYJ"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Cook III",
+    "position": "RB",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Davis Mills",
+    "position": "QB",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Khalil Shakir",
+    "position": "WR",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ka'imi Fairbairn",
+    "position": "K",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Higgins",
+    "position": "WR",
+    "teamAbbreviation": "BUF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Texans",
+    "position": "DST",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ryan Flournoy",
+    "position": "WR",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jahmyr Gibbs",
+    "position": "RB",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dak Prescott",
+    "position": "QB",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "CeeDee Lamb",
+    "position": "WR",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ja. Williams",
+    "position": "WR",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Brandon Aubrey",
+    "position": "K",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "K. Pitts Sr.",
+    "position": "TE",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "B. Robinson",
+    "position": "RB",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Mike Evans",
+    "position": "WR",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kirk Cousins",
+    "position": "QB",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "C. Godwin Jr.",
+    "position": "WR",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "D. Sills V",
+    "position": "WR",
+    "teamAbbreviation": "ATL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tucker Kraft",
+    "position": "TE",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Love",
+    "position": "QB",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Aaron Rodgers",
+    "position": "QB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Romeo Doubs",
+    "position": "WR",
+    "teamAbbreviation": "GB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Chris Boswell",
+    "position": "K",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "R. Wilson",
+    "position": "WR",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Sam Darnold",
+    "position": "QB",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jaxon Smith-Njigba",
+    "position": "WR",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jayden Daniels",
+    "position": "QB",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tory Horton",
+    "position": "WR",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "A. Barner",
+    "position": "RB",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "C. White",
+    "position": "WR",
+    "teamAbbreviation": "SEA"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ladd McConkey",
+    "position": "WR",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Justin Herbert",
+    "position": "QB",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kimani Vidal",
+    "position": "RB",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Cameron Dicker",
+    "position": "K",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Chargers",
+    "position": "DST",
+    "teamAbbreviation": "LAC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ja. Williams",
+    "position": "WR",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jahmyr Gibbs",
+    "position": "RB",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jalen Hurts",
+    "position": "QB",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "A. Brown",
+    "position": "WR",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jake Elliott",
+    "position": "K",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Eagles",
+    "position": "DST",
+    "teamAbbreviation": "PHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "D. Adams",
+    "position": "WR",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Puka Nacua",
+    "position": "WR",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Matthew Stafford",
+    "position": "QB",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rams",
+    "position": "DST",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Tez Johnson",
+    "position": "WR",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Colby Parkinson",
+    "position": "TE",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Zach Ertz",
+    "position": "TE",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Bo Nix",
+    "position": "QB",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Marcus Mariota",
+    "position": "QB",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "RJ Harvey",
+    "position": "RB",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Terry McLaurin",
+    "position": "WR",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Adam Trautman",
+    "position": "TE",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Nico Collins",
+    "position": "WR",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "C.J. Stroud",
+    "position": "QB",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Woody Marks",
+    "position": "RB",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kareem Hunt",
+    "position": "RB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ka'imi Fairbairn",
+    "position": "K",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Texans",
+    "position": "DST",
+    "teamAbbreviation": "HOU"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jalen Nailor",
+    "position": "WR",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Dak Prescott",
+    "position": "QB",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "CeeDee Lamb",
+    "position": "WR",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Williams",
+    "position": "RB",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. McCarthy",
+    "position": "QB",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Brandon Aubrey",
+    "position": "K",
+    "teamAbbreviation": "DAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Luther Burden III",
+    "position": "WR",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Christian McCaffrey",
+    "position": "RB",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "Brock Purdy",
+    "position": "QB",
+    "teamAbbreviation": "SF"
+  },
+  {
+    "sport": "NFL",
+    "name": "D'Andre Swift",
+    "position": "RB",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Colston Loveland",
+    "position": "TE",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jake Tonges",
+    "position": "TE",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Zay Flowers",
+    "position": "WR",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Lamar Jackson",
+    "position": "QB",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Aaron Rodgers",
+    "position": "QB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kenneth Gainwell",
+    "position": "RB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "C. Austin III",
+    "position": "WR",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Devontez Walker",
+    "position": "WR",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jared Goff",
+    "position": "QB",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "T. Henderson",
+    "position": "RB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "D'Andre Swift",
+    "position": "RB",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Puka Nacua",
+    "position": "WR",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "A. St. Brown",
+    "position": "WR",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "J. Williams",
+    "position": "WR",
+    "teamAbbreviation": "DET"
+  },
+  {
+    "sport": "NFL",
+    "name": "Colby Parkinson",
+    "position": "TE",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ben Sinnott",
+    "position": "TE",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Bears",
+    "position": "DST",
+    "teamAbbreviation": "CHI"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ryan Fitzpatrick",
+    "position": "QB",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "James Conner",
+    "position": "RB",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Alvin Kamara",
+    "position": "RB",
+    "teamAbbreviation": "NO"
+  },
+  {
+    "sport": "NFL",
+    "name": "Mike Evans",
+    "position": "WR",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "D. Jackson",
+    "position": "WR",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "M. Thomas",
+    "position": "WR",
+    "teamAbbreviation": "NO"
+  },
+  {
+    "sport": "NFL",
+    "name": "Jordan Reed",
+    "position": "TE",
+    "teamAbbreviation": "WAS"
+  },
+  {
+    "sport": "NFL",
+    "name": "Emmanuel Sanders",
+    "position": "WR",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Ravens",
+    "position": "DST",
+    "teamAbbreviation": "BAL"
+  },
+  {
+    "sport": "NFL",
+    "name": "Patrick Mahomes",
+    "position": "QB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Kareem Hunt",
+    "position": "RB",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Christian McCaffrey",
+    "position": "RB",
+    "teamAbbreviation": "CAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "S. Diggs",
+    "position": "WR",
+    "teamAbbreviation": "MIN"
+  },
+  {
+    "sport": "NFL",
+    "name": "JuJu Smith-Schuster",
+    "position": "WR",
+    "teamAbbreviation": "PIT"
+  },
+  {
+    "sport": "NFL",
+    "name": "Sammy Watkins",
+    "position": "WR",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Travis Kelce",
+    "position": "TE",
+    "teamAbbreviation": "KC"
+  },
+  {
+    "sport": "NFL",
+    "name": "Phillip Lindsay",
+    "position": "RB",
+    "teamAbbreviation": "DEN"
+  },
+  {
+    "sport": "NFL",
+    "name": "Buccaneers",
+    "position": "DST",
+    "teamAbbreviation": "TB"
+  },
+  {
+    "sport": "NFL",
+    "name": "Julian Edelman",
+    "position": "WR",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Patriots",
+    "position": "DST",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Brandin Cooks",
+    "position": "WR",
+    "teamAbbreviation": "LAR"
+  },
+  {
+    "sport": "NFL",
+    "name": "Rob Gronkowski",
+    "position": "TE",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "Sony Michel",
+    "position": "RB",
+    "teamAbbreviation": "NE"
+  },
+  {
+    "sport": "NFL",
+    "name": "R. Woods",
+    "position": "WR",
+    "teamAbbreviation": "LAR"
+  }
+]

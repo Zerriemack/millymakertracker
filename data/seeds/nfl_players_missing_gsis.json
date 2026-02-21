@@ -1,0 +1,1610 @@
+[
+  {
+    "id": "cmln7erjc000khjitr7mukinw",
+    "name": "49ers",
+    "position": "DST",
+    "team": {
+      "abbreviation": "SF"
+    }
+  },
+  {
+    "id": "cmlr2zb8x00c6tuitf6eafdwu",
+    "name": "A. Barner",
+    "position": "RB",
+    "team": {
+      "abbreviation": "WAS"
+    }
+  },
+  {
+    "id": "cmln7erjc003bhjit1xmcwydy",
+    "name": "A. Barner",
+    "position": "TE",
+    "team": {
+      "abbreviation": "SEA"
+    }
+  },
+  {
+    "id": "cmln7erjc000phjitdp8puc37",
+    "name": "A. Borregales",
+    "position": "K",
+    "team": {
+      "abbreviation": "NE"
+    }
+  },
+  {
+    "id": "cmln7erjc0011hjit15npml1b",
+    "name": "A. Brown",
+    "position": "WR",
+    "team": {
+      "abbreviation": "PHI"
+    }
+  },
+  {
+    "id": "cmlpud95900addwit85bguqa1",
+    "name": "A. J. Barner",
+    "position": "TE",
+    "team": {
+      "abbreviation": "SEA"
+    }
+  },
+  {
+    "id": "cmln7erjc003qhjitcpuwuxoh",
+    "name": "A. Jeanty",
+    "position": "RB",
+    "team": {
+      "abbreviation": "LV"
+    }
+  },
+  {
+    "id": "cmln7erjc003rhjit1nuwkb9m",
+    "name": "A. Jones Sr.",
+    "position": "RB",
+    "team": {
+      "abbreviation": "MIN"
+    }
+  },
+  {
+    "id": "cmlu89tea00dumaitl677mz5q",
+    "name": "A. Kamara",
+    "position": "RB",
+    "team": {
+      "abbreviation": "NO"
+    }
+  },
+  {
+    "id": "cmln7erjc003shjitgo35q0il",
+    "name": "A. Mitchell",
+    "position": "WR",
+    "team": {
+      "abbreviation": "NYJ"
+    }
+  },
+  {
+    "id": "cmlohr6hk007kc7itytrgnr4i",
+    "name": "A. Pierce",
+    "position": "WR",
+    "team": {
+      "abbreviation": "IND"
+    }
+  },
+  {
+    "id": "cmln7erjc001chjitzqod8qet",
+    "name": "A. Rodgers",
+    "position": "QB",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmln7erjc003thjitr44evbey",
+    "name": "A. St. Brown",
+    "position": "WR",
+    "team": {
+      "abbreviation": "DET"
+    }
+  },
+  {
+    "id": "cmln7erjc003jhjitf56apt6n",
+    "name": "A. Trautman",
+    "position": "TE",
+    "team": {
+      "abbreviation": "DEN"
+    }
+  },
+  {
+    "id": "cmlpu8sud009ucbitbihns09x",
+    "name": "B. Aubrey",
+    "position": "K",
+    "team": {
+      "abbreviation": "DAL"
+    }
+  },
+  {
+    "id": "cmln7erjc000dhjito1xt12oo",
+    "name": "B. Bowers",
+    "position": "TE",
+    "team": {
+      "abbreviation": "LV"
+    }
+  },
+  {
+    "id": "cmlucit4a00ecidithy2zz8dt",
+    "name": "B. Cooks",
+    "position": "WR",
+    "team": {
+      "abbreviation": "LAR"
+    }
+  },
+  {
+    "id": "cmln7erjc003uhjitzvw3tm5o",
+    "name": "B. Hall",
+    "position": "RB",
+    "team": {
+      "abbreviation": "NYJ"
+    }
+  },
+  {
+    "id": "cmln7erjc003vhjitdq6g51e7",
+    "name": "B. Irving",
+    "position": "RB",
+    "team": {
+      "abbreviation": "TB"
+    }
+  },
+  {
+    "id": "cmln7ojd3005vmdithoxqzio7",
+    "name": "B. Mayfield",
+    "position": "QB",
+    "team": {
+      "abbreviation": "TB"
+    }
+  },
+  {
+    "id": "cmln7erjc003ghjitbaspzde3",
+    "name": "B. Nix",
+    "position": "QB",
+    "team": {
+      "abbreviation": "DEN"
+    }
+  },
+  {
+    "id": "cmln7erjc001lhjiti22nsodu",
+    "name": "B. Robinson",
+    "position": "RB",
+    "team": {
+      "abbreviation": "ATL"
+    }
+  },
+  {
+    "id": "cmlu36xg800dqmzitlewz2d6x",
+    "name": "B. Sinnott",
+    "position": "TE",
+    "team": {
+      "abbreviation": "WAS"
+    }
+  },
+  {
+    "id": "cmlo58dl700623titfc9wqyns",
+    "name": "Bears",
+    "position": "DST",
+    "team": {
+      "abbreviation": "CHI"
+    }
+  },
+  {
+    "id": "cmln7erjc003phjitshax7ciy",
+    "name": "Bengals",
+    "position": "DST",
+    "team": {
+      "abbreviation": "CIN"
+    }
+  },
+  {
+    "id": "cmln7erjc003whjit9v7dizlp",
+    "name": "Bills",
+    "position": "DST",
+    "team": {
+      "abbreviation": "BUF"
+    }
+  },
+  {
+    "id": "cmln7erjc003khjit70m31epo",
+    "name": "Broncos",
+    "position": "DST",
+    "team": {
+      "abbreviation": "DEN"
+    }
+  },
+  {
+    "id": "cmln7erjc003xhjitfetuhs3h",
+    "name": "Browns",
+    "position": "DST",
+    "team": {
+      "abbreviation": "CLE"
+    }
+  },
+  {
+    "id": "cmlu89tea00e9maitwv5gu9jb",
+    "name": "Buccaneers",
+    "position": "DST",
+    "team": {
+      "abbreviation": "TB"
+    }
+  },
+  {
+    "id": "cmln7erjc001hhjitb5orxx63",
+    "name": "C. Austin III",
+    "position": "WR",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmln7erjc003nhjitzysokftm",
+    "name": "C. Brown",
+    "position": "RB",
+    "team": {
+      "abbreviation": "CIN"
+    }
+  },
+  {
+    "id": "cmlpv950500buxjitls8xtrbt",
+    "name": "C. Godwin Jr.",
+    "position": "WR",
+    "team": {
+      "abbreviation": "TB"
+    }
+  },
+  {
+    "id": "cmln7erjc000mhjit8xdx8808",
+    "name": "C. Hubbard",
+    "position": "RB",
+    "team": {
+      "abbreviation": "CAR"
+    }
+  },
+  {
+    "id": "cmln82fbf0061lhitv6f7mzkk",
+    "name": "C. Kmet",
+    "position": "TE",
+    "team": {
+      "abbreviation": "CHI"
+    }
+  },
+  {
+    "id": "cmln7erjc0001hjitu3cxqtpw",
+    "name": "C. Lamb",
+    "position": "WR",
+    "team": {
+      "abbreviation": "DAL"
+    }
+  },
+  {
+    "id": "cmln7erjc003zhjit59t2yg9a",
+    "name": "C. Loveland",
+    "position": "TE",
+    "team": {
+      "abbreviation": "CHI"
+    }
+  },
+  {
+    "id": "cmlu89tea00e3maitllirxz6r",
+    "name": "C. McCaffrey",
+    "position": "RB",
+    "team": {
+      "abbreviation": "CAR"
+    }
+  },
+  {
+    "id": "cmln7erjc0040hjitz7t8okdf",
+    "name": "C. Olave",
+    "position": "WR",
+    "team": {
+      "abbreviation": "NO"
+    }
+  },
+  {
+    "id": "cmln7erjc0041hjit4qnso8kn",
+    "name": "C. Otton",
+    "position": "TE",
+    "team": {
+      "abbreviation": "TB"
+    }
+  },
+  {
+    "id": "cmlppjk9y007zhaity9cvyjkc",
+    "name": "C. Watson",
+    "position": "WR",
+    "team": {
+      "abbreviation": "GB"
+    }
+  },
+  {
+    "id": "cmln7erjc003chjit94pkl3zn",
+    "name": "C. White",
+    "position": "WR",
+    "team": {
+      "abbreviation": "SEA"
+    }
+  },
+  {
+    "id": "cmln7erjc0042hjitwv7nrisu",
+    "name": "C. Williams",
+    "position": "QB",
+    "team": {
+      "abbreviation": "CHI"
+    }
+  },
+  {
+    "id": "cmln7erjc0005hjitm4cv7ftw",
+    "name": "Cardinals",
+    "position": "DST",
+    "team": {
+      "abbreviation": "ARI"
+    }
+  },
+  {
+    "id": "cmln7erjc0010hjitc72hp2mo",
+    "name": "Chargers",
+    "position": "DST",
+    "team": {
+      "abbreviation": "LAC"
+    }
+  },
+  {
+    "id": "cmln7erjc002ohjitn9mouwsl",
+    "name": "Chiefs",
+    "position": "DST",
+    "team": {
+      "abbreviation": "KC"
+    }
+  },
+  {
+    "id": "cmln7erjc0043hjitvwq6pl4z",
+    "name": "Colts",
+    "position": "DST",
+    "team": {
+      "abbreviation": "IND"
+    }
+  },
+  {
+    "id": "cmln7erjc0004hjitr5b832os",
+    "name": "Cowboys",
+    "position": "DST",
+    "team": {
+      "abbreviation": "DAL"
+    }
+  },
+  {
+    "id": "cmln7erjc002zhjitgqyu58pq",
+    "name": "D. Adams",
+    "position": "WR",
+    "team": {
+      "abbreviation": "LAR"
+    }
+  },
+  {
+    "id": "cmlr2zb8x00cjtuit7fht8x23",
+    "name": "D. Adams",
+    "position": "WR",
+    "team": {
+      "abbreviation": "TB"
+    }
+  },
+  {
+    "id": "cmln7erjc001shjit5xuyn0ma",
+    "name": "D. Henry",
+    "position": "RB",
+    "team": {
+      "abbreviation": "BAL"
+    }
+  },
+  {
+    "id": "cmlu89tea00dwmait9y2aq4x4",
+    "name": "D. Jackson",
+    "position": "WR",
+    "team": {
+      "abbreviation": "TB"
+    }
+  },
+  {
+    "id": "cmln7erjc0044hjitd6aq2y2d",
+    "name": "D. London",
+    "position": "WR",
+    "team": {
+      "abbreviation": "ATL"
+    }
+  },
+  {
+    "id": "cmln7erjc0045hjitp1x2vi51",
+    "name": "D. Metcalf",
+    "position": "WR",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmlo5cqkz006chbitu9v3p4fz",
+    "name": "D. Montgomery",
+    "position": "RB",
+    "team": {
+      "abbreviation": "DET"
+    }
+  },
+  {
+    "id": "cmlohr6hk007pc7it8u6gy7rx",
+    "name": "D. Robinson",
+    "position": "WR",
+    "team": {
+      "abbreviation": "SF"
+    }
+  },
+  {
+    "id": "cmln7erjc0046hjitg3naynz1",
+    "name": "D. Schultz",
+    "position": "TE",
+    "team": {
+      "abbreviation": "HOU"
+    }
+  },
+  {
+    "id": "cmlpv950500bvxjitvtbgt3vo",
+    "name": "D. Sills V",
+    "position": "WR",
+    "team": {
+      "abbreviation": "ATL"
+    }
+  },
+  {
+    "id": "cmln7erjc0008hjit2rj1afid",
+    "name": "D. Smith",
+    "position": "WR",
+    "team": {
+      "abbreviation": "PHI"
+    }
+  },
+  {
+    "id": "cmln82fbf005zlhitce7ksluq",
+    "name": "D. Swift",
+    "position": "RB",
+    "team": {
+      "abbreviation": "CHI"
+    }
+  },
+  {
+    "id": "cmln7erjc001ihjit41x1rnuv",
+    "name": "D. Walker",
+    "position": "WR",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmlr3bnth00dibrit4i2syygl",
+    "name": "D. Walker",
+    "position": "WR",
+    "team": {
+      "abbreviation": "BAL"
+    }
+  },
+  {
+    "id": "cmln7erjc0009hjithacjfyoz",
+    "name": "D. Wicks",
+    "position": "WR",
+    "team": {
+      "abbreviation": "GB"
+    }
+  },
+  {
+    "id": "cmln7erjc0047hjit4npmr69x",
+    "name": "E. Egbuka",
+    "position": "WR",
+    "team": {
+      "abbreviation": "TB"
+    }
+  },
+  {
+    "id": "cmln7erjc003ohjitxbflhalz",
+    "name": "E. McPherson",
+    "position": "K",
+    "team": {
+      "abbreviation": "CIN"
+    }
+  },
+  {
+    "id": "cmlpuir1q00ahxfitdao1ond6",
+    "name": "E. Pineiro",
+    "position": "K",
+    "team": {
+      "abbreviation": "LAR"
+    }
+  },
+  {
+    "id": "cmlu89tea00dzmaitzetrec4e",
+    "name": "E. Sanders",
+    "position": "WR",
+    "team": {
+      "abbreviation": "DEN"
+    }
+  },
+  {
+    "id": "cmln7erjc0048hjitbr301i0i",
+    "name": "E. Wilson",
+    "position": "RB",
+    "team": {
+      "abbreviation": "GB"
+    }
+  },
+  {
+    "id": "cmln7erjc000bhjithxyup9dv",
+    "name": "Eagles",
+    "position": "DST",
+    "team": {
+      "abbreviation": "PHI"
+    }
+  },
+  {
+    "id": "cmln7erjc001rhjitwi74hgiq",
+    "name": "Falcons",
+    "position": "DST",
+    "team": {
+      "abbreviation": "ATL"
+    }
+  },
+  {
+    "id": "cmln7erjc0049hjitjbwjp59g",
+    "name": "G. Dortch",
+    "position": "WR",
+    "team": {
+      "abbreviation": "ARI"
+    }
+  },
+  {
+    "id": "cmln7erjc000chjitkpf0vuph",
+    "name": "G. Pickens",
+    "position": "WR",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmln7erjc004ahjitqkzv1zup",
+    "name": "G. Pickens",
+    "position": "WR",
+    "team": {
+      "abbreviation": "DAL"
+    }
+  },
+  {
+    "id": "cmln7erjc005mhjitjcm7awn1",
+    "name": "G. Smith",
+    "position": "QB",
+    "team": {
+      "abbreviation": "LV"
+    }
+  },
+  {
+    "id": "cmln7erjc004bhjitklxikz2q",
+    "name": "Giants",
+    "position": "DST",
+    "team": {
+      "abbreviation": "NYG"
+    }
+  },
+  {
+    "id": "cmln7erjc002lhjit090632qx",
+    "name": "H. Brown",
+    "position": "WR",
+    "team": {
+      "abbreviation": "KC"
+    }
+  },
+  {
+    "id": "cmln7erjc004chjit4adkpino",
+    "name": "H. Fannin Jr.",
+    "position": "TE",
+    "team": {
+      "abbreviation": "CLE"
+    }
+  },
+  {
+    "id": "cmln7erjc004dhjit8hhjx859",
+    "name": "H. Henry",
+    "position": "TE",
+    "team": {
+      "abbreviation": "NE"
+    }
+  },
+  {
+    "id": "cmln7erjc0022hjit6dl12wr4",
+    "name": "J. Allen",
+    "position": "QB",
+    "team": {
+      "abbreviation": "BUF"
+    }
+  },
+  {
+    "id": "cmln7erjc003mhjittvqw1bqk",
+    "name": "J. Burrow",
+    "position": "QB",
+    "team": {
+      "abbreviation": "CIN"
+    }
+  },
+  {
+    "id": "cmln7erjc003lhjituue0rlbs",
+    "name": "J. Chase",
+    "position": "WR",
+    "team": {
+      "abbreviation": "CIN"
+    }
+  },
+  {
+    "id": "cmlu89tea00dtmait6ztrwd7s",
+    "name": "J. Conner",
+    "position": "RB",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmln7erjc0025hjit3nakq7k4",
+    "name": "J. Cook III",
+    "position": "RB",
+    "team": {
+      "abbreviation": "BUF"
+    }
+  },
+  {
+    "id": "cmlpv950500b5xjitys8xzixg",
+    "name": "J. Dobbins",
+    "position": "RB",
+    "team": {
+      "abbreviation": "LV"
+    }
+  },
+  {
+    "id": "cmlucit4a00eaiditk9lbf3u5",
+    "name": "J. Edelman",
+    "position": "WR",
+    "team": {
+      "abbreviation": "NE"
+    }
+  },
+  {
+    "id": "cmln7erjc0014hjitqgxtj94a",
+    "name": "J. Elliott",
+    "position": "K",
+    "team": {
+      "abbreviation": "PHI"
+    }
+  },
+  {
+    "id": "cmln7erjc004fhjitprb3jzoi",
+    "name": "J. Ferguson",
+    "position": "TE",
+    "team": {
+      "abbreviation": "DAL"
+    }
+  },
+  {
+    "id": "cmlpv950500atxjityhgq0dyr",
+    "name": "J. Flacco",
+    "position": "QB",
+    "team": {
+      "abbreviation": "CIN"
+    }
+  },
+  {
+    "id": "cmlpv950500bixjitk8ehyg7f",
+    "name": "J. Higgins",
+    "position": "WR",
+    "team": {
+      "abbreviation": "BUF"
+    }
+  },
+  {
+    "id": "cmln7erjc002thjitqo1kcqbu",
+    "name": "J. Higgins",
+    "position": "WR",
+    "team": {
+      "abbreviation": "HOU"
+    }
+  },
+  {
+    "id": "cmln7erjc0006hjitusey2qme",
+    "name": "J. Jacobs",
+    "position": "RB",
+    "team": {
+      "abbreviation": "GB"
+    }
+  },
+  {
+    "id": "cmln7erjc0027hjitgo9x61s1",
+    "name": "J. Jefferson",
+    "position": "WR",
+    "team": {
+      "abbreviation": "MIN"
+    }
+  },
+  {
+    "id": "cmln7erjc000jhjits26tvfbj",
+    "name": "J. Jennings",
+    "position": "WR",
+    "team": {
+      "abbreviation": "SF"
+    }
+  },
+  {
+    "id": "cmln7erjc004hhjitgm249bed",
+    "name": "J. Johnson",
+    "position": "TE",
+    "team": {
+      "abbreviation": "NO"
+    }
+  },
+  {
+    "id": "cmlpsxsws009gbtitgf13ir2d",
+    "name": "J. Love",
+    "position": "QB",
+    "team": {
+      "abbreviation": "GB"
+    }
+  },
+  {
+    "id": "cmln7erjc005ohjitjlhz0mn8",
+    "name": "J. Mason",
+    "position": "RB",
+    "team": {
+      "abbreviation": "MIN"
+    }
+  },
+  {
+    "id": "cmln7erjc0028hjit4tpajog1",
+    "name": "J. McCarthy",
+    "position": "QB",
+    "team": {
+      "abbreviation": "MIN"
+    }
+  },
+  {
+    "id": "cmlo659si006o8qitf2t4hvos",
+    "name": "J. McNichols",
+    "position": "RB",
+    "team": {
+      "abbreviation": "WAS"
+    }
+  },
+  {
+    "id": "cmlpv950500bcxjitiromu5f8",
+    "name": "J. Metchie III",
+    "position": "WR",
+    "team": {
+      "abbreviation": "NYJ"
+    }
+  },
+  {
+    "id": "cmln7erjc003ehjitwwzjxtq6",
+    "name": "J. Myers",
+    "position": "K",
+    "team": {
+      "abbreviation": "SEA"
+    }
+  },
+  {
+    "id": "cmlu89tea00dymaituk950l4v",
+    "name": "J. Reed",
+    "position": "TE",
+    "team": {
+      "abbreviation": "WAS"
+    }
+  },
+  {
+    "id": "cmlpsjkbx008t8ditfx2ojomw",
+    "name": "J. Romo",
+    "position": "K",
+    "team": {
+      "abbreviation": "ATL"
+    }
+  },
+  {
+    "id": "cmlpv950500bdxjitvy7tbwzq",
+    "name": "J. Ruckert",
+    "position": "TE",
+    "team": {
+      "abbreviation": "NYJ"
+    }
+  },
+  {
+    "id": "cmln7erjc001khjitqr05dyfw",
+    "name": "J. Smith",
+    "position": "WR",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmln7erjc0039hjit7bphck5f",
+    "name": "J. Smith-Njigba",
+    "position": "WR",
+    "team": {
+      "abbreviation": "SEA"
+    }
+  },
+  {
+    "id": "cmlu89tea00e5maitkpp9vl2i",
+    "name": "J. Smith-Schuster",
+    "position": "WR",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmln7erjc004ihjit8v73vwlt",
+    "name": "J. Taylor",
+    "position": "RB",
+    "team": {
+      "abbreviation": "IND"
+    }
+  },
+  {
+    "id": "cmlr2zb8x00dctuithe4pbb7m",
+    "name": "J. Tonges",
+    "position": "TE",
+    "team": {
+      "abbreviation": "CHI"
+    }
+  },
+  {
+    "id": "cmln7erjc004jhjit3ii529yw",
+    "name": "J. Tonges",
+    "position": "TE",
+    "team": {
+      "abbreviation": "SF"
+    }
+  },
+  {
+    "id": "cmln7erjc004khjitwcxaufwe",
+    "name": "J. Waddle",
+    "position": "WR",
+    "team": {
+      "abbreviation": "MIA"
+    }
+  },
+  {
+    "id": "cmln7erjc001fhjitvlp08o3z",
+    "name": "J. Warren",
+    "position": "RB",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmln7erjc002ehjit7j9tn2ts",
+    "name": "J. Williams",
+    "position": "WR",
+    "team": {
+      "abbreviation": "DET"
+    }
+  },
+  {
+    "id": "cmln7erjc002ahjiter2otw6k",
+    "name": "J. Williams",
+    "position": "RB",
+    "team": {
+      "abbreviation": "MIN"
+    }
+  },
+  {
+    "id": "cmln7erjc004lhjitv4rvk62x",
+    "name": "J. Williams",
+    "position": "RB",
+    "team": {
+      "abbreviation": "DAL"
+    }
+  },
+  {
+    "id": "cmln7erjc004mhjit2sx82lf1",
+    "name": "J. Winston",
+    "position": "QB",
+    "team": {
+      "abbreviation": "NYG"
+    }
+  },
+  {
+    "id": "cmlpvqvvm00boxsitkrh6el0b",
+    "name": "Ja. Williams",
+    "position": "WR",
+    "team": {
+      "abbreviation": "DET"
+    }
+  },
+  {
+    "id": "cmln7erjc004nhjityxv95srf",
+    "name": "Jets",
+    "position": "DST",
+    "team": {
+      "abbreviation": "NYJ"
+    }
+  },
+  {
+    "id": "cmln7erjc004ohjit6v5v2dyh",
+    "name": "K. Allen",
+    "position": "WR",
+    "team": {
+      "abbreviation": "LAC"
+    }
+  },
+  {
+    "id": "cmlpuir1q00aixfitxshk2hud",
+    "name": "K. Bourne",
+    "position": "WR",
+    "team": {
+      "abbreviation": "SF"
+    }
+  },
+  {
+    "id": "cmln7erjc004phjithppbu362",
+    "name": "K. Boutte",
+    "position": "WR",
+    "team": {
+      "abbreviation": "NE"
+    }
+  },
+  {
+    "id": "cmln7erjc0021hjitoxzkge44",
+    "name": "K. Coleman",
+    "position": "WR",
+    "team": {
+      "abbreviation": "BUF"
+    }
+  },
+  {
+    "id": "cmln7erjc002jhjit28hl6nvt",
+    "name": "K. Hunt",
+    "position": "RB",
+    "team": {
+      "abbreviation": "KC"
+    }
+  },
+  {
+    "id": "cmln7erjc004qhjitp4yqpwyj",
+    "name": "K. Monangai",
+    "position": "RB",
+    "team": {
+      "abbreviation": "CHI"
+    }
+  },
+  {
+    "id": "cmln7erjc001nhjit1jeibz7f",
+    "name": "K. Pitts Sr.",
+    "position": "TE",
+    "team": {
+      "abbreviation": "ATL"
+    }
+  },
+  {
+    "id": "cmln7erjc003dhjit4j919pmo",
+    "name": "K. Walker III",
+    "position": "RB",
+    "team": {
+      "abbreviation": "SEA"
+    }
+  },
+  {
+    "id": "cmln7erjc002xhjit1xwalptb",
+    "name": "K. Williams",
+    "position": "RB",
+    "team": {
+      "abbreviation": "LAR"
+    }
+  },
+  {
+    "id": "cmlr2zb8x00d7tuittcqv8rkz",
+    "name": "L. Burden III",
+    "position": "WR",
+    "team": {
+      "abbreviation": "CHI"
+    }
+  },
+  {
+    "id": "cmlpsovhd0091lzitdsb7b6xt",
+    "name": "L. Farrell",
+    "position": "TE",
+    "team": {
+      "abbreviation": "SF"
+    }
+  },
+  {
+    "id": "cmlpuko7000apaqitm48fbvpk",
+    "name": "L. Humphrey",
+    "position": "WR",
+    "team": {
+      "abbreviation": "NYG"
+    }
+  },
+  {
+    "id": "cmln7erjc001thjit3mdnldsk",
+    "name": "L. Jackson",
+    "position": "QB",
+    "team": {
+      "abbreviation": "BAL"
+    }
+  },
+  {
+    "id": "cmln7erjc000xhjitnp7ad3tp",
+    "name": "L. McConkey",
+    "position": "WR",
+    "team": {
+      "abbreviation": "LAC"
+    }
+  },
+  {
+    "id": "cmln7erjc004shjitrgpz58pq",
+    "name": "Lions",
+    "position": "DST",
+    "team": {
+      "abbreviation": "DET"
+    }
+  },
+  {
+    "id": "cmln7erjc001vhjitlp8oi57a",
+    "name": "M. Andrews",
+    "position": "TE",
+    "team": {
+      "abbreviation": "BAL"
+    }
+  },
+  {
+    "id": "cmlpv950500bsxjit7mz4hzv0",
+    "name": "M. Evans",
+    "position": "WR",
+    "team": {
+      "abbreviation": "TB"
+    }
+  },
+  {
+    "id": "cmlo6bqdx006zi6ituk1t9wea",
+    "name": "M. Gay",
+    "position": "K",
+    "team": {
+      "abbreviation": "SF"
+    }
+  },
+  {
+    "id": "cmln7erjc0003hjitzm2hzv7d",
+    "name": "M. Harrison Jr.",
+    "position": "WR",
+    "team": {
+      "abbreviation": "ARI"
+    }
+  },
+  {
+    "id": "cmlpq80oe008702itpqo0smv0",
+    "name": "M. Hollins",
+    "position": "WR",
+    "team": {
+      "abbreviation": "NE"
+    }
+  },
+  {
+    "id": "cmln7erjc004thjithakdgpe4",
+    "name": "M. Mayer",
+    "position": "TE",
+    "team": {
+      "abbreviation": "LV"
+    }
+  },
+  {
+    "id": "cmln7erjc004uhjit7dxk1ow4",
+    "name": "M. Pittman Jr.",
+    "position": "WR",
+    "team": {
+      "abbreviation": "IND"
+    }
+  },
+  {
+    "id": "cmlu89tea00dxmaitvabq779h",
+    "name": "M. Thomas",
+    "position": "WR",
+    "team": {
+      "abbreviation": "NO"
+    }
+  },
+  {
+    "id": "cmlppjk9y007xhait9z4cm292",
+    "name": "M. Willis",
+    "position": "QB",
+    "team": {
+      "abbreviation": "GB"
+    }
+  },
+  {
+    "id": "cmln7erjc004vhjituubt3t96",
+    "name": "M. Wilson",
+    "position": "WR",
+    "team": {
+      "abbreviation": "ARI"
+    }
+  },
+  {
+    "id": "cmln7erjc002phjitgdsjeo96",
+    "name": "N. Collins",
+    "position": "WR",
+    "team": {
+      "abbreviation": "HOU"
+    }
+  },
+  {
+    "id": "cmln7erjc004whjitei0ctadm",
+    "name": "O. Gadsden II",
+    "position": "TE",
+    "team": {
+      "abbreviation": "LAC"
+    }
+  },
+  {
+    "id": "cmln7erjc004xhjitcqvz27i2",
+    "name": "O. Zaccheaus",
+    "position": "WR",
+    "team": {
+      "abbreviation": "CHI"
+    }
+  },
+  {
+    "id": "cmlu89tea00e8mait2l9ig22m",
+    "name": "P. Lindsay",
+    "position": "RB",
+    "team": {
+      "abbreviation": "DEN"
+    }
+  },
+  {
+    "id": "cmln7erjc004yhjittror47c7",
+    "name": "P. Washington",
+    "position": "WR",
+    "team": {
+      "abbreviation": "JAX"
+    }
+  },
+  {
+    "id": "cmln7erjc000ahjitvaj77wff",
+    "name": "Packers",
+    "position": "DST",
+    "team": {
+      "abbreviation": "GB"
+    }
+  },
+  {
+    "id": "cmln7erjc004zhjitbk0sw17h",
+    "name": "Panthers",
+    "position": "DST",
+    "team": {
+      "abbreviation": "CAR"
+    }
+  },
+  {
+    "id": "cmln7erjc0050hjitbh2n0uyz",
+    "name": "Patriots",
+    "position": "DST",
+    "team": {
+      "abbreviation": "NE"
+    }
+  },
+  {
+    "id": "cmln7erjc0051hjitvd7hs23h",
+    "name": "Q. Johnston",
+    "position": "WR",
+    "team": {
+      "abbreviation": "LAC"
+    }
+  },
+  {
+    "id": "cmln7erjc001xhjiticngk96u",
+    "name": "R. Ali",
+    "position": "RB",
+    "team": {
+      "abbreviation": "BAL"
+    }
+  },
+  {
+    "id": "cmlo5cqkz006dhbitp6f1dzqv",
+    "name": "R. Bateman",
+    "position": "WR",
+    "team": {
+      "abbreviation": "BAL"
+    }
+  },
+  {
+    "id": "cmln7erjc0052hjitg0ehs4ah",
+    "name": "R. Davis",
+    "position": "RB",
+    "team": {
+      "abbreviation": "BUF"
+    }
+  },
+  {
+    "id": "cmlpsxsws009jbtitmenmjlef",
+    "name": "R. Doubs",
+    "position": "WR",
+    "team": {
+      "abbreviation": "GB"
+    }
+  },
+  {
+    "id": "cmln7erjc0053hjitjw7jnms4",
+    "name": "R. Dowdle",
+    "position": "RB",
+    "team": {
+      "abbreviation": "CAR"
+    }
+  },
+  {
+    "id": "cmlu89tea00dsmait8ubsyfxj",
+    "name": "R. Fitzpatrick",
+    "position": "QB",
+    "team": {
+      "abbreviation": "TB"
+    }
+  },
+  {
+    "id": "cmlpv950500bkxjitpccl3kuy",
+    "name": "R. Flournoy",
+    "position": "WR",
+    "team": {
+      "abbreviation": "DAL"
+    }
+  },
+  {
+    "id": "cmlucit4a00ediditdig6wcyg",
+    "name": "R. Gronkowski",
+    "position": "TE",
+    "team": {
+      "abbreviation": "NE"
+    }
+  },
+  {
+    "id": "cmln7erjc003ihjit1r3uhtij",
+    "name": "R. Harvey",
+    "position": "RB",
+    "team": {
+      "abbreviation": "DEN"
+    }
+  },
+  {
+    "id": "cmln7erjc0054hjit5eqv7sp2",
+    "name": "R. Odunze",
+    "position": "WR",
+    "team": {
+      "abbreviation": "CHI"
+    }
+  },
+  {
+    "id": "cmln7erjc0055hjitoppdmcbr",
+    "name": "R. Pearsall",
+    "position": "WR",
+    "team": {
+      "abbreviation": "SF"
+    }
+  },
+  {
+    "id": "cmln7erjc0056hjitaqfr6cbg",
+    "name": "R. Rice",
+    "position": "WR",
+    "team": {
+      "abbreviation": "KC"
+    }
+  },
+  {
+    "id": "cmln7erjc0057hjit59cw7eqy",
+    "name": "R. Wilson",
+    "position": "QB",
+    "team": {
+      "abbreviation": "NYG"
+    }
+  },
+  {
+    "id": "cmlr2zb8x00c1tuitp01obahr",
+    "name": "R. Wilson",
+    "position": "WR",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmln7erjc001dhjit4gm6t2b3",
+    "name": "R. Wilson",
+    "position": "QB",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmlucit4a00efidityqmdihw0",
+    "name": "R. Woods",
+    "position": "WR",
+    "team": {
+      "abbreviation": "LAR"
+    }
+  },
+  {
+    "id": "cmln7erjc0058hjit7c8lf9q9",
+    "name": "Raiders",
+    "position": "DST",
+    "team": {
+      "abbreviation": "LV"
+    }
+  },
+  {
+    "id": "cmln7erjc0032hjitb0njpnq7",
+    "name": "Rams",
+    "position": "DST",
+    "team": {
+      "abbreviation": "LAR"
+    }
+  },
+  {
+    "id": "cmln7erjc0020hjitk3ycyknb",
+    "name": "Ravens",
+    "position": "DST",
+    "team": {
+      "abbreviation": "BAL"
+    }
+  },
+  {
+    "id": "cmln7erjc0038hjit7t8eh657",
+    "name": "S. Darnold",
+    "position": "QB",
+    "team": {
+      "abbreviation": "SEA"
+    }
+  },
+  {
+    "id": "cmln7erjc0026hjittlakjkjn",
+    "name": "S. Diggs",
+    "position": "WR",
+    "team": {
+      "abbreviation": "NE"
+    }
+  },
+  {
+    "id": "cmlu89tea00e4maitx2idr043",
+    "name": "S. Diggs",
+    "position": "WR",
+    "team": {
+      "abbreviation": "MIN"
+    }
+  },
+  {
+    "id": "cmlucit4a00eeiditnpjv7jm1",
+    "name": "S. Michel",
+    "position": "RB",
+    "team": {
+      "abbreviation": "NE"
+    }
+  },
+  {
+    "id": "cmlu89tea00e6maittzjtfkko",
+    "name": "S. Watkins",
+    "position": "WR",
+    "team": {
+      "abbreviation": "KC"
+    }
+  },
+  {
+    "id": "cmln7erjc0059hjitu38uzr35",
+    "name": "Saints",
+    "position": "DST",
+    "team": {
+      "abbreviation": "NO"
+    }
+  },
+  {
+    "id": "cmln7erjc003fhjitv5j9nqil",
+    "name": "Seahawks",
+    "position": "DST",
+    "team": {
+      "abbreviation": "SEA"
+    }
+  },
+  {
+    "id": "cmln7erjc005ahjittbddofam",
+    "name": "Steelers",
+    "position": "DST",
+    "team": {
+      "abbreviation": "PIT"
+    }
+  },
+  {
+    "id": "cmln7erjc0031hjitpmcywr4r",
+    "name": "T. Ferguson",
+    "position": "TE",
+    "team": {
+      "abbreviation": "LAR"
+    }
+  },
+  {
+    "id": "cmln7erjc003hhjitkmnuluk9",
+    "name": "T. Franklin",
+    "position": "WR",
+    "team": {
+      "abbreviation": "DEN"
+    }
+  },
+  {
+    "id": "cmln7erjc005bhjitq7mjkqra",
+    "name": "T. Henderson",
+    "position": "RB",
+    "team": {
+      "abbreviation": "NE"
+    }
+  },
+  {
+    "id": "cmln7erjc0018hjitu3mttdzg",
+    "name": "T. Hill",
+    "position": "WR",
+    "team": {
+      "abbreviation": "MIA"
+    }
+  },
+  {
+    "id": "cmln7erjc003ahjit2cn41c7k",
+    "name": "T. Horton",
+    "position": "WR",
+    "team": {
+      "abbreviation": "SEA"
+    }
+  },
+  {
+    "id": "cmln7erjc005chjitz7n9zlto",
+    "name": "T. Johnson",
+    "position": "WR",
+    "team": {
+      "abbreviation": "NE"
+    }
+  },
+  {
+    "id": "cmlpuabsu009wouit9yowrfx4",
+    "name": "T. Kraft",
+    "position": "TE",
+    "team": {
+      "abbreviation": "GB"
+    }
+  },
+  {
+    "id": "cmln7erjc005dhjitakxiwbwd",
+    "name": "T. Lawrence",
+    "position": "QB",
+    "team": {
+      "abbreviation": "JAX"
+    }
+  },
+  {
+    "id": "cmlps98j5008pnfit0b85j2dh",
+    "name": "T. Loop",
+    "position": "K",
+    "team": {
+      "abbreviation": "BUF"
+    }
+  },
+  {
+    "id": "cmln7erjc005ehjitjd111z4j",
+    "name": "T. McBride",
+    "position": "TE",
+    "team": {
+      "abbreviation": "ARI"
+    }
+  },
+  {
+    "id": "cmln7erjc005fhjits4h3dnjf",
+    "name": "T. McMillan",
+    "position": "WR",
+    "team": {
+      "abbreviation": "CAR"
+    }
+  },
+  {
+    "id": "cmln7erjc005ghjitis8cqocu",
+    "name": "T. Pollard",
+    "position": "RB",
+    "team": {
+      "abbreviation": "TEN"
+    }
+  },
+  {
+    "id": "cmln7erjc005hhjit8u763i82",
+    "name": "T. Thornton",
+    "position": "WR",
+    "team": {
+      "abbreviation": "KC"
+    }
+  },
+  {
+    "id": "cmln7erjc005ihjitmm06mfyb",
+    "name": "T. Tracy Jr.",
+    "position": "RB",
+    "team": {
+      "abbreviation": "DAL"
+    }
+  },
+  {
+    "id": "cmln7erjc005rhjittsuqkss0",
+    "name": "T. Tucker",
+    "position": "WR",
+    "team": {
+      "abbreviation": "WAS"
+    }
+  },
+  {
+    "id": "cmln7erjc000ehjitmb00i9oz",
+    "name": "T. Tucker",
+    "position": "WR",
+    "team": {
+      "abbreviation": "LV"
+    }
+  },
+  {
+    "id": "cmln7erjc002uhjitcmcfyqvn",
+    "name": "Texans",
+    "position": "DST",
+    "team": {
+      "abbreviation": "HOU"
+    }
+  },
+  {
+    "id": "cmln7erjc005jhjit4v5zioar",
+    "name": "Titans",
+    "position": "DST",
+    "team": {
+      "abbreviation": "TEN"
+    }
+  },
+  {
+    "id": "cmln7erjc005uhjitvu9wo4ow",
+    "name": "Vikings",
+    "position": "DST",
+    "team": {
+      "abbreviation": "MIN"
+    }
+  },
+  {
+    "id": "cmln7erjc005khjitjbk7mtbb",
+    "name": "W. Marks",
+    "position": "RB",
+    "team": {
+      "abbreviation": "HOU"
+    }
+  },
+  {
+    "id": "cmln7erjc000vhjitqtem26qs",
+    "name": "W. Robinson",
+    "position": "WR",
+    "team": {
+      "abbreviation": "NYG"
+    }
+  },
+  {
+    "id": "cmln7erjc005lhjitz5x5kelv",
+    "name": "X. Hutchinson",
+    "position": "WR",
+    "team": {
+      "abbreviation": "HOU"
+    }
+  },
+  {
+    "id": "cmlpud95900abdwit65y05zda",
+    "name": "Z. Charbonnet",
+    "position": "RB",
+    "team": {
+      "abbreviation": "SEA"
+    }
+  },
+  {
+    "id": "cmln7erjc001uhjit82fy0rld",
+    "name": "Z. Flowers",
+    "position": "WR",
+    "team": {
+      "abbreviation": "BAL"
+    }
+  }
+]
