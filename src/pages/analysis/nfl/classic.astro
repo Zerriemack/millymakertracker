@@ -1,7 +1,8 @@
 ---
+// src/pages/analysis/nfl/classic.astro
 import Layout from "../../../../layouts/Layout.astro";
 
-const apiUrl = `${Astro.url.origin}/api/analysis/nfl/2025/classic`;
+const apiUrl = `${Astro.url.origin}/api/analysis/nfl/classic`;
 const res = await fetch(apiUrl);
 
 if (!res.ok) {
@@ -90,16 +91,14 @@ const rows = rowsRaw
     const slateId = String(r.slateId ?? r.id ?? r.slate?.id ?? "");
     const week = Number(r.week ?? r.slate?.week ?? null);
     const slateType = String(r.slateType ?? r.slate?.slateType ?? "");
-
     const slateDate = String(r.slateDate ?? r.slate?.slateDate ?? r.date ?? "");
-    const link = String(r.link ?? r.url ?? (slateId ? `/nfl/2025/slate/${slateId}` : ""));
 
     const year =
       typeof r.year === "number"
         ? r.year
         : typeof r.slate?.season?.year === "number"
           ? r.slate.season.year
-          : 2025;
+          : null;
 
     const salaryUsed = typeof r.salaryUsed === "number" ? r.salaryUsed : n(r.lineup?.salaryUsed);
     const salaryLeft =
@@ -139,6 +138,15 @@ const rows = rowsRaw
     const qbStack = String(r.qbStack ?? r.stack ?? r.construction?.qbStack ?? "");
     const uniqueTeams = typeof r.uniqueTeams === "number" ? r.uniqueTeams : n(r.construction?.uniqueTeams);
     const maxFromTeam = typeof r.maxFromTeam === "number" ? r.maxFromTeam : n(r.construction?.maxFromTeam);
+
+    const link =
+      typeof r.link === "string" && r.link
+        ? r.link
+        : typeof r.url === "string" && r.url
+          ? r.url
+          : slateId && year
+            ? `/nfl/${year}/slate/${slateId}`
+            : "";
 
     return {
       slateId,
@@ -181,7 +189,7 @@ const stackLines = Array.from(stackCounts.entries()).length
       .map(([k, v]) => ({ k, v }))
   : [];
 
-const pageTitle = "NFL Classic Review (2025)";
+const pageTitle = "NFL Classic Review";
 ---
 
 <Layout title={pageTitle}>
@@ -196,7 +204,7 @@ const pageTitle = "NFL Classic Review (2025)";
 
       <div class="searchWrap">
         <label class="srOnly" for="q">Search</label>
-        <input id="q" class="search" type="text" placeholder="Search: BUF QB+2, MAIN, WK 6, etc" />
+        <input id="q" class="search" type="text" placeholder="Search: 2018, WK 2, MAIN, KC, QB+2, etc" />
         <button id="resetAllTop" class="resetAll" type="button">Reset all</button>
       </div>
     </header>
@@ -229,7 +237,7 @@ const pageTitle = "NFL Classic Review (2025)";
             </div>
 
             <div class="note">
-              Median is the middle row after sorting. Most and least are the season high and season low.
+              Filters are per column. Use the YEAR column menu to isolate a season.
             </div>
           </div>
         </div>
@@ -276,8 +284,8 @@ const pageTitle = "NFL Classic Review (2025)";
 
             <tbody>
               {rows.map((r) => {
-                const year = Number.isFinite(r.year) ? String(r.year) : "";
-                const wk = Number.isFinite(r.week) ? String(r.week) : "";
+                const year = Number.isFinite(r.year as any) ? String(r.year) : "";
+                const wk = Number.isFinite(r.week as any) ? String(r.week) : "";
                 const left = n(r.salaryLeft);
                 const own = n(r.ownPct);
                 const pts = n(r.pts);
@@ -772,6 +780,16 @@ const pageTitle = "NFL Classic Review (2025)";
     align-items: center;
   }
 
+  .toggle {
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.14);
+    background: rgba(0,0,0,0.04);
+    font-weight: 900;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
   .search {
     width: min(520px, 100%);
     padding: 10px 12px;
@@ -945,7 +963,7 @@ const pageTitle = "NFL Classic Review (2025)";
 
   @media (max-width: 900px) {
     .topbar { flex-direction: column; align-items: stretch; }
-    .searchWrap { justify-content: stretch; }
+    .searchWrap { justify-content: stretch; flex-wrap: wrap; }
     .search { width: 100%; }
   }
 </style>

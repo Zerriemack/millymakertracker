@@ -1,7 +1,7 @@
 ---
 import Layout from "../../../../layouts/Layout.astro";
 
-const apiUrl = `${Astro.url.origin}/api/analysis/nfl/2025/showdown`;
+const apiUrl = `${Astro.url.origin}/api/analysis/nfl/showdown`;
 const res = await fetch(apiUrl);
 
 if (!res.ok) {
@@ -92,7 +92,7 @@ const rows = rowsRaw
     const slateType = String(r.slateType ?? r.slate?.slateType ?? "");
 
     const slateDate = String(r.slateDate ?? r.slate?.slateDate ?? r.date ?? "");
-    const link = String(r.link ?? r.url ?? (slateId ? `/nfl/2025/slate/${slateId}` : ""));
+    const link = String(r.link ?? r.url ?? (slateId ? `/nfl/${r.year ?? 2025}/slate/${slateId}` : ""));
 
     // YEAR: future-proof. If API later provides r.year, use it. Otherwise default from this route.
     const year =
@@ -185,7 +185,7 @@ const capPosLines = Array.from(capPosCounts.entries()).length
       .map(([k, v]) => ({ k, v }))
   : [];
 
-const pageTitle = "NFL Showdown Review (2025)";
+const pageTitle = "NFL Showdown Review";
 ---
 
 <Layout title={pageTitle}>
