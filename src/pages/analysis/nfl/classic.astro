@@ -67,7 +67,7 @@ function minMax(vals: number[]) {
 function countsByKey(list: any[], key: string) {
   const m = new Map<string, number>();
   for (const it of list) {
-    const k = String((it as any)[key] || "").trim();
+    const k = String((it as any)[key] ?? "").trim();
     if (!k) continue;
     m.set(k, (m.get(k) || 0) + 1);
   }
@@ -84,6 +84,16 @@ function mostLeast(map: Map<string, number>) {
     if (e[1] < least[1]) least = e;
   }
   return { most, least };
+}
+
+function ynFromCount(v: any) {
+  const x = n(v);
+  if (x === null) return "";
+  return x > 0 ? "YES" : "NO";
+}
+
+function sum(nums: number[]) {
+  return nums.reduce((a, b) => a + b, 0);
 }
 
 const rows = rowsRaw
@@ -147,8 +157,38 @@ const rows = rowsRaw
           : null;
 
     const qbStack = String(r.qbStack ?? r.stack ?? r.construction?.qbStack ?? "");
-    const uniqueTeams = typeof r.uniqueTeams === "number" ? r.uniqueTeams : n(r.construction?.uniqueTeams);
+
     const maxFromTeam = typeof r.maxFromTeam === "number" ? r.maxFromTeam : n(r.construction?.maxFromTeam);
+    const maxFromGame = typeof r.maxFromGame === "number" ? r.maxFromGame : n(r.construction?.maxFromGame);
+
+    const stackCount = typeof r.stackCount === "number" ? r.stackCount : n(r.construction?.stackCount);
+    const bringbackCount = typeof r.bringbackCount === "number" ? r.bringbackCount : n(r.construction?.bringbackCount);
+    const hasBringback = String(r.hasBringback ?? ynFromCount(bringbackCount));
+
+    const earlyCount =
+      typeof r.earlyCount === "number"
+        ? r.earlyCount
+        : typeof r.lineup?.analysis?.earlyCount === "number"
+          ? r.lineup.analysis.earlyCount
+          : n(r.construction?.earlyCount);
+
+    const lateCount =
+      typeof r.lateCount === "number"
+        ? r.lateCount
+        : typeof r.lineup?.analysis?.lateCount === "number"
+          ? r.lineup.analysis.lateCount
+          : n(r.construction?.lateCount);
+
+    // ownership bucket counts for the 9-man Classic winning lineup
+    // API should return these as integers, sum must be 9
+    const own0_10 = typeof r.own0_10 === "number" ? r.own0_10 : n(r.ownership_0_10 ?? r.construction?.own0_10);
+    const own11_19 = typeof r.own11_19 === "number" ? r.own11_19 : n(r.ownership_11_19 ?? r.construction?.own11_19);
+    const own20p = typeof r.own20p === "number" ? r.own20p : n(r.ownership_20p ?? r.construction?.own20p);
+
+    const ownBucketTotal =
+      (typeof own0_10 === "number" ? own0_10 : 0) +
+      (typeof own11_19 === "number" ? own11_19 : 0) +
+      (typeof own20p === "number" ? own20p : 0);
 
     const tag = String(r.slateTag ?? r.slate?.slateTag ?? "");
     const group = String(r.slateGroup ?? r.slate?.slateGroup ?? "");
@@ -171,9 +211,24 @@ const rows = rowsRaw
       tag,
       group,
       link,
+
       qbStack,
-      uniqueTeams,
+      stackCount,
+      bringbackCount,
+      hasBringback,
+
       maxFromTeam,
+      maxFromGame,
+
+      earlyCount,
+      lateCount,
+
+      // new
+      own0_10,
+      own11_19,
+      own20p,
+      ownBucketTotal,
+
       salaryLeft,
       ownPct,
       pts,
@@ -185,38 +240,83 @@ const rows = rowsRaw
 const salaryLeftVals = rows.map((r) => n(r.salaryLeft)).filter((v): v is number => v !== null);
 const ownPctVals = rows.map((r) => n(r.ownPct)).filter((v): v is number => v !== null);
 const ptsVals = rows.map((r) => n(r.pts)).filter((v): v is number => v !== null);
-const uniqueTeamsVals = rows.map((r) => n(r.uniqueTeams)).filter((v): v is number => v !== null);
+
 const maxFromTeamVals = rows.map((r) => n(r.maxFromTeam)).filter((v): v is number => v !== null);
+const maxFromGameVals = rows.map((r) => n(r.maxFromGame)).filter((v): v is number => v !== null);
+
+const stackCountVals = rows.map((r) => n(r.stackCount)).filter((v): v is number => v !== null);
+const bringbackCountVals = rows.map((r) => n(r.bringbackCount)).filter((v): v is number => v !== null);
+
+const earlyVals = rows.map((r) => n(r.earlyCount)).filter((v): v is number => v !== null);
+const lateVals = rows.map((r) => n(r.lateCount)).filter((v): v is number => v !== null);
+
+const own0Vals = rows.map((r) => n(r.own0_10)).filter((v): v is number => v !== null);
+const own11Vals = rows.map((r) => n(r.own11_19)).filter((v): v is number => v !== null);
+const own20Vals = rows.map((r) => n(r.own20p)).filter((v): v is number => v !== null);
+const ownTotVals = rows.map((r) => n(r.ownBucketTotal)).filter((v): v is number => v !== null);
 
 const salaryLeftMM = minMax(salaryLeftVals);
 const ownPctMM = minMax(ownPctVals);
 const ptsMM = minMax(ptsVals);
-const uniqueTeamsMM = minMax(uniqueTeamsVals);
+
 const maxFromTeamMM = minMax(maxFromTeamVals);
+const maxFromGameMM = minMax(maxFromGameVals);
+
+const stackCountMM = minMax(stackCountVals);
+const bringbackCountMM = minMax(bringbackCountVals);
+
+const earlyMM = minMax(earlyVals);
+const lateMM = minMax(lateVals);
+
+const own0MM = minMax(own0Vals);
+const own11MM = minMax(own11Vals);
+const own20MM = minMax(own20Vals);
+const ownTotMM = minMax(ownTotVals);
 
 const salaryLeftMedian = median(salaryLeftVals);
 const ownMedian = median(ownPctVals);
 const ptsMedian = median(ptsVals);
-const uniqueTeamsMedian = median(uniqueTeamsVals);
+
 const maxFromTeamMedian = median(maxFromTeamVals);
+const maxFromGameMedian = median(maxFromGameVals);
+
+const stackCountMedian = median(stackCountVals);
+const bringbackMedian = median(bringbackCountVals);
+
+const earlyMedian = median(earlyVals);
+const lateMedian = median(lateVals);
+
+const own0Median = median(own0Vals);
+const own11Median = median(own11Vals);
+const own20Median = median(own20Vals);
+const ownTotMedian = median(ownTotVals);
 
 const salaryLeftMode = mode(salaryLeftVals);
 
-const stackCounts = countsByKey(rows, "qbStack");
-const stackML = mostLeast(stackCounts);
+const stackShapeCounts = countsByKey(rows, "qbStack");
+const stackShapeML = mostLeast(stackShapeCounts);
 
-const stackLines = Array.from(stackCounts.entries()).length
-  ? Array.from(stackCounts.entries())
-      .sort((a, b) => b[1] - a[1])
-      .map(([k, v]) => ({ k, v }))
+const bringbackFlagCounts = countsByKey(rows, "hasBringback");
+const bringbackFlagLines = Array.from(bringbackFlagCounts.entries()).length
+  ? Array.from(bringbackFlagCounts.entries()).sort((a, b) => b[1] - a[1]).map(([k, v]) => ({ k, v }))
+  : [];
+
+const stackShapeLines = Array.from(stackShapeCounts.entries()).length
+  ? Array.from(stackShapeCounts.entries()).sort((a, b) => b[1] - a[1]).map(([k, v]) => ({ k, v }))
   : [];
 
 const typeCounts = countsByKey(rows, "slateType");
 const typeLines = Array.from(typeCounts.entries()).length
-  ? Array.from(typeCounts.entries())
-      .sort((a, b) => b[1] - a[1])
-      .map(([k, v]) => ({ k, v }))
+  ? Array.from(typeCounts.entries()).sort((a, b) => b[1] - a[1]).map(([k, v]) => ({ k, v }))
   : [];
+
+function pct(part: number, total: number) {
+  if (!total) return "0.0%";
+  return `${((part / total) * 100).toFixed(1)}%`;
+}
+
+const bringbackYes = bringbackFlagCounts.get("YES") || 0;
+const bringbackNo = bringbackFlagCounts.get("NO") || 0;
 
 const pageTitle = "NFL Classic Review";
 ---
@@ -237,7 +337,7 @@ const pageTitle = "NFL Classic Review";
           id="q"
           class="search"
           type="text"
-          placeholder="Search: 2018, WK 2, MAIN, QB+2, 7 teams, max 4, TAG, GROUP"
+          placeholder="Search: 2018, WK 2, MAIN, QB+2, YES, max 4, early 6, TAG, GROUP"
         />
         <button id="resetAllTop" class="resetAll" type="button">Reset all</button>
       </div>
@@ -270,13 +370,6 @@ const pageTitle = "NFL Classic Review";
               <div>Least: {ptsMM.min === null ? "—" : ptsMM.min.toFixed(2)}</div>
             </div>
 
-            <div class="k">Unique teams</div>
-            <div class="v mono">
-              <div>Median: {uniqueTeamsMedian === null ? "—" : uniqueTeamsMedian.toFixed(0)}</div>
-              <div>Most: {uniqueTeamsMM.max === null ? "—" : uniqueTeamsMM.max.toFixed(0)}</div>
-              <div>Least: {uniqueTeamsMM.min === null ? "—" : uniqueTeamsMM.min.toFixed(0)}</div>
-            </div>
-
             <div class="k">Max from one team</div>
             <div class="v mono">
               <div>Median: {maxFromTeamMedian === null ? "—" : maxFromTeamMedian.toFixed(0)}</div>
@@ -284,8 +377,26 @@ const pageTitle = "NFL Classic Review";
               <div>Least: {maxFromTeamMM.min === null ? "—" : maxFromTeamMM.min.toFixed(0)}</div>
             </div>
 
-            <div class="note">
-              Filters are per column. Use YEAR to isolate a season, then filter TEAM and MAX for construction.
+            <div class="k">Max from one game</div>
+            <div class="v mono">
+              <div>Median: {maxFromGameMedian === null ? "—" : maxFromGameMedian.toFixed(0)}</div>
+              <div>Most: {maxFromGameMM.max === null ? "—" : maxFromGameMM.max.toFixed(0)}</div>
+              <div>Least: {maxFromGameMM.min === null ? "—" : maxFromGameMM.min.toFixed(0)}</div>
+            </div>
+
+            <div class="k">Windows</div>
+            <div class="v mono">
+              <div>Early median: {earlyMedian === null ? "—" : earlyMedian.toFixed(0)} (min {earlyMM.min ?? "—"} max {earlyMM.max ?? "—"})</div>
+              <div>Late median: {lateMedian === null ? "—" : lateMedian.toFixed(0)} (min {lateMM.min ?? "—"} max {lateMM.max ?? "—"})</div>
+            </div>
+
+            <div class="k">Ownership buckets (players)</div>
+            <div class="v mono">
+              <div>0–10% median: {own0Median === null ? "—" : own0Median.toFixed(0)} (min {own0MM.min ?? "—"} max {own0MM.max ?? "—"})</div>
+              <div>11–19% median: {own11Median === null ? "—" : own11Median.toFixed(0)} (min {own11MM.min ?? "—"} max {own11MM.max ?? "—"})</div>
+              <div>20%+ median: {own20Median === null ? "—" : own20Median.toFixed(0)} (min {own20MM.min ?? "—"} max {own20MM.max ?? "—"})</div>
+              <div>Total median: {ownTotMedian === null ? "—" : ownTotMedian.toFixed(0)} (min {ownTotMM.min ?? "—"} max {ownTotMM.max ?? "—"})</div>
+              <div class="tinyNote">Total must be 9 for Classic. Any row not 9 is missing bucket data.</div>
             </div>
           </div>
         </div>
@@ -293,11 +404,11 @@ const pageTitle = "NFL Classic Review";
         <div class="card">
           <div class="cardTitle">Construction</div>
           <div class="kv">
-            <div class="k">QB stacks</div>
+            <div class="k">QB stack shape</div>
             <div class="v mono">
-              {stackLines.length ? (
+              {stackShapeLines.length ? (
                 <div class="lines">
-                  {stackLines.map((x) => (
+                  {stackShapeLines.map((x) => (
                     <div>{x.k}: {x.v}</div>
                   ))}
                 </div>
@@ -305,8 +416,38 @@ const pageTitle = "NFL Classic Review";
                 <div>—</div>
               )}
               <div class="spacer"></div>
-              <div>Most: {stackML.most ? `${stackML.most[0]} (${stackML.most[1]})` : "—"}</div>
-              <div>Least: {stackML.least ? `${stackML.least[0]} (${stackML.least[1]})` : "—"}</div>
+              <div>Most: {stackShapeML.most ? `${stackShapeML.most[0]} (${stackShapeML.most[1]})` : "—"}</div>
+              <div>Least: {stackShapeML.least ? `${stackShapeML.least[0]} (${stackShapeML.least[1]})` : "—"}</div>
+            </div>
+
+            <div class="k">Bringback</div>
+            <div class="v mono">
+              {bringbackFlagLines.length ? (
+                <div class="lines">
+                  {bringbackFlagLines.map((x) => (
+                    <div>{x.k}: {x.v}</div>
+                  ))}
+                </div>
+              ) : (
+                <div>—</div>
+              )}
+              <div class="spacer"></div>
+              <div>YES rate: {pct(bringbackYes, bringbackYes + bringbackNo)}</div>
+              <div>NO rate: {pct(bringbackNo, bringbackYes + bringbackNo)}</div>
+            </div>
+
+            <div class="k">Stack links count</div>
+            <div class="v mono">
+              <div>Median: {stackCountMedian === null ? "—" : stackCountMedian.toFixed(0)}</div>
+              <div>Most: {stackCountMM.max === null ? "—" : stackCountMM.max.toFixed(0)}</div>
+              <div>Least: {stackCountMM.min === null ? "—" : stackCountMM.min.toFixed(0)}</div>
+            </div>
+
+            <div class="k">Bringback links count</div>
+            <div class="v mono">
+              <div>Median: {bringbackMedian === null ? "—" : bringbackMedian.toFixed(0)}</div>
+              <div>Most: {bringbackCountMM.max === null ? "—" : bringbackCountMM.max.toFixed(0)}</div>
+              <div>Least: {bringbackCountMM.min === null ? "—" : bringbackCountMM.min.toFixed(0)}</div>
             </div>
 
             <div class="k">Slate types</div>
@@ -331,16 +472,29 @@ const pageTitle = "NFL Classic Review";
             <thead>
               <tr>
                 <th class="colYear"><button class="thBtn" type="button" data-col="year">YEAR</button></th>
-                <th class="colWk"><button class="thBtn" type="button" data-col="week">WK</button></th>
+                <th class="colWk"><button class="thBtn" type="button" data-col="week">WEEK</button></th>
                 <th class="colType"><button class="thBtn" type="button" data-col="type">TYPE</button></th>
                 <th class="colDate"><button class="thBtn" type="button" data-col="date">DATE</button></th>
+
                 <th class="colStack"><button class="thBtn" type="button" data-col="stack">STACK</button></th>
-                <th class="colTeams"><button class="thBtn" type="button" data-col="teams">TEAMS</button></th>
-                <th class="colMax"><button class="thBtn" type="button" data-col="maxTeam">MAX</button></th>
-                <th class="colLeft"><button class="thBtn" type="button" data-col="left">LEFT</button></th>
-                <th class="colOwn"><button class="thBtn" type="button" data-col="own">OWN</button></th>
-                <th class="colPts"><button class="thBtn" type="button" data-col="pts">PTS</button></th>
-                <th class="colPrize"><button class="thBtn" type="button" data-col="top">TOP</button></th>
+                <th class="colBring"><button class="thBtn" type="button" data-col="bring">BRING BACK</button></th>
+
+                <th class="colMax"><button class="thBtn" type="button" data-col="maxTeam">MAX FROM TEAM</button></th>
+                <th class="colMaxG"><button class="thBtn" type="button" data-col="maxGame">MAX FROM GAME</button></th>
+
+                <th class="colEarly"><button class="thBtn" type="button" data-col="early">EARLY PLAYERS</button></th>
+                <th class="colLate"><button class="thBtn" type="button" data-col="late">LATE PLAYERS</button></th>
+
+                <th class="colLeft"><button class="thBtn" type="button" data-col="left">SALARY LEFT</button></th>
+                <th class="colOwn"><button class="thBtn" type="button" data-col="own">TOTAL OWNERSHIP</button></th>
+
+                <th class="colB0"><button class="thBtn" type="button" data-col="b0">OWN 0–10</button></th>
+                <th class="colB11"><button class="thBtn" type="button" data-col="b11">OWN 11–19</button></th>
+                <th class="colB20"><button class="thBtn" type="button" data-col="b20">OWN 20+</button></th>
+                <th class="colBtot"><button class="thBtn" type="button" data-col="btot">BUCKET TOTAL</button></th>
+
+                <th class="colPts"><button class="thBtn" type="button" data-col="pts">WINNER POINTS</button></th>
+                <th class="colPrize"><button class="thBtn" type="button" data-col="top">TOP PRIZE</button></th>
                 <th class="colTag"><button class="thBtn" type="button" data-col="tag">TAG</button></th>
                 <th class="colGroup"><button class="thBtn" type="button" data-col="group">GROUP</button></th>
                 <th class="colLink"></th>
@@ -351,16 +505,28 @@ const pageTitle = "NFL Classic Review";
               {rows.map((r) => {
                 const year = Number.isFinite(r.year as any) ? String(r.year) : "";
                 const wk = Number.isFinite(r.week as any) ? String(r.week) : "";
+
                 const left = n(r.salaryLeft);
                 const own = n(r.ownPct);
                 const pts = n(r.pts);
                 const top = n(r.topPrizeCents);
 
-                const teams = n(r.uniqueTeams);
                 const maxTeam = n(r.maxFromTeam);
+                const maxGame = n(r.maxFromGame);
 
+                const early = n(r.earlyCount);
+                const late = n(r.lateCount);
+
+                const b0 = n(r.own0_10);
+                const b11 = n(r.own11_19);
+                const b20 = n(r.own20p);
+                const btot = n(r.ownBucketTotal);
+
+                const bring = String(r.hasBringback || "").trim();
                 const tag = String(r.tag || "").trim();
                 const group = String(r.group || "").trim();
+
+                const badBucket = typeof btot === "number" && btot !== 9;
 
                 return (
                   <tr
@@ -370,10 +536,17 @@ const pageTitle = "NFL Classic Review";
                     data-dateiso={r.slateDate || ""}
                     data-date={fmtDate(r.slateDate)}
                     data-stack={r.qbStack || ""}
-                    data-teams={teams === null ? "" : String(teams)}
+                    data-bring={bring}
                     data-maxteam={maxTeam === null ? "" : String(maxTeam)}
+                    data-maxgame={maxGame === null ? "" : String(maxGame)}
+                    data-early={early === null ? "" : String(early)}
+                    data-late={late === null ? "" : String(late)}
                     data-left={left === null ? "" : String(left)}
                     data-own={own === null ? "" : String(own)}
+                    data-b0={b0 === null ? "" : String(b0)}
+                    data-b11={b11 === null ? "" : String(b11)}
+                    data-b20={b20 === null ? "" : String(b20)}
+                    data-btot={btot === null ? "" : String(btot)}
                     data-pts={pts === null ? "" : String(pts)}
                     data-top={top === null ? "" : String(top)}
                     data-tag={tag}
@@ -383,11 +556,24 @@ const pageTitle = "NFL Classic Review";
                     <td class="mono">{wk || "—"}</td>
                     <td class="mono">{r.slateType || "—"}</td>
                     <td class="mono">{fmtDate(r.slateDate)}</td>
+
                     <td class="capCell"><div class="capMain">{r.qbStack || "—"}</div></td>
-                    <td class="mono">{teams === null ? "—" : teams.toFixed(0)}</td>
+                    <td class="mono">{bring || "—"}</td>
+
                     <td class="mono">{maxTeam === null ? "—" : maxTeam.toFixed(0)}</td>
+                    <td class="mono">{maxGame === null ? "—" : maxGame.toFixed(0)}</td>
+
+                    <td class="mono">{early === null ? "—" : early.toFixed(0)}</td>
+                    <td class="mono">{late === null ? "—" : late.toFixed(0)}</td>
+
                     <td class="mono">{left === null ? "—" : left.toFixed(0)}</td>
                     <td class="mono">{own === null ? "—" : `${own.toFixed(2)}%`}</td>
+
+                    <td class={"mono " + (badBucket ? "bad" : "")}>{b0 === null ? "—" : b0.toFixed(0)}</td>
+                    <td class={"mono " + (badBucket ? "bad" : "")}>{b11 === null ? "—" : b11.toFixed(0)}</td>
+                    <td class={"mono " + (badBucket ? "bad" : "")}>{b20 === null ? "—" : b20.toFixed(0)}</td>
+                    <td class={"mono " + (badBucket ? "bad" : "")}>{btot === null ? "—" : btot.toFixed(0)}</td>
+
                     <td class="mono">{pts === null ? "—" : pts.toFixed(2)}</td>
                     <td class="mono">{moneyCents(r.topPrizeCents)}</td>
                     <td class="mono">{tag || "—"}</td>
@@ -449,18 +635,34 @@ const pageTitle = "NFL Classic Review";
                 week: "",
                 type: "",
                 stack: "",
+                bring: "",
                 tag: "",
                 group: "",
                 dateStart: "",
                 dateEnd: "",
-                teamsMin: "",
-                teamsMax: "",
+
                 maxTeamMin: "",
                 maxTeamMax: "",
+                maxGameMin: "",
+                maxGameMax: "",
+                earlyMin: "",
+                earlyMax: "",
+                lateMin: "",
+                lateMax: "",
+
                 leftMin: "",
                 leftMax: "",
                 ownMin: "",
                 ownMax: "",
+                b0Min: "",
+                b0Max: "",
+                b11Min: "",
+                b11Max: "",
+                b20Min: "",
+                b20Max: "",
+                btotMin: "",
+                btotMax: "",
+
                 ptsMin: "",
                 ptsMax: "",
                 topMin: "",
@@ -471,16 +673,29 @@ const pageTitle = "NFL Classic Review";
 
             const colMeta = {
               year: { kind: "catNum", label: "YEAR", key: "year" },
-              week: { kind: "catNum", label: "WK", key: "week" },
+              week: { kind: "catNum", label: "WEEK", key: "week" },
               type: { kind: "cat", label: "TYPE", key: "type" },
               date: { kind: "date", label: "DATE", key: "dateiso" },
+
               stack: { kind: "cat", label: "STACK", key: "stack" },
-              teams: { kind: "num", label: "TEAMS", key: "teams" },
-              maxTeam: { kind: "num", label: "MAX", key: "maxteam" },
+              bring: { kind: "cat", label: "BRING", key: "bring" },
+
+              maxTeam: { kind: "num", label: "MAX FROM TEAM", key: "maxteam" },
+              maxGame: { kind: "num", label: "MAX FROM GAME", key: "maxgame" },
+              early: { kind: "num", label: "EARLY", key: "early" },
+              late: { kind: "num", label: "LATE", key: "late" },
+
               left: { kind: "num", label: "LEFT", key: "left" },
               own: { kind: "num", label: "OWN", key: "own" },
+
+              b0: { kind: "num", label: "OWN 0–10", key: "b0" },
+              b11: { kind: "num", label: "OWN 11–19", key: "b11" },
+              b20: { kind: "num", label: "OWN 20+", key: "b20" },
+              btot: { kind: "num", label: "BUCKET TOTAL", key: "btot" },
+
               pts: { kind: "num", label: "PTS", key: "pts" },
               top: { kind: "num", label: "TOP", key: "top" },
+
               tag: { kind: "cat", label: "TAG", key: "tag" },
               group: { kind: "cat", label: "GROUP", key: "group" }
             };
@@ -528,8 +743,11 @@ const pageTitle = "NFL Classic Review";
             function hay(tr) {
               const parts = [
                 tr.dataset.year, tr.dataset.week, tr.dataset.type, tr.dataset.date,
-                tr.dataset.stack, tr.dataset.teams, tr.dataset.maxteam,
-                tr.dataset.left, tr.dataset.own, tr.dataset.pts, tr.dataset.top,
+                tr.dataset.stack, tr.dataset.bring,
+                tr.dataset.maxteam, tr.dataset.maxgame, tr.dataset.early, tr.dataset.late,
+                tr.dataset.left, tr.dataset.own,
+                tr.dataset.b0, tr.dataset.b11, tr.dataset.b20, tr.dataset.btot,
+                tr.dataset.pts, tr.dataset.top,
                 tr.dataset.tag, tr.dataset.group
               ];
               return parts.map((x) => text(x).toLowerCase()).join(" ");
@@ -542,6 +760,7 @@ const pageTitle = "NFL Classic Review";
               if (f.week && text(tr.dataset.week) !== f.week) return false;
               if (f.type && text(tr.dataset.type) !== f.type) return false;
               if (f.stack && text(tr.dataset.stack) !== f.stack) return false;
+              if (f.bring && text(tr.dataset.bring) !== f.bring) return false;
               if (f.tag && text(tr.dataset.tag) !== f.tag) return false;
               if (f.group && text(tr.dataset.group) !== f.group) return false;
 
@@ -549,11 +768,17 @@ const pageTitle = "NFL Classic Review";
                 if (!withinDate(tr.dataset.dateiso, f.dateStart, f.dateEnd)) return false;
               }
 
-              if (f.teamsMin || f.teamsMax) {
-                if (!withinNum(tr.dataset.teams, f.teamsMin, f.teamsMax)) return false;
-              }
               if (f.maxTeamMin || f.maxTeamMax) {
                 if (!withinNum(tr.dataset.maxteam, f.maxTeamMin, f.maxTeamMax)) return false;
+              }
+              if (f.maxGameMin || f.maxGameMax) {
+                if (!withinNum(tr.dataset.maxgame, f.maxGameMin, f.maxGameMax)) return false;
+              }
+              if (f.earlyMin || f.earlyMax) {
+                if (!withinNum(tr.dataset.early, f.earlyMin, f.earlyMax)) return false;
+              }
+              if (f.lateMin || f.lateMax) {
+                if (!withinNum(tr.dataset.late, f.lateMin, f.lateMax)) return false;
               }
 
               if (f.leftMin || f.leftMax) {
@@ -562,6 +787,20 @@ const pageTitle = "NFL Classic Review";
               if (f.ownMin || f.ownMax) {
                 if (!withinNum(tr.dataset.own, f.ownMin, f.ownMax)) return false;
               }
+
+              if (f.b0Min || f.b0Max) {
+                if (!withinNum(tr.dataset.b0, f.b0Min, f.b0Max)) return false;
+              }
+              if (f.b11Min || f.b11Max) {
+                if (!withinNum(tr.dataset.b11, f.b11Min, f.b11Max)) return false;
+              }
+              if (f.b20Min || f.b20Max) {
+                if (!withinNum(tr.dataset.b20, f.b20Min, f.b20Max)) return false;
+              }
+              if (f.btotMin || f.btotMax) {
+                if (!withinNum(tr.dataset.btot, f.btotMin, f.btotMax)) return false;
+              }
+
               if (f.ptsMin || f.ptsMax) {
                 if (!withinNum(tr.dataset.pts, f.ptsMin, f.ptsMax)) return false;
               }
@@ -688,10 +927,16 @@ const pageTitle = "NFL Classic Review";
 
               if (meta.kind === "num") {
                 const map = {
-                  teams: ["teamsMin", "teamsMax"],
                   maxTeam: ["maxTeamMin", "maxTeamMax"],
+                  maxGame: ["maxGameMin", "maxGameMax"],
+                  early: ["earlyMin", "earlyMax"],
+                  late: ["lateMin", "lateMax"],
                   left: ["leftMin", "leftMax"],
                   own: ["ownMin", "ownMax"],
+                  b0: ["b0Min", "b0Max"],
+                  b11: ["b11Min", "b11Max"],
+                  b20: ["b20Min", "b20Max"],
+                  btot: ["btotMin", "btotMax"],
                   pts: ["ptsMin", "ptsMax"],
                   top: ["topMin", "topMax"]
                 };
@@ -763,15 +1008,27 @@ const pageTitle = "NFL Classic Review";
               if (col === "week") state.filters.week = "";
               if (col === "type") state.filters.type = "";
               if (col === "stack") state.filters.stack = "";
+              if (col === "bring") state.filters.bring = "";
               if (col === "tag") state.filters.tag = "";
               if (col === "group") state.filters.group = "";
               if (col === "date") { state.filters.dateStart = ""; state.filters.dateEnd = ""; }
-              if (col === "teams") { state.filters.teamsMin = ""; state.filters.teamsMax = ""; }
+
               if (col === "maxTeam") { state.filters.maxTeamMin = ""; state.filters.maxTeamMax = ""; }
+              if (col === "maxGame") { state.filters.maxGameMin = ""; state.filters.maxGameMax = ""; }
+              if (col === "early") { state.filters.earlyMin = ""; state.filters.earlyMax = ""; }
+              if (col === "late") { state.filters.lateMin = ""; state.filters.lateMax = ""; }
+
               if (col === "left") { state.filters.leftMin = ""; state.filters.leftMax = ""; }
               if (col === "own") { state.filters.ownMin = ""; state.filters.ownMax = ""; }
+
+              if (col === "b0") { state.filters.b0Min = ""; state.filters.b0Max = ""; }
+              if (col === "b11") { state.filters.b11Min = ""; state.filters.b11Max = ""; }
+              if (col === "b20") { state.filters.b20Min = ""; state.filters.b20Max = ""; }
+              if (col === "btot") { state.filters.btotMin = ""; state.filters.btotMax = ""; }
+
               if (col === "pts") { state.filters.ptsMin = ""; state.filters.ptsMax = ""; }
               if (col === "top") { state.filters.topMin = ""; state.filters.topMax = ""; }
+
               applyAll();
             }
 
@@ -863,249 +1120,87 @@ const pageTitle = "NFL Classic Review";
 
 <style>
   .page { width: 100%; max-width: 100%; padding: 18px 18px; }
-
-  .topbar {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-
+  .topbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; margin-bottom: 14px; }
   .titleBlock { min-width: 320px; }
-
   .h1 { margin: 0; font-size: 28px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; }
-
   .sub { margin-top: 6px; color: rgba(255,255,255,0.55); font-size: 13px; }
 
-  .searchWrap {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .search {
-    width: min(520px, 100%);
-    padding: 10px 12px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.10);
-    background: #141414;
-    color: rgba(255,255,255,0.92);
-    font-size: 14px;
-    outline: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  }
-
+  .searchWrap { flex: 1 1 auto; display: flex; justify-content: flex-end; gap: 10px; align-items: center; }
+  .search { width: min(520px, 100%); padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.10); background: #141414; color: rgba(255,255,255,0.92); font-size: 14px; outline: none; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
   .search::placeholder { color: rgba(255,255,255,0.45); }
-
-  .search:focus {
-    border-color: rgba(255,255,255,0.18);
-    box-shadow: 0 0 0 3px rgba(255,255,255,0.10), 0 12px 32px rgba(0,0,0,0.45);
-  }
-
-  .resetAll {
-    padding: 10px 12px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.10);
-    background: #1f1f1f;
-    color: rgba(255,255,255,0.88);
-    font-weight: 900;
-    cursor: pointer;
-    white-space: nowrap;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
-  }
-
-  .resetAll:hover { background: #232323; border-color: rgba(255,255,255,0.14); transform: translateY(-1px); }
-  .resetAll:active { transform: translateY(0px); }
-
+  .resetAll { padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.10); background: #1f1f1f; color: rgba(255,255,255,0.88); font-weight: 900; cursor: pointer; white-space: nowrap; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
   .srOnly { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
-  main.page > section.grid { background: transparent; border: 0; box-shadow: none; border-radius: 0; padding: 0; }
-
   .grid { display: grid; grid-template-columns: 370px 1fr; gap: 12px; min-height: 0; }
-
   .sidebar { overflow: auto; padding-right: 4px; }
-
   .main { min-height: 0; display: flex; flex-direction: column; }
 
-  .card {
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    background: #1f1f1f;
-    padding: 12px 12px;
-    margin-bottom: 10px;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
-  }
-
+  .card { border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; background: #1f1f1f; padding: 12px 12px; margin-bottom: 10px; box-shadow: 0 18px 40px rgba(0,0,0,0.40); }
   .cardTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
 
   .kv { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; align-items: start; }
-
   .k { color: rgba(255,255,255,0.55); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; }
-
   .v { font-weight: 900; color: rgba(255,255,255,0.88); }
 
-  .mono {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-weight: 700;
-  }
+  .tinyNote { margin-top: 8px; font-size: 11px; color: rgba(255,255,255,0.50); font-weight: 900; }
 
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-weight: 700; }
   .mono .spacer { height: 10px; }
-
-  .note {
-    grid-column: 1 / -1;
-    margin-top: 8px;
-    color: rgba(255,255,255,0.55);
-    font-size: 12px;
-    line-height: 1.35;
-  }
-
   .lines { max-height: 220px; overflow: auto; padding-right: 4px; }
 
-  .tableWrap {
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    overflow: auto;
-    background: #1f1f1f;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
-  }
-
+  .tableWrap { border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; overflow: auto; background: #1f1f1f; box-shadow: 0 18px 40px rgba(0,0,0,0.40); }
   table { width: 100%; border-collapse: collapse; }
-
-  thead th {
-    position: sticky;
-    top: 0;
-    background: #181818;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    padding: 10px 10px;
-    z-index: 2;
-    text-align: left;
-  }
-
-  tbody td {
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 10px 10px;
-    vertical-align: top;
-    font-size: 13px;
-    color: rgba(255,255,255,0.88);
-  }
-
+  thead th { position: sticky; top: 0; background: #181818; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 10px 10px; z-index: 2; text-align: left; }
+  tbody td { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 10px 10px; vertical-align: top; font-size: 13px; color: rgba(255,255,255,0.88); }
   tbody tr:hover td { background: #232323; }
 
-  .capCell .capMain { font-weight: 900; color: rgba(255,255,255,0.92); }
+  .bad { color: #ffb3b3; }
 
-  .link {
-    font-weight: 900;
-    text-decoration: none;
-    color: rgba(255,255,255,0.88);
-  }
+  .capCell .capMain { font-weight: 900; color: rgba(255,255,255,0.92); }
+  .link { font-weight: 900; text-decoration: none; color: rgba(255,255,255,0.88); }
   .link:hover { color: #fff; }
 
-  .thBtn {
-    width: 100%;
-    text-align: left;
-    border: 0;
-    background: transparent;
-    padding: 0;
-    font-size: 11px;
-    color: rgba(255,255,255,0.62);
-    font-weight: 900;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-  .thBtn:hover { color: rgba(255,255,255,0.88); }
+  .thBtn { width: 100%; text-align: left; border: 0; background: transparent; padding: 0; font-size: 11px; color: rgba(255,255,255,0.62); font-weight: 900; letter-spacing: 0.02em; text-transform: uppercase; cursor: pointer; }
 
-  .menu {
-    position: fixed;
-    width: 320px;
-    background: #181818;
-    border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 14px;
-    box-shadow: 0 18px 44px rgba(0,0,0,0.55);
-    padding: 12px;
-    z-index: 9999;
-    color: rgba(255,255,255,0.88);
-  }
-
+  .menu { position: fixed; width: 320px; background: #181818; border: 1px solid rgba(255,255,255,0.10); border-radius: 14px; box-shadow: 0 18px 44px rgba(0,0,0,0.55); padding: 12px; z-index: 9999; color: rgba(255,255,255,0.88); }
   .menuTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
-
   .menuRow { display: flex; gap: 8px; margin-bottom: 10px; }
-
-  .menuBtn {
-    flex: 1 1 auto;
-    padding: 9px 10px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.10);
-    background: #1f1f1f;
-    color: rgba(255,255,255,0.88);
-    font-weight: 900;
-    cursor: pointer;
-    font-size: 13px;
-    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
-  }
-
-  .menuBtn:hover { background: #232323; border-color: rgba(255,255,255,0.14); transform: translateY(-1px); }
-  .menuBtn:active { transform: translateY(0px); }
-
+  .menuBtn { flex: 1 1 auto; padding: 9px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.10); background: #1f1f1f; color: rgba(255,255,255,0.88); font-weight: 900; cursor: pointer; font-size: 13px; }
   .menuBtn.secondary { background: #141414; }
-
   .menuBlock { margin-bottom: 10px; }
-
-  .menuLabel {
-    font-size: 11px;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 6px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
-
-  .menuInput {
-    width: 100%;
-    padding: 9px 10px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.10);
-    background: #141414;
-    color: rgba(255,255,255,0.92);
-    font-size: 13px;
-    outline: none;
-  }
-
-  .menuInput:focus {
-    border-color: rgba(255,255,255,0.16);
-    box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
-  }
-
+  .menuLabel { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; }
+  .menuInput { width: 100%; padding: 9px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.10); background: #141414; color: rgba(255,255,255,0.92); font-size: 13px; outline: none; }
   .menuGrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: end; }
-
   .mini { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; }
 
   .colYear { width: 78px; }
   .colWk { width: 56px; }
   .colType { width: 90px; }
   .colDate { width: 90px; }
+
   .colStack { width: 140px; }
-  .colTeams { width: 80px; }
-  .colMax { width: 70px; }
+  .colBring { width: 70px; }
+
+  .colMax { width: 90px; }
+  .colMaxG { width: 90px; }
+
+  .colEarly { width: 90px; }
+  .colLate { width: 90px; }
+
   .colLeft { width: 80px; }
-  .colOwn { width: 90px; }
+  .colOwn { width: 95px; }
+
+  .colB0 { width: 80px; }
+  .colB11 { width: 90px; }
+  .colB20 { width: 80px; }
+  .colBtot { width: 95px; }
+
   .colPts { width: 90px; }
   .colPrize { width: 110px; }
   .colTag { width: 100px; }
   .colGroup { width: 120px; }
   .colLink { width: 70px; }
 
-  @media (max-width: 1200px) {
-    .grid { grid-template-columns: 1fr; }
-  }
-
-  @media (max-width: 900px) {
-    .topbar { flex-direction: column; align-items: stretch; }
-    .searchWrap { justify-content: stretch; flex-wrap: wrap; }
-    .search { width: 100%; }
-  }
+  @media (max-width: 1200px) { .grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .topbar { flex-direction: column; align-items: stretch; } .searchWrap { justify-content: stretch; flex-wrap: wrap; } .search { width: 100%; } }
 </style>
