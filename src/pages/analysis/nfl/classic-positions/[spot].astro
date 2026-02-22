@@ -1,0 +1,390 @@
+---
+// src/pages/analysis/nfl/classic-positions/[spot].astro
+import Layout from "../../../../layouts/Layout.astro";
+
+const spotRaw = String(Astro.params.spot ?? "").trim().toUpperCase();
+const allowed = new Set(["QB", "RB", "WR", "TE", "FLEX", "DST"]);
+if (!allowed.has(spotRaw)) throw new Error(`Invalid roster spot: ${spotRaw}`);
+
+const apiUrl = `${Astro.url.origin}/api/analysis/nfl/classic_positions?spot=${encodeURIComponent(spotRaw)}`;
+
+const res = await fetch(apiUrl, { cache: "no-store" });
+if (!res.ok) throw new Error(`Analysis API failed: ${res.status} ${res.statusText} (${apiUrl})`);
+
+const data = await res.json();
+const rowsRaw = Array.isArray(data?.rows) ? data.rows : [];
+
+function n(v: any) {
+  const x = Number(v);
+  return Number.isFinite(x) ? x : null;
+}
+
+function fmtDate(iso: any) {
+  const s = String(iso || "");
+  if (!s) return "—";
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return s;
+  return new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit" }).format(d);
+}
+
+function median(vals: number[]) {
+  if (!vals.length) return null;
+  const a = [...vals].sort((x, y) => x - y);
+  const mid = Math.floor(a.length / 2);
+  return a.length % 2 ? a[mid] : (a[mid - 1] + a[mid]) / 2;
+}
+
+function minMax(vals: number[]) {
+  if (!vals.length) return { min: null as number | null, max: null as number | null };
+  let mn = vals[0];
+  let mx = vals[0];
+  for (const v of vals) {
+    if (v < mn) mn = v;
+    if (v > mx) mx = v;
+  }
+  return { min: mn, max: mx };
+}
+
+function countsByKey(list: any[], key: string) {
+  const m = new Map<string, number>();
+  for (const it of list) {
+    const k = String((it as any)[key] || "").trim();
+    if (!k) continue;
+    m.set(k, (m.get(k) || 0) + 1);
+  }
+  return m;
+}
+
+function mostLeast(map: Map<string, number>) {
+  const entries = Array.from(map.entries());
+  if (!entries.length) return { most: null as any, least: null as any };
+  let most = entries[0];
+  let least = entries[0];
+  for (const e of entries) {
+    if (e[1] > most[1]) most = e;
+    if (e[1] < least[1]) least = e;
+  }
+  return { most, least };
+}
+
+const rows = rowsRaw.map((r: any) => ({
+  year: typeof r.year === "number" ? r.year : null,
+  week: typeof r.week === "number" ? r.week : null,
+  slateType: String(r.slateType ?? ""),
+  slateDate: String(r.slateDate ?? ""),
+  player: String(r.player ?? ""),
+  position: String(r.position ?? ""),
+  team: String(r.team ?? ""),
+  salary: n(r.salary),
+  points: n(r.points),
+  ownPct: n(r.ownPct),
+  link: typeof r.link === "string" ? r.link : "",
+}));
+
+const salaryVals = rows.map((r) => n(r.salary)).filter((v): v is number => v !== null);
+const pointsVals = rows.map((r) => n(r.points)).filter((v): v is number => v !== null);
+const ownVals = rows.map((r) => n(r.ownPct)).filter((v): v is number => v !== null);
+
+const salaryMM = minMax(salaryVals);
+const pointsMM = minMax(pointsVals);
+const ownMM = minMax(ownVals);
+
+const salaryMedian = median(salaryVals);
+const pointsMedian = median(pointsVals);
+const ownMedian = median(ownVals);
+
+const teamCounts = countsByKey(rows, "team");
+const playerCounts = countsByKey(rows, "player");
+const teamML = mostLeast(teamCounts);
+const playerML = mostLeast(playerCounts);
+
+const pageTitle = `Classic ${spotRaw} Micro Analysis`;
+---
+
+<Layout title={pageTitle}>
+  <main class="page">
+    <header class="topbar">
+      <div class="titleBlock">
+        <a class="back" href="/analysis/nfl/classic-positions">← Positions</a>
+        <h1 class="h1">{pageTitle}</h1>
+        <div class="sub">
+          Rows: <span id="shownCount">{rows.length}</span> / {rows.length}
+        </div>
+      </div>
+
+      <div class="searchWrap">
+        <input id="q" class="search" type="text" placeholder={`Search: ${spotRaw}, KC, 2021, MAIN`} />
+        <button id="resetAllTop" class="resetAll" type="button">Reset all</button>
+      </div>
+    </header>
+
+    <section class="grid">
+      <aside class="sidebar">
+        <div class="card">
+          <div class="cardTitle">Distribution</div>
+          <div class="kv">
+            <div class="k">Salary</div>
+            <div class="v mono">
+              <div>Median: {salaryMedian === null ? "—" : salaryMedian.toFixed(0)}</div>
+              <div>Most: {salaryMM.max === null ? "—" : salaryMM.max.toFixed(0)}</div>
+              <div>Least: {salaryMM.min === null ? "—" : salaryMM.min.toFixed(0)}</div>
+            </div>
+
+            <div class="k">Points</div>
+            <div class="v mono">
+              <div>Median: {pointsMedian === null ? "—" : pointsMedian.toFixed(2)}</div>
+              <div>Most: {pointsMM.max === null ? "—" : pointsMM.max.toFixed(2)}</div>
+              <div>Least: {pointsMM.min === null ? "—" : pointsMM.min.toFixed(2)}</div>
+            </div>
+
+            <div class="k">Ownership</div>
+            <div class="v mono">
+              <div>Median: {ownMedian === null ? "—" : `${ownMedian.toFixed(2)}%`}</div>
+              <div>Most: {ownMM.max === null ? "—" : `${ownMM.max.toFixed(2)}%`}</div>
+              <div>Least: {ownMM.min === null ? "—" : `${ownMM.min.toFixed(2)}%`}</div>
+            </div>
+
+            <div class="k">Most used</div>
+            <div class="v mono">
+              <div>Player: {playerML.most ? `${playerML.most[0]} (${playerML.most[1]})` : "—"}</div>
+              <div>Team: {teamML.most ? `${teamML.most[0]} (${teamML.most[1]})` : "—"}</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="main">
+        <div class="tableWrap">
+          <table id="t">
+            <thead>
+              <tr>
+                <th class="colYear"><button class="thBtn" type="button" data-col="year">YEAR</button></th>
+                <th class="colWk"><button class="thBtn" type="button" data-col="week">WK</button></th>
+                <th class="colType"><button class="thBtn" type="button" data-col="type">TYPE</button></th>
+                <th class="colDate"><button class="thBtn" type="button" data-col="date">DATE</button></th>
+                <th class="colTeam"><button class="thBtn" type="button" data-col="team">TEAM</button></th>
+                <th class="colPlayer"><button class="thBtn" type="button" data-col="player">PLAYER</button></th>
+                <th class="colPos"><button class="thBtn" type="button" data-col="pos">POS</button></th>
+                <th class="colSal"><button class="thBtn" type="button" data-col="sal">SAL</button></th>
+                <th class="colOwn"><button class="thBtn" type="button" data-col="own">OWN</button></th>
+                <th class="colPts"><button class="thBtn" type="button" data-col="pts">PTS</button></th>
+                <th class="colLink"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {rows.map((r) => (
+                <tr
+                  data-year={r.year == null ? "" : String(r.year)}
+                  data-week={r.week == null ? "" : String(r.week)}
+                  data-type={r.slateType || ""}
+                  data-dateiso={r.slateDate || ""}
+                  data-date={fmtDate(r.slateDate)}
+                  data-team={r.team || ""}
+                  data-player={r.player || ""}
+                  data-pos={r.position || ""}
+                  data-sal={r.salary == null ? "" : String(r.salary)}
+                  data-own={r.ownPct == null ? "" : String(r.ownPct)}
+                  data-pts={r.points == null ? "" : String(r.points)}
+                >
+                  <td class="mono">{r.year == null ? "—" : String(r.year)}</td>
+                  <td class="mono">{r.week == null ? "—" : String(r.week)}</td>
+                  <td class="mono">{r.slateType || "—"}</td>
+                  <td class="mono">{fmtDate(r.slateDate)}</td>
+                  <td class="mono">{r.team || "—"}</td>
+                  <td class="capCell"><div class="capMain">{r.player || "—"}</div></td>
+                  <td class="mono">{r.position || "—"}</td>
+                  <td class="mono">{r.salary == null ? "—" : r.salary.toFixed(0)}</td>
+                  <td class="mono">{r.ownPct == null ? "—" : `${r.ownPct.toFixed(2)}%`}</td>
+                  <td class="mono">{r.points == null ? "—" : r.points.toFixed(2)}</td>
+                  <td class="mono">
+                    {r.link ? <a class="link" href={r.link} target="_blank" rel="noreferrer">View</a> : "—"}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <script is:inline>
+            function byId(id) { return document.getElementById(id); }
+            function numOrNull(v) {
+              if (v === "" || v == null) return null;
+              const x = Number(v);
+              return Number.isFinite(x) ? x : null;
+            }
+            function text(v) { return String(v == null ? "" : v).trim(); }
+
+            const q = byId("q");
+            const shownCount = byId("shownCount");
+            const resetAllTop = byId("resetAllTop");
+
+            const tbody = document.querySelector("#t tbody");
+            const trs = tbody ? Array.from(tbody.querySelectorAll("tr")) : [];
+
+            const state = {
+              q: "",
+              filters: {
+                year: "",
+                week: "",
+                type: "",
+                team: "",
+                player: "",
+                pos: "",
+                dateStart: "",
+                dateEnd: "",
+                salMin: "",
+                salMax: "",
+                ownMin: "",
+                ownMax: "",
+                ptsMin: "",
+                ptsMax: ""
+              }
+            };
+
+            function withinNum(v, minStr, maxStr) {
+              const x = numOrNull(v);
+              if (x == null) return false;
+              const minV = numOrNull(minStr);
+              const maxV = numOrNull(maxStr);
+              if (minV != null && x < minV) return false;
+              if (maxV != null && x > maxV) return false;
+              return true;
+            }
+
+            function withinDate(iso, startStr, endStr) {
+              const s = text(iso);
+              if (!s) return false;
+              const t = new Date(s).getTime();
+              if (!Number.isFinite(t)) return false;
+
+              if (startStr) {
+                const st = new Date(startStr).getTime();
+                if (Number.isFinite(st) && t < st) return false;
+              }
+              if (endStr) {
+                const et = new Date(endStr).getTime();
+                if (Number.isFinite(et) && t > et) return false;
+              }
+              return true;
+            }
+
+            function hay(tr) {
+              const parts = [
+                tr.dataset.year, tr.dataset.week, tr.dataset.type, tr.dataset.date,
+                tr.dataset.team, tr.dataset.player, tr.dataset.pos,
+                tr.dataset.sal, tr.dataset.own, tr.dataset.pts
+              ];
+              return parts.map((x) => text(x).toLowerCase()).join(" ");
+            }
+
+            function passesFilters(tr) {
+              const f = state.filters;
+              if (f.year && text(tr.dataset.year) !== f.year) return false;
+              if (f.week && text(tr.dataset.week) !== f.week) return false;
+              if (f.type && text(tr.dataset.type) !== f.type) return false;
+              if (f.team && text(tr.dataset.team) !== f.team) return false;
+              if (f.player && text(tr.dataset.player) !== f.player) return false;
+              if (f.pos && text(tr.dataset.pos) !== f.pos) return false;
+
+              if (f.dateStart || f.dateEnd) {
+                if (!withinDate(tr.dataset.dateiso, f.dateStart, f.dateEnd)) return false;
+              }
+              if (f.salMin || f.salMax) {
+                if (!withinNum(tr.dataset.sal, f.salMin, f.salMax)) return false;
+              }
+              if (f.ownMin || f.ownMax) {
+                if (!withinNum(tr.dataset.own, f.ownMin, f.ownMax)) return false;
+              }
+              if (f.ptsMin || f.ptsMax) {
+                if (!withinNum(tr.dataset.pts, f.ptsMin, f.ptsMax)) return false;
+              }
+              return true;
+            }
+
+            function applyAll() {
+              const qv = state.q;
+              let shown = 0;
+
+              for (const tr of trs) {
+                let ok = true;
+                if (qv) {
+                  if (!hay(tr).includes(qv)) ok = false;
+                }
+                if (ok && !passesFilters(tr)) ok = false;
+
+                tr.style.display = ok ? "" : "none";
+                if (ok) shown += 1;
+              }
+
+              if (shownCount) shownCount.textContent = String(shown);
+            }
+
+            if (q) {
+              q.addEventListener("input", () => {
+                state.q = q.value.trim().toLowerCase();
+                applyAll();
+              });
+            }
+
+            if (resetAllTop) {
+              resetAllTop.addEventListener("click", () => {
+                state.q = "";
+                for (const k in state.filters) state.filters[k] = "";
+                q.value = "";
+                applyAll();
+              });
+            }
+
+            applyAll();
+          </script>
+        </div>
+      </section>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page { width: 100%; max-width: 100%; padding: 18px 18px; }
+  .topbar { display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:14px; }
+  .titleBlock { min-width:320px; }
+  .back { display:inline-block; margin-bottom:8px; text-decoration:none; font-weight:900; color:rgba(255,255,255,0.70); }
+  .back:hover { color:#fff; }
+  .h1 { margin:0; font-size:28px; font-weight:900; line-height:1.1; letter-spacing:-0.01em; }
+  .sub { margin-top:6px; color:rgba(255,255,255,0.55); font-size:13px; }
+
+  .searchWrap { flex:1 1 auto; display:flex; justify-content:flex-end; gap:10px; align-items:center; }
+  .search { width:min(520px,100%); padding:10px 12px; border-radius:12px; border:1px solid rgba(255,255,255,0.10); background:#141414; color:rgba(255,255,255,0.92); font-size:14px; outline:none; box-shadow:0 10px 30px rgba(0,0,0,0.35); }
+  .search::placeholder { color:rgba(255,255,255,0.45); }
+
+  .resetAll { padding:10px 12px; border-radius:12px; border:1px solid rgba(255,255,255,0.10); background:#1f1f1f; color:rgba(255,255,255,0.88); font-weight:900; cursor:pointer; white-space:nowrap; box-shadow:0 10px 30px rgba(0,0,0,0.35); }
+  .resetAll:hover { background:#232323; border-color:rgba(255,255,255,0.14); }
+
+  .grid { display:grid; grid-template-columns:370px 1fr; gap:12px; min-height:0; }
+  .sidebar { overflow:auto; padding-right:4px; }
+  .main { min-height:0; display:flex; flex-direction:column; }
+
+  .card { border:1px solid rgba(255,255,255,0.08); border-radius:14px; background:#1f1f1f; padding:12px 12px; margin-bottom:10px; box-shadow:0 18px 40px rgba(0,0,0,0.40); }
+  .cardTitle { font-weight:900; margin-bottom:10px; color:rgba(255,255,255,0.92); }
+
+  .kv { display:grid; grid-template-columns:1fr 1fr; gap:8px 10px; align-items:start; }
+  .k { color:rgba(255,255,255,0.55); font-size:12px; font-weight:900; text-transform:uppercase; letter-spacing:0.02em; }
+  .v { font-weight:900; color:rgba(255,255,255,0.88); }
+
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-weight:700; }
+
+  .tableWrap { border:1px solid rgba(255,255,255,0.08); border-radius:14px; overflow:auto; background:#1f1f1f; box-shadow:0 18px 40px rgba(0,0,0,0.40); }
+  table { width:100%; border-collapse:collapse; }
+  thead th { position:sticky; top:0; background:#181818; border-bottom:1px solid rgba(255,255,255,0.08); padding:10px 10px; z-index:2; text-align:left; }
+  tbody td { border-bottom:1px solid rgba(255,255,255,0.06); padding:10px 10px; vertical-align:top; font-size:13px; color:rgba(255,255,255,0.88); }
+  tbody tr:hover td { background:#232323; }
+
+  .capCell .capMain { font-weight:900; color:rgba(255,255,255,0.92); }
+  .link { font-weight:900; text-decoration:none; color:rgba(255,255,255,0.88); }
+  .link:hover { color:#fff; }
+
+  .thBtn { width:100%; text-align:left; border:0; background:transparent; padding:0; font-size:11px; color:rgba(255,255,255,0.62); font-weight:900; letter-spacing:0.02em; text-transform:uppercase; cursor:pointer; }
+  .thBtn:hover { color:rgba(255,255,255,0.88); }
+
+  @media (max-width: 1200px) { .grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .topbar { flex-direction: column; align-items: stretch; } .searchWrap { justify-content: stretch; flex-wrap: wrap; } .search { width: 100%; } }
+</style>
