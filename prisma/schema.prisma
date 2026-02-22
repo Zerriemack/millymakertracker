@@ -43,8 +43,13 @@ enum GameWindow {
   OTHER
 }
 
+enum CorrelationType {
+  STACK
+  BRINGBACK
+}
+
 model Season {
-  id     String  @id @default(cuid())
+  id     String @id @default(cuid())
   year   Int
   sport  Sport
   slates Slate[]
@@ -84,7 +89,7 @@ model Slate {
 }
 
 model Contest {
-  id            String  @id @default(cuid())
+  id            String @id @default(cuid())
   slateId       String
   site          String
   siteContestId String?
@@ -124,7 +129,7 @@ model ContestAnalysis {
 }
 
 model Winner {
-  id         String  @id @default(cuid())
+  id         String @id @default(cuid())
   contestId  String
   username   String
   points     Float
@@ -190,6 +195,10 @@ model Player {
 
   weekForms PlayerWeekForm[]
 
+  corrAsQb   LineupCorrelation[] @relation("CorrQB")
+  corrAsMate LineupCorrelation[] @relation("CorrMate")
+  corrAsOpp  LineupCorrelation[] @relation("CorrOpp")
+
   @@unique([sport, dkPlayerId])
   @@unique([sport, name, position, teamId])
   @@unique([sport, gsisId])
@@ -220,7 +229,8 @@ model Game {
   homeStartingQb Player? @relation("HomeStartingQb", fields: [homeStartingQbPlayerId], references: [id])
   awayStartingQb Player? @relation("AwayStartingQb", fields: [awayStartingQbPlayerId], references: [id])
 
-  lineupItems LineupItem[]
+  lineupItems    LineupItem[]
+  correlations   LineupCorrelation[]
 
   @@unique([seasonId, homeTeamId, awayTeamId, kickoffTimeUtc])
   @@index([seasonId])
@@ -260,8 +270,10 @@ model Lineup {
 
   totalOwnershipBp Int?
 
-  items  LineupItem[]
-  winner Winner @relation(fields: [winnerId], references: [id])
+  items        LineupItem[]
+  winner       Winner        @relation(fields: [winnerId], references: [id])
+  analysis     LineupAnalysis?
+  correlations LineupCorrelation[]
 
   @@index([lineupType])
 }
@@ -318,18 +330,20 @@ model LineupItem {
   sacks                      Int?
   takeaways                  Int?
 
-  lineup Lineup @relation(fields: [lineupId], references: [id])
-  player Player @relation(fields: [playerId], references: [id])
-
-  game Game? @relation(fields: [gameId], references: [id])
+  lineup   Lineup  @relation(fields: [lineupId], references: [id])
+  player   Player  @relation(fields: [playerId], references: [id])
+  game     Game?   @relation(fields: [gameId], references: [id])
 
   opponentTeam       Team?   @relation("LineupItemOpponentTeam", fields: [opponentTeamId], references: [id])
   opponentStartingQb Player? @relation("LineupItemOpponentQb", fields: [opponentStartingQbPlayerId], references: [id])
+
+  analysis LineupItemAnalysis?
 
   @@unique([lineupId, rosterSpot, slotIndex])
   @@index([lineupId])
   @@index([playerId])
 
+  @@index([rosterSpot])
   @@index([ownershipClassicBp])
   @@index([ownershipCaptainBp])
   @@index([ownershipFlexBp])
@@ -338,4 +352,61 @@ model LineupItem {
   @@index([opponentTeamId])
   @@index([opponentStartingQbPlayerId])
   @@index([pointsAllowedBucket])
+}
+
+model LineupAnalysis {
+  id       String @id @default(cuid())
+  lineupId String @unique
+  lineup   Lineup @relation(fields: [lineupId], references: [id], onDelete: Cascade)
+
+  archetypeTags Json?
+  macroStory    String?
+
+  earlyCount Int?
+  lateCount  Int?
+  primeCount Int?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([lineupId])
+}
+
+model LineupItemAnalysis {
+  id           String @id @default(cuid())
+  lineupItemId String @unique
+  lineupItem   LineupItem @relation(fields: [lineupItemId], references: [id], onDelete: Cascade)
+
+  roleTags   Json?
+  microStory String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([lineupItemId])
+}
+
+model LineupCorrelation {
+  id       String @id @default(cuid())
+  lineupId String
+  gameId   String?
+  type     CorrelationType
+
+  qbPlayerId       String
+  teammatePlayerId String?
+  opponentPlayerId String?
+
+  lineup   Lineup @relation(fields: [lineupId], references: [id], onDelete: Cascade)
+  game     Game?  @relation(fields: [gameId], references: [id])
+
+  qb       Player  @relation("CorrQB", fields: [qbPlayerId], references: [id])
+  teammate Player? @relation("CorrMate", fields: [teammatePlayerId], references: [id])
+  opponent Player? @relation("CorrOpp", fields: [opponentPlayerId], references: [id])
+
+  @@index([lineupId])
+  @@index([gameId])
+  @@index([type])
+  @@index([qbPlayerId])
+  @@index([teammatePlayerId])
+  @@index([opponentPlayerId])
 }

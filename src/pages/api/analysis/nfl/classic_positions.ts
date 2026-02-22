@@ -8,8 +8,103 @@ function n(v: any) {
   return Number.isFinite(x) ? x : null;
 }
 
+function up(v: any) {
+  return String(v ?? "").trim().toUpperCase();
+}
+
+function s(v: any) {
+  return String(v ?? "").trim();
+}
+
+function posCountLabel(positions: string[]) {
+  const m = new Map<string, number>();
+  for (const p of positions.map((x) => up(x)).filter(Boolean)) {
+    m.set(p, (m.get(p) || 0) + 1);
+  }
+  const parts = Array.from(m.entries())
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([p, c]) => (c === 1 ? p : `${p}x${c}`));
+  return parts.length ? parts.join(", ") : "NA";
+}
+
+function dkStatLine(it: any) {
+  const pos = up(it?.player?.position);
+  const spot = up(it?.rosterSpot);
+
+  if (spot === "DST") {
+    const sacks = n(it?.sacks);
+    const takeaways = n(it?.takeaways);
+    const pa = n(it?.pointsAllowedBucket);
+    const dtd = n(it?.defensiveTdCount);
+
+    const parts: string[] = [];
+    if (sacks != null) parts.push(`${sacks} SACK`);
+    if (takeaways != null) parts.push(`${takeaways} TAKE`);
+    if (dtd != null) parts.push(`${dtd} DTD`);
+    if (pa != null) parts.push(`${pa} PA`);
+
+    return parts.length ? parts.join(", ") : "NA";
+  }
+
+  if (pos === "QB") {
+    const passYds = n(it?.passYds);
+    const passTd = n(it?.passTd);
+    const passInt = n(it?.passInt);
+    const rushYds = n(it?.rushYds);
+    const rushTd = n(it?.rushTd);
+
+    const parts: string[] = [];
+    if (passTd != null) parts.push(`${passTd} PaTD`);
+    if (rushTd != null) parts.push(`${rushTd} RuTD`);
+    if (passYds != null) parts.push(`${passYds} PaYds`);
+    if (rushYds != null) parts.push(`${rushYds} RuYds`);
+    if (passInt != null) parts.push(`${passInt} INT`);
+
+    return parts.length ? parts.join(", ") : "NA";
+  }
+
+  if (pos === "RB") {
+    const rushYds = n(it?.rushYdsRb);
+    const rushAtt = n(it?.rushAtt);
+    const rushTd = n(it?.rushTdRb);
+
+    const targets = n(it?.targetsRb);
+    const rec = n(it?.recRb);
+    const recYds = n(it?.recYdsRb);
+    const recTd = n(it?.recTdRb);
+
+    const parts: string[] = [];
+    if (recTd != null) parts.push(`${recTd} RecTD`);
+    if (recYds != null) parts.push(`${recYds} RecYds`);
+    if (rushYds != null) parts.push(`${rushYds} RuYds`);
+    if (rec != null) parts.push(`${rec} REC`);
+    if (rushAtt != null) parts.push(`${rushAtt} RuAtt`);
+    if (targets != null) parts.push(`${targets} TGT`);
+    if (rushTd != null) parts.push(`${rushTd} RuTD`);
+
+    return parts.length ? parts.join(", ") : "NA";
+  }
+
+  if (pos === "WR" || pos === "TE") {
+    const rec = n(it?.rec);
+    const recYds = n(it?.recYds);
+    const recTd = n(it?.recTd);
+    const targets = n(it?.targets);
+
+    const parts: string[] = [];
+    if (recTd != null) parts.push(`${recTd} RecTD`);
+    if (recYds != null) parts.push(`${recYds} RecYds`);
+    if (rec != null) parts.push(`${rec} REC`);
+    if (targets != null) parts.push(`${targets} TGT`);
+
+    return parts.length ? parts.join(", ") : "NA";
+  }
+
+  return "NA";
+}
+
 export const GET: APIRoute = async ({ url }) => {
-  const spotRaw = String(url.searchParams.get("spot") ?? "").trim().toUpperCase();
+  const spotRaw = up(url.searchParams.get("spot"));
   if (!ALLOWED.has(spotRaw)) {
     return new Response(JSON.stringify({ ok: false, error: "Invalid spot. Use QB,RB,WR,TE,FLEX,DST" }), {
       status: 400,
@@ -39,10 +134,51 @@ export const GET: APIRoute = async ({ url }) => {
       },
     } as any,
     select: {
+      id: true,
       rosterSpot: true,
       salary: true,
       points: true,
       ownershipClassicBp: true,
+
+      gameId: true,
+
+      passYds: true,
+      passTd: true,
+      passInt: true,
+      rushYds: true,
+      rushTd: true,
+
+      rushAtt: true,
+      rushYdsRb: true,
+      rushTdRb: true,
+      targetsRb: true,
+      recRb: true,
+      recYdsRb: true,
+      recTdRb: true,
+
+      targets: true,
+      rec: true,
+      recYds: true,
+      recTd: true,
+
+      pointsAllowedBucket: true,
+      defensiveTdCount: true,
+      sacks: true,
+      takeaways: true,
+
+      opponentTeam: { select: { abbreviation: true } },
+      opponentStartingQb: { select: { name: true } },
+
+      game: {
+        select: {
+          window: true,
+          homeTeam: { select: { abbreviation: true, homeIsIndoor: true } },
+          awayTeam: { select: { abbreviation: true } },
+          homeStartingQb: { select: { name: true } },
+          awayStartingQb: { select: { name: true } },
+        },
+      },
+
       player: {
         select: {
           name: true,
@@ -50,20 +186,31 @@ export const GET: APIRoute = async ({ url }) => {
           team: { select: { abbreviation: true } },
         },
       },
+
       lineup: {
         select: {
+          id: true,
+          items: {
+            select: {
+              rosterSpot: true,
+              gameId: true,
+              player: {
+                select: {
+                  name: true,
+                  position: true,
+                  team: { select: { abbreviation: true } },
+                },
+              },
+            },
+          },
           winner: {
             select: {
-              username: true,
-              points: true,
               contest: {
                 select: {
-                  topPrizeCents: true,
                   slate: {
                     select: {
                       id: true,
                       week: true,
-                      slateType: true,
                       slateDate: true,
                       season: { select: { year: true } },
                     },
@@ -88,22 +235,126 @@ export const GET: APIRoute = async ({ url }) => {
     const ownBp = typeof it.ownershipClassicBp === "number" ? it.ownershipClassicBp : null;
     const ownPct = ownBp === null ? null : ownBp / 100;
 
+    const team = up(it.player?.team?.abbreviation);
+    const pos = up(it.player?.position);
+    const spot = up(it.rosterSpot);
+
+    const game = it.game;
+    const homeTeam = up(game?.homeTeam?.abbreviation);
+    const awayTeam = up(game?.awayTeam?.abbreviation);
+
+    const hasGame = Boolean(it.gameId && homeTeam && awayTeam);
+    const matchup = hasGame ? `${awayTeam} @ ${homeTeam}` : "NA";
+
+    const indoorOutdoor =
+      hasGame && typeof game?.homeTeam?.homeIsIndoor === "boolean"
+        ? game.homeTeam.homeIsIndoor
+          ? "INDOOR"
+          : "OUTDOOR"
+        : "NA";
+
+    const isHome = hasGame ? team === homeTeam : null;
+    const homeAway = isHome == null ? "NA" : isHome ? "HOME" : "AWAY";
+
+    const qbItem = (it.lineup?.items || []).find((x) => up(x?.player?.position) === "QB") ?? null;
+    const qbTeam = up(qbItem?.player?.team?.abbreviation);
+    const qbGameId = s(qbItem?.gameId);
+
+    const stackPartnerPositions = (it.lineup?.items || [])
+      .filter((x) => {
+        const xTeam = up(x?.player?.team?.abbreviation);
+        const xPos = up(x?.player?.position);
+        if (!qbTeam || xTeam !== qbTeam) return false;
+        return xPos === "WR" || xPos === "TE";
+      })
+      .map((x) => up(x?.player?.position));
+
+    const bringbackPositions = (it.lineup?.items || [])
+      .filter((x) => {
+        const gid = s(x?.gameId);
+        if (!qbGameId || gid !== qbGameId) return false;
+
+        const xTeam = up(x?.player?.team?.abbreviation);
+        if (!xTeam || xTeam === qbTeam) return false;
+
+        const xPos = up(x?.player?.position);
+        if (xPos === "DST") return false;
+
+        return true;
+      })
+      .map((x) => up(x?.player?.position));
+
+    const stackPartners = posCountLabel(stackPartnerPositions);
+    const bringBack = bringbackPositions.length ? posCountLabel(bringbackPositions) : "NO";
+
+    let role = "NONE";
+    if (spot !== "DST" && qbTeam) {
+      const sameTeamAsQb = team === qbTeam;
+      const sameGameAsQb = qbGameId && s(it.gameId) === qbGameId;
+      const isPassCatcher = pos === "WR" || pos === "TE";
+      if (sameTeamAsQb && isPassCatcher) role = "STACK";
+      if (sameGameAsQb && qbTeam && team && team !== qbTeam && pos !== "DST") role = "BRING BACK";
+    }
+
+    const samePosSameTeamCount =
+      spot === "QB" || spot === "DST"
+        ? null
+        : (it.lineup?.items || []).filter((x) => up(x?.player?.position) === pos && up(x?.player?.team?.abbreviation) === team).length;
+
+    const samePosSameGameCount =
+      spot === "QB" || spot === "DST"
+        ? null
+        : (it.lineup?.items || []).filter((x) => s(x?.gameId) && s(x?.gameId) === s(it.gameId) && up(x?.player?.position) === pos).length;
+
+    const statLine = dkStatLine(it);
+
+    let dstQbFaced = "NA";
+    if (spot === "DST") {
+      if (it.opponentStartingQb?.name) {
+        dstQbFaced = s(it.opponentStartingQb.name) || "NA";
+      } else if (hasGame && homeTeam && awayTeam) {
+        if (team === homeTeam) dstQbFaced = s(game?.awayStartingQb?.name) || "NA";
+        if (team === awayTeam) dstQbFaced = s(game?.homeStartingQb?.name) || "NA";
+      }
+    }
+
+    const oppTeam = it.opponentTeam?.abbreviation ? up(it.opponentTeam.abbreviation) : "NA";
+
     return {
       year: seasonYear,
       week: slate?.week ?? null,
-      slateType: slate?.slateType ?? null,
       slateDate: slate?.slateDate ?? null,
-      topPrizeCents: it.lineup?.winner?.contest?.topPrizeCents ?? null,
       link,
-      username: it.lineup?.winner?.username ?? null,
-      winnerPoints: it.lineup?.winner?.points ?? null,
-      rosterSpot: it.rosterSpot,
-      player: it.player?.name ?? null,
-      position: it.player?.position ?? null,
+
       team: it.player?.team?.abbreviation ?? null,
+
+      // For FLEX, we want the underlying position (RB/WR/TE) instead of the player name.
+      flexPos: spot === "FLEX" ? pos : null,
+
+      // For display: FLEX shows RB/WR/TE. Others show the player name.
+      slotLabel: spot === "FLEX" ? pos : (it.player?.name ?? null),
+
+      position: it.player?.position ?? null,
+
       salary: it.salary ?? null,
       points: it.points ?? null,
       ownPct,
+
+      matchup,
+      indoorOutdoor,
+      homeAway,
+
+      role,
+      stackPartners,
+      bringBack,
+
+      samePosSameTeamCount,
+      samePosSameGameCount,
+
+      opponentTeam: oppTeam,
+      dstQbFaced,
+
+      statLine,
     };
   });
 

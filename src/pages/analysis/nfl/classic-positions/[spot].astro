@@ -19,11 +19,15 @@ function n(v: any) {
   return Number.isFinite(x) ? x : null;
 }
 
+function s(v: any) {
+  return String(v ?? "").trim();
+}
+
 function fmtDate(iso: any) {
-  const s = String(iso || "");
-  if (!s) return "—";
-  const d = new Date(s);
-  if (Number.isNaN(d.getTime())) return s;
+  const t = String(iso || "");
+  if (!t) return "—";
+  const d = new Date(t);
+  if (Number.isNaN(d.getTime())) return t;
   return new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit" }).format(d);
 }
 
@@ -67,17 +71,41 @@ function mostLeast(map: Map<string, number>) {
   return { most, least };
 }
 
+const isQB = spotRaw === "QB";
+const isDST = spotRaw === "DST";
+
 const rows = rowsRaw.map((r: any) => ({
   year: typeof r.year === "number" ? r.year : null,
   week: typeof r.week === "number" ? r.week : null,
-  slateType: String(r.slateType ?? ""),
-  slateDate: String(r.slateDate ?? ""),
-  player: String(r.player ?? ""),
-  position: String(r.position ?? ""),
-  team: String(r.team ?? ""),
+  slateDate: s(r.slateDate),
+
+  team: s(r.team),
+
+  slotLabel: s(r.slotLabel),
+  flexPos: s(r.flexPos),
+  name: s(r.name),
+  position: s(r.position),
+
   salary: n(r.salary),
   points: n(r.points),
   ownPct: n(r.ownPct),
+
+  matchup: s(r.matchup),
+  indoorOutdoor: s(r.indoorOutdoor),
+  homeAway: s(r.homeAway),
+
+  role: s(r.role),
+  stackPartners: s(r.stackPartners),
+  bringBack: s(r.bringBack),
+
+  samePosSameTeamCount: n(r.samePosSameTeamCount),
+  samePosSameGameCount: n(r.samePosSameGameCount),
+
+  opponentTeam: s(r.opponentTeam),
+  dstQbFaced: s(r.dstQbFaced),
+
+  statLine: s(r.statLine),
+
   link: typeof r.link === "string" ? r.link : "",
 }));
 
@@ -94,9 +122,11 @@ const pointsMedian = median(pointsVals);
 const ownMedian = median(ownVals);
 
 const teamCounts = countsByKey(rows, "team");
-const playerCounts = countsByKey(rows, "player");
+const playerCounts = countsByKey(rows, "slotLabel");
 const teamML = mostLeast(teamCounts);
 const playerML = mostLeast(playerCounts);
+
+const indoorCounts = countsByKey(rows, "indoorOutdoor");
 
 const pageTitle = `Classic ${spotRaw} Micro Analysis`;
 ---
@@ -113,7 +143,13 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
       </div>
 
       <div class="searchWrap">
-        <input id="q" class="search" type="text" placeholder={`Search: ${spotRaw}, KC, 2021, MAIN`} />
+        <label class="srOnly" for="q">Search</label>
+        <input
+          id="q"
+          class="search"
+          type="text"
+          placeholder={`Search: ${spotRaw}, KC, 2021, INDOOR, OUTDOOR, STACK, BRING BACK, stat line`}
+        />
         <button id="resetAllTop" class="resetAll" type="button">Reset all</button>
       </div>
     </header>
@@ -149,6 +185,31 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
               <div>Player: {playerML.most ? `${playerML.most[0]} (${playerML.most[1]})` : "—"}</div>
               <div>Team: {teamML.most ? `${teamML.most[0]} (${teamML.most[1]})` : "—"}</div>
             </div>
+
+            {spotRaw === "FLEX" ? (
+              <>
+                <div class="k">Flex positions</div>
+                <div class="v mono">
+                  <div>
+                    RB: {countsByKey(rows, "flexPos").get("RB") ?? 0} (
+                    {rows.length ? (((countsByKey(rows, "flexPos").get("RB") ?? 0) / rows.length) * 100).toFixed(1) : "0.0"}%)
+                  </div>
+                  <div>
+                    WR: {countsByKey(rows, "flexPos").get("WR") ?? 0} (
+                    {rows.length ? (((countsByKey(rows, "flexPos").get("WR") ?? 0) / rows.length) * 100).toFixed(1) : "0.0"}%)
+                  </div>
+                  <div>
+                    TE: {countsByKey(rows, "flexPos").get("TE") ?? 0} (
+                    {rows.length ? (((countsByKey(rows, "flexPos").get("TE") ?? 0) / rows.length) * 100).toFixed(1) : "0.0"}%)
+                  </div>
+                </div>
+              </>
+            ) : null}
+
+            <div class="k">Environment</div>
+            <div class="v mono">
+              <div>Indoor: {indoorCounts.get("INDOOR") ?? 0} | Outdoor: {indoorCounts.get("OUTDOOR") ?? 0} | NA: {indoorCounts.get("NA") ?? 0}</div>
+            </div>
           </div>
         </div>
       </aside>
@@ -159,15 +220,31 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
             <thead>
               <tr>
                 <th class="colYear"><button class="thBtn" type="button" data-col="year">YEAR</button></th>
-                <th class="colWk"><button class="thBtn" type="button" data-col="week">WK</button></th>
-                <th class="colType"><button class="thBtn" type="button" data-col="type">TYPE</button></th>
-                <th class="colDate"><button class="thBtn" type="button" data-col="date">DATE</button></th>
+                <th class="colWk"><button class="thBtn" type="button" data-col="week">WEEK</button></th>
+                <th class="colMatch"><button class="thBtn" type="button" data-col="match">GAME (AWAY @ HOME)</button></th>
+                <th class="colEnv"><button class="thBtn" type="button" data-col="env">INDOOR OR OUTDOOR</button></th>
+
                 <th class="colTeam"><button class="thBtn" type="button" data-col="team">TEAM</button></th>
-                <th class="colPlayer"><button class="thBtn" type="button" data-col="player">PLAYER</button></th>
-                <th class="colPos"><button class="thBtn" type="button" data-col="pos">POS</button></th>
-                <th class="colSal"><button class="thBtn" type="button" data-col="sal">SAL</button></th>
-                <th class="colOwn"><button class="thBtn" type="button" data-col="own">OWN</button></th>
-                <th class="colPts"><button class="thBtn" type="button" data-col="pts">PTS</button></th>
+                <th class="colName"><button class="thBtn" type="button" data-col="pos">POSITION</button></th>
+
+                <th class="colStat"><button class="thBtn" type="button" data-col="stat">STAT LINE</button></th>
+
+                {isQB ? <th class="colStack"><button class="thBtn" type="button" data-col="stack">STACK PARTNERS</button></th> : null}
+                {isQB ? <th class="colBring"><button class="thBtn" type="button" data-col="bring">BRING BACK</button></th> : null}
+
+                {!isQB && !isDST ? <th class="colRole"><button class="thBtn" type="button" data-col="role">ROLE</button></th> : null}
+                {!isQB && !isDST ? <th class="colBring"><button class="thBtn" type="button" data-col="bring">BRING BACK</button></th> : null}
+
+                {!isQB && !isDST ? <th class="colSameT"><button class="thBtn" type="button" data-col="sameT">SAME POSITION TEAM COUNT</button></th> : null}
+                {!isQB && !isDST ? <th class="colSameG"><button class="thBtn" type="button" data-col="sameG">SAME POSITION GAME COUNT</button></th> : null}
+
+                {isDST ? <th class="colOpp"><button class="thBtn" type="button" data-col="opp">OPP TEAM</button></th> : null}
+                {isDST ? <th class="colQBF"><button class="thBtn" type="button" data-col="qbf">QB FACED</button></th> : null}
+
+                <th class="colSal"><button class="thBtn" type="button" data-col="sal">SALARY</button></th>
+                <th class="colOwn"><button class="thBtn" type="button" data-col="own">OWNERSHIP</button></th>
+                <th class="colPts"><button class="thBtn" type="button" data-col="pts">DK POINTS</button></th>
+
                 <th class="colLink"></th>
               </tr>
             </thead>
@@ -176,27 +253,56 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
               {rows.map((r) => (
                 <tr
                   data-year={r.year == null ? "" : String(r.year)}
-                  data-week={r.week == null ? "" : String(r.week)}
-                  data-type={r.slateType || ""}
-                  data-dateiso={r.slateDate || ""}
-                  data-date={fmtDate(r.slateDate)}
+                  data-week={r.week == null ? "" : String(r.week)}                  data-date={fmtDate(r.slateDate)}
+
+                  data-match={r.matchup || ""}
+                  data-env={r.indoorOutdoor || ""}
+
                   data-team={r.team || ""}
-                  data-player={r.player || ""}
-                  data-pos={r.position || ""}
+                  data-pos={r.slotLabel || ""}
+
+                  data-stat={r.statLine || ""}
+
+                  data-stack={r.stackPartners || ""}
+                  data-bring={r.bringBack || ""}
+                  data-role={r.role || ""}
+
+                  data-samet={r.samePosSameTeamCount == null ? "" : String(r.samePosSameTeamCount)}
+                  data-sameg={r.samePosSameGameCount == null ? "" : String(r.samePosSameGameCount)}
+
+                  data-opp={r.opponentTeam || ""}
+                  data-qbf={r.dstQbFaced || ""}
+
                   data-sal={r.salary == null ? "" : String(r.salary)}
                   data-own={r.ownPct == null ? "" : String(r.ownPct)}
                   data-pts={r.points == null ? "" : String(r.points)}
                 >
                   <td class="mono">{r.year == null ? "—" : String(r.year)}</td>
                   <td class="mono">{r.week == null ? "—" : String(r.week)}</td>
-                  <td class="mono">{r.slateType || "—"}</td>
-                  <td class="mono">{fmtDate(r.slateDate)}</td>
+                  <td class="mono">{r.matchup || "—"}</td>
+                  <td class="mono">{r.indoorOutdoor || "—"}</td>
+
                   <td class="mono">{r.team || "—"}</td>
-                  <td class="capCell"><div class="capMain">{r.player || "—"}</div></td>
-                  <td class="mono">{r.position || "—"}</td>
+                  <td class="capCell"><div class="capMain">{r.slotLabel || "—"}</div></td>
+
+                  <td class="mono">{r.statLine || "—"}</td>
+
+                  {isQB ? <td class="mono">{r.stackPartners || "—"}</td> : null}
+                  {isQB ? <td class="mono">{r.bringBack || "—"}</td> : null}
+
+                  {!isQB && !isDST ? <td class="mono">{r.role || "—"}</td> : null}
+                  {!isQB && !isDST ? <td class="mono">{r.bringBack || "—"}</td> : null}
+
+                  {!isQB && !isDST ? <td class="mono">{r.samePosSameTeamCount == null ? "—" : r.samePosSameTeamCount.toFixed(0)}</td> : null}
+                  {!isQB && !isDST ? <td class="mono">{r.samePosSameGameCount == null ? "—" : r.samePosSameGameCount.toFixed(0)}</td> : null}
+
+                  {isDST ? <td class="mono">{r.opponentTeam || "—"}</td> : null}
+                  {isDST ? <td class="mono">{r.dstQbFaced || "—"}</td> : null}
+
                   <td class="mono">{r.salary == null ? "—" : r.salary.toFixed(0)}</td>
                   <td class="mono">{r.ownPct == null ? "—" : `${r.ownPct.toFixed(2)}%`}</td>
                   <td class="mono">{r.points == null ? "—" : r.points.toFixed(2)}</td>
+
                   <td class="mono">
                     {r.link ? <a class="link" href={r.link} target="_blank" rel="noreferrer">View</a> : "—"}
                   </td>
@@ -204,6 +310,22 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
               ))}
             </tbody>
           </table>
+
+          <div id="colMenu" class="menu" style="display:none;">
+            <div class="menuTitle" id="menuTitle">Column</div>
+
+            <div class="menuRow">
+              <button class="menuBtn" type="button" data-action="sortAsc">Sort</button>
+              <button class="menuBtn" type="button" data-action="sortDesc">Sort</button>
+            </div>
+
+            <div class="menuBlock" id="menuFilterBlock"></div>
+
+            <div class="menuRow">
+              <button class="menuBtn secondary" type="button" data-action="clearCol">Clear column</button>
+              <button class="menuBtn secondary" type="button" data-action="clearAll">Clear all</button>
+            </div>
+          </div>
 
           <script is:inline>
             function byId(id) { return document.getElementById(id); }
@@ -219,27 +341,86 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
             const resetAllTop = byId("resetAllTop");
 
             const tbody = document.querySelector("#t tbody");
+            const menu = byId("colMenu");
+            const menuTitle = byId("menuTitle");
+            const menuFilterBlock = byId("menuFilterBlock");
+
+            const thButtons = Array.from(document.querySelectorAll(".thBtn"));
             const trs = tbody ? Array.from(tbody.querySelectorAll("tr")) : [];
 
             const state = {
               q: "",
               filters: {
                 year: "",
-                week: "",
-                type: "",
+                week: "",                dateEnd: "",
+
+                match: "",
+                env: "",
                 team: "",
-                player: "",
                 pos: "",
-                dateStart: "",
-                dateEnd: "",
+
+                statText: "",
+
+                stackText: "",
+                bringText: "",
+                role: "",
+
+                sameTMin: "",
+                sameTMax: "",
+                sameGMin: "",
+                sameGMax: "",
+
+                opp: "",
+                qbfText: "",
+
                 salMin: "",
                 salMax: "",
                 ownMin: "",
                 ownMax: "",
                 ptsMin: "",
                 ptsMax: ""
-              }
+              },
+              sort: { col: "", dir: "" }
             };
+
+            const colMeta = {
+              year:  { kind: "catNum", label: "YEAR", key: "year" },
+              week:  { kind: "catNum", label: "WEEK", key: "week" },              match: { kind: "cat",    label: "GAME (AWAY @ HOME)", key: "match" },
+              env:   { kind: "cat",    label: "INDOOR OR OUTDOOR",  key: "env" },
+
+              team:  { kind: "cat",    label: "TEAM", key: "team" },
+              pos:   { kind: "cat",    label: "POSITION", key: "pos" },
+
+              stat:  { kind: "text",   label: "STAT LINE", key: "stat" },
+
+              stack: { kind: "text",   label: "STACK PARTNERS", key: "stack" },
+              bring: { kind: "text",   label: "BRING BACK", key: "bring" },
+
+              role:  { kind: "cat",    label: "ROLE", key: "role" },
+
+              sameT: { kind: "num",    label: "SAME POSITION TEAM COUNT", key: "samet" },
+              sameG: { kind: "num",    label: "SAME POSITION GAME COUNT", key: "sameg" },
+
+              opp:   { kind: "cat",    label: "OPP TEAM", key: "opp" },
+              qbf:   { kind: "text",   label: "QB FACED", key: "qbf" },
+
+              sal:   { kind: "num",    label: "SALARY", key: "sal" },
+              own:   { kind: "num",    label: "OWNERSHIP", key: "own" },
+              pts:   { kind: "num",    label: "DK POINTS", key: "pts" }
+            };
+
+            function uniqueValues(colKey) {
+              const set = new Set();
+              for (const tr of trs) {
+                const v = text(tr.dataset[colKey]);
+                if (v) set.add(v);
+              }
+              return Array.from(set).sort((a, b) => {
+                const na = Number(a), nb = Number(b);
+                if (Number.isFinite(na) && Number.isFinite(nb)) return na - nb;
+                return a.localeCompare(b);
+              });
+            }
 
             function withinNum(v, minStr, maxStr) {
               const x = numOrNull(v);
@@ -270,8 +451,11 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
 
             function hay(tr) {
               const parts = [
-                tr.dataset.year, tr.dataset.week, tr.dataset.type, tr.dataset.date,
-                tr.dataset.team, tr.dataset.player, tr.dataset.pos,
+                tr.dataset.year, tr.dataset.week, tr.dataset.date,
+                tr.dataset.match, tr.dataset.env,
+                tr.dataset.team, tr.dataset.pos,
+                tr.dataset.stat, tr.dataset.stack, tr.dataset.bring, tr.dataset.role,
+                tr.dataset.samet, tr.dataset.sameg, tr.dataset.opp, tr.dataset.qbf,
                 tr.dataset.sal, tr.dataset.own, tr.dataset.pts
               ];
               return parts.map((x) => text(x).toLowerCase()).join(" ");
@@ -279,17 +463,18 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
 
             function passesFilters(tr) {
               const f = state.filters;
+
               if (f.year && text(tr.dataset.year) !== f.year) return false;
               if (f.week && text(tr.dataset.week) !== f.week) return false;
-              if (f.type && text(tr.dataset.type) !== f.type) return false;
+
+              if (f.match && text(tr.dataset.match) !== f.match) return false;
+              if (f.env && text(tr.dataset.env) !== f.env) return false;
+
               if (f.team && text(tr.dataset.team) !== f.team) return false;
-              if (f.player && text(tr.dataset.player) !== f.player) return false;
               if (f.pos && text(tr.dataset.pos) !== f.pos) return false;
 
-              if (f.dateStart || f.dateEnd) {
-                if (!withinDate(tr.dataset.dateiso, f.dateStart, f.dateEnd)) return false;
-              }
-              if (f.salMin || f.salMax) {
+              if (f.role && text(tr.dataset.role) !== f.role) return false;
+              if (f.opp && text(tr.dataset.opp) !== f.opp) return false;              if (f.salMin || f.salMax) {
                 if (!withinNum(tr.dataset.sal, f.salMin, f.salMax)) return false;
               }
               if (f.ownMin || f.ownMax) {
@@ -298,7 +483,51 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
               if (f.ptsMin || f.ptsMax) {
                 if (!withinNum(tr.dataset.pts, f.ptsMin, f.ptsMax)) return false;
               }
+
+              if (f.sameTMin || f.sameTMax) {
+                if (!withinNum(tr.dataset.samet, f.sameTMin, f.sameTMax)) return false;
+              }
+              if (f.sameGMin || f.sameGMax) {
+                if (!withinNum(tr.dataset.sameg, f.sameGMin, f.sameGMin, f.sameGMax)) return false;
+              }
+
+              if (f.statText) {
+                if (!text(tr.dataset.stat).toLowerCase().includes(text(f.statText).toLowerCase())) return false;
+              }
+
+              if (f.stackText) {
+                if (!text(tr.dataset.stack).toLowerCase().includes(text(f.stackText).toLowerCase())) return false;
+              }
+
+              if (f.bringText) {
+                if (!text(tr.dataset.bring).toLowerCase().includes(text(f.bringText).toLowerCase())) return false;
+              }
+
+              if (f.qbfText) {
+                if (!text(tr.dataset.qbf).toLowerCase().includes(text(f.qbfText).toLowerCase())) return false;
+              }
+
               return true;
+            }
+
+            function compare(trA, trB, col, dir) {
+              const meta = colMeta[col];
+              if (!meta) return 0;
+
+              const a = trA.dataset[meta.key];
+              const b = trB.dataset[meta.key];
+
+              if (meta.kind === "catNum" || meta.kind === "num") {
+                const av = numOrNull(a);
+                const bv = numOrNull(b);
+                const aa = av == null ? -Infinity : av;
+                const bb = bv == null ? -Infinity : bv;
+                return dir === "asc" ? aa - bb : bb - aa;
+              }              const as = text(a).toLowerCase();
+              const bs = text(b).toLowerCase();
+              if (as < bs) return dir === "asc" ? -1 : 1;
+              if (as > bs) return dir === "asc" ? 1 : -1;
+              return 0;
             }
 
             function applyAll() {
@@ -317,6 +546,185 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
               }
 
               if (shownCount) shownCount.textContent = String(shown);
+
+              if (tbody && state.sort.col && state.sort.dir) {
+                const visible = trs.filter((tr) => tr.style.display !== "none");
+                visible.sort((a, b) => compare(a, b, state.sort.col, state.sort.dir));
+                for (const tr of visible) tbody.appendChild(tr);
+              }
+            }
+
+            let activeCol = "";
+
+            function closeMenu() {
+              if (menu) menu.style.display = "none";
+              if (menuFilterBlock) menuFilterBlock.innerHTML = "";
+              activeCol = "";
+            }
+
+            function positionMenu(anchorEl) {
+              if (!menu) return;
+              const r = anchorEl.getBoundingClientRect();
+              const top = Math.round(r.bottom + 8);
+              const left = Math.round(Math.min(window.innerWidth - 340, Math.max(12, r.left)));
+              menu.style.top = top + "px";
+              menu.style.left = left + "px";
+            }
+
+            function buildFilterUI(col) {
+              const meta = colMeta[col];
+              if (!meta || !menuFilterBlock) return;
+
+              if (meta.kind === "cat" || meta.kind === "catNum") {
+                const values = uniqueValues(meta.key);
+                const current = state.filters[col] || "";
+
+                menuFilterBlock.innerHTML =
+                  '<div class="menuLabel">Filter</div>' +
+                  '<select id="menuSelect" class="menuInput">' +
+                  '<option value="">All</option>' +
+                  values.map((v) => '<option value="' + v + '">' + v + "</option>").join("") +
+                  "</select>";
+
+                const sel = byId("menuSelect");
+                if (sel) {
+                  sel.value = current;
+                  sel.addEventListener("change", () => {
+                    state.filters[col] = sel.value;
+                    applyAll();
+                  });
+                }
+                return;
+              }              if (meta.kind === "num") {
+                const map = {
+                  sal: ["salMin", "salMax"],
+                  own: ["ownMin", "ownMax"],
+                  pts: ["ptsMin", "ptsMax"],
+                  sameT: ["sameTMin", "sameTMax"],
+                  sameG: ["sameGMin", "sameGMax"]
+                };
+                const pair = map[col];
+                if (!pair) return;
+
+                const minKey = pair[0];
+                const maxKey = pair[1];
+
+                const minVal = state.filters[minKey] || "";
+                const maxVal = state.filters[maxKey] || "";
+
+                menuFilterBlock.innerHTML =
+                  '<div class="menuLabel">Range</div>' +
+                  '<div class="menuGrid2">' +
+                  '<div><div class="mini">Min</div><input id="menuNumMin" class="menuInput" type="number" step="any" value="' + minVal + '" /></div>' +
+                  '<div><div class="mini">Max</div><input id="menuNumMax" class="menuInput" type="number" step="any" value="' + maxVal + '" /></div>' +
+                  "</div>";
+
+                const minEl = byId("menuNumMin");
+                const maxEl = byId("menuNumMax");
+
+                function sync() {
+                  state.filters[minKey] = minEl ? minEl.value : "";
+                  state.filters[maxKey] = maxEl ? maxEl.value : "";
+                  applyAll();
+                }
+
+                if (minEl) minEl.addEventListener("input", sync);
+                if (maxEl) maxEl.addEventListener("input", sync);
+                return;
+              }
+
+              if (meta.kind === "text") {
+                const map = {
+                  stat: "statText",
+                  stack: "stackText",
+                  bring: "bringText",
+                  qbf: "qbfText"
+                };
+                const key = map[col];
+                if (!key) return;
+
+                const current = state.filters[key] || "";
+                menuFilterBlock.innerHTML =
+                  '<div class="menuLabel">Contains</div>' +
+                  '<input id="menuText" class="menuInput" type="text" value="' + current.replace(/"/g, "&quot;") + '" placeholder="type to filter" />';
+
+                const inp = byId("menuText");
+                if (inp) {
+                  inp.addEventListener("input", () => {
+                    state.filters[key] = inp.value;
+                    applyAll();
+                  });
+                }
+              }
+            }
+
+            function updateSortButtonLabels(col) {
+              const meta = colMeta[col];
+              const ascBtn = menu ? menu.querySelector('[data-action="sortAsc"]') : null;
+              const descBtn = menu ? menu.querySelector('[data-action="sortDesc"]') : null;
+              if (!ascBtn || !descBtn) return;
+
+              if (meta && (meta.kind === "num" || meta.kind === "catNum")) {
+                ascBtn.textContent = "Sort Low → High";
+                descBtn.textContent = "Sort High → Low";
+                return;
+              }              ascBtn.textContent = "Sort A → Z";
+              descBtn.textContent = "Sort Z → A";
+            }
+
+            function openMenuFor(col, anchorEl) {
+              if (!menu || !menuTitle) return;
+              activeCol = col;
+              const meta = colMeta[col];
+              menuTitle.textContent = meta ? meta.label : "Column";
+              buildFilterUI(col);
+              updateSortButtonLabels(col);
+              positionMenu(anchorEl);
+              menu.style.display = "block";
+            }
+
+            function clearColumn(col) {
+              if (col === "year") state.filters.year = "";
+              if (col === "week") state.filters.week = "";
+              if (col === "match") state.filters.match = "";
+              if (col === "env") state.filters.env = "";
+              if (col === "team") state.filters.team = "";
+              if (col === "pos") state.filters.pos = "";
+
+              if (col === "stat") state.filters.statText = "";
+              if (col === "stack") state.filters.stackText = "";
+              if (col === "bring") state.filters.bringText = "";
+
+              if (col === "role") state.filters.role = "";
+              if (col === "sameT") { state.filters.sameTMin = ""; state.filters.sameTMax = ""; }
+              if (col === "sameG") { state.filters.sameGMin = ""; state.filters.sameGMax = ""; }
+
+              if (col === "opp") state.filters.opp = "";
+              if (col === "qbf") state.filters.qbfText = "";
+
+              if (col === "sal") { state.filters.salMin = ""; state.filters.salMax = ""; }
+              if (col === "own") { state.filters.ownMin = ""; state.filters.ownMax = ""; }
+              if (col === "pts") { state.filters.ptsMin = ""; state.filters.ptsMax = ""; }
+
+              applyAll();
+            }
+
+            function clearAll() {
+              state.q = "";
+              for (const k in state.filters) state.filters[k] = "";
+              state.sort.col = "";
+              state.sort.dir = "";
+              if (q) q.value = "";
+              applyAll();
+            }
+
+            for (const btn of thButtons) {
+              btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const col = btn.dataset.col;
+                if (!col) return;
+                openMenuFor(col, btn);
+              });
             }
 
             if (q) {
@@ -328,12 +736,56 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
 
             if (resetAllTop) {
               resetAllTop.addEventListener("click", () => {
-                state.q = "";
-                for (const k in state.filters) state.filters[k] = "";
-                q.value = "";
-                applyAll();
+                clearAll();
+                closeMenu();
               });
             }
+
+            if (menu) {
+              menu.addEventListener("click", (e) => {
+                const t = e.target;
+                if (!t || !t.dataset) return;
+                const action = t.dataset.action;
+                if (!action) return;
+
+                if (action === "sortAsc" && activeCol) {
+                  state.sort.col = activeCol;
+                  state.sort.dir = "asc";
+                  applyAll();
+                  closeMenu();
+                  return;
+                }
+
+                if (action === "sortDesc" && activeCol) {
+                  state.sort.col = activeCol;
+                  state.sort.dir = "desc";
+                  applyAll();
+                  closeMenu();
+                  return;
+                }
+
+                if (action === "clearCol" && activeCol) {
+                  clearColumn(activeCol);
+                  buildFilterUI(activeCol);
+                  updateSortButtonLabels(activeCol);
+                  return;
+                }
+
+                if (action === "clearAll") {
+                  clearAll();
+                  closeMenu();
+                  return;
+                }
+              });
+            }
+
+            document.addEventListener("click", (e) => {
+              const target = e.target;
+              if (!target) return;
+              if (menu && menu.contains(target)) return;
+              if (target.classList && target.classList.contains("thBtn")) return;
+              closeMenu();
+            });
 
             applyAll();
           </script>
@@ -355,9 +807,13 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
   .searchWrap { flex:1 1 auto; display:flex; justify-content:flex-end; gap:10px; align-items:center; }
   .search { width:min(520px,100%); padding:10px 12px; border-radius:12px; border:1px solid rgba(255,255,255,0.10); background:#141414; color:rgba(255,255,255,0.92); font-size:14px; outline:none; box-shadow:0 10px 30px rgba(0,0,0,0.35); }
   .search::placeholder { color:rgba(255,255,255,0.45); }
+  .search:focus { border-color: rgba(255,255,255,0.18); box-shadow: 0 0 0 3px rgba(255,255,255,0.10), 0 12px 32px rgba(0,0,0,0.45); }
 
-  .resetAll { padding:10px 12px; border-radius:12px; border:1px solid rgba(255,255,255,0.10); background:#1f1f1f; color:rgba(255,255,255,0.88); font-weight:900; cursor:pointer; white-space:nowrap; box-shadow:0 10px 30px rgba(0,0,0,0.35); }
-  .resetAll:hover { background:#232323; border-color:rgba(255,255,255,0.14); }
+  .resetAll { padding:10px 12px; border-radius:12px; border:1px solid rgba(255,255,255,0.10); background:#1f1f1f; color:rgba(255,255,255,0.88); font-weight:900; cursor:pointer; white-space:nowrap; box-shadow:0 10px 30px rgba(0,0,0,0.35); transition: transform 120ms ease, background 120ms ease, border-color 120ms ease; }
+  .resetAll:hover { background:#232323; border-color:rgba(255,255,255,0.14); transform: translateY(-1px); }
+  .resetAll:active { transform: translateY(0px); }
+
+  .srOnly { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
   .grid { display:grid; grid-template-columns:370px 1fr; gap:12px; min-height:0; }
   .sidebar { overflow:auto; padding-right:4px; }
@@ -384,6 +840,93 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
 
   .thBtn { width:100%; text-align:left; border:0; background:transparent; padding:0; font-size:11px; color:rgba(255,255,255,0.62); font-weight:900; letter-spacing:0.02em; text-transform:uppercase; cursor:pointer; }
   .thBtn:hover { color:rgba(255,255,255,0.88); }
+
+  .menu {
+    position: fixed;
+    width: 320px;
+    background: #181818;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    box-shadow: 0 18px 44px rgba(0,0,0,0.55);
+    padding: 12px;
+    z-index: 9999;
+    color: rgba(255,255,255,0.88);
+  }
+
+  .menuTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
+  .menuRow { display: flex; gap: 8px; margin-bottom: 10px; }
+  .menuBtn {
+    flex: 1 1 auto;
+    padding: 9px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #1f1f1f;
+    color: rgba(255,255,255,0.88);
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 13px;
+    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+  }
+  .menuBtn:hover { background: #232323; border-color: rgba(255,255,255,0.14); transform: translateY(-1px); }
+  .menuBtn:active { transform: translateY(0px); }
+  .menuBtn.secondary { background: #141414; }
+
+  .menuBlock { margin-bottom: 10px; }
+
+  .menuLabel {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 6px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .menuInput {
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #141414;
+    color: rgba(255,255,255,0.92);
+    font-size: 13px;
+    outline: none;
+  }
+
+  .menuInput:focus {
+    border-color: rgba(255,255,255,0.16);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+  }
+
+  .menuGrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: end; }
+  .mini { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; }
+
+  .colYear { width: 78px; }
+  .colWk { width: 90px; }
+  .colDate { width: 90px; }
+
+  .colMatch { width: 160px; }
+  .colEnv { width: 160px; }
+
+  .colTeam { width: 70px; }
+  .colName { width: 180px; }
+
+  .colStat { width: 280px; }
+
+  .colStack { width: 200px; }
+  .colBring { width: 170px; }
+  .colRole { width: 120px; }
+
+  .colSameT { width: 180px; }
+  .colSameG { width: 180px; }
+
+  .colOpp { width: 90px; }
+  .colQBF { width: 160px; }
+
+  .colSal { width: 90px; }
+  .colOwn { width: 110px; }
+  .colPts { width: 90px; }
+  .colLink { width: 70px; }
 
   @media (max-width: 1200px) { .grid { grid-template-columns: 1fr; } }
   @media (max-width: 900px) { .topbar { flex-direction: column; align-items: stretch; } .searchWrap { justify-content: stretch; flex-wrap: wrap; } .search { width: 100%; } }
