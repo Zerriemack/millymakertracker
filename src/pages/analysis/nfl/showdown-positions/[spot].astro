@@ -1,0 +1,1062 @@
+---
+// src/pages/analysis/nfl/showdown-positions/[spot].astro
+import Layout from "../../../../layouts/Layout.astro";
+
+const { spot } = Astro.params;
+
+function normSpot(v: any) {
+  const s = String(v || "").trim().toLowerCase();
+  if (s === "captain") return "captain";
+  if (s === "flex") return "flex";
+  return null;
+}
+
+const spotKey = normSpot(spot);
+if (!spotKey) throw new Error("Invalid spot");
+
+const apiUrl = `${Astro.url.origin}/api/analysis/nfl/showdown_positions?spot=${encodeURIComponent(spotKey)}`;
+const res = await fetch(apiUrl, { cache: "no-store" });
+
+if (!res.ok) {
+  throw new Error(`Analysis API failed: ${res.status} ${res.statusText} (${apiUrl})`);
+}
+
+const data = await res.json();
+const rowsRaw = Array.isArray(data?.rows) ? data.rows : Array.isArray(data?.items) ? data.items : [];
+
+function n(v: any) {
+  const x = Number(v);
+  return Number.isFinite(x) ? x : null;
+}
+
+function fmtDate(iso: any) {
+  const s = String(iso || "");
+  if (!s) return "—";
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return s;
+  return new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit" }).format(d);
+}
+
+function median(vals: number[]) {
+  if (!vals.length) return null;
+  const a = [...vals].sort((x, y) => x - y);
+  const mid = Math.floor(a.length / 2);
+  return a.length % 2 ? a[mid] : (a[mid - 1] + a[mid]) / 2;
+}
+
+function mode(vals: number[]) {
+  if (!vals.length) return null;
+  const m = new Map<number, number>();
+  for (const v of vals) m.set(v, (m.get(v) || 0) + 1);
+  let best: number | null = null;
+  let bestC = 0;
+  for (const [k, c] of m.entries()) {
+    if (c > bestC) {
+      bestC = c;
+      best = k;
+    }
+  }
+  return best;
+}
+
+function minMax(vals: number[]) {
+  if (!vals.length) return { min: null as number | null, max: null as number | null };
+  let mn = vals[0];
+  let mx = vals[0];
+  for (const v of vals) {
+    if (v < mn) mn = v;
+    if (v > mx) mx = v;
+  }
+  return { min: mn, max: mx };
+}
+
+function countsByKey(list: any[], key: string) {
+  const m = new Map<string, number>();
+  for (const it of list) {
+    const k = String((it as any)[key] || "").trim();
+    if (!k) continue;
+    m.set(k, (m.get(k) || 0) + 1);
+  }
+  return m;
+}
+
+function mostLeast(map: Map<string, number>) {
+  const entries = Array.from(map.entries());
+  if (!entries.length) return { most: null as any, least: null as any };
+  let most = entries[0];
+  let least = entries[0];
+  for (const e of entries) {
+    if (e[1] > most[1]) most = e;
+    if (e[1] < least[1]) least = e;
+  }
+  return { most, least };
+}
+
+const rows = rowsRaw
+  .map((r: any) => {
+    const slateId = String(r.slateId ?? r.slate?.id ?? "");
+    const year = typeof r.year === "number" ? r.year : typeof r.slate?.season?.year === "number" ? r.slate.season.year : null;
+    const week = Number(r.week ?? r.slate?.week ?? null);
+    const slateType = String(r.slateType ?? r.slate?.slateType ?? "");
+    const slateDate = String(r.slateDate ?? r.slate?.slateDate ?? "");
+
+    const teamSplit = String(r.teamSplit ?? "");
+    const rosterSpot = String(r.rosterSpot ?? "");
+    const player = String(r.playerName ?? r.name ?? "");
+    const position = String(r.playerPos ?? r.position ?? "");
+    const team = String(r.playerTeam ?? r.team ?? "");
+    const salary = n(r.salary);
+    const ownPct = n(r.ownershipPct);
+    const pts = n(r.points);
+
+    const link =
+      typeof r.link === "string" && r.link
+        ? r.link
+        : slateId && year
+          ? `/nfl/${year}/slate/${slateId}`
+          : "";
+
+    return {
+      slateId,
+      year,
+      week,
+      slateType,
+      slateDate,
+      link,
+      teamSplit,
+      rosterSpot,
+      player,
+      position,
+      team,
+      salary,
+      ownPct,
+      pts,
+    };
+  })
+  .filter((r: any) => r.slateId);
+
+const salaryVals = rows.map((r) => n(r.salary)).filter((v): v is number => v !== null);
+const ownVals = rows.map((r) => n(r.ownPct)).filter((v): v is number => v !== null);
+const ptsVals = rows.map((r) => n(r.pts)).filter((v): v is number => v !== null);
+
+const salaryMM = minMax(salaryVals);
+const ownMM = minMax(ownVals);
+const ptsMM = minMax(ptsVals);
+
+const salaryMedian = median(salaryVals);
+const ownMedian = median(ownVals);
+const ptsMedian = median(ptsVals);
+
+const salaryMode = mode(salaryVals);
+
+const splitCounts = countsByKey(rows, "teamSplit");
+const posCounts = countsByKey(rows, "position");
+const typeCounts = countsByKey(rows, "slateType");
+
+const splitML = mostLeast(splitCounts);
+const posML = mostLeast(posCounts);
+
+const splitLines = Array.from(splitCounts.entries()).length
+  ? Array.from(splitCounts.entries()).sort((a, b) => b[1] - a[1]).map(([k, v]) => ({ k, v }))
+  : [];
+
+const posLines = Array.from(posCounts.entries()).length
+  ? Array.from(posCounts.entries()).sort((a, b) => b[1] - a[1]).map(([k, v]) => ({ k, v }))
+  : [];
+
+const typeLines = Array.from(typeCounts.entries()).length
+  ? Array.from(typeCounts.entries()).sort((a, b) => b[1] - a[1]).map(([k, v]) => ({ k, v }))
+  : [];
+
+const spotLabel = spotKey === "captain" ? "CAPTAIN" : "FLEX";
+const pageTitle = `NFL Showdown Positions: ${spotLabel}`;
+---
+
+<Layout title={pageTitle}>
+  <main class="page">
+    <header class="topbar">
+      <div class="titleBlock">
+        <h1 class="h1">{pageTitle}</h1>
+        <div class="sub">
+          Rows: <span id="shownCount">{rows.length}</span> / {rows.length}
+        </div>
+
+        <nav class="pills" aria-label="Showdown position pills">
+          <a class={`pill ${spotKey === "captain" ? "pillActive" : ""}`} href="/analysis/nfl/showdown-positions/captain">CAPTAIN</a>
+          <a class={`pill ${spotKey === "flex" ? "pillActive" : ""}`} href="/analysis/nfl/showdown-positions/flex">FLEX</a>
+        </nav>
+      </div>
+
+      <div class="searchWrap">
+        <label class="srOnly" for="q">Search</label>
+        <input
+          id="q"
+          class="search"
+          type="text"
+          placeholder="Search: 2019, WK 2, 4-2, WR, KC, Mahomes, MNF"
+        />
+        <button id="resetAllTop" class="resetAll" type="button">Reset all</button>
+      </div>
+    </header>
+
+    <section class="grid">
+      <aside class="sidebar">
+        <div class="card">
+          <div class="cardTitle">Distribution</div>
+          <div class="kv">
+            <div class="k">Salary</div>
+            <div class="v mono">
+              <div>Median: {salaryMedian === null ? "—" : salaryMedian.toFixed(0)}</div>
+              <div>Most: {salaryMM.max === null ? "—" : salaryMM.max.toFixed(0)}</div>
+              <div>Least: {salaryMM.min === null ? "—" : salaryMM.min.toFixed(0)}</div>
+              <div>Mode: {salaryMode === null ? "—" : String(salaryMode)}</div>
+            </div>
+
+            <div class="k">Ownership</div>
+            <div class="v mono">
+              <div>Median: {ownMedian === null ? "—" : `${ownMedian.toFixed(2)}%`}</div>
+              <div>Most: {ownMM.max === null ? "—" : `${ownMM.max.toFixed(2)}%`}</div>
+              <div>Least: {ownMM.min === null ? "—" : `${ownMM.min.toFixed(2)}%`}</div>
+            </div>
+
+            <div class="k">Player points</div>
+            <div class="v mono">
+              <div>Median: {ptsMedian === null ? "—" : ptsMedian.toFixed(2)}</div>
+              <div>Most: {ptsMM.max === null ? "—" : ptsMM.max.toFixed(2)}</div>
+              <div>Least: {ptsMM.min === null ? "—" : ptsMM.min.toFixed(2)}</div>
+            </div>
+
+            <div class="note">
+              This page reads winning lineup items for the selected roster spot and lets you filter by year, week, slate type, split, position, team, and player.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">Construction</div>
+          <div class="kv">
+            <div class="k">Team splits</div>
+            <div class="v mono">
+              {splitLines.length ? (
+                <div class="lines">
+                  {splitLines.map((x) => (
+                    <div>{x.k}: {x.v}</div>
+                  ))}
+                </div>
+              ) : (
+                <div>—</div>
+              )}
+              <div class="spacer"></div>
+              <div>Most: {splitML.most ? `${splitML.most[0]} (${splitML.most[1]})` : "—"}</div>
+              <div>Least: {splitML.least ? `${splitML.least[0]} (${splitML.least[1]})` : "—"}</div>
+            </div>
+
+            <div class="k">Positions</div>
+            <div class="v mono">
+              {posLines.length ? (
+                <div class="lines">
+                  {posLines.map((x) => (
+                    <div>{x.k}: {x.v}</div>
+                  ))}
+                </div>
+              ) : (
+                <div>—</div>
+              )}
+              <div class="spacer"></div>
+              <div>Most: {posML.most ? `${posML.most[0]} (${posML.most[1]})` : "—"}</div>
+              <div>Least: {posML.least ? `${posML.least[0]} (${posML.least[1]})` : "—"}</div>
+            </div>
+
+            <div class="k">Slate types</div>
+            <div class="v mono">
+              {typeLines.length ? (
+                <div class="lines">
+                  {typeLines.map((x) => (
+                    <div>{x.k}: {x.v}</div>
+                  ))}
+                </div>
+              ) : (
+                <div>—</div>
+              )}
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="main">
+        <div class="tableWrap">
+          <table id="t">
+            <thead>
+              <tr>
+                <th class="colYear"><button class="thBtn" type="button" data-col="year">YEAR</button></th>
+                <th class="colWk"><button class="thBtn" type="button" data-col="week">WK</button></th>
+                <th class="colType"><button class="thBtn" type="button" data-col="type">TYPE</button></th>
+                <th class="colDate"><button class="thBtn" type="button" data-col="date">DATE</button></th>
+                <th class="colSplit"><button class="thBtn" type="button" data-col="split">SPLIT</button></th>
+                <th class="colPos"><button class="thBtn" type="button" data-col="pos">POS</button></th>
+                <th class="colTeam"><button class="thBtn" type="button" data-col="team">TEAM</button></th>
+                <th class="colPlayer"><button class="thBtn" type="button" data-col="player">PLAYER</button></th>
+                <th class="colSal"><button class="thBtn" type="button" data-col="sal">SAL</button></th>
+                <th class="colOwn"><button class="thBtn" type="button" data-col="own">OWN</button></th>
+                <th class="colPts"><button class="thBtn" type="button" data-col="pts">PTS</button></th>
+                <th class="colLink"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {rows.map((r) => {
+                const year = Number.isFinite(r.year as any) ? String(r.year) : "";
+                const wk = Number.isFinite(r.week as any) ? String(r.week) : "";
+                const sal = n(r.salary);
+                const own = n(r.ownPct);
+                const pts = n(r.pts);
+
+                return (
+                  <tr
+                    data-year={year}
+                    data-week={wk}
+                    data-type={r.slateType || ""}
+                    data-dateiso={r.slateDate || ""}
+                    data-date={fmtDate(r.slateDate)}
+                    data-split={r.teamSplit || ""}
+                    data-pos={r.position || ""}
+                    data-team={r.team || ""}
+                    data-player={r.player || ""}
+                    data-sal={sal === null ? "" : String(sal)}
+                    data-own={own === null ? "" : String(own)}
+                    data-pts={pts === null ? "" : String(pts)}
+                  >
+                    <td class="mono">{year || "—"}</td>
+                    <td class="mono">{wk || "—"}</td>
+                    <td class="mono">{r.slateType || "—"}</td>
+                    <td class="mono">{fmtDate(r.slateDate)}</td>
+                    <td class="mono">{r.teamSplit || "—"}</td>
+                    <td class="mono">{r.position || "—"}</td>
+                    <td class="mono">{r.team || "—"}</td>
+                    <td class="mono">{r.player || "—"}</td>
+                    <td class="mono">{sal === null ? "—" : sal.toFixed(0)}</td>
+                    <td class="mono">{own === null ? "—" : `${own.toFixed(2)}%`}</td>
+                    <td class="mono">{pts === null ? "—" : pts.toFixed(2)}</td>
+                    <td class="mono">
+                      {r.link ? (
+                        <a class="link" href={r.link} target="_blank" rel="noreferrer">View</a>
+                      ) : (
+                        "—"
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+
+          <div id="colMenu" class="menu" style="display:none;">
+            <div class="menuTitle" id="menuTitle">Column</div>
+
+            <div class="menuRow">
+              <button class="menuBtn" type="button" data-action="sortAsc">Sort</button>
+              <button class="menuBtn" type="button" data-action="sortDesc">Sort</button>
+            </div>
+
+            <div class="menuBlock" id="menuFilterBlock"></div>
+
+            <div class="menuRow">
+              <button class="menuBtn secondary" type="button" data-action="clearCol">Clear column</button>
+              <button class="menuBtn secondary" type="button" data-action="clearAll">Clear all</button>
+            </div>
+          </div>
+
+          <script is:inline>
+            function byId(id) { return document.getElementById(id); }
+            function numOrNull(v) {
+              if (v === "" || v == null) return null;
+              const x = Number(v);
+              return Number.isFinite(x) ? x : null;
+            }
+            function text(v) { return String(v == null ? "" : v).trim(); }
+
+            const q = byId("q");
+            const shownCount = byId("shownCount");
+            const resetAllTop = byId("resetAllTop");
+
+            const tbody = document.querySelector("#t tbody");
+            const menu = byId("colMenu");
+            const menuTitle = byId("menuTitle");
+            const menuFilterBlock = byId("menuFilterBlock");
+
+            const thButtons = Array.from(document.querySelectorAll(".thBtn"));
+            const trs = tbody ? Array.from(tbody.querySelectorAll("tr")) : [];
+
+            const state = {
+              q: "",
+              filters: {
+                year: "",
+                week: "",
+                type: "",
+                split: "",
+                pos: "",
+                team: "",
+                player: "",
+                dateStart: "",
+                dateEnd: "",
+                salMin: "",
+                salMax: "",
+                ownMin: "",
+                ownMax: "",
+                ptsMin: "",
+                ptsMax: ""
+              },
+              sort: { col: "", dir: "" }
+            };
+
+            const colMeta = {
+              year: { kind: "catNum", label: "YEAR", key: "year" },
+              week: { kind: "catNum", label: "WK", key: "week" },
+              type: { kind: "cat", label: "TYPE", key: "type" },
+              date: { kind: "date", label: "DATE", key: "dateiso" },
+              split: { kind: "splitCat", label: "SPLIT", key: "split" },
+              pos: { kind: "cat", label: "POS", key: "pos" },
+              team: { kind: "cat", label: "TEAM", key: "team" },
+              player: { kind: "cat", label: "PLAYER", key: "player" },
+              sal: { kind: "num", label: "SAL", key: "sal" },
+              own: { kind: "num", label: "OWN", key: "own" },
+              pts: { kind: "num", label: "PTS", key: "pts" }
+            };
+
+            function uniqueValues(colKey) {
+              const set = new Set();
+              for (const tr of trs) {
+                const v = text(tr.dataset[colKey]);
+                if (v) set.add(v);
+              }
+              return Array.from(set).sort((a, b) => {
+                const na = Number(a), nb = Number(b);
+                if (Number.isFinite(na) && Number.isFinite(nb)) return na - nb;
+                return a.localeCompare(b);
+              });
+            }
+
+            function withinNum(v, minStr, maxStr) {
+              const x = numOrNull(v);
+              if (x == null) return false;
+              const minV = numOrNull(minStr);
+              const maxV = numOrNull(maxStr);
+              if (minV != null && x < minV) return false;
+              if (maxV != null && x > maxV) return false;
+              return true;
+            }
+
+            function withinDate(iso, startStr, endStr) {
+              const s = text(iso);
+              if (!s) return false;
+              const t = new Date(s).getTime();
+              if (!Number.isFinite(t)) return false;
+
+              if (startStr) {
+                const st = new Date(startStr).getTime();
+                if (Number.isFinite(st) && t < st) return false;
+              }
+              if (endStr) {
+                const et = new Date(endStr).getTime();
+                if (Number.isFinite(et) && t > et) return false;
+              }
+              return true;
+            }
+
+            function hay(tr) {
+              const parts = [
+                tr.dataset.year, tr.dataset.week, tr.dataset.type, tr.dataset.date,
+                tr.dataset.split, tr.dataset.pos, tr.dataset.team, tr.dataset.player,
+                tr.dataset.sal, tr.dataset.own, tr.dataset.pts
+              ];
+              return parts.map((x) => text(x).toLowerCase()).join(" ");
+            }
+
+            function passesFilters(tr) {
+              const f = state.filters;
+
+              if (f.year && text(tr.dataset.year) !== f.year) return false;
+              if (f.week && text(tr.dataset.week) !== f.week) return false;
+              if (f.type && text(tr.dataset.type) !== f.type) return false;
+              if (f.split && text(tr.dataset.split) !== f.split) return false;
+              if (f.pos && text(tr.dataset.pos) !== f.pos) return false;
+              if (f.team && text(tr.dataset.team) !== f.team) return false;
+              if (f.player && text(tr.dataset.player) !== f.player) return false;
+
+              if (f.dateStart || f.dateEnd) {
+                if (!withinDate(tr.dataset.dateiso, f.dateStart, f.dateEnd)) return false;
+              }
+
+              if (f.salMin || f.salMax) {
+                if (!withinNum(tr.dataset.sal, f.salMin, f.salMax)) return false;
+              }
+              if (f.ownMin || f.ownMax) {
+                if (!withinNum(tr.dataset.own, f.ownMin, f.ownMax)) return false;
+              }
+              if (f.ptsMin || f.ptsMax) {
+                if (!withinNum(tr.dataset.pts, f.ptsMin, f.ptsMax)) return false;
+              }
+
+              return true;
+            }
+
+            function splitRank(s) {
+              const v = text(s);
+              if (!v) return -Infinity;
+              const parts = v.split("-").map((x) => Number(x));
+              if (parts.length !== 2 || !Number.isFinite(parts[0]) || !Number.isFinite(parts[1])) return -Infinity;
+              return parts[0] * 10 + parts[1];
+            }
+
+            function compare(trA, trB, col, dir) {
+              const meta = colMeta[col];
+              if (!meta) return 0;
+
+              const a = trA.dataset[meta.key];
+              const b = trB.dataset[meta.key];
+
+              if (meta.kind === "splitCat") {
+                const aa = splitRank(a);
+                const bb = splitRank(b);
+                return dir === "asc" ? aa - bb : bb - aa;
+              }
+
+              if (meta.kind === "catNum" || meta.kind === "num") {
+                const av = numOrNull(a);
+                const bv = numOrNull(b);
+                const aa = av == null ? -Infinity : av;
+                const bb = bv == null ? -Infinity : bv;
+                return dir === "asc" ? aa - bb : bb - aa;
+              }
+
+              if (meta.kind === "date") {
+                const at = new Date(text(a)).getTime();
+                const bt = new Date(text(b)).getTime();
+                const aa = Number.isFinite(at) ? at : 0;
+                const bb = Number.isFinite(bt) ? bt : 0;
+                return dir === "asc" ? aa - bb : bb - aa;
+              }
+
+              const as = text(a).toLowerCase();
+              const bs = text(b).toLowerCase();
+              if (as < bs) return dir === "asc" ? -1 : 1;
+              if (as > bs) return dir === "asc" ? 1 : -1;
+              return 0;
+            }
+
+            function applyAll() {
+              const qv = state.q;
+              let shown = 0;
+
+              for (const tr of trs) {
+                let ok = true;
+                if (qv) {
+                  if (!hay(tr).includes(qv)) ok = false;
+                }
+                if (ok && !passesFilters(tr)) ok = false;
+
+                tr.style.display = ok ? "" : "none";
+                if (ok) shown += 1;
+              }
+
+              if (shownCount) shownCount.textContent = String(shown);
+
+              if (tbody && state.sort.col && state.sort.dir) {
+                const visible = trs.filter((tr) => tr.style.display !== "none");
+                visible.sort((a, b) => compare(a, b, state.sort.col, state.sort.dir));
+                for (const tr of visible) tbody.appendChild(tr);
+              }
+            }
+
+            let activeCol = "";
+
+            function closeMenu() {
+              if (menu) menu.style.display = "none";
+              if (menuFilterBlock) menuFilterBlock.innerHTML = "";
+              activeCol = "";
+            }
+
+            function positionMenu(anchorEl) {
+              if (!menu) return;
+              const r = anchorEl.getBoundingClientRect();
+              const top = Math.round(r.bottom + 8);
+              const left = Math.round(Math.min(window.innerWidth - 340, Math.max(12, r.left)));
+              menu.style.top = top + "px";
+              menu.style.left = left + "px";
+            }
+
+            function buildFilterUI(col) {
+              const meta = colMeta[col];
+              if (!meta || !menuFilterBlock) return;
+
+              if (meta.kind === "cat" || meta.kind === "catNum" || meta.kind === "splitCat") {
+                const values = uniqueValues(meta.key);
+                const current = state.filters[col] || "";
+
+                menuFilterBlock.innerHTML =
+                  '<div class="menuLabel">Filter</div>' +
+                  '<select id="menuSelect" class="menuInput">' +
+                  '<option value="">All</option>' +
+                  values.map((v) => '<option value="' + v + '">' + v + "</option>").join("") +
+                  "</select>";
+
+                const sel = byId("menuSelect");
+                if (sel) {
+                  sel.value = current;
+                  sel.addEventListener("change", () => {
+                    state.filters[col] = sel.value;
+                    applyAll();
+                  });
+                }
+                return;
+              }
+
+              if (meta.kind === "date") {
+                const start = state.filters.dateStart || "";
+                const end = state.filters.dateEnd || "";
+                menuFilterBlock.innerHTML =
+                  '<div class="menuLabel">Range</div>' +
+                  '<div class="menuGrid2">' +
+                  '<div><div class="mini">Start</div><input id="menuDateStart" class="menuInput" type="date" value="' + start + '" /></div>' +
+                  '<div><div class="mini">End</div><input id="menuDateEnd" class="menuInput" type="date" value="' + end + '" /></div>' +
+                  "</div>";
+
+                const a = byId("menuDateStart");
+                const b = byId("menuDateEnd");
+                if (a) a.addEventListener("change", () => { state.filters.dateStart = a.value; applyAll(); });
+                if (b) b.addEventListener("change", () => { state.filters.dateEnd = b.value; applyAll(); });
+                return;
+              }
+
+              if (meta.kind === "num") {
+                const map = {
+                  sal: ["salMin", "salMax"],
+                  own: ["ownMin", "ownMax"],
+                  pts: ["ptsMin", "ptsMax"]
+                };
+                const pair = map[col];
+                if (!pair) return;
+
+                const minKey = pair[0];
+                const maxKey = pair[1];
+
+                const minVal = state.filters[minKey] || "";
+                const maxVal = state.filters[maxKey] || "";
+
+                menuFilterBlock.innerHTML =
+                  '<div class="menuLabel">Range</div>' +
+                  '<div class="menuGrid2">' +
+                  '<div><div class="mini">Min</div><input id="menuNumMin" class="menuInput" type="number" step="any" value="' + minVal + '" /></div>' +
+                  '<div><div class="mini">Max</div><input id="menuNumMax" class="menuInput" type="number" step="any" value="' + maxVal + '" /></div>' +
+                  "</div>";
+
+                const minEl = byId("menuNumMin");
+                const maxEl = byId("menuNumMax");
+
+                function sync() {
+                  state.filters[minKey] = minEl ? minEl.value : "";
+                  state.filters[maxKey] = maxEl ? maxEl.value : "";
+                  applyAll();
+                }
+
+                if (minEl) minEl.addEventListener("input", sync);
+                if (maxEl) maxEl.addEventListener("input", sync);
+              }
+            }
+
+            function updateSortButtonLabels(col) {
+              const meta = colMeta[col];
+              const ascBtn = menu ? menu.querySelector('[data-action="sortAsc"]') : null;
+              const descBtn = menu ? menu.querySelector('[data-action="sortDesc"]') : null;
+              if (!ascBtn || !descBtn) return;
+
+              if (meta && (meta.kind === "num" || meta.kind === "splitCat")) {
+                ascBtn.textContent = "Sort Low → High";
+                descBtn.textContent = "Sort High → Low";
+                return;
+              }
+
+              if (meta && meta.kind === "date") {
+                ascBtn.textContent = "Sort Old → New";
+                descBtn.textContent = "Sort New → Old";
+                return;
+              }
+
+              ascBtn.textContent = "Sort A → Z";
+              descBtn.textContent = "Sort Z → A";
+            }
+
+            function openMenuFor(col, anchorEl) {
+              if (!menu || !menuTitle) return;
+              activeCol = col;
+              const meta = colMeta[col];
+              menuTitle.textContent = meta ? meta.label : "Column";
+              buildFilterUI(col);
+              updateSortButtonLabels(col);
+              positionMenu(anchorEl);
+              menu.style.display = "block";
+            }
+
+            function clearColumn(col) {
+              if (col === "year") state.filters.year = "";
+              if (col === "week") state.filters.week = "";
+              if (col === "type") state.filters.type = "";
+              if (col === "split") state.filters.split = "";
+              if (col === "pos") state.filters.pos = "";
+              if (col === "team") state.filters.team = "";
+              if (col === "player") state.filters.player = "";
+              if (col === "date") { state.filters.dateStart = ""; state.filters.dateEnd = ""; }
+              if (col === "sal") { state.filters.salMin = ""; state.filters.salMax = ""; }
+              if (col === "own") { state.filters.ownMin = ""; state.filters.ownMax = ""; }
+              if (col === "pts") { state.filters.ptsMin = ""; state.filters.ptsMax = ""; }
+              applyAll();
+            }
+
+            function clearAll() {
+              state.q = "";
+              for (const k in state.filters) state.filters[k] = "";
+              state.sort.col = "";
+              state.sort.dir = "";
+              if (q) q.value = "";
+              applyAll();
+            }
+
+            for (const btn of thButtons) {
+              btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const col = btn.dataset.col;
+                if (!col) return;
+                openMenuFor(col, btn);
+              });
+            }
+
+            if (q) {
+              q.addEventListener("input", () => {
+                state.q = q.value.trim().toLowerCase();
+                applyAll();
+              });
+            }
+
+            if (resetAllTop) {
+              resetAllTop.addEventListener("click", () => {
+                clearAll();
+                closeMenu();
+              });
+            }
+
+            if (menu) {
+              menu.addEventListener("click", (e) => {
+                const t = e.target;
+                if (!t || !t.dataset) return;
+                const action = t.dataset.action;
+                if (!action) return;
+
+                if (action === "sortAsc" && activeCol) {
+                  state.sort.col = activeCol;
+                  state.sort.dir = "asc";
+                  applyAll();
+                  closeMenu();
+                  return;
+                }
+
+                if (action === "sortDesc" && activeCol) {
+                  state.sort.col = activeCol;
+                  state.sort.dir = "desc";
+                  applyAll();
+                  closeMenu();
+                  return;
+                }
+
+                if (action === "clearCol" && activeCol) {
+                  clearColumn(activeCol);
+                  buildFilterUI(activeCol);
+                  updateSortButtonLabels(activeCol);
+                  return;
+                }
+
+                if (action === "clearAll") {
+                  clearAll();
+                  closeMenu();
+                  return;
+                }
+              });
+            }
+
+            document.addEventListener("click", (e) => {
+              const target = e.target;
+              if (!target) return;
+              if (menu && menu.contains(target)) return;
+              if (target.classList && target.classList.contains("thBtn")) return;
+              closeMenu();
+            });
+
+            applyAll();
+          </script>
+        </div>
+      </section>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page { width: 100%; max-width: 100%; padding: 18px 18px; }
+
+  .topbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .titleBlock { min-width: 320px; }
+
+  .h1 { margin: 0; font-size: 28px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; }
+
+  .sub { margin-top: 6px; color: rgba(255,255,255,0.55); font-size: 13px; }
+
+  .pills { display: flex; gap: 10px; margin-top: 10px; }
+
+  .pill {
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #141414;
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+  }
+
+  .pill:hover { background: #1f1f1f; border-color: rgba(255,255,255,0.14); }
+
+  .pillActive { background: #1f1f1f; border-color: rgba(255,255,255,0.18); }
+
+  .searchWrap {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .search {
+    width: min(520px, 100%);
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #141414;
+    color: rgba(255,255,255,0.92);
+    font-size: 14px;
+    outline: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  }
+
+  .search::placeholder { color: rgba(255,255,255,0.45); }
+
+  .search:focus {
+    border-color: rgba(255,255,255,0.18);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.10), 0 12px 32px rgba(0,0,0,0.45);
+  }
+
+  .resetAll {
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #1f1f1f;
+    color: rgba(255,255,255,0.88);
+    font-weight: 900;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+  }
+
+  .resetAll:hover { background: #232323; border-color: rgba(255,255,255,0.14); transform: translateY(-1px); }
+  .resetAll:active { transform: translateY(0px); }
+
+  .srOnly { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  main.page > section.grid { background: transparent; border: 0; box-shadow: none; border-radius: 0; padding: 0; }
+
+  .grid { display: grid; grid-template-columns: 370px 1fr; gap: 12px; min-height: 0; }
+
+  .sidebar { overflow: auto; padding-right: 4px; }
+
+  .main { min-height: 0; display: flex; flex-direction: column; }
+
+  .card {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    background: #1f1f1f;
+    padding: 12px 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
+  }
+
+  .cardTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
+
+  .kv { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; align-items: start; }
+
+  .k { color: rgba(255,255,255,0.55); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; }
+
+  .v { font-weight: 900; color: rgba(255,255,255,0.88); }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: 700;
+  }
+
+  .mono .spacer { height: 10px; }
+
+  .note {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    color: rgba(255,255,255,0.55);
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .lines { max-height: 220px; overflow: auto; padding-right: 4px; }
+
+  .tableWrap {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    overflow: auto;
+    background: #1f1f1f;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
+  }
+
+  table { width: 100%; border-collapse: collapse; }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    background: #181818;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 10px 10px;
+    z-index: 2;
+    text-align: left;
+  }
+
+  tbody td {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 10px 10px;
+    vertical-align: top;
+    font-size: 13px;
+    color: rgba(255,255,255,0.88);
+  }
+
+  tbody tr:hover td { background: #232323; }
+
+  .link {
+    font-weight: 900;
+    text-decoration: none;
+    color: rgba(255,255,255,0.88);
+  }
+  .link:hover { color: #fff; }
+
+  .thBtn {
+    width: 100%;
+    text-align: left;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-size: 11px;
+    color: rgba(255,255,255,0.62);
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .thBtn:hover { color: rgba(255,255,255,0.88); }
+
+  .menu {
+    position: fixed;
+    width: 320px;
+    background: #181818;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    box-shadow: 0 18px 44px rgba(0,0,0,0.55);
+    padding: 12px;
+    z-index: 9999;
+    color: rgba(255,255,255,0.88);
+  }
+
+  .menuTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
+
+  .menuRow { display: flex; gap: 8px; margin-bottom: 10px; }
+
+  .menuBtn {
+    flex: 1 1 auto;
+    padding: 9px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #1f1f1f;
+    color: rgba(255,255,255,0.88);
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 13px;
+    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+  }
+
+  .menuBtn:hover { background: #232323; border-color: rgba(255,255,255,0.14); transform: translateY(-1px); }
+  .menuBtn:active { transform: translateY(0px); }
+
+  .menuBtn.secondary { background: #141414; }
+
+  .menuBlock { margin-bottom: 10px; }
+
+  .menuLabel {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 6px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .menuInput {
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: #141414;
+    color: rgba(255,255,255,0.92);
+    font-size: 13px;
+    outline: none;
+  }
+
+  .menuInput:focus {
+    border-color: rgba(255,255,255,0.16);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+  }
+
+  .menuGrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: end; }
+
+  .mini { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; }
+
+  .colYear { width: 78px; }
+  .colWk { width: 56px; }
+  .colType { width: 90px; }
+  .colDate { width: 90px; }
+  .colSplit { width: 72px; }
+  .colPos { width: 70px; }
+  .colTeam { width: 70px; }
+  .colPlayer { width: 220px; }
+  .colSal { width: 90px; }
+  .colOwn { width: 90px; }
+  .colPts { width: 90px; }
+  .colLink { width: 70px; }
+
+  @media (max-width: 1200px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 900px) {
+    .topbar { flex-direction: column; align-items: stretch; }
+    .searchWrap { justify-content: stretch; flex-wrap: wrap; }
+    .search { width: 100%; }
+  }
+</style>
