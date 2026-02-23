@@ -1,24 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../../../layouts/Layout.astro";
 
 const cards = [
-  { title: "NFL Showdown Review", href: "/analysis/nfl/showdown" },
-  { title: "NFL Classic Review", href: "/analysis/nfl/classic" },
-  { title: "NFL Classic Positions", href: "/analysis/nfl/classic-positions" },
-  { title: "NFL Showdown Positions", href: "/analysis/nfl/showdown-positions" },
+  { title: "CAPTAIN", href: "/analysis/nfl/showdown-positions/captain" },
+  { title: "FLEX", href: "/analysis/nfl/showdown-positions/flex" },
 ];
+
+const pageTitle = "NFL Showdown Positions";
 ---
 
-<Layout title="Review | Milly Maker Tracker">
+<Layout title={pageTitle}>
   <main class="page">
     <header class="hero">
-      <h1 class="title">Review</h1>
-      <p class="sub">
-        Use this section to review slates by season and format. It is built for scanning results and opening slates for deeper review.
-      </p>
+      <h1 class="title">{pageTitle}</h1>
+      <p class="sub">Micro analysis for winning Showdown lineups by roster spot.</p>
     </header>
 
-    <section class="grid" aria-label="Review pages">
+    <section class="grid" aria-label="Showdown position pages">
       {cards.map((c) => (
         <a class="card" href={c.href}>
           <h2 class="card-title">{c.title}</h2>
@@ -51,7 +49,6 @@ const cards = [
   .title{margin:0;font-size:44px;letter-spacing:-0.02em;font-weight:950}
   .sub{margin:10px 0 0;max-width:78ch;color:var(--muted);line-height:1.65;font-weight:650}
 
-  /* hard reset so the wrapper never looks like a "big pill" */
   main.page > section.grid{
     background: transparent;
     border: 0;
@@ -72,7 +69,6 @@ const cards = [
     .grid{grid-template-columns:1fr 1fr}
   }
 
-  /* bigger pills */
   .card{
     display:block;
     text-decoration:none;
