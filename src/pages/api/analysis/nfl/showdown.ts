@@ -1,3 +1,4 @@
+// src/pages/api/analysis/nfl/showdown.ts
 import type { APIRoute } from "astro";
 import { prisma } from "../../../../lib/prisma";
 
@@ -79,6 +80,15 @@ function ownershipPctFromItem(it: any) {
   return isNum(bp) ? bp / 100 : null;
 }
 
+function normPos(v: any) {
+  return String(v || "").trim().toUpperCase();
+}
+
+function isDSTPos(p: any) {
+  const x = normPos(p);
+  return x === "DST" || x === "D/ST" || x === "DEF" || x === "D";
+}
+
 function parseMatchupFromSlateKey(slateKey: any) {
   const key = String(slateKey || "").trim();
   if (!key) return { away: "", home: "" };
@@ -141,6 +151,11 @@ function teamSplitFromItemsStrict(items: any[], away: string, home: string) {
   return forceAllowedSplit(aFinal, bFinal);
 }
 
+function pct1(n: number | null) {
+  if (!isNum(n)) return null;
+  return Math.round(n * 10) / 10;
+}
+
 export const GET: APIRoute = async () => {
   const contests = await prisma.contest.findMany({
     where: {
@@ -177,6 +192,7 @@ export const GET: APIRoute = async () => {
                 select: {
                   rosterSpot: true,
                   salary: true,
+                  points: true,
                   ownershipBp: true,
                   ownershipCaptainBp: true,
                   ownershipFlexBp: true,
@@ -205,7 +221,6 @@ export const GET: APIRoute = async () => {
 
     const year = c.slate.season?.year ?? null;
 
-
     const salaryUsed = lineup?.salaryUsed ?? null;
     const salaryLeft = isNum(salaryUsed) ? 50000 - salaryUsed : null;
 
@@ -222,6 +237,23 @@ export const GET: APIRoute = async () => {
 
     const matchup = parseMatchupFromSlateKey(c.slate.slateKey);
     const teamSplit = teamSplitFromItemsStrict(items, matchup.away, matchup.home);
+
+    const hasK = items.some((it) => normPos(it?.player?.position) === "K");
+    const hasDST = items.some((it) => isDSTPos(it?.player?.position));
+    const hasKD = hasK || hasDST;
+
+    let u20Count = 0;
+    let u1kCount = 0;
+    let ge50Count = 0;
+
+    for (const it of items) {
+      const own = ownershipPctFromItem(it);
+      if (isNum(own) && own < 20) u20Count += 1;
+      if (isNum(own) && own >= 50) ge50Count += 1;
+
+      const sal = it?.salary;
+      if (isNum(sal) && sal < 1000) u1kCount += 1;
+    }
 
     return {
       slateId: c.slate.id,
@@ -253,16 +285,29 @@ export const GET: APIRoute = async () => {
 
       teamSplit,
 
+      hasKD,
+      u20Count,
+      u1kCount,
+      ge50Count,
+
       hasAnalysis: Boolean(c.analysis),
       analysisKeys: c.analysis && typeof c.analysis === "object" ? Object.keys(c.analysis as any) : [],
     };
   });
+
+  const totalLineups = rows.length;
 
   const salaryLefts = rows.map((r) => r.salaryLeft).filter(isNum);
   const ownerships = rows.map((r) => r.totalOwnershipPct).filter(isNum);
   const winnerPts = rows.map((r) => r.points).filter(isNum);
   const captainOwns = rows.map((r) => r.captainOwnershipPct).filter(isNum);
   const captainSalaries = rows.map((r) => r.captainSalary).filter(isNum);
+
+  const u20Counts = rows.map((r) => r.u20Count).filter(isNum);
+  const u1kCounts = rows.map((r) => r.u1kCount).filter(isNum);
+  const ge50Counts = rows.map((r) => r.ge50Count).filter(isNum);
+
+  const hasKDCount = rows.filter((r) => r.hasKD).length;
 
   const bySlateType: Record<string, number> = {};
   for (const r of rows) {
@@ -303,6 +348,36 @@ export const GET: APIRoute = async () => {
   const analysisCoverage = {
     contestsWithAnalysis: rows.filter((r) => r.hasAnalysis).length,
     contestsWithoutAnalysis: rows.filter((r) => !r.hasAnalysis).length,
+  };
+
+  const constructionStats = {
+    totalLineups,
+
+    kd: {
+      count: hasKDCount,
+      pct: totalLineups ? pct1((hasKDCount / totalLineups) * 100) : null,
+    },
+
+    u20Players: {
+      avg: avg(u20Counts),
+      median: median(u20Counts),
+      most: maxVal(u20Counts),
+      least: minVal(u20Counts),
+    },
+
+    u1kPlayers: {
+      avg: avg(u1kCounts),
+      median: median(u1kCounts),
+      most: maxVal(u1kCounts),
+      least: minVal(u1kCounts),
+    },
+
+    ge50Players: {
+      avg: avg(ge50Counts),
+      median: median(ge50Counts),
+      most: maxVal(ge50Counts),
+      least: minVal(ge50Counts),
+    },
   };
 
   const metrics = {
@@ -368,6 +443,7 @@ export const GET: APIRoute = async () => {
     },
     construction: {
       teamSplitCounts,
+      stats: constructionStats,
     },
   };
 
