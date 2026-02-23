@@ -17,7 +17,14 @@
 
 import fs from "fs";
 import path from "path";
-import { PrismaClient, Sport, SlateType, LineupType, RosterSpot } from "@prisma/client";
+import {
+  PrismaClient,
+  Sport,
+  SlateType,
+  LineupType,
+  RosterSpot,
+  CorrelationType,
+} from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from "pg";
 
@@ -73,7 +80,9 @@ type ImportContest = {
   siteContestId?: string | null;
   entryFeeCents?: number | null;
   entries?: number | null;
+
   topPrizeCents?: number | null;
+
   totalOwnershipBp?: number | null;
 };
 
@@ -108,12 +117,75 @@ type ImportLineupItem = {
   flexOwnershipPct?: number | string | null;
   ownershipFlexPct?: number | string | null;
   flex_ownership_pct?: number | string | null;
+
+  passYds?: number | null;
+  passTd?: number | null;
+  passInt?: number | null;
+  rushYds?: number | null;
+  rushTd?: number | null;
+
+  rushAtt?: number | null;
+  rushYdsRb?: number | null;
+  rushTdRb?: number | null;
+  targetsRb?: number | null;
+  recRb?: number | null;
+  recYdsRb?: number | null;
+  recTdRb?: number | null;
+
+  targets?: number | null;
+  rec?: number | null;
+  recYds?: number | null;
+  recTd?: number | null;
+
+  opponentStartingQbName?: string | null;
+  pointsAllowedBucket?: number | null;
+  defensiveTdCount?: number | null;
+  sacks?: number | null;
+  takeaways?: number | null;
 };
 
-type ImportAnalysis = {
+type ImportContestAnalysisFlat = {
   stackSummary?: string | null;
   uniquenessNotes?: string | null;
   stackMeta?: any | null;
+};
+
+type ImportLineupAnalysis = {
+  archetypeTags?: any | null;
+  macroStory?: string | null;
+  earlyCount?: number | null;
+  lateCount?: number | null;
+  primeCount?: number | null;
+};
+
+type ImportLineupItemAnalysis = {
+  rosterSpot: string;
+  slotIndex: number;
+  roleTags?: any | null;
+  microStory?: string | null;
+};
+
+type ImportPlayerRef = {
+  dkPlayerId?: number | null;
+  name?: string | null;
+  position?: string | null;
+  team?: string | null;
+};
+
+type ImportCorrelation = {
+  type: string;
+  qb: ImportPlayerRef;
+  teammate?: ImportPlayerRef | null;
+  opponent?: ImportPlayerRef | null;
+};
+
+type ImportAnalysis = ImportContestAnalysisFlat & {
+  contestAnalysis?: ImportContestAnalysisFlat | null;
+
+  lineupAnalysis?: ImportLineupAnalysis | null;
+  lineupItemAnalysis?: ImportLineupItemAnalysis[] | null;
+
+  correlations?: ImportCorrelation[] | null;
 };
 
 type ImportFile = {
@@ -122,11 +194,18 @@ type ImportFile = {
   week?: number | null;
   slateType?: string | null;
   slateDate: string;
+
+  slateName?: string | null;
+  slateTag?: string | null;
+  slateGroup?: string | null;
+  isMain?: boolean | null;
+
   contest: ImportContest;
   winner: ImportWinner;
   lineup: {
     salaryUsed?: number | null;
     totalPoints?: number | null;
+    totalOwnershipBp?: number | null;
     items: ImportLineupItem[];
   };
   analysis?: ImportAnalysis | null;
@@ -137,7 +216,8 @@ type ImportFile = {
 function detectSlateTypeFromPath(filePath: string): SlateType | null {
   const normalized = filePath.replace(/\\/g, "/").toUpperCase();
 
-  if (normalized.includes("/SUPER BOWL/") || normalized.includes("/SUPER_BOWL/")) return SlateType.SUPER_BOWL;
+  if (normalized.includes("/SUPER BOWL/") || normalized.includes("/SUPER_BOWL/"))
+    return SlateType.SUPER_BOWL;
 
   if (normalized.includes("/MNF/")) return SlateType.MNF;
   if (normalized.includes("/TNF/")) return SlateType.TNF;
@@ -209,21 +289,20 @@ function parsePctValue(value: unknown): number | null {
 
   if (typeof value === "number") {
     if (!Number.isFinite(value)) return null;
-    return value; // 0.8 stays 0.8 (meaning 0.8%)
+    return value;
   }
 
   if (typeof value === "string") {
     const s = value.trim();
     if (!s) return null;
 
-    const hasPct = s.includes("%");
     const cleaned = s.replace("%", "").trim();
     if (!cleaned) return null;
 
     const num = Number(cleaned);
     if (!Number.isFinite(num)) return null;
 
-    return num; // "80.0%" becomes 80, "0.8" stays 0.8
+    return num;
   }
 
   return null;
@@ -291,6 +370,92 @@ class MissingEntitiesError extends Error {
   }
 }
 
+/* ------------------------------- helpers ------------------------------- */
+
+function cleanString(v: any): string | null {
+  const s = String(v ?? "").trim();
+  return s ? s : null;
+}
+
+function normalizeContestAnalysis(analysis: ImportAnalysis | null | undefined): ImportContestAnalysisFlat | null {
+  if (!analysis) return null;
+
+  const a = analysis.contestAnalysis ?? analysis;
+
+  const stackSummary = cleanString((a as any).stackSummary);
+  const uniquenessNotes = cleanString((a as any).uniquenessNotes);
+  const stackMeta = (a as any).stackMeta ?? null;
+
+  if (!stackSummary && !uniquenessNotes && !stackMeta) return null;
+
+  return {
+    stackSummary: stackSummary ?? null,
+    uniquenessNotes: uniquenessNotes ?? null,
+    stackMeta: stackMeta ?? null,
+  };
+}
+
+function normalizeLineupAnalysis(analysis: ImportAnalysis | null | undefined): ImportLineupAnalysis | null {
+  if (!analysis || !analysis.lineupAnalysis) return null;
+  const la = analysis.lineupAnalysis;
+
+  const archetypeTags = la.archetypeTags ?? null;
+  const macroStory = cleanString(la.macroStory) ?? null;
+
+  const earlyCount = typeof la.earlyCount === "number" ? la.earlyCount : null;
+  const lateCount = typeof la.lateCount === "number" ? la.lateCount : null;
+  const primeCount = typeof la.primeCount === "number" ? la.primeCount : null;
+
+  if (!archetypeTags && !macroStory && earlyCount === null && lateCount === null && primeCount === null) return null;
+
+  return { archetypeTags, macroStory, earlyCount, lateCount, primeCount };
+}
+
+function normalizeItemAnalyses(analysis: ImportAnalysis | null | undefined): ImportLineupItemAnalysis[] {
+  if (!analysis || !Array.isArray(analysis.lineupItemAnalysis)) return [];
+  return analysis.lineupItemAnalysis
+    .map((x) => ({
+      rosterSpot: String(x.rosterSpot ?? "").toUpperCase().trim(),
+      slotIndex: Number(x.slotIndex),
+      roleTags: x.roleTags ?? null,
+      microStory: cleanString(x.microStory) ?? null,
+    }))
+    .filter((x) => x.rosterSpot && Number.isFinite(x.slotIndex));
+}
+
+function parseCorrelationType(v: any): CorrelationType | null {
+  const s = String(v ?? "").toUpperCase().trim();
+  if (s === "STACK") return CorrelationType.STACK;
+  if (s === "BRINGBACK" || s === "BRING_BACK") return CorrelationType.BRINGBACK;
+  return null;
+}
+
+async function resolvePlayerIdByRef(params: {
+  sport: Sport;
+  teamIdByAbbr: Map<string, string>;
+  playersByDkId: Map<number, string>;
+  playerIdByComposite: Map<string, string>;
+  ref: ImportPlayerRef;
+}): Promise<string | null> {
+  const dkPlayerId = typeof params.ref.dkPlayerId === "number" ? params.ref.dkPlayerId : null;
+  if (dkPlayerId !== null) {
+    const pid = params.playersByDkId.get(dkPlayerId);
+    if (pid) return pid;
+  }
+
+  const teamAbbr = String(params.ref.team ?? "").toUpperCase().trim();
+  const teamId = teamAbbr ? params.teamIdByAbbr.get(teamAbbr) ?? null : null;
+
+  const name = cleanString(params.ref.name);
+  const position = cleanString(params.ref.position);
+
+  if (!teamId || !name || !position) return null;
+
+  const key = `${name}|||${position}|||${teamId}`;
+  const pid2 = params.playerIdByComposite.get(key);
+  return pid2 ?? null;
+}
+
 /* --------------------------------- Main --------------------------------- */
 
 async function main() {
@@ -319,6 +484,10 @@ async function main() {
   const slateType: SlateType = slateTypeFromPath ?? slateTypeFromJson ?? SlateType.SHOWDOWN;
   const lineupType = slateTypeToLineupType(slateType);
 
+  if (lineupType === LineupType.CLASSIC && week === null) {
+    throw new Error("Classic imports require week for schedule linkage.");
+  }
+
   const teamAbbrs = data.lineup.items.map((i) => String(i.team).toUpperCase().trim()).filter(Boolean);
   const slateKey = buildSlateKey({ sport, year, week, slateType, slateDate, teamAbbrs });
 
@@ -329,11 +498,19 @@ async function main() {
   });
 
   const slateDbType: SlateType = slateType;
-  const slateTag = String(slateType).toLowerCase();
+
+  const slateTag = cleanString((data as any).slateTag) ?? String(slateType).toLowerCase();
+  const slateGroup = cleanString((data as any).slateGroup) ?? "_";
 
   const slateName =
-    data.contest?.contestName?.trim() ||
+    cleanString((data as any).slateName) ??
+    cleanString(data.contest?.contestName) ??
     (slateType === SlateType.MAIN ? "Main" : `${String(slateType).replace(/_/g, " ")} Showdown`);
+
+  const isMain =
+    typeof (data as any).isMain === "boolean"
+      ? Boolean((data as any).isMain)
+      : slateDbType === SlateType.MAIN;
 
   const slate = await prisma.slate.upsert({
     where: { slateKey },
@@ -346,8 +523,8 @@ async function main() {
       slateKey,
       slateName,
       slateTag,
-      slateGroup: "_",
-      isMain: slateDbType === SlateType.MAIN,
+      slateGroup,
+      isMain,
     },
     update: {
       week: week ?? undefined,
@@ -356,8 +533,8 @@ async function main() {
       lineupType,
       slateName,
       slateTag,
-      slateGroup: "_",
-      isMain: slateDbType === SlateType.MAIN,
+      slateGroup,
+      isMain,
     },
   });
 
@@ -392,19 +569,20 @@ async function main() {
     },
   });
 
-  if (data.analysis) {
+  const contestAnalysis = normalizeContestAnalysis(data.analysis ?? null);
+  if (contestAnalysis) {
     await prisma.contestAnalysis.upsert({
       where: { contestId: contest.id },
       create: {
         contestId: contest.id,
-        stackSummary: data.analysis.stackSummary ?? null,
-        uniquenessNotes: data.analysis.uniquenessNotes ?? null,
-        stackMeta: data.analysis.stackMeta ?? null,
+        stackSummary: contestAnalysis.stackSummary ?? null,
+        uniquenessNotes: contestAnalysis.uniquenessNotes ?? null,
+        stackMeta: contestAnalysis.stackMeta ?? null,
       },
       update: {
-        stackSummary: data.analysis.stackSummary ?? null,
-        uniquenessNotes: data.analysis.uniquenessNotes ?? null,
-        stackMeta: data.analysis.stackMeta ?? null,
+        stackSummary: contestAnalysis.stackSummary ?? null,
+        uniquenessNotes: contestAnalysis.uniquenessNotes ?? null,
+        stackMeta: contestAnalysis.stackMeta ?? null,
       },
     });
   }
@@ -434,13 +612,37 @@ async function main() {
       lineupType,
       salaryUsed: data.lineup.salaryUsed ?? null,
       totalPoints: data.lineup.totalPoints ?? data.winner.points ?? null,
+      totalOwnershipBp: data.lineup.totalOwnershipBp ?? null,
     },
     update: {
       lineupType,
       salaryUsed: data.lineup.salaryUsed ?? null,
       totalPoints: data.lineup.totalPoints ?? data.winner.points ?? null,
+      totalOwnershipBp: data.lineup.totalOwnershipBp ?? null,
     },
   });
+
+  const lineupAnalysis = normalizeLineupAnalysis(data.analysis ?? null);
+  if (lineupAnalysis) {
+    await prisma.lineupAnalysis.upsert({
+      where: { lineupId: lineup.id },
+      create: {
+        lineupId: lineup.id,
+        archetypeTags: lineupAnalysis.archetypeTags ?? null,
+        macroStory: lineupAnalysis.macroStory ?? null,
+        earlyCount: lineupAnalysis.earlyCount ?? null,
+        lateCount: lineupAnalysis.lateCount ?? null,
+        primeCount: lineupAnalysis.primeCount ?? null,
+      },
+      update: {
+        archetypeTags: lineupAnalysis.archetypeTags ?? null,
+        macroStory: lineupAnalysis.macroStory ?? null,
+        earlyCount: lineupAnalysis.earlyCount ?? null,
+        lateCount: lineupAnalysis.lateCount ?? null,
+        primeCount: lineupAnalysis.primeCount ?? null,
+      },
+    });
+  }
 
   /* -------------------- Path A resolve Teams and Players -------------------- */
 
@@ -578,7 +780,47 @@ async function main() {
     throw new MissingEntitiesError([], missingPlayers);
   }
 
+  // -------------------- Resolve games from seeded schedule --------------------
+  // FIX HERE: Game model uses seasonId, not seasonYear.
+
+  const games =
+    week !== null
+      ? await prisma.game.findMany({
+          where: { sport, seasonId: season.id, week },
+          select: {
+            id: true,
+            homeTeamId: true,
+            awayTeamId: true,
+            window: true,
+            homeStartingQbPlayerId: true,
+            awayStartingQbPlayerId: true,
+          },
+        })
+      : [];
+
+  const gameByTeamId = new Map<
+    string,
+    { gameId: string; opponentTeamId: string; opponentStartingQbPlayerId: string | null }
+  >();
+
+  for (const g of games) {
+    gameByTeamId.set(g.homeTeamId, {
+      gameId: g.id,
+      opponentTeamId: g.awayTeamId,
+      opponentStartingQbPlayerId: g.awayStartingQbPlayerId ?? null,
+    });
+    gameByTeamId.set(g.awayTeamId, {
+      gameId: g.id,
+      opponentTeamId: g.homeTeamId,
+      opponentStartingQbPlayerId: g.homeStartingQbPlayerId ?? null,
+    });
+  }
+
+  const teamIdByLineupIndex = new Map<number, string>();
+  for (const c of candidates) teamIdByLineupIndex.set(c.idx, c.teamId);
+
   const slotCounters2: Record<string, number> = {};
+  const lineupItemIdByKey = new Map<string, string>();
 
   for (let i = 0; i < items.length; i++) {
     const it = items[i];
@@ -596,38 +838,189 @@ async function main() {
 
     const ownershipCaptainBp = !isClassic && rosterSpot === RosterSpot.CAPTAIN ? bp : null;
     const ownershipFlexBp = !isClassic && rosterSpot === RosterSpot.FLEX ? bp : null;
-
     const ownershipClassicBp = isClassic ? bp : null;
 
     const legacyOwnership = null;
     const legacyOwnershipBp = null;
 
-    await prisma.lineupItem.upsert({
+    const teamId = teamIdByLineupIndex.get(i) ?? null;
+    const gameLink = teamId ? (gameByTeamId.get(teamId) ?? null) : null;
+
+    const gameId = gameLink ? gameLink.gameId : null;
+    const opponentTeamId = gameLink ? gameLink.opponentTeamId : null;
+
+    const opponentStartingQbPlayerId =
+      rosterSpot === RosterSpot.DST && gameLink ? gameLink.opponentStartingQbPlayerId : null;
+
+    const saved = await prisma.lineupItem.upsert({
       where: { lineupId_rosterSpot_slotIndex: { lineupId: lineup.id, rosterSpot, slotIndex } },
       create: {
         lineupId: lineup.id,
         playerId,
         rosterSpot,
         slotIndex,
+
+        gameId,
+        opponentTeamId,
+        opponentStartingQbPlayerId,
+
         salary: it.salary ?? null,
         points: it.points ?? null,
+
         ownership: legacyOwnership,
         ownershipBp: legacyOwnershipBp,
+
         ownershipCaptainBp,
         ownershipFlexBp,
         ownershipClassicBp,
+
+        passYds: it.passYds ?? null,
+        passTd: it.passTd ?? null,
+        passInt: it.passInt ?? null,
+        rushYds: it.rushYds ?? null,
+        rushTd: it.rushTd ?? null,
+
+        rushAtt: it.rushAtt ?? null,
+        rushYdsRb: it.rushYdsRb ?? null,
+        rushTdRb: it.rushTdRb ?? null,
+        targetsRb: it.targetsRb ?? null,
+        recRb: it.recRb ?? null,
+        recYdsRb: it.recYdsRb ?? null,
+        recTdRb: it.recTdRb ?? null,
+
+        targets: it.targets ?? null,
+        rec: it.rec ?? null,
+        recYds: it.recYds ?? null,
+        recTd: it.recTd ?? null,
+
+        pointsAllowedBucket: it.pointsAllowedBucket ?? null,
+        defensiveTdCount: it.defensiveTdCount ?? null,
+        sacks: it.sacks ?? null,
+        takeaways: it.takeaways ?? null,
       },
       update: {
         playerId,
+
+        gameId,
+        opponentTeamId,
+        opponentStartingQbPlayerId,
+
         salary: it.salary ?? null,
         points: it.points ?? null,
+
         ownership: legacyOwnership,
         ownershipBp: legacyOwnershipBp,
+
         ownershipCaptainBp,
         ownershipFlexBp,
         ownershipClassicBp,
+
+        passYds: it.passYds ?? null,
+        passTd: it.passTd ?? null,
+        passInt: it.passInt ?? null,
+        rushYds: it.rushYds ?? null,
+        rushTd: it.rushTd ?? null,
+
+        rushAtt: it.rushAtt ?? null,
+        rushYdsRb: it.rushYdsRb ?? null,
+        rushTdRb: it.rushTdRb ?? null,
+        targetsRb: it.targetsRb ?? null,
+        recRb: it.recRb ?? null,
+        recYdsRb: it.recYdsRb ?? null,
+        recTdRb: it.recTdRb ?? null,
+
+        targets: it.targets ?? null,
+        rec: it.rec ?? null,
+        recYds: it.recYds ?? null,
+        recTd: it.recTd ?? null,
+
+        pointsAllowedBucket: it.pointsAllowedBucket ?? null,
+        defensiveTdCount: it.defensiveTdCount ?? null,
+        sacks: it.sacks ?? null,
+        takeaways: it.takeaways ?? null,
       },
+      select: { id: true },
     });
+
+    lineupItemIdByKey.set(`${rosterSpot}:${slotIndex}`, saved.id);
+  }
+
+  const itemAnalyses = normalizeItemAnalyses(data.analysis ?? null);
+  if (itemAnalyses.length > 0) {
+    for (const ia of itemAnalyses) {
+      const rs = ia.rosterSpot as RosterSpot;
+      if (!Object.values(RosterSpot).includes(rs)) continue;
+
+      const key = `${rs}:${ia.slotIndex}`;
+      const lineupItemId = lineupItemIdByKey.get(key);
+      if (!lineupItemId) continue;
+
+      await prisma.lineupItemAnalysis.upsert({
+        where: { lineupItemId },
+        create: {
+          lineupItemId,
+          roleTags: ia.roleTags ?? null,
+          microStory: ia.microStory ?? null,
+        },
+        update: {
+          roleTags: ia.roleTags ?? null,
+          microStory: ia.microStory ?? null,
+        },
+      });
+    }
+  }
+
+  const correlations = Array.isArray(data.analysis?.correlations) ? data.analysis?.correlations ?? [] : [];
+  if (correlations.length > 0) {
+    await prisma.lineupCorrelation.deleteMany({ where: { lineupId: lineup.id } });
+
+    for (const c of correlations) {
+      const type = parseCorrelationType(c.type);
+      if (!type) continue;
+
+      const qbId = await resolvePlayerIdByRef({
+        sport,
+        teamIdByAbbr,
+        playersByDkId,
+        playerIdByComposite,
+        ref: c.qb ?? {},
+      });
+
+      if (!qbId) continue;
+
+      const mateId =
+        c.teammate
+          ? await resolvePlayerIdByRef({
+              sport,
+              teamIdByAbbr,
+              playersByDkId,
+              playerIdByComposite,
+              ref: c.teammate,
+            })
+          : null;
+
+      const oppId =
+        c.opponent
+          ? await resolvePlayerIdByRef({
+              sport,
+              teamIdByAbbr,
+              playersByDkId,
+              playerIdByComposite,
+              ref: c.opponent,
+            })
+          : null;
+
+      await prisma.lineupCorrelation.create({
+        data: {
+          lineupId: lineup.id,
+          gameId: null,
+          type,
+          qbPlayerId: qbId,
+          teammatePlayerId: mateId ?? null,
+          opponentPlayerId: oppId ?? null,
+        },
+      });
+    }
   }
 
   const totalOwnershipBpFromJson = data.contest.totalOwnershipBp ?? null;
@@ -649,7 +1042,10 @@ async function main() {
         lineupId: lineup.id,
         lineupItemCount: items.length,
         totalOwnershipBp: totalOwnershipBpFromJson,
-        analysisSaved: Boolean(data.analysis),
+        analysisSaved: Boolean(contestAnalysis || lineupAnalysis || itemAnalyses.length || correlations.length),
+        slateTag,
+        slateGroup,
+        gamesMatched: week !== null ? games.length : 0,
       },
       null,
       2

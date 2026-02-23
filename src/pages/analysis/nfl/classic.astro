@@ -190,8 +190,8 @@ const rows = rowsRaw
       (typeof own11_19 === "number" ? own11_19 : 0) +
       (typeof own20p === "number" ? own20p : 0);
 
-    const tag = String(r.slateTag ?? r.slate?.slateTag ?? "");
-    const group = String(r.slateGroup ?? r.slate?.slateGroup ?? "");
+    const tag = String(r.tag ?? "");
+const group = String(r.group ?? "");
 
     const link =
       typeof r.link === "string" && r.link

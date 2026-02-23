@@ -74,7 +74,12 @@ function qbStackLabelFromItems(items: any[]) {
 
   const qbTeam = String(qb?.player?.team?.abbreviation || "").toUpperCase();
   if (!qb || !qbTeam) {
-    return { qbStack: "NO QB", qbTeam: null as string | null, qbName: null as string | null, qbPlus: null as number | null };
+    return {
+      qbStack: "NO QB",
+      qbTeam: null as string | null,
+      qbName: null as string | null,
+      qbPlus: null as number | null,
+    };
   }
 
   const qbName = qb?.player?.name ?? null;
@@ -234,6 +239,8 @@ export const GET: APIRoute = async () => {
           slateType: true,
           slateDate: true,
           slateKey: true,
+          slateTag: true,
+          slateGroup: true,
           season: { select: { year: true } },
         },
       },
@@ -313,6 +320,9 @@ export const GET: APIRoute = async () => {
       slateKey: c.slate.slateKey,
       link,
 
+      tag: c.slate.slateTag ?? null,
+      group: c.slate.slateGroup ?? null,
+
       salaryUsed,
       salaryLeft,
 
@@ -338,12 +348,12 @@ export const GET: APIRoute = async () => {
       stackCount: corrStats.stackCount,
       bringbackCount: corrStats.bringbackCount,
       hasBringback: corrStats.hasBringback,
+      bringBack: corrStats.hasBringback,
 
       earlyCount,
       lateCount,
       primeCount,
 
-      // new per-lineup ownership buckets
       own0_10: ownBuckets.own0_10,
       own11_19: ownBuckets.own11_19,
       own20p: ownBuckets.own20p,

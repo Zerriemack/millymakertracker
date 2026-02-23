@@ -318,7 +318,14 @@ export const GET: APIRoute = async ({ url }) => {
       }
     }
 
-    const oppTeam = it.opponentTeam?.abbreviation ? up(it.opponentTeam.abbreviation) : "NA";
+    // FIX: derive opponent team from game first (works as soon as gameId is set)
+    let oppTeam = "NA";
+    if (hasGame && homeTeam && awayTeam) {
+      if (team === homeTeam) oppTeam = awayTeam;
+      else if (team === awayTeam) oppTeam = homeTeam;
+    } else if (it.opponentTeam?.abbreviation) {
+      oppTeam = up(it.opponentTeam.abbreviation);
+    }
 
     return {
       year: seasonYear,
@@ -328,10 +335,7 @@ export const GET: APIRoute = async ({ url }) => {
 
       team: it.player?.team?.abbreviation ?? null,
 
-      // For FLEX, we want the underlying position (RB/WR/TE) instead of the player name.
       flexPos: spot === "FLEX" ? pos : null,
-
-      // For display: FLEX shows RB/WR/TE. Others show the player name.
       slotLabel: spot === "FLEX" ? pos : (it.player?.name ?? null),
 
       position: it.player?.position ?? null,

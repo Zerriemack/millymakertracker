@@ -4,11 +4,17 @@
   "week": 1,
   "slateType": "MAIN",
   "slateDate": "2025-09-07T00:00:00.000Z",
+  "slateName": "NFL Main Slate Week 1",
+  "slateTag": "Fields rushing ceiling",
+  "slateGroup": "QB NAKED, DST VS ROOKIE QB",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
     "contestName": "NFL Millionaire Maker",
-    "topPrizeCents": 100000000,
     "siteContestId": "NFL_2025_WK01_MAIN_2025-09-07T00:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 100000000,
     "totalOwnershipBp": 9800
   },
   "winner": {
@@ -19,6 +25,7 @@
   "lineup": {
     "salaryUsed": 49900,
     "totalPoints": 193.92,
+    "totalOwnershipBp": 9800,
     "items": [
       {
         "rosterSpot": "QB",
@@ -27,7 +34,14 @@
         "team": "NYJ",
         "salary": 5400,
         "points": 29.52,
-        "ownership": 1.8
+        "ownershipPercent": 1.8,
+        "passTd": 1,
+        "rushTd": 2,
+        "passYds": 218,
+        "rushYds": 48,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "PIT"
       },
       {
         "rosterSpot": "RB",
@@ -36,7 +50,14 @@
         "team": "ATL",
         "salary": 8000,
         "points": 27.4,
-        "ownership": 10.7
+        "ownershipPercent": 10.7,
+        "rushYdsRb": 24,
+        "recRb": 6,
+        "recYdsRb": 100,
+        "recTdRb": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "TB"
       },
       {
         "rosterSpot": "RB",
@@ -45,7 +66,14 @@
         "team": "MIA",
         "salary": 6900,
         "points": 16.5,
-        "ownership": 15.6
+        "ownershipPercent": 15.6,
+        "rushYdsRb": 55,
+        "recRb": 3,
+        "recYdsRb": 20,
+        "recTdRb": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
       },
       {
         "rosterSpot": "WR",
@@ -54,7 +82,13 @@
         "team": "LAR",
         "salary": 7600,
         "points": 26.1,
-        "ownership": 6.3
+        "ownershipPercent": 6.3,
+        "rec": 10,
+        "recYds": 130,
+        "rushYds": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "HOU"
       },
       {
         "rosterSpot": "WR",
@@ -63,7 +97,12 @@
         "team": "SF",
         "salary": 4500,
         "points": 17.8,
-        "ownership": 12.6
+        "ownershipPercent": 12.6,
+        "rec": 4,
+        "recYds": 108,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
       },
       {
         "rosterSpot": "WR",
@@ -72,7 +111,14 @@
         "team": "TB",
         "salary": 4600,
         "points": 23.6,
-        "ownership": 25.9
+        "ownershipPercent": 25.9,
+        "rec": 4,
+        "recYds": 67,
+        "recTd": 2,
+        "rushYds": 9,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
       },
       {
         "rosterSpot": "TE",
@@ -81,7 +127,12 @@
         "team": "NO",
         "salary": 3300,
         "points": 15.6,
-        "ownership": 0.8
+        "ownershipPercent": 0.8,
+        "rec": 8,
+        "recYds": 76,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "ARI"
       },
       {
         "rosterSpot": "FLEX",
@@ -90,7 +141,12 @@
         "team": "SEA",
         "salary": 5800,
         "points": 23.4,
-        "ownership": 7.5
+        "ownershipPercent": 7.5,
+        "rec": 9,
+        "recYds": 124,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SF"
       },
       {
         "rosterSpot": "DST",
@@ -98,8 +154,61 @@
         "position": "DST",
         "team": "DEN",
         "salary": 3800,
-        "points": 14,
-        "ownership": 16.8
+        "points": 14.0,
+        "ownershipPercent": 16.8,
+        "sacks": 6,
+        "takeaways": 2,
+        "defensiveTdCount": 1,
+        "pointsAllowedBucket": 7,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "TEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is built around a ceiling source the field usually treats as optional. Fields at 1.8% is not a thin value play. It is a scoring type play. When the quarterback gets home with rushing touchdowns, the slate flattens because those points do not have to route through a wide receiver or tight end. That changes which roster constructions can keep pace.\n\nAfter locking the quarterback ceiling, the build shifts into balance. Nacua, Johnson, and Smith-Njigba are reception heavy profiles, which stabilizes the score while still leaving room for a spike week through yardage. The swing piece is Egbuka. Two touchdowns on modest volume is the kind of result the field rarely captures with the same receiver, the same salary, and the same surrounding pieces.\n\nThe overall shape matters. There is no forced stack story, no strict bring back rule, and no attempt to spend every dollar. It is a slate wide construction that wins because the top end scoring landed in a distribution the field did not match.",
+    "uniquenessNotes": "The lineup gains separation without chasing a weird one off. Fields provides the immediate ownership leverage, but the real separation comes from how the roster mixes scoring profiles. Many builds pair a low owned quarterback with a heavy team stack to justify the click. This one treats the quarterback as the isolated ceiling and uses the rest of the salary to buy volume in other games.\n\nDuplication pressure usually comes from popular mid salary combinations. Here, the receiver trio does not align with the most common optimizer clusters, especially once you add a low owned tight end who wins through catches instead of touchdowns. Denver is the same concept at defense. It is not a matchup narrative. It is an event scoring slot that can land on sacks and takeaways while the offense carries the touchdown concentration.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Low owned rushing quarterback ceiling paired with volume receivers and one touchdown efficiency outlier",
+      "secondaryLever": "Combination uniqueness created by mixed scoring profiles rather than heavy stacking rules",
+      "notes": {
+        "qbRushTd": 2,
+        "volumeAnchors": ["P. Nacua", "J. Johnson", "J. Smith-Njigba"],
+        "touchdownOutlier": "E. Egbuka"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": ["RUSH_QB_CEILING", "VOLUME_RECEIVERS", "TD_EFFICIENCY_WR", "NO_FORCED_STACK"],
+      "macroStory": "This is a slate wide lineup built around one low owned ceiling event. Fields supplies the scoring type outcome, then the roster leans on catch volume to avoid needing multiple fragile touchdowns. Egbuka provides the receiver touchdown concentration that flips the build from solid to first place. The lack of a forced stack is the point. The roster is betting the slate did not require a single game to break in a clean way."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_CEILING", "RUSHING_TD_PATH", "LOW_OWNED_ENGINE"],
+        "microStory": "Fields wins the slate because the points come from the ground. Two rushing touchdowns create a ceiling without needing a narrow pass catcher pairing."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 2,
+        "roleTags": ["SEPARATOR", "TD_EFFICIENCY", "SCORING_CONCENTRATION"],
+        "microStory": "Egbuka is the separating slot. The production is touchdown driven, which is hard for the field to land correctly at his salary when the build is not tied to a game stack."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["EVENT_SCORING", "SACK_UPSIDE"],
+        "microStory": "Denver pays off through sacks and takeaways. It fits a lineup that already has its ceiling baked in elsewhere, so the defense can score through chaos rather than needing a script."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "J. Fields", "position": "QB", "team": "NYJ" },
+        "teammate": null,
+        "opponent": null
       }
     ]
   }
