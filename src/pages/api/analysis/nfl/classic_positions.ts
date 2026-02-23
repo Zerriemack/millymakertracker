@@ -1,3 +1,4 @@
+// src/pages/api/analysis/nfl/classic_positions.ts
 import type { APIRoute } from "astro";
 import { prisma } from "../../../../lib/prisma";
 
@@ -167,6 +168,8 @@ export const GET: APIRoute = async ({ url }) => {
       takeaways: true,
 
       opponentTeam: { select: { abbreviation: true } },
+
+      opponentStartingQbPlayerId: true,
       opponentStartingQb: { select: { name: true } },
 
       game: {
@@ -309,16 +312,24 @@ export const GET: APIRoute = async ({ url }) => {
     const statLine = dkStatLine(it);
 
     let dstQbFaced = "NA";
+    let dstQbFacedSource: "OVERRIDE" | "GAME" | "NA" = "NA";
+
     if (spot === "DST") {
       if (it.opponentStartingQb?.name) {
         dstQbFaced = s(it.opponentStartingQb.name) || "NA";
+        dstQbFacedSource = dstQbFaced === "NA" ? "NA" : "OVERRIDE";
       } else if (hasGame && homeTeam && awayTeam) {
-        if (team === homeTeam) dstQbFaced = s(game?.awayStartingQb?.name) || "NA";
-        if (team === awayTeam) dstQbFaced = s(game?.homeStartingQb?.name) || "NA";
+        if (team === homeTeam) {
+          dstQbFaced = s(game?.awayStartingQb?.name) || "NA";
+          dstQbFacedSource = dstQbFaced === "NA" ? "NA" : "GAME";
+        }
+        if (team === awayTeam) {
+          dstQbFaced = s(game?.homeStartingQb?.name) || "NA";
+          dstQbFacedSource = dstQbFaced === "NA" ? "NA" : "GAME";
+        }
       }
     }
 
-    // FIX: derive opponent team from game first (works as soon as gameId is set)
     let oppTeam = "NA";
     if (hasGame && homeTeam && awayTeam) {
       if (team === homeTeam) oppTeam = awayTeam;
@@ -357,6 +368,7 @@ export const GET: APIRoute = async ({ url }) => {
 
       opponentTeam: oppTeam,
       dstQbFaced,
+      dstQbFacedSource,
 
       statLine,
     };

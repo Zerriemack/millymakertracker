@@ -4,12 +4,17 @@
   "week": 2,
   "slateType": "MAIN",
   "slateDate": "2025-09-14T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 2",
+  "slateTag": "REALLY BAD COWBOYS DST",
+  "slateGroup": "4-2-2-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
     "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
-    "entryFeeCents": 2000,
-    "topPrizeCents": 100000000,
     "siteContestId": "NFL_2025_WK02_MAIN_2025-09-14T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
     "totalOwnershipBp": 8540
   },
   "winner": {
@@ -20,6 +25,7 @@
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 260.2,
+    "totalOwnershipBp": 8540,
     "items": [
       {
         "rosterSpot": "QB",
@@ -28,7 +34,14 @@
         "team": "NYG",
         "salary": 5100,
         "points": 34.3,
-        "ownership": 0.9
+        "ownershipPercent": 0.9,
+        "passTd": 3,
+        "passYds": 450,
+        "rushYds": 23,
+        "passInt": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
       },
       {
         "rosterSpot": "RB",
@@ -37,7 +50,14 @@
         "team": "IND",
         "salary": 6700,
         "points": 32.5,
-        "ownership": 7.1
+        "ownershipPercent": 7.1,
+        "rushYdsRb": 165,
+        "recRb": 2,
+        "recYdsRb": 50,
+        "recTdRb": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "DEN"
       },
       {
         "rosterSpot": "RB",
@@ -46,7 +66,14 @@
         "team": "SF",
         "salary": 7500,
         "points": 22.7,
-        "ownership": 38.6
+        "ownershipPercent": 38.6,
+        "rushYdsRb": 55,
+        "recRb": 6,
+        "recYdsRb": 52,
+        "recTdRb": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
       },
       {
         "rosterSpot": "WR",
@@ -55,7 +82,13 @@
         "team": "NYG",
         "salary": 7100,
         "points": 40.7,
-        "ownership": 8.2
+        "ownershipPercent": 8.2,
+        "rec": 9,
+        "recYds": 167,
+        "recTd": 2,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
       },
       {
         "rosterSpot": "WR",
@@ -64,7 +97,14 @@
         "team": "DET",
         "salary": 7000,
         "points": 42.2,
-        "ownership": 5.7
+        "ownershipPercent": 5.7,
+        "rec": 9,
+        "recYds": 115,
+        "recTd": 3,
+        "rushYds": 7,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "CHI"
       },
       {
         "rosterSpot": "WR",
@@ -73,7 +113,13 @@
         "team": "CHI",
         "salary": 4800,
         "points": 34.8,
-        "ownership": 9.2
+        "ownershipPercent": 9.2,
+        "rec": 7,
+        "recYds": 128,
+        "recTd": 2,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
       },
       {
         "rosterSpot": "TE",
@@ -82,7 +128,12 @@
         "team": "DAL",
         "salary": 3800,
         "points": 16.8,
-        "ownership": 12.2
+        "ownershipPercent": 12.2,
+        "rec": 9,
+        "recYds": 78,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "NYG"
       },
       {
         "rosterSpot": "FLEX",
@@ -91,7 +142,13 @@
         "team": "NYG",
         "salary": 4400,
         "points": 31.2,
-        "ownership": 1.2
+        "ownershipPercent": 1.2,
+        "rec": 8,
+        "recYds": 142,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
       },
       {
         "rosterSpot": "DST",
@@ -99,8 +156,96 @@
         "position": "DST",
         "team": "SF",
         "salary": 3600,
-        "points": 5,
-        "ownership": 2.3
+        "points": 5.0,
+        "ownershipPercent": 2.3,
+        "sacks": 3,
+        "takeaways": 1,
+        "qbFaced": "Spencer Rattler",
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Wilson under one percent shifts the lineup into a distribution most rosters never touch. The build commits to a pass heavy Giants outcome and splits exposure across two different receiver profiles. Nabers captures the explosive scoring and touchdown access. Robinson captures the drive level target volume, then adds his own spike. Ferguson is the return path. His role survives regardless of how Dallas looks, because the routes and targets stay available in a game with sustained passing.\n\nSt. Brown with Odunze is the second ceiling lane. Both hit with multi touchdown profiles, giving the roster a second place where raw points can separate without dragging in extra teammates.\n\nMcCaffrey paired with the 49ers defense is a third lane. The offense points flow through one player, while the defense can add sacks and a turnover against Spencer Rattler. Taylor stays isolated as the independent eruption score.",
+    "uniquenessNotes": "The quarterback ownership is the entry point, but separation comes from how the lineup allocates ceiling. Two Giants receivers remove the need to guess a single correct pass catcher, and Ferguson creates an opponent anchor without relying on a narrow wide receiver outcome.\n\nThe secondary mini stack is expensive enough to break common roster clusters. The McCaffrey and 49ers defense pairing further reduces duplication because it requires two distinct scoring channels from the same game: concentrated offense points plus defensive disruption.\n\nTaylor supplies the final gap. It gives the roster a separate high score, independent of the passing outcomes.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Sub one percent quarterback paired with two pass catchers plus Ferguson as the bring back",
+      "secondaryLever": "Two wide receiver mini plus McCaffrey paired with 49ers defense",
+      "notes": {
+        "rosterConstruction": "4-2-2-1",
+        "giantsCowboysCluster": ["R. Wilson", "M. Nabers", "W. Robinson", "J. Ferguson"],
+        "lionsBearsMini": ["A. St. Brown", "R. Odunze"],
+        "ninersPair": ["C. McCaffrey", "49ers"],
+        "oneOffHammer": "J. Taylor",
+        "qbFacedBy49ersDst": "S. Rattler"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNED_QB_ENGINE",
+        "DOUBLE_PASS_CATCHER_PAIR",
+        "TE_BRING_BACK",
+        "TWO_WR_MINI_WITH_TD_CONCENTRATION",
+        "RB_PLUS_DST_PAIR_SAME_GAME",
+        "ONE_OFF_RB_HAMMER"
+      ],
+      "macroStory": "A first place build driven by a rare passing ceiling at quarterback, reinforced by two independent receiver ceilings and an RB plus defense pairing from a separate game. Multiple ceiling events land, and the lineup holds exposure to each without redundant attachments."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNED_OUTCOME", "PASSING_CEILING"],
+        "microStory": "Wilson is the core lever. The 450 and three passing touchdowns outcome is the slate breaker at his ownership."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["SECOND_PASS_CATCHER", "VOLUME_FLOOR_WITH_CEILING", "STACK_COMPLETION"],
+        "microStory": "Robinson supplies the second pass catcher lane. Eight for 142 and a score complements Nabers rather than overlapping him."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["BRING_BACK", "RECEPTION_DRIVEN", "SCRIPT_RESILIENT"],
+        "microStory": "Ferguson is the return piece. Reception volume keeps him live even if the game tilts into constant passing."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["QB_PRESSURE_PATH", "TURNOVER_ACCESS", "PAIRED_WITH_RB_SAME_GAME"],
+        "microStory": "San Francisco defense is paired with McCaffrey but scores through a different channel. Three sacks and a takeaway against S. Rattler keeps the slot from sinking the roster while the lineup carries touchdown density elsewhere."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "R. Wilson", "position": "QB", "team": "NYG" },
+        "teammates": [
+          { "name": "M. Nabers", "position": "WR", "team": "NYG" },
+          { "name": "W. Robinson", "position": "WR", "team": "NYG" }
+        ],
+        "opponent": { "name": "J. Ferguson", "position": "TE", "team": "DAL" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "A. St. Brown", "position": "WR", "team": "DET" },
+        "opponent": { "name": "R. Odunze", "position": "WR", "team": "CHI" }
+      },
+      {
+        "type": "RB_DST_PAIR",
+        "qb": null,
+        "teammate": { "name": "C. McCaffrey", "position": "RB", "team": "SF" },
+        "opponent": {
+          "name": "49ers",
+          "position": "DST",
+          "team": "SF",
+          "qbFaced": "Spencer Rattler"
+        }
       }
     ]
   }

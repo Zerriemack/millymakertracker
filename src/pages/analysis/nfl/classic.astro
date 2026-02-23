@@ -17,14 +17,6 @@ function n(v: any) {
   return Number.isFinite(x) ? x : null;
 }
 
-function fmtDate(iso: any) {
-  const s = String(iso || "");
-  if (!s) return "—";
-  const d = new Date(s);
-  if (Number.isNaN(d.getTime())) return s;
-  return new Intl.DateTimeFormat("en-US", { month: "short", day: "2-digit" }).format(d);
-}
-
 function moneyCents(v: any) {
   const x = n(v);
   if (x === null) return "—";
@@ -101,7 +93,7 @@ const rows = rowsRaw
     const slateId = String(r.slateId ?? r.id ?? r.slate?.id ?? "");
     const week = Number(r.week ?? r.slate?.week ?? null);
     const slateType = String(r.slateType ?? r.slate?.slateType ?? "");
-    const slateDate = String(r.slateDate ?? r.slate?.slateDate ?? r.date ?? "");
+    const venue = String(r.slateDate ?? r.slate?.slateDate ?? r.date ?? "");
 
     const year =
       typeof r.year === "number"
@@ -179,8 +171,6 @@ const rows = rowsRaw
           ? r.lineup.analysis.lateCount
           : n(r.construction?.lateCount);
 
-    // ownership bucket counts for the 9-man Classic winning lineup
-    // API should return these as integers, sum must be 9
     const own0_10 = typeof r.own0_10 === "number" ? r.own0_10 : n(r.ownership_0_10 ?? r.construction?.own0_10);
     const own11_19 = typeof r.own11_19 === "number" ? r.own11_19 : n(r.ownership_11_19 ?? r.construction?.own11_19);
     const own20p = typeof r.own20p === "number" ? r.own20p : n(r.ownership_20p ?? r.construction?.own20p);
@@ -191,7 +181,7 @@ const rows = rowsRaw
       (typeof own20p === "number" ? own20p : 0);
 
     const tag = String(r.tag ?? "");
-const group = String(r.group ?? "");
+    const group = String(r.group ?? "");
 
     const link =
       typeof r.link === "string" && r.link
@@ -207,7 +197,7 @@ const group = String(r.group ?? "");
       year,
       week,
       slateType,
-      slateDate,
+      venue,
       tag,
       group,
       link,
@@ -223,7 +213,6 @@ const group = String(r.group ?? "");
       earlyCount,
       lateCount,
 
-      // new
       own0_10,
       own11_19,
       own20p,
@@ -474,7 +463,7 @@ const pageTitle = "NFL Classic Review";
                 <th class="colYear"><button class="thBtn" type="button" data-col="year">YEAR</button></th>
                 <th class="colWk"><button class="thBtn" type="button" data-col="week">WEEK</button></th>
                 <th class="colType"><button class="thBtn" type="button" data-col="type">TYPE</button></th>
-                <th class="colDate"><button class="thBtn" type="button" data-col="date">DATE</button></th>
+                <th class="colVenue"><button class="thBtn" type="button" data-col="venue">VENUE</button></th>
 
                 <th class="colStack"><button class="thBtn" type="button" data-col="stack">STACK</button></th>
                 <th class="colBring"><button class="thBtn" type="button" data-col="bring">BRING BACK</button></th>
@@ -533,8 +522,7 @@ const pageTitle = "NFL Classic Review";
                     data-year={year}
                     data-week={wk}
                     data-type={r.slateType || ""}
-                    data-dateiso={r.slateDate || ""}
-                    data-date={fmtDate(r.slateDate)}
+                    data-venue={r.venue || ""}
                     data-stack={r.qbStack || ""}
                     data-bring={bring}
                     data-maxteam={maxTeam === null ? "" : String(maxTeam)}
@@ -555,7 +543,7 @@ const pageTitle = "NFL Classic Review";
                     <td class="mono">{year || "—"}</td>
                     <td class="mono">{wk || "—"}</td>
                     <td class="mono">{r.slateType || "—"}</td>
-                    <td class="mono">{fmtDate(r.slateDate)}</td>
+                    <td class="mono">{r.venue || "—"}</td>
 
                     <td class="capCell"><div class="capMain">{r.qbStack || "—"}</div></td>
                     <td class="mono">{bring || "—"}</td>
@@ -634,12 +622,11 @@ const pageTitle = "NFL Classic Review";
                 year: "",
                 week: "",
                 type: "",
+                venue: "",
                 stack: "",
                 bring: "",
                 tag: "",
                 group: "",
-                dateStart: "",
-                dateEnd: "",
 
                 maxTeamMin: "",
                 maxTeamMax: "",
@@ -675,7 +662,7 @@ const pageTitle = "NFL Classic Review";
               year: { kind: "catNum", label: "YEAR", key: "year" },
               week: { kind: "catNum", label: "WEEK", key: "week" },
               type: { kind: "cat", label: "TYPE", key: "type" },
-              date: { kind: "date", label: "DATE", key: "dateiso" },
+              venue: { kind: "cat", label: "VENUE", key: "venue" },
 
               stack: { kind: "cat", label: "STACK", key: "stack" },
               bring: { kind: "cat", label: "BRING", key: "bring" },
@@ -723,26 +710,9 @@ const pageTitle = "NFL Classic Review";
               return true;
             }
 
-            function withinDate(iso, startStr, endStr) {
-              const s = text(iso);
-              if (!s) return false;
-              const t = new Date(s).getTime();
-              if (!Number.isFinite(t)) return false;
-
-              if (startStr) {
-                const st = new Date(startStr).getTime();
-                if (Number.isFinite(st) && t < st) return false;
-              }
-              if (endStr) {
-                const et = new Date(endStr).getTime();
-                if (Number.isFinite(et) && t > et) return false;
-              }
-              return true;
-            }
-
             function hay(tr) {
               const parts = [
-                tr.dataset.year, tr.dataset.week, tr.dataset.type, tr.dataset.date,
+                tr.dataset.year, tr.dataset.week, tr.dataset.type, tr.dataset.venue,
                 tr.dataset.stack, tr.dataset.bring,
                 tr.dataset.maxteam, tr.dataset.maxgame, tr.dataset.early, tr.dataset.late,
                 tr.dataset.left, tr.dataset.own,
@@ -759,14 +729,11 @@ const pageTitle = "NFL Classic Review";
               if (f.year && text(tr.dataset.year) !== f.year) return false;
               if (f.week && text(tr.dataset.week) !== f.week) return false;
               if (f.type && text(tr.dataset.type) !== f.type) return false;
+              if (f.venue && text(tr.dataset.venue) !== f.venue) return false;
               if (f.stack && text(tr.dataset.stack) !== f.stack) return false;
               if (f.bring && text(tr.dataset.bring) !== f.bring) return false;
               if (f.tag && text(tr.dataset.tag) !== f.tag) return false;
               if (f.group && text(tr.dataset.group) !== f.group) return false;
-
-              if (f.dateStart || f.dateEnd) {
-                if (!withinDate(tr.dataset.dateiso, f.dateStart, f.dateEnd)) return false;
-              }
 
               if (f.maxTeamMin || f.maxTeamMax) {
                 if (!withinNum(tr.dataset.maxteam, f.maxTeamMin, f.maxTeamMax)) return false;
@@ -823,14 +790,6 @@ const pageTitle = "NFL Classic Review";
                 const bv = numOrNull(b);
                 const aa = av == null ? -Infinity : av;
                 const bb = bv == null ? -Infinity : bv;
-                return dir === "asc" ? aa - bb : bb - aa;
-              }
-
-              if (meta.kind === "date") {
-                const at = new Date(text(a)).getTime();
-                const bt = new Date(text(b)).getTime();
-                const aa = Number.isFinite(at) ? at : 0;
-                const bb = Number.isFinite(bt) ? bt : 0;
                 return dir === "asc" ? aa - bb : bb - aa;
               }
 
@@ -908,23 +867,6 @@ const pageTitle = "NFL Classic Review";
                 return;
               }
 
-              if (meta.kind === "date") {
-                const start = state.filters.dateStart || "";
-                const end = state.filters.dateEnd || "";
-                menuFilterBlock.innerHTML =
-                  '<div class="menuLabel">Range</div>' +
-                  '<div class="menuGrid2">' +
-                  '<div><div class="mini">Start</div><input id="menuDateStart" class="menuInput" type="date" value="' + start + '" /></div>' +
-                  '<div><div class="mini">End</div><input id="menuDateEnd" class="menuInput" type="date" value="' + end + '" /></div>' +
-                  "</div>";
-
-                const a = byId("menuDateStart");
-                const b = byId("menuDateEnd");
-                if (a) a.addEventListener("change", () => { state.filters.dateStart = a.value; applyAll(); });
-                if (b) b.addEventListener("change", () => { state.filters.dateEnd = b.value; applyAll(); });
-                return;
-              }
-
               if (meta.kind === "num") {
                 const map = {
                   maxTeam: ["maxTeamMin", "maxTeamMax"],
@@ -982,12 +924,6 @@ const pageTitle = "NFL Classic Review";
                 return;
               }
 
-              if (meta && meta.kind === "date") {
-                ascBtn.textContent = "Sort Old → New";
-                descBtn.textContent = "Sort New → Old";
-                return;
-              }
-
               ascBtn.textContent = "Sort A → Z";
               descBtn.textContent = "Sort Z → A";
             }
@@ -1007,11 +943,11 @@ const pageTitle = "NFL Classic Review";
               if (col === "year") state.filters.year = "";
               if (col === "week") state.filters.week = "";
               if (col === "type") state.filters.type = "";
+              if (col === "venue") state.filters.venue = "";
               if (col === "stack") state.filters.stack = "";
               if (col === "bring") state.filters.bring = "";
               if (col === "tag") state.filters.tag = "";
               if (col === "group") state.filters.group = "";
-              if (col === "date") { state.filters.dateStart = ""; state.filters.dateEnd = ""; }
 
               if (col === "maxTeam") { state.filters.maxTeamMin = ""; state.filters.maxTeamMax = ""; }
               if (col === "maxGame") { state.filters.maxGameMin = ""; state.filters.maxGameMax = ""; }
@@ -1176,7 +1112,7 @@ const pageTitle = "NFL Classic Review";
   .colYear { width: 78px; }
   .colWk { width: 56px; }
   .colType { width: 90px; }
-  .colDate { width: 90px; }
+  .colVenue { width: 140px; }
 
   .colStack { width: 140px; }
   .colBring { width: 70px; }

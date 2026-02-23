@@ -220,6 +220,22 @@ function ownershipBucketsFromItems(items: any[]) {
   return { own0_10, own11_19, own20p, ownBucketTotal, counted };
 }
 
+function indoorOutdoorCountsFromItems(items: any[]) {
+  let indoor = 0;
+  let outdoor = 0;
+  let counted = 0;
+
+  for (const it of items || []) {
+    const isIndoor = it?.game?.homeTeam?.homeIsIndoor;
+    if (typeof isIndoor !== "boolean") continue;
+    counted += 1;
+    if (isIndoor) indoor += 1;
+    else outdoor += 1;
+  }
+
+  return { indoor, outdoor, counted };
+}
+
 export const GET: APIRoute = async () => {
   const contests = await prisma.contest.findMany({
     where: {
@@ -261,7 +277,12 @@ export const GET: APIRoute = async () => {
                   salary: true,
                   gameId: true,
                   opponentTeamId: true,
-                  game: { select: { window: true } },
+                  game: {
+                    select: {
+                      window: true,
+                      homeTeam: { select: { homeIsIndoor: true } },
+                    },
+                  },
                   ownershipBp: true,
                   ownershipCaptainBp: true,
                   ownershipFlexBp: true,
@@ -299,6 +320,7 @@ export const GET: APIRoute = async () => {
     const gameStats = gameStatsFromItems(items);
     const corrStats = stackBringbackFromItems(items);
     const ownBuckets = ownershipBucketsFromItems(items);
+    const io = indoorOutdoorCountsFromItems(items);
 
     const year = c.slate.season?.year ?? null;
     const link = year ? `/nfl/${year}/slate/${c.slate.id}` : "";
@@ -316,7 +338,13 @@ export const GET: APIRoute = async () => {
       year,
       week: c.slate.week,
       slateType: c.slate.slateType,
-      slateDate: c.slate.slateDate,
+
+      // keep the raw date if you want it for filters/sorting later
+      slateDateIso: c.slate.slateDate,
+
+      // DO NOT display date in the table; show Indoor/Outdoor counts instead
+      slateDate: `Indoor ${io.indoor}, Outdoor ${io.outdoor}`,
+
       slateKey: c.slate.slateKey,
       link,
 
@@ -359,6 +387,10 @@ export const GET: APIRoute = async () => {
       own20p: ownBuckets.own20p,
       ownBucketTotal: ownBuckets.ownBucketTotal,
       ownBucketCounted: ownBuckets.counted,
+
+      indoorPlayers: io.indoor,
+      outdoorPlayers: io.outdoor,
+      indoorOutdoorCounted: io.counted,
 
       hasAnalysis: Boolean(c.analysis),
       analysisKeys: c.analysis && typeof c.analysis === "object" ? Object.keys(c.analysis as any) : [],

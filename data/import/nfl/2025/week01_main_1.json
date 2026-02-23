@@ -160,6 +160,7 @@
         "takeaways": 2,
         "defensiveTdCount": 1,
         "pointsAllowedBucket": 7,
+        "qbFaced": "Cam Ward",
         "gameAwayTeam": "TEN",
         "gameHomeTeam": "DEN",
         "opponentTeam": "TEN"
@@ -167,40 +168,41 @@
     ]
   },
   "analysis": {
-    "stackSummary": "This lineup is built around a ceiling source the field usually treats as optional. Fields at 1.8% is not a thin value play. It is a scoring type play. When the quarterback gets home with rushing touchdowns, the slate flattens because those points do not have to route through a wide receiver or tight end. That changes which roster constructions can keep pace.\n\nAfter locking the quarterback ceiling, the build shifts into balance. Nacua, Johnson, and Smith-Njigba are reception heavy profiles, which stabilizes the score while still leaving room for a spike week through yardage. The swing piece is Egbuka. Two touchdowns on modest volume is the kind of result the field rarely captures with the same receiver, the same salary, and the same surrounding pieces.\n\nThe overall shape matters. There is no forced stack story, no strict bring back rule, and no attempt to spend every dollar. It is a slate wide construction that wins because the top end scoring landed in a distribution the field did not match.",
-    "uniquenessNotes": "The lineup gains separation without chasing a weird one off. Fields provides the immediate ownership leverage, but the real separation comes from how the roster mixes scoring profiles. Many builds pair a low owned quarterback with a heavy team stack to justify the click. This one treats the quarterback as the isolated ceiling and uses the rest of the salary to buy volume in other games.\n\nDuplication pressure usually comes from popular mid salary combinations. Here, the receiver trio does not align with the most common optimizer clusters, especially once you add a low owned tight end who wins through catches instead of touchdowns. Denver is the same concept at defense. It is not a matchup narrative. It is an event scoring slot that can land on sacks and takeaways while the offense carries the touchdown concentration.",
+    "stackSummary": "This build is anchored by a quarterback score that does not need to route through a teammate. Fields reaches the slate winning range through rushing touchdowns, so the lineup is free to shop for volume and efficiency across unrelated games.\n\nThe receiver layer is intentionally mixed. Nacua and Smith Njigba are reception driven points, built to accumulate across the full game without needing fragile touchdown timing. Egbuka is the swing piece. Two receiving touchdowns on limited catches is the kind of profile the field misses because it is hard to land cleanly without forcing a team stack.\n\nThe backfield is not decorative. Robinson and Achane both contribute through receiving production, which protects the lineup from needing every touchdown to land through the same position group.\n\nDenver closes the build with event scoring against rookie Cam Ward. Six sacks plus a defensive touchdown is a complete slate outcome, not a bonus. It pairs well with a lineup already carrying its ceiling elsewhere.",
+    "uniquenessNotes": "Fields provides the separation point, but the more useful detail is what the roster does after Fields. There is no dependency on a single game breaking in a clean, concentrated way. The salary is spread into roles that can score through different mechanisms.\n\nThe common duplication trap on slates like this is a popular midrange cluster at receiver and tight end. This lineup avoids that clustering by combining one low owned tight end with a high volume receiver core, then adding a touchdown heavy wideout who can outscore higher volume options on fewer touches.\n\nDenver is the final filter. Defense ownership usually follows matchup labels. This one gets paid through pressure and a defensive touchdown, which is the scoring lane that actually wins tournaments.",
     "stackMeta": {
       "lineupType": "CLASSIC",
-      "primaryLever": "Low owned rushing quarterback ceiling paired with volume receivers and one touchdown efficiency outlier",
-      "secondaryLever": "Combination uniqueness created by mixed scoring profiles rather than heavy stacking rules",
+      "primaryLever": "Rushing quarterback ceiling with no forced pass catcher pairing",
+      "secondaryLever": "Volume receivers plus one touchdown concentrated wideout, then event scoring defense versus rookie quarterback",
       "notes": {
         "qbRushTd": 2,
         "volumeAnchors": ["P. Nacua", "J. Johnson", "J. Smith-Njigba"],
-        "touchdownOutlier": "E. Egbuka"
+        "touchdownOutlier": "E. Egbuka",
+        "qbFacedByBroncosDst": "Cam Ward"
       }
     },
     "lineupAnalysis": {
       "archetypeTags": ["RUSH_QB_CEILING", "VOLUME_RECEIVERS", "TD_EFFICIENCY_WR", "NO_FORCED_STACK"],
-      "macroStory": "This is a slate wide lineup built around one low owned ceiling event. Fields supplies the scoring type outcome, then the roster leans on catch volume to avoid needing multiple fragile touchdowns. Egbuka provides the receiver touchdown concentration that flips the build from solid to first place. The lack of a forced stack is the point. The roster is betting the slate did not require a single game to break in a clean way."
+      "macroStory": "A slate wide lineup built around a rushing quarterback ceiling, then supported by reception volume and one touchdown concentrated receiver outcome. The defense score is a full event outcome against a rookie quarterback, providing separation without needing extra game attachments."
     },
     "lineupItemAnalysis": [
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
         "roleTags": ["PRIMARY_CEILING", "RUSHING_TD_PATH", "LOW_OWNED_ENGINE"],
-        "microStory": "Fields wins the slate because the points come from the ground. Two rushing touchdowns create a ceiling without needing a narrow pass catcher pairing."
+        "microStory": "Fields carries the build because two rushing touchdowns compress the slate. The quarterback score arrives without requiring a paired pass catcher to keep pace."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 2,
         "roleTags": ["SEPARATOR", "TD_EFFICIENCY", "SCORING_CONCENTRATION"],
-        "microStory": "Egbuka is the separating slot. The production is touchdown driven, which is hard for the field to land correctly at his salary when the build is not tied to a game stack."
+        "microStory": "Egbuka supplies the touchdown concentration. Two receiving touchdowns on modest volume is a profile the field rarely lands correctly alongside a non stacked quarterback outcome."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
         "roleTags": ["EVENT_SCORING", "SACK_UPSIDE"],
-        "microStory": "Denver pays off through sacks and takeaways. It fits a lineup that already has its ceiling baked in elsewhere, so the defense can score through chaos rather than needing a script."
+        "microStory": "Denver hits the full defensive ceiling. Six sacks plus a defensive touchdown is the kind of DST line that changes the top of the standings, especially when it comes against a rookie quarterback."
       }
     ],
     "correlations": [

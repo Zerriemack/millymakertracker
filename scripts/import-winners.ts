@@ -137,11 +137,19 @@ type ImportLineupItem = {
   recYds?: number | null;
   recTd?: number | null;
 
+  // DST override (Option A): if provided, importer resolves Player and stores opponentStartingQbPlayerId
+  qbFaced?: string | null;
   opponentStartingQbName?: string | null;
+
   pointsAllowedBucket?: number | null;
   defensiveTdCount?: number | null;
   sacks?: number | null;
   takeaways?: number | null;
+
+  // optional context keys (ignored by DB, used only for schedule linking elsewhere)
+  gameAwayTeam?: string | null;
+  gameHomeTeam?: string | null;
+  opponentTeam?: string | null;
 };
 
 type ImportContestAnalysisFlat = {
@@ -377,6 +385,21 @@ function cleanString(v: any): string | null {
   return s ? s : null;
 }
 
+function getOpponentTeamAbbrFromItem(it: any): string | null {
+  const dstTeam = String(it?.team ?? "").trim().toUpperCase();
+  const opp = String(it?.opponentTeam ?? "").trim().toUpperCase();
+  if (opp) return opp;
+
+  const away = String(it?.gameAwayTeam ?? "").trim().toUpperCase();
+  const home = String(it?.gameHomeTeam ?? "").trim().toUpperCase();
+  if (dstTeam && away && home) {
+    if (dstTeam === home) return away;
+    if (dstTeam === away) return home;
+  }
+
+  return null;
+}
+
 function normalizeContestAnalysis(analysis: ImportAnalysis | null | undefined): ImportContestAnalysisFlat | null {
   if (!analysis) return null;
 
@@ -430,6 +453,35 @@ function parseCorrelationType(v: any): CorrelationType | null {
   return null;
 }
 
+function normName(v: any): string {
+  return String(v ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/\./g, "")
+    .replace(/\s+/g, " ");
+}
+
+function nameLooksLike(dbName: string, input: string): boolean {
+  const a = normName(dbName);
+  const b = normName(input);
+  if (!a || !b) return false;
+  if (a === b) return true;
+  if (a.includes(b) || b.includes(a)) return true;
+
+  const aParts = a.split(" ");
+  const bParts = b.split(" ");
+  const aLast = aParts[aParts.length - 1] || "";
+  const bLast = bParts[bParts.length - 1] || "";
+  if (!aLast || !bLast) return false;
+  if (aLast !== bLast) return false;
+
+  const aFirst = aParts[0] || "";
+  const bFirst = bParts[0] || "";
+  if (!aFirst || !bFirst) return false;
+
+  return aFirst[0] === bFirst[0];
+}
+
 async function resolvePlayerIdByRef(params: {
   sport: Sport;
   teamIdByAbbr: Map<string, string>;
@@ -454,6 +506,24 @@ async function resolvePlayerIdByRef(params: {
   const key = `${name}|||${position}|||${teamId}`;
   const pid2 = params.playerIdByComposite.get(key);
   return pid2 ?? null;
+}
+
+async function resolveOpponentStartingQbIdByName(params: {
+  sport: Sport;
+  opponentTeamId: string | null;
+  qbNameRaw: string | null;
+}): Promise<string | null> {
+  const qbName = cleanString(params.qbNameRaw);
+  if (!qbName) return null;
+  if (!params.opponentTeamId) return null;
+
+  const qbs = await prisma.player.findMany({
+    where: { sport: params.sport, position: "QB", teamId: params.opponentTeamId },
+    select: { id: true, name: true },
+  });
+
+  const hit = qbs.find((p) => nameLooksLike(p.name, qbName));
+  return hit?.id ?? null;
 }
 
 /* --------------------------------- Main --------------------------------- */
@@ -781,7 +851,7 @@ async function main() {
   }
 
   // -------------------- Resolve games from seeded schedule --------------------
-  // FIX HERE: Game model uses seasonId, not seasonYear.
+  // Game model uses seasonId, not seasonYear.
 
   const games =
     week !== null
@@ -847,10 +917,29 @@ async function main() {
     const gameLink = teamId ? (gameByTeamId.get(teamId) ?? null) : null;
 
     const gameId = gameLink ? gameLink.gameId : null;
-    const opponentTeamId = gameLink ? gameLink.opponentTeamId : null;
+
+    // allow opponentTeamId to come from schedule link OR from the JSON (DST only)
+    let opponentTeamId: string | null = gameLink ? gameLink.opponentTeamId : null;
+
+    if (rosterSpot === RosterSpot.DST && !opponentTeamId) {
+      const oppAbbr = getOpponentTeamAbbrFromItem(it);
+      if (oppAbbr) opponentTeamId = teamIdByAbbr.get(oppAbbr) ?? null;
+    }
+
+    const qbNameOverride =
+      cleanString((it as any).qbFaced) ??
+      cleanString((it as any).opponentStartingQbName) ??
+      null;
+
+    const overrideOpponentQbId =
+      rosterSpot === RosterSpot.DST
+        ? await resolveOpponentStartingQbIdByName({ sport, opponentTeamId, qbNameRaw: qbNameOverride })
+        : null;
 
     const opponentStartingQbPlayerId =
-      rosterSpot === RosterSpot.DST && gameLink ? gameLink.opponentStartingQbPlayerId : null;
+      rosterSpot === RosterSpot.DST
+        ? (overrideOpponentQbId ?? (gameLink ? gameLink.opponentStartingQbPlayerId : null))
+        : null;
 
     const saved = await prisma.lineupItem.upsert({
       where: { lineupId_rosterSpot_slotIndex: { lineupId: lineup.id, rosterSpot, slotIndex } },

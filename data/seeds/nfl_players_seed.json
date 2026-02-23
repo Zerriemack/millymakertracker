@@ -552,7 +552,9 @@
 { "sport": "NFL", "name": "B. Cooks", "position": "WR", "teamAbbreviation": "LAR" },
 { "sport": "NFL", "name": "R. Gronkowski", "position": "TE", "teamAbbreviation": "NE" },
 { "sport": "NFL", "name": "S. Michel", "position": "RB", "teamAbbreviation": "NE" },
-{ "sport": "NFL", "name": "R. Woods", "position": "WR", "teamAbbreviation": "LAR" }
+{ "sport": "NFL", "name": "R. Woods", "position": "WR", "teamAbbreviation": "LAR" },
+{ "sport": "NFL", "name": "Spencer Rattler", "position": "QB", "teamAbbreviation": "NO" },
+{ "sport": "NFL", "name": "Cam Ward", "position": "QB", "teamAbbreviation": "TEN" }
 ]
 
 
