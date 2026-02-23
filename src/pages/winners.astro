@@ -1,4 +1,5 @@
 ---
+// src/pages/winners.astro (or wherever this page lives)
 import Layout from "../layouts/Layout.astro";
 import { prisma } from "../lib/prisma";
 
@@ -144,7 +145,7 @@ for (const r of rows) {
   }
 
   if (slateDateIso) {
-    agg.lastWinDate = !agg.lastWinDate ? slateDateIso : (agg.lastWinDate < slateDateIso ? slateDateIso : agg.lastWinDate);
+    agg.lastWinDate = !agg.lastWinDate ? slateDateIso : agg.lastWinDate < slateDateIso ? slateDateIso : agg.lastWinDate;
   }
 
   if (Number.isFinite(Number(topPrizeCents))) {
@@ -215,7 +216,7 @@ const recentGlobal = rows
 ---
 
 <Layout title="Winners | Milly Maker Tracker">
-  <main class="wrap">
+  <main class="wrap" id="winners">
     <header class="hero">
       <h1>Winners</h1>
       <p class="sub">
@@ -371,32 +372,75 @@ const recentGlobal = rows
     </section>
 
     <script is:inline>
-      {`
-        (() => {
-          const input = document.getElementById("winnerSearch");
-          const count = document.getElementById("matchCount");
-          const cards = Array.from(document.querySelectorAll("[data-username]"));
+  (function () {
+    function onReady(fn) {
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", fn, { once: true });
+      } else {
+        fn();
+      }
+    }
 
-          function apply() {
-            const q = String(input?.value || "").trim().toLowerCase();
-            let shown = 0;
+    onReady(function () {
+      const input = document.getElementById("winnerSearch");
+      const count = document.getElementById("matchCount");
 
-            for (const el of cards) {
-              const u = String(el.getAttribute("data-username") || "");
-              const ok = !q || u.includes(q);
-              el.style.display = ok ? "" : "none";
-              if (ok) shown += 1;
-            }
+      // If this logs, the script is running.
+      console.log("[winners] search init", { input: !!input, count: !!count });
 
-            if (count) count.textContent = String(shown);
-          }
+      if (!input) return;
 
-          if (input) {
-            input.addEventListener("input", apply);
-          }
-        })();
-      `}
-    </script>
+      const topCards = Array.from(document.querySelectorAll("#leaderboard .winnerCard[data-username]"));
+      const recentCards = Array.from(document.querySelectorAll(".recentWin[data-username]"));
+      const tableRows = Array.from(document.querySelectorAll("#allWinnersTable tbody tr[data-username]"));
+
+      function setVisible(el, ok) {
+        el.hidden = !ok;
+      }
+
+      function apply() {
+        const q = String(input.value || "").trim().toLowerCase();
+
+        for (const el of topCards) {
+          const u = String(el.getAttribute("data-username") || "");
+          setVisible(el, !q || u.includes(q));
+        }
+
+        for (const el of recentCards) {
+          const u = String(el.getAttribute("data-username") || "");
+          setVisible(el, !q || u.includes(q));
+        }
+
+        let shownRows = 0;
+        for (const el of tableRows) {
+          const u = String(el.getAttribute("data-username") || "");
+          const ok = !q || u.includes(q);
+          setVisible(el, ok);
+          if (ok) shownRows += 1;
+        }
+
+        if (count) count.textContent = String(shownRows);
+      }
+
+      // make Enter work even if browser doesn’t emit input event
+      input.addEventListener("input", apply);
+      input.addEventListener("change", apply);
+      input.addEventListener("search", apply);
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          apply();
+        }
+        if (e.key === "Escape") {
+          input.value = "";
+          apply();
+        }
+      });
+
+      apply();
+    });
+  })();
+</script>
   </main>
 
   <style>
@@ -412,6 +456,9 @@ const recentGlobal = rows
       --shadow:0 18px 55px rgba(0,0,0,.55);
       --shadowSoft:0 12px 30px rgba(0,0,0,.40);
     }
+
+    /* tweak: make hidden elements disappear cleanly everywhere */
+    #winners [hidden]{display:none !important;}
 
     .wrap{max-width:1320px;margin:0 auto;padding:26px 16px 70px;color:var(--text)}
 
