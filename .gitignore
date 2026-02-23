@@ -25,3 +25,5 @@ dist/
 .env
 /src/generated/prisma
 .vercel/
+
+.astro/
