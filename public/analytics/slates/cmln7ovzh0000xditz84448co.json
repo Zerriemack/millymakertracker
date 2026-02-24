@@ -1,0 +1,189 @@
+{
+  "slateId": "cmln7ovzh0000xditz84448co",
+  "siteContestId": "NFL_2025_13_CLASSIC_main_20251130__nfl_millionaire_maker",
+  "slateKey": "NFL_2025_WK13_MAIN_2025-11-30_ARI_ATL_CAR_HOU_LAC_LV_NYJ_SEA",
+  "slateType": "MAIN",
+  "slateDate": "2025-11-30T00:00:00",
+  "winner": {
+    "id": "cmln7ow460002xdita8vdrfj3",
+    "username": "bmozley24",
+    "points": 205.44,
+    "maxEntries": 57
+  },
+  "lineup": {
+    "lineupType": "CLASSIC",
+    "salaryUsed": 49900,
+    "salaryLeft": 100,
+    "totalPoints": 205.44,
+    "totalOwnershipPct": 120.5,
+    "captain": null,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "J. Brissett",
+        "position": null,
+        "team": null,
+        "salary": 5800,
+        "points": 23.64,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "K. Vidal",
+        "position": null,
+        "team": null,
+        "salary": 5700,
+        "points": 23.7,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "B. Robinson",
+        "position": null,
+        "team": null,
+        "salary": 8500,
+        "points": 33.3,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "N. Collins",
+        "position": null,
+        "team": null,
+        "salary": 6700,
+        "points": 21.5,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "T. McMillan",
+        "position": null,
+        "team": null,
+        "salary": 6100,
+        "points": 11.3,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A. Mitchell",
+        "position": null,
+        "team": null,
+        "salary": 3600,
+        "points": 27.2,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "D. Schultz",
+        "position": null,
+        "team": null,
+        "salary": 3800,
+        "points": 12.5,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Bowers",
+        "position": null,
+        "team": null,
+        "salary": 5800,
+        "points": 22.3,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Seahawks",
+        "position": null,
+        "team": null,
+        "salary": 3900,
+        "points": 30.0,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "QB",
+        "name": "J. Brissett",
+        "position": null,
+        "team": null,
+        "salary": 5800,
+        "points": 23.64,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "K. Vidal",
+        "position": null,
+        "team": null,
+        "salary": 5700,
+        "points": 23.7,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "B. Robinson",
+        "position": null,
+        "team": null,
+        "salary": 8500,
+        "points": 33.3,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "N. Collins",
+        "position": null,
+        "team": null,
+        "salary": 6700,
+        "points": 21.5,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "T. McMillan",
+        "position": null,
+        "team": null,
+        "salary": 6100,
+        "points": 11.3,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A. Mitchell",
+        "position": null,
+        "team": null,
+        "salary": 3600,
+        "points": 27.2,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "D. Schultz",
+        "position": null,
+        "team": null,
+        "salary": 3800,
+        "points": 12.5,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "B. Bowers",
+        "position": null,
+        "team": null,
+        "salary": 5800,
+        "points": 22.3,
+        "ownershipPercent": null
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Seahawks",
+        "position": null,
+        "team": null,
+        "salary": 3900,
+        "points": 30.0,
+        "ownershipPercent": null
+      }
+    ]
+  },
+  "tags": {
+    "archetype": null
+  },
+  "generatedAt": "2026-02-24T18:50:23.142862Z"
+}

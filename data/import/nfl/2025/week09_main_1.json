@@ -4,10 +4,17 @@
   "week": 9,
   "slateType": "MAIN",
   "slateDate": "2025-11-02T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 9",
+  "slateTag": "BENGALS DEFENSE COLLAPSE, BOWERS NUCLEAR, 4-MAN QB GAME STACK",
+  "slateGroup": "4-1-1-1-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
     "contestName": "NFL Milly Maker",
     "siteContestId": "NFL_2025_WK09_MAIN_2025-11-02T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
     "totalOwnershipBp": 15850
   },
   "winner": {
@@ -18,6 +25,16 @@
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 264.7,
+    "totalOwnershipBp": 15850,
+    "rosterConstruction": "4-1-1-1-1-1",
+    "gameKey": [
+      "CHI@CIN: 4 (QB game)",
+      "SF@NYG: 1",
+      "IND@PIT: 1",
+      "ATL@NE: 1",
+      "LAC@LV: 1",
+      "LAC@TEN: 1"
+    ],
     "items": [
       {
         "rosterSpot": "QB",
@@ -26,7 +43,14 @@
         "team": "CHI",
         "salary": 5700,
         "points": 38.7,
-        "ownership": 9.8
+        "ownershipPercent": 9.8,
+        "passTd": 3,
+        "passYds": 280,
+        "passInt": 1,
+        "rushYds": 53,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
       },
       {
         "rosterSpot": "RB",
@@ -35,7 +59,15 @@
         "team": "SF",
         "salary": 8800,
         "points": 37.3,
-        "ownership": 33
+        "ownershipPercent": 33.0,
+        "rushTdRb": 1,
+        "rushYdsRb": 106,
+        "recRb": 5,
+        "recYdsRb": 67,
+        "recTdRb": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
       },
       {
         "rosterSpot": "RB",
@@ -44,7 +76,14 @@
         "team": "PIT",
         "salary": 5500,
         "points": 16.9,
-        "ownership": 8.2
+        "ownershipPercent": 8.2,
+        "rushTdRb": 2,
+        "rushYdsRb": 31,
+        "recRb": 2,
+        "recYdsRb": -2,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "IND"
       },
       {
         "rosterSpot": "WR",
@@ -53,7 +92,13 @@
         "team": "CIN",
         "salary": 8400,
         "points": 20.1,
-        "ownership": 28.4
+        "ownershipPercent": 28.4,
+        "rec": 6,
+        "recYds": 111,
+        "recTd": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CHI"
       },
       {
         "rosterSpot": "WR",
@@ -62,7 +107,13 @@
         "team": "ATL",
         "salary": 6400,
         "points": 41.8,
-        "ownership": 4.2
+        "ownershipPercent": 4.2,
+        "rec": 9,
+        "recYds": 118,
+        "recTd": 3,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
       },
       {
         "rosterSpot": "WR",
@@ -71,7 +122,13 @@
         "team": "CHI",
         "salary": 3300,
         "points": 17.8,
-        "ownership": 4.9
+        "ownershipPercent": 4.9,
+        "rec": 6,
+        "recYds": 58,
+        "recTd": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
       },
       {
         "rosterSpot": "TE",
@@ -80,7 +137,14 @@
         "team": "LV",
         "salary": 5000,
         "points": 46.3,
-        "ownership": 13.9
+        "ownershipPercent": 13.9,
+        "rec": 12,
+        "recYds": 127,
+        "recTd": 3,
+        "rushYds": 6,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LAC"
       },
       {
         "rosterSpot": "FLEX",
@@ -89,7 +153,13 @@
         "team": "CHI",
         "salary": 4600,
         "points": 25.8,
-        "ownership": 54.7
+        "ownershipPercent": 54.7,
+        "rushYdsRb": 176,
+        "recRb": 3,
+        "recYdsRb": 22,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
       },
       {
         "rosterSpot": "DST",
@@ -97,11 +167,108 @@
         "position": "DST",
         "team": "TEN",
         "salary": 2300,
-        "points": 20,
-        "ownership": 1.4
+        "points": 20.0,
+        "ownershipPercent": 1.4,
+        "sacks": 6,
+        "takeaways": 1,
+        "defensiveTdCount": 2,
+        "qbFaced": "Justin Herbert",
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "LAC"
       }
     ]
   },
-  "lineupType": "CLASSIC",
-  "slateKey": "NFL_2025_WK09_MAIN_2025-11-02T17:00:00.000Z"
+  "analysis": {
+    "stackSummary": "This roster treats the Bears at Bengals game as the anchor and refuses to treat the Bengals defense as an unknown. The quarterback plus three teammates structure forces a single game to carry the lineup, and it chooses the side where the scoring can be concentrated without guessing which Bengal brings it back. Chase is the only Cincinnati piece because his role is immune to game script. He can cash in deep, he can cash in on volume, and he can cash in in the red zone, so he is the one opponent player who can justify occupying the bring back slot while the Bears pieces do the heavy lifting.\n\nThe lineup then adds a second concentrated engine with Brock Bowers. Paying up at tight end is usually fragile because volume can vanish, but Bowers belongs to the small group where the offense routes through him when the game tilts. Three touchdowns from a tight end deletes the normal positional scoring curve, and it does it from a mid salary that does not force the roster into multiple thin punts.\n\nMcCaffrey is the cleanest play the best plays button on the slate. The roster accepts his ownership and uses him as a stable ceiling source while the rest of the lineup uses far lower owned outcomes to separate. Titans defense is the final leverage lane. It is not a bet on a safe game. It is a bet on a defensive touchdown path against Justin Herbert that almost nobody is willing to buy, even if the Titans lose the actual game.",
+    "uniquenessNotes": "The field gets trapped by a basic idea in this spot: if the Bears pieces get there, then Cincinnati pieces should come along for the ride. This roster rejects that assumption and keeps the bring back to one player. It lets Chicago points flow through the quarterback, a cheap receiver, and a rookie back, while Chase acts as a single opposing pressure valve.\n\nThe roster also avoids the common tight end split where people either punt the position or pay all the way up. Bowers sits in the middle and still delivers the slate defining score. That creates a roster shape many lineups never occupy, because it spends enough at tight end to demand real production, but it does not spend enough to force obvious compensations elsewhere.\n\nThe Titans defense is the duplication killer. A one percent defense is rarely paired with two players over thirty percent ownership, but that is exactly why the roster stays unique. It accepts two popular hammers and still finds separation through a defense score that the field did not allocate salary or ownership to capture.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Four player QB game stack that treats Bengals defense as targetable, with Chase as the lone bring back",
+      "secondaryLever": "Bowers as the tight end ceiling that breaks the position, plus Titans defense as the low owned defensive touchdown path",
+      "notes": {
+        "rosterConstruction": "4-1-1-1-1-1",
+        "bearsBengalsCluster": ["C. Williams", "O. Zaccheaus", "K. Monangai", "J. Chase"],
+        "oneOffHammers": ["C. McCaffrey", "D. London", "J. Warren"],
+        "tightEndSlateBreaker": "B. Bowers",
+        "dstQbFaced": "Justin Herbert"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FOUR_MAN_QB_GAME_STACK",
+        "SINGLE_BRING_BACK_ALPHA_WR",
+        "TE_CEILING_ANCHOR",
+        "TWO_HIGH_OWNED_HAMMERS_WITH_LOW_OWNED_DST_SEPARATION",
+        "MULTI_GAME_ONE_OFF_CEILING"
+      ],
+      "macroStory": "A first place roster built around one game carrying four slots, with the opposing side reduced to a single structurally sound bring back. The lineup then wins the slate with two independent ceiling events outside the core: Bowers detonating tight end scoring and a one percent defense producing touchdowns, while McCaffrey supplies a popular ceiling the roster does not attempt to outsmart."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "GAME_STACK_ANCHOR", "RUSHING_PLUS_PASSING_CEILING"],
+        "microStory": "Williams is the anchor because he can get there two ways. The passing line lands, and the rushing yardage keeps the quarterback score above the pocket passer cluster."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["CHEAP_ACCESSORY", "TOUCHDOWN_DEPENDENT", "STACK_COMPLETION"],
+        "microStory": "Zaccheaus is the salary release that still stays attached to the quarterback. A low cost receiver who scores once is enough when the rest of the roster carries touchdown density."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["VALUE_RB_WITH_ROLE", "GAME_STACK_FOURTH_PIECE", "OWNERSHIP_BET"],
+        "microStory": "Monangai is the ownership magnet and it is still rational. The yardage does the job, and his presence lets the roster keep Chicago scoring concentrated without adding extra Bengals."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["POSITION_BREAKER", "OFFENSE_THROUGH_PLAYER", "MULTI_TD_OUTCOME"],
+        "microStory": "Bowers is the structural reason the roster wins. Three touchdowns from tight end forces the lineup into a scoring tier most builds cannot reach, even if they get the core game right."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNED_SEPARATION", "DEFENSIVE_TOUCHDOWN_PATH", "QB_FACED_SIGNAL"],
+        "microStory": "Tennessee defense is the volatility slot that lands. Two defensive touchdowns plus pressure events is a contest winning outcome at almost no ownership, even while losing to Herbert."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "C. Williams", "position": "QB", "team": "CHI" },
+        "teammates": [
+          { "name": "O. Zaccheaus", "position": "WR", "team": "CHI" },
+          { "name": "K. Monangai", "position": "RB", "team": "CHI" }
+        ],
+        "opponent": { "name": "J. Chase", "position": "WR", "team": "CIN" }
+      },
+      {
+        "type": "ONE_OFF_CEILING",
+        "qb": null,
+        "teammate": { "name": "D. London", "position": "WR", "team": "ATL" },
+        "opponent": null
+      },
+      {
+        "type": "RB_ONE_OFF",
+        "qb": null,
+        "teammate": { "name": "C. McCaffrey", "position": "RB", "team": "SF" },
+        "opponent": null
+      },
+      {
+        "type": "DST_QB_FACED",
+        "qb": null,
+        "teammate": {
+          "name": "Titans",
+          "position": "DST",
+          "team": "TEN",
+          "qbFaced": "Justin Herbert"
+        },
+        "opponent": { "name": "Justin Herbert", "position": "QB", "team": "LAC" }
+      }
+    ]
+  }
 }

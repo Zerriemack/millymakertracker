@@ -4,10 +4,17 @@
   "week": 12,
   "slateType": "MAIN",
   "slateDate": "2025-11-23T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 12",
+  "slateTag": "VINTAGE WINSTON AT 4 PERCENT, DET GAME NUCLEAR, EAGLES DOUBLE WR WITHOUT HURTS, BROWNS FRONT 10 SACKS VS GENO",
+  "slateGroup": "4-2-1-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
     "contestName": "NFL Milly Maker",
     "siteContestId": "NFL_2025_WK12_MAIN_2025-11-23T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
     "totalOwnershipBp": 17300
   },
   "winner": {
@@ -18,6 +25,15 @@
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 277.04,
+    "totalOwnershipBp": 17300,
+    "rosterConstruction": "4-2-1-1-1",
+    "gameKey": [
+      "NYG@DET: 4 (QB game)",
+      "PHI@DAL: 2",
+      "MIN@GB: 1",
+      "NE@CIN: 1",
+      "CLE@LV: 1"
+    ],
     "items": [
       {
         "rosterSpot": "QB",
@@ -26,7 +42,17 @@
         "team": "NYG",
         "salary": 4600,
         "points": 36.24,
-        "ownership": 4
+        "ownershipPercent": 4.0,
+        "passTd": 2,
+        "passYds": 366,
+        "passInt": 1,
+        "rushYds": 13,
+        "rec": 1,
+        "recYds": 33,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
       },
       {
         "rosterSpot": "RB",
@@ -35,7 +61,15 @@
         "team": "DET",
         "salary": 8300,
         "points": 58.4,
-        "ownership": 38.8
+        "ownershipPercent": 38.8,
+        "rushYdsRb": 219,
+        "rushTdRb": 2,
+        "recRb": 11,
+        "recYdsRb": 45,
+        "recTdRb": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "NYG"
       },
       {
         "rosterSpot": "RB",
@@ -44,7 +78,14 @@
         "team": "GB",
         "salary": 5300,
         "points": 29.5,
-        "ownership": 23.3
+        "ownershipPercent": 23.3,
+        "rushYdsRb": 107,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 18,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "MIN"
       },
       {
         "rosterSpot": "WR",
@@ -53,7 +94,12 @@
         "team": "PHI",
         "salary": 5600,
         "points": 14.9,
-        "ownership": 20.5
+        "ownershipPercent": 20.5,
+        "rec": 6,
+        "recYds": 89,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
       },
       {
         "rosterSpot": "WR",
@@ -62,7 +108,13 @@
         "team": "DET",
         "salary": 8000,
         "points": 32.9,
-        "ownership": 23.1
+        "ownershipPercent": 23.1,
+        "rec": 9,
+        "recYds": 149,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "NYG"
       },
       {
         "rosterSpot": "WR",
@@ -71,7 +123,13 @@
         "team": "NYG",
         "salary": 5500,
         "points": 33.6,
-        "ownership": 7.7
+        "ownershipPercent": 7.7,
+        "rec": 9,
+        "recYds": 156,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
       },
       {
         "rosterSpot": "TE",
@@ -80,7 +138,13 @@
         "team": "NE",
         "salary": 3900,
         "points": 27.5,
-        "ownership": 13.3
+        "ownershipPercent": 13.3,
+        "rec": 7,
+        "recYds": 115,
+        "recTd": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
       },
       {
         "rosterSpot": "FLEX",
@@ -88,8 +152,14 @@
         "position": "WR",
         "team": "PHI",
         "salary": 5900,
-        "points": 28,
-        "ownership": 13.9
+        "points": 28.0,
+        "ownershipPercent": 13.9,
+        "rec": 8,
+        "recYds": 110,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
       },
       {
         "rosterSpot": "DST",
@@ -97,11 +167,102 @@
         "position": "DST",
         "team": "CLE",
         "salary": 2900,
-        "points": 16,
-        "ownership": 28.4
+        "points": 16.0,
+        "ownershipPercent": 28.4,
+        "sacks": 10,
+        "takeaways": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Geno Smith",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LV"
       }
     ]
   },
-  "lineupType": "CLASSIC",
-  "slateKey": "NFL_2025_WK12_MAIN_2025-11-23T17:00:00.000Z"
+  "analysis": {
+    "stackSummary": "This build is a statement about ownership gravity and where to attack it. The slate hands a 38.8 percent Gibbs outcome that becomes an unavoidable scoring anchor, and the lineup refuses to compete with the field by fading it. Instead, it flips the leverage point to quarterback. Winston at four percent produces the version of Detroit at New York scoring where the Lions still erupt, yet the roster captures the back and forth through a cheap quarterback who does not need efficiency to get there. The stat line is chaotic, but the volume creates a ceiling profile very few rosters rostered at quarterback.\n\nThe Lions game correlation is not a simple Winston plus one. Gibbs and St. Brown represent the two primary Detroit scoring channels, then Robinson becomes the bring back who benefits from the same shootout pacing. The lineup owns the full distribution of production from the highest scoring environment without forcing a narrow touchdown guess.\n\nPhiladelphia becomes the second game the roster is right about. Pairing Brown with Smith without Hurts is a bet on concentrated targets and condensed touchdown equity, not on quarterback points. Dallas is the opponent, and the match up gives both receivers a clean path to volume and finishing drives.\n\nHenry is the third sharp touch. Cincinnati continues to bleed production to tight ends, and this lineup captures that through a mid salary player who can reach a slate score via targets and a touchdown.\n\nCleveland defense is the final acceptance of the obvious. Ten sacks at 28.4 percent is still correct when the matchup is an offensive line collapse. Geno Smith becomes the quarterback faced, and the defense produces a score that does not require a defensive touchdown to matter.",
+    "uniquenessNotes": "Five players above twenty percent ownership looks blunt, but the roster uses chalk as camouflage. The unique part is the way it pairs chalk with a low owned quarterback who can access ceiling through volatility. Most rosters that started with Gibbs and Browns defense attempted to keep the rest of the roster low owned. This lineup does the opposite. It keeps stacking strong projection points and concentrates its uniqueness in one slot, then ties that slot directly to the highest scoring environment.\n\nThe Detroit game is also built to avoid duplication clusters. Many Gibbs lineups chase the same quarterback path. Winston creates a different roster shape, and Robinson as the bring back keeps the stack correlated without chasing the expensive Detroit secondary pieces.\n\nThe Eagles double receiver construction is another duplication reducer. Many lineups would choose one and move on. Taking both assumes the target tree collapses and the touchdowns can be captured by two receivers together, which is exactly what happens when the offense is condensed and the opponent cannot cover.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Four player NYG at DET game bet anchored by Winston at four percent against the chalk Gibbs eruption",
+      "secondaryLever": "Eagles double wide receiver without Hurts plus Henry versus Cincinnati tight end weakness, with Browns DST as the pressure outcome versus Geno",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "nygDetCluster": ["J. Winston", "J. Gibbs", "A. St. Brown", "W. Robinson"],
+        "phiDalPair": ["A. Brown", "D. Smith"],
+        "oneOffs": ["E. Wilson", "H. Henry"],
+        "dstQbFaced": "Geno Smith"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNED_QB_LEVERAGE",
+        "FOUR_PLAYER_QB_GAME_STACK",
+        "CHALK_CORE_WITH_SINGLE_POINT_UNIQUENESS",
+        "DOUBLE_WR_SAME_TEAM_NO_QB",
+        "TE_TARGET_AND_TD_CAPTURE",
+        "HIGH_OWNED_DST_PRESSURE_SCORE"
+      ],
+      "macroStory": "A first place roster built around embracing the chalk scoring base and extracting leverage through a low owned quarterback attached to the same nuclear game. The lineup wins by being correct on three environments and concentrating uniqueness in the one slot that can swing a tournament at scale."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNED_VOLATILITY", "GAME_STACK_ANCHOR"],
+        "microStory": "Winston is the leverage key. He does not need clean football. He needs attempts, yards, and touchdowns, and the price makes the roster shape possible."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["CHALK_HAMMER", "SLATE_BREAKER", "DUAL_ROLE_USAGE"],
+        "microStory": "Gibbs is the slate outcome. The rushing total plus eleven receptions creates a score that forces the rest of the roster to be built around it."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["TARGET_CONCENTRATION", "OFFENSE_CONDENSED", "DOUBLE_WR_BET"],
+        "microStory": "A. Brown functions as one half of the concentrated Eagles bet. He pairs with Smith to capture the full receiver scoring band without needing a quarterback slot."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRESSURE_PATH", "MATCHUP_DRIVEN", "QB_FACED_SIGNAL"],
+        "microStory": "Cleveland defense is a pressure score. Ten sacks plus a takeaway against Geno Smith is the outcome the ownership expects, and it still matters in a build that separates at quarterback."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "J. Winston", "position": "QB", "team": "NYG" },
+        "teammates": [
+          { "name": "W. Robinson", "position": "WR", "team": "NYG" }
+        ],
+        "opponent": { "name": "A. St. Brown", "position": "WR", "team": "DET" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "J. Gibbs", "position": "RB", "team": "DET" },
+        "opponent": { "name": "W. Robinson", "position": "WR", "team": "NYG" }
+      },
+      {
+        "type": "TEAM_PAIR",
+        "qb": null,
+        "teammate": { "name": "A. Brown", "position": "WR", "team": "PHI" },
+        "opponent": { "name": "D. Smith", "position": "WR", "team": "PHI" }
+      },
+      {
+        "type": "DST_QB_FACED",
+        "qb": null,
+        "teammate": {
+          "name": "Browns",
+          "position": "DST",
+          "team": "CLE",
+          "qbFaced": "Geno Smith"
+        },
+        "opponent": { "name": "Geno Smith", "position": "QB", "team": "LV" }
+      }
+    ]
+  }
 }

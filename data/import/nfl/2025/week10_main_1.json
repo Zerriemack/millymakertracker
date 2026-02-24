@@ -4,10 +4,17 @@
   "week": 10,
   "slateType": "MAIN",
   "slateDate": "2025-11-09T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 10",
+  "slateTag": "MAYFIELD 5-MAN GAME BET, ACHANE VS BAD RUN FRONT, JETS DOUBLE RETURN TD OUTCOME",
+  "slateGroup": "5-1-1-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
     "contestName": "NFL Milly Maker",
     "siteContestId": "NFL_2025_WK10_MAIN_2025-11-09T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
     "totalOwnershipBp": 11850
   },
   "winner": {
@@ -18,6 +25,15 @@
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 239.62,
+    "totalOwnershipBp": 11850,
+    "rosterConstruction": "5-1-1-1-1",
+    "gameKey": [
+      "NE@TB: 5 (QB game)",
+      "BUF@MIA: 1",
+      "LAR@SF: 1",
+      "DET@WAS: 1",
+      "CLE@NYJ: 1"
+    ],
     "items": [
       {
         "rosterSpot": "QB",
@@ -26,7 +42,12 @@
         "team": "TB",
         "salary": 6200,
         "points": 22.92,
-        "ownership": 5.7
+        "ownershipPercent": 5.7,
+        "passTd": 3,
+        "passYds": 273,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NE"
       },
       {
         "rosterSpot": "RB",
@@ -35,7 +56,14 @@
         "team": "MIA",
         "salary": 7400,
         "points": 43.5,
-        "ownership": 25.2
+        "ownershipPercent": 25.2,
+        "rushTdRb": 2,
+        "rushYdsRb": 174,
+        "recRb": 6,
+        "recYdsRb": 51,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "BUF"
       },
       {
         "rosterSpot": "RB",
@@ -43,8 +71,15 @@
         "position": "RB",
         "team": "NE",
         "salary": 5600,
-        "points": 31,
-        "ownership": 14.6
+        "points": 31.0,
+        "ownershipPercent": 14.6,
+        "rushTdRb": 2,
+        "rushYdsRb": 147,
+        "recRb": 1,
+        "recYdsRb": 3,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
       },
       {
         "rosterSpot": "WR",
@@ -53,25 +88,44 @@
         "team": "SF",
         "salary": 4600,
         "points": 18.1,
-        "ownership": 18.1
+        "ownershipPercent": 18.1,
+        "rec": 6,
+        "recYds": 71,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "LAR"
       },
       {
         "rosterSpot": "WR",
         "name": "E. Egbuka",
         "position": "WR",
-        "team": "TB",
+        "team": "NE",
         "salary": 7000,
         "points": 26.5,
-        "ownership": 16.4
+        "ownershipPercent": 16.4,
+        "rec": 6,
+        "recYds": 115,
+        "recTd": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
       },
       {
         "rosterSpot": "WR",
         "name": "T. Johnson",
         "position": "WR",
-        "team": "NE",
+        "team": "TB",
         "salary": 4500,
         "points": 20.2,
-        "ownership": 12.3
+        "ownershipPercent": 12.3,
+        "rec": 4,
+        "recYds": 42,
+        "recTd": 2,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NE"
       },
       {
         "rosterSpot": "TE",
@@ -80,16 +134,29 @@
         "team": "TB",
         "salary": 3900,
         "points": 17.2,
-        "ownership": 10.3
+        "ownershipPercent": 10.3,
+        "rec": 9,
+        "recYds": 82,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NE"
       },
       {
         "rosterSpot": "FLEX",
         "name": "J. Gibbs",
         "position": "RB",
         "team": "DET",
-        "salary": 8000,
+        "salary": 8800,
         "points": 41.2,
-        "ownership": 12.3
+        "ownershipPercent": 12.3,
+        "rushTdRb": 2,
+        "rushYdsRb": 142,
+        "recRb": 3,
+        "recYdsRb": 30,
+        "recTdRb": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
       },
       {
         "rosterSpot": "DST",
@@ -97,11 +164,96 @@
         "position": "DST",
         "team": "NYJ",
         "salary": 2800,
-        "points": 19,
-        "ownership": 3.6
+        "points": 19.0,
+        "ownershipPercent": 3.6,
+        "sacks": 6,
+        "defensiveTdCount": 2,
+        "pointsAllowed": 20,
+        "qbFaced": "Dillon Gabriel",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "CLE"
       }
     ]
   },
-  "lineupType": "CLASSIC",
-  "slateKey": "NFL_2025_WK10_MAIN_2025-11-09T17:00:00.000Z"
+  "analysis": {
+    "stackSummary": "This is a Mayfield slate winner built around accepting variance in the exact place the field hates to accept it. The NE at TB game stack takes five slots and forces the lineup to be right about one environment instead of spreading thin across a dozen partial correlations. Mayfield is the anchor, but the roster does not rely on a single narrow receiver. It spreads the touchdown access across two different receiver archetypes and then adds Otton as the middle of field volume layer. That structure keeps the stack alive even if one individual pass catcher fails, because the scoring can still concentrate through a different route tree.\n\nAchane is the separate ceiling engine. He is popular for a reason, and the roster treats him as a points requirement rather than a leverage spot. When the slate hands you a fragile rush defense, the correct move is to take the raw score and find separation elsewhere.\n\nThe Jets defense is the real fork. The season context matters. The Jets had been so poor at creating interceptions that an outcome where the defense posts a tournament winning score felt unavailable. Standish still buys the slot, and instead of needing a clean pick six script, the defense lands through special teams touchdowns. That is the kind of thing the field cannot plan for, but a lineup can still position itself to benefit if it simply holds a defense with touchdown access at low ownership.\n\nGibbs is the last ceiling piece. His season profile creates hesitation because his outcomes swing. Standish takes the swing anyway and gets the version where he reaches the end zone multiple times while still adding receiving production.",
+    "uniquenessNotes": "The roster is unique because it concentrates where the field tries to diversify. A five man game bet means you either get paid or you die, and most lineups cannot tolerate that risk across 200,000 entries. That structural choice creates separation even before any player score is considered.\n\nInside the stack, the lineup avoids a one receiver dependency. It uses multiple touchdown paths in the same game, which lowers the chance of the stack failing due to one wrong guess. The bring back pair then gives the game a second direction the scoring can take without forcing Mayfield to compete with his own teammates for the same points.\n\nJets defense is the low owned separator that makes the roster hard to duplicate. Two special teams touchdowns are not something optimizers can reliably chase, but the roster still benefits because it held a low owned defense in a spot where the field was psychologically out. When that slot hits, the rest of the lineup can be more straightforward and still win.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Five player NE at TB game bet anchored by Mayfield, built to distribute Tampa touchdowns across multiple archetypes",
+      "secondaryLever": "Achane as the required raw score, plus Jets defense winning through special teams touchdown variance",
+      "notes": {
+        "rosterConstruction": "5-1-1-1-1",
+        "qbGameCluster": ["B. Mayfield", "T. Henderson", "E. Egbuka", "T. Johnson", "C. Otton"],
+        "oneOffHammers": ["D. Achane", "J. Gibbs"],
+        "secondaryCeiling": "J. Jennings",
+        "dstQbFaced": "Dillon Gabriel"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FIVE_MAN_QB_GAME_STACK",
+        "MULTI_TOUCHDOWN_DISTRIBUTION_WITH_TE_LAYER",
+        "TWO_RB_CEILING_ONE_OFFS",
+        "SPECIAL_TEAMS_DST_TOUCHDOWN_PATH",
+        "SINGLE_WR_ONE_OFF_SCORE"
+      ],
+      "macroStory": "A first place roster that wins by making one primary game carry five slots, then pairing it with two separate RB ceiling events and a low owned defense score. The build is comfortable being wrong often if the upside is a unique combination of correlated points when it is right."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNED_QB", "GAME_STACK_ANCHOR"],
+        "microStory": "Mayfield is the entry point because his ownership sits in a range where a three touchdown game creates immediate separation. The stack commits to his ceiling instead of treating him as a placeholder."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["STACK_GLUE", "VOLUME_LAYER", "RED_ZONE_ACCESS"],
+        "microStory": "Otton gives the stack a volume channel that does not require long touchdowns. Nine receptions lets the roster cash points even if wide receiver scoring is concentrated elsewhere."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["RAW_SCORE_REQUIREMENT", "MATCHUP_CEILING", "POPULAR_HAMMER"],
+        "microStory": "Achane is treated as a points tax. The roster accepts the ownership because the score is too large to fade without an equally strong alternative path."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNED_SEPARATION", "SPECIAL_TEAMS_TOUCHDOWN_PATH", "QB_FACED_SIGNAL"],
+        "microStory": "Jets defense wins in the weirdest way, which is exactly why it matters in a 200,000 entry contest. Two return touchdowns create a score most lineups cannot reach even if the rest of their build is correct."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "B. Mayfield", "position": "QB", "team": "TB" },
+        "teammates": [
+          { "name": "T. Johnson", "position": "WR", "team": "TB" },
+          { "name": "C. Otton", "position": "TE", "team": "TB" }
+        ],
+        "opponent": { "name": "E. Egbuka", "position": "WR", "team": "NE" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "T. Henderson", "position": "RB", "team": "NE" },
+        "opponent": { "name": "B. Mayfield", "position": "QB", "team": "TB" }
+      },
+      {
+        "type": "DST_QB_FACED",
+        "qb": null,
+        "teammate": {
+          "name": "Jets",
+          "position": "DST",
+          "team": "NYJ",
+          "qbFaced": "Dillon Gabriel"
+        },
+        "opponent": { "name": "Dillon Gabriel", "position": "QB", "team": "CLE" }
+      }
+    ]
+  }
 }

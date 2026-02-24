@@ -4,12 +4,17 @@
   "week": 14,
   "slateType": "MAIN",
   "slateDate": "2025-12-07T00:00:00.000Z",
+  "slateName": "NFL Main Slate Week 14",
+  "slateTag": "POLLARD ERUPTION, TITANS RB PLUS DST, WILSON CHALK",
+  "slateGroup": "2-3-2-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
-    "contestName": "Milly Maker",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2025_14_CLASSIC_main_20251207_nfl_millionaire_maker",
     "entryFeeCents": 2000,
+    "entries": null,
     "topPrizeCents": 100000000,
-    "siteContestId": "NFL_2025_14_CLASSIC_main_20251207__nfl_millionaire_maker",
     "totalOwnershipBp": 11540
   },
   "winner": {
@@ -20,6 +25,7 @@
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 239.34,
+    "totalOwnershipBp": 11540,
     "items": [
       {
         "rosterSpot": "QB",
@@ -28,7 +34,14 @@
         "team": "BUF",
         "salary": 7700,
         "points": 37.84,
-        "ownership": 14.2
+        "ownershipPercent": 14.2,
+        "passTd": 3,
+        "passYds": 251,
+        "rushTd": 1,
+        "rushYds": 78,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "CIN"
       },
       {
         "rosterSpot": "RB",
@@ -37,7 +50,14 @@
         "team": "GB",
         "salary": 6800,
         "points": 17.2,
-        "ownership": 18.5
+        "ownershipPercent": 18.5,
+        "rushYdsRb": 86,
+        "rushTdRb": 1,
+        "recRb": 2,
+        "recYdsRb": 6,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "CHI"
       },
       {
         "rosterSpot": "RB",
@@ -46,7 +66,12 @@
         "team": "TEN",
         "salary": 4900,
         "points": 31.1,
-        "ownership": 0.3
+        "ownershipPercent": 0.3,
+        "rushYdsRb": 161,
+        "rushTdRb": 2,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
       },
       {
         "rosterSpot": "WR",
@@ -55,7 +80,13 @@
         "team": "LAR",
         "salary": 8700,
         "points": 38.7,
-        "ownership": 14.9
+        "ownershipPercent": 14.9,
+        "rec": 7,
+        "recYds": 167,
+        "recTd": 2,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
       },
       {
         "rosterSpot": "WR",
@@ -64,7 +95,13 @@
         "team": "ARI",
         "salary": 5600,
         "points": 40.2,
-        "ownership": 42.0
+        "ownershipPercent": 42.0,
+        "rec": 11,
+        "recYds": 142,
+        "recTd": 2,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "LAR"
       },
       {
         "rosterSpot": "WR",
@@ -73,7 +110,12 @@
         "team": "PIT",
         "salary": 5400,
         "points": 24.8,
-        "ownership": 4.6
+        "ownershipPercent": 4.6,
+        "rec": 7,
+        "recYds": 148,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
       },
       {
         "rosterSpot": "TE",
@@ -82,16 +124,28 @@
         "team": "BUF",
         "salary": 4300,
         "points": 14.1,
-        "ownership": 7.7
+        "ownershipPercent": 7.7,
+        "rec": 4,
+        "recYds": 41,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "CIN"
       },
       {
         "rosterSpot": "FLEX",
         "name": "H. Fannin Jr.",
         "position": "TE",
-        "team": "CLE",
+        "team": "TEN",
         "salary": 3700,
         "points": 28.4,
-        "ownership": 5.2
+        "ownershipPercent": 5.2,
+        "rec": 8,
+        "recYds": 114,
+        "recTd": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
       },
       {
         "rosterSpot": "DST",
@@ -100,7 +154,95 @@
         "team": "TEN",
         "salary": 2900,
         "points": 7.0,
-        "ownership": 8.0
+        "ownershipPercent": 8.0,
+        "sacks": 2,
+        "takeaways": 2,
+        "pointsAllowedBucket": 34,
+        "qbFaced": "Shedeur Sanders",
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "The lineup has two clear anchors. The first is the Tennessee thesis: Tony Pollard paired with the Titans defense in Cleveland. Pollard had spent the season trending toward irrelevance in season long formats, so the field stopped treating him as a ceiling outcome. The build reopens his range anyway, accepts the matchup, then gets the exact eruption game at 0.3 percent. The defense side of the pair does not need a takeover performance. It only needs to stay afloat while Pollard supplies the rushing touchdown concentration.\n\nThe second anchor is a decision to stop fighting ownership. Michael Wilson at 42 percent is treated as a requirement, then paired with Puka Nacua to capture the full LAR at ARI scoring environment. Instead of spending energy searching for uniqueness in the wrong places, the roster takes the slate wide receiver points and forces separation through Pollard.\n\nJosh Allen plus Dalton Kincaid is the clean access point to a high scoring Bills game without turning the roster into a full game stack. The rest stays additive: Josh Jacobs provides a stable score in CHI at GB, and DK Metcalf functions as an isolated yardage ceiling in PIT at BAL.\n\nThere is one uncomfortable correlation: a Cleveland bring back against a Titans defense. Most builds avoid that relationship because it asks both sides to score in opposite directions. This roster survives it because Pollard carries the Tennessee script outcome, and the defense posts enough pressure and disruption to avoid sinking the slot. The process conflict lands because the points are concentrated in the one place the field refused to click.",
+    "uniquenessNotes": "Duplication pressure is extreme because Wilson is on nearly half the rosters and Nacua is a premium spend. The separation point is not a collection of small pivots. It is one massive distribution shift through Pollard.\n\nThe roster also avoids unnecessary stacking. Allen is paired with one teammate, then the build stops and lets other games supply points. That structure keeps each score additive instead of overlapping, which reduces the need for a perfect single player guess inside one team.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Pollard plus Titans defense as the low owned rushing ceiling outcome",
+      "secondaryLever": "Wilson chalk paired with Nacua to capture the full LAR at ARI scoring environment",
+      "notes": {
+        "rosterConstruction": "2-3-2-1-1",
+        "gameKey": [
+          "CIN@BUF: 2 (QB game)",
+          "TEN@CLE: 3",
+          "LAR@ARI: 2",
+          "CHI@GB: 1",
+          "PIT@BAL: 1"
+        ],
+        "billsCluster": ["J. Allen", "D. Kincaid"],
+        "titansCluster": ["T. Pollard", "H. Fannin Jr.", "Titans"],
+        "ramsCardinalsMini": ["P. Nacua", "M. Wilson"],
+        "oneOffs": ["J. Jacobs", "D. Metcalf"],
+        "qbFacedByTitansDst": "Shedeur Sanders"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "RB_PLUS_DST_PAIR_SAME_GAME",
+        "LOW_OWNED_RB_HAMMER",
+        "CHALK_WR_ACCEPTANCE",
+        "TWO_MAN_QB_STACK",
+        "DOUBLE_TE_BUILD",
+        "TWO_PLAYER_GAME_ENVIRONMENT_CAPTURE"
+      ],
+      "macroStory": "A first place roster built around one unpopular rushing eruption, while embracing the slate wide receiver ownership and keeping the rest of the construction clean and additive."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": ["PRIMARY_LEVER", "LOW_OWNED_OUTCOME", "RUSHING_CEILING"],
+        "microStory": "Pollard is the separation point. Two rushing touchdowns and 161 yards at 0.3 percent creates a score gap the field cannot match through small deviations."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["RB_PAIR", "PRESSURE_PATH", "PROCESS_CONFLICT_TOLERANCE"],
+        "microStory": "Titans defense is paired with Pollard to represent a Tennessee control script. The defense does enough through sacks and takeaways to stay neutral while Pollard supplies the touchdown density."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["CHALK_ANCHOR", "CEILING_POINTS", "NO_FADE"],
+        "microStory": "Wilson is the slate receiver outcome. The roster treats him as a required score and shifts the uniqueness burden to Pollard."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["RAW_POINTS", "SHOOTOUT_ACCESS", "TWO_MAN_STACK"],
+        "microStory": "Allen supplies the quarterback ceiling outcome while Kincaid captures a touchdown path without forcing additional Bills."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "J. Allen", "position": "QB", "team": "BUF" },
+        "teammates": [{ "name": "D. Kincaid", "position": "TE", "team": "BUF" }],
+        "opponent": null
+      },
+      {
+        "type": "RB_DST_PAIR",
+        "qb": null,
+        "teammate": { "name": "T. Pollard", "position": "RB", "team": "TEN" },
+        "opponent": { "name": "Titans", "position": "DST", "team": "TEN", "qbFaced": "Shedeur Sanders" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "P. Nacua", "position": "WR", "team": "LAR" },
+        "opponent": { "name": "M. Wilson", "position": "WR", "team": "ARI" }
       }
     ]
   }

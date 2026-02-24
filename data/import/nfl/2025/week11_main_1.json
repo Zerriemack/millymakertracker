@@ -4,10 +4,17 @@
   "week": 11,
   "slateType": "MAIN",
   "slateDate": "2025-11-16T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 11",
+  "slateTag": "SF@ARI FULL GAME BET, BRISSETT 452, MCCAFFREY + MCBRIDE CHALK PRINTING PRESS, STEELERS DST TD PATH VS FLACCO",
+  "slateGroup": "5-2-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
     "contestName": "NFL Milly Maker",
     "siteContestId": "NFL_2025_WK11_MAIN_2025-11-16T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
     "totalOwnershipBp": 13070
   },
   "winner": {
@@ -18,6 +25,14 @@
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 248.98,
+    "totalOwnershipBp": 13070,
+    "rosterConstruction": "5-2-1-1",
+    "gameKey": [
+      "SF@ARI: 5 (QB game)",
+      "CAR@ATL: 2",
+      "CHI@MIN: 1",
+      "CIN@PIT: 1"
+    ],
     "items": [
       {
         "rosterSpot": "QB",
@@ -26,7 +41,14 @@
         "team": "ARI",
         "salary": 4900,
         "points": 26.88,
-        "ownership": 14.8
+        "ownershipPercent": 14.8,
+        "passTd": 2,
+        "passYds": 452,
+        "passInt": 2,
+        "rushYds": -2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "SF"
       },
       {
         "rosterSpot": "RB",
@@ -35,7 +57,14 @@
         "team": "ATL",
         "salary": 8300,
         "points": 33.3,
-        "ownership": 11.7
+        "ownershipPercent": 11.7,
+        "rushTdRb": 2,
+        "rushYdsRb": 104,
+        "recRb": 4,
+        "recYdsRb": 39,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "CAR"
       },
       {
         "rosterSpot": "RB",
@@ -44,7 +73,13 @@
         "team": "MIN",
         "salary": 5500,
         "points": 11.1,
-        "ownership": 10.3
+        "ownershipPercent": 10.3,
+        "rushYdsRb": 70,
+        "recRb": 3,
+        "recYdsRb": 11,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "CHI"
       },
       {
         "rosterSpot": "WR",
@@ -53,7 +88,12 @@
         "team": "ARI",
         "salary": 3800,
         "points": 36.5,
-        "ownership": 23.8
+        "ownershipPercent": 23.8,
+        "rec": 15,
+        "recYds": 185,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "SF"
       },
       {
         "rosterSpot": "WR",
@@ -62,7 +102,13 @@
         "team": "ARI",
         "salary": 3300,
         "points": 18.6,
-        "ownership": 8.8
+        "ownershipPercent": 8.8,
+        "rec": 6,
+        "recYds": 66,
+        "recTd": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "SF"
       },
       {
         "rosterSpot": "WR",
@@ -70,8 +116,14 @@
         "position": "WR",
         "team": "CAR",
         "salary": 5600,
-        "points": 36,
-        "ownership": 2.7
+        "points": 36.0,
+        "ownershipPercent": 2.7,
+        "rec": 8,
+        "recYds": 130,
+        "recTd": 2,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
       },
       {
         "rosterSpot": "TE",
@@ -80,7 +132,13 @@
         "team": "ARI",
         "salary": 6300,
         "points": 30.5,
-        "ownership": 33.7
+        "ownershipPercent": 33.7,
+        "rec": 10,
+        "recYds": 115,
+        "recTd": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "SF"
       },
       {
         "rosterSpot": "FLEX",
@@ -89,7 +147,15 @@
         "team": "SF",
         "salary": 9000,
         "points": 35.1,
-        "ownership": 22
+        "ownershipPercent": 22.0,
+        "rushTdRb": 2,
+        "rushYdsRb": 81,
+        "recRb": 5,
+        "recYdsRb": 40,
+        "recTdRb": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
       },
       {
         "rosterSpot": "DST",
@@ -97,11 +163,105 @@
         "position": "DST",
         "team": "PIT",
         "salary": 3300,
-        "points": 21,
-        "ownership": 2.9
+        "points": 21.0,
+        "ownershipPercent": 2.9,
+        "sacks": 1,
+        "takeaways": 1,
+        "defensiveTdCount": 2,
+        "pointsAllowed": 13,
+        "qbFaced": "Joe Flacco",
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "CIN"
       }
     ]
   },
-  "lineupType": "CLASSIC",
-  "slateKey": "NFL_2025_WK11_MAIN_2025-11-16T17:00:00.000Z"
+  "analysis": {
+    "stackSummary": "This lineup wins by treating SF at ARI as the only game that matters, then building the roster to survive the messy ways a shootout can arrive. Brissett throws for 452 yards with two interceptions and still lands as a tournament winning quarterback because the roster is not asking him to be clean. It is asking him to force volume. The stack then uses three different catch profiles. McBride is the possession and red zone consolidator, Wilson is the target avalanche that turns into a slate score without needing multiple touchdowns, and Dortch is the small salary attachment that still carries one touchdown access.\n\nMcCaffrey is the opposing hammer that completes the game environment. His points come through both rushing and receiving, so the lineup captures the version of San Francisco scoring that stays live regardless of how the touchdowns distribute. A full game bet works when both sides keep producing, and McCaffrey is the cleanest way to hold San Francisco scoring without needing to guess a specific receiver.\n\nThe second game the roster gets right is CAR at ATL. Robinson provides the stable rushing touchdown base, then McMillan supplies the low owned ceiling that makes the two man game exposure meaningful. When a lineup already carries five players from one game, it cannot waste the remaining correlation. McMillan brings two touchdowns at two point seven percent and immediately separates the roster from the common Robinson builds.\n\nThe Steelers defense is the third correct game and the actual contest decider. A Flacco start against an in division opponent after a midseason trade is the sort of organizational chaos defenses can exploit. The outcome shows up as two defensive touchdowns, which is the type of score the field cannot reproduce through normal roster construction.",
+    "uniquenessNotes": "The roster is chalky in the right places and unique in the only places that matter. McBride and McCaffrey are the plays the best plays anchors. This lineup does not pretend it found a secret. It accepts them and then builds a structure that most of the field will not tolerate.\n\nThe first separator is the five man game stack. It forces a single game to carry over half the roster and it does it with a quarterback many lineups would not pair with both McBride and McCaffrey. The second separator is how the stack allocates points. Wilson can win without multiple touchdowns, McBride can win through receptions plus a score, and Dortch gives salary relief without sacrificing touchdown access. That spread prevents the stack from being fragile.\n\nMcMillan and the Steelers defense are the final separation. McMillan is the low owned touchdown capture inside the second game the lineup chooses to care about. The Steelers defense is the rare outcome slot. Two defensive touchdowns is not something the field can plan for, but a low owned defense that can get paid that way is exactly what lets a chalk core win a 200,000 entry contest.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Five player SF at ARI game bet built around reception volume plus a dual role opposing RB, with McBride as the chalk anchor",
+      "secondaryLever": "CAR at ATL mini where McMillan carries the low owned touchdown concentration, plus Steelers DST touchdown path versus Flacco",
+      "notes": {
+        "rosterConstruction": "5-2-1-1",
+        "sfAriCluster": ["J. Brissett", "M. Wilson", "G. Dortch", "T. McBride", "C. McCaffrey"],
+        "carAtlMini": ["B. Robinson", "T. McMillan"],
+        "oneOff": "A. Jones Sr.",
+        "dstQbFaced": "Joe Flacco"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FIVE_MAN_QB_GAME_STACK",
+        "TRIPLE_PASS_CATCHER_DISTRIBUTION",
+        "OPPOSING_RB_HAMMER_SAME_GAME",
+        "SECOND_GAME_TWO_MAN_CORRELATION",
+        "LOW_OWNED_TD_WR",
+        "DEFENSIVE_TD_DST_PATH"
+      ],
+      "macroStory": "A first place build driven by one full game environment landing at a high volume level, supported by a second correlated game hit and a defense that posts an unreplicable touchdown score. The roster accepts chalk at tight end and running back, then wins through structure and touchdown concentration in the low owned slots."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "VOLUME_FORCING", "STACK_ANCHOR"],
+        "microStory": "Brissett is not a clean box score, and that is the point. The 452 passing yards forces enough plays for three Arizona pass catchers to matter, even with two interceptions."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["TARGET_AVALANCHE", "PPR_CEILING", "NON_TD_SLATE_SCORE"],
+        "microStory": "Wilson provides the rare wide receiver line where the yards and receptions create a tournament score without needing a multi touchdown script."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["CHALK_ANCHOR", "ROLE_STABILITY", "RED_ZONE_CONSOLIDATION"],
+        "microStory": "McBride is the printing press. Ten for 115 with a touchdown is exactly why paying up at tight end can still be correct even when the field is there too."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 2,
+        "roleTags": ["LOW_OWNED_TOUCHDOWN_CAPTURE", "MINI_STACK_PAYOFF"],
+        "microStory": "McMillan is where the roster gets paid. Two touchdowns at two point seven percent turns a two man secondary game into a real separator."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNED_SEPARATION", "DEFENSIVE_TOUCHDOWN_PATH", "QB_FACED_SIGNAL"],
+        "microStory": "Steelers defense is the final edge. Two defensive touchdowns against Flacco is a score the slate cannot absorb without collapsing duplication around it."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "J. Brissett", "position": "QB", "team": "ARI" },
+        "teammates": [
+          { "name": "M. Wilson", "position": "WR", "team": "ARI" },
+          { "name": "G. Dortch", "position": "WR", "team": "ARI" },
+          { "name": "T. McBride", "position": "TE", "team": "ARI" }
+        ],
+        "opponent": { "name": "C. McCaffrey", "position": "RB", "team": "SF" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "B. Robinson", "position": "RB", "team": "ATL" },
+        "opponent": { "name": "T. McMillan", "position": "WR", "team": "CAR" }
+      },
+      {
+        "type": "DST_QB_FACED",
+        "qb": null,
+        "teammate": {
+          "name": "Steelers",
+          "position": "DST",
+          "team": "PIT",
+          "qbFaced": "Joe Flacco"
+        },
+        "opponent": { "name": "Joe Flacco", "position": "QB", "team": "CIN" }
+      }
+    ]
+  }
 }

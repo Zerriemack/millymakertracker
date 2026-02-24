@@ -4,12 +4,17 @@
   "week": 13,
   "slateType": "MAIN",
   "slateDate": "2025-11-30T00:00:00.000Z",
+  "slateName": "NFL Main Slate Week 13",
+  "slateTag": "SEAHAWKS DST VS ROOKIE START, BRISSETT HEATER, THREE 2-MAN GAME CLUSTERS",
+  "slateGroup": "1-2-2-2-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
     "contestName": "Milly Maker",
+    "siteContestId": "NFL_2025_WK13_MAIN_2025-11-30T00:00:00.000Z_DK_MAIN_MILLY",
     "entryFeeCents": 2000,
+    "entries": null,
     "topPrizeCents": 100000000,
-    "siteContestId": "NFL_2025_13_CLASSIC_main_20251130__nfl_millionaire_maker",
     "totalOwnershipBp": 12050
   },
   "winner": {
@@ -20,6 +25,16 @@
   "lineup": {
     "salaryUsed": 49900,
     "totalPoints": 205.44,
+    "totalOwnershipBp": 12050,
+    "rosterConstruction": "1-2-2-2-1-1",
+    "gameKey": [
+      "ARI@TB: 1 (QB game)",
+      "LV@LAC: 2",
+      "ATL@NYJ: 2",
+      "HOU@IND: 2",
+      "LAR@CAR: 1",
+      "MIN@SEA: 1"
+    ],
     "items": [
       {
         "rosterSpot": "QB",
@@ -28,7 +43,14 @@
         "team": "ARI",
         "salary": 5800,
         "points": 23.64,
-        "ownership": 17.2
+        "ownershipPercent": 17.2,
+        "passTd": 2,
+        "passYds": 301,
+        "rushYds": 16,
+        "passInt": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
       },
       {
         "rosterSpot": "RB",
@@ -37,7 +59,14 @@
         "team": "LAC",
         "salary": 5700,
         "points": 23.7,
-        "ownership": 16.1
+        "ownershipPercent": 16.1,
+        "rushTdRb": 1,
+        "rushYdsRb": 126,
+        "recRb": 1,
+        "recYdsRb": 11,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LV"
       },
       {
         "rosterSpot": "RB",
@@ -46,7 +75,14 @@
         "team": "ATL",
         "salary": 8500,
         "points": 33.3,
-        "ownership": 14.4
+        "ownershipPercent": 14.4,
+        "rushTdRb": 1,
+        "rushYdsRb": 142,
+        "recRb": 5,
+        "recYdsRb": 51,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
       },
       {
         "rosterSpot": "WR",
@@ -55,7 +91,14 @@
         "team": "HOU",
         "salary": 6700,
         "points": 21.5,
-        "ownership": 21.4
+        "ownershipPercent": 21.4,
+        "rec": 5,
+        "recYds": 98,
+        "rushYds": 7,
+        "rushTd": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
       },
       {
         "rosterSpot": "WR",
@@ -64,7 +107,13 @@
         "team": "CAR",
         "salary": 6100,
         "points": 11.3,
-        "ownership": 9.0
+        "ownershipPercent": 9.0,
+        "rec": 1,
+        "recYds": 43,
+        "recTd": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "LAR"
       },
       {
         "rosterSpot": "WR",
@@ -73,7 +122,13 @@
         "team": "NYJ",
         "salary": 3600,
         "points": 27.2,
-        "ownership": 7.7
+        "ownershipPercent": 7.7,
+        "rec": 8,
+        "recYds": 102,
+        "recTd": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "ATL"
       },
       {
         "rosterSpot": "TE",
@@ -82,7 +137,12 @@
         "team": "HOU",
         "salary": 3800,
         "points": 12.5,
-        "ownership": 10.6
+        "ownershipPercent": 10.6,
+        "rec": 7,
+        "recYds": 55,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
       },
       {
         "rosterSpot": "FLEX",
@@ -91,7 +151,13 @@
         "team": "LV",
         "salary": 5800,
         "points": 22.3,
-        "ownership": 10.0
+        "ownershipPercent": 10.0,
+        "rec": 4,
+        "recYds": 63,
+        "recTd": 2,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
       },
       {
         "rosterSpot": "DST",
@@ -100,7 +166,95 @@
         "team": "SEA",
         "salary": 3900,
         "points": 30.0,
-        "ownership": 14.1
+        "ownershipPercent": 14.1,
+        "sacks": 4,
+        "takeaways": 5,
+        "defensiveTdCount": 1,
+        "pointsAllowed": 0,
+        "qbFaced": "Max Brosmer",
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "MIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins with a small slate score because it chooses the only place where the slate offered a true outlier. Seattle defense versus a rookie making a first start is a structural mismatch, and the lineup captures it with four sacks, four interceptions, and a defensive touchdown. When a defense posts 30, it compresses the rest of the roster requirements and turns a mid tier quarterback score into enough.\n\nBrissett functions as a solo volume bet. Arizona spent weeks in negative script, and Brissett kept landing yardage and touchdown totals without needing an elite efficiency profile. This lineup does not force a teammate, which avoids guessing a single correct target and keeps salary flexible for the three two player clusters.\n\nThe roster then spreads its exposure across three separate two man game pockets. Vidal with Bowers captures the Chargers win while still benefiting from a Raiders tight end scoring outcome. Robinson with Mitchell captures the Jets Falcons game without tying the roster to a quarterback. Collins with Schultz captures the Texans game through two different scoring channels, one player with touchdown access and one player with reception volume.\n\nTwo scores land under 20 and it still wins because the defense creates a points gap most rosters never touch.",
+    "uniquenessNotes": "The lineup avoids over committing to any one game environment. The only hard commitment is Seattle defense, because that score is the slate breaker. Everything else is distributed into two player clusters that can win independently.\n\nBrissett without a teammate is a purposeful choice. It increases the number of combinations available while still gaining access to his passing yard bonus and touchdown path.\n\nThe two tight end structure also matters. Bowers adds a second touchdown lane at a position where many rosters settle for thin volume, and Schultz provides reception based stability. That pairing reduces reliance on a third wide receiver needing a spike.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Seahawks DST slate breaker versus rookie QB start, with Brissett used as a solo volume bet",
+      "secondaryLever": "Three separate two player game pockets plus double tight end touchdown access",
+      "notes": {
+        "rosterConstruction": "1-2-2-2-1-1",
+        "brissettSolo": "J. Brissett",
+        "lvLacPocket": ["K. Vidal", "B. Bowers"],
+        "atlNyjPocket": ["B. Robinson", "A. Mitchell"],
+        "houIndPocket": ["N. Collins", "D. Schultz"],
+        "oneOff": "T. McMillan",
+        "dstQbFaced": "Max Brosmer"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "DEFENSE_SLATE_BREAKER",
+        "SOLO_QB_VOLUME_BET",
+        "THREE_TWO_PLAYER_GAME_POCKETS",
+        "DOUBLE_TE_BUILD",
+        "RB_WITH_REC_ROLE",
+        "DST_QB_FACED_ROOKIE_START"
+      ],
+      "macroStory": "A first place roster where defense creates the winning margin. The build stays modular elsewhere, using small correlated pockets across multiple games and allowing a lower raw team total to win because Seattle provides a rare 30 point defense score."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_SEPARATOR", "TURNOVER_DENSITY", "DEFENSIVE_TD_PATH"],
+        "microStory": "Seattle defense decides the contest. Four interceptions plus a defensive touchdown against Max Brosmer produces a score that changes the required ceiling for every other slot."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["SOLO_ENGINE", "VOLUME_PATH", "BONUS_ACCESS"],
+        "microStory": "Brissett supplies the passing yard bonus and two touchdowns without needing a teammate to reach value."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["TD_CONCENTRATION", "POSITIONAL_ADVANTAGE"],
+        "microStory": "Bowers provides two touchdowns from tight end, which keeps the lineup from needing a wide receiver spike outside the mini game pockets."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "K. Vidal", "position": "RB", "team": "LAC" },
+        "opponent": { "name": "B. Bowers", "position": "TE", "team": "LV" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "B. Robinson", "position": "RB", "team": "ATL" },
+        "opponent": { "name": "A. Mitchell", "position": "WR", "team": "NYJ" }
+      },
+      {
+        "type": "TEAM_PAIR",
+        "qb": null,
+        "teammate": { "name": "N. Collins", "position": "WR", "team": "HOU" },
+        "opponent": { "name": "D. Schultz", "position": "TE", "team": "HOU" }
+      },
+      {
+        "type": "DST_QB_FACED",
+        "qb": null,
+        "teammate": {
+          "name": "Seahawks",
+          "position": "DST",
+          "team": "SEA",
+          "qbFaced": "Max Brosmer"
+        },
+        "opponent": { "name": "Max Brosmer", "position": "QB", "team": "MIN" }
       }
     ]
   }
