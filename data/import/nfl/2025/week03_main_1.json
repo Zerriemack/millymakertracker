@@ -4,10 +4,16 @@
   "week": 3,
   "slateType": "MAIN",
   "slateDate": "2025-09-21T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 3",
+  "slateTag": "VIKINGS DST VS BROWNING",
+  "slateGroup": "3-2-2-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
-    "contestName": "NFL Milly Maker",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
     "siteContestId": "NFL_2025_WK03_MAIN_2025-09-21T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
     "topPrizeCents": 100000000,
     "totalOwnershipBp": 11950
   },
@@ -19,6 +25,7 @@
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 231.06,
+    "totalOwnershipBp": 11950,
     "items": [
       {
         "rosterSpot": "QB",
@@ -27,7 +34,13 @@
         "team": "LV",
         "salary": 5200,
         "points": 26.06,
-        "ownership": 1.1
+        "ownershipPercent": 1.1,
+        "passTd": 3,
+        "passYds": 289,
+        "rushYds": 5,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
       },
       {
         "rosterSpot": "RB",
@@ -36,7 +49,14 @@
         "team": "IND",
         "salary": 7200,
         "points": 35.8,
-        "ownership": 24.1
+        "ownershipPercent": 24.1,
+        "rushYdsRb": 102,
+        "rushTdRb": 3,
+        "recRb": 3,
+        "recYdsRb": 16,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
       },
       {
         "rosterSpot": "RB",
@@ -45,7 +65,12 @@
         "team": "MIN",
         "salary": 5400,
         "points": 26.6,
-        "ownership": 35.5
+        "ownershipPercent": 35.5,
+        "rushYdsRb": 116,
+        "rushTdRb": 2,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "CIN"
       },
       {
         "rosterSpot": "WR",
@@ -54,7 +79,12 @@
         "team": "SF",
         "salary": 5500,
         "points": 22.7,
-        "ownership": 11.0
+        "ownershipPercent": 11.0,
+        "rec": 8,
+        "recYds": 117,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "ARI"
       },
       {
         "rosterSpot": "WR",
@@ -63,16 +93,29 @@
         "team": "PIT",
         "salary": 5700,
         "points": 12.2,
-        "ownership": 9.3
+        "ownershipPercent": 9.3,
+        "rec": 3,
+        "recYds": 32,
+        "recTd": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
       },
       {
         "rosterSpot": "WR",
         "name": "T. Tucker",
         "position": "WR",
-        "team": "WAS",
+        "team": "LV",
         "salary": 3400,
         "points": 43.9,
-        "ownership": 0.6
+        "ownershipPercent": 0.6,
+        "rec": 8,
+        "recYds": 145,
+        "recTd": 3,
+        "rushYds": 4,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
       },
       {
         "rosterSpot": "TE",
@@ -81,7 +124,12 @@
         "team": "LV",
         "salary": 6000,
         "points": 9.8,
-        "ownership": 7.8
+        "ownershipPercent": 7.8,
+        "rec": 4,
+        "recYds": 38,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
       },
       {
         "rosterSpot": "FLEX",
@@ -90,7 +138,13 @@
         "team": "SF",
         "salary": 8200,
         "points": 24.0,
-        "ownership": 25.5
+        "ownershipPercent": 25.5,
+        "rushYdsRb": 52,
+        "recRb": 10,
+        "recYdsRb": 88,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "ARI"
       },
       {
         "rosterSpot": "DST",
@@ -99,7 +153,94 @@
         "team": "MIN",
         "salary": 3400,
         "points": 30.0,
-        "ownership": 4.6
+        "ownershipPercent": 4.6,
+        "sacks": 4,
+        "takeaways": 5,
+        "defensiveTdCount": 2,
+        "pointsAllowedBucket": 13,
+        "qbFaced": "Jake Browning",
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "CIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "The roster accepts a scoreboard loss in LV at WAS and still uses that game as the scoring engine. Geno Smith at low ownership lands in a game script where volume rises after the deficit. The key is how the stack is built. Tre Tucker carries the spike profile and takes three touchdowns, while Brock Bowers stays functional without stealing the same scoring. Bowers absorbs enough of the passing game to keep the stack coherent, but the touchdowns flow through Tucker, which avoids cannibalizing the ceiling.\n\nThe rest of the roster is structured to keep the LV comeback story independent from every other bet. Jonathan Taylor is the separate eruption. Three rushing touchdowns means his points do not require any pass catchers to be correct. The Minnesota pair targets a different kind of leverage. Jordan Mason supplies the offense points, then the Vikings defense attacks the Bengals after the quarterback change to Jake Browning. Two defensive touchdowns is the kind of score that flips tournament math, and the build is one of the few constructions that can carry it without losing salary efficiency elsewhere.\n\nSan Francisco is a controlled secondary lane. Pearsall plus McCaffrey gives exposure to yardage accumulation on both sides of the usage tree, receiver volume plus running back plus receiving work, without needing another teammate. Metcalf is the lone receiver slot whose job is simple, get a touchdown and keep the roster balanced across games.",
+    "uniquenessNotes": "The separation starts with the LV stack working in a loss. Many builds avoid stacking a team that gets smashed, even when the passing volume can rise late. Geno plus Tucker plus Bowers is a concentrated bet on targets remaining stable and touchdowns concentrating through one wide receiver. Tucker at 0.6 percent is the true differentiator, but the structure matters more than the number. Bowers at under eight percent prevents the stack from becoming a single player parlay.\n\nThe defense selection is not random. Minnesota facing Browning creates a path to pressure, mistakes, and defensive scoring, and the lineup carries that outcome without forcing a Bengals bring back. Mason keeps Minnesota points alive through offense while the defense scores through disruption. Taylor supplies another isolated ceiling so the roster does not need perfect alignment across every game.\n\nThe final layer is portfolio balance inside a single lineup. Two players from SF, three from LV, and two from MIN creates multiple scoring routes without over committing to one matchup producing every point.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Low owned LV passing stack still viable in a blowout loss because comeback volume stays high",
+      "secondaryLever": "Vikings defense leveraged against Jake Browning after Burrow injury, paired with Mason to keep Minnesota scoring live",
+      "notes": {
+        "rosterConstruction": "QB, 2 RB, 3 WR, TE, FLEX, DST",
+        "lvWshCluster": ["G. Smith", "T. Tucker", "B. Bowers"],
+        "vikingsBengalsPair": ["J. Mason", "Vikings"],
+        "ninersPair": ["R. Pearsall", "C. McCaffrey"],
+        "oneOffHammer": "J. Taylor",
+        "soloTdSlot": "D. Metcalf",
+        "qbFacedByVikingsDst": "Jake Browning",
+        "lvScoreNote": "LV 24 at WAS 41"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNED_QB_ENGINE",
+        "TRIPLE_STACK_NO_BRING_BACK",
+        "SINGLE_PLAYER_TOUCHDOWN_CONCENTRATION",
+        "RB_ONE_OFF_TOUCHDOWN_MONOPOLY",
+        "RB_PLUS_DST_SAME_TEAM_DUAL_SCORING_CHANNELS",
+        "TWO_PLAYER_SAME_TEAM_YARDAGE_LANE"
+      ],
+      "macroStory": "A first place build where the main stack survives a losing game script, then the roster adds independent touchdown sources through Taylor and the Vikings defense. The construction spreads ceiling events across multiple games while keeping each event internally consistent."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNED_OUTCOME", "GAME_SCRIPT_VOLUME"],
+        "microStory": "Geno Smith is the entry point. The roster expects the pass volume to keep rising after the deficit, then captures the production through two different target types."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 2,
+        "roleTags": ["TOUCHDOWN_CONCENTRATION", "PRIMARY_CEILING_CAPTURE", "STACK_BREAKER"],
+        "microStory": "Tre Tucker is the slate winner. Three receiving touchdowns at 0.6 percent ownership creates separation that no normal roster cluster can match."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["STACK_STABILIZER", "NON_REDUNDANT_POINTS", "DRIVE_LEVEL_USAGE"],
+        "microStory": "Brock Bowers keeps the stack complete without needing a touchdown. His points come through catches and yards, which allows Tucker to own the scoring."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["QB_PRESSURE_PATH", "TURNOVER_ACCESS", "DEFENSIVE_TOUCHDOWN_CEILING"],
+        "microStory": "Minnesota defense targets the backup quarterback situation. Facing Jake Browning after Burrow injury opens the path to mistakes, and two defensive touchdowns turns a mid owned roster into a solo lane."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "G. Smith", "position": "QB", "team": "LV" },
+        "teammates": [
+          { "name": "T. Tucker", "position": "WR", "team": "LV" },
+          { "name": "B. Bowers", "position": "TE", "team": "LV" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "TEAM_PAIR",
+        "qb": null,
+        "teammate": { "name": "R. Pearsall", "position": "WR", "team": "SF" },
+        "opponent": { "name": "C. McCaffrey", "position": "RB", "team": "SF" }
+      },
+      {
+        "type": "RB_DST_PAIR",
+        "qb": null,
+        "teammate": { "name": "J. Mason", "position": "RB", "team": "MIN" },
+        "opponent": { "name": "Vikings", "position": "DST", "team": "MIN", "qbFaced": "Jake Browning" }
       }
     ]
   }

@@ -4,10 +4,17 @@
   "week": 6,
   "slateType": "MAIN",
   "slateDate": "2025-10-12T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 6",
+  "slateTag": "PLAY THE BEST PLAYS, COLTS DST VS BRISSETT, BOUTTE 1.2 PERCENT",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
-    "contestName": "NFL Milly Maker",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
     "siteContestId": "NFL_2025_WK06_MAIN_2025-10-12T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
     "totalOwnershipBp": 15750
   },
   "winner": {
@@ -16,8 +23,9 @@
     "maxEntries": 5
   },
   "lineup": {
-    "salaryUsed": 50000,
+    "salaryUsed": 49900,
     "totalPoints": 227.14,
+    "totalOwnershipBp": 15750,
     "items": [
       {
         "rosterSpot": "QB",
@@ -26,7 +34,13 @@
         "team": "NE",
         "salary": 5900,
         "points": 27.24,
-        "ownership": 12
+        "ownershipPercent": 12.0,
+        "passTd": 3,
+        "passYds": 261,
+        "rushYds": 28,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
       },
       {
         "rosterSpot": "RB",
@@ -34,8 +48,15 @@
         "position": "RB",
         "team": "GB",
         "salary": 7300,
-        "points": 32,
-        "ownership": 29.8
+        "points": 32.0,
+        "ownershipPercent": 29.8,
+        "rushYdsRb": 93,
+        "rushTdRb": 2,
+        "recRb": 5,
+        "recYdsRb": 57,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "CIN"
       },
       {
         "rosterSpot": "RB",
@@ -44,7 +65,14 @@
         "team": "LAR",
         "salary": 6300,
         "points": 16.7,
-        "ownership": 23.7
+        "ownershipPercent": 23.7,
+        "rushYdsRb": 50,
+        "rushTdRb": 1,
+        "recRb": 2,
+        "recYdsRb": 37,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
       },
       {
         "rosterSpot": "WR",
@@ -53,7 +81,13 @@
         "team": "SEA",
         "salary": 7600,
         "points": 33.2,
-        "ownership": 25.2
+        "ownershipPercent": 25.2,
+        "rec": 8,
+        "recYds": 162,
+        "recTd": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
       },
       {
         "rosterSpot": "WR",
@@ -62,7 +96,13 @@
         "team": "DAL",
         "salary": 6800,
         "points": 34.8,
-        "ownership": 9.5
+        "ownershipPercent": 9.5,
+        "rec": 9,
+        "recYds": 168,
+        "recTd": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
       },
       {
         "rosterSpot": "WR",
@@ -71,7 +111,13 @@
         "team": "NE",
         "salary": 3800,
         "points": 26.3,
-        "ownership": 1.2
+        "ownershipPercent": 1.2,
+        "rec": 5,
+        "recYds": 93,
+        "recTd": 2,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
       },
       {
         "rosterSpot": "TE",
@@ -79,8 +125,14 @@
         "position": "TE",
         "team": "LV",
         "salary": 3100,
-        "points": 16,
-        "ownership": 4.8
+        "points": 16.0,
+        "ownershipPercent": 4.8,
+        "rec": 5,
+        "recYds": 50,
+        "recTd": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "TEN"
       },
       {
         "rosterSpot": "FLEX",
@@ -89,7 +141,14 @@
         "team": "CAR",
         "salary": 5800,
         "points": 36.9,
-        "ownership": 37.6
+        "ownershipPercent": 37.6,
+        "rushYdsRb": 183,
+        "recRb": 4,
+        "recYdsRb": 56,
+        "recTdRb": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "DAL"
       },
       {
         "rosterSpot": "DST",
@@ -97,11 +156,97 @@
         "position": "DST",
         "team": "IND",
         "salary": 3300,
-        "points": 4,
-        "ownership": 13.7
+        "points": 4.0,
+        "ownershipPercent": 13.7,
+        "sacks": 2,
+        "takeaways": 1,
+        "qbFaced": "Jacoby Brissett",
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "ARI"
       }
     ]
   },
-  "lineupType": "CLASSIC",
-  "slateKey": "NFL_2025_WK06_MAIN_2025-10-12T17:00:00.000Z"
+  "analysis": {
+    "stackSummary": "This lineup is a two game anchor build that stays aggressive without turning into a fragile chain. The Patriots portion is Maye with Boutte. It is a precise bet on touchdown allocation inside a Maye ceiling outcome. Maye supplies three passing touchdowns plus rushing production, then Boutte absorbs the highest value portion of the box score with two receiving touchdowns at 1.2 percent.\n\nThe second cluster is Dallas at Carolina, built around Pickens and Dowdle. It captures two different scoring channels from the same game. Pickens wins through downfield volume and touchdown access. Dowdle wins through rushing dominance plus a receiving touchdown, creating a ceiling that does not require the quarterback to be correct.\n\nThe remaining pieces are isolated ceiling captures. Jacobs is the high ownership score the roster accepts because it is required. Smith-Njigba provides a reception plus yardage outcome that holds pace with the slate. Williams and Mayer are touchdown outcomes at manageable salary. The Colts defense is a controlled selection tied to Jacoby Brissett starting for an injured Kyler Murray, where the points come from pressure and an interception rather than needing a defensive touchdown.",
+    "uniquenessNotes": "Separation comes from one decision and one structural discipline. The decision is Boutte. The roster does not need an exotic story to justify him. It needs Maye to reach multiple passing touchdowns and it needs one of those touchdowns to land on a receiver the field does not prioritize.\n\nThe discipline is how the lineup handles game correlation. The Dallas Carolina pairing gets exposure to a high scoring pocket without forcing a quarterback stack. That matters because the roster already has its quarterback bet in the Patriots game. This keeps the build from over committing to one script and it protects the lineup from dead slots if one passing game under performs.\n\nIndianapolis defense is not a ceiling chase. It is a refusal to donate points at defense while still retaining sack and turnover access against a backup quarterback.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Maye paired with Boutte as a two man Patriots touchdown concentration bet",
+      "secondaryLever": "Pickens plus Dowdle from the same game without forcing a quarterback attachment",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "NE@NO: 2 (QB game)",
+          "DAL@CAR: 2",
+          "CIN@GB: 1",
+          "LAR@BAL: 1",
+          "SEA@JAX: 1",
+          "TEN@LV: 1",
+          "ARI@IND: 1"
+        ],
+        "patriotsCore": ["D. Maye", "K. Boutte"],
+        "cowboysPanthersMini": ["G. Pickens", "R. Dowdle"],
+        "oneOffCeilings": ["J. Jacobs", "J. Smith-Njigba", "K. Williams", "M. Mayer"],
+        "dstQbFaced": "Jacoby Brissett"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "TWO_MAN_QB_WR_CORE",
+        "LOW_OWNED_TD_CONCENTRATION",
+        "TWO_PLAYER_GAME_CLUSTER_NO_QB",
+        "HIGH_OWNERSHIP_RB_ABSORPTION",
+        "SPREAD_ONE_OFF_CEILINGS",
+        "DST_TARGET_QB_CONTEXT"
+      ],
+      "macroStory": "A first place build built around two game clustering with a low owned touchdown capture inside the quarterback game. The roster then spreads remaining slots across independent ceiling games, staying flexible while still collecting enough raw points to win."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "MULTI_TD_PASSING", "RUSHING_BONUS"],
+        "microStory": "Maye is the anchor because his score combines passing touchdowns with rushing production. It gives the roster a quarterback ceiling without requiring multiple pass catchers to be correct."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 2,
+        "roleTags": ["LOW_OWNED_TOUCHDOWN_CAPTURE", "RED_ZONE_CONVERSION"],
+        "microStory": "Boutte is the decision point. Two receiving touchdowns at 1.2 percent converts a Maye ceiling game into a leverage outcome the field almost never holds."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["RUSHING_HAMMER", "ADDS_RECEIVING_LAYER", "GAME_CLUSTER"],
+        "microStory": "Dowdle supplies the slate winning rushing yard outcome. The receiving touchdown keeps the score from being empty volume and it pairs with Pickens without overlap."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRESSURE_AND_TURNOVER_PATH", "QB_CONTEXT_TARGET"],
+        "microStory": "Indianapolis is anchored to Brissett starting. Two sacks and an interception keeps the slot viable without needing an outlier defensive touchdown."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "D. Maye", "position": "QB", "team": "NE" },
+        "teammates": [{ "name": "K. Boutte", "position": "WR", "team": "NE" }],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "G. Pickens", "position": "WR", "team": "DAL" },
+        "opponent": { "name": "R. Dowdle", "position": "RB", "team": "CAR" }
+      },
+      {
+        "type": "DST_QB_FACED",
+        "qb": null,
+        "teammate": { "name": "Colts", "position": "DST", "team": "IND", "qbFaced": "Jacoby Brissett" },
+        "opponent": { "name": "Jacoby Brissett", "position": "QB", "team": "ARI" }
+      }
+    ]
+  }
 }

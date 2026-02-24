@@ -4,10 +4,17 @@
   "week": 7,
   "slateType": "MAIN",
   "slateDate": "2025-10-19T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 7",
+  "slateTag": "ONE GAME CORE, DOUBLE TE, PANTHERS DST VS FIELDS AND TYROD, LV STINKS META, PLAY THE BEST PLAYS",
+  "slateGroup": "4-1-1-1-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
     "contestName": "NFL Milly Maker",
     "siteContestId": "NFL_2025_WK07_MAIN_2025-10-19T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
     "totalOwnershipBp": 14040
   },
   "winner": {
@@ -18,6 +25,7 @@
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 249.6,
+    "totalOwnershipBp": 14040,
     "items": [
       {
         "rosterSpot": "QB",
@@ -26,7 +34,14 @@
         "team": "LAC",
         "salary": 6400,
         "points": 32.9,
-        "ownership": 6
+        "ownershipPercent": 6.0,
+        "passTd": 3,
+        "passYds": 420,
+        "rushYds": 31,
+        "passInt": 2,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "IND"
       },
       {
         "rosterSpot": "RB",
@@ -35,7 +50,14 @@
         "team": "DAL",
         "salary": 6700,
         "points": 21.8,
-        "ownership": 22.3
+        "ownershipPercent": 22.3,
+        "rushYdsRb": 116,
+        "rushTdRb": 1,
+        "recRb": 1,
+        "recYdsRb": 2,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "WAS"
       },
       {
         "rosterSpot": "RB",
@@ -44,7 +66,14 @@
         "team": "IND",
         "salary": 8800,
         "points": 34.2,
-        "ownership": 28.6
+        "ownershipPercent": 28.6,
+        "rushYdsRb": 94,
+        "rushTdRb": 3,
+        "recRb": 3,
+        "recYdsRb": 38,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
       },
       {
         "rosterSpot": "WR",
@@ -53,7 +82,13 @@
         "team": "LAC",
         "salary": 5500,
         "points": 31.9,
-        "ownership": 6.2
+        "ownershipPercent": 6.2,
+        "rec": 11,
+        "recYds": 119,
+        "recTd": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "IND"
       },
       {
         "rosterSpot": "WR",
@@ -62,7 +97,13 @@
         "team": "KC",
         "salary": 5600,
         "points": 23.2,
-        "ownership": 37
+        "ownershipPercent": 37.0,
+        "rec": 7,
+        "recYds": 42,
+        "recTd": 2,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LV"
       },
       {
         "rosterSpot": "WR",
@@ -71,7 +112,13 @@
         "team": "NO",
         "salary": 5400,
         "points": 26.8,
-        "ownership": 16.4
+        "ownershipPercent": 16.4,
+        "rec": 5,
+        "recYds": 98,
+        "recTd": 2,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
       },
       {
         "rosterSpot": "TE",
@@ -80,7 +127,13 @@
         "team": "LAC",
         "salary": 3300,
         "points": 32.4,
-        "ownership": 1.4
+        "ownershipPercent": 1.4,
+        "rec": 7,
+        "recYds": 164,
+        "recTd": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "IND"
       },
       {
         "rosterSpot": "FLEX",
@@ -89,7 +142,13 @@
         "team": "ARI",
         "salary": 5700,
         "points": 29.4,
-        "ownership": 14
+        "ownershipPercent": 14.0,
+        "rec": 10,
+        "recYds": 74,
+        "recTd": 2,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "GB"
       },
       {
         "rosterSpot": "DST",
@@ -97,11 +156,101 @@
         "position": "DST",
         "team": "CAR",
         "salary": 2500,
-        "points": 17,
-        "ownership": 8.5
+        "points": 17.0,
+        "ownershipPercent": 8.5,
+        "sacks": 6,
+        "takeaways": 2,
+        "pointsAllowedBucket": 6,
+        "qbFaced": "Justin Fields / Tyrod Taylor",
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
       }
     ]
   },
-  "lineupType": "CLASSIC",
-  "slateKey": "NFL_2025_WK07_MAIN_2025-10-19T17:00:00.000Z"
+  "analysis": {
+    "stackSummary": "This is a one game core build that treats the IND at LAC environment as the slate’s primary scoring engine, then uses two tight ends to widen the ceiling without adding dead weight. Herbert plus Allen is the stable connection, but the defining choice is committing to Gadsden as the second pass catcher. His 164 yards and a touchdown at 1.4 percent reshapes a common game concentration into a rare distribution.\n\nTaylor completes the four player core as the opponent hammer. Three rushing touchdowns is the highest leverage scoring available in a shootout because it absorbs red zone points while still allowing Herbert to reach 420 passing yards. The lineup does not need Colts receivers to cooperate because Taylor captures the touchdowns directly.\n\nDouble tight end is not decorative here. McBride plays the role of a wide receiver at tight end. Ten catches and two touchdowns provides receiver level raw points while preserving roster flexibility. It lets the lineup chase ceiling without building a second quarterback bet.\n\nOutside the core, the roster accepts one piece of meta chalk for structural reasons. Rice is the cleanest way to access two touchdowns at a modest salary, and the season context matters. Las Vegas being one of the weakest teams removes pressure to force a bring back. The lineup takes the Chiefs points and moves on.\n\nCarolina defense is the final separating score. Six sacks and two interceptions is a slate changing defense outcome. Facing Justin Fields and Tyrod Taylor gives the slot two different turnover paths, and the defense score functions as a raw points contributor rather than a thin touchdown hope.",
+    "uniquenessNotes": "The lineup’s uniqueness is not about avoiding popular plays. It is about where the roster chooses to be specific. Many builds can land on the same IND at LAC concentration, but the ownership distribution changes when the second pass catcher is a low rostered tight end who posts a wide receiver box score.\n\nThe second uniqueness layer is the double tight end structure. It is rare to carry two tight ends with both clearing 29 points, and the roster is built so those scores are not redundant. Gadsden is attached to the quarterback core. McBride is an independent ceiling.\n\nThe Chiefs piece shows restraint. Rice is popular, yet the roster does not waste salary or correlation forcing an LV run back in a spot where the opponent profile did not justify it. The defense choice then adds separation through pressure and interceptions against a quarterback room that invites chaos.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Herbert paired with Allen and Gadsden with Taylor as the opposing rushing touchdown hammer",
+      "secondaryLever": "Double tight end ceiling with McBride functioning as a wide receiver archetype at TE",
+      "notes": {
+        "rosterConstruction": "4-1-1-1-1-1",
+        "gameKey": [
+          "IND@LAC: 4 (QB game)",
+          "WAS@DAL: 1",
+          "LV@KC: 1",
+          "NO@CHI: 1",
+          "GB@ARI: 1",
+          "CAR@NYJ: 1"
+        ],
+        "chargersCore": ["J. Herbert", "K. Allen", "O. Gadsden II"],
+        "coltsHammer": "J. Taylor",
+        "doubleTe": ["O. Gadsden II", "T. McBride"],
+        "metaNote": "LV offense profile did not force a run back, so the build takes Rice and keeps correlation elsewhere",
+        "qbFacedByPanthersDst": "Justin Fields / Tyrod Taylor"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "ONE_GAME_CORE_4_MAN",
+        "QB_WR_TE_PASS_TREE",
+        "OPPONENT_RB_MULTI_RUSH_TD_HAMMER",
+        "DOUBLE_TE_BUILD",
+        "CHALK_WR_NO_RUNBACK",
+        "DEFENSE_PRESSURE_TURNOVER_CEILING"
+      ],
+      "macroStory": "A first place build driven by IND at LAC as the single core, where a low rostered tight end becomes the separation point. Double tight end scoring expands ceiling without adding a second quarterback bet, while Panthers defense supplies a true raw points swing."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "HIGH_YARDAGE_PASSING", "MULTI_TD_PASSING"],
+        "microStory": "Herbert is the engine because 420 passing yards and three touchdowns supports multiple ceiling outcomes inside one game core."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNED_SPIKE", "STACK_SEPARATOR", "YARDAGE_DOMINANCE"],
+        "microStory": "Gadsden is the separator. He posts a wide receiver yardage line from tight end at minimal ownership, turning a common core into a unique roster distribution."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["TE_AS_WR_ARCHETYPE", "INDEPENDENT_CEILING", "MULTI_TD_ACCESS"],
+        "microStory": "McBride supplies receiver style volume from tight end and adds two touchdowns, creating a second ceiling lane without creating a second quarterback dependency."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRESSURE_VOLUME", "TURNOVER_ACCESS", "SLATE_SWING_AT_DST"],
+        "microStory": "Carolina scores through six sacks and two interceptions against Justin Fields and Tyrod Taylor, delivering a defense score that competes with skill position totals."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "J. Herbert", "position": "QB", "team": "LAC" },
+        "teammates": [
+          { "name": "K. Allen", "position": "WR", "team": "LAC" },
+          { "name": "O. Gadsden II", "position": "TE", "team": "LAC" }
+        ],
+        "opponent": { "name": "J. Taylor", "position": "RB", "team": "IND" }
+      },
+      {
+        "type": "DOUBLE_TE",
+        "qb": null,
+        "teammate": { "name": "O. Gadsden II", "position": "TE", "team": "LAC" },
+        "opponent": { "name": "T. McBride", "position": "TE", "team": "ARI" }
+      },
+      {
+        "type": "DST_QB_FACED",
+        "qb": null,
+        "teammate": { "name": "Panthers", "position": "DST", "team": "CAR", "qbFaced": "Justin Fields / Tyrod Taylor" },
+        "opponent": { "name": "Jets", "position": "DST", "team": "NYJ" }
+      }
+    ]
+  }
 }

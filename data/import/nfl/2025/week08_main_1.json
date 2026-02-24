@@ -4,10 +4,17 @@
   "week": 8,
   "slateType": "MAIN",
   "slateDate": "2025-10-26T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 8",
+  "slateTag": "Bills DST versus Andy Dalton, discounted Tagovailoa with Waddle, two running back eruptions",
+  "slateGroup": "2-2-2-2-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
     "contestName": "NFL Milly Maker",
     "siteContestId": "NFL_2025_WK08_MAIN_2025-10-26T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
     "totalOwnershipBp": 7700
   },
   "winner": {
@@ -18,6 +25,15 @@
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 230.66,
+    "totalOwnershipBp": 7700,
+    "rosterConstruction": "2-2-2-2-1",
+    "gameKey": [
+      "MIA@ATL: 2 (QB game)",
+      "BUF@CAR: 2",
+      "SF@HOU: 2",
+      "TEN@IND: 2",
+      "NYJ@CIN: 1"
+    ],
     "items": [
       {
         "rosterSpot": "QB",
@@ -26,7 +42,9 @@
         "team": "MIA",
         "salary": 4800,
         "points": 24.2,
-        "ownership": 0.4
+        "ownershipPercent": 0.4,
+        "passTd": 4,
+        "passYds": 205
       },
       {
         "rosterSpot": "RB",
@@ -35,7 +53,10 @@
         "team": "BUF",
         "salary": 6700,
         "points": 36.6,
-        "ownership": 10.9
+        "ownershipPercent": 10.9,
+        "rushAtt": 19,
+        "rushYdsRb": 216,
+        "rushTdRb": 2
       },
       {
         "rosterSpot": "RB",
@@ -44,7 +65,12 @@
         "team": "NYJ",
         "salary": 6100,
         "points": 35.86,
-        "ownership": 6.4
+        "ownershipPercent": 6.4,
+        "rushYdsRb": 133,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 14,
+        "recTdRb": 1
       },
       {
         "rosterSpot": "WR",
@@ -53,7 +79,10 @@
         "team": "IND",
         "salary": 5600,
         "points": 23.5,
-        "ownership": 9.4
+        "ownershipPercent": 9.4,
+        "rec": 8,
+        "recYds": 95,
+        "recTd": 1
       },
       {
         "rosterSpot": "WR",
@@ -62,7 +91,10 @@
         "team": "MIA",
         "salary": 5700,
         "points": 20.9,
-        "ownership": 4.7
+        "ownershipPercent": 4.7,
+        "rec": 5,
+        "recYds": 99,
+        "recTd": 1
       },
       {
         "rosterSpot": "WR",
@@ -71,7 +103,10 @@
         "team": "HOU",
         "salary": 3700,
         "points": 17.9,
-        "ownership": 1.9
+        "ownershipPercent": 1.9,
+        "rec": 5,
+        "recYds": 69,
+        "recTd": 1
       },
       {
         "rosterSpot": "TE",
@@ -80,7 +115,10 @@
         "team": "SF",
         "salary": 4500,
         "points": 14.3,
-        "ownership": 7.3
+        "ownershipPercent": 7.3,
+        "rec": 4,
+        "recYds": 43,
+        "recTd": 1
       },
       {
         "rosterSpot": "FLEX",
@@ -89,7 +127,12 @@
         "team": "IND",
         "salary": 9500,
         "points": 40.4,
-        "ownership": 33.1
+        "ownershipPercent": 33.1,
+        "rushYdsRb": 153,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 21,
+        "recTdRb": 1
       },
       {
         "rosterSpot": "DST",
@@ -97,11 +140,84 @@
         "position": "DST",
         "team": "BUF",
         "salary": 3300,
-        "points": 17,
-        "ownership": 2.9
+        "points": 17.0,
+        "ownershipPercent": 2.9,
+        "sacks": 7,
+        "takeaways": 3,
+        "defensiveTdCount": 0,
+        "pointsAllowedBucket": 13,
+        "qbFaced": "Andy Dalton"
       }
     ]
   },
-  "lineupType": "CLASSIC",
-  "slateKey": "NFL_2025_WK08_MAIN_2025-10-26T17:00:00.000Z"
+  "analysis": {
+    "stackSummary": "The entry point is the quarterback decision. Tagovailoa at 4,800 and under one percent is a portfolio play built for first place equity, because it buys access to a four touchdown game without paying the typical salary tax attached to elite outcomes. Pairing him with Waddle keeps the stack narrow and functional. The lineup does not need the Atlanta side to cooperate because the Miami passing production is already consolidated into one receiver score and one quarterback score.\n\nThe build then shifts into score insulation through two independent rushing ceilings. Taylor is the volume driven hammer. Cook is the breakaway profile tied to an offense capable of producing short fields and extra possessions. Hall functions as a third lane that does not depend on either of the other game environments, and his receiving touchdown prevents the roster from being trapped in one scoring channel.\n\nCorrelation is used with restraint. Pittman and Taylor are same team points, but they are not redundant points. Taylor supplies touchdowns and rushing yardage. Pittman supplies reception based scoring in a game where Indianapolis reached a high team total. The final mini is Kittle with Hutchinson, a two player exposure to the San Francisco Houston game that captures a tight end touchdown plus an opposing receiver touchdown without committing extra salary or extra roster spots to the same outcome.",
+    "uniquenessNotes": "Uniqueness comes from structure rather than novelty. A low owned quarterback can fail in silence, so the lineup protects the decision by keeping the stack compact and by building around three separate running back ceilings. The roster does not need a single fragile passing shootout to carry the entire score.\n\nThe Bills defense is not a decorative add. It is paired with Cook in a game where Carolina was led by Andy Dalton, and the defense created points through pressure and turnovers. Cook can still lead the slate in rushing while the defense scores through sacks, takeaways, and field position swings. This pairing avoids the common duplication path where the running back spike is attached to a high owned quarterback stack.\n\nHutchinson is the final ownership valve. His salary and modest ownership allow the rest of the roster to keep Taylor, Cook, and Hall without forcing thin punts at multiple spots.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Sub one percent quarterback with a single receiver",
+      "secondaryLever": "Two separate running back ceilings plus Bills defense correlated to pressure on Dalton",
+      "notes": {
+        "rosterConstruction": "2-2-2-2-1",
+        "qbGame": "MIA@ATL",
+        "miaStack": ["T. Tagovailoa", "J. Waddle"],
+        "coltsPair": ["J. Taylor", "M. Pittman Jr."],
+        "billsPair": ["J. Cook III", "Bills"],
+        "sfHouMini": ["G. Kittle", "X. Hutchinson"],
+        "oneOff": "B. Hall",
+        "qbFacedByBillsDst": "Andy Dalton"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNED_QB_ENGINE",
+        "SKINNY_WR_STACK",
+        "THREE_RB_CEILING_LANES",
+        "RB_PLUS_DST_PAIR_SAME_GAME",
+        "SAME_TEAM_RB_WR_NON_REDUNDANT",
+        "TWO_PLAYER_GAME_MINI"
+      ],
+      "macroStory": "A first place structure built around a discounted, low owned quarterback outcome, then reinforced with multiple independent rushing ceilings and a defense aligned with pressure and turnovers against Dalton. The roster collects points from several games without over committing roster spots to any single environment."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNED_OUTCOME", "TOUCHDOWN_CONCENTRATION"],
+        "microStory": "Tagovailoa delivers four passing touchdowns at a salary that usually caps upside at two. The ownership makes the outcome disproportionately valuable relative to the field."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["EXPLOSIVE_RUSHING", "BIG_PLAY_ACCESS", "RB_PLUS_DST_PAIR"],
+        "microStory": "Cook supplies a long touchdown and a second rushing score, then remains compatible with the Bills defense because both can score without sharing the same fantasy points."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRESSURE_DRIVEN_SCORING", "TURNOVER_ACCESS", "QB_MATCHUP"],
+        "microStory": "Buffalo creates separation through seven sacks and multiple takeaways against Andy Dalton, converting matchup leverage into a score that stays stable even without a defensive touchdown."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "T. Tagovailoa", "position": "QB", "team": "MIA" },
+        "teammates": [{ "name": "J. Waddle", "position": "WR", "team": "MIA" }],
+        "opponent": null
+      },
+      {
+        "type": "RB_DST_PAIR",
+        "qb": null,
+        "teammate": { "name": "J. Cook III", "position": "RB", "team": "BUF" },
+        "opponent": { "name": "Bills", "position": "DST", "team": "BUF", "qbFaced": "Andy Dalton" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "G. Kittle", "position": "TE", "team": "SF" },
+        "opponent": { "name": "X. Hutchinson", "position": "WR", "team": "HOU" }
+      }
+    ]
+  }
 }

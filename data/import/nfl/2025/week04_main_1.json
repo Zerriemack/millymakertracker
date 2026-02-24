@@ -4,10 +4,17 @@
   "week": 4,
   "slateType": "MAIN",
   "slateDate": "2025-09-28T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 4",
+  "slateTag": "PLAY THE BEST PLAYS, THREE RB BUILD, LIONS DST VS FLACCO",
+  "slateGroup": "1-2-1-1-1-1-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
     "contestName": "NFL Milly Maker",
     "siteContestId": "NFL_2025_WK04_MAIN_2025-09-28T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
     "totalOwnershipBp": 11940
   },
   "winner": {
@@ -18,6 +25,7 @@
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 239.9,
+    "totalOwnershipBp": 11940,
     "items": [
       {
         "rosterSpot": "QB",
@@ -26,7 +34,13 @@
         "team": "KC",
         "salary": 6000,
         "points": 27.3,
-        "ownership": 7.3
+        "ownershipPercent": 7.3,
+        "passTd": 4,
+        "passYds": 270,
+        "rushYds": 5,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "BAL"
       },
       {
         "rosterSpot": "RB",
@@ -35,7 +49,15 @@
         "team": "LV",
         "salary": 6200,
         "points": 37.5,
-        "ownership": 13.6
+        "ownershipPercent": 13.6,
+        "rushYdsRb": 138,
+        "rushTdRb": 1,
+        "recRb": 2,
+        "recYdsRb": 17,
+        "recTdRb": 2,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "CHI"
       },
       {
         "rosterSpot": "RB",
@@ -44,7 +66,15 @@
         "team": "HOU",
         "salary": 4400,
         "points": 27.9,
-        "ownership": 0.9
+        "ownershipPercent": 0.9,
+        "rushYdsRb": 69,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 50,
+        "recTdRb": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "TEN"
       },
       {
         "rosterSpot": "WR",
@@ -53,7 +83,13 @@
         "team": "CHI",
         "salary": 6300,
         "points": 16.9,
-        "ownership": 29.5
+        "ownershipPercent": 29.5,
+        "rec": 4,
+        "recYds": 69,
+        "recTd": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LV"
       },
       {
         "rosterSpot": "WR",
@@ -61,8 +97,14 @@
         "position": "WR",
         "team": "LAR",
         "salary": 7900,
-        "points": 39,
-        "ownership": 38.3
+        "points": 39.0,
+        "ownershipPercent": 38.3,
+        "rec": 13,
+        "recYds": 170,
+        "recTd": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "IND"
       },
       {
         "rosterSpot": "WR",
@@ -70,8 +112,14 @@
         "position": "WR",
         "team": "ATL",
         "salary": 5700,
-        "points": 28,
-        "ownership": 14.3
+        "points": 28.0,
+        "ownershipPercent": 14.3,
+        "rec": 8,
+        "recYds": 110,
+        "recTd": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "WAS"
       },
       {
         "rosterSpot": "TE",
@@ -80,7 +128,13 @@
         "team": "SF",
         "salary": 3100,
         "points": 14.8,
-        "ownership": 0.5
+        "ownershipPercent": 0.5,
+        "rec": 3,
+        "recYds": 58,
+        "recTd": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "JAX"
       },
       {
         "rosterSpot": "FLEX",
@@ -89,7 +143,14 @@
         "team": "TB",
         "salary": 6900,
         "points": 29.5,
-        "ownership": 5.2
+        "ownershipPercent": 5.2,
+        "rushYdsRb": 63,
+        "recRb": 5,
+        "recYdsRb": 102,
+        "recTdRb": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "PHI"
       },
       {
         "rosterSpot": "DST",
@@ -97,11 +158,85 @@
         "position": "DST",
         "team": "DET",
         "salary": 3500,
-        "points": 19,
-        "ownership": 9.8
+        "points": 19.0,
+        "ownershipPercent": 9.8,
+        "sacks": 3,
+        "takeaways": 3,
+        "defensiveTdCount": 1,
+        "pointsAllowedBucket": 13,
+        "qbFaced": "Joe Flacco",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "CLE"
       }
     ]
   },
-  "lineupType": "CLASSIC",
-  "slateKey": "NFL_2025_WK04_MAIN_2025-09-28T17:00:00.000Z"
+  "analysis": {
+    "stackSummary": "This roster wins without leaning on a conventional quarterback stack. Mahomes is treated as an efficiency bet at a modest ownership point, then the build uses three separate touchdown channels to avoid needing one single game to become the only answer.\n\nThe first channel is Puka Nacua at 38 percent ownership. The point is not uniqueness. The point is removing the most common failure mode on the slate, which is fading the one wide receiver outcome capable of burying the field. Once that is secured, the lineup shifts to gaining separation through roster composition and where the secondary ceiling comes from.\n\nThe second channel is the CHI at LV game, but it is built through role contrast rather than mirror stacking. Odunze captures the Bears side with a defined touchdown and yardage hit, while Jeanty captures the Raiders side with a rare running back profile where touchdowns can arrive through the air and the ground. That pairing captures a full game story without spending two wide receiver slots on the same type of scoring.\n\nThe third channel is a running back heavy allocation that replaces a fourth wide receiver. Marks and Irving are not selected as floor pieces. They are selected because each can access a receiver level score through receptions plus a touchdown, which is how a three running back build keeps pace with wide receiver heavy constructions when the slate scoring tilts toward pass catch volume.\n\nDetroit defense is the control lever. It is not treated as a cheap add on. It is a direct bet on Joe Flacco being forced into high attempt, turnover eligible situations once Detroit leads. The defensive touchdown completes the profile because it converts game script into points that are not available to most offensive combinations.",
+    "uniquenessNotes": "The public anchor is obvious, and the separation is structural. Most rosters that start with Nacua plus another high owned wide receiver cluster into four wide receiver builds. This lineup takes the opposite route and pays for three running backs with real receiving roles. That decision removes the lineup from the most duplicated roster shapes without needing to fade the slate’s best raw projection.\n\nMarks at sub one percent is the key. He is the kind of player the field leaves behind because his median outcome is not exciting. The winner is selecting him for a narrow but real ceiling that requires both a rushing touchdown and a receiving touchdown. When that exact distribution lands, it produces a wide receiver score from a running back salary and ownership point.\n\nTonges at one half of one percent is the quiet second separator. The roster does not need him to be the top tight end. It needs him to clear the position at almost no ownership while the slate’s premium scoring is concentrated at wide receiver and running back. That is enough when the rest of the roster is already holding the true slate breaking scores.\n\nDetroit defense then closes duplication further because it forces the lineup to be correct about the opposing quarterback failing in a specific way. Many lineups can match offensive points. Far fewer match the combination of sacks, multiple interceptions, and a defensive touchdown against the same opponent.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Chalk WR secured, then separation through three RB construction plus two near zero percent skill positions",
+      "secondaryLever": "Game story capture through Jeanty versus Odunze plus Lions DST pressure and turnover bet versus Joe Flacco",
+      "notes": {
+        "rosterConstruction": "1-2-1-1-1-1-1-1",
+        "chi_lv_pair": ["A. Jeanty", "R. Odunze"],
+        "three_rb_build": ["A. Jeanty", "W. Marks", "B. Irving"],
+        "chalk_anchor": "P. Nacua",
+        "thin_te_separator": "J. Tonges",
+        "dst_qb_faced": "Joe Flacco"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "NO_STACK_QB",
+        "CHALK_WR_ANCHOR",
+        "THREE_RB_ROSTER_SHAPE",
+        "LOW_OWNED_RB_TD_DISTRIBUTION_BET",
+        "LOW_OWNED_TE_CLEAR",
+        "DST_VS_POCKET_QB_TURNOVER_SCRIPT"
+      ],
+      "macroStory": "A winner built around locking the slate’s most damaging wide receiver outcome, then escaping the duplicated roster shapes by shifting secondary ceiling into running backs and a low owned tight end, with a defense slot tied to a turnover game script."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_ANCHOR", "FAILURE_MODE_REMOVAL", "RAW_POINTS_PRIORITY"],
+        "microStory": "Nacua at 38 percent is the decision to stop fighting the slate’s highest leverage wide receiver outcome. The lineup then asks the rest of the roster to be different rather than asking Nacua to be wrong."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": ["LOW_OWNED_CEILING", "DUAL_TD_PATH", "ROSTER_SHAPE_SEPARATOR"],
+        "microStory": "Marks is the piece most rosters do not have access to. The win condition requires a specific distribution of points: one rushing score and one receiving score. When it hits, the roster gains a receiver level total from a sub one percent running back."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["POSITIONAL_CLEAR", "LOW_OWNERSHIP", "TOUCHDOWN_REQUIRED"],
+        "microStory": "Tonges does not need to dominate volume. A single touchdown plus enough yardage to avoid a position sink is the entire requirement, and it arrives at almost no ownership."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["TURNOVER_SCRIPT", "DEFENSIVE_TD_ACCESS", "QB_PRESSURE_PATH"],
+        "microStory": "Detroit defense is an explicit bet on Flacco being forced into mistakes under pressure once the game tilts. The defensive touchdown is the swing event that converts a correct script into a points gap."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "A. Jeanty", "position": "RB", "team": "LV" },
+        "opponent": { "name": "R. Odunze", "position": "WR", "team": "CHI" }
+      },
+      {
+        "type": "RB_DST_PAIR",
+        "qb": null,
+        "teammate": { "name": "Lions", "position": "DST", "team": "DET", "qbFaced": "Joe Flacco" },
+        "opponent": { "name": "Joe Flacco", "position": "QB", "team": "CLE" }
+      }
+    ]
+  }
 }

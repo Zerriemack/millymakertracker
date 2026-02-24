@@ -6,7 +6,7 @@
   "slateDate": "2025-09-07T00:00:00.000Z",
   "slateName": "NFL Main Slate Week 1",
   "slateTag": "Fields rushing ceiling",
-  "slateGroup": "QB NAKED, DST VS ROOKIE QB",
+  "slateGroup": "1-2-2-1-1-1-1",
   "isMain": true,
   "contest": {
     "site": "DraftKings",
@@ -175,6 +175,7 @@
       "primaryLever": "Rushing quarterback ceiling with no forced pass catcher pairing",
       "secondaryLever": "Volume receivers plus one touchdown concentrated wideout, then event scoring defense versus rookie quarterback",
       "notes": {
+        "rosterConstruction": "1-2-2-1-1-1-1",
         "qbRushTd": 2,
         "volumeAnchors": ["P. Nacua", "J. Johnson", "J. Smith-Njigba"],
         "touchdownOutlier": "E. Egbuka",
