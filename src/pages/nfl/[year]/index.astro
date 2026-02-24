@@ -148,6 +148,7 @@ function lineupBadgeClass(kind: any) {
                 {rows.map((s, i) => {
                   const t = parseTeamsFromSlateKey(s.slateKey);
                   const matchup = t.away && t.home ? `${t.away} vs ${t.home}` : "Matchup TBD";
+                  const label = safeUpper(s.lineupType) === "CLASSIC" ? `NFL Classic Millionaire Maker Week ${wk}` : matchup;
                   const href = `/nfl/${yearParam}/slate/${s.id}`;
                   const hidden = i >= PREVIEW_LIMIT;
 
@@ -163,7 +164,7 @@ function lineupBadgeClass(kind: any) {
                         <div class="date">{fmtDateShort(s.slateDate)}</div>
                       </div>
 
-                      <div class="matchup">{matchup}</div>
+                      <div class="matchup">{label}</div>
                     </a>
                   );
                 })}
