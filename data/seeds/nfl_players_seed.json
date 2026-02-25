@@ -685,7 +685,17 @@
 { "sport": "NFL", "name": "Colby Parkinson", "position": "TE", "teamAbbreviation": "LAR" },
 { "sport": "NFL", "name": "Ben Sinnott", "position": "TE", "teamAbbreviation": "WAS" },
 { "sport": "NFL", "name": "Bears", "position": "DST", "teamAbbreviation": "CHI" },
-{ "sport": "NFL", "name": "Shedeur Sanders", "position": "QB", "teamAbbreviation": "CLE" }
+{ "sport": "NFL", "name": "Shedeur Sanders", "position": "QB", "teamAbbreviation": "CLE" },
+{ "sport": "NFL", "name": "Justin Herbert", "position": "QB", "teamAbbreviation": "LAC" },
+{ "sport": "NFL", "name": "James Cook III", "position": "RB", "teamAbbreviation": "BUF" },
+{ "sport": "NFL", "name": "Chase Brown", "position": "RB", "teamAbbreviation": "CIN" },
+{ "sport": "NFL", "name": "Chris Olave", "position": "WR", "teamAbbreviation": "NO" },
+{ "sport": "NFL", "name": "Quentin Johnston", "position": "WR", "teamAbbreviation": "LAC" },
+{ "sport": "NFL", "name": "Keenan Allen", "position": "WR", "teamAbbreviation": "LAC" },
+{ "sport": "NFL", "name": "Brock Bowers", "position": "TE", "teamAbbreviation": "LV" },
+{ "sport": "NFL", "name": "Ashton Jeanty", "position": "RB", "teamAbbreviation": "LV" },
+{ "sport": "NFL", "name": "Raiders", "position": "DST", "teamAbbreviation": "LV" },
+{ "sport": "NFL", "name": "C.J. Stroud", "position": "QB", "teamAbbreviation": "HOU" }
 ]
 
 
