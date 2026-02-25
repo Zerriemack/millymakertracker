@@ -365,7 +365,14 @@ function extractRelevantOwnership(
 type MissingTeam = { sport: Sport; abbreviation: string };
 type MissingPlayer =
   | { mode: "DK_ID"; sport: Sport; dkPlayerId: number }
-  | { mode: "NAME_POS_TEAM"; sport: Sport; name: string; position: string; teamAbbreviation: string };
+  | {
+      mode: "NAME_POS_TEAM";
+      sport: Sport;
+      name: string;
+      position: string;
+      teamAbbreviation: string;
+      suggestions?: string[];
+    };
 
 class MissingEntitiesError extends Error {
   missingTeams: MissingTeam[];
@@ -456,9 +463,32 @@ function parseCorrelationType(v: any): CorrelationType | null {
 function normName(v: any): string {
   return String(v ?? "")
     .trim()
-    .toLowerCase()
     .replace(/\./g, "")
-    .replace(/\s+/g, " ");
+    .replace(/\s+/g, " ")
+    .toLowerCase();
+}
+
+function splitName(v: any): { first: string; last: string } {
+  const n = normName(v);
+  if (!n) return { first: "", last: "" };
+  const parts = n.split(" ").filter(Boolean);
+  if (parts.length === 0) return { first: "", last: "" };
+  if (parts.length === 1) return { first: parts[0], last: parts[0] };
+  return { first: parts[0], last: parts[parts.length - 1] };
+}
+
+function namesCompatible(a: any, b: any): boolean {
+  const na = normName(a);
+  const nb = normName(b);
+  if (!na || !nb) return false;
+  if (na === nb) return true;
+
+  const aParts = splitName(na);
+  const bParts = splitName(nb);
+  if (!aParts.last || !bParts.last || aParts.last !== bParts.last) return false;
+  if (!aParts.first || !bParts.first) return false;
+
+  return aParts.first[0] === bParts.first[0];
 }
 
 function nameLooksLike(dbName: string, input: string): boolean {
@@ -482,11 +512,64 @@ function nameLooksLike(dbName: string, input: string): boolean {
   return aFirst[0] === bFirst[0];
 }
 
+function buildTeamPosKey(teamId: string, position: string): string {
+  return `${teamId}|||${position}`;
+}
+
+function getLastName(v: any): string {
+  return splitName(v).last;
+}
+
+function getSuggestionsForName(params: {
+  name: string;
+  position: string;
+  teamId: string;
+  playersByTeamPos: Map<string, { id: string; name: string }[]>;
+}): string[] {
+  const targetLast = getLastName(params.name);
+  if (!targetLast) return [];
+  const key = buildTeamPosKey(params.teamId, params.position);
+  const candidates = params.playersByTeamPos.get(key) ?? [];
+  const hits = candidates
+    .filter((c) => getLastName(c.name) === targetLast)
+    .map((c) => c.name);
+  return Array.from(new Set(hits)).sort((a, b) => a.localeCompare(b));
+}
+
+function resolvePlayerIdByName(params: {
+  name: string;
+  position: string;
+  teamId: string;
+  allowInitials: boolean;
+  playerIdByComposite: Map<string, string>;
+  playersByTeamPos: Map<string, { id: string; name: string }[]>;
+}): { id: string | null; suggestions: string[] } {
+  const key = `${params.name}|||${params.position}|||${params.teamId}`;
+  const exact = params.playerIdByComposite.get(key);
+  if (exact) return { id: exact, suggestions: [] };
+
+  const suggestions = getSuggestionsForName(params);
+  if (!params.allowInitials) return { id: null, suggestions };
+
+  const teamPosKey = buildTeamPosKey(params.teamId, params.position);
+  const candidates = params.playersByTeamPos.get(teamPosKey) ?? [];
+  const compatible = candidates.filter((c) => namesCompatible(c.name, params.name));
+
+  if (compatible.length === 1) return { id: compatible[0].id, suggestions: [] };
+
+  const exactNorm = compatible.find((c) => normName(c.name) === normName(params.name));
+  if (exactNorm) return { id: exactNorm.id, suggestions: [] };
+
+  return { id: null, suggestions };
+}
+
 async function resolvePlayerIdByRef(params: {
   sport: Sport;
   teamIdByAbbr: Map<string, string>;
   playersByDkId: Map<number, string>;
   playerIdByComposite: Map<string, string>;
+  playersByTeamPos: Map<string, { id: string; name: string }[]>;
+  allowInitials: boolean;
   ref: ImportPlayerRef;
 }): Promise<string | null> {
   const dkPlayerId = typeof params.ref.dkPlayerId === "number" ? params.ref.dkPlayerId : null;
@@ -503,9 +586,15 @@ async function resolvePlayerIdByRef(params: {
 
   if (!teamId || !name || !position) return null;
 
-  const key = `${name}|||${position}|||${teamId}`;
-  const pid2 = params.playerIdByComposite.get(key);
-  return pid2 ?? null;
+  const resolved = resolvePlayerIdByName({
+    name,
+    position,
+    teamId,
+    allowInitials: params.allowInitials,
+    playerIdByComposite: params.playerIdByComposite,
+    playersByTeamPos: params.playersByTeamPos,
+  });
+  return resolved.id ?? null;
 }
 
 async function resolveOpponentStartingQbIdByName(params: {
@@ -718,6 +807,7 @@ async function main() {
 
   const missingTeams: MissingTeam[] = [];
   const missingPlayers: MissingPlayer[] = [];
+  const allowInitials = process.env.IMPORT_ALLOW_INITIALS === "1";
 
   const neededTeamAbbrs = Array.from(
     new Set(data.lineup.items.map((i) => String(i.team).toUpperCase().trim()).filter(Boolean))
@@ -803,6 +893,7 @@ async function main() {
 
   const needComposite = candidates.filter((c) => c.dkPlayerId === null || !playersByDkId.has(c.dkPlayerId));
   const playerIdByComposite = new Map<string, string>();
+  const playersByTeamPos = new Map<string, { id: string; name: string }[]>();
 
   if (needComposite.length > 0) {
     const teamIds = Array.from(new Set(needComposite.map((c) => c.teamId)));
@@ -812,6 +903,10 @@ async function main() {
     });
     for (const p of found) {
       playerIdByComposite.set(`${p.name}|||${p.position}|||${p.teamId}`, p.id);
+      const key = buildTeamPosKey(p.teamId, p.position);
+      const list = playersByTeamPos.get(key) ?? [];
+      list.push({ id: p.id, name: p.name });
+      playersByTeamPos.set(key, list);
     }
   }
 
@@ -826,10 +921,17 @@ async function main() {
       }
     }
 
-    const key = `${c.name}|||${c.position}|||${c.teamId}`;
-    const pid2 = playerIdByComposite.get(key);
-    if (pid2) {
-      resolvedPlayerIdByIndex.set(c.idx, pid2);
+    const resolved = resolvePlayerIdByName({
+      name: c.name,
+      position: c.position,
+      teamId: c.teamId,
+      allowInitials,
+      playerIdByComposite,
+      playersByTeamPos,
+    });
+
+    if (resolved.id) {
+      resolvedPlayerIdByIndex.set(c.idx, resolved.id);
       continue;
     }
 
@@ -842,6 +944,7 @@ async function main() {
         name: c.name,
         position: c.position,
         teamAbbreviation: c.teamAbbr,
+        suggestions: resolved.suggestions,
       });
     }
   }
@@ -1072,6 +1175,8 @@ async function main() {
         teamIdByAbbr,
         playersByDkId,
         playerIdByComposite,
+        playersByTeamPos,
+        allowInitials,
         ref: c.qb ?? {},
       });
 
@@ -1084,6 +1189,8 @@ async function main() {
               teamIdByAbbr,
               playersByDkId,
               playerIdByComposite,
+              playersByTeamPos,
+              allowInitials,
               ref: c.teammate,
             })
           : null;
@@ -1095,6 +1202,8 @@ async function main() {
               teamIdByAbbr,
               playersByDkId,
               playerIdByComposite,
+              playersByTeamPos,
+              allowInitials,
               ref: c.opponent,
             })
           : null;
@@ -1169,8 +1278,16 @@ main()
           else uniq.set(`${p.sport}:n:${p.name}:p:${p.position}:t:${p.teamAbbreviation}`, p);
         }
         for (const p of Array.from(uniq.values()).sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b)))) {
-          if (p.mode === "DK_ID") lines.push(`  - (${p.sport}, dkPlayerId=${p.dkPlayerId})`);
-          else lines.push(`  - (${p.sport}, "${p.name}", ${p.position}, team=${p.teamAbbreviation})`);
+          if (p.mode === "DK_ID") {
+            lines.push(`  - (${p.sport}, dkPlayerId=${p.dkPlayerId})`);
+          } else {
+            const base = `  - (${p.sport}, "${p.name}", ${p.position}, team=${p.teamAbbreviation})`;
+            if (p.suggestions && p.suggestions.length > 0) {
+              lines.push(`${base} -> suggestions: ${p.suggestions.join(", ")}`);
+            } else {
+              lines.push(base);
+            }
+          }
         }
         lines.push("");
       }
