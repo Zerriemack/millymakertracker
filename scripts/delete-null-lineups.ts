@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { prisma } from "../src/lib/db";
+import { prisma } from "../src/lib/prisma";
 
 async function main() {
   // 1) find all lineup ids where totalOwnershipBp is NULL

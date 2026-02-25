@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { prisma } from "../src/lib/db";
+import { prisma } from "../src/lib/prisma";
 
 function pct(n: number, d: number) {
   return d === 0 ? "0.0%" : `${((n / d) * 100).toFixed(1)}%`;

@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { prisma } from "../src/lib/db";
+import { prisma } from "../../src/lib/prisma";
 
 async function run() {
   // Find all contests grouped by (site, slateId)
