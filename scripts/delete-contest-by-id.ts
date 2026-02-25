@@ -1,4 +1,5 @@
-import { prisma } from "../src/lib/db";
+import "dotenv/config";
+import { prisma } from "../src/lib/prisma";
 
 const contestId = process.env.CONTEST_ID;
 if (!contestId) {
@@ -46,7 +47,13 @@ if (!contestId) {
     }
   });
 
-  console.log(JSON.stringify({ ok: true, deletedContestId: c.id, siteContestId: c.siteContestId }, null, 2));
+  console.log(
+    JSON.stringify(
+      { ok: true, deletedContestId: c.id, siteContestId: c.siteContestId ?? null },
+      null,
+      2
+    )
+  );
   process.exit(0);
 })().catch((e) => {
   console.error(e);

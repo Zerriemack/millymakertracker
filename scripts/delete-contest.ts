@@ -1,22 +1,64 @@
 import "dotenv/config";
-import { prisma } from "../src/lib/db";
+import { prisma } from "../src/lib/prisma";
 
-const contestId = "PASTE_DUPLICATE_ID_HERE";
-
-async function main() {
-  await prisma.$transaction(async (tx) => {
-    await tx.winner.deleteMany({ where: { contestId } });
-    await tx.lineupItem.deleteMany({ where: { lineup: { contestId } } });
-    await tx.lineup.deleteMany({ where: { contestId } });
-    await tx.contest.delete({ where: { id: contestId } });
-  });
-
-  console.log("Deleted duplicate contest:", contestId);
-  await prisma.$disconnect();
+const contestId = process.env.CONTEST_ID;
+if (!contestId) {
+  console.error(
+    'Missing CONTEST_ID. Example: CONTEST_ID="PASTE_DUPLICATE_ID_HERE" <run command>'
+  );
+  process.exit(1);
 }
 
-main().catch(async (e) => {
+async function main() {
+  const c = await prisma.contest.findUnique({
+    where: { id: contestId },
+    select: {
+      id: true,
+      siteContestId: true,
+      slateId: true,
+      winners: { select: { id: true, lineup: { select: { id: true } } } },
+      analysis: { select: { id: true } },
+    },
+  });
+
+  if (!c) {
+    console.error("Contest not found:", contestId);
+    process.exit(1);
+  }
+
+  await prisma.$transaction(async (tx) => {
+    for (const w of c.winners) {
+      const lineupId = w.lineup?.id ?? null;
+      if (lineupId) {
+        await tx.lineupItem.deleteMany({ where: { lineupId } });
+        await tx.lineup.delete({ where: { id: lineupId } });
+      }
+    }
+
+    await tx.winner.deleteMany({ where: { contestId: c.id } });
+
+    if (c.analysis?.id) {
+      await tx.contestAnalysis.delete({ where: { id: c.analysis.id } });
+    }
+
+    await tx.contest.delete({ where: { id: c.id } });
+
+    const remaining = await tx.contest.count({ where: { slateId: c.slateId } });
+    if (remaining === 0) {
+      await tx.slate.delete({ where: { id: c.slateId } });
+    }
+  });
+
+  console.log(
+    JSON.stringify(
+      { ok: true, deletedContestId: c.id, siteContestId: c.siteContestId ?? null },
+      null,
+      2
+    )
+  );
+}
+
+main().catch((e) => {
   console.error(e);
-  await prisma.$disconnect();
   process.exit(1);
 });
