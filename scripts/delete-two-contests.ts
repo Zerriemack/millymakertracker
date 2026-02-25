@@ -1,5 +1,6 @@
 import "dotenv/config";
-import { prisma } from "../src/lib/prisma";
+import { spawnSync } from "node:child_process";
+import { resolve } from "node:path";
 
 const a = process.env.CONTEST_ID_A ?? "";
 const b = process.env.CONTEST_ID_B ?? "";
@@ -13,65 +14,27 @@ Example:
   process.exit(1);
 }
 
+const safeScript = resolve(process.cwd(), "scripts/delete-contest.safe.ts");
+
 async function main() {
-  const contests = await prisma.contest.findMany({
-    where: { id: { in: idsToDelete } },
-    select: {
-      id: true,
-      siteContestId: true,
-      contestName: true,
-      slateId: true,
-      winners: { select: { id: true, lineup: { select: { id: true } } } },
-      analysis: { select: { id: true } },
-    },
-  });
-
-  const foundIds = new Set(contests.map((c) => c.id));
-  const missing = idsToDelete.filter((id) => !foundIds.has(id));
-  if (missing.length) {
-    console.error("Contest(s) not found:", missing);
-    process.exit(1);
-  }
-
-  await prisma.$transaction(async (tx) => {
-    for (const c of contests) {
-      for (const w of c.winners) {
-        const lineupId = w.lineup?.id ?? null;
-        if (lineupId) {
-          await tx.lineupItem.deleteMany({ where: { lineupId } });
-          await tx.lineup.delete({ where: { id: lineupId } });
-        }
-      }
-
-      await tx.winner.deleteMany({ where: { contestId: c.id } });
-
-      if (c.analysis?.id) {
-        await tx.contestAnalysis.delete({ where: { id: c.analysis.id } });
-      }
-
-      await tx.contest.delete({ where: { id: c.id } });
-
-      const remaining = await tx.contest.count({ where: { slateId: c.slateId } });
-      if (remaining === 0) {
-        await tx.slate.delete({ where: { id: c.slateId } });
-      }
-    }
-  });
-
-  console.log(
-    JSON.stringify(
+  for (const id of idsToDelete) {
+    const result = spawnSync(
+      process.execPath,
+      ["--import", "dotenv/config", "--import", "tsx", safeScript],
       {
-        ok: true,
-        deleted: contests.map((c) => ({
-          id: c.id,
-          siteContestId: c.siteContestId ?? null,
-          contestName: c.contestName ?? null,
-        })),
-      },
-      null,
-      2
-    )
-  );
+        stdio: "inherit",
+        env: {
+          ...process.env,
+          CONTEST_ID: id,
+          CONFIRM: "YES",
+        },
+      }
+    );
+
+    if (result.status !== 0) {
+      process.exit(result.status ?? 1);
+    }
+  }
 }
 
 main().catch((e) => {

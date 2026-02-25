@@ -1,69 +1,6 @@
 import "dotenv/config";
-import { prisma } from "../src/lib/prisma";
-
-type DeleteResult = {
-  deletedContestId: string;
-  deletedSiteContestId: string | null;
-  deletedContestName?: string | null;
-  deletedWinners: number;
-  remainingContestIdsInSlate: number;
-  deletedSlateId?: string | null;
-};
-
-async function deleteOneContest(contestId: string): Promise<DeleteResult> {
-  const c = await prisma.contest.findUnique({
-    where: { id: contestId },
-    select: {
-      id: true,
-      siteContestId: true,
-      contestName: true,
-      slateId: true,
-      winners: { select: { id: true, lineup: { select: { id: true } } } },
-      analysis: { select: { id: true } },
-    },
-  });
-
-  if (!c) {
-    throw new Error(`Contest not found: ${contestId}`);
-  }
-
-  const deletedWinners = c.winners.length;
-
-  return await prisma.$transaction(async (tx) => {
-    for (const w of c.winners) {
-      const lineupId = w.lineup?.id ?? null;
-      if (lineupId) {
-        await tx.lineupItem.deleteMany({ where: { lineupId } });
-        await tx.lineup.delete({ where: { id: lineupId } });
-      }
-    }
-
-    await tx.winner.deleteMany({ where: { contestId: c.id } });
-
-    if (c.analysis?.id) {
-      await tx.contestAnalysis.delete({ where: { id: c.analysis.id } });
-    }
-
-    await tx.contest.delete({ where: { id: c.id } });
-
-    const remaining = await tx.contest.count({ where: { slateId: c.slateId } });
-    let deletedSlateId: string | null = null;
-
-    if (remaining === 0) {
-      await tx.slate.delete({ where: { id: c.slateId } });
-      deletedSlateId = c.slateId;
-    }
-
-    return {
-      deletedContestId: c.id,
-      deletedSiteContestId: c.siteContestId ?? null,
-      deletedContestName: c.contestName ?? null,
-      deletedWinners,
-      remainingContestIdsInSlate: remaining,
-      deletedSlateId,
-    };
-  });
-}
+import { spawnSync } from "node:child_process";
+import { resolve } from "node:path";
 
 function parseIdsFromEnv(): string[] {
   const raw =
@@ -91,13 +28,26 @@ Examples:
     process.exit(1);
   }
 
-  const results: DeleteResult[] = [];
-  for (const id of ids) {
-    const r = await deleteOneContest(id);
-    results.push(r);
-  }
+  const safeScript = resolve(process.cwd(), "scripts/delete-contest.safe.ts");
 
-  console.log(JSON.stringify({ ok: true, deleted: results }, null, 2));
+  for (const id of ids) {
+    const result = spawnSync(
+      process.execPath,
+      ["--import", "dotenv/config", "--import", "tsx", safeScript],
+      {
+        stdio: "inherit",
+        env: {
+          ...process.env,
+          CONTEST_ID: id,
+          CONFIRM: "YES",
+        },
+      }
+    );
+
+    if (result.status !== 0) {
+      process.exit(result.status ?? 1);
+    }
+  }
 }
 
 main().catch((e) => {
