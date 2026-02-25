@@ -5,7 +5,7 @@ if (/^[0-9]{4}$/.test(__slateKey)) {
 }
 
 import Layout from "../../layouts/Layout.astro";
-import { prisma } from "../../lib/db";
+import { prisma } from "../../lib/prisma";
 
 const slateKey = Astro.params.slateKey;
 
