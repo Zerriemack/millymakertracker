@@ -10,6 +10,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
@@ -19,12 +20,14 @@
     "astro": "^5.17.1",
     "pg": "^8.18.0",
     "sharp": "^0.34.3",
+    "typescript": "^5.9.3",
     "zod": "^3.25.76"
   },
   "devDependencies": {
     "dotenv": "^17.2.4",
     "esbuild": "^0.27.3",
     "prisma": "^7.3.0",
+    "ts-prune": "^0.10.3",
     "tsx": "^4.21.0"
   }
 }
