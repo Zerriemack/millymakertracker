@@ -34,7 +34,7 @@
         "team": "LAC",
         "salary": 6000,
         "points": 33.2,
-        "ownershipPercent": 7.0,
+        "ownershipPercent": 7,
         "passTd": 2,
         "passYds": 300,
         "rushTd": 1,
@@ -142,7 +142,7 @@
         "team": "LV",
         "salary": 5600,
         "points": 34.8,
-        "ownershipPercent": 2.0,
+        "ownershipPercent": 2,
         "recRb": 1,
         "recYdsRb": 60,
         "recTdRb": 1,
@@ -158,13 +158,14 @@
         "position": "DST",
         "team": "LV",
         "salary": 2000,
-        "points": 1.0,
+        "points": 1,
         "ownershipPercent": 2.7,
         "pointsAllowedBucket": 20,
         "qbFaced": "C.J. Stroud",
         "gameAwayTeam": "LV",
         "gameHomeTeam": "HOU",
-        "opponentTeam": "HOU"
+        "opponentTeam": "HOU",
+        "qbFacedArchetype": "FRANCHISE"
       }
     ]
   },
@@ -184,9 +185,21 @@
           "CIN@MIA: 1",
           "NYJ@NO: 1"
         ],
-        "chargersCluster": ["J. Herbert", "Q. Johnston", "K. Allen"],
-        "raidersCluster": ["B. Bowers", "A. Jeanty", "Raiders"],
-        "oneOffHammers": ["J. Cook III", "C. Brown", "C. Olave"],
+        "chargersCluster": [
+          "J. Herbert",
+          "Q. Johnston",
+          "K. Allen"
+        ],
+        "raidersCluster": [
+          "B. Bowers",
+          "A. Jeanty",
+          "Raiders"
+        ],
+        "oneOffHammers": [
+          "J. Cook III",
+          "C. Brown",
+          "C. Olave"
+        ],
         "qbFacedByRaidersDst": "C.J. Stroud"
       }
     },
@@ -205,35 +218,62 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "PASSING_CEILING", "THREE_MAN_STACK_ANCHOR"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "PASSING_CEILING",
+          "THREE_MAN_STACK_ANCHOR"
+        ],
         "microStory": "Herbert provides the main scoring lane. At seven percent ownership, 33.2 points is the type of output that lets a concentrated stack compete with more common roster builds."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 1,
-        "roleTags": ["STACK_SPIKE", "LOW_OWNED_TOUCHDOWN_ACCESS"],
+        "roleTags": [
+          "STACK_SPIKE",
+          "LOW_OWNED_TOUCHDOWN_ACCESS"
+        ],
         "microStory": "Johnston gives the triple its leverage. One score plus 100 yard bonus performance at 1.5 percent ownership creates separation without needing a Dallas return."
       },
       {
         "rosterSpot": "FLEX",
         "slotIndex": 0,
-        "roleTags": ["CEILING_DRIVER", "LOW_OWNED_HAMMER", "RB_STACK_ANCHOR"],
+        "roleTags": [
+          "CEILING_DRIVER",
+          "LOW_OWNED_HAMMER",
+          "RB_STACK_ANCHOR"
+        ],
         "microStory": "Jeanty is the reason the Raiders cluster stays profitable even with defense scoring failure. His two percent ownership attaches a ceiling outcome to a roster already carrying a high scoring quarterback stack."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["RB_PAIR", "OWNERSHIP_CONTROL", "SURVIVED_FAILURE"],
+        "roleTags": [
+          "RB_PAIR",
+          "OWNERSHIP_CONTROL",
+          "SURVIVED_FAILURE"
+        ],
         "microStory": "Raiders defense scores one point against C.J. Stroud, yet the lineup remains live because the roster has multiple higher priority ceiling paths. This slot becomes a tolerated miss, not a sink."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "J. Herbert", "position": "QB", "team": "LAC" },
+        "qb": {
+          "name": "J. Herbert",
+          "position": "QB",
+          "team": "LAC"
+        },
         "teammates": [
-          { "name": "Q. Johnston", "position": "WR", "team": "LAC" },
-          { "name": "K. Allen", "position": "WR", "team": "LAC" }
+          {
+            "name": "Q. Johnston",
+            "position": "WR",
+            "team": "LAC"
+          },
+          {
+            "name": "K. Allen",
+            "position": "WR",
+            "team": "LAC"
+          }
         ],
         "opponent": null
       },
@@ -241,17 +281,39 @@
         "type": "GAME_CLUSTER",
         "qb": null,
         "teammates": [
-          { "name": "B. Bowers", "position": "TE", "team": "LV" },
-          { "name": "A. Jeanty", "position": "RB", "team": "LV" },
-          { "name": "Raiders", "position": "DST", "team": "LV", "qbFaced": "C.J. Stroud" }
+          {
+            "name": "B. Bowers",
+            "position": "TE",
+            "team": "LV"
+          },
+          {
+            "name": "A. Jeanty",
+            "position": "RB",
+            "team": "LV"
+          },
+          {
+            "name": "Raiders",
+            "position": "DST",
+            "team": "LV",
+            "qbFaced": "C.J. Stroud"
+          }
         ],
         "opponent": null
       },
       {
         "type": "RB_DST_PAIR",
         "qb": null,
-        "teammate": { "name": "A. Jeanty", "position": "RB", "team": "LV" },
-        "opponent": { "name": "Raiders", "position": "DST", "team": "LV", "qbFaced": "C.J. Stroud" }
+        "teammate": {
+          "name": "A. Jeanty",
+          "position": "RB",
+          "team": "LV"
+        },
+        "opponent": {
+          "name": "Raiders",
+          "position": "DST",
+          "team": "LV",
+          "qbFaced": "C.J. Stroud"
+        }
       }
     ]
   }

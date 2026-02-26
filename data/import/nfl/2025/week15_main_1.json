@@ -143,7 +143,8 @@
         "qbFaced": "Shedeur Sanders",
         "gameAwayTeam": "CLE",
         "gameHomeTeam": "CHI",
-        "opponentTeam": "CLE"
+        "opponentTeam": "CLE",
+        "qbFacedArchetype": "ROOKIE"
       }
     ]
   },
@@ -156,8 +157,17 @@
       "secondaryLever": "Swift paired with Bears defense against Shedeur Sanders for the second straight week pattern",
       "notes": {
         "rosterConstruction": "5-2-1-1",
-        "lionsRamsCluster": ["J. Goff", "A. St. Brown", "J. Williams", "P. Nacua", "C. Parkinson"],
-        "bearsBrownsPair": ["D. Swift", "Bears"],
+        "lionsRamsCluster": [
+          "J. Goff",
+          "A. St. Brown",
+          "J. Williams",
+          "P. Nacua",
+          "C. Parkinson"
+        ],
+        "bearsBrownsPair": [
+          "D. Swift",
+          "Bears"
+        ],
         "oneOffHammer": "T. Henderson",
         "qbFacedByBearsDst": "Shedeur Sanders"
       }
@@ -178,45 +188,88 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "POCKET_PASSER", "WR_CARRY_THROUGH"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "POCKET_PASSER",
+          "WR_CARRY_THROUGH"
+        ],
         "microStory": "Goff is the anchor because Detroit touchdowns route through his wide receivers. The build correctly assumes his ceiling drags St. Brown and Williams with him in a shootout."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 0,
-        "roleTags": ["ALPHA_BRING_BACK", "RAW_POINTS_ACCEPTED"],
+        "roleTags": [
+          "ALPHA_BRING_BACK",
+          "RAW_POINTS_ACCEPTED"
+        ],
         "microStory": "Nacua is the ownership you live with because the game requires his points. The roster differentiates elsewhere instead of fading the obvious 180 plus yard outcome."
       },
       {
         "rosterSpot": "TE",
         "slotIndex": 0,
-        "roleTags": ["LOWER_SALARY_TD_ACCESS", "COMPLEMENTS_ALPHA"],
+        "roleTags": [
+          "LOWER_SALARY_TD_ACCESS",
+          "COMPLEMENTS_ALPHA"
+        ],
         "microStory": "Parkinson gives Rams touchdown access without paying for a second expensive wide receiver, which keeps the five man cluster financially possible while staying aligned with the game script."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["QB_PRESSURE_PATH", "TURNOVER_CONVERSION", "PAIRED_WITH_RB_SAME_GAME"],
+        "roleTags": [
+          "QB_PRESSURE_PATH",
+          "TURNOVER_CONVERSION",
+          "PAIRED_WITH_RB_SAME_GAME"
+        ],
         "microStory": "Chicago defense turns Shedeur Sanders into points with sacks and interceptions. The pairing with Swift captures the short field finishing equity created by those plays."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "J. Goff", "position": "QB", "team": "DET" },
+        "qb": {
+          "name": "J. Goff",
+          "position": "QB",
+          "team": "DET"
+        },
         "teammates": [
-          { "name": "A. St. Brown", "position": "WR", "team": "DET" },
-          { "name": "J. Williams", "position": "WR", "team": "DET" }
+          {
+            "name": "A. St. Brown",
+            "position": "WR",
+            "team": "DET"
+          },
+          {
+            "name": "J. Williams",
+            "position": "WR",
+            "team": "DET"
+          }
         ],
         "opponents": [
-          { "name": "P. Nacua", "position": "WR", "team": "LAR" },
-          { "name": "C. Parkinson", "position": "TE", "team": "LAR" }
+          {
+            "name": "P. Nacua",
+            "position": "WR",
+            "team": "LAR"
+          },
+          {
+            "name": "C. Parkinson",
+            "position": "TE",
+            "team": "LAR"
+          }
         ]
       },
       {
         "type": "RB_DST_PAIR",
-        "teammate": { "name": "D. Swift", "position": "RB", "team": "CHI" },
-        "opponent": { "name": "Bears", "position": "DST", "team": "CHI", "qbFaced": "Shedeur Sanders" }
+        "teammate": {
+          "name": "D. Swift",
+          "position": "RB",
+          "team": "CHI"
+        },
+        "opponent": {
+          "name": "Bears",
+          "position": "DST",
+          "team": "CHI",
+          "qbFaced": "Shedeur Sanders"
+        }
       }
     ]
   }

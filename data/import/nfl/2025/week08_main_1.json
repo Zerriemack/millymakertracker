@@ -140,13 +140,14 @@
         "position": "DST",
         "team": "BUF",
         "salary": 3300,
-        "points": 17.0,
+        "points": 17,
         "ownershipPercent": 2.9,
         "sacks": 7,
         "takeaways": 3,
         "defensiveTdCount": 0,
         "pointsAllowedBucket": 13,
-        "qbFaced": "Andy Dalton"
+        "qbFaced": "Andy Dalton",
+        "qbFacedArchetype": "BACKUP"
       }
     ]
   },
@@ -160,10 +161,22 @@
       "notes": {
         "rosterConstruction": "2-2-2-2-1",
         "qbGame": "MIA@ATL",
-        "miaStack": ["T. Tagovailoa", "J. Waddle"],
-        "coltsPair": ["J. Taylor", "M. Pittman Jr."],
-        "billsPair": ["J. Cook III", "Bills"],
-        "sfHouMini": ["G. Kittle", "X. Hutchinson"],
+        "miaStack": [
+          "T. Tagovailoa",
+          "J. Waddle"
+        ],
+        "coltsPair": [
+          "J. Taylor",
+          "M. Pittman Jr."
+        ],
+        "billsPair": [
+          "J. Cook III",
+          "Bills"
+        ],
+        "sfHouMini": [
+          "G. Kittle",
+          "X. Hutchinson"
+        ],
         "oneOff": "B. Hall",
         "qbFacedByBillsDst": "Andy Dalton"
       }
@@ -183,40 +196,79 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNED_OUTCOME", "TOUCHDOWN_CONCENTRATION"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNED_OUTCOME",
+          "TOUCHDOWN_CONCENTRATION"
+        ],
         "microStory": "Tagovailoa delivers four passing touchdowns at a salary that usually caps upside at two. The ownership makes the outcome disproportionately valuable relative to the field."
       },
       {
         "rosterSpot": "RB",
         "slotIndex": 0,
-        "roleTags": ["EXPLOSIVE_RUSHING", "BIG_PLAY_ACCESS", "RB_PLUS_DST_PAIR"],
+        "roleTags": [
+          "EXPLOSIVE_RUSHING",
+          "BIG_PLAY_ACCESS",
+          "RB_PLUS_DST_PAIR"
+        ],
         "microStory": "Cook supplies a long touchdown and a second rushing score, then remains compatible with the Bills defense because both can score without sharing the same fantasy points."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["PRESSURE_DRIVEN_SCORING", "TURNOVER_ACCESS", "QB_MATCHUP"],
+        "roleTags": [
+          "PRESSURE_DRIVEN_SCORING",
+          "TURNOVER_ACCESS",
+          "QB_MATCHUP"
+        ],
         "microStory": "Buffalo creates separation through seven sacks and multiple takeaways against Andy Dalton, converting matchup leverage into a score that stays stable even without a defensive touchdown."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "T. Tagovailoa", "position": "QB", "team": "MIA" },
-        "teammates": [{ "name": "J. Waddle", "position": "WR", "team": "MIA" }],
+        "qb": {
+          "name": "T. Tagovailoa",
+          "position": "QB",
+          "team": "MIA"
+        },
+        "teammates": [
+          {
+            "name": "J. Waddle",
+            "position": "WR",
+            "team": "MIA"
+          }
+        ],
         "opponent": null
       },
       {
         "type": "RB_DST_PAIR",
         "qb": null,
-        "teammate": { "name": "J. Cook III", "position": "RB", "team": "BUF" },
-        "opponent": { "name": "Bills", "position": "DST", "team": "BUF", "qbFaced": "Andy Dalton" }
+        "teammate": {
+          "name": "J. Cook III",
+          "position": "RB",
+          "team": "BUF"
+        },
+        "opponent": {
+          "name": "Bills",
+          "position": "DST",
+          "team": "BUF",
+          "qbFaced": "Andy Dalton"
+        }
       },
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "G. Kittle", "position": "TE", "team": "SF" },
-        "opponent": { "name": "X. Hutchinson", "position": "WR", "team": "HOU" }
+        "teammate": {
+          "name": "G. Kittle",
+          "position": "TE",
+          "team": "SF"
+        },
+        "opponent": {
+          "name": "X. Hutchinson",
+          "position": "WR",
+          "team": "HOU"
+        }
       }
     ]
   }

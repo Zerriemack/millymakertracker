@@ -109,7 +109,7 @@
         "position": "WR",
         "team": "MIA",
         "salary": 5400,
-        "points": 26.0,
+        "points": 26,
         "ownershipPercent": 12.8,
         "rec": 6,
         "recYds": 110,
@@ -125,7 +125,7 @@
         "team": "DAL",
         "salary": 4800,
         "points": 23.9,
-        "ownershipPercent": 30.0,
+        "ownershipPercent": 30,
         "rec": 7,
         "recYds": 49,
         "recTd": 2,
@@ -140,7 +140,7 @@
         "team": "CAR",
         "salary": 4300,
         "points": 35.4,
-        "ownershipPercent": 18.0,
+        "ownershipPercent": 18,
         "rushYdsRb": 206,
         "rushTdRb": 1,
         "recRb": 3,
@@ -155,7 +155,7 @@
         "position": "DST",
         "team": "NO",
         "salary": 2200,
-        "points": 18.0,
+        "points": 18,
         "ownershipPercent": 15.8,
         "sacks": 1,
         "takeaways": 5,
@@ -164,7 +164,8 @@
         "qbFaced": "Jaxson Dart",
         "gameAwayTeam": "NYG",
         "gameHomeTeam": "NO",
-        "opponentTeam": "NYG"
+        "opponentTeam": "NYG",
+        "qbFacedArchetype": "ROOKIE"
       }
     ]
   },
@@ -177,10 +178,21 @@
       "secondaryLever": "Saints defense anchored to a turnover heavy rookie quarterback road start",
       "notes": {
         "rosterConstruction": "3-2-2-1-1",
-        "jetsCore": ["J. Fields", "B. Hall"],
-        "cowboysTouchdownTightEnd": ["J. Ferguson"],
-        "bucsSeahawksMini": ["E. Egbuka", "J. Smith-Njigba"],
-        "dolphinsPanthersMini": ["J. Waddle", "R. Dowdle"],
+        "jetsCore": [
+          "J. Fields",
+          "B. Hall"
+        ],
+        "cowboysTouchdownTightEnd": [
+          "J. Ferguson"
+        ],
+        "bucsSeahawksMini": [
+          "E. Egbuka",
+          "J. Smith-Njigba"
+        ],
+        "dolphinsPanthersMini": [
+          "J. Waddle",
+          "R. Dowdle"
+        ],
         "oneOffHammer": "J. Taylor",
         "dstTarget": {
           "dst": "Saints",
@@ -203,52 +215,100 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "RUSHING_FLOOR", "TWO_POINT_ACCESS"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "RUSHING_FLOOR",
+          "TWO_POINT_ACCESS"
+        ],
         "microStory": "Fields holds the Jets core together because he scores through multiple channels. The passing line reaches two touchdowns, the rushing line adds stability, and the two point throws add a scoring layer most quarterback boxes do not carry."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 1,
-        "roleTags": ["LOWER_OWNERSHIP_CEILING", "OPPOSING_GAME_MINI"],
+        "roleTags": [
+          "LOWER_OWNERSHIP_CEILING",
+          "OPPOSING_GAME_MINI"
+        ],
         "microStory": "Egbuka functions as the ownership hinge inside the highest scoring receiver outcome on the slate. The volume and yardage ceiling land at 7.1 percent, and the roster benefits without needing to guess a second Tampa Bay pass catcher."
       },
       {
         "rosterSpot": "FLEX",
         "slotIndex": 0,
-        "roleTags": ["RUSHING_AVALANCHE", "TWO_SIDED_GAME_CAPTURE"],
+        "roleTags": [
+          "RUSHING_AVALANCHE",
+          "TWO_SIDED_GAME_CAPTURE"
+        ],
         "microStory": "Dowdle is the score that changes the math. Two hundred plus rushing yards compresses the value of the rest of the roster because one slot delivers a total usually reserved for multiple players."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["TURNOVER_CONVERSION", "DEFENSIVE_TOUCHDOWN_PATH", "ROOKIE_QB_PRESSURE"],
+        "roleTags": [
+          "TURNOVER_CONVERSION",
+          "DEFENSIVE_TOUCHDOWN_PATH",
+          "ROOKIE_QB_PRESSURE"
+        ],
         "microStory": "New Orleans defense is not selected for a small sack projection. The bet is on possessions ending early and often. Multiple takeaways plus a defensive touchdown make the defense an active scoring piece, not a placeholder."
       }
     ],
     "correlations": [
       {
         "type": "TEAM_PAIR",
-        "qb": { "name": "J. Fields", "position": "QB", "team": "NYJ" },
-        "teammates": [{ "name": "B. Hall", "position": "RB", "team": "NYJ" }],
+        "qb": {
+          "name": "J. Fields",
+          "position": "QB",
+          "team": "NYJ"
+        },
+        "teammates": [
+          {
+            "name": "B. Hall",
+            "position": "RB",
+            "team": "NYJ"
+          }
+        ],
         "opponent": null
       },
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "E. Egbuka", "position": "WR", "team": "TB" },
-        "opponent": { "name": "J. Smith-Njigba", "position": "WR", "team": "SEA" }
+        "teammate": {
+          "name": "E. Egbuka",
+          "position": "WR",
+          "team": "TB"
+        },
+        "opponent": {
+          "name": "J. Smith-Njigba",
+          "position": "WR",
+          "team": "SEA"
+        }
       },
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "J. Waddle", "position": "WR", "team": "MIA" },
-        "opponent": { "name": "R. Dowdle", "position": "RB", "team": "CAR" }
+        "teammate": {
+          "name": "J. Waddle",
+          "position": "WR",
+          "team": "MIA"
+        },
+        "opponent": {
+          "name": "R. Dowdle",
+          "position": "RB",
+          "team": "CAR"
+        }
       },
       {
         "type": "DST_QB_TARGET",
         "qb": null,
-        "teammate": { "name": "Saints", "position": "DST", "team": "NO" },
-        "opponent": { "name": "Jaxson Dart", "position": "QB", "team": "NYG" }
+        "teammate": {
+          "name": "Saints",
+          "position": "DST",
+          "team": "NO"
+        },
+        "opponent": {
+          "name": "Jaxson Dart",
+          "position": "QB",
+          "team": "NYG"
+        }
       }
     ]
   }

@@ -79,7 +79,7 @@
         "team": "SF",
         "salary": 5500,
         "points": 22.7,
-        "ownershipPercent": 11.0,
+        "ownershipPercent": 11,
         "rec": 8,
         "recYds": 117,
         "gameAwayTeam": "ARI",
@@ -137,7 +137,7 @@
         "position": "RB",
         "team": "SF",
         "salary": 8200,
-        "points": 24.0,
+        "points": 24,
         "ownershipPercent": 25.5,
         "rushYdsRb": 52,
         "recRb": 10,
@@ -152,7 +152,7 @@
         "position": "DST",
         "team": "MIN",
         "salary": 3400,
-        "points": 30.0,
+        "points": 30,
         "ownershipPercent": 4.6,
         "sacks": 4,
         "takeaways": 5,
@@ -161,7 +161,8 @@
         "qbFaced": "Jake Browning",
         "gameAwayTeam": "CIN",
         "gameHomeTeam": "MIN",
-        "opponentTeam": "CIN"
+        "opponentTeam": "CIN",
+        "qbFacedArchetype": "BACKUP"
       }
     ]
   },
@@ -174,9 +175,19 @@
       "secondaryLever": "Vikings defense leveraged against Jake Browning after Burrow injury, paired with Mason to keep Minnesota scoring live",
       "notes": {
         "rosterConstruction": "QB, 2 RB, 3 WR, TE, FLEX, DST",
-        "lvWshCluster": ["G. Smith", "T. Tucker", "B. Bowers"],
-        "vikingsBengalsPair": ["J. Mason", "Vikings"],
-        "ninersPair": ["R. Pearsall", "C. McCaffrey"],
+        "lvWshCluster": [
+          "G. Smith",
+          "T. Tucker",
+          "B. Bowers"
+        ],
+        "vikingsBengalsPair": [
+          "J. Mason",
+          "Vikings"
+        ],
+        "ninersPair": [
+          "R. Pearsall",
+          "C. McCaffrey"
+        ],
         "oneOffHammer": "J. Taylor",
         "soloTdSlot": "D. Metcalf",
         "qbFacedByVikingsDst": "Jake Browning",
@@ -198,49 +209,94 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNED_OUTCOME", "GAME_SCRIPT_VOLUME"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNED_OUTCOME",
+          "GAME_SCRIPT_VOLUME"
+        ],
         "microStory": "Geno Smith is the entry point. The roster expects the pass volume to keep rising after the deficit, then captures the production through two different target types."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 2,
-        "roleTags": ["TOUCHDOWN_CONCENTRATION", "PRIMARY_CEILING_CAPTURE", "STACK_BREAKER"],
+        "roleTags": [
+          "TOUCHDOWN_CONCENTRATION",
+          "PRIMARY_CEILING_CAPTURE",
+          "STACK_BREAKER"
+        ],
         "microStory": "Tre Tucker is the slate winner. Three receiving touchdowns at 0.6 percent ownership creates separation that no normal roster cluster can match."
       },
       {
         "rosterSpot": "TE",
         "slotIndex": 0,
-        "roleTags": ["STACK_STABILIZER", "NON_REDUNDANT_POINTS", "DRIVE_LEVEL_USAGE"],
+        "roleTags": [
+          "STACK_STABILIZER",
+          "NON_REDUNDANT_POINTS",
+          "DRIVE_LEVEL_USAGE"
+        ],
         "microStory": "Brock Bowers keeps the stack complete without needing a touchdown. His points come through catches and yards, which allows Tucker to own the scoring."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["QB_PRESSURE_PATH", "TURNOVER_ACCESS", "DEFENSIVE_TOUCHDOWN_CEILING"],
+        "roleTags": [
+          "QB_PRESSURE_PATH",
+          "TURNOVER_ACCESS",
+          "DEFENSIVE_TOUCHDOWN_CEILING"
+        ],
         "microStory": "Minnesota defense targets the backup quarterback situation. Facing Jake Browning after Burrow injury opens the path to mistakes, and two defensive touchdowns turns a mid owned roster into a solo lane."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "G. Smith", "position": "QB", "team": "LV" },
+        "qb": {
+          "name": "G. Smith",
+          "position": "QB",
+          "team": "LV"
+        },
         "teammates": [
-          { "name": "T. Tucker", "position": "WR", "team": "LV" },
-          { "name": "B. Bowers", "position": "TE", "team": "LV" }
+          {
+            "name": "T. Tucker",
+            "position": "WR",
+            "team": "LV"
+          },
+          {
+            "name": "B. Bowers",
+            "position": "TE",
+            "team": "LV"
+          }
         ],
         "opponent": null
       },
       {
         "type": "TEAM_PAIR",
         "qb": null,
-        "teammate": { "name": "R. Pearsall", "position": "WR", "team": "SF" },
-        "opponent": { "name": "C. McCaffrey", "position": "RB", "team": "SF" }
+        "teammate": {
+          "name": "R. Pearsall",
+          "position": "WR",
+          "team": "SF"
+        },
+        "opponent": {
+          "name": "C. McCaffrey",
+          "position": "RB",
+          "team": "SF"
+        }
       },
       {
         "type": "RB_DST_PAIR",
         "qb": null,
-        "teammate": { "name": "J. Mason", "position": "RB", "team": "MIN" },
-        "opponent": { "name": "Vikings", "position": "DST", "team": "MIN", "qbFaced": "Jake Browning" }
+        "teammate": {
+          "name": "J. Mason",
+          "position": "RB",
+          "team": "MIN"
+        },
+        "opponent": {
+          "name": "Vikings",
+          "position": "DST",
+          "team": "MIN",
+          "qbFaced": "Jake Browning"
+        }
       }
     ]
   }

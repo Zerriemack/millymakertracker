@@ -167,6 +167,10 @@ export const GET: APIRoute = async ({ url }) => {
       sacks: true,
       takeaways: true,
 
+      qbFacedText: true,
+      qbFacedPlayerId: true,
+
+      opponentTeamId: true,
       opponentTeam: { select: { abbreviation: true } },
 
       opponentStartingQbPlayerId: true,
@@ -215,7 +219,7 @@ export const GET: APIRoute = async ({ url }) => {
                       id: true,
                       week: true,
                       slateDate: true,
-                      season: { select: { year: true } },
+                      season: { select: { id: true, year: true } },
                     },
                   },
                 },
@@ -227,6 +231,64 @@ export const GET: APIRoute = async ({ url }) => {
     },
     orderBy: [{ lineup: { winner: { contest: { slate: { slateDate: "desc" } } } } }],
   });
+
+  type QbSeasonLite = {
+    seasonId: string;
+    playerId: string;
+    archetype: any;
+    pffPassGrade: number | null;
+  };
+
+  const dstRefs = items
+    .map((it) => {
+      const seasonId = it.lineup?.winner?.contest?.slate?.season?.id ?? null;
+      const playerId = it.qbFacedPlayerId ?? null;
+      const teamId = it.opponentTeamId ?? null;
+      const spot = up(it.rosterSpot);
+      return { id: it.id, spot, seasonId, playerId, teamId };
+    })
+    .filter((x) => x.spot === "DST" && x.seasonId && x.playerId);
+
+  const seasonIds = Array.from(new Set(dstRefs.map((x) => x.seasonId))) as string[];
+  const playerIds = Array.from(new Set(dstRefs.map((x) => x.playerId))) as string[];
+
+  const qbSeasonRows =
+    seasonIds.length && playerIds.length
+      ? await prisma.qbSeason.findMany({
+          where: {
+            sport: "NFL",
+            seasonId: { in: seasonIds },
+            playerId: { in: playerIds },
+          },
+          select: {
+            seasonId: true,
+            playerId: true,
+            archetype: true,
+            pffPassGrade: true,
+          },
+        })
+      : [];
+
+  const qbSeasonByPlayerSeason = new Map<string, QbSeasonLite>();
+  for (const row of qbSeasonRows) {
+    const k = `${row.seasonId}:${row.playerId}`;
+    const prev = qbSeasonByPlayerSeason.get(k);
+    if (!prev) {
+      qbSeasonByPlayerSeason.set(k, row as QbSeasonLite);
+    } else if (prev.pffPassGrade == null && row.pffPassGrade != null) {
+      qbSeasonByPlayerSeason.set(k, row as QbSeasonLite);
+    }
+  }
+
+  function resolveQbSeason(seasonId: string | null, playerId: string | null): QbSeasonLite | null {
+    if (!seasonId || !playerId) return null;
+    return qbSeasonByPlayerSeason.get(`${seasonId}:${playerId}`) ?? null;
+  }
+
+  const qbSeasonByItemId = new Map<string, QbSeasonLite | null>();
+  for (const ref of dstRefs) {
+    qbSeasonByItemId.set(ref.id, resolveQbSeason(ref.seasonId, ref.playerId));
+  }
 
   const rows = items.map((it) => {
     const slate = it.lineup?.winner?.contest?.slate;
@@ -311,24 +373,9 @@ export const GET: APIRoute = async ({ url }) => {
 
     const statLine = dkStatLine(it);
 
-    let dstQbFaced = "NA";
-    let dstQbFacedSource: "OVERRIDE" | "GAME" | "NA" = "NA";
-
-    if (spot === "DST") {
-      if (it.opponentStartingQb?.name) {
-        dstQbFaced = s(it.opponentStartingQb.name) || "NA";
-        dstQbFacedSource = dstQbFaced === "NA" ? "NA" : "OVERRIDE";
-      } else if (hasGame && homeTeam && awayTeam) {
-        if (team === homeTeam) {
-          dstQbFaced = s(game?.awayStartingQb?.name) || "NA";
-          dstQbFacedSource = dstQbFaced === "NA" ? "NA" : "GAME";
-        }
-        if (team === awayTeam) {
-          dstQbFaced = s(game?.homeStartingQb?.name) || "NA";
-          dstQbFacedSource = dstQbFaced === "NA" ? "NA" : "GAME";
-        }
-      }
-    }
+    const dstQbFaced = spot === "DST" ? (s(it.qbFacedText) || null) : null;
+    const qbSeason = spot === "DST" ? (qbSeasonByItemId.get(it.id) ?? null) : null;
+    const pffPassGrade = typeof qbSeason?.pffPassGrade === "number" ? qbSeason.pffPassGrade : null;
 
     let oppTeam = "NA";
     if (hasGame && homeTeam && awayTeam) {
@@ -367,8 +414,9 @@ export const GET: APIRoute = async ({ url }) => {
       samePosSameGameCount,
 
       opponentTeam: oppTeam,
-      dstQbFaced,
-      dstQbFacedSource,
+      qbFacedText: dstQbFaced,
+      qbArchetype: spot === "DST" ? (qbSeason?.archetype ?? null) : null,
+      qbEpaScore: spot === "DST" ? pffPassGrade : null,
 
       statLine,
     };

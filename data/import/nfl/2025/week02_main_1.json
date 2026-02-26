@@ -156,14 +156,15 @@
         "position": "DST",
         "team": "SF",
         "salary": 3600,
-        "points": 5.0,
+        "points": 5,
         "ownershipPercent": 2.3,
         "sacks": 3,
         "takeaways": 1,
         "qbFaced": "Spencer Rattler",
         "gameAwayTeam": "SF",
         "gameHomeTeam": "NO",
-        "opponentTeam": "NO"
+        "opponentTeam": "NO",
+        "qbFacedArchetype": "BRIDGE"
       }
     ]
   },
@@ -176,9 +177,20 @@
       "secondaryLever": "Two wide receiver mini plus McCaffrey paired with 49ers defense",
       "notes": {
         "rosterConstruction": "4-2-2-1",
-        "giantsCowboysCluster": ["R. Wilson", "M. Nabers", "W. Robinson", "J. Ferguson"],
-        "lionsBearsMini": ["A. St. Brown", "R. Odunze"],
-        "ninersPair": ["C. McCaffrey", "49ers"],
+        "giantsCowboysCluster": [
+          "R. Wilson",
+          "M. Nabers",
+          "W. Robinson",
+          "J. Ferguson"
+        ],
+        "lionsBearsMini": [
+          "A. St. Brown",
+          "R. Odunze"
+        ],
+        "ninersPair": [
+          "C. McCaffrey",
+          "49ers"
+        ],
         "oneOffHammer": "J. Taylor",
         "qbFacedBy49ersDst": "S. Rattler"
       }
@@ -198,48 +210,92 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNED_OUTCOME", "PASSING_CEILING"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNED_OUTCOME",
+          "PASSING_CEILING"
+        ],
         "microStory": "Wilson is the core lever. The 450 and three passing touchdowns outcome is the slate breaker at his ownership."
       },
       {
         "rosterSpot": "FLEX",
         "slotIndex": 0,
-        "roleTags": ["SECOND_PASS_CATCHER", "VOLUME_FLOOR_WITH_CEILING", "STACK_COMPLETION"],
+        "roleTags": [
+          "SECOND_PASS_CATCHER",
+          "VOLUME_FLOOR_WITH_CEILING",
+          "STACK_COMPLETION"
+        ],
         "microStory": "Robinson supplies the second pass catcher lane. Eight for 142 and a score complements Nabers rather than overlapping him."
       },
       {
         "rosterSpot": "TE",
         "slotIndex": 0,
-        "roleTags": ["BRING_BACK", "RECEPTION_DRIVEN", "SCRIPT_RESILIENT"],
+        "roleTags": [
+          "BRING_BACK",
+          "RECEPTION_DRIVEN",
+          "SCRIPT_RESILIENT"
+        ],
         "microStory": "Ferguson is the return piece. Reception volume keeps him live even if the game tilts into constant passing."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["QB_PRESSURE_PATH", "TURNOVER_ACCESS", "PAIRED_WITH_RB_SAME_GAME"],
+        "roleTags": [
+          "QB_PRESSURE_PATH",
+          "TURNOVER_ACCESS",
+          "PAIRED_WITH_RB_SAME_GAME"
+        ],
         "microStory": "San Francisco defense is paired with McCaffrey but scores through a different channel. Three sacks and a takeaway against S. Rattler keeps the slot from sinking the roster while the lineup carries touchdown density elsewhere."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "R. Wilson", "position": "QB", "team": "NYG" },
+        "qb": {
+          "name": "R. Wilson",
+          "position": "QB",
+          "team": "NYG"
+        },
         "teammates": [
-          { "name": "M. Nabers", "position": "WR", "team": "NYG" },
-          { "name": "W. Robinson", "position": "WR", "team": "NYG" }
+          {
+            "name": "M. Nabers",
+            "position": "WR",
+            "team": "NYG"
+          },
+          {
+            "name": "W. Robinson",
+            "position": "WR",
+            "team": "NYG"
+          }
         ],
-        "opponent": { "name": "J. Ferguson", "position": "TE", "team": "DAL" }
+        "opponent": {
+          "name": "J. Ferguson",
+          "position": "TE",
+          "team": "DAL"
+        }
       },
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "A. St. Brown", "position": "WR", "team": "DET" },
-        "opponent": { "name": "R. Odunze", "position": "WR", "team": "CHI" }
+        "teammate": {
+          "name": "A. St. Brown",
+          "position": "WR",
+          "team": "DET"
+        },
+        "opponent": {
+          "name": "R. Odunze",
+          "position": "WR",
+          "team": "CHI"
+        }
       },
       {
         "type": "RB_DST_PAIR",
         "qb": null,
-        "teammate": { "name": "C. McCaffrey", "position": "RB", "team": "SF" },
+        "teammate": {
+          "name": "C. McCaffrey",
+          "position": "RB",
+          "team": "SF"
+        },
         "opponent": {
           "name": "49ers",
           "position": "DST",

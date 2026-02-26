@@ -17,29 +17,8 @@
 
 import fs from "fs";
 import path from "path";
-import {
-  PrismaClient,
-  Sport,
-  SlateType,
-  LineupType,
-  RosterSpot,
-  CorrelationType,
-} from "@prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
-import { Pool } from "pg";
-
-/* ------------------------- Prisma client (adapter) ------------------------- */
-
-const DATABASE_URL = process.env.DATABASE_URL;
-if (!DATABASE_URL) {
-  throw new Error(
-    "DATABASE_URL is missing. Ensure dotenv_config_path=.env.local and .env.local contains DATABASE_URL."
-  );
-}
-
-const pool = new Pool({ connectionString: DATABASE_URL });
-const adapter = new PrismaPg(pool);
-const prisma = new PrismaClient({ adapter });
+import { Sport, SlateType, LineupType, RosterSpot, CorrelationType } from "@prisma/client";
+import { prisma } from "../src/lib/prisma";
 
 /* ----------------------------- CLI parsing ----------------------------- */
 
@@ -876,6 +855,59 @@ async function main() {
     });
   }
 
+  // -------------------- Resolve games from seeded schedule --------------------
+  // Game model uses seasonId, not seasonYear.
+
+  const games =
+    week !== null
+      ? await prisma.game.findMany({
+          where: { sport, seasonId: season.id, week },
+          select: {
+            id: true,
+            homeTeamId: true,
+            awayTeamId: true,
+            window: true,
+            homeStartingQbPlayerId: true,
+            awayStartingQbPlayerId: true,
+          },
+        })
+      : [];
+
+  const gameByTeamId = new Map<
+    string,
+    { gameId: string; opponentTeamId: string; opponentStartingQbPlayerId: string | null }
+  >();
+
+  for (const g of games) {
+    gameByTeamId.set(g.homeTeamId, {
+      gameId: g.id,
+      opponentTeamId: g.awayTeamId,
+      opponentStartingQbPlayerId: g.awayStartingQbPlayerId ?? null,
+    });
+    gameByTeamId.set(g.awayTeamId, {
+      gameId: g.id,
+      opponentTeamId: g.homeTeamId,
+      opponentStartingQbPlayerId: g.homeStartingQbPlayerId ?? null,
+    });
+  }
+
+  const opponentTeamIds = new Set<string>();
+  for (const it of items) {
+    const rs = String(it.rosterSpot).toUpperCase().trim() as RosterSpot;
+    if (rs !== RosterSpot.DST) continue;
+    const teamAbbr = String(it.team).toUpperCase().trim();
+    const teamId = teamIdByAbbr.get(teamAbbr) ?? null;
+    if (!teamId) continue;
+
+    let opponentTeamId = gameByTeamId.get(teamId)?.opponentTeamId ?? null;
+    if (!opponentTeamId) {
+      const oppAbbr = getOpponentTeamAbbrFromItem(it);
+      if (oppAbbr) opponentTeamId = teamIdByAbbr.get(oppAbbr) ?? null;
+    }
+
+    if (opponentTeamId) opponentTeamIds.add(opponentTeamId);
+  }
+
   const dkIds = Array.from(
     new Set(candidates.map((c) => c.dkPlayerId).filter((v): v is number => typeof v === "number"))
   );
@@ -895,8 +927,8 @@ async function main() {
   const playerIdByComposite = new Map<string, string>();
   const playersByTeamPos = new Map<string, { id: string; name: string }[]>();
 
-  if (needComposite.length > 0) {
-    const teamIds = Array.from(new Set(needComposite.map((c) => c.teamId)));
+  if (needComposite.length > 0 || opponentTeamIds.size > 0) {
+    const teamIds = Array.from(new Set([...needComposite.map((c) => c.teamId), ...opponentTeamIds]));
     const found = await prisma.player.findMany({
       where: { sport, teamId: { in: teamIds } },
       select: { id: true, name: true, position: true, teamId: true },
@@ -908,6 +940,19 @@ async function main() {
       list.push({ id: p.id, name: p.name });
       playersByTeamPos.set(key, list);
     }
+  }
+
+  const qbPlayers = await prisma.player.findMany({
+    where: { sport, position: "QB" },
+    select: { id: true, name: true },
+  });
+  const qbPlayerIdsByNorm = new Map<string, string[]>();
+  for (const p of qbPlayers) {
+    const key = normName(p.name);
+    if (!key) continue;
+    const list = qbPlayerIdsByNorm.get(key) ?? [];
+    list.push(p.id);
+    qbPlayerIdsByNorm.set(key, list);
   }
 
   const resolvedPlayerIdByIndex = new Map<number, string>();
@@ -953,44 +998,21 @@ async function main() {
     throw new MissingEntitiesError([], missingPlayers);
   }
 
-  // -------------------- Resolve games from seeded schedule --------------------
-  // Game model uses seasonId, not seasonYear.
-
-  const games =
-    week !== null
-      ? await prisma.game.findMany({
-          where: { sport, seasonId: season.id, week },
-          select: {
-            id: true,
-            homeTeamId: true,
-            awayTeamId: true,
-            window: true,
-            homeStartingQbPlayerId: true,
-            awayStartingQbPlayerId: true,
-          },
-        })
-      : [];
-
-  const gameByTeamId = new Map<
-    string,
-    { gameId: string; opponentTeamId: string; opponentStartingQbPlayerId: string | null }
-  >();
-
-  for (const g of games) {
-    gameByTeamId.set(g.homeTeamId, {
-      gameId: g.id,
-      opponentTeamId: g.awayTeamId,
-      opponentStartingQbPlayerId: g.awayStartingQbPlayerId ?? null,
-    });
-    gameByTeamId.set(g.awayTeamId, {
-      gameId: g.id,
-      opponentTeamId: g.homeTeamId,
-      opponentStartingQbPlayerId: g.homeStartingQbPlayerId ?? null,
-    });
-  }
-
   const teamIdByLineupIndex = new Map<number, string>();
   for (const c of candidates) teamIdByLineupIndex.set(c.idx, c.teamId);
+
+  const qbSeasonCountBefore = await prisma.qbSeason.count({
+    where: { sport, seasonId: season.id },
+  });
+
+  const qbSeasonRows = await prisma.qbSeason.findMany({
+    where: { sport, seasonId: season.id },
+    select: { id: true, playerId: true },
+  });
+  const qbSeasonIdByPlayer = new Map<string, string>();
+  for (const row of qbSeasonRows) {
+    if (!qbSeasonIdByPlayer.has(row.playerId)) qbSeasonIdByPlayer.set(row.playerId, row.id);
+  }
 
   const slotCounters2: Record<string, number> = {};
   const lineupItemIdByKey = new Map<string, string>();
@@ -1029,10 +1051,13 @@ async function main() {
       if (oppAbbr) opponentTeamId = teamIdByAbbr.get(oppAbbr) ?? null;
     }
 
-    const qbNameOverride =
+    const qbFacedText =
       cleanString((it as any).qbFaced) ??
       cleanString((it as any).opponentStartingQbName) ??
       null;
+    const qbFacedArchetype = cleanString((it as any).qbFacedArchetype);
+
+    const qbNameOverride = qbFacedText;
 
     const overrideOpponentQbId =
       rosterSpot === RosterSpot.DST
@@ -1043,6 +1068,47 @@ async function main() {
       rosterSpot === RosterSpot.DST
         ? (overrideOpponentQbId ?? (gameLink ? gameLink.opponentStartingQbPlayerId : null))
         : null;
+
+    let qbFacedPlayerId: string | null = null;
+    let qbFacedSeasonId: string | null = null;
+
+    const qbFacedName = cleanString(qbFacedText);
+    const canResolveQbFaced =
+      rosterSpot === RosterSpot.DST &&
+      qbFacedName &&
+      !qbFacedName.includes("/") &&
+      Boolean(opponentTeamId);
+
+    if (canResolveQbFaced && opponentTeamId) {
+      const resolved = resolvePlayerIdByName({
+        name: qbFacedName,
+        position: "QB",
+        teamId: opponentTeamId,
+        allowInitials: false,
+        playerIdByComposite,
+        playersByTeamPos,
+      });
+
+      if (resolved.id) {
+        qbFacedPlayerId = resolved.id;
+        qbFacedSeasonId = qbSeasonIdByPlayer.get(qbFacedPlayerId) ?? null;
+
+        if (qbFacedArchetype) {
+          const norm = normName(qbFacedName);
+          const ids = norm ? qbPlayerIdsByNorm.get(norm) ?? [] : [];
+          if (ids.length === 0) {
+            console.warn("QB FACED ARCHETYPE: no playerId matches", { name: qbFacedName, season: year });
+          }
+
+          for (const pid of ids) {
+            await prisma.qbSeason.updateMany({
+              where: { sport, seasonId: season.id, playerId: pid },
+              data: { archetype: qbFacedArchetype as any },
+            });
+          }
+        }
+      }
+    }
 
     const saved = await prisma.lineupItem.upsert({
       where: { lineupId_rosterSpot_slotIndex: { lineupId: lineup.id, rosterSpot, slotIndex } },
@@ -1055,6 +1121,9 @@ async function main() {
         gameId,
         opponentTeamId,
         opponentStartingQbPlayerId,
+        qbFacedText,
+        qbFacedPlayerId,
+        qbFacedSeasonId,
 
         salary: it.salary ?? null,
         points: it.points ?? null,
@@ -1096,6 +1165,9 @@ async function main() {
         gameId,
         opponentTeamId,
         opponentStartingQbPlayerId,
+        qbFacedText,
+        qbFacedPlayerId,
+        qbFacedSeasonId,
 
         salary: it.salary ?? null,
         points: it.points ?? null,
@@ -1135,6 +1207,15 @@ async function main() {
     });
 
     lineupItemIdByKey.set(`${rosterSpot}:${slotIndex}`, saved.id);
+  }
+
+  const qbSeasonCountAfter = await prisma.qbSeason.count({
+    where: { sport, seasonId: season.id },
+  });
+  if (qbSeasonCountAfter > qbSeasonCountBefore) {
+    throw new Error(
+      `QbSeason row count increased after archetype updates (${qbSeasonCountBefore} -> ${qbSeasonCountAfter}). No rows should be created.`
+    );
   }
 
   const itemAnalyses = normalizeItemAnalyses(data.analysis ?? null);
@@ -1301,5 +1382,4 @@ main()
   })
   .finally(async () => {
     await prisma.$disconnect();
-    await pool.end();
   });

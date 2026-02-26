@@ -97,7 +97,7 @@
         "position": "WR",
         "team": "LAR",
         "salary": 7900,
-        "points": 39.0,
+        "points": 39,
         "ownershipPercent": 38.3,
         "rec": 13,
         "recYds": 170,
@@ -112,7 +112,7 @@
         "position": "WR",
         "team": "ATL",
         "salary": 5700,
-        "points": 28.0,
+        "points": 28,
         "ownershipPercent": 14.3,
         "rec": 8,
         "recYds": 110,
@@ -158,7 +158,7 @@
         "position": "DST",
         "team": "DET",
         "salary": 3500,
-        "points": 19.0,
+        "points": 19,
         "ownershipPercent": 9.8,
         "sacks": 3,
         "takeaways": 3,
@@ -167,7 +167,8 @@
         "qbFaced": "Joe Flacco",
         "gameAwayTeam": "CLE",
         "gameHomeTeam": "DET",
-        "opponentTeam": "CLE"
+        "opponentTeam": "CLE",
+        "qbFacedArchetype": "BACKUP"
       }
     ]
   },
@@ -180,8 +181,15 @@
       "secondaryLever": "Game story capture through Jeanty versus Odunze plus Lions DST pressure and turnover bet versus Joe Flacco",
       "notes": {
         "rosterConstruction": "1-2-1-1-1-1-1-1",
-        "chi_lv_pair": ["A. Jeanty", "R. Odunze"],
-        "three_rb_build": ["A. Jeanty", "W. Marks", "B. Irving"],
+        "chi_lv_pair": [
+          "A. Jeanty",
+          "R. Odunze"
+        ],
+        "three_rb_build": [
+          "A. Jeanty",
+          "W. Marks",
+          "B. Irving"
+        ],
         "chalk_anchor": "P. Nacua",
         "thin_te_separator": "J. Tonges",
         "dst_qb_faced": "Joe Flacco"
@@ -202,25 +210,41 @@
       {
         "rosterSpot": "WR",
         "slotIndex": 0,
-        "roleTags": ["SLATE_ANCHOR", "FAILURE_MODE_REMOVAL", "RAW_POINTS_PRIORITY"],
+        "roleTags": [
+          "SLATE_ANCHOR",
+          "FAILURE_MODE_REMOVAL",
+          "RAW_POINTS_PRIORITY"
+        ],
         "microStory": "Nacua at 38 percent is the decision to stop fighting the slate’s highest leverage wide receiver outcome. The lineup then asks the rest of the roster to be different rather than asking Nacua to be wrong."
       },
       {
         "rosterSpot": "RB",
         "slotIndex": 1,
-        "roleTags": ["LOW_OWNED_CEILING", "DUAL_TD_PATH", "ROSTER_SHAPE_SEPARATOR"],
+        "roleTags": [
+          "LOW_OWNED_CEILING",
+          "DUAL_TD_PATH",
+          "ROSTER_SHAPE_SEPARATOR"
+        ],
         "microStory": "Marks is the piece most rosters do not have access to. The win condition requires a specific distribution of points: one rushing score and one receiving score. When it hits, the roster gains a receiver level total from a sub one percent running back."
       },
       {
         "rosterSpot": "TE",
         "slotIndex": 0,
-        "roleTags": ["POSITIONAL_CLEAR", "LOW_OWNERSHIP", "TOUCHDOWN_REQUIRED"],
+        "roleTags": [
+          "POSITIONAL_CLEAR",
+          "LOW_OWNERSHIP",
+          "TOUCHDOWN_REQUIRED"
+        ],
         "microStory": "Tonges does not need to dominate volume. A single touchdown plus enough yardage to avoid a position sink is the entire requirement, and it arrives at almost no ownership."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["TURNOVER_SCRIPT", "DEFENSIVE_TD_ACCESS", "QB_PRESSURE_PATH"],
+        "roleTags": [
+          "TURNOVER_SCRIPT",
+          "DEFENSIVE_TD_ACCESS",
+          "QB_PRESSURE_PATH"
+        ],
         "microStory": "Detroit defense is an explicit bet on Flacco being forced into mistakes under pressure once the game tilts. The defensive touchdown is the swing event that converts a correct script into a points gap."
       }
     ],
@@ -228,14 +252,31 @@
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "A. Jeanty", "position": "RB", "team": "LV" },
-        "opponent": { "name": "R. Odunze", "position": "WR", "team": "CHI" }
+        "teammate": {
+          "name": "A. Jeanty",
+          "position": "RB",
+          "team": "LV"
+        },
+        "opponent": {
+          "name": "R. Odunze",
+          "position": "WR",
+          "team": "CHI"
+        }
       },
       {
         "type": "RB_DST_PAIR",
         "qb": null,
-        "teammate": { "name": "Lions", "position": "DST", "team": "DET", "qbFaced": "Joe Flacco" },
-        "opponent": { "name": "Joe Flacco", "position": "QB", "team": "CLE" }
+        "teammate": {
+          "name": "Lions",
+          "position": "DST",
+          "team": "DET",
+          "qbFaced": "Joe Flacco"
+        },
+        "opponent": {
+          "name": "Joe Flacco",
+          "position": "QB",
+          "team": "CLE"
+        }
       }
     ]
   }

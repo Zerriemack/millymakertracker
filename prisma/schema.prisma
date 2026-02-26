@@ -48,6 +48,18 @@ enum CorrelationType {
   BRINGBACK
 }
 
+enum QbArchetype {
+  ROOKIE
+  BACKUP
+  BRIDGE
+  JOURNEYMAN
+  REPLACEMENT_LEVEL
+  FRANCHISE
+  GUNSLINGER
+  GAME_MANAGER
+  UNKNOWN
+}
+
 model Season {
   id     String @id @default(cuid())
   year   Int
@@ -56,8 +68,33 @@ model Season {
   games  Game[]
 
   weekForms PlayerWeekForm[]
+  qbSeasons QbSeason[]
 
   @@unique([year, sport])
+}
+
+model QbSeason {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sport     Sport
+  seasonId  String
+  playerId  String
+  teamId    String
+
+  archetype      QbArchetype @default(UNKNOWN)
+  pffPassGrade   Float?
+
+  season Season @relation(fields: [seasonId], references: [id], onDelete: Cascade)
+  player Player @relation(fields: [playerId], references: [id], onDelete: Cascade)
+  team   Team   @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  lineupItemsFaced LineupItem[] @relation("LineupItemQbFacedSeason")
+
+  @@unique([sport, seasonId, playerId, teamId])
+  @@index([sport, seasonId])
+  @@index([playerId])
+  @@index([teamId])
 }
 
 model Slate {
@@ -154,6 +191,7 @@ model Team {
 
   players Player[]
   seasons TeamSeason[]
+  qbSeasons QbSeason[]
 
   opponentLineupItems LineupItem[] @relation("LineupItemOpponentTeam")
 
@@ -189,6 +227,9 @@ model Player {
   lineupItems LineupItem[]
 
   opponentStartingQbFor LineupItem[] @relation("LineupItemOpponentQb")
+  qbFacedLineupItems     LineupItem[] @relation("LineupItemQbFaced")
+
+  qbSeasons QbSeason[]
 
   homeStartingQbGames Game[] @relation("HomeStartingQb")
   awayStartingQbGames Game[] @relation("AwayStartingQb")
@@ -325,6 +366,9 @@ model LineupItem {
 
   // DST outcome fields
   opponentStartingQbPlayerId String?
+  qbFacedText                String?
+  qbFacedPlayerId            String?
+  qbFacedSeasonId            String?
   pointsAllowedBucket        Int?
   defensiveTdCount           Int?
   sacks                      Int?
@@ -336,6 +380,8 @@ model LineupItem {
 
   opponentTeam       Team?   @relation("LineupItemOpponentTeam", fields: [opponentTeamId], references: [id])
   opponentStartingQb Player? @relation("LineupItemOpponentQb", fields: [opponentStartingQbPlayerId], references: [id])
+  qbFacedPlayer      Player? @relation("LineupItemQbFaced", fields: [qbFacedPlayerId], references: [id])
+  qbFacedSeason      QbSeason? @relation("LineupItemQbFacedSeason", fields: [qbFacedSeasonId], references: [id])
 
   analysis LineupItemAnalysis?
 
@@ -351,6 +397,8 @@ model LineupItem {
   @@index([gameId])
   @@index([opponentTeamId])
   @@index([opponentStartingQbPlayerId])
+  @@index([qbFacedPlayerId])
+  @@index([qbFacedSeasonId])
   @@index([pointsAllowedBucket])
 }
 

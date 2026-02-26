@@ -2,8 +2,6 @@ import dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });
 import fs from "fs";
 import path from "path";
-import { PrismaClient } from "@prisma/client";
-
 import { prisma } from "../src/lib/prisma";
 
 type SeedPlayer = {

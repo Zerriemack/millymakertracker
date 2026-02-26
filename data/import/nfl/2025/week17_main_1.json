@@ -104,7 +104,7 @@
         "team": "NE",
         "salary": 5800,
         "points": 25.1,
-        "ownershipPercent": 26.0,
+        "ownershipPercent": 26,
         "rec": 6,
         "recYds": 101,
         "recTd": 1,
@@ -118,7 +118,7 @@
         "position": "WR",
         "team": "JAX",
         "salary": 4800,
-        "points": 22.0,
+        "points": 22,
         "ownershipPercent": 11.9,
         "rec": 8,
         "recYds": 115,
@@ -162,7 +162,7 @@
         "position": "DST",
         "team": "NYG",
         "salary": 2900,
-        "points": 18.0,
+        "points": 18,
         "ownershipPercent": 8.3,
         "sacks": 4,
         "takeaways": 2,
@@ -171,7 +171,8 @@
         "qbFaced": "Geno Smith",
         "gameAwayTeam": "NYG",
         "gameHomeTeam": "LV",
-        "opponentTeam": "LV"
+        "opponentTeam": "LV",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL"
       }
     ]
   },
@@ -185,9 +186,20 @@
       "notes": {
         "rosterConstruction": "3-3-2-1",
         "qbGame": "NE@NYJ",
-        "patriotsCluster": ["D. Maye", "S. Diggs", "R. Stevenson"],
-        "ariCinCluster": ["C. Brown", "M. Wilson", "T. McBride"],
-        "giantsRaidersPair": ["Giants", "M. Mayer"],
+        "patriotsCluster": [
+          "D. Maye",
+          "S. Diggs",
+          "R. Stevenson"
+        ],
+        "ariCinCluster": [
+          "C. Brown",
+          "M. Wilson",
+          "T. McBride"
+        ],
+        "giantsRaidersPair": [
+          "Giants",
+          "M. Mayer"
+        ],
         "oneOff": "P. Washington",
         "qbFacedByGiantsDst": "Geno Smith"
       }
@@ -207,35 +219,63 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "TEAM_TOTAL_CAPTURE", "TOUCHDOWN_CONVERSION"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "TEAM_TOTAL_CAPTURE",
+          "TOUCHDOWN_CONVERSION"
+        ],
         "microStory": "Maye converts a favored script into five passing touchdowns, so the roster does not need fragile yardage chasing to reach the top."
       },
       {
         "rosterSpot": "RB",
         "slotIndex": 1,
-        "roleTags": ["LEVERAGE_WITHIN_CHALK", "DUAL_THREAT_USAGE", "TOUCHDOWN_ACCESS"],
+        "roleTags": [
+          "LEVERAGE_WITHIN_CHALK",
+          "DUAL_THREAT_USAGE",
+          "TOUCHDOWN_ACCESS"
+        ],
         "microStory": "Stevenson is the NE decision that changes duplication. His rushing touchdown plus receiving touchdown outcome lets the lineup benefit from the same blowout without needing a second Patriots wideout."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["PRESSURE_PATH", "TURNOVER_ACCESS", "DEFENSIVE_TOUCHDOWN"],
+        "roleTags": [
+          "PRESSURE_PATH",
+          "TURNOVER_ACCESS",
+          "DEFENSIVE_TOUCHDOWN"
+        ],
         "microStory": "Giants defense posts a slate winning defensive score. The path is sacks and interceptions against Geno Smith, then a defensive touchdown converts disruption into separation."
       },
       {
         "rosterSpot": "FLEX",
         "slotIndex": 0,
-        "roleTags": ["VOLUME_TIGHT_END", "INJURY_REPLACEMENT_ROLE", "CONTRAST_WITH_DST"],
+        "roleTags": [
+          "VOLUME_TIGHT_END",
+          "INJURY_REPLACEMENT_ROLE",
+          "CONTRAST_WITH_DST"
+        ],
         "microStory": "Mayer benefits from Bowers being out and earns nine receptions. The tight end production comes from short area volume, so it can coexist with a defensive ceiling outcome on the other side."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "D. Maye", "position": "QB", "team": "NE" },
+        "qb": {
+          "name": "D. Maye",
+          "position": "QB",
+          "team": "NE"
+        },
         "teammates": [
-          { "name": "S. Diggs", "position": "WR", "team": "NE" },
-          { "name": "R. Stevenson", "position": "RB", "team": "NE" }
+          {
+            "name": "S. Diggs",
+            "position": "WR",
+            "team": "NE"
+          },
+          {
+            "name": "R. Stevenson",
+            "position": "RB",
+            "team": "NE"
+          }
         ],
         "opponent": null
       },
@@ -243,9 +283,21 @@
         "type": "GAME_CLUSTER",
         "qb": null,
         "teammates": [
-          { "name": "C. Brown", "position": "RB", "team": "CIN" },
-          { "name": "M. Wilson", "position": "WR", "team": "ARI" },
-          { "name": "T. McBride", "position": "TE", "team": "ARI" }
+          {
+            "name": "C. Brown",
+            "position": "RB",
+            "team": "CIN"
+          },
+          {
+            "name": "M. Wilson",
+            "position": "WR",
+            "team": "ARI"
+          },
+          {
+            "name": "T. McBride",
+            "position": "TE",
+            "team": "ARI"
+          }
         ],
         "opponent": null
       },
@@ -258,7 +310,11 @@
           "team": "NYG",
           "qbFaced": "Geno Smith"
         },
-        "opponent": { "name": "M. Mayer", "position": "TE", "team": "LV" }
+        "opponent": {
+          "name": "M. Mayer",
+          "position": "TE",
+          "team": "LV"
+        }
       }
     ]
   }

@@ -1,0 +1,2 @@
+-- AlterEnum
+ALTER TYPE "QbArchetype" ADD VALUE 'REPLACEMENT_LEVEL';

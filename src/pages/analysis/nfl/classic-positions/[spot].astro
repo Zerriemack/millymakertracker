@@ -15,6 +15,7 @@ const data = await res.json();
 const rowsRaw = Array.isArray(data?.rows) ? data.rows : [];
 
 function n(v: any) {
+  if (v == null || v === "") return null;
   const x = Number(v);
   return Number.isFinite(x) ? x : null;
 }
@@ -102,7 +103,9 @@ const rows = rowsRaw.map((r: any) => ({
   samePosSameGameCount: n(r.samePosSameGameCount),
 
   opponentTeam: s(r.opponentTeam),
-  dstQbFaced: s(r.dstQbFaced),
+  qbFacedText: s(r.qbFacedText),
+  qbArchetype: s(r.qbArchetype),
+  qbEpaScore: n(r.qbEpaScore),
 
   statLine: s(r.statLine),
 
@@ -208,8 +211,32 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
 
             <div class="k">Environment</div>
             <div class="v mono">
-              <div>Indoor: {indoorCounts.get("INDOOR") ?? 0} | Outdoor: {indoorCounts.get("OUTDOOR") ?? 0} | NA: {indoorCounts.get("NA") ?? 0}</div>
+              <div>
+                Indoor: {indoorCounts.get("INDOOR") ?? 0} | Outdoor: {indoorCounts.get("OUTDOOR") ?? 0} | NA:{" "}
+                {indoorCounts.get("NA") ?? 0}
+              </div>
             </div>
+
+            {isDST ? (
+              <>
+                <div class="k">QB Faced</div>
+                <div class="v mono">
+                  <div>Most: <span id="qbFacedMost">—</span></div>
+                </div>
+
+                <div class="k">Archetype</div>
+                <div class="v mono">
+                  <div>Most: <span id="qbArchetypeMost">—</span></div>
+                </div>
+
+                <div class="k">PFF GRADE</div>
+                <div class="v mono">
+                  <div>Median: <span id="qbEpaMedian">—</span></div>
+                  <div>Most: <span id="qbEpaMax">—</span></div>
+                  <div>Least: <span id="qbEpaMin">—</span></div>
+                </div>
+              </>
+            ) : null}
           </div>
         </div>
       </aside>
@@ -227,6 +254,10 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
                 <th class="colTeam"><button class="thBtn" type="button" data-col="team">TEAM</button></th>
                 <th class="colName"><button class="thBtn" type="button" data-col="pos">POSITION</button></th>
 
+                {isDST ? <th class="colSal"><button class="thBtn" type="button" data-col="sal">SALARY</button></th> : null}
+                {isDST ? <th class="colPts"><button class="thBtn" type="button" data-col="pts">DK POINTS</button></th> : null}
+                {isDST ? <th class="colOwn"><button class="thBtn" type="button" data-col="own">DST %</button></th> : null}
+
                 <th class="colStat"><button class="thBtn" type="button" data-col="stat">STAT LINE</button></th>
 
                 {isQB ? <th class="colStack"><button class="thBtn" type="button" data-col="stack">STACK PARTNERS</button></th> : null}
@@ -235,15 +266,25 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
                 {!isQB && !isDST ? <th class="colRole"><button class="thBtn" type="button" data-col="role">ROLE</button></th> : null}
                 {!isQB && !isDST ? <th class="colBring"><button class="thBtn" type="button" data-col="bring">BRING BACK</button></th> : null}
 
-                {!isQB && !isDST ? <th class="colSameT"><button class="thBtn" type="button" data-col="sameT">SAME POSITION TEAM COUNT</button></th> : null}
-                {!isQB && !isDST ? <th class="colSameG"><button class="thBtn" type="button" data-col="sameG">SAME POSITION GAME COUNT</button></th> : null}
+                {!isQB && !isDST ? (
+                  <th class="colSameT">
+                    <button class="thBtn" type="button" data-col="sameT">SAME POSITION TEAM COUNT</button>
+                  </th>
+                ) : null}
+                {!isQB && !isDST ? (
+                  <th class="colSameG">
+                    <button class="thBtn" type="button" data-col="sameG">SAME POSITION GAME COUNT</button>
+                  </th>
+                ) : null}
 
                 {isDST ? <th class="colOpp"><button class="thBtn" type="button" data-col="opp">OPP TEAM</button></th> : null}
                 {isDST ? <th class="colQBF"><button class="thBtn" type="button" data-col="qbf">QB FACED</button></th> : null}
+                {isDST ? <th class="colQBA"><button class="thBtn" type="button" data-col="qba">ARCHETYPE</button></th> : null}
+                {isDST ? <th class="colQBE"><button class="thBtn" type="button" data-col="qbe">PFF Grade</button></th> : null}
 
-                <th class="colSal"><button class="thBtn" type="button" data-col="sal">SALARY</button></th>
-                <th class="colOwn"><button class="thBtn" type="button" data-col="own">OWNERSHIP</button></th>
-                <th class="colPts"><button class="thBtn" type="button" data-col="pts">DK POINTS</button></th>
+                {!isDST ? <th class="colSal"><button class="thBtn" type="button" data-col="sal">SALARY</button></th> : null}
+                {!isDST ? <th class="colOwn"><button class="thBtn" type="button" data-col="own">OWNERSHIP</button></th> : null}
+                {!isDST ? <th class="colPts"><button class="thBtn" type="button" data-col="pts">DK POINTS</button></th> : null}
 
                 <th class="colLink"></th>
               </tr>
@@ -253,26 +294,22 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
               {rows.map((r) => (
                 <tr
                   data-year={r.year == null ? "" : String(r.year)}
-                  data-week={r.week == null ? "" : String(r.week)}                  data-date={fmtDate(r.slateDate)}
-
+                  data-week={r.week == null ? "" : String(r.week)}
+                  data-date={fmtDate(r.slateDate)}
                   data-match={r.matchup || ""}
                   data-env={r.indoorOutdoor || ""}
-
                   data-team={r.team || ""}
                   data-pos={r.slotLabel || ""}
-
                   data-stat={r.statLine || ""}
-
                   data-stack={r.stackPartners || ""}
                   data-bring={r.bringBack || ""}
                   data-role={r.role || ""}
-
                   data-samet={r.samePosSameTeamCount == null ? "" : String(r.samePosSameTeamCount)}
                   data-sameg={r.samePosSameGameCount == null ? "" : String(r.samePosSameGameCount)}
-
                   data-opp={r.opponentTeam || ""}
-                  data-qbf={r.dstQbFaced || ""}
-
+                  data-qbf={r.qbFacedText || ""}
+                  data-qba={r.qbArchetype || ""}
+                  data-qbe={r.qbEpaScore == null ? "" : String(r.qbEpaScore)}
                   data-sal={r.salary == null ? "" : String(r.salary)}
                   data-own={r.ownPct == null ? "" : String(r.ownPct)}
                   data-pts={r.points == null ? "" : String(r.points)}
@@ -285,6 +322,10 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
                   <td class="mono">{r.team || "—"}</td>
                   <td class="capCell"><div class="capMain">{r.slotLabel || "—"}</div></td>
 
+                  {isDST ? <td class="mono">{r.salary == null ? "—" : r.salary.toFixed(0)}</td> : null}
+                  {isDST ? <td class="mono">{r.points == null ? "—" : r.points.toFixed(2)}</td> : null}
+                  {isDST ? <td class="mono">{r.ownPct == null ? "—" : `${r.ownPct.toFixed(2)}%`}</td> : null}
+
                   <td class="mono">{r.statLine || "—"}</td>
 
                   {isQB ? <td class="mono">{r.stackPartners || "—"}</td> : null}
@@ -293,15 +334,21 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
                   {!isQB && !isDST ? <td class="mono">{r.role || "—"}</td> : null}
                   {!isQB && !isDST ? <td class="mono">{r.bringBack || "—"}</td> : null}
 
-                  {!isQB && !isDST ? <td class="mono">{r.samePosSameTeamCount == null ? "—" : r.samePosSameTeamCount.toFixed(0)}</td> : null}
-                  {!isQB && !isDST ? <td class="mono">{r.samePosSameGameCount == null ? "—" : r.samePosSameGameCount.toFixed(0)}</td> : null}
+                  {!isQB && !isDST ? (
+                    <td class="mono">{r.samePosSameTeamCount == null ? "—" : r.samePosSameTeamCount.toFixed(0)}</td>
+                  ) : null}
+                  {!isQB && !isDST ? (
+                    <td class="mono">{r.samePosSameGameCount == null ? "—" : r.samePosSameGameCount.toFixed(0)}</td>
+                  ) : null}
 
                   {isDST ? <td class="mono">{r.opponentTeam || "—"}</td> : null}
-                  {isDST ? <td class="mono">{r.dstQbFaced || "—"}</td> : null}
+                  {isDST ? <td class="mono">{r.qbFacedText || "—"}</td> : null}
+                  {isDST ? <td class="mono">{r.qbArchetype || "—"}</td> : null}
+                  {isDST ? <td class="mono">{r.qbEpaScore == null ? "—" : r.qbEpaScore.toFixed(1)}</td> : null}
 
-                  <td class="mono">{r.salary == null ? "—" : r.salary.toFixed(0)}</td>
-                  <td class="mono">{r.ownPct == null ? "—" : `${r.ownPct.toFixed(2)}%`}</td>
-                  <td class="mono">{r.points == null ? "—" : r.points.toFixed(2)}</td>
+                  {!isDST ? <td class="mono">{r.salary == null ? "—" : r.salary.toFixed(0)}</td> : null}
+                  {!isDST ? <td class="mono">{r.ownPct == null ? "—" : `${r.ownPct.toFixed(2)}%`}</td> : null}
+                  {!isDST ? <td class="mono">{r.points == null ? "—" : r.points.toFixed(2)}</td> : null}
 
                   <td class="mono">
                     {r.link ? <a class="link" href={r.link} target="_blank" rel="noreferrer">View</a> : "—"}
@@ -336,23 +383,32 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
             }
             function text(v) { return String(v == null ? "" : v).trim(); }
 
+            const isDSTPage = ${isDST ? "true" : "false"};
+
             const q = byId("q");
             const shownCount = byId("shownCount");
             const resetAllTop = byId("resetAllTop");
 
-            const tbody = document.querySelector("#t tbody");
+            const table = document.getElementById("t");
+            const tbody = table ? table.querySelector("tbody") : null;
             const menu = byId("colMenu");
             const menuTitle = byId("menuTitle");
             const menuFilterBlock = byId("menuFilterBlock");
 
             const thButtons = Array.from(document.querySelectorAll(".thBtn"));
-            const trs = tbody ? Array.from(tbody.querySelectorAll("tr")) : [];
+            const trs = table ? Array.from(table.querySelectorAll("tbody tr")) : [];
+
+            const qbFacedMostEl = byId("qbFacedMost");
+            const qbArchetypeMostEl = byId("qbArchetypeMost");
+            const qbEpaMedianEl = byId("qbEpaMedian");
+            const qbEpaMaxEl = byId("qbEpaMax");
+            const qbEpaMinEl = byId("qbEpaMin");
 
             const state = {
               q: "",
               filters: {
                 year: "",
-                week: "",                dateEnd: "",
+                week: "",
 
                 match: "",
                 env: "",
@@ -372,6 +428,10 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
 
                 opp: "",
                 qbfText: "",
+                qbaText: "",
+
+                qbeMin: "",
+                qbeMax: "",
 
                 salMin: "",
                 salMax: "",
@@ -384,29 +444,32 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
             };
 
             const colMeta = {
-              year:  { kind: "catNum", label: "YEAR", key: "year" },
-              week:  { kind: "catNum", label: "WEEK", key: "week" },              match: { kind: "cat",    label: "GAME (AWAY @ HOME)", key: "match" },
-              env:   { kind: "cat",    label: "INDOOR OR OUTDOOR",  key: "env" },
+              year: { kind: "catNum", label: "YEAR", key: "year" },
+              week: { kind: "catNum", label: "WEEK", key: "week" },
+              match: { kind: "cat", label: "GAME (AWAY @ HOME)", key: "match" },
+              env: { kind: "cat", label: "INDOOR OR OUTDOOR", key: "env" },
 
-              team:  { kind: "cat",    label: "TEAM", key: "team" },
-              pos:   { kind: "cat",    label: "POSITION", key: "pos" },
+              team: { kind: "cat", label: "TEAM", key: "team" },
+              pos: { kind: "cat", label: "POSITION", key: "pos" },
 
-              stat:  { kind: "text",   label: "STAT LINE", key: "stat" },
+              stat: { kind: "text", label: "STAT LINE", key: "stat" },
 
-              stack: { kind: "text",   label: "STACK PARTNERS", key: "stack" },
-              bring: { kind: "text",   label: "BRING BACK", key: "bring" },
+              stack: { kind: "text", label: "STACK PARTNERS", key: "stack" },
+              bring: { kind: "text", label: "BRING BACK", key: "bring" },
 
-              role:  { kind: "cat",    label: "ROLE", key: "role" },
+              role: { kind: "cat", label: "ROLE", key: "role" },
 
-              sameT: { kind: "num",    label: "SAME POSITION TEAM COUNT", key: "samet" },
-              sameG: { kind: "num",    label: "SAME POSITION GAME COUNT", key: "sameg" },
+              sameT: { kind: "num", label: "SAME POSITION TEAM COUNT", key: "samet" },
+              sameG: { kind: "num", label: "SAME POSITION GAME COUNT", key: "sameg" },
 
-              opp:   { kind: "cat",    label: "OPP TEAM", key: "opp" },
-              qbf:   { kind: "text",   label: "QB FACED", key: "qbf" },
+              opp: { kind: "cat", label: "OPP TEAM", key: "opp" },
+              qbf: { kind: "text", label: "QB FACED", key: "qbf" },
+              qba: { kind: "text", label: "ARCHETYPE", key: "qba" },
+              qbe: { kind: "num", label: "PFF GRADE", key: "qbe" },
 
-              sal:   { kind: "num",    label: "SALARY", key: "sal" },
-              own:   { kind: "num",    label: "OWNERSHIP", key: "own" },
-              pts:   { kind: "num",    label: "DK POINTS", key: "pts" }
+              sal: { kind: "num", label: "SALARY", key: "sal" },
+              own: { kind: "num", label: "OWNERSHIP", key: "own" },
+              pts: { kind: "num", label: "DK POINTS", key: "pts" }
             };
 
             function uniqueValues(colKey) {
@@ -432,30 +495,13 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
               return true;
             }
 
-            function withinDate(iso, startStr, endStr) {
-              const s = text(iso);
-              if (!s) return false;
-              const t = new Date(s).getTime();
-              if (!Number.isFinite(t)) return false;
-
-              if (startStr) {
-                const st = new Date(startStr).getTime();
-                if (Number.isFinite(st) && t < st) return false;
-              }
-              if (endStr) {
-                const et = new Date(endStr).getTime();
-                if (Number.isFinite(et) && t > et) return false;
-              }
-              return true;
-            }
-
             function hay(tr) {
               const parts = [
                 tr.dataset.year, tr.dataset.week, tr.dataset.date,
                 tr.dataset.match, tr.dataset.env,
                 tr.dataset.team, tr.dataset.pos,
                 tr.dataset.stat, tr.dataset.stack, tr.dataset.bring, tr.dataset.role,
-                tr.dataset.samet, tr.dataset.sameg, tr.dataset.opp, tr.dataset.qbf,
+                tr.dataset.samet, tr.dataset.sameg, tr.dataset.opp, tr.dataset.qbf, tr.dataset.qba, tr.dataset.qbe,
                 tr.dataset.sal, tr.dataset.own, tr.dataset.pts
               ];
               return parts.map((x) => text(x).toLowerCase()).join(" ");
@@ -474,7 +520,12 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
               if (f.pos && text(tr.dataset.pos) !== f.pos) return false;
 
               if (f.role && text(tr.dataset.role) !== f.role) return false;
-              if (f.opp && text(tr.dataset.opp) !== f.opp) return false;              if (f.salMin || f.salMax) {
+              if (f.opp && text(tr.dataset.opp) !== f.opp) return false;
+
+              if (f.qbeMin || f.qbeMax) {
+                if (!withinNum(tr.dataset.qbe, f.qbeMin, f.qbeMax)) return false;
+              }
+              if (f.salMin || f.salMax) {
                 if (!withinNum(tr.dataset.sal, f.salMin, f.salMax)) return false;
               }
               if (f.ownMin || f.ownMax) {
@@ -488,23 +539,23 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
                 if (!withinNum(tr.dataset.samet, f.sameTMin, f.sameTMax)) return false;
               }
               if (f.sameGMin || f.sameGMax) {
-                if (!withinNum(tr.dataset.sameg, f.sameGMin, f.sameGMin, f.sameGMax)) return false;
+                if (!withinNum(tr.dataset.sameg, f.sameGMin, f.sameGMax)) return false;
               }
 
               if (f.statText) {
                 if (!text(tr.dataset.stat).toLowerCase().includes(text(f.statText).toLowerCase())) return false;
               }
-
               if (f.stackText) {
                 if (!text(tr.dataset.stack).toLowerCase().includes(text(f.stackText).toLowerCase())) return false;
               }
-
               if (f.bringText) {
                 if (!text(tr.dataset.bring).toLowerCase().includes(text(f.bringText).toLowerCase())) return false;
               }
-
               if (f.qbfText) {
                 if (!text(tr.dataset.qbf).toLowerCase().includes(text(f.qbfText).toLowerCase())) return false;
+              }
+              if (f.qbaText) {
+                if (!text(tr.dataset.qba).toLowerCase().includes(text(f.qbaText).toLowerCase())) return false;
               }
 
               return true;
@@ -523,7 +574,9 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
                 const aa = av == null ? -Infinity : av;
                 const bb = bv == null ? -Infinity : bv;
                 return dir === "asc" ? aa - bb : bb - aa;
-              }              const as = text(a).toLowerCase();
+              }
+
+              const as = text(a).toLowerCase();
               const bs = text(b).toLowerCase();
               if (as < bs) return dir === "asc" ? -1 : 1;
               if (as > bs) return dir === "asc" ? 1 : -1;
@@ -551,6 +604,12 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
                 const visible = trs.filter((tr) => tr.style.display !== "none");
                 visible.sort((a, b) => compare(a, b, state.sort.col, state.sort.dir));
                 for (const tr of visible) tbody.appendChild(tr);
+                if (isDSTPage && (qbFacedMostEl || qbArchetypeMostEl || qbEpaMedianEl || qbEpaMaxEl || qbEpaMinEl)) {
+                  updateQbSummaries(visible);
+                }
+              } else if (isDSTPage && (qbFacedMostEl || qbArchetypeMostEl || qbEpaMedianEl || qbEpaMaxEl || qbEpaMinEl)) {
+                const visible = trs.filter((tr) => tr.style.display !== "none");
+                updateQbSummaries(visible);
               }
             }
 
@@ -576,6 +635,9 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
               if (!meta || !menuFilterBlock) return;
 
               if (meta.kind === "cat" || meta.kind === "catNum") {
+                if (col === "stat" || col === "stack" || col === "bring" || col === "qbf" || col === "qba") {
+                  return;
+                }
                 const values = uniqueValues(meta.key);
                 const current = state.filters[col] || "";
 
@@ -595,8 +657,11 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
                   });
                 }
                 return;
-              }              if (meta.kind === "num") {
+              }
+
+              if (meta.kind === "num") {
                 const map = {
+                  qbe: ["qbeMin", "qbeMax"],
                   sal: ["salMin", "salMax"],
                   own: ["ownMin", "ownMax"],
                   pts: ["ptsMin", "ptsMax"],
@@ -638,7 +703,8 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
                   stat: "statText",
                   stack: "stackText",
                   bring: "bringText",
-                  qbf: "qbfText"
+                  qbf: "qbfText",
+                  qba: "qbaText"
                 };
                 const key = map[col];
                 if (!key) return;
@@ -646,7 +712,7 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
                 const current = state.filters[key] || "";
                 menuFilterBlock.innerHTML =
                   '<div class="menuLabel">Contains</div>' +
-                  '<input id="menuText" class="menuInput" type="text" value="' + current.replace(/"/g, "&quot;") + '" placeholder="type to filter" />';
+                  '<input id="menuText" class="menuInput" type="text" value="' + current.replace(/\"/g, "&quot;") + '" placeholder="type to filter" />';
 
                 const inp = byId("menuText");
                 if (inp) {
@@ -668,7 +734,9 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
                 ascBtn.textContent = "Sort Low → High";
                 descBtn.textContent = "Sort High → Low";
                 return;
-              }              ascBtn.textContent = "Sort A → Z";
+              }
+
+              ascBtn.textContent = "Sort A → Z";
               descBtn.textContent = "Sort Z → A";
             }
 
@@ -701,6 +769,8 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
 
               if (col === "opp") state.filters.opp = "";
               if (col === "qbf") state.filters.qbfText = "";
+              if (col === "qba") state.filters.qbaText = "";
+              if (col === "qbe") { state.filters.qbeMin = ""; state.filters.qbeMax = ""; }
 
               if (col === "sal") { state.filters.salMin = ""; state.filters.salMax = ""; }
               if (col === "own") { state.filters.ownMin = ""; state.filters.ownMax = ""; }
@@ -716,6 +786,104 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
               state.sort.dir = "";
               if (q) q.value = "";
               applyAll();
+            }
+
+            function updateQbSummaries(visibleRows) {
+              const facedCounts = new Map();
+              const facedMaxWeek = new Map();
+              const archCounts = new Map();
+              const archMaxWeek = new Map();
+              const epaVals = [];
+
+              for (const tr of visibleRows) {
+                const faced = text(tr.dataset.qbf);
+                if (faced && faced !== "-" && faced !== "—") {
+                  facedCounts.set(faced, (facedCounts.get(faced) || 0) + 1);
+                  const wk = numOrNull(tr.dataset.week);
+                  if (wk != null) {
+                    const prev = facedMaxWeek.get(faced);
+                    if (prev == null || wk > prev) facedMaxWeek.set(faced, wk);
+                  }
+                }
+
+                const arch = text(tr.dataset.qba);
+                if (arch && arch !== "-" && arch !== "—") {
+                  archCounts.set(arch, (archCounts.get(arch) || 0) + 1);
+                  const wk = numOrNull(tr.dataset.week);
+                  if (wk != null) {
+                    const prev = archMaxWeek.get(arch);
+                    if (prev == null || wk > prev) archMaxWeek.set(arch, wk);
+                  }
+                }
+
+                const epa = numOrNull(tr.dataset.qbe);
+                if (epa != null) epaVals.push(epa);
+              }
+
+              if (qbFacedMostEl) {
+                if (!facedCounts.size) {
+                  qbFacedMostEl.textContent = "—";
+                } else {
+                  let bestName = "";
+                  let bestCount = -1;
+                  let bestWeek = -Infinity;
+                  for (const [name, count] of facedCounts.entries()) {
+                    const wk = facedMaxWeek.get(name);
+                    const w = wk == null ? -Infinity : wk;
+                    if (
+                      count > bestCount ||
+                      (count === bestCount && w > bestWeek) ||
+                      (count === bestCount && w === bestWeek && name.localeCompare(bestName) < 0)
+                    ) {
+                      bestName = name;
+                      bestCount = count;
+                      bestWeek = w;
+                    }
+                  }
+                  qbFacedMostEl.textContent = `${bestName} (${bestCount})`;
+                }
+              }
+
+              if (qbArchetypeMostEl) {
+                if (!archCounts.size) {
+                  qbArchetypeMostEl.textContent = "—";
+                } else {
+                  let bestName = "";
+                  let bestCount = -1;
+                  let bestWeek = -Infinity;
+                  for (const [name, count] of archCounts.entries()) {
+                    const wk = archMaxWeek.get(name);
+                    const w = wk == null ? -Infinity : wk;
+                    if (
+                      count > bestCount ||
+                      (count === bestCount && w > bestWeek) ||
+                      (count === bestCount && w === bestWeek && name.localeCompare(bestName) < 0)
+                    ) {
+                      bestName = name;
+                      bestCount = count;
+                      bestWeek = w;
+                    }
+                  }
+                  qbArchetypeMostEl.textContent = `${bestName} (${bestCount})`;
+                }
+              }
+
+              if (qbEpaMedianEl || qbEpaMaxEl || qbEpaMinEl) {
+                if (!epaVals.length) {
+                  if (qbEpaMedianEl) qbEpaMedianEl.textContent = "—";
+                  if (qbEpaMaxEl) qbEpaMaxEl.textContent = "—";
+                  if (qbEpaMinEl) qbEpaMinEl.textContent = "—";
+                } else {
+                  const sorted = [...epaVals].sort((a, b) => a - b);
+                  const mid = Math.floor(sorted.length / 2);
+                  const med = sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+                  const min = sorted[0];
+                  const max = sorted[sorted.length - 1];
+                  if (qbEpaMedianEl) qbEpaMedianEl.textContent = med.toFixed(2);
+                  if (qbEpaMaxEl) qbEpaMaxEl.textContent = max.toFixed(2);
+                  if (qbEpaMinEl) qbEpaMinEl.textContent = min.toFixed(2);
+                }
+              }
             }
 
             for (const btn of thButtons) {
@@ -743,9 +911,9 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
 
             if (menu) {
               menu.addEventListener("click", (e) => {
-                const t = e.target;
-                if (!t || !t.dataset) return;
-                const action = t.dataset.action;
+                const btn = e.target && e.target.closest ? e.target.closest("button[data-action]") : null;
+                if (!btn) return;
+                const action = btn.dataset.action;
                 if (!action) return;
 
                 if (action === "sortAsc" && activeCol) {
@@ -784,6 +952,7 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
               if (!target) return;
               if (menu && menu.contains(target)) return;
               if (target.classList && target.classList.contains("thBtn")) return;
+              if (target.closest && target.closest(".thBtn")) return;
               closeMenu();
             });
 
@@ -841,88 +1010,36 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
   .thBtn { width:100%; text-align:left; border:0; background:transparent; padding:0; font-size:11px; color:rgba(255,255,255,0.62); font-weight:900; letter-spacing:0.02em; text-transform:uppercase; cursor:pointer; }
   .thBtn:hover { color:rgba(255,255,255,0.88); }
 
-  .menu {
-    position: fixed;
-    width: 320px;
-    background: #181818;
-    border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 14px;
-    box-shadow: 0 18px 44px rgba(0,0,0,0.55);
-    padding: 12px;
-    z-index: 9999;
-    color: rgba(255,255,255,0.88);
-  }
-
+  .menu { position: fixed; width: 320px; background: #181818; border: 1px solid rgba(255,255,255,0.10); border-radius: 14px; box-shadow: 0 18px 44px rgba(0,0,0,0.55); padding: 12px; z-index: 9999; color: rgba(255,255,255,0.88); }
   .menuTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
   .menuRow { display: flex; gap: 8px; margin-bottom: 10px; }
-  .menuBtn {
-    flex: 1 1 auto;
-    padding: 9px 10px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.10);
-    background: #1f1f1f;
-    color: rgba(255,255,255,0.88);
-    font-weight: 900;
-    cursor: pointer;
-    font-size: 13px;
-    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
-  }
+  .menuBtn { flex: 1 1 auto; padding: 9px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.10); background: #1f1f1f; color: rgba(255,255,255,0.88); font-weight: 900; cursor: pointer; font-size: 13px; transition: transform 120ms ease, background 120ms ease, border-color 120ms ease; }
   .menuBtn:hover { background: #232323; border-color: rgba(255,255,255,0.14); transform: translateY(-1px); }
   .menuBtn:active { transform: translateY(0px); }
   .menuBtn.secondary { background: #141414; }
-
   .menuBlock { margin-bottom: 10px; }
-
-  .menuLabel {
-    font-size: 11px;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 6px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
-
-  .menuInput {
-    width: 100%;
-    padding: 9px 10px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.10);
-    background: #141414;
-    color: rgba(255,255,255,0.92);
-    font-size: 13px;
-    outline: none;
-  }
-
-  .menuInput:focus {
-    border-color: rgba(255,255,255,0.16);
-    box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
-  }
-
+  .menuLabel { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; }
+  .menuInput { width: 100%; padding: 9px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.10); background: #141414; color: rgba(255,255,255,0.92); font-size: 13px; outline: none; }
+  .menuInput:focus { border-color: rgba(255,255,255,0.16); box-shadow: 0 0 0 3px rgba(255,255,255,0.08); }
   .menuGrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: end; }
   .mini { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; }
 
   .colYear { width: 78px; }
   .colWk { width: 90px; }
-  .colDate { width: 90px; }
-
   .colMatch { width: 160px; }
   .colEnv { width: 160px; }
-
   .colTeam { width: 70px; }
   .colName { width: 180px; }
-
   .colStat { width: 280px; }
-
   .colStack { width: 200px; }
   .colBring { width: 170px; }
   .colRole { width: 120px; }
-
   .colSameT { width: 180px; }
   .colSameG { width: 180px; }
-
   .colOpp { width: 90px; }
   .colQBF { width: 160px; }
-
+  .colQBA { width: 140px; }
+  .colQBE { width: 130px; }
   .colSal { width: 90px; }
   .colOwn { width: 110px; }
   .colPts { width: 90px; }

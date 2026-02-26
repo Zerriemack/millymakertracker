@@ -71,7 +71,7 @@
         "position": "RB",
         "team": "NE",
         "salary": 5600,
-        "points": 31.0,
+        "points": 31,
         "ownershipPercent": 14.6,
         "rushTdRb": 2,
         "rushYdsRb": 147,
@@ -164,7 +164,7 @@
         "position": "DST",
         "team": "NYJ",
         "salary": 2800,
-        "points": 19.0,
+        "points": 19,
         "ownershipPercent": 3.6,
         "sacks": 6,
         "defensiveTdCount": 2,
@@ -172,7 +172,8 @@
         "qbFaced": "Dillon Gabriel",
         "gameAwayTeam": "CLE",
         "gameHomeTeam": "NYJ",
-        "opponentTeam": "CLE"
+        "opponentTeam": "CLE",
+        "qbFacedArchetype": "ROOKIE"
       }
     ]
   },
@@ -185,8 +186,17 @@
       "secondaryLever": "Achane as the required raw score, plus Jets defense winning through special teams touchdown variance",
       "notes": {
         "rosterConstruction": "5-1-1-1-1",
-        "qbGameCluster": ["B. Mayfield", "T. Henderson", "E. Egbuka", "T. Johnson", "C. Otton"],
-        "oneOffHammers": ["D. Achane", "J. Gibbs"],
+        "qbGameCluster": [
+          "B. Mayfield",
+          "T. Henderson",
+          "E. Egbuka",
+          "T. Johnson",
+          "C. Otton"
+        ],
+        "oneOffHammers": [
+          "D. Achane",
+          "J. Gibbs"
+        ],
         "secondaryCeiling": "J. Jennings",
         "dstQbFaced": "Dillon Gabriel"
       }
@@ -205,43 +215,83 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNED_QB", "GAME_STACK_ANCHOR"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNED_QB",
+          "GAME_STACK_ANCHOR"
+        ],
         "microStory": "Mayfield is the entry point because his ownership sits in a range where a three touchdown game creates immediate separation. The stack commits to his ceiling instead of treating him as a placeholder."
       },
       {
         "rosterSpot": "TE",
         "slotIndex": 0,
-        "roleTags": ["STACK_GLUE", "VOLUME_LAYER", "RED_ZONE_ACCESS"],
+        "roleTags": [
+          "STACK_GLUE",
+          "VOLUME_LAYER",
+          "RED_ZONE_ACCESS"
+        ],
         "microStory": "Otton gives the stack a volume channel that does not require long touchdowns. Nine receptions lets the roster cash points even if wide receiver scoring is concentrated elsewhere."
       },
       {
         "rosterSpot": "RB",
         "slotIndex": 0,
-        "roleTags": ["RAW_SCORE_REQUIREMENT", "MATCHUP_CEILING", "POPULAR_HAMMER"],
+        "roleTags": [
+          "RAW_SCORE_REQUIREMENT",
+          "MATCHUP_CEILING",
+          "POPULAR_HAMMER"
+        ],
         "microStory": "Achane is treated as a points tax. The roster accepts the ownership because the score is too large to fade without an equally strong alternative path."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["LOW_OWNED_SEPARATION", "SPECIAL_TEAMS_TOUCHDOWN_PATH", "QB_FACED_SIGNAL"],
+        "roleTags": [
+          "LOW_OWNED_SEPARATION",
+          "SPECIAL_TEAMS_TOUCHDOWN_PATH",
+          "QB_FACED_SIGNAL"
+        ],
         "microStory": "Jets defense wins in the weirdest way, which is exactly why it matters in a 200,000 entry contest. Two return touchdowns create a score most lineups cannot reach even if the rest of their build is correct."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "B. Mayfield", "position": "QB", "team": "TB" },
+        "qb": {
+          "name": "B. Mayfield",
+          "position": "QB",
+          "team": "TB"
+        },
         "teammates": [
-          { "name": "T. Johnson", "position": "WR", "team": "TB" },
-          { "name": "C. Otton", "position": "TE", "team": "TB" }
+          {
+            "name": "T. Johnson",
+            "position": "WR",
+            "team": "TB"
+          },
+          {
+            "name": "C. Otton",
+            "position": "TE",
+            "team": "TB"
+          }
         ],
-        "opponent": { "name": "E. Egbuka", "position": "WR", "team": "NE" }
+        "opponent": {
+          "name": "E. Egbuka",
+          "position": "WR",
+          "team": "NE"
+        }
       },
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "T. Henderson", "position": "RB", "team": "NE" },
-        "opponent": { "name": "B. Mayfield", "position": "QB", "team": "TB" }
+        "teammate": {
+          "name": "T. Henderson",
+          "position": "RB",
+          "team": "NE"
+        },
+        "opponent": {
+          "name": "B. Mayfield",
+          "position": "QB",
+          "team": "TB"
+        }
       },
       {
         "type": "DST_QB_FACED",
@@ -252,7 +302,11 @@
           "team": "NYJ",
           "qbFaced": "Dillon Gabriel"
         },
-        "opponent": { "name": "Dillon Gabriel", "position": "QB", "team": "CLE" }
+        "opponent": {
+          "name": "Dillon Gabriel",
+          "position": "QB",
+          "team": "CLE"
+        }
       }
     ]
   }

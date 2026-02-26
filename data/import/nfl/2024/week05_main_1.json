@@ -1,0 +1,264 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 5,
+  "slateType": "MAIN",
+  "slateDate": "2024-10-06T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 5",
+  "slateTag": "LAMAR WITH CIN WRS, SLAYTON SALARY BREAKER, BRONCOS DST CHALK",
+  "slateGroup": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK05_MAIN_2024-10-06T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14320
+  },
+  "winner": {
+    "username": "dustpop",
+    "points": 236.92,
+    "maxEntries": 149
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 236.92,
+    "totalOwnershipBp": 14320,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 7500,
+        "points": 37.42,
+        "ownershipPercent": 6.8,
+        "passTd": 4,
+        "passYds": 348,
+        "rushYds": 55,
+        "fumblesLost": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Chuba Hubbard",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 6100,
+        "points": 18.5,
+        "ownershipPercent": 18.8,
+        "rushYdsRb": 97,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": -2,
+        "fumblesLost": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "D'Andre Swift",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 5700,
+        "points": 20.0,
+        "ownershipPercent": 17.9,
+        "rushYdsRb": 73,
+        "rushTdRb": 1,
+        "recRb": 2,
+        "recYdsRb": 47,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Ja'Marr Chase",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 8000,
+        "points": 44.3,
+        "ownershipPercent": 11.7,
+        "rec": 10,
+        "recYds": 193,
+        "recTd": 2,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Terry McLaurin",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 6100,
+        "points": 17.4,
+        "ownershipPercent": 8.9,
+        "rec": 4,
+        "recYds": 112,
+        "rushYds": 2,
+        "fumblesLost": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tee Higgins",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 6000,
+        "points": 29.3,
+        "ownershipPercent": 8.7,
+        "rec": 9,
+        "recYds": 83,
+        "recTd": 2,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Tucker Kraft",
+        "position": "TE",
+        "team": "GB",
+        "salary": 3500,
+        "points": 24.8,
+        "ownershipPercent": 30.8,
+        "rec": 4,
+        "recYds": 88,
+        "recTd": 2,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Darius Slayton",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 3900,
+        "points": 29.2,
+        "ownershipPercent": 4.6,
+        "rec": 8,
+        "recYds": 122,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Broncos",
+        "position": "DST",
+        "team": "DEN",
+        "salary": 2900,
+        "points": 16,
+        "ownershipPercent": 35.0,
+        "sacks": 3,
+        "takeaways": 3,
+        "qbFaced": "Gardner Minshew",
+        "qbFacedArchetype": "JOURNEYMAN",
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "LV"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner is built around a simple premise. Take the most projectable defense on the slate, accept the ownership, and let the rest of the roster do the separating. Denver against Gardner Minshew is the classic spot where the field wants sacks, short fields, and a touchdown. The defense delivers with pressure and interceptions, which creates breathing room for an otherwise balanced construction.\n\nThe core correlation is unconventional in a way that matters. Lamar Jackson is paired with Ja'Marr Chase and Tee Higgins, but the roster avoids Joe Burrow entirely. It bets on Baltimore forcing Cincinnati into a high volume passing response, then captures the concentrated touchdown access through the Bengals receivers while Lamar supplies the opposing engine. It is a bet on points flowing through specific players rather than through a tidy team stack.\n\nThe Chicago Carolina game provides the running back volume. Chuba Hubbard and D'Andre Swift land usable scores without needing a full shootout, which keeps the roster stable while the spike weeks come from the pass catchers.\n\nTucker Kraft showing up again at massive ownership is the reminder that good plays can remain good plays. The separator is Darius Slayton. At 3,900, a 100 yard touchdown score breaks salary structure and pushes the roster into a point range that typical mid tier receiver builds cannot reach. The final note is the human part of large field tournaments. The winning entry can be buried deep in a set of lineups. It only takes one that lands on the right combination.",
+    "uniquenessNotes": "The roster does not try to win every slot. Denver defense is treated as a shared assumption with the field, and the lineup still wins because the separation is created in the quarterback and salary relief decisions.\n\nThe Lamar plus Bengals receivers construction avoids the most common lineup tree for that game. Most rosters that chased Cincinnati receiver ceilings took Burrow, then tried to guess which wide receiver. This build removes the quarterback decision entirely and simply captures the two receiver outcomes while keeping Lamar's rushing and touchdown equity.\n\nThe rest of the lineup is intentionally steady. Two running backs from the same game provide predictable touch volume. Kraft is a popular tight end, which keeps the roster from drifting into fragile uniqueness. Slayton is the pressure point. His score turns the balanced build into a first place build because it frees salary without giving away raw points.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Lamar Jackson paired with Ja'Marr Chase and Tee Higgins without Joe Burrow",
+      "secondaryLever": "Broncos defense chalk versus Gardner Minshew plus Darius Slayton as the salary relief ceiling",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "BAL@CIN: 3 (QB game)",
+          "CAR@CHI: 2",
+          "CLE@WAS: 1",
+          "GB@LAR: 1",
+          "NYG@SEA: 1",
+          "LV@DEN: 1"
+        ],
+        "ravensBengalsCluster": ["Lamar Jackson", "Ja'Marr Chase", "Tee Higgins"],
+        "panthersBearsPair": ["Chuba Hubbard", "D'Andre Swift"],
+        "tightEndChalk": "Tucker Kraft",
+        "salaryReliefBreaker": "Darius Slayton",
+        "qbFacedByBroncosDst": "Gardner Minshew"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "OPPONENT_PASS_CATCHER_STACK_WITHOUT_OPP_QB",
+        "CHALK_DST_ANCHOR",
+        "TWO_RBS_SAME_GAME_VOLUME",
+        "TE_CHALK_WITH_QUALITY_ROLE",
+        "SALARY_RELIEF_WR_CEILING"
+      ],
+      "macroStory": "A first place roster anchored by a chalk defense and a rare cross team passing construction that captures Cincinnati receiver ceilings while Lamar Jackson supplies the opposing engine, then finished by a low salary wide receiver score that breaks the slate."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["BASELINE_ANCHOR", "TURNOVER_CEILING", "CHALK_THAT_HIT"],
+        "microStory": "Denver defense is the shared foundation. The interceptions and defensive touchdown outcome provides the margin needed for the rest of the roster to win without perfection."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "DUAL_THREAT_CEILING", "CORRELATION_HUB"],
+        "microStory": "Lamar Jackson supplies the raw points and holds the roster together while the Bengals receivers capture the opposing touchdowns."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["SALARY_RELIEF_BREAKER", "YARDAGE_PLUS_TD", "LOW_OWNERSHIP"],
+        "microStory": "Darius Slayton is the structural swing. A 3,900 wide receiver scoring 29 points changes what the roster can afford without sacrificing ceiling."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["RECEIVER_CEILING", "TARGET_VOLUME", "GAME_ENVIRONMENT_BENEFIT"],
+        "microStory": "Ja'Marr Chase delivers the true elite wide receiver score, and it pairs naturally with Higgins while still allowing Lamar to be the quarterback."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Lamar Jackson", "position": "QB", "team": "BAL" },
+        "teammates": [],
+        "opponent": {
+          "name": "Ja'Marr Chase",
+          "position": "WR",
+          "team": "CIN"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Ja'Marr Chase", "position": "WR", "team": "CIN" },
+        "opponent": { "name": "Tee Higgins", "position": "WR", "team": "CIN" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Chuba Hubbard", "position": "RB", "team": "CAR" },
+        "opponent": { "name": "D'Andre Swift", "position": "RB", "team": "CHI" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Broncos", "position": "DST", "team": "DEN", "qbFaced": "Gardner Minshew" },
+        "opponent": { "name": "Gardner Minshew", "position": "QB", "team": "LV" }
+      }
+    ]
+  }
+}

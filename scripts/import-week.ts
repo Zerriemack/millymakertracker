@@ -2,20 +2,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import { config } from "dotenv";
-import { PrismaClient } from "@prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
+import { prisma } from "../src/lib/prisma";
 
 config({ path: ".env.local" });
-
-const databaseUrl = process.env.DATABASE_URL;
-
-if (!databaseUrl) {
-  console.error("DATABASE_URL is missing. Check .env.local in the project root.");
-  process.exit(1);
-}
-
-const adapter = new PrismaPg({ connectionString: databaseUrl });
-const prisma = new PrismaClient({ adapter });
 
 type Input = {
   season: { year: number; sport: "NFL" | "CFB" };

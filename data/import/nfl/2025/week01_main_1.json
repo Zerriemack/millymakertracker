@@ -154,7 +154,7 @@
         "position": "DST",
         "team": "DEN",
         "salary": 3800,
-        "points": 14.0,
+        "points": 14,
         "ownershipPercent": 16.8,
         "sacks": 6,
         "takeaways": 2,
@@ -163,7 +163,8 @@
         "qbFaced": "Cam Ward",
         "gameAwayTeam": "TEN",
         "gameHomeTeam": "DEN",
-        "opponentTeam": "TEN"
+        "opponentTeam": "TEN",
+        "qbFacedArchetype": "ROOKIE"
       }
     ]
   },
@@ -177,39 +178,63 @@
       "notes": {
         "rosterConstruction": "1-2-2-1-1-1-1",
         "qbRushTd": 2,
-        "volumeAnchors": ["P. Nacua", "J. Johnson", "J. Smith-Njigba"],
+        "volumeAnchors": [
+          "P. Nacua",
+          "J. Johnson",
+          "J. Smith-Njigba"
+        ],
         "touchdownOutlier": "E. Egbuka",
         "qbFacedByBroncosDst": "Cam Ward"
       }
     },
     "lineupAnalysis": {
-      "archetypeTags": ["RUSH_QB_CEILING", "VOLUME_RECEIVERS", "TD_EFFICIENCY_WR", "NO_FORCED_STACK"],
+      "archetypeTags": [
+        "RUSH_QB_CEILING",
+        "VOLUME_RECEIVERS",
+        "TD_EFFICIENCY_WR",
+        "NO_FORCED_STACK"
+      ],
       "macroStory": "A slate wide lineup built around a rushing quarterback ceiling, then supported by reception volume and one touchdown concentrated receiver outcome. The defense score is a full event outcome against a rookie quarterback, providing separation without needing extra game attachments."
     },
     "lineupItemAnalysis": [
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_CEILING", "RUSHING_TD_PATH", "LOW_OWNED_ENGINE"],
+        "roleTags": [
+          "PRIMARY_CEILING",
+          "RUSHING_TD_PATH",
+          "LOW_OWNED_ENGINE"
+        ],
         "microStory": "Fields carries the build because two rushing touchdowns compress the slate. The quarterback score arrives without requiring a paired pass catcher to keep pace."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 2,
-        "roleTags": ["SEPARATOR", "TD_EFFICIENCY", "SCORING_CONCENTRATION"],
+        "roleTags": [
+          "SEPARATOR",
+          "TD_EFFICIENCY",
+          "SCORING_CONCENTRATION"
+        ],
         "microStory": "Egbuka supplies the touchdown concentration. Two receiving touchdowns on modest volume is a profile the field rarely lands correctly alongside a non stacked quarterback outcome."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["EVENT_SCORING", "SACK_UPSIDE"],
+        "roleTags": [
+          "EVENT_SCORING",
+          "SACK_UPSIDE"
+        ],
         "microStory": "Denver hits the full defensive ceiling. Six sacks plus a defensive touchdown is the kind of DST line that changes the top of the standings, especially when it comes against a rookie quarterback."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "J. Fields", "position": "QB", "team": "NYJ" },
+        "qb": {
+          "name": "J. Fields",
+          "position": "QB",
+          "team": "NYJ"
+        },
         "teammate": null,
         "opponent": null
       }

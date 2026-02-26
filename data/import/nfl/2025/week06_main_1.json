@@ -34,7 +34,7 @@
         "team": "NE",
         "salary": 5900,
         "points": 27.24,
-        "ownershipPercent": 12.0,
+        "ownershipPercent": 12,
         "passTd": 3,
         "passYds": 261,
         "rushYds": 28,
@@ -48,7 +48,7 @@
         "position": "RB",
         "team": "GB",
         "salary": 7300,
-        "points": 32.0,
+        "points": 32,
         "ownershipPercent": 29.8,
         "rushYdsRb": 93,
         "rushTdRb": 2,
@@ -125,7 +125,7 @@
         "position": "TE",
         "team": "LV",
         "salary": 3100,
-        "points": 16.0,
+        "points": 16,
         "ownershipPercent": 4.8,
         "rec": 5,
         "recYds": 50,
@@ -156,14 +156,15 @@
         "position": "DST",
         "team": "IND",
         "salary": 3300,
-        "points": 4.0,
+        "points": 4,
         "ownershipPercent": 13.7,
         "sacks": 2,
         "takeaways": 1,
         "qbFaced": "Jacoby Brissett",
         "gameAwayTeam": "ARI",
         "gameHomeTeam": "IND",
-        "opponentTeam": "ARI"
+        "opponentTeam": "ARI",
+        "qbFacedArchetype": "BACKUP"
       }
     ]
   },
@@ -185,9 +186,20 @@
           "TEN@LV: 1",
           "ARI@IND: 1"
         ],
-        "patriotsCore": ["D. Maye", "K. Boutte"],
-        "cowboysPanthersMini": ["G. Pickens", "R. Dowdle"],
-        "oneOffCeilings": ["J. Jacobs", "J. Smith-Njigba", "K. Williams", "M. Mayer"],
+        "patriotsCore": [
+          "D. Maye",
+          "K. Boutte"
+        ],
+        "cowboysPanthersMini": [
+          "G. Pickens",
+          "R. Dowdle"
+        ],
+        "oneOffCeilings": [
+          "J. Jacobs",
+          "J. Smith-Njigba",
+          "K. Williams",
+          "M. Mayer"
+        ],
         "dstQbFaced": "Jacoby Brissett"
       }
     },
@@ -206,46 +218,87 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "MULTI_TD_PASSING", "RUSHING_BONUS"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "MULTI_TD_PASSING",
+          "RUSHING_BONUS"
+        ],
         "microStory": "Maye is the anchor because his score combines passing touchdowns with rushing production. It gives the roster a quarterback ceiling without requiring multiple pass catchers to be correct."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 2,
-        "roleTags": ["LOW_OWNED_TOUCHDOWN_CAPTURE", "RED_ZONE_CONVERSION"],
+        "roleTags": [
+          "LOW_OWNED_TOUCHDOWN_CAPTURE",
+          "RED_ZONE_CONVERSION"
+        ],
         "microStory": "Boutte is the decision point. Two receiving touchdowns at 1.2 percent converts a Maye ceiling game into a leverage outcome the field almost never holds."
       },
       {
         "rosterSpot": "FLEX",
         "slotIndex": 0,
-        "roleTags": ["RUSHING_HAMMER", "ADDS_RECEIVING_LAYER", "GAME_CLUSTER"],
+        "roleTags": [
+          "RUSHING_HAMMER",
+          "ADDS_RECEIVING_LAYER",
+          "GAME_CLUSTER"
+        ],
         "microStory": "Dowdle supplies the slate winning rushing yard outcome. The receiving touchdown keeps the score from being empty volume and it pairs with Pickens without overlap."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["PRESSURE_AND_TURNOVER_PATH", "QB_CONTEXT_TARGET"],
+        "roleTags": [
+          "PRESSURE_AND_TURNOVER_PATH",
+          "QB_CONTEXT_TARGET"
+        ],
         "microStory": "Indianapolis is anchored to Brissett starting. Two sacks and an interception keeps the slot viable without needing an outlier defensive touchdown."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "D. Maye", "position": "QB", "team": "NE" },
-        "teammates": [{ "name": "K. Boutte", "position": "WR", "team": "NE" }],
+        "qb": {
+          "name": "D. Maye",
+          "position": "QB",
+          "team": "NE"
+        },
+        "teammates": [
+          {
+            "name": "K. Boutte",
+            "position": "WR",
+            "team": "NE"
+          }
+        ],
         "opponent": null
       },
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "G. Pickens", "position": "WR", "team": "DAL" },
-        "opponent": { "name": "R. Dowdle", "position": "RB", "team": "CAR" }
+        "teammate": {
+          "name": "G. Pickens",
+          "position": "WR",
+          "team": "DAL"
+        },
+        "opponent": {
+          "name": "R. Dowdle",
+          "position": "RB",
+          "team": "CAR"
+        }
       },
       {
         "type": "DST_QB_FACED",
         "qb": null,
-        "teammate": { "name": "Colts", "position": "DST", "team": "IND", "qbFaced": "Jacoby Brissett" },
-        "opponent": { "name": "Jacoby Brissett", "position": "QB", "team": "ARI" }
+        "teammate": {
+          "name": "Colts",
+          "position": "DST",
+          "team": "IND",
+          "qbFaced": "Jacoby Brissett"
+        },
+        "opponent": {
+          "name": "Jacoby Brissett",
+          "position": "QB",
+          "team": "ARI"
+        }
       }
     ]
   }

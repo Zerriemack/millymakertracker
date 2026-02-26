@@ -1,0 +1,308 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 3,
+  "slateType": "MAIN",
+  "slateDate": "2024-09-22T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 3",
+  "slateTag": "JAUAN JENNINGS NUCLEAR, GOEDERT 170 YARDS, VIKINGS GAME STACK",
+  "slateGroup": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK03_MAIN_2024-09-22T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8590
+  },
+  "winner": {
+    "username": "bruceleeroygree...",
+    "points": 240.14,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 240.14,
+    "totalOwnershipBp": 8590,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Sam Darnold",
+        "position": "QB",
+        "team": "MIN",
+        "salary": 5500,
+        "points": 23.24,
+        "ownershipPercent": 6.4,
+        "passTd": 4,
+        "passYds": 181,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Kyren Williams",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 7100,
+        "points": 31.6,
+        "ownershipPercent": 2.8,
+        "rushYdsRb": 89,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 27,
+        "recTdRb": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Zach Charbonnet",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 6000,
+        "points": 25.7,
+        "ownershipPercent": 21.9,
+        "rushYdsRb": 91,
+        "rushTdRb": 2,
+        "recRb": 3,
+        "recYdsRb": 16,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jauan Jennings",
+        "position": "WR",
+        "team": "SF",
+        "salary": 4100,
+        "points": 49.5,
+        "ownershipPercent": 14.3,
+        "rec": 11,
+        "recYds": 175,
+        "recTd": 3,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Diontae Johnson",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 4900,
+        "points": 29.2,
+        "ownershipPercent": 7.3,
+        "rec": 8,
+        "recYds": 122,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 8600,
+        "points": 20.1,
+        "ownershipPercent": 8.5,
+        "rec": 6,
+        "recYds": 81,
+        "recTd": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Dallas Goedert",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 4600,
+        "points": 30,
+        "ownershipPercent": 5.8,
+        "rec": 10,
+        "recYds": 170,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Aaron Jones",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 5900,
+        "points": 28.8,
+        "ownershipPercent": 3.1,
+        "rushYdsRb": 102,
+        "recRb": 5,
+        "recYdsRb": 46,
+        "recTdRb": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Buccaneers",
+        "position": "DST",
+        "team": "TB",
+        "salary": 3000,
+        "points": 2,
+        "ownershipPercent": 15.8,
+        "sacks": 0,
+        "takeaways": 1,
+        "qbFaced": "Bo Nix",
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "DEN",
+        "qbFacedArchetype": "ROOKIE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This build wins because it embraces uneven scoring across the roster and refuses to require nine perfect outcomes. The Minnesota cluster is the anchor. Sam Darnold gets four passing touchdowns at modest ownership, and the lineup captures the points with Justin Jefferson while letting Aaron Jones take a different path to ceiling through rushing volume plus receiving touchdown access. It is a concentrated bet on Minnesota turning a low yardage passing line into a multi touchdown distribution.\n\nThe slate breaking score is Jauan Jennings. Three receiving touchdowns changes the contest math immediately, and his salary keeps the roster flexible enough to still afford Jefferson. The pairing with Kyren Williams in the same game is a second layer. Kyren at sub three percent is not a thin angle. It is a commitment to touchdowns and workload in a game where the winning lineup does not need a quarterback bring back to access the full scoring profile.\n\nDallas Goedert is the quiet separator. Ten catches for 170 yards is a position score most lineups never reach, and it arrives without needing a touchdown. Zach Charbonnet fits the backup running back workload theme and supplies a stable rushing base. Diontae Johnson gives a standalone ceiling from a separate game. Tampa Bay defense does not add much, yet the roster survives because the true separation comes from Jennings, Goedert, and the Minnesota touchdowns landing in the right places.",
+    "uniquenessNotes": "Many builds chase defensive points as a requirement. This winner treats defense as a salary and ownership slot, then wins with offensive concentration. The roster accepts a low defense return because the rest of the lineup contains two rare position ceiling events: a wide receiver three touchdown game and a tight end 170 yard game.\n\nThe Minnesota stack is narrow and deliberate. Darnold is not asked to be a raw yardage monster. He is asked to deliver touchdowns, and the roster captures them through Jefferson while letting Jones bring exposure to the same scoring environment without forcing additional pass catchers.\n\nKyren Williams at low ownership matters because it is paired with a slate wide receiver eruption from the same game. The lineup gets access to touchdowns and yardage without needing to predict the entire game tree. It lands on the correct high value outcomes while leaving several slots in the middle range, which reduces duplication.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Minnesota game stack built around Darnold touchdowns with Jefferson plus Aaron Jones",
+      "secondaryLever": "Jauan Jennings ceiling paired with low owned Kyren Williams from the same game",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "HOU@MIN: 3 (QB game)",
+          "SF@LAR: 2",
+          "MIA@SEA: 1",
+          "CAR@LV: 1",
+          "PHI@NO: 1",
+          "DEN@TB: 1"
+        ],
+        "vikingsCluster": [
+          "Sam Darnold",
+          "Justin Jefferson",
+          "Aaron Jones"
+        ],
+        "ninersRamsCluster": [
+          "Jauan Jennings",
+          "Kyren Williams"
+        ],
+        "oneOffCeilings": [
+          "Dallas Goedert",
+          "Diontae Johnson"
+        ],
+        "workloadBack": "Zach Charbonnet",
+        "qbFacedByBuccaneersDst": "Bo Nix"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "TOUCHDOWN_DISTRIBUTION_QB_STACK",
+        "RB_PLUS_WR_SAME_GAME_NO_BRINGBACK",
+        "TE_YARDAGE_SPIKE",
+        "BACKUP_RB_WORKLOAD_SMASH",
+        "DEFENSE_AS_LOW_IMPACT_SLOT"
+      ],
+      "macroStory": "A first place roster built on Minnesota touchdowns landing correctly, then amplified by a rare wide receiver eruption and a tight end yardage ceiling, while tolerating minimal defense scoring."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_SLATE_BREAKER",
+          "MULTI_TD_OUTCOME",
+          "SALARY_ACCELERATOR"
+        ],
+        "microStory": "Jauan Jennings delivers the score most rosters cannot match. Three receiving touchdowns at his salary reshapes the entire contest."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "POSITION_SEPARATION",
+          "YARDAGE_CEILING",
+          "NON_TD_30_POINT_PATH"
+        ],
+        "microStory": "Dallas Goedert supplies a tight end score that competes with elite wide receiver outputs. Ten catches and 170 yards carries the roster even without a touchdown."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "TOUCHDOWN_DENSITY",
+          "STACK_ANCHOR"
+        ],
+        "microStory": "Sam Darnold is the right kind of quarterback score for tournaments. Four passing touchdowns matters more than passing yards when the roster captures the touchdowns through attached pieces."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_TOUCHDOWN_ACCESS",
+          "WORKLOAD_LOCK",
+          "GAME_ENVIRONMENT_PAIR"
+        ],
+        "microStory": "Kyren Williams at low ownership is the workload and touchdown lever. Two rushing touchdowns plus a receiving touchdown completes the winning profile."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Sam Darnold",
+          "position": "QB",
+          "team": "MIN"
+        },
+        "teammates": [
+          {
+            "name": "Justin Jefferson",
+            "position": "WR",
+            "team": "MIN"
+          },
+          {
+            "name": "Aaron Jones",
+            "position": "RB",
+            "team": "MIN"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Jauan Jennings",
+          "position": "WR",
+          "team": "SF"
+        },
+        "opponent": {
+          "name": "Kyren Williams",
+          "position": "RB",
+          "team": "LAR"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Buccaneers",
+          "position": "DST",
+          "team": "TB"
+        },
+        "opponent": {
+          "name": "Bo Nix",
+          "position": "QB",
+          "team": "DEN"
+        }
+      }
+    ]
+  }
+}

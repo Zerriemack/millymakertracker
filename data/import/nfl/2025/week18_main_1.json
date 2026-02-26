@@ -135,7 +135,7 @@
         "team": "CHI",
         "salary": 3900,
         "points": 25.1,
-        "ownershipPercent": 14.0,
+        "ownershipPercent": 14,
         "rec": 10,
         "recYds": 91,
         "recTd": 1,
@@ -166,7 +166,7 @@
         "position": "DST",
         "team": "NE",
         "salary": 3900,
-        "points": 12.0,
+        "points": 12,
         "ownershipPercent": 3.4,
         "sacks": 4,
         "takeaways": 2,
@@ -174,7 +174,8 @@
         "qbFaced": "Quinn Ewers",
         "gameAwayTeam": "MIA",
         "gameHomeTeam": "NE",
-        "opponentTeam": "MIA"
+        "opponentTeam": "MIA",
+        "qbFacedArchetype": "ROOKIE"
       }
     ]
   },
@@ -188,10 +189,23 @@
       "notes": {
         "rosterConstruction": "2-2-2-1-1-1",
         "qbGame": "TEN@JAX",
-        "jaxMini": ["T. Lawrence", "P. Washington"],
-        "detChiMini": ["A. St. Brown", "C. Loveland"],
-        "neScriptPair": ["R. Stevenson", "Patriots"],
-        "oneOffs": ["R. Davis", "T. Tracy Jr.", "M. Wilson"],
+        "jaxMini": [
+          "T. Lawrence",
+          "P. Washington"
+        ],
+        "detChiMini": [
+          "A. St. Brown",
+          "C. Loveland"
+        ],
+        "neScriptPair": [
+          "R. Stevenson",
+          "Patriots"
+        ],
+        "oneOffs": [
+          "R. Davis",
+          "T. Tracy Jr.",
+          "M. Wilson"
+        ],
         "qbFacedByPatriotsDst": "Quinn Ewers"
       }
     },
@@ -210,45 +224,83 @@
       {
         "rosterSpot": "RB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_SEPARATION", "WEEK_18_SUBSTITUTION_BENEFIT", "WORKLOAD_SPIKE"],
+        "roleTags": [
+          "PRIMARY_SEPARATION",
+          "WEEK_18_SUBSTITUTION_BENEFIT",
+          "WORKLOAD_SPIKE"
+        ],
         "microStory": "Davis benefits from Buffalo changing course after signaling starter usage. One percent ownership plus 151 rushing yards creates the roster’s separation engine."
       },
       {
         "rosterSpot": "FLEX",
         "slotIndex": 0,
-        "roleTags": ["SCRIPT_CONVERSION", "MULTI_TOUCHDOWN_ACCESS", "CORRELATED_WITH_DST"],
+        "roleTags": [
+          "SCRIPT_CONVERSION",
+          "MULTI_TOUCHDOWN_ACCESS",
+          "CORRELATED_WITH_DST"
+        ],
         "microStory": "Stevenson converts game control into three total touchdowns. The receiving score matters because it adds a second touchdown lane beyond goal line carries."
       },
       {
         "rosterSpot": "TE",
         "slotIndex": 0,
-        "roleTags": ["RECEPTION_DENSITY", "RED_ZONE_ACCESS", "OPPOSING_SIDE_MINI"],
+        "roleTags": [
+          "RECEPTION_DENSITY",
+          "RED_ZONE_ACCESS",
+          "OPPOSING_SIDE_MINI"
+        ],
         "microStory": "Loveland earns ten catches and a touchdown as Chicago’s volume outlet. It pairs cleanly with St. Brown because the points come from different offenses inside the same high play count environment."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["PRESSURE_SCORING", "ROOKIE_QB_TARGET", "SCRIPT_PAIR_COMPLETION"],
+        "roleTags": [
+          "PRESSURE_SCORING",
+          "ROOKIE_QB_TARGET",
+          "SCRIPT_PAIR_COMPLETION"
+        ],
         "microStory": "New England defense scores through sacks and takeaways versus Quinn Ewers. The output aligns with a game flow where New England leads and forces dropbacks."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "T. Lawrence", "position": "QB", "team": "JAX" },
-        "teammates": [{ "name": "P. Washington", "position": "WR", "team": "JAX" }],
+        "qb": {
+          "name": "T. Lawrence",
+          "position": "QB",
+          "team": "JAX"
+        },
+        "teammates": [
+          {
+            "name": "P. Washington",
+            "position": "WR",
+            "team": "JAX"
+          }
+        ],
         "opponent": null
       },
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "A. St. Brown", "position": "WR", "team": "DET" },
-        "opponent": { "name": "C. Loveland", "position": "TE", "team": "CHI" }
+        "teammate": {
+          "name": "A. St. Brown",
+          "position": "WR",
+          "team": "DET"
+        },
+        "opponent": {
+          "name": "C. Loveland",
+          "position": "TE",
+          "team": "CHI"
+        }
       },
       {
         "type": "RB_DST_PAIR",
         "qb": null,
-        "teammate": { "name": "R. Stevenson", "position": "RB", "team": "NE" },
+        "teammate": {
+          "name": "R. Stevenson",
+          "position": "RB",
+          "team": "NE"
+        },
         "opponent": {
           "name": "Patriots",
           "position": "DST",

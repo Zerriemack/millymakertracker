@@ -116,7 +116,7 @@
         "position": "WR",
         "team": "CAR",
         "salary": 5600,
-        "points": 36.0,
+        "points": 36,
         "ownershipPercent": 2.7,
         "rec": 8,
         "recYds": 130,
@@ -147,7 +147,7 @@
         "team": "SF",
         "salary": 9000,
         "points": 35.1,
-        "ownershipPercent": 22.0,
+        "ownershipPercent": 22,
         "rushTdRb": 2,
         "rushYdsRb": 81,
         "recRb": 5,
@@ -163,7 +163,7 @@
         "position": "DST",
         "team": "PIT",
         "salary": 3300,
-        "points": 21.0,
+        "points": 21,
         "ownershipPercent": 2.9,
         "sacks": 1,
         "takeaways": 1,
@@ -172,7 +172,8 @@
         "qbFaced": "Joe Flacco",
         "gameAwayTeam": "CIN",
         "gameHomeTeam": "PIT",
-        "opponentTeam": "CIN"
+        "opponentTeam": "CIN",
+        "qbFacedArchetype": "BACKUP"
       }
     ]
   },
@@ -185,8 +186,17 @@
       "secondaryLever": "CAR at ATL mini where McMillan carries the low owned touchdown concentration, plus Steelers DST touchdown path versus Flacco",
       "notes": {
         "rosterConstruction": "5-2-1-1",
-        "sfAriCluster": ["J. Brissett", "M. Wilson", "G. Dortch", "T. McBride", "C. McCaffrey"],
-        "carAtlMini": ["B. Robinson", "T. McMillan"],
+        "sfAriCluster": [
+          "J. Brissett",
+          "M. Wilson",
+          "G. Dortch",
+          "T. McBride",
+          "C. McCaffrey"
+        ],
+        "carAtlMini": [
+          "B. Robinson",
+          "T. McMillan"
+        ],
         "oneOff": "A. Jones Sr.",
         "dstQbFaced": "Joe Flacco"
       }
@@ -206,50 +216,97 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "VOLUME_FORCING", "STACK_ANCHOR"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "VOLUME_FORCING",
+          "STACK_ANCHOR"
+        ],
         "microStory": "Brissett is not a clean box score, and that is the point. The 452 passing yards forces enough plays for three Arizona pass catchers to matter, even with two interceptions."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 0,
-        "roleTags": ["TARGET_AVALANCHE", "PPR_CEILING", "NON_TD_SLATE_SCORE"],
+        "roleTags": [
+          "TARGET_AVALANCHE",
+          "PPR_CEILING",
+          "NON_TD_SLATE_SCORE"
+        ],
         "microStory": "Wilson provides the rare wide receiver line where the yards and receptions create a tournament score without needing a multi touchdown script."
       },
       {
         "rosterSpot": "TE",
         "slotIndex": 0,
-        "roleTags": ["CHALK_ANCHOR", "ROLE_STABILITY", "RED_ZONE_CONSOLIDATION"],
+        "roleTags": [
+          "CHALK_ANCHOR",
+          "ROLE_STABILITY",
+          "RED_ZONE_CONSOLIDATION"
+        ],
         "microStory": "McBride is the printing press. Ten for 115 with a touchdown is exactly why paying up at tight end can still be correct even when the field is there too."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 2,
-        "roleTags": ["LOW_OWNED_TOUCHDOWN_CAPTURE", "MINI_STACK_PAYOFF"],
+        "roleTags": [
+          "LOW_OWNED_TOUCHDOWN_CAPTURE",
+          "MINI_STACK_PAYOFF"
+        ],
         "microStory": "McMillan is where the roster gets paid. Two touchdowns at two point seven percent turns a two man secondary game into a real separator."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["LOW_OWNED_SEPARATION", "DEFENSIVE_TOUCHDOWN_PATH", "QB_FACED_SIGNAL"],
+        "roleTags": [
+          "LOW_OWNED_SEPARATION",
+          "DEFENSIVE_TOUCHDOWN_PATH",
+          "QB_FACED_SIGNAL"
+        ],
         "microStory": "Steelers defense is the final edge. Two defensive touchdowns against Flacco is a score the slate cannot absorb without collapsing duplication around it."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "J. Brissett", "position": "QB", "team": "ARI" },
+        "qb": {
+          "name": "J. Brissett",
+          "position": "QB",
+          "team": "ARI"
+        },
         "teammates": [
-          { "name": "M. Wilson", "position": "WR", "team": "ARI" },
-          { "name": "G. Dortch", "position": "WR", "team": "ARI" },
-          { "name": "T. McBride", "position": "TE", "team": "ARI" }
+          {
+            "name": "M. Wilson",
+            "position": "WR",
+            "team": "ARI"
+          },
+          {
+            "name": "G. Dortch",
+            "position": "WR",
+            "team": "ARI"
+          },
+          {
+            "name": "T. McBride",
+            "position": "TE",
+            "team": "ARI"
+          }
         ],
-        "opponent": { "name": "C. McCaffrey", "position": "RB", "team": "SF" }
+        "opponent": {
+          "name": "C. McCaffrey",
+          "position": "RB",
+          "team": "SF"
+        }
       },
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "B. Robinson", "position": "RB", "team": "ATL" },
-        "opponent": { "name": "T. McMillan", "position": "WR", "team": "CAR" }
+        "teammate": {
+          "name": "B. Robinson",
+          "position": "RB",
+          "team": "ATL"
+        },
+        "opponent": {
+          "name": "T. McMillan",
+          "position": "WR",
+          "team": "CAR"
+        }
       },
       {
         "type": "DST_QB_FACED",
@@ -260,7 +317,11 @@
           "team": "PIT",
           "qbFaced": "Joe Flacco"
         },
-        "opponent": { "name": "Joe Flacco", "position": "QB", "team": "CIN" }
+        "opponent": {
+          "name": "Joe Flacco",
+          "position": "QB",
+          "team": "CIN"
+        }
       }
     ]
   }

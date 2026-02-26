@@ -107,7 +107,7 @@
         "team": "CAR",
         "salary": 6100,
         "points": 11.3,
-        "ownershipPercent": 9.0,
+        "ownershipPercent": 9,
         "rec": 1,
         "recYds": 43,
         "recTd": 1,
@@ -151,7 +151,7 @@
         "team": "LV",
         "salary": 5800,
         "points": 22.3,
-        "ownershipPercent": 10.0,
+        "ownershipPercent": 10,
         "rec": 4,
         "recYds": 63,
         "recTd": 2,
@@ -165,7 +165,7 @@
         "position": "DST",
         "team": "SEA",
         "salary": 3900,
-        "points": 30.0,
+        "points": 30,
         "ownershipPercent": 14.1,
         "sacks": 4,
         "takeaways": 5,
@@ -174,7 +174,8 @@
         "qbFaced": "Max Brosmer",
         "gameAwayTeam": "MIN",
         "gameHomeTeam": "SEA",
-        "opponentTeam": "MIN"
+        "opponentTeam": "MIN",
+        "qbFacedArchetype": "ROOKIE"
       }
     ]
   },
@@ -188,9 +189,18 @@
       "notes": {
         "rosterConstruction": "1-2-2-2-1-1",
         "brissettSolo": "J. Brissett",
-        "lvLacPocket": ["K. Vidal", "B. Bowers"],
-        "atlNyjPocket": ["B. Robinson", "A. Mitchell"],
-        "houIndPocket": ["N. Collins", "D. Schultz"],
+        "lvLacPocket": [
+          "K. Vidal",
+          "B. Bowers"
+        ],
+        "atlNyjPocket": [
+          "B. Robinson",
+          "A. Mitchell"
+        ],
+        "houIndPocket": [
+          "N. Collins",
+          "D. Schultz"
+        ],
         "oneOff": "T. McMillan",
         "dstQbFaced": "Max Brosmer"
       }
@@ -210,19 +220,30 @@
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_SEPARATOR", "TURNOVER_DENSITY", "DEFENSIVE_TD_PATH"],
+        "roleTags": [
+          "PRIMARY_SEPARATOR",
+          "TURNOVER_DENSITY",
+          "DEFENSIVE_TD_PATH"
+        ],
         "microStory": "Seattle defense decides the contest. Four interceptions plus a defensive touchdown against Max Brosmer produces a score that changes the required ceiling for every other slot."
       },
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["SOLO_ENGINE", "VOLUME_PATH", "BONUS_ACCESS"],
+        "roleTags": [
+          "SOLO_ENGINE",
+          "VOLUME_PATH",
+          "BONUS_ACCESS"
+        ],
         "microStory": "Brissett supplies the passing yard bonus and two touchdowns without needing a teammate to reach value."
       },
       {
         "rosterSpot": "FLEX",
         "slotIndex": 0,
-        "roleTags": ["TD_CONCENTRATION", "POSITIONAL_ADVANTAGE"],
+        "roleTags": [
+          "TD_CONCENTRATION",
+          "POSITIONAL_ADVANTAGE"
+        ],
         "microStory": "Bowers provides two touchdowns from tight end, which keeps the lineup from needing a wide receiver spike outside the mini game pockets."
       }
     ],
@@ -230,20 +251,44 @@
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "K. Vidal", "position": "RB", "team": "LAC" },
-        "opponent": { "name": "B. Bowers", "position": "TE", "team": "LV" }
+        "teammate": {
+          "name": "K. Vidal",
+          "position": "RB",
+          "team": "LAC"
+        },
+        "opponent": {
+          "name": "B. Bowers",
+          "position": "TE",
+          "team": "LV"
+        }
       },
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "B. Robinson", "position": "RB", "team": "ATL" },
-        "opponent": { "name": "A. Mitchell", "position": "WR", "team": "NYJ" }
+        "teammate": {
+          "name": "B. Robinson",
+          "position": "RB",
+          "team": "ATL"
+        },
+        "opponent": {
+          "name": "A. Mitchell",
+          "position": "WR",
+          "team": "NYJ"
+        }
       },
       {
         "type": "TEAM_PAIR",
         "qb": null,
-        "teammate": { "name": "N. Collins", "position": "WR", "team": "HOU" },
-        "opponent": { "name": "D. Schultz", "position": "TE", "team": "HOU" }
+        "teammate": {
+          "name": "N. Collins",
+          "position": "WR",
+          "team": "HOU"
+        },
+        "opponent": {
+          "name": "D. Schultz",
+          "position": "TE",
+          "team": "HOU"
+        }
       },
       {
         "type": "DST_QB_FACED",
@@ -254,7 +299,11 @@
           "team": "SEA",
           "qbFaced": "Max Brosmer"
         },
-        "opponent": { "name": "Max Brosmer", "position": "QB", "team": "MIN" }
+        "opponent": {
+          "name": "Max Brosmer",
+          "position": "QB",
+          "team": "MIN"
+        }
       }
     ]
   }

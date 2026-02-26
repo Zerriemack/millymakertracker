@@ -1,0 +1,315 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 4,
+  "slateType": "MAIN",
+  "slateDate": "2024-09-29T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 4",
+  "slateTag": "FULL MIN GB GAME STACK, 49ERS DST VS BRISSETT, NICO COLLINS CHALK SMASH",
+  "slateGroup": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK04_MAIN_2024-09-29T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 13370
+  },
+  "winner": {
+    "username": "Fatebender",
+    "points": 220.96,
+    "maxEntries": 20
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 220.96,
+    "totalOwnershipBp": 13370,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Jordan Love",
+        "position": "QB",
+        "team": "GB",
+        "salary": 6000,
+        "points": 34.16,
+        "ownershipPercent": 2.1,
+        "passTd": 4,
+        "passYds": 389,
+        "rushYds": 6,
+        "passInt": 3,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Aaron Jones",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 6400,
+        "points": 17.9,
+        "ownershipPercent": 18.9,
+        "rushYdsRb": 93,
+        "recRb": 4,
+        "recYdsRb": 46,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Zack Moss",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 5900,
+        "points": 17.8,
+        "ownershipPercent": 11,
+        "rushYdsRb": 51,
+        "recRb": 4,
+        "recYdsRb": 27,
+        "recTdRb": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Nico Collins",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 7200,
+        "points": 36.1,
+        "ownershipPercent": 35.6,
+        "rec": 12,
+        "recYds": 151,
+        "recTd": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jayden Reed",
+        "position": "WR",
+        "team": "GB",
+        "salary": 6000,
+        "points": 30.1,
+        "ownershipPercent": 6.7,
+        "rec": 7,
+        "recYds": 139,
+        "recTd": 1,
+        "rushYds": 2,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Diontae Johnson",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 5600,
+        "points": 21.3,
+        "ownershipPercent": 30.3,
+        "rec": 7,
+        "recYds": 83,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Tucker Kraft",
+        "position": "TE",
+        "team": "GB",
+        "salary": 3000,
+        "points": 18.3,
+        "ownershipPercent": 2.3,
+        "rec": 6,
+        "recYds": 53,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "twoPt": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brian Robinson Jr.",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 6100,
+        "points": 23.3,
+        "ownershipPercent": 23.5,
+        "rushYdsRb": 101,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 12,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "49ers",
+        "position": "DST",
+        "team": "SF",
+        "salary": 3800,
+        "points": 22,
+        "ownershipPercent": 3.3,
+        "sacks": 6,
+        "takeaways": 3,
+        "qbFaced": "Jacoby Brissett",
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "NE",
+        "qbFacedArchetype": "BRIDGE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This first place roster leans on balanced salary allocation and a full Minnesota Green Bay game build, then lets two separate game environments supply the decisive scoring. Jordan Love carries the quarterback slot with a four touchdown passing day, and the rest of the game stack is built to collect points through multiple paths. Jayden Reed captures explosive yardage plus a score. Tucker Kraft provides a low owned tight end touchdown, and even survives a lost fumble because the overall stack supplies enough points. Aaron Jones brings the opposing volume angle, giving the roster access to sustained drives without needing Minnesota passing production.\n\nThe lineup accepts high ownership where it is correct. Nico Collins at massive ownership still matters because his role and the game staying close kept him on the field for a ceiling target load. Diontae Johnson joins him at heavy ownership, and the build treats both as stable point pillars rather than uniqueness levers. The separation comes from where the roster diverges. Love at 2.1 percent is a major ownership swing, and Kraft at 2.3 percent adds another.\n\nSan Francisco defense versus a New England offense with limited receiving threats gives the roster a clean defensive ceiling route. Six sacks, an interception, two recoveries, plus a defensive touchdown creates the points Tampa Bay failed to provide the prior week. Brian Robinson Jr. completes the construction as an efficient standalone rushing score from Washington Arizona, keeping the roster from becoming overly dependent on one shootout. Zack Moss continues the theme of backs delivering when workload consolidates, and his receiving touchdown avoids the need for a second quarterback stack.",
+    "uniquenessNotes": "This roster wins without needing every slot to be a perfect hit. The defense slot does the heavy lifting, which lowers the requirement for the quarterback stack to be pristine. Love throws three interceptions, yet four touchdowns plus the bonus scoring keeps him ahead of most quarterback outcomes.\n\nThe Minnesota Green Bay build is complete and intentional. It stacks the quarterback with two pass catchers, then adds Aaron Jones as the opposing volume piece. The result is exposure to touchdowns, explosive plays, and sustained drives across both sides, while still leaving room for a defense led ceiling.\n\nHigh ownership receivers do not block first place when the rest of the build creates unique roster shapes. Collins and Johnson deliver, and the lineup still separates through Love, Kraft, and the 49ers defense outcome.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Full MIN at GB game stack built around Jordan Love with Jayden Reed and Tucker Kraft plus Aaron Jones on the other side",
+      "secondaryLever": "49ers defense ceiling versus Brissett combined with a balanced two chalk receiver structure",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "MIN@GB: 4 (QB game)",
+          "CIN@CAR: 2",
+          "JAX@HOU: 1",
+          "WAS@ARI: 1",
+          "NE@SF: 1"
+        ],
+        "minPackCluster": [
+          "Jordan Love",
+          "Jayden Reed",
+          "Tucker Kraft",
+          "Aaron Jones"
+        ],
+        "cinCarPair": [
+          "Zack Moss",
+          "Diontae Johnson"
+        ],
+        "chalkAnchor": "Nico Collins",
+        "oneOffRunScore": "Brian Robinson Jr.",
+        "qbFacedBy49ersDst": "Jacoby Brissett"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_GAME_STACK",
+        "LOW_OWNED_QB_SEPARATION",
+        "TE_TOUCHDOWN_AT_LOW_OWNERSHIP",
+        "DOUBLE_CHALK_WR_WITH_UNIQUE_CORE",
+        "DEFENSE_TOUCHDOWN_CEILING",
+        "BACKUP_AND_WORKLOAD_RB_ANGLE"
+      ],
+      "macroStory": "A first place roster anchored by a full game stack in Minnesota Green Bay and a defense touchdown outcome, with salary spread across nine playable ceilings rather than one fragile onslaught."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_OUTCOME",
+          "TOUCHDOWN_DENSITY"
+        ],
+        "microStory": "Jordan Love supplies the ownership swing. Four passing touchdowns offsets the turnovers and creates the base for a full game stack to pay off."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_LEVER",
+          "SACK_AND_TURNOVER_PATH",
+          "DEFENSIVE_TOUCHDOWN_ACCESS"
+        ],
+        "microStory": "San Francisco defense turns a favorable opponent into a slate deciding score. The sacks and takeaways are the floor, and the defensive touchdown is the separation layer."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNED_TOUCHDOWN",
+          "STACK_COMPLETION",
+          "SALARY_RELIEF_WITH_POINTS"
+        ],
+        "microStory": "Tucker Kraft completes the stack at low ownership. The touchdown plus 53 yards matters more than the lost fumble because the roster carries multiple high end scores."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "CHALK_ANCHOR",
+          "TARGET_VOLUME_CEILING",
+          "GAME_STAYS_CLOSE_BENEFIT"
+        ],
+        "microStory": "Nico Collins is the high ownership piece that still belongs in the winning lineup. A 12 catch, 151 yard, touchdown line removes the need to fade a correct projection."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Jordan Love",
+          "position": "QB",
+          "team": "GB"
+        },
+        "teammates": [
+          {
+            "name": "Jayden Reed",
+            "position": "WR",
+            "team": "GB"
+          },
+          {
+            "name": "Tucker Kraft",
+            "position": "TE",
+            "team": "GB"
+          }
+        ],
+        "opponent": {
+          "name": "Aaron Jones",
+          "position": "RB",
+          "team": "MIN"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Zack Moss",
+          "position": "RB",
+          "team": "CIN"
+        },
+        "opponent": {
+          "name": "Diontae Johnson",
+          "position": "WR",
+          "team": "CAR"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "49ers",
+          "position": "DST",
+          "team": "SF",
+          "qbFaced": "Jacoby Brissett"
+        },
+        "opponent": {
+          "name": "Jacoby Brissett",
+          "position": "QB",
+          "team": "NE"
+        }
+      }
+    ]
+  }
+}

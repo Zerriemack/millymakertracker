@@ -42,7 +42,7 @@
         "team": "NYG",
         "salary": 4600,
         "points": 36.24,
-        "ownershipPercent": 4.0,
+        "ownershipPercent": 4,
         "passTd": 2,
         "passYds": 366,
         "passInt": 1,
@@ -152,7 +152,7 @@
         "position": "WR",
         "team": "PHI",
         "salary": 5900,
-        "points": 28.0,
+        "points": 28,
         "ownershipPercent": 13.9,
         "rec": 8,
         "recYds": 110,
@@ -167,7 +167,7 @@
         "position": "DST",
         "team": "CLE",
         "salary": 2900,
-        "points": 16.0,
+        "points": 16,
         "ownershipPercent": 28.4,
         "sacks": 10,
         "takeaways": 1,
@@ -175,7 +175,8 @@
         "qbFaced": "Geno Smith",
         "gameAwayTeam": "CLE",
         "gameHomeTeam": "LV",
-        "opponentTeam": "LV"
+        "opponentTeam": "LV",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL"
       }
     ]
   },
@@ -188,9 +189,20 @@
       "secondaryLever": "Eagles double wide receiver without Hurts plus Henry versus Cincinnati tight end weakness, with Browns DST as the pressure outcome versus Geno",
       "notes": {
         "rosterConstruction": "4-2-1-1-1",
-        "nygDetCluster": ["J. Winston", "J. Gibbs", "A. St. Brown", "W. Robinson"],
-        "phiDalPair": ["A. Brown", "D. Smith"],
-        "oneOffs": ["E. Wilson", "H. Henry"],
+        "nygDetCluster": [
+          "J. Winston",
+          "J. Gibbs",
+          "A. St. Brown",
+          "W. Robinson"
+        ],
+        "phiDalPair": [
+          "A. Brown",
+          "D. Smith"
+        ],
+        "oneOffs": [
+          "E. Wilson",
+          "H. Henry"
+        ],
         "dstQbFaced": "Geno Smith"
       }
     },
@@ -209,48 +221,92 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNED_VOLATILITY", "GAME_STACK_ANCHOR"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNED_VOLATILITY",
+          "GAME_STACK_ANCHOR"
+        ],
         "microStory": "Winston is the leverage key. He does not need clean football. He needs attempts, yards, and touchdowns, and the price makes the roster shape possible."
       },
       {
         "rosterSpot": "RB",
         "slotIndex": 0,
-        "roleTags": ["CHALK_HAMMER", "SLATE_BREAKER", "DUAL_ROLE_USAGE"],
+        "roleTags": [
+          "CHALK_HAMMER",
+          "SLATE_BREAKER",
+          "DUAL_ROLE_USAGE"
+        ],
         "microStory": "Gibbs is the slate outcome. The rushing total plus eleven receptions creates a score that forces the rest of the roster to be built around it."
       },
       {
         "rosterSpot": "FLEX",
         "slotIndex": 0,
-        "roleTags": ["TARGET_CONCENTRATION", "OFFENSE_CONDENSED", "DOUBLE_WR_BET"],
+        "roleTags": [
+          "TARGET_CONCENTRATION",
+          "OFFENSE_CONDENSED",
+          "DOUBLE_WR_BET"
+        ],
         "microStory": "A. Brown functions as one half of the concentrated Eagles bet. He pairs with Smith to capture the full receiver scoring band without needing a quarterback slot."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["PRESSURE_PATH", "MATCHUP_DRIVEN", "QB_FACED_SIGNAL"],
+        "roleTags": [
+          "PRESSURE_PATH",
+          "MATCHUP_DRIVEN",
+          "QB_FACED_SIGNAL"
+        ],
         "microStory": "Cleveland defense is a pressure score. Ten sacks plus a takeaway against Geno Smith is the outcome the ownership expects, and it still matters in a build that separates at quarterback."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "J. Winston", "position": "QB", "team": "NYG" },
+        "qb": {
+          "name": "J. Winston",
+          "position": "QB",
+          "team": "NYG"
+        },
         "teammates": [
-          { "name": "W. Robinson", "position": "WR", "team": "NYG" }
+          {
+            "name": "W. Robinson",
+            "position": "WR",
+            "team": "NYG"
+          }
         ],
-        "opponent": { "name": "A. St. Brown", "position": "WR", "team": "DET" }
+        "opponent": {
+          "name": "A. St. Brown",
+          "position": "WR",
+          "team": "DET"
+        }
       },
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "J. Gibbs", "position": "RB", "team": "DET" },
-        "opponent": { "name": "W. Robinson", "position": "WR", "team": "NYG" }
+        "teammate": {
+          "name": "J. Gibbs",
+          "position": "RB",
+          "team": "DET"
+        },
+        "opponent": {
+          "name": "W. Robinson",
+          "position": "WR",
+          "team": "NYG"
+        }
       },
       {
         "type": "TEAM_PAIR",
         "qb": null,
-        "teammate": { "name": "A. Brown", "position": "WR", "team": "PHI" },
-        "opponent": { "name": "D. Smith", "position": "WR", "team": "PHI" }
+        "teammate": {
+          "name": "A. Brown",
+          "position": "WR",
+          "team": "PHI"
+        },
+        "opponent": {
+          "name": "D. Smith",
+          "position": "WR",
+          "team": "PHI"
+        }
       },
       {
         "type": "DST_QB_FACED",
@@ -261,7 +317,11 @@
           "team": "CLE",
           "qbFaced": "Geno Smith"
         },
-        "opponent": { "name": "Geno Smith", "position": "QB", "team": "LV" }
+        "opponent": {
+          "name": "Geno Smith",
+          "position": "QB",
+          "team": "LV"
+        }
       }
     ]
   }

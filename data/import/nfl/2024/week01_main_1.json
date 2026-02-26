@@ -1,0 +1,213 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 1,
+  "slateType": "MAIN",
+  "slateDate": "2024-09-08T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 1",
+  "slateTag": "ALLEN TWO RUSH TD, HILL AND ACHANE SAME GAME, VIKINGS PICK SIX VS DANIEL JONES",
+  "slateGroup": "1-2-2-2-1-1",
+  "rosterConstruction": "1-2-2-2-1-1",
+  "gameKey": [
+    "ARI@BUF: 1 (QB game)",
+    "JAX@MIA: 2",
+    "HOU@IND: 2",
+    "CAR@NO: 2",
+    "DEN@SEA: 1",
+    "MIN@NYG: 1"
+  ],
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK01_MAIN_2024-09-08T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 6890
+  },
+  "winner": {
+    "username": "sidi1979",
+    "points": 196.88,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 196.88,
+    "totalOwnershipBp": 6890,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "J. Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 8000,
+        "points": 32.18,
+        "ownershipPercent": 9.3,
+        "passTd": 2,
+        "passYds": 232,
+        "rushTd": 2,
+        "rushYds": 39,
+        "passInt": 0,
+        "fum": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "D. Achane",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 6800,
+        "points": 23,
+        "ownershipPercent": 14.1,
+        "rushTdRb": 1,
+        "rushYdsRb": 24,
+        "recRb": 7,
+        "recYdsRb": 76,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "J. Mixon",
+        "position": "RB",
+        "team": "HOU",
+        "salary": 6600,
+        "points": 29.8,
+        "ownershipPercent": 8.5,
+        "rushTdRb": 1,
+        "rushYdsRb": 159,
+        "recRb": 3,
+        "recYdsRb": 19,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "J. Reynolds",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 4200,
+        "points": 9.5,
+        "ownershipPercent": 0.5,
+        "rec": 5,
+        "recYds": 45,
+        "recTd": 0,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "T. Hill",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 8700,
+        "points": 29,
+        "ownershipPercent": 29.2,
+        "rec": 7,
+        "recYds": 130,
+        "recTd": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A. Pierce",
+        "position": "WR",
+        "team": "IND",
+        "salary": 4000,
+        "points": 24.5,
+        "ownershipPercent": 0.8,
+        "rec": 3,
+        "recYds": 125,
+        "recTd": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "J. Johnson",
+        "position": "TE",
+        "team": "NO",
+        "salary": 3700,
+        "points": 10.6,
+        "ownershipPercent": 0.8,
+        "rec": 2,
+        "recYds": 26,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "R. Shaheed",
+        "position": "WR",
+        "team": "NO",
+        "salary": 4400,
+        "points": 16.3,
+        "ownershipPercent": 2.4,
+        "rec": 3,
+        "recYds": 73,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Vikings",
+        "position": "DST",
+        "team": "MIN",
+        "salary": 3600,
+        "points": 22,
+        "ownershipPercent": 3.3,
+        "sacks": 5,
+        "takeaways": 2,
+        "defTd": 1,
+        "pointsAllowed": 6,
+        "qbFaced": "Daniel Jones",
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "The roster is built around an Allen ceiling game without forcing a Buffalo receiver guess. Two rushing touchdowns at quarterback is the cleanest way to separate early in a season because the field still concentrates around wide receiver driven scoring. This construction takes the quarterback points directly, then spends the rest of the salary on independent touchdown access across multiple games.\n\nMiami provides the first concentrated scoring lane. Hill carries the high owned raw points role, while Achane captures the same offensive eruption through a different scoring channel. The combination is not redundant. Hill can get there on explosive targets and end zone usage, while Achane can get there through condensed touches and receiving work. When both hit in the same game, it usually means Miami scored enough times that the roster does not need a full game stack to keep pace.\n\nHouston at Indianapolis supplies the second ceiling lane. Mixon provides the volume and touchdown base, and Pierce supplies the vertical touchdown outcome from the other sideline. That pairing creates a game environment bet on big plays and short fields without needing the quarterback points from either team.\n\nNew Orleans is the final concentration point. Johnson and Shaheed capture two different touchdown archetypes, a tight end red zone score and a receiver splash play. The Saints game outcome pays off twice, then the Vikings defense closes the loop by turning Daniel Jones dropbacks into sacks, interceptions, and a defensive touchdown.",
+    "uniquenessNotes": "The low owned separation is not a single punt, it is the way the roster allocates ceiling across different archetypes. Reynolds functions as the salary release, but the actual differentiation comes from Pierce plus the Saints double and the decision to play Allen without a pass catcher. Many rosters that started with Allen chose to attach a receiver for comfort. This build accepts the risk of spreading Buffalo points across the backfield and rushing production, then uses the saved roster slot to chase touchdowns elsewhere.\n\nThe lineup also avoids a narrow single game dependency. Miami, Houston versus Indianapolis, and New Orleans can each carry the roster with multiple touchdowns, and none of them require a specific quarterback to be perfect. The Vikings defense adds a fourth scoring channel, pressure plus turnover return, against a quarterback who can be baited into negative plays when forced into longer down and distance.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Allen ceiling through rushing touchdowns without a Buffalo pass catcher",
+      "secondaryLever": "Hill and Achane paired from the same game plus Mixon with Pierce as the opposing deep touchdown path",
+      "notes": {
+        "rosterConstruction": "1-2-2-2-1-1",
+        "bufCluster": [
+          "J. Allen"
+        ],
+        "miaCluster": [
+          "T. Hill",
+          "D. Achane"
+        ],
+        "houIndCluster": [
+          "J. Mixon",
+          "A. Pierce"
+        ],
+        "noCluster": [
+          "J. Johnson",
+          "R. Shaheed"
+        ],
+        "oneOffValue": "J. Reynolds",
+        "qbFacedByVikingsDst": "Daniel Jones"
+      }
+    }
+  }
+}

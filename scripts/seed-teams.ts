@@ -9,22 +9,8 @@
 
 import fs from "fs";
 import path from "path";
-import { PrismaClient, Sport } from "@prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
-import { Pool } from "pg";
-
-/* ------------------------- Prisma client (adapter) ------------------------- */
-
-const DATABASE_URL = process.env.DATABASE_URL;
-if (!DATABASE_URL) {
-  throw new Error(
-    "DATABASE_URL is missing. Ensure dotenv_config_path=.env.local and .env.local contains DATABASE_URL."
-  );
-}
-
-const pool = new Pool({ connectionString: DATABASE_URL });
-const adapter = new PrismaPg(pool);
-const prisma = new PrismaClient({ adapter });
+import { Sport } from "@prisma/client";
+import { prisma } from "../src/lib/prisma";
 
 /* ------------------------------ CLI parsing ------------------------------ */
 
@@ -112,5 +98,4 @@ main()
   })
   .finally(async () => {
     await prisma.$disconnect();
-    await pool.end();
   });

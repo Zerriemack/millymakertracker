@@ -34,7 +34,7 @@
         "team": "LAC",
         "salary": 6400,
         "points": 32.9,
-        "ownershipPercent": 6.0,
+        "ownershipPercent": 6,
         "passTd": 3,
         "passYds": 420,
         "rushYds": 31,
@@ -97,7 +97,7 @@
         "team": "KC",
         "salary": 5600,
         "points": 23.2,
-        "ownershipPercent": 37.0,
+        "ownershipPercent": 37,
         "rec": 7,
         "recYds": 42,
         "recTd": 2,
@@ -142,7 +142,7 @@
         "team": "ARI",
         "salary": 5700,
         "points": 29.4,
-        "ownershipPercent": 14.0,
+        "ownershipPercent": 14,
         "rec": 10,
         "recYds": 74,
         "recTd": 2,
@@ -156,15 +156,16 @@
         "position": "DST",
         "team": "CAR",
         "salary": 2500,
-        "points": 17.0,
+        "points": 17,
         "ownershipPercent": 8.5,
         "sacks": 6,
         "takeaways": 2,
         "pointsAllowedBucket": 6,
-        "qbFaced": "Justin Fields / Tyrod Taylor",
+        "qbFaced": "Justin Fields",
         "gameAwayTeam": "CAR",
         "gameHomeTeam": "NYJ",
-        "opponentTeam": "NYJ"
+        "opponentTeam": "NYJ",
+        "qbFacedArchetype": "JOURNEYMAN"
       }
     ]
   },
@@ -185,9 +186,16 @@
           "GB@ARI: 1",
           "CAR@NYJ: 1"
         ],
-        "chargersCore": ["J. Herbert", "K. Allen", "O. Gadsden II"],
+        "chargersCore": [
+          "J. Herbert",
+          "K. Allen",
+          "O. Gadsden II"
+        ],
         "coltsHammer": "J. Taylor",
-        "doubleTe": ["O. Gadsden II", "T. McBride"],
+        "doubleTe": [
+          "O. Gadsden II",
+          "T. McBride"
+        ],
         "metaNote": "LV offense profile did not force a run back, so the build takes Rice and keeps correlation elsewhere",
         "qbFacedByPanthersDst": "Justin Fields / Tyrod Taylor"
       }
@@ -207,49 +215,98 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "HIGH_YARDAGE_PASSING", "MULTI_TD_PASSING"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "HIGH_YARDAGE_PASSING",
+          "MULTI_TD_PASSING"
+        ],
         "microStory": "Herbert is the engine because 420 passing yards and three touchdowns supports multiple ceiling outcomes inside one game core."
       },
       {
         "rosterSpot": "TE",
         "slotIndex": 0,
-        "roleTags": ["LOW_OWNED_SPIKE", "STACK_SEPARATOR", "YARDAGE_DOMINANCE"],
+        "roleTags": [
+          "LOW_OWNED_SPIKE",
+          "STACK_SEPARATOR",
+          "YARDAGE_DOMINANCE"
+        ],
         "microStory": "Gadsden is the separator. He posts a wide receiver yardage line from tight end at minimal ownership, turning a common core into a unique roster distribution."
       },
       {
         "rosterSpot": "FLEX",
         "slotIndex": 0,
-        "roleTags": ["TE_AS_WR_ARCHETYPE", "INDEPENDENT_CEILING", "MULTI_TD_ACCESS"],
+        "roleTags": [
+          "TE_AS_WR_ARCHETYPE",
+          "INDEPENDENT_CEILING",
+          "MULTI_TD_ACCESS"
+        ],
         "microStory": "McBride supplies receiver style volume from tight end and adds two touchdowns, creating a second ceiling lane without creating a second quarterback dependency."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["PRESSURE_VOLUME", "TURNOVER_ACCESS", "SLATE_SWING_AT_DST"],
+        "roleTags": [
+          "PRESSURE_VOLUME",
+          "TURNOVER_ACCESS",
+          "SLATE_SWING_AT_DST"
+        ],
         "microStory": "Carolina scores through six sacks and two interceptions against Justin Fields and Tyrod Taylor, delivering a defense score that competes with skill position totals."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "J. Herbert", "position": "QB", "team": "LAC" },
+        "qb": {
+          "name": "J. Herbert",
+          "position": "QB",
+          "team": "LAC"
+        },
         "teammates": [
-          { "name": "K. Allen", "position": "WR", "team": "LAC" },
-          { "name": "O. Gadsden II", "position": "TE", "team": "LAC" }
+          {
+            "name": "K. Allen",
+            "position": "WR",
+            "team": "LAC"
+          },
+          {
+            "name": "O. Gadsden II",
+            "position": "TE",
+            "team": "LAC"
+          }
         ],
-        "opponent": { "name": "J. Taylor", "position": "RB", "team": "IND" }
+        "opponent": {
+          "name": "J. Taylor",
+          "position": "RB",
+          "team": "IND"
+        }
       },
       {
         "type": "DOUBLE_TE",
         "qb": null,
-        "teammate": { "name": "O. Gadsden II", "position": "TE", "team": "LAC" },
-        "opponent": { "name": "T. McBride", "position": "TE", "team": "ARI" }
+        "teammate": {
+          "name": "O. Gadsden II",
+          "position": "TE",
+          "team": "LAC"
+        },
+        "opponent": {
+          "name": "T. McBride",
+          "position": "TE",
+          "team": "ARI"
+        }
       },
       {
         "type": "DST_QB_FACED",
         "qb": null,
-        "teammate": { "name": "Panthers", "position": "DST", "team": "CAR", "qbFaced": "Justin Fields / Tyrod Taylor" },
-        "opponent": { "name": "Jets", "position": "DST", "team": "NYJ" }
+        "teammate": {
+          "name": "Panthers",
+          "position": "DST",
+          "team": "CAR",
+          "qbFaced": "Justin Fields / Tyrod Taylor"
+        },
+        "opponent": {
+          "name": "Jets",
+          "position": "DST",
+          "team": "NYJ"
+        }
       }
     ]
   }

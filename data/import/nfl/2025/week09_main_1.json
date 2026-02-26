@@ -59,7 +59,7 @@
         "team": "SF",
         "salary": 8800,
         "points": 37.3,
-        "ownershipPercent": 33.0,
+        "ownershipPercent": 33,
         "rushTdRb": 1,
         "rushYdsRb": 106,
         "recRb": 5,
@@ -167,7 +167,7 @@
         "position": "DST",
         "team": "TEN",
         "salary": 2300,
-        "points": 20.0,
+        "points": 20,
         "ownershipPercent": 1.4,
         "sacks": 6,
         "takeaways": 1,
@@ -175,7 +175,8 @@
         "qbFaced": "Justin Herbert",
         "gameAwayTeam": "LAC",
         "gameHomeTeam": "TEN",
-        "opponentTeam": "LAC"
+        "opponentTeam": "LAC",
+        "qbFacedArchetype": "FRANCHISE"
       }
     ]
   },
@@ -188,8 +189,17 @@
       "secondaryLever": "Bowers as the tight end ceiling that breaks the position, plus Titans defense as the low owned defensive touchdown path",
       "notes": {
         "rosterConstruction": "4-1-1-1-1-1",
-        "bearsBengalsCluster": ["C. Williams", "O. Zaccheaus", "K. Monangai", "J. Chase"],
-        "oneOffHammers": ["C. McCaffrey", "D. London", "J. Warren"],
+        "bearsBengalsCluster": [
+          "C. Williams",
+          "O. Zaccheaus",
+          "K. Monangai",
+          "J. Chase"
+        ],
+        "oneOffHammers": [
+          "C. McCaffrey",
+          "D. London",
+          "J. Warren"
+        ],
         "tightEndSlateBreaker": "B. Bowers",
         "dstQbFaced": "Justin Herbert"
       }
@@ -208,54 +218,98 @@
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["PRIMARY_ENGINE", "GAME_STACK_ANCHOR", "RUSHING_PLUS_PASSING_CEILING"],
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "GAME_STACK_ANCHOR",
+          "RUSHING_PLUS_PASSING_CEILING"
+        ],
         "microStory": "Williams is the anchor because he can get there two ways. The passing line lands, and the rushing yardage keeps the quarterback score above the pocket passer cluster."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 1,
-        "roleTags": ["CHEAP_ACCESSORY", "TOUCHDOWN_DEPENDENT", "STACK_COMPLETION"],
+        "roleTags": [
+          "CHEAP_ACCESSORY",
+          "TOUCHDOWN_DEPENDENT",
+          "STACK_COMPLETION"
+        ],
         "microStory": "Zaccheaus is the salary release that still stays attached to the quarterback. A low cost receiver who scores once is enough when the rest of the roster carries touchdown density."
       },
       {
         "rosterSpot": "FLEX",
         "slotIndex": 0,
-        "roleTags": ["VALUE_RB_WITH_ROLE", "GAME_STACK_FOURTH_PIECE", "OWNERSHIP_BET"],
+        "roleTags": [
+          "VALUE_RB_WITH_ROLE",
+          "GAME_STACK_FOURTH_PIECE",
+          "OWNERSHIP_BET"
+        ],
         "microStory": "Monangai is the ownership magnet and it is still rational. The yardage does the job, and his presence lets the roster keep Chicago scoring concentrated without adding extra Bengals."
       },
       {
         "rosterSpot": "TE",
         "slotIndex": 0,
-        "roleTags": ["POSITION_BREAKER", "OFFENSE_THROUGH_PLAYER", "MULTI_TD_OUTCOME"],
+        "roleTags": [
+          "POSITION_BREAKER",
+          "OFFENSE_THROUGH_PLAYER",
+          "MULTI_TD_OUTCOME"
+        ],
         "microStory": "Bowers is the structural reason the roster wins. Three touchdowns from tight end forces the lineup into a scoring tier most builds cannot reach, even if they get the core game right."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["LOW_OWNED_SEPARATION", "DEFENSIVE_TOUCHDOWN_PATH", "QB_FACED_SIGNAL"],
+        "roleTags": [
+          "LOW_OWNED_SEPARATION",
+          "DEFENSIVE_TOUCHDOWN_PATH",
+          "QB_FACED_SIGNAL"
+        ],
         "microStory": "Tennessee defense is the volatility slot that lands. Two defensive touchdowns plus pressure events is a contest winning outcome at almost no ownership, even while losing to Herbert."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "C. Williams", "position": "QB", "team": "CHI" },
+        "qb": {
+          "name": "C. Williams",
+          "position": "QB",
+          "team": "CHI"
+        },
         "teammates": [
-          { "name": "O. Zaccheaus", "position": "WR", "team": "CHI" },
-          { "name": "K. Monangai", "position": "RB", "team": "CHI" }
+          {
+            "name": "O. Zaccheaus",
+            "position": "WR",
+            "team": "CHI"
+          },
+          {
+            "name": "K. Monangai",
+            "position": "RB",
+            "team": "CHI"
+          }
         ],
-        "opponent": { "name": "J. Chase", "position": "WR", "team": "CIN" }
+        "opponent": {
+          "name": "J. Chase",
+          "position": "WR",
+          "team": "CIN"
+        }
       },
       {
         "type": "ONE_OFF_CEILING",
         "qb": null,
-        "teammate": { "name": "D. London", "position": "WR", "team": "ATL" },
+        "teammate": {
+          "name": "D. London",
+          "position": "WR",
+          "team": "ATL"
+        },
         "opponent": null
       },
       {
         "type": "RB_ONE_OFF",
         "qb": null,
-        "teammate": { "name": "C. McCaffrey", "position": "RB", "team": "SF" },
+        "teammate": {
+          "name": "C. McCaffrey",
+          "position": "RB",
+          "team": "SF"
+        },
         "opponent": null
       },
       {
@@ -267,7 +321,11 @@
           "team": "TEN",
           "qbFaced": "Justin Herbert"
         },
-        "opponent": { "name": "Justin Herbert", "position": "QB", "team": "LAC" }
+        "opponent": {
+          "name": "Justin Herbert",
+          "position": "QB",
+          "team": "LAC"
+        }
       }
     ]
   }

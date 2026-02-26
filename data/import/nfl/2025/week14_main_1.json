@@ -95,7 +95,7 @@
         "team": "ARI",
         "salary": 5600,
         "points": 40.2,
-        "ownershipPercent": 42.0,
+        "ownershipPercent": 42,
         "rec": 11,
         "recYds": 142,
         "recTd": 2,
@@ -153,15 +153,16 @@
         "position": "DST",
         "team": "TEN",
         "salary": 2900,
-        "points": 7.0,
-        "ownershipPercent": 8.0,
+        "points": 7,
+        "ownershipPercent": 8,
         "sacks": 2,
         "takeaways": 2,
         "pointsAllowedBucket": 34,
         "qbFaced": "Shedeur Sanders",
         "gameAwayTeam": "TEN",
         "gameHomeTeam": "CLE",
-        "opponentTeam": "CLE"
+        "opponentTeam": "CLE",
+        "qbFacedArchetype": "ROOKIE"
       }
     ]
   },
@@ -181,10 +182,23 @@
           "CHI@GB: 1",
           "PIT@BAL: 1"
         ],
-        "billsCluster": ["J. Allen", "D. Kincaid"],
-        "titansCluster": ["T. Pollard", "H. Fannin Jr.", "Titans"],
-        "ramsCardinalsMini": ["P. Nacua", "M. Wilson"],
-        "oneOffs": ["J. Jacobs", "D. Metcalf"],
+        "billsCluster": [
+          "J. Allen",
+          "D. Kincaid"
+        ],
+        "titansCluster": [
+          "T. Pollard",
+          "H. Fannin Jr.",
+          "Titans"
+        ],
+        "ramsCardinalsMini": [
+          "P. Nacua",
+          "M. Wilson"
+        ],
+        "oneOffs": [
+          "J. Jacobs",
+          "D. Metcalf"
+        ],
         "qbFacedByTitansDst": "Shedeur Sanders"
       }
     },
@@ -203,46 +217,89 @@
       {
         "rosterSpot": "RB",
         "slotIndex": 1,
-        "roleTags": ["PRIMARY_LEVER", "LOW_OWNED_OUTCOME", "RUSHING_CEILING"],
+        "roleTags": [
+          "PRIMARY_LEVER",
+          "LOW_OWNED_OUTCOME",
+          "RUSHING_CEILING"
+        ],
         "microStory": "Pollard is the separation point. Two rushing touchdowns and 161 yards at 0.3 percent creates a score gap the field cannot match through small deviations."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": ["RB_PAIR", "PRESSURE_PATH", "PROCESS_CONFLICT_TOLERANCE"],
+        "roleTags": [
+          "RB_PAIR",
+          "PRESSURE_PATH",
+          "PROCESS_CONFLICT_TOLERANCE"
+        ],
         "microStory": "Titans defense is paired with Pollard to represent a Tennessee control script. The defense does enough through sacks and takeaways to stay neutral while Pollard supplies the touchdown density."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 1,
-        "roleTags": ["CHALK_ANCHOR", "CEILING_POINTS", "NO_FADE"],
+        "roleTags": [
+          "CHALK_ANCHOR",
+          "CEILING_POINTS",
+          "NO_FADE"
+        ],
         "microStory": "Wilson is the slate receiver outcome. The roster treats him as a required score and shifts the uniqueness burden to Pollard."
       },
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": ["RAW_POINTS", "SHOOTOUT_ACCESS", "TWO_MAN_STACK"],
+        "roleTags": [
+          "RAW_POINTS",
+          "SHOOTOUT_ACCESS",
+          "TWO_MAN_STACK"
+        ],
         "microStory": "Allen supplies the quarterback ceiling outcome while Kincaid captures a touchdown path without forcing additional Bills."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": { "name": "J. Allen", "position": "QB", "team": "BUF" },
-        "teammates": [{ "name": "D. Kincaid", "position": "TE", "team": "BUF" }],
+        "qb": {
+          "name": "J. Allen",
+          "position": "QB",
+          "team": "BUF"
+        },
+        "teammates": [
+          {
+            "name": "D. Kincaid",
+            "position": "TE",
+            "team": "BUF"
+          }
+        ],
         "opponent": null
       },
       {
         "type": "RB_DST_PAIR",
         "qb": null,
-        "teammate": { "name": "T. Pollard", "position": "RB", "team": "TEN" },
-        "opponent": { "name": "Titans", "position": "DST", "team": "TEN", "qbFaced": "Shedeur Sanders" }
+        "teammate": {
+          "name": "T. Pollard",
+          "position": "RB",
+          "team": "TEN"
+        },
+        "opponent": {
+          "name": "Titans",
+          "position": "DST",
+          "team": "TEN",
+          "qbFaced": "Shedeur Sanders"
+        }
       },
       {
         "type": "GAME_PAIR",
         "qb": null,
-        "teammate": { "name": "P. Nacua", "position": "WR", "team": "LAR" },
-        "opponent": { "name": "M. Wilson", "position": "WR", "team": "ARI" }
+        "teammate": {
+          "name": "P. Nacua",
+          "position": "WR",
+          "team": "LAR"
+        },
+        "opponent": {
+          "name": "M. Wilson",
+          "position": "WR",
+          "team": "ARI"
+        }
       }
     ]
   }

@@ -1,0 +1,299 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 2,
+  "slateType": "MAIN",
+  "slateDate": "2024-09-15T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 2",
+  "slateTag": "CARDINALS DST VS STAFFORD, KAMARA FOUR TDS, ARIZONA THREE PIECE",
+  "slateGroup": "2-3-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK02_MAIN_2024-09-15T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14560
+  },
+  "winner": {
+    "username": "Sampit16",
+    "points": 229.92,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 229.92,
+    "totalOwnershipBp": 14560,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Daniel Jones",
+        "position": "QB",
+        "team": "NYG",
+        "salary": 5300,
+        "points": 18.32,
+        "ownershipPercent": 6.9,
+        "passTd": 2,
+        "passYds": 178,
+        "rushYds": 32,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "A. Kamara",
+        "position": "RB",
+        "team": "NO",
+        "salary": 7000,
+        "points": 47,
+        "ownershipPercent": 4.3,
+        "rushYdsRb": 115,
+        "rushTdRb": 3,
+        "recRb": 2,
+        "recYdsRb": 65,
+        "recTdRb": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jordan Mason",
+        "position": "RB",
+        "team": "SF",
+        "salary": 5200,
+        "points": 20.4,
+        "ownershipPercent": 50.1,
+        "rushYdsRb": 100,
+        "rushTdRb": 1,
+        "recRb": 1,
+        "recYdsRb": 4,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "M. Harrison Jr.",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 6900,
+        "points": 32,
+        "ownershipPercent": 3.6,
+        "rec": 4,
+        "recYds": 130,
+        "recTd": 2,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6000,
+        "points": 27.7,
+        "ownershipPercent": 23.2,
+        "rec": 7,
+        "recYds": 117,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "M. Nabers",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 5900,
+        "points": 31.7,
+        "ownershipPercent": 17.6,
+        "rec": 10,
+        "recYds": 127,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "T. McBride",
+        "position": "TE",
+        "team": "ARI",
+        "salary": 6000,
+        "points": 18.7,
+        "ownershipPercent": 6.6,
+        "rec": 6,
+        "recYds": 67,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "J.K. Dobbins",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 5400,
+        "points": 23.1,
+        "ownershipPercent": 27.5,
+        "rushYdsRb": 131,
+        "rushTdRb": 1,
+        "recRb": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 2300,
+        "points": 11,
+        "ownershipPercent": 5.8,
+        "sacks": 5,
+        "takeaways": 1,
+        "qbFaced": "Matthew Stafford",
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "LAR",
+        "qbFacedArchetype": "FRANCHISE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by building around a defense led game and then layering in concentrated offense from the same environment without turning it into a fragile onslaught. Arizona defense versus Matthew Stafford is the leverage point. Five sacks plus a takeaway creates a scoring floor at a salary that opens the rest of the build, and it also establishes the game script lens where Los Angeles possessions end early or end with mistakes.\n\nHarrison and McBride complete the Arizona side in two different ways. Harrison captures the touchdown access and the spike yardage on minimal targets, while McBride captures the drive level involvement. Together, they cover both red zone and chain moving roles, so Arizona scoring does not need to funnel through a single archetype.\n\nKamara is the slate breaker. Four touchdowns at modest ownership is the type of isolated eruption that cannot be replicated by balanced scoring. Mason supplies the popular salary efficient rushing production, but the rest of the build refuses to follow common clustering. Jones with Nabers is a clean two man anchor that stays away from unnecessary attachments, and Godwin plus Dobbins remain standalone point sources from separate games.",
+    "uniquenessNotes": "Most lineups that used Jordan Mason at his ownership traveled into heavier stacks or duplicated mid range receivers. This build takes the opposite path. It accepts Mason as a neutral salary release, then it forces uniqueness through a three player Arizona construction where the defense score is paired with two pass catchers who win through different usage profiles.\n\nThe Giants pairing avoids the typical mistake of over stacking a low scoring quarterback. Jones does enough to keep the stack afloat, while Nabers provides the actual ceiling. In a week where many rosters chased full game stacks, the two player approach keeps correlation benefits without paying a duplication tax.\n\nKamara finishes the job as a true one off hammer. When a roster already has a defensive score and two separate receiver ceilings, a four touchdown running back outcome becomes the final separator rather than the only way to win.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Arizona defense versus Stafford paired with Harrison and McBride from the same game",
+      "secondaryLever": "Jones paired with Nabers as a narrow correlation anchor, then Kamara as the isolated eruption",
+      "notes": {
+        "rosterConstruction": "2-3-1-1-1-1",
+        "gameKey": [
+          "NYG@WAS: 2 (QB game)",
+          "LAR@ARI: 3",
+          "NO@DAL: 1",
+          "SF@MIN: 1",
+          "TB@DET: 1",
+          "LAC@CAR: 1"
+        ],
+        "qbGameCluster": [
+          "D. Jones",
+          "M. Nabers"
+        ],
+        "cardinalsRamsCluster": [
+          "M. Harrison Jr.",
+          "T. McBride",
+          "Cardinals"
+        ],
+        "oneOffHammer": "A. Kamara",
+        "chalkRelease": "J. Mason",
+        "qbFacedByCardinalsDst": "Matthew Stafford"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "DST_ANCHOR_WITH_SACK_PATH",
+        "DST_PLUS_TWO_TEAMMATES_SAME_GAME",
+        "NARROW_QB_STACK",
+        "ONE_OFF_TD_MONSTER",
+        "CHALK_RELEASE_WITH_UNIQUE_CLUSTERING"
+      ],
+      "macroStory": "A first place build driven by a defense led game environment, paired with two Arizona pass catchers who win through separate usage profiles, then finished by a four touchdown running back outcome and a narrow quarterback stack that avoids over commitment."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_LEVER",
+          "PRESSURE_DRIVEN_SCORING",
+          "SALARY_RELEASE"
+        ],
+        "microStory": "Arizona defense sets the slate angle. Five sacks and a takeaway versus Stafford creates points without needing a touchdown, and it unlocks the salary structure for multiple ceiling pieces."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "TOUCHDOWN_DENSITY",
+          "LOW_OWNERSHIP_CEILING",
+          "SAME_GAME_WITH_DST"
+        ],
+        "microStory": "Harrison provides the explosive receiving lane. Two scores plus 130 yards gives the roster a wide receiver ceiling without attaching extra players from the same offense."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "VOLUME_COMPLEMENT",
+          "DRIVE_LEVEL_ROLE",
+          "SAME_GAME_WITH_DST"
+        ],
+        "microStory": "McBride supplies the steady target based production in the same game, keeping the Arizona cluster live even if the touchdowns land elsewhere."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "ONE_OFF_HAMMER",
+          "MULTI_TD_OUTCOME",
+          "SLATE_BREAKER"
+        ],
+        "microStory": "Kamara is the score no roster can replace through small edges. Four touchdowns forces the leaderboard gap."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_CLUSTER",
+        "qb": null,
+        "teammates": [
+          {
+            "name": "M. Harrison Jr.",
+            "position": "WR",
+            "team": "ARI"
+          },
+          {
+            "name": "T. McBride",
+            "position": "TE",
+            "team": "ARI"
+          },
+          {
+            "name": "Cardinals",
+            "position": "DST",
+            "team": "ARI",
+            "qbFaced": "Matthew Stafford"
+          }
+        ],
+        "opponent": {
+          "name": "Matthew Stafford",
+          "position": "QB",
+          "team": "LAR"
+        }
+      },
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "D. Jones",
+          "position": "QB",
+          "team": "NYG"
+        },
+        "teammates": [
+          {
+            "name": "M. Nabers",
+            "position": "WR",
+            "team": "NYG"
+          }
+        ],
+        "opponent": null
+      }
+    ]
+  }
+}
