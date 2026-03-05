@@ -1,0 +1,224 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 15,
+  "slateType": "MAIN",
+  "slateDate": "2022-12-18T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 15",
+  "slateTag": "CHIEFS QUAD NO BRINGBACK, ALLGEIER 0.3 PERCENT, ZAY JONES THREE TDS",
+  "slateGroup": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK15_MAIN_2022-12-18T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 7980
+  },
+  "winner": {
+    "username": "RyanR1",
+    "points": 231.34,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 231.34,
+    "totalOwnershipBp": 7980,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 8100,
+        "points": 35.74,
+        "ownershipPercent": 9.7,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jerick McKinnon",
+        "position": "RB",
+        "team": "KC",
+        "salary": 5200,
+        "points": 34.2,
+        "ownershipPercent": 11.1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Tyler Allgeier",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 4700,
+        "points": 25.6,
+        "ownershipPercent": 0.3,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 8000,
+        "points": 30.1,
+        "ownershipPercent": 8.6,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "JuJu Smith-Schuster",
+        "position": "WR",
+        "team": "KC",
+        "salary": 5800,
+        "points": 17.8,
+        "ownershipPercent": 8.3,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Zay Jones",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 4900,
+        "points": 37.9,
+        "ownershipPercent": 18.6,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 7800,
+        "points": 23.5,
+        "ownershipPercent": 15.8,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Rashid Shaheed",
+        "position": "WR",
+        "team": "NO",
+        "salary": 3200,
+        "points": 18.5,
+        "ownershipPercent": 3.1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Titans",
+        "position": "DST",
+        "team": "TEN",
+        "salary": 2200,
+        "points": 8,
+        "ownershipPercent": 4.3,
+        "qbFaced": "Justin Herbert",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is built around a rare commitment: four Chiefs with no Houston bring back. The bet is specific. Kansas City scoring concentrates through tight end, slot wide receiver, and the pass catching back, while Houston fails to produce a single opposing skill player score that forces inclusion. Patrick Mahomes, Travis Kelce, JuJu Smith-Schuster, and Jerick McKinnon capture the scoring surface area of the Chiefs offense without wasting a slot on an opponent who lands in the teens.\n\nJerick McKinnon is the internal lever that makes the Chiefs quad viable. He posts 34.2 at 5,200, which provides premium points per dollar inside the same offense as Mahomes. That changes the stack from an expensive luxury into a salary efficient way to capture touchdowns. Kelce adds 23.5 as a stable ceiling at a volatile position. JuJu at 17.8 is not required to be a slate breaker because McKinnon and Mahomes already carry the stack’s ceiling.\n\nOutside the Chiefs, the roster finds separation through two thin, low owned hits that fit together structurally. Tyler Allgeier at 0.3 percent scores 25.6. Rashid Shaheed at 3.1 percent scores 18.5 in the same game environment, giving the lineup a two player mini at low ownership and low salary. Those points prevent the roster from needing a Houston run back and keep the build from colliding with the common mid range receiver constructions.\n\nZay Jones provides the other ceiling pillar. At 37.9, he supplies a true top end wide receiver score at a salary point that keeps the roster coherent with Mahomes plus Kelce. A.J. Brown adds 30.1 as the premium receiver outcome from Philadelphia, which is an ownership and ceiling stance rather than a uniqueness stance. The Titans defense is a quiet ownership decision at 4.3 percent. The score is ordinary, but the salary and ownership avoid the main defensive chalk path.\n\nDiagnostic analysis points to two drivers producing most of the win equity. First is the Chiefs quad without a bring back, which captures the slate’s most projectable touchdown concentration while avoiding a forced opponent slot. Second is the Allgeier plus Shaheed pairing, which supplies low owned points that allow the lineup to accept a moderate JuJu outcome and still finish first.\n\nPredictive value comes from recognizing the conditions where a no bring back quad becomes logical. The favorite offense needs multiple concentrated touchdown conduits and at least one salary efficient ceiling piece inside the stack. The underdog response needs dispersion across secondary pieces, or scoring that fails to produce a single must have player. When those conditions hold, adding a bring back can reduce expected ceiling because it competes with the favorite’s own concentration.\n\nPrescriptive takeaway is a roster construction rule set. If building four from one offense, the fourth piece should offer ceiling plus salary efficiency, the way McKinnon did. Pair the stack with at least one sub five percent ceiling score to prevent duplication and to supply separation independent of the stack. Finally, treat defense as a salary and ownership slot when offensive correlation already carries the ceiling, and avoid paying extra for the most popular defense path unless the matchup offers an extreme turnover profile.",
+    "uniquenessNotes": "This roster is not a full leverage build. It is a concentrated leverage build. The Chiefs pieces sit in the single digit to mid teen ownership range, which keeps the stack accessible, but the no bring back decision creates uniqueness because most roster trees attach a Houston player by default.\n\nThe uniqueness is carried by two points of friction. The first is Tyler Allgeier at 0.3 percent landing a 25.6. The second is the decision to pair Allgeier with Rashid Shaheed, creating a two player mini in a game most lineups ignored. Those two plays are the reason the lineup can include popular pieces such as Kelce or Zay Jones and still avoid duplication.\n\nThe Chiefs quad is also unique in distribution terms. Many Mahomes rosters choose one of Kelce or JuJu and then move to a second game stack. This roster concentrates Chiefs production across three pass catchers, including the back, which captures a higher share of touchdowns when the game breaks toward short area targets and red zone efficiency.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Four Chiefs with Mahomes, Kelce, JuJu Smith-Schuster, and Jerick McKinnon with no Houston bring back",
+      "secondaryLever": "Low ownership ATL at NO mini with Allgeier and Shaheed plus a single slate breaker receiver in Zay Jones",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "KC@HOU: 4 (QB game)",
+          "ATL@NO: 2",
+          "PHI@CHI: 1",
+          "DAL@JAX: 1",
+          "TEN@LAC: 1"
+        ],
+        "chiefsCluster": ["Patrick Mahomes", "Jerick McKinnon", "JuJu Smith-Schuster", "Travis Kelce"],
+        "falconsSaintsMini": ["Tyler Allgeier", "Rashid Shaheed"],
+        "qbFacedByTitansDst": "Justin Herbert"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FOUR_MAN_OFFENSE_STACK_NO_BRINGBACK",
+        "RB_PASS_GAME_CEILING_WITH_QB",
+        "LOW_OWNERSHIP_RB_CEILING",
+        "LOW_OWNERSHIP_GAME_MINI",
+        "DEFENSE_SALARY_AND_OWNERSHIP_POSTURE"
+      ],
+      "macroStory": "A first place roster built around a Chiefs quad that captures touchdown concentration without an opponent, paired with a low owned two player mini from ATL at NO and a single slate breaker receiver, creating separation without requiring defensive ceiling."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["CEILING_PER_DOLLAR", "STACK_MULTIPLIER", "PASS_GAME_SCORING_ACCESS"],
+        "microStory": "Jerick McKinnon turns the Chiefs quad from expensive to efficient. A 34.2 at 5,200 allows Mahomes plus Kelce to fit while still leaving room for a second receiver ceiling."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": ["LOW_OWNERSHIP_CEILING", "STRUCTURE_BREAKER", "MINI_STACK_ANCHOR"],
+        "microStory": "Tyler Allgeier at 0.3 percent provides the separation layer the roster needs. His 25.6 supplies points at an ownership level the field cannot pair with a Chiefs quad often."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "TOUCHDOWN_VARIANCE_CAPTURE", "MID_SALARY_CEILING"],
+        "microStory": "Zay Jones delivers the wide receiver ceiling outcome at 4,900, which stabilizes the roster against any single Chiefs piece underperforming."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "TOUCHDOWN_CONCENTRATION_CAPTURE", "ON_OFFENSE_CORRELATION_HUB"],
+        "microStory": "Patrick Mahomes is used as the roster’s scoring engine, but the roster differentiates by capturing his distribution through three different pass catching archetypes: tight end, slot receiver, and pass catching back."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Patrick Mahomes", "position": "QB", "team": "KC" },
+        "teammates": [
+          { "name": "Jerick McKinnon", "position": "RB", "team": "KC" },
+          { "name": "JuJu Smith-Schuster", "position": "WR", "team": "KC" },
+          { "name": "Travis Kelce", "position": "TE", "team": "KC" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Tyler Allgeier", "position": "RB", "team": "ATL" },
+        "opponent": { "name": "Rashid Shaheed", "position": "WR", "team": "NO" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Titans", "position": "DST", "team": "TEN", "qbFaced": "Justin Herbert" },
+        "opponent": { "name": "Justin Herbert", "position": "QB", "team": "LAC" }
+      }
+    ]
+  }
+}

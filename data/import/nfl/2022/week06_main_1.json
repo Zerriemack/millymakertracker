@@ -1,0 +1,218 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 6,
+  "slateType": "MAIN",
+  "slateDate": "2022-10-16T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 6",
+  "slateTag": "BURROW CHASE KAMARA BRINGBACK, ONE OFF RB CHAOS PICK DEON JACKSON, SUB 1 PERCENT ARIZONA DST TOUCHDOWN",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK06_MAIN_2022-10-16T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": 236000,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 5410
+  },
+  "winner": {
+    "username": "WestchesterBC",
+    "points": 226.7,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 226.7,
+    "totalOwnershipBp": 5410,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Joe Burrow",
+        "position": "QB",
+        "team": "CIN",
+        "salary": 6700,
+        "points": 35.5,
+        "ownershipPercent": 4.5,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "team": "NO",
+        "salary": 6700,
+        "points": 18.4,
+        "ownershipPercent": 12.7,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Deon Jackson",
+        "position": "RB",
+        "team": "IND",
+        "salary": 5200,
+        "points": 28.1,
+        "ownershipPercent": 8.5,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jaylen Waddle",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 6200,
+        "points": 20.9,
+        "ownershipPercent": 3.2,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Brandon Aiyuk",
+        "position": "WR",
+        "team": "SF",
+        "salary": 5400,
+        "points": 28.3,
+        "ownershipPercent": 2.4,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "JuJu Smith-Schuster",
+        "position": "WR",
+        "team": "KC",
+        "salary": 5200,
+        "points": 25.3,
+        "ownershipPercent": 4.9,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Robert Tonyan",
+        "position": "TE",
+        "team": "GB",
+        "salary": 3600,
+        "points": 19.0,
+        "ownershipPercent": 2.6,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Ja'Marr Chase",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 7700,
+        "points": 35.2,
+        "ownershipPercent": 14.8,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 3300,
+        "points": 16.0,
+        "ownershipPercent": 0.6,
+        "qbFaced": "Geno Smith",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis\nThis lineup is built on a narrow stack decision and then a set of one off choices that lean into uncertainty rather than running from it. Joe Burrow is paired with Ja’Marr Chase, and the bring back is Alvin Kamara. The bring back choice is where the intent shows. Most entries chase a wide receiver from the opposing team to mirror the passing points. Kamara captures New Orleans production through targets and red zone touches, and the quarterback change pushes more of the offense into checkdowns and shallow throws. The stack wins because Cincinnati touchdowns concentrate through Chase while Kamara can score without needing the Saints passing game to be efficient.\n\nThe slate context matters because running back ownership concentrates around multiple injury replacements, and this roster sidesteps the most obvious versions. Deon Jackson sits in the same workload archetype as the popular replacements, but the timing of news and uncertainty keeps his ownership down. He becomes a direct way to profit from the field treating similar roles as interchangeable while still overpaying in ownership for the earlier confirmed plays.\n\nThe wide receiver trio is the second lever. Jaylen Waddle, Brandon Aiyuk, and JuJu Smith-Schuster all sit in profiles where weekly volatility suppresses ownership. The lineup is not chasing random low ownership. It is targeting players whose ceiling comes from routes that generate chunk plays or yards after catch, and whose teams can concentrate production when game conditions shift. Aiyuk is the cleanest example because the offensive benefit is tied to a defensive weakness elsewhere in the same team ecosystem. The selection is a second order bet on how an injury cluster changes how a game plays.\n\nRobert Tonyan is the fragile piece that lands. Tight end is the position where volatility can be absorbed if the rest of the lineup hits true ceilings. Tonyan reaching 19 points at low ownership removes any need for a tight end punt and keeps the roster from being forced into a defense that needs to carry the entire differentiation load.\n\nArizona defense is the finishing move. A sub one percent defense winning the slate is not a magic trick, it is the highest variance position hitting the highest variance outcome, sacks plus a defensive touchdown. The rest of the lineup already has enough ceiling to contend, and the defense outcome creates separation that the field rarely duplicates.\n\nPredictive Analysis\nSkinny stacks with a bring back remain one of the most efficient ways to maximize correctness in a top heavy large field contest when the scoring concentrates through one receiver. The decision point is not whether to bring back, it is what type of bring back creates a unique path. Running backs who function as the top pass catcher can be stronger bring backs than wide receivers because they score through receptions and touchdowns while also being structurally less common in stack trees.\n\nAt running back, the highest leverage spots often come from late injury news when the field has already committed ownership to earlier clarity. When multiple replacement backs exist, the field will over concentrate on the ones confirmed earlier, even when the late confirmed option has the same workload expectation. Monitoring timing of news and how the industry reacts can create repeated low owned access to starting running back volume.\n\nDefense remains the most exploitable position for contrarian exposure because projection differences are small relative to outcome variance. The lesson is not to blindly play low owned defenses, it is to accept that the best offensive lineup in the world still needs one defense outcome to win, and that outcome will often come from a low rostered team.\n\nPrescriptive Analysis\nWhen building a quarterback plus one receiver stack, treat the bring back slot as a leverage slot. Use a running back bring back when the opponent wide receiver tree is uncertain or when the running back can function as a primary target earner.\n\nWhen multiple injury replacement running backs exist, prioritize the one with the most similar role at lower ownership, even if it feels less comfortable. Comfort is often another word for ownership.\n\nAllocate deliberate low ownership defense exposure in large field builds, especially when the rest of the lineup is constructed around solid ceiling profiles. A contrarian defense can be the separating slot without forcing weak offensive plays elsewhere.",
+    "uniquenessNotes": "The roster is built to be correct in fewer places than the field. The stack is compact and direct, and the bring back is uncommon in how it captures opposing production. The one off receivers are all players whose ceiling can beat their ownership without needing a team wide eruption. The defense is the true separation point, but it is enabled by the fact that the rest of the lineup does not rely on thin punts or fragile correlation chains.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Joe Burrow paired with Ja’Marr Chase with Alvin Kamara as the running back bring back",
+      "secondaryLever": "Deon Jackson as the lower owned injury replacement profile plus Cardinals defense at sub one percent ownership",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "CIN@NO: 3 (QB game)",
+          "JAX@IND: 1",
+          "MIN@MIA: 1",
+          "SF@ATL: 1",
+          "BUF@KC: 1",
+          "NYJ@GB: 1",
+          "ARI@SEA: 1"
+        ],
+        "bengalsSaintsCluster": ["Joe Burrow", "Ja’Marr Chase", "Alvin Kamara"],
+        "oneOffRb": "Deon Jackson",
+        "receiverOneOffs": ["Jaylen Waddle", "Brandon Aiyuk", "JuJu Smith-Schuster"],
+        "tightEndOneOff": "Robert Tonyan",
+        "qbFacedByCardinalsDst": "Geno Smith"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "SKINNY_STACK_QB_WR_WITH_RB_BRINGBACK",
+        "LATE_NEWS_RB_ROLE_AT_MODERATE_OWNERSHIP",
+        "VOLATILE_WR_CEILING_CLUSTER",
+        "LOW_OWNERSHIP_TE_SPIKE",
+        "SUB_ONE_PERCENT_DST_TOUCHDOWN_OUTCOME"
+      ],
+      "macroStory": "A first place roster built around a compact Burrow Chase stack with a Kamara bring back, then separated by low owned ceiling receivers and a sub one percent defense hitting the slate breaking outcome."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "STACK_ANCHOR", "TOUCHDOWN_CONCENTRATION"],
+        "microStory": "Joe Burrow is chosen for a scoring path that concentrates through one wide receiver, which lets the roster stay narrow and still capture the full quarterback payoff."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_LEVER", "ALPHA_SCORING_PATH", "SALARY_SPENT_ON_TRUE_CEILING"],
+        "microStory": "Ja’Marr Chase is the bet that the Bengals touchdowns run through one player, and the roster construction is designed to monetize that concentration."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["LEVERAGE_BRINGBACK", "TARGET_EARNING_RB", "RED_ZONE_ACCESS"],
+        "microStory": "Alvin Kamara functions as the bring back in a way the field often avoids, capturing opponent production through receptions while still holding touchdown equity."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_SEPARATOR", "SACK_PLUS_TD_PATH", "HIGH_VARIANCE_SLOT_WINNER"],
+        "microStory": "Cardinals defense at sub one percent ownership provides the separating outcome through pressure and a defensive touchdown against Geno Smith."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Joe Burrow", "position": "QB", "team": "CIN" },
+        "teammates": [{ "name": "Ja’Marr Chase", "position": "WR", "team": "CIN" }],
+        "opponent": { "name": "Alvin Kamara", "position": "RB", "team": "NO" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Cardinals", "position": "DST", "team": "ARI", "qbFaced": "Geno Smith" },
+        "opponent": { "name": "Geno Smith", "position": "QB", "team": "SEA" }
+      }
+    ]
+  }
+}

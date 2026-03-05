@@ -1,0 +1,262 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 13,
+  "slateType": "MAIN",
+  "slateDate": "2024-12-01T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 13",
+  "slateTag": "JAYDEN DANIELS ROOKIE BREAKOUT CORE, BUCKY IRVING 34% SMASH, CHARGERS DEFENSIVE TOUCHDOWN SWING",
+  "slateGroup": "4-2-2-1",
+  "rosterConstruction": "4-2-2-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK13_MAIN_2024-12-01T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9420
+  },
+  "winner": {
+    "username": "Tedybear77",
+    "points": 218.74,
+    "maxEntries": 7
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 218.74,
+    "totalOwnershipBp": 9420,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Jayden Daniels",
+        "position": "QB",
+        "team": "WAS",
+        "salary": 7200,
+        "points": 28.64,
+        "ownershipPercent": 2.9,
+        "passTd": 3,
+        "passYds": 206,
+        "rushTd": 1,
+        "rushYds": 34,
+        "interceptions": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Bucky Irving",
+        "position": "RB",
+        "team": "TB",
+        "salary": 5800,
+        "points": 30.5,
+        "ownershipPercent": 34.3,
+        "rushTdRb": 1,
+        "rushYdsRb": 152,
+        "recRb": 3,
+        "recYdsRb": 33,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Brian Robinson Jr.",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 6100,
+        "points": 20.9,
+        "ownershipPercent": 4.6,
+        "rushTdRb": 1,
+        "rushYdsRb": 103,
+        "recRb": 1,
+        "recYdsRb": 6,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Terry McLaurin",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 7100,
+        "points": 27.3,
+        "ownershipPercent": 2.3,
+        "rec": 8,
+        "recYds": 73,
+        "recTd": 2,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Ladd McConkey",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 6100,
+        "points": 23.7,
+        "ownershipPercent": 21.8,
+        "rec": 9,
+        "recYds": 117,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Nick Westbrook-Ikhine",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 4300,
+        "points": 21.1,
+        "ownershipPercent": 4.3,
+        "rec": 3,
+        "recYds": 61,
+        "recTd": 2,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Pat Freiermuth",
+        "position": "TE",
+        "team": "PIT",
+        "salary": 3500,
+        "points": 18.8,
+        "ownershipPercent": 4.6,
+        "rec": 6,
+        "recYds": 68,
+        "recTd": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mike Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6700,
+        "points": 28.8,
+        "ownershipPercent": 17.5,
+        "rec": 8,
+        "recYds": 118,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Chargers",
+        "position": "DST",
+        "team": "LAC",
+        "salary": 3100,
+        "points": 19,
+        "ownershipPercent": 1.9,
+        "sacks": 1,
+        "takeaways": 4,
+        "defTd": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Kirk Cousins",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis. This winner is a two pillar build with a deliberate imbalance in ownership. The roster accepts extreme popularity at running back with Bucky Irving, then demands separation through a low owned quarterback cluster and a low owned defense score. Irving succeeds in the exact way a 34 percent running back succeeds, through rushing yardage plus a touchdown against a soft front, so the lineup treats Irving as a baseline requirement rather than a differentiator.\n\nThe differentiator is the Washington core. Jayden Daniels at 2.9 percent provides four touchdown involvement, and the roster captures the distribution through Brian Robinson Jr. and Terry McLaurin. Robinson supplies a touchdown plus 100 yard rushing outcome, while McLaurin supplies two receiving touchdowns. This is not a thin pairing. It is a full capture of how Washington can post 42 points without requiring a second Washington receiver to land.\n\nNick Westbrook-Ikhine is the specific counterweight. He acts as the Tennessee touchdown capture without paying for Tennessee volume. A two touchdown receiver score at 4.3 percent closes the loop on the game environment. Tennessee reaches 19 points, and the roster captures the subset of outcomes that matter most, the touchdowns.\n\nThe second pillar is Los Angeles at Atlanta. Ladd McConkey supplies a high reception yardage score, and the Chargers defense supplies the slate swing. Four interceptions plus a defensive touchdown is not ordinary variance. It is a scoreboard event. The defense facing Kirk Cousins as a replacement level archetype matters because the lineup is taking a stance on pressure plus mistakes rather than trying to guess a low scoring game. The defensive touchdown turns a solid roster into a first place roster.\n\nPat Freiermuth is the final leverage point. The roster identifies Cincinnati as a repeat target for tight end production and takes an efficient touchdown day at low ownership. A 3,500 tight end with 18.8 points preserves salary while avoiding the typical tight end paths the field used.\n\nPredictive analysis. This roster reinforces a repeatable tournament structure for slates where one popular running back projects as a volume play. When the field condenses around a single popular running back, the path to first often runs through one game stack with multiple touchdown capture at low ownership, plus one defensive outlier score. The Washington cluster provides the touchdown concentration, and the Chargers defense provides the rare 19 point outcome.\n\nThis lineup also gives a useful lesson on bring backs. Westbrook-Ikhine is not selected for target share. He is selected for touchdown access at a price and ownership level that does not force perfection elsewhere. This is a repeatable profile when an offense produces points through condensed scoring plays rather than a single volume receiver.\n\nPrescriptive analysis. When a slate presents a running back with extreme popularity and a strong role, treat him as a structural decision and plan separation elsewhere. Build a quarterback core designed to capture three or four touchdowns with a clear distribution, then add one opponent who captures touchdowns directly. For defense, allocate exposure toward units with realistic paths to multiple interceptions rather than relying on sacks alone, especially versus quarterbacks who can enter mistake scripts under pressure. Tight end can be used as a portfolio separator when an opponent repeatedly concedes production to the position, especially when the tight end salary keeps the roster flexible.",
+    "uniquenessNotes": "The roster does not try to be unique everywhere. It uses one highly popular running back as a stable base, then creates separation through three low ownership levers. Jayden Daniels, Terry McLaurin, and Chargers defense form the core separation. Westbrook-Ikhine and Freiermuth add secondary separation without breaking the salary structure.\n\nThe rosterConstruction confirms intent. The build concentrates four players in the quarterback game, then splits exposure across two secondary games with two players each. This keeps ceiling concentrated while still allowing the defense score to matter without requiring a full secondary stack.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Jayden Daniels paired with Brian Robinson Jr. and Terry McLaurin, brought back by Nick Westbrook-Ikhine to capture concentrated touchdowns in TEN at WAS",
+      "secondaryLever": "Chargers defense versus Kirk Cousins paired with Ladd McConkey to capture both volume offense and defensive turnover touchdowns in LAC at ATL",
+      "notes": {
+        "rosterConstruction": "4-2-2-1",
+        "gameKey": [
+          "TEN@WAS: 4 (QB game)",
+          "TB@CAR: 2",
+          "LAC@ATL: 2",
+          "PIT@CIN: 1"
+        ],
+        "commandersCluster": ["Jayden Daniels", "Brian Robinson Jr.", "Terry McLaurin"],
+        "bringBack": "Nick Westbrook-Ikhine",
+        "buccaneersPair": ["Bucky Irving", "Mike Evans"],
+        "chargersPair": ["Ladd McConkey", "Chargers"],
+        "qbFacedByChargersDst": "Kirk Cousins"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "ROOKIE_QB_MULTI_TD_CAPTURE",
+        "RB_HIGH_OWNERSHIP_BASELINE",
+        "TOUCHDOWN_ONLY_BRINGBACK",
+        "TE_ATTACK_VERSUS_SYSTEM_WEAKNESS",
+        "DEFENSE_OUTLIER_TD_SWING"
+      ],
+      "macroStory": "A popular running back base combined with a low owned rookie quarterback touchdown cluster, paired with a defensive touchdown outcome and a low owned touchdown focused bring back."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "MULTI_TD_INVOLVEMENT", "CORRELATION_HUB"],
+        "microStory": "Jayden Daniels delivers four touchdown involvement at sub three percent ownership, and the roster captures his scoring through two teammates who account for three of the touchdowns."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["HIGH_OWNERSHIP_BASE", "VOLUME_PLUS_EFFICIENCY", "RUSHING_CEILING"],
+        "microStory": "Bucky Irving functions as the field level baseline. The lineup assumes his success and uses other slots to create separation."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_CAPTURE", "LOW_OWNERSHIP", "BRINGBACK_ROLE"],
+        "microStory": "Nick Westbrook-Ikhine captures Tennessee touchdowns without requiring Tennessee volume, which aligns with a game where the opposing offense controls the scoring."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["TURNOVER_SPIKE", "DEFENSIVE_TOUCHDOWN", "QB_ARCETYPE_TARGET"],
+        "microStory": "Chargers defense turns the slate through four interceptions and a defensive touchdown versus Kirk Cousins, producing a first place level defense score at 1.9 percent ownership."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Jayden Daniels", "position": "QB", "team": "WAS" },
+        "teammates": [
+          { "name": "Brian Robinson Jr.", "position": "RB", "team": "WAS" },
+          { "name": "Terry McLaurin", "position": "WR", "team": "WAS" }
+        ],
+        "opponent": { "name": "Nick Westbrook-Ikhine", "position": "WR", "team": "TEN" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Bucky Irving", "position": "RB", "team": "TB" },
+        "opponent": { "name": "Mike Evans", "position": "WR", "team": "TB" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Ladd McConkey", "position": "WR", "team": "LAC" },
+        "opponent": { "name": "Chargers", "position": "DST", "team": "LAC", "qbFaced": "Kirk Cousins" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Chargers", "position": "DST", "team": "LAC", "qbFaced": "Kirk Cousins" },
+        "opponent": { "name": "Kirk Cousins", "position": "QB", "team": "ATL" }
+      }
+    ]
+  }
+}

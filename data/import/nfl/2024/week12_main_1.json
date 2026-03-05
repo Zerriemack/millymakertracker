@@ -1,0 +1,254 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 12,
+  "slateType": "MAIN",
+  "slateDate": "2024-11-24T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 12",
+  "slateTag": "TUA TRIPLE IN MIAMI, JORDAN ADDISON 1.5% SLATE BREAKER, SEVEN UNDER 10% OWNERSHIP",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK12_MAIN_2024-11-24T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8160
+  },
+  "winner": {
+    "username": "kittyplume",
+    "points": 233.08,
+    "maxEntries": 4
+  },
+  "lineup": {
+    "salaryUsed": 49600,
+    "totalPoints": 233.08,
+    "totalOwnershipBp": 8160,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Tua Tagovailoa",
+        "position": "QB",
+        "team": "MIA",
+        "salary": 5800,
+        "points": 31.48,
+        "ownershipPercent": 7.2,
+        "passTd": 4,
+        "passYds": 317,
+        "rushYds": -2,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "De'Von Achane",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 7500,
+        "points": 20.6,
+        "ownershipPercent": 23.7,
+        "rushYdsRb": 32,
+        "recRb": 3,
+        "recYdsRb": 24,
+        "recTd": 2,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Bucky Irving",
+        "position": "RB",
+        "team": "TB",
+        "salary": 5300,
+        "points": 27.1,
+        "ownershipPercent": 8.9,
+        "rushYdsRb": 87,
+        "rushTdRb": 1,
+        "recRb": 6,
+        "recYdsRb": 64,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jakobi Meyers",
+        "position": "WR",
+        "team": "LV",
+        "salary": 5100,
+        "points": 25.1,
+        "ownershipPercent": 8.9,
+        "rec": 10,
+        "recYds": 121,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jaylen Waddle",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 5300,
+        "points": 31.4,
+        "ownershipPercent": 4.9,
+        "rec": 8,
+        "recYds": 144,
+        "recTd": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jordan Addison",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 5100,
+        "points": 33.2,
+        "ownershipPercent": 1.5,
+        "rec": 8,
+        "recYds": 162,
+        "recTd": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Trey McBride",
+        "position": "TE",
+        "team": "ARI",
+        "salary": 5600,
+        "points": 28.3,
+        "ownershipPercent": 9.6,
+        "rec": 12,
+        "recYds": 133,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jahmyr Gibbs",
+        "position": "RB",
+        "team": "DET",
+        "salary": 7300,
+        "points": 24.9,
+        "ownershipPercent": 13.5,
+        "rushYdsRb": 90,
+        "rushTdRb": 2,
+        "recRb": 3,
+        "recYdsRb": 9,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 2600,
+        "points": 11,
+        "ownershipPercent": 3.4,
+        "sacks": 5,
+        "takeaways": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Geno Smith",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis. This winner wins by separating the slate into two different problem types, then solving both with minimal overlap with the field. The first problem is identifying the most concentrated scoring environment. New England in Miami is a familiar failure mode, and the roster treats it as a passing funnel for Tua Tagovailoa. The triple pairing with De'Von Achane and Jaylen Waddle captures the Miami touchdowns in two different ways. Achane absorbs the high value receiving touchdowns, while Waddle collects the downfield yardage and one score. The quarterback output stays clean because the roster avoids spreading exposure across the Miami ancillary pieces.\n\nThe second problem is building a roster that can still win if the Miami cluster becomes common. The answer is Jordan Addison at 1.5 percent. Minnesota at Chicago produces a score that can be missed by constructions anchored to the most popular games. Addison posting a 30 point receiver outcome at that ownership shifts the entire leaderboard. It is the one slot that changes the probability of finishing first far more than any other decision in the lineup.\n\nThe rest of the roster is built to sustain the ceiling rather than chase novelty. Trey McBride supplies a high catch profile at tight end, which matters on a slate where many rosters accept thin tight end scoring. The Arizona pairing extends that game environment into a coherent stance. McBride benefits from sustained drives, and the Cardinals defense benefits from Geno Smith dropbacks producing sacks and a turnover. The defense does not need a touchdown to matter, and the 11 points are enough because the roster already has a low owned receiver eruption.\n\nBucky Irving and Jahmyr Gibbs finish the construction as touchdown accumulators from different archetypes. Irving supplies a dual path score, rushing plus receiving, which keeps the roster from being fragile if Miami scoring concentrates into only the quarterback and Waddle. Gibbs supplies a two touchdown rushing outcome, which gives the roster a separate route to points that does not require another quarterback pairing.\n\nPredictive analysis. This lineup is evidence for a modern large field pattern. A slate can produce a winning build with seven players under ten percent ownership when two conditions are met. First, one correlated core must be clean and efficient, meaning it captures a large share of touchdowns from a single team without needing to guess extra pieces. Second, one low owned player must produce a true slate shifting score, not a minor beat. Addison is the example.\n\nThe Arizona TE plus defense pairing also offers a repeatable angle. When a tight end projects for high reception volume and the opposing quarterback archetype supports sacks and turnovers, pairing the tight end with the defense can succeed without relying on a forced shootout story.\n\nPrescriptive analysis. When building for similar slates, treat quarterback cores as touchdown capture mechanisms rather than as narrative statements. If a team has a strong likelihood of multiple passing touchdowns and a concentrated distribution, use a triple pairing that captures both high leverage receiving work and receiver yardage. Then allocate one slot for a low ownership receiver with a plausible 100 plus yard and touchdown path in a game the field undervalues. Finally, for secondary correlations, favor pairings where each piece can score without requiring a full game environment to flip, such as tight end reception volume paired with a defense facing a quarterback profile susceptible to pressure.",
+    "uniquenessNotes": "The roster does not rely on one game taking over the slate. Miami provides the core, yet the separating action comes from a different game entirely through Addison. This reduces duplication pressure because many rosters that land on the correct quarterback core still miss the one percent receiver ceiling.\n\nThe construction also avoids overpaying for uniqueness. Several mid range players provide elite scoring without forcing salary contortions, and the defense is priced low enough to keep the roster flexible while still producing a meaningful score.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Tua Tagovailoa paired with De'Von Achane and Jaylen Waddle to capture Miami passing touchdowns against New England in Miami",
+      "secondaryLever": "Jordan Addison at 1.5% ownership as the slate separating receiver outcome, plus Trey McBride paired with Cardinals defense versus Geno Smith pressure outcomes",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "NE@MIA: 3 (QB game)",
+          "ARI@SEA: 2",
+          "TB@NYG: 1",
+          "DEN@LV: 1",
+          "MIN@CHI: 1",
+          "DET@IND: 1"
+        ],
+        "dolphinsCluster": ["Tua Tagovailoa", "De'Von Achane", "Jaylen Waddle"],
+        "cardinalsCluster": ["Trey McBride", "Cardinals"],
+        "slateBreaker": "Jordan Addison",
+        "qbFacedByCardinalsDst": "Geno Smith"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_TRIPLE_TEAM_TOUCHDOWN_CAPTURE",
+        "LOW_OWNERSHIP_WR_SLATE_BREAKER",
+        "TE_VOLUME_ENGINE",
+        "TE_PLUS_DST_SAME_GAME_PAIR",
+        "RB_TOUCHDOWN_ACCUMULATION"
+      ],
+      "macroStory": "A Miami passing core paired with a slate separating low owned receiver eruption, supported by a tight end plus defense pairing and two touchdown driven running back outcomes."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "TOUCHDOWN_DISTRIBUTOR", "CORRELATION_HUB"],
+        "microStory": "Tua Tagovailoa supplies four passing touchdowns, and the roster is structured to collect them through two high impact teammates rather than dilute the capture."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "LOW_OWNERSHIP", "YARDAGE_PLUS_TD"],
+        "microStory": "Jordan Addison is the separating decision. The score arrives in a game many builds treat as secondary, which creates leaderboard separation that the Miami core alone cannot guarantee."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["PPR_VOLUME", "DRIVE_SUSTAINER", "CEILING_WITHOUT_TD_MULTIPLIER"],
+        "microStory": "Trey McBride supplies a reception heavy tight end output that keeps the roster competitive in raw points even if tight end scoring across the slate is scattered."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRESSURE_OUTCOME", "TURNOVER_PATH", "QB_ARCETYPE_TARGET"],
+        "microStory": "Cardinals defense versus Geno Smith targets sacks and a turnover while staying cheap enough to support multiple mid range ceiling outcomes."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Tua Tagovailoa", "position": "QB", "team": "MIA" },
+        "teammates": [
+          { "name": "De'Von Achane", "position": "RB", "team": "MIA" },
+          { "name": "Jaylen Waddle", "position": "WR", "team": "MIA" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Trey McBride", "position": "TE", "team": "ARI" },
+        "opponent": { "name": "Cardinals", "position": "DST", "team": "ARI", "qbFaced": "Geno Smith" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Cardinals", "position": "DST", "team": "ARI", "qbFaced": "Geno Smith" },
+        "opponent": { "name": "Geno Smith", "position": "QB", "team": "SEA" }
+      }
+    ]
+  }
+}

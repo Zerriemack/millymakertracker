@@ -1,0 +1,222 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 5,
+  "slateType": "MAIN",
+  "slateDate": "2022-10-09T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 5",
+  "slateTag": "ALLEN DAVIS SINGLE STACK, BUCS VALUE TRIPLE, DALLAS DST SMASH",
+  "slateGroup": "2-3-2-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK05_MAIN_2022-10-09T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": 236000,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12820
+  },
+  "winner": {
+    "username": "ChevChelios",
+    "points": 244.26,
+    "maxEntries": 20
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 244.26,
+    "totalOwnershipBp": 12820,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 8200,
+        "points": 39.16,
+        "ownershipPercent": 12.1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Leonard Fournette",
+        "position": "RB",
+        "team": "TB",
+        "salary": 6900,
+        "points": 35.9,
+        "ownershipPercent": 14.1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "team": "NO",
+        "salary": 6600,
+        "points": 27.4,
+        "ownershipPercent": 14.0,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Gabe Davis",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 6400,
+        "points": 35.1,
+        "ownershipPercent": 7.5,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 5900,
+        "points": 12.3,
+        "ownershipPercent": 27.0,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyler Lockett",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 5600,
+        "points": 30.4,
+        "ownershipPercent": 13.4,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Cade Otton",
+        "position": "TE",
+        "team": "TB",
+        "salary": 2500,
+        "points": 10.3,
+        "ownershipPercent": 7.8,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Breece Hall",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 5400,
+        "points": 30.7,
+        "ownershipPercent": 9.6,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cowboys",
+        "position": "DST",
+        "team": "DAL",
+        "salary": 2500,
+        "points": 23.0,
+        "ownershipPercent": 22.7,
+        "qbFaced": "Matthew Stafford",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis\nThis lineup wins by building around two clean ideas, then letting one volatile slot land in the best possible way. The first idea is a Bills single stack. Josh Allen carries the highest ceiling on the slate, but the pairing choice matters because most Allen lineups concentrate on Stefon Diggs. Gabe Davis gives access to the same passing touchdowns through a different scoring profile, deeper targets and chunk plays, while holding lower ownership. The roster also refuses a Steelers bring back. Buffalo can sustain pass volume with a lead, and Pittsburgh enters as a low probability offensive partner, so the lineup chooses structural clarity over symmetry.\n\nThe second idea is a Tampa Bay value cluster. Leonard Fournette, Chris Godwin, and Cade Otton compress salary while keeping direct access to Tampa touchdowns. The key detail is how this three player group allows the roster to avoid thin punts elsewhere. Godwin does not post a ceiling score, Otton only needs to be functional at his price, and Fournette supplies the payoff with a multi score day. The cluster does its job because the construction does not require every member to win, it requires the group to keep the lineup stable while the ceiling arrives through other slots.\n\nThe remaining three pieces show how the roster reaches 244 without forcing a fragile third stack. Alvin Kamara arrives at a depressed salary for his role, and quarterback change increases checkdown probability, which raises his reception floor while keeping his bonus and touchdown access intact. Tyler Lockett functions as a pricing correction. Seattle receiver volume is often split, so paying for the cheaper member at similar usage creates a clean expected value angle without needing to predict target distribution with precision. Breece Hall is the volatility slot chosen with intent. His role is expanding, and his pass game usage creates access to a slate breaking outcome even on limited total touches.\n\nDallas defense is the last mover. The matchup provides predictable pressure versus a compromised offensive line, and the slate gives a rare defensive touchdown. A defense posting 23 points allows the lineup to survive a merely average score from one of the Tampa pieces and still clear the top of the contest.\n\nPredictive Analysis\nSingle stacks remain underused in large field settings when the field insists on full game correlations. The edge is not avoiding correlation, it is choosing correlation whose failure case is still acceptable. Allen plus one receiver can win without a bring back when Buffalo keeps throwing and the opponent offense has low scoring probability.\n\nThree player team clusters can be more valuable than a traditional secondary game stack when pricing gaps exist. If a team has multiple underpriced starters, grouping them captures the team total without forcing a bet on which single player monopolizes touchdowns.\n\nDefense remains the slot where projection edges are thin and outcome variance is massive. When a defense has a pressure based floor, pairing it with a ceiling oriented lineup elsewhere can create a portfolio where the defense outcome pushes the roster from top percentile to first.\n\nPrescriptive Analysis\nWhen rostering a high owned quarterback, use the stacking partner decision as the primary leverage point. Prioritize receivers whose scoring comes from downfield targets and multi touchdown paths when the field concentrates ownership on the possession alpha.\n\nIf a favorite projects to score and multiple starters are priced below role expectation, treat a three player cluster as a salary and touchdown access engine. Use the cluster to remove fragile punts, then spend remaining slots on players whose ceilings are independent of teammate success.\n\nFor defense selection, prefer units with a pass rush profile that can produce sacks without requiring turnovers. Then allow the tournament winning outcomes, defensive touchdowns, to be additive rather than required.",
+    "uniquenessNotes": "The lineup is not rare because of player obscurity. It is rare because the ownership is concentrated in different places than the field prefers. Allen is paired with Davis instead of the highest owned receiver, the Bills side is played without forcing a bring back, and Tampa is represented through a three player salary cluster rather than a more expensive quarterback stack. The roster then adds two mid owned ceiling backs, Hall and Fournette, and accepts Dallas defense chalk while still keeping a path to first through the receiver pairing and the absence of Pittsburgh exposure.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Josh Allen paired with Gabe Davis as a single stack without a Steelers bring back",
+      "secondaryLever": "Buccaneers value triple plus Dallas defense chalk versus Matthew Stafford",
+      "notes": {
+        "rosterConstruction": "2-3-2-1-1",
+        "gameKey": [
+          "PIT@BUF: 2 (QB game)",
+          "ATL@TB: 3",
+          "SEA@NO: 2",
+          "MIA@NYJ: 1",
+          "DAL@LAR: 1"
+        ],
+        "billsCluster": ["Josh Allen", "Gabe Davis"],
+        "buccaneersCluster": ["Leonard Fournette", "Chris Godwin", "Cade Otton"],
+        "saintsSeahawksPair": ["Alvin Kamara", "Tyler Lockett"],
+        "oneOffCeiling": "Breece Hall",
+        "qbFacedByCowboysDst": "Matthew Stafford"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "SINGLE_STACK_QB_WR_NO_BRINGBACK",
+        "THREE_MAN_TEAM_VALUE_CLUSTER",
+        "OPPONENT_RB_WR_GAME_CORRELATION",
+        "ROOKIE_ROLE_GROWTH_CEILING",
+        "CHALK_DST_WITH_PRESSURE_FLOOR"
+      ],
+      "macroStory": "A first place roster built around an Allen single stack and a Tampa salary cluster, then pushed over the top by ceiling backs and a slate breaking Dallas defense outcome."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "RAW_POINTS_ANCHOR", "OWNERSHIP_ABSORBER"],
+        "microStory": "Josh Allen provides the score level required to win, and the roster differentiates through the receiver choice and the decision to avoid Pittsburgh run backs."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_LEVER", "DEEP_TARGET_CEILING", "MULTI_TD_PATH"],
+        "microStory": "Gabe Davis is the leverage fulcrum inside the chalk quarterback. His scoring profile fits the exact outcome needed to separate from Diggs heavy Allen constructions."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["ROLE_EXPANSION", "RECEIVING_SPIKE_ACCESS", "TOURNAMENT_CEILING"],
+        "microStory": "Breece Hall converts a growing role into a slate defining receiving line, which supplies a ceiling outcome without requiring any Jets stack commitments."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRESSURE_FLOOR", "CHALK_THAT_HIT", "DEFENSIVE_TD_SWING"],
+        "microStory": "Dallas defense pairs pass rush expectation with a defensive touchdown outcome, creating separation in a slot where most lineups accept small scores."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Josh Allen", "position": "QB", "team": "BUF" },
+        "teammates": [{ "name": "Gabe Davis", "position": "WR", "team": "BUF" }],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Alvin Kamara", "position": "RB", "team": "NO" },
+        "opponent": { "name": "Tyler Lockett", "position": "WR", "team": "SEA" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Cowboys", "position": "DST", "team": "DAL", "qbFaced": "Matthew Stafford" },
+        "opponent": { "name": "Matthew Stafford", "position": "QB", "team": "LAR" }
+      }
+    ]
+  }
+}

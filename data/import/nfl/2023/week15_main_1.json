@@ -1,0 +1,264 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 15,
+  "slateType": "MAIN",
+  "slateDate": "2023-12-17T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 15",
+  "slateTag": "MAYFIELD WITH RACHAAD WHITE, JAYDEN REED BRINGBACK, JAMES COOK CEILING",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK15_MAIN_2023-12-17T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 13610
+  },
+  "winner": {
+    "username": "haffeyjr5",
+    "points": 235.24,
+    "maxEntries": 7
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 235.24,
+    "totalOwnershipBp": 13610,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Baker Mayfield",
+        "position": "QB",
+        "team": "TB",
+        "salary": 5700,
+        "points": 33.04,
+        "ownershipPercent": 1.0,
+        "passTd": 4,
+        "passYds": 381,
+        "rushYds": -2,
+        "fumblesLost": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 9300,
+        "points": 44.7,
+        "ownershipPercent": 35.7,
+        "rushYdsRb": 115,
+        "rushTdRb": 1,
+        "recRb": 5,
+        "recYdsRb": 72,
+        "recTdRb": 2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Rachaad White",
+        "position": "RB",
+        "team": "TB",
+        "salary": 7000,
+        "points": 21.9,
+        "ownershipPercent": 15.3,
+        "rushYdsRb": 89,
+        "rushTdRb": 0,
+        "recRb": 2,
+        "recYdsRb": 50,
+        "recTdRb": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Demarcus Robinson",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 3600,
+        "points": 14.7,
+        "ownershipPercent": 11.5,
+        "rec": 2,
+        "recYds": 44,
+        "recTd": 1,
+        "rushYds": 23,
+        "fumblesLost": 0,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Noah Brown",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 5000,
+        "points": 22.2,
+        "ownershipPercent": 5.2,
+        "rec": 8,
+        "recYds": 82,
+        "recTd": 1,
+        "rushYds": 0,
+        "fumblesLost": 0,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jayden Reed",
+        "position": "WR",
+        "team": "GB",
+        "salary": 4900,
+        "points": 17.2,
+        "ownershipPercent": 40.7,
+        "rec": 6,
+        "recYds": 52,
+        "recTd": 1,
+        "rushYds": 0,
+        "fumblesLost": 0,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "David Njoku",
+        "position": "TE",
+        "team": "CLE",
+        "salary": 4700,
+        "points": 29.4,
+        "ownershipPercent": 14.7,
+        "rec": 10,
+        "recYds": 104,
+        "recTd": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "James Cook",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 6300,
+        "points": 39.1,
+        "ownershipPercent": 4.5,
+        "rushYdsRb": 179,
+        "rushTdRb": 1,
+        "recRb": 2,
+        "recYdsRb": 42,
+        "recTdRb": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Browns",
+        "position": "DST",
+        "team": "CLE",
+        "salary": 3500,
+        "points": 13.0,
+        "ownershipPercent": 7.5,
+        "sacks": 3,
+        "takeaways": 3,
+        "dstTd": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Justin Fields",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis. The lineup wins because it combines one condensed scoring environment with two separate spike outcomes, while keeping ownership concentrated in slots where the field already accepted concentration. Tampa Bay at Green Bay becomes the anchor through Baker Mayfield plus Rachaad White, then Jayden Reed functions as the opposing access point. Reed is popular, but his popularity is a feature here, because it keeps the stack from needing a second Green Bay piece and still captures the most common Packers touchdown path. Mayfield at 1 percent turns the same game environment into a payout lever, since four passing touchdowns at his salary changes the slate math. Christian McCaffrey is treated as an expected slate tax. The roster does not fight him. It instead forces separation elsewhere. The true separation comes from James Cook. Cook posts a ceiling profile against Dallas and does it at 4.5 percent. This single slot flips the roster from strong to first place, because it supplies near forty points without requiring expensive wide receiver duplication. The secondary spike comes from David Njoku. Tight end rarely gives first place builds a clean path, but ten receptions plus a touchdown creates a rare salary to points mismatch, and it pairs naturally with Cleveland defense correlation.\n\nPredictive Analysis. When a popular bringback receiver projects for high ownership because of role and price, pairing him with a low owned quarterback from the opposing side can be more valuable than forcing a second teammate. The field tends to stack the quarterback with one pass catcher. This build shows a different path. If the quarterback has multi touchdown equity and spreads production, the lineup can capture the full quarterback score without needing to guess a single receiver. Future research angle. Identify games where a popular mid salary pass catcher becomes the default bringback, then evaluate opposing quarterbacks who can reach four touchdowns without requiring a concentrated target tree. In parallel, track running backs in strong offenses whose ceiling games feel uncomfortable because of quarterback red zone dominance. Those backs often land in single digit ownership even when the matchup supports efficiency plus volume.\n\nPrescriptive Analysis. If the slate presents one obvious mega chalk running back, accept him when his score can bury non owners, then allocate uniqueness budget toward a single low owned ceiling back from a different game. Pair the low owned ceiling back with a roster that already has a stable scoring base. Use a single bringback receiver from the quarterback game when that receiver can represent the opponent touchdowns without forcing extra roster spots. Finally, use tight end as a ceiling capture position when a specific player can hit through target volume rather than thin touchdown dependency.",
+    "uniquenessNotes": "The uniqueness does not come from avoiding popular plays. It comes from placing ownership where it does minimal damage and using one lever, quarterback, plus one lever, flex, to create the score gap. Jayden Reed at 40.7 percent is absorbed because Mayfield at 1 percent makes every Reed touchdown a direct amplifier for the lineup rather than a neutral event. James Cook at 4.5 percent is the second amplifier. His score replaces what many rosters needed from an expensive wide receiver, while still keeping salary at 50,000. The rest of the roster stays coherent. McCaffrey prevents a structural dead end. Njoku supplies a rare tight end ceiling. Cleveland defense adds correlation through pressure and turnovers against Justin Fields and it benefits from any short field created by the offense.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Baker Mayfield paired with Rachaad White plus Jayden Reed bringback",
+      "secondaryLever": "James Cook ceiling game at low ownership with Christian McCaffrey as the chalk anchor",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "TB@GB: 3 (QB game)",
+          "CHI@CLE: 2",
+          "SF@ARI: 1",
+          "DAL@BUF: 1",
+          "WAS@LAR: 1",
+          "HOU@TEN: 1"
+        ],
+        "buccaneersPackersCluster": ["Baker Mayfield", "Rachaad White", "Jayden Reed"],
+        "brownsBearsPair": ["David Njoku", "Browns"],
+        "salaryReliefAndCeilingMix": ["Demarcus Robinson", "Noah Brown", "James Cook"],
+        "qbFacedByBrownsDst": "Justin Fields"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNED_QB_WITH_POPULAR_BRINGBACK",
+        "RB_CEILING_LEVERAGE",
+        "CHALK_RB_ANCHOR",
+        "TE_VOLUME_CEILING",
+        "DST_VS_MOBILE_QB_PRESSURE_PATH"
+      ],
+      "macroStory": "A low owned quarterback outcome paired with a popular bringback, then a low owned running back ceiling game provides separation while chalk allocation stays confined to one unavoidable slate breaker."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNERSHIP_SCORE_GAP", "TOUCHDOWN_CONVERSION"],
+        "microStory": "Baker Mayfield supplies the score gap. Four passing touchdowns at 1 percent converts a common game environment into a unique payout path."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["CEILING_LEVER", "LOW_OWNERSHIP", "ROLE_PLUS_EFFICIENCY"],
+        "microStory": "James Cook is the swing outcome. The profile combines long rushing production with a receiving touchdown, which replaces expensive wide receiver ceiling without paying wide receiver pricing."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["CHALK_ANCHOR", "RAW_POINTS", "NO_FADE"],
+        "microStory": "Christian McCaffrey functions as slate protection. Two receiving touchdowns plus a rushing touchdown removes the need to get different at the position."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["VOLUME_CEILING", "POSITIONAL_SCARCITY_WINNER", "CHAIN_MOVING_ROLE"],
+        "microStory": "David Njoku provides a rare tight end score driven by ten receptions, which prevents the roster from relying on thin touchdown variance."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Baker Mayfield", "position": "QB", "team": "TB" },
+        "teammates": [{ "name": "Rachaad White", "position": "RB", "team": "TB" }],
+        "opponent": { "name": "Jayden Reed", "position": "WR", "team": "GB" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "David Njoku", "position": "TE", "team": "CLE" },
+        "opponent": { "name": "Browns", "position": "DST", "team": "CLE" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Browns", "position": "DST", "team": "CLE", "qbFaced": "Justin Fields" },
+        "opponent": { "name": "Justin Fields", "position": "QB", "team": "CHI" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 5,
+  "slateType": "MAIN",
+  "slateDate": "2021-10-10T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 5",
+  "slateTag": "BRADY DOUBLE WITH EVANS AND ANTONIO BROWN, MATTISON 35% CHALK SMASH, KADARIUS TONEY 10 FOR 189",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2021_WK05_MAIN_2021-10-10T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11590
+  },
+  "winner": {
+    "username": "nkoerner25",
+    "points": 260.84,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 260.84,
+    "totalOwnershipBp": 11590,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Tom Brady",
+        "position": "QB",
+        "team": "TB",
+        "salary": 7400,
+        "points": 40.74,
+        "ownershipPercent": 6.4,
+        "passTd": 5,
+        "passYds": 411,
+        "rushYds": 13,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Chuba Hubbard",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 6000,
+        "points": 21.4,
+        "ownershipPercent": 6.4,
+        "rushYdsRb": 101,
+        "recRb": 5,
+        "recYdsRb": 33,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Alexander Mattison",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 5500,
+        "points": 30.3,
+        "ownershipPercent": 35.4,
+        "rushYdsRb": 113,
+        "recRb": 7,
+        "recYdsRb": 40,
+        "recTdRb": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "GB",
+        "salary": 8200,
+        "points": 40.6,
+        "ownershipPercent": 23.6,
+        "rec": 11,
+        "recYds": 206,
+        "recTd": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mike Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6800,
+        "points": 32.3,
+        "ownershipPercent": 5.4,
+        "rec": 6,
+        "recYds": 113,
+        "recTd": 2,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Antonio Brown",
+        "position": "WR",
+        "team": "TB",
+        "salary": 5200,
+        "points": 34.4,
+        "ownershipPercent": 14.7,
+        "rec": 7,
+        "recYds": 124,
+        "recTd": 2,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Hunter Henry",
+        "position": "TE",
+        "team": "NE",
+        "salary": 3700,
+        "points": 19.5,
+        "ownershipPercent": 4.5,
+        "rec": 6,
+        "recYds": 75,
+        "recTd": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kadarius Toney",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 4000,
+        "points": 32.6,
+        "ownershipPercent": 11.4,
+        "rec": 10,
+        "recYds": 189,
+        "rushYds": 7,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Vikings",
+        "position": "DST",
+        "team": "MIN",
+        "salary": 3000,
+        "points": 9.0,
+        "ownershipPercent": 8.1,
+        "sacks": 4,
+        "takeaways": 2,
+        "pointsAllowed": 20,
+        "qbFaced": "Jared Goff",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "DET"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is a two engine build with one game providing the quarterback ceiling and the other game providing the ownership anchor. Tampa Bay supplies the quarterback outcome through Tom Brady throwing for 411 yards and five touchdowns. The roster chooses the cleanest way to capture scoring concentration by pairing Brady with Mike Evans and Antonio Brown. Evans and Brown combine for four receiving touchdowns, which turns the passing outburst into locked points instead of hoping a single receiver lands the multi score result.\n\nDetroit at Minnesota is the second engine, but it is used in a different way. Alexander Mattison is the slate ownership magnet at 35.4 percent and he delivers a 30 point line even with a lost fumble. The Vikings defense then completes a two man cluster from the same game. It is not a ceiling defense outcome, but four sacks and a takeaway create a stable nine points while keeping the roster aligned with the Mattison game environment.\n\nThe rest of the lineup is built around two wide receiver events that changed roster math. Davante Adams posts 11 catches for 206 yards and a touchdown at heavy ownership. The roster accepts it because fading a 40 point receiver at 23.6 percent creates a hole that requires multiple low probability events to fill. Kadarius Toney supplies the inverse. He posts 10 catches for 189 yards without a touchdown at a modest salary. That type of raw yardage score at 4,000 is how a lineup pays for a Brady double and still reaches first place.\n\nChuba Hubbard and Hunter Henry are the glue pieces. Hubbard provides 101 rushing yards with five catches, which is the salary efficient running back score needed behind Mattison. Henry provides a tight end touchdown with real yardage, which removes the need to chase a fragile punt tight end path.",
+    "uniquenessNotes": "The main differentiator is the Tampa Bay stack shape. Brady is paired with Evans and Brown, leaving out Chris Godwin. Four touchdowns land on the two rostered wide receivers, so the stack captures the concentrated scoring outcome rather than a split distribution.\n\nThe roster also balances ownership in a disciplined way. Mattison and Adams provide two high ownership scores that were hard to replace. The build then separates through salary efficiency, primarily Kadarius Toney at 4,000 delivering a wide receiver one style yardage line.\n\nThe Vikings defense is a practical inclusion. It stacks with Mattison in the same game while bringing a modest pressure score against Jared Goff. It is not a tournament winner by itself, but it keeps the roster from needing a defense touchdown to win.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Tom Brady double stack with Mike Evans and Antonio Brown captures four receiving touchdowns in the QB game",
+      "secondaryLever": "Alexander Mattison chalk plus Kadarius Toney salary efficiency allows multiple 40 point wide receiver outcomes",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "MIA@TB: 3 (QB game)",
+          "DET@MIN: 2",
+          "PHI@CAR: 1",
+          "GB@CIN: 1",
+          "NE@HOU: 1",
+          "NYG@DAL: 1"
+        ],
+        "buccaneersCluster": ["Tom Brady", "Mike Evans", "Antonio Brown"],
+        "lionsVikingsPair": ["Alexander Mattison", "Vikings"],
+        "eliteChalkReceiver": "Davante Adams",
+        "salaryReliefBreaker": "Kadarius Toney",
+        "dstQbFaced": "Jared Goff"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_DOUBLE_STACK_TOUCHDOWN_CONCENTRATION",
+        "RB_CHALK_ANCHOR",
+        "ELITE_WR_CHALK_ACCEPTANCE",
+        "SALARY_RELIEF_WR_YARDAGE_OUTCOME",
+        "DST_WITH_RB_SAME_GAME_PAIR"
+      ],
+      "macroStory": "A Brady double captures the Tampa touchdown flood, Mattison anchors ownership with a 30 point score, and Toney supplies the salary efficiency needed to fit Adams plus the Tampa receivers without sacrificing points."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "TOUCHDOWN_ACCOUNTING", "STACK_HUB"],
+        "microStory": "Tom Brady is the anchor because five passing touchdowns create a score level that forces full capture. Pairing him with Evans and Brown turns the game into banked points rather than partial exposure."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["OWNERSHIP_ANCHOR", "VOLUME_PLUS_RECEIVING", "SURVIVES_NEGATIVE_EVENTS"],
+        "microStory": "Alexander Mattison holds the roster floor at massive ownership and still reaches 30 points even with a lost fumble."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["CHALK_THAT_PAID", "TARGET_FLOOD", "CEILING_WITH_VOLUME"],
+        "microStory": "Davante Adams is the accepted high ownership score. The roster treats his 40 points as a requirement, then wins by solving the remaining slots better than the field."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["SALARY_EFFICIENCY", "VOLUME_SPIKE", "STRUCTURAL_SWING"],
+        "microStory": "Kadarius Toney is the structural swing. A 4,000 receiver producing 189 yards changes the salary map and makes the Brady double plus Adams construction viable."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Tom Brady", "position": "QB", "team": "TB" },
+        "teammates": [
+          { "name": "Mike Evans", "position": "WR", "team": "TB" },
+          { "name": "Antonio Brown", "position": "WR", "team": "TB" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Alexander Mattison", "position": "RB", "team": "MIN" },
+        "opponent": { "name": "Vikings", "position": "DST", "team": "MIN" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Vikings", "position": "DST", "team": "MIN", "qbFaced": "Jared Goff" },
+        "opponent": { "name": "Jared Goff", "position": "QB", "team": "DET" }
+      }
+    ]
+  }
+}

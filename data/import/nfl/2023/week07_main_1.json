@@ -1,0 +1,255 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 7,
+  "slateType": "MAIN",
+  "slateDate": "2023-10-22T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 7",
+  "slateTag": "MAHOMES KELCE VINTAGE, FOREMAN START SMASH, DOUBLE TE WITH BROWNS DST",
+  "slateGroup": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK07_MAIN_2023-10-22T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10700
+  },
+  "winner": {
+    "username": "deathstarcanteen",
+    "points": 238.06,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 238.06,
+    "totalOwnershipBp": 10700,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 8300,
+        "points": 37.86,
+        "ownershipPercent": 11.6,
+        "passTd": 4,
+        "passYds": 424,
+        "rushYds": 29,
+        "int": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jahmyr Gibbs",
+        "position": "RB",
+        "team": "DET",
+        "salary": 6300,
+        "points": 27.6,
+        "ownershipPercent": 15.5,
+        "rushYdsRb": 68,
+        "rushTdRb": 1,
+        "recRb": 9,
+        "recYdsRb": 58,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "D'Onta Foreman",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 4800,
+        "points": 33.0,
+        "ownershipPercent": 10.3,
+        "rushYdsRb": 89,
+        "rushTdRb": 2,
+        "recRb": 3,
+        "recYdsRb": 31,
+        "recTdRb": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Courtland Sutton",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 5200,
+        "points": 19.6,
+        "ownershipPercent": 4.4,
+        "rec": 6,
+        "recYds": 76,
+        "recTd": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jaxon Smith-Njigba",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 3900,
+        "points": 16.3,
+        "ownershipPercent": 12.4,
+        "rec": 4,
+        "recYds": 63,
+        "recTd": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Josh Downs",
+        "position": "WR",
+        "team": "IND",
+        "salary": 4500,
+        "points": 26.5,
+        "ownershipPercent": 2.3,
+        "rec": 5,
+        "recYds": 125,
+        "recTd": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 8000,
+        "points": 38.9,
+        "ownershipPercent": 17.9,
+        "rec": 12,
+        "recYds": 179,
+        "recTd": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mark Andrews",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 5700,
+        "points": 22.3,
+        "ownershipPercent": 19.8,
+        "rec": 4,
+        "recYds": 63,
+        "recTd": 2,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Browns",
+        "position": "DST",
+        "team": "CLE",
+        "salary": 3300,
+        "points": 16.0,
+        "ownershipPercent": 12.8,
+        "sacks": 4,
+        "takeaways": 4,
+        "defTd": 1,
+        "blockedKick": 1,
+        "pointsAllowed": 38,
+        "qbFaced": "Gardner Minshew",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This build has a clean anchor and a very sharp set of secondary decisions. Patrick Mahomes plus Travis Kelce is not a clever pairing, it is a scoring thesis. Kansas City posted a total that forced the slate to chase raw points, and the roster captured the densest touchdown path in the game. Four passing touchdowns with Kelce producing an elite yardage and reception profile means the stack did not need an auxiliary receiver. The quarterback stack carried enough of the ceiling by itself.\n\nThe slate separating decision is where the roster stops following comfort. The lineup plays two tight ends, then adds Browns defense into the same game environment as Josh Downs. Cleveland allowed 38 points and still ends as a tournament winning defense because the scoring came through sacks, takeaways, and a defensive touchdown, plus a blocked kick. That is the uncomfortable part for many builders, because it requires accepting that points allowed can be noisy while pressure events can still spike. Downs then functions as the opposite side of the chaos. He benefits from the game turning frantic and produces a ceiling receiving line at very low ownership, while the defense captures the non offensive scoring.\n\nThe other spine piece is D'Onta Foreman. The start became the entire story. Two rushing touchdowns plus a receiving touchdown is a profile that collapses salary constraints. It let the roster pay for the Mahomes Kelce ceiling and still keep both tight ends.\n\nJahmyr Gibbs adds a different kind of leverage. His role is reception driven and he gets there with nine catches. That matters because it creates a scoring floor while the rest of the build chases spike events. Courtland Sutton and Jaxon Smith Njigba are the minimum viable wide receiver scores. They are not the reason the roster wins. They are the stabilizers that keep the construction intact while the slate breaks open through the three pressure points: Mahomes Kelce, Foreman, and the Browns defense outcome.",
+    "uniquenessNotes": "The roster wins while leaving a popular comfort rule behind. It pairs a wide receiver with the opposing defense in the same game and accepts the full volatility. The defense hits via the events that DraftKings rewards the most, while the wide receiver hits via volume and a touchdown. Those outcomes can coexist when the game becomes a turnover driven track meet.\n\nThe double tight end decision is structural. Kelce is a true ceiling piece, while Andrews is priced lower than his two touchdown access. The roster treats tight end as a source of ceiling rather than a salary relief slot, and it gets away with it because Foreman supplies the salary compression.\n\nThe wide receivers are intentionally modest. Sutton and Smith Njigba are used as role based bridges that let the roster keep every other bet intact. The separation is concentrated, not spread evenly across all nine slots.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Patrick Mahomes paired with Travis Kelce as the concentrated Kansas City touchdown capture",
+      "secondaryLever": "Browns DST spike against Gardner Minshew while still playing Josh Downs from the same game",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "LAC@KC: 2 (QB game)",
+          "DET@BAL: 2",
+          "CLE@IND: 2",
+          "LV@CHI: 1",
+          "GB@DEN: 1",
+          "ARI@SEA: 1"
+        ],
+        "chiefsCore": ["Patrick Mahomes", "Travis Kelce"],
+        "ravensLionsMini": ["Jahmyr Gibbs", "Mark Andrews"],
+        "coltsBrownsConflict": ["Josh Downs", "Browns"],
+        "foremanOutcome": "Three touchdowns at 4,800 unlocked the full construction"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "ELITE_QB_TE_TOUCHDOWN_FUNNEL",
+        "DOUBLE_TE_CEILING_BUILD",
+        "DST_SPIKE_IN_HIGH_POINTS_ALLOWED_GAME",
+        "LOW_OWNERSHIP_WR_CEILING",
+        "VALUE_RB_ROLE_TO_MULTITD"
+      ],
+      "macroStory": "A first place roster built around a vintage Mahomes Kelce eruption, then separated by accepting a volatile defense plus opposing receiver combination and using a mispriced starting running back to pay for double tight end ceiling."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "TOUCHDOWN_CONCENTRATION", "CEILING_ANCHOR"],
+        "microStory": "Mahomes does not need a second Kansas City pass catcher because Kelce absorbs the premium targets and the yardage bonus range. The stack score is concentrated enough to stand alone."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_FUNNEL", "VOLUME_CEILING", "PRIMARY_STACK_PARTNER"],
+        "microStory": "Kelce delivers the rare combination of 12 catches and 179 yards while also scoring. This is the slate defining profile that forces everything else to be about support and leverage."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["SALARY_RELEASE", "ROLE_CONVERSION", "MULTITD_OUTCOME"],
+        "microStory": "Foreman turns a starting role into three touchdowns. This single outcome makes the double tight end structure viable without sacrificing quarterback ceiling."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["TURNOVER_CEILING", "NON_OFFENSIVE_TOUCHDOWN", "VOLATILITY_EMBRACE"],
+        "microStory": "Cleveland concedes 38 and still wins the slate through pressure events, a defensive touchdown, and a blocked kick. This is a reminder that points allowed can be the wrong lens when the defense is scoring through high leverage events."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Patrick Mahomes", "position": "QB", "team": "KC" },
+        "teammates": [{ "name": "Travis Kelce", "position": "TE", "team": "KC" }],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Jahmyr Gibbs", "position": "RB", "team": "DET" },
+        "opponent": { "name": "Mark Andrews", "position": "TE", "team": "BAL" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Browns", "position": "DST", "team": "CLE", "qbFaced": "Gardner Minshew" },
+        "opponent": { "name": "Gardner Minshew", "position": "QB", "team": "IND" }
+      }
+    ]
+  }
+}

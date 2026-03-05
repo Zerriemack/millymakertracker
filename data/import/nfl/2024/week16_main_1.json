@@ -1,0 +1,257 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 16,
+  "slateType": "MAIN",
+  "slateDate": "2024-12-22T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 16",
+  "slateTag": "JONATHAN TAYLOR ERUPTION, CAROLINA RB META, PENIX CHALK FLOP DID NOT MATTER",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "rosterConstruction": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK16_MAIN_2024-12-22T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11190
+  },
+  "winner": {
+    "username": "uofm1506",
+    "points": 238.48,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 238.48,
+    "totalOwnershipBp": 11190,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Michael Penix Jr.",
+        "position": "QB",
+        "team": "ATL",
+        "salary": 4500,
+        "points": 7.38,
+        "ownershipPercent": 19.1,
+        "passTd": 0,
+        "passYds": 202,
+        "int": 1,
+        "rushYds": 3,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jonathan Taylor",
+        "position": "RB",
+        "team": "IND",
+        "salary": 6900,
+        "points": 42.8,
+        "ownershipPercent": 6.0,
+        "rushYdsRb": 218,
+        "rushTdRb": 3,
+        "recRb": 0,
+        "recYdsRb": 0,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Chuba Hubbard",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 6800,
+        "points": 35.5,
+        "ownershipPercent": 10.4,
+        "rushYdsRb": 152,
+        "rushTdRb": 2,
+        "recRb": 4,
+        "recYdsRb": 13,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Kayshon Boutte",
+        "position": "WR",
+        "team": "NE",
+        "salary": 3500,
+        "points": 20.5,
+        "ownershipPercent": 1.4,
+        "rec": 5,
+        "recYds": 95,
+        "recTd": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jaxon Smith-Njigba",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 6000,
+        "points": 24.0,
+        "ownershipPercent": 18.2,
+        "rec": 8,
+        "recYds": 95,
+        "recTd": 1,
+        "rushYds": 5,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 5300,
+        "points": 32.1,
+        "ownershipPercent": 18.8,
+        "rec": 9,
+        "recYds": 141,
+        "recTd": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "George Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 6000,
+        "points": 21.6,
+        "ownershipPercent": 5.1,
+        "rec": 8,
+        "recYds": 106,
+        "recTd": 0,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "James Conner",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 7100,
+        "points": 29.6,
+        "ownershipPercent": 28.9,
+        "rushYdsRb": 117,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 49,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Falcons",
+        "position": "DST",
+        "team": "ATL",
+        "salary": 3700,
+        "points": 25.0,
+        "ownershipPercent": 4.0,
+        "sacks": 3,
+        "takeaways": 3,
+        "defTd": 2,
+        "qbFaced": "Drew Lock",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "NYG"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis starts with the scoreboard. Two games supplied almost all first place separation. Indianapolis Tennessee produced the slate breaking raw score through Jonathan Taylor, and Arizona Carolina produced a second eruption that came from both sides. Chuba Hubbard and James Conner landing together matters because the field often forces a single running back story per game. This roster treated Carolina as a weekly running back production engine and then pulled the leverage from the opposite direction by pairing the chalk Panthers facing piece with the Cardinals bring back. When both backs cleared 100 rushing yards and both added receiving production, the roster locked in a points floor and still accessed tournament winning ceiling.\n\nThe quarterback slot explains why the build won without perfection. Michael Penix Jr. was popular salary relief and he failed in fantasy terms. The lineup survives because the roster did not rely on Penix for a ceiling outcome. The Atlanta New York commitment was actually a bet on the Falcons defense. Three sacks, three takeaways, and two defensive touchdowns created a 25 point swing at 4 percent ownership. Drew Lock as a backup archetype fits the exact path to defensive touchdowns because the offense can implode in a way a starter often avoids.\n\nThe wide receiver choices complete the picture. Keenan Allen and Jaxon Smith-Njigba provided sturdy high volume production, which kept the roster from being overly fragile, while Kayshon Boutte supplied the true separation at 1.4 percent. The Boutte result matches the context: full route participation at a cheap price plus negative game script. Buffalo forcing New England into pass volume created a narrow runway where a low salary receiver could get five catches and still reach the end zone.\n\nPredictive analysis points to a repeatable structure. When a season develops a weekly running back target, Carolina did in 2024, the most profitable builds often accept the chalk side and focus differentiation on game partners and non offensive scoring. The field over focuses on finding a perfect quarterback result. This roster shows a different way: treat quarterback as a salary and access decision, then demand real ceiling from running backs, defense, and one low owned receiver.\n\nPrescriptive analysis is simple to apply. In slates where one matchup becomes an every week running back engine, prioritize two back constructions from that game when both roles offer red zone access and receiving involvement. Pair that with a defense facing a backup quarterback in a low stability offense, then allocate remaining receiver slots toward one high volume anchor and one low owned full route player in projected negative script.",
+    "uniquenessNotes": "The uniqueness is not hidden in trick plays. It is created by where the lineup accepted risk. Penix failing would normally bury a build with 19 percent ownership, but the roster insulated the quarterback slot by stacking raw points through running backs and a defensive ceiling outcome.\n\nThe Arizona Carolina double running back cluster is the sharpest decision on the slate. The field can roster Conner as the obvious piece against Carolina and stop there. Bringing Hubbard back flips the lineup from common to special because it captures the same game environment in a different way: Carolina scoring enough to keep Conner active while Hubbard benefits from Carolina controlling red zone touches and piling up rush attempts.\n\nBoutte is the pressure point. A 3,500 wide receiver at 1.4 percent ownership posting 20.5 points changes the entire roster math. It allows two 6k plus backs and still keeps enough salary for Allen, Smith-Njigba, and Kittle. It is not random. It is role based, tied to routes and game script.\n\nAtlanta defense is the final separator. Defensive touchdowns are hard to force, but the archetype angle narrows the search. Backup quarterbacks increase the odds of short fields, desperation throws, and chaotic plays. Two defensive touchdowns is extreme, yet the process of targeting instability at quarterback is repeatable.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Two running backs from ARI@CAR with the leverage coming from Hubbard as the bring back to chalk Conner",
+      "secondaryLever": "Falcons defense ceiling versus Drew Lock plus Boutte as the low owned full route salary relief",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "NYG@ATL: 2 (QB game)",
+          "ARI@CAR: 2",
+          "TEN@IND: 1",
+          "NE@BUF: 1",
+          "MIN@SEA: 1",
+          "DET@CHI: 1",
+          "SF@MIA: 1"
+        ],
+        "falconsCluster": ["Michael Penix Jr.", "Falcons"],
+        "panthersCardinalsCluster": ["Chuba Hubbard", "James Conner"],
+        "volumeReceivers": ["Keenan Allen", "Jaxon Smith-Njigba"],
+        "lowOwnedRoleBet": "Kayshon Boutte",
+        "qbFacedByFalconsDst": "Drew Lock"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "CAROLINA_RB_META",
+        "TWO_RBS_SAME_GAME",
+        "QB_SALARY_RELIEF_SURVIVED",
+        "LOW_OWNED_FULL_ROUTE_WR",
+        "DST_VS_BACKUP_QB_CHAOS"
+      ],
+      "macroStory": "A first place roster built around two slate defining running back outcomes, insulated quarterback failure, and a low owned defense plus low owned receiver providing the separation needed to clear a massive field."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "SLATE_BREAKER", "TOUCHDOWN_DOMINANCE"],
+        "microStory": "Jonathan Taylor supplied the raw points gap. Three rushing touchdowns plus 218 rushing yards creates a score range few rosters can match even with correct mid tier decisions elsewhere."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": ["GAME_LEVER", "VOLUME_PLUS_TD_ACCESS", "META_EXPLOIT"],
+        "microStory": "Chuba Hubbard is the leverage move against the common Conner build. The role stayed intact, the touchdowns arrived, and the receiving work prevented the score from being purely yardage dependent."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["CEILING_SEPARATOR", "TURNOVER_CASCADE", "DEF_TD_PATH"],
+        "microStory": "Atlanta defense delivered the rarest outcome on the slate: two defensive touchdowns. The matchup with Drew Lock fit the instability profile, and the result created a 25 point slot at 4 percent ownership."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["SALARY_RELIEF_BREAKER", "LOW_OWNERSHIP", "ROLE_BASED_BET"],
+        "microStory": "Kayshon Boutte converted role into points. Full routes plus negative script created target volume, and the touchdown finished the profile needed for a 3,500 receiver to matter at the top."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_STACK",
+        "qb": { "name": "Michael Penix Jr.", "position": "QB", "team": "ATL" },
+        "teammates": [],
+        "opponent": { "name": "Falcons", "position": "DST", "team": "ATL" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Chuba Hubbard", "position": "RB", "team": "CAR" },
+        "opponent": { "name": "James Conner", "position": "RB", "team": "ARI" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Falcons", "position": "DST", "team": "ATL", "qbFaced": "Drew Lock" },
+        "opponent": { "name": "Drew Lock", "position": "QB", "team": "NYG" }
+      }
+    ]
+  }
+}

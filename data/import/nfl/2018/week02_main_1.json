@@ -3,12 +3,16 @@
   "year": 2018,
   "week": 2,
   "slateType": "MAIN",
-  "slateDate": "2018-09-16",
+  "slateDate": "2018-09-16T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 2",
+  "slateTag": "MAHOMES 6-TD DETONATION, KC 4-MAN WITH JUJU BRINGBACK, CMC 14-CATCH PPR CEILING",
+  "slateGroup": "5-1-1-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
-    "contestName": "NFL Millionaire Maker ($1M to 1st)",
-    "siteContestId": "NFL_2018_WK02_MAIN_2018-09-16_DK_MAIN_MILLY",
-    "entryFeeCents": null,
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK02_MAIN_2018-09-16T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
     "entries": null,
     "topPrizeCents": 100000000,
     "totalOwnershipBp": 6350
@@ -21,78 +25,129 @@
   "lineup": {
     "salaryUsed": 49700,
     "totalPoints": 237.84,
+    "totalOwnershipBp": 6350,
     "items": [
       {
         "rosterSpot": "QB",
-        "name": "P. Mahomes",
+        "name": "Patrick Mahomes",
         "position": "QB",
         "team": "KC",
         "salary": 6100,
         "points": 41.84,
-        "ownershipPercent": 11.9
+        "ownershipPercent": 11.9,
+        "passTd": 6,
+        "passYds": 326,
+        "rushYds": 18,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
       },
       {
         "rosterSpot": "RB",
-        "name": "K. Hunt",
+        "name": "Kareem Hunt",
         "position": "RB",
         "team": "KC",
         "salary": 6200,
-        "points": 15,
-        "ownershipPercent": 8.6
+        "points": 15.0,
+        "ownershipPercent": 8.6,
+        "rushYdsRb": 75,
+        "recRb": 1,
+        "recYdsRb": 5,
+        "recTd": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
       },
       {
         "rosterSpot": "RB",
-        "name": "C. McCaffrey",
+        "name": "Christian McCaffrey",
         "position": "RB",
         "team": "CAR",
         "salary": 7000,
         "points": 30.9,
-        "ownershipPercent": 13.2
+        "ownershipPercent": 13.2,
+        "rushYdsRb": 37,
+        "recRb": 14,
+        "recYdsRb": 102,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
       },
       {
         "rosterSpot": "WR",
-        "name": "S. Diggs",
+        "name": "Stefon Diggs",
         "position": "WR",
         "team": "MIN",
         "salary": 6900,
         "points": 38.9,
-        "ownershipPercent": 3.4
+        "ownershipPercent": 3.4,
+        "rec": 9,
+        "recYds": 128,
+        "recTd": 2,
+        "rushYds": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
       },
       {
         "rosterSpot": "WR",
-        "name": "J. Smith-Schuster",
+        "name": "JuJu Smith-Schuster",
         "position": "WR",
         "team": "PIT",
         "salary": 6400,
         "points": 34.1,
-        "ownershipPercent": 13.8
+        "ownershipPercent": 13.8,
+        "rec": 13,
+        "recYds": 121,
+        "recTd": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "KC"
       },
       {
         "rosterSpot": "WR",
-        "name": "S. Watkins",
+        "name": "Sammy Watkins",
         "position": "WR",
         "team": "KC",
         "salary": 4600,
         "points": 22.1,
-        "ownershipPercent": 2.5
+        "ownershipPercent": 2.5,
+        "rec": 6,
+        "recYds": 100,
+        "rushYds": 31,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
       },
       {
         "rosterSpot": "TE",
-        "name": "T. Kelce",
+        "name": "Travis Kelce",
         "position": "TE",
         "team": "KC",
         "salary": 5900,
         "points": 32.9,
-        "ownershipPercent": 4.4
+        "ownershipPercent": 4.4,
+        "rec": 7,
+        "recYds": 109,
+        "recTd": 2,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
       },
       {
         "rosterSpot": "FLEX",
-        "name": "P. Lindsay",
+        "name": "Phillip Lindsay",
         "position": "RB",
         "team": "DEN",
         "salary": 4400,
         "points": 15.1,
-        "ownershipPercent": 3.1
+        "ownershipPercent": 3.1,
+        "rushYdsRb": 107,
+        "recRb": 1,
+        "recYdsRb": 4,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "OAK"
       },
       {
         "rosterSpot": "DST",
@@ -101,24 +156,100 @@
         "team": "TB",
         "salary": 2200,
         "points": 7,
-        "ownershipPercent": 2.6
+        "ownershipPercent": 2.6,
+        "sacks": 3,
+        "fumbleRecoveries": 2,
+        "qbFaced": "Nick Foles",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "PHI"
       }
     ]
   },
   "analysis": {
-    "stackSummary": "This week is a slate where Kansas City pulls the scoring into a tight circle, and the build makes sure it is standing in the middle of it. Mahomes is the driver, but the roster construction is about how the touchdowns are distributed. Kelce gives you the red zone and third down role, Watkins gives you the splash play access, and Hunt keeps you connected to any scoring that comes through the backfield. The stack is not chasing a single narrow outcome. It covers multiple ways the Chiefs can hang 40.\n\nThe rest of the lineup is built around direct, high end performances from a few players who win their roles outright. Diggs posts a ceiling game without needing Minnesota to be perfect all day. McCaffrey gets there through receiving volume plus efficiency, which travels well across game scripts.\n\nLindsay at flex is not a headline play, but it keeps the salary structure flexible while still offering a path to points through touches and a score. Buccaneers DST is the cheapest spot, and it is there to free the rest of the build without forcing a fragile punt at a skill position.",
-    "uniquenessNotes": "The main duplication release is how the Chiefs exposure is allocated. Many rosters will play Mahomes with one pass catcher, or they will take a single Chiefs receiver and hope they guessed right. Using Mahomes with Kelce and Watkins spreads the bet across two different receiver archetypes. Adding Hunt pushes the build into a more specific Kansas City story where nearly every touchdown path is covered.\n\nDiggs is the other separator. He is a lower owned ceiling outcome at receiver, and he does it at a salary tier where many players chase more comfortable names. The cheap defense keeps the roster from having to sacrifice any of the ceiling pieces.",
+    "stackSummary": "This roster is anchored by a single scoring thesis: if Kansas City produces a quarterback-driven touchdown avalanche, the cleanest way to win is to own the places those touchdowns are most likely to land. Patrick Mahomes throws six, and the build captures the two highest-leverage receivers of those touchdowns through Travis Kelce and Sammy Watkins, while also keeping Kareem Hunt in the mix to absorb any backfield scoring and to stay attached if the offense shifts red zone usage toward the running back.\n\nThe bringback is JuJu Smith-Schuster, and it matters because it explains why the Kansas City concentration can remain profitable even if the Steelers score enough to keep the game in an aggressive posture. JuJu’s 13-catch, 121-yard, touchdown game functions as the opposing pressure valve. It does not need Pittsburgh to be efficient across the full tree. It only needs one player to monopolize the response, which is exactly what happened.\n\nThe rest of the roster reflects early-season role clarity plus scoring format exploitation. Christian McCaffrey supplies a 14-catch outcome that wins PPR math without needing a touchdown. Phillip Lindsay brings a low-salary 100-yard rushing bonus that protects the roster from having to make a second fragile value choice. Stefon Diggs supplies an elite wide receiver score at low ownership, which is critical because the Kansas City game creates massive raw points, but the slate is still won by who adds the extra ceiling outside that nucleus. Tampa Bay defense is not asked to break the slate. It is asked to be acceptable while still providing access to sacks and turnover events against a backup quarterback.",
+    "uniquenessNotes": "This is not a no-bringback onslaught. It is a Kansas City concentration with a single, highly specific opposing capture. That choice narrows the problem. Instead of guessing which Steelers player benefits from the game staying alive, the roster picks one player whose usage can dominate regardless of who scores the actual points. JuJu’s target profile accomplishes this, and it pairs naturally with the decision to concentrate Kansas City’s touchdowns through Kelce and Watkins.\n\nThe roster also separates by how it allocates Chiefs production. Mahomes ownership is not the edge. The edge is owning the exact touchdown recipients at modest ownership. Kelce at 4.4 percent and Watkins at 2.5 percent represent leverage inside the most powerful team outcome on the slate.\n\nOutside the KC-PIT game, the lineup avoids unnecessary variance. McCaffrey is a reception-driven floor with a ceiling that does not require touchdowns. Lindsay is a low-cost yardage bonus path. Diggs provides the extra eruption that turns a strong Kansas City core into a first place core.",
     "stackMeta": {
       "lineupType": "CLASSIC",
-      "construction": {
-        "teamStacks": [
-          { "team": "KC", "players": ["P. Mahomes", "T. Kelce", "S. Watkins", "K. Hunt"] }
+      "primaryLever": "Kansas City 4-man concentration built around Patrick Mahomes with Travis Kelce touchdown capture and Sammy Watkins salary efficiency",
+      "secondaryLever": "JuJu Smith-Schuster as the opposing bringback to preserve game aggression, paired with Christian McCaffrey PPR ceiling and Phillip Lindsay salary value",
+      "notes": {
+        "rosterConstruction": "5-1-1-1-1",
+        "gameKey": [
+          "KC@PIT: 5 (QB game)",
+          "CAR@ATL: 1",
+          "MIN@GB: 1",
+          "OAK@DEN: 1",
+          "PHI@TB: 1"
         ],
-        "primaryGame": "KC-PIT",
-        "buildType": "QB stack with primary pass catcher plus secondary receiver and an onslaught style RB attachment"
+        "chiefsCluster": ["Patrick Mahomes", "Kareem Hunt", "Sammy Watkins", "Travis Kelce"],
+        "bringBack": "JuJu Smith-Schuster",
+        "pprCeilingBack": "Christian McCaffrey",
+        "salaryValueRusher": "Phillip Lindsay",
+        "qbFacedByBuccaneersDst": "Nick Foles"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_LED_TEAM_CONCENTRATION",
+        "SINGLE_OPP_BRINGBACK_ALPHA",
+        "PPR_RB_CEILING_WITHOUT_TD",
+        "SALARY_RELIEF_RB_BONUS"
+      ],
+      "macroStory": "A slate won by concentrating a six-touchdown quarterback outcome into the correct Kansas City touchdown recipients, then locking in a single opposing receiver as the response capture while the rest of the lineup exploited role clarity and PPR math."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "TOUCHDOWN_DISTRIBUTION", "SLATE_SHAPER"],
+        "microStory": "Patrick Mahomes supplies the week’s defining event. Six passing touchdowns makes the correct attachment choices more important than finding a unique quarterback."
       },
-      "primaryLever": "Kansas City scoring concentrated through QB plus tight end plus receiver with RB attached for any rushing or receiving TDs",
-      "secondaryLever": "Ceiling receiver points from a lower owned option paired with a high volume RB profile"
-    }
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["TD_CAPTURE", "RED_ZONE_PRIORITY", "LOW_OWNERSHIP_LEVER"],
+        "microStory": "Travis Kelce provides the cleanest form of leverage in a Mahomes eruption: double touchdown access through the tight end position at low ownership."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["OPPONENT_RESPONSE_CAPTURE", "VOLUME_MONOPOLY", "KEEP_GAME_HOT"],
+        "microStory": "JuJu Smith-Schuster is the bringback that explains the build. A 13-catch response keeps the Kansas City concentration fully live while still letting Pittsburgh points consolidate through one player."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["PPR_ENGINE", "USAGE_THROUGHPUT", "TD_INDEPENDENT_CEILING"],
+        "microStory": "Christian McCaffrey’s 14 receptions represent a scoring channel that does not compete with Mahomes touchdowns. It adds a separate axis of points in full PPR."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Patrick Mahomes", "position": "QB", "team": "KC" },
+        "teammates": [
+          { "name": "Travis Kelce", "position": "TE", "team": "KC" },
+          { "name": "Sammy Watkins", "position": "WR", "team": "KC" }
+        ],
+        "opponent": { "name": "JuJu Smith-Schuster", "position": "WR", "team": "PIT" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Kareem Hunt", "position": "RB", "team": "KC" },
+        "opponent": { "name": "JuJu Smith-Schuster", "position": "WR", "team": "PIT" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Buccaneers", "position": "DST", "team": "TB", "qbFaced": "Nick Foles" },
+        "opponent": { "name": "Nick Foles", "position": "QB", "team": "PHI" }
+      }
+    ],
+    "diagnosticAnalysis": "Two decisions explain most of the win equity.\n\nThe first is the Kansas City allocation. Mahomes was attainable, but the slate is decided by whether the touchdowns are captured through the correct receivers. Kelce scoring twice and Watkins reaching the 100-yard bonus creates the gap. Hunt is present to absorb the remaining scoring access without forcing a fifth Kansas City pass catcher.\n\nThe second is the bringback choice. JuJu is not a random opposing piece. He is the mechanism that allows Kansas City’s five-player game concentration to remain coherent. Pittsburgh production consolidated into one player, which preserved the game’s aggression without requiring additional Steelers exposure.\n\nThe remaining roster slots are structural support. McCaffrey supplies a reception ceiling that does not require touchdowns. Diggs supplies a separate elite receiver score at low ownership. Lindsay supplies salary relief through a yardage bonus outcome. Tampa Bay defense stays neutral while still providing a path to sacks and fumble recoveries against backup quarterback play.",
+    "predictiveAnalysis": "This roster suggests a repeatable pattern when a team is capable of producing a multi-touchdown quarterback outcome. The optimal approach is not automatically a full team onslaught. It can be a concentrated quarterback core plus the two most touchdown- and bonus-sensitive pass catchers, paired with a single opposing alpha whose usage can monopolize the response.\n\nFor future research, isolate slates where a quarterback throws five or more touchdowns. Measure whether first place rosters more often pair that quarterback with a tight end who has multi-touchdown potential versus spreading exposure across wide receivers. Then evaluate the opponent selection pattern. A single high-volume alpha bringback may outperform multi-player opponent exposure when the opponent’s scoring consolidates.",
+    "prescriptiveAnalysis": "When building for a scenario where a quarterback can produce a slate-defining touchdown total, prioritize recipient certainty over player count.\n\nFirst, concentrate on the pass catchers who can convert touchdowns and bonuses at the highest rate, such as tight ends with red zone primacy and receivers with clear downfield roles.\n\nSecond, use a single opposing bringback when the opponent has an established alpha role capable of dominating targets regardless of game flow. This keeps the game environment alive while reducing the need to solve a second team’s distribution.\n\nThird, complete the roster with roles that win through a different scoring channel, such as a reception-driven running back ceiling and a low-salary yardage bonus path. This keeps the build from being solely dependent on one game’s touchdown distribution."
   }
 }

@@ -1,0 +1,259 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 14,
+  "slateType": "MAIN",
+  "slateDate": "2023-12-10T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 14",
+  "slateTag": "LAMAR LIKELY STACK WITH ODELL, WHITE LONDON MINI, VIKINGS 20 POINT DST IN 3-0 GAME",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK14_MAIN_2023-12-10T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10490
+  },
+  "winner": {
+    "username": "Hacksawel11",
+    "points": 230.84,
+    "maxEntries": 39
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 230.84,
+    "totalOwnershipBp": 10490,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 7700,
+        "points": 35.64,
+        "ownershipPercent": 3.7,
+        "passTd": 3,
+        "passYds": 316,
+        "rushYds": 70,
+        "interceptions": 1,
+        "twoPtPass": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Rachaad White",
+        "position": "RB",
+        "team": "TB",
+        "salary": 6800,
+        "points": 24.5,
+        "ownershipPercent": 3.9,
+        "rushYdsRb": 102,
+        "recRb": 2,
+        "recYdsRb": 33,
+        "recTdRb": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 6100,
+        "points": 21.5,
+        "ownershipPercent": 26.0,
+        "rushYdsRb": 79,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 46,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Deebo Samuel",
+        "position": "WR",
+        "team": "SF",
+        "salary": 6800,
+        "points": 37.0,
+        "ownershipPercent": 16.5,
+        "rec": 7,
+        "recYds": 149,
+        "recTd": 1,
+        "rushYds": 22,
+        "rushTd": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Drake London",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 4600,
+        "points": 32.2,
+        "ownershipPercent": 21.3,
+        "rec": 10,
+        "recYds": 172,
+        "twoPt": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Odell Beckham Jr.",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 3800,
+        "points": 19.7,
+        "ownershipPercent": 7.7,
+        "rec": 4,
+        "recYds": 97,
+        "recTd": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Isaiah Likely",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 3500,
+        "points": 19.3,
+        "ownershipPercent": 14.6,
+        "rec": 5,
+        "recYds": 83,
+        "recTd": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 7600,
+        "points": 21.0,
+        "ownershipPercent": 5.3,
+        "rushYdsRb": 51,
+        "rushTdRb": 1,
+        "recRb": 5,
+        "recYdsRb": 49,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Vikings",
+        "position": "DST",
+        "team": "MIN",
+        "salary": 3100,
+        "points": 20,
+        "ownershipPercent": 5.9,
+        "sacks": 4,
+        "takeaways": 3,
+        "ptsAllowed": 0,
+        "qbFaced": "Aidan O'Connell",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LV"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis starts with the Baltimore concentration. Lamar Jackson posts 316 passing yards with three passing touchdowns, then adds 70 rushing yards and a two point pass. The stack uses two pass catchers who convert red zone usage into touchdowns. Isaiah Likely and Odell Beckham Jr. both score, and both do it at salaries that leave room for multiple other ceiling outcomes. The lineup captures Baltimore scoring without paying for a premium wide receiver price tier.\n\nThe next driver is the Tampa Bay at Atlanta mini game. Drake London arrives as popular volume and produces 172 yards with a two point conversion. Rachaad White provides the counterweight at low roster rate and still gets there through 102 rushing yards plus a receiving touchdown. The pairing matters because it solves the same game environment from two different salary angles, and it removes pressure from the second running back slot.\n\nThe slate breaking slot is defense. Minnesota posts 20 DraftKings points in a game that ends 3 to 0. Four sacks plus three takeaways creates a score that behaves as a second skill position ceiling. The opponent quarterback archetype matches the output. Aidan O'Connell plays the backup profile in this spot, and the game never develops enough offense to push Minnesota out of aggressive play calling.\n\nThe rest of the lineup is built around role based scoring. Joe Mixon and Austin Ekeler both land around 21 points without needing game totals to explode. Their usage keeps the lineup stable while Deebo Samuel supplies the burst outcome with a receiving touchdown, a rushing touchdown, and 171 combined yards.\n\nPredictive analysis points to a repeatable slate shape. When the best quarterback outcome comes with multiple touchdown distribution and rushing bonus, pairing him with mid salary touchdown catchers can outperform the more expensive receiver attachment. This structure increases chances of landing the correct touchdown allocation while preserving salary for separate ceiling events.\n\nPrescriptive analysis comes down to three decisions. Start with a quarterback in a game where touchdown allocation can run through two affordable pass catchers. Add a mini game where one side carries high volume ownership, then pair it with a lower roster rate opponent piece who can score through both rushing and receiving. Finish with a defense capable of creating points through pressure and takeaways, even in a low total game, because the ceiling comes from play volume against a limited passing setup rather than from a shootout.",
+    "uniquenessNotes": "Uniqueness is created through pricing and touchdown distribution. Lamar Jackson at 3.7 percent becomes a slate level edge because the roster selects two Baltimore pass catchers who both score while staying cheap. The roster also pairs Drake London chalk with Rachaad White leverage, and White reaches ceiling through a receiving touchdown.\n\nMinnesota defense is the sharpest separation point. A 20 point defense score in a 3 to 0 final is rare, and it changes roster math because it replaces a missing skill position ceiling.\n\nOne more note is how the lineup treats 21 point running back scores. Mixon and Ekeler remain useful, yet the lineup wins because the ceiling comes from quarterback, receiver, and defense rather than from chasing perfect running back outcomes.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Lamar Jackson stacked with Isaiah Likely and Odell Beckham Jr.",
+      "secondaryLever": "Rachaad White leverage within the Drake London game plus Vikings defense ceiling versus Aidan O'Connell",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "LAR@BAL: 3 (QB game)",
+          "TB@ATL: 2",
+          "IND@CIN: 1",
+          "SEA@SF: 1",
+          "DEN@LAC: 1",
+          "MIN@LV: 1"
+        ],
+        "ravensCluster": ["Lamar Jackson", "Isaiah Likely", "Odell Beckham Jr."],
+        "bucsFalconsPair": ["Rachaad White", "Drake London"],
+        "qbFacedByVikingsDst": "Aidan O'Connell"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_DOUBLE_PASS_CATCHER_TOUCHDOWN_CAPTURE",
+        "MINI_GAME_VOLUME_PLUS_LEVERAGE",
+        "DEFENSE_CEILING_IN_LOW_TOTAL_GAME",
+        "MID_TIER_RB_ROLE_SCORES",
+        "WR_WITH_RUSHING_PLUS_RECEIVING_TDS"
+      ],
+      "macroStory": "A Baltimore touchdown capture stack at low ownership pairs with a Tampa Atlanta mini game solved from both sides, then Minnesota defense supplies a slate changing score in a 3 to 0 final."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["CEILING_ENGINE", "PRESSURE_PLUS_TAKEAWAYS", "SCORE_REPLACEMENT"],
+        "microStory": "Minnesota produces a 20 point defense score through sacks and takeaways, giving the lineup an extra ceiling outcome without spending on another receiver."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "RUSHING_FLOOR", "TOUCHDOWN_THROUGHPUT"],
+        "microStory": "Lamar Jackson supplies the raw points and the full touchdown distribution, then adds rushing production that separates from many pocket passer scores."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_CAPTURE", "SALARY_EFFICIENCY", "STACK_ATTACHMENT"],
+        "microStory": "Isaiah Likely turns an affordable tight end salary into a scoring attachment point by converting targets into a touchdown and 83 yards."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["LEVERAGE", "RECEIVING_TD_PATH", "GAME_ENVIRONMENT_SOLVE"],
+        "microStory": "Rachaad White provides leverage against the high volume Atlanta pass catcher build by scoring through a receiving touchdown while also clearing 100 rushing yards."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Lamar Jackson", "position": "QB", "team": "BAL" },
+        "teammates": [
+          { "name": "Isaiah Likely", "position": "TE", "team": "BAL" },
+          { "name": "Odell Beckham Jr.", "position": "WR", "team": "BAL" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Rachaad White", "position": "RB", "team": "TB" },
+        "opponent": { "name": "Drake London", "position": "WR", "team": "ATL" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Vikings", "position": "DST", "team": "MIN", "qbFaced": "Aidan O'Connell" },
+        "opponent": { "name": "Aidan O'Connell", "position": "QB", "team": "LV" }
+      }
+    ]
+  }
+}

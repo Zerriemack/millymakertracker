@@ -1,0 +1,262 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 11,
+  "slateType": "MAIN",
+  "slateDate": "2021-11-21T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 11",
+  "slateTag": "JONATHAN TAYLOR FIVE TD SLATE BREAKER, STARS AND SCRUBS WITH CHEAP CAM NEWTON, LIONS DST SWIFT MINI CORRELATION",
+  "slateGroup": "3-2-1-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2021_WK11_MAIN_2021-11-21T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 2800
+  },
+  "winner": {
+    "username": "Jackson205",
+    "points": 230.16,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 230.16,
+    "totalOwnershipBp": 2800,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Cam Newton",
+        "position": "QB",
+        "team": "CAR",
+        "salary": 5100,
+        "points": 26.16,
+        "ownershipPercent": 9.3,
+        "passTd": 2,
+        "passYds": 189,
+        "rushTd": 1,
+        "rushYds": 46,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jonathan Taylor",
+        "position": "RB",
+        "team": "IND",
+        "salary": 8300,
+        "points": 56.4,
+        "ownershipPercent": 3.9,
+        "rushYdsRb": 185,
+        "rushTdRb": 4,
+        "recRb": 3,
+        "recYdsRb": 19,
+        "recTdRb": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Miles Sanders",
+        "position": "RB",
+        "team": "PHI",
+        "salary": 5000,
+        "points": 8.4,
+        "ownershipPercent": 0.7,
+        "rushYdsRb": 94,
+        "rushTdRb": 0,
+        "recRb": 0,
+        "recYdsRb": 0,
+        "fumblesLost": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 8100,
+        "points": 40.2,
+        "ownershipPercent": 3.0,
+        "rec": 8,
+        "recYds": 169,
+        "recTd": 2,
+        "rushYds": 3,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Terry McLaurin",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 7000,
+        "points": 24.3,
+        "ownershipPercent": 1.2,
+        "rec": 5,
+        "recYds": 103,
+        "recTd": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Elijah Moore",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 4900,
+        "points": 32.6,
+        "ownershipPercent": 4.6,
+        "rec": 8,
+        "recYds": 141,
+        "recTd": 1,
+        "rushYds": 15,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Tommy Tremble",
+        "position": "TE",
+        "team": "CAR",
+        "salary": 2500,
+        "points": 5.5,
+        "ownershipPercent": 0.1,
+        "rec": 2,
+        "recYds": 35,
+        "recTd": 0,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D'Andre Swift",
+        "position": "RB",
+        "team": "DET",
+        "salary": 7000,
+        "points": 25.6,
+        "ownershipPercent": 2.8,
+        "rushYdsRb": 136,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 0,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Lions",
+        "position": "DST",
+        "team": "DET",
+        "salary": 2100,
+        "points": 11,
+        "ownershipPercent": 2.4,
+        "sacks": 1,
+        "takeaways": 2,
+        "blocks": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Baker Mayfield",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis.\n\nWeek 11 is a slate where roster construction tells the story before any individual stat line. The build accepts a stars and scrubs posture, then chooses the correct stars in the correct slots. Jonathan Taylor is the entire slate. Five touchdowns from one player collapses first place requirements into a simple equation. Either the roster has Taylor or the roster needs multiple near perfect ceiling outcomes across premium receivers and quarterback, plus clean value results across every cheap slot. This roster chooses Taylor at sub four percent ownership and sidesteps the fragility problem immediately.\n\nThe second decision is the cheap quarterback. Cam Newton is not used as a raw ceiling chase. He is used as a pricing exploit that keeps the roster from forcing thin mid range plays. Newton produces two passing touchdowns and adds a rushing touchdown, which is the exact blend needed. It hits the price adjusted ceiling while preserving budget for Taylor and Justin Jefferson.\n\nThe Carolina Washington cluster is intentionally minimal. Newton is paired with Tommy Tremble instead of the expensive receivers. Tremble is not asked to score a touchdown. Tremble is asked to keep the lineup structurally legal while Newton captures the scoring. Terry McLaurin functions as the opponent capture. His touchdown and 100 yard bonus concentrates the Washington points in one slot, which keeps the roster from needing multiple ancillary pieces from the same game.\n\nJustin Jefferson and Elijah Moore are the other spine pieces. Jefferson brings the premium receiver ceiling at microscopic ownership, then Moore provides the mid range ceiling that allows the roster to remain unique without turning into a punt fest. Moore adds rushing yards on top of the receiving line, which is a small detail that matters in a slate where many mid range receivers land in the 18 to 22 range.\n\nThe Detroit Cleveland mini correlation is a structural separator. D'Andre Swift plus Lions defense is not a conventional pairing, yet it fits the game. Swift scores through rushing volume and a touchdown, while the Lions defense produces interceptions and a block, which are events that can occur without Detroit needing to dominate. The defense does not need a shutout. It needs high leverage plays.\n\nMiles Sanders is the only weak point, and the roster still wins. This is the clearest signal of how extreme the Taylor and Jefferson combination is. The build can carry a fumble and still reach first place because the slate breaking outcomes arrive from low owned premium pieces.\n\nPredictive analysis.\n\nThis roster is the template for weeks where a single expensive running back owns a multi touchdown ceiling that is under owned due to value running backs soaking attention. When the field allocates salary to cheap volume backs, the leverage is not fading all value. The leverage is paying for the one expensive back who can score 50 while still keeping ownership low.\n\nThe second repeatable pattern is the cheap quarterback plus punt tight end pairing. This is not a casual punt. It is a deliberate trade. Quarterback receives rushing touchdown access and red zone involvement, while tight end receives minimal requirements. In weeks where the quarterback position has multiple low salary starters with goal line equity, the punt tight end becomes a reasonable way to unlock two premium receiver ceilings plus the slate breaking running back.\n\nPrescriptive analysis.\n\nWhen the slate offers a true nuclear running back ceiling at low ownership, treat him as the first decision and build around it. Next, choose a low salary quarterback with rushing touchdown access, then pair him with either a punt teammate or no teammate at all, depending on how concentrated the scoring is expected to be. Use one opponent receiver who can capture the 100 yard bonus and a touchdown, then allocate remaining salary to one premium receiver ceiling with low ownership.\n\nFor secondary correlation, small mini correlations can replace a second full stack when the slate includes one outlier score. Swift plus Lions defense is the example. It creates a coherent roster story without demanding a perfect shootout. The goal is a lineup that can survive one weak slot while still carrying multiple paths to first place through elite scores.",
+    "uniquenessNotes": "The uniqueness comes from combining two slate defining low owned outcomes with a cheap quarterback structure that makes the salary math possible. Taylor and Jefferson are both priced as premium players, yet both appear at sub four percent ownership, which creates a rare two stud combination that very few rosters can reach.\n\nThe Carolina construction is another quiet uniqueness layer. Many Newton builds chase a conventional stack partner. This roster uses Tremble as the structural enabler, then uses McLaurin as the opponent capture. It removes the need to guess which Carolina receiver benefits.\n\nThe build also demonstrates a practical truth. First place rosters do not need every slot to win. They need the correct outlier scores in the slots that matter, plus enough coherence in the remaining pieces to avoid a total collapse.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Jonathan Taylor and Justin Jefferson as low owned premium ceilings within a stars and scrubs salary script",
+      "secondaryLever": "Cam Newton pricing exploit with punt Tommy Tremble plus Lions DST and D'Andre Swift mini correlation against Baker Mayfield",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1-1",
+        "gameKey": [
+          "WAS@CAR: 3 (QB game)",
+          "DET@CLE: 2",
+          "IND@BUF: 1",
+          "NO@PHI: 1",
+          "GB@MIN: 1",
+          "MIA@NYJ: 1",
+          "NO@PHI: 1"
+        ],
+        "panthersCluster": ["Cam Newton", "Tommy Tremble"],
+        "bringback": "Terry McLaurin",
+        "studCore": ["Jonathan Taylor", "Justin Jefferson"],
+        "midRangeCeiling": "Elijah Moore",
+        "miniCorrelation": ["D'Andre Swift", "Lions"],
+        "qbFacedByLionsDst": "Baker Mayfield"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "STARS_AND_SCRUBS_WITH_CHEAP_QB",
+        "NUCLEAR_RB_SLATE_BREAKER",
+        "LOW_OWNERSHIP_PREMIUM_WR_CEILING",
+        "PUNT_TE_TO_UNLOCK_STUDS",
+        "DST_WITH_BLOCK_OR_TURNOVER_CEILING"
+      ],
+      "macroStory": "A first place roster built around a low owned Jonathan Taylor eruption and a low owned Justin Jefferson ceiling, enabled by a cheap Cam Newton build with punt tight end salary relief, then reinforced by a Swift plus Lions defense mini correlation that captures high leverage defensive events."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_SEPARATOR", "MULTI_TD_NUCLEAR_OUTCOME", "LOW_OWNERSHIP_PREMIUM"],
+        "microStory": "Jonathan Taylor delivers the defining score of the slate, which allows the roster to survive a weak secondary running back slot and still finish first."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["PREMIUM_CEILING", "LOW_OWNERSHIP", "GAME_ENVIRONMENT_SPIKE"],
+        "microStory": "Justin Jefferson provides the second elite ceiling at extremely low ownership, creating a combination few lineups can match."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["SALARY_SCRIPT_ENGINE", "RUSH_TD_ACCESS", "TOUCHDOWN_CONCENTRATION"],
+        "microStory": "Cam Newton supplies three total touchdowns at a low salary, which unlocks the roster’s expensive ceiling pieces without forcing thin mid range punts."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["EVENT_DRIVEN_CEILING", "TURNOVER_PATH", "BLOCK_PATH"],
+        "microStory": "Detroit defense scores through interceptions and a block against a franchise quarterback, fitting the slate where defensive events matter more than points allowed."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Cam Newton", "position": "QB", "team": "CAR" },
+        "teammates": [{ "name": "Tommy Tremble", "position": "TE", "team": "CAR" }],
+        "opponent": { "name": "Terry McLaurin", "position": "WR", "team": "WAS" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "D'Andre Swift", "position": "RB", "team": "DET" },
+        "opponent": { "name": "Lions", "position": "DST", "team": "DET" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Lions", "position": "DST", "team": "DET", "qbFaced": "Baker Mayfield" },
+        "opponent": { "name": "Baker Mayfield", "position": "QB", "team": "CLE" }
+      }
+    ]
+  }
+}

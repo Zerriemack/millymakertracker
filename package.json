@@ -24,6 +24,7 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
+    "csv-parse": "^6.1.0",
     "dotenv": "^17.2.4",
     "esbuild": "^0.27.3",
     "prisma": "^7.3.0",

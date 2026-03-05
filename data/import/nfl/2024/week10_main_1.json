@@ -1,0 +1,254 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 10,
+  "slateType": "MAIN",
+  "slateDate": "2024-11-10T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 10",
+  "slateTag": "PURDY TRIPLE WITH NO RUNBACK, PATRIOTS DST BURIES CALEB, LOW SCORING SLATE SURVIVAL",
+  "slateGroup": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK10_MAIN_2024-11-10T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11650
+  },
+  "winner": {
+    "username": "giantsquid",
+    "points": 178.32,
+    "maxEntries": 18
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 178.32,
+    "totalOwnershipBp": 11650,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Brock Purdy",
+        "position": "QB",
+        "team": "SF",
+        "salary": 6500,
+        "points": 26.82,
+        "ownershipPercent": 16.3,
+        "passTd": 2,
+        "passYds": 353,
+        "rushYds": 17,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Bijan Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 7700,
+        "points": 32.4,
+        "ownershipPercent": 16.7,
+        "rushTdRb": 2,
+        "rushYdsRb": 116,
+        "recRb": 3,
+        "recYdsRb": 28,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 5800,
+        "points": 18.1,
+        "ownershipPercent": 15.4,
+        "rushTdRb": 2,
+        "rushYdsRb": 44,
+        "recRb": 1,
+        "recYdsRb": 7,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Calvin Ridley",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 5700,
+        "points": 25.4,
+        "ownershipPercent": 3.8,
+        "rec": 5,
+        "recYds": 84,
+        "recTd": 2,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jauan Jennings",
+        "position": "WR",
+        "team": "SF",
+        "salary": 5100,
+        "points": 16.3,
+        "ownershipPercent": 14.8,
+        "rec": 7,
+        "recYds": 93,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Noah Brown",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 4300,
+        "points": 6.3,
+        "ownershipPercent": 8.5,
+        "rec": 3,
+        "recYds": 33,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "George Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 5800,
+        "points": 14.7,
+        "ownershipPercent": 19.0,
+        "rec": 3,
+        "recYds": 57,
+        "recTd": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "James Conner",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 6500,
+        "points": 22.3,
+        "ownershipPercent": 9.8,
+        "rushTdRb": 1,
+        "rushYdsRb": 33,
+        "recRb": 5,
+        "recYdsRb": 80,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 2500,
+        "points": 16,
+        "ownershipPercent": 12.2,
+        "sacks": 9,
+        "takeaways": 1,
+        "dfr": 0,
+        "pointsAllowedBucket": 6,
+        "qbFaced": "Caleb Williams",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis\n\nThis slate is a reminder that first place does not always require a perfect roster. It requires one or two forces that reshape the scoring landscape, then a construction that avoids donating points everywhere else.\n\nThe force in this lineup is the Patriots defense against Caleb Williams. Nine sacks is not a normal defensive outcome. It is a game level event that changes what it takes to win because it collapses a large portion of lineups tied to Chicago pieces and it creates a defensive score that behaves like an extra skill player touchdown.\n\nThe offensive center is the San Francisco cluster. Brock Purdy, Jauan Jennings, and George Kittle form a three player concentration from a game that did not explode. The important detail is the distribution. Purdy produces a strong yardage bonus and two touchdowns, and the points land in a way that is captured by the roster without needing a Tampa Bay bringback. This works because the scoring is not driven by a back and forth touchdown exchange. It is driven by San Francisco efficiency and concentrated passing production.\n\nThe rest of the lineup is built to survive a low scoring week. Bijan Robinson and James Conner bring volume based scoring with touchdown access. Austin Ekeler is a fragile play in a low yardage profile, but he is rescued by two goal line touchdowns. Calvin Ridley supplies the one wide receiver ceiling score on the roster, and it arrives at low roster percentage.\n\nNoah Brown is the miss. In a higher scoring slate, a 6.3 would be fatal. In this slate, the Patriots defense and the steady running back production make the miss absorbable.\n\nPredictive Analysis\n\nThis lineup points to a repeatable dynamic in low scoring weeks. Defense can function as a primary difference maker when one matchup offers a realistic path to overwhelming pressure. When the quarterback holds the ball, takes sacks, and the offense fails to convert third downs, the defense creates extra possessions and suppresses opponent fantasy scoring at the same time.\n\nThe second dynamic is the bringback rule becoming optional when the quarterback game produces points through one sided efficiency. Purdy plus two pass catchers succeeds because the points are concentrated on one offense and the opposing side does not force a response.\n\nPrescriptive Analysis\n\nWhen early slate conditions indicate scoring suppression, widen the set of defenses considered viable, but narrow it again using one filter. Prioritize defensive lines that can create sack volume against quarterbacks who are holding the ball and taking negative plays. In those weeks, the defense slot can carry more leverage than a mid tier wide receiver.\n\nFor quarterback stacks in these environments, favor concentration over symmetry. A quarterback with two pass catchers can be correct without an opposing bringback when the offense can score through efficiency and the opponent cannot keep pace.\n\nFinally, accept one imperfect slot if the roster contains a single slate shaping event and two stable volume backs. The correct trade is to keep the rest of the lineup out of trouble while letting the slate shaping event do the separating.",
+    "uniquenessNotes": "The lineup wins with an uneven portfolio.\n\nIt uses popular pieces in obvious roles. Brock Purdy and the San Francisco pass catchers are not hidden, and Bijan Robinson carries meaningful roster share.\n\nThe separation comes from two levers. The Patriots defense delivers an extreme sack outcome against Caleb Williams, and Calvin Ridley provides a low rostered two touchdown receiver line.\n\nThe roster also shows a disciplined tolerance for a single miss. Noah Brown fails, yet the lineup remains live because the defense score and the concentrated touchdowns elsewhere reduce the need for every slot to win its matchup.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Brock Purdy triple with Jauan Jennings and George Kittle without a Tampa Bay bringback",
+      "secondaryLever": "Patriots defense pressure outcome versus Caleb Williams",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "SF@TB: 3 (QB game)",
+          "PIT@WAS: 2",
+          "ATL@NO: 1",
+          "TEN@LAC: 1",
+          "NYJ@ARI: 1",
+          "NE@CHI: 1"
+        ],
+        "ninersCluster": ["Brock Purdy", "Jauan Jennings", "George Kittle"],
+        "steelersCommandersPair": ["Austin Ekeler", "Noah Brown"],
+        "volumeBack": "James Conner",
+        "qbFacedByPatriotsDst": "Caleb Williams"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_DOUBLE_STACK_NO_BRINGBACK",
+        "DST_PRESSURE_EVENT",
+        "LOW_SCORING_SLATE_SURVIVAL",
+        "RB_VOLUME_WITH_TD_ACCESS",
+        "LOW_ROSTERED_WR_MULTI_TD"
+      ],
+      "macroStory": "A first place roster driven by an extreme defensive sack outcome and a concentrated quarterback triple in a low scoring week, while surviving one wide receiver miss."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_SEPARATOR", "PRESSURE_EVENT", "OPPONENT_SUPPRESSION"],
+        "microStory": "New England defense is the slate shaping event. Nine sacks versus Caleb Williams changes the scoring landscape and creates separation that a normal defense score cannot."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["CONCENTRATION_HUB", "YARDAGE_BONUS", "EFFICIENCY_PATH"],
+        "microStory": "Brock Purdy delivers a strong passing line and the points remain concentrated enough that a two teammate stack captures the payoff without needing a Tampa Bay bringback."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP", "MULTI_TD_ACCESS", "SLATE_SWING"],
+        "microStory": "Calvin Ridley supplies the low rostered two touchdown score that keeps the roster ahead in a week where wide receiver ceilings are scarce."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["VOLUME_STABILITY", "TOUCHDOWN_ACCESS", "FLOOR_PLUS"],
+        "microStory": "James Conner provides volume based points through both rushing and receiving work, which matters when the slate does not offer many spike scores."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Brock Purdy", "position": "QB", "team": "SF" },
+        "teammates": [
+          { "name": "Jauan Jennings", "position": "WR", "team": "SF" },
+          { "name": "George Kittle", "position": "TE", "team": "SF" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Austin Ekeler", "position": "RB", "team": "WAS" },
+        "opponent": { "name": "Noah Brown", "position": "WR", "team": "WAS" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Patriots", "position": "DST", "team": "NE", "qbFaced": "Caleb Williams" },
+        "opponent": { "name": "Caleb Williams", "position": "QB", "team": "CHI" }
+      }
+    ]
+  }
+}

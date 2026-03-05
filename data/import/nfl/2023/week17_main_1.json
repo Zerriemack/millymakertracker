@@ -1,0 +1,256 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 17,
+  "slateType": "MAIN",
+  "slateDate": "2023-12-31T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 17",
+  "slateTag": "LAMAR FLOWERS MIAMI ROUT, SLAYTON WANDALE GIANTS VALUE DOUBLE, TEXANS DST TD VS WILL LEVIS",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "rosterConstruction": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK17_MAIN_2023-12-31T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 5980
+  },
+  "winner": {
+    "username": "UNKNOWN",
+    "points": 221.24,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 221.24,
+    "totalOwnershipBp": 5980,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 7700,
+        "points": 39.34,
+        "ownershipPercent": 6.3,
+        "passYds": 321,
+        "passTd": 5,
+        "passInt": 0,
+        "rushYds": 35,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Travis Etienne",
+        "position": "RB",
+        "team": "JAX",
+        "salary": 7200,
+        "points": 28.8,
+        "ownershipPercent": 7.7,
+        "rushYdsRb": 102,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 16,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Kenneth Walker",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 6100,
+        "points": 16.5,
+        "ownershipPercent": 1.6,
+        "rushYdsRb": 53,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 22,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "LV",
+        "salary": 7400,
+        "points": 40.6,
+        "ownershipPercent": 2.6,
+        "rec": 13,
+        "recYds": 126,
+        "recTd": 2,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Zay Flowers",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 5600,
+        "points": 22.6,
+        "ownershipPercent": 10.7,
+        "rec": 3,
+        "recYds": 106,
+        "recTd": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Darius Slayton",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 3400,
+        "points": 23.6,
+        "ownershipPercent": 12.3,
+        "rec": 4,
+        "recYds": 106,
+        "recTd": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "George Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 5600,
+        "points": 5.9,
+        "ownershipPercent": 8.8,
+        "rec": 3,
+        "recYds": 29,
+        "recTd": 0,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Wan'Dale Robinson",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 4000,
+        "points": 19.9,
+        "ownershipPercent": 3.7,
+        "rushYds": 24,
+        "rushTd": 1,
+        "rec": 6,
+        "recYds": 55,
+        "recTd": 0,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Houston Defense",
+        "position": "DST",
+        "team": "HOU",
+        "salary": 3000,
+        "points": 24,
+        "ownershipPercent": 6.1,
+        "sacks": 6,
+        "takeaways": 1,
+        "dstTd": 1,
+        "pointsAllowed": 3,
+        "qbFaced": "Will Levis",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "TEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis. The roster is a two layer build where one game provides pure volume scoring and a second game supplies separation through cheap access points. Baltimore versus Miami is the anchor, yet it is not a fragile version. Lamar Jackson posts a five touchdown passing outcome, and Zay Flowers captures the downfield scoring attached to it. This pairing avoids a three or four man commitment, which keeps the lineup flexible for other ceilings.\n\nThe swing comes from New York versus Los Angeles. Darius Slayton and Wan'Dale Robinson are not selected for floor. They are selected because salary allows multiple slate level ceilings elsewhere, and the Giants can condense production into two receivers when the offense is forced to answer. Slayton brings the touchdown and 100 yard style outcome at 3,400. Wan'Dale Robinson adds a rushing touchdown plus receiving volume, which turns a mid range salary into a slate relevant score.\n\nThe third leg is Houston defense. The slate uses a defense score as a true engine rather than a support slot. Six sacks plus a defensive touchdown versus Will Levis creates a 24 point defense outcome, which compresses the need for a second premium receiver. It also pairs well with a lineup already built around explosive plays, since defensive touchdowns reward chaos.\n\nDavante Adams is the single player leverage call. At low ownership, he posts a target hog performance in a game where the offense funnels through him. This is the second slate breaking receiver score on the roster, and it is the part that separates from Lamar stacks built with more popular wide receiver archetypes.\n\nPredictive Analysis. A two man quarterback stack can win when the quarterback captures all touchdowns and the receiver slot captures a high aDOT score. This reduces the need to guess between multiple teammates. Future research angle. Flag slates where an elite quarterback can reach four or five passing touchdowns in a blowout, then model whether a two man stack with one explosive receiver can outperform fuller stacks because it preserves salary and roster slots for other games.\n\nCheap double stacks remain viable when they represent the condensed path for a team and include touchdown access through either red zone targets or designed rush attempts. The Giants pairing shows how a cheap receiver plus a cheap hybrid receiver can function as the salary bridge into two additional ceiling outcomes.\n\nPrescriptive Analysis. When a slate offers a realistic path for a defense to score a touchdown against a quarterback with pressure problems, treat defense as a ceiling slot and allocate salary accordingly. Pair that defense ceiling with a quarterback stack that does not demand extra teammates. Use a two player value cluster from one additional game to free salary while keeping touchdown access. Reserve one roster spot for a low owned alpha receiver whose team can funnel targets at extreme volume.",
+    "uniquenessNotes": "Ownership is controlled through allocation, not through avoiding popular projections. Lamar Jackson is used at moderate ownership, yet the roster separates through three levers. Houston defense posts a rare 24 point outcome at modest ownership. Davante Adams supplies a true alpha score at low ownership. The Giants double provides salary relief without giving away touchdown access. The rest of the roster stays coherent because each game block serves a clear scoring function.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Lamar Jackson with Zay Flowers plus Houston defense touchdown game versus Will Levis",
+      "secondaryLever": "Darius Slayton and Wan'Dale Robinson value double with Davante Adams low owned alpha score",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "MIA@BAL: 2 (QB game)",
+          "LAR@NYG: 2",
+          "CAR@JAX: 1",
+          "PIT@SEA: 1",
+          "LV@IND: 1",
+          "SF@WAS: 1",
+          "TEN@HOU: 1"
+        ],
+        "ravensDolphinsCluster": ["Lamar Jackson", "Zay Flowers"],
+        "giantsRamsCluster": ["Darius Slayton", "Wan'Dale Robinson"],
+        "qbFacedByTexansDst": "Will Levis"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "TWO_MAN_QB_STACK_WITH_BLOWOUT_CEILING",
+        "CHEAP_DOUBLE_FROM_ONE_GAME",
+        "DEFENSE_AS_CEILING_ENGINE",
+        "LOW_OWNERSHIP_ALPHA_WR",
+        "MULTI_GAME_CEILING_PORTFOLIO"
+      ],
+      "macroStory": "A roster anchored by a Lamar Jackson passing eruption, separated by a defense touchdown outcome and a low owned alpha receiver ceiling, then financed by a cheap two receiver cluster from one game."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["CEILING_ENGINE", "PRESSURE_CONVERSION", "TOUCHDOWN_OUTCOME"],
+        "microStory": "Houston defense supplies the separation score. Six sacks plus a defensive touchdown against Will Levis creates a slate defining defense output."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_ALPHA", "VOLUME_FUNNEL", "SLATE_LEVEL_SCORE"],
+        "microStory": "Davante Adams functions as the receiver ceiling lever. The offense funnels targets into him and the roster captures the full payout at low ownership."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["SALARY_RELIEF_CEILING", "TOUCHDOWN_ACCESS", "VALUE_CLUSTER_PARTNER"],
+        "microStory": "Darius Slayton converts a low salary into a touchdown plus yardage outcome, enabling multiple premium ceilings elsewhere."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "MULTI_TD_OUTCOME", "TWO_MAN_STACK_DRIVER"],
+        "microStory": "Lamar Jackson provides the primary raw points engine through five passing touchdowns, supporting a two man stack construction."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Lamar Jackson", "position": "QB", "team": "BAL" },
+        "teammates": [{ "name": "Zay Flowers", "position": "WR", "team": "BAL" }],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Darius Slayton", "position": "WR", "team": "NYG" },
+        "opponent": { "name": "Wan'Dale Robinson", "position": "WR", "team": "NYG" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Houston Defense", "position": "DST", "team": "HOU", "qbFaced": "Will Levis" },
+        "opponent": { "name": "Will Levis", "position": "QB", "team": "TEN" }
+      }
+    ]
+  }
+}

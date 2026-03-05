@@ -1,0 +1,254 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 8,
+  "slateType": "MAIN",
+  "slateDate": "2021-10-31T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 8",
+  "slateTag": "IND TEN GAME STACK, GODWIN ALL TIME HEATER, CARTER CHEAP RB SMASH",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "rosterConstruction": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2021_WK08_MAIN_2021-10-31T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11480
+  },
+  "winner": {
+    "username": "PiReZ",
+    "points": 226.24,
+    "maxEntries": 35
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 226.24,
+    "totalOwnershipBp": 11480,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Carson Wentz",
+        "position": "QB",
+        "team": "IND",
+        "salary": 5700,
+        "points": 20.34,
+        "ownershipPercent": 8.0,
+        "passTd": 3,
+        "passYds": 231,
+        "interceptions": 2,
+        "rushYds": 11,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Elijah Mitchell",
+        "position": "RB",
+        "team": "SF",
+        "salary": 5400,
+        "points": 22.7,
+        "ownershipPercent": 11.0,
+        "rushTdRb": 1,
+        "rushYdsRb": 137,
+        "recRb": 0,
+        "recYdsRb": 0,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Michael Carter",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 4900,
+        "points": 32.2,
+        "ownershipPercent": 6.0,
+        "rushTdRb": 0,
+        "rushYdsRb": 77,
+        "recRb": 9,
+        "recYdsRb": 95,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 9000,
+        "points": 27.5,
+        "ownershipPercent": 14.6,
+        "rec": 7,
+        "recYds": 115,
+        "recTd": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 6900,
+        "points": 34.5,
+        "ownershipPercent": 14.5,
+        "rec": 10,
+        "recYds": 155,
+        "recTd": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Pittman Jr.",
+        "position": "WR",
+        "team": "IND",
+        "salary": 5300,
+        "points": 30.6,
+        "ownershipPercent": 26.5,
+        "rec": 10,
+        "recYds": 86,
+        "recTd": 2,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Pat Freiermuth",
+        "position": "TE",
+        "team": "PIT",
+        "salary": 3600,
+        "points": 14.4,
+        "ownershipPercent": 4.5,
+        "rec": 4,
+        "recYds": 44,
+        "recTd": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6400,
+        "points": 31.0,
+        "ownershipPercent": 24.6,
+        "rec": 8,
+        "recYds": 140,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Seahawks",
+        "position": "DST",
+        "team": "SEA",
+        "salary": 2800,
+        "points": 13,
+        "ownershipPercent": 5.1,
+        "sacks": 1,
+        "takeaways": 2,
+        "qbFaced": "Trevor Lawrence",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "JAX"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis.\n\nThis roster wins by concentrating its salary on four pressure points, then refusing to punt any slot into dead volume. The Tennessee at Indianapolis game is the anchor and also the separator. Carson Wentz is not paired with a single teammate. He is paired with both primary alpha receivers from each side. A.J. Brown supplies the explosive yardage and touchdown access for Tennessee, while Michael Pittman Jr. captures Indianapolis red zone work and intermediate volume. The result is a three player cluster that harvests nearly every meaningful touchdown in a 65 point game without needing to predict which quarterback would lead the slate.\n\nThe second engine is the running back structure. Michael Carter is the defining decision. He is priced as a secondary back but produces a wide receiver game while still carrying enough rushing involvement to avoid a fragile outcome. The nine catches do not function as cheap floor. They function as a points amplifier because the passing work arrives in a game where the Jets are forced to keep scoring. Elijah Mitchell plays a different role. His 137 and a touchdown is direct rushing production in a spot where the field expects it, yet the roster can still accept it because the rest of the build already contains the leverage and ceiling.\n\nChris Godwin provides the stability and the ceiling at the same time. The ownership is high, yet the roster treats it as a shared assumption, then wins by pairing it with ceiling outcomes in the two games most likely to produce 30 plus receiver scores. Cooper Kupp adds the final elite receiver result. This is the slate where his role is no longer a story. It is a weekly expectation, and the roster pays for it.\n\nSeattle defense is the finishing stroke, not the foundation. The rookie quarterback leverage is direct. One sack and two takeaways is enough because the rest of the lineup is doing the heavy lifting. The defense choice protects the roster from needing perfection at tight end.\n\nPredictive analysis.\n\nThis build is a template for slates where one game projects as the highest total and the scoring ends up condensing into two alpha wide receivers. The key is pairing the quarterback with both sides of the receiver spike rather than forcing a traditional same team stack. When the game hits, the roster collects every touchdown drive without needing a perfect quarterback ceiling.\n\nThe second reusable lesson is the running back archetype Carter represents. When a back has a passing role large enough to behave as a slot receiver, a price in the mid range becomes a ceiling opportunity, not a compromise. This is the sort of profile that can break a slate when the game demands tempo and the team cannot hide.\n\nPrescriptive analysis.\n\nWhen a single game is likely to be the slate engine, prioritize a three player cluster built around the quarterback plus two alphas, one from each team, when both receivers own end zone access and the game environment suggests sustained pace. Then pair it with one high leverage back who can reach 25 plus through receptions and yards, not through a multi touchdown parlay. Finally, use the remaining spots to lock in one bankable high ownership receiver outcome and one elite target hog priced at the top of the slate. Defense and tight end can be chosen for salary structure and opponent archetype, as long as neither slot blocks the roster from paying for the receiver ceilings.",
+    "uniquenessNotes": "The uniqueness is not created by avoiding ownership. It is created by spending ownership in the correct places and then stacking the correct game in a way the field rarely uses.\n\nMost rosters that treated Tennessee at Indianapolis as the engine would stack Wentz with a teammate, then bring it back with one Titan. This roster takes both alpha receivers and forces the game to pay it twice. The approach removes the need to pick between Brown and Pittman, which is normally the spot where first place rosters die.\n\nMichael Carter is the roster hinge. At 4,900 and 6 percent ownership, he opens the salary for Kupp while still delivering a true tournament winning score. Pat Freiermuth is the quiet stabilizer. He does not need to win the slate. He needs to avoid losing it while the rest of the lineup carries the ceiling.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Tennessee at Indianapolis three player engine through Carson Wentz with A.J. Brown and Michael Pittman Jr.",
+      "secondaryLever": "Michael Carter as mid range back with wide receiver scoring profile plus Seahawks defense versus rookie quarterback Trevor Lawrence",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "TEN@IND: 3 (QB game)",
+          "CIN@NYJ: 1",
+          "SF@CHI: 1",
+          "LAR@HOU: 1",
+          "PIT@CLE: 1",
+          "TB@NO: 1",
+          "JAX@SEA: 1"
+        ],
+        "indTitansCluster": ["Carson Wentz", "A.J. Brown", "Michael Pittman Jr."],
+        "heaterReceiver": "Chris Godwin",
+        "alphaMagnet": "Cooper Kupp",
+        "salaryReliefBreaker": "Michael Carter",
+        "qbFacedBySeahawksDst": "Trevor Lawrence"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WITH_TWO_ALPHA_WR_OPP_GAME_ENGINE",
+        "PASS_CATCHING_RB_CEILING_PROFILE",
+        "HIGH_OWNERSHIP_WR_HEATER_ACCEPTED",
+        "ELITE_TARGET_HOG_PAID_FOR",
+        "DST_VS_ROOKIE_QB"
+      ],
+      "macroStory": "A first place roster driven by the Tennessee at Indianapolis shootout captured through both alpha wide receivers, then elevated by a mid range running back who scores as a primary slot receiver, with Godwin and Kupp supplying bankable elite wide receiver ceilings."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "GAME_ENVIRONMENT_CAPTURE", "CORRELATION_HUB"],
+        "microStory": "Carson Wentz is used as a conduit for the shootout rather than as a raw ceiling play. Pairing him with both A.J. Brown and Michael Pittman Jr. captures the touchdown flow even if Wentz is not the top scoring quarterback."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["SALARY_RELIEF_BREAKER", "RECEPTION_VOLUME_CEILING", "GAME_SCRIPT_PROOF"],
+        "microStory": "Michael Carter turns a mid range salary into a slate defining score through receptions and yards, which keeps the roster from needing a thin touchdown parlay."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["ALPHA_CEILING", "YARDAGE_PLUS_TD", "GAME_ENGINE_SIDE_A"],
+        "microStory": "A.J. Brown supplies the explosive side of the Titans scoring while still pairing cleanly with Wentz through the overall game script."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["VOLUME_PLUS_TD", "GAME_ENGINE_SIDE_B", "OWNERSHIP_ACCEPTED"],
+        "microStory": "Michael Pittman Jr. delivers the concentrated Indianapolis touchdown access and target volume that makes the three player game engine complete."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Carson Wentz", "position": "QB", "team": "IND" },
+        "teammates": [{ "name": "Michael Pittman Jr.", "position": "WR", "team": "IND" }],
+        "opponent": { "name": "A.J. Brown", "position": "WR", "team": "TEN" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Michael Carter", "position": "RB", "team": "NYJ" },
+        "opponent": { "name": "Cooper Kupp", "position": "WR", "team": "LAR" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Seahawks", "position": "DST", "team": "SEA", "qbFaced": "Trevor Lawrence" },
+        "opponent": { "name": "Trevor Lawrence", "position": "QB", "team": "JAX" }
+      }
+    ]
+  }
+}

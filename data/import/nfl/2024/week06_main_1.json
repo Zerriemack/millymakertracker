@@ -1,0 +1,261 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 6,
+  "slateType": "MAIN",
+  "slateDate": "2024-10-13T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 6",
+  "slateTag": "BUCS 5-MAN ONSLAUGHT VS ROOKIE QB, IRVING 52.8% ANCHOR, BIJAN VS CAR RUN FRONT",
+  "slateGroup": "5-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK06_MAIN_2024-10-13T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 17540
+  },
+  "winner": {
+    "username": "rbx88",
+    "points": 208.2,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 208.2,
+    "totalOwnershipBp": 17540,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Baker Mayfield",
+        "position": "QB",
+        "team": "TB",
+        "salary": 6500,
+        "points": 31.9,
+        "ownershipPercent": 3.4,
+        "passTd": 4,
+        "passYds": 325,
+        "interceptions": 3,
+        "rushYds": 29,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Najee Harris",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 5800,
+        "points": 23.2,
+        "ownershipPercent": 6.2,
+        "rushTdRb": 1,
+        "rushYdsRb": 106,
+        "recRb": 2,
+        "recYdsRb": 16,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Bucky Irving",
+        "position": "RB",
+        "team": "TB",
+        "salary": 5400,
+        "points": 18.5,
+        "ownershipPercent": 52.8,
+        "rushTdRb": 1,
+        "rushYdsRb": 81,
+        "recRb": 2,
+        "recYdsRb": 24,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6900,
+        "points": 38.5,
+        "ownershipPercent": 9.3,
+        "rec": 11,
+        "recYds": 125,
+        "recTd": 2,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Zay Flowers",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 6500,
+        "points": 25.4,
+        "ownershipPercent": 15.8,
+        "rec": 9,
+        "recYds": 132,
+        "rushYds": 2,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tank Dell",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 6200,
+        "points": 18.7,
+        "ownershipPercent": 9.1,
+        "rec": 7,
+        "recYds": 57,
+        "recTd": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Cade Otton",
+        "position": "TE",
+        "team": "TB",
+        "salary": 3500,
+        "points": 9.5,
+        "ownershipPercent": 18.3,
+        "rec": 2,
+        "recYds": 15,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Bijan Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 6600,
+        "points": 25.5,
+        "ownershipPercent": 31.2,
+        "rushTdRb": 2,
+        "rushYdsRb": 95,
+        "recRb": 3,
+        "recYdsRb": 10,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Buccaneers",
+        "position": "DST",
+        "team": "TB",
+        "salary": 2600,
+        "points": 17,
+        "ownershipPercent": 29.3,
+        "sacks": 5,
+        "interceptions": 2,
+        "fumbleRecoveries": 1,
+        "defTd": 1,
+        "qbFaced": "Spencer Rattler",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is a full commitment to a single game environment. Tampa Bay at New Orleans supplies five of nine slots, including the defense, and the build treats volatility as an asset rather than a problem. The Buccaneers were a heavy favorite facing a rookie quarterback, which created two parallel paths to a ceiling. First, defensive disruption produced sacks, interceptions, a fumble recovery, and a defensive touchdown. Second, the same disruption created short fields and repeated red zone sequences, which allowed Baker Mayfield to clear a tournament score on touchdown rate rather than on raw dropback volume.\n\nThe Tampa cluster is deliberately concentrated. Bucky Irving carries massive ownership, and the roster accepts it because Irving is not the differentiator. Irving is the stabilizer who keeps the Tampa story on schedule. The separation comes from pairing Mayfield with Chris Godwin and Cade Otton, then completing the onslaught with the Buccaneers defense. Godwin supplies the true slate swinging outcome through 11 catches and two touchdowns. Otton adds an inexpensive touchdown to capture yet another scoring node inside the same offense. This is the cleanest version of the slate’s most projectable team executing at the highest leverage points.\n\nThe remaining four slots are chosen to remove unnecessary fragility. Bijan Robinson attacks Carolina’s weak run defense with a two touchdown performance. Zay Flowers targets a defense that bleeds production to wide receivers and posts a 100 plus yard game. Tank Dell contributes a touchdown score without requiring the roster to take a second quarterback or to force extra correlation. Najee Harris adds another 100 plus rushing game, giving the roster a second stable volume back, which reduces the requirement for every wide receiver slot to spike.",
+    "uniquenessNotes": "The lineup wins a contest with massive entry count by being structurally aggressive in one place and conservative everywhere else. Five Buccaneers in a classic build is a hard stance because it compresses the roster into one fragile outcome if the game underperforms. The build makes this acceptable by choosing the version of the favorite game that can score without extended passing volume. Defense scoring plus short fields converts a spread driven script into quarterback points.\n\nOwnership is handled with intent. Irving at 52.8 percent and Buccaneers defense at 29.3 percent are treated as shared assumptions. The roster is not trying to beat the field by fading the most popular plays. It is trying to beat the field by selecting the correct way those popular plays connect to a first place structure. Mayfield at 3.4 percent is the pressure point. When the favorite scores efficiently and the touchdowns concentrate, the quarterback becomes the beneficiary, and the field often fails to capture it because of volume fear.\n\nThe non Tampa selections do not chase thin uniqueness. Flowers, Robinson, and Dell are strong projection plays against specific defensive weaknesses, and Harris provides another bankable workload profile. This is the slate’s best plays, but assembled into a construction that extracts maximum payout from one team’s game script.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Tampa Bay 5-man onslaught including Buccaneers DST in a rookie QB matchup, paired with low-owned Baker Mayfield for touchdown rate access",
+      "secondaryLever": "High-floor, high-ceiling one-offs that aligned with defensive weaknesses: Bijan Robinson versus Carolina run defense, Zay Flowers versus a bottom-ranked WR pass defense",
+      "notes": {
+        "rosterConstruction": "5-1-1-1-1",
+        "gameKey": [
+          "TB@NO: 5 (QB game)",
+          "ATL@CAR: 1",
+          "WAS@BAL: 1",
+          "HOU@NE: 1",
+          "PIT@LV: 1"
+        ],
+        "bucsCluster": ["Baker Mayfield", "Bucky Irving", "Chris Godwin", "Cade Otton", "Buccaneers"],
+        "qbFacedByBuccaneersDst": "Spencer Rattler"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FAVORITE_ONSLAUGHT_WITH_DST",
+        "LOW_OWNED_QB_TD_RATE_CAPTURE",
+        "CHALK_RB_AS_STABILIZER",
+        "SINGLE_SLOT_ONE_OFF_ATTACKS"
+      ],
+      "macroStory": "A five player favorite onslaught built to profit from defensive chaos and short fields, then completed with strong projection one-offs that exploited specific defensive failure points."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["FOUNDATION", "DISRUPTION_SCORE", "SHORT_FIELD_CREATOR"],
+        "microStory": "The Buccaneers defense is the engine behind the entire Tampa construction. The defensive touchdown and multiple takeaways create both direct points and field position that turns Tampa touchdowns into Mayfield production without requiring a pass-heavy script."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_ENGINE", "TD_RATE_OUTCOME", "ONSLAUGHT_HUB"],
+        "microStory": "Mayfield converts a spread-driven game into a tournament score through four passing touchdowns. The roster is built to benefit if Tampa scores from advantageous field position and concentrates touchdowns through a narrow set of players."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["OWNERSHIP_SPONGE", "ROLE_STABILITY", "SCRIPT_COMPATIBLE"],
+        "microStory": "Irving carries extreme ownership, but his role keeps the Tampa story intact. His workload and touchdown remove the risk of the onslaught failing because the backfield never reached the end zone."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_CEILING", "TARGET_DOMINANCE", "TD_CONCENTRATION"],
+        "microStory": "Godwin is the Tampa outcome that breaks the slate. The catch volume plus two touchdowns is the cleanest form of touchdown concentration, and it is the reason the onslaught can win without needing additional shootout bring-backs."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Baker Mayfield", "position": "QB", "team": "TB" },
+        "teammates": [
+          { "name": "Chris Godwin", "position": "WR", "team": "TB" },
+          { "name": "Cade Otton", "position": "TE", "team": "TB" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "DST_WITH_OFFENSE",
+        "qb": null,
+        "teammate": { "name": "Buccaneers", "position": "DST", "team": "TB", "qbFaced": "Spencer Rattler" },
+        "opponent": { "name": "Spencer Rattler", "position": "QB", "team": "NO" }
+      },
+      {
+        "type": "GAME_ONSLAUGHT_CLUSTER",
+        "qb": { "name": "Baker Mayfield", "position": "QB", "team": "TB" },
+        "teammates": [
+          { "name": "Bucky Irving", "position": "RB", "team": "TB" },
+          { "name": "Chris Godwin", "position": "WR", "team": "TB" },
+          { "name": "Cade Otton", "position": "TE", "team": "TB" },
+          { "name": "Buccaneers", "position": "DST", "team": "TB" }
+        ],
+        "opponent": null
+      }
+    ],
+    "diagnosticAnalysis": "The 80/20 drivers are concentrated in two decisions. First, the roster treated Tampa as the slate’s highest confidence scoring source and captured five slots from the same game, including defense. Second, it chose the version of the Tampa outcome that produces a low-owned quarterback ceiling. Defensive disruption created short fields and touchdown opportunities, and touchdown distribution flowed through Mayfield to Godwin and Otton while Irving supplied the backfield score. Those combined events explain most of the gap required to finish first.\n\nThe rest of the roster played a supporting role. Flowers and Robinson were aligned with matchup-specific defensive weakness, then delivered yardage bonuses plus touchdowns. Dell and Harris provided additional touchdown access and a second 100-yard rushing bonus. Those four slots did not need to be unique. They needed to be correct, and they were.",
+    "predictiveAnalysis": "This build suggests a repeatable research angle for future slates. When a team projects as a heavy favorite against a rookie quarterback and the offense has a condensed scoring tree, the favorite can generate quarterback ceiling without needing extreme pass volume. The highest EV outcome often comes from short fields, red zone frequency, and defensive scoring pressure, which increases touchdown rate.\n\nFor future study, track favorite teams with top projected defenses and quantify how often the quarterback outperforms expectation in games with elevated defensive pressure and turnover probability. Separate the cases where touchdowns concentrate through one primary receiver or tight end, since concentration is what makes an onslaught pay off in classic.",
+    "prescriptiveAnalysis": "Use this as a decision rule, not a slogan. If a defense projects top tier, the opposing quarterback archetype is ROOKIE, and the favorite offense has at least two credible touchdown earners plus a value back who stays on the field, then an onslaught including defense becomes a high quality route to first place outcomes. The roster should include the quarterback, one primary receiver, and either a second pass catcher or the tight end, then add the defense to maximize the short-field and defensive score linkage.\n\nTreat the popular running back as the stabilizer when his role is secure. Do not require him to differentiate. Differentiation should come from selecting the correct touchdown distribution through the quarterback and the pass catchers, which is where the field often makes the wrong choice under volume fear."
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 12,
+  "slateType": "MAIN",
+  "slateDate": "2023-11-26T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 12",
+  "slateTag": "JOSH ALLEN NAKED, KYREN WILLIAMS SLATE BREAKER, JAX HOU GAME PAIR COLLINS RIDLEY",
+  "slateGroup": "1-2-1-1-1-1-1-1",
+  "rosterConstruction": "1-2-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK12_MAIN_2023-11-26T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10280
+  },
+  "winner": {
+    "username": "jmt0813",
+    "points": 220.66,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 220.66,
+    "totalOwnershipBp": 10280,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 8100,
+        "points": 43.66,
+        "ownershipPercent": 15.0,
+        "passTd": 2,
+        "passYds": 339,
+        "rushYds": 81,
+        "rushTd": 2,
+        "interceptions": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Kyren Williams",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 6600,
+        "points": 41.4,
+        "ownershipPercent": 18.4,
+        "rushYdsRb": 143,
+        "recRb": 6,
+        "recYdsRb": 61,
+        "recTdRb": 2,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jerome Ford",
+        "position": "RB",
+        "team": "CLE",
+        "salary": 5600,
+        "points": 11.9,
+        "ownershipPercent": 15.8,
+        "rushYdsRb": 65,
+        "recRb": 4,
+        "recYdsRb": 14,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Rashee Rice",
+        "position": "WR",
+        "team": "KC",
+        "salary": 5500,
+        "points": 27.7,
+        "ownershipPercent": 5.0,
+        "rec": 8,
+        "recYds": 107,
+        "recTd": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Nico Collins",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 6400,
+        "points": 26.4,
+        "ownershipPercent": 16.4,
+        "rec": 7,
+        "recYds": 104,
+        "recTd": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Calvin Ridley",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 6000,
+        "points": 21.9,
+        "ownershipPercent": 13.8,
+        "rec": 5,
+        "recYds": 89,
+        "recTd": 1,
+        "twoPt": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Pat Freiermuth",
+        "position": "TE",
+        "team": "PIT",
+        "salary": 2900,
+        "points": 24.0,
+        "ownershipPercent": 2.9,
+        "rec": 9,
+        "recYds": 120,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Rhamondre Stevenson",
+        "position": "RB",
+        "team": "NE",
+        "salary": 5800,
+        "points": 21.7,
+        "ownershipPercent": 14.5,
+        "rushYdsRb": 98,
+        "rushTdRb": 1,
+        "recRb": 5,
+        "recYdsRb": 9,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Panthers",
+        "position": "DST",
+        "team": "CAR",
+        "salary": 3100,
+        "points": 2,
+        "ownershipPercent": 1.0,
+        "sacks": 1,
+        "takeaways": 0,
+        "qbFaced": "Will Levis",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis starts with the most uncomfortable part of the roster. Josh Allen is played without a Bills pass catcher, and the build still spends 8,100 at quarterback. The bet is simple. Allen can carry an entire slate with rushing touchdowns, and he does it again here. Two rushing touchdowns plus 339 passing yards creates an elite score while the lineup saves roster spots for ceilings from other games.\n\nKyren Williams is the second pillar. This is not a thin efficiency story. This is full control of the scoring environment. He clears 200 yards from scrimmage, scores twice through the air, and removes the need to guess which Rams receiver gets paid. When a running back owns both yardage and touchdown access at this level, he functions as a second quarterback.\n\nThe rest of the roster shows how first place can come from assembling independent ceiling events rather than forcing one game to provide everything. Kansas City at Las Vegas supplies Rashee Rice at five percent with a 100 yard touchdown game. Pittsburgh at Cincinnati supplies Pat Freiermuth at 2.9 percent with 120 yards. Jacksonville at Houston supplies the cleanest correlation in the lineup, a two player game pair with Nico Collins and Calvin Ridley. It is a single game with both sides represented, but it stays compact and does not ask for a quarterback to hit a perfect distribution.\n\nThe Panthers defense is a leverage decision, not a production driver. It carries one percent roster rate, but it does not need a ceiling. It only needs to avoid destroying the roster while the skill positions do the heavy scoring.\n\nPredictive analysis for future research points to a clear slate archetype. When a quarterback owns rushing touchdown equity at an elite level, pairing him with pass catchers becomes optional rather than mandatory. In those slates, the stronger use of correlation can shift to two player game pairs and low roster rate one offs, while the quarterback supplies raw points.\n\nPrescriptive analysis focuses on the conditions to deploy this style. Use a naked quarterback when the quarterback can reach a tournament winning score through legs and red zone carries, and when the slate offers multiple non quarterback ceiling pieces across different games. Pair that quarterback with a second anchor who can replicate quarterback impact, usually a running back with true three down control. Then use correlation in smaller doses, one compact game pair, and spend the remaining slots hunting for receivers or tight ends with a real path to 100 yards plus a touchdown at reduced roster rates. The Rice and Freiermuth combination is the template for where separation is created in a build that already contains two elite anchors.",
+    "uniquenessNotes": "The roster looks scattered on purpose. It refuses to commit extra slots to Buffalo, and it refuses to attach wide receivers to Allen’s output. That decision creates room for multiple ceiling events elsewhere.\n\nThe uniqueness is concentrated in two low roster rate outcomes. Rashee Rice at five percent supplies a true wide receiver ceiling without requiring Kansas City quarterback exposure. Pat Freiermuth at 2.9 percent supplies a tight end ceiling that most rosters did not have.\n\nThe defense is also a distinct choice. Carolina is one percent roster rate and scores poorly, but the roster can absorb it because the two anchors and the low roster rate pass catchers do enough damage to keep first place intact.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Josh Allen naked paired with Kyren Williams as a second anchor",
+      "secondaryLever": "Compact JAX HOU game pair plus low roster rate ceilings from Rashee Rice and Pat Freiermuth",
+      "notes": {
+        "rosterConstruction": "1-2-1-1-1-1-1-1",
+        "gameKey": [
+          "BUF@PHI: 1 (QB game)",
+          "JAX@HOU: 2",
+          "LAR@ARI: 1",
+          "CLE@DEN: 1",
+          "KC@LV: 1",
+          "PIT@CIN: 1",
+          "NE@NYG: 1",
+          "CAR@TEN: 1"
+        ],
+        "jaxHouPair": ["Nico Collins", "Calvin Ridley"],
+        "lowRosterRateCeilings": ["Rashee Rice", "Pat Freiermuth"],
+        "qbFacedByPanthersDst": "Will Levis"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "NAKED_RUSHING_QB",
+        "DUAL_ANCHOR_QB_PLUS_WORKHORSE",
+        "COMPACT_GAME_PAIR",
+        "LOW_ROSTER_RATE_TE_CEILING",
+        "LOW_ROSTER_RATE_WR_CEILING"
+      ],
+      "macroStory": "A slate won by treating Josh Allen as a standalone rushing engine, pairing him with a running back who posts a quarterback level score, then stitching together independent ceiling events with one compact game pair."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "RUSHING_TD_EQUITY", "INDEPENDENT_CEILING"],
+        "microStory": "Josh Allen supplies the first place foundation through rushing touchdowns, allowing the roster to avoid spending slots on Bills pass catchers."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["SECOND_ENGINE", "TOTAL_YARDS_CONTROL", "RECEIVING_TD_UPSIDE"],
+        "microStory": "Kyren Williams functions as the second anchor. His yardage plus two receiving touchdowns creates a score that mirrors an elite quarterback week."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["LOW_ROSTER_RATE_SEPARATOR", "YARDAGE_SPIKE", "POSITIONAL_CEILING"],
+        "microStory": "Pat Freiermuth provides the tight end separation. A 2.9 percent roster rate tight end posting 120 yards breaks common roster trees."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["LOW_ROSTER_RATE_SEPARATOR", "TD_PLUS_YARDAGE_PATH", "ONE_SLOT_SWING"],
+        "microStory": "Rashee Rice gives the lineup a wide receiver ceiling at five percent while staying detached from Kansas City quarterback exposure."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Nico Collins", "position": "WR", "team": "HOU" },
+        "opponent": { "name": "Calvin Ridley", "position": "WR", "team": "JAX" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Panthers", "position": "DST", "team": "CAR", "qbFaced": "Will Levis" },
+        "opponent": { "name": "Will Levis", "position": "QB", "team": "TEN" }
+      }
+    ]
+  }
+}

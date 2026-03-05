@@ -1,0 +1,260 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 16,
+  "slateType": "MAIN",
+  "slateDate": "2022-12-25T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 16",
+  "slateTag": "NYG@MIN 6 MAN GAME STACK, CHUBA 1 PERCENT SALARY RELIEF, PATRIOTS PICK SIX VS BURROW",
+  "slateGroup": "6-1-1-1",
+  "rosterConstruction": "6-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK16_MAIN_2022-12-25T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10290
+  },
+  "winner": {
+    "username": "h418ov21c",
+    "points": 228.96,
+    "maxEntries": 150
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 228.96,
+    "totalOwnershipBp": 10290,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Daniel Jones",
+        "position": "QB",
+        "team": "NYG",
+        "salary": 5600,
+        "points": 24.76,
+        "ownershipPercent": 11.8,
+        "passTd": 1,
+        "passYds": 334,
+        "rushYds": 34,
+        "passInt": 1,
+        "twoPtPass": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 7900,
+        "points": 27.3,
+        "ownershipPercent": 9.6,
+        "rushYdsRb": 84,
+        "rushTdRb": 1,
+        "recRb": 8,
+        "recYdsRb": 49,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Chuba Hubbard",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 4900,
+        "points": 15.5,
+        "ownershipPercent": 1.2,
+        "rushYdsRb": 125,
+        "rushTdRb": 0,
+        "recRb": 0,
+        "recYdsRb": 0,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 9300,
+        "points": 34.3,
+        "ownershipPercent": 24.1,
+        "rec": 12,
+        "recYds": 133,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Isaiah Hodgins",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 4100,
+        "points": 22.9,
+        "ownershipPercent": 9.6,
+        "rec": 8,
+        "recYds": 89,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Richie James",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 3900,
+        "points": 17.0,
+        "ownershipPercent": 18.6,
+        "rec": 8,
+        "recYds": 90,
+        "recTd": 0,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "T.J. Hockenson",
+        "position": "TE",
+        "team": "MIN",
+        "salary": 4900,
+        "points": 38.9,
+        "ownershipPercent": 13.8,
+        "rec": 13,
+        "recYds": 109,
+        "recTd": 2,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeVonta Smith",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 6600,
+        "points": 34.3,
+        "ownershipPercent": 9.3,
+        "rec": 8,
+        "recYds": 113,
+        "recTd": 2,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 2700,
+        "points": 14,
+        "ownershipPercent": 4.9,
+        "sacks": 2,
+        "takeaways": 3,
+        "defTd": 1,
+        "qbFaced": "Joe Burrow",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "CIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This build is an aggressive bet on one game carrying the slate, and it commits with zero hesitation. New York at Minnesota supplies six of nine roster spots, and the construction is not random. Daniel Jones is the conduit for a Giants passing spike, but the lineup also captures the Giants touchdown and yardage equity through three separate skill roles. Saquon Barkley covers the backfield scoring surface. Isaiah Hodgins and Richie James cover the wide receiver surface where New York condensed targets. On the other side, the lineup does not try to guess between Minnesota pieces. It takes the two most bankable target magnets, Justin Jefferson and T.J. Hockenson, and forces the game to pay off through volume and scoring concentration.\n\nThe rest of the roster stays disciplined. Chuba Hubbard is the value release valve at almost no ownership, and he does not need a touchdown to function. One hundred twenty five rushing yards at 4,900 provides clean points without stealing salary from the primary bet. DeVonta Smith is the one piece taken from a separate shootout, and the single bullet choice matters. Philadelphia at Dallas produces points in many directions, so capturing one high end outcome without chasing the full tree keeps the roster from becoming a second game stack competing with the main thesis.\n\nThe Patriots defense is the final lever. New England is not required to win the game. The defense is purchased for the exact outcome that breaks scoring at 2,700. Pressure plus turnovers plus a defensive touchdown against Joe Burrow creates a path to the optimal defense even in a losing effort, and it keeps the roster aligned with the slate level goal of finding points in non glamorous places.",
+    "uniquenessNotes": "The 80 20 of this roster sits inside NYG at MIN. Six players from one game produce 165.16 of 228.96 total points. The win condition is simple. If the game environment turns into a pass heavy track meet with concentrated usage, the lineup becomes hard to catch because it owns almost every touchdown path without needing a perfect single player guess.\n\nThe Giants side is built around how their distribution actually worked. Hodgins and James are not decoration. They are the low salary access points to the Jones ceiling, and they let Barkley function as more than a one dimensional rushing bet. On the Vikings side, Jefferson supplies the alpha receiver score while Hockenson supplies the tight end ceiling that normally requires a touchdown guess. Thirteen catches and two touchdowns removes variance.\n\nChuba Hubbard is the structural separator. Many lineups can reach similar raw points in the main game stack, but very few pair it with a 1.2 percent running back who posts a 100 yard bonus day at a sub 5k salary. The Patriots defense then finishes the build by hitting the rarest scoring event on the slate, the defensive touchdown, at sub five percent ownership.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "NYG at MIN full game stack with Daniel Jones plus three Giants skill players and two Vikings target alphas",
+      "secondaryLever": "Chuba Hubbard low owned rushing value paired with a Patriots defensive touchdown versus Joe Burrow",
+      "notes": {
+        "rosterConstruction": "6-1-1-1",
+        "gameKey": [
+          "NYG@MIN: 6 (QB game)",
+          "DET@CAR: 1",
+          "PHI@DAL: 1",
+          "CIN@NE: 1"
+        ],
+        "nygCluster": ["Daniel Jones", "Saquon Barkley", "Isaiah Hodgins", "Richie James"],
+        "vikingsBringbacks": ["Justin Jefferson", "T.J. Hockenson"],
+        "valueRelease": "Chuba Hubbard",
+        "oneOffShootout": "DeVonta Smith",
+        "qbFacedByDst": "Joe Burrow"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_GAME_STACK_MAX_COMMITMENT",
+        "UNDERDOG_TARGET_CONDENSATION_CAPTURE",
+        "ONE_OFF_FROM_SECONDARY_SHOOTOUT",
+        "LOW_OWNED_RUSH_VOLUME_VALUE",
+        "DST_TOUCHDOWN_LEVER"
+      ],
+      "macroStory": "A six man NYG at MIN commitment captures nearly every concentrated scoring surface in the highest payoff game environment, then closes the build with a low owned rushing value play and a cheap defense that lands the defensive touchdown outcome versus a franchise quarterback."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "VOLUME_PASSING_OUTCOME", "STACK_HUB"],
+        "microStory": "Daniel Jones is selected because the lineup is calling for sustained passing volume, not a thin efficiency spike. Three hundred thirty four passing yards plus the two point conversion connects directly to the Giants pass catcher selections and keeps the Vikings side honest."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["TARGET_MONOPOLY", "RED_ZONE_CAPTURE", "CEILING_AT_SCARCE_POSITION"],
+        "microStory": "T.J. Hockenson is the slate breaker at tight end. Thirteen catches and two touchdowns is not a normal tight end score. It is a wide receiver one score hidden in the tight end slot, and it is the reason a full game stack can separate instead of tying."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_VALUE", "RUSH_VOLUME_ONLY", "POINTS_WITHOUT_TOUCHDOWN"],
+        "microStory": "Chuba Hubbard supplies the salary release without turning the roster into a fragile punt. One hundred twenty five rushing yards is a clean, banked score. It gives the build enough margin to carry expensive ceiling inside the primary game without requiring perfection elsewhere."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_EVENT", "PRESSURE_PLUS_TURNOVER", "CHEAP_OPTIMAL_PATH"],
+        "microStory": "New England defense is drafted for the rare outcome, not for a safe floor. Two interceptions and a defensive touchdown is the direct path to an optimal defense score at 2,700, even when the real game ends in a loss."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_STACK",
+        "qb": { "name": "Daniel Jones", "position": "QB", "team": "NYG" },
+        "teammates": [
+          { "name": "Saquon Barkley", "position": "RB", "team": "NYG" },
+          { "name": "Isaiah Hodgins", "position": "WR", "team": "NYG" },
+          { "name": "Richie James", "position": "WR", "team": "NYG" }
+        ],
+        "opponents": [
+          { "name": "Justin Jefferson", "position": "WR", "team": "MIN" },
+          { "name": "T.J. Hockenson", "position": "TE", "team": "MIN" }
+        ]
+      },
+      {
+        "type": "ONE_OFF",
+        "qb": null,
+        "teammate": { "name": "DeVonta Smith", "position": "WR", "team": "PHI" },
+        "opponent": { "name": "Dallas Cowboys", "position": "TEAM", "team": "DAL" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Patriots", "position": "DST", "team": "NE", "qbFaced": "Joe Burrow" },
+        "opponent": { "name": "Joe Burrow", "position": "QB", "team": "CIN" }
+      }
+    ]
+  }
+}

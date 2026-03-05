@@ -1,0 +1,223 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 3,
+  "slateType": "MAIN",
+  "slateDate": "2022-09-25T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 3",
+  "slateTag": "LAMAR ANDREWS SINGLE STACK, MACK HOLLINS TARGETS BECOME A CEILING GAME, JAGUARS DST HERBERT ACTIVE GOES TO ZERO",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker",
+    "siteContestId": "NFL_2022_WK03_MAIN_2022-09-25T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": 236000,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8320
+  },
+  "winner": {
+    "username": "abedollars",
+    "points": 201.88,
+    "maxEntries": 6
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 201.88,
+    "totalOwnershipBp": 8320,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 8000,
+        "points": 43.42,
+        "ownershipPercent": 2.3,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Leonard Fournette",
+        "position": "RB",
+        "team": "TB",
+        "salary": 6500,
+        "points": 12.0,
+        "ownershipPercent": 16.0,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Dameon Pierce",
+        "position": "RB",
+        "team": "HOU",
+        "salary": 5000,
+        "points": 18.1,
+        "ownershipPercent": 13.9,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jaylen Waddle",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 6800,
+        "points": 18.1,
+        "ownershipPercent": 16.9,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Allen Lazard",
+        "position": "WR",
+        "team": "GB",
+        "salary": 6000,
+        "points": 14.5,
+        "ownershipPercent": 1.4,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DeVonta Smith",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 5200,
+        "points": 33.9,
+        "ownershipPercent": 5.6,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Mark Andrews",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 6900,
+        "points": 28.9,
+        "ownershipPercent": 2.6,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mack Hollins",
+        "position": "WR",
+        "team": "LV",
+        "salary": 3300,
+        "points": 32.96,
+        "ownershipPercent": 8.8,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Jaguars",
+        "position": "DST",
+        "team": "JAX",
+        "salary": 2300,
+        "points": 0.0,
+        "ownershipPercent": 15.7,
+        "qbFaced": "Justin Herbert",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis\nThe roster is a true single stack with Lamar Jackson paired to Mark Andrews, then it refuses the common bring back instinct. New England can reach a useful team total while spreading production across multiple backs and ancillary targets, so forcing a Patriots run back can add fragility without increasing access to the Ravens scoring path. Baltimore scores 37, Jackson runs the offense for four quarters, and Andrews captures the tight end ceiling outcome at low ownership.\n\nThe separation point is structural, not a fragile uniqueness stunt. Mack Hollins sits in a salary zone where roster spots usually exist to keep a lineup legal. Here, the spot becomes a ceiling slot because role signals exist ahead of kickoff. Hunter Renfrow is out, Week 2 already showed Hollins earning targets, and Week 3 converts volume into a spike. DeVonta Smith is the second separator. Philadelphia had already scored plenty while spreading targets, so most builds did not treat Smith as a primary ceiling source. The lineup accepts the uncertainty and gets the high end target spike.\n\nThe Jaguars defense is the sharpest lesson because it fails. The build is positioned for late window uncertainty, then Justin Herbert plays and the defense posts zero. This is still a winning roster because the lineup already banked elite ceilings in four slots. The defense outcome becomes survivable once the rest of the roster clears a scoring bar the field cannot match.\n\nPredictive Analysis\nSingle stacks can stay under owned even when the players lead their positions in scoring, because the field drifts toward the newest projection story at quarterback and toward random tight end value. When an elite tight end owns the full touchdown share profile for his team, single digit ownership can be mispriced relative to ceiling. A one pass catcher stack can be enough when the stack partner carries end zone and yardage routes in the same role.\n\nSalary relief wide receiver ceilings often come from role clarity, not talent debates. When a team removes a high volume slot receiver, the replacement can gain targets quickly. If salary stays low, the play becomes an engine for the entire roster because it allows access to multiple ceiling pieces without forcing punts.\n\nLate swap fragility for defenses is a repeatable risk. When a defense is tied to quarterback news in the late window, builds benefit from leaving salary flexibility so a swap path exists if the starter becomes active.\n\nPrescriptive Analysis\nWhen building around a quarterback in a game where the opponent distributes production, prioritize a tight end or primary receiver partner and allow the bring back decision to be optional, not automatic.\n\nWhen salary relief is needed, prefer relief tied to projected targets and route participation rather than relief tied to thin touchdown paths.\n\nWhen a late window defense depends on quarterback status, leave at least one swap path by reserving salary, even if the lineup already projects well. A small salary reserve can buy access to a different defense tier if news breaks against the original plan.",
+    "uniquenessNotes": "The roster wins while taking multiple ownership positions the field also holds, because the differentiators sit in the right slots. Jaylen Waddle and Leonard Fournette do not need ceiling games because they score enough relative to weak slate running back outcomes. The roster is free to win through its four highest leverage outcomes: Lamar Jackson as the overall slate quarterback, Mark Andrews as the tight end ceiling, DeVonta Smith as the wide receiver eruption, and Mack Hollins as the salary relief score that changes the roster economy.\n\nThe Jaguars defense result shows a second order edge. If the roster already includes multiple true ceiling paths, it can tolerate one slot failing. Many lineups chase uniqueness by lowering projection across several spots. This roster concentrates projection and ceiling, then accepts one miss.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Lamar Jackson with Mark Andrews as a single stack without a Patriots bring back",
+      "secondaryLever": "Mack Hollins salary relief ceiling plus DeVonta Smith target spike at moderate ownership",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "BAL@NE: 2 (QB game)",
+          "GB@TB: 2",
+          "HOU@CHI: 1",
+          "BUF@MIA: 1",
+          "PHI@WAS: 1",
+          "LV@TEN: 1",
+          "JAX@LAC: 1"
+        ],
+        "ravensCluster": ["Lamar Jackson", "Mark Andrews"],
+        "packersBuccaneersPair": ["Allen Lazard", "Leonard Fournette"],
+        "salaryReliefBreaker": "Mack Hollins",
+        "qbFacedByJaguarsDst": "Justin Herbert"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "SINGLE_STACK_QB_TE",
+        "NO_BRINGBACK_WITH_DISTRIBUTION_OPPONENT",
+        "SALARY_RELIEF_WR_ROLE_CEILING",
+        "MID_SALARY_WR_TARGET_SPIKE",
+        "DEFENSE_NEWS_RISK_ACCEPTED"
+      ],
+      "macroStory": "A first place roster built around concentrated Baltimore scoring, then finished by two non obvious wide receiver ceilings that overpower a late window defense failure."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "DUAL_THREAT_CEILING", "LOW_OWNERSHIP_FOR_ROLE"],
+        "microStory": "Lamar Jackson supplies the top raw score at quarterback while the roster avoids the ownership gravity pulling builds toward Josh Allen."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["CONCENTRATED_TD_ACCESS", "POSITIONAL_CEILING", "LOW_SINGLE_DIGIT_OWNERSHIP"],
+        "microStory": "Mark Andrews captures the tight end ceiling outcome, which changes the tight end position from survival to advantage."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["SALARY_RELIEF_BREAKER", "VOLUME_ROLE_SIGNAL", "CEILING_CONVERSION"],
+        "microStory": "Mack Hollins turns a low salary role into a slate changing score, enabling the rest of the roster to stay premium without sacrificing points."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["NEWS_DEPENDENT_PLAY", "LATE_WINDOW_RISK", "ZERO_OUTCOME_SURVIVED"],
+        "microStory": "Jacksonville defense depends on quarterback news, Justin Herbert plays, and the defense fails. The roster still wins because multiple ceiling pieces already separated."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Lamar Jackson", "position": "QB", "team": "BAL" },
+        "teammates": [{ "name": "Mark Andrews", "position": "TE", "team": "BAL" }],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Allen Lazard", "position": "WR", "team": "GB" },
+        "opponent": { "name": "Leonard Fournette", "position": "RB", "team": "TB" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Jaguars", "position": "DST", "team": "JAX", "qbFaced": "Justin Herbert" },
+        "opponent": { "name": "Justin Herbert", "position": "QB", "team": "LAC" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 11,
+  "slateType": "MAIN",
+  "slateDate": "2023-11-19T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 11",
+  "slateTag": "BILLS STACK WITHOUT JOSH ALLEN, DEVIN SINGLETARY 40% CHALK, COWBOYS DST CEILING VS BRYCE YOUNG",
+  "slateGroup": "1-2-2-1-1-1-1",
+  "rosterConstruction": "1-2-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK11_MAIN_2023-11-19T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 18120
+  },
+  "winner": {
+    "username": "jarussell1025",
+    "points": 215.82,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 215.82,
+    "totalOwnershipBp": 18120,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Brock Purdy",
+        "position": "QB",
+        "team": "SF",
+        "salary": 5800,
+        "points": 29.72,
+        "ownershipPercent": 14.5,
+        "passTd": 3,
+        "passYds": 333,
+        "rushYds": 14,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Brian Robinson Jr.",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 5800,
+        "points": 20.1,
+        "ownershipPercent": 28.9,
+        "rushYdsRb": 73,
+        "recRb": 7,
+        "recYdsRb": 58,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Devin Singletary",
+        "position": "RB",
+        "team": "HOU",
+        "salary": 5300,
+        "points": 22.8,
+        "ownershipPercent": 41.6,
+        "rushYdsRb": 112,
+        "rushTdRb": 1,
+        "recRb": 2,
+        "recYdsRb": 6,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Khalil Shakir",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 3200,
+        "points": 23.5,
+        "ownershipPercent": 1.5,
+        "rec": 3,
+        "recYds": 115,
+        "recTd": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tank Dell",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 5900,
+        "points": 31.9,
+        "ownershipPercent": 34.5,
+        "rec": 8,
+        "recYds": 149,
+        "recTd": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "D.J. Moore",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 5600,
+        "points": 22.6,
+        "ownershipPercent": 24.2,
+        "rec": 7,
+        "recYds": 96,
+        "recTd": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Dalton Kincaid",
+        "position": "TE",
+        "team": "BUF",
+        "salary": 4900,
+        "points": 10.6,
+        "ownershipPercent": 9.0,
+        "rec": 6,
+        "recYds": 46,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 9300,
+        "points": 33.6,
+        "ownershipPercent": 17.8,
+        "rec": 10,
+        "recYds": 146,
+        "recTd": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cowboys",
+        "position": "DST",
+        "team": "DAL",
+        "salary": 4100,
+        "points": 21,
+        "ownershipPercent": 9.2,
+        "sacks": 7,
+        "takeaways": 2,
+        "defTd": 1,
+        "ptsAllowed": 13,
+        "qbFaced": "Bryce Young",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis starts with the constraint the roster accepts. The backfield value is owned by the field and the build does not try to be cute about it. Devin Singletary at 41.6 percent and Brian Robinson Jr. at 28.9 percent produce exactly the kind of stable scores high volume roles produce when pricing lags. The roster wins because it turns the remaining salary into concentrated pass catcher scoring while using defense as the true ceiling slot.\n\nThe roster’s most telling decision is the Bills mini stack built without Josh Allen. Buffalo produces enough pass volume for two pass catchers to matter, but the construction avoids paying the quarterback tax. Khalil Shakir at 1.5 percent is the separator, and it is not a random dart. The slate outcome needed a low roster rate touchdown plus yardage spike, and Shakir provides 115 yards and a touchdown on only three catches. Dalton Kincaid adds the attachment point so the roster still gets paid when Buffalo sustains drives, but it does not require Allen to dominate the distribution.\n\nThe second concentration is Arizona at Houston, where the roster captures both running back and receiver scoring through Singletary and Tank Dell. This is the cleanest form of stacking without a quarterback. It captures the team’s touchdown and yardage flows through the two most fantasy relevant roles, while leaving the lineup free to take a different quarterback path.\n\nThat quarterback path is Brock Purdy in a single piece setup. Purdy posts 333 passing yards with rushing support, and the roster does not spend extra slots trying to guess which San Francisco pass catcher matches his scoring. This is a slate level decision. The build treats Purdy as a points per dollar engine, then spends the correlation budget elsewhere.\n\nThe slate breaker is defense. Dallas against Bryce Young is the exact profile where pressure can become both points and field position. Seven sacks alone is a large base, but the defensive touchdown and multiple takeaways create a score that separates from lineups relying on skill position perfection. When the defense posts 21 points at 9.2 percent roster rate, it changes what a lineup needs from its remaining positions to finish first.\n\nPredictive analysis for future research is about recognizing when paying down at quarterback is strongest. The signal is when multiple games offer concentrated pass catcher ceilings and when the best running back roles are obvious. In those slates, a mid range quarterback can keep pace, and the roster can win by allocating salary toward unique yardage plus touchdown profiles at receiver and tight end, plus one high leverage defense.\n\nPrescriptive analysis is simple to apply. If you identify two to three running back outcomes the field will lock, accept them when the roles are clean and the prices are wrong. Use the saved salary to buy access to a defensive ceiling against a vulnerable quarterback archetype, then find one low roster rate receiver whose path to a touchdown is paired with a real yardage path, not a one catch hope. The Shakir score is the blueprint. Finally, allow a quarterback to be unstacked when his salary and projection create a clean points per dollar profile and the rest of the slate provides better correlation targets than his own pass catchers.",
+    "uniquenessNotes": "The uniqueness is created through one aggressive pocket and one disciplined omission. The aggressive pocket is Khalil Shakir at 1.5 percent in a Bills build that still captures Buffalo production without paying for Josh Allen. The disciplined omission is refusing to force a Purdy stack when the slate has stronger correlation opportunities elsewhere.\n\nThe roster also uses defense as a primary scoring channel rather than a salary dump. Dallas is not chosen to survive. Dallas is chosen to outscore skill players, and it happens through sacks plus the defensive touchdown outcome against a rookie quarterback.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Bills pass catchers without Josh Allen, led by Khalil Shakir as the low roster rate ceiling",
+      "secondaryLever": "Cowboys defense ceiling versus Bryce Young plus Houston concentration through Devin Singletary and Tank Dell",
+      "notes": {
+        "rosterConstruction": "1-2-2-1-1-1-1",
+        "gameKey": [
+          "TB@SF: 1 (QB game)",
+          "ARI@HOU: 2",
+          "NYJ@BUF: 2",
+          "NYG@WAS: 1",
+          "CHI@DET: 1",
+          "LV@MIA: 1",
+          "DAL@CAR: 1"
+        ],
+        "houstonPair": ["Devin Singletary", "Tank Dell"],
+        "billsPair": ["Khalil Shakir", "Dalton Kincaid"],
+        "defenseAnchor": "Cowboys",
+        "qbFacedByCowboysDst": "Bryce Young"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "MID_SALARY_QB_SINGLE",
+        "RB_CHALK_ACCEPTED",
+        "NO_QB_TEAM_CONCENTRATION",
+        "LOW_ROSTER_RATE_WR_CEILING",
+        "DEFENSE_AS_SCORING_CHANNEL"
+      ],
+      "macroStory": "A slate where the field accepted the same running back value, and first place was decided by a low roster rate Bills ceiling without Josh Allen plus a Dallas defensive eruption against a rookie quarterback."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["CEILING_ENGINE", "PRESSURE_CREATES_POINTS", "PRIMARY_DIFFERENTIATOR"],
+        "microStory": "Dallas is the defining edge. Seven sacks create the base and the defensive touchdown pushes the lineup beyond builds that needed every skill player to be perfect."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["LOW_ROSTER_RATE_SEPARATOR", "TD_PLUS_YARDAGE_PATH", "ONE_SLOT_SWING"],
+        "microStory": "Khalil Shakir is the roster point that flips the contest. At 1.5 percent, a 115 yard touchdown game creates separation while still fitting the slate’s salary structure."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["TEAM_CONCENTRATION", "YARDAGE_SPIKE", "TOUCHDOWN_ACCESS"],
+        "microStory": "Tank Dell gives the Houston side its receiver ceiling while Singletary captures the rushing touchdowns, creating a two piece concentration without spending a quarterback slot."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["POINTS_PER_DOLLAR", "SINGLE_PIECE_QB", "SALARY_ENABLER"],
+        "microStory": "Brock Purdy is used as the efficient quarterback score that keeps the roster competitive while salary is allocated toward receivers and defense."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Devin Singletary", "position": "RB", "team": "HOU" },
+        "opponent": { "name": "Tank Dell", "position": "WR", "team": "HOU" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Khalil Shakir", "position": "WR", "team": "BUF" },
+        "opponent": { "name": "Dalton Kincaid", "position": "TE", "team": "BUF" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Cowboys", "position": "DST", "team": "DAL", "qbFaced": "Bryce Young" },
+        "opponent": { "name": "Bryce Young", "position": "QB", "team": "CAR" }
+      }
+    ]
+  }
+}

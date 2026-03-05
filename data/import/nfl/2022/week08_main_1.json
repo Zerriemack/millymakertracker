@@ -1,0 +1,242 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 8,
+  "slateType": "MAIN",
+  "slateDate": "2022-10-30T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 8",
+  "slateTag": "TUA DOUBLE WITH HILL AND WADDLE, NO DETROIT BRINGBACK, KAMARA PLUS SAINTS DST",
+  "slateGroup": "3-2-2-1-1",
+  "rosterConstruction": "3-2-2-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK08_MAIN_2022-10-30T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 17420
+  },
+  "winner": {
+    "username": "AllstarHarry",
+    "points": 272.68,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 272.68,
+    "totalOwnershipBp": 17420,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Tua Tagovailoa",
+        "position": "QB",
+        "team": "MIA",
+        "salary": 6200,
+        "points": 32.18,
+        "ownershipPercent": 21.2,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "team": "NO",
+        "salary": 7100,
+        "points": 42.8,
+        "ownershipPercent": 12.5,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Tony Pollard",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 6100,
+        "points": 36.7,
+        "ownershipPercent": 51.0,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 8500,
+        "points": 34.5,
+        "ownershipPercent": 28.8,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jaylen Waddle",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 6700,
+        "points": 33.6,
+        "ownershipPercent": 23.4,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Garrett Wilson",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 4200,
+        "points": 20.5,
+        "ownershipPercent": 7.4,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Tyler Conklin",
+        "position": "TE",
+        "team": "NYJ",
+        "salary": 3200,
+        "points": 25.9,
+        "ownershipPercent": 1.6,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DJ Moore",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 5300,
+        "points": 30.5,
+        "ownershipPercent": 27.6,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Saints",
+        "position": "DST",
+        "team": "NO",
+        "salary": 2700,
+        "points": 16.0,
+        "ownershipPercent": 0.9,
+        "qbFaced": "Derek Carr",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "LV"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is a concentrated ceiling build with selective correlation and one major omission. The anchor is the Miami passing tree. Tua Tagovailoa is paired with Tyreek Hill and Jaylen Waddle, then the build stops. No Detroit piece comes back. In a game that still reaches 58 real points, the Dolphins side carries the entire payoff because Hill and Waddle hold a massive share of the targets and air yards. Detroit scoring does not force a single Lion into the winning lineup, since production spreads across role players and fails to consolidate into one separator.\n\nThe secondary structure is a leverageable pairing that reads as simple but behaves as a portfolio hedge. Alvin Kamara is attached to the Saints defense. When Kamara racks up touchdowns and the Saints control the game, the defense benefits through pass volume, sacks, and short fields. This specific slate also contains an opponent offense that collapses, so the pairing captures both the offensive and defensive endpoints from the same game script.\n\nThe rest of the roster fills in with three distinct functions. Tony Pollard is the high owned workload capture, the slot that prevents losing to the most projectable points at running back. DJ Moore is the volume consolidation angle created by personnel movement, with a game environment that unexpectedly explodes. The Jets mini stack, Garrett Wilson plus Tyler Conklin, is the thin play that turns into a difference maker. It attacks a game the field does not want, then wins through concentrated touchdowns and a rookie breakout profile.",
+    "uniquenessNotes": "Cumulative ownership is elevated, so the separation has to come from construction choices rather than from a full contrarian roster. The first separator is the missing bringback in the Miami Detroit game. Many rosters accept the Miami double, then reflexively attach a Detroit pass catcher. This build rejects the reflex and leans into target concentration on the Miami side.\n\nThe second separator is the tight end decision. Tyler Conklin at low ownership is not a popularity play. It is a volatility acceptance play in a week missing the usual elite tight end gravitational pulls. Two touchdowns from a cheap tight end creates a points per dollar outcome that expensive, mid scoring tight ends cannot match.\n\nThe third separator is roster composition. Four wide receivers is a structural statement on this slate. The build accepts two expensive receivers inside the quarterback stack, then still supports a high scoring flex wide receiver plus a value wide receiver. It is a wide receiver ceiling allocation that keeps Pollard chalk intact without sacrificing raw points.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Tua Tagovailoa with Tyreek Hill and Jaylen Waddle, then no Detroit bringback",
+      "secondaryLever": "Alvin Kamara paired with Saints DST against Derek Carr",
+      "notes": {
+        "rosterConstruction": "3-2-2-1-1",
+        "gameKey": [
+          "MIA@DET: 3 (QB game)",
+          "LV@NO: 2",
+          "NE@NYJ: 2",
+          "CHI@DAL: 1",
+          "CAR@ATL: 1"
+        ],
+        "dolphinsCluster": ["Tua Tagovailoa", "Tyreek Hill", "Jaylen Waddle"],
+        "saintsPair": ["Alvin Kamara", "Saints"],
+        "jetsPair": ["Garrett Wilson", "Tyler Conklin"],
+        "chalkRBAccept": "Tony Pollard",
+        "volumeWRInShootout": "DJ Moore",
+        "qbFacedBySaintsDst": "Derek Carr"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "DOUBLE_WR_STACK_WITHOUT_BRINGBACK",
+        "RB_PLUS_DST_GAME_SCRIPT_PAIR",
+        "RB_CHALK_CAPTURE",
+        "LOW_OWNERSHIP_TE_TOUCHDOWN_VARIANCE",
+        "FOUR_WR_ALLOCATION"
+      ],
+      "macroStory": "A first place roster driven by the Miami passing concentration, reinforced by a Kamara plus Saints defense script, then separated by a low owned tight end touchdown outcome inside a four wide receiver construction."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "TARGET_CONCENTRATION_BENEFIT", "CEILING_THROUGH_DOUBLE"],
+        "microStory": "Tua Tagovailoa functions as the delivery mechanism for two elite receivers in a matchup where Miami production condenses into the same two players."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["ELITE_CEILING", "STACK_PAYOFF", "SCORE_CONSOLIDATION"],
+        "microStory": "Tyreek Hill provides the spike week required for first place, and his points arrive in the same channel as the quarterback and the second receiver."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP", "TD_VOLATILITY_CAPTURE", "SALARY_EFFICIENCY"],
+        "microStory": "Tyler Conklin is the thin outcome that lands. Two touchdowns from a cheap tight end changes the slate math for every roster construction path."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["GAME_SCRIPT_AMPLIFIER", "RANGE_OF_OUTCOMES_WIN", "CORRELATED_WITH_RB"],
+        "microStory": "Saints defense is paired with Alvin Kamara and hits near the top end of outcomes against Derek Carr, turning a modest salary into points that do not require offensive perfection."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Tua Tagovailoa", "position": "QB", "team": "MIA" },
+        "teammates": [
+          { "name": "Tyreek Hill", "position": "WR", "team": "MIA" },
+          { "name": "Jaylen Waddle", "position": "WR", "team": "MIA" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "RB_PLUS_DST",
+        "qb": null,
+        "teammate": { "name": "Alvin Kamara", "position": "RB", "team": "NO" },
+        "opponent": { "name": "Saints", "position": "DST", "team": "NO" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Garrett Wilson", "position": "WR", "team": "NYJ" },
+        "opponent": { "name": "Tyler Conklin", "position": "TE", "team": "NYJ" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Saints", "position": "DST", "team": "NO", "qbFaced": "Derek Carr" },
+        "opponent": { "name": "Derek Carr", "position": "QB", "team": "LV" }
+      }
+    ],
+    "diagnosticAnalysis": {
+      "whatHappened": "The slate is decided by two concentrated game outcomes. Miami Detroit produces fantasy points through the Miami side in a narrow distribution, which rewards the Tua Hill Waddle triple without requiring a bringback. Las Vegas at New Orleans collapses into a Saints control script, which allows Kamara to post a slate breaking running back score while the defense posts a top tier result.\n\nThe 80 20 driver is touchdown consolidation. Hill and Waddle absorb enough of Miami’s high value targets to carry the stack. Kamara absorbs the Saints scoring while the defense benefits from opponent failure. Conklin absorbs the tight end touchdown distribution in a week without the typical elite tight end anchors. Those three concentration points create the points gap that Pollard chalk and DJ Moore volume then stabilize."
+    },
+    "predictiveAnalysis": {
+      "howToUseThisLater": "When a passing offense shows an extreme two receiver concentration, the double with the quarterback can be treated as a self contained game environment play. The bringback becomes optional rather than automatic, especially versus opponents that distribute production across multiple secondary pieces.\n\nWhen a running back projects for both usage and touchdown access, pairing with the same team defense becomes a strong way to capture a specific script. The pair does not need a defensive touchdown to pay off, but it does create access to a combined ceiling where the offense and defense score through the same opponent failure.\n\nWhen the slate removes elite tight ends from the pool, the tight end slot becomes an open volatility market. Low owned touchdown paths become more valuable, since raw points at tight end can separate more than marginal target volume."
+    },
+    "prescriptiveAnalysis": {
+      "actionableIfThenRules": "If the slate features a clear top game environment but the opponent side lacks a single dominant target earner, prioritize the concentrated side and allow lineups without a bringback, especially when the quarterback supports a two receiver concentration.\n\nIf an offense projects to play from in front and the opposing quarterback rates as replacement level, prioritize an RB plus DST commitment from the same team when the running back owns touchdown equity and the defense can force negative drives.\n\nIf tight end lacks elite anchors and pricing condenses, allocate toward touchdown volatility at low ownership, then use the savings or uniqueness to support high end wide receiver ceilings without abandoning one high owned running back slot."
+    }
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 11,
+  "slateType": "MAIN",
+  "slateDate": "2024-11-17T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 11",
+  "slateTag": "DETROIT ONSLAUGHT, TAYSOM HILL TE CHEAT CODE, TWO GAME CORE WITH LV MIA",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK11_MAIN_2024-11-17T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9570
+  },
+  "winner": {
+    "username": "crclngthdrn(5)",
+    "points": 232.5,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 232.5,
+    "totalOwnershipBp": 9570,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Jared Goff",
+        "position": "QB",
+        "team": "DET",
+        "salary": 6300,
+        "points": 37.58,
+        "ownershipPercent": 7.4,
+        "passTd": 4,
+        "passYds": 412,
+        "rushYds": 21,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Audric Estime",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 4500,
+        "points": 5.5,
+        "ownershipPercent": 9.0,
+        "rushYdsRb": 16,
+        "recRb": 3,
+        "recYdsRb": 9,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Breece Hall",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 7500,
+        "points": 31.1,
+        "ownershipPercent": 7.8,
+        "rushTdRb": 1,
+        "rushYdsRb": 78,
+        "recRb": 7,
+        "recYdsRb": 43,
+        "recTd": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Amon-Ra St. Brown",
+        "position": "WR",
+        "team": "DET",
+        "salary": 8000,
+        "points": 41.7,
+        "ownershipPercent": 8.5,
+        "rec": 11,
+        "recYds": 161,
+        "recTd": 2,
+        "rushYds": -4,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jameson Williams",
+        "position": "WR",
+        "team": "DET",
+        "salary": 5800,
+        "points": 25.6,
+        "ownershipPercent": 8.7,
+        "rec": 4,
+        "recYds": 124,
+        "recTd": 1,
+        "rushYds": 2,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Kendrick Bourne",
+        "position": "WR",
+        "team": "NE",
+        "salary": 3100,
+        "points": 18.0,
+        "ownershipPercent": 1.3,
+        "rec": 5,
+        "recYds": 70,
+        "recTd": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Taysom Hill",
+        "position": "TE",
+        "team": "NO",
+        "salary": 4500,
+        "points": 46.52,
+        "ownershipPercent": 3.8,
+        "passYds": 18,
+        "interceptions": 1,
+        "rushYds": 138,
+        "rushTd": 3,
+        "rec": 8,
+        "recYds": 50,
+        "fumblesLost": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "De'Von Achane",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 7200,
+        "points": 20.5,
+        "ownershipPercent": 36.0,
+        "rushTdRb": 1,
+        "rushYdsRb": 73,
+        "recRb": 4,
+        "recYdsRb": 32,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Dolphins",
+        "position": "DST",
+        "team": "MIA",
+        "salary": 3000,
+        "points": 6.0,
+        "ownershipPercent": 13.2,
+        "sacks": 3,
+        "takeaways": 1,
+        "pointsAllowed": 20,
+        "qbFaced": "Gardner Minshew",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "LV"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis. The roster is a two game thesis with a clean hierarchy. Detroit is the engine, Miami is the stabilizer, and the remaining one offs exist to solve salary and touchdown access. Detroit scoring 52 is the slate level event, and this build captures it through the most predictable path for a pocket passer ceiling. When Jared Goff reaches a ceiling, the score concentrates through receivers, and the lineup commits to two teammates rather than a single pairing.\n\nThe Detroit cluster is not random. Amon-Ra St. Brown supplies possession volume plus red zone access. Jameson Williams supplies the downfield and long touchdown path. Together they cover the two main ways a Detroit eruption becomes unbeatable. The Goff plus St. Brown plus Williams trio is also an information filter. It says Detroit offense is the outcome worth buying, while still leaving room for a second game to matter.\n\nThe second pillar is LV at Miami, built as De'Von Achane plus Dolphins defense. This pairing functions as field position and clock control capture. Achane scoring and the defense creating sacks and an interception can occur in the same script, especially when the opponent quarterback archetype trends toward pressure problems. The DST facing Gardner Minshew aligns with the roster goal of converting opponent dropbacks into short fields.\n\nThe lineup accepts imperfection on purpose. Audric Estime fails at a price built for role based value. The roster survives because it already secured an uncommon 46 point tight end score through Taysom Hill. Hill at tight end is not a normal tight end decision. It is a multi role player decision inside a position label, and it shifts the lineup ceiling without requiring a fragile game stack.\n\nPredictive analysis. This winner reinforces a repeatable construction pattern for slates with one runaway team total. When a pocket quarterback hits a ceiling, prioritize two teammates who win in different ways, one volume receiver and one explosive receiver. Then use a second game as an independent scoring pillar rather than forcing a bring back. The Miami mini correlation also shows how to handle uncertain secondary stacks. Pair a running back with his defense when the game script can compress opponent possessions and create defensive scoring chances.\n\nPrescriptive analysis. Use this roster as a decision tree. If the slate offers one offense with a realistic 40 plus scoring path and clear pass distribution, build the quarterback with two pass catchers who split target volume and explosive routes. Next, choose a second pillar through either RB plus DST from a favorite or RB plus DST from a defense with pressure ability versus a quarterback prone to negative plays. Finally, allocate one low salary receiver who can reach 15 plus without needing a massive target share, then allow one value miss if the portfolio contains one position breaking score such as Hill at tight end.",
+    "uniquenessNotes": "Detroit triple is the obvious element, yet it is not the entire answer. The separator is how the lineup handled the rest of the roster. Many builds that chased Detroit also tried to mirror it with a forced secondary game stack. This roster does not. It isolates Miami as a script pair and treats the other slots as independent touchdown and salary levers.\n\nTaysom Hill is the structural edge. Tight end is normally a role limited position. Hill is a quarterback and running back disguised as a tight end, and his ceiling changes the salary distribution requirements. With Hill producing a slate breaking score, the roster can tolerate Estime failing while still keeping a low ownership receiver, Kendrick Bourne, who returns value at near minimum pricing.\n\nBreece Hall functions as the final stabilizer. His score arrives through both rushing and receiving touchdowns, which reduces the need for the lineup to guess a third game environment. He is also a useful hedge against Detroit absorbing so much of the slate. If Detroit dominates, the rest of the roster still needs independent touchdowns. Hall supplies that without overlapping with the Detroit or Miami pillars.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Jared Goff paired with Amon-Ra St. Brown and Jameson Williams to capture a Detroit eruption through both volume and explosive scoring paths",
+      "secondaryLever": "De'Von Achane paired with Dolphins defense versus Gardner Minshew to capture a Miami control script and defensive pressure outcomes",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "JAX@DET: 3 (QB game)",
+          "LV@MIA: 2",
+          "ATL@DEN: 1",
+          "IND@NYJ: 1",
+          "LAR@NE: 1",
+          "CLE@NO: 1"
+        ],
+        "lionsCluster": ["Jared Goff", "Amon-Ra St. Brown", "Jameson Williams"],
+        "dolphinsCluster": ["De'Von Achane", "Dolphins"],
+        "tightEndOutlier": "Taysom Hill",
+        "salaryReliefReceiver": "Kendrick Bourne",
+        "qbFacedByDolphinsDst": "Gardner Minshew"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "POCKET_QB_DOUBLE_RECEIVER_CAPTURE",
+        "TEAM_TOTAL_RUNAWAY_OFFENSE",
+        "RB_PLUS_DST_SCRIPT_PAIR",
+        "TE_POSITIONAL_LOOPHOLE_CEILING",
+        "LOW_SALARY_WR_TOUCHDOWN_VALUE"
+      ],
+      "macroStory": "A Detroit passing eruption captured through a pocket quarterback with two complementary receivers, paired with a Miami script mini correlation, then lifted to first by a tight end outlier score and a near minimum touchdown receiver."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "PASS_HEAVY_CEILING", "CORRELATION_HUB"],
+        "microStory": "Jared Goff is selected as a pocket passer ceiling play, which requires teammates to convert the yardage into touchdowns. The roster commits to that conversion by pairing two receivers who win through different scoring modes."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["VOLUME_PLUS_TD", "RED_ZONE_ACCESS", "DRIVE_FINISHER"],
+        "microStory": "Amon-Ra St. Brown supplies the stable reception base plus multiple touchdown access, which keeps the Detroit stack from needing perfect long plays to reach an elite range."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["EXPLOSIVE_ROUTE_CEILING", "BIG_PLAY_SCORING", "COMPLEMENTARY_TO_VOLUME_WR"],
+        "microStory": "Jameson Williams completes the Detroit capture by adding the downfield scoring path, which often appears in extreme team totals and separates from single receiver stacks."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["POSITION_BREAKER", "MULTI_ROLE_USAGE", "SLATE_SWING_SCORE"],
+        "microStory": "Taysom Hill at tight end functions as a hybrid player selection rather than a traditional tight end. His rushing touchdowns create a ceiling few tight ends can match, and the lineup is built to benefit from that asymmetry."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["SCRIPT_PARTNER", "TOUCHDOWN_ACCESS", "DRIVE_CONTROL"],
+        "microStory": "De'Von Achane is paired with the defense to align with a Miami control script where touchdowns and defensive pressure outcomes can coexist."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRESSURE_OUTCOME", "SHORT_FIELD_CREATION", "QB_ARCETYPE_TARGET"],
+        "microStory": "Dolphins defense versus Gardner Minshew targets a backup archetype path where sacks and interceptions can appear without needing a defensive touchdown."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Jared Goff", "position": "QB", "team": "DET" },
+        "teammates": [
+          { "name": "Amon-Ra St. Brown", "position": "WR", "team": "DET" },
+          { "name": "Jameson Williams", "position": "WR", "team": "DET" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "RB_DST",
+        "qb": null,
+        "teammate": { "name": "De'Von Achane", "position": "RB", "team": "MIA" },
+        "opponent": { "name": "Dolphins", "position": "DST", "team": "MIA", "qbFaced": "Gardner Minshew" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Dolphins", "position": "DST", "team": "MIA", "qbFaced": "Gardner Minshew" },
+        "opponent": { "name": "Gardner Minshew", "position": "QB", "team": "LV" }
+      }
+    ]
+  }
+}

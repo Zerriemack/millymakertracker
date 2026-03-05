@@ -1,0 +1,274 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 16,
+  "slateType": "MAIN",
+  "slateDate": "2023-12-24T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 16",
+  "slateTag": "FLACCO COOPER NUCLEAR GAME, BREECE HALL WITH JETS DST, DJ CHARK MIN PRICE CEILING",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK16_MAIN_2023-12-24T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14640
+  },
+  "winner": {
+    "username": "papagates",
+    "points": 226.92,
+    "maxEntries": 19
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 226.92,
+    "totalOwnershipBp": 14640,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Joe Flacco",
+        "position": "QB",
+        "team": "CLE",
+        "salary": 5500,
+        "points": 29.82,
+        "ownershipPercent": 9.9,
+        "passTd": 3,
+        "passYds": 368,
+        "rushYds": 1,
+        "passInt": 2,
+        "fumblesLost": 0,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Breece Hall",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 6100,
+        "points": 43.1,
+        "ownershipPercent": 26.9,
+        "rushYdsRb": 95,
+        "rushTdRb": 2,
+        "recRb": 12,
+        "recYdsRb": 96,
+        "recTdRb": 0,
+        "fumblesLost": 0,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Devin Singletary",
+        "position": "RB",
+        "team": "HOU",
+        "salary": 5500,
+        "points": 9.3,
+        "ownershipPercent": 17.7,
+        "rushYdsRb": 44,
+        "rushTdRb": 0,
+        "recRb": 3,
+        "recYdsRb": 19,
+        "recTdRb": 0,
+        "fumblesLost": 0,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 9200,
+        "points": 28.2,
+        "ownershipPercent": 17.6,
+        "rec": 6,
+        "recYds": 118,
+        "recTd": 1,
+        "rushYds": 14,
+        "fumblesLost": 0,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Amari Cooper",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 6400,
+        "points": 54.5,
+        "ownershipPercent": 11.7,
+        "rec": 11,
+        "recYds": 265,
+        "recTd": 2,
+        "rushYds": 0,
+        "fumblesLost": 0,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DJ Chark Jr.",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 3100,
+        "points": 27.8,
+        "ownershipPercent": 0.2,
+        "rec": 6,
+        "recYds": 98,
+        "recTd": 2,
+        "rushYds": 0,
+        "fumblesLost": 0,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "David Njoku",
+        "position": "TE",
+        "team": "CLE",
+        "salary": 5300,
+        "points": 16.4,
+        "ownershipPercent": 23.3,
+        "rec": 6,
+        "recYds": 44,
+        "recTd": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T.J. Hockenson",
+        "position": "TE",
+        "team": "MIN",
+        "salary": 5800,
+        "points": 9.8,
+        "ownershipPercent": 9.4,
+        "rec": 4,
+        "recYds": 58,
+        "recTd": 0,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Jets",
+        "position": "DST",
+        "team": "NYJ",
+        "salary": 3100,
+        "points": 8,
+        "ownershipPercent": 29.7,
+        "sacks": 1,
+        "takeaways": 3,
+        "dstTd": 0,
+        "pointsAllowed": 28,
+        "qbFaced": "Sam Howell",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "WAS"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis. The roster is built around a single game producing a slate level receiver eruption, and it captures the full blast radius. Joe Flacco plus Amari Cooper plus David Njoku is not a tidy stack, it is a commitment to Cleveland controlling the scoring through the air. Cooper posts an outcome that changes the receiver baseline for the entire slate. Once Cooper hits that score, the decision tree becomes simple. Any first place roster either has Cooper or must find an alternate path to replace him, and replacement paths are rare.\n\nThe fourth piece from Cleveland at Houston is Devin Singletary. This is the sharp part, because it keeps the roster attached to Houston points without forcing the build to guess which Texans pass catcher would survive in a game where Cleveland dominates through one receiver. Singletary does not smash, but he keeps the game live and prevents the build from collapsing if Houston only answers through rush attempts and short outlets.\n\nThe second pillar is Breece Hall paired with the Jets defense. The correlation is not about a defensive touchdown, it is about controlling play volume and field position. Sam Howell creates turnover chances, and every extra Jets possession is more Hall touch volume. In overtime, the entire Jets scoring profile funnels through Hall. This combination is popular, but it functions as stability while Cleveland supplies the slate breaking event.\n\nThe winning separation move is DJ Chark Jr. at near minimum salary and near zero ownership. This is the roster slot that turns a concentrated core into a first place build, because it adds a second spike outcome without paying for it. With Chark supplying almost twenty eight points, the roster can accept a modest T.J. Hockenson score at the second tight end slot and still remain above the field.\n\nPredictive Analysis. When one receiver outcome laps the slate, the most reliable path to first is full capture of his game environment. Pairing the receiver with his quarterback matters more when the receiver wins through a mix of touchdowns and the 100 yard bonus, because the quarterback collects the same scoring events. Adding a third teammate can be correct when the offense concentrates red zone targets or tight end usage, which is how Njoku remains additive instead of redundant.\n\nChark points to a repeatable research thread. Near minimum receivers can win tournaments when their role includes downfield targets and red zone access, even if weekly volume is fragile. The key is price based ceiling, not median projection. A two touchdown profile at 3,100 creates salary freedom that allows the roster to pay for the slate breaking receiver plus additional high end pieces.\n\nPrescriptive Analysis. In future slates, if a single pass catcher posts an extreme score and the slate does not present multiple similar receiver outcomes, prioritize capturing the entire passing box score rather than taking the receiver alone. Use an opponent bringback that keeps the game active without requiring narrow target guessing. If the slate offers a popular running back plus defense pairing with a clear volume story, accept it as a stability block and spend uniqueness budget on one cheap receiver with a true multi touchdown path. When a cheap receiver hits, it becomes acceptable to carry one lower scoring slot elsewhere, including a second tight end, because the roster already has multiple engines.",
+    "uniquenessNotes": "The build does not chase uniqueness across every position. It concentrates uniqueness where it creates the largest score gap. DJ Chark Jr. at 0.2 percent is the structural lever, because he supplies a tournament winning score at a salary that normally functions as a placeholder. Joe Flacco is not low owned, but he is priced as a mid tier quarterback, and pairing him with a historic receiver score creates leverage over lineups that roster Cooper without quarterback capture. The roster also accepts high ownership where the field is correct. Breece Hall and the Jets defense function as a stable scoring base. The remaining gap is created by the Cleveland passing eruption plus the near minimum receiver ceiling.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Cleveland passing commitment through Joe Flacco, Amari Cooper, and David Njoku with Devin Singletary bringback",
+      "secondaryLever": "DJ Chark Jr. near minimum ceiling plus Breece Hall paired with Jets defense",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "CLE@HOU: 4 (QB game)",
+          "WAS@NYJ: 2",
+          "DAL@MIA: 1",
+          "GB@CAR: 1",
+          "DET@MIN: 1"
+        ],
+        "brownsTexansCluster": ["Joe Flacco", "Amari Cooper", "David Njoku", "Devin Singletary"],
+        "jetsCommandersPair": ["Breece Hall", "Jets"],
+        "salaryReliefBreaker": "DJ Chark Jr.",
+        "premiumOneOff": "CeeDee Lamb",
+        "qbFacedByJetsDst": "Sam Howell"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_PASSING_GAME_CAPTURE",
+        "RB_PLUS_DST_CONTROL_BLOCK",
+        "MIN_SALARY_WR_CEILING",
+        "DOUBLE_TE_WITH_ONE_CEILING_TE",
+        "OPPONENT_RB_BRINGBACK"
+      ],
+      "macroStory": "A roster anchored by a passing eruption from Cleveland, stabilized by Jets control through Breece Hall and the Jets defense, then separated by a near minimum wide receiver ceiling score."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "RAW_POINTS_ANCHOR", "GAME_ENVIRONMENT_PAYOFF"],
+        "microStory": "Amari Cooper provides the defining receiver outcome. The roster wins because it captures the full magnitude of a score that reshapes the slate baseline."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["EVENT_CAPTURE", "TOUCHDOWN_AND_BONUS_ACCESS", "STACK_ENGINE"],
+        "microStory": "Joe Flacco converts Cooper touchdowns and the yardage bonus into quarterback points, which separates from rosters that roster Cooper as a one off."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["SALARY_RELIEF_BREAKER", "TWO_TD_PATH", "ULTRA_LOW_OWNERSHIP"],
+        "microStory": "DJ Chark Jr. is the payout lever. Near minimum salary plus a two touchdown outcome provides the flexibility to carry high end scoring elsewhere."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["VOLUME_ENGINE", "OFFENSE_FUELS_DEFENSE", "GAME_LENGTH_BENEFIT"],
+        "microStory": "Breece Hall owns the Jets offense and benefits from extra possessions created by the defense. Overtime amplifies this role into a slate winning running back score."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["TURNOVER_ACCESS", "PRESSURE_OUTPUT", "CORRELATED_WITH_RB_VOLUME"],
+        "microStory": "The Jets defense supplies turnovers and short field conditions against Sam Howell, which reinforces the Hall workload and keeps the roster stable."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Joe Flacco", "position": "QB", "team": "CLE" },
+        "teammates": [
+          { "name": "Amari Cooper", "position": "WR", "team": "CLE" },
+          { "name": "David Njoku", "position": "TE", "team": "CLE" }
+        ],
+        "opponent": { "name": "Devin Singletary", "position": "RB", "team": "HOU" }
+      },
+      {
+        "type": "RB_DST",
+        "qb": null,
+        "teammate": { "name": "Breece Hall", "position": "RB", "team": "NYJ" },
+        "opponent": { "name": "Jets", "position": "DST", "team": "NYJ" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Jets", "position": "DST", "team": "NYJ", "qbFaced": "Sam Howell" },
+        "opponent": { "name": "Sam Howell", "position": "QB", "team": "WAS" }
+      }
+    ]
+  }
+}

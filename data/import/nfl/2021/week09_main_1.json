@@ -1,0 +1,264 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 9,
+  "slateType": "MAIN",
+  "slateDate": "2021-11-07T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 9",
+  "slateTag": "CONNER 2 PERCENT SLATE BREAKER, BROWNS DST LEVERAGE OFF CHUBB CHALK, HERBERT ALLEN STACK WITH ALLEN PPR MONSTER",
+  "slateGroup": "2-2-2-1-1-1",
+  "rosterConstruction": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2021_WK09_MAIN_2021-11-07T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10290
+  },
+  "winner": {
+    "username": "rbradley23",
+    "points": 205.34,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 205.34,
+    "totalOwnershipBp": 10290,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Justin Herbert",
+        "position": "QB",
+        "team": "LAC",
+        "salary": 7000,
+        "points": 34.64,
+        "ownershipPercent": 3.5,
+        "passTd": 2,
+        "passYds": 356,
+        "rushYds": 14,
+        "rushTd": 1,
+        "twoPtPass": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Nick Chubb",
+        "position": "RB",
+        "team": "CLE",
+        "salary": 6700,
+        "points": 33.3,
+        "ownershipPercent": 21.1,
+        "rushYdsRb": 137,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 26,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Zack Moss",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 5300,
+        "points": 4.4,
+        "ownershipPercent": 8.1,
+        "rushYdsRb": 6,
+        "rushTdRb": 0,
+        "recRb": 2,
+        "recYdsRb": 18,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 6700,
+        "points": 25.4,
+        "ownershipPercent": 7.0,
+        "rec": 12,
+        "recYds": 104,
+        "recTd": 0,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Marquise Brown",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 6000,
+        "points": 23.6,
+        "ownershipPercent": 28.3,
+        "rec": 9,
+        "recYds": 116,
+        "recTd": 0,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jaylen Waddle",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 5600,
+        "points": 16.3,
+        "ownershipPercent": 14.2,
+        "rec": 8,
+        "recYds": 83,
+        "recTd": 0,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Mike Gesicki",
+        "position": "TE",
+        "team": "MIA",
+        "salary": 4900,
+        "points": 9.4,
+        "ownershipPercent": 15.7,
+        "rec": 4,
+        "recYds": 54,
+        "recTd": 0,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "James Conner",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 5300,
+        "points": 40.3,
+        "ownershipPercent": 2.0,
+        "rushYdsRb": 96,
+        "rushTdRb": 2,
+        "recRb": 5,
+        "recYdsRb": 77,
+        "recTdRb": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Browns",
+        "position": "DST",
+        "team": "CLE",
+        "salary": 2500,
+        "points": 18,
+        "ownershipPercent": 3.0,
+        "sacks": 5,
+        "takeaways": 3,
+        "defTd": 1,
+        "pointsAllowed": 20,
+        "qbFaced": "Joe Burrow",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis.\n\nThis winner is a two track build. Track one is the Browns defense plus Nick Chubb from the same game, which creates a deliberately tense relationship. The field usually treats Cleveland scoring through Chubb as the clean path, then treats Cleveland defense as a separate decision. This roster takes both and accepts the friction because the Browns defense does not need Cincinnati to fail completely. It needs Joe Burrow to produce pressure events, and it needs them in the highest leverage moments. Five sacks, two interceptions, and a defensive touchdown is not a side note outcome. It is the slate level outcome that changes first place requirements.\n\nTrack two is the passing concentration. Justin Herbert plus Keenan Allen is a narrow, efficient stack because Allen captures the chain moving volume and the red zone access through reception accumulation. Herbert adds a rushing touchdown and a two point pass, which matters because it converts a strong box score into a scoring profile that can compete with more popular quarterback constructions.\n\nThe middle of the roster is engineered to avoid wasted salary while still leaving room for a singular slate breaker. Zack Moss is the miss, and the roster survives because the roster includes a true outlier. James Conner at two percent ownership dominates the slate. The key is how he gets there. He is not a thin rushing touchdown outcome. He scores through both rushing touchdowns and a receiving touchdown, plus heavy reception volume and yardage. Conner supplies a 40 point spike from a salary band that rarely produces it.\n\nThe Miami mini stack is not a ceiling story. It is a glue story. Jaylen Waddle and Mike Gesicki provide controlled points in a game where the slate did not demand a perfect game environment from every slot. The roster is asking Waddle and Gesicki to keep the lineup alive while the defense and Conner do the separation.\n\nMarquise Brown is the final pressure relief. His ownership is high, yet his 100 yard outcome is still needed because the roster took a zero adjacent running back score. Brown provides enough raw points to keep the roster from needing a second slate breaker.\n\nPredictive analysis.\n\nThis lineup is a model for slates where one low owned running back has a workload profile that can reach 35 plus through multiple scoring paths. When a back can score through goal line carries and also has legitimate receiving touchdown access, ownership becomes a secondary variable. Conner is the reminder that cheap ownership is often tied to uncertainty, not to lack of ceiling.\n\nThe Browns DST plus Chubb pairing is also repeatable under one condition. The defense must have a path to a touchdown or multiple short field events, and the offense must still have a clear rushing centerpiece. In those builds, the defense does not need to fully oppose the running back. Both can win if the game creates extra possessions and defensive scores.\n\nPrescriptive analysis.\n\nWhen a slate offers one back with true three score access at modest salary and low ownership, treat him as the primary differentiator and build stability around him through concentrated volume receivers. Pair that with a defense that can score, and do not fear pairing it with a popular running back from the same team when the defense path is sacks, interceptions, and a touchdown rather than pure points allowed.\n\nFor stack selection, prioritize a quarterback wide receiver pair where the wide receiver can reach a 12 catch game. That gives the roster a points base that does not rely on long touchdowns, which frees the rest of the lineup to chase a rare back ceiling and a defense touchdown.",
+    "uniquenessNotes": "The roster wins while carrying two elements the field usually treats as mutually exclusive. It plays Browns defense as leverage against Joe Burrow while also playing Nick Chubb at heavy ownership. The leverage is not a blanket fade of the game. It is a targeted bet on defensive scoring events.\n\nThe second uniqueness layer is structural. The roster pays for one true reception monster in Keenan Allen, then chooses another high volume receiver in Marquise Brown, then uses the remaining slots to fund the one player capable of breaking the slate at low ownership.\n\nZack Moss failing is part of the story, because it shows how strong the primary levers were. Conner plus Browns DST created enough separation to absorb a low score from a mid range running back slot.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Browns DST versus Joe Burrow paired with Nick Chubb from the same game",
+      "secondaryLever": "James Conner at two percent ownership as the slate breaking ceiling plus Herbert to Allen concentrated volume",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "LAC@PHI: 2 (QB game)",
+          "HOU@MIA: 2",
+          "CLE@CIN: 2",
+          "BUF@JAX: 1",
+          "MIN@BAL: 1",
+          "ARI@SF: 1"
+        ],
+        "chargersCluster": ["Justin Herbert", "Keenan Allen"],
+        "brownsCluster": ["Browns", "Nick Chubb"],
+        "dolphinsPair": ["Jaylen Waddle", "Mike Gesicki"],
+        "swingPiece": "James Conner",
+        "qbFacedByBrownsDst": "Joe Burrow"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "DST_RB_SAME_TEAM_PAIRING_WITH_DEF_TD_PATH",
+        "LOW_OWNERSHIP_RB_THREE_SCORE_ACCESS",
+        "QB_WR_CONCENTRATED_TARGET_ENGINE",
+        "SMALL_GAME_STACK_FOR_STABILITY",
+        "CHALK_WR_ACCEPTED_TO_OFFSET_MISS"
+      ],
+      "macroStory": "A first place roster driven by a defense touchdown outcome paired with its own chalk running back, then separated by a two percent running back ceiling game, with Herbert Allen providing the reception driven scoring base."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_SEPARATOR", "DEF_TD_OUTCOME", "PRESSURE_TO_POINTS_CONVERSION"],
+        "microStory": "Cleveland defense provides the slate changing result through sacks, interceptions, and a defensive touchdown against a franchise quarterback."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "LOW_OWNERSHIP", "MULTI_PATH_SCORING"],
+        "microStory": "James Conner produces a three touchdown game with receiving volume, which turns a low owned mid salary slot into the primary separation point."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["RECEPTION_ENGINE", "TARGET_VOLUME", "FLOOR_PLUS_UPSIDE"],
+        "microStory": "Keenan Allen supplies a 12 catch performance that stabilizes the roster and pairs cleanly with Herbert even without a multi touchdown receiver line."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["CHALK_ACCEPTED", "RUSHING_VOLUME", "TOUCHDOWN_ACCESS"],
+        "microStory": "Nick Chubb delivers the popular rushing outcome, and the roster still wins because the defense score adds a second Cleveland based lever."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Justin Herbert", "position": "QB", "team": "LAC" },
+        "teammates": [{ "name": "Keenan Allen", "position": "WR", "team": "LAC" }],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Jaylen Waddle", "position": "WR", "team": "MIA" },
+        "opponent": { "name": "Mike Gesicki", "position": "TE", "team": "MIA" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Browns", "position": "DST", "team": "CLE", "qbFaced": "Joe Burrow" },
+        "opponent": { "name": "Nick Chubb", "position": "RB", "team": "CLE" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Browns", "position": "DST", "team": "CLE", "qbFaced": "Joe Burrow" },
+        "opponent": { "name": "Joe Burrow", "position": "QB", "team": "CIN" }
+      }
+    ]
+  }
+}

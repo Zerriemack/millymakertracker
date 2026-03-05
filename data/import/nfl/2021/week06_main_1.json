@@ -1,0 +1,258 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 6,
+  "slateType": "MAIN",
+  "slateDate": "2021-10-17T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 6",
+  "slateTag": "CHEAP MAYFIELD STACK, DOUBLE TE CONSTRUCTION, COLTS DST WITH TAYLOR",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "rosterConstruction": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2021_WK06_MAIN_2021-10-17T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9300
+  },
+  "winner": {
+    "username": "bullnasty",
+    "points": 231.86,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 231.86,
+    "totalOwnershipBp": 9300,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Baker Mayfield",
+        "position": "QB",
+        "team": "CLE",
+        "salary": 5900,
+        "points": 15.16,
+        "ownershipPercent": 1.7,
+        "passTd": 2,
+        "passYds": 234,
+        "rushYds": 8,
+        "int": 1,
+        "fumblesLost": 2,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jonathan Taylor",
+        "position": "RB",
+        "team": "IND",
+        "salary": 6600,
+        "points": 31.8,
+        "ownershipPercent": 25.1,
+        "rushYdsRb": 145,
+        "rushTdRb": 2,
+        "recRb": 1,
+        "recYdsRb": 13,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 6400,
+        "points": 26.3,
+        "ownershipPercent": 15.0,
+        "rushYdsRb": 94,
+        "recRb": 5,
+        "recYdsRb": 59,
+        "recTdRb": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 6500,
+        "points": 39.1,
+        "ownershipPercent": 5.3,
+        "rec": 9,
+        "recYds": 149,
+        "recTd": 2,
+        "rushYds": 2,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Donovan Peoples-Jones",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 3500,
+        "points": 29.1,
+        "ownershipPercent": 0.8,
+        "rec": 4,
+        "recYds": 101,
+        "recTd": 2,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Adam Thielen",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 5800,
+        "points": 32.8,
+        "ownershipPercent": 5.6,
+        "rec": 11,
+        "recYds": 126,
+        "recTd": 1,
+        "rushYds": 2,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Noah Fant",
+        "position": "TE",
+        "team": "DEN",
+        "salary": 4800,
+        "points": 24.7,
+        "ownershipPercent": 2.7,
+        "rec": 9,
+        "recYds": 97,
+        "recTd": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 7000,
+        "points": 17.9,
+        "ownershipPercent": 21.9,
+        "rec": 8,
+        "recYds": 99,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Colts",
+        "position": "DST",
+        "team": "IND",
+        "salary": 3500,
+        "points": 15,
+        "ownershipPercent": 14.9,
+        "sacks": 2,
+        "takeaways": 3,
+        "pointsAllowed": 6,
+        "qbFaced": "Davis Mills",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "HOU"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis: The roster wins by turning one low cost quarterback decision into a two touchdown access point while concentrating ceiling through wide receivers and letting the rest of the build remain stable. Baker Mayfield plus Donovan Peoples-Jones is the anchor because Peoples-Jones supplies 29.1 points at 0.8 percent while Mayfield stays low owned and merely needs competence. The payoff comes from the distribution of touchdowns. Cleveland scores through the exact receiver attached to the quarterback, while the roster spends its premium scoring slots on concentrated roles. CeeDee Lamb and Adam Thielen both reach multi catch, multi drive production with touchdown equity, which creates a wide receiver core few builds can match. The double tight end construction is not a gimmick. Noah Fant supplies a true ceiling game at 2.7 percent, and Travis Kelce posts a useful score at heavy ownership without needing a touchdown.\n\nPredictive Analysis: The repeatable lesson sits in the salary geometry. Paying down at quarterback can coexist with first place outcomes when the paired receiver carries a narrow target tree role and an available multi touchdown ceiling. This does not require a shootout. It requires one receiver outcome the field does not capture, plus a second layer of ceiling via premium wide receivers. Double tight end becomes viable when one tight end behaves as a wide receiver in targets and yardage, and the other tight end functions as a high floor ownership absorber.\n\nPrescriptive Analysis: When building around a cheap quarterback, pair him with the pass catcher whose outcome is most tied to touchdowns rather than yardage alone. Then allocate remaining ceiling toward wide receivers with clear red zone roles and high target volume. Use a chalk tight end as a stabilizer if the slate offers a clear role, then seek the second tight end in the salary band where nine plus targets can happen without ownership. Finish the roster with a defense tied to a quarterback archetype prone to pressure mistakes, then correlate with a running back from the same team when the game environment projects short fields and extra drives.",
+    "uniquenessNotes": "The uniqueness does not come from forcing thin plays across the roster. The build accepts popular elements where they protect the floor and then concentrates leverage into a single high impact outcome. Peoples-Jones at sub one percent is the separating event. Many lineups either skip Cleveland entirely or use a different Cleveland receiver, so a two touchdown game from Peoples-Jones creates separation without requiring a perfect quarterback score.\n\nThe double tight end decision avoids fragile wide receiver punts while still keeping ceiling. Fant supplies wide receiver style volume at low ownership, and Kelce absorbs the tight end ownership decision at a level the field can live with. The running back and defense pairing from Indianapolis is a correlation built for game script. Two takeaways plus a low points allowed bucket produces a strong defense score, and Jonathan Taylor benefits from drives and red zone chances created by defensive disruption.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Baker Mayfield paired with Donovan Peoples-Jones as the low owned touchdown capture",
+      "secondaryLever": "Double tight end construction with Noah Fant ceiling plus Travis Kelce ownership absorber",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "ARI@CLE: 2 (QB game)",
+          "HOU@IND: 2",
+          "CIN@DET: 1",
+          "DAL@NE: 1",
+          "MIN@CAR: 1",
+          "LV@DEN: 1",
+          "KC@WAS: 1"
+        ],
+        "clevelandPair": ["Baker Mayfield", "Donovan Peoples-Jones"],
+        "doubleTightEnd": ["Noah Fant", "Travis Kelce"],
+        "coltsCluster": ["Jonathan Taylor", "Colts DST"],
+        "qbFacedByColtsDst": "Davis Mills"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "CHEAP_QB_PLUS_WR_TOUCHDOWN_CAPTURE",
+        "DOUBLE_TE_CONSTRUCTION",
+        "DST_RB_SAME_TEAM_CORRELATION",
+        "THREE_WR_CEILING_CORE",
+        "LOW_OWNERSHIP_ONE_PLAYER_SEPARATOR"
+      ],
+      "macroStory": "A low salary quarterback stack captures the correct two touchdown receiver outcome at sub one percent, then the roster piles ceiling into wide receivers and tight ends while Indianapolis defense plus Jonathan Taylor supplies correlated scoring through short fields and red zone volume."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_SEPARATOR", "TD_CONCENTRATION", "STACK_PARTNER"],
+        "microStory": "Donovan Peoples-Jones is the deciding event. Two touchdowns at 0.8 percent converts a cheap quarterback decision into a slate breaking receiver score without paying premium salary."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_VOLUME", "CEILING_OUTCOME", "STRUCTURAL_ADVANTAGE"],
+        "microStory": "Noah Fant supplies nine receptions and a touchdown at 2.7 percent, creating a second ceiling layer while many builds treat tight end as a single slot decision."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["GAME_SCRIPT_DRIVER", "TURNOVER_EQUITY", "QB_ARCHETYPE_TARGET"],
+        "microStory": "Indianapolis defense faces Davis Mills and converts pressure into two interceptions plus a fumble recovery while holding Houston in the lowest points allowed bucket, which pairs cleanly with Jonathan Taylor benefiting from the extra possessions."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["ELITE_CEILING", "TARGET_VOLUME", "MULTI_TD_ACCESS"],
+        "microStory": "CeeDee Lamb supplies the premium score and removes the need for perfection elsewhere. The roster can carry a modest quarterback score because Lamb delivers a true top end wide receiver outcome."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Baker Mayfield", "position": "QB", "team": "CLE" },
+        "teammates": [
+          { "name": "Donovan Peoples-Jones", "position": "WR", "team": "CLE" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "DST_RB",
+        "qb": null,
+        "teammate": { "name": "Colts", "position": "DST", "team": "IND" },
+        "opponent": { "name": "Jonathan Taylor", "position": "RB", "team": "IND" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Colts", "position": "DST", "team": "IND", "qbFaced": "Davis Mills" },
+        "opponent": { "name": "Davis Mills", "position": "QB", "team": "HOU" }
+      }
+    ]
+  }
+}

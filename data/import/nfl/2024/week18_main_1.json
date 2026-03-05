@@ -1,0 +1,269 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 18,
+  "slateType": "MAIN",
+  "slateDate": "2025-01-05T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 18",
+  "slateTag": "BRONCOS QUAD VS CHIEFS REST, BIJAN SMASH AT 40 PERCENT, JAKOBI MEYERS LOW OWNERSHIP BREAKER",
+  "slateGroup": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $2.25M FANTASY FOOTBALL MILLIONAIRE [$1M TO 1ST]",
+    "siteContestId": "NFL_2024_WK18_MAIN_2025-01-05T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 16440
+  },
+  "winner": {
+    "username": "rsbathla",
+    "points": 234.04,
+    "maxEntries": 55
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 234.04,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Bo Nix",
+        "position": "QB",
+        "team": "DEN",
+        "salary": 6400,
+        "points": 36.54,
+        "ownershipPercent": 7.3,
+        "passTd": 4,
+        "passYds": 321,
+        "rushYds": 47,
+        "fumblesLost": 0,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Michael Carter",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 4700,
+        "points": 15.9,
+        "ownershipPercent": 32.6,
+        "rushYdsRb": 43,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 16,
+        "fumblesLost": 0,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Bijan Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 8500,
+        "points": 34.3,
+        "ownershipPercent": 40.6,
+        "rushYdsRb": 170,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 3,
+        "fumblesLost": 0,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Courtland Sutton",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 6400,
+        "points": 20.8,
+        "ownershipPercent": 20.5,
+        "rec": 5,
+        "recYds": 98,
+        "recTd": 1,
+        "fumblesLost": 0,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jakobi Meyers",
+        "position": "WR",
+        "team": "LV",
+        "salary": 5700,
+        "points": 30.3,
+        "ownershipPercent": 5.5,
+        "rec": 9,
+        "recYds": 123,
+        "recTd": 1,
+        "fumblesLost": 0,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Drake London",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 6500,
+        "points": 43.7,
+        "ownershipPercent": 15.3,
+        "rec": 10,
+        "recYds": 187,
+        "recTd": 2,
+        "fumblesLost": 0,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Zach Ertz",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 4000,
+        "points": 15.4,
+        "ownershipPercent": 14.4,
+        "rec": 5,
+        "recYds": 44,
+        "recTd": 1,
+        "fumblesLost": 0,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Marvin Mims Jr.",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 4600,
+        "points": 22.1,
+        "ownershipPercent": 9.1,
+        "rec": 5,
+        "recYds": 51,
+        "recTd": 2,
+        "fumblesLost": 0,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Broncos",
+        "position": "DST",
+        "team": "DEN",
+        "salary": 3000,
+        "points": 15.0,
+        "ownershipPercent": 19.1,
+        "sacks": 5,
+        "takeaways": 0,
+        "pointsAllowed": 0,
+        "qbFaced": "Carson Wentz",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "KC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Week 18 creates pricing and ownership outcomes driven by motivation more than talent. Kansas City resting starters concentrates the slate around teams still chasing seeding or an outright berth, and Denver becomes the cleanest version of that motivation edge. This roster leans into it with a four man Denver block anchored by Bo Nix, then refuses to pay a bring back tax from Kansas City. The game script stays one directional, Denver finishes the job, and the build gains access to touchdowns from one offense without needing to predict a competitive response.\n\nThe second core is Atlanta Carolina, but it is chosen for role concentration instead of team result. Bijan Robinson carries the slate level rushing score at heavy ownership, and Drake London supplies the type of wide receiver outcome that usually forces uncomfortable salary sacrifices elsewhere. Atlanta losing does not matter because the fantasy points still consolidate through Robinson and London.\n\nThe separator comes from the mid range, not the top. Jakobi Meyers at 5.5 percent ownership supplies a 30 point wide receiver score in a game environment most rosters treated as secondary. In a week where many lineups share similar motivation driven cores, Meyers creates the distance without forcing thin plays in multiple slots.\n\nMichael Carter and Zach Ertz round out the structure with role based access to usable points. Carter benefits from an expanded workload and turns it into a touchdown plus receiving floor, and Ertz converts volume into a tight end score without chasing a low probability spike.",
+    "uniquenessNotes": "The roster accepts ownership where the slate pushes it, then chooses a single place to separate. Bijan Robinson is the obvious running back, and Denver pieces become popular once Kansas City rests starters. The win condition becomes finding one non obvious 25 plus point receiver outcome without breaking correlation or sacrificing projection elsewhere.\n\nJakobi Meyers fits that exact requirement. He sits in a salary band where many lineups either pay up for a more expensive name or punt for uniqueness. This build stays balanced, then takes a focused stand on a receiver who can earn targets in negative script and still capture a touchdown.\n\nThe Denver four man block also has a specific angle. The lineup captures passing touchdowns through Bo Nix plus two receivers while also collecting the defensive payoff from a shutout and sacks. Denver can score through offense and defense in the same script without cannibalizing itself.\n\nWeek 18 volatility often comes from guessing who plays a full game. This build reduces that uncertainty by choosing teams with clear incentive and roles with stable usage signals.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Four man Broncos block without a Chiefs bring back, capturing a one sided script from a must win team",
+      "secondaryLever": "Jakobi Meyers as the single low ownership mid range ceiling outcome",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "KC@DEN: 4 (QB game)",
+          "CAR@ATL: 2",
+          "SF@ARI: 1",
+          "LAC@LV: 1",
+          "WAS@DAL: 1"
+        ],
+        "broncosCluster": ["Bo Nix", "Courtland Sutton", "Marvin Mims Jr.", "Broncos DST"],
+        "falconsPair": ["Bijan Robinson", "Drake London"],
+        "oneOffs": ["Michael Carter", "Zach Ertz", "Jakobi Meyers"],
+        "qbFacedByBroncosDst": "Carson Wentz"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "MOTIVATION_EDGE_WEEK_18",
+        "FOUR_MAN_TEAM_BLOCK_NO_BRINGBACK",
+        "CHALK_RB_SMASH",
+        "SINGLE_LEVERAGE_WR_BREAKER",
+        "ROLE_BASED_VALUE_RB"
+      ],
+      "macroStory": "A Week 18 build that prioritizes certainty of incentive and role, then separates with one mid range wide receiver ceiling outcome while the Denver onslaught lands in a shutout script."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["SCRIPT_ENFORCER", "PRESSURE_SCORE", "LOW_VARIANCE_ROLE"],
+        "microStory": "Denver defense wins because Kansas City lacks offensive competence with backups and Denver can pressure without fear of losing contain. Five sacks plus a shutout bonus creates a top end defense score even with zero takeaways."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "MULTI_TD_ACCESS", "RUSH_FLOOR"],
+        "microStory": "Bo Nix provides the winning quarterback score through four passing touchdowns plus rushing production. Low ownership at quarterback matters more when the rest of the roster carries popular pieces."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["SINGLE_SEPARATOR", "TARGET_VOLUME", "MID_RANGE_CEILING"],
+        "microStory": "Jakobi Meyers creates the gap. A 30 point receiver at 5.5 percent ownership supplies the one slot where the roster outruns the duplicated motivation cores."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["ROLE_BASED_TOUCHDOWN", "SALARY_STABILITY", "WEEK_18_DEPTH_CHART_EDGE"],
+        "microStory": "Michael Carter lands because Arizona provides a condensed running back role, then he adds receiving to avoid needing a 100 yard rushing outcome. The touchdown completes the score."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Bo Nix", "position": "QB", "team": "DEN" },
+        "teammates": [
+          { "name": "Courtland Sutton", "position": "WR", "team": "DEN" },
+          { "name": "Marvin Mims Jr.", "position": "WR", "team": "DEN" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "TEAM_BLOCK",
+        "qb": null,
+        "teammate": { "name": "Broncos", "position": "DST", "team": "DEN", "qbFaced": "Carson Wentz" },
+        "opponent": { "name": "Bo Nix", "position": "QB", "team": "DEN" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Bijan Robinson", "position": "RB", "team": "ATL" },
+        "opponent": { "name": "Drake London", "position": "WR", "team": "ATL" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Broncos", "position": "DST", "team": "DEN", "qbFaced": "Carson Wentz" },
+        "opponent": { "name": "Carson Wentz", "position": "QB", "team": "KC" }
+      }
+    ],
+    "diagnosticAnalysis": "The primary cause of the win is a clean Week 18 motivation filter applied to the highest leverage position. Quarterback wins large field contests when it lands as the top scoring outcome at modest ownership, and Bo Nix provides that while still pairing naturally with touchdown catchers. Denver also supplies a defense ceiling path through a shutout script with sacks, so the roster captures points on both sides of the same game story.\n\nThe secondary cause is accepting Bijan Robinson at high ownership because his role and matchup create an outcome most lineups cannot fade safely. The roster does not attempt to get cute at running back, so it can take a clear stand elsewhere.\n\nThe final cause is concentrated separation. Jakobi Meyers is not a random low owned punt. He is a mid range receiver with a target role capable of a 30 point outcome. One correct low ownership ceiling is enough when the rest of the build lands its popular components.",
+    "predictiveAnalysis": "Week 18 research can start with a binary split. Teams with locked seeding produce fragile projections, while teams playing for a berth produce stable usage. From there, focus on quarterback plus pass catcher concentration on motivated teams, since late season volatility often comes from substitutes and reduced snaps.\n\nFor future slates with heavy motivation imbalance, a four man offense plus defense block can be viable when the opposing offense lacks competence. The build can win without a bring back when the most likely script includes short fields, stalled drives, and clock control.\n\nReceiver leverage can be treated as a single slot problem. When the slate hands out obvious cores, prioritize finding one mid range wide receiver with a real path to double digit targets and a touchdown. One correct lever can outscore multiple thin punts.",
+    "prescriptiveAnalysis": "When a slate includes a clear must win team facing a resting opponent, prioritize stacking the must win quarterback with at least one touchdown catcher, then decide whether to add the defense based on the opposing quarterback quality and offensive line state. In this case, a backup quarterback plus a low incentive offense supports adding the defense and avoiding a bring back.\n\nWhen the field condenses around one chalk running back role, accept the chalk if it carries both yardage and multi touchdown access, then use the saved decision bandwidth to attack wide receiver leverage.\n\nIn late season slates, choose value running backs who have both carries and receiving routes. That profile can reach 15 points without needing game level efficiency, which reduces the number of fragile slots in the roster."
+  }
+}

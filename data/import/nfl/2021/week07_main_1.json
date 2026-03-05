@@ -1,0 +1,256 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 7,
+  "slateType": "MAIN",
+  "slateDate": "2021-10-24T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 7",
+  "slateTag": "STAFFORD KUPP DOUBLE WITH SWIFT BRINGBACK, BUCS DST AGAINST FIELDS, MOREAU SALARY RELEASE",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2021_WK07_MAIN_2021-10-24T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9140
+  },
+  "winner": {
+    "username": "meaganjoy",
+    "points": 237.06,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 237.06,
+    "totalOwnershipBp": 9140,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Matthew Stafford",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 7100,
+        "points": 30.16,
+        "ownershipPercent": 13.4,
+        "passTd": 3,
+        "passYds": 334,
+        "rushYds": -2,
+        "pass2Pt": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "D'Andre Swift",
+        "position": "RB",
+        "team": "DET",
+        "salary": 6000,
+        "points": 28.4,
+        "ownershipPercent": 7.0,
+        "rushYdsRb": 48,
+        "recRb": 8,
+        "recYdsRb": 96,
+        "recTdRb": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Damien Harris",
+        "position": "RB",
+        "team": "NE",
+        "salary": 5700,
+        "points": 28.3,
+        "ownershipPercent": 12.6,
+        "rushYdsRb": 106,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 7,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 5900,
+        "points": 28.1,
+        "ownershipPercent": 25.9,
+        "rec": 8,
+        "recYds": 111,
+        "recTd": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 8400,
+        "points": 40.6,
+        "ownershipPercent": 19.3,
+        "rec": 10,
+        "recYds": 156,
+        "recTd": 2,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Terry McLaurin",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 6900,
+        "points": 28.2,
+        "ownershipPercent": 4.1,
+        "rec": 7,
+        "recYds": 122,
+        "recTd": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Foster Moreau",
+        "position": "TE",
+        "team": "LV",
+        "salary": 2500,
+        "points": 18,
+        "ownershipPercent": 2.0,
+        "rec": 6,
+        "recYds": 60,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Van Jefferson",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 3500,
+        "points": 14.3,
+        "ownershipPercent": 4.3,
+        "rec": 4,
+        "recYds": 43,
+        "recTd": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Buccaneers",
+        "position": "DST",
+        "team": "TB",
+        "salary": 4000,
+        "points": 21,
+        "ownershipPercent": 2.8,
+        "sacks": 4,
+        "takeaways": 5,
+        "pointsAllowed": 6,
+        "qbFaced": "Justin Fields",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "CHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis: The slate breaks open through one game cluster, Detroit at Los Angeles, then the roster uses two separate scoring paths to clear the field. Matthew Stafford plus Cooper Kupp is the primary engine. It captures three passing touchdowns and the double touchdown receiver eruption without paying for a second expensive wide receiver from the same team. D'Andre Swift functions as the opposing pressure valve. His eight catch receiving line keeps pace even while Detroit trails, so the roster gains correlation without relying on Detroit touchdowns.\n\nThe second path comes from Tampa Bay. Chris Godwin carries heavy ownership and reaches value, yet the roster still separates in the same game by pairing him with the Buccaneers defense. Tampa Bay produces a slate winning defensive box score through sacks and takeaways against Justin Fields, and the points allowed bucket lands in the best range. Most builds treat Godwin as a one way play tied only to his own targets. This roster turns the game into a two sided bet: Tampa Bay offense stays on schedule through Godwin, and Tampa Bay defense ends Chicago drives.\n\nFoster Moreau is the roster release point. A 2,500 tight end reaching 18 points removes the need for thin wide receiver punts and keeps salary allocation clean. Damien Harris supplies touchdown equity at moderate ownership, while Terry McLaurin provides a lower owned ceiling receiver line in Green Bay.\n\nPredictive Analysis: Similar slates often hinge on one passing game producing a true alpha receiver score, then the rest of the roster deciding where to accept ownership and where to search for ceiling. A quarterback plus elite wide receiver pairing stays viable when a second, cheaper teammate supplies a touchdown in the same game, because it raises the stack payoff without raising salary.\n\nPrescriptive Analysis: When a slate projects one clear passing game ceiling, prioritize a quarterback plus alpha receiver pairing, then add one lower cost teammate whose path to a touchdown stays realistic. For the bringback, favor an opponent player whose scoring comes through reception volume, since it survives negative game script. For defense, target pressure plus mistake profiles at quarterback, then decide if pairing with a popular receiver from the same game creates a second path to top percentile outcomes. Tight end salary relief becomes optimal when the relief player carries an end zone role and route volume, since it preserves ceiling while protecting roster structure.",
+    "uniquenessNotes": "Uniqueness comes from concentration, not randomness. The roster accepts Godwin ownership and still gains separation by attaching Buccaneers defense to the same game environment. It also uses a three player cluster from Detroit at Los Angeles without overpaying for a second premium wide receiver. Van Jefferson supplies the cheap touchdown access inside the same passing eruption, which lets the roster spend on McLaurin and still keep a strong running back score.\n\nMoreau completes the build by removing the fragile mid tier tight end decision. A low owned tight end touchdown plus usable yardage creates a scoring slot most rosters cannot match at his salary.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Matthew Stafford paired with Cooper Kupp plus Van Jefferson, with D'Andre Swift as the bringback",
+      "secondaryLever": "Buccaneers defense against Justin Fields paired with Chris Godwin from the same game",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "DET@LAR: 4 (QB game)",
+          "CHI@TB: 2",
+          "NYJ@NE: 1",
+          "WAS@GB: 1",
+          "PHI@LV: 1"
+        ],
+        "ramsCluster": ["Matthew Stafford", "Cooper Kupp", "Van Jefferson"],
+        "bringback": ["D'Andre Swift"],
+        "bucsCluster": ["Chris Godwin", "Buccaneers DST"],
+        "tightEndRelief": "Foster Moreau",
+        "qbFacedByBucsDst": "Justin Fields"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WR_DOUBLE_PLUS_CHEAP_TD_WR",
+        "OPPONENT_RB_BRINGBACK_THROUGH_RECEIVING",
+        "DST_VS_QB_PRESSURE_MISTAKE_TARGET",
+        "WR_PLUS_SAME_GAME_DST_PAIR",
+        "TE_SALARY_RELEASE_WITH_TOUCHDOWN_PATH"
+      ],
+      "macroStory": "A concentrated Rams passing eruption captures the slate defining wide receiver ceiling, Swift keeps pace through reception volume, then Buccaneers defense adds a second spike outcome against Fields while Moreau supplies low cost tight end scoring."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "TD_MULTIPLIER", "TARGET_MONOPOLY"],
+        "microStory": "Cooper Kupp delivers the defining receiver score. Two touchdowns and 156 yards create raw points few roster builds can match without sacrificing structure."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["TURNOVER_CEILING", "SACK_FLOOR", "QB_ARCHETYPE_TARGET"],
+        "microStory": "Tampa Bay defense provides the second spike. Three interceptions plus four sacks against Justin Fields creates a result capable of winning first place on its own."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["SALARY_RELEASE", "LOW_OWNERSHIP_SCORE", "TOUCHDOWN_ACCESS"],
+        "microStory": "Foster Moreau supplies tight end scoring at 2,500 with a touchdown. It frees salary while staying competitive in raw points."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["BRINGBACK_ENGINE", "RECEPTION_VOLUME", "GAME_SCRIPT_PROOF"],
+        "microStory": "D'Andre Swift functions as the opposing counterweight to the Rams scoring. Eight receptions keeps his score intact even with Detroit trailing."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Matthew Stafford", "position": "QB", "team": "LAR" },
+        "teammates": [
+          { "name": "Cooper Kupp", "position": "WR", "team": "LAR" },
+          { "name": "Van Jefferson", "position": "WR", "team": "LAR" }
+        ],
+        "opponent": { "name": "D'Andre Swift", "position": "RB", "team": "DET" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Chris Godwin", "position": "WR", "team": "TB" },
+        "opponent": { "name": "Buccaneers", "position": "DST", "team": "TB" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Buccaneers", "position": "DST", "team": "TB", "qbFaced": "Justin Fields" },
+        "opponent": { "name": "Justin Fields", "position": "QB", "team": "CHI" }
+      }
+    ]
+  }
+}

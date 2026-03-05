@@ -1,0 +1,245 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 1,
+  "slateType": "MAIN",
+  "slateDate": "2023-09-10T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 1",
+  "slateTag": "TYREEK 200 AND 2 AGAIN, TUA PLUS HILL WITH ECKELER RUNBACK, AIYUK UNDER 6 PERCENT CEILING",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK01_MAIN_2023-09-10T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11820
+  },
+  "winner": {
+    "username": "ryenella",
+    "points": 233.24,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 233.24,
+    "totalOwnershipBp": 11820,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Tua Tagovailoa",
+        "position": "QB",
+        "team": "MIA",
+        "salary": 6700,
+        "points": 32.14,
+        "ownershipPercent": 5.8,
+        "passTd": 3,
+        "passYds": 466,
+        "rushYds": 5,
+        "interceptions": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 8400,
+        "points": 29.4,
+        "ownershipPercent": 15.1,
+        "rushYdsRb": 117,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 47,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Kenneth Walker III",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 6000,
+        "points": 10.7,
+        "ownershipPercent": 9.7,
+        "rushYdsRb": 64,
+        "recRb": 4,
+        "recYdsRb": 3,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Kendrick Bourne",
+        "position": "WR",
+        "team": "NE",
+        "salary": 3300,
+        "points": 24.4,
+        "ownershipPercent": 2.2,
+        "rec": 6,
+        "recYds": 64,
+        "recTd": 2,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Calvin Ridley",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 6500,
+        "points": 27.1,
+        "ownershipPercent": 16.9,
+        "rec": 8,
+        "recYds": 101,
+        "recTd": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Brandon Aiyuk",
+        "position": "WR",
+        "team": "SF",
+        "salary": 4900,
+        "points": 35.9,
+        "ownershipPercent": 5.7,
+        "rec": 8,
+        "recYds": 129,
+        "recTd": 2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Hayden Hurst",
+        "position": "TE",
+        "team": "CAR",
+        "salary": 3000,
+        "points": 15.1,
+        "ownershipPercent": 3.7,
+        "rec": 5,
+        "recYds": 41,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 8200,
+        "points": 47.5,
+        "ownershipPercent": 23.6,
+        "rec": 11,
+        "recYds": 215,
+        "recTd": 2,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Commanders",
+        "position": "DST",
+        "team": "WAS",
+        "salary": 2800,
+        "points": 11,
+        "ownershipPercent": 35.5,
+        "sacks": 3,
+        "takeaways": 2,
+        "qbFaced": "Joshua Dobbs",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "ARI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This Week 1 winner treats role uncertainty as an edge, not a handicap. The slate anchor is the Miami Los Angeles game, but the roster builds it in a way that turns a common shootout read into a sharp points funnel. Tua Tagovailoa plus Tyreek Hill captures the most fragile outcome on the slate, a single receiver pulling the game’s ceiling past the range where balanced builds can survive. Hill lands another 200 yard, two touchdown performance, and the roster is built to benefit from it instead of treating it as an outlier.\n\nThe Austin Ekeler bring back is not decoration. It is the way the roster preserves access to Chargers scoring without spending a second slot on guessing the Los Angeles receiver tree. Ekeler can match passing volume, convert red zone chances, and keep the game live even if wide receiver results spread. In Week 1, where rotations and usage remain unstable across the league, this is a cleaner way to stay connected to the opponent’s points while reducing decision count.\n\nThe separators sit in two places. Kendrick Bourne is the first. A cheap Patriot wide receiver becomes a slate breaker because early season coverage rules and personnel usage can create single game concentration nobody wants to project. The second is Brandon Aiyuk. Sub six percent ownership on a two touchdown, 129 yard score turns a mid salary receiver slot into an elite ceiling slot.\n\nPaying down at tight end and defense is not a concession. It is a salary allocation decision that fits this roster’s thesis. Hayden Hurst and Commanders defense do enough to avoid negative pressure on the build, and the cap space goes to the spots capable of forcing first place separation.",
+    "uniquenessNotes": "The ownership profile tells a clear story. The roster accepts popular salary at defense and a strong bring back at running back, then forces uniqueness through concentrated ceiling outcomes at wide receiver. A Week 1 field often uses uncertainty as a reason to scatter exposure. This roster does the opposite. It chooses a small number of outcomes and asks for them to hit.\n\nThe slateGroup shows how clean the portfolio is. Three players from the QB game, then one player from six other games. This avoids accidental negative correlation and avoids over committing to secondary games where usage distributions can flip in Week 1. It is a tight set of assumptions, then a wide net for secondary point sources.\n\nKenneth Walker III is the reminder that a first place roster can carry one muted score if the ceiling slots land correctly. The lineup does not need perfection across nine positions when the top end outcomes arrive in two separate wide receiver slots and the quarterback game clears the bar.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Tua Tagovailoa paired with Tyreek Hill, with Austin Ekeler as the direct opponent response",
+      "secondaryLever": "Two low owned wide receiver ceilings in Kendrick Bourne and Brandon Aiyuk, supported by pay down tight end and defense",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "MIA@LAC: 3 (QB game)",
+          "SEA@LAR: 1",
+          "PHI@NE: 1",
+          "JAX@IND: 1",
+          "SF@PIT: 1",
+          "CAR@ATL: 1",
+          "ARI@WAS: 1"
+        ],
+        "qbGameCluster": ["Tua Tagovailoa", "Tyreek Hill", "Austin Ekeler"],
+        "salaryReliefTargets": ["Kendrick Bourne", "Hayden Hurst", "Commanders"],
+        "qbFacedByCommandersDst": "Joshua Dobbs"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WR_PRIMARY_STACK",
+        "RB_BRINGBACK_WITH_PASSING_ROLE",
+        "WEEK1_ROLE_UNCERTAINTY_ATTACK",
+        "PAYDOWN_TE_AND_DST_FOR_WR_CEILING",
+        "TWO_WR_CEILING_WITH_LOW_OWNERSHIP"
+      ],
+      "macroStory": "A Week 1 first place roster built around a narrow bet on the Miami passing ceiling, then amplified by two separate low owned wide receiver eruption games while the low salary tight end and defense avoid failure outcomes."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "CEILING_THROUGH_SINGLE_WR", "GAME_ENVIRONMENT_ANCHOR"],
+        "microStory": "Tua Tagovailoa is chosen because Miami can condense explosive plays through Tyreek Hill. When Hill posts a slate defining line, Tua becomes the cleanest way to capture the same touchdowns without splitting across multiple receivers."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "TARGET_CONCENTRATION", "TILT_POINT"],
+        "microStory": "Tyreek Hill is the roster’s defining allocation. The record level 200 yard, two touchdown outcome is the kind of score that forces a winner to have it, and the roster treats him as the central scoring event rather than a luxury spend."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["BRINGBACK", "DUAL_PATH_TOUCHDOWNS", "VOLUME_PLUS_RECEIVING"],
+        "microStory": "Austin Ekeler functions as the opponent response without taking a stance on which Chargers pass catcher spikes. His receiving and red zone profile keeps him connected to every game script where the Chargers have to keep pace."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_CEILING", "ROLE_DISCOVERY_WEEK1", "SALARY_RELIEF_WITH_TOUCHDOWNS"],
+        "microStory": "Kendrick Bourne is a Week 1 role discovery leverage point. The roster benefits from a two touchdown concentration outcome that projection systems and the field struggle to price in early season usage."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Tua Tagovailoa", "position": "QB", "team": "MIA" },
+        "teammates": [{ "name": "Tyreek Hill", "position": "WR", "team": "MIA" }],
+        "opponent": { "name": "Austin Ekeler", "position": "RB", "team": "LAC" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Commanders", "position": "DST", "team": "WAS", "qbFaced": "Joshua Dobbs" },
+        "opponent": { "name": "Joshua Dobbs", "position": "QB", "team": "ARI" }
+      }
+    ]
+  }
+}

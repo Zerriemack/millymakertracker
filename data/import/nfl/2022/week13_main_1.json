@@ -1,0 +1,222 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 13,
+  "slateType": "MAIN",
+  "slateDate": "2022-12-04T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 13",
+  "slateTag": "GENO LOCKETT SKINNY, DOUBLE ELITE WRS ADAMS AMONRA, BROWNS DST 30 VS KYLE ALLEN",
+  "slateGroup": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK13_MAIN_2022-12-04T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10682
+  },
+  "winner": {
+    "username": "UNKNOWN",
+    "points": 229.18,
+    "maxEntries": 150
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 229.18,
+    "totalOwnershipBp": 10682,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Geno Smith",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 6100,
+        "points": 27.98,
+        "ownershipPercent": 1.87,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Brian Robinson Jr.",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 5300,
+        "points": 13.1,
+        "ownershipPercent": 7.72,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Zonovan Knight",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 4600,
+        "points": 16.8,
+        "ownershipPercent": 14.9,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "LV",
+        "salary": 8700,
+        "points": 40.7,
+        "ownershipPercent": 10.13,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyler Lockett",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 6000,
+        "points": 30.8,
+        "ownershipPercent": 5.14,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Garrett Wilson",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 5300,
+        "points": 27.2,
+        "ownershipPercent": 33.9,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Logan Thomas",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 2900,
+        "points": 5,
+        "ownershipPercent": 1.49,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Amon-Ra St. Brown",
+        "position": "WR",
+        "team": "DET",
+        "salary": 7100,
+        "points": 37.6,
+        "ownershipPercent": 27.67,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Browns",
+        "position": "DST",
+        "team": "CLE",
+        "salary": 3900,
+        "points": 30,
+        "ownershipPercent": 4.0,
+        "qbFaced": "Kyle Allen",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is a clean example of how a slate can be won without leaning on the most popular correlation tree. The roster has a single primary stack, Geno Smith with Tyler Lockett, and it stops there. There is no second Seattle pass catcher and no run back from the Rams. That decision matters because the roster is already committing to concentrated wide receiver scoring elsewhere, and it avoids turning the build into a single game dependency.\n\nThe slate breaking element is the Cleveland defense at 4 percent ownership scoring 30 points against Kyle Allen. This outcome is a structural advantage, not a cosmetic one. A defense at 3,900 is rarely allowed to be a top three raw score piece. When it happens, it compresses the rest of the lineup requirements because it replaces a wide receiver spike that the field usually needs to find in a fragile salary range.\n\nThe second anchor is the deliberate pay down at running back to pay up at wide receiver. Zonovan Knight and Brian Robinson Jr. combine for a workable floor with enough points to keep pace, while the roster spends for Davante Adams and Amon-Ra St. Brown. Adams and St. Brown finishing as the top two wide receivers on the slate is the reason this construction closes the door. The lineup does not need to thread the needle at tight end or find a perfect third receiver because the salary was allocated to the positions that actually carried the slate.\n\nGarrett Wilson is the ownership heavy piece and the roster accepts it because his role was consolidating. The win does not come from fading Wilson. The win comes from pairing Wilson with Knight as a secondary team stack that captures the Jets scoring concentration, while the Browns defense and the double elite wide receiver ceiling provide separation.\n\nDiagnostic read of what happened is simple. The 80 20 drivers are the Browns defense score and the Adams plus St. Brown ceiling combination. Geno Smith plus Tyler Lockett is the glue that keeps the roster in the winning range without forcing the lineup into the chalk quarterback cluster. Everything else is built to stay alive around those outcomes.",
+    "uniquenessNotes": "The ownership story is more nuanced than a single contrarian click. The total ownership is 106.82 percent, but it is distributed in a way that matters. The roster eats Garrett Wilson at 33.90 percent and Amon-Ra St. Brown at 27.67 percent, then buys back uniqueness with Geno Smith at 1.87 percent, Logan Thomas at 1.49 percent, and Cleveland defense at 4 percent.\n\nThe structural uniqueness is the quarterback choice and the decision to keep the stack skinny. Geno Smith plus Tyler Lockett at modest salary is an efficient way to access a 58.78 point two player outcome without paying the salary and ownership attached to the higher priced quarterback tier. The roster does not add D.K. Metcalf even though he also scored. That is a restraint decision, and it keeps salary available for the Adams and St. Brown pairing.\n\nThe running back choices are functional rather than dominant. They are not expected to win the slate. They are expected to avoid loss, and they do. That is the core concept of this build. The raw points are expected to come from wide receiver and defense, and the roster aligns salary with that expectation.\n\nThe Browns defense is the major leverage lever. A defense posting 30 points creates a gap that a typical defense score cannot overcome. It also provides leverage against the field allocation patterns that spend down at defense and then attempt to compensate with an extra fragile mid range receiver ceiling.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Geno Smith paired with Tyler Lockett as a skinny stack at low ownership and efficient salary",
+      "secondaryLever": "Cleveland defense ceiling versus Kyle Allen plus paying up for Davante Adams and Amon-Ra St. Brown",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "SEA@LAR: 2 (QB game)",
+          "WAS@NYG: 2",
+          "NYJ@MIN: 2",
+          "LV@LAC: 1",
+          "DET@JAX: 1",
+          "CLE@HOU: 1"
+        ],
+        "seahawksStack": ["Geno Smith", "Tyler Lockett"],
+        "jetsPair": ["Garrett Wilson", "Zonovan Knight"],
+        "commandersPair": ["Brian Robinson Jr.", "Logan Thomas"],
+        "qbFacedByBrownsDst": "Kyle Allen"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "SKINNY_QB_WR_STACK",
+        "PAY_DOWN_RB_PAY_UP_WR",
+        "DEFENSE_SLATE_BREAKER",
+        "SECONDARY_TEAM_STACK",
+        "OWNERSHIP_DISTRIBUTION_STANCE"
+      ],
+      "macroStory": "A winning build anchored by a low owned skinny quarterback stack, two elite wide receiver ceilings, and a rare defense eruption, with running back salary intentionally redirected to maximize top end wide receiver outcomes."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "LOW_OWNERSHIP_CEILING", "SEPARATION_ENGINE"],
+        "microStory": "Cleveland defense scoring 30 points against Kyle Allen is the defining separator. It provides elite raw points at a position the field treats as low impact, which changes the payoff map for the entire roster."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["ELITE_CEILING", "PAY_UP_ANCHOR", "TOP_TWO_OUTCOME_CAPTURE"],
+        "microStory": "Davante Adams supplies the premium wide receiver ceiling outcome. The roster is built to afford his price without sacrificing the rest of the build, and the slate requires this level of receiver score to finish first."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["ELITE_CEILING", "OWNERSHIP_ACCEPTANCE", "STRUCTURE_COMPANION"],
+        "microStory": "Amon-Ra St. Brown is the second premium ceiling. Pairing him with Adams is the core allocation stance of the roster, and it is the reason the running back room can be functional rather than dominant."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_ENGINE", "EFFICIENCY_STACK", "SALARY_STABILITY"],
+        "microStory": "Geno Smith is chosen as a leverage quarterback who can reach a winning score without requiring a full onslaught. The decision to pair him only with Tyler Lockett keeps the build flexible and protects the pay up wide receiver plan."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Geno Smith", "position": "QB", "team": "SEA" },
+        "teammates": [{ "name": "Tyler Lockett", "position": "WR", "team": "SEA" }],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Garrett Wilson", "position": "WR", "team": "NYJ" },
+        "opponent": { "name": "Zonovan Knight", "position": "RB", "team": "NYJ" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Browns", "position": "DST", "team": "CLE", "qbFaced": "Kyle Allen" },
+        "opponent": { "name": "Kyle Allen", "position": "QB", "team": "HOU" }
+      }
+    ]
+  }
+}

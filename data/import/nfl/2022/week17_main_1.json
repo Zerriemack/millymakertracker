@@ -1,0 +1,225 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 17,
+  "slateType": "MAIN",
+  "slateDate": "2023-01-01T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 17",
+  "slateTag": "BRADY EVANS NUCLEAR, TWO TE DUPLICATED TIE, SAINTS DST SMASH",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK17_MAIN_2023-01-01T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 7718
+  },
+  "winner": {
+    "username": "dc05",
+    "points": 248.78,
+    "maxEntries": 150
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 248.78,
+    "totalOwnershipBp": 7718,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Tom Brady",
+        "position": "QB",
+        "team": "TB",
+        "salary": 6100,
+        "points": 40.68,
+        "ownershipPercent": 3.21,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 9000,
+        "points": 34.3,
+        "ownershipPercent": 15.97,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Travis Etienne",
+        "position": "RB",
+        "team": "JAX",
+        "salary": 6400,
+        "points": 26,
+        "ownershipPercent": 25.46,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6800,
+        "points": 25,
+        "ownershipPercent": 10.67,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mike Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6500,
+        "points": 51.7,
+        "ownershipPercent": 6.42,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DJ Moore",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 5700,
+        "points": 26.7,
+        "ownershipPercent": 7.41,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Hunter Henry",
+        "position": "TE",
+        "team": "NE",
+        "salary": 3000,
+        "points": 10.2,
+        "ownershipPercent": 2.05,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Darren Waller",
+        "position": "TE",
+        "team": "LV",
+        "salary": 4300,
+        "points": 16.2,
+        "ownershipPercent": 1.13,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Saints",
+        "position": "DST",
+        "team": "NO",
+        "salary": 2200,
+        "points": 18,
+        "ownershipPercent": 4.86,
+        "qbFaced": "Gardner Minshew",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winning roster solves the slate through one decision, then presses the edge without drifting into randomness. The decision sits in the Tampa Bay Carolina game. Tom Brady at low ownership becomes the anchor, then the roster captures two distinct scoring channels through Chris Godwin and Mike Evans while still taking the bring back with DJ Moore. Most builds approached Tampa in either a thin Brady double, or a one receiver attachment to a different quarterback. This roster commits to the full story where Tampa finally produces a vintage passing spike and Carolina stays involved enough to keep pass volume alive.\n\nThe second move is structural, not decorative. Christian McCaffrey paired with Darren Waller forms a two piece secondary game block. It targets a condensed path to points from the San Francisco side while selecting one of the only Raiders pieces with red zone and yardage access. The roster does not force a quarterback correlation from that game, so it can keep the Tampa bet intact.\n\nThe tight end construction is the part people misread. Hunter Henry plus Darren Waller is not a thin value grab. It is an ownership geometry play. Two tight ends with minimal combined ownership allow the roster to carry a popular running back in Travis Etienne without surrendering duplication protection. The Saints defense completes the profile by converting a volatile slot into a ceiling slot. Against Philadelphia with Gardner Minshew, the defense has a clearer path to pressure outcomes, and the lineup ends with a defensive score that can hang with any skill position spike.\n\nThis slate result is also a reminder of how sharp duplication can look. A sub eighty percent total ownership roster can still tie when the construction lands on the same concentrated scoring tree.",
+    "uniquenessNotes": "The uniqueness does not come from one contrarian dart. It comes from a four player game commitment where the quarterback carries low ownership, then the roster pairs it with a double receiver and a bring back. This creates a lineup path many builders skip, because it demands belief in a full game script reversal for Tampa.\n\nThe two tight end build is a duplication trap in most weeks because it often pulls two popular cheap options. Here, both tight ends sit in low ownership ranges, so the roster gains both salary flexibility and uniqueness without paying a projection tax.\n\nTravis Etienne functions as the stabilizer. The roster accepts a popular running back score so the rest of the build can swing for first place through Brady Evans and the Saints defense ceiling outcome.\n\nThis contest finished as a two person tie between dc05 and phamilton014, which underlines how precise the roster tree is. The build is unique in concept, yet easy to duplicate once someone sees the same game stack and tight end pairing.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Tom Brady with Chris Godwin and Mike Evans plus DJ Moore bring back",
+      "secondaryLever": "Two tight end construction for ownership geometry plus Saints DST ceiling versus Gardner Minshew",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "CAR@TB: 4 (QB game)",
+          "SF@LV: 2",
+          "JAX@HOU: 1",
+          "NE@MIA: 1",
+          "NO@PHI: 1"
+        ],
+        "bucsPanthersCluster": ["Tom Brady", "Chris Godwin", "Mike Evans", "DJ Moore"],
+        "ninersRaidersPair": ["Christian McCaffrey", "Darren Waller"],
+        "tightEndConstruction": ["Hunter Henry", "Darren Waller"],
+        "qbFacedBySaintsDst": "Gardner Minshew"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_GAME_STACK",
+        "QB_DOUBLE_WR_PLUS_BRINGBACK",
+        "TWO_TE_OWNERSHIP_GEOMETRY",
+        "CHALK_RB_STABILIZER",
+        "DST_VS_BACKUP_QB_CEILING"
+      ],
+      "macroStory": "A low owned quarterback anchors a full game bet, the roster protects uniqueness through a low owned two tight end structure, then it closes with a defense versus a backup quarterback outcome that keeps pace with the slate breaking wide receiver score."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNERSHIP_ANCHOR", "VOLUME_THROUGH_ADVERSITY"],
+        "microStory": "Tom Brady becomes the decision point. The roster commits to Tampa producing multiple passing touchdowns and captures the full distribution by pairing both receivers who can each reach a ceiling in different ways."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "TOUCHDOWN_CONCENTRATION", "LEVERAGED_CEILING"],
+        "microStory": "Mike Evans provides the separating score. A 50 point wide receiver outcome at moderate ownership is the event that turns a coherent stack into a first place outcome."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["OWNERSHIP_LOCKPICK", "SALARY_STRUCTURE_ENABLER", "NON_FRAGILE_POINTS"],
+        "microStory": "The tight end pairing avoids the common one tight end plus mid tier receiver pattern. It creates a path where uniqueness improves without forcing a fragile punt."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["VOLATILITY_CAPTURE", "MATCHUP_CEILING", "BACKUP_QB_PRESSURE_PATH"],
+        "microStory": "New Orleans defense converts the quarterback situation into upside. Against Gardner Minshew, pressure and turnover paths become more available, and the defense score becomes part of the ceiling stack rather than a filler slot."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Tom Brady", "position": "QB", "team": "TB" },
+        "teammates": [
+          { "name": "Chris Godwin", "position": "WR", "team": "TB" },
+          { "name": "Mike Evans", "position": "WR", "team": "TB" }
+        ],
+        "opponent": { "name": "DJ Moore", "position": "WR", "team": "CAR" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Christian McCaffrey", "position": "RB", "team": "SF" },
+        "opponent": { "name": "Darren Waller", "position": "TE", "team": "LV" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Saints", "position": "DST", "team": "NO", "qbFaced": "Gardner Minshew" },
+        "opponent": { "name": "Gardner Minshew", "position": "QB", "team": "PHI" }
+      }
+    ]
+  }
+}

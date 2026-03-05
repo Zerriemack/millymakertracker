@@ -1,0 +1,260 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 4,
+  "slateType": "MAIN",
+  "slateDate": "2023-10-01T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 4",
+  "slateTag": "CHRISTIAN MCCAFFREY 4 TDS BREAKS SLATE, ALLEN DIGGS WITH ARI BRINGBACK, MICHAEL WILSON 0.3% CEILING",
+  "slateGroup": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK04_MAIN_2023-10-01T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10460
+  },
+  "winner": {
+    "username": "michaelto717",
+    "points": 253.7,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 253.7,
+    "totalOwnershipBp": 10460,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 8200,
+        "points": 39.5,
+        "ownershipPercent": 6.1,
+        "passTd": 4,
+        "passYds": 320,
+        "rushTd": 1,
+        "rushYds": 17,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 9200,
+        "points": 51.7,
+        "ownershipPercent": 25.4,
+        "rushYdsRb": 106,
+        "rushTdRb": 3,
+        "recRb": 7,
+        "recYdsRb": 71,
+        "recTdRb": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Khalil Herbert",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 4700,
+        "points": 25.2,
+        "ownershipPercent": 3.3,
+        "rushYdsRb": 103,
+        "recRb": 4,
+        "recYdsRb": 19,
+        "recTdRb": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Stefon Diggs",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 8100,
+        "points": 39,
+        "ownershipPercent": 12.6,
+        "rec": 6,
+        "recYds": 120,
+        "recTd": 3,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Nico Collins",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 5100,
+        "points": 38.8,
+        "ownershipPercent": 6.7,
+        "rec": 7,
+        "recYds": 168,
+        "recTd": 2,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Adam Thielen",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 4500,
+        "points": 15.2,
+        "ownershipPercent": 29.3,
+        "rec": 7,
+        "recYds": 76,
+        "rushYds": 6,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Pat Freiermuth",
+        "position": "TE",
+        "team": "PIT",
+        "salary": 3400,
+        "points": 3.7,
+        "ownershipPercent": 14.7,
+        "rec": 3,
+        "recYds": 7,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Michael Wilson",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 3500,
+        "points": 26.6,
+        "ownershipPercent": 0.3,
+        "rec": 7,
+        "recYds": 76,
+        "recTd": 2,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Chargers",
+        "position": "DST",
+        "team": "LAC",
+        "salary": 3100,
+        "points": 14,
+        "ownershipPercent": 6.2,
+        "sacks": 7,
+        "takeaways": 3,
+        "int": 1,
+        "fumbleRecoveries": 2,
+        "pointsAllowed": 20,
+        "qbFaced": "Aidan O'Connell",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LV"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis: The slate turns on one concentration point. Christian McCaffrey converts four touchdowns, then adds yardage and receptions, so the roster starts with a score profile the field cannot simulate through balanced builds. Once McCaffrey reaches 50, the remaining job becomes finding enough ceiling elsewhere without paying for a chalk quarterback combination.\n\nThe quarterback decision solves this cleanly. Josh Allen paired with Stefon Diggs captures Buffalo touchdowns directly, and the 300 yard bonus keeps the stack from needing a third Bills pass catcher. The bringback choice does not chase Arizona volume. It targets the least owned touchdown path. Michael Wilson at 0.3 percent ownership scores twice, which turns a normal bringback into the separator that pushes the lineup past every other McCaffrey build.\n\nThe roster has a second scoring spine outside Buffalo. Nico Collins posts a true alpha score with 168 yards and two touchdowns, so the lineup gets another ceiling result from a mid salary role. Khalil Herbert benefits from a role shift created by backfield injuries, and his receiving touchdown matters because it lets the lineup keep pace even when quarterback scoring runs hot.\n\nThe defense selection matches the slate script. The Chargers face Aidan O'Connell and reach seven sacks with multiple turnovers. It is not a defense touchdown slate winner, but it is a high pressure score that avoids the common defense failure mode.\n\nPredictive Analysis: When one player produces a slate breaking outcome at high ownership, first place often belongs to the roster that pairs that outcome with one low owned touchdown cluster tied to the same game environment. Here, McCaffrey becomes the required input. The differentiator becomes identifying where the opponent can score without being the popular opponent. The Michael Wilson result shows a repeatable research angle. In heavy favorite games, the best bringback is frequently a low salary receiver who only needs a small number of targets to access multiple touchdowns.\n\nPrescriptive Analysis: In future main slates, treat the highest ownership slate breaker as an anchor when his role produces both touchdown access and reception volume. Then force the lineup to include one micro decision with true first place leverage, ideally inside the same game as the anchor. Pick a low owned touchdown path, not a low owned yardage path. Pair that with a premium quarterback stack where touchdowns consolidate through one primary receiver, so the roster can allocate salary and variance to the leverage slot rather than spreading thin across secondary stacks. Use defense as a pressure based ceiling selection versus a backup archetype quarterback, since sacks and short fields raise the probability of a 12 to 16 point defense score without needing a defensive touchdown.",
+    "uniquenessNotes": "The roster accepts McCaffrey and Thielen ownership and still wins because the uniqueness lives in two places. Josh Allen at modest ownership plus Stefon Diggs gives access to the highest end quarterback ceiling without paying the most common stack tree across the slate. Michael Wilson at 0.3 percent ownership provides the decisive separation, especially because he is correlated with the McCaffrey game and benefits from the same touchdown environment.\n\nThe build also stays efficient with salary. The lineup leaves 200 on the table, which reduces duplication risk, and it avoids forcing a perfect tight end. Pat Freiermuth misses, yet the roster still wins because the other eight slots include multiple slate defining outcomes.\n\nThe Chargers defense adds a clean floor and a pressure ceiling against Aidan O'Connell, which protects the roster from a defense zero while keeping access to a tournament viable defense score.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Christian McCaffrey slate breaking role paired with Josh Allen and Stefon Diggs, then brought back with Michael Wilson leverage",
+      "secondaryLever": "Nico Collins true alpha eruption plus Chargers pressure defense versus Aidan O'Connell",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "MIA@BUF: 2 (QB game)",
+          "ARI@SF: 2",
+          "PIT@HOU: 2",
+          "DEN@CHI: 1",
+          "MIN@CAR: 1",
+          "LV@LAC: 1"
+        ],
+        "billsCluster": ["Josh Allen", "Stefon Diggs"],
+        "ninersCardinalsCluster": ["Christian McCaffrey", "Michael Wilson"],
+        "texansSteelersPair": ["Nico Collins", "Pat Freiermuth"],
+        "qbFacedByChargersDst": "Aidan O'Connell"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "SLATE_BREAKING_RB_ANCHOR",
+        "QB_WR_TOUCHDOWN_CONSOLIDATION",
+        "LEVERAGE_BRINGBACK_TOUCHDOWN_PATH",
+        "MID_SALARY_ALPHA_WR_CEILING",
+        "PRESSURE_DST_VERSUS_BACKUP_QB"
+      ],
+      "macroStory": "A McCaffrey anchored build that separates through a low owned touchdown bringback in the same game, supported by a premium quarterback stack and a mid salary alpha receiver eruption."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_ANCHOR", "TD_CONCENTRATION", "RECEPTION_FLOOR_PLUS_CEILING"],
+        "microStory": "Christian McCaffrey provides the winning margin through four touchdowns with enough receiving work to remove most downside. The roster can survive a tight end miss because this slot is a true slate breaker."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_SEPARATOR", "LOW_OWNERSHIP_TOUCHDOWNS", "GAME_ENVIRONMENT_LEVERAGE"],
+        "microStory": "Michael Wilson is the decision that wins first place among McCaffrey lineups. Two touchdowns at 0.3 percent ownership create separation the field cannot match with popular Arizona bringbacks."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["CEILING_ENGINE", "BONUS_ACCESS", "TOUCHDOWN_STACK_DRIVER"],
+        "microStory": "Josh Allen supplies the elite quarterback score through four passing touchdowns and a rushing touchdown, while staying paired with the correct consolidation partner in Diggs."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRESSURE_CEILING", "TURNOVER_PATH", "BACKUP_QB_TARGET"],
+        "microStory": "Chargers defense targets a backup archetype quarterback and converts pressure into sacks and turnovers. It is a functional ceiling defense score without requiring a defensive touchdown."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Josh Allen", "position": "QB", "team": "BUF" },
+        "teammates": [{ "name": "Stefon Diggs", "position": "WR", "team": "BUF" }],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Christian McCaffrey", "position": "RB", "team": "SF" },
+        "opponent": { "name": "Michael Wilson", "position": "WR", "team": "ARI" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Nico Collins", "position": "WR", "team": "HOU" },
+        "opponent": { "name": "Pat Freiermuth", "position": "TE", "team": "PIT" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Chargers", "position": "DST", "team": "LAC", "qbFaced": "Aidan O'Connell" },
+        "opponent": { "name": "Aidan O'Connell", "position": "QB", "team": "LV" }
+      }
+    ]
+  }
+}

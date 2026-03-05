@@ -1,0 +1,266 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 3,
+  "slateType": "MAIN",
+  "slateDate": "2023-09-24T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 3",
+  "slateTag": "MIAMI 70 POINTS, KEENAN ALLEN 18 CATCHES, RARE MILLY MAKER TIE",
+  "slateGroup": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK03_MAIN_2023-09-24T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 13200
+  },
+  "winner": {
+    "username": "ctoujague",
+    "points": 294.38,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 294.38,
+    "totalOwnershipBp": 13200,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Jared Goff",
+        "position": "QB",
+        "team": "DET",
+        "salary": 6500,
+        "points": 19.02,
+        "ownershipPercent": 3.7,
+        "passTd": 1,
+        "passYds": 243,
+        "rushTd": 1,
+        "rushYds": 3,
+        "int": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Kenneth Walker III",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 6200,
+        "points": 30.6,
+        "ownershipPercent": 20.4,
+        "rushYdsRb": 97,
+        "rushTdRb": 2,
+        "recRb": 3,
+        "recYdsRb": 59,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Raheem Mostert",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 6000,
+        "points": 45.2,
+        "ownershipPercent": 16.2,
+        "rushYdsRb": 82,
+        "rushTdRb": 3,
+        "recRb": 7,
+        "recYdsRb": 60,
+        "recTdRb": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 9000,
+        "points": 33.7,
+        "ownershipPercent": 22.8,
+        "rec": 9,
+        "recYds": 157,
+        "recTd": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 7600,
+        "points": 48.46,
+        "ownershipPercent": 15.7,
+        "rec": 18,
+        "recYds": 215,
+        "passTd": 1,
+        "passYds": 49,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tank Dell",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 3600,
+        "points": 28.5,
+        "ownershipPercent": 20.6,
+        "rec": 5,
+        "recYds": 145,
+        "recTd": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Sam LaPorta",
+        "position": "TE",
+        "team": "DET",
+        "salary": 4000,
+        "points": 22.4,
+        "ownershipPercent": 9.3,
+        "rec": 8,
+        "recYds": 84,
+        "recTd": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Adam Thielen",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 3900,
+        "points": 34.5,
+        "ownershipPercent": 11.0,
+        "rec": 11,
+        "recYds": 145,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bills",
+        "position": "DST",
+        "team": "BUF",
+        "salary": 2900,
+        "points": 32,
+        "ownershipPercent": 12.3,
+        "sacks": 9,
+        "takeaways": 5,
+        "int": 4,
+        "fumbleRecoveries": 1,
+        "defTd": 1,
+        "pointsAllowed": 6,
+        "qbFaced": "Sam Howell",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis: The slate breaks open through two separate pressure points, and both appear in this roster. First, Miami reaches 70 real points, which converts a mid range RB into an outlier slate winner while still allowing Tyreek Hill to clear an elite ceiling. Second, Keenan Allen posts an 18 catch volume eruption with a bonus passing touchdown. Those two outcomes create a scoring surface where many lineups can reach high totals, so the win comes from pairing those ceiling events with a low owned quarterback who does not sink the roster.\n\nThe Jared Goff plus Sam LaPorta mini stack functions as the stabilizer with access to touchdowns. Detroit does not need a full shootout for this pair to pay off because LaPorta’s scoring can consolidate at tight end while Goff adds a rushing touchdown to prevent a dead quarterback slot. This is the slate level reason the build survives the common failure mode of paying for ceiling receivers while taking a low output quarterback.\n\nPredictive Analysis: This roster shows an important pattern for weeks where multiple games produce historic scoring. When the slate offers at least one unstoppable offense, the optimal approach often becomes capturing the most reliable touch concentration at RB and WR, then solving quarterback through price, ownership, and touchdown path rather than raw projection. The Goff selection captures a clean path to two to three total touchdowns without paying for the most popular quarterback archetypes. The rest of the roster stays aligned with concentrated usage, so the roster does not depend on thin efficiency outcomes outside one slot.\n\nPrescriptive Analysis: In future main slates, treat extreme team scoring environments as multipliers for roles, not as reasons to force a specific stack tree. If an offense projects for a blowout score, prioritize the player whose role converts team touchdowns into fantasy points with minimal fragility, then decide whether a second piece adds ceiling or creates duplication. Pair that with a quarterback who can reach the winning range through touchdowns at low ownership, especially when the field spreads ownership across many viable high end quarterbacks. Use a second correlated pocket inside the roster, such as QB plus TE, to protect the lineup from the thin quarterback outcome while keeping access to multi touchdown paths.",
+    "uniquenessNotes": "The roster avoids the common slate build where quarterback and primary stack consume most salary. Jared Goff at 3.7 percent ownership changes the lineup’s duplication profile immediately, and the rushing touchdown adds a scoring path many pocket passers do not provide.\n\nThe build embraces popular pieces without losing separation. Tank Dell provides the salary structure to fit multiple ceiling slots, and his production comes from a high value role outcome rather than a single long touchdown. Kenneth Walker III and Adam Thielen from the same game function as a balanced volume and touchdown cluster, which keeps the roster from becoming a single game dependent build.\n\nBuffalo defense against Sam Howell supplies a defensive ceiling outcome that fits the slate story. Nine sacks plus four interceptions and a defensive touchdown produces a score that flips the defense slot from a neutral filler into a true differentiator, while still pairing logically with a replacement level quarterback on the other side.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Miami ceiling captured through Raheem Mostert plus Tyreek Hill, paired with a low owned quarterback path through Jared Goff",
+      "secondaryLever": "Keenan Allen volume eruption plus Buffalo defense ceiling against Sam Howell",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "ATL@DET: 2 (QB game)",
+          "DEN@MIA: 2",
+          "CAR@SEA: 2",
+          "LAC@MIN: 1",
+          "HOU@JAX: 1",
+          "BUF@WAS: 1"
+        ],
+        "lionsCluster": ["Jared Goff", "Sam LaPorta"],
+        "dolphinsCluster": ["Raheem Mostert", "Tyreek Hill"],
+        "panthersSeahawksPair": ["Kenneth Walker III", "Adam Thielen"],
+        "salaryRelief": "Tank Dell",
+        "qbFacedByBillsDst": "Sam Howell"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNED_QB_TOUCHDOWN_PATH",
+        "HISTORIC_TEAM_TOTAL_CAPTURE",
+        "RB_ROLE_MULTIPLIER_IN_BLOWOUT",
+        "ELITE_VOLUME_WR_OUTLIER",
+        "DST_CEILING_VERSUS_REPLACEMENT_LEVEL_QB",
+        "QB_TE_TOUCHDOWN_CONSOLIDATION"
+      ],
+      "macroStory": "A rare tie winner built around slate defining offensive totals, then separated through a low owned quarterback who stayed afloat via touchdowns and a defense slot that posted a true ceiling outcome."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_SEPARATOR", "LOW_OWNERSHIP_ENGINE", "TOUCHDOWN_PATH"],
+        "microStory": "Jared Goff does not need a 35 point quarterback outcome. He needs to avoid failure while the rest of the roster captures the slate’s monster scores, and the rushing touchdown plus a LaPorta touchdown connection accomplishes that."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["SCORE_MULTIPLIER", "TOUCHDOWN_CLUSTER", "TEAM_TOTAL_CAPTURE"],
+        "microStory": "Raheem Mostert converts Miami’s scoring into direct fantasy points through four touchdowns and seven receptions. This is the cleanest way to harvest a 70 point team outcome without requiring the quarterback slot."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["VOLUME_OUTLIER", "BONUS_ACCESS", "SCORE_THAT_WINS_SLOTS"],
+        "microStory": "Keenan Allen posts a reception total that changes the slate math. The passing touchdown is secondary, because the core separation is 18 catches paired with 215 receiving yards."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["TURNOVER_CEILING", "PRESSURE_DOMINANCE", "DEFENSIVE_TOUCHDOWN"],
+        "microStory": "Buffalo defense delivers the full ceiling script. Sacks create long down situations, interceptions follow, and the defensive touchdown turns a strong performance into a slate defining defense score."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Jared Goff", "position": "QB", "team": "DET" },
+        "teammates": [{ "name": "Sam LaPorta", "position": "TE", "team": "DET" }],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Raheem Mostert", "position": "RB", "team": "MIA" },
+        "opponent": { "name": "Tyreek Hill", "position": "WR", "team": "MIA" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Kenneth Walker III", "position": "RB", "team": "SEA" },
+        "opponent": { "name": "Adam Thielen", "position": "WR", "team": "CAR" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Bills", "position": "DST", "team": "BUF", "qbFaced": "Sam Howell" },
+        "opponent": { "name": "Sam Howell", "position": "QB", "team": "WAS" }
+      }
+    ]
+  }
+}

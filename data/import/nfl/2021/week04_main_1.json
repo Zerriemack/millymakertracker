@@ -1,0 +1,254 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 4,
+  "slateType": "MAIN",
+  "slateDate": "2021-10-03T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 4",
+  "slateTag": "BILLS DST NUKES DAVIS MILLS, DAK PRESCOTT WITH DJ MOORE, CORDARRELLE PATTERSON 3 TD GAME",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "rosterConstruction": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2021_WK04_MAIN_2021-10-03T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8860
+  },
+  "winner": {
+    "username": "jZinser",
+    "points": 255.32,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 255.32,
+    "totalOwnershipBp": 8860,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 6700,
+        "points": 27.02,
+        "ownershipPercent": 6.8,
+        "passTd": 4,
+        "passYds": 188,
+        "rushYds": 35,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 6700,
+        "points": 29.6,
+        "ownershipPercent": 2.4,
+        "rushYdsRb": 52,
+        "rushTdRb": 1,
+        "recRb": 5,
+        "recYdsRb": 74,
+        "recTdRb": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Cordarrelle Patterson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 4900,
+        "points": 34.6,
+        "ownershipPercent": 6.7,
+        "rushYdsRb": 34,
+        "recRb": 5,
+        "recYdsRb": 82,
+        "recTdRb": 3,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Deebo Samuel",
+        "position": "WR",
+        "team": "SF",
+        "salary": 6500,
+        "points": 38.7,
+        "ownershipPercent": 10.1,
+        "rec": 8,
+        "recYds": 156,
+        "recTd": 2,
+        "rushYds": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DJ Moore",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 6600,
+        "points": 34.9,
+        "ownershipPercent": 17.6,
+        "rec": 8,
+        "recYds": 113,
+        "recTd": 2,
+        "rushYds": 6,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Corey Davis",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 5000,
+        "points": 24.1,
+        "ownershipPercent": 9.9,
+        "rec": 4,
+        "recYds": 111,
+        "recTd": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Dalton Schultz",
+        "position": "TE",
+        "team": "DAL",
+        "salary": 3400,
+        "points": 17.8,
+        "ownershipPercent": 9.6,
+        "rec": 6,
+        "recYds": 58,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "David Montgomery",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 5800,
+        "points": 25.6,
+        "ownershipPercent": 20.2,
+        "rushYdsRb": 106,
+        "rushTdRb": 2,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bills",
+        "position": "DST",
+        "team": "BUF",
+        "salary": 4300,
+        "points": 23.0,
+        "ownershipPercent": 5.3,
+        "sacks": 3,
+        "takeaways": 5,
+        "pointsAllowed": 0,
+        "qbFaced": "Davis Mills",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "HOU"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is built around a defensive outcome strong enough to let the quarterback slot be merely good instead of perfect. Buffalo defense puts up a 23 point score against Davis Mills through sacks and takeaways with a zero points allowed bucket. When a defense produces points normally reserved for a skill player, roster building changes. The slate no longer requires a 35 point quarterback. It requires avoiding mistakes while concentrating touchdowns in the right places.\n\nThe Dallas Carolina game becomes the anchor because it supplies reliable touchdown volume without needing a full game stack. Dak Prescott throws four touchdowns, but the roster does not chase multiple Cowboys receivers. It takes Dalton Schultz as the internal touchdown capture and uses DJ Moore as the opposing ceiling receiver. This pairing is efficient. Prescott plus Schultz covers Dallas scoring concentration in a way that survives wide receiver distribution variance, while Moore covers Carolina’s production regardless of game state.\n\nThe rest of the roster answers a different question. Where did the slate winning individual spikes come from, and how can one roster hold multiple of them without breaking salary or correlation logic. Cordarrelle Patterson provides three receiving touchdowns at a price point that normally buys a low ceiling running back. Saquon Barkley provides a two touchdown profile that includes a receiving touchdown, which is the part that separates his score from typical rushing only builds. Deebo Samuel supplies a true alpha receiver line, and Corey Davis fills the final wide receiver slot with a 100 yard touchdown game at mid ownership.\n\nDiagnostic takeaway is clear. The roster’s top end comes from touchdowns distributed across non traditional sources. Patterson’s three receiving touchdowns and Barkley’s receiving touchdown are the type of outcomes that punish builds over committed to wide receiver studs only. Buffalo defense supplies the points buffer. The Prescott stack is chosen for efficiency and touchdown accounting, not for maximum ceiling.\n\nPredictive takeaway is to treat an elite defense versus a fragile quarterback archetype as a slate shaping event when the defensive unit has true takeaway equity. When the defense hits, the roster can win with a quarterback who is good but not the top raw scorer, provided the touchdown capture at the skill positions is sharp.\n\nPrescriptive takeaway is to separate lineup construction into two decisions. First, decide whether the slate contains a defense capable of producing a skill player score against a backup level quarterback. If the answer is yes, build with that defense as an anchor and shift the rest of the roster toward touchdown concentration and role based captures rather than thin, long shot receiver guesses. Second, in the anchor quarterback game, prioritize one efficient teammate who captures scoring through a condensed role, then use the opponent slot for a true ceiling receiver. This roster uses Schultz for Dallas and Moore for Carolina, and the rest of the lineup chases individual spike outcomes across the slate without forcing unnecessary stacks.",
+    "uniquenessNotes": "The roster does not rely on a fragile game stack tree. It uses a three player cluster from CAR at DAL, then wins through independent spike outcomes. This is a deliberate choice when a defense can provide a large portion of the required separation.\n\nThe Cowboys side is taken through Dak Prescott and Dalton Schultz instead of a wide receiver pairing. That choice is a stance on touchdown distribution. If Dallas spreads targets, the tight end remains a stable way to capture scoring without guessing the correct receiver.\n\nThe touchdown profile across the running back slots is unusual. Saquon Barkley includes a receiving touchdown, and Cordarrelle Patterson scores three times through the air. Those are uncommon paths that outscore many wide receiver heavy constructions while keeping salary balanced.\n\nBills defense is the score that changes the contest. At 5.3 percent ownership it provides the points needed to beat lineups that hit similar offensive pieces but did not get a defense outcome.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Bills defense ceiling versus Davis Mills creates the margin, enabling a Dak Prescott plus Dalton Schultz anchor with DJ Moore as the opposing ceiling",
+      "secondaryLever": "Touchdown concentration from Cordarrelle Patterson and receiving touchdown access from Saquon Barkley outpace common rushing only running back builds",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "CAR@DAL: 3 (QB game)",
+          "NYG@NO: 1",
+          "WAS@ATL: 1",
+          "SEA@SF: 1",
+          "TEN@NYJ: 1",
+          "DET@CHI: 1",
+          "HOU@BUF: 1"
+        ],
+        "cowboysPanthersCluster": ["Dak Prescott", "Dalton Schultz", "DJ Moore"],
+        "touchdownBacks": ["Saquon Barkley", "Cordarrelle Patterson", "David Montgomery"],
+        "dstQbFaced": "Davis Mills"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "DEFENSE_AS_PRIMARY_SEPARATOR",
+        "QB_PLUS_TE_TOUCHDOWN_CAPTURE",
+        "OPPONENT_WR_CEILING_RUNBACK",
+        "RECEIVING_TD_RB_PROFILES",
+        "DISTRIBUTED_ONE_OFF_SPIKES"
+      ],
+      "macroStory": "Buffalo defense supplies a skill player level score against a backup level quarterback, while the offense is built around efficient touchdown capture in the QB game and multiple independent spike performances across the slate."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_SEPARATOR", "TURNOVER_CEILING", "MATCHUP_LOCK"],
+        "microStory": "Bills defense versus Davis Mills is the defining decision. The combination of sacks, interceptions, and a zero points allowed bucket creates a points surplus the rest of the roster can spend."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_DISTRIBUTOR", "EFFICIENCY_ANCHOR", "STACK_HUB"],
+        "microStory": "Dak Prescott delivers four passing touchdowns without needing rushing. The roster pairs him with the tight end to capture scoring while avoiding wide receiver guesswork."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_OUTLIER", "RECEIVING_ROLE", "LOW_OWNERSHIP_FOR_SCORE"],
+        "microStory": "Cordarrelle Patterson provides a rare three receiving touchdown outcome at a sub five thousand salary, which is a slate breaking efficiency score."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["OPPONENT_CEILING", "VOLUME_PLUS_TD", "GAME_ENVIRONMENT_BENEFIT"],
+        "microStory": "DJ Moore provides the opposing ceiling in the quarterback game, keeping the CAR at DAL environment fully monetized without adding extra Cowboys receivers."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Dak Prescott", "position": "QB", "team": "DAL" },
+        "teammates": [
+          { "name": "Dalton Schultz", "position": "TE", "team": "DAL" }
+        ],
+        "opponent": {
+          "name": "DJ Moore",
+          "position": "WR",
+          "team": "CAR"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Bills", "position": "DST", "team": "BUF", "qbFaced": "Davis Mills" },
+        "opponent": { "name": "Davis Mills", "position": "QB", "team": "HOU" }
+      }
+    ]
+  }
+}

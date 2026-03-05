@@ -1,0 +1,261 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 2,
+  "slateType": "MAIN",
+  "slateDate": "2021-09-19T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 2",
+  "slateTag": "KING HENRY BREAKS THE SLATE, TOM BRADY TRIPLE, COOPER KUPP CHALK SMASH",
+  "slateGroup": "3-2-2-1-1",
+  "rosterConstruction": "3-2-2-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2021_WK02_MAIN_2021-09-19T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8790
+  },
+  "winner": {
+    "username": "topher1072",
+    "points": 233.34,
+    "maxEntries": 150
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 233.34,
+    "totalOwnershipBp": 8790,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Tom Brady",
+        "position": "QB",
+        "team": "TB",
+        "salary": 6900,
+        "points": 30.64,
+        "ownershipPercent": 13.4,
+        "passTd": 5,
+        "passYds": 276,
+        "rushYds": 6,
+        "fumblesLost": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 8300,
+        "points": 50.7,
+        "ownershipPercent": 7.0,
+        "rushYdsRb": 182,
+        "rushTdRb": 3,
+        "recRb": 6,
+        "recYdsRb": 55,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Leonard Fournette",
+        "position": "RB",
+        "team": "TB",
+        "salary": 5100,
+        "points": 11.6,
+        "ownershipPercent": 4.8,
+        "rushYdsRb": 52,
+        "recRb": 4,
+        "recYdsRb": 24,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyler Lockett",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 7200,
+        "points": 34.8,
+        "ownershipPercent": 8.6,
+        "rec": 8,
+        "recYds": 178,
+        "recTd": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Rondale Moore",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 4000,
+        "points": 27.4,
+        "ownershipPercent": 2.4,
+        "rec": 7,
+        "recYds": 114,
+        "recTd": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 6000,
+        "points": 39.8,
+        "ownershipPercent": 20.3,
+        "rec": 9,
+        "recYds": 163,
+        "recTd": 2,
+        "rushYds": -5,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Rob Gronkowski",
+        "position": "TE",
+        "team": "TB",
+        "salary": 4700,
+        "points": 19.9,
+        "ownershipPercent": 17.8,
+        "rec": 4,
+        "recYds": 39,
+        "recTd": 2,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Marvin Jones Jr.",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 4700,
+        "points": 17.5,
+        "ownershipPercent": 4.7,
+        "rec": 6,
+        "recYds": 55,
+        "recTd": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 2900,
+        "points": 1.0,
+        "ownershipPercent": 8.9,
+        "sacks": 1,
+        "takeaways": 0,
+        "pointsAllowed": 34,
+        "qbFaced": "Kirk Cousins",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "MIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is a slate solving exercise built around one non negotiable outcome and one concentrated passing bet. Derrick Henry posts a 50 point rushing score at seven percent ownership, and the entire lineup becomes a story about accommodating his salary while still capturing enough total touchdowns. Once Henry lands, the remaining question becomes which expensive passing environment can keep pace. The answer is Tampa Bay.\n\nTom Brady is paired with Rob Gronkowski and Leonard Fournette in the same game, which creates a clean three player anchor without forcing a wide receiver decision from Tampa. Brady throws five touchdowns, Gronkowski captures two of them, and Fournette supplies cheap volume to keep the stack coherent even if the touchdown distribution tilts away from him. This is a triple built to capture Tampa scoring through roles, not through guessing which receiver becomes the spike.\n\nThe rest of the roster shows a deliberate choice to source ceiling from non Tampa games where usage was concentrated. Cooper Kupp at twenty percent ownership is accepted because his role produces a high floor and a high ceiling when the Rams pass game funnels targets. Tyler Lockett provides access to the same game as Henry without pairing with Russell Wilson, which matters because Henry already carries the Seattle Tennessee correlation. Rondale Moore brings a low owned, high volume receiver line from Minnesota Arizona, and the Cardinals defense is a repeat appearance that functions as a salary bridge rather than a separator.\n\nThe total construction is aggressive in one place and disciplined everywhere else. Henry supplies the raw advantage, the Tampa cluster supplies multi touchdown access, and the receiver selections avoid thin paths by prioritizing players whose production can arrive through volume instead of a single long play.",
+    "uniquenessNotes": "The key uniqueness is structural rather than exotic. Paying for Derrick Henry forces most lineups into uncomfortable concessions at quarterback or wide receiver. This roster avoids fragile concessions by taking Brady at moderate ownership and letting the Tampa touchdowns flow through Gronkowski, which is a narrower and more valuable capture than a single Tampa wide receiver.\n\nBrady plus Gronkowski plus Fournette also avoids the most common Henry pairing. Many Henry builds either run it back with an opposing Seattle piece or build a full game stack. This roster takes the cheapest and most direct Seattle scoring capture, Tyler Lockett, and stops there. It uses the Tennessee Seattle game for two high end outcomes without letting correlation take over the entire lineup.\n\nCardinals defense is not a ceiling result in this specific week. The defense scores one point. Its role is salary alignment and roster continuity. That choice is important. The roster does not need every position to win its matchup. It needs the combination of Henry plus Tampa touchdowns plus two elite receiver lines to reach a first place total.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Derrick Henry slate breaking score paired with a Tampa Bay triple through Tom Brady and Rob Gronkowski",
+      "secondaryLever": "Concentrated receiver ceilings through Cooper Kupp, Tyler Lockett, and Rondale Moore while keeping salary stable",
+      "notes": {
+        "rosterConstruction": "3-2-2-1-1",
+        "gameKey": [
+          "ATL@TB: 3 (QB game)",
+          "TEN@SEA: 2",
+          "MIN@ARI: 2",
+          "LAR@IND: 1",
+          "DEN@JAX: 1"
+        ],
+        "buccaneersCluster": ["Tom Brady", "Leonard Fournette", "Rob Gronkowski"],
+        "titansSeahawksPair": ["Derrick Henry", "Tyler Lockett"],
+        "vikingsCardinalsPair": ["Rondale Moore", "Cardinals"],
+        "dstQbFaced": "Kirk Cousins"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "SLATE_BREAKING_RB",
+        "QB_TRIPLE_WITH_TD_CONCENTRATION_TE",
+        "CHALK_WR_ACCEPTANCE_WITH_ROLE",
+        "TWO_PLAYER_GAME_CAPTURE_WITHOUT_FULL_STACK",
+        "DST_AS_SALARY_ALIGNMENT"
+      ],
+      "macroStory": "A Henry driven slate breaker funded by a touchdown concentrated Tampa triple, then finished with receiver ceilings sourced from three different games to avoid over committing to any single environment."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "SLATE_BREAKER", "LOWER_OWNERSHIP_FOR_OUTPUT"],
+        "microStory": "Derrick Henry is the deciding event. Three rushing touchdowns and 182 rushing yards create a points gap the rest of the roster can protect."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_DISTRIBUTOR", "STACK_ANCHOR", "HIGH_TOUCHDOWN_ENVIRONMENT"],
+        "microStory": "Tom Brady supplies five passing touchdowns and makes the Tampa cluster viable without requiring a wide receiver guess."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_CAPTURE", "RED_ZONE_PRIORITY", "STACK_MULTIPLIER"],
+        "microStory": "Rob Gronkowski concentrates two of Brady’s touchdowns into one roster spot, which is the cleanest way to convert the Tampa passing environment into first place points."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["CHALK_THAT_PAID", "TARGET_FUNNEL", "CEILING_WITH_VOLUME"],
+        "microStory": "Cooper Kupp delivers the high owned receiver outcome, which removes the need for a contrarian receiver to hit in order to win."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Tom Brady", "position": "QB", "team": "TB" },
+        "teammates": [
+          { "name": "Rob Gronkowski", "position": "TE", "team": "TB" },
+          { "name": "Leonard Fournette", "position": "RB", "team": "TB" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Derrick Henry", "position": "RB", "team": "TEN" },
+        "opponent": { "name": "Tyler Lockett", "position": "WR", "team": "SEA" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Rondale Moore", "position": "WR", "team": "ARI" },
+        "opponent": { "name": "Cardinals", "position": "DST", "team": "ARI" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Cardinals", "position": "DST", "team": "ARI", "qbFaced": "Kirk Cousins" },
+        "opponent": { "name": "Kirk Cousins", "position": "QB", "team": "MIN" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 10,
+  "slateType": "MAIN",
+  "slateDate": "2023-11-12T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 10",
+  "slateTag": "DAK TRIPLE, LAMB THREE STRAIGHT OPTIMAL MILLY WEEKS, DOUBLE TE WITH ARI DST STACK",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK10_MAIN_2023-11-12T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10270
+  },
+  "winner": {
+    "username": "RoyalPain21",
+    "points": 260.06,
+    "maxEntries": 91
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 260.06,
+    "totalOwnershipBp": 10270,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 6700,
+        "points": 41.86,
+        "ownershipPercent": 7.6,
+        "passTd": 4,
+        "passYds": 404,
+        "rushYds": 17,
+        "rushTd": 1,
+        "interceptions": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Rachaad White",
+        "position": "RB",
+        "team": "TB",
+        "salary": 5800,
+        "points": 17.8,
+        "ownershipPercent": 21.4,
+        "rushYdsRb": 51,
+        "recRb": 2,
+        "recYdsRb": 47,
+        "recTdRb": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Najee Harris",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 4900,
+        "points": 18.6,
+        "ownershipPercent": 13.7,
+        "rushYdsRb": 82,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 14,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 8500,
+        "points": 42.5,
+        "ownershipPercent": 12.9,
+        "rec": 11,
+        "recYds": 151,
+        "recTd": 1,
+        "rushYds": 14,
+        "rushTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Brandin Cooks",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 4200,
+        "points": 35.3,
+        "ownershipPercent": 1.6,
+        "rec": 9,
+        "recYds": 173,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 8800,
+        "points": 43.5,
+        "ownershipPercent": 8.0,
+        "rec": 11,
+        "recYds": 175,
+        "recTd": 2,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "T.J. Hockenson",
+        "position": "TE",
+        "team": "MIN",
+        "salary": 5000,
+        "points": 33.4,
+        "ownershipPercent": 6.1,
+        "rec": 11,
+        "recYds": 134,
+        "recTd": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Trey McBride",
+        "position": "TE",
+        "team": "ARI",
+        "salary": 3500,
+        "points": 24.1,
+        "ownershipPercent": 19.6,
+        "rec": 8,
+        "recYds": 131,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 2500,
+        "points": 3,
+        "ownershipPercent": 11.8,
+        "sacks": 3,
+        "takeaways": 0,
+        "qbFaced": "Taylor Heinicke",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ATL"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis starts with the anchor. Dallas against the Giants produces a true slate defining quarterback game, and the build captures it with a three player concentration. Dak Prescott supplies four passing touchdowns plus a rushing touchdown, and the roster collects two separate receiver ceilings from the same environment. CeeDee Lamb delivers the alpha profile with 11 catches, 151 receiving yards, and a receiving touchdown, then adds a rushing touchdown. Brandin Cooks supplies the second spike with 173 receiving yards and a touchdown at 1.6 percent roster rate. The combination solves two problems at once. It wins raw points at quarterback while also generating separation inside the same game tree many rosters entered.\n\nThe second lever is structural. Double tight end is present, but it is not redundant. T.J. Hockenson is used as a high end target funnel with 11 catches and a touchdown. Trey McBride is used as a mid salary volume tight end, and the roster pairs him with the Cardinals defense from the same game. Arizona does not post a ceiling defense score, but three sacks and a 2,500 salary keep the lineup stable while the pass catchers carry the scoring load.\n\nThe running backs are chosen for role clarity instead of slate dominance. Rachaad White and Najee Harris deliver usable scores without needing multi touchdown outcomes. This matters because the slate is decided by wide receiver and tight end eruptions, so the build avoids over investing in a running back ceiling chase.\n\nPredictive analysis for future research is straightforward. When a quarterback hits a true five touchdown game, pairing him with two receivers can be the cleanest path to first when one receiver is a low roster rate piece who owns a large share of yardage. The key is not guessing a random third option. It is identifying when the secondary receiver can plausibly absorb downfield volume while the alpha keeps the target floor. This is the Dallas blueprint in this specific week.\n\nPrescriptive analysis is about when to use each factor. In large fields, commit to a single game cluster when the quarterback can exceed the field by ten plus points. Add a second receiver when the distribution of production can split across two players without cannibalizing the quarterback outcome. Then, keep the remaining slots focused on target volume and role certainty, with at least one salary pocket where a volume player can reach a tournament score without a touchdown. McBride and Hockenson show how tight end volume can replace thin wide receiver darts when the slate scoring concentrates through pass catchers.",
+    "uniquenessNotes": "The uniqueness is created inside a popular storyline without paying the popular price. Prescott plus Lamb is understandable. Prescott plus Lamb plus Cooks is the separator because Cooks carries the rare yardage share outcome while Lamb retains the touchdown access. Cooks at 1.6 percent is the roster point of differentiation that changes contest math.\n\nThe tight end pairing is also a decision point. Many builds treat tight end as one slot. This roster treats tight end as two separate scoring channels, one elite target funnel and one mid salary target funnel. The Cardinals defense is present as a cost control move tied to the McBride game, not as a ceiling bet. The defense does enough to avoid failure and allows the roster to stay focused on pass catcher scoring.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Dak Prescott with CeeDee Lamb and Brandin Cooks",
+      "secondaryLever": "Double tight end volume with Trey McBride plus Cardinals defense correlation",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "NYG@DAL: 3 (QB game)",
+          "ATL@ARI: 2",
+          "TEN@TB: 1",
+          "GB@PIT: 1",
+          "DET@LAC: 1",
+          "NO@MIN: 1"
+        ],
+        "cowboysCluster": ["Dak Prescott", "CeeDee Lamb", "Brandin Cooks"],
+        "tightEndPair": ["T.J. Hockenson", "Trey McBride"],
+        "ariCluster": ["Trey McBride", "Cardinals"],
+        "qbFacedByCardinalsDst": "Taylor Heinicke"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_DOUBLE_WR_TRIPLE",
+        "ALPHA_WR_PLUS_LOW_ROSTER_RATE_WR",
+        "DOUBLE_TE_VOLUME",
+        "TE_PLUS_DST_SAME_GAME_CLUSTER",
+        "ROLE_BASED_RB_SCORES"
+      ],
+      "macroStory": "A Dallas passing eruption captured through a three player concentration, separated by a low roster rate wide receiver ceiling, then stabilized by double tight end target volume and an inexpensive defense tied to the McBride game."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "TOUCHDOWN_CONCENTRATION", "CEILING_OUTCOME"],
+        "microStory": "Dak Prescott creates the first place gap. A five touchdown game forces the winning roster to be built around him, and the lineup does not dilute the outcome."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["ALPHA_VOLUME", "TD_ACCESS", "YARDAGE_FLOOR"],
+        "microStory": "CeeDee Lamb is the predictable ceiling piece. He combines 11 catch volume with both receiving and rushing touchdown access in the same game."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["LOW_ROSTER_RATE_SEPARATOR", "DOWNFIELD_YARDAGE", "CEILING_COMPLEMENT"],
+        "microStory": "Brandin Cooks is the contest winning separator. At 4,200 salary and 1.6 percent roster rate, 173 yards and a touchdown changes the finishing position of every Dallas stack structure."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["TARGET_FUNNEL", "CHAIN_MOVING_VOLUME", "TOUCHDOWN_BOOST"],
+        "microStory": "T.J. Hockenson provides a wide receiver style score at tight end through 11 catches, 134 yards, and a touchdown."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Dak Prescott", "position": "QB", "team": "DAL" },
+        "teammates": [
+          { "name": "CeeDee Lamb", "position": "WR", "team": "DAL" },
+          { "name": "Brandin Cooks", "position": "WR", "team": "DAL" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Trey McBride", "position": "TE", "team": "ARI" },
+        "opponent": { "name": "Cardinals", "position": "DST", "team": "ARI" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Cardinals", "position": "DST", "team": "ARI", "qbFaced": "Taylor Heinicke" },
+        "opponent": { "name": "Taylor Heinicke", "position": "QB", "team": "ATL" }
+      }
+    ]
+  }
+}

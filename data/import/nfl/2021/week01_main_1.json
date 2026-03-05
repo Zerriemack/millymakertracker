@@ -1,0 +1,256 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 1,
+  "slateType": "MAIN",
+  "slateDate": "2021-09-12T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 1",
+  "slateTag": "VALUE BURROW STACK, EXPENSIVE CHIEFS STACK, CARDINALS DST PRESSURE",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2021_WK01_MAIN_2021-09-12T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 7810
+  },
+  "winner": {
+    "username": "blbrown1994",
+    "points": 222.54,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 222.54,
+    "totalOwnershipBp": 7810,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Joe Burrow",
+        "position": "QB",
+        "team": "CIN",
+        "salary": 5700,
+        "points": 18.64,
+        "ownershipPercent": 3.0,
+        "passTd": 2,
+        "passYds": 261,
+        "rushYds": 2,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Melvin Gordon III",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 5300,
+        "points": 23.8,
+        "ownershipPercent": 3.9,
+        "rushYdsRb": 101,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 17,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 6200,
+        "points": 28.0,
+        "ownershipPercent": 12.9,
+        "rushYdsRb": 127,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 23,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "KC",
+        "salary": 8200,
+        "points": 40.1,
+        "ownershipPercent": 11.3,
+        "rec": 11,
+        "recYds": 197,
+        "recTd": 1,
+        "rushYds": 4,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Deebo Samuel",
+        "position": "WR",
+        "team": "SF",
+        "salary": 5900,
+        "points": 35.9,
+        "ownershipPercent": 5.0,
+        "rec": 9,
+        "recYds": 189,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tee Higgins",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 4700,
+        "points": 15.8,
+        "ownershipPercent": 12.6,
+        "rec": 4,
+        "recYds": 58,
+        "recTd": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 8300,
+        "points": 25.6,
+        "ownershipPercent": 14.4,
+        "rec": 6,
+        "recYds": 76,
+        "recTd": 2,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Marvin Jones Jr.",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 3600,
+        "points": 18.7,
+        "ownershipPercent": 13.7,
+        "rec": 5,
+        "recYds": 77,
+        "recTd": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 2100,
+        "points": 16.0,
+        "ownershipPercent": 1.3,
+        "sacks": 6,
+        "takeaways": 3,
+        "pointsAllowed": 13,
+        "qbFaced": "Ryan Tannehill",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "The build starts with a price based stance on Joe Burrow. At 5,700 and three percent ownership, Burrow functioned as a salary release valve for a slate where the two most expensive pieces were tied to Kansas City. Burrow did not need a ceiling game. He needed a clean 18.64 with two passing touchdowns, and he delivered without dragging in fragile, low volume pieces.\n\nCincinnati exposure is shaped around role certainty. Joe Mixon provides the scoring floor and the red zone access, while Tee Higgins is the receiver attachment priced for a smaller game than the one Cincinnati played. The three man MIN at CIN cluster creates a coherent anchor, yet it stays affordable, which preserves a second high end bet.\n\nThe expensive bet is the Chiefs pairing. Tyreek Hill and Travis Kelce are the concentrated version of Kansas City touchdowns. This combination does not ask for guesswork across multiple receivers. It asks for the offense to score and for the scoring to run through the two players with the highest per play payoff, which is exactly what happened.\n\nCardinals defense against Ryan Tannehill is the leverage point. A 2,100 defense at 1.3 percent ownership produces six sacks and three takeaways, plus a points allowed bucket stored as 13. This outcome covers the gap created by paying 16,500 in salary for Hill and Kelce while keeping the rest of the roster intact. The final construction detail is the single shot value receiver. Marvin Jones Jr. supplies a touchdown at 3,600 and keeps the salary math stable without removing access to elite outcomes elsewhere.",
+    "uniquenessNotes": "The lineup wins because the roster spends ceiling salary in a narrow, high confidence place and gets its separation from a defense and a quarterback price point most rosters ignored.\n\nMany builds reaching for Kansas City points used the quarterback path and then made a single pass catcher decision. This roster skips the quarterback tax and captures the two highest leverage Kansas City skill pieces directly. The result is a Chiefs stack without the standard roster tree.\n\nThe Cincinnati stack functions as an economic counterweight. Burrow plus Mixon plus Higgins creates a three player anchor with touchdown access, yet it avoids the salary pressure of the top quarterback tier. This lets the roster stay balanced while still fitting the Chiefs pairing.\n\nCardinals DST is the swing. Six sacks and three takeaways at low ownership supplies the margin required for first place. Without a defense spike, this roster is strong but not unique enough to clear the field.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Value Joe Burrow plus Bengals mini stack to fund Tyreek Hill and Travis Kelce",
+      "secondaryLever": "Cardinals DST ceiling versus Ryan Tannehill at low ownership",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "MIN@CIN: 3 (QB game)",
+          "CLE@KC: 2",
+          "DEN@NYG: 1",
+          "SF@DET: 1",
+          "JAX@HOU: 1",
+          "ARI@TEN: 1"
+        ],
+        "bengalsCluster": ["Joe Burrow", "Joe Mixon", "Tee Higgins"],
+        "chiefsPair": ["Tyreek Hill", "Travis Kelce"],
+        "dstQbFaced": "Ryan Tannehill"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "VALUE_QB_ANCHOR",
+        "ELITE_TE_WR_DOUBLE_FROM_SAME_TEAM",
+        "RB_ROLE_ANCHOR",
+        "LOW_OWNERSHIP_DST_CEILING",
+        "ONE_OFF_VALUE_WR_TOUCHDOWN"
+      ],
+      "macroStory": "A price driven Burrow anchor funds a concentrated Kansas City ceiling, while Cardinals defense supplies the separation outcome needed to clear the top of a massive field."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["SALARY_RELEASE", "TOUCHDOWN_FUNCTION", "LOW_OWNERSHIP_ANCHOR"],
+        "microStory": "Joe Burrow is chosen for price and ownership rather than raw ceiling. Two passing touchdowns and stable yardage let the roster spend ceiling salary elsewhere."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_CEILING", "VOLUME_PLUS_EXPLOSION", "PAYUP_THAT_HIT"],
+        "microStory": "Tyreek Hill supplies the slate breaking receiver line. His 11 catch, 197 yard, touchdown game turns the Chiefs pairing into a true first place path."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_CONCENTRATION", "RED_ZONE_CAPTURE", "PAYUP_COMPLEMENT"],
+        "microStory": "Travis Kelce captures two touchdowns in the same game environment as Hill. The pairing compresses Kansas City scoring into two roster spots."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["SEPARATOR", "PRESSURE_EVENT_CEILING", "LOW_OWNERSHIP_HAMMER"],
+        "microStory": "Cardinals defense creates the separation. Six sacks and three takeaways against Ryan Tannehill deliver the score needed for first place."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Joe Burrow", "position": "QB", "team": "CIN" },
+        "teammates": [
+          { "name": "Joe Mixon", "position": "RB", "team": "CIN" },
+          { "name": "Tee Higgins", "position": "WR", "team": "CIN" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "TEAM_PAIR",
+        "qb": null,
+        "teammate": { "name": "Tyreek Hill", "position": "WR", "team": "KC" },
+        "opponent": { "name": "Travis Kelce", "position": "TE", "team": "KC" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Cardinals", "position": "DST", "team": "ARI", "qbFaced": "Ryan Tannehill" },
+        "opponent": { "name": "Ryan Tannehill", "position": "QB", "team": "TEN" }
+      }
+    ]
+  }
+}

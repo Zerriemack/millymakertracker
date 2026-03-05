@@ -1,0 +1,216 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 11,
+  "slateType": "MAIN",
+  "slateDate": "2022-11-20T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 11",
+  "slateTag": "BRISSETT COOPER SINGLETARY DOME LEVERAGE, POLLARD 40 POINTS AT 5 PERCENT, COMMANDERS DST VS DAVIS MILLS",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK11_MAIN_2022-11-20T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 6522
+  },
+  "winner": {
+    "username": "msabarre",
+    "points": 197.46,
+    "maxEntries": 150
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 197.46,
+    "totalOwnershipBp": 6522,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Jacoby Brissett",
+        "position": "QB",
+        "team": "CLE",
+        "salary": 5400,
+        "points": 29.86,
+        "ownershipPercent": 0.6,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Tony Pollard",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 6500,
+        "points": 39.9,
+        "ownershipPercent": 5.64,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Cordarrelle Patterson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 6200,
+        "points": 12.9,
+        "ownershipPercent": 13.41,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tee Higgins",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 7100,
+        "points": 26.8,
+        "ownershipPercent": 14.08,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Amari Cooper",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 6400,
+        "points": 34.3,
+        "ownershipPercent": 3.67,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Pittman Jr.",
+        "position": "WR",
+        "team": "IND",
+        "salary": 6100,
+        "points": 13.5,
+        "ownershipPercent": 4.57,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Tyler Conklin",
+        "position": "TE",
+        "team": "NYJ",
+        "salary": 3400,
+        "points": 3.5,
+        "ownershipPercent": 5.36,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Devin Singletary",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 5800,
+        "points": 17.7,
+        "ownershipPercent": 11.27,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Commanders",
+        "position": "DST",
+        "team": "WAS",
+        "salary": 3100,
+        "points": 19,
+        "ownershipPercent": 6.62,
+        "qbFaced": "Davis Mills",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This slate ends with a winning score under 200, which changes the entire decision tree. The roster is built for survival first, then separation through a small number of high leverage outcomes. The clearest anchor is Cleveland Buffalo after the move indoors. The build takes Jacoby Brissett at 0.60 percent with Amari Cooper at 3.67 percent, then adds Devin Singletary at 11.27 percent as the opposing touch funnel. Three players from one game is the only true concentration, and it is concentrated on price and uniqueness rather than on brand name.\n\nThe Brissett Cooper connection is not an aesthetic stack. It is a salary and ownership strategy that still carries slate ceiling because Cooper can monopolize downfield targets and red zone work. In a low scoring week, a quarterback does not need 40 points to win, but he must deliver a clean path to a receiver spike. Cooper supplies the spike at 34.3, and Brissett reaches 29.86 without forcing expensive construction.\n\nTony Pollard is the slate breaker. A 39.9 point running back at 5.64 percent ownership is the kind of result that overwrites many other mistakes across the field. Pollard gives the roster access to the single biggest raw score without paying the premium ownership cost attached to the common chalk clusters.\n\nThe Commanders defense is the other leverage pillar. Washington versus Davis Mills is a pressure and mistake profile spot, and the roster takes it at 6.62 percent. On a slate where many lineups settle for low impact defenses, 19 points from a defense creates a margin that makes thin correlations viable.\n\nEverything else is chosen to avoid dead slots while still allowing paths to ceiling. Tee Higgins brings a strong wide receiver score at 26.8. Michael Pittman Jr. and Cordarrelle Patterson are not required to win their positions. They are required to avoid collapsing the roster while the Pollard and Cooper outcomes do the heavy lifting. Tyler Conklin is the intentional concession. A 3.5 point tight end is survivable when the slate score is low and the roster has already captured multiple slate defining spikes.",
+    "uniquenessNotes": "This roster wins because it focuses uniqueness where it matters and accepts neutrality where it does not. The quarterback decision is the primary separator. Sub one percent Brissett is paired with a receiver who posted one of the top wide receiver scores on the slate. Most lineups chasing ceiling at quarterback paid for a higher owned name and then needed perfect allocation everywhere else.\n\nThe Cleveland Buffalo cluster is built as a controlled three piece rather than a full game onslaught. Cooper is the ceiling capture. Singletary is the opponent volume capture. Brissett is the delivery mechanism and the ownership catalyst. The roster does not need a fourth or fifth piece from the game because the slate environment does not demand it.\n\nPollard at 5.64 percent is the decisive leverage. He is not a fringe play who barely gets there. He is the top scoring player on the slate. When the top raw score is also low owned, the lineup can remain balanced everywhere else and still separate.\n\nWashington defense at 6.62 percent is the second separator. Defensive ceilings are rare, and when they arrive in a low scoring week, they compress the rest of the lineup requirements. This is the reason the roster can survive a tight end miss and still finish first.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Brissett plus Cooper with Singletary as the opposing volume piece in the moved indoors game",
+      "secondaryLever": "Pollard as the top raw score at low ownership plus Commanders defense versus Davis Mills",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "CLE@BUF: 3 (QB game)",
+          "DAL@MIN: 1",
+          "ATL@CHI: 1",
+          "CIN@PIT: 1",
+          "IND@PHI: 1",
+          "NYJ@NE: 1",
+          "WAS@HOU: 1"
+        ],
+        "brownsBillsCluster": ["Jacoby Brissett", "Amari Cooper", "Devin Singletary"],
+        "pollardOneOff": "Tony Pollard",
+        "qbFacedByCommandersDst": "Davis Mills"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_ENGINE",
+        "SKINNY_GAME_CLUSTER",
+        "LOW_OWNERSHIP_SLATE_BREAKER_RB",
+        "DEFENSE_CEILING_VS_BACKUP_QB",
+        "LOW_SCORE_SLATE_SURVIVAL_BUILD"
+      ],
+      "macroStory": "A low scoring slate winner built around an indoor game leverage trio, a low owned top raw score running back, and a defense ceiling against a backup quarterback, while accepting one weak position because the slate did not punish it."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "OWNERSHIP_CATALYST", "SALARY_RELIEF_WITH_CEILING_PATH"],
+        "microStory": "Jacoby Brissett is the separator. The roster gets a near elite quarterback score at sub one percent ownership without paying for the expensive quarterback tier."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["CEILING_CAPTURE", "STACK_PARTNER", "LOW_OWNERSHIP_SPIKE"],
+        "microStory": "Amari Cooper provides the wide receiver ceiling needed for first place and converts the Brissett decision into a complete outcome rather than an isolated quarterback score."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "LOW_OWNERSHIP_TOP_RAW_SCORE", "STRUCTURE_FINISHER"],
+        "microStory": "Tony Pollard is the score that forces the rest of the field to catch up. When the top player is five percent owned, the roster does not need extreme risk elsewhere."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["TURNOVER_CEILING", "PRESSURE_MATCHUP", "LEVERAGE_DEFENSE"],
+        "microStory": "Washington defense versus Davis Mills captures defensive ceiling at low ownership. In a low scoring week, 19 points from defense creates a margin few lineups can match."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Jacoby Brissett", "position": "QB", "team": "CLE" },
+        "teammates": [{ "name": "Amari Cooper", "position": "WR", "team": "CLE" }],
+        "opponent": { "name": "Devin Singletary", "position": "RB", "team": "BUF" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Commanders", "position": "DST", "team": "WAS", "qbFaced": "Davis Mills" },
+        "opponent": { "name": "Davis Mills", "position": "QB", "team": "HOU" }
+      }
+    ]
+  }
+}

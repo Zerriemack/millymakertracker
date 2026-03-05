@@ -1,0 +1,253 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 9,
+  "slateType": "MAIN",
+  "slateDate": "2023-11-05T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 9",
+  "slateTag": "STROUD HOUSTON ONSLAUGHT, LAMB CHALK SURVIVED, BROWNS DST PUNISHED TUNE",
+  "slateGroup": "5-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK09_MAIN_2023-11-05T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11300
+  },
+  "winner": {
+    "username": "youdacao",
+    "points": 250.4,
+    "maxEntries": 45
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 250.4,
+    "totalOwnershipBp": 11300,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "C.J. Stroud",
+        "position": "QB",
+        "team": "HOU",
+        "salary": 6200,
+        "points": 44.8,
+        "ownershipPercent": 6.9,
+        "passTd": 5,
+        "passYds": 470,
+        "rushYds": 10,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Bijan Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 6100,
+        "points": 6.9,
+        "ownershipPercent": 15.7,
+        "rushYdsRb": 51,
+        "recRb": 2,
+        "recYdsRb": 8,
+        "fumblesLost": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Rachaad White",
+        "position": "RB",
+        "team": "TB",
+        "salary": 5600,
+        "points": 27.9,
+        "ownershipPercent": 10.1,
+        "rushYdsRb": 73,
+        "rushTdRb": 2,
+        "recRb": 4,
+        "recYdsRb": 46,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 8200,
+        "points": 32.1,
+        "ownershipPercent": 34.9,
+        "rec": 11,
+        "recYds": 191,
+        "fumblesLost": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tank Dell",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 5300,
+        "points": 32.6,
+        "ownershipPercent": 6.8,
+        "rec": 6,
+        "recYds": 114,
+        "recTd": 2,
+        "rushYds": 2,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Noah Brown",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 3100,
+        "points": 30.3,
+        "ownershipPercent": 3.7,
+        "rec": 6,
+        "recYds": 153,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Dalton Schultz",
+        "position": "TE",
+        "team": "HOU",
+        "salary": 4200,
+        "points": 31.0,
+        "ownershipPercent": 5.7,
+        "rec": 10,
+        "recYds": 130,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": "LV",
+        "salary": 6900,
+        "points": 21.8,
+        "ownershipPercent": 17.7,
+        "rushYdsRb": 98,
+        "rushTdRb": 2,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Browns",
+        "position": "DST",
+        "team": "CLE",
+        "salary": 4200,
+        "points": 23.0,
+        "ownershipPercent": 11.5,
+        "sacks": 7,
+        "takeaways": 3,
+        "pointsAllowedBucket": 10,
+        "qbFaced": "Clayton Tune",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "ARI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This win is decided by one game turning into a historical outlier, then being captured with maximum density. Five lineup slots come from Tampa Bay at Houston, and every one of them is wired into the same scoring mechanism. C.J. Stroud generates five passing touchdowns, and the roster does not waste those touchdowns on ancillary routes. Tank Dell, Noah Brown, and Dalton Schultz collect the touchdowns and bonus yardage, while Rachaad White provides the opposing scoring so the game never slows. This construction does not need a second game to cooperate. It needs this one game to become the slate.\n\nThe slate still required surviving the field’s most popular raw point. CeeDee Lamb at massive ownership gets there again through volume driven receiving production in a loss. The roster accepts the ownership because fading him introduces unnecessary failure risk when the real path to first is getting the Houston game correct.\n\nThe most telling decision is the tolerance for one dead slot. Bijan Robinson posts a failing score and the roster still wins because the Houston cluster plus Lamb plus Browns defense creates a points gap that makes one miss survivable. The diagnostic takeaway is structural. When one game provides multiple 30 point outcomes across different positions, the lineup no longer needs nine successful picks. It needs the correct concentration of the slate’s true scoring source.\n\nCleveland defense is the final clamp. Clayton Tune at quarterback creates pressure and turnover volume, and the Browns convert it into seven sacks and multiple takeaways while holding points allowed in the 10 bucket. It is a direct way to add ceiling without competing for salary with the Houston offensive cluster.",
+    "uniquenessNotes": "The Houston commitment is not a loose stack. It is a deliberate attempt to own the passing touchdown distribution without guessing a single receiver. Dell, Brown, and Schultz cover different areas of the target tree, so the lineup can capture both explosive plays and sustained drive volume.\n\nThis build also shows a rare form of risk management in large field play. The roster takes on chalk where failure is costly and predictable, then concentrates its differentiation in the game environment and distribution choices. The field can land on Stroud plus one pass catcher. Landing on Stroud plus three pass catchers plus the opposing scoring back is a smaller branch of the lineup tree, and it is the branch that matches five passing touchdowns.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Five player TB at HOU capture with C.J. Stroud plus three pass catchers and Rachaad White as the opposing scoring pressure",
+      "secondaryLever": "Browns DST ceiling versus Clayton Tune while surviving CeeDee Lamb chalk and a Bijan Robinson miss",
+      "notes": {
+        "rosterConstruction": "5-1-1-1-1",
+        "gameKey": [
+          "TB@HOU: 5 (QB game)",
+          "DAL@PHI: 1",
+          "NYG@LV: 1",
+          "MIN@ATL: 1",
+          "ARI@CLE: 1"
+        ],
+        "texansCluster": ["C.J. Stroud", "Tank Dell", "Noah Brown", "Dalton Schultz"],
+        "bringback": ["Rachaad White"],
+        "chalkAnchor": "CeeDee Lamb",
+        "qbFacedByBrownsDst": "Clayton Tune"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "MAX_DENSITY_QB_CLUSTER",
+        "TRIPLE_PASS_CATCHER_TOUCHDOWN_COVERAGE",
+        "OPP_RB_SCORING_PRESSURE",
+        "CHALK_ACCEPTANCE_WITH_CONCENTRATED_DIFFERENTIATION",
+        "DST_VS_BACKUP_QB_CEILING"
+      ],
+      "macroStory": "A slate where the winner is determined by fully capturing a five touchdown passing eruption, then pairing it with one necessary chalk receiver, one defensive ceiling outcome, and accepting a single miss because the main game produced enough 30 point scores to erase it."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "TOUCHDOWN_DISTRIBUTOR", "BONUS_YARDAGE_CEILING"],
+        "microStory": "C.J. Stroud supplies the entire slate ceiling through five passing touchdowns and the 300 yard bonus range. The rest of the Houston cluster is built to convert that output into multiple independent 30 point lines."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_CAPTURE", "CEILING_RECEIVER", "STACK_PAYOFF"],
+        "microStory": "Tank Dell turns the Houston decision into an advantage by converting two touchdowns and a 100 yard game. In this build, his role is to capture multi touchdown equity so the roster does not need secondary games to erupt."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["LOW_OWNERSHIP_SPIKE", "BONUS_YARDAGE", "DISTRIBUTION_COVERAGE"],
+        "microStory": "Noah Brown is distribution insurance. When the game produces an extreme yardage outcome, a secondary receiver can become a primary scorer. This roster captures that branch instead of leaving it to chance."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRESSURE_VOLUME", "TURNOVER_PATH", "MATCHUP_CONVERSION"],
+        "microStory": "Cleveland defense turns a backup quarterback start into fantasy scoring through sacks and takeaways. This outcome adds ceiling without requiring offensive correlation."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "C.J. Stroud", "position": "QB", "team": "HOU" },
+        "teammates": [
+          { "name": "Tank Dell", "position": "WR", "team": "HOU" },
+          { "name": "Noah Brown", "position": "WR", "team": "HOU" },
+          { "name": "Dalton Schultz", "position": "TE", "team": "HOU" }
+        ],
+        "opponent": {
+          "name": "Rachaad White",
+          "position": "RB",
+          "team": "TB"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Browns", "position": "DST", "team": "CLE", "qbFaced": "Clayton Tune" },
+        "opponent": { "name": "Clayton Tune", "position": "QB", "team": "ARI" }
+      }
+    ]
+  }
+}

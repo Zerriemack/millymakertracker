@@ -1,0 +1,252 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 13,
+  "slateType": "MAIN",
+  "slateDate": "2023-12-03T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 13",
+  "slateTag": "PURDY DEEBO CHALK SMASH, ZACK MOSS 65% FAILURE ABSORBED, HENRY 8% LEVERAGE OFF MOSS",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "rosterConstruction": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK13_MAIN_2023-12-03T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 15940
+  },
+  "winner": {
+    "username": "cantgetright903",
+    "points": 218.16,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 218.16,
+    "totalOwnershipBp": 15940,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Brock Purdy",
+        "position": "QB",
+        "team": "SF",
+        "salary": 6100,
+        "points": 32.46,
+        "ownershipPercent": 21.1,
+        "passTd": 4,
+        "passYds": 314,
+        "rushYds": 9,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 6800,
+        "points": 28.0,
+        "ownershipPercent": 8.3,
+        "rushYdsRb": 102,
+        "rushTdRb": 2,
+        "recRb": 1,
+        "recYdsRb": 18,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Zack Moss",
+        "position": "RB",
+        "team": "IND",
+        "salary": 4600,
+        "points": 7.7,
+        "ownershipPercent": 65.2,
+        "rushYdsRb": 51,
+        "recRb": 2,
+        "recYdsRb": 6,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Deebo Samuel",
+        "position": "WR",
+        "team": "SF",
+        "salary": 6200,
+        "points": 38.8,
+        "ownershipPercent": 20.7,
+        "rec": 4,
+        "recYds": 116,
+        "recTd": 2,
+        "rushYds": 22,
+        "rushTd": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mike Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 7700,
+        "points": 32.2,
+        "ownershipPercent": 4.8,
+        "rec": 7,
+        "recYds": 162,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Nico Collins",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 6800,
+        "points": 37.1,
+        "ownershipPercent": 8.8,
+        "rec": 9,
+        "recYds": 191,
+        "recTd": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Sam LaPorta",
+        "position": "TE",
+        "team": "DET",
+        "salary": 5600,
+        "points": 32.0,
+        "ownershipPercent": 6.8,
+        "rec": 9,
+        "recYds": 140,
+        "recTd": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Greg Dortch",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 3700,
+        "points": 2.9,
+        "ownershipPercent": 9.6,
+        "rec": 1,
+        "recYds": 19,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 2400,
+        "points": 7,
+        "ownershipPercent": 14.1,
+        "qbFaced": "Justin Herbert",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "LAC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis begins with the slate’s most central scoring engine. San Francisco produces four Brock Purdy passing touchdowns, and the roster collects the highest value attachment point through Deebo Samuel. Samuel turns modest volume into a slate shaping outcome by stacking two receiving touchdowns with a rushing touchdown. When a two player stack captures a three touchdown player plus the quarterback’s full passing total, the roster no longer needs extra pieces from the game to justify the commitment.\n\nThe second driver is ownership gravity at running back. Zack Moss shows up on 65.2 percent of rosters and posts a score that sinks lineups in theory, yet the slate converts it into neutral damage because nearly everyone takes the same hit. The edge comes from pairing the game with Derrick Henry at 8.3 percent. Henry’s two rushing touchdowns create direct competition against the Moss roster slot across the same game environment, and the leverage lands without requiring any Titans passing piece.\n\nFrom there, the build wins through isolated ceiling outcomes, each one paired with a clean statistical profile. Mike Evans reaches 162 receiving yards and a touchdown at 4.8 percent. Nico Collins reaches 191 receiving yards and a touchdown at 8.8 percent. Sam LaPorta adds a tight end ceiling score with nine catches, 140 yards, and a touchdown. Those three outcomes supply the separation Purdy and Samuel cannot provide on their own because the field also arrives at the same popular core.\n\nGreg Dortch is the only slot that fails, and the roster is built to survive it. The salary is low enough to preserve overall scoring, and the rest of the lineup contains enough true ceiling events to keep first place within reach. New England defense provides a serviceable score despite drawing a franchise quarterback, keeping the build from collapsing around the one weak spot.\n\nPredictive analysis for future research should focus on slate types where a single player becomes an ownership magnet and then disappoints. In those weeks, fading the player is rarely sufficient. The profitable angle comes from capturing the opposing touchdown distribution inside the same game, especially when the opponent is priced for ceiling and rostered far less.\n\nPrescriptive analysis follows three steps. First, accept a popular quarterback stack when the offense has condensed touchdown allocation and a clear top receiver can absorb multi score outcomes. Second, when a mega owned running back becomes the slate’s shared assumption, pair that selection with a low roster rate opponent whose scoring arrives through red zone dominance. Third, allocate remaining slots toward receivers and tight ends whose ceiling path includes both yardage and touchdowns, then keep one salary relief slot available to absorb volatility without damaging the rest of the roster.",
+    "uniquenessNotes": "Uniqueness comes from combining a popular nucleus with three ceiling outcomes the field rarely stacks together. Purdy and Samuel are common. The separation comes from Derrick Henry serving as the opposing answer to the Zack Moss roster slot, plus Mike Evans and Nico Collins producing massive yardage and touchdown totals at modest roster rates. Sam LaPorta adds a tight end score that outpaces the majority of the position.\n\nThe roster also shows a useful lesson about where to place risk. The cheap Greg Dortch slot is the only true miss. The lineup survives because the roster concentrates its salary into positions capable of producing 30 point outcomes, then accepts a low cost floor in one spot.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Brock Purdy with Deebo Samuel plus Derrick Henry leverage against Zack Moss ownership",
+      "secondaryLever": "Three independent ceiling outcomes from Mike Evans, Nico Collins, and Sam LaPorta",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "SF@PHI: 2 (QB game)",
+          "IND@TEN: 2",
+          "CAR@TB: 1",
+          "DEN@HOU: 1",
+          "DET@NO: 1",
+          "ARI@PIT: 1",
+          "LAC@NE: 1"
+        ],
+        "ninersPair": ["Brock Purdy", "Deebo Samuel"],
+        "coltsTitansPair": ["Zack Moss", "Derrick Henry"],
+        "ceilingOneOffs": ["Mike Evans", "Nico Collins", "Sam LaPorta"],
+        "qbFacedByPatriotsDst": "Justin Herbert"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "CHALK_STACK_THAT_HIT",
+        "MEGA_OWNED_FAILURE_ABSORBED",
+        "LEVERAGE_OPPONENT_RB",
+        "MULTIPLE_LOW_ROSTER_RATE_CEILINGS",
+        "ONE_CHEAP_SLOT_SACRIFICE"
+      ],
+      "macroStory": "San Francisco provides the core points through Purdy and Samuel, the slate wide Zack Moss miss becomes neutral, and first place comes from Henry leverage plus multiple standalone ceiling scores at receiver and tight end."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["CEILING_ENGINE", "TOUCHDOWN_CONCENTRATION", "STACK_PAYOFF"],
+        "microStory": "Deebo Samuel converts limited targets into slate shaping points by combining explosive receiving production with a rushing touchdown, turning the Purdy stack into a top end payoff."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["LEVERAGE", "RED_ZONE_DOMINANCE", "OPPONENT_GAME_PRESSURE"],
+        "microStory": "Derrick Henry provides the leverage point. Two rushing touchdowns at 8.3 percent directly counter the most popular running back decision on the slate."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["LOW_ROSTER_RATE_CEILING", "YARDAGE_SPIKE", "ONE_SLOT_SWING"],
+        "microStory": "Mike Evans supplies a ceiling yardage score at 4.8 percent, creating separation without tying the roster to additional Tampa Bay pieces."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["POSITIONAL_CEILING", "YARDAGE_PLUS_TD", "SCARCE_OUTCOME"],
+        "microStory": "Sam LaPorta produces a tight end ceiling game with nine catches, 140 yards, and a touchdown, separating the roster from common tight end ranges."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Brock Purdy", "position": "QB", "team": "SF" },
+        "teammates": [
+          { "name": "Deebo Samuel", "position": "WR", "team": "SF" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Zack Moss", "position": "RB", "team": "IND" },
+        "opponent": { "name": "Derrick Henry", "position": "RB", "team": "TEN" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Patriots", "position": "DST", "team": "NE", "qbFaced": "Justin Herbert" },
+        "opponent": { "name": "Justin Herbert", "position": "QB", "team": "LAC" }
+      }
+    ]
+  }
+}

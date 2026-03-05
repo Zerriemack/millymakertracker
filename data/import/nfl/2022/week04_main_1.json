@@ -1,0 +1,226 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 4,
+  "slateType": "MAIN",
+  "slateDate": "2022-10-02T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 4",
+  "slateTag": "SEA DET SIX MAN ONSLAUGHT, DOUBLE RB ONE OFFS FOR TD ACCESS, EAGLES DST LOW OWNERSHIP WINNER",
+  "slateGroup": "6-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker",
+    "siteContestId": "NFL_2022_WK04_MAIN_2022-10-02T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": 236000,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12180
+  },
+  "winner": {
+    "username": "hoop2410",
+    "points": 252.0,
+    "maxEntries": 150
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 252.0,
+    "totalOwnershipBp": 12180,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Geno Smith",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 5400,
+        "points": 34.7,
+        "ownershipPercent": 6.8,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 7700,
+        "points": 34.9,
+        "ownershipPercent": 15.2,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jamaal Williams",
+        "position": "RB",
+        "team": "DET",
+        "salary": 6100,
+        "points": 26.9,
+        "ownershipPercent": 38.0,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DK Metcalf",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 6800,
+        "points": 24.9,
+        "ownershipPercent": 5.7,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyler Lockett",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 5900,
+        "points": 14.1,
+        "ownershipPercent": 15.4,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Josh Reynolds",
+        "position": "WR",
+        "team": "DET",
+        "salary": 4600,
+        "points": 21.1,
+        "ownershipPercent": 11.4,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "T.J. Hockenson",
+        "position": "TE",
+        "team": "DET",
+        "salary": 4100,
+        "points": 42.9,
+        "ownershipPercent": 19.9,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": "LV",
+        "salary": 5500,
+        "points": 37.5,
+        "ownershipPercent": 6.1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Eagles",
+        "position": "DST",
+        "team": "PHI",
+        "salary": 3800,
+        "points": 15.0,
+        "ownershipPercent": 3.3,
+        "sacks": 4,
+        "takeaways": 5,
+        "pointsAllowed": 20,
+        "qbFaced": "Trevor Lawrence",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "JAX"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis\nThe slate collapses into one game environment. Seattle versus Detroit produces 93 real points and the lineup takes six of nine slots from it. The build avoids half measures. Geno Smith becomes the hinge, then both Seattle receivers are paired with three separate Detroit skill players. This creates a portfolio inside one game where multiple touchdown paths can pay off without requiring a single player to monopolize scoring.\n\nThe Detroit selections show intent. Jamaal Williams carries the goal line profile, Josh Reynolds provides mid salary volume, and T.J. Hockenson supplies the tight end ceiling. The lineup does not chase a skinny run back. It purchases every way Detroit can answer, rushing scores, intermediate chains, and red zone tight end work.\n\nThe two one off running backs exist for a different reason. With six offensive slots consumed by the onslaught, the remaining offense must be compact and high touchdown access. Austin Ekeler and Josh Jacobs fit because both can post slate deciding scores without needing a second teammate. Ekeler benefits from targets moving toward the backfield when a short area receiver is missing, then the touchdowns arrive after early season volume without scoring. Jacobs lands in a game script where carries can stack and he adds receiving involvement, which widens the ceiling.\n\nPhiladelphia defense is the leverage lever. Defense remains difficult to project, so the win comes from holding a low owned outcome when many lineups share similar high owned pieces from Seattle Detroit.\n\nPredictive Analysis\nGame onslaughts become viable when one environment separates from the slate and salary does not block access to primary roles on both teams. Geno Smith plus DK Metcalf plus Tyler Lockett remained affordable enough to still reach three Detroit skill players. When a slate presents one clear scoring outlier, correlation density can replace traditional balance, because the lineup wins by capturing the full distribution of touchdowns inside the outlier.\n\nFor large field research, track situations where ownership rises on individual pieces, yet roster rates for full combinations stay low. The combination can remain rare even when many individual parts carry meaningful ownership.\n\nPrescriptive Analysis\nWhen one game projects as the only true shootout, build lineups around the probability of the entire game scoring profile, not around a single player projection. Use a quarterback as the anchor, then commit to two pass catchers from the same team and multiple bring backs from the opponent.\n\nAfter committing to a game onslaught, fill remaining slots with players whose scoring comes from concentrated touch and touchdown roles, because there is no room for fragile secondary correlations. Use running backs who can reach ceiling through carries plus receiving.\n\nOn defense, diversify across multi entry builds and allow some exposure to lower owned defenses, because a non chalk defense can deliver a score that separates lineups built from similar offensive cores.",
+    "uniquenessNotes": "The lineup is not unique through obscure names. It is unique through combination density. Many entries carried pieces from Seattle Detroit, yet far fewer carried six combined offensive slots from a single game. The build then avoids the common flex wide receiver construction by using an extra running back, which changes roster archetype while keeping ceiling. Philadelphia defense at 3.3 percent ownership is the final separator because it wins a slot where projection edges are thin.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Six man SEA DET onslaught built around Geno Smith with two Seattle receivers and three Detroit bring backs",
+      "secondaryLever": "Two one off running backs for compact touchdown access plus Eagles defense at low ownership",
+      "notes": {
+        "rosterConstruction": "6-1-1-1",
+        "gameKey": [
+          "SEA@DET: 6 (QB game)",
+          "LAC@HOU: 1",
+          "DEN@LV: 1",
+          "JAX@PHI: 1"
+        ],
+        "seahawksCluster": ["Geno Smith", "DK Metcalf", "Tyler Lockett"],
+        "lionsCluster": ["Jamaal Williams", "Josh Reynolds", "T.J. Hockenson"],
+        "oneOffRbs": ["Austin Ekeler", "Josh Jacobs"],
+        "qbFacedByEaglesDst": "Trevor Lawrence"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "GAME_ONSLAUGHT_6_MAN",
+        "QB_DOUBLE_WR_PLUS_TRIPLE_BRINGBACK",
+        "DOUBLE_RB_ONE_OFF_TOUCHDOWN_ACCESS",
+        "LOW_OWNERSHIP_DST_SEPARATION",
+        "COMBINATION_DENSITY_OVER_PLAYER_OBSCURITY"
+      ],
+      "macroStory": "A first place roster driven by full commitment to the lone slate breaking game, then finished with two independent running back ceilings and a low owned defense score."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "ONSLAUGHT_ANCHOR", "ACCESS_TO_MULTI_PLAYER_CEILINGS"],
+        "microStory": "Geno Smith is the access point for Seattle scoring and unlocks the ability to roster two Seattle receivers while still affording three Detroit answers."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["POSITIONAL_CEILING", "RED_ZONE_ACCESS", "ONSLAUGHT_BRINGBACK_CORE"],
+        "microStory": "T.J. Hockenson provides the tight end spike, which turns the Detroit side from support into a true ceiling driver."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_CLUSTER", "PASS_GAME_ROLE", "ONE_OFF_CEILING"],
+        "microStory": "Austin Ekeler supplies a self contained ceiling through receiving and multi touchdown equity."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_SEPARATOR", "PRESSURE_PLUS_TURNOVER_PATH", "SURVIVES_OFFENSE_CHALK"],
+        "microStory": "Eagles defense at low ownership provides separation while the offense core remains popular in individual parts."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Geno Smith", "position": "QB", "team": "SEA" },
+        "teammates": [
+          { "name": "DK Metcalf", "position": "WR", "team": "SEA" },
+          { "name": "Tyler Lockett", "position": "WR", "team": "SEA" }
+        ],
+        "opponent": { "name": "T.J. Hockenson", "position": "TE", "team": "DET" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Jamaal Williams", "position": "RB", "team": "DET" },
+        "opponent": { "name": "DK Metcalf", "position": "WR", "team": "SEA" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Eagles", "position": "DST", "team": "PHI", "qbFaced": "Trevor Lawrence" },
+        "opponent": { "name": "Trevor Lawrence", "position": "QB", "team": "JAX" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 14,
+  "slateType": "MAIN",
+  "slateDate": "2022-12-11T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 14",
+  "slateTag": "LAWRENCE DOUBLE STACK CHEAP, ENGRAM 40 PLUS FROM TE, 49ERS DST PIVOT OFF DALLAS 35 PERCENT",
+  "slateGroup": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK14_MAIN_2022-12-11T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8780
+  },
+  "winner": {
+    "username": "gordonjonathan1",
+    "points": 272.32,
+    "maxEntries": 14
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 272.32,
+    "totalOwnershipBp": 8780,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Trevor Lawrence",
+        "position": "QB",
+        "team": "JAX",
+        "salary": 5700,
+        "points": 36.42,
+        "ownershipPercent": 2.5,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 7900,
+        "points": 25.5,
+        "ownershipPercent": 21.3,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Miles Sanders",
+        "position": "RB",
+        "team": "PHI",
+        "salary": 6200,
+        "points": 31.5,
+        "ownershipPercent": 7.4,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 9000,
+        "points": 36.3,
+        "ownershipPercent": 27.2,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jerry Jeudy",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 5400,
+        "points": 33.3,
+        "ownershipPercent": 11.3,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Zay Jones",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 4700,
+        "points": 21.7,
+        "ownershipPercent": 6.0,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Evan Engram",
+        "position": "TE",
+        "team": "JAX",
+        "salary": 3300,
+        "points": 42.2,
+        "ownershipPercent": 3.6,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jerick McKinnon",
+        "position": "RB",
+        "team": "KC",
+        "salary": 4600,
+        "points": 35.4,
+        "ownershipPercent": 2.0,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "49ers",
+        "position": "DST",
+        "team": "SF",
+        "salary": 3200,
+        "points": 10,
+        "ownershipPercent": 6.6,
+        "qbFaced": "Tom Brady",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "TB"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by concentrating where the slate offered the cleanest asymmetry, then spending the rest of the lineup on outcomes that the field could not easily pair with that concentration. Jacksonville at Tennessee is the engine. Trevor Lawrence is priced as if he needs a narrow path to ceiling, and the build responds with the exact version that maximizes touchdown capture without paying for brand name receivers. Zay Jones and Evan Engram are both affordable, and together they cover the two pass catchers most capable of absorbing the touchdown distribution. The double stack is not a stylistic choice. It is a math choice. Lawrence does not need rushing to win if the passing touchdowns are captured, and this roster captures them.\n\nThe bring back is Derrick Henry, and it is the correct type. It is not a small accessory. It is the entire script. Tennessee can stay functional by running through Henry, which forces Jacksonville to stay aggressive and keeps Lawrence in a pass heavy posture longer. The final score hides how this could still be true in the parts of the game that mattered for fantasy. Henry getting there early creates the chase condition, and the roster is built around that sequence.\n\nThe second stack is Kansas City at Denver, but it is expressed through player roles rather than a quarterback tree. Jerry Jeudy and Jerick McKinnon are chosen because they are the most direct beneficiaries of how this game can break. Jeudy can capture concentrated targets when Denver is short on healthy receiving bodies, and McKinnon benefits when Kansas City moves to shorter, higher percentage throws. That combination is a bet on the most concentrated points in that game rather than a bet on the quarterback box score.\n\nJustin Jefferson is the ownership tax and the roster pays it because the Lions matchup can support a true slate level receiver score. The key is that Jefferson is paired with a lower owned primary stack, so his ownership does not drag the lineup into duplication. Miles Sanders is the quiet stabilizer. Philadelphia can score in multiple ways, but the Giants run defense vulnerability gives Sanders a path to a ceiling that does not require an extreme passing day.\n\nThe defense decision is the final lever. San Francisco at 6.6 percent is a direct pivot away from the most popular defense. It is not selected to be the highest scoring defense. It is selected because it can score enough while being cheaper, and because it does not force the roster into the same construction as the field. Against Tom Brady, the defense outcome is narrower than against a mistake prone quarterback, but the roster does not need a defensive eruption because the tight end slot already supplies an eruption.\n\nDiagnostic analysis is clear. The 80 20 drivers are Evan Engram scoring 42.2 at 3.6 percent and the Jacksonville passing touchdowns being captured through the exact two pass catchers paired with Trevor Lawrence. The rest of the roster is built to stack secondary ceiling outcomes around that core without diluting it.\n\nPredictive value comes from the structure rather than the names. When a team enters a clear pass funnel matchup and the quarterback does not have rushing as a backstop, the cleanest way to win a large field contest is to double stack into the affordable touchdown concentration pieces and use a bring back that enforces the chase script. The second lesson is that a tight end ceiling can replace an extra wide receiver ceiling. When tight end produces a wide receiver level score at low ownership, the roster can accept more normal outputs at other positions and still win.\n\nPrescriptive takeaway is a decision rule. If the slate offers one game where the quarterback price and the pass funnel profile are misaligned, make that the anchor and force yourself into double stack discipline even if it feels uncomfortable. Then add a second game mini that targets role concentration, and do not spend salary on a defense outcome that the field is already mass selecting. The roster shows a repeatable way to win without requiring a full game onslaught.",
+    "uniquenessNotes": "This roster is unique in the ways that matter and conventional in the ways that keep it stable. Derrick Henry and Justin Jefferson carry large ownership, but they are not the story. They are the baseline. The story is that the baseline is attached to a low owned quarterback stack that hits the exact distribution outcome.\n\nThe Jacksonville stack is not a single pass catcher bet. It is a bet on capturing all the touchdowns. Zay Jones scores 21.7 and would be replaceable in many lineup trees. Evan Engram scoring 42.2 is not replaceable. Pairing both with Lawrence ensures that any Jacksonville passing touchdown sequence that produces a tournament winning score is captured almost completely.\n\nThe Kansas City Denver pairing is the second uniqueness layer. McKinnon at 2.0 percent is the type of player that can be ignored by the field because his role feels secondary. When his target volume spikes, his scoring becomes the kind that pairs with a wide receiver hat trick game from Jeudy without needing a quarterback.\n\nSan Francisco defense is a posture decision against the most common roster template. The defense score is ordinary, but the roster does not need it to be extraordinary. It needs it to avoid forcing the lineup into the same salary allocations as the most popular defense path, and it does that.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Trevor Lawrence double stacked with Zay Jones and Evan Engram with Derrick Henry as the bring back",
+      "secondaryLever": "Role based mini stack from KC at DEN with Jeudy and McKinnon plus defense pivot away from the most popular defense",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "JAX@TEN: 4 (QB game)",
+          "KC@DEN: 2",
+          "PHI@NYG: 1",
+          "MIN@DET: 1",
+          "TB@SF: 1"
+        ],
+        "jaguarsTitansCluster": ["Trevor Lawrence", "Zay Jones", "Evan Engram", "Derrick Henry"],
+        "chiefsBroncosPair": ["Jerry Jeudy", "Jerick McKinnon"],
+        "qbFacedBy49ersDst": "Tom Brady"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_DOUBLE_STACK_WITH_TD_CONCENTRATION",
+        "RB_BRINGBACK_SCRIPT_ENFORCER",
+        "TE_SLATE_BREAKER",
+        "ROLE_MINI_STACK_WITHOUT_QB",
+        "DEFENSE_PIVOT_OFF_FIELD_TEMPLATE"
+      ],
+      "macroStory": "A first place roster anchored by a four player game core built around a pass funnel plus chase script, powered by a rare tight end eruption, and supported by a low owned role mini stack that adds a second ceiling cluster without introducing quarterback fragility."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "LOW_OWNERSHIP_CEILING", "TOUCHDOWN_CAPTURE"],
+        "microStory": "Evan Engram is the tournament deciding piece. A tight end scoring 42.2 at 3.6 percent changes what the rest of the roster needs to do, and it is fully captured through the paired quarterback."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "PASS_FUNNEL_BENEFICIARY", "DOUBLE_STACK_DRIVER"],
+        "microStory": "Trevor Lawrence is the anchor because the matchup encourages passing volume and the stack is constructed to capture the full touchdown distribution through two inexpensive pass catchers."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["SCRIPT_ENFORCER", "BRINGBACK", "OWNERSHIP_ACCEPTED"],
+        "microStory": "Derrick Henry is selected to enforce a game script where Jacksonville must stay aggressive. His points are important, but his game impact on Jacksonville play calling is the larger value."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_ROLE_SPIKE", "PASS_GAME_BACK", "SECONDARY_CEILING_CLUSTER"],
+        "microStory": "Jerick McKinnon supplies the second ceiling cluster by turning target volume into receiver level scoring without using Patrick Mahomes, which keeps the roster from depending on a second quarterback outcome."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Trevor Lawrence", "position": "QB", "team": "JAX" },
+        "teammates": [
+          { "name": "Zay Jones", "position": "WR", "team": "JAX" },
+          { "name": "Evan Engram", "position": "TE", "team": "JAX" }
+        ],
+        "opponent": { "name": "Derrick Henry", "position": "RB", "team": "TEN" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Jerry Jeudy", "position": "WR", "team": "DEN" },
+        "opponent": { "name": "Jerick McKinnon", "position": "RB", "team": "KC" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "49ers", "position": "DST", "team": "SF", "qbFaced": "Tom Brady" },
+        "opponent": { "name": "Tom Brady", "position": "QB", "team": "TB" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 12,
+  "slateType": "MAIN",
+  "slateDate": "2022-11-27T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 12",
+  "slateTag": "NO TRUE QB WR STACK, JACOBS 50 BURGER AT 3 PERCENT, JETS DST PIVOT VS TREVOR SIEMIAN",
+  "slateGroup": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK12_MAIN_2022-11-27T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10370
+  },
+  "winner": {
+    "username": "Getsomesleep",
+    "points": 227.44,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 227.44,
+    "totalOwnershipBp": 10370,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Kyler Murray",
+        "position": "QB",
+        "team": "ARI",
+        "salary": 6800,
+        "points": 26.24,
+        "ownershipPercent": 7.0,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": "LV",
+        "salary": 7700,
+        "points": 51.3,
+        "ownershipPercent": 3.5,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "James Conner",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 6600,
+        "points": 25.0,
+        "ownershipPercent": 10.4,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6000,
+        "points": 32.0,
+        "ownershipPercent": 8.8,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Zay Jones",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 4600,
+        "points": 30.5,
+        "ownershipPercent": 4.5,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Garrett Wilson",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 4300,
+        "points": 26.4,
+        "ownershipPercent": 14.8,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Mark Andrews",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 6500,
+        "points": 11.0,
+        "ownershipPercent": 17.4,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Treylon Burks",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 4200,
+        "points": 17.0,
+        "ownershipPercent": 13.1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Jets",
+        "position": "DST",
+        "team": "NYJ",
+        "salary": 3300,
+        "points": 8,
+        "ownershipPercent": 24.2,
+        "sacks": 0,
+        "takeaways": 0,
+        "qbFaced": "Trevor Siemian",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "CHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by refusing to follow the most common slate script. It does not use a quarterback paired with a wide receiver or tight end from his own team. Instead, it captures scoring concentration through role funnels and game level exposure, then lets one extreme outlier performance decide the contest.\n\nThe Kyler Murray and James Conner pairing is the first tell. It is a bet on Arizona scoring flowing through two players, with Conner doing enough through targets and touchdown access to connect back to Murray without paying for the expensive receiver route. In the Cardinals game environment, the lineup captures most of the team production while avoiding the popular salary and ownership attached to DeAndre Hopkins.\n\nThe second tell is how the lineup treats the Baltimore Jacksonville game. Zay Jones plus Mark Andrews is a deliberate way to gain access to a high scoring game without touching either quarterback. It is not a random mini correlation. It is a decision to capture the top receiver outcome from each side while saving the lineup from a fragile quarterback miss.\n\nThe slate is decided by Josh Jacobs. A 51.3 point running back score at 3.5 percent ownership is the score that rewrites placement math in a field this large. The rest of the roster is built to remain competitive while waiting for one player to separate. Jacobs provides separation on his own.\n\nNew York Jets defense is the ownership and contest management choice. With quarterback uncertainty for Chicago in pregame news, the matchup profile points toward pressure and mistakes. New York does not post a tournament winning defense score, but it does enough while the rest of the lineup carries the ceiling.\n\nChris Godwin and Garrett Wilson provide the secondary spikes. They are not thin filler. They post wide receiver scores that fit the slate winning range and keep the roster from becoming a one player story. Treylon Burks is the final stabilizer, a value receiver score that keeps the salary structure intact while still adding points.",
+    "uniquenessNotes": "This roster separates through construction more than through one off randomness. The build fades the default stack rule and still keeps correlation discipline, but it expresses correlation through team scoring capture and game level receiver pairing rather than through quarterback plus pass catcher.\n\nMurray paired with Conner is a way to take a quarterback ceiling while redirecting attachment away from the most popular Arizona pass catcher. When Murray lands in the mid 20s, the roster does not need a perfect double stack. It needs one attached piece to convert touchdowns into shared scoring. Conner supplies that outcome at a lower ownership profile.\n\nZay Jones plus Mark Andrews is the other structural decision. It targets a game that can produce multiple pass catcher ceilings, then captures both without paying the quarterback tax. This matters on weeks where quarterback scoring is flatter and where the slate winning score can be reached through receiver and running back spikes.\n\nJacobs is the leverage that ends the debate. The field had multiple cheap running backs projecting for volume, which pulled roster builds toward value at the position. Paying 7,700 for Jacobs at 3.5 percent is a decision to trust role quality and matchup over projection driven duplication. The result becomes the dominant driver of first place.\n\nThe Jets defense at 24.2 percent is the concession. The build is comfortable eating defense ownership because the lineup already creates separation through Jacobs and through the unusual correlation structure.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "No traditional QB pass catcher stack, with Murray paired to Conner to capture Arizona scoring",
+      "secondaryLever": "Jacobs as the low owned slate breaker plus Andrews and Zay Jones as a quarterback fade game capture",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "LAC@ARI: 2 (QB game)",
+          "CHI@NYJ: 2",
+          "BAL@JAX: 2",
+          "LV@SEA: 1",
+          "TB@CLE: 1",
+          "CIN@TEN: 1"
+        ],
+        "cardinalsCluster": ["Kyler Murray", "James Conner"],
+        "ravensJaguarsPair": ["Mark Andrews", "Zay Jones"],
+        "jetsGamePair": ["Garrett Wilson", "Jets"],
+        "qbFacedByJetsDst": "Trevor Siemian"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "NO_TRUE_QB_WR_STACK",
+        "RB_QB_SAME_TEAM_SCORING_CAPTURE",
+        "PASS_CATCHER_GAME_PAIR_WITHOUT_QB",
+        "LOW_OWNERSHIP_RB_SLATE_BREAKER",
+        "CHALK_DEFENSE_ACCEPTED"
+      ],
+      "macroStory": "A first place roster built around a non standard correlation plan and a single low owned running back eruption, supported by two wide receiver spike scores and game level receiver pairing without quarterback exposure."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "LOW_OWNERSHIP_TOP_RAW_SCORE", "TOURNAMENT_DECIDER"],
+        "microStory": "Josh Jacobs is the defining outcome. The roster becomes first place because it captured the highest score on the slate at 3.5 percent ownership, which compresses the need for perfection elsewhere."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "TEAM_SCORING_CAPTURE", "NON_STANDARD_ATTACHMENT"],
+        "microStory": "Kyler Murray is used without the common receiver pairing. The lineup chooses to attach him to James Conner to keep exposure to Arizona touchdowns while avoiding the most expensive and most popular pass catcher route."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["GAME_CAPTURE", "LOWER_OWNERSHIP_CEILING", "QB_FADE_COMPATIBLE"],
+        "microStory": "Zay Jones captures the Jaguars receiver ceiling in a high scoring game while the roster avoids quarterback risk. His 30.5 point score is one of the support beams under the Jacobs outcome."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["MATCHUP_TARGET", "OWNERSHIP_CONCESSION", "FLOOR_PROTECTION"],
+        "microStory": "New York Jets defense is selected as a pregame matchup stance against a backup quarterback situation. The score is not special, but it does not sink the roster, and the roster does not require defense ceiling once Jacobs breaks the slate."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Kyler Murray", "position": "QB", "team": "ARI" },
+        "opponent": { "name": "James Conner", "position": "RB", "team": "ARI" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Mark Andrews", "position": "TE", "team": "BAL" },
+        "opponent": { "name": "Zay Jones", "position": "WR", "team": "JAX" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Jets", "position": "DST", "team": "NYJ", "qbFaced": "Trevor Siemian" },
+        "opponent": { "name": "Trevor Siemian", "position": "QB", "team": "CHI" }
+      }
+    ]
+  }
+}

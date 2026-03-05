@@ -1,0 +1,236 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 9,
+  "slateType": "MAIN",
+  "slateDate": "2022-11-06T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 9",
+  "slateTag": "FIELDS DOUBLE WITH MOONEY AND KMET, STEVENSON PLUS PATRIOTS DST, MIXON SLATE BREAKER",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK09_MAIN_2022-11-06T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12550
+  },
+  "winner": {
+    "username": "csears175",
+    "points": 268.12,
+    "maxEntries": 35
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 268.12,
+    "totalOwnershipBp": 12550,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Justin Fields",
+        "position": "QB",
+        "team": "CHI",
+        "salary": 5300,
+        "points": 45.72,
+        "ownershipPercent": 14.2,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 6500,
+        "points": 58.1,
+        "ownershipPercent": 12.2,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Rhamondre Stevenson",
+        "position": "RB",
+        "team": "NE",
+        "salary": 6200,
+        "points": 16.0,
+        "ownershipPercent": 40.5,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 8500,
+        "points": 30.3,
+        "ownershipPercent": 14.9,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Christian Kirk",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 5500,
+        "points": 21.6,
+        "ownershipPercent": 10.0,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Darnell Mooney",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 4700,
+        "points": 17.5,
+        "ownershipPercent": 8.5,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Cole Kmet",
+        "position": "TE",
+        "team": "CHI",
+        "salary": 3000,
+        "points": 22.0,
+        "ownershipPercent": 1.4,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kenneth Walker III",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 6200,
+        "points": 30.9,
+        "ownershipPercent": 13.6,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 4100,
+        "points": 26.0,
+        "ownershipPercent": 10.2,
+        "qbFaced": "Sam Ehlinger",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "IND"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by turning popular building blocks into a structure the field does not mirror. Justin Fields is popular at his price, but the lineup refuses the common naked or single stack path and instead double stacks Fields with Darnell Mooney and Cole Kmet. The bet is simple. If Chicago finally produces multiple passing touchdowns, a double stack captures the full payout because Chicago targets condense into a narrow set of players. Mooney enters as a scoreless volume profile, so the touchdown swing carries real leverage. Kmet enters in a slate where tight end lacks a clean anchor, so attaching the low salary tight end to Fields is a direct way to buy multi touchdown access without paying for fragile mid tier options.\n\nThe bringback is chosen for raw points, not symmetry. Tyreek Hill is the opposing hammer who keeps the stack honest. Chicago salary relief makes the Hill decision painless, and Hill can post the top wide receiver score in any environment.\n\nThe second correlation is game script engineering. Rhamondre Stevenson is major chalk, so the roster pairs him with the Patriots defense to create a joint outcome. New England as a defense is expensive enough to keep ownership moderate, yet the matchup against Sam Ehlinger gives access to sacks, short fields, and defensive scoring. This pairing turns a popular running back into a leverage structure instead of a dead spot.\n\nJoe Mixon is the slate breaker who makes first place unreachable without him. Kenneth Walker III supplies a second ceiling running back while staying off the most crowded decision points at the position. Christian Kirk is the final stabilizer, a mid range receiver score that keeps the salary map intact while the rest of the roster does the separating.",
+    "uniquenessNotes": "Total ownership is modest for a first place lineup, so uniqueness comes from correlation choices rather than obscure names. The Fields double is the clearest separator. Many lineups accept Fields and move on. Far fewer attach two pass catchers, since rushing quarterbacks tend to support naked builds in popular thinking. This roster uses that bias against the field.\n\nThe tight end slot is the second separator. Cole Kmet at very low ownership creates a ceiling event the field rarely owns, and tight end scoring scarcity magnifies the gap.\n\nThe Patriots defense completes the uniqueness loop. Pairing a chalk running back with a less popular defense produces a different distribution of lineups than either play alone, while still aligning with a coherent New England control script.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Justin Fields double stacked with Darnell Mooney and Cole Kmet plus Tyreek Hill bringback",
+      "secondaryLever": "Rhamondre Stevenson paired with Patriots DST versus Sam Ehlinger",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "MIA@CHI: 4 (QB game)",
+          "IND@NE: 2",
+          "CAR@CIN: 1",
+          "SEA@ARI: 1",
+          "LV@JAX: 1"
+        ],
+        "bearsCluster": ["Justin Fields", "Darnell Mooney", "Cole Kmet"],
+        "bringback": "Tyreek Hill",
+        "patriotsPair": ["Rhamondre Stevenson", "Patriots"],
+        "ceilingsAwayFromCrowd": ["Joe Mixon", "Kenneth Walker III"],
+        "salaryFitWR": "Christian Kirk",
+        "qbFacedByPatriotsDst": "Sam Ehlinger"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "RUSHING_QB_DOUBLE_STACK",
+        "OPPONENT_ALPHA_BRINGBACK",
+        "CHALK_RB_WITH_DEFENSE_PAIR",
+        "LOW_OWNERSHIP_TE_TOUCHDOWN_EVENT",
+        "RB_CEILING_DOUBLE"
+      ],
+      "macroStory": "A first place roster built from popular pieces, then reshaped into a rare correlation structure through a Fields double stack, a Patriots script pair, and a tight end touchdown outcome that few rosters capture."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "DUAL_THREAT_PRESSURE", "CORRELATION_HUB"],
+        "microStory": "Justin Fields supplies the raw score and enables a double stack path the field underbuilds, since many Fields lineups avoid heavy attachment to pass catchers."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP", "TWO_TD_ACCESS", "SLATE_SCARCITY_ATTACK"],
+        "microStory": "Cole Kmet captures the tight end slot through touchdowns, the exact outcome required when the slate does not offer a stable high end tight end anchor."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["SCRIPT_ENFORCER", "BACKUP_QB_PRESSURE", "CORRELATED_WITH_RB"],
+        "microStory": "Patriots defense converts the Sam Ehlinger matchup into a high end defensive score, then pairs cleanly with a Stevenson based control script."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["SLATE_BREAKER", "TOUCHDOWN_CONSOLIDATION", "RAW_POINT_GAP"],
+        "microStory": "Joe Mixon creates the separation no correlation can replace, turning a solid roster into a first place roster through an extreme touchdown consolidation game."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Justin Fields", "position": "QB", "team": "CHI" },
+        "teammates": [
+          { "name": "Darnell Mooney", "position": "WR", "team": "CHI" },
+          { "name": "Cole Kmet", "position": "TE", "team": "CHI" }
+        ],
+        "opponent": { "name": "Tyreek Hill", "position": "WR", "team": "MIA" }
+      },
+      {
+        "type": "RB_PLUS_DST",
+        "qb": null,
+        "teammate": { "name": "Rhamondre Stevenson", "position": "RB", "team": "NE" },
+        "opponent": { "name": "Patriots", "position": "DST", "team": "NE" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Patriots", "position": "DST", "team": "NE", "qbFaced": "Sam Ehlinger" },
+        "opponent": { "name": "Sam Ehlinger", "position": "QB", "team": "IND" }
+      }
+    ],
+    "diagnosticAnalysis": {
+      "whatHappened": "The slate turns on two levers. First, Chicago produces a Fields ceiling game where passing touchdowns matter, so the double stack captures more of the scoring distribution than a naked Fields build. Second, Indianapolis with Sam Ehlinger creates a defensive scoring environment, and New England converts it into points while Stevenson keeps the offense aligned with control script.\n\nThe 80 20 driver is touchdown consolidation in low owned places. Cole Kmet creates the tight end gap through two touchdowns at low ownership. Joe Mixon creates the overall slate gap through an extreme running back score. Many lineups can find Fields plus Hill. Far fewer lineups also land Mixon plus Kmet plus Patriots defense, and the combined result clears the field."
+    },
+    "predictiveAnalysis": {
+      "howToUseThisLater": "When a rushing quarterback carries heavy popularity, the highest leverage variant often comes from attaching two pass catchers rather than fading the quarterback. The field bias toward naked builds creates an ownership discount on the paired outcomes.\n\nWhen a chalk running back projects for elite volume due to injury or role shift, pairing with a defense in a strong matchup can create a cleaner lineup tree than playing the running back alone. The defense does not need perfection, but it does benefit from the same opponent failure that supports the running back script.\n\nWhen tight end lacks a reliable spend option, touchdown concentration becomes the main separation path. Low owned tight ends attached to a quarterback can produce slate shaping outcomes without forcing salary sacrifice at wide receiver."
+    },
+    "prescriptiveAnalysis": {
+      "actionableIfThenRules": "If a rushing quarterback projects as popular and affordable, allocate exposure to the double stack variant when pass catcher roles show any concentration, since the field typically underbuilds that structure.\n\nIf a backup quarterback starts against a strong home defense and game total stays modest, prioritize a defense plus lead back pairing from the favorite when the back also projects for high snap share.\n\nIf tight end presents no clean spend, treat the position as a touchdown market and attach a low salary tight end to the quarterback stack when pricing unlocks an opposing alpha bringback or a second ceiling running back."
+    }
+  }
+}

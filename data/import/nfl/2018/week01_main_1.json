@@ -3,12 +3,16 @@
   "year": 2018,
   "week": 1,
   "slateType": "MAIN",
-  "slateDate": "2018-09-09",
+  "slateDate": "2018-09-09T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 1",
+  "slateTag": "FITZMAGIC TB@NO NUCLEAR, THREE 40+ SCORES SAME GAME, WEEK 1 PRICING RESET PUNISHED",
+  "slateGroup": "5-1-1-1-1",
+  "isMain": true,
   "contest": {
     "site": "DraftKings",
-    "contestName": "NFL Millionaire Maker ($1M to 1st)",
-    "siteContestId": "NFL_2018_WK01_MAIN_2018-09-09_DK_MAIN_MILLY",
-    "entryFeeCents": null,
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK01_MAIN_2018-09-09T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
     "entries": null,
     "topPrizeCents": 100000000,
     "totalOwnershipBp": 13420
@@ -21,78 +25,132 @@
   "lineup": {
     "salaryUsed": 49900,
     "totalPoints": 301.18,
+    "totalOwnershipBp": 13420,
     "items": [
       {
         "rosterSpot": "QB",
-        "name": "R. Fitzpatrick",
+        "name": "Ryan Fitzpatrick",
         "position": "QB",
         "team": "TB",
         "salary": 5000,
         "points": 45.28,
-        "ownershipPercent": 1.3
+        "ownershipPercent": 1.3,
+        "passTd": 4,
+        "passYds": 417,
+        "rushTd": 1,
+        "rushYds": 36,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
       },
       {
         "rosterSpot": "RB",
-        "name": "J. Conner",
+        "name": "James Conner",
         "position": "RB",
         "team": "PIT",
         "salary": 4500,
         "points": 38.2,
-        "ownershipPercent": 25.5
+        "ownershipPercent": 25.5,
+        "rushTdRb": 2,
+        "rushYdsRb": 135,
+        "recRb": 5,
+        "recYdsRb": 47,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
       },
       {
         "rosterSpot": "RB",
-        "name": "A. Kamara",
+        "name": "Alvin Kamara",
         "position": "RB",
         "team": "NO",
         "salary": 8500,
         "points": 46.1,
-        "ownershipPercent": 33.5
+        "ownershipPercent": 33.5,
+        "rushTdRb": 2,
+        "rushYdsRb": 112,
+        "recRb": 9,
+        "recYdsRb": 29,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "TB"
       },
       {
         "rosterSpot": "WR",
-        "name": "M. Evans",
+        "name": "Mike Evans",
         "position": "WR",
         "team": "TB",
         "salary": 6700,
         "points": 30.7,
-        "ownershipPercent": 2.8
+        "ownershipPercent": 2.8,
+        "rec": 7,
+        "recYds": 147,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
       },
       {
         "rosterSpot": "WR",
-        "name": "D. Jackson",
+        "name": "DeSean Jackson",
         "position": "WR",
         "team": "TB",
         "salary": 4600,
         "points": 34.6,
-        "ownershipPercent": 0.9
+        "ownershipPercent": 0.9,
+        "rec": 5,
+        "recYds": 146,
+        "recTd": 2,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
       },
       {
         "rosterSpot": "WR",
-        "name": "M. Thomas",
+        "name": "Michael Thomas",
         "position": "WR",
         "team": "NO",
         "salary": 7800,
-        "points": 42,
-        "ownershipPercent": 19.1
+        "points": 42.0,
+        "ownershipPercent": 19.1,
+        "rec": 16,
+        "recYds": 180,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "TB"
       },
       {
         "rosterSpot": "TE",
-        "name": "J. Reed",
+        "name": "Jordan Reed",
         "position": "TE",
         "team": "WAS",
         "salary": 4000,
         "points": 14.8,
-        "ownershipPercent": 12.5
+        "ownershipPercent": 12.5,
+        "rec": 4,
+        "recYds": 48,
+        "recTd": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
       },
       {
         "rosterSpot": "FLEX",
-        "name": "E. Sanders",
+        "name": "Emmanuel Sanders",
         "position": "WR",
         "team": "DEN",
         "salary": 5000,
         "points": 32.5,
-        "ownershipPercent": 18.2
+        "ownershipPercent": 18.2,
+        "rec": 10,
+        "recYds": 135,
+        "recTd": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "SEA"
       },
       {
         "rosterSpot": "DST",
@@ -101,25 +159,101 @@
         "team": "BAL",
         "salary": 3800,
         "points": 17,
-        "ownershipPercent": 20.4
+        "ownershipPercent": 20.4,
+        "sacks": 6,
+        "interceptions": 2,
+        "pointsAllowedBucket": 6,
+        "qbFaced": "Nathan Peterman",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BUF"
       }
     ]
   },
   "analysis": {
-    "stackSummary": "Week 1 is decided by one game going off the rails and this lineup stays glued to it without wasting spots. Tampa Bay at New Orleans produces a box score that looks fake, and Fitzpatrick at 5k is the access point. Pairing him with Evans and DeSean is the bet that the production will not funnel through one receiver. Evans brings the steady target role, DeSean brings the downfield scoring, and together they capture most of the passing value without needing to guess which archetype gets paid.\n\nThe Saints side is handled cleanly. Kamara plus Michael Thomas avoids the trap of guessing a secondary pass catcher. Kamara gets there with touchdowns and receiving work, Thomas gets there with volume that stays intact even when the game state gets weird. This is two different scoring paths attached to the same environment.\n\nEverything outside that game is built to avoid a dead slot. Conner is the salary relief that still carries real workload, and he lands the kind of multi score game that keeps the build from being one game and a prayer. Sanders is another high volume receiver in a separate matchup who can win on targets and yardage without needing a perfect touchdown guess. Reed is the modest part of the build, but he does enough to keep the structure stable.\n\nRavens DST is the final support beam. It adds defensive scoring without forcing a low ceiling punt elsewhere, and it fits a roster that already has the slate’s ceiling game covered.",
-    "uniquenessNotes": "The separation comes from how the Tampa side is played. Many builds will choose one Buccaneer receiver and move on, or they will chase New Orleans pieces without fully committing to the shootout. Fitzpatrick plus Evans plus DeSean is a specific story about how the points arrive, and it is uncomfortable because it spends three roster spots on a team people did not treat as reliable.\n\nThe rest of the roster avoids obvious duplication levers. Conner was popular, Kamara was popular, but the lineup is not trying to be different everywhere. It eats the right volume and then differentiates through the exact way the game stack is constructed and which complementary pieces are used around it.",
+    "stackSummary": "This slate is decided by one game breaking its own distribution. Tampa Bay at New Orleans becomes a Week 1 outlier with four separate skill players clearing 30 points and three players pushing beyond 40. Ryan Fitzpatrick sits at 1.3 percent ownership, so the roster captures a nuclear quarterback score without needing any exotic salary structure. The passing line is not a narrow funnel. It is a wide blast radius. Mike Evans and DeSean Jackson both hit 100-yard bonuses and multiple explosive gains, while Michael Thomas and Alvin Kamara respond with volume and touchdowns. The construction behaves as an onslaught without a formal bring back constraint because the bring back is already in the lineup through the Saints stars.\n\nEverything outside TB at NO is a lesson in Week 1 price inefficiency and role clarity. James Conner carries the public workload confidence because the slate opens with a clean running back job at a discounted tag, then he produces 135 rushing yards and two touchdowns. Emmanuel Sanders provides another early season role anchor with a 10-catch game at a midrange tag. Jordan Reed lands as the functional floor tight end with touchdown equity, then delivers.\n\nBaltimore defense against Nathan Peterman supplies the final amplifier. The defense scores 17 and adds a second scoring channel that does not depend on offensive efficiency. In a week where most people were still calibrating projections, the lineup leans into the clearest roles and lets the one extreme game environment do the separating.",
+    "uniquenessNotes": "Uniqueness comes from selecting the correct quarterback in the correct chaos week. Fitzpatrick is not popular in Week 1, and the roster pairs him with both Tampa wide receivers, which multiplies the benefit when the scoring concentrates through chunk plays. The decision is not a thin dart. It is a stance on the Tampa passing tree being underpriced and under-owned relative to its ceiling.\n\nThe Saints pieces do not reduce the build. They complete it. Kamara and Thomas are expensive, but their usage profile creates a path where Tampa scoring forces sustained New Orleans response. The roster does not require guessing which side wins. It requires the game environment to stay aggressive, and it does.\n\nThe rest of the lineup avoids fragile uniqueness. Conner and Sanders are high-confidence role plays. Reed is a salary controlled touchdown position. Baltimore defense is a pressure and turnover spot against a replacement level quarterback. The build is volatile in one place and stable everywhere else, which is a coherent way to win a Week 1 slate.",
     "stackMeta": {
       "lineupType": "CLASSIC",
-      "construction": {
-        "teamStacks": [
-          { "team": "TB", "players": ["R. Fitzpatrick", "M. Evans", "D. Jackson"] },
-          { "team": "NO", "players": ["A. Kamara", "M. Thomas"] }
+      "primaryLever": "Tampa Bay passing eruption captured through Ryan Fitzpatrick plus Mike Evans and DeSean Jackson, completed by Alvin Kamara and Michael Thomas as the direct response block",
+      "secondaryLever": "Week 1 role clarity spine through James Conner and Emmanuel Sanders, plus Ravens DST versus Nathan Peterman for turnover and short field scoring",
+      "notes": {
+        "rosterConstruction": "5-1-1-1-1",
+        "gameKey": [
+          "TB@NO: 5 (QB game)",
+          "PIT@CLE: 1",
+          "WAS@ARI: 1",
+          "SEA@DEN: 1",
+          "BUF@BAL: 1"
         ],
-        "primaryGame": "TB-NO",
-        "buildType": "QB double stack with an aggressive opposing bring back plus a second correlated bring back"
+        "tbNoCluster": ["Ryan Fitzpatrick", "Mike Evans", "DeSean Jackson", "Alvin Kamara", "Michael Thomas"],
+        "rbRoleAnchor": "James Conner",
+        "wrVolumeAnchor": "Emmanuel Sanders",
+        "qbFacedByRavensDst": "Nathan Peterman"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "WEEK1_GAME_ENVIRONMENT_OUTLIER",
+        "LOW_OWNERSHIP_QB_TRIPLE_CORRELATION",
+        "ROLE_CLARITY_CORE",
+        "DEFENSE_VS_REPLACEMENT_LEVEL_QB"
+      ],
+      "macroStory": "A Week 1 slate solved by capturing a historic shootout at minimal quarterback ownership, then pairing it with high-confidence roles and a defense position that added non-offensive scoring."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "LOW_OWNERSHIP_CEILING", "EXPLOSIVE_PLAY_ACCESS"],
+        "microStory": "Ryan Fitzpatrick is the defining decision. Four passing touchdowns plus a rushing touchdown collapses the entire slate because the roster also holds the two main Tampa downfield winners."
       },
-      "primaryLever": "Cheap QB paired with both a volume receiver and a deep threat in the slate’s highest scoring environment",
-      "secondaryLever": "Game environment capture without guessing ancillary pieces, supported by stable workload plays elsewhere"
-    }
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_MULTIPLIER", "BONUS_YARDAGE", "CORRELATED_CEILING"],
+        "microStory": "DeSean Jackson delivers two touchdowns with 146 yards. The points are not incremental. They are the direct conversion of Fitzpatrick’s low-owned ceiling into separation."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["ROLE_CERTAINTY", "TOUCHDOWN_CAPTURE", "PRICING_ADVANTAGE"],
+        "microStory": "James Conner provides the Week 1 workload outcome the slate priced too cheaply. Two rushing touchdowns at 4,500 keeps the roster from needing thin values elsewhere."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["NON_LINEAR_SCORING", "PRESSURE_EDGE", "TURNOVER_ACCESS"],
+        "microStory": "Ravens defense supplies a strong score in a spot where quarterback play collapses. It adds a second lane to first place without consuming salary needed for the TB at NO block."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Ryan Fitzpatrick", "position": "QB", "team": "TB" },
+        "teammates": [
+          { "name": "Mike Evans", "position": "WR", "team": "TB" },
+          { "name": "DeSean Jackson", "position": "WR", "team": "TB" }
+        ],
+        "opponent": { "name": "Michael Thomas", "position": "WR", "team": "NO" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Alvin Kamara", "position": "RB", "team": "NO" },
+        "opponent": { "name": "Ryan Fitzpatrick", "position": "QB", "team": "TB" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Ravens", "position": "DST", "team": "BAL", "qbFaced": "Nathan Peterman" },
+        "opponent": { "name": "Nathan Peterman", "position": "QB", "team": "BUF" }
+      }
+    ],
+    "diagnosticAnalysis": "The 80/20 explanation is simple. The slate is broken by TB at NO producing multiple 40-point outcomes, and the roster holds the correct low-owned quarterback plus the two primary Tampa wide receivers. This single decision cluster accounts for most of the separation because it captures both raw points and unique points.\n\nThe second driver is Week 1 role clarity. Conner and Sanders provide high volume in spots where pricing and uncertainty across the slate left many lineups guessing. Reed adds a touchdown at a low salary. Baltimore defense adds a strong score against a replacement level quarterback. Those pieces do not compete with the outlier game for ceiling. They remove failure modes in the remaining slots, so the roster converts the outlier into a first place finish.",
+    "predictiveAnalysis": "Week 1 creates a specific kind of edge. Pricing is based on preseason assumptions, roles are less stable, and the field overweights comfort. When one game breaks the expected distribution early in the season, the winning roster often comes from being correct on the quarterback who benefits most from explosive play concentration.\n\nFor future research, isolate Week 1 slates and measure how often the winning quarterback comes from a team with low preseason confidence but clear vertical receiver roles. Track how frequently the same roster also includes two or more stable volume anchors from other games. The pattern to test is not random chaos. It is one extreme game plus a stability spine.",
+    "prescriptiveAnalysis": "In early season slates, build a decision framework around two separate questions.\n\nFirst, identify a small set of games with the ability to produce multiple ceiling outcomes across both teams. When a game has vertical receiver roles and a pace profile that can hold for four quarters, a full game block becomes viable, including expensive bring back pieces.\n\nSecond, pair the game block with role certainty elsewhere, even if ownership rises. Use running back and target volume anchors to reduce the need for thin salary plays. Add one defense position that can win through quarterback collapse or short fields. The goal is a roster that survives normal variance while remaining fully exposed to the one game capable of redefining the slate.",
+    "historicalNote": "301.18 represents an extreme historical outcome for classic scoring. It is a reminder that the right Week 1 game environment can create a score range that would be unreachable in most weeks."
   }
 }

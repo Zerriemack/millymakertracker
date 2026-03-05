@@ -1,0 +1,261 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 18,
+  "slateType": "MAIN",
+  "slateDate": "2024-01-07T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 18",
+  "slateTag": "MULLENS DOUBLE WITH JUSTIN JEFFERSON AND JOHNNY MUNDT, CONNER WITH MICHAEL WILSON, GIANTS DST WITH DARIUS SLAYTON",
+  "slateGroup": "3-2-2-1-1",
+  "rosterConstruction": "3-2-2-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK18_MAIN_2024-01-07T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14750
+  },
+  "winner": {
+    "username": "UNKNOWN",
+    "points": 226.04,
+    "maxEntries": 150
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 226.04,
+    "totalOwnershipBp": 14750,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Nick Mullens",
+        "position": "QB",
+        "team": "MIN",
+        "salary": 5100,
+        "points": 25.64,
+        "ownershipPercent": 14.8,
+        "passTd": 2,
+        "passYds": 411,
+        "interceptions": 4,
+        "rushYds": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "James Conner",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 6100,
+        "points": 33.4,
+        "ownershipPercent": 30.0,
+        "rushYdsRb": 150,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 54,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Breece Hall",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 7200,
+        "points": 32.0,
+        "ownershipPercent": 5.7,
+        "rushYdsRb": 178,
+        "rushTdRb": 1,
+        "recRb": 2,
+        "recYdsRb": 12,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 9300,
+        "points": 35.5,
+        "ownershipPercent": 32.0,
+        "rec": 9,
+        "recYds": 110,
+        "rushYds": 5,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Darius Slayton",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 4000,
+        "points": 17.2,
+        "ownershipPercent": 14.5,
+        "rec": 5,
+        "recYds": 62,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 8500,
+        "points": 39.0,
+        "ownershipPercent": 28.0,
+        "rec": 12,
+        "recYds": 192,
+        "recTd": 1,
+        "rushYds": -12,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Johnny Mundt",
+        "position": "TE",
+        "team": "MIN",
+        "salary": 3000,
+        "points": 10.8,
+        "ownershipPercent": 12.2,
+        "rec": 5,
+        "recYds": 58,
+        "recTd": 0,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Michael Wilson",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 4400,
+        "points": 15.5,
+        "ownershipPercent": 3.1,
+        "rec": 6,
+        "recYds": 95,
+        "recTd": 0,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Giants",
+        "position": "DST",
+        "team": "NYG",
+        "salary": 2300,
+        "points": 17,
+        "ownershipPercent": 7.0,
+        "sacks": 3,
+        "takeaways": 1,
+        "qbFaced": "Marcus Mariota",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis: Week 18 creates two simultaneous forces. Pricing softens because multiple teams rotate personnel, while projection density rises because obvious roles concentrate touches. This roster accepts both forces and uses them as a scoring engine, then still finds separation through where correlation is concentrated.\n\nMinnesota provides the anchor. Nick Mullens is inexpensive for a quarterback path to 400 yards, and pairing him with Justin Jefferson captures the entire passing ceiling. Johnny Mundt completes the cluster as the low cost access point to red zone variance and short field sequences. The trio does not need efficiency. It needs volume, and volume arrives when Minnesota throws into a game script where passing attempts stay high.\n\nArizona supplies the second cluster, but it is built to match a specific failure mode for the field. James Conner can score through raw rushing volume even when the offense remains imperfect, and Michael Wilson captures the secondary value created when the defense overcommits to stopping Conner and the primary targets. Conner plus Wilson forms a two player capture of touchdowns and chunk plays without forcing a quarterback.\n\nNew York provides the structural closer. Giants defense versus Marcus Mariota is a pressure bet. The goal is sacks and short fields, not a defensive touchdown. Pairing Giants defense with Darius Slayton captures the second order effect. Defensive pressure increases drive volatility, and volatility creates more possessions and more broken play scoring chances for the offense, even when the offense itself is not elite.\n\nBreece Hall is the separation lever inside a high ownership build. Many rosters reach for the same high salary receivers once value opens. Hall provides a different form of ceiling. He can produce 30 points without multiple touchdowns, and his ownership stays low because his path reads less cleanly than the premium receiver paths.\n\nPredictive analysis: When a slate contains widespread salary relief, the winning lineup frequently becomes a contest of capturing the correct concentrated ceilings, not a contest of finding thin punts. Quarterback plus alpha receiver remains one of the most stable ways to capture raw points when the quarterback cost collapses. A second cluster built around a volume running back plus a low owned receiver from the same team can function as a proxy for team scoring without paying for quarterback.\n\nPrescriptive analysis: In future Week 18 or injury driven value slates, treat the roster as three decisions. First, identify the cheap quarterback who can reach 40 attempts and pair him with the one receiver who can command the majority of high value targets. Second, add a two player team scoring capture built around a running back with 25 touch potential plus a receiver whose role expands when defenses tilt. Third, choose a defense versus a backup quarterback and pair it with one offensive player from the same team to benefit from field position and possession swings. Use the final one off slot to select a ceiling back whose workload is secure but whose popularity remains suppressed by matchup narratives.",
+    "uniquenessNotes": "Total ownership rises because the roster treats several popular plays as acceptable shared assumptions. The lineup still wins because ownership is concentrated in spots that can combine for slate breaking totals.\n\nThe construction uses three team clusters without stretching into fragile thin correlations. Minnesota is a true passing ceiling capture. Arizona is a team scoring proxy through the running back and a low owned receiver. New York is a pressure and field position bet through defense plus a wide receiver.\n\nThe differentiator is placement of leverage. Breece Hall provides a 30 point profile at single digit ownership inside a roster that otherwise carries several popular pieces.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Nick Mullens paired with Justin Jefferson and Johnny Mundt",
+      "secondaryLever": "James Conner paired with Michael Wilson plus Giants defense versus Marcus Mariota",
+      "notes": {
+        "rosterConstruction": "3-2-2-1-1",
+        "gameKey": [
+          "MIN@DET: 3 (QB game)",
+          "ARI@SEA: 2",
+          "NYG@PHI: 2",
+          "DAL@WAS: 1",
+          "NYJ@NE: 1"
+        ],
+        "vikingsCluster": ["Nick Mullens", "Justin Jefferson", "Johnny Mundt"],
+        "cardinalsCluster": ["James Conner", "Michael Wilson"],
+        "giantsCluster": ["Darius Slayton", "Giants"],
+        "qbFacedByGiantsDst": "Marcus Mariota"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "CHEAP_QB_THREE_PLAYER_TEAM_CLUSTER",
+        "RB_PLUS_LOW_OWNED_WR_TEAM_SCORING_PROXY",
+        "DST_VERSUS_BACKUP_QB",
+        "DEFENSE_PLUS_PASS_CATCHER_SAME_TEAM",
+        "LOW_OWNERSHIP_VOLUME_RB_CEILING"
+      ],
+      "macroStory": "A Week 18 roster built to exploit value driven pricing by locking in concentrated ceilings through a cheap quarterback cluster, then layering two additional team scoring captures and finishing with a low owned volume back ceiling."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "VOLUME_PASSING_PATH", "SALARY_RELIEF_QUARTERBACK"],
+        "microStory": "Nick Mullens provides the salary break and the volume profile. The passing yardage ceiling creates access to first place without needing rushing production."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["ALPHA_CEILING", "TARGET_CONCENTRATION", "STACK_CORE"],
+        "microStory": "Justin Jefferson is the concentrated ceiling. Pairing him with Mullens captures the majority of Minnesota passing production."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["VOLUME_RUSHING", "TOUCHDOWN_ACCESS", "TEAM_SCORING_CAPTURE"],
+        "microStory": "James Conner converts raw workload into a slate level score and supports the Arizona mini stack without paying for quarterback."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRESSURE_BET", "SACK_FLOOR", "BACKUP_QB_MATCHUP"],
+        "microStory": "Giants defense versus Marcus Mariota targets disruption and short fields. The point total comes from pressure and turnovers rather than a defensive touchdown requirement."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Nick Mullens", "position": "QB", "team": "MIN" },
+        "teammates": [
+          { "name": "Justin Jefferson", "position": "WR", "team": "MIN" },
+          { "name": "Johnny Mundt", "position": "TE", "team": "MIN" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "TEAM_PAIR",
+        "qb": null,
+        "teammate": { "name": "James Conner", "position": "RB", "team": "ARI" },
+        "opponent": { "name": "Michael Wilson", "position": "WR", "team": "ARI" }
+      },
+      {
+        "type": "TEAM_PAIR",
+        "qb": null,
+        "teammate": { "name": "Giants", "position": "DST", "team": "NYG", "qbFaced": "Marcus Mariota" },
+        "opponent": { "name": "Darius Slayton", "position": "WR", "team": "NYG" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Giants", "position": "DST", "team": "NYG", "qbFaced": "Marcus Mariota" },
+        "opponent": { "name": "Marcus Mariota", "position": "QB", "team": "PHI" }
+      }
+    ]
+  }
+}

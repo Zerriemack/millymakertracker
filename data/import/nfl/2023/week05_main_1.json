@@ -1,0 +1,264 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 5,
+  "slateType": "MAIN",
+  "slateDate": "2023-10-08T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 5",
+  "slateTag": "BURROW TO CHASE 3 TDS, MONTGOMERY 44.6% SMASH, JETS DST PLUS BREECE HALL CORRELATION",
+  "slateGroup": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK05_MAIN_2023-10-08T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 16730
+  },
+  "winner": {
+    "username": "buckeye151",
+    "points": 259.18,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 259.18,
+    "totalOwnershipBp": 16730,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Joe Burrow",
+        "position": "QB",
+        "team": "CIN",
+        "salary": 6200,
+        "points": 27.38,
+        "ownershipPercent": 6.2,
+        "passTd": 3,
+        "passYds": 317,
+        "rushYds": 7,
+        "int": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Breece Hall",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 5400,
+        "points": 31.4,
+        "ownershipPercent": 31.2,
+        "rushYdsRb": 177,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 17,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Montgomery",
+        "position": "RB",
+        "team": "DET",
+        "salary": 6600,
+        "points": 23.9,
+        "ownershipPercent": 44.6,
+        "rushYdsRb": 109,
+        "rushTdRb": 1,
+        "recRb": 2,
+        "recYdsRb": 20,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jordan Addison",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 5300,
+        "points": 18.4,
+        "ownershipPercent": 4.3,
+        "rec": 6,
+        "recYds": 64,
+        "recTd": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Ja'Marr Chase",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 7900,
+        "points": 55.2,
+        "ownershipPercent": 20.0,
+        "rec": 15,
+        "recYds": 192,
+        "recTd": 3,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Adam Thielen",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 5100,
+        "points": 30.7,
+        "ownershipPercent": 15.8,
+        "rec": 11,
+        "recYds": 107,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Dallas Goedert",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 4200,
+        "points": 28.7,
+        "ownershipPercent": 5.6,
+        "rec": 8,
+        "recYds": 117,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "De'Von Achane",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 6100,
+        "points": 25.5,
+        "ownershipPercent": 31.1,
+        "rushYdsRb": 151,
+        "rushTdRb": 1,
+        "recRb": 1,
+        "recYdsRb": 14,
+        "fumblesLost": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Jets",
+        "position": "DST",
+        "team": "NYJ",
+        "salary": 3100,
+        "points": 18,
+        "ownershipPercent": 8.5,
+        "sacks": 4,
+        "takeaways": 3,
+        "fumbleRecoveries": 3,
+        "defTd": 1,
+        "safeties": 1,
+        "pointsAllowed": 27,
+        "qbFaced": "Russell Wilson",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis: This slate centers on two events that decide first place range. The first event is Ja'Marr Chase producing a three touchdown, 15 catch eruption. The second event is David Montgomery absorbing a high share workload and converting it at massive ownership. Once Montgomery becomes a near mandatory input, the contest shifts to a secondary question. Which lineups combine the Montgomery foundation with an outcome that the Montgomery lineups do not share.\n\nThe roster answers by pairing Joe Burrow with Chase, then letting the rest of the lineup behave as a points funnel from concentrated roles. Burrow is not a ceiling quarterback score, but three passing touchdowns plus the 300 yard bonus keeps the stack from needing a third Bengal. The separation comes from how rare the Chase eruption is in large field builds. The field can pay for Chase, yet fewer lineups also match the correct quarterback and still land enough points elsewhere.\n\nThe Jets defense plus Breece Hall combination gives the roster a second correlated scoring pocket. Hall piles up yardage and a touchdown, and the defense adds a defensive touchdown with pressure outcomes against Russell Wilson. The defense does not need perfect points allowed scoring once it reaches a touchdown, sacks, and a safety.\n\nThe remaining slots fill the lineup with high volume receivers tied to game scripts that feed targets. Adam Thielen collects PPR through heavy usage, Dallas Goedert reaches a ceiling tight end score, and Jordan Addison supplies a compact touchdown plus reception volume at low ownership. De'Von Achane is popular and productive, so the lineup does not depend on Achane for separation. Achane provides a stable 25 point score while the leverage comes from the Bengals stack and the Jets defense touchdown.\n\nPredictive Analysis: Weeks where one running back becomes the clear ownership magnet create a predictable lineup landscape. Many rosters share the same anchor and many share the same secondary value. First place tends to come from a second pocket that can produce a touchdown cluster without requiring a full game stack. The Burrow to Chase pairing is a clean example. It captures a concentrated touchdown distribution in one game while keeping the rest of the lineup flexible enough to absorb multiple high volume receivers from unrelated games.\n\nPrescriptive Analysis: When a high owned running back projects as the slate anchor, treat him as a baseline input, then force a second correlated decision with multi touchdown access. Prioritize a passing stack where touchdowns can consolidate through one receiver, since this reduces the need to guess between two teammates. Pair that stack with one additional correlation that can score without offensive efficiency, such as defense plus running back versus a replacement level quarterback. Finally, allow one low owned wide receiver with a realistic touchdown role to sit beside the chalk anchors. This roster uses Jordan Addison in that role, so the build has a path to win even if one position misses, since the ceiling clusters come from the stack and the defense touchdown.",
+    "uniquenessNotes": "The roster is popular in several places and still clears first place because the overlap points are chosen for stability, while the leverage points are chosen for event level ceilings. Montgomery at 44.6 percent and Achane at 31.1 percent are shared assumptions with the field. The roster still wins because it pairs those shared assumptions with a rare receiver eruption and the correct quarterback.\n\nThe Bengals stack is the primary separator. Burrow is low owned and captures every Chase touchdown. Many Chase lineups fail to match all three receiving touchdowns once they miss Burrow or miss a correlated path to keep pace.\n\nThe Jets defense adds another separation layer. Defensive touchdowns are scarce on a slate wide basis, and the roster pairs the defense touchdown with Hall yardage plus a touchdown, which compresses points into a single game pocket and reduces the need for additional thin correlations.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Joe Burrow paired with Ja'Marr Chase to capture a concentrated three touchdown receiver eruption",
+      "secondaryLever": "Jets defense touchdown plus Breece Hall production versus Russell Wilson as a pressure based game script",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "CIN@ARI: 2 (QB game)",
+          "NYJ@DEN: 2",
+          "CAR@DET: 2",
+          "KC@MIN: 1",
+          "PHI@LAR: 1",
+          "NYG@MIA: 1"
+        ],
+        "bengalsCluster": ["Joe Burrow", "Ja'Marr Chase"],
+        "jetsCluster": ["Breece Hall", "Jets"],
+        "lionsPanthersPair": ["David Montgomery", "Adam Thielen"],
+        "tightEndCeiling": "Dallas Goedert",
+        "qbFacedByJetsDst": "Russell Wilson"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "RB_CHALK_ANCHOR_THEN_SEPARATE",
+        "QB_WR_TOUCHDOWN_CONSOLIDATION",
+        "RB_PLUS_DST_CORRELATED_SCRIPT",
+        "VOLUME_WR_SCRIPT_CAPTURE",
+        "TE_CEILING_AT_MODERATE_OWNERSHIP"
+      ],
+      "macroStory": "A chalk anchored construction that wins through a concentrated three touchdown receiver eruption captured by the correct quarterback, then reinforced by a defense touchdown and pressure outcomes in a correlated game pocket."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_SEPARATOR", "TD_CLUSTER", "VOLUME_PLUS_CEILING"],
+        "microStory": "Ja'Marr Chase provides the slate defining score. Three touchdowns paired with 15 receptions turns a premium salary receiver into the lineup’s decisive event."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["CORRELATION_DRIVER", "LOW_OWNERSHIP_QB", "BONUS_ACCESS"],
+        "microStory": "Joe Burrow is the enabling choice. The quarterback score is solid rather than nuclear, but it captures every Chase touchdown and keeps the stack complete."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["CHALK_BASELINE", "WORKLOAD_CONVERSION", "NO_FAIL_ANCHOR"],
+        "microStory": "David Montgomery serves as the shared base. The lineup accepts heavy ownership, then searches for separation elsewhere, which is correct once Montgomery clears 100 yards and a touchdown."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["DEF_TD_SWING", "PRESSURE_OUTCOME", "REPLACEMENT_LEVEL_QB_TARGET"],
+        "microStory": "Jets defense supplies a defense touchdown and multiple disruption events. This single slot adds points that many Montgomery lineups cannot match without a similar defensive score."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Joe Burrow", "position": "QB", "team": "CIN" },
+        "teammates": [{ "name": "Ja'Marr Chase", "position": "WR", "team": "CIN" }],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Breece Hall", "position": "RB", "team": "NYJ" },
+        "opponent": { "name": "Jets", "position": "DST", "team": "NYJ" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "David Montgomery", "position": "RB", "team": "DET" },
+        "opponent": { "name": "Adam Thielen", "position": "WR", "team": "CAR" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Jets", "position": "DST", "team": "NYJ", "qbFaced": "Russell Wilson" },
+        "opponent": { "name": "Russell Wilson", "position": "QB", "team": "DEN" }
+      }
+    ]
+  }
+}

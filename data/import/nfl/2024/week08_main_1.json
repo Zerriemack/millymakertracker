@@ -1,0 +1,268 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 8,
+  "slateType": "MAIN",
+  "slateDate": "2024-10-27T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 8",
+  "slateTag": "BO NIX NAKED, BILLS RB PLUS DST, OTTON ROUTE VS ROBINSON",
+  "slateGroup": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK08_MAIN_2024-10-27T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9860
+  },
+  "winner": {
+    "username": "rick12324",
+    "points": 211.66,
+    "maxEntries": 135
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 211.66,
+    "totalOwnershipBp": 9860,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Bo Nix",
+        "position": "QB",
+        "team": "DEN",
+        "salary": 5600,
+        "points": 29.76,
+        "ownershipPercent": 8.9,
+        "passTd": 3,
+        "passYds": 284,
+        "rushTd": 1,
+        "rushYds": 4,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "James Cook",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 7000,
+        "points": 31.3,
+        "ownershipPercent": 2.6,
+        "rushTdRb": 2,
+        "rushYdsRb": 111,
+        "recRb": 3,
+        "recYdsRb": 22,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Bijan Robinson",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 7200,
+        "points": 22,
+        "ownershipPercent": 8.1,
+        "recTd": 1,
+        "recYds": 37,
+        "rec": 6,
+        "rushYdsRb": 63,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Ladd McConkey",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 5100,
+        "points": 32.1,
+        "ownershipPercent": 3.3,
+        "recTd": 2,
+        "recYds": 111,
+        "rec": 6,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Ja'Marr Chase",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 8500,
+        "points": 20.4,
+        "ownershipPercent": 18.1,
+        "recTd": 1,
+        "recYds": 54,
+        "rec": 9,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Cedric Tillman",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 3300,
+        "points": 28.9,
+        "ownershipPercent": 19.7,
+        "recTd": 2,
+        "recYds": 99,
+        "rec": 7,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Cade Otton",
+        "position": "TE",
+        "team": "TB",
+        "salary": 3500,
+        "points": 29.1,
+        "ownershipPercent": 35.2,
+        "recTd": 2,
+        "recYds": 81,
+        "rec": 9,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chuba Hubbard",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 6700,
+        "points": 9.1,
+        "ownershipPercent": 1.1,
+        "rushYdsRb": 56,
+        "recRb": 2,
+        "recYdsRb": 15,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bills",
+        "position": "DST",
+        "team": "BUF",
+        "salary": 3000,
+        "points": 9,
+        "ownershipPercent": 1.6,
+        "sacks": 1,
+        "takeaways": 1,
+        "dfr": 1,
+        "pointsAllowedBucket": 13,
+        "qbFaced": "Geno Smith",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis\n\nThe anchor is the Carolina at Denver game, but the lineup takes the unusual branch. Bo Nix delivers a four touchdown slate breaker with no Denver pass catcher attached. A typical Denver outcome concentrates points into one receiver or tight end. This roster accepts the risk of missing the correct Denver skill player, then uses the quarterback score as raw separation.\n\nThe correlation still shows up, but it shows up as an opponent bringback. Chuba Hubbard sits in the flex from the same game. The game flow Nix creates forces Carolina into extra plays, then Hubbard becomes the only Panthers piece required to convert volume into lineup stability. Hubbard fails, yet the structure survives because the rest of the roster produces multiple independent ceiling events.\n\nThe second pillar is Buffalo at Seattle. James Cook and the Bills defense form a paired stance on Buffalo control. Cook delivers the touchdowns. The defense captures the complementary pressure and turnover points versus Geno Smith. This pairing gives the lineup points from both offensive success and opponent disruption, without needing a shootout.\n\nThe third pillar is Atlanta at Tampa Bay. Bijan Robinson and Cade Otton form a compact two side capture of the touchdown distribution. Otton spikes twice as a tight end, while Robinson still returns a strong score through receiving involvement. This two player game bridge gives access to Tampa touchdowns without paying for premium wide receiver salaries.\n\nThe roster closes with two wide receiver outcomes that win separate battles. Ladd McConkey supplies a true low owned eruption in a late window game. Cedric Tillman supplies a cheap, popular score that functions as a salary valve without giving away points. Ja'Marr Chase lands a non ceiling game, yet remains viable because nine receptions and a touchdown keep the slot from sinking the lineup.\n\nPredictive Analysis\n\nThis win shows a repeatable path for slates where a mid salary quarterback owns legitimate four touchdown range. A naked quarterback can remain viable when three conditions align. First, the quarterback score exceeds the combined score of common quarterback plus pass catcher pairs. Second, the rest of the roster contains multiple touchdown sources from distinct games. Third, the salary saved at quarterback funds concentrated touchdown roles elsewhere, especially tight end and value receiver.\n\nThe Bills pairing with Cook points to a second repeatable pattern. Defense plus team running back becomes strongest when the running back carries multi touchdown access and the defense faces a quarterback prone to pressure mistakes. The lineup does not need a defensive touchdown. One sack, one interception, and a recovery paired with a two touchdown runner produces enough combined output to matter.\n\nPrescriptive Analysis\n\nUse this construction as a filter for future research. Start by flagging weeks where a mid tier quarterback projects for high efficiency in the red zone. If the slate contains at least two additional games with clear touchdown funnels, naked quarterback becomes a viable branch.\n\nWhen selecting a defense plus running back pairing, prioritize a running back with a realistic two touchdown path and a defense facing a quarterback whose profile includes turnover exposure under pressure. Treat the defense score as an additive lever, not as the main engine.\n\nFor the secondary stack, look for a tight end whose route involvement signals red zone usage, then pair him with an opponent who earns points without needing a rushing touchdown. The Robinson plus Otton pairing is the template.\n\nFinally, reserve one wide receiver slot for a lower owned late window ceiling outcome, then allow one chalk value receiver when the value receiver owns real touchdown equity. McConkey and Tillman show how this balance can coexist inside a first place build.",
+    "uniquenessNotes": "The ownership profile is uneven by design. Cade Otton and Cedric Tillman carry heavy roster share, yet the lineup remains distinct because it stacks those chalk outcomes with a low owned eruption from Ladd McConkey and a low owned combined pairing of James Cook plus Bills defense.\n\nBo Nix without a Denver pass catcher is the main differentiator. Many rosters that rostered Nix paired him with at least one Charger, or they paired a different quarterback with McConkey. This roster separates by isolating the quarterback points, then spending correlation capital elsewhere.\n\nThe Hubbard miss matters. The build is sturdy because it does not require every correlation to hit. The roster contains three separate touchdown clusters. Buffalo provides two rushing scores. Tampa provides two tight end scores. Los Angeles provides two receiver scores. One flex failure does not remove the lineup from first place range when three other games deliver concentrated touchdowns.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Bo Nix naked with Chuba Hubbard as opponent bringback",
+      "secondaryLever": "Bills defense paired with James Cook versus Geno Smith",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "CAR@DEN: 2 (QB game)",
+          "BUF@SEA: 2",
+          "ATL@TB: 2",
+          "NO@LAC: 1",
+          "PHI@CIN: 1",
+          "BAL@CLE: 1"
+        ],
+        "qbCluster": ["Bo Nix", "Chuba Hubbard"],
+        "rbDstPair": ["James Cook", "Bills"],
+        "falconsBuccaneersPair": ["Bijan Robinson", "Cade Otton"],
+        "lowOwnedCeilingWr": "Ladd McConkey",
+        "valueWrWithTdEquity": "Cedric Tillman",
+        "qbFacedByBillsDst": "Geno Smith"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "NAKED_QB_SPIKE",
+        "OPPONENT_RB_BRINGBACK",
+        "RB_PLUS_DST_CONTROL_PAIR",
+        "TE_TOUCHDOWN_FUNNEL",
+        "LOW_OWNED_WR_ERUPTION",
+        "VALUE_WR_TOUCHDOWN_EQUITY"
+      ],
+      "macroStory": "A first place roster built around a naked quarterback spike, a control pairing of running back plus defense, and two separate pass catching touchdown funnels that cover for a failed bringback."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "RAW_POINTS", "SEPARATION_BRANCH"],
+        "microStory": "Bo Nix provides the slate breaking score without a Denver pass catcher attached. The quarterback points become standalone separation."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_ACCESS", "GAME_CONTROL", "COMPLEMENT_TO_DST"],
+        "microStory": "James Cook converts Buffalo control into two rushing touchdowns and gives the Bills defense a cleaner path to pressure points."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["TOUCHDOWN_FUNNEL", "SALARY_EFFICIENCY", "CHALK_THAT_HIT"],
+        "microStory": "Cade Otton supplies two touchdowns at a tight end salary. This score behaves like a premium receiver outcome without the cost."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP", "CEILING_EVENT", "LATE_WINDOW_SWING"],
+        "microStory": "Ladd McConkey provides the low owned eruption that turns a good roster into a first place roster."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["COMPLEMENT", "TURNOVER_PATH", "SALARY_RELIEF"],
+        "microStory": "Bills defense adds pressure points and a turnover versus Geno Smith. The score supports the Cook pairing and keeps salary flexible."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Bo Nix", "position": "QB", "team": "DEN" },
+        "teammates": [],
+        "opponent": { "name": "Chuba Hubbard", "position": "RB", "team": "CAR" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Bijan Robinson", "position": "RB", "team": "ATL" },
+        "opponent": { "name": "Cade Otton", "position": "TE", "team": "TB" }
+      },
+      {
+        "type": "TEAM_PAIR",
+        "qb": null,
+        "teammate": { "name": "James Cook", "position": "RB", "team": "BUF" },
+        "opponent": { "name": "Bills", "position": "DST", "team": "BUF" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Bills", "position": "DST", "team": "BUF", "qbFaced": "Geno Smith" },
+        "opponent": { "name": "Geno Smith", "position": "QB", "team": "SEA" }
+      }
+    ]
+  }
+}

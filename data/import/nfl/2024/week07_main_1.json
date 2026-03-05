@@ -1,0 +1,252 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 7,
+  "slateType": "MAIN",
+  "slateDate": "2024-10-20T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 7",
+  "slateTag": "3-GAME CONDENSED BUILD, DET@MIN SKILL TRIPLE, CIN DST WITH CLE PASS CATCHERS",
+  "slateGroup": "4-3-2",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK07_MAIN_2024-10-20T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8850
+  },
+  "winner": {
+    "username": "theHman",
+    "points": 185.36,
+    "maxEntries": 8
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 185.36,
+    "totalOwnershipBp": 8850,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Sam Darnold",
+        "position": "QB",
+        "team": "MIN",
+        "salary": 6200,
+        "points": 17.26,
+        "ownershipPercent": 11.5,
+        "passTd": 1,
+        "passYds": 259,
+        "interceptions": 1,
+        "rushYds": 39,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Kareem Hunt",
+        "position": "RB",
+        "team": "KC",
+        "salary": 6000,
+        "points": 22.3,
+        "ownershipPercent": 13.7,
+        "rushTdRb": 2,
+        "rushYdsRb": 78,
+        "recRb": 2,
+        "recYdsRb": 5,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jahmyr Gibbs",
+        "position": "RB",
+        "team": "DET",
+        "salary": 6900,
+        "points": 35.0,
+        "ownershipPercent": 3.0,
+        "rushTdRb": 2,
+        "rushYdsRb": 116,
+        "recRb": 4,
+        "recYdsRb": 44,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 8500,
+        "points": 21.4,
+        "ownershipPercent": 21.0,
+        "rec": 7,
+        "recYds": 81,
+        "recTd": 1,
+        "rushYds": 3,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Amon-Ra St. Brown",
+        "position": "WR",
+        "team": "DET",
+        "salary": 8300,
+        "points": 28.2,
+        "ownershipPercent": 8.1,
+        "rec": 8,
+        "recYds": 112,
+        "recTd": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Elijah Moore",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 3200,
+        "points": 10.1,
+        "ownershipPercent": 5.5,
+        "rec": 6,
+        "recYds": 41,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "David Njoku",
+        "position": "TE",
+        "team": "CLE",
+        "salary": 4100,
+        "points": 23.6,
+        "ownershipPercent": 18.5,
+        "rec": 10,
+        "recYds": 76,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mecole Hardman",
+        "position": "WR",
+        "team": "KC",
+        "salary": 3300,
+        "points": 12.5,
+        "ownershipPercent": 0.9,
+        "rushTd": 1,
+        "rushYds": 38,
+        "rec": 1,
+        "recYds": 17,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bengals",
+        "position": "DST",
+        "team": "CIN",
+        "salary": 3300,
+        "points": 15,
+        "ownershipPercent": 6.3,
+        "sacks": 4,
+        "interceptions": 2,
+        "defTd": 1,
+        "qbFaced": "Deshaun Watson",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This is a low-scoring slate winner that behaves more like a portfolio concentration bet than a nine-piece puzzle. The lineup plays only three games and accepts the opportunity cost everywhere else. The Detroit Minnesota game is the anchor, but it is not built as a clean quarterback plus pass catcher stack. It is a four-player bundle where the quarterback functions as the cheapest way to stay attached to the game, while the real ceiling is carried by the two alpha receivers and the explosive running back.\n\nThe Cleveland Cincinnati block is where the lineup stops looking conventional. Cincinnati defense is paired directly against two Browns pass catchers. That pairing becomes viable because the slate context is not asking for a 235-point roster. It is asking for one defensive touchdown and one concentrated target outcome. The Bengals defense supplies the spike through a defensive touchdown plus turnovers, while David Njoku and Elijah Moore accumulate receptions in the same game without requiring Cleveland to be efficient or to protect the quarterback. It is compatible with a quarterback injury sequence because backup play can increase short-area attempts while also increasing turnover volatility.\n\nKansas City at San Francisco is used as a thin but intentional add-on. Kareem Hunt provides touchdown access and a stable rushing base, while Mecole Hardman functions as the true differentiator. At sub-one percent ownership, his rushing touchdown is a small score on paper, but it changes the distribution of who had access to Kansas City points. That is enough in a week where the overall scoring environment compresses and a roster can win without a 200-point threshold.",
+    "uniquenessNotes": "The uniqueness is not created by nine contrarian names. It is created by three structural choices.\n\nFirst, the slate is reduced to three games. That forces the roster to be correct about where points would actually survive in a week where many offenses under-delivered.\n\nSecond, the lineup uses a defense with offensive opponents from the same game. This is typically rejected because it reduces theoretical ceiling. In this slate context, the ceiling is delivered by the defensive touchdown, and the opposing pass catchers still reach usable scores through volume and red zone concentration.\n\nThird, the Detroit Minnesota bundle is not a single-player bet. It is a bet on distribution. If the game produces points through the two top receivers and an explosive running back, then the quarterback does not have to be the highest scorer at his position for the roster to remain competitive.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Three-game concentration with a 4-player DET@MIN anchor built around Jahmyr Gibbs plus Justin Jefferson and Amon-Ra St. Brown, using Sam Darnold as attachment rather than as the primary ceiling source",
+      "secondaryLever": "Cincinnati DST paired with Cleveland volume pieces while banking on turnover scoring and defensive touchdown variance in a low scoring slate",
+      "notes": {
+        "rosterConstruction": "4-3-2",
+        "gameKey": [
+          "DET@MIN: 4 (QB game)",
+          "CIN@CLE: 3",
+          "KC@SF: 2"
+        ],
+        "detMinCluster": ["Sam Darnold", "Jahmyr Gibbs", "Justin Jefferson", "Amon-Ra St. Brown"],
+        "brownsOppositionPair": ["Elijah Moore", "David Njoku"],
+        "chiefsMini": ["Kareem Hunt", "Mecole Hardman"],
+        "qbFacedByBengalsDst": "Deshaun Watson"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "THREE_GAME_CONCENTRATION",
+        "DEFENSE_VS_OWN_PASS_CATCHERS",
+        "WR_ALPHA_PAIR_ACROSS_TEAMS",
+        "LOW_OWNERSHIP_GADGET_SCORE"
+      ],
+      "macroStory": "A compressed scoring slate solved through game selection and role selection, where the defensive touchdown provides the separation and the DET@MIN bundle supplies the only true multi-player ceiling."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["SEPARATOR_EVENT", "NON_LINEAR_SCORING", "OUTCOME_DRIVER"],
+        "microStory": "The Bengals defense provides the single event that changes the slate ranking. A defensive touchdown plus turnovers supplies points that are difficult to replicate through normal offensive volume in a suppressed scoring week."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_CEILING", "EXPLOSIVE_TOUCHDOWN_ACCESS", "LOW_OWNERSHIP"],
+        "microStory": "Jahmyr Gibbs is the rare low-owned back who hits both the yardage bonus and multi-touchdown outcome. That performance is the main offensive engine of the roster."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["ALPHA_VOLUME", "TOUCHDOWN_EQUITY", "GAME_ANCHOR"],
+        "microStory": "Justin Jefferson delivers an efficient touchdown game without requiring a shootout. In a slate where wide receiver ceilings were scarce, his score is a stabilizing anchor inside the DET@MIN concentration."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_SCORING_NODE", "NON_TRADITIONAL_TOUCHDOWN", "DIFFERENTIATION"],
+        "microStory": "Mecole Hardman supplies a low-owned rushing touchdown. It is not a massive raw score, but it captures a type of production the field rarely allocates correctly when Kansas City points are dispersed."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_CLUSTER",
+        "qb": { "name": "Sam Darnold", "position": "QB", "team": "MIN" },
+        "teammates": [{ "name": "Justin Jefferson", "position": "WR", "team": "MIN" }],
+        "opponent": { "name": "Amon-Ra St. Brown", "position": "WR", "team": "DET" }
+      },
+      {
+        "type": "GAME_CLUSTER",
+        "qb": null,
+        "teammate": { "name": "Jahmyr Gibbs", "position": "RB", "team": "DET" },
+        "opponent": { "name": "Justin Jefferson", "position": "WR", "team": "MIN" }
+      },
+      {
+        "type": "DST_VS_PASS_CATCHERS",
+        "qb": null,
+        "teammate": { "name": "Bengals", "position": "DST", "team": "CIN", "qbFaced": "Deshaun Watson" },
+        "opponent": { "name": "David Njoku", "position": "TE", "team": "CLE" }
+      }
+    ],
+    "diagnosticAnalysis": "The outcome is explained by two drivers that account for most of the finishing position.\n\nDriver one is the defensive touchdown. In a slate that never required a 230-point outcome, the Bengals defense providing a defensive touchdown plus multiple turnovers functions as an irreplaceable scoring event. This single slot creates a lead that many balanced builds cannot recover without multiple offensive outliers.\n\nDriver two is how the Detroit Minnesota points were captured. The roster does not try to predict a single receiver eruption. It captures both top receivers in the game plus the explosive running back. That combination absorbs most plausible touchdown paths. Sam Darnold is included to keep the lineup attached if passing touchdowns occur, but the roster is not dependent on him being the highest scorer at quarterback.\n\nEverything else is support. Kareem Hunt supplies two rushing touchdowns. David Njoku supplies a high-volume tight end outcome. Mecole Hardman supplies a low-owned touchdown that improves the roster's placement in a condensed distribution of scores.",
+    "predictiveAnalysis": "This roster points to a repeatable slate diagnostic: when the week collapses into a low scoring distribution, the optimal path shifts from chasing maximum team count diversity to capturing the small number of games with concentrated touchdown availability and pairing it with at least one non-linear scoring source.\n\nFor future research, isolate slates where first place lands below 200 and quantify which events are most predictive of winning. Defensive touchdowns and multi-turnover defenses should show an outsized contribution. In those same slates, examine whether winners tend to prefer multi-player game bundles that cover scoring distribution rather than single fragile stacks that require a specific receiver to break the slate.",
+    "prescriptiveAnalysis": "When projections and early results suggest a depressed scoring week, shift the decision framework.\n\nFirst, prioritize access to non-linear points. A defense with elevated turnover potential becomes more valuable because a defensive touchdown can decide the slate.\n\nSecond, concentrate exposure into the few games that can plausibly provide multiple independent ceilings. Use bundles that cover scoring distribution across positions, such as pairing an explosive running back with one or two alpha receivers, while treating the quarterback as an attachment if pricing permits.\n\nThird, allow controlled negative correlation when it is supported by a specific game script. A defense can coexist with opposing pass catchers if the pass catchers can reach value through volume and short-area usage while the defense benefits from quarterback instability, sacks, and turnover sequences."
+  }
+}

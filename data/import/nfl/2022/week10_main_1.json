@@ -1,0 +1,242 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 10,
+  "slateType": "MAIN",
+  "slateDate": "2022-11-13T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 10",
+  "slateTag": "FIELDS NAKED WITH AMON-RA CORRELATION, POLLARD WITH WATSON BRINGBACK, VIKINGS DST PUNTS INTO TD",
+  "slateGroup": "2-2-2-1-1-1",
+  "rosterConstruction": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK10_MAIN_2022-11-13T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14770
+  },
+  "winner": {
+    "username": "funkymonk1369",
+    "points": 238.38,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 238.38,
+    "totalOwnershipBp": 14770,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Justin Fields",
+        "position": "QB",
+        "team": "CHI",
+        "salary": 6500,
+        "points": 43.38,
+        "ownershipPercent": 29.4,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Tony Pollard",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 6500,
+        "points": 24.8,
+        "ownershipPercent": 25.8,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jeff Wilson Jr.",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 5500,
+        "points": 25.3,
+        "ownershipPercent": 10.6,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Amon-Ra St. Brown",
+        "position": "WR",
+        "team": "DET",
+        "salary": 6900,
+        "points": 25.1,
+        "ownershipPercent": 16.9,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Christian Kirk",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 5900,
+        "points": 34.5,
+        "ownershipPercent": 20.4,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "George Pickens",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 5000,
+        "points": 14.5,
+        "ownershipPercent": 10.3,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 7800,
+        "points": 20.1,
+        "ownershipPercent": 16.0,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Christian Watson",
+        "position": "WR",
+        "team": "GB",
+        "salary": 3700,
+        "points": 35.7,
+        "ownershipPercent": 2.4,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Vikings",
+        "position": "DST",
+        "team": "MIN",
+        "salary": 2200,
+        "points": 15.0,
+        "ownershipPercent": 16.0,
+        "sacks": null,
+        "takeaways": null,
+        "qbFaced": "Josh Allen",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by refusing the default stacking reflex and still capturing correlation where it matters. Justin Fields runs as the primary scoring engine, so the build skips the traditional Bears pass catcher attachment. Instead, the correlation arrives through the opposing alpha, Amon-Ra St. Brown. A big Fields outcome pushes Detroit into aggressive volume, and Detroit’s offense funnels through St. Brown more than any other skill player. Fields does not need a paired receiver for ceiling, but St. Brown benefits from Chicago scoring.\n\nKansas City becomes the cleanest concentration spot at tight end. Travis Kelce projects far ahead of the position, so paying up becomes a structure decision, not a luxury. Christian Kirk functions as the logical runback because Jacksonville’s passing volume becomes more stable when Kansas City forces tempo. The pair captures a full game environment without over investing in Jacksonville.\n\nThe sharpest leverage lives in the Pollard Watson mini. Tony Pollard carries heavy ownership because of role expansion, so the build reduces effective ownership by tying Pollard to an opposing wide receiver. Green Bay scoring increases Dallas play volume, and the Watson spike creates separation at a salary point where the field rarely lands a slate level score.\n\nMinnesota defense is the weirdest part of the roster and also the reason the build survives being chalk heavy elsewhere. Late news shifts the defensive decision tree once Josh Allen plays, since Minnesota becomes a poor process play at prior ownership. The roster keeps the Vikings anyway and benefits from a defensive touchdown created by an Allen mistake. Results create the margin.\n\nJeff Wilson Jr. is the quiet glue. He provides a stable mid range running back score without forcing extra correlation. George Pickens provides a small score that does not matter once the ceiling pieces land.",
+    "uniquenessNotes": "Most of the lineup sits in the popular projection band, so uniqueness comes from combination ownership rather than from obscure one offs. The biggest combination lever is Pollard paired with Watson. Pollard attracts the crowd, Watson does not, and the pair becomes a narrow path to a two player, two game script payoff.\n\nThe second lever is the Fields construction. Many lineups either stack Fields with Bears receivers or play him naked with no opposing correlation. This roster chooses a third path by capturing the opponent alpha correlation without forcing Chicago pass catchers.\n\nThe third lever is Minnesota defense. The field interest in Minnesota is tied to a Josh Allen absence. Allen plays, yet the roster keeps Minnesota and gains access to a rare defensive touchdown event at a salary punt.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Justin Fields played without a Bears pass catcher, paired indirectly through Amon-Ra St. Brown correlation",
+      "secondaryLever": "Tony Pollard paired with Christian Watson as the opposing bringback mini",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "DET@CHI: 2 (QB game)",
+          "DAL@GB: 2",
+          "JAX@KC: 2",
+          "CLE@MIA: 1",
+          "NO@PIT: 1",
+          "MIN@BUF: 1"
+        ],
+        "fieldsGame": ["Justin Fields", "Amon-Ra St. Brown"],
+        "chiefsJaguarsPair": ["Travis Kelce", "Christian Kirk"],
+        "cowboysPackersPair": ["Tony Pollard", "Christian Watson"],
+        "salaryAndRoleStability": "Jeff Wilson Jr.",
+        "lowImpactFiller": "George Pickens",
+        "qbFacedByVikingsDst": "Josh Allen"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "RUSHING_QB_NAKED_WITH_OPP_ALPHA",
+        "TE_SPENDUP_WITH_RUNBACK",
+        "CHALK_RB_WITH_LOW_OWNERSHIP_WR_BRINGBACK",
+        "DEFENSE_PUNT_WITH_TOUCHDOWN_PATH",
+        "COMBINATION_OWNERSHIP_ENGINEERING"
+      ],
+      "macroStory": "A first place roster built from strong projections, then separated by correlation choices that lower effective ownership, plus a defensive touchdown outcome from a punt defense play into a franchise quarterback."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "RUSH_CEILING", "STACK_OPTIONALITY"],
+        "microStory": "Justin Fields supplies a slate defining score through rushing, which removes the need for a forced pass catcher attachment."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["OPPONENT_ALPHA_CORRELATION", "TARGET_FUNNEL", "GAME_SCRIPT_BENEFIT"],
+        "microStory": "Amon-Ra St. Brown captures Detroit’s response volume in a game where Chicago scoring forces Detroit into aggressive passing."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_BREAKER", "SCRIPT_PAIR", "SALARY_RELIEF_CEILING"],
+        "microStory": "Christian Watson provides the low owned eruption and turns the Pollard chalk into a differentiated game script commitment."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PUNT_DEFENSE", "TD_REQUIRED", "OUTCOME_DEPENDENT"],
+        "microStory": "Vikings defense survives the Josh Allen active news and still reaches ceiling because a defensive touchdown arrives from a late error."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_PAIR",
+        "qb": { "name": "Justin Fields", "position": "QB", "team": "CHI" },
+        "teammates": [],
+        "opponent": { "name": "Amon-Ra St. Brown", "position": "WR", "team": "DET" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Travis Kelce", "position": "TE", "team": "KC" },
+        "opponent": { "name": "Christian Kirk", "position": "WR", "team": "JAX" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Tony Pollard", "position": "RB", "team": "DAL" },
+        "opponent": { "name": "Christian Watson", "position": "WR", "team": "GB" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Vikings", "position": "DST", "team": "MIN", "qbFaced": "Josh Allen" },
+        "opponent": { "name": "Josh Allen", "position": "QB", "team": "BUF" }
+      }
+    ],
+    "diagnosticAnalysis": {
+      "whatHappened": "The slate resolves through three concentrated outcomes. First, Fields hits a ceiling game where rushing carries the score, so the optimal Fields construction does not require Bears receivers. Second, the Kansas City tight end advantage remains intact, so Kelce provides positional separation even without an extreme score. Third, the Pollard chalk slot becomes viable in first place only when paired with a low owned, high score bringback, and Watson provides exactly that.\n\nThe 80 20 driver is combination ownership. Pollard plus Watson moves past a large portion of lineups holding Pollard without the opposing eruption. Fields plus St. Brown captures a correlated game environment without duplicating the common stack paths. Minnesota defense adds a rare defensive touchdown, which converts a thin play into a points spike that finishes the job."
+    },
+    "predictiveAnalysis": {
+      "howToUseThisLater": "When a rushing quarterback projects for heavy ownership, the highest edge often comes from building the opponent correlation instead of forcing a teammate stack. Opponent alpha receivers can function as the correlation capture while the quarterback score arrives through legs.\n\nWhen a chalk running back projects as a strong play, pairing with an opposing wide receiver can reduce effective ownership and keep access to ceiling. This structure becomes more valuable when the opposing receiver sits in a low ownership range with red zone access.\n\nWhen tight end projects as a single player tier, paying for the top option can provide structural separation even without a slate winning raw score, since many builds attempt to shortcut the position and accept fragile outcomes.\n\nWhen late news changes defensive viability, defensive touchdowns remain the only realistic path for a bad process defense to win. Replication requires treating this as an outcome bucket, not a repeatable edge."
+    },
+    "prescriptiveAnalysis": {
+      "actionableIfThenRules": "If the slate features a popular rushing quarterback with limited reliable pass catchers, prioritize opponent alpha correlation rather than forcing a teammate stack, especially in games with condensed opponent target share.\n\nIf a running back becomes chalk due to role expansion, attach an opposing wide receiver with low ownership and touchdown access to lower effective ownership while maintaining a coherent script.\n\nIf one tight end projects far ahead, accept the spend and use the rest of the roster to create uniqueness through combinations, not through unnecessary fades.\n\nIf a defense becomes popular due to expected quarterback absence and the quarterback later plays, treat the defense as a thin touchdown dependent play. Only include it when the roster already carries enough unique combination leverage elsewhere."
+    }
+  }
+}

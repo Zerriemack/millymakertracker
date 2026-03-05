@@ -1,0 +1,224 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 2,
+  "slateType": "MAIN",
+  "slateDate": "2022-09-18T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 2",
+  "slateTag": "MIA DOUBLE STACK WITH ANDREWS BRINGBACK, ST BROWN TARGET SHARE ONE OFF, JAGUARS DST LOW OWNERSHIP SEPARATOR",
+  "slateGroup": "4-1-1-1-1-1",
+  "rosterConstruction": "4-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK02_MAIN_2022-09-18T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9520
+  },
+  "winner": {
+    "username": "madcow65",
+    "points": 284.16,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 284.16,
+    "totalOwnershipBp": 9520,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Tua Tagovailoa",
+        "position": "QB",
+        "team": "MIA",
+        "salary": 5600,
+        "points": 43.86,
+        "ownershipPercent": 3.6,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Nick Chubb",
+        "position": "RB",
+        "team": "CLE",
+        "salary": 7100,
+        "points": 32.3,
+        "ownershipPercent": 8.4,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jeff Wilson Jr.",
+        "position": "RB",
+        "team": "SF",
+        "salary": 5100,
+        "points": 12.3,
+        "ownershipPercent": 10.4,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 7100,
+        "points": 45,
+        "ownershipPercent": 14.4,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Amon-Ra St. Brown",
+        "position": "WR",
+        "team": "DET",
+        "salary": 6500,
+        "points": 42.4,
+        "ownershipPercent": 19.7,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jaylen Waddle",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 6400,
+        "points": 43.1,
+        "ownershipPercent": 6.3,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Mark Andrews",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 6400,
+        "points": 28.7,
+        "ownershipPercent": 9.2,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Greg Dortch",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 3500,
+        "points": 15.5,
+        "ownershipPercent": 21.3,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Jaguars",
+        "position": "DST",
+        "team": "JAX",
+        "salary": 2300,
+        "points": 21,
+        "ownershipPercent": 1.8,
+        "qbFaced": "Matt Ryan",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "IND"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner is a pure game outcome capture from MIA at BAL, then a disciplined refusal to chase secondary correlations elsewhere. Tua Tagovailoa, Tyreek Hill, and Jaylen Waddle form the double stack, then Mark Andrews completes the game environment capture as the bringback. The scoring distribution inside Miami makes the structure coherent. Tagovailoa throws six passing touchdowns and four go to Hill and Waddle. The lineup does not need to guess which Miami receiver gets the eruption because it carries both, and it does not need a Baltimore quarterback because Andrews supplies the direct path to Ravens touchdown access.\n\nOutside the stack, the roster selects one concentrated passing profile from Detroit and one concentrated rushing profile from Cleveland. Amon-Ra St. Brown becomes the Lions passing game, which matters because Jared Goff spreads touchdowns while St. Brown carries the target share. Nick Chubb becomes the Browns scoring engine through touchdowns in a game Cleveland controlled for long stretches. Greg Dortch is the only true chalk concession. His salary role keeps the build viable without taking on structural risk.\n\nJacksonville defense is the lineup breaker. At 1.8 percent ownership, the Jaguars become the late slot that flips the contest. The defense outcome punishes chalk defense builds and creates a margin where a merely acceptable running back score from Jeff Wilson Jr. does not matter.",
+    "uniquenessNotes": "The uniqueness lives in two places. First, the roster commits to a full double stack with a bringback in a large field contest, then declines every other micro correlation. Many lineups over extend correlation once they choose a primary game. This roster treats the primary game as the only place where correlation adds win equity, then keeps the remaining selections independent and role driven.\n\nSecond, the defense choice is a low ownership decision with direct leverage against common construction habits. Jacksonville is paired with an in division opponent and arrives at a ceiling outcome while popular defenses fail. This type of defense selection is not about predicting one exact event. It is about using a volatile position as a separation mechanism while the rest of the roster stays anchored to concentrated usage profiles.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Tua Tagovailoa double stacked with Tyreek Hill and Jaylen Waddle, brought back with Mark Andrews",
+      "secondaryLever": "Jacksonville defense at low ownership as the separation slot while chalk defenses fail",
+      "notes": {
+        "rosterConstruction": "4-1-1-1-1-1",
+        "gameKey": [
+          "MIA@BAL: 4 (QB game)",
+          "WAS@DET: 1",
+          "NYJ@CLE: 1",
+          "SEA@SF: 1",
+          "ARI@LV: 1",
+          "IND@JAX: 1"
+        ],
+        "miamiBaltimoreCluster": ["Tua Tagovailoa", "Tyreek Hill", "Jaylen Waddle", "Mark Andrews"],
+        "detroitOneOff": ["Amon-Ra St. Brown"],
+        "clevelandRushEngine": ["Nick Chubb"],
+        "valueChalk": "Greg Dortch",
+        "qbFacedByJaguarsDst": "Matt Ryan"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "DOUBLE_STACK_WITH_BRINGBACK",
+        "NO_SECONDARY_GAME_STACKS",
+        "TARGET_SHARE_ALPHA_ONE_OFF",
+        "TOUCHDOWN_ENGINE_RB",
+        "LOW_OWNERSHIP_DST_SEPARATOR"
+      ],
+      "macroStory": "A roster built to capture a single extreme passing game environment through a double stack and bringback, then stabilized by concentrated usage one offs and finished by a low ownership defense ceiling outcome."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "TOUCHDOWN_CONCENTRATION", "STACK_HUB"],
+        "microStory": "Tagovailoa is the access point to six passing touchdowns at low ownership. The roster correctly expects the Miami production to consolidate through two receivers."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_CEILING", "YARDAGE_BONUS_PROFILE", "STACK_PAYOFF"],
+        "microStory": "Hill provides the game breaking receiver score inside the double stack and converts the quarterback outcome into a tournament separating ceiling."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["SECOND_CEILING", "TOUCHDOWN_ACCESS", "STACK_COMPLETION"],
+        "microStory": "Waddle completes the stack logic by absorbing the remaining concentrated scoring. Carrying both receivers removes guesswork and maximizes capture when the passing game breaks."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_SWING", "VOLATILITY_WEAPON", "LEVERAGE_SLOT"],
+        "microStory": "Jacksonville defense supplies the score gap. The roster uses the most volatile position to separate from a field concentrated on popular defenses."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Tua Tagovailoa", "position": "QB", "team": "MIA" },
+        "teammates": [
+          { "name": "Tyreek Hill", "position": "WR", "team": "MIA" },
+          { "name": "Jaylen Waddle", "position": "WR", "team": "MIA" }
+        ],
+        "opponent": { "name": "Mark Andrews", "position": "TE", "team": "BAL" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Jaguars", "position": "DST", "team": "JAX", "qbFaced": "Matt Ryan" },
+        "opponent": { "name": "Matt Ryan", "position": "QB", "team": "IND" }
+      }
+    ],
+    "diagnosticAnalysis": "The 80 20 driver is the MIA at BAL game stack. Four roster spots come from one game and all four land on ceiling outcomes. Tagovailoa, Hill, and Waddle all reach slate breaking scores, and Andrews supplies the opposing side touchdown access. When a roster captures an outlier game environment with concentrated production, it no longer needs perfection across the remaining five slots.\n\nThe second driver is the defense slot. Jacksonville at 1.8 percent posts a ceiling score, while popular defenses fail. Defense volatility becomes the lever that widens the margin between first and the pack. A roster can absorb a modest outcome from a running back or a secondary value piece when defense contributes a score few lineups possess.\n\nThe remaining pieces are selected for concentration rather than novelty. St. Brown carries Detroit receiving share, Chubb carries Cleveland touchdown equity, and Dortch supplies salary relief with role based volume. Jeff Wilson Jr. is the weakest point total, yet the roster still wins by a wide gap because the primary game and defense cover the shortfall.",
+    "predictiveAnalysis": "This slate reinforces a repeatable principle for large field contests. Double stacks matter when the quarterback produces a true outlier touchdown total and the touchdowns concentrate through two receivers. When the offense spreads production or the quarterback provides meaningful rushing scores, double stacks lose value because the second pass catcher slot becomes harder to justify.\n\nThe defense pattern is more stable across slates. Ownership concentrates on a small set of perceived safe defenses, while scoring remains volatile. Using low ownership defenses with plausible pressure and turnover paths can produce separation without forcing fragile uniqueness elsewhere.\n\nA third research thread is the value chalk dynamic. Dortch at over twenty percent shows a roster can accept one popular punt when the remaining leverage appears in higher impact slots. The contest is not won by avoiding every popular value. It is won by choosing which positions carry differentiation and which positions carry stability.",
+    "prescriptiveAnalysis": "When projections identify a single game with both ceiling and concentration, allocate correlation budget there and cap correlation elsewhere. One primary game stack can carry the entire roster if it hits an extreme outcome, so secondary stacks become unnecessary risk.\n\nWhen deciding where to spend ownership, protect the roster with concentrated usage one offs. A target share alpha receiver and a touchdown engine running back create stable scoring paths without relying on rare play sequences.\n\nWhen selecting defense, use volatility as a tool. Avoid highly owned defenses and choose a low ownership unit with a path to sacks and takeaways. Defense is the position where a single correct choice can create a margin the field cannot replicate through normal skill position scoring."
+  }
+}

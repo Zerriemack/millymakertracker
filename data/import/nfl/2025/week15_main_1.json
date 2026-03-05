@@ -5,20 +5,14 @@
   "slateType": "MAIN",
   "slateDate": "2025-12-14T18:00:00.000Z",
   "slateName": "NFL Main Slate Week 15",
-  "slateTag": "LIONS RAMS SHOOTOUT, RB PLUS DST VS SHEDEUR, SINNOTT SALARY RELEASE",
+  "slateTag": "LIONS RAMS 5 MAN, HENDERSON PATRIOTS 148 RUSH YDS 2 TDS, BEARS DST 5 SACK 3 INT",
   "slateGroup": "5-2-1-1",
   "rosterConstruction": "5-2-1-1",
-  "gameKey": [
-    "DET@LAR: 5 (QB game)",
-    "CLE@CHI: 2",
-    "BUF@NE: 1",
-    "WAS@NYG: 1"
-  ],
   "isMain": true,
   "contest": {
     "site": "DraftKings",
     "contestName": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
-    "siteContestId": "NFL_2025_WK15_MAIN_2025-12-14_DK_MAIN_MILLY",
+    "siteContestId": "NFL_2025_WK15_MAIN_2025-12-14T18:00:00.000Z_DK_MAIN_MILLY",
     "entryFeeCents": 2000,
     "entries": 147058,
     "topPrizeCents": 100000000,
@@ -27,7 +21,7 @@
   "winner": {
     "username": "giantsandwarfs",
     "points": 236.02,
-    "maxEntries": 33
+    "maxEntries": null
   },
   "lineup": {
     "salaryUsed": 50000,
@@ -36,96 +30,131 @@
     "items": [
       {
         "rosterSpot": "QB",
-        "name": "J. Goff",
+        "name": "Jared Goff",
         "position": "QB",
         "team": "DET",
         "salary": 6100,
         "points": 28.52,
         "ownershipPercent": 3.7,
+        "passTd": 3,
+        "passYds": 338,
+        "rushYds": 0,
+        "fumblesLost": 0,
         "gameAwayTeam": "DET",
         "gameHomeTeam": "LAR",
         "opponentTeam": "LAR"
       },
       {
         "rosterSpot": "RB",
-        "name": "T. Henderson",
+        "name": "Treyveon Henderson",
         "position": "RB",
         "team": "NE",
         "salary": 6100,
         "points": 33.1,
         "ownershipPercent": 6.6,
+        "rushYdsRb": 148,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 13,
+        "fumblesLost": 0,
         "gameAwayTeam": "BUF",
         "gameHomeTeam": "NE",
         "opponentTeam": "BUF"
       },
       {
         "rosterSpot": "RB",
-        "name": "D. Swift",
+        "name": "D'Andre Swift",
         "position": "RB",
         "team": "CHI",
         "salary": 5700,
         "points": 22.6,
         "ownershipPercent": 3.3,
+        "rushYdsRb": 98,
+        "rushTdRb": 2,
+        "recRb": 1,
+        "recYdsRb": -2,
+        "fumblesLost": 0,
         "gameAwayTeam": "CLE",
         "gameHomeTeam": "CHI",
         "opponentTeam": "CLE"
       },
       {
         "rosterSpot": "WR",
-        "name": "P. Nacua",
+        "name": "Puka Nacua",
         "position": "WR",
         "team": "LAR",
         "salary": 8700,
         "points": 30.9,
         "ownershipPercent": 38.8,
+        "rec": 9,
+        "recYds": 181,
+        "recTd": 0,
+        "rushYds": 8,
+        "fumblesLost": 0,
         "gameAwayTeam": "DET",
         "gameHomeTeam": "LAR",
         "opponentTeam": "DET"
       },
       {
         "rosterSpot": "WR",
-        "name": "A. St. Brown",
+        "name": "Amon-Ra St. Brown",
         "position": "WR",
         "team": "DET",
         "salary": 7900,
         "points": 44.4,
         "ownershipPercent": 13.2,
+        "rec": 13,
+        "recYds": 164,
+        "recTd": 2,
+        "fumblesLost": 0,
         "gameAwayTeam": "DET",
         "gameHomeTeam": "LAR",
         "opponentTeam": "LAR"
       },
       {
         "rosterSpot": "WR",
-        "name": "J. Williams",
+        "name": "Jameson Williams",
         "position": "WR",
         "team": "DET",
         "salary": 6100,
         "points": 29.4,
         "ownershipPercent": 15.3,
+        "rec": 7,
+        "recYds": 134,
+        "recTd": 1,
+        "fumblesLost": 0,
         "gameAwayTeam": "DET",
         "gameHomeTeam": "LAR",
         "opponentTeam": "LAR"
       },
       {
         "rosterSpot": "TE",
-        "name": "C. Parkinson",
+        "name": "Colby Parkinson",
         "position": "TE",
         "team": "LAR",
         "salary": 3200,
         "points": 24.5,
         "ownershipPercent": 7.3,
+        "rec": 5,
+        "recYds": 75,
+        "recTd": 2,
+        "fumblesLost": 0,
         "gameAwayTeam": "DET",
         "gameHomeTeam": "LAR",
         "opponentTeam": "DET"
       },
       {
         "rosterSpot": "FLEX",
-        "name": "B. Sinnott",
+        "name": "Ben Sinnott",
         "position": "TE",
         "team": "WAS",
         "salary": 2700,
         "points": 4.6,
         "ownershipPercent": 0.8,
+        "rec": 1,
+        "recYds": 36,
+        "recTd": 0,
+        "fumblesLost": 0,
         "gameAwayTeam": "WAS",
         "gameHomeTeam": "NYG",
         "opponentTeam": "NYG"
@@ -140,35 +169,42 @@
         "ownershipPercent": 4.8,
         "sacks": 5,
         "takeaways": 3,
+        "dstTd": 0,
         "qbFaced": "Shedeur Sanders",
+        "qbFacedArchetype": "ROOKIE",
         "gameAwayTeam": "CLE",
         "gameHomeTeam": "CHI",
-        "opponentTeam": "CLE",
-        "qbFacedArchetype": "ROOKIE"
+        "opponentTeam": "CLE"
       }
     ]
   },
   "analysis": {
-    "stackSummary": "The roster is a five man commitment to DET at LAR, but it is not the lazy version. Goff becomes the anchor because the Lions side can concentrate touchdowns through two wide receivers without forcing a third Detroit piece. St. Brown and Williams split the scoring profile cleanly. St. Brown captures red zone and chain moving volume, while Williams captures the one play distance outcome. Pairing both means the lineup does not need to guess which Detroit receiver gets the spike. Goff is the delivery mechanism and the build stays coherent because he is the prototypical pocket passer who brings his receivers with him when the game breaks open.\n\nThe Rams pieces are chosen to match how this specific shootout can pay off. Nacua is the obvious bring back and the roster embraces the ownership because the game environment demands raw points. Parkinson complements Nacua because his scoring comes from a different zone of the field. It gives the lineup access to a Rams touchdown without paying for a second expensive Rams wide receiver and without locking into a Stafford requirement.\n\nThe secondary block repeats a pattern from the prior week. Swift paired with the Bears defense attacks Shedeur Sanders again, leaning into the idea that the defense creates short fields and the opposing running game can finish drives. The Bears defense did the damaging part with five sacks and three interceptions, while Swift turned the game into a two touchdown rushing line. Henderson is the isolated eruption that keeps the roster from being only a Rams Lions story. Against one of the league’s worst Bills rushing defenses, he provides two long touchdowns and breaks the slate with a score that does not need stacking partners.\n\nSinnott is the salary release valve. The miniscule output is acceptable because the slot exists to buy the true ceiling pieces. The construction accepts a weak link at low ownership so the lineup can hold multiple high end receivers plus a real defensive ceiling game.",
-    "uniquenessNotes": "Most rosters either full stack a shootout with the quarterback on both sides or they choose a tighter three or four man cluster. This build takes five pieces from the same game, but it does so with asymmetric logic. It uses the Lions quarterback with two Lions receivers, then brings it back with the Rams alpha plus a lower salary Rams touchdown path. That creates exposure to nearly every touchdown channel in the game without turning the roster into a fragile on rails double quarterback story.\n\nThe Swift plus Bears defense pairing is where the lineup separates from lineups that merely followed the Lions Rams points. It is a portfolio decision that treats Cleveland’s offense as a turnover machine through Shedeur Sanders and then captures the downstream effect on Chicago rushing attempts and goal line carries. Henderson is the final layer. It is the copy cat theme again, but applied to a different defense weakness. The lineup is built to win two separate game scripts at once: the featured shootout plus a running back eruption in a different game.",
+    "stackSummary": "The roster is a five man commitment to Detroit at Los Angeles, but it is not the lazy version. Jared Goff becomes the anchor because Detroit can concentrate touchdowns through two wide receivers without forcing a third Detroit piece. Amon-Ra St. Brown and Jameson Williams split the scoring profile cleanly. St. Brown captures red zone and chain moving volume, while Williams captures the one play distance outcome. Pairing both means the lineup does not need to guess which Detroit receiver gets the spike. Goff is the delivery mechanism and the build stays coherent because he is a pocket passer whose ceiling pulls his receivers with him when the game breaks open.\n\nThe Rams pieces are chosen to match how this specific shootout can pay off. Puka Nacua is the obvious bring back and the roster embraces the ownership because the game environment demands raw points. Colby Parkinson complements Nacua because his scoring comes from a different zone of the field. It gives the lineup access to Rams touchdowns without paying for a second expensive Rams wide receiver and without locking into a Stafford requirement.\n\nThe secondary block repeats a pattern from the prior week. D'Andre Swift paired with the Bears defense attacks Shedeur Sanders again, leaning into the idea that the defense creates short fields and the running game can finish drives. The Bears defense did the damaging part with five sacks and three interceptions, while Swift turned the game into a two touchdown rushing line.\n\nTreyveon Henderson is the isolated eruption that keeps the roster from being only a Lions Rams story. Against Buffalo, he supplies two rushing touchdowns plus 148 rushing yards, and the lineup captures a slate breaking running back score without needing any Patriots passing exposure. Ben Sinnott is the salary release valve. The output is acceptable because the slot exists to buy the true ceiling pieces, and the construction accepts a weak link at low ownership so the lineup can hold multiple high end receivers plus a real defensive ceiling game.",
+    "uniquenessNotes": "Most rosters either full stack a shootout with quarterbacks on both sides, or they choose a tighter three or four man cluster. This build takes five pieces from the same game, but it does so with asymmetric logic. It uses the Lions quarterback with two Lions receivers, then brings it back with the Rams alpha plus a lower salary Rams touchdown path. That creates exposure to nearly every touchdown channel in the game without turning the roster into a fragile double quarterback story.\n\nThe Swift plus Bears defense pairing is where the lineup separates from rosters that merely followed Lions Rams points. It is a portfolio decision that treats Cleveland’s offense as a turnover machine through Shedeur Sanders and then captures the downstream effect on Chicago rushing attempts and goal line carries.\n\nHenderson is the final layer. It is a second independent ceiling path that does not need the shootout to reach first place, which is why the roster can tolerate a small flex score and still finish on top.",
     "stackMeta": {
       "lineupType": "CLASSIC",
-      "primaryLever": "Five player DET at LAR cluster anchored by Goff with two Detroit wide receivers, brought back by Nacua plus Parkinson",
-      "secondaryLever": "Swift paired with Bears defense against Shedeur Sanders for the second straight week pattern",
+      "primaryLever": "Five player DET at LAR cluster anchored by Jared Goff with Amon-Ra St. Brown and Jameson Williams, brought back by Puka Nacua plus Colby Parkinson",
+      "secondaryLever": "D'Andre Swift paired with Bears defense against Shedeur Sanders as a repeatable pressure and short field rushing outcome",
       "notes": {
         "rosterConstruction": "5-2-1-1",
+        "gameKey": [
+          "DET@LAR: 5 (QB game)",
+          "CLE@CHI: 2",
+          "BUF@NE: 1",
+          "WAS@NYG: 1"
+        ],
         "lionsRamsCluster": [
-          "J. Goff",
-          "A. St. Brown",
-          "J. Williams",
-          "P. Nacua",
-          "C. Parkinson"
+          "Jared Goff",
+          "Amon-Ra St. Brown",
+          "Jameson Williams",
+          "Puka Nacua",
+          "Colby Parkinson"
         ],
         "bearsBrownsPair": [
-          "D. Swift",
+          "D'Andre Swift",
           "Bears"
         ],
-        "oneOffHammer": "T. Henderson",
+        "oneOffHammer": "Treyveon Henderson",
         "qbFacedByBearsDst": "Shedeur Sanders"
       }
     },
@@ -182,94 +218,51 @@
         "ONE_OFF_RB_HAMMER",
         "SALARY_RELEASE_TE_FLEX"
       ],
-      "macroStory": "A five man Lions Rams shootout block supplies raw points through concentrated touchdown channels, while a Swift plus Bears defense pairing punishes Shedeur Sanders and creates short field rushing scores. Henderson adds an independent eruption against a weak run defense, and Sinnott exists solely to finance the top end."
+      "macroStory": "A five man Lions Rams shootout block supplies raw points through concentrated touchdown channels, while a Swift plus Bears defense pairing punishes Shedeur Sanders and creates short field rushing scores. Henderson adds an independent eruption against Buffalo, and Sinnott exists solely to finance the top end."
     },
     "lineupItemAnalysis": [
       {
         "rosterSpot": "QB",
         "slotIndex": 0,
-        "roleTags": [
-          "PRIMARY_ENGINE",
-          "POCKET_PASSER",
-          "WR_CARRY_THROUGH"
-        ],
-        "microStory": "Goff is the anchor because Detroit touchdowns route through his wide receivers. The build correctly assumes his ceiling drags St. Brown and Williams with him in a shootout."
+        "roleTags": ["PRIMARY_ENGINE", "POCKET_PASSER", "WR_CARRY_THROUGH"],
+        "microStory": "Jared Goff is the anchor because Detroit touchdowns route through his wide receivers. The build correctly assumes his ceiling drags Amon-Ra St. Brown and Jameson Williams with him in a shootout."
       },
       {
         "rosterSpot": "WR",
         "slotIndex": 0,
-        "roleTags": [
-          "ALPHA_BRING_BACK",
-          "RAW_POINTS_ACCEPTED"
-        ],
-        "microStory": "Nacua is the ownership you live with because the game requires his points. The roster differentiates elsewhere instead of fading the obvious 180 plus yard outcome."
+        "roleTags": ["ALPHA_BRING_BACK", "RAW_POINTS_ACCEPTED"],
+        "microStory": "Puka Nacua is the ownership you live with because the game requires his points. The roster differentiates elsewhere instead of fading the 180 yard outcome."
       },
       {
         "rosterSpot": "TE",
         "slotIndex": 0,
-        "roleTags": [
-          "LOWER_SALARY_TD_ACCESS",
-          "COMPLEMENTS_ALPHA"
-        ],
-        "microStory": "Parkinson gives Rams touchdown access without paying for a second expensive wide receiver, which keeps the five man cluster financially possible while staying aligned with the game script."
+        "roleTags": ["LOWER_SALARY_TD_ACCESS", "COMPLEMENTS_ALPHA"],
+        "microStory": "Colby Parkinson gives Rams touchdown access without paying for a second expensive wide receiver, which keeps the five man cluster financially possible while staying aligned with the game script."
       },
       {
         "rosterSpot": "DST",
         "slotIndex": 0,
-        "roleTags": [
-          "QB_PRESSURE_PATH",
-          "TURNOVER_CONVERSION",
-          "PAIRED_WITH_RB_SAME_GAME"
-        ],
-        "microStory": "Chicago defense turns Shedeur Sanders into points with sacks and interceptions. The pairing with Swift captures the short field finishing equity created by those plays."
+        "roleTags": ["QB_PRESSURE_PATH", "TURNOVER_CONVERSION", "PAIRED_WITH_RB_SAME_GAME"],
+        "microStory": "Chicago defense turns Shedeur Sanders into points with sacks and interceptions. The pairing with D'Andre Swift captures the short field finishing equity created by those plays."
       }
     ],
     "correlations": [
       {
         "type": "STACK",
-        "qb": {
-          "name": "J. Goff",
-          "position": "QB",
-          "team": "DET"
-        },
+        "qb": { "name": "Jared Goff", "position": "QB", "team": "DET" },
         "teammates": [
-          {
-            "name": "A. St. Brown",
-            "position": "WR",
-            "team": "DET"
-          },
-          {
-            "name": "J. Williams",
-            "position": "WR",
-            "team": "DET"
-          }
+          { "name": "Amon-Ra St. Brown", "position": "WR", "team": "DET" },
+          { "name": "Jameson Williams", "position": "WR", "team": "DET" }
         ],
         "opponents": [
-          {
-            "name": "P. Nacua",
-            "position": "WR",
-            "team": "LAR"
-          },
-          {
-            "name": "C. Parkinson",
-            "position": "TE",
-            "team": "LAR"
-          }
+          { "name": "Puka Nacua", "position": "WR", "team": "LAR" },
+          { "name": "Colby Parkinson", "position": "TE", "team": "LAR" }
         ]
       },
       {
         "type": "RB_DST_PAIR",
-        "teammate": {
-          "name": "D. Swift",
-          "position": "RB",
-          "team": "CHI"
-        },
-        "opponent": {
-          "name": "Bears",
-          "position": "DST",
-          "team": "CHI",
-          "qbFaced": "Shedeur Sanders"
-        }
+        "teammate": { "name": "D'Andre Swift", "position": "RB", "team": "CHI" },
+        "opponent": { "name": "Bears", "position": "DST", "team": "CHI", "qbFaced": "Shedeur Sanders" }
       }
     ]
   }

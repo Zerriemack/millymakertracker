@@ -1,0 +1,274 @@
+{
+  "sport": "NFL",
+  "year": 2024,
+  "week": 14,
+  "slateType": "MAIN",
+  "slateDate": "2024-12-08T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 14",
+  "slateTag": "BUF RAMS BIG XII SHOOTOUT, DOUBLE RB CHALK SMASH, ADDISON CEILING GAME",
+  "slateGroup": "3-2-2-1-1",
+  "rosterConstruction": "3-2-2-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2024_WK14_MAIN_2024-12-08T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14250
+  },
+  "winner": {
+    "username": "Snakediem17",
+    "points": 281.68,
+    "maxEntries": 10
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 281.68,
+    "totalOwnershipBp": 14250,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 8000,
+        "points": 54.88,
+        "ownershipPercent": 6.2,
+        "passTd": 3,
+        "passYds": 342,
+        "rushTd": 3,
+        "rushYds": 82,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Isaac Guerendo",
+        "position": "RB",
+        "team": "SF",
+        "salary": 5400,
+        "points": 26.8,
+        "ownershipPercent": 41.0,
+        "rushTdRb": 2,
+        "rushYdsRb": 78,
+        "recRb": 2,
+        "recYdsRb": 50,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Zach Charbonnet",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 4800,
+        "points": 41.3,
+        "ownershipPercent": 43.3,
+        "rushTdRb": 2,
+        "rushYdsRb": 134,
+        "recRb": 7,
+        "recYdsRb": 59,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Puka Nacua",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 7700,
+        "points": 44.8,
+        "ownershipPercent": 7.3,
+        "rec": 12,
+        "recYds": 162,
+        "recTd": 1,
+        "rushYds": 16,
+        "rushTd": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Khalil Shakir",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 5900,
+        "points": 24.6,
+        "ownershipPercent": 7.2,
+        "rec": 5,
+        "recYds": 106,
+        "recTd": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Darnell Mooney",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 5500,
+        "points": 23.2,
+        "ownershipPercent": 7.0,
+        "rec": 6,
+        "recYds": 142,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Pat Freiermuth",
+        "position": "TE",
+        "team": "PIT",
+        "salary": 3800,
+        "points": 13.8,
+        "ownershipPercent": 9.3,
+        "rec": 3,
+        "recYds": 48,
+        "recTd": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jordan Addison",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 5300,
+        "points": 42.3,
+        "ownershipPercent": 10.9,
+        "rec": 8,
+        "recYds": 133,
+        "recTd": 3,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Steelers",
+        "position": "DST",
+        "team": "PIT",
+        "salary": 3500,
+        "points": 10,
+        "ownershipPercent": 10.3,
+        "sacks": 3,
+        "takeaways": 3,
+        "interceptions": 2,
+        "fumbleRecoveries": 1,
+        "pointsAllowed": 20,
+        "qbFaced": "Jameis Winston",
+        "qbFacedArchetype": "GUNSLINGER",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis. This slate produced an extreme top end, and the winner treated it as a math problem. Four players cleared 40 points, and the roster captured three of them while keeping salary structure intact. The BUF Rams BIG XII shootout supplied the highest leverage score on the slate. Josh Allen delivered a 50 plus outcome through both passing and rushing touchdowns. The roster paired Allen with Puka Nacua and Khalil Shakir, which captured the game environment from both sidelines without forcing an extra Rams pass catcher.\n\nThe second driver was injury and role consolidation at running back. Isaac Guerendo and Zach Charbonnet carried massive ownership, then exceeded it anyway. This roster did not fight those outcomes. It accepted them and used the combined value to pay for Allen plus Nacua without sacrificing ceiling elsewhere.\n\nJordan Addison was the separator inside a slate full of chalk points. A three touchdown receiver score at around ten percent ownership created a second nuclear outcome outside the chalk running backs. Atlanta at Minnesota also supplied Darnell Mooney, which quietly reinforced the same game environment and prevented Addison from being an isolated spike.\n\nTight end and defense became secondary because the roster already locked in the slate breaking points. Pat Freiermuth produced a functional touchdown line, and Steelers defense produced a clean 10 points versus Jameis Winston. The defense role was to avoid failure while the rest of the roster lapped the field.\n\nPredictive analysis. When a slate produces two running back replacements with extreme ownership and both smash, first place becomes a chase for the correct premium ceiling combination. In those weeks, the optimal path often includes paying up at quarterback in a game with real 40 plus exposure, then attaching the most concentrated opposing receiver. The Allen plus Nacua pairing is a blueprint for how to treat a true shootout. Pair the quarterback with at least one teammate, then pull back the opponent side through the alpha target.\n\nAddison adds a second layer. A slate can still require one additional 40 point outcome outside the chalk core. When popular value opens salary, allocate at least one mid tier receiver slot toward a player with multi touchdown access rather than a pure target floor profile.\n\nPrescriptive analysis. In future slates where two backup running backs project for 35 to 45 percent ownership due to injuries, treat them as salary enablers and plan differentiation through ceiling combinations, not through thin pivots. Prioritize a quarterback from the game most capable of a 70 plus combined score, then pair him with a teammate who can score from multiple areas of the field. Add one opponent pass catcher with a target share profile capable of 12 plus receptions.\n\nAfter locking those pieces, reserve one receiver slot for a touchdown concentration play in a different game environment, similar to Addison. Tight end and defense can remain simple. A touchdown tight end and a defense with turnover equity versus a gunslinger archetype can be enough when the top end of the roster carries the slate.",
+    "uniquenessNotes": "This roster won without exotic construction. It won by maximizing points in the exact week where raw points overwhelmed most uniqueness concerns. The ownership profile concentrated in the running back slots, then spread across the premium and receiver slots where ceiling mattered most.\n\nThe rosterConstruction confirms intent. Three from the quarterback game captured the BUF Rams shootout. Two from ATL at MIN captured the Addison eruption. Two from CLE at PIT handled tight end plus defense correlation against a volatile quarterback. The remaining singletons were the two chalk running backs.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Josh Allen paired with Puka Nacua and Khalil Shakir to capture the BUF Rams BIG XII shootout ceiling",
+      "secondaryLever": "Double chalk backup running back smash enabling pay up ceiling plus Jordan Addison three touchdown eruption",
+      "notes": {
+        "rosterConstruction": "3-2-2-1-1",
+        "gameKey": [
+          "BUF@LAR: 3 (QB game)",
+          "ATL@MIN: 2",
+          "CLE@PIT: 2",
+          "CHI@SF: 1",
+          "SEA@ARI: 1"
+        ],
+        "shootoutCluster": ["Josh Allen", "Puka Nacua", "Khalil Shakir"],
+        "vikingsFalconsPair": ["Jordan Addison", "Darnell Mooney"],
+        "steelersPair": ["Pat Freiermuth", "Steelers"],
+        "chalkBackups": ["Isaac Guerendo", "Zach Charbonnet"],
+        "qbFacedBySteelersDst": "Jameis Winston"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_GAME_SHOOTOUT_CAPTURE",
+        "DOUBLE_CHALK_BACKUP_RB_VALUE",
+        "PAY_UP_QB_PLUS_ALPHA_OPP_WR",
+        "SECONDARY_GAME_TD_CONCENTRATION_WR",
+        "DST_VERSUS_GUNSLINGER_FLOOR"
+      ],
+      "macroStory": "A slate defined by multiple 40 point performances, captured through an Allen shootout core plus double chalk running backs, then separated by an Addison eruption while tight end and defense avoided landmines."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "RUSHING_TD_ACCESS", "CEILING_ANCHOR"],
+        "microStory": "Josh Allen provided the slate’s top score and carried both passing and rushing touchdown access, which allowed the roster to win without perfection at tight end or defense."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["CHALK_VALUE", "ROLE_CONSOLIDATION", "SALARY_ENABLER"],
+        "microStory": "Isaac Guerendo delivered a multi touchdown outcome at massive ownership, which turned the position from a leverage spot into a survival requirement."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": ["CHALK_SMASH", "DUAL_THREAT_USAGE", "UNFADEABLE_SCORE"],
+        "microStory": "Zach Charbonnet produced a true ceiling game at the same ownership level, locking in salary flexibility for the premium core."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["ALPHA_VOLUME", "PPR_CEILING", "OPPONENT_CORRELATION"],
+        "microStory": "Puka Nacua captured the opposing side of the shootout through overwhelming reception volume, matching the Allen ceiling without requiring a full Rams stack."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": ["TD_CONCENTRATION", "SECONDARY_SLATE_BREAKER", "MID_TIER_CEILING"],
+        "microStory": "Jordan Addison supplied the extra nuclear outcome outside the chalk running backs, creating separation from lineups that stopped after the shootout core."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["TURNOVER_PATH", "GAME_CONTROL_FLOOR", "QB_ARCHETYPE_TARGET"],
+        "microStory": "Steelers defense posted a steady score versus Jameis Winston, which was enough once the rest of the roster handled the slate’s scoring concentration."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Josh Allen", "position": "QB", "team": "BUF" },
+        "teammates": [{ "name": "Khalil Shakir", "position": "WR", "team": "BUF" }],
+        "opponent": { "name": "Puka Nacua", "position": "WR", "team": "LAR" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Jordan Addison", "position": "WR", "team": "MIN" },
+        "opponent": { "name": "Darnell Mooney", "position": "WR", "team": "ATL" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Pat Freiermuth", "position": "TE", "team": "PIT" },
+        "opponent": { "name": "Steelers", "position": "DST", "team": "PIT", "qbFaced": "Jameis Winston" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Steelers", "position": "DST", "team": "PIT", "qbFaced": "Jameis Winston" },
+        "opponent": { "name": "Jameis Winston", "position": "QB", "team": "CLE" }
+      }
+    ]
+  }
+}

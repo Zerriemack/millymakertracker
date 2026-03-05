@@ -1,0 +1,251 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 8,
+  "slateType": "MAIN",
+  "slateDate": "2023-10-29T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 8",
+  "slateTag": "HOPKINS 1% SLATE BREAKER, MCBRIDE CHEAP CHALK SMASH, DAK TRIPLE WITH GALLUP WHIFF",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK08_MAIN_2023-10-29T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14510
+  },
+  "winner": {
+    "username": "JasperJ",
+    "points": 237.66,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 237.66,
+    "totalOwnershipBp": 14510,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 6100,
+        "points": 32.06,
+        "ownershipPercent": 6.4,
+        "passTd": 4,
+        "passYds": 304,
+        "rushYds": 19,
+        "int": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "team": "NO",
+        "salary": 7300,
+        "points": 27.0,
+        "ownershipPercent": 29.7,
+        "rushYdsRb": 59,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 51,
+        "recTdRb": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Breece Hall",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 5900,
+        "points": 21.3,
+        "ownershipPercent": 45.1,
+        "rushYdsRb": 17,
+        "recRb": 6,
+        "recYdsRb": 76,
+        "recTdRb": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 8000,
+        "points": 36.0,
+        "ownershipPercent": 21.7,
+        "rec": 8,
+        "recYds": 130,
+        "recTd": 2,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 7600,
+        "points": 44.0,
+        "ownershipPercent": 5.4,
+        "rec": 12,
+        "recYds": 158,
+        "recTd": 2,
+        "rushYds": 12,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Gallup",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 3400,
+        "points": 4.0,
+        "ownershipPercent": 7.8,
+        "rec": 2,
+        "recYds": 20,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Trey McBride",
+        "position": "TE",
+        "team": "ARI",
+        "salary": 2800,
+        "points": 25.5,
+        "ownershipPercent": 19.5,
+        "rec": 10,
+        "recYds": 95,
+        "recTd": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeAndre Hopkins",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 5500,
+        "points": 37.8,
+        "ownershipPercent": 0.9,
+        "rec": 4,
+        "recYds": 128,
+        "recTd": 3,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Seahawks",
+        "position": "DST",
+        "team": "SEA",
+        "salary": 3400,
+        "points": 10.0,
+        "ownershipPercent": 8.6,
+        "sacks": 3,
+        "takeaways": 3,
+        "pointsAllowed": 20,
+        "qbFaced": "P.J. Walker",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "The slate story is simple and brutal. Most of the popular plays delivered, so the tournament stopped being about finding safety and turned into a race to locate one ceiling outcome the field did not own. This roster matched the slate pace by eating multiple high ownership results, then it separated through one extreme decision: DeAndre Hopkins at sub one percent producing three touchdowns.\n\nThe Dallas core sets the structure. Dak Prescott is paired with CeeDee Lamb and Michael Gallup, and the bet is clear: Dallas scores enough touchdowns for the quarterback to matter, and Lamb captures the premium portion of those touchdowns. The twist is that the third piece fails. Gallup posts a near zero, yet the lineup still wins. Diagnostic takeaway: the Dak stack did not need perfect completion because Lamb reached a slate defining score on his own, and Dak reached four passing touchdowns without requiring a second wide receiver to succeed.\n\nTrey McBride is the second pillar. He is priced as a thin role player and produces ten catches, ninety five yards, and a touchdown. In a week where many lineups tried to treat tight end as a survival slot, this roster treats tight end as a direct path to raw points. Alvin Kamara and Breece Hall handle the volume backbone. Kamara adds both rushing and receiving touchdowns. Hall posts a heavy reception line and still scores. These two plays keep the roster in range of the chalk builds so Hopkins can decide the contest.\n\nSeattle defense completes the story the way these tournaments often end. A backup quarterback matchup creates sack and turnover access, and the defense hits enough to pay off even without needing a defensive touchdown. It is a support piece that aligns with the slate environment, then the roster wins because the Hopkins decision supplies the missing ceiling.",
+    "uniquenessNotes": "This is a case where contrarian does not mean thin. The roster takes on ownership in several places, then isolates its uniqueness into one slot that can realistically outscore every wide receiver on the slate. Hopkins at 5,500 is not a random dart when the entire build is already stable through Hall, Kamara, Brown, and McBride.\n\nThe Dak triple is a second uniqueness point, but it is not used the common way. The third Cowboy is a salary choice, not a required scorer. The lineup accepts the risk of a weak third piece because it already has two elite ceilings in Lamb and Hopkins. The roster is constructed to survive one miss, as long as the ceiling pieces hit.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "DeAndre Hopkins at 0.9 percent delivering a three touchdown ceiling to beat a chalk heavy slate",
+      "secondaryLever": "Dak Prescott with CeeDee Lamb carrying the Dallas eruption even with Michael Gallup failing",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "LAR@DAL: 3 (QB game)",
+          "NO@IND: 1",
+          "NYJ@NYG: 1",
+          "PHI@WAS: 1",
+          "BAL@ARI: 1",
+          "ATL@TEN: 1",
+          "CLE@SEA: 1"
+        ],
+        "cowboysCluster": ["Dak Prescott", "CeeDee Lamb", "Michael Gallup"],
+        "bestPlaysCore": ["Breece Hall", "Alvin Kamara", "A.J. Brown", "Trey McBride"],
+        "uniqueSeparator": "DeAndre Hopkins",
+        "qbFacedBySeahawksDst": "P.J. Walker"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "CHALK_FOUNDATION_PLUS_ONE_NUCLEAR_LEVER",
+        "QB_TRIPLE_WITH_ONE_INTENTIONAL_WEAK_LINK",
+        "TE_CEILING_AS_A_CORE_SLOT",
+        "RB_RECEIVING_ROLE_PRIORITY",
+        "DST_VS_BACKUP_QB_PRESSURE_BET"
+      ],
+      "macroStory": "A chalk forward slate where most popular plays hit, decided by a single low owned wide receiver eruption, supported by a Dallas passing spike and a cheap tight end score that functioned as a true ceiling slot."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_SEPARATOR", "TOUCHDOWN_CONCENTRATION", "LOW_OWNERSHIP_CEILING"],
+        "microStory": "Hopkins is the entire win condition. Three receiving touchdowns at 0.9 percent creates a points gap that no small optimization elsewhere can replicate."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_TEAM_CEILING", "TARGET_DOMINANCE", "STACK_PAYOFF"],
+        "microStory": "Lamb turns the Dallas bet into a true advantage. Two touchdowns plus massive catch volume allows the roster to carry a failing third Cowboy."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["SALARY_RELIEF_CEILING", "VOLUME_AT_TIGHT_END", "CHALK_THAT_SCORED"],
+        "microStory": "McBride is cheap enough to be treated as access, yet he produces a wide receiver style line. This tight end outcome is a major reason the roster stays perfect even with Gallup missing."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["PRESSURE_ACCESS", "TURNOVER_PATH", "MATCHUP_DRIVEN"],
+        "microStory": "Seattle does not need a clean real life game. The defense needs sacks and takeaways versus a backup quarterback, and it gets enough of them to hold the floor while the offense pieces decide the slate."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Dak Prescott", "position": "QB", "team": "DAL" },
+        "teammates": [
+          { "name": "CeeDee Lamb", "position": "WR", "team": "DAL" },
+          { "name": "Michael Gallup", "position": "WR", "team": "DAL" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Seahawks", "position": "DST", "team": "SEA", "qbFaced": "P.J. Walker" },
+        "opponent": { "name": "P.J. Walker", "position": "QB", "team": "CLE" }
+      }
+    ]
+  }
+}

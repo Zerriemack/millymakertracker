@@ -1,0 +1,258 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 2,
+  "slateType": "MAIN",
+  "slateDate": "2023-09-17T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 2",
+  "slateTag": "RODGERS OUT, ZACH WILSON IN, PUKA AND KYREN DOUBLE BRINGBACK, KEENAN ALLEN TARGET HOARD",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2023_WK02_MAIN_2023-09-17T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9700
+  },
+  "winner": {
+    "username": "russell_miller",
+    "points": 201.24,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 201.24,
+    "totalOwnershipBp": 9700,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Brock Purdy",
+        "position": "QB",
+        "team": "SF",
+        "salary": 5700,
+        "points": 14.74,
+        "ownershipPercent": 9.6,
+        "passTd": 0,
+        "passYds": 206,
+        "rushYds": 5,
+        "rushTd": 1,
+        "fumblesLost": 0,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Kyren Williams",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 5000,
+        "points": 28.0,
+        "ownershipPercent": 5.7,
+        "rushYdsRb": 52,
+        "rushTdRb": 1,
+        "recRb": 6,
+        "recYdsRb": 48,
+        "recTdRb": 1,
+        "fumblesLost": 0,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Zack Moss",
+        "position": "RB",
+        "team": "IND",
+        "salary": 4700,
+        "points": 20.7,
+        "ownershipPercent": 6.5,
+        "rushYdsRb": 88,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 19,
+        "recTdRb": 0,
+        "fumblesLost": 0,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Deebo Samuel",
+        "position": "WR",
+        "team": "SF",
+        "salary": 5600,
+        "points": 22.1,
+        "ownershipPercent": 25.2,
+        "rec": 6,
+        "recYds": 63,
+        "recTd": 0,
+        "rushYds": 38,
+        "rushTd": 1,
+        "fumblesLost": 0,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Puka Nacua",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 4900,
+        "points": 33.1,
+        "ownershipPercent": 11.0,
+        "rec": 15,
+        "recYds": 147,
+        "recTd": 0,
+        "rushYds": 4,
+        "rushTd": 0,
+        "fumblesLost": 0,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 7100,
+        "points": 34.1,
+        "ownershipPercent": 13.1,
+        "rec": 8,
+        "recYds": 111,
+        "recTd": 2,
+        "rushYds": 0,
+        "rushTd": 0,
+        "fumblesLost": 0,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Darren Waller",
+        "position": "TE",
+        "team": "NYG",
+        "salary": 5500,
+        "points": 13.6,
+        "ownershipPercent": 6.2,
+        "rec": 6,
+        "recYds": 76,
+        "recTd": 0,
+        "fumblesLost": 0,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tony Pollard",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 7500,
+        "points": 19.9,
+        "ownershipPercent": 9.2,
+        "rushYdsRb": 72,
+        "rushTdRb": 0,
+        "recRb": 7,
+        "recYdsRb": 37,
+        "recTdRb": 0,
+        "twoPt": 1,
+        "fumblesLost": 0,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cowboys",
+        "position": "DST",
+        "team": "DAL",
+        "salary": 4000,
+        "points": 15,
+        "ownershipPercent": 10.5,
+        "sacks": 3,
+        "takeaways": 4,
+        "qbFaced": "Zach Wilson",
+        "qbFacedArchetype": "BACKUP",
+        "pointsAllowed": 13,
+        "defTd": 0,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "NYJ"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner is built around SF at LAR, but it wins with a non standard scoring shape. Brock Purdy plus Deebo Samuel lands without a passing eruption, because both reach value through rushing touchdowns. In a large field, a modest quarterback score can still be viable when the rest of the lineup carries true ceiling outcomes.\n\nThe Rams side is the defining decision. Puka Nacua and Kyren Williams form a double bringback that covers two different sources of scoring. Nacua delivers the PPR wet dream through pure reception volume and yardage. Williams adds touchdown access plus receiving work, so the lineup captures both short area accumulation and end zone conversion from the same offense.\n\nThe second anchor is the defense plus running back pairing tied to the Aaron Rodgers injury aftermath. Zach Wilson stepping in creates a clean path for sacks and turnovers. Dallas converts pressure into four takeaways, and Tony Pollard benefits from sustained drives and a game state where Dallas can keep calling runs and checkdowns.\n\nZack Moss is the leverage hinge. Many entries were unsure of his role returning from injury, but Indianapolis gives him the start and the touchdown. Keenan Allen is the raw points hammer. He absorbs targets and converts two touchdowns, which supplies the type of wide receiver score that allows the roster to accept thin spots elsewhere. Darren Waller does enough, which matters because the lineup does not waste salary chasing an elite tight end ceiling on a slate where wide receiver spikes decide placement.",
+    "uniquenessNotes": "The roster uses one of the most common game environments as the base, but it avoids the popular path. It does not require Purdy to throw multiple touchdowns. It chooses a scoring profile where rushing scores cover the stack while the bringbacks produce the passing volume.\n\nThe lineup also concentrates its risk in a few places. Moss provides role uncertainty leverage. The Dallas defense bet is narrow and aggressive, yet it is paired with Pollard so the build benefits even if the defense fails to score a touchdown. The rest of the roster leans into clear usage, with Allen and Nacua functioning as volume driven engines.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Puka Nacua and Kyren Williams as a double bringback to the 49ers stack",
+      "secondaryLever": "Cowboys DST paired with Tony Pollard versus Zach Wilson as the game control path",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "SF@LAR: 4 (QB game)",
+          "NYJ@DAL: 2",
+          "IND@HOU: 1",
+          "LAC@TEN: 1",
+          "NYG@ARI: 1"
+        ],
+        "sfLarCluster": ["Brock Purdy", "Deebo Samuel", "Puka Nacua", "Kyren Williams"],
+        "jetsCowboysPair": ["Tony Pollard", "Cowboys"],
+        "roleUncertaintyLever": "Zack Moss",
+        "targetHogHammer": "Keenan Allen",
+        "qbFacedByCowboysDst": "Zach Wilson"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "DOUBLE_BRINGBACK",
+        "DST_RB_GAME_CONTROL",
+        "VOLUME_WR_HAMMER",
+        "ROLE_UNCERTAINTY_RB",
+        "RUSHING_TD_STACK_VARIANT"
+      ],
+      "macroStory": "A four man game cluster where the stack gets home via rushing scores while the bringbacks deliver massive receiving volume, supported by a defense plus running back pairing built around a backup quarterback forced into action."
+    },
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Brock Purdy", "position": "QB", "team": "SF" },
+        "teammates": [{ "name": "Deebo Samuel", "position": "WR", "team": "SF" }],
+        "opponents": [
+          { "name": "Puka Nacua", "position": "WR", "team": "LAR" },
+          { "name": "Kyren Williams", "position": "RB", "team": "LAR" }
+        ]
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Cowboys", "position": "DST", "team": "DAL", "qbFaced": "Zach Wilson" },
+        "opponent": { "name": "Zach Wilson", "position": "QB", "team": "NYJ" }
+      },
+      {
+        "type": "DST_RB_PAIR",
+        "qb": null,
+        "teammate": { "name": "Cowboys", "position": "DST", "team": "DAL" },
+        "opponent": { "name": "Tony Pollard", "position": "RB", "team": "DAL" }
+      }
+    ],
+    "prescriptive": {
+      "whenToUse": "Use the double bringback when one offense can feed both a reception funnel and a touchdown funnel, and the opposing stack can score in a way that does not force a passing ceiling. Use defense plus running back when a backup quarterback start raises turnover probability and creates extra possessions.",
+      "howToApply": [
+        "If the bringback wide receiver projects for elite target share, pair him with a back who owns goal line and receiving work, so the lineup can win even if touchdowns concentrate away from the wide receiver.",
+        "When the quarterback in the stack carries a low passing ceiling path, identify alternative touchdown routes such as rushing scores, then make sure the rest of the lineup supplies true ceiling points.",
+        "Treat role uncertainty backs as a lever, but balance them with at least one volume locked wide receiver who can carry raw points."
+      ]
+    }
+  }
+}

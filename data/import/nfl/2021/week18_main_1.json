@@ -1,0 +1,258 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 18,
+  "slateType": "MAIN",
+  "slateDate": "2022-01-09T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 18",
+  "slateTag": "COOPER KUPP TRIPLE CROWN, STAFFORD TRIPLE WITH RAMS QUAD, DOLPHINS DST DOUBLE TOUCHDOWN VS MAC JONES",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2021_WK18_MAIN_2022-01-09T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 7890
+  },
+  "winner": {
+    "username": "jblaketheking",
+    "points": 217.42,
+    "maxEntries": 4
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 217.42,
+    "totalOwnershipBp": 7890,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Matthew Stafford",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 6700,
+        "points": 19.52,
+        "ownershipPercent": 7.8,
+        "passTd": 3,
+        "passYds": 238,
+        "interceptions": 2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "James Conner",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 6300,
+        "points": 27.3,
+        "ownershipPercent": 10.3,
+        "rushTdRb": 1,
+        "rushYdsRb": 52,
+        "recRb": 6,
+        "recYdsRb": 41,
+        "recTdRb": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Antonio Gibson",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 5800,
+        "points": 25.1,
+        "ownershipPercent": 9.3,
+        "rushTdRb": 1,
+        "rushYdsRb": 146,
+        "recRb": 1,
+        "recYdsRb": 58,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyler Lockett",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 6400,
+        "points": 27.0,
+        "ownershipPercent": 11.6,
+        "rec": 5,
+        "recYds": 98,
+        "recTd": 2,
+        "rushYds": 2,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jauan Jennings",
+        "position": "WR",
+        "team": "SF",
+        "salary": 3600,
+        "points": 27.4,
+        "ownershipPercent": 0.2,
+        "rec": 6,
+        "recYds": 94,
+        "recTd": 2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chase Claypool",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 5100,
+        "points": 18.0,
+        "ownershipPercent": 6.9,
+        "rec": 5,
+        "recYds": 37,
+        "recTd": 1,
+        "rushYds": 33,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Tyler Higbee",
+        "position": "TE",
+        "team": "LAR",
+        "salary": 4000,
+        "points": 23.5,
+        "ownershipPercent": 6.4,
+        "rec": 6,
+        "recYds": 55,
+        "recTd": 2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 9700,
+        "points": 29.6,
+        "ownershipPercent": 18.3,
+        "rec": 7,
+        "recYds": 118,
+        "recTd": 1,
+        "rushYds": 18,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Dolphins",
+        "position": "DST",
+        "team": "MIA",
+        "salary": 2400,
+        "points": 20,
+        "ownershipPercent": 8.1,
+        "sacks": 2,
+        "takeaways": 3,
+        "defTd": 2,
+        "qbFaced": "Mac Jones",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "NE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic analysis.\n\nWeek 18 is where motivation and substitution patterns turn pricing into a trap. This winner avoids the trap by anchoring the build in the one situation that stayed stable. The Rams were still treating the game as a full effort environment, and the target tree remained concentrated through Cooper Kupp, Tyler Higbee, and the auxiliary wideouts. The roster leans into that certainty with a Rams quad that captures every scoring lane. Matthew Stafford provides the quarterback access, Cooper Kupp supplies the predictable alpha volume plus touchdown equity, Tyler Higbee collects the condensed red zone usage, and Jauan Jennings becomes the opponent pressure valve that rises when the Rams force San Francisco to answer.\n\nThe Jennings inclusion is the structural separator. At near zero ownership, he does not need a random long touchdown to matter. He needs the game to produce two concentrated receiving touchdowns on the San Francisco side, and that is exactly what happened. The Rams quad is then no longer a fragile stack. It becomes a loop that converts every touchdown drive into points because the roster owns the primary scorers from both teams.\n\nThe second pillar is the Miami defense. Two defensive touchdowns is a slate defining event, and the game context matters. Miami had a reason to play for a result, and the Patriots offense was built around a rookie quarterback profile. When that game turns into pressure and short fields, the defense scoring becomes more valuable than chasing another mid range receiver outcome.\n\nThe rest of the roster is a Week 18 motivation read expressed through player roles. James Conner is used for touchdown access and receiving involvement, which keeps him viable even if Arizona rotates. Tyler Lockett pairs with Conner from the same game, which captures the points from a contest that clearly stayed aggressive on both sides. Antonio Gibson supplies the cleanest rushing volume outcome in the build, then Chase Claypool is the final stabilizer, providing enough points from a separate game to prevent the roster from being fully dependent on one environment.\n\nPredictive analysis.\n\nThis roster is a model for how to treat Week 18 as a slate of known unknowns. The edge is not predicting every surprise. The edge is identifying the few games where effort level and usage certainty remain intact, then over indexing those games while keeping the remaining slots tied to roles that survive volatility.\n\nThe Rams cluster is the reusable pattern. When a team enters a game with clear incentive and a concentrated target hierarchy, a four player cluster can be more robust than the typical two player stack because it reduces the number of external outcomes needed. The opponent bringback being a low owned scoring concentrator is the other repeatable element. If the opposing scoring is likely to condense into one or two pass catchers, the bringback can turn the stack from linear to complete.\n\nPrescriptive analysis.\n\nFor Week 18 slates, start by sorting games into two buckets. Games with stable incentive and stable usage, and games where substitutes and tempo uncertainty dominate. Build the primary stack from the first bucket and do not be afraid to stack deeper when the scoring tree is narrow.\n\nThen choose one defense in a spot where motivation aligns with a quarterback profile prone to pressure mistakes. If the defense hits a touchdown outcome, it can replace the need for a second perfect offensive environment.\n\nFinally, fill the remaining slots with role based touch certainty and multi path scoring. Conner is the example of a back who can score through rushing and receiving. Gibson is the example of a back whose day is built on pure volume. This combination creates a roster that can tolerate Week 18 chaos while still chasing first place outcomes.",
+    "uniquenessNotes": "The roster is unique because it stacks into certainty while the slate pushes people toward uncertainty. The Rams quad is a statement that the game will play clean and the touchdowns will route through the primary pieces. The Jennings bringback is the leverage layer that makes the quad win first rather than simply cash.\n\nThe defense selection is the other uniqueness driver. Many lineups chase offensive ceilings in Week 18 and accept fragile defensive floors. This roster uses Miami defense as a ceiling component and receives two touchdowns, which compresses the path to first.\n\nThe rest of the lineup stays disciplined. The build does not spend salary on thin projections. It spends salary on roles that remain meaningful even when teams rotate.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Rams quad with Stafford, Kupp, Higbee, and Jauan Jennings as the opponent bringback in the same game",
+      "secondaryLever": "Dolphins DST ceiling versus rookie Mac Jones plus SEA ARI mini with Conner and Lockett",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "SF@LAR: 4 (QB game)",
+          "SEA@ARI: 2",
+          "WAS@NYG: 1",
+          "PIT@BAL: 1",
+          "NE@MIA: 1"
+        ],
+        "ramsCluster": ["Matthew Stafford", "Cooper Kupp", "Tyler Higbee"],
+        "bringback": "Jauan Jennings",
+        "seaAriPair": ["James Conner", "Tyler Lockett"],
+        "qbFacedByDolphinsDst": "Mac Jones"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "WEEK_18_MOTIVATION_READ",
+        "QB_TRIPLE_STACK_PLUS_BRINGBACK",
+        "OPPONENT_TOUCHDOWN_CONCENTRATOR",
+        "DST_TOUCHDOWN_CEILING",
+        "TWO_PLAYER_GAME_MINI"
+      ],
+      "macroStory": "A Week 18 winner built around a deep Rams passing cluster with a low owned bringback that captures opposing touchdowns, then sealed by a defense that hits the rare double touchdown outcome while the remaining pieces stay anchored in stable roles."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "VOLUME_ALPHA", "TOUCHDOWN_ACCESS"],
+        "microStory": "Cooper Kupp is the stable centerpiece of the slate, and the roster treats his role as the one constant worth paying for in a week defined by uncertainty."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_SEPARATOR", "OPPONENT_SCORE_CAPTURE", "MULTI_TD_OUTCOME"],
+        "microStory": "Jauan Jennings converts the Rams stack into a complete game script by collecting the concentrated San Francisco receiving touchdowns at near zero ownership."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["CEILING_EVENT", "DEF_TD_PATH", "MOTIVATION_ALIGNED"],
+        "microStory": "Miami defense supplies two touchdowns and pressure events against a rookie quarterback profile, which changes the first place scoring equation."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["STACK_HUB", "TOUCHDOWN_DISTRIBUTOR", "GAME_ENVIRONMENT_DRIVER"],
+        "microStory": "Matthew Stafford distributes three passing touchdowns into a narrow set of pass catchers, allowing the roster to stack deeper without guessing incorrectly."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Matthew Stafford", "position": "QB", "team": "LAR" },
+        "teammates": [
+          { "name": "Cooper Kupp", "position": "WR", "team": "LAR" },
+          { "name": "Tyler Higbee", "position": "TE", "team": "LAR" }
+        ],
+        "opponent": { "name": "Jauan Jennings", "position": "WR", "team": "SF" }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "James Conner", "position": "RB", "team": "ARI" },
+        "opponent": { "name": "Tyler Lockett", "position": "WR", "team": "SEA" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Dolphins", "position": "DST", "team": "MIA", "qbFaced": "Mac Jones" },
+        "opponent": { "name": "Mac Jones", "position": "QB", "team": "NE" }
+      }
+    ]
+  }
+}

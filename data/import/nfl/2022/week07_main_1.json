@@ -1,0 +1,226 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 7,
+  "slateType": "MAIN",
+  "slateDate": "2022-10-23T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 7",
+  "slateTag": "BURROW CHASE HURST DOUBLE STACK NO BRINGBACK, RB TRIPLE CHALK WITH EKELER WALKER JACOBS, HARDMAN CAMPBELL LOW OWNERSHIP CEILINGS",
+  "slateGroup": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK07_MAIN_2022-10-23T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": 236000,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 18920
+  },
+  "winner": {
+    "username": "bamor",
+    "points": 255.04,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 255.04,
+    "totalOwnershipBp": 18920,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Joe Burrow",
+        "position": "QB",
+        "team": "CIN",
+        "salary": 6900,
+        "points": 42.24,
+        "ownershipPercent": 17.0,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 8300,
+        "points": 36.7,
+        "ownershipPercent": 21.4,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Kenneth Walker III",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 5800,
+        "points": 31.8,
+        "ownershipPercent": 32.1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Ja'Marr Chase",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 8200,
+        "points": 36.0,
+        "ownershipPercent": 15.5,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mecole Hardman",
+        "position": "WR",
+        "team": "KC",
+        "salary": 4300,
+        "points": 28.0,
+        "ownershipPercent": 2.1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Parris Campbell",
+        "position": "WR",
+        "team": "IND",
+        "salary": 3900,
+        "points": 23.0,
+        "ownershipPercent": 2.6,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Hayden Hurst",
+        "position": "TE",
+        "team": "CIN",
+        "salary": 3500,
+        "points": 10.8,
+        "ownershipPercent": 8.1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": "LV",
+        "salary": 6500,
+        "points": 39.5,
+        "ownershipPercent": 46.7,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Jets",
+        "position": "DST",
+        "team": "NYJ",
+        "salary": 2600,
+        "points": 7.0,
+        "ownershipPercent": 43.8,
+        "qbFaced": "Brett Rypien",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Diagnostic Analysis\nThe core decision is a Burrow double stack with Ja’Marr Chase and Hayden Hurst, and the absence of an Atlanta bring back is the sharpest structural choice. Cincinnati scores enough to make Burrow the correct quarterback, but Atlanta does not respond through passing volume, so a Falcons receiver bring back becomes dead money. The roster captures Cincinnati air yards and touchdowns through Chase, then uses Hurst as the second attachment because tight end scoring is thin and the position can flip tournaments when a modest salary player scores.\n\nThe second driver is running back concentration. Austin Ekeler, Kenneth Walker III, and Josh Jacobs are all high ownership, yet the combination still wins because the roster chooses the specific backs whose points are least dependent on fragile game conditions. Ekeler can score through receptions even when the Chargers trail. Walker can score through rushing volume when Seattle can control pace. Jacobs provides the slate breaking rushing role in a game where the Raiders can keep feeding him. The roster accepts the ownership and then forces differentiation through wide receiver selection rather than trying to get cute at running back.\n\nThe wide receivers are where the lineup separates from the thousands of similar Burrow plus Chase plus chalk back builds. Mecole Hardman and Parris Campbell are low ownership plays that arrive with credible usage signals. Hardman is a deep speed player tied to a high scoring offense, so he can get there on a small number of touches. Campbell enters with rising targets, which gives a path to a ceiling day at a low salary. Those two scores turn a chalk back skeleton into a first place roster.\n\nNew York Jets defense is not the slate breaker, but it fits the construction. Paying down at defense is what keeps the roster from sacrificing any of the expensive backs, and facing a backup quarterback limits the risk of the defense slot being a full collapse.\n\nPredictive Analysis\nDouble stacks become more valuable with pocket passers who accumulate most of their points through passing touchdowns. When the quarterback is not generating points on the ground, the optimal lineups are more likely to include multiple pass catchers to capture the full touchdown distribution. The second insight is about bring backs. When an opponent offense has a low pass volume floor or can lose without throwing, leaving out the bring back can be higher expected value than forcing symmetry.\n\nAt roster level, high ownership running backs can still be part of a first place lineup when the slate does not offer wide receiver ceilings that dominate the position. In those slates, the edge shifts toward selecting the correct low ownership wide receivers who can reach 25 plus points without requiring perfect team correlation.\n\nPrescriptive Analysis\nWhen building around a non mobile quarterback, prioritize a double stack if there is a clear path for two pass catchers to score. Decide on the bring back only after evaluating whether the opponent can realistically produce pass catcher value through volume.\n\nIf the slate is running back heavy, accept the best projected backs and do the separating at wide receiver. The separating receivers should have either a downfield role in an elite offense or a recent, measurable usage increase.\n\nFor defense, when the rest of the roster already carries ceiling, choose a defense that keeps salary intact and reduces downside by facing a limited quarterback situation. The defense does not need to win the slate if it prevents a zero and lets the offense carry the roster.",
+    "uniquenessNotes": "The lineup wins by concentrating ownership in places where the field cannot create true separation anyway, then taking its separation in the two wide receiver slots that most lineups treat as filler. The no bring back Burrow double stack avoids a common lineup tree, and the Hardman plus Campbell combination is uncommon even among players who rostered Burrow and Chase. The running back trio is popular, but the exact construction is less duplicated because many builds choose a fourth wide receiver instead of the third running back.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Joe Burrow paired with Ja’Marr Chase and Hayden Hurst without an Atlanta bring back",
+      "secondaryLever": "Three running backs with massive roles plus low ownership wide receiver ceilings",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "ATL@CIN: 3 (QB game)",
+          "SEA@LAC: 2",
+          "HOU@LV: 1",
+          "KC@SF: 1",
+          "IND@TEN: 1",
+          "NYJ@DEN: 1"
+        ],
+        "bengalsCluster": ["Joe Burrow", "Ja’Marr Chase", "Hayden Hurst"],
+        "chargersSeahawksPair": ["Austin Ekeler", "Kenneth Walker III"],
+        "oneOffRb": "Josh Jacobs",
+        "receiverOneOffs": ["Mecole Hardman", "Parris Campbell"],
+        "qbFacedByJetsDst": "Brett Rypien"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "DOUBLE_STACK_QB_WR_TE_NO_BRINGBACK",
+        "TRIPLE_RB_CONCENTRATION",
+        "LOW_OWNERSHIP_WR_CEILING_PAIR",
+        "PAYDOWN_DST_VS_BACKUP_QB",
+        "DIFFERENTIATION_AT_WR_NOT_RB"
+      ],
+      "macroStory": "A first place roster anchored by a Burrow double stack without a bring back, powered by three high ownership running backs, then separated by two low ownership wide receiver ceiling outcomes."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "POCKET_PASSER_DOUBLE_STACK_FIT", "TOUCHDOWN_DISTRIBUTION_CAPTURE"],
+        "microStory": "Joe Burrow provides the quarterback ceiling, and the roster captures it through two pass catchers rather than relying on a single receiver outcome."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["HIGH_OWNERSHIP_THAT_STILL_MATTERS", "ROLE_STABILITY", "CEILING_THROUGH_USAGE"],
+        "microStory": "Josh Jacobs is the ownership magnet and the raw points requirement, and the roster treats him as a score baseline rather than a uniqueness lever."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_SEPARATOR", "EXPLOSIVE_OFFENSE_ATTACHMENT", "LIMITED_TOUCH_CEILING"],
+        "microStory": "Mecole Hardman provides a ceiling score at low ownership by attaching to a high scoring offense without requiring volume."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["SALARY_ENABLER", "DOWNside_CONTROL", "BACKUP_QB_MATCHUP"],
+        "microStory": "Jets defense keeps the roster salary structure intact and limits downside by facing Brett Rypien."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Joe Burrow", "position": "QB", "team": "CIN" },
+        "teammates": [
+          { "name": "Ja’Marr Chase", "position": "WR", "team": "CIN" },
+          { "name": "Hayden Hurst", "position": "TE", "team": "CIN" }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Austin Ekeler", "position": "RB", "team": "LAC" },
+        "opponent": { "name": "Kenneth Walker III", "position": "RB", "team": "SEA" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Jets", "position": "DST", "team": "NYJ", "qbFaced": "Brett Rypien" },
+        "opponent": { "name": "Brett Rypien", "position": "QB", "team": "DEN" }
+      }
+    ]
+  }
+}
