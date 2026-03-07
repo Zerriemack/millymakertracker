@@ -1,0 +1,270 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 1,
+  "slateType": "MAIN",
+  "slateDate": "2022-09-11T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 1",
+  "slateTag": "MAHOMES KELCE SINGLE STACK, RB VS OPP WR1 SCRIPT PAIR, STEELERS DST LOW OWNERSHIP NUCLEAR",
+  "slateGroup": "2-2-2-1-1-1",
+  "rosterConstruction": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2022_WK01_MAIN_2022-09-11T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 500,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11150
+  },
+  "winner": {
+    "username": "RapidFirexd",
+    "points": 251.4,
+    "maxEntries": 150
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 251.4,
+    "totalOwnershipBp": 11150,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 7700,
+        "points": 37.9,
+        "ownershipPercent": 9.1,
+        "passTd": 5,
+        "passYds": 360,
+        "rushYds": 5,
+        "fumblesLost": 0,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 6100,
+        "points": 36.4,
+        "ownershipPercent": 14.2,
+        "rushYdsRb": 164,
+        "rushTdRb": 1,
+        "recRb": 6,
+        "recYdsRb": 30,
+        "fumblesLost": 0,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Antonio Gibson",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 5800,
+        "points": 20,
+        "ownershipPercent": 9.3,
+        "rushYdsRb": 58,
+        "rushTdRb": 0,
+        "recRb": 7,
+        "recYdsRb": 72,
+        "fumblesLost": 0,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Romeo Doubs",
+        "position": "WR",
+        "team": "GB",
+        "salary": 3000,
+        "points": 8.8,
+        "ownershipPercent": 8,
+        "rec": 4,
+        "recYds": 37,
+        "recTd": 0,
+        "rushYds": 11,
+        "fumblesLost": 0,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Pittman Jr.",
+        "position": "WR",
+        "team": "IND",
+        "salary": 5500,
+        "points": 30.1,
+        "ownershipPercent": 27,
+        "rec": 9,
+        "recYds": 121,
+        "recTd": 1,
+        "fumblesLost": 0,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Christian Kirk",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 5100,
+        "points": 20.7,
+        "ownershipPercent": 11.2,
+        "rec": 6,
+        "recYds": 117,
+        "recTd": 0,
+        "fumblesLost": 0,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 6600,
+        "points": 29.1,
+        "ownershipPercent": 17.2,
+        "rec": 8,
+        "recYds": 121,
+        "recTd": 1,
+        "fumblesLost": 0,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 7800,
+        "points": 42.4,
+        "ownershipPercent": 12.5,
+        "rec": 9,
+        "recYds": 184,
+        "recTd": 2,
+        "fumblesLost": 0,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Steelers",
+        "position": "DST",
+        "team": "PIT",
+        "salary": 2400,
+        "points": 26,
+        "ownershipPercent": 3,
+        "sacks": 7,
+        "takeaways": 5,
+        "ints": 4,
+        "fumblesRecovered": 1,
+        "defTd": 1,
+        "pointsAllowed": 20,
+        "blocks": 1,
+        "qbFaced": "Joe Burrow",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner is built around a narrow Kansas City bet, then a single high variance defensive swing. Patrick Mahomes paired with Travis Kelce is a deliberate concentration play. The roster captures the Chiefs passing touchdowns through the most direct channel, quarterback plus primary pass catcher, without adding a second Chiefs receiver who would need an independent ceiling game.\n\nThe choice becomes sharper in Week 1 context. With Tyreek Hill gone, the field treated Kansas City as less certain. Mahomes came in under ten percent ownership while Kelce still carried meaningful ownership because tight end ceiling is harder to replace. Pairing Mahomes with Kelce lets the roster absorb the best part of the Chiefs offense while keeping ownership manageable.\n\nThe rest of the build stays clean and independent across games. It adds one script based correlation in Antonio Gibson with Christian Kirk, then accepts two strong plays in Michael Pittman Jr. and Saquon Barkley. The finishing move is the Steelers defense at three percent, which supplies slate breaking points through sacks, interceptions, and a touchdown outcome.",
+    "uniquenessNotes": "The roster avoids the modern instinct to force a bringback or a double stack in the quarterback game. It treats KC at ARI as a points source, not as a full game story requiring both sides. The single stack removes internal competition for targets. Every Kelce spike directly boosts Mahomes.\n\nThe lineup takes chalk in specific places, then refuses to chase uniqueness everywhere. Pittman functions as a stable anchor, Barkley supplies a true ceiling rushing score, and Jefferson provides the raw points slot that reduces pressure on the remaining positions.\n\nUniqueness is carried by two choices. The first is the thin Gibson Kirk correlation, which is uncommon because many builds avoid opposing offense when they roster a running back. The second is the defense slot. Pittsburgh at three percent is the profile that wins top heavy contests when it hits, because defensive scoring can create a gap the field cannot close with normal skill position outcomes.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Patrick Mahomes plus Travis Kelce as a single stack built around concentration and positional scarcity at tight end",
+      "secondaryLever": "Antonio Gibson paired with Christian Kirk to express Washington control plus Jacksonville pass volume response",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "KC@ARI: 2 (QB game)",
+          "JAX@WAS: 2",
+          "GB@MIN: 2",
+          "NYG@TEN: 1",
+          "IND@HOU: 1",
+          "PIT@CIN: 1"
+        ],
+        "chiefsCluster": ["Patrick Mahomes", "Travis Kelce"],
+        "scriptPair": ["Antonio Gibson", "Christian Kirk"],
+        "oneOffHammers": ["Justin Jefferson", "Saquon Barkley"],
+        "chalkSlot": "Michael Pittman Jr.",
+        "dstSwing": "Steelers",
+        "qbFacedBySteelersDst": "Joe Burrow"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "TWO_MAN_QB_TE_CONCENTRATION",
+        "RB_VS_OPP_PASS_CATCHER_SCRIPT_PAIR",
+        "SELECTIVE_CHALK_ABSORPTION",
+        "ONE_OFF_ALPHA_CEILING",
+        "LOW_OWNERSHIP_DST_TOUCHDOWN_PATH"
+      ],
+      "macroStory": "A concentrated Mahomes Kelce construction supplies elite quarterback ceiling without forcing extra Chiefs pieces, the roster stabilizes with Pittman Barkley Jefferson, then the Steelers defense provides the separation event."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": ["PRIMARY_ENGINE", "LOWER_OWNERSHIP_ELITE_QB", "CONCENTRATION_WITH_TE"],
+        "microStory": "Mahomes is used as an ownership leverage elite. The roster profits from a Week 1 market overreaction to Kansas City losing Hill."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": ["TARGET_FUNNEL", "RED_ZONE_PRIORITY", "POSITION_SCARCITY_EDGE"],
+        "microStory": "Kelce is the funnel. Tight end ceiling is rarer, so capturing a true top end score at tight end changes what a roster needs from the remaining slots."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": ["SCRIPT_DRIVER", "VALUE_ROLE", "RECEIVING_ACCESS"],
+        "microStory": "Gibson gives both rushing and receiving points. Pairing him with Kirk expresses a clear script where Washington controls while Jacksonville must throw."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": ["LOW_OWNERSHIP_SWING", "PASS_RUSH_UPSIDE", "MULTI_TURNOVER_TOUCHDOWN_CEILING"],
+        "microStory": "Steelers defense is the contest deciding swing. Defensive touchdowns and multi turnover games create a point gap that ordinary wide receiver outcomes cannot match."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": { "name": "Patrick Mahomes", "position": "QB", "team": "KC" },
+        "teammates": [{ "name": "Travis Kelce", "position": "TE", "team": "KC" }],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": { "name": "Antonio Gibson", "position": "RB", "team": "WAS" },
+        "opponent": { "name": "Christian Kirk", "position": "WR", "team": "JAX" }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": { "name": "Steelers", "position": "DST", "team": "PIT", "qbFaced": "Joe Burrow" },
+        "opponent": { "name": "Joe Burrow", "position": "QB", "team": "CIN" }
+      }
+    ],
+    "diagnosticAnalysis": "Two forces explain why this roster wins by a wide margin. The first force is concentration of elite scoring. Mahomes plus Kelce captures five passing touchdowns through a single teammate channel, which avoids the problem of guessing a second Kansas City receiver ceiling game.\n\nThe second force is defense volatility used as a weapon. Pittsburgh scores 26 DraftKings points through sacks, interceptions, and a defensive touchdown at three percent ownership. In a contest this large, defensive outliers function as separation events. Once the defense posts a score of this magnitude, the roster no longer needs every other slot to be perfect.\n\nThe 80 20 of the outcome is Steelers defense plus Jefferson. Jefferson supplies the slate leading wide receiver score. Pittsburgh supplies a score most rosters cannot access. With those two positions solved, the rest of the lineup can win through strong, sensible plays. Barkley hits a true ceiling rushing game, Pittman clears a high volume receiving game, and Gibson Kirk provide a correlated floor with enough upside to stay attached to the top end.",
+    "predictiveAnalysis": "Week 1 provides a repeatable research angle on game stacking. In massive fields, single stacks can outperform full game stacks when the scoring tree is concentrated and when secondary pieces introduce more internal competition than added ceiling. Quarterback plus primary pass catcher is the cleanest form of concentration, especially when the pass catcher has red zone priority and positional scarcity.\n\nThe defense lesson is structural. The defense slot is a leverage reservoir because the scoring distribution is wide and the field clusters around a small set of perceived safe options. A talented pass rush facing a franchise quarterback can still produce a slate defining outcome, because sacks and turnovers are not tightly tied to pre slate Vegas comfort.\n\nThe Gibson Kirk pairing suggests a second research thread. RB versus opposing primary pass catcher can express a game script without forcing a full game stack. It can also reduce duplication because many builds either pair RB with defense or avoid opposing offense entirely.",
+    "prescriptiveAnalysis": "When the slate offers a concentrated passing funnel, build quarterback plus funnel pass catcher and stop. Do not force a second receiver when the offense has multiple viable options and the second receiver outcome is harder to predict than the quarterback outcome.\n\nWhen selecting differentiation points, allocate them to positions with the widest scoring spread and the highest ownership clustering. Defense fits both. Prioritize overlooked defenses with credible pressure potential, then accept variance as part of the plan.\n\nWhen eating chalk, do it in spots where the play is structurally hard to replace. A true alpha receiver ceiling game and a clear value receiver role can be accepted. Save the separation for a defense choice and a correlation choice, so the roster remains stable while still holding first place range."
+  }
+}
