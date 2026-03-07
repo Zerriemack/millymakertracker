@@ -1,0 +1,345 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 4,
+  "slateType": "MAIN",
+  "slateDate": "2020-10-04T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 4",
+  "slateTag": "DALLAS SHOOTOUT META, JOE MIXON MONSTER OUTING, MIKE DAVIS START VALUE",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK04_MAIN_2020-10-04T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 102500000,
+    "totalOwnershipBp": 11920
+  },
+  "winner": {
+    "username": "RoyalPain21",
+    "points": 254.08,
+    "maxEntries": 77
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 254.08,
+    "totalOwnershipBp": 11920,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 7200,
+        "points": 42.28,
+        "ownershipPercent": 8.7,
+        "passTd": 4,
+        "passYds": 502,
+        "rushYds": 12,
+        "passInt": 1,
+        "fumblesLost": 1,
+        "twoPtPass": 1,
+        "twoPtRush": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 5800,
+        "points": 45.1,
+        "ownershipPercent": 3.8,
+        "rushYdsRb": 151,
+        "rushTdRb": 2,
+        "recRb": 6,
+        "recYdsRb": 30,
+        "recTdRb": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ronald Jones II",
+        "position": "RB",
+        "team": "TB",
+        "salary": 4700,
+        "points": 21.8,
+        "ownershipPercent": 16.7,
+        "rushYdsRb": 111,
+        "recRb": 6,
+        "recYdsRb": 17,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Amari Cooper",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 6700,
+        "points": 36.4,
+        "ownershipPercent": 10.3,
+        "rec": 12,
+        "recYds": 134,
+        "recTd": 1,
+        "twoPtRec": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Odell Beckham Jr.",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 5800,
+        "points": 38.4,
+        "ownershipPercent": 15.8,
+        "rec": 5,
+        "recYds": 81,
+        "recTd": 2,
+        "rushYds": 73,
+        "rushTd": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 5400,
+        "points": 25.2,
+        "ownershipPercent": 9.1,
+        "rec": 5,
+        "recYds": 79,
+        "recTd": 2,
+        "rushYds": 3,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Darren Waller",
+        "position": "TE",
+        "team": "LV",
+        "salary": 5200,
+        "points": 16.8,
+        "ownershipPercent": 17.1,
+        "rec": 9,
+        "recYds": 88,
+        "fumblesLost": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mike Davis",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 5700,
+        "points": 22.1,
+        "ownershipPercent": 19.0,
+        "rushYdsRb": 84,
+        "rushTdRb": 1,
+        "recRb": 5,
+        "recYdsRb": 27,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Buccaneers",
+        "position": "DST",
+        "team": "TB",
+        "salary": 3400,
+        "points": 6.0,
+        "ownershipPercent": 18.7,
+        "sacks": 2,
+        "interceptions": 1,
+        "fumbleRecoveries": 1,
+        "takeaways": 2,
+        "qbFaced": "Justin Herbert",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "LAC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup captures a clear early 2020 truth. Dallas games were becoming slate engines because the defense could not control pace, explosive plays, or game flow. Dak Prescott gave the roster access to massive volume again, and the build pressed into that reality with Amari Cooper and CeeDee Lamb on the Dallas side plus Odell Beckham Jr. coming back from Cleveland. Four roster spots were tied to one game because one game was carrying a disproportionate share of ceiling on the slate.\n\nThe roster still needed a second power source, and Joe Mixon supplied it. His 45.1 point outing at 3.8 percent ownership was the largest non quarterback swing in the lineup. Once Mixon posted two rushing touchdowns, one receiving touchdown, and 181 total yards, the build no longer needed every remaining slot to outperform salary. It only needed enough support around two dominant forces, the Dallas Cleveland game and Mixon's eruption.\n\nMike Davis gave the roster a clean injury replacement path after Christian McCaffrey was ruled out. This was not thin projection chasing. Davis had a direct role transfer with rushing work, receiving volume, and red zone access. Ronald Jones II filled a similar function from a different salary tier. Leonard Fournette was inactive, which left Jones with backfield control and a viable pass game role. The lineup used two running backs whose roles had expanded faster than pricing.\n\nDarren Waller and the Buccaneers defense were stabilizers more than separators. Waller produced enough at tight end to avoid damage, and Tampa Bay against rookie Justin Herbert gave the roster a defense with pressure and takeaway potential. This winner did not come from one exotic angle. It came from recognizing where the slate's scoring density was forming, then using role based running back value to afford concentrated exposure to it.",
+    "uniquenessNotes": "The most important uniqueness point sits in how the Dallas Cleveland game was attacked. Many lineups had Dak Prescott. Many lineups had one Dallas receiver. Fewer lineups used Dak Prescott with Amari Cooper and CeeDee Lamb, then brought the stack back with Odell Beckham Jr. instead of a thinner Cleveland choice. Beckham delivered both through the air and on the ground, which gave the run back more paths than a standard receiver outcome.\n\nJoe Mixon was the structural hammer. At 3.8 percent ownership, his score changed the tournament. Dallas stacks were available to the field. Mixon's eruption inside a Dallas stack was far less common. This combination is where the lineup moved from strong to first place.\n\nMike Davis and Ronald Jones II show a second layer of sharpness. Both were tied to role expansion. Davis stepped into the McCaffrey workload. Jones stepped into a cleaner backfield with Fournette out. Those were not random cheap pieces. They were volume driven salary solutions tied to immediate opportunity changes.\n\nThe Buccaneers defense was popular enough to avoid being hidden, yet it served an important roster purpose. It paired with Ronald Jones II from the same game, which created a controlled form of game exposure. Tampa Bay did not need a defensive touchdown for the lineup to survive because Mixon and the Dallas cluster had already created so much room. The defense simply needed a competent score, and it gave one.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Dak Prescott with Amari Cooper and CeeDee Lamb, brought back by Odell Beckham Jr. in the Dallas Cleveland shootout",
+      "secondaryLever": "Joe Mixon breaking the slate at low ownership while Mike Davis and Ronald Jones II captured expanded running back roles",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "CLE@DAL: 4 (QB game)",
+          "LAC@TB: 2",
+          "JAX@CIN: 1",
+          "BUF@LV: 1",
+          "ARI@CAR: 1"
+        ],
+        "dallasClevelandCluster": [
+          "Dak Prescott",
+          "Amari Cooper",
+          "CeeDee Lamb",
+          "Odell Beckham Jr."
+        ],
+        "roleExpansionBacks": [
+          "Mike Davis",
+          "Ronald Jones II"
+        ],
+        "slateBreaker": "Joe Mixon",
+        "qbFacedByBuccaneersDst": "Justin Herbert"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_QB_GAME_STACK",
+        "LOW_OWNED_RB_SLATE_BREAKER",
+        "ROLE_EXPANSION_RB_VALUE",
+        "DALLAS_GAME_ENVIRONMENT_META",
+        "DST_VERSUS_ROOKIE_QB"
+      ],
+      "macroStory": "A first place roster built around the 2020 Dallas shootout environment through Dak Prescott, Amari Cooper, CeeDee Lamb, and Odell Beckham Jr., then lifted by Joe Mixon's tournament breaking score and two running backs whose roles had expanded before pricing fully caught up."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "GAME_STACK_HUB",
+          "VOLUME_OVERFLOW"
+        ],
+        "microStory": "Dak Prescott was the center of the roster because Dallas game flow kept forcing extreme passing volume. Five hundred two passing yards made him the natural anchor for a game environment built on defensive failure and offensive response."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "LOW_OWNERSHIP_HAMMER",
+          "THREE_TOUCHDOWN_OUTCOME"
+        ],
+        "microStory": "Joe Mixon was the decisive swing. His three touchdown day at 3.8 percent ownership gave the lineup a score the field could not replicate through common roster paths."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "HIGH_VOLUME_ALPHA",
+          "STACK_PAYOFF",
+          "DOUBLE_DIGIT_RECEPTIONS"
+        ],
+        "microStory": "Amari Cooper turned Dak Prescott's passing flood into direct roster points through twelve catches, 134 yards, and a touchdown. He gave the Dallas side of the stack a high floor and ceiling blend."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "RUN_BACK_CEILING",
+          "MULTI_PATH_SCORING",
+          "GAME_ENVIRONMENT_CAPTURE"
+        ],
+        "microStory": "Odell Beckham Jr. was the correct Cleveland return piece because he could score in more than one way. Two receiving touchdowns plus a rushing touchdown turned the run back into a major source of separation."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "ROLE_TRANSFER_VALUE",
+          "INJURY_REPLACEMENT_VOLUME",
+          "SALARY_STABILITY"
+        ],
+        "microStory": "Mike Davis gave the lineup dependable volume after stepping into Christian McCaffrey's workload. He kept the roster structurally sound while the larger ceiling events did the winning."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Dak Prescott",
+          "position": "QB",
+          "team": "DAL"
+        },
+        "teammates": [
+          {
+            "name": "Amari Cooper",
+            "position": "WR",
+            "team": "DAL"
+          },
+          {
+            "name": "CeeDee Lamb",
+            "position": "WR",
+            "team": "DAL"
+          }
+        ],
+        "opponent": {
+          "name": "Odell Beckham Jr.",
+          "position": "WR",
+          "team": "CLE"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Ronald Jones II",
+          "position": "RB",
+          "team": "TB"
+        },
+        "opponent": {
+          "name": "Buccaneers",
+          "position": "DST",
+          "team": "TB"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Mike Davis",
+          "position": "RB",
+          "team": "CAR"
+        },
+        "opponent": {
+          "name": "Joe Mixon",
+          "position": "RB",
+          "team": "CIN"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Buccaneers",
+          "position": "DST",
+          "team": "TB",
+          "qbFaced": "Justin Herbert"
+        },
+        "opponent": {
+          "name": "Justin Herbert",
+          "position": "QB",
+          "team": "LAC"
+        }
+      }
+    ]
+  }
+}

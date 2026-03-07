@@ -1,0 +1,342 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 5,
+  "slateType": "MAIN",
+  "slateDate": "2020-10-11T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 5",
+  "slateTag": "MAHOMES TRIPLE, CLAYPOOL 1 PERCENT SLATE BREAKER, DALLAS DEFENSE AGAIN",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK05_MAIN_2020-10-11T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 102500000,
+    "totalOwnershipBp": 11720
+  },
+  "winner": {
+    "username": "jduke24",
+    "points": 242.5,
+    "maxEntries": 24
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 242.5,
+    "totalOwnershipBp": 11720,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 7700,
+        "points": 33.7,
+        "ownershipPercent": 13.5,
+        "passTd": 2,
+        "passYds": 340,
+        "rushTd": 1,
+        "rushYds": 21,
+        "passInt": 1,
+        "twoPtPass": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Devonta Freeman",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 4600,
+        "points": 16.7,
+        "ownershipPercent": 4.4,
+        "rushYdsRb": 60,
+        "rushTdRb": 1,
+        "recRb": 2,
+        "recYdsRb": 27,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Todd Gurley II",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 5700,
+        "points": 28.0,
+        "ownershipPercent": 13.3,
+        "rushYdsRb": 121,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 29,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Darius Slayton",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 4800,
+        "points": 23.9,
+        "ownershipPercent": 29.9,
+        "rec": 8,
+        "recYds": 129,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "KC",
+        "salary": 6900,
+        "points": 18.3,
+        "ownershipPercent": 18.0,
+        "rec": 3,
+        "recYds": 78,
+        "rushYds": 15,
+        "rushTd": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chase Claypool",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 4100,
+        "points": 45.6,
+        "ownershipPercent": 1.2,
+        "rec": 7,
+        "recYds": 110,
+        "recTd": 3,
+        "rushYds": 6,
+        "rushTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 6400,
+        "points": 27.8,
+        "ownershipPercent": 12.0,
+        "rec": 8,
+        "recYds": 108,
+        "recTd": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Robby Anderson",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 5900,
+        "points": 22.5,
+        "ownershipPercent": 30.4,
+        "rec": 8,
+        "recYds": 112,
+        "rushYds": 3,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Ravens",
+        "position": "DST",
+        "team": "BAL",
+        "salary": 3900,
+        "points": 26.0,
+        "ownershipPercent": 6.5,
+        "sacks": 7,
+        "interceptions": 1,
+        "fumbleRecoveries": 2,
+        "takeaways": 3,
+        "defTd": 1,
+        "pointsAllowedBucket": 6,
+        "qbFaced": "Joe Burrow",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "CIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is built on a direct reading of where 2020 scoring was concentrating. Kansas City against Las Vegas gave Patrick Mahomes a clean ceiling path, and the lineup did not dilute it. It used the full Mahomes triple through Tyreek Hill and Travis Kelce, then allowed the rest of the build to attack separate pressure points across the slate. That matters because the Kansas City stack was not a bet on novelty. It was a bet on elite offense remaining elite, with Kelce once again punishing an AFC West opponent in a spot where raw tight end points could separate the field.\n\nThe second force in the build is Dallas again. By this point, Dallas had become part of the 2020 slate grammar. The defense kept turning games into fantasy accelerants, and the roster took the simplest available route by attacking New York skill players. Devonta Freeman and Darius Slayton did not need the Giants to become an efficient offense. They needed Dallas to keep the game loose, fast, and porous enough for volume and chunk plays to arrive. That is exactly what happened.\n\nThe true slate swing came from Chase Claypool. At 1.2 percent ownership and 4,100 salary, he delivered one of the defining ceiling events of the week with four total touchdowns. This was the kind of score that changes the tournament immediately because it was both low owned and structurally valuable. Once Claypool hit, the lineup could carry a few merely solid outcomes instead of requiring every premium piece to post an outlier.\n\nThe Carolina Atlanta mini stack added another layer of clean game targeting. Todd Gurley II and Robby Anderson came from a game with defensive weakness on both sides and enough play volume to support skill production. The Ravens defense completed the roster by overwhelming rookie Joe Burrow with sacks, takeaways, and a defensive touchdown. This was a roster built through concentration rather than spread. Mahomes triple, Dallas defense attack, one game mini, one rookie wide receiver detonation, and a defense facing a rookie quarterback under pressure.",
+    "uniquenessNotes": "The roster was willing to eat strong plays, but it did so with discipline. Darius Slayton at 29.9 percent ownership and Robby Anderson at 30.4 percent ownership show that this build did not chase uniqueness for its own sake. The separation came from how the popular pieces were paired with the right low owned detonator and the right defensive outcome.\n\nChase Claypool is the obvious separator, but the construction around him deserves equal credit. Many Mahomes stacks would have used more conventional running back combinations and more common defense choices. This build instead attacked Dallas through Giants skill players, which was a sharper version of the 2020 Cowboys thesis than forcing a second game stack around Dak Prescott every week. It recognized that Dallas could be useful even without Dak on the roster.\n\nThe Carolina Atlanta mini stack was another decision point. Todd Gurley II and Robby Anderson were not randomly paired. They came from a game where both sides could produce offense without the roster needing to commit a quarterback slot. That gave the lineup access to correlated production while preserving Mahomes as the primary engine.\n\nThe Ravens defense at 6.5 percent ownership was the final pressure point. Rookie quarterbacks can create fantasy goodness for opposing defenses through sacks, strip sacks, rushed decisions, and short field opportunities. Baltimore converted that exact profile into a 26 point score. The lineup won because the best plays were not merely identified. They were assembled in a way that let the low owned ceiling event do maximum damage.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Patrick Mahomes triple stack with Tyreek Hill and Travis Kelce",
+      "secondaryLever": "Chase Claypool breaking the slate at 1.2 percent ownership plus direct attack on the Dallas defense through Devonta Freeman and Darius Slayton",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "LV@KC: 3 (QB game)",
+          "NYG@DAL: 2",
+          "CAR@ATL: 2",
+          "PHI@PIT: 1",
+          "CIN@BAL: 1"
+        ],
+        "chiefsRaidersCluster": [
+          "Patrick Mahomes",
+          "Tyreek Hill",
+          "Travis Kelce"
+        ],
+        "dallasAttack": [
+          "Devonta Freeman",
+          "Darius Slayton"
+        ],
+        "carolinaAtlantaMini": [
+          "Todd Gurley II",
+          "Robby Anderson"
+        ],
+        "salaryBreaker": "Chase Claypool",
+        "qbFacedByRavensDst": "Joe Burrow"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_TRIPLE_STACK",
+        "ROSTER_AGAINST_BAD_DEFENSE",
+        "LOW_OWNED_WR_SLATE_BREAKER",
+        "CORRELATED_NON_QB_MINI_STACK",
+        "DST_VERSUS_ROOKIE_QB"
+      ],
+      "macroStory": "A first place roster anchored by a Mahomes triple stack, sharpened by direct exploitation of the 2020 Dallas defensive environment, then broken open by Chase Claypool's one percent eruption and the Ravens defense crushing rookie Joe Burrow."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "TRIPLE_STACK_HUB",
+          "ELITE_OFFENSE_ANCHOR"
+        ],
+        "microStory": "Patrick Mahomes gave the lineup a stable ceiling base through both passing and rushing production, and his pairing with Tyreek Hill and Travis Kelce concentrated Kansas City's touchdowns into the roster."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "LOW_OWNERSHIP_NUCLEAR_SCORE",
+          "SALARY_MULTIPLIER"
+        ],
+        "microStory": "Chase Claypool was the tournament swing. Four total touchdowns at 1.2 percent ownership turned a 4,100 receiver slot into a first place separating event."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "POSITIONAL_RAW_POINTS",
+          "STACK_PAYOFF",
+          "AFC_WEST_PUNISHER"
+        ],
+        "microStory": "Travis Kelce again showed why paying for tight end raw points can be correct when the role is elite and the offense is concentrated. He gave the Mahomes stack a premium ceiling layer."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "BAD_DEFENSE_ATTACK",
+          "HIGH_OWNERSHIP_GOOD_PLAY",
+          "YARDAGE_FOUNDATION"
+        ],
+        "microStory": "Darius Slayton represented the field's awareness of Dallas as a defensive target, but the roster used him correctly inside a broader structure that still had room for Claypool to create separation."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_CEILING",
+          "PRESSURE_DOMINANCE",
+          "ROOKIE_QB_ATTACK"
+        ],
+        "microStory": "The Ravens defense turned Joe Burrow's rookie pressure environment into sacks, takeaways, and a defensive touchdown. It was the correct high impact finish to an already aggressive roster."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Patrick Mahomes",
+          "position": "QB",
+          "team": "KC"
+        },
+        "teammates": [
+          {
+            "name": "Tyreek Hill",
+            "position": "WR",
+            "team": "KC"
+          },
+          {
+            "name": "Travis Kelce",
+            "position": "TE",
+            "team": "KC"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Devonta Freeman",
+          "position": "RB",
+          "team": "NYG"
+        },
+        "opponent": {
+          "name": "Darius Slayton",
+          "position": "WR",
+          "team": "NYG"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Todd Gurley II",
+          "position": "RB",
+          "team": "ATL"
+        },
+        "opponent": {
+          "name": "Robby Anderson",
+          "position": "WR",
+          "team": "CAR"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Ravens",
+          "position": "DST",
+          "team": "BAL",
+          "qbFaced": "Joe Burrow"
+        },
+        "opponent": {
+          "name": "Joe Burrow",
+          "position": "QB",
+          "team": "CIN"
+        }
+      }
+    ]
+  }
+}

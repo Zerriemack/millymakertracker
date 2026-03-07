@@ -1,0 +1,339 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 6,
+  "slateType": "MAIN",
+  "slateDate": "2020-10-18T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 6",
+  "slateTag": "ATL MIN CLEAN GAME STACK, DERRICK HENRY CHALK EXPLOSION, SWIFT VALUE BREAKER",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK06_MAIN_2020-10-18T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 102500000,
+    "totalOwnershipBp": 7700
+  },
+  "winner": {
+    "username": "WackyUncle",
+    "points": 256.64,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 256.64,
+    "totalOwnershipBp": 7700,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Matt Ryan",
+        "position": "QB",
+        "team": "ATL",
+        "salary": 6600,
+        "points": 34.64,
+        "ownershipPercent": 4.2,
+        "passTd": 4,
+        "passYds": 371,
+        "rushYds": 8,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ronald Jones II",
+        "position": "RB",
+        "team": "TB",
+        "salary": 6000,
+        "points": 29.1,
+        "ownershipPercent": 9.2,
+        "rushYdsRb": 113,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 8,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 7300,
+        "points": 43.4,
+        "ownershipPercent": 26.1,
+        "rushYdsRb": 212,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 52,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Marquez Valdes-Scantling",
+        "position": "WR",
+        "team": "GB",
+        "salary": 4600,
+        "points": 6.2,
+        "ownershipPercent": 4.0,
+        "rec": 3,
+        "recYds": 32,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 6700,
+        "points": 36.7,
+        "ownershipPercent": 9.8,
+        "rec": 8,
+        "recYds": 137,
+        "recTd": 2,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 6000,
+        "points": 42.6,
+        "ownershipPercent": 13.3,
+        "rec": 9,
+        "recYds": 166,
+        "recTd": 2,
+        "twoPtRec": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Hayden Hurst",
+        "position": "TE",
+        "team": "ATL",
+        "salary": 4700,
+        "points": 15.7,
+        "ownershipPercent": 1.4,
+        "rec": 4,
+        "recYds": 57,
+        "recTd": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D'Andre Swift",
+        "position": "RB",
+        "team": "DET",
+        "salary": 4500,
+        "points": 30.3,
+        "ownershipPercent": 4.2,
+        "rushYdsRb": 116,
+        "rushTdRb": 2,
+        "recRb": 3,
+        "recYdsRb": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Steelers",
+        "position": "DST",
+        "team": "PIT",
+        "salary": 3600,
+        "points": 18.0,
+        "ownershipPercent": 4.8,
+        "sacks": 4,
+        "interceptions": 2,
+        "takeaways": 2,
+        "defTd": 1,
+        "pointsAllowedBucket": 13,
+        "qbFaced": "Baker Mayfield",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is built around a very clean read on how Matt Ryan lineups succeed. Ryan is a pocket passer whose ceiling tends to drag pass catchers with him, so once Atlanta against Minnesota became a viable game environment, the correct move was not to isolate Ryan. It was to pair him with multiple receivers. Julio Jones and Hayden Hurst handled the Atlanta side, then Justin Jefferson came back from Minnesota. That gave the lineup direct access to the passing concentration from both offenses in a game that produced exactly the type of back and forth scoring needed for a Ryan ceiling outcome.\n\nThe second anchor was Derrick Henry, and there was no reason to overthink it. He was popular because his role, touchdown equity, and raw rushing volume made him one of the strongest projections on the slate. When that type of back posts 212 rushing yards and two touchdowns, the ownership becomes background noise. The more important point is structural. Henry gave the lineup a stable raw points pillar, which let the rest of the roster attack lower owned leverage points without needing every slot to be fragile.\n\nD'Andre Swift was the real separator. At 4,500 and 4.2 percent ownership, he turned an already strong build into a first place build. Two rushing touchdowns and 116 rushing yards from that salary tier changed the tournament math. Once Swift hit, the roster could absorb a low score from Marquez Valdes-Scantling and still remain well above the field. That is the kind of value score that matters in large field tournaments. It does not need to be the highest raw score on the slate. It needs to create a gap between salary expectation and actual output.\n\nThe Green Bay Tampa Bay mini stack also did useful work. Ronald Jones II took advantage of his role and produced a strong rushing score, while Valdes-Scantling functioned as the low owned return piece. The Steelers defense closed the lineup by attacking Baker Mayfield in a spot where pressure, mistakes, and field position could tilt the game. Four sacks, two interceptions, and a defensive touchdown gave the roster another low owned spike. This was a disciplined build. Strong chalk where projection demanded it, clean quarterback correlation where archetype demanded it, and a low owned value back who broke the slate.",
+    "uniquenessNotes": "The first uniqueness point is that the Atlanta Minnesota stack is built in the correct shape for Matt Ryan. Ryan does not usually create optimal lineups in isolation. He tends to bring pass catchers with him because his value is tied almost entirely to passing volume and passing touchdowns. Pairing him with Julio Jones and Hayden Hurst, then bringing back Justin Jefferson, was a very coherent way to capture the game's scoring map.\n\nDerrick Henry at 26.1 percent ownership did not reduce the lineup's chance to win because the rest of the construction already had room for separation. This is where many players get too cute. They fade a premium projection simply because it is popular, then lose raw points they cannot replace. This lineup kept Henry and found uniqueness through Swift, Hurst, Valdes-Scantling, and the Steelers defense.\n\nSwift is the main structural hinge. A 4.2 percent owned running back at 4,500 scoring 30.3 points is the kind of outcome that creates first place paths. It gave the lineup an inexpensive ceiling event rather than an inexpensive survival score. That difference is enormous.\n\nThe Steelers defense was also a sharp choice because it attacked Baker Mayfield through pressure rather than through a blind search for variance. Against a quarterback archetype capable of collapse under heat, the defense had a path to sacks, takeaways, and a touchdown. It landed all three. That let the roster separate without needing every skill player slot to be perfect.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Matt Ryan stacked with Julio Jones and Hayden Hurst, brought back by Justin Jefferson in Atlanta Minnesota",
+      "secondaryLever": "Derrick Henry raw point chalk plus D'Andre Swift as the low owned value breaker",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "ATL@MIN: 4 (QB game)",
+          "GB@TB: 2",
+          "HOU@TEN: 1",
+          "DET@JAX: 1",
+          "CLE@PIT: 1"
+        ],
+        "atlantaMinnesotaCluster": [
+          "Matt Ryan",
+          "Julio Jones",
+          "Hayden Hurst",
+          "Justin Jefferson"
+        ],
+        "greenBayTampaMini": [
+          "Ronald Jones II",
+          "Marquez Valdes-Scantling"
+        ],
+        "chalkAnchor": "Derrick Henry",
+        "valueBreaker": "D'Andre Swift",
+        "qbFacedBySteelersDst": "Baker Mayfield"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "POCKET_PASSER_DOUBLE_STACK",
+        "CLEAN_QB_GAME_STACK",
+        "CHALK_RB_RAW_POINTS",
+        "LOW_OWNED_VALUE_RB_CEILING",
+        "DST_VERSUS_REPLACEMENT_LEVEL_QB"
+      ],
+      "macroStory": "A first place roster anchored by the correct Matt Ryan stack shape in Atlanta Minnesota, supported by Derrick Henry's raw point explosion, then pushed over the top by D'Andre Swift delivering a low owned value smash and the Steelers defense turning Baker Mayfield pressure into a defensive ceiling."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "POCKET_PASSER_HUB",
+          "CORRELATION_DRIVER"
+        ],
+        "microStory": "Matt Ryan was viable because the game forced a passing outcome, and once that happened his touchdowns were going to flow through teammates. The roster captured that by stacking him correctly."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "CHALK_THAT_HIT",
+          "VOLUME_DOMINANCE"
+        ],
+        "microStory": "Derrick Henry gave the roster one of the slate's most stable ceiling scores. The rushing volume and touchdown expectation were too strong to fade without a better reason."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "VALUE_BREAKER",
+          "LOW_OWNERSHIP_SPIKE",
+          "SALARY_MULTIPLIER"
+        ],
+        "microStory": "D'Andre Swift was the salary slot that changed everything. At 4,500, 30.3 points gave the lineup extra room everywhere else while still creating separation on raw output."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "RUN_BACK_CEILING",
+          "EXPLOSIVE_YARDAGE",
+          "GAME_STACK_PAYOFF"
+        ],
+        "microStory": "Justin Jefferson completed the Atlanta Minnesota story from the other side. His 166 yards and two touchdowns turned the game stack from correct to dominant."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRESSURE_CEILING",
+          "TURNOVER_EVENT",
+          "DEFENSIVE_TOUCHDOWN_PATH"
+        ],
+        "microStory": "The Steelers defense punished Baker Mayfield with pressure and takeaways, then added a defensive touchdown. It was the kind of low owned defense score that closes the door on the field."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Matt Ryan",
+          "position": "QB",
+          "team": "ATL"
+        },
+        "teammates": [
+          {
+            "name": "Julio Jones",
+            "position": "WR",
+            "team": "ATL"
+          },
+          {
+            "name": "Hayden Hurst",
+            "position": "TE",
+            "team": "ATL"
+          }
+        ],
+        "opponent": {
+          "name": "Justin Jefferson",
+          "position": "WR",
+          "team": "MIN"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Ronald Jones II",
+          "position": "RB",
+          "team": "TB"
+        },
+        "opponent": {
+          "name": "Marquez Valdes-Scantling",
+          "position": "WR",
+          "team": "GB"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Derrick Henry",
+          "position": "RB",
+          "team": "TEN"
+        },
+        "opponent": {
+          "name": "D'Andre Swift",
+          "position": "RB",
+          "team": "DET"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Steelers",
+          "position": "DST",
+          "team": "PIT",
+          "qbFaced": "Baker Mayfield"
+        },
+        "opponent": {
+          "name": "Baker Mayfield",
+          "position": "QB",
+          "team": "CLE"
+        }
+      }
+    ]
+  }
+}

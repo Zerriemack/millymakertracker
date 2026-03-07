@@ -1,0 +1,342 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 2,
+  "slateType": "MAIN",
+  "slateDate": "2020-09-20T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 2",
+  "slateTag": "ATL DAL GAME STACK, AARON JONES SLATE BREAKER, DOUBLE TE SALARY RELIEF",
+  "slateGroup": "4-1-1-1-1-1",
+  "rosterConstruction": "4-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK02_MAIN_2020-09-20T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 102500000,
+    "totalOwnershipBp": 8210
+  },
+  "winner": {
+    "username": "goners",
+    "points": 248.9,
+    "maxEntries": 14
+  },
+  "lineup": {
+    "salaryUsed": 45800,
+    "totalPoints": 248.9,
+    "totalOwnershipBp": 8210,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 6800,
+        "points": 43.8,
+        "ownershipPercent": 11.2,
+        "passTd": 1,
+        "passYds": 450,
+        "rushTd": 3,
+        "rushYds": 18,
+        "fumblesLost": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Aaron Jones",
+        "position": "RB",
+        "team": "GB",
+        "salary": 7100,
+        "points": 48.6,
+        "ownershipPercent": 8.9,
+        "rushYdsRb": 168,
+        "rushTdRb": 2,
+        "recRb": 4,
+        "recYdsRb": 68,
+        "recTdRb": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Miles Sanders",
+        "position": "RB",
+        "team": "PHI",
+        "salary": 6000,
+        "points": 21.1,
+        "ownershipPercent": 9.2,
+        "rushYdsRb": 95,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 36,
+        "fumblesLost": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Calvin Ridley",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 6800,
+        "points": 32.9,
+        "ownershipPercent": 11.9,
+        "rec": 7,
+        "recYds": 109,
+        "recTd": 2,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Amari Cooper",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 6300,
+        "points": 19.0,
+        "ownershipPercent": 17.5,
+        "rec": 6,
+        "recYds": 100,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 4700,
+        "points": 20.5,
+        "ownershipPercent": 13.4,
+        "rec": 6,
+        "recYds": 106,
+        "rushYds": 9,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 7000,
+        "points": 24.0,
+        "ownershipPercent": 5.1,
+        "rec": 9,
+        "recYds": 90,
+        "recTd": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jordan Reed",
+        "position": "TE",
+        "team": "SF",
+        "salary": 2600,
+        "points": 24.0,
+        "ownershipPercent": 11.9,
+        "rec": 7,
+        "recYds": 50,
+        "recTd": 2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Colts",
+        "position": "DST",
+        "team": "IND",
+        "salary": 2500,
+        "points": 15.0,
+        "ownershipPercent": 3.0,
+        "sacks": 3,
+        "interceptions": 3,
+        "takeaways": 3,
+        "pointsAllowedBucket": 13,
+        "defTd": 0,
+        "specialTeamsTd": 1,
+        "qbFaced": "Kirk Cousins",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "MIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster starts with a full commitment to the Atlanta Dallas game, but the build is more selective than a broad game stack. Dak Prescott is paired with two Dallas receivers and brought back with Calvin Ridley, which gives the lineup access to nearly every meaningful passing touchdown in a game that turned into one of the wildest environments of the slate. The key detail is that the stack did not chase balance for its own sake. It concentrated on the passing volume and let Dak's rushing touchdowns finish the job.\n\nAaron Jones is the score that bends the slate. When a running back posts 48.6 points at sub 10 percent ownership, the rest of the lineup does not need every slot to be perfect. Jones gave this roster a nuclear score from a one off position, which allowed the Dallas cluster to function as the structural core instead of having to carry the entire lineup by itself.\n\nThe tight end allocation is where the construction gets sharper. Travis Kelce at 7,000 was not a luxury purchase here. He was a ceiling spend at a position where raw points could separate, and Jordan Reed at 2,600 gave the roster a second tight end score without damaging the salary cap. That pairing created a rare double tight end build with one premium ceiling and one near minimum touchdown outcome.\n\nThe Colts defense completes the roster with a low owned pressure point against Kirk Cousins. Three interceptions and a special teams touchdown gave the lineup a defensive score that kept pace with the offensive eruption elsewhere. This was not a lineup built around one idea. It was a lineup built around one game environment, one slate breaking running back, and one salary structure decision that opened paths the field was less willing to take.",
+    "uniquenessNotes": "The uniqueness does not come from being strange in every slot. It comes from combining a popular game environment with a roster shape the field rarely lands on cleanly. Many entries from Atlanta Dallas had Dak Prescott with one receiver, or Dak Prescott with a run back and a more conventional tight end build. This roster used Dak Prescott with both Amari Cooper and CeeDee Lamb, then added Calvin Ridley from the other side. That captured a larger share of the game's passing production without forcing Ezekiel Elliott into the build.\n\nAaron Jones changes the ownership equation. He was not a pure punt and he was not a chalk anchor. He was a high ceiling one off whose score reset the tournament. Once Jones delivered, the rest of the lineup only needed coherence and enough access to touchdowns. It got both.\n\nThe Kelce plus Jordan Reed pairing is the part many lineups would not reach. Kelce gave the roster elite tight end raw points. Reed gave it touchdown density and salary relief in one move. That is a cleaner version of double tight end than the field usually builds because each player had a defined reason for inclusion.\n\nThe Colts defense at 3 percent ownership is the final separator. Defensive variance is always present, but this was not blind variance hunting. It was an inexpensive defense against a quarterback archetype who could create short field mistakes under pressure. The result gave the roster a low owned defensive ceiling without asking for an overpriced defense slot.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Dak Prescott with Amari Cooper and CeeDee Lamb, brought back by Calvin Ridley in the Atlanta Dallas game",
+      "secondaryLever": "Aaron Jones as the slate breaking one off plus the Travis Kelce and Jordan Reed double tight end salary structure",
+      "notes": {
+        "rosterConstruction": "4-1-1-1-1-1",
+        "gameKey": [
+          "ATL@DAL: 4 (QB game)",
+          "DET@GB: 1",
+          "LAR@PHI: 1",
+          "KC@LAC: 1",
+          "SF@NYJ: 1",
+          "MIN@IND: 1"
+        ],
+        "atlantaDallasCluster": [
+          "Dak Prescott",
+          "Calvin Ridley",
+          "Amari Cooper",
+          "CeeDee Lamb"
+        ],
+        "slateBreaker": "Aaron Jones",
+        "doubleTightEndStructure": [
+          "Travis Kelce",
+          "Jordan Reed"
+        ],
+        "qbFacedByColtsDst": "Kirk Cousins"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_QB_GAME_STACK",
+        "SLATE_BREAKING_ONE_OFF_RB",
+        "DOUBLE_TIGHT_END_BUILD",
+        "LOW_OWNED_DST_CEILING",
+        "PASSING_CONCENTRATION_OVER_BALANCE"
+      ],
+      "macroStory": "A first place roster anchored by an Atlanta Dallas passing concentration through Dak Prescott, Calvin Ridley, Amari Cooper, and CeeDee Lamb, then pushed over the top by Aaron Jones breaking the slate and a double tight end construction that combined Travis Kelce's raw points with Jordan Reed's salary relief touchdown ceiling."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "GAME_STACK_HUB",
+          "RUSHING_TD_OUTLIER"
+        ],
+        "microStory": "Dak Prescott carried both the passing volume and the rushing touchdown variance. The 450 yard passing game already put the lineup on a winning track, but the three rushing touchdowns turned a strong stack into the central engine of a first place roster."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "ONE_OFF_NUCLEAR_SCORE",
+          "LOWER_OWNERSHIP_CEILING"
+        ],
+        "microStory": "Aaron Jones was the score that changed the tournament. Two rushing touchdowns plus a receiving touchdown at 8.9 percent ownership gave the roster a one off outcome the rest of the field could not absorb."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "PREMIUM_RAW_POINTS",
+          "POSITIONAL_CEILING",
+          "EXPENSIVE_CORNERSTONE"
+        ],
+        "microStory": "Travis Kelce functioned as a premium ceiling spend rather than a luxury attachment. He gave the lineup raw points at a position where most rosters were trying to save money."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_TOUCHDOWN_SOURCE",
+          "DOUBLE_TIGHT_END_ENABLER",
+          "STRUCTURAL_LEVER"
+        ],
+        "microStory": "Jordan Reed made the double tight end build viable. At 2,600, two touchdowns turned a salary relief slot into a true ceiling event rather than a survival play."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNED_SEPARATOR",
+          "TURNOVER_CEILING",
+          "ARCHETYPE_ATTACK"
+        ],
+        "microStory": "The Colts defense gave the lineup a 3 percent owned spike through interceptions and a special teams touchdown. Against Kirk Cousins, the defense delivered the type of disruptive outcome that lets an offensive roster keep its lead."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Dak Prescott",
+          "position": "QB",
+          "team": "DAL"
+        },
+        "teammates": [
+          {
+            "name": "Amari Cooper",
+            "position": "WR",
+            "team": "DAL"
+          },
+          {
+            "name": "CeeDee Lamb",
+            "position": "WR",
+            "team": "DAL"
+          }
+        ],
+        "opponent": {
+          "name": "Calvin Ridley",
+          "position": "WR",
+          "team": "ATL"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Dak Prescott",
+          "position": "QB",
+          "team": "DAL"
+        },
+        "opponent": {
+          "name": "Calvin Ridley",
+          "position": "WR",
+          "team": "ATL"
+        }
+      },
+      {
+        "type": "DOUBLE_TIGHT_END",
+        "qb": null,
+        "teammate": {
+          "name": "Travis Kelce",
+          "position": "TE",
+          "team": "KC"
+        },
+        "opponent": {
+          "name": "Jordan Reed",
+          "position": "TE",
+          "team": "SF"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Colts",
+          "position": "DST",
+          "team": "IND",
+          "qbFaced": "Kirk Cousins"
+        },
+        "opponent": {
+          "name": "Kirk Cousins",
+          "position": "QB",
+          "team": "MIN"
+        }
+      }
+    ]
+  }
+}
