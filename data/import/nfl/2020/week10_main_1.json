@@ -1,0 +1,311 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 10,
+  "slateType": "MAIN",
+  "slateDate": "2020-11-15T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 10",
+  "slateTag": "KYLER DOUBLE WITH BEASLEY, ALVIN KAMARA AND DALVIN COOK STYLE JOSH JACOBS RAW POINTS, BROWNS DST AGAINST DESHAUN WATSON",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "rosterConstruction": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK10_MAIN_2020-11-15T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 102500000,
+    "totalOwnershipBp": 7930
+  },
+  "winner": {
+    "username": "meaganjoy",
+    "points": 218.5,
+    "maxEntries": 139
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 218.5,
+    "totalOwnershipBp": 7930,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Kyler Murray",
+        "position": "QB",
+        "team": "ARI",
+        "salary": 8000,
+        "points": 30.9,
+        "ownershipPercent": 18.6,
+        "passTd": 1,
+        "passYds": 245,
+        "rushTd": 2,
+        "rushYds": 61,
+        "interceptions": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "team": "NO",
+        "salary": 8200,
+        "points": 34.8,
+        "ownershipPercent": 13.5,
+        "rushTdRb": 2,
+        "rushYdsRb": 83,
+        "recRb": 7,
+        "recYdsRb": 15,
+        "recTdRb": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": "LV",
+        "salary": 6500,
+        "points": 32.6,
+        "ownershipPercent": 4.5,
+        "rushTdRb": 2,
+        "rushYdsRb": 112,
+        "recRb": 4,
+        "recYdsRb": 24,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Diontae Johnson",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 5200,
+        "points": 26.6,
+        "ownershipPercent": 4.3,
+        "rec": 6,
+        "recYds": 116,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DeAndre Hopkins",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 7700,
+        "points": 28.7,
+        "ownershipPercent": 16.1,
+        "rec": 7,
+        "recYds": 127,
+        "recTd": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Cole Beasley",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 4700,
+        "points": 30.9,
+        "ownershipPercent": 4.5,
+        "rec": 11,
+        "recYds": 109,
+        "recTd": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Logan Thomas",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 3300,
+        "points": 10.6,
+        "ownershipPercent": 3.5,
+        "rec": 4,
+        "recYds": 66,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Reynolds",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 3500,
+        "points": 17.4,
+        "ownershipPercent": 10.8,
+        "rec": 8,
+        "recYds": 94,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Browns",
+        "position": "DST",
+        "team": "CLE",
+        "salary": 2900,
+        "points": 6,
+        "ownershipPercent": 3.5,
+        "sacks": 2,
+        "pointsAllowed": 13,
+        "qbFaced": "Deshaun Watson",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "HOU"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins through concentrated raw points at running back and an efficient quarterback game stack rather than through a sprawling set of fragile correlations. Kyler Murray, DeAndre Hopkins, and Cole Beasley create the main engine. Murray gets there with two rushing scores and enough passing volume to keep both receiving pieces live. Hopkins delivers the expected alpha output on the Arizona side, while Beasley gives the lineup the lower owned return from Buffalo. That choice matters. Buffalo had several paths to production, yet the roster lands on the cheaper wide receiver who catches eleven passes and scores. This is a sharp salary allocation decision inside a high total game rather than a blind game stack.\n\nThe running back room is where the lineup separates from more conventional Murray builds. Alvin Kamara posts 34.8 points through his normal hybrid role, which gives the roster elite floor and ceiling in one slot. Josh Jacobs is the stronger tournament pivot. At 4.5 percent ownership, he provides a two touchdown, 136 yard game at a salary tier many rosters used for thinner wide receiver constructions. Pairing Kamara with Jacobs instead of paying for a second premium receiver creates a different shape. It says the builder believed raw points at running back could outscore the wider receiver pool on this slate, and that read proved right.\n\nDiontae Johnson is another strong pressure point. At 5,200, he gives the roster an alpha target profile at modest ownership. His line is not a miracle outcome. It is the type of game volume driven receivers can post when pricing lags role. Logan Thomas and Josh Reynolds continue the same theme. Both are inexpensive volume plays who do enough to keep salary flowing toward Murray, Kamara, Hopkins, and Jacobs.\n\nCleveland defense against Deshaun Watson looks uncomfortable at first because Watson carried franchise quarterback status and still had individual playmaking ability. The roster does not need the Browns to break the slate. It needs them to avoid collapse at 2,900 while preserving salary. Two sacks and the lowest salary defense among viable options accomplish that goal. This is a roster construction choice more than a defensive ceiling chase.\n\nThe broader story is discipline. The lineup does not force an extra Buffalo player. It does not over commit to the Arizona stack. It does not spend down in both running back slots. Every decision protects the main thesis, which is Murray plus one Arizona alpha, one Buffalo return, and heavy raw points through running back.",
+    "uniquenessNotes": "The strongest element here is how the lineup handles ownership without running from strong plays. Murray and Hopkins are popular enough, yet the build still finds separation through Beasley, Jacobs, Diontae Johnson, and the salary distribution around them. Beasley at 4.5 percent is a clean example. Many rosters returning Arizona Buffalo likely gravitated toward Stefon Diggs. This construction takes the cheaper Buffalo path, saves salary, and still captures a ceiling game.\n\nJacobs is the second major separator. A 6,500 running back with a full workload and two touchdown access can outscore a broad group of midrange receivers. When that player comes in under five percent, the lineup gains leverage without drifting into thin projection.\n\nThe tight end and flex slots show restraint. Logan Thomas and Josh Reynolds are not there to win the slate on their own. They are there to keep salary efficient while preserving strong target roles. This allows the lineup to maintain four true pressure points: Murray, Kamara, Jacobs, and Hopkins.\n\nThe defense choice carries the same logic. Cleveland is not chosen because Watson was weak. Cleveland is chosen because salary mattered, the game had paths to sacks, and the roster did not need more than competence from the slot. That distinction matters in large field tournament construction.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Kyler Murray with DeAndre Hopkins and Cole Beasley in the Buffalo Arizona game",
+      "secondaryLever": "Alvin Kamara and Josh Jacobs provide elite running back raw points while low cost volume plays keep the structure intact",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "BUF@ARI: 3 (QB game)",
+          "SF@NO: 1",
+          "DEN@LV: 1",
+          "CIN@PIT: 1",
+          "WAS@DET: 1",
+          "SEA@LAR: 1",
+          "HOU@CLE: 1"
+        ],
+        "cardinalsBillsCluster": [
+          "Kyler Murray",
+          "DeAndre Hopkins",
+          "Cole Beasley"
+        ],
+        "premiumBackCore": [
+          "Alvin Kamara",
+          "Josh Jacobs"
+        ],
+        "salarySupport": [
+          "Diontae Johnson",
+          "Logan Thomas",
+          "Josh Reynolds"
+        ],
+        "qbFacedByBrownsDst": "Deshaun Watson"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_DOUBLE_WITH_OPPOSING_WR_RETURN",
+        "DOUBLE_RB_RAW_POINTS_BUILD",
+        "LOW_OWNERSHIP_RETURN_PATH",
+        "CHEAP_VOLUME_SUPPORT",
+        "SALARY_PRESERVATION_DST"
+      ],
+      "macroStory": "A first place roster built around Kyler Murray in the Buffalo Arizona environment, then strengthened by premium running back raw points and a set of inexpensive volume plays that keep the ceiling concentrated in the correct slots."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "RUSHING_TOUCHDOWN_DRIVER",
+          "GAME_STACK_HUB"
+        ],
+        "microStory": "Kyler Murray is the roster's central engine. Two rushing scores give him tournament level output even without a massive passing touchdown total."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "DUAL_USAGE_CEILING",
+          "ELITE_TOUCH_ROLE"
+        ],
+        "microStory": "Alvin Kamara gives the lineup premium back scoring through both carries and targets, which keeps the roster's floor and first place path aligned."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": [
+          "LOW_OWNERSHIP_LEVER",
+          "TOUCHDOWN_CONCENTRATION",
+          "TOURNAMENT_SEPARATOR"
+        ],
+        "microStory": "Josh Jacobs is the key leverage back. His two touchdown game creates separation from lineups built around heavier midrange wide receiver exposure."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_COST_RETURN_PATH",
+          "TARGET_VOLUME",
+          "SALARY_EFFICIENCY"
+        ],
+        "microStory": "Cole Beasley gives the roster the right Buffalo return at the right price, which opens room for Kamara and Jacobs while still capturing ceiling."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Kyler Murray",
+          "position": "QB",
+          "team": "ARI"
+        },
+        "teammates": [
+          {
+            "name": "DeAndre Hopkins",
+            "position": "WR",
+            "team": "ARI"
+          }
+        ],
+        "opponent": {
+          "name": "Cole Beasley",
+          "position": "WR",
+          "team": "BUF"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Kyler Murray",
+          "position": "QB",
+          "team": "ARI"
+        },
+        "opponent": {
+          "name": "Cole Beasley",
+          "position": "WR",
+          "team": "BUF"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Browns",
+          "position": "DST",
+          "team": "CLE",
+          "qbFaced": "Deshaun Watson"
+        },
+        "opponent": {
+          "name": "Deshaun Watson",
+          "position": "QB",
+          "team": "HOU"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 11,
+  "slateType": "MAIN",
+  "slateDate": "2020-11-22T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 11",
+  "slateTag": "NAKED TAYSOM HILL, DALVIN COOK STILL SMASHES AT 42 PERCENT, BROWNS DST AGAINST CARSON WENTZ",
+  "slateGroup": "1-3-2-1-1-1",
+  "rosterConstruction": "1-3-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK11_MAIN_2020-11-22T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14910
+  },
+  "winner": {
+    "username": "Wynson",
+    "points": 222.02,
+    "maxEntries": 6
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 222.02,
+    "totalOwnershipBp": 14910,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Taysom Hill",
+        "position": "QB",
+        "team": "NO",
+        "salary": 4800,
+        "points": 25.42,
+        "ownershipPercent": 17.7,
+        "passYds": 233,
+        "rushYds": 51,
+        "rushTd": 2,
+        "fumblesLost": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Dalvin Cook",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 9000,
+        "points": 29.0,
+        "ownershipPercent": 42.5,
+        "rushYdsRb": 115,
+        "rushTdRb": 1,
+        "recRb": 5,
+        "recYdsRb": 45,
+        "fumblesLost": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Salvon Ahmed",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 4800,
+        "points": 12.4,
+        "ownershipPercent": 8.5,
+        "rushYdsRb": 43,
+        "recRb": 5,
+        "recYdsRb": 31,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Adam Thielen",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 6300,
+        "points": 35.3,
+        "ownershipPercent": 14.3,
+        "rec": 8,
+        "recYds": 123,
+        "recTd": 2,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 7400,
+        "points": 38.5,
+        "ownershipPercent": 24.7,
+        "rec": 16,
+        "recYds": 145,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Diontae Johnson",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 5900,
+        "points": 26.1,
+        "ownershipPercent": 14.7,
+        "rec": 12,
+        "recYds": 111,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Dallas Goedert",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 3800,
+        "points": 18.7,
+        "ownershipPercent": 12.1,
+        "rec": 5,
+        "recYds": 77,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 5000,
+        "points": 16.6,
+        "ownershipPercent": 7.8,
+        "rec": 4,
+        "recYds": 34,
+        "recTd": 1,
+        "rushYds": 12,
+        "twoPt": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Browns",
+        "position": "DST",
+        "team": "CLE",
+        "salary": 3000,
+        "points": 20.0,
+        "ownershipPercent": 6.8,
+        "sacks": 5,
+        "takeaways": 3,
+        "defTd": 1,
+        "pointsAllowed": 20,
+        "qbFaced": "Carson Wentz",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "PHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins because it correctly identifies where raw points could be accepted without fear and where salary had to stay flexible. Taysom Hill is the first decision that drives the entire build. He is used naked at quarterback, which matters because his ceiling does not depend on distributing passing touchdowns to an expensive receiver partner. His role concentration is different from most quarterbacks. He can reach a tournament winning score through designed runs, goal line usage, broken play rushing, and enough passing volume to avoid failing. When a player carries that kind of hybrid job description at 4,800, the lineup gains access to premium scoring elsewhere without sacrificing quarterback upside.\n\nThe second anchor is the Minnesota Dallas game. Dalvin Cook at 9,000 and 42.5 percent ownership still belongs in the winning lineup because Dallas was giving away rushing efficiency, red zone access, and explosive plays all season. Fading him for ownership alone would have been a refusal to read the slate. The sharper decision is pairing Cook with Adam Thielen and then still allowing CeeDee Lamb back from the Dallas side. This game cluster captures multiple scoring paths. Cook handles the rushing and receiving back volume. Thielen captures the direct touchdown concentration through the air. Lamb proves the point in your context that a player against Dallas's opponent stack can still succeed on the other side. Minnesota can smash and Dallas can still funnel enough trailing volume to one receiver for him to matter.\n\nThe rest of the build is disciplined support around that core. Keenan Allen posts the type of massive target total that can carry a wide receiver slot by itself. Diontae Johnson does the same in a different way through twelve catches and over one hundred yards. These are not fluky outcomes. They are role driven scores from receivers whose target control was strong enough to matter independent of game stacking.\n\nSalvon Ahmed is the salary relief valve. He does not need a touchdown to justify his place in this build. He needs enough touches and enough receiving usage to keep the structure alive, and he does. Dallas Goedert fits the same principle. He gives the roster touchdown access at tight end without spending for a premium option.\n\nCleveland defense closes the roster with a clean pressure thesis against Carson Wentz in one of the more fragile quarterback environments of the season. Five sacks, takeaways, and a defensive touchdown create a true difference making defense score. The important part is that the lineup did not need Cleveland because of ownership or price alone. It needed a defense with a credible path to pressure and a quarterback on the other side who was already showing replacement level tendencies under stress.",
+    "uniquenessNotes": "The strongest feature of this build is how it separates role certainty from ownership discomfort. Dalvin Cook is massive chalk, yet the lineup still wins because the separation does not need to come from fading the best play. It comes from how the rest of the salary is organized around him.\n\nNaked Taysom Hill is a strong example. Many quarterback builds feel incomplete without a pass catcher attached. Hill is different because his scoring distribution can be self contained. That makes him one of the rare quarterbacks where the naked version can carry more structural value than the conventional stack.\n\nThe Minnesota Dallas cluster is another sharp layer. Many lineups would stop at Cook and Thielen, or would avoid the opposing bring back because of the fear that Dallas would fail completely. CeeDee Lamb gives the roster access to trailing production without demanding that Dallas play well. That is an important distinction. Bad defenses can still allow the opposing stars to smash while one player from the trailing side remains viable through volume and game script.\n\nAhmed is the kind of value piece large field winners often need. He is not asked to decide the slate. He is asked to keep expensive raw points combinations affordable. That is a narrower job, and he completes it. Cleveland defense then turns a reasonable salary slot into a ceiling score, which is often what pushes a good structure into first place.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Naked Taysom Hill plus the Minnesota Dallas game cluster with Dalvin Cook, Adam Thielen, and CeeDee Lamb",
+      "secondaryLever": "Cleveland defense against Carson Wentz and salary relief from Salvon Ahmed allow the roster to keep multiple elite target and touch roles",
+      "notes": {
+        "rosterConstruction": "1-3-2-1-1-1",
+        "gameKey": [
+          "ATL@NO: 1 (QB game)",
+          "DAL@MIN: 3",
+          "PHI@CLE: 2",
+          "MIA@DEN: 1",
+          "NYJ@LAC: 1",
+          "PIT@JAX: 1"
+        ],
+        "vikingsCowboysCluster": [
+          "Dalvin Cook",
+          "Adam Thielen",
+          "CeeDee Lamb"
+        ],
+        "eaglesBrownsPair": [
+          "Dallas Goedert",
+          "Browns"
+        ],
+        "salaryReliefSupport": "Salvon Ahmed",
+        "qbFacedByBrownsDst": "Carson Wentz"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "NAKED_RUSHING_QB",
+        "CHALK_RB_RAW_POINTS_ANCHOR",
+        "PLAYER_AGAINST_OPPOSING_STACK_STILL_LIVE",
+        "SALARY_RELIEF_RB_ROLE_PLAY",
+        "DST_VS_REPLACEMENT_LEVEL_QB"
+      ],
+      "macroStory": "A first place roster built around naked Taysom Hill and the idea that Dallas could not stop concentrated production, then finished by role driven receiver volume and a Cleveland defense ceiling against Carson Wentz."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "NAKED_QB_CEILING",
+          "RUSHING_TOUCHDOWN_ACCESS"
+        ],
+        "microStory": "Taysom Hill gives the roster a self contained quarterback ceiling at low salary because his scoring does not require an attached pass catcher to realize his full value."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "CHALK_THAT_STILL_HAD_TO_BE_PLAYED",
+          "MATCHUP_PUNISHER"
+        ],
+        "microStory": "Dalvin Cook is the slate's unavoidable power source. Dallas was too vulnerable for ownership to matter more than his touch and scoring profile."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "TRAILING_VOLUME_ACCESS",
+          "OPPOSING_GAME_PIECE",
+          "STRUCTURAL_COMPLEMENT"
+        ],
+        "microStory": "CeeDee Lamb shows how an opposing player can still succeed inside a game controlled by the other side. Trailing script keeps him relevant even while Minnesota's stars get there."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRESSURE_CEILING",
+          "TURNOVER_CONVERSION",
+          "QB_FRAGILITY_TARGET"
+        ],
+        "microStory": "Cleveland defense converts the Carson Wentz pressure environment into sacks, takeaways, and a defensive touchdown, which gives the lineup one more true spike score."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Dalvin Cook",
+          "position": "RB",
+          "team": "MIN"
+        },
+        "opponent": {
+          "name": "CeeDee Lamb",
+          "position": "WR",
+          "team": "DAL"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Adam Thielen",
+          "position": "WR",
+          "team": "MIN"
+        },
+        "opponent": {
+          "name": "CeeDee Lamb",
+          "position": "WR",
+          "team": "DAL"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Browns",
+          "position": "DST",
+          "team": "CLE",
+          "qbFaced": "Carson Wentz"
+        },
+        "opponent": {
+          "name": "Carson Wentz",
+          "position": "QB",
+          "team": "PHI"
+        }
+      }
+    ]
+  }
+}

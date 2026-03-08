@@ -1,0 +1,310 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 8,
+  "slateType": "MAIN",
+  "slateDate": "2020-11-01T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 8",
+  "slateTag": "KC NYJ FULL GAME STACK, DALVIN COOK BREAKS THE SLATE, THREE 3K WRS FUND THE STUDS",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK08_MAIN_2020-11-01T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11190
+  },
+  "winner": {
+    "username": "ghartman314",
+    "points": 244.04,
+    "maxEntries": 11
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 244.04,
+    "totalOwnershipBp": 11190,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 8100,
+        "points": 39.64,
+        "ownershipPercent": 8.7,
+        "passTd": 5,
+        "passYds": 416,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 8000,
+        "points": 20.2,
+        "ownershipPercent": 27.7,
+        "rushTdRb": 1,
+        "rushYdsRb": 112,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Dalvin Cook",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 7500,
+        "points": 51.6,
+        "ownershipPercent": 10.4,
+        "rushTdRb": 3,
+        "rushYdsRb": 163,
+        "recRb": 2,
+        "recYdsRb": 63,
+        "recTdRb": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DK Metcalf",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 7500,
+        "points": 43.1,
+        "ownershipPercent": 12.7,
+        "rec": 12,
+        "recYds": 161,
+        "recTd": 2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Denzel Mims",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 3200,
+        "points": 6.2,
+        "ownershipPercent": 15.4,
+        "rec": 2,
+        "recYds": 42,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Demarcus Robinson",
+        "position": "WR",
+        "team": "KC",
+        "salary": 3100,
+        "points": 16.3,
+        "ownershipPercent": 2.4,
+        "rec": 4,
+        "recYds": 63,
+        "recTd": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 6600,
+        "points": 27.9,
+        "ownershipPercent": 9.7,
+        "rec": 8,
+        "recYds": 109,
+        "recTd": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kendrick Bourne",
+        "position": "WR",
+        "team": "SF",
+        "salary": 3500,
+        "points": 16.1,
+        "ownershipPercent": 12.2,
+        "rec": 8,
+        "recYds": 81,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Dolphins",
+        "position": "DST",
+        "team": "MIA",
+        "salary": 2400,
+        "points": 23,
+        "ownershipPercent": 12.7,
+        "sacks": 2,
+        "takeaways": 2,
+        "defTd": 2,
+        "qbFaced": "Jared Goff",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is built from a clear slate reading. Patrick Mahomes on the 2020 heater against the Jets was not merely a quarterback click. He was the engine for a four player cluster from the same game, with Travis Kelce and Demarcus Robinson on the Kansas City side and Denzel Mims returning volume from the New York side. Mahomes throws for 416 yards and five touchdowns, which means any winning build from this game needed to identify where those touchdowns would land and how to afford the rest of the roster around him. Kelce supplies the stable elite component. Robinson gives the lineup a low salary route into one of the passing scores. Mims does not post a ceiling game, yet his presence preserves the full game script thesis and keeps the salary structure intact.\n\nThe true slate breaking event comes from Dalvin Cook. His 51.6 points against Green Bay changes the contest because he does not merely reach value. He becomes a raw points event strong enough to punish balanced constructions without him. Once Cook hits four touchdowns and clears 200 yards from scrimmage, the slate becomes less about finding nine great plays and more about correctly pairing Cook with the right high salary quarterback environment.\n\nDerrick Henry adds another form of raw point stability. Tennessee loses, yet Henry still gets home with 112 rushing yards and a score. This matters because the roster does not need every expensive player to lead the slate at his position. It needs expensive players to avoid failure while Cook and Mahomes push toward first place range. DK Metcalf then adds the second true eruption with 161 receiving yards and two touchdowns. Kendrick Bourne serves as the functional return path from the San Francisco side, which creates a two player game pairing without forcing a full quarterback stack.\n\nMiami defense finishes the build with a high leverage result against Jared Goff. Two defensive touchdowns at low salary change lineup geometry. The field often treats cheap defenses as interchangeable. This roster treats defense as one more slot capable of producing a tournament deciding score.\n\nThe lineup is well constructed because every low salary decision has a job. Robinson funds Mahomes and Kelce. Mims keeps the game stack affordable. Bourne gives access to the Seattle San Francisco passing environment without paying a second premium tag. Miami defense creates salary relief without surrendering ceiling. Nothing in the build is decorative.",
+    "uniquenessNotes": "The lineup does not attempt to be different in a reckless way. Mahomes, Henry, Cook, Metcalf, and Kelce are all premium names with clear ceiling cases. Separation comes from how the expensive core is financed and how game environments are layered together.\n\nThe Kansas City New York game stack is more nuanced than a standard quarterback with one pass catcher. Kelce provides the concentrated target floor and touchdown equity. Robinson serves as the cheaper attachment point who can capture one touchdown without requiring a second premium salary. Mims is the low cost return, yet his deeper purpose is structural. His salary makes Cook, Henry, Metcalf, and Kelce coexist with Mahomes. In other words, the low salary receiver is not in the build for his isolated projection. He is in the build because he is part of a broader allocation plan.\n\nMiami defense at 12.7 percent is another sharp choice. Defensive scoring is volatile, yet this slot can separate a roster when the field underestimates how much damage a pressure and turnover sequence can do to a quarterback with strong name value. Jared Goff entered as a franchise archetype, which likely kept some lineups away from treating Miami as a ceiling defense. This roster stayed focused on price, path to pressure, and touchdown potential rather than quarterback label alone.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Patrick Mahomes full game stack with Travis Kelce, Demarcus Robinson, and Denzel Mims",
+      "secondaryLever": "Dalvin Cook raw points eruption paired with cheap 3K range receivers to fund multiple premium ceilings",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "NYJ@KC: 4 (QB game)",
+          "SF@SEA: 2",
+          "TEN@CIN: 1",
+          "MIN@GB: 1",
+          "LAR@MIA: 1"
+        ],
+        "chiefsJetsCluster": [
+          "Patrick Mahomes",
+          "Travis Kelce",
+          "Demarcus Robinson",
+          "Denzel Mims"
+        ],
+        "seahawks49ersPair": [
+          "DK Metcalf",
+          "Kendrick Bourne"
+        ],
+        "premiumRbCore": [
+          "Dalvin Cook",
+          "Derrick Henry"
+        ],
+        "qbFacedByDolphinsDst": "Jared Goff"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_GAME_STACK_QB_ANCHOR",
+        "RAW_POINTS_RB_SLATE_BREAKER",
+        "THREE_CHEAP_WRS_FUND_STUDS",
+        "ELITE_TE_WITH_QB_STACK",
+        "LOW_SALARY_DST_CEILING"
+      ],
+      "macroStory": "A first place roster anchored by Patrick Mahomes in a full game stack, then elevated by Dalvin Cook's slate defining eruption and a carefully chosen set of low salary receivers who open room for several premium ceilings at once."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "FULL_GAME_STACK_HUB",
+          "MULTI_TOUCHDOWN_DRIVER"
+        ],
+        "microStory": "Patrick Mahomes is the structural center of the roster. Five passing touchdowns and 416 yards allow the lineup to capture one of the slate's cleanest paths to first place."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_NUCLEAR_SCORE",
+          "SLATE_BREAKER",
+          "FOUR_TOUCHDOWN_OUTCOME"
+        ],
+        "microStory": "Dalvin Cook supplies the score that bends the entire slate. Once he posts 51.6 points, every roster without him is chasing from a major deficit."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_WITH_STACK_ACCESS",
+          "LOW_OWNERSHIP_TOUCHDOWN",
+          "PREMIUM_FUNDER"
+        ],
+        "microStory": "Demarcus Robinson is not filler. He is the low salary attachment to Mahomes who helps fund the expensive core while still capturing a touchdown from the quarterback stack."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_SALARY_CEILING",
+          "DEFENSIVE_TOUCHDOWN_SWING",
+          "TOURNAMENT_ACCELERATOR"
+        ],
+        "microStory": "Miami defense turns a cheap slot into 23 points through turnovers and two defensive touchdowns, which gives the roster another spike score outside the skill positions."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Patrick Mahomes",
+          "position": "QB",
+          "team": "KC"
+        },
+        "teammates": [
+          {
+            "name": "Travis Kelce",
+            "position": "TE",
+            "team": "KC"
+          },
+          {
+            "name": "Demarcus Robinson",
+            "position": "WR",
+            "team": "KC"
+          }
+        ],
+        "opponent": {
+          "name": "Denzel Mims",
+          "position": "WR",
+          "team": "NYJ"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "DK Metcalf",
+          "position": "WR",
+          "team": "SEA"
+        },
+        "opponent": {
+          "name": "Kendrick Bourne",
+          "position": "WR",
+          "team": "SF"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Dolphins",
+          "position": "DST",
+          "team": "MIA",
+          "qbFaced": "Jared Goff"
+        },
+        "opponent": {
+          "name": "Jared Goff",
+          "position": "QB",
+          "team": "LAR"
+        }
+      }
+    ]
+  }
+}

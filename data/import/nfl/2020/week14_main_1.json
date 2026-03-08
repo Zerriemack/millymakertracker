@@ -1,0 +1,324 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 14,
+  "slateType": "MAIN",
+  "slateDate": "2020-12-13T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 14",
+  "slateTag": "CARR AGHOLOR GARBAGE TIME, JAX TEN GAME STACK, DOUBLE TIGHT END WITH LOW OWNERSHIP CORE",
+  "slateGroup": "2-3-2-1-1",
+  "rosterConstruction": "2-3-2-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK14_MAIN_2020-12-13T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8920
+  },
+  "winner": {
+    "username": "Fortyfortner",
+    "points": 222.74,
+    "maxEntries": 4
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 222.74,
+    "totalOwnershipBp": 8920,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Derek Carr",
+        "position": "QB",
+        "team": "LV",
+        "salary": 6000,
+        "points": 28.84,
+        "ownershipPercent": 0.8,
+        "passTd": 2,
+        "passYds": 316,
+        "rushTd": 1,
+        "rushYds": 12,
+        "interceptions": 2,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 8700,
+        "points": 39.2,
+        "ownershipPercent": 26.4,
+        "rushTdRb": 2,
+        "rushYdsRb": 215,
+        "recRb": 2,
+        "recYdsRb": 7,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Montgomery",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 6500,
+        "points": 27.5,
+        "ownershipPercent": 22.9,
+        "rushTdRb": 1,
+        "rushYdsRb": 113,
+        "recRb": 3,
+        "recYdsRb": 42,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Nelson Agholor",
+        "position": "WR",
+        "team": "LV",
+        "salary": 4700,
+        "points": 24.0,
+        "ownershipPercent": 1.4,
+        "rec": 5,
+        "recYds": 100,
+        "recTd": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 7300,
+        "points": 27.2,
+        "ownershipPercent": 5.8,
+        "rec": 7,
+        "recYds": 112,
+        "recTd": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Allen Robinson II",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 6800,
+        "points": 30.3,
+        "ownershipPercent": 6.1,
+        "rec": 9,
+        "recYds": 123,
+        "recTd": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Mike Gesicki",
+        "position": "TE",
+        "team": "MIA",
+        "salary": 4500,
+        "points": 23.5,
+        "ownershipPercent": 9.2,
+        "rec": 5,
+        "recYds": 65,
+        "recTd": 2,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tyler Eifert",
+        "position": "TE",
+        "team": "JAX",
+        "salary": 3100,
+        "points": 4.2,
+        "ownershipPercent": 1.0,
+        "rec": 2,
+        "recYds": 22,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cowboys",
+        "position": "DST",
+        "team": "DAL",
+        "salary": 2400,
+        "points": 18.0,
+        "ownershipPercent": 15.6,
+        "sacks": 2,
+        "takeaways": 3,
+        "defTd": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Brandon Allen",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins through low owned concentration, not through a fragile all in game environment call. Derek Carr with Nelson Agholor is the first pressure point. At sub one percent quarterback ownership, Carr does enough with 316 passing yards and a rushing score, then Agholor turns late game volume into a 100 yard touchdown outcome. Garbage time still counts the same, and this build captured it cleanly. The key is cost adjusted ceiling. Carr did not need to be the top raw point quarterback. He needed to unlock an expensive and highly productive running back and wide receiver core while still producing a winning score relative to salary.\n\nThe Tennessee Jacksonville cluster is the second engine. Derrick Henry is popular and still correct. He runs for 215 yards and two touchdowns, which means fading him would have been needless self harm. The sharper move is pairing Henry with A.J. Brown and then using Tyler Eifert as the skinny return. Brown captures the passing side of Tennessee's domination, while Eifert keeps the game linked at nearly no ownership and minimal salary. He does very little, yet his job is not to win the slate. His job is to keep the expensive spine intact.\n\nChicago against Houston provides the third layer. David Montgomery and Allen Robinson II both post strong games, and this pairing matters because it captures nearly every meaningful Chicago touchdown path. Montgomery handles backfield volume and scoring equity. Robinson supplies the target concentration. In a week where both were affordable enough to fit, the lineup correctly treated the Bears offense as a source of usable volume instead of as a team to avoid.\n\nMike Gesicki is the double tight end accelerator. Two touchdowns from the tight end slot at 9.2 percent ownership create a score many lineups did not have, and his presence in the actual tight end slot frees the flex for the cheap bring back instead of forcing a wide receiver only structure. This is the same idea behind double tight end winning builds in general. When one tight end can post wide receiver scoring and the second can be a salary release, the positional label loses importance.\n\nDallas defense rounds out the build with a simple read against Brandon Allen. The quarterback archetype matters here. Backup quarterbacks behind weak offenses can create short fields, strip sack paths, and return touchdown chances without needing the defense to dominate every snap. Dallas converts those chances and turns a 2,400 salary slot into 18 points.",
+    "uniquenessNotes": "Six players under ten percent ownership is the defining feature of this build. It is impressive because the lineup never drifts into random territory. Every lower owned slot still carries a clear role. Carr had access to volume against a defense capable of yielding late production. Agholor had a direct attachment to his quarterback and a path to the deep score. Brown had elite efficiency upside. Robinson had target control. Gesicki had red zone and seam access. Eifert was a structural connector.\n\nThe double tight end construction is the easiest place to miss this lineup's intelligence. Gesicki is not a gimmick. He is a ceiling tight end score. Eifert is not there because double tight end is fashionable. He is there because the salary savings allow Henry, Montgomery, Brown, Robinson, and Gesicki to coexist. Once the rest of the roster hits, four points from the cheap flex is enough.\n\nThe roster also accepts strong running back chalk without becoming chalky overall. Henry and Montgomery were popular for good reason, yet the surrounding structure stayed very different from the field. Carr at 0.8 percent and Agholor at 1.4 percent give the lineup a rare first place path even before adding Brown, Robinson, and Gesicki.\n\nDallas defense against Brandon Allen is another example of selective acceptance. At 15.6 percent it was not invisible, but it still gave the roster a strong defense score without forcing salary compromises elsewhere. The lineup did not need to be different at every slot. It needed to be different at the right slots.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Derek Carr paired with Nelson Agholor plus a low owned double tight end structure",
+      "secondaryLever": "The Tennessee Jacksonville game stack and Chicago volume pair provide the raw scoring backbone around the cheap quarterback build",
+      "notes": {
+        "rosterConstruction": "2-3-2-1-1",
+        "gameKey": [
+          "IND@LV: 2 (QB game)",
+          "TEN@JAX: 3",
+          "HOU@CHI: 2",
+          "KC@MIA: 1",
+          "DAL@CIN: 1"
+        ],
+        "raidersCluster": [
+          "Derek Carr",
+          "Nelson Agholor"
+        ],
+        "titansJaguarsCluster": [
+          "Derrick Henry",
+          "A.J. Brown",
+          "Tyler Eifert"
+        ],
+        "bearsPair": [
+          "David Montgomery",
+          "Allen Robinson II"
+        ],
+        "doubleTightEndBuild": [
+          "Mike Gesicki",
+          "Tyler Eifert"
+        ],
+        "qbFacedByCowboysDst": "Brandon Allen"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_WR_STACK",
+        "DOUBLE_TIGHT_END_BUILD",
+        "RB_CHALK_SMASH",
+        "GAME_STACK_WITH_CHEAP_BRING_BACK",
+        "MID_OWNERSHIP_DST_VS_BACKUP_QB"
+      ],
+      "macroStory": "A first place roster built from a very low owned Carr Agholor pairing, then carried by strong running back chalk, concentrated receiver volume, and a double tight end construction that kept the salary map wide open."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_ENGINE",
+          "SALARY_RELEASE_QB",
+          "LATE_PRODUCTION_ACCESS"
+        ],
+        "microStory": "Derek Carr gives the lineup rare quarterback ownership leverage without sacrificing functional ceiling. The salary discount is what lets the rest of the roster stay loaded."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "GARBAGE_TIME_CONVERTER",
+          "LOW_OWNERSHIP_ATTACHMENT",
+          "YARDAGE_PLUS_TOUCHDOWN"
+        ],
+        "microStory": "Nelson Agholor is the direct payoff from the Carr call. His late production turns an already viable quarterback score into a true tournament level stack."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "DOUBLE_TIGHT_END_CEILING",
+          "RED_ZONE_FINISHER",
+          "ROSTER_MULTIPLIER"
+        ],
+        "microStory": "Mike Gesicki gives the lineup wide receiver style output from the tight end slot. Two touchdowns from this position create a major structural edge."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "BACKUP_QB_TARGET",
+          "TURNOVER_CEILING",
+          "CHEAP_DEFENSE_PAYOFF"
+        ],
+        "microStory": "Dallas defense turns a low salary slot into a difference maker through takeaways and a defensive touchdown against Brandon Allen."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Derek Carr",
+          "position": "QB",
+          "team": "LV"
+        },
+        "teammates": [
+          {
+            "name": "Nelson Agholor",
+            "position": "WR",
+            "team": "LV"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Derrick Henry",
+          "position": "RB",
+          "team": "TEN"
+        },
+        "opponent": {
+          "name": "Tyler Eifert",
+          "position": "TE",
+          "team": "JAX"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "A.J. Brown",
+          "position": "WR",
+          "team": "TEN"
+        },
+        "opponent": {
+          "name": "Tyler Eifert",
+          "position": "TE",
+          "team": "JAX"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Cowboys",
+          "position": "DST",
+          "team": "DAL",
+          "qbFaced": "Brandon Allen"
+        },
+        "opponent": {
+          "name": "Brandon Allen",
+          "position": "QB",
+          "team": "CIN"
+        }
+      }
+    ]
+  }
+}

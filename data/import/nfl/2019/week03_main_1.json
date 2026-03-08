@@ -1,0 +1,332 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 3,
+  "slateType": "MAIN",
+  "slateDate": "2019-09-22T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 3",
+  "slateTag": "WINSTON EVANS STACK, KEENAN PPR AVALANCHE, PANTHERS DST MCCAFFREY PAIR",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "rosterConstruction": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker",
+    "siteContestId": "NFL_2019_WK03_MAIN_2019-09-22T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8620
+  },
+  "winner": {
+    "username": "Hishboo",
+    "points": 275.7,
+    "maxEntries": 148
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 275.7,
+    "totalOwnershipBp": 8620,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Jameis Winston",
+        "position": "QB",
+        "team": "TB",
+        "salary": 5400,
+        "points": 29.5,
+        "ownershipPercent": 6.6,
+        "passTd": 3,
+        "passYds": 380,
+        "rushYds": 3,
+        "interceptions": 1,
+        "bonusPass300": true,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Rex Burkhead",
+        "position": "RB",
+        "team": "NE",
+        "salary": 3900,
+        "points": 18.9,
+        "ownershipPercent": 10.2,
+        "rushTdRb": 1,
+        "rushYdsRb": 47,
+        "recRb": 6,
+        "recYdsRb": 22,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Phillip Lindsay",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 4300,
+        "points": 29.0,
+        "ownershipPercent": 2.9,
+        "rushTdRb": 2,
+        "rushYdsRb": 81,
+        "recRb": 4,
+        "recYdsRb": 49,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 7000,
+        "points": 46.6,
+        "ownershipPercent": 15.4,
+        "rec": 13,
+        "recYds": 183,
+        "recTd": 2,
+        "rushYds": 3,
+        "bonusRec100": true,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mike Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6600,
+        "points": 48.0,
+        "ownershipPercent": 11.3,
+        "rec": 8,
+        "recYds": 190,
+        "recTd": 3,
+        "bonusRec100": true,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 7300,
+        "points": 29.8,
+        "ownershipPercent": 10.5,
+        "rec": 8,
+        "recYds": 128,
+        "recTd": 1,
+        "bonusRec100": true,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Darren Waller",
+        "position": "TE",
+        "team": "OAK",
+        "salary": 4100,
+        "points": 30.1,
+        "ownershipPercent": 5.9,
+        "rec": 13,
+        "recYds": 134,
+        "rushYds": 7,
+        "bonusRec100": true,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 8700,
+        "points": 30.8,
+        "ownershipPercent": 22.2,
+        "rushTdRb": 1,
+        "rushYdsRb": 153,
+        "recRb": 3,
+        "recYdsRb": 35,
+        "bonusRush100": true,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Panthers",
+        "position": "DST",
+        "team": "CAR",
+        "salary": 2700,
+        "points": 13.0,
+        "ownershipPercent": 1.2,
+        "sacks": 8,
+        "takeaways": 2,
+        "pointsAllowedBucket": 20,
+        "qbFaced": "Kyler Murray",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster won through a precise mix of concentrated passing damage, underpriced volume, and one sharp defensive correlation. Jameis Winston at 5,400 paired with Mike Evans at 6,600 gave access to Tampa Bay's ceiling at a combined salary far below what a 570 yard passing environment should have cost. Winston did not need a perfect box score. He needed enough yardage and touchdown concentration for Evans to reach a true slate breaking outcome, and that is exactly what happened.\n\nThe second layer came from the Carolina Arizona game. Christian McCaffrey was popular for good reason, yet the Panthers defense at 1.2 percent ownership changed the meaning of the spend. This was not a random pairing. It was a direct read on a rookie quarterback who could generate volume while still taking sacks and giving the defense opportunities. McCaffrey handled the offensive side of Carolina control, while the defense harvested the negative side of Kyler Murray's learning curve.\n\nThe rest of the lineup is a lesson in how ceiling can be built without forcing dead salary. Keenan Allen delivered one of the purest PPR avalanche games of the season. Darren Waller turned trailing game flow into a target flood. Julio Jones remained Julio Jones in his prime and gave the build another alpha score without needing any cheap gimmicks. Phillip Lindsay then became the true ownership hinge. At 2.9 percent, his multi touchdown game created a second low owned eruption in a lineup that already had enough structure to absorb chalk where chalk made sense.\n\nRex Burkhead rounds out the roster as the smallest score among the non defense positions, yet even he served the architecture. At 3,900, he gave access to New England backfield production without heavy salary commitment, which allowed the lineup to preserve its receiver and flex ceiling.",
+    "uniquenessNotes": "The strongest detail in this build is that uniqueness came from decision quality rather than from chaos. Mike Evans at 11.3 percent and Keenan Allen at 15.4 percent were not hidden plays. The separation came from stacking Evans with Winston instead of treating Evans as a one off receiver, then pairing that with Phillip Lindsay, Darren Waller, and the Panthers defense.\n\nThe Panthers defense next to McCaffrey is the sharpest wrinkle. Many lineups are comfortable pairing a running back with his defense when game control is obvious, but this particular version required a more nuanced read. Arizona was playing fast enough to create chances for both sides. That gave McCaffrey touch volume and the defense sack volume. Eight sacks against a rookie quarterback at 1.2 percent ownership created a very profitable asymmetry.\n\nDarren Waller is another point worth isolating. A thirteen catch tight end score at 5.9 percent ownership is a major structural event because tight end usually creates compression across tournament builds. Waller broke that compression while still fitting the broader lineup story of high volume roles being underpriced before the field fully adjusted.\n\nPhillip Lindsay supplied the final ownership break. His 2.9 percent mark gave the lineup a second distinct low owned path to separation, and unlike a thin touchdown dependent back, he brought both rushing and receiving production.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Jameis Winston paired with Mike Evans in a discounted Tampa Bay ceiling stack",
+      "secondaryLever": "Panthers defense with Christian McCaffrey against rookie Kyler Murray",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "NYG@TB: 2 (QB game)",
+          "CAR@ARI: 2",
+          "NYJ@NE: 1",
+          "DEN@GB: 1",
+          "HOU@LAC: 1",
+          "ATL@IND: 1",
+          "OAK@MIN: 1"
+        ],
+        "buccaneersStack": [
+          "Jameis Winston",
+          "Mike Evans"
+        ],
+        "panthersCardinalsPair": [
+          "Christian McCaffrey",
+          "Panthers"
+        ],
+        "volumeMonsters": [
+          "Keenan Allen",
+          "Darren Waller",
+          "Julio Jones"
+        ],
+        "lowOwnedLevers": [
+          "Phillip Lindsay",
+          "Panthers"
+        ],
+        "qbFacedByPanthersDst": "Kyler Murray"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WR_CEILING_STACK",
+        "RB_DST_CONTROL_PAIR",
+        "PPR_TARGET_AVALANCHE",
+        "LOW_OWNERSHIP_RB_SPIKE",
+        "GARBAGE_TIME_TIGHT_END_FLOOD"
+      ],
+      "macroStory": "A first place roster built on a discounted Winston Evans stack, a Carolina control thesis through McCaffrey and Panthers defense, and massive target concentration from Keenan Allen, Darren Waller, and Julio Jones."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "DISCOUNTED_CEILING",
+          "STACK_HUB"
+        ],
+        "microStory": "Jameis Winston gave the roster access to a huge passing environment at a mid tier salary. The price allowed the build to hold multiple elite target earners without sacrificing quarterback upside."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "ALPHA_RECEIVER",
+          "TOUCHDOWN_CONCENTRATION",
+          "STACK_PAYOFF"
+        ],
+        "microStory": "Mike Evans turned the Tampa Bay bet into a tournament winning event. Three touchdowns and 190 yards meant Winston did not need a double stack for the pairing to bury the slate."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "PPR_AVALANCHE",
+          "TARGET_MONOPOLY",
+          "RAW_POINTS_ENGINE"
+        ],
+        "microStory": "Keenan Allen posted one of those wide receiver scores driven by relentless reception volume and chunk yardage. Thirteen catches gave the lineup a floor and ceiling combination very few players could match."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "VOLUME_TIGHT_END",
+          "TRAILING_SCRIPT_BENEFIT",
+          "POSITIONAL_SEPARATOR"
+        ],
+        "microStory": "Darren Waller weaponized negative game script. Garbage time is often dismissed as noise, yet for a target dominant tight end it can become a slate defining source of bankable volume."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_DEFENSE",
+          "SACK_CEILING",
+          "ROOKIE_QB_PRESSURE"
+        ],
+        "microStory": "The Panthers defense created leverage through pressure rather than through fluky touchdowns. Eight sacks against Kyler Murray made the defense matter without requiring an outlier defensive score."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Jameis Winston",
+          "position": "QB",
+          "team": "TB"
+        },
+        "teammates": [
+          {
+            "name": "Mike Evans",
+            "position": "WR",
+            "team": "TB"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Christian McCaffrey",
+          "position": "RB",
+          "team": "CAR"
+        },
+        "opponent": {
+          "name": "Panthers",
+          "position": "DST",
+          "team": "CAR"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Panthers",
+          "position": "DST",
+          "team": "CAR",
+          "qbFaced": "Kyler Murray"
+        },
+        "opponent": {
+          "name": "Kyler Murray",
+          "position": "QB",
+          "team": "ARI"
+        }
+      }
+    ],
+    "diagnosticAnalysis": "The 80 20 answer is clear. Most of the winning value came from four sources. Winston plus Evans created an underpriced quarterback receiver ceiling stack. Keenan Allen delivered elite raw points through target concentration. Darren Waller broke the tight end position through trailing game volume. Panthers defense with McCaffrey turned one game into a double source of Carolina control.\n\nPhillip Lindsay then provided the ownership break that pushed the roster from excellent to first place. Without Lindsay, the lineup remains strong. With Lindsay at 2.9 percent and 29 points, the construction gained enough separation to capitalize on all the popular or semi popular ceilings elsewhere.\n\nThis build also shows how the field can underprice role certainty in different forms at once. Keenan Allen earned targets through design. Waller earned them through team necessity. McCaffrey earned them through total offensive dependence. Evans earned them through vertical and red zone dominance. These are different pathways to the same result, raw points through concentrated usage.",
+    "predictiveAnalysis": "For future lineup building, this roster argues for stronger classification of volume archetypes. Not every target driven player should be treated the same. Allen represented premium PPR concentration. Waller represented trailing script target inflation with stable route participation. Evans represented touchdown and explosive yardage concentration. When multiple forms of concentration are underpriced on the same slate, it becomes possible to build a winner without chasing fragile one play outcomes across the entire lineup.\n\nThe Carolina pairing also matters for defensive research. A defense against a rookie quarterback can remain viable even when the opposing offense is fast and capable of producing volume. Sacks can be enough. The common mistake is assuming a defense must live inside a low play environment. In some cases, more plays create more pressure chances.\n\nThe Winston Evans stack is another reminder that cheap quarterbacks do not need to be safe. They need to be capable of routing production through one dominant pass catcher. When the salary is right, a single teammate stack can be sufficient.",
+    "prescriptiveAnalysis": "In similar slates, sort candidate plays by how their scoring is most likely to accumulate. Prioritize players whose teams are likely to funnel touches and targets into them regardless of game script. Then identify one or two ownership pressure points where the field is still slow to act on role growth or matchup context. Phillip Lindsay and Panthers defense were those pressure points here.\n\nBe willing to pair a popular offensive centerpiece with a low owned defense from the same team when the opponent's quarterback profile supports sacks, pressure, or stalled drives. That is what happened with McCaffrey and Panthers defense. The pair did not conflict. They reinforced the same game script.\n\nFinally, do not force a full game stack when a one quarterback one receiver pairing already captures most of the offense's touchdown equity. Winston to Evans was enough. The roster used the saved slots to gather other concentrated ceilings across the slate, and that distribution of correlation was the correct call."
+  }
+}

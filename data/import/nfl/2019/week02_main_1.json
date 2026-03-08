@@ -1,0 +1,330 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 2,
+  "slateType": "MAIN",
+  "slateDate": "2019-09-15T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 2",
+  "slateTag": "MAHOMES TRIPLE, PATRIOTS STACK, THREE SUB 2 PERCENT HITS",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker",
+    "siteContestId": "NFL_2019_WK02_MAIN_2019-09-15T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9720
+  },
+  "winner": {
+    "username": "Mushtaqlatifi",
+    "points": 231.12,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 231.12,
+    "totalOwnershipBp": 9720,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 7500,
+        "points": 35.62,
+        "ownershipPercent": 13.2,
+        "passTd": 4,
+        "passYds": 443,
+        "rushYds": -1,
+        "bonusPass300": true,
+        "fumblesLost": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 8700,
+        "points": 23.0,
+        "ownershipPercent": 8.5,
+        "rushTdRb": 1,
+        "rushYdsRb": 111,
+        "recRb": 2,
+        "recYdsRb": 9,
+        "bonusRush100": true,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 6000,
+        "points": 17.3,
+        "ownershipPercent": 14.7,
+        "rushTdRb": 1,
+        "rushYdsRb": 81,
+        "recRb": 2,
+        "recYdsRb": 12,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "John Brown",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 5200,
+        "points": 14.2,
+        "ownershipPercent": 20.8,
+        "rec": 7,
+        "recYds": 72,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Demarcus Robinson",
+        "position": "WR",
+        "team": "KC",
+        "salary": 3500,
+        "points": 38.2,
+        "ownershipPercent": 0.6,
+        "rec": 6,
+        "recYds": 172,
+        "recTd": 2,
+        "bonusRec100": true,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Emmanuel Sanders",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 4700,
+        "points": 28.8,
+        "ownershipPercent": 1.8,
+        "rec": 11,
+        "recYds": 98,
+        "recTd": 1,
+        "twoPt": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 7300,
+        "points": 26.7,
+        "ownershipPercent": 16.6,
+        "rec": 7,
+        "recYds": 107,
+        "recTd": 1,
+        "bonusRec100": true,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Preston Williams",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 3400,
+        "points": 10.3,
+        "ownershipPercent": 0.6,
+        "rec": 4,
+        "recYds": 63,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 3700,
+        "points": 37.0,
+        "ownershipPercent": 20.4,
+        "sacks": 7,
+        "takeaways": 4,
+        "dstTd": 2,
+        "pointsAllowedBucket": 0,
+        "qbFaced": "Ryan Fitzpatrick",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster reads like a slate where the obvious game environment and the obvious mismatch both landed at once, then the winning entry threaded them together with almost no wasted salary. Patrick Mahomes is triple stacked with Demarcus Robinson and Travis Kelce, which captures nearly all of Kansas City's passing damage in Oakland. Mahomes throws for 443 yards and four touchdowns, Robinson delivers the low owned detonation, and Kelce supplies the high floor elite tight end score that keeps the stack from depending on one fragile accessory piece.\n\nThe second pillar is New England against Miami, and calling it a defense play alone undersells the construction. This is effectively a Patriots game stack. The defense posts 37 points against a Miami team that looked historically noncompetitive, while Preston Williams functions as an inexpensive bring back from the same game. The field clearly respected the Patriots defense, but far fewer lineups paired that assumption with a cheap Miami receiver and then spent the rest of the build around a concentrated Kansas City passing eruption.\n\nWhat makes the roster feel strange at first glance is the presence of three players below 2 percent ownership in a lineup that still contains recognizable strong plays. Demarcus Robinson at 0.6 percent, Emmanuel Sanders at 1.8 percent, and Preston Williams at 0.6 percent created enough separation on their own. This was not random scattershot variance. Each one had a structural role. Robinson was direct access to Mahomes ceiling at a near minimum ownership level. Sanders was an underpriced target hog in a game where Denver needed him. Williams was a salary release valve attached to the most dominant defensive game on the slate.\n\nThe rest of the lineup stayed grounded. Ezekiel Elliott and Derrick Henry kept raw running back production intact. John Brown gave the roster another volume based vertical threat, even though his score was merely acceptable rather than slate breaking. That detail matters. First place did not require every slot to smash. It required the correct concentration of ceiling in the correct salary zones.",
+    "uniquenessNotes": "The uniqueness here is not merely that three players came in below 2 percent ownership. The sharper point is where those low owned players were placed. One sat directly inside the Mahomes stack, one operated as a low salary game extension off the Patriots defense, and one functioned as an independent midrange ceiling receiver. That is diversified uniqueness with purpose rather than blind contrarianism.\n\nMahomes triple stacks were available to the field, but many constructions likely centered on Sammy Watkins after his Week 1 eruption or stopped at Mahomes plus Kelce. Demarcus Robinson changed the entire ownership geometry of the stack. He gave the lineup exposure to Kansas City's explosive passing offense without following the most traveled route.\n\nPreston Williams is another subtle point. He scored only 10.3 points, yet his presence still mattered because it converted an overwhelmingly popular macro read, Miami is broken and New England will bury them, into a more complete game bet. He did not need to bury the slate. He needed to be cheap, connected, and non zero while the Patriots defense created the actual separation.\n\nEmmanuel Sanders then gave the roster a third off script angle. At 4,700 and 1.8 percent ownership, an 11 catch game with a touchdown and two point conversion became one of the defining outcomes of the slate. That score turned a powerful but still somewhat obvious shell into a first place construction.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Patrick Mahomes triple stack with Demarcus Robinson and Travis Kelce",
+      "secondaryLever": "Patriots defense against Miami paired with Preston Williams as the low salary bring back",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "KC@OAK: 3 (QB game)",
+          "NE@MIA: 2",
+          "DAL@WAS: 1",
+          "IND@TEN: 1",
+          "BUF@NYG: 1",
+          "CHI@DEN: 1"
+        ],
+        "chiefsTriple": [
+          "Patrick Mahomes",
+          "Demarcus Robinson",
+          "Travis Kelce"
+        ],
+        "patriotsMiamiCluster": [
+          "Patriots",
+          "Preston Williams"
+        ],
+        "lowOwnedHits": [
+          "Demarcus Robinson",
+          "Emmanuel Sanders",
+          "Preston Williams"
+        ],
+        "qbFacedByPatriotsDst": "Ryan Fitzpatrick"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_TRIPLE_STACK",
+        "DST_BRING_BACK_PAIR",
+        "THREE_SUB_TWO_PERCENT_PLAYERS",
+        "ELITE_TE_IN_PRIMARY_STACK",
+        "SINGULAR_SALARY_RELIEF_CORRELATION"
+      ],
+      "macroStory": "A first place roster built around a full Kansas City passing concentration, a New England destruction script against Miami, and three low owned pieces whose roles were tied to specific game assumptions rather than random differentiation."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "TRIPLE_STACK_HUB",
+          "RAW_YARDAGE_CEILING"
+        ],
+        "microStory": "Patrick Mahomes supplied the slate's cleanest passing engine. At 443 yards and four touchdowns, he created enough surplus to justify concentrating multiple roster spots around his game."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_BREAKER",
+          "STACK_SEPARATOR",
+          "DOWNFIELD_EXPLOSION"
+        ],
+        "microStory": "Demarcus Robinson was the decisive separator inside the Kansas City stack. At 0.6 percent ownership, 172 yards and two touchdowns gave the lineup elite leverage without sacrificing direct access to Mahomes production."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_ANCHOR",
+          "TURNOVER_CEILING",
+          "DEFENSIVE_NUCLEAR_SCORE"
+        ],
+        "microStory": "The Patriots defense was more than a good play. It was a slate defining event. Seven sacks, four interceptions, and two defensive touchdowns against Miami gave this roster a score at defense that most lineups could not recover from."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "LOW_OWNERSHIP_SUPPLEMENT",
+          "TARGET_CONCENTRATION",
+          "PRICE_TO_CEILING_WIN"
+        ],
+        "microStory": "Emmanuel Sanders added a second independent low owned eruption. Eleven catches at 4,700 gave the lineup another ceiling score in a salary band where the field often settles for median."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "GAME_EXTENSION",
+          "CHEAP_CORRELATION",
+          "NON_ZERO_BRING_BACK"
+        ],
+        "microStory": "Preston Williams did not need a tournament winning individual score. His job was to cheaply connect the Miami New England game environment to the Patriots defense while preserving salary for the Mahomes stack."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Patrick Mahomes",
+          "position": "QB",
+          "team": "KC"
+        },
+        "teammates": [
+          {
+            "name": "Demarcus Robinson",
+            "position": "WR",
+            "team": "KC"
+          },
+          {
+            "name": "Travis Kelce",
+            "position": "TE",
+            "team": "KC"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Patriots",
+          "position": "DST",
+          "team": "NE",
+          "qbFaced": "Ryan Fitzpatrick"
+        },
+        "opponent": {
+          "name": "Preston Williams",
+          "position": "WR",
+          "team": "MIA"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Patriots",
+          "position": "DST",
+          "team": "NE",
+          "qbFaced": "Ryan Fitzpatrick"
+        },
+        "opponent": {
+          "name": "Ryan Fitzpatrick",
+          "position": "QB",
+          "team": "MIA"
+        }
+      }
+    ],
+    "diagnosticAnalysis": "The 80 20 explanation starts with two decisions. First, the lineup concentrated on the most explosive quarterback environment through a true Mahomes triple stack. Second, it treated New England versus Miami as more than a defense click and captured that game through the Patriots defense plus a cheap opposing receiver. Those two choices created the majority of the lineup's edge.\n\nThe context matters. Miami looked like an all time tank operation at this point in the season, and New England responded with a defensive score that functioned more like another premium skill player outcome. At the same time, Kansas City remained one of the few offenses capable of producing multiple tournament winners from the same passing tree in a single game. Once Demarcus Robinson became the receiver instead of the more popular alternatives, the stack gained enormous leverage.\n\nThe rest of the roster did not need to get exotic. Ezekiel Elliott, Derrick Henry, and John Brown stabilized the lineup while Emmanuel Sanders delivered the extra spike necessary to convert a sharp core into a first place finish.",
+    "predictiveAnalysis": "For future research, this lineup reinforces a few repeatable ideas. When a defense projects as popular because the opposing offense is structurally broken, there can still be value in treating the game as stackable through a cheap opposing bring back, especially when the defense can score without suppressing all pass volume. Defensive touchdowns, interceptions, and short fields can coexist with one inexpensive receiver posting a usable line.\n\nIt also shows that triple stacks should be reserved for offenses with credible concentrated passing ceiling. Kansas City had the profile for it. A quarterback with elite efficiency and three or more viable touchdown outlets can support a triple even in classic formats, provided at least one receiving piece comes at a suppressed salary and ownership point.\n\nFinally, low ownership matters most when it is embedded in high leverage decision nodes. Demarcus Robinson was low owned inside the most important game on the slate. Emmanuel Sanders was low owned in a salary band where a target spike could win the position. Preston Williams was low owned but attached to a highly specific script. This is far more useful than chasing low ownership in isolation.",
+    "prescriptiveAnalysis": "In similar slates, start by separating low owned players into two buckets. The first bucket contains players with independent ceiling but no structural connection to the rest of the lineup. The second bucket contains players whose success amplifies a larger roster thesis. Prioritize the second bucket. This lineup won through thesis aligned differentiation.\n\nWhen an offense with Mahomes level passing density appears on a slate, allow for triple stack consideration if the pricing allows the third piece to function as a true separator rather than a luxury attachment. When a defense faces a team showing collapse level offensive fragility, consider whether a cheap opposing receiver can convert a one sided macro assumption into a fuller game expression.\n\nThe broader lesson is that a lineup can carry multiple low owned players without becoming random, as long as every one of them answers the same question. What exact version of this slate is being predicted. This roster had a clear answer, and every contrarian choice was tied to it."
+  }
+}

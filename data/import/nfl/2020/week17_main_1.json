@@ -1,0 +1,307 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 17,
+  "slateType": "MAIN",
+  "slateDate": "2021-01-03T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 17",
+  "slateTag": "COUSINS WITH MATTISON, TITANS TEXANS GAME STACK, MARVIN JONES STAFFORD KING MAKER GAME",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK17_MAIN_2021-01-03T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12260
+  },
+  "winner": {
+    "username": "dthealey7",
+    "points": 267.6,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 267.6,
+    "totalOwnershipBp": 12260,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Kirk Cousins",
+        "position": "QB",
+        "team": "MIN",
+        "salary": 6300,
+        "points": 37.3,
+        "ownershipPercent": 15.2,
+        "passTd": 3,
+        "passYds": 405,
+        "rushTd": 1,
+        "rushYds": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jonathan Taylor",
+        "position": "RB",
+        "team": "IND",
+        "salary": 7400,
+        "points": 41.4,
+        "ownershipPercent": 25.1,
+        "rushTdRb": 2,
+        "rushYdsRb": 253,
+        "recRb": 1,
+        "recYdsRb": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Alexander Mattison",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 6100,
+        "points": 29.5,
+        "ownershipPercent": 10.8,
+        "rushTdRb": 1,
+        "rushYdsRb": 95,
+        "recRb": 3,
+        "recYdsRb": 50,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Brandin Cooks",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 6900,
+        "points": 42.6,
+        "ownershipPercent": 14.0,
+        "rec": 11,
+        "recYds": 166,
+        "recTd": 2,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jerry Jeudy",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 4200,
+        "points": 30.0,
+        "ownershipPercent": 7.8,
+        "rec": 5,
+        "recYds": 140,
+        "recTd": 1,
+        "twoPt": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Marvin Jones Jr.",
+        "position": "WR",
+        "team": "DET",
+        "salary": 5100,
+        "points": 41.0,
+        "ownershipPercent": 11.2,
+        "rec": 8,
+        "recYds": 180,
+        "recTd": 2,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Mike Gesicki",
+        "position": "TE",
+        "team": "MIA",
+        "salary": 4200,
+        "points": 9.7,
+        "ownershipPercent": 13.4,
+        "rec": 5,
+        "recYds": 47,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 7200,
+        "points": 34.1,
+        "ownershipPercent": 12.0,
+        "rec": 10,
+        "recYds": 151,
+        "recTd": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Jets",
+        "position": "DST",
+        "team": "NYJ",
+        "salary": 2300,
+        "points": 2.0,
+        "ownershipPercent": 13.1,
+        "sacks": 3,
+        "pointsAllowed": 34,
+        "qbFaced": "Cam Newton",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins by identifying where Week 17 still offered concentrated offensive certainty, then letting ceiling beat aesthetics. Kirk Cousins is paired with Alexander Mattison in place of Dalvin Cook, and the build correctly treats Minnesota's offense as still intact rather than diminished. Cousins throws for 405 yards and three touchdowns, while Mattison handles the backfield work and adds receiving production. Marvin Jones Jr. comes back from the Detroit side and posts the type of wide receiver eruption Matthew Stafford so often enabled in these environments. Stafford had long shown the ability to produce slate level receiver games, and Jones benefits again with 180 yards and two touchdowns. This is not a random three player cluster. It is a targeted read on where passing efficiency and replacement back volume could coexist.\n\nThe Tennessee Houston game is the second major engine. Brandin Cooks and A.J. Brown create a two sided game stack, and both smash. Cooks catches eleven passes and scores twice. Brown clears 150 yards with a touchdown on the other side. The key here is that the lineup does not need Ryan Tannehill or Deshaun Watson attached to both receivers to benefit from the game. It uses the direct high leverage pass catchers and lets their concentrated production do the rest. In a week where Tennessee against Houston still had a wide open passing script, this was one of the cleanest ways to capture ceiling without overcommitting roster spots.\n\nJonathan Taylor is the chalk anchor, and he absolutely had to be respected. Twenty five percent ownership at that point was not a reason to fade. It was a reason to decide whether 253 rushing yards and two touchdowns could bury the slate. He does exactly that. The smart move was not resisting Taylor. It was pairing him with the correct lower owned ceiling pieces elsewhere.\n\nJerry Jeudy is one of those pieces. At 4,200, his ceiling game against Las Vegas gives the roster another major score without straining salary. Mike Gesicki is the only true underperformer, but the lineup absorbs it because the rest of the construction is so explosive. The Jets defense failing at 2.0 points also does not matter. At 2,300, the defense only needed to avoid catastrophic damage to stay live when the roster already held multiple 30 and 40 point outcomes elsewhere.\n\nThis is what a ceiling based Week 17 winner can look like. It does not require perfection at every slot. It requires being right about where the truly irreplaceable scores will come from. Cousins with Mattison and Marvin Jones Jr., Taylor as the chalk hammer, and the Cooks Brown game environment were more than enough.",
+    "uniquenessNotes": "The lineup is sharp because it accepts chalk only where the raw points were hardest to replace. Jonathan Taylor is the obvious example. At 25.1 percent ownership, he still belongs because once he reaches 41.4 points the slate becomes a catch up exercise for lineups without him.\n\nThe Minnesota Detroit cluster is the more nuanced call. Pairing Cousins with Mattison instead of a traditional pass catcher tells you the build was reading the Vikings offense through total touchdown access rather than through narrow stacking rules. Bringing it back with Marvin Jones Jr. is even stronger. Stafford had a long record of creating spike receiver outcomes, and this lineup leaned into that instead of spreading exposure across safer but lower ceiling options.\n\nThe Brandin Cooks and A.J. Brown pairing is another good example of selective game stacking. Both wide receivers had true eruption potential in a game where secondary resistance was weak. The roster does not force the quarterbacks into the same stack because the receiving concentration alone is powerful enough.\n\nThe defense slot is the last lesson. The Jets fail, but the salary was minimal and the roster's ceiling elsewhere was so high that it did not matter. That is a useful reminder for large field tournaments. A cheap defense can miss if the rest of the lineup owns enough irreplaceable scoring.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Kirk Cousins with Alexander Mattison and Marvin Jones Jr. in the Minnesota Detroit shootout",
+      "secondaryLever": "Jonathan Taylor chalk plus the Brandin Cooks and A.J. Brown game stack provide the raw points foundation",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "MIN@DET: 3 (QB game)",
+          "TEN@HOU: 2",
+          "JAX@IND: 1",
+          "LV@DEN: 1",
+          "MIA@BUF: 1",
+          "NYJ@NE: 1"
+        ],
+        "vikingsLionsCluster": [
+          "Kirk Cousins",
+          "Alexander Mattison",
+          "Marvin Jones Jr."
+        ],
+        "titansTexansPair": [
+          "Brandin Cooks",
+          "A.J. Brown"
+        ],
+        "chalkAnchor": "Jonathan Taylor",
+        "valueCeiling": "Jerry Jeudy",
+        "qbFacedByJetsDst": "Cam Newton"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WITH_REPLACEMENT_RB_STACK",
+        "WR_KING_MAKER_BRING_BACK",
+        "CHALK_RB_SLATE_HAMMER",
+        "TWO_WR_GAME_STACK",
+        "CHEAP_DST_FAILURE_DOES_NOT_MATTER"
+      ],
+      "macroStory": "A first place roster built around a strong Minnesota Detroit offensive read, stabilized by Jonathan Taylor chalk, and pushed into a winning range by Brandin Cooks, A.J. Brown, Jerry Jeudy, and Marvin Jones Jr."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "NON_TRADITIONAL_STACK_HUB",
+          "TOUCHDOWN_DISTRIBUTOR"
+        ],
+        "microStory": "Kirk Cousins is the hub of the roster's best game environment. The key was not pairing him with multiple Minnesota wide receivers. The key was owning the game's touchdown access through him, Mattison, and Jones."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "CHALK_HAMMER",
+          "RAW_POINTS_ANCHOR",
+          "UNAVOIDABLE_SCORE"
+        ],
+        "microStory": "Jonathan Taylor is the lineup's non negotiable anchor. Once he clears 250 rushing yards with two touchdowns, the roster almost has to start here."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "WR_KING_MAKER_PAYOFF",
+          "YARDAGE_SPIKE",
+          "DOUBLE_TOUCHDOWN_CEILING"
+        ],
+        "microStory": "Marvin Jones Jr. is the perfect Detroit bring back. Stafford again turns one receiver into a slate level score, and the lineup captures it cleanly."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "CHEAP_SURVIVAL_PLAY",
+          "NON_FATAL_MISS",
+          "SALARY_PRESERVER"
+        ],
+        "microStory": "The Jets defense fails, but the salary was low enough and the offensive ceiling elsewhere was high enough that the miss never became fatal."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Kirk Cousins",
+          "position": "QB",
+          "team": "MIN"
+        },
+        "teammates": [
+          {
+            "name": "Alexander Mattison",
+            "position": "RB",
+            "team": "MIN"
+          }
+        ],
+        "opponent": {
+          "name": "Marvin Jones Jr.",
+          "position": "WR",
+          "team": "DET"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Brandin Cooks",
+          "position": "WR",
+          "team": "HOU"
+        },
+        "opponent": {
+          "name": "A.J. Brown",
+          "position": "WR",
+          "team": "TEN"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Jets",
+          "position": "DST",
+          "team": "NYJ",
+          "qbFaced": "Cam Newton"
+        },
+        "opponent": {
+          "name": "Cam Newton",
+          "position": "QB",
+          "team": "NE"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 13,
+  "slateType": "MAIN",
+  "slateDate": "2020-12-06T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 13",
+  "slateTag": "CARR WALLER STACK, COREY DAVIS SLATE BREAKER, DOUBLE TIGHT END BUILD",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "rosterConstruction": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK13_MAIN_2020-12-06T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11400
+  },
+  "winner": {
+    "username": "igii",
+    "points": 258.44,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49500,
+    "totalPoints": 258.44,
+    "totalOwnershipBp": 11400,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Derek Carr",
+        "position": "QB",
+        "team": "LV",
+        "salary": 5800,
+        "points": 35.74,
+        "ownershipPercent": 4.9,
+        "passTd": 3,
+        "passYds": 381,
+        "rushTd": 1,
+        "rushYds": 5,
+        "interceptions": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Chris Carson",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 6300,
+        "points": 20.0,
+        "ownershipPercent": 13.0,
+        "rushYdsRb": 65,
+        "recRb": 3,
+        "recYdsRb": 45,
+        "recTdRb": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "James Robinson",
+        "position": "RB",
+        "team": "JAX",
+        "salary": 7300,
+        "points": 22.8,
+        "ownershipPercent": 11.3,
+        "rushYdsRb": 78,
+        "rushTdRb": 1,
+        "recRb": 6,
+        "recYdsRb": 30,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Robert Woods",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 5900,
+        "points": 18.5,
+        "ownershipPercent": 23.2,
+        "rec": 10,
+        "recYds": 85,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 6900,
+        "points": 30.3,
+        "ownershipPercent": 17.4,
+        "rec": 9,
+        "recYds": 121,
+        "recTd": 1,
+        "rushYds": 2,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Corey Davis",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 5100,
+        "points": 38.2,
+        "ownershipPercent": 9.1,
+        "rec": 11,
+        "recYds": 182,
+        "recTd": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Robert Tonyan",
+        "position": "TE",
+        "team": "GB",
+        "salary": 3700,
+        "points": 13.9,
+        "ownershipPercent": 21.0,
+        "rec": 4,
+        "recYds": 39,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Darren Waller",
+        "position": "TE",
+        "team": "LV",
+        "salary": 6100,
+        "points": 48.0,
+        "ownershipPercent": 9.0,
+        "rec": 13,
+        "recYds": 200,
+        "recTd": 2,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 2400,
+        "points": 31.0,
+        "ownershipPercent": 5.1,
+        "sacks": 3,
+        "takeaways": 2,
+        "defTd": 2,
+        "pointsAllowed": 0,
+        "qbFaced": "Justin Herbert",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins because it identifies two ceiling engines and then refuses to dilute either one. Derek Carr with Darren Waller is the first engine. Carr posts 381 passing yards and four total touchdowns, while Waller turns 13 catches into 200 receiving yards and two scores. This is not a generic quarterback tight end pairing. It is a concentrated passing offense outcome where one pass catcher absorbs an enormous share of the production. Against the Jets, Las Vegas had a path to a narrow distribution, and the lineup landed on the exact receiver channel that mattered most.\n\nThe second engine is Corey Davis. His 182 yard touchdown game is one of the defining pressure points of the slate. He is the separator because he reaches a score tier many rosters did not have access to at his salary. Once Davis posts 38.2 points at 5,100, the rest of the construction gains room to keep high floor pieces without sacrificing first place upside. This is why the lineup can accept Robert Tonyan at 21 percent ownership and still win. Tonyan does enough. He is not present to dominate the slate. He is present to hold structure, score a touchdown, and keep the lineup efficient while the true spike weeks come from Waller and Davis.\n\nThe Jacksonville Minnesota mini stack is also sharp. James Robinson from the Jacksonville side and Justin Jefferson from the Minnesota side create a skinny bring back structure built around direct role concentration rather than game overexposure. Robinson handles backfield volume and catches six passes. Jefferson gives the roster Minnesota's explosive receiving outcome. This pairing captures the core production from the game without spending an extra slot on lower value branches.\n\nThe double tight end build deserves attention. Waller in the flex is not an awkward exception. It is a statement about how reception volume and yardage concentration can make elite tight ends function as wide receivers in full PPR scoring. When Waller catches 13 passes, the positional label matters less than the target share. Tonyan then fills the actual tight end slot cheaply and competently. This is a construction read, not a novelty read.\n\nNew England defense against Justin Herbert adds a final layer of asymmetry. Herbert had been playing strong football as a rookie, so this was not a pure quarterback weakness attack. It was a low salary defense finding a path to volatility through Bill Belichick's game planning and a young quarterback's exposure to disguised coverage. Two defensive touchdowns push the lineup into a range the field cannot easily match. This is the type of defense score that turns a strong roster into a winning roster.",
+    "uniquenessNotes": "The strongest part of this lineup is how it uses concentrated passing outcomes without over stacking entire games. Carr and Waller are enough from Las Vegas against the Jets. Robinson and Jefferson are enough from Jacksonville against Minnesota. The roster keeps correlation where role concentration is clean, then stops before adding unnecessary branches.\n\nThe double tight end structure is another sharp choice. Many lineups still treat the flex spot as a wide receiver only decision in practical terms. Waller breaks that rule because his target share gives him wide receiver level volume with tight end pricing and ownership dynamics. Tonyan then becomes a simple salary and touchdown access play. The build gains ceiling from one tight end and stability from the other.\n\nCorey Davis is the largest tournament swing in the non quarterback slots. His salary allowed the lineup to avoid thin punts while still keeping Waller, Jefferson, and Robinson. When a midrange receiver reaches 182 yards, the roster gains leverage over lineups that spread exposure across safer but lower ceiling options.\n\nThe Patriots defense score is the last point. Herbert was a rookie with real talent, which likely kept many rosters from viewing New England as a true tournament ceiling defense. This lineup accepted the uncertainty and got the full defensive touchdown outcome. That is how low owned defense can reshape a slate without any need for chalk failure elsewhere.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Derek Carr paired with Darren Waller in a concentrated Las Vegas passing eruption",
+      "secondaryLever": "Corey Davis plus a double tight end build create the roster's separation while the Jacksonville Minnesota mini stack stays efficient",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "LV@NYJ: 2 (QB game)",
+          "JAX@MIN: 2",
+          "NE@LAC: 1",
+          "LAR@ARI: 1",
+          "NYG@SEA: 1",
+          "CLE@TEN: 1",
+          "PHI@GB: 1"
+        ],
+        "raidersCluster": [
+          "Derek Carr",
+          "Darren Waller"
+        ],
+        "jaguarsVikingsPair": [
+          "James Robinson",
+          "Justin Jefferson"
+        ],
+        "doubleTightEndBuild": [
+          "Robert Tonyan",
+          "Darren Waller"
+        ],
+        "slateBreaker": "Corey Davis",
+        "qbFacedByPatriotsDst": "Justin Herbert"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_TE_CONCENTRATED_STACK",
+        "DOUBLE_TIGHT_END_BUILD",
+        "SKINNY_BRING_BACK_GAME_PAIR",
+        "MIDRANGE_WR_SLATE_BREAKER",
+        "LOW_OWNERSHIP_DST_TOUCHDOWN_CEILING"
+      ],
+      "macroStory": "A first place roster built around a concentrated Carr Waller passing outcome, then pushed over the top by Corey Davis, a sharp double tight end construction, and a Patriots defense eruption against a rookie quarterback."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "PPR_MONSTER",
+          "TARGET_DOMINANCE",
+          "SLATE_BREAKING_TE"
+        ],
+        "microStory": "Darren Waller is the roster's central pass catcher. Thirteen receptions and 200 yards give the flex slot a score profile most lineups only find at wide receiver."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "MIDRANGE_SLATE_BREAKER",
+          "YARDAGE_SPIKE",
+          "TOUCHDOWN_FINISH"
+        ],
+        "microStory": "Corey Davis turns a midrange salary slot into one of the slate's defining scores. His ceiling is the extra force that keeps the roster from being only a Carr Waller story."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "CHALK_ACCEPTANCE",
+          "TOUCHDOWN_ACCESS",
+          "STRUCTURAL_SUPPORT"
+        ],
+        "microStory": "Robert Tonyan is accepted rather than faded. He scores a touchdown, holds salary efficiency, and lets the higher leverage pieces do the separating."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_CEILING",
+          "DEFENSIVE_TOUCHDOWN_SWING",
+          "ROOKIE_QB_PRESSURE"
+        ],
+        "microStory": "New England defense turns a low cost slot into 31 points through sacks, takeaways, and two defensive touchdowns. That outcome gives the lineup one more elite score without extra salary pressure."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Derek Carr",
+          "position": "QB",
+          "team": "LV"
+        },
+        "teammates": [
+          {
+            "name": "Darren Waller",
+            "position": "TE",
+            "team": "LV"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "James Robinson",
+          "position": "RB",
+          "team": "JAX"
+        },
+        "opponent": {
+          "name": "Justin Jefferson",
+          "position": "WR",
+          "team": "MIN"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Patriots",
+          "position": "DST",
+          "team": "NE",
+          "qbFaced": "Justin Herbert"
+        },
+        "opponent": {
+          "name": "Justin Herbert",
+          "position": "QB",
+          "team": "LAC"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 1,
+  "slateType": "MAIN",
+  "slateDate": "2019-09-08T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 1",
+  "slateTag": "LAMAR HOLLYWOOD MINI, DESEAN NUCLEAR, 49ERS DST VS JAMEIS",
+  "slateGroup": "2-1-1-1-1-1-1-1",
+  "rosterConstruction": "2-1-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker",
+    "siteContestId": "NFL_2019_WK01_MAIN_2019-09-08T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12910
+  },
+  "winner": {
+    "username": "TopCorner",
+    "points": 281.36,
+    "maxEntries": 31
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 281.36,
+    "totalOwnershipBp": 12910,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 6000,
+        "points": 36.56,
+        "ownershipPercent": 6.9,
+        "passTd": 5,
+        "passYds": 324,
+        "rushYds": 6,
+        "bonusPass300": true,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Chris Carson",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 5700,
+        "points": 25.1,
+        "ownershipPercent": 26.7,
+        "rushTdRb": 1,
+        "rushYdsRb": 46,
+        "recRb": 6,
+        "recYdsRb": 35,
+        "fumblesLost": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 8800,
+        "points": 45.9,
+        "ownershipPercent": 20.3,
+        "rushTdRb": 2,
+        "rushYdsRb": 128,
+        "recRb": 10,
+        "recYdsRb": 81,
+        "bonusRush100": true,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Odell Beckham Jr.",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 8100,
+        "points": 14.1,
+        "ownershipPercent": 12.0,
+        "rec": 7,
+        "recYds": 71,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Marquise Brown",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 3800,
+        "points": 33.7,
+        "ownershipPercent": 0.3,
+        "rec": 4,
+        "recYds": 147,
+        "recTd": 2,
+        "bonusRec100": true,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DeSean Jackson",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 4500,
+        "points": 38.4,
+        "ownershipPercent": 8.4,
+        "rec": 8,
+        "recYds": 154,
+        "recTd": 2,
+        "bonusRec100": true,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Evan Engram",
+        "position": "TE",
+        "team": "NYG",
+        "salary": 4800,
+        "points": 31.6,
+        "ownershipPercent": 13.2,
+        "rec": 11,
+        "recYds": 116,
+        "recTd": 1,
+        "bonusRec100": true,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dalvin Cook",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 6000,
+        "points": 29.0,
+        "ownershipPercent": 37.0,
+        "rushTdRb": 2,
+        "rushYdsRb": 111,
+        "recRb": 2,
+        "recYdsRb": 9,
+        "bonusRush100": true,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "49ers",
+        "position": "DST",
+        "team": "SF",
+        "salary": 2200,
+        "points": 27.0,
+        "ownershipPercent": 4.3,
+        "sacks": 3,
+        "takeaways": 4,
+        "dstTd": 2,
+        "pointsAllowedBucket": 13,
+        "qbFaced": "Jameis Winston",
+        "qbFacedArchetype": "GUNSLINGER",
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup opens the 2019 season with a clean statement. Salary did not need to be forced into novelty when the slate handed out underpriced ceiling. Lamar Jackson at 6,000 with Marquise Brown at 3,800 gave access to Baltimore's offensive explosion without paying premium quarterback salary. That pairing created immediate structural freedom, and the roster spent it on raw points instead of unnecessary creativity.\n\nThe more revealing part sits around the rest of the build. Christian McCaffrey, Dalvin Cook, Evan Engram, and DeSean Jackson were not thin tournament darts. They were direct paths to concentrated usage, explosive roles, and underpriced opportunity. This is where the #TEAMPLAYTHEBESTPLAYS idea shows up in a sharp form. The roster did not chase fragile uniqueness. It accepted strong volume and strong price to ceiling relationships, then let one low owned eruption do the separating.\n\nSan Francisco defense against Jameis Winston matters far beyond a normal defense note. This was the 33 touchdown, 30 interception Jameis season, and Week 1 already showed the entire trade. Tampa Bay could create offense, but Winston could also hand over fields, sacks, and defensive touchdowns in bunches. Paying 2,200 for direct access to that volatility was a high leverage use of salary because defensive scoring could arrive through quarterback error rather than through simple pressure alone.\n\nOdell Beckham Jr. is the modest score in the lineup, and that is part of why this roster won. It did not need every expensive slot to post a slate breaker because the lower salary positions produced nuclear outcomes. Lamar Jackson, Marquise Brown, DeSean Jackson, Evan Engram, Dalvin Cook, and Christian McCaffrey carried the burden. Chris Carson added enough reception based volume to keep the floor of the build intact while still contributing a strong total.",
+    "uniquenessNotes": "The roster lands in first place without a wild ownership profile because uniqueness came from placement, not from reckless player selection. Total ownership reached 129.1 percent, which is healthy, but not extreme for a winning lineup built around several strong plays. The separator was Marquise Brown at 0.3 percent paired with Lamar Jackson. Baltimore concentrated a massive chunk of efficiency into one inexpensive rookie wide receiver, and the field had not priced in the possibility of immediate vertical destruction.\n\nDeSean Jackson created the second layer of separation. At 4,500, he provided a deep threat score usually reserved for upper tier pricing. When two low salary wide receivers both clear 30 points, expensive running back spending becomes easier to justify, and mediocre salary relief becomes unnecessary.\n\nThe lineup also avoided overstacking. It stopped at Lamar Jackson plus one teammate. No Miami bring back was forced into the build. That restraint mattered because Baltimore produced enough on its own, while the rest of the roster harvested ceiling from unrelated spots across the slate. This is a disciplined form of aggression. Correlate where the underpricing is obvious, then let raw projection and role concentration carry the rest.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Lamar Jackson paired with Marquise Brown at a combined 9,800 salary",
+      "secondaryLever": "San Francisco defense against Jameis Winston plus two low salary wide receivers with vertical touchdown access",
+      "notes": {
+        "rosterConstruction": "2-1-1-1-1-1-1-1",
+        "gameKey": [
+          "BAL@MIA: 2 (QB game)",
+          "CIN@SEA: 1",
+          "LAR@CAR: 1",
+          "TEN@CLE: 1",
+          "WAS@PHI: 1",
+          "NYG@DAL: 1",
+          "ATL@MIN: 1",
+          "SF@TB: 1"
+        ],
+        "ravensMiniStack": [
+          "Lamar Jackson",
+          "Marquise Brown"
+        ],
+        "premiumRunningBackSpend": [
+          "Christian McCaffrey",
+          "Dalvin Cook"
+        ],
+        "receiverCeilingLayer": [
+          "Marquise Brown",
+          "DeSean Jackson"
+        ],
+        "dstQuarterbackTarget": "Jameis Winston"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "BEST_PLAYS_WITH_ONE_NUCLEAR_LOW_OWNED_WR",
+        "QB_WR_MINI_STACK",
+        "PREMIUM_RB_DOUBLE_SPEND",
+        "CHEAP_DST_VS_TURNOVER_QB",
+        "NO_FORCED_BRING_BACK"
+      ],
+      "macroStory": "A Week 1 winner built on price to ceiling imbalances across the slate, anchored by Lamar Jackson with Marquise Brown, reinforced by two expensive running backs with elite workload, and finished by San Francisco defense exploiting Jameis Winston volatility."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "UNDERPRICED_CEILING",
+          "EFFICIENCY_SPIKE"
+        ],
+        "microStory": "Lamar Jackson delivered a tournament winning quarterback score at a midrange salary. Five passing touchdowns from a 6,000 quarterback changed the entire salary map of the build."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_BREAKER",
+          "VERTICAL_TOUCHDOWN_ACCESS",
+          "STACK_PARTNER"
+        ],
+        "microStory": "Marquise Brown was the eruption point. Four catches turned into 147 yards and two touchdowns, which is the exact type of efficiency spike that turns a popular roster shell into first place."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "SALARY_RELIEF_CEILING",
+          "DOWNFIELD_ROLE",
+          "TOUCHDOWN_MULTIPLIER"
+        ],
+        "microStory": "DeSean Jackson provided a second cheap wide receiver explosion. His score prevented the lineup from needing value filler elsewhere and allowed premium salary to stay attached to secure volume."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "ELITE_WORKLOAD",
+          "PASS_GAME_PLUS_RUSHING"
+        ],
+        "microStory": "Christian McCaffrey was the expensive spend worth paying for. He combined target volume, rushing volume, and touchdown equity into a score that few roster spots on the slate could match."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_LEVER",
+          "CHEAP_CEILING",
+          "QUARTERBACK_ERROR_TARGET"
+        ],
+        "microStory": "San Francisco defense did not need a low scoring game script to win. It needed Jameis Winston mistakes, and Winston supplied them. Two defensive touchdowns at 2,200 turned defense from filler into a true slate swing."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Lamar Jackson",
+          "position": "QB",
+          "team": "BAL"
+        },
+        "teammates": [
+          {
+            "name": "Marquise Brown",
+            "position": "WR",
+            "team": "BAL"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "49ers",
+          "position": "DST",
+          "team": "SF",
+          "qbFaced": "Jameis Winston"
+        },
+        "opponent": {
+          "name": "Jameis Winston",
+          "position": "QB",
+          "team": "TB"
+        }
+      }
+    ],
+    "diagnosticAnalysis": "The 80 20 answer is straightforward. Most of the win came from identifying underpriced access to elite outcomes rather than from building a fragile correlation web. Lamar Jackson plus Marquise Brown generated massive surplus value. DeSean Jackson generated another major surplus value event. San Francisco defense added a defensive ceiling outcome against a quarterback profile capable of self destruction. Christian McCaffrey and Dalvin Cook then converted salary into secure raw points. Once those pillars landed, the lineup no longer needed perfection from every remaining slot.\n\nThis build also shows how Week 1 can reward role clarity over certainty theater. Salaries were still soft. Depth chart movement, offseason changes, and true team identity had not been fully priced. The lineup attacked underreaction instead of trying to outsmart the slate with obscure secondary plays.",
+    "predictiveAnalysis": "For future lineup building, this roster argues for a disciplined rule. When early season pricing leaves obvious ceiling underpriced at quarterback or at explosive receiver, preserve salary for raw points instead of spending mental energy searching for novelty. A cheap quarterback with multi touchdown efficiency upside paired with one explosive teammate can be enough. Full game stacks are not mandatory when the offense can bury the opponent without a meaningful push back.\n\nIt also reinforces how defense selection should be tied to quarterback failure modes, not only to Vegas totals or sack projections. Jameis Winston offered a path to fantasy scoring through interceptions, short fields, and defensive touchdowns. Quarterbacks who can create both yardage and catastrophic mistakes deserve separate treatment in tournament research because their volatility can make a cheap defense viable far beyond median projection.",
+    "prescriptiveAnalysis": "In similar slates, prioritize three filters. First, isolate underpriced quarterbacks whose touchdown expectation and efficiency upside can break salary structure. Second, search for low or moderate salary wide receivers with concentrated downfield usage who can post slate changing scores on limited volume. Third, treat defenses facing volatile quarterbacks as offensive leverage pieces rather than as passive salary savers.\n\nWhen those conditions are present, it is acceptable to build around strong chalk or strong median projection elsewhere. The correct move is not forced contrarianism. The correct move is selective separation. This lineup won because it paired best play discipline with a few highly specific ceiling bets in the right slots."
+  }
+}

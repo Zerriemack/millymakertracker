@@ -11,6 +11,12 @@ type SeedPlayer = {
   teamAbbreviation: string;
 };
 
+const TEAM_ABBREVIATION_ALIASES: Record<string, string> = {
+  OAK: "LV",
+  SD: "LAC",
+  STL: "LAR",
+};
+
 async function main() {
   const file = process.argv[2];
   if (!file) throw new Error("Usage: tsx scripts/seed-players.ts <path-to-seed-json>");
@@ -22,33 +28,38 @@ async function main() {
   const sports = Array.from(new Set(players.map(p => p.sport)));
 
   for (const sport of sports) {
-    const neededTeams = Array.from(
-      new Set(players.filter(p => p.sport === sport).map(p => p.teamAbbreviation))
-    );
-
-    const teams = await prisma.team.findMany({
-      where: { sport, abbreviation: { in: neededTeams } },
-      select: { id: true, abbreviation: true }
-    });
-
-    const teamIdByAbbr = new Map(teams.map(t => [t.abbreviation, t.id]));
-    const missingTeams = neededTeams.filter(a => !teamIdByAbbr.get(a));
-    if (missingTeams.length) {
-      throw new Error(
-        `Missing Teams: ${missingTeams.map(t => `(${sport}, ${t})`).join(", ")}`
-      );
-    }
-
     const data = players
       .filter(p => p.sport === sport)
-      .map(p => ({
-        sport: p.sport,
-        name: p.name,
-        position: p.position,
-        teamId: teamIdByAbbr.get(p.teamAbbreviation)!
-      }));
+      .map(async (player) => {
+        const rawAbbr = player.teamAbbreviation.trim().toUpperCase();
+        const lookupAbbr = TEAM_ABBREVIATION_ALIASES[rawAbbr] ?? rawAbbr;
 
-    await prisma.player.createMany({ data, skipDuplicates: true });
+        const team = await prisma.team.findUnique({
+          where: {
+            sport_abbreviation: {
+              sport: player.sport,
+              abbreviation: lookupAbbr,
+            },
+          },
+        });
+
+        if (!team) {
+          throw new Error(
+            `Missing Teams: (${player.sport}, raw=${rawAbbr}, lookup=${lookupAbbr})`
+          );
+        }
+
+        return {
+          sport: player.sport,
+          name: player.name,
+          position: player.position,
+          teamId: team.id,
+        };
+      });
+
+    const resolvedData = await Promise.all(data);
+
+    await prisma.player.createMany({ data: resolvedData, skipDuplicates: true });
   }
 
   console.log("Seed complete (skipDuplicates=true).");

@@ -1,0 +1,308 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 9,
+  "slateType": "MAIN",
+  "slateDate": "2020-11-08T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 9",
+  "slateTag": "DALVIN COOK BREAKS THE SLATE, DREW LOCK DOUBLE, GIANTS DST AGAINST ALEX SMITH",
+  "slateGroup": "2-2-2-1-1-1",
+  "rosterConstruction": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK09_MAIN_2020-11-08T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 102500000,
+    "totalOwnershipBp": 10350
+  },
+  "winner": {
+    "username": "MangioneMotorspo...",
+    "points": 238.02,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 238.02,
+    "totalOwnershipBp": 10350,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Drew Lock",
+        "position": "QB",
+        "team": "DEN",
+        "salary": 5200,
+        "points": 33.22,
+        "ownershipPercent": 7.0,
+        "passTd": 2,
+        "passYds": 313,
+        "rushTd": 1,
+        "rushYds": 47,
+        "interceptions": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 8500,
+        "points": 37.1,
+        "ownershipPercent": 6.3,
+        "rushYdsRb": 69,
+        "rushTdRb": 1,
+        "recRb": 10,
+        "recYdsRb": 82,
+        "recTdRb": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Dalvin Cook",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 8200,
+        "points": 42.2,
+        "ownershipPercent": 38.6,
+        "rushYdsRb": 206,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 46,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 7000,
+        "points": 28.3,
+        "ownershipPercent": 10.7,
+        "rec": 9,
+        "recYds": 103,
+        "recTd": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Terry McLaurin",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 6500,
+        "points": 27.5,
+        "ownershipPercent": 7.6,
+        "rec": 7,
+        "recYds": 115,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jerry Jeudy",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 4700,
+        "points": 28.5,
+        "ownershipPercent": 14.5,
+        "rec": 7,
+        "recYds": 125,
+        "recTd": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Jonnu Smith",
+        "position": "TE",
+        "team": "TEN",
+        "salary": 3900,
+        "points": 11.2,
+        "ownershipPercent": 6.0,
+        "rec": 2,
+        "recYds": 32,
+        "recTd": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Gabriel Davis",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 3200,
+        "points": 17.0,
+        "ownershipPercent": 0.6,
+        "rec": 4,
+        "recYds": 70,
+        "recTd": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Giants",
+        "position": "DST",
+        "team": "NYG",
+        "salary": 2700,
+        "points": 13,
+        "ownershipPercent": 12.2,
+        "sacks": 2,
+        "takeaways": 3,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS",
+        "qbFaced": "Alex Smith",
+        "qbFacedArchetype": "BRIDGE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins by combining one slate defining raw points event with a lower cost quarterback structure that still carried first place upside. Dalvin Cook is the center of gravity. At 38.6 percent ownership, he is not a separator by himself, but once he posts 206 rushing yards, adds 46 receiving yards, and scores twice, the entire tournament shifts. Any build without him is drawing thin. The task then becomes finding the correct companion ceiling at quarterback and correctly distributing the remaining salary.\n\nThat companion path is Drew Lock at 5,200 with Jerry Jeudy attached. This is where the roster gains structural leverage. Lock does not need to be Patrick Mahomes or Josh Allen at the same price tier. He needs to reach a tournament winning score relative to salary, and he does. The 313 passing yards, 47 rushing yards, and rushing touchdown matter because they create a dual path ceiling at modest ownership. Jeudy gives the lineup direct access to one of the Denver passing spike weeks without paying a premium tag. Atlanta from the other side is not used as a return, which is notable. The roster is willing to capture the Denver production without forcing a full game stack when the rest of the slate offers stronger raw points one offs.\n\nChristian McCaffrey and Keenan Allen are the other major pressure points. McCaffrey returns from injury and immediately posts a ceiling game through both rushing and receiving volume. He gives the build another premium score outside the Cook bucket, and because he comes in at only 6.3 percent ownership, he becomes one of the true tournament swinging decisions. Keenan Allen continues his target driven role and turns that into a 100 yard touchdown game. Terry McLaurin does the same from Washington, but his role in the lineup is even more interesting because it sits across from the Giants defense. The roster is willing to pair McLaurin with the opposing defense, which tells you the builder was reading New York through pressure and turnover equity rather than through a strict full game fade of Washington skill players.\n\nJonnu Smith and Gabriel Davis complete the build. Jonnu gives the lineup a tight end touchdown at low salary without demanding target volume. Gabriel Davis at 0.6 percent ownership is the thin but decisive salary release. He is not there to produce a median outcome. He is there to create enough score at 3,200 for the roster to hold Cook, McCaffrey, Allen, and McLaurin together.\n\nThe Giants defense closes the construction with a sharp archetype read. Alex Smith as a bridge quarterback creates a lower aDOT, more conservative offense, but also one vulnerable to sacks, tipped balls, and drive killing mistakes when the protection and efficiency fail. New York gets the turnovers needed, and the defense does its job without needing a touchdown.",
+    "uniquenessNotes": "The strongest feature of this build is not that it found a collection of obscure names. It is that it understood where salary sensitivity mattered and where it did not. Paying for Dalvin Cook and Christian McCaffrey in the same lineup is aggressive, but the Drew Lock quarterback slot and Gabriel Davis flex slot make it possible without breaking ceiling.\n\nThe lineup also avoids over stacking. Drew Lock is paired with Jerry Jeudy and then left alone. That restraint matters. Many lineups in a Denver Atlanta environment would feel pressure to add a second bring back or a second Denver receiver. This build instead uses the saved salary and roster spots on stronger isolated ceilings from around the slate.\n\nGabriel Davis at 0.6 percent is the cleanest separation point. He does not need to rival the highest scoring receivers. He needs to avoid failing while preserving the expensive core. That is what he does. The same idea shows up at tight end. Jonnu Smith is not a target hog in this lineup context. He is a touchdown access point at 3,900.\n\nThe defense plus opposing wide receiver combination is another sign the roster was built by role and scoring path rather than by rigid rule. Giants defense can succeed through sacks and takeaways even while McLaurin produces as the clear Washington alpha. That combination is uncomfortable for many roster builders, which is part of why it can still be correct.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Dalvin Cook plus a cheap Drew Lock Jerry Jeudy stack opens access to multiple premium one off ceilings",
+      "secondaryLever": "Christian McCaffrey and Gabriel Davis give the build low owned raw points and salary flexibility around the Cook core",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "DEN@ATL: 2 (QB game)",
+          "NYG@WAS: 2",
+          "CAR@KC: 1",
+          "DET@MIN: 1",
+          "LV@LAC: 1",
+          "CHI@TEN: 1",
+          "SEA@BUF: 1"
+        ],
+        "broncosCluster": [
+          "Drew Lock",
+          "Jerry Jeudy"
+        ],
+        "giantsWashingtonPair": [
+          "Giants",
+          "Terry McLaurin"
+        ],
+        "premiumRbCore": [
+          "Dalvin Cook",
+          "Christian McCaffrey"
+        ],
+        "salaryReliefSeparator": "Gabriel Davis",
+        "qbFacedByGiantsDst": "Alex Smith"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "CHEAP_QB_STACK_TO_FUND_DOUBLE_PREMIUM_RB",
+        "CHALK_RB_RAW_POINTS_ANCHOR",
+        "LOW_OWNED_PREMIUM_RB_CEILING",
+        "MICRO_SALARY_RELIEF_WR_TOUCHDOWN",
+        "DST_OPPOSING_ALPHA_WR_COMBINATION"
+      ],
+      "macroStory": "A first place roster anchored by Dalvin Cook's slate level raw points, then elevated by a low cost Drew Lock Jerry Jeudy stack and a set of carefully chosen one off ceilings that let two elite running backs and multiple strong receiver roles coexist."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "CHALK_THAT_HAD_TO_BE_RIGHT",
+          "SLATE_SHAPING_SCORE"
+        ],
+        "microStory": "Dalvin Cook is the lineup's non negotiable foundation. Once he posts over 40 points, the winning roster almost has to start here."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_EFFICIENCY_ENGINE",
+          "DUAL_PATH_CEILING",
+          "STACK_HUB"
+        ],
+        "microStory": "Drew Lock gives the lineup tournament level quarterback scoring without premium salary, which is what makes the double premium running back structure viable."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_SALARY_RELEASE",
+          "TOUCHDOWN_SWING",
+          "ROSTER_ENABLER"
+        ],
+        "microStory": "Gabriel Davis is the hidden pressure point. At 0.6 percent ownership, he gives the build a cheap touchdown score that preserves the expensive core."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_BET",
+          "BRIDGE_QB_TARGET",
+          "COMPLEMENTARY_CEILING"
+        ],
+        "microStory": "The Giants defense does not need a defensive touchdown to matter. Three takeaways against Alex Smith are enough to make the slot useful and keep the lineup on first place pace."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Drew Lock",
+          "position": "QB",
+          "team": "DEN"
+        },
+        "teammates": [
+          {
+            "name": "Jerry Jeudy",
+            "position": "WR",
+            "team": "DEN"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Giants",
+          "position": "DST",
+          "team": "NYG"
+        },
+        "opponent": {
+          "name": "Terry McLaurin",
+          "position": "WR",
+          "team": "WAS"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Giants",
+          "position": "DST",
+          "team": "NYG",
+          "qbFaced": "Alex Smith"
+        },
+        "opponent": {
+          "name": "Alex Smith",
+          "position": "QB",
+          "team": "WAS"
+        }
+      }
+    ]
+  }
+}

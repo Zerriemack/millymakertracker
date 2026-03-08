@@ -20,6 +20,17 @@ import path from "path";
 import { Sport, SlateType, LineupType, RosterSpot, CorrelationType } from "@prisma/client";
 import { prisma } from "../src/lib/prisma";
 
+const TEAM_ABBREVIATION_ALIASES: Record<string, string> = {
+  OAK: "LV",
+  SD: "LAC",
+  STL: "LAR",
+};
+
+function normalizeTeamAbbreviation(teamAbbreviation: string): string {
+  const rawAbbr = teamAbbreviation.trim().toUpperCase();
+  return TEAM_ABBREVIATION_ALIASES[rawAbbr] ?? rawAbbr;
+}
+
 /* ----------------------------- CLI parsing ----------------------------- */
 
 function getArgValue(flag: string): string | null {
@@ -341,7 +352,7 @@ function extractRelevantOwnership(
 
 /* ----------------------- Missing entities error type --------------------- */
 
-type MissingTeam = { sport: Sport; abbreviation: string };
+type MissingTeam = { sport: Sport; abbreviationRaw: string; abbreviationLookup: string };
 type MissingPlayer =
   | { mode: "DK_ID"; sport: Sport; dkPlayerId: number }
   | {
@@ -349,7 +360,8 @@ type MissingPlayer =
       sport: Sport;
       name: string;
       position: string;
-      teamAbbreviation: string;
+      teamAbbreviationRaw: string;
+      teamAbbreviationLookup: string;
       suggestions?: string[];
     };
 
@@ -557,8 +569,9 @@ async function resolvePlayerIdByRef(params: {
     if (pid) return pid;
   }
 
-  const teamAbbr = String(params.ref.team ?? "").toUpperCase().trim();
-  const teamId = teamAbbr ? params.teamIdByAbbr.get(teamAbbr) ?? null : null;
+  const teamAbbrRaw = String(params.ref.team ?? "").toUpperCase().trim();
+  const teamAbbrLookup = teamAbbrRaw ? normalizeTeamAbbreviation(teamAbbrRaw) : "";
+  const teamId = teamAbbrLookup ? params.teamIdByAbbr.get(teamAbbrLookup) ?? null : null;
 
   const name = cleanString(params.ref.name);
   const position = cleanString(params.ref.position);
@@ -788,20 +801,24 @@ async function main() {
   const missingPlayers: MissingPlayer[] = [];
   const allowInitials = process.env.IMPORT_ALLOW_INITIALS === "1";
 
-  const neededTeamAbbrs = Array.from(
+  const neededTeamAbbrsRaw = Array.from(
     new Set(data.lineup.items.map((i) => String(i.team).toUpperCase().trim()).filter(Boolean))
   );
+  const neededTeamAbbrsLookup = Array.from(new Set(neededTeamAbbrsRaw.map((abbr) => normalizeTeamAbbreviation(abbr))));
 
   const existingTeams = await prisma.team.findMany({
-    where: { sport, abbreviation: { in: neededTeamAbbrs } },
+    where: { sport, abbreviation: { in: neededTeamAbbrsLookup } },
     select: { id: true, abbreviation: true },
   });
 
   const teamIdByAbbr = new Map<string, string>();
   for (const t of existingTeams) teamIdByAbbr.set(t.abbreviation.toUpperCase(), t.id);
 
-  for (const abbr of neededTeamAbbrs) {
-    if (!teamIdByAbbr.has(abbr)) missingTeams.push({ sport, abbreviation: abbr });
+  for (const rawAbbr of neededTeamAbbrsRaw) {
+    const lookupAbbr = normalizeTeamAbbreviation(rawAbbr);
+    if (!teamIdByAbbr.has(lookupAbbr)) {
+      missingTeams.push({ sport, abbreviationRaw: rawAbbr, abbreviationLookup: lookupAbbr });
+    }
   }
 
   if (missingTeams.length > 0) {
@@ -837,9 +854,10 @@ async function main() {
     slotCounters[rs] = slotIndex + 1;
 
     const teamAbbr = String(it.team).toUpperCase().trim();
-    const teamId = teamIdByAbbr.get(teamAbbr);
+    const teamAbbrLookup = normalizeTeamAbbreviation(teamAbbr);
+    const teamId = teamIdByAbbr.get(teamAbbrLookup);
     if (!teamId) {
-      missingTeams.push({ sport, abbreviation: teamAbbr });
+      missingTeams.push({ sport, abbreviationRaw: teamAbbr, abbreviationLookup: teamAbbrLookup });
       continue;
     }
 
@@ -896,13 +914,17 @@ async function main() {
     const rs = String(it.rosterSpot).toUpperCase().trim() as RosterSpot;
     if (rs !== RosterSpot.DST) continue;
     const teamAbbr = String(it.team).toUpperCase().trim();
-    const teamId = teamIdByAbbr.get(teamAbbr) ?? null;
+    const teamAbbrLookup = normalizeTeamAbbreviation(teamAbbr);
+    const teamId = teamIdByAbbr.get(teamAbbrLookup) ?? null;
     if (!teamId) continue;
 
     let opponentTeamId = gameByTeamId.get(teamId)?.opponentTeamId ?? null;
     if (!opponentTeamId) {
       const oppAbbr = getOpponentTeamAbbrFromItem(it);
-      if (oppAbbr) opponentTeamId = teamIdByAbbr.get(oppAbbr) ?? null;
+      if (oppAbbr) {
+        const oppLookup = normalizeTeamAbbreviation(oppAbbr);
+        opponentTeamId = teamIdByAbbr.get(oppLookup) ?? null;
+      }
     }
 
     if (opponentTeamId) opponentTeamIds.add(opponentTeamId);
@@ -983,12 +1005,14 @@ async function main() {
     if (c.dkPlayerId !== null) {
       missingPlayers.push({ mode: "DK_ID", sport, dkPlayerId: c.dkPlayerId });
     } else {
+      const teamAbbrLookup = normalizeTeamAbbreviation(c.teamAbbr);
       missingPlayers.push({
         mode: "NAME_POS_TEAM",
         sport,
         name: c.name,
         position: c.position,
-        teamAbbreviation: c.teamAbbr,
+        teamAbbreviationRaw: c.teamAbbr,
+        teamAbbreviationLookup: teamAbbrLookup,
         suggestions: resolved.suggestions,
       });
     }
@@ -1342,11 +1366,14 @@ main()
       if (err.missingTeams.length > 0) {
         lines.push("Missing Teams (seed these first):");
         const uniq = new Map<string, MissingTeam>();
-        for (const t of err.missingTeams) uniq.set(`${t.sport}:${t.abbreviation}`, t);
+        for (const t of err.missingTeams)
+          uniq.set(`${t.sport}:${t.abbreviationRaw}:${t.abbreviationLookup}`, t);
         for (const t of Array.from(uniq.values()).sort((a, b) =>
-          `${a.sport}:${a.abbreviation}`.localeCompare(`${b.sport}:${b.abbreviation}`)
+          `${a.sport}:${a.abbreviationRaw}:${a.abbreviationLookup}`.localeCompare(
+            `${b.sport}:${b.abbreviationRaw}:${b.abbreviationLookup}`
+          )
         )) {
-          lines.push(`  - (${t.sport}, ${t.abbreviation})`);
+          lines.push(`  - (${t.sport}, raw=${t.abbreviationRaw}, lookup=${t.abbreviationLookup})`);
         }
         lines.push("");
       }
@@ -1356,13 +1383,17 @@ main()
         const uniq = new Map<string, MissingPlayer>();
         for (const p of err.missingPlayers) {
           if (p.mode === "DK_ID") uniq.set(`${p.sport}:dk:${p.dkPlayerId}`, p);
-          else uniq.set(`${p.sport}:n:${p.name}:p:${p.position}:t:${p.teamAbbreviation}`, p);
+          else
+            uniq.set(
+              `${p.sport}:n:${p.name}:p:${p.position}:t:${p.teamAbbreviationRaw}:l:${p.teamAbbreviationLookup}`,
+              p
+            );
         }
         for (const p of Array.from(uniq.values()).sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b)))) {
           if (p.mode === "DK_ID") {
             lines.push(`  - (${p.sport}, dkPlayerId=${p.dkPlayerId})`);
           } else {
-            const base = `  - (${p.sport}, "${p.name}", ${p.position}, team=${p.teamAbbreviation})`;
+            const base = `  - (${p.sport}, "${p.name}", ${p.position}, raw=${p.teamAbbreviationRaw}, lookup=${p.teamAbbreviationLookup})`;
             if (p.suggestions && p.suggestions.length > 0) {
               lines.push(`${base} -> suggestions: ${p.suggestions.join(", ")}`);
             } else {

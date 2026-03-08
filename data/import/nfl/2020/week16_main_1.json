@@ -1,0 +1,313 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 16,
+  "slateType": "MAIN",
+  "slateDate": "2020-12-27T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 16",
+  "slateTag": "HOU CINCY FULL GAME STACK, GALLUP SMASHES AT LOW OWNERSHIP, MONTGOMERY CHALK DOES ENOUGH",
+  "slateGroup": "4-1-1-1-1-1",
+  "rosterConstruction": "4-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK16_MAIN_2020-12-27T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12210
+  },
+  "winner": {
+    "username": "jvsherry",
+    "points": 217.78,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 217.78,
+    "totalOwnershipBp": 12210,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Deshaun Watson",
+        "position": "QB",
+        "team": "HOU",
+        "salary": 7600,
+        "points": 30.76,
+        "ownershipPercent": 7.9,
+        "passTd": 3,
+        "passYds": 324,
+        "rushYds": 38,
+        "fumblesLost": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Montgomery",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 7700,
+        "points": 20.1,
+        "ownershipPercent": 43.7,
+        "rushTdRb": 1,
+        "rushYdsRb": 95,
+        "recRb": 2,
+        "recYdsRb": 26,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Johnson",
+        "position": "RB",
+        "team": "HOU",
+        "salary": 6100,
+        "points": 31.9,
+        "ownershipPercent": 14.0,
+        "rushYdsRb": 128,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 14,
+        "recTdRb": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Gallup",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 4100,
+        "points": 33.1,
+        "ownershipPercent": 5.3,
+        "rec": 6,
+        "recYds": 121,
+        "recTd": 2,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Brandin Cooks",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 6200,
+        "points": 30.1,
+        "ownershipPercent": 10.1,
+        "rec": 7,
+        "recYds": 141,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tee Higgins",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 4700,
+        "points": 21.9,
+        "ownershipPercent": 16.7,
+        "rec": 6,
+        "recYds": 99,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Mark Andrews",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 5700,
+        "points": 13.6,
+        "ownershipPercent": 6.3,
+        "rec": 6,
+        "recYds": 76,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jamison Crowder",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 4500,
+        "points": 29.32,
+        "ownershipPercent": 15.9,
+        "passTd": 1,
+        "rec": 7,
+        "recYds": 92,
+        "recTd": 1,
+        "rushYds": 14,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Chargers",
+        "position": "DST",
+        "team": "LAC",
+        "salary": 3300,
+        "points": 7,
+        "ownershipPercent": 2.2,
+        "sacks": 2,
+        "takeaways": 2,
+        "pointsAllowed": 20,
+        "qbFaced": "Drew Lock",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "DEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by getting the quarterback game exactly right. Houston against Cincinnati becomes the center of the build, and the lineup attacks it with Deshaun Watson plus David Johnson and Brandin Cooks, then brings it back with Tee Higgins. This is a full game stack built around concentrated offensive roles rather than a loose collection of correlated pieces. Watson reaches 324 passing yards and three touchdowns. David Johnson adds both rushing and receiving scoring. Cooks clears 140 yards and scores. Higgins answers from the other side with 99 yards and a touchdown. When one game supplies a quarterback, a running back, two wide receivers, and a bring back, the slate can turn quickly because so much of the scoring is captured inside one environment.\n\nDavid Montgomery is the chalk running back, and he does enough. That matters. At 43.7 percent ownership, the goal was not fading him for the sake of difference. The goal was finding separation around him. He gives the lineup a stable twenty plus point score in a strong matchup, which means the rest of the roster is free to create first place through lower owned passing outcomes.\n\nMichael Gallup is one of those outcomes. At 5.3 percent ownership and 4,100 salary, he gives the build a true value spike with two touchdowns and 121 receiving yards. Dallas against Philadelphia offered access to downfield production, and Gallup was the cheaper way to capture it. This is one of the slate's most important decisions because it provided ceiling without requiring major salary.\n\nJamison Crowder is another strong structural choice. He produces through multiple paths with a passing touchdown, a receiving touchdown, and rushing yards. A player who can get there in more than one way is especially valuable in a flex slot because the roster does not need him tied to one clean game script. Mark Andrews functions as a steady skill piece rather than a slate breaker. He keeps the lineup balanced and gives it another path to target driven production without forcing salary strain.\n\nThe Chargers defense against Drew Lock rounds out the build. Drew Lock was volatile enough to create takeaways even when the defense itself was not projecting as one of the most popular units. At 2.2 percent ownership, Los Angeles did not need a touchdown to matter. Two sacks and two interceptions were enough because the rest of the lineup already had the heavy ceiling concentrated in the Houston Cincinnati stack and the Gallup value eruption.",
+    "uniquenessNotes": "The lineup is sharp because it does not confuse leverage with random deviation. Montgomery is massive chalk and remains in the build. The difference comes from the rest of the construction, especially the Houston Cincinnati full game stack and Gallup at low ownership.\n\nThe Houston side is particularly well built. Many lineups stacking Watson would choose one pass catcher and stop there, or would avoid pairing him with David Johnson because of the belief that passing ceiling and running back ceiling are in conflict. This roster rejects that assumption. Johnson can score through the air and on the ground, which makes him a strong attachment in the right game environment. Once Houston concentrates touchdowns through Watson, Johnson, and Cooks, the lineup owns nearly all of it.\n\nGallup is the clean salary release with real ceiling. There is a difference between cheap volume and cheap explosive access. Gallup offered the second type. His score is the bridge between a strong Watson construction and a first place Watson construction.\n\nThe defense is another point of separation. Chargers at 2.2 percent against Drew Lock was a selective decision, not a blind punt. Lock's volatility created turnover access, and the lineup took it without spending extra salary or following the crowd.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Deshaun Watson full game stack with David Johnson and Brandin Cooks, brought back by Tee Higgins",
+      "secondaryLever": "Michael Gallup gives the roster low owned value ceiling while David Montgomery chalk keeps the floor stable",
+      "notes": {
+        "rosterConstruction": "4-1-1-1-1-1",
+        "gameKey": [
+          "CIN@HOU: 4 (QB game)",
+          "PHI@DAL: 1",
+          "CHI@JAX: 1",
+          "NYG@BAL: 1",
+          "CLE@NYJ: 1",
+          "DEN@LAC: 1"
+        ],
+        "texansBengalsCluster": [
+          "Deshaun Watson",
+          "David Johnson",
+          "Brandin Cooks",
+          "Tee Higgins"
+        ],
+        "chalkAnchor": "David Montgomery",
+        "salaryReliefBreaker": "Michael Gallup",
+        "flexWildcard": "Jamison Crowder",
+        "qbFacedByChargersDst": "Drew Lock"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_GAME_STACK_QB_ANCHOR",
+        "CHALK_RB_DOES_ENOUGH",
+        "LOW_OWNERSHIP_VALUE_WR_CEILING",
+        "PASSING_GAME_WITH_PASS_CATCHING_RB",
+        "LOW_OWNERSHIP_DST_VS_VOLATILE_QB"
+      ],
+      "macroStory": "A first place roster anchored by the Houston Cincinnati full game stack, stabilized by David Montgomery chalk, and pushed over the top by Michael Gallup's low owned value ceiling."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "FULL_GAME_STACK_HUB",
+          "TOUCHDOWN_DISTRIBUTOR"
+        ],
+        "microStory": "Deshaun Watson is the structural center of the roster. His passing volume and touchdown distribution allow the lineup to capture multiple Houston scores while still bringing back Cincinnati production."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "CHALK_ACCEPTANCE",
+          "STABILITY_ANCHOR",
+          "MATCHUP_PAYOFF"
+        ],
+        "microStory": "David Montgomery does not need to break the slate. He needs to avoid failure at heavy ownership so the lower owned pieces can do the separating."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_VALUE_SMASH",
+          "YARDAGE_PLUS_TOUCHDOWNS",
+          "SALARY_MULTIPLIER"
+        ],
+        "microStory": "Michael Gallup is the roster's key salary release. Two touchdowns at 4,100 create the room needed for the Watson stack to become a winning build."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_DEFENSE",
+          "TURNOVER_ACCESS",
+          "VOLATILE_QB_TARGET"
+        ],
+        "microStory": "The Chargers defense does enough through sacks and interceptions against Drew Lock. At 2.2 percent ownership, even a modest defense score carries real value."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Deshaun Watson",
+          "position": "QB",
+          "team": "HOU"
+        },
+        "teammates": [
+          {
+            "name": "David Johnson",
+            "position": "RB",
+            "team": "HOU"
+          },
+          {
+            "name": "Brandin Cooks",
+            "position": "WR",
+            "team": "HOU"
+          }
+        ],
+        "opponent": {
+          "name": "Tee Higgins",
+          "position": "WR",
+          "team": "CIN"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Deshaun Watson",
+          "position": "QB",
+          "team": "HOU"
+        },
+        "opponent": {
+          "name": "Tee Higgins",
+          "position": "WR",
+          "team": "CIN"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Chargers",
+          "position": "DST",
+          "team": "LAC",
+          "qbFaced": "Drew Lock"
+        },
+        "opponent": {
+          "name": "Drew Lock",
+          "position": "QB",
+          "team": "DEN"
+        }
+      }
+    ]
+  }
+}

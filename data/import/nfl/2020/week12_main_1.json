@@ -1,0 +1,318 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 12,
+  "slateType": "MAIN",
+  "slateDate": "2020-11-29T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 12",
+  "slateTag": "TYREEK HILL ALL TIME GAME, SAINTS DST VERSUS KENDALL HINTON CHALK SMASH, HENRY OVER HINES",
+  "slateGroup": "2-2-2-1-1-1",
+  "rosterConstruction": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK12_MAIN_2020-11-29T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 102500000,
+    "totalOwnershipBp": 17300
+  },
+  "winner": {
+    "username": "lrfulsher",
+    "points": 246.68,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 246.68,
+    "totalOwnershipBp": 17300,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 8000,
+        "points": 35.28,
+        "ownershipPercent": 20.4,
+        "passTd": 3,
+        "passYds": 462,
+        "rushYds": 28,
+        "fumblesLost": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 7900,
+        "points": 41.5,
+        "ownershipPercent": 6.4,
+        "rushTdRb": 3,
+        "rushYdsRb": 178,
+        "recRb": 2,
+        "recYdsRb": 7,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Nyheim Hines",
+        "position": "RB",
+        "team": "IND",
+        "salary": 4600,
+        "points": 17.5,
+        "ownershipPercent": 35.5,
+        "rushYdsRb": 29,
+        "recRb": 8,
+        "recYdsRb": 66,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "KC",
+        "salary": 7800,
+        "points": 60.9,
+        "ownershipPercent": 24.4,
+        "rec": 13,
+        "recYds": 269,
+        "recTd": 3,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DeVante Parker",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 5900,
+        "points": 22.9,
+        "ownershipPercent": 19.2,
+        "rec": 8,
+        "recYds": 119,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Gabriel Davis",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 3000,
+        "points": 16.9,
+        "ownershipPercent": 12.7,
+        "rec": 3,
+        "recYds": 79,
+        "recTd": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Kyle Rudolph",
+        "position": "TE",
+        "team": "MIN",
+        "salary": 2800,
+        "points": 13.8,
+        "ownershipPercent": 14.1,
+        "rec": 7,
+        "recYds": 68,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 6100,
+        "points": 23.9,
+        "ownershipPercent": 12.1,
+        "rushYdsRb": 44,
+        "recRb": 11,
+        "recYdsRb": 85,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Saints",
+        "position": "DST",
+        "team": "NO",
+        "salary": 3800,
+        "points": 14,
+        "ownershipPercent": 28.2,
+        "sacks": 1,
+        "takeaways": 2,
+        "defTd": 1,
+        "pointsAllowed": 6,
+        "qbFaced": "Kendall Hinton",
+        "qbFacedArchetype": "UNKNOWN",
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by accepting the slate's most obvious truths and then arranging them with enough structure to capture first place rather than a good cash score. The 2020 season produced strange weekly conditions, and Week 12 delivered one of the strangest. Denver lost every true quarterback option and had Kendall Hinton, a college quarterback turned wide receiver, start an NFL game. New Orleans defense became one of the clearest chalk plays of the entire season, and the roster did not overthink it. The Saints defense scores a touchdown, forces turnovers, and does exactly what the slate said it should do. Sometimes the highest leverage move is refusing to get cute when the best play is sitting in plain view.\n\nThe second truth was Tyreek Hill. This was an all time eruption, and the lineup captured it directly through Patrick Mahomes plus Hill. Mahomes throws for 462 yards, yet the deeper story is concentration. Hill absorbs 269 of those yards and all three passing touchdowns. Tampa Bay had no answer for his speed or alignment versatility. Once Kansas City decided to funnel the game through Hill, the roster held the exact quarterback receiver pairing needed to access a score the slate could not survive. This is a classic example of why elite concentrated ceiling matters more than broad exposure. One pass catcher owning nearly the entire passing touchdown distribution is how tournaments get broken.\n\nThe running back room is where the build becomes sharp instead of obvious. Nyheim Hines is heavy chalk at 35.5 percent because of salary and role, and he does enough. The true separator is Derrick Henry from the other side at 6.4 percent. Henry scoring three times while Hines merely remains useful creates a powerful leverage layer inside one game. The roster does not need Hines to fail. It only needs Henry to decisively outscore him, which is exactly what happens. That decision matters more than fading chalk. It is about pairing chalk with the correct counterweight.\n\nAustin Ekeler and Gabriel Davis form another game based salary structure from Los Angeles at Buffalo. Ekeler returns to his heavy receiving role immediately, catching eleven passes. Davis gives the roster low salary touchdown access on the Buffalo side. Neither player needs to break the slate because Mahomes, Hill, and Henry are already doing the heavy lifting. Their job is to make the expensive core affordable without giving away points.\n\nDeVante Parker and Kyle Rudolph round out the build with stable production. Parker gives the roster a strong yardage game in a soft Jets matchup. Rudolph provides cheap tight end functionality with seven catches. The winning score does not require every slot to erupt. It requires the supporting pieces to stay on pace while the concentrated ceiling pieces do the separating.",
+    "uniquenessNotes": "This lineup is a good reminder that ownership is not the enemy. Four players clear 20 percent ownership, yet the roster still wins because the field did not own the right combinations in the right places. New Orleans defense was chalk for obvious reasons. Tyreek Hill was highly owned. Nyheim Hines was highly owned. Patrick Mahomes was highly owned. None of those facts blocked first place because the lineup also paired them with Derrick Henry's ceiling and the exact Hill Mahomes concentration outcome.\n\nThe Henry versus Hines decision is the cleanest tournament lever in the build. The field treated Hines as salary relief and workload value. This roster accepted Hines but then used Henry as the true power back from the same game environment. That is a much stronger construction choice than a simple fade because it allows both scripts to remain live while still capturing the highest scoring branch.\n\nThe Mahomes Hill stack also avoids unnecessary complexity. There is no forced Tampa Bay return. There is no attempt to spread Kansas City's scoring across secondary pass catchers. The roster identifies one ceiling distribution and commits to it. When the distribution lands in the most extreme version possible, the lineup gains a massive edge over builds with diluted exposure.\n\nNew Orleans defense against Kendall Hinton is another lesson in identifying when a slot does not require creativity. The defense was the right play, the field knew it, and the winning lineup still used it. Edge came from what happened around the chalk, not from trying to look different in a historically obvious defensive spot.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Patrick Mahomes with Tyreek Hill in a fully concentrated Kansas City passing eruption",
+      "secondaryLever": "Derrick Henry's ceiling over Nyheim Hines chalk plus Saints defense against Kendall Hinton create the roster's leverage and baseline",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "KC@TB: 2 (QB game)",
+          "TEN@IND: 2",
+          "LAC@BUF: 2",
+          "MIA@NYJ: 1",
+          "CAR@MIN: 1",
+          "NO@DEN: 1"
+        ],
+        "chiefsCluster": [
+          "Patrick Mahomes",
+          "Tyreek Hill"
+        ],
+        "titansColtsPair": [
+          "Derrick Henry",
+          "Nyheim Hines"
+        ],
+        "chargersBillsPair": [
+          "Austin Ekeler",
+          "Gabriel Davis"
+        ],
+        "chalkDefense": "Saints",
+        "qbFacedBySaintsDst": "Kendall Hinton"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "CHALK_DST_ANCHOR",
+        "ELITE_QB_WR_CONCENTRATION",
+        "SAME_GAME_RB_LEVERAGE_PAIR",
+        "CHEAP_WR_TOUCHDOWN_SUPPORT",
+        "PLAY_THE_BEST_PLAYS"
+      ],
+      "macroStory": "A first place roster anchored by the most obvious defense on the slate, then broken open by Tyreek Hill's historic ceiling and Derrick Henry's leverage over heavy Nyheim Hines ownership."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "BASELINE_ANCHOR",
+          "CHALK_THAT_HIT",
+          "UNIQUE_QUARTERBACK_CONTEXT"
+        ],
+        "microStory": "New Orleans defense was the slate's clearest structural starting point once Denver lost every real quarterback option. The field saw it, and the winning lineup still profited because the defense delivered exactly as expected."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "TOUCHDOWN_CONCENTRATION",
+          "HISTORIC_CEILING"
+        ],
+        "microStory": "Tyreek Hill posts one of the defining wide receiver games of the season. When a single receiver captures nearly the entire passing touchdown distribution from an elite quarterback, tournaments get decided immediately."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "LEVERAGE_OVER_CHALK",
+          "RAW_POINTS_NUCLEAR_SCORE",
+          "SAME_GAME_COUNTERWEIGHT"
+        ],
+        "microStory": "Derrick Henry is the lineup's strongest leverage call. He does not need Nyheim Hines to fail. He only needs to bury him in raw points, and three rushing touchdowns accomplish that."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "STACK_HUB",
+          "HIGH_VOLUME_PASSING_BASE"
+        ],
+        "microStory": "Patrick Mahomes provides the passing volume base for Hill's explosion. The winning decision was not merely playing Mahomes. It was pairing him with the exact receiver who absorbed the entire eruption."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Patrick Mahomes",
+          "position": "QB",
+          "team": "KC"
+        },
+        "teammates": [
+          {
+            "name": "Tyreek Hill",
+            "position": "WR",
+            "team": "KC"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Derrick Henry",
+          "position": "RB",
+          "team": "TEN"
+        },
+        "opponent": {
+          "name": "Nyheim Hines",
+          "position": "RB",
+          "team": "IND"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Austin Ekeler",
+          "position": "RB",
+          "team": "LAC"
+        },
+        "opponent": {
+          "name": "Gabriel Davis",
+          "position": "WR",
+          "team": "BUF"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Saints",
+          "position": "DST",
+          "team": "NO",
+          "qbFaced": "Kendall Hinton"
+        },
+        "opponent": {
+          "name": "Kendall Hinton",
+          "position": "QB",
+          "team": "DEN"
+        }
+      }
+    ]
+  }
+}

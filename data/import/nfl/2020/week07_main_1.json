@@ -1,0 +1,312 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 7,
+  "slateType": "MAIN",
+  "slateDate": "2020-10-25T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 7",
+  "slateTag": "SEA ARI GAME STACK, CHEAP CHALK SMASHES, WASHINGTON DOMINATES ANDY DALTON",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2020_WK07_MAIN_2020-10-25T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12970
+  },
+  "winner": {
+    "username": "ncorfield8k",
+    "points": 279.02,
+    "maxEntries": 49
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 279.02,
+    "totalOwnershipBp": 12970,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Russell Wilson",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 8000,
+        "points": 35.92,
+        "ownershipPercent": 6.3,
+        "passTd": 3,
+        "passYds": 388,
+        "rushYds": 84,
+        "interceptions": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Todd Gurley II",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 6000,
+        "points": 22.2,
+        "ownershipPercent": 10.2,
+        "rushTdRb": 2,
+        "rushYdsRb": 63,
+        "recRb": 2,
+        "recYdsRb": 19,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jamaal Williams",
+        "position": "RB",
+        "team": "GB",
+        "salary": 4000,
+        "points": 21.4,
+        "ownershipPercent": 36.9,
+        "rushTdRb": 1,
+        "rushYdsRb": 77,
+        "recRb": 4,
+        "recYdsRb": 37,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyler Lockett",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 6600,
+        "points": 56.0,
+        "ownershipPercent": 10.0,
+        "rec": 15,
+        "recYds": 200,
+        "recTd": 3,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "GB",
+        "salary": 7900,
+        "points": 47.6,
+        "ownershipPercent": 23.2,
+        "rec": 13,
+        "recYds": 196,
+        "recTd": 2,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Diontae Johnson",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 4200,
+        "points": 29.0,
+        "ownershipPercent": 5.0,
+        "rec": 9,
+        "recYds": 80,
+        "recTd": 2,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Harrison Bryant",
+        "position": "TE",
+        "team": "CLE",
+        "salary": 2500,
+        "points": 21.6,
+        "ownershipPercent": 2.8,
+        "rec": 4,
+        "recYds": 56,
+        "recTd": 2,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeAndre Hopkins",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 8200,
+        "points": 28.3,
+        "ownershipPercent": 9.6,
+        "rec": 10,
+        "recYds": 103,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Washington Football Team",
+        "position": "DST",
+        "team": "WAS",
+        "salary": 2500,
+        "points": 17.0,
+        "ownershipPercent": 25.7,
+        "sacks": 6,
+        "takeaways": 1,
+        "safeties": 1,
+        "qbFaced": "Andy Dalton",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "DAL"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is an aggressive acceptance of concentrated production rather than a search for novelty in every slot. Russell Wilson, Tyler Lockett, and DeAndre Hopkins create a three player game environment anchor from Seattle at Arizona, a spot where explosive passing volume and condensed target trees could carry an entire tournament roster. Wilson throws for 388 yards and adds 84 rushing yards, which keeps quarterback ceiling intact even before the passing touchdowns are counted. Lockett then produces the true slate breaker with 15 catches, 200 receiving yards, and 3 touchdowns. Hopkins completes the game stack from the other side with 10 catches, 103 receiving yards, and a score. This is not a thin bring back. It is a full commitment to a game environment capable of supporting multiple tournament winning scores at once.\n\nThe second pillar is Green Bay at Houston. Jamaal Williams enters as cheap chalk because salary, projected role, and game environment all point in the same direction. Instead of resisting the play, this build leans into it and pairs Williams with Davante Adams. That pairing matters. Williams handles the backfield scoring path while Adams captures the elite target and touchdown concentration. When cheap chalk reaches ceiling and expensive alpha volume reaches ceiling in the same game, the field can still fall behind because many rosters split exposure across alternatives rather than stacking both outcomes together.\n\nThe final separation layer comes from correctly identifying where low salary access still carried real multi touchdown potential. Diontae Johnson at 4,200 turns 9 catches into 29 points against Tennessee. Harrison Bryant at the bare minimum salary turns a tight end injury situation into a two touchdown outcome. Todd Gurley II provides stable volume plus touchdown access in a game Atlanta controlled through him near the goal line. Washington defense closes the loop by attacking Andy Dalton behind a vulnerable Dallas offensive structure and converting pressure into sacks, an interception, and a safety.\n\nThis winner reflects a simple slate reading principle carried out with precision. When several cheap and obvious plays hold elite role quality, the edge may come from embracing them, then arranging them inside the correct game level thesis instead of forcing uniqueness for its own sake.",
+    "uniquenessNotes": "The lineup wins because its chalk is layered rather than scattered. Jamaal Williams, Washington defense, and Harrison Bryant all rate as inexpensive value access points, yet the roster does not stop at salary relief. Each of those pieces is connected to a larger roster level idea. Washington is a pressure bet against a backup quarterback in a broken offensive setting. Bryant is a low salary access point into Cleveland touchdown distribution during a week when role expansion at tight end created temporary mispricing. Williams is not a one off value placeholder. He is paired with Adams so Green Bay touchdown concentration can be captured through two different channels.\n\nThe Seattle Arizona cluster is also more forceful than many first pass roster builds from this slate. Wilson plus Lockett plus Hopkins is a direct wager on one game supplying a massive share of the tournament winning raw points. Many lineups from high total games stop at a quarterback plus one receiver with a run back. This build lands on the correct receiver from Seattle, keeps the opposing alpha receiver, and still preserves room for Adams, Diontae Johnson, and Gurley.\n\nA roster can carry heavy ownership and still separate when it captures ceilings in the right sequence. Williams at 36.9 percent is not a problem once Lockett scores 56, Adams scores 47.6, and Diontae Johnson adds 29 at five percent ownership. Ownership concentration on cheap values lowered the cost of accessing multiple high end ceilings elsewhere.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Russell Wilson with Tyler Lockett and DeAndre Hopkins in the Seattle Arizona shootout",
+      "secondaryLever": "Cheap chalk smash through Jamaal Williams, Harrison Bryant, and Washington defense while Davante Adams supplies another elite ceiling",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "SEA@ARI: 3 (QB game)",
+          "GB@HOU: 2",
+          "DET@ATL: 1",
+          "PIT@TEN: 1",
+          "CLE@CIN: 1",
+          "DAL@WAS: 1"
+        ],
+        "seahawksCardinalsCluster": [
+          "Russell Wilson",
+          "Tyler Lockett",
+          "DeAndre Hopkins"
+        ],
+        "packersTexansPair": [
+          "Jamaal Williams",
+          "Davante Adams"
+        ],
+        "cheapCeilingLayer": [
+          "Diontae Johnson",
+          "Harrison Bryant",
+          "Washington Football Team"
+        ],
+        "qbFacedByWashingtonDst": "Andy Dalton"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "GAME_STACK_SHOOTOUT_ANCHOR",
+        "CHEAP_CHALK_SMASH",
+        "RB_WR_SAME_GAME_CONCENTRATION",
+        "BARE_MINIMUM_TE_CEILING",
+        "DST_VS_BACKUP_QB_PRESSURE_BET"
+      ],
+      "macroStory": "A first place roster built by accepting elite cheap chalk, then surrounding it with concentrated ceilings from Seattle at Arizona and Green Bay at Houston, while Washington defense punishes a backup quarterback spot the slate could not survive."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "RUSHING_FLOOR_PLUS_PASSING_CEILING",
+          "GAME_STACK_HUB"
+        ],
+        "microStory": "Russell Wilson supplies dual path scoring through 388 passing yards and 84 rushing yards, which keeps the Seattle Arizona stack alive even before Lockett fully erupts."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "TARGET_FLOOD",
+          "TOUCHDOWN_CONVERSION"
+        ],
+        "microStory": "Tyler Lockett is the tournament separating event. Fifteen catches and three touchdowns create a receiver score many lineups cannot recover from."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_CEILING",
+          "ROLE_EXPANSION",
+          "MULTI_TOUCHDOWN_OUTLIER"
+        ],
+        "microStory": "Harrison Bryant turns a minimum salary tight end slot into a two touchdown score, which allows the roster to keep Adams and Hopkins without sacrificing raw points."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "CHALK_THAT_HIT",
+          "PRESSURE_CONVERSION",
+          "BACKUP_QB_TARGET"
+        ],
+        "microStory": "Washington defense cashes the slate's cleanest structural read. Dallas with Andy Dalton behind a compromised offensive environment creates sacks, a turnover, and a safety."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Russell Wilson",
+          "position": "QB",
+          "team": "SEA"
+        },
+        "teammates": [
+          {
+            "name": "Tyler Lockett",
+            "position": "WR",
+            "team": "SEA"
+          }
+        ],
+        "opponent": {
+          "name": "DeAndre Hopkins",
+          "position": "WR",
+          "team": "ARI"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Jamaal Williams",
+          "position": "RB",
+          "team": "GB"
+        },
+        "opponent": {
+          "name": "Davante Adams",
+          "position": "WR",
+          "team": "GB"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Washington Football Team",
+          "position": "DST",
+          "team": "WAS",
+          "qbFaced": "Andy Dalton"
+        },
+        "opponent": {
+          "name": "Andy Dalton",
+          "position": "QB",
+          "team": "DAL"
+        }
+      }
+    ]
+  }
+}
