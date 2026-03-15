@@ -1,0 +1,312 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 17,
+  "slateType": "MAIN",
+  "slateDate": "2017-01-01T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 17",
+  "slateTag": "RYAN FIVE MAN GAME, ERTZ 41.9, CARDINALS DST GOFF WIPEOUT",
+  "slateGroup": "5-1-1-1-1",
+  "rosterConstruction": "5-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK17_MAIN_2017-01-01T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11900
+  },
+  "winner": {
+    "username": "Jvreurink",
+    "points": 262.14,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 262.14,
+    "totalOwnershipBp": 11900,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Matt Ryan",
+        "position": "QB",
+        "team": "ATL",
+        "salary": 7400,
+        "points": 32.44,
+        "ownershipPercent": 11.0,
+        "passTd": 4,
+        "passYds": 331,
+        "rushYds": 2,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Devonta Freeman",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 7000,
+        "points": 28.7,
+        "ownershipPercent": 25.6,
+        "rushYdsRb": 96,
+        "rushTdRb": 1,
+        "recRb": 5,
+        "recYdsRb": 81,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Mark Ingram",
+        "position": "RB",
+        "team": "NO",
+        "salary": 5600,
+        "points": 28.2,
+        "ownershipPercent": 17.3,
+        "rushYdsRb": 103,
+        "rushTdRb": 1,
+        "recRb": 6,
+        "recYdsRb": 29,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Geronimo Allison",
+        "position": "WR",
+        "team": "GB",
+        "salary": 3000,
+        "points": 19.1,
+        "ownershipPercent": 0.4,
+        "rec": 4,
+        "recYds": 91,
+        "recTd": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 8400,
+        "points": 22.6,
+        "ownershipPercent": 17.9,
+        "rec": 7,
+        "recYds": 96,
+        "recTd": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Thomas",
+        "position": "WR",
+        "team": "NO",
+        "salary": 6700,
+        "points": 34.6,
+        "ownershipPercent": 12.5,
+        "rec": 10,
+        "recYds": 156,
+        "recTd": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Zach Ertz",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 4800,
+        "points": 41.9,
+        "ownershipPercent": 10.8,
+        "rec": 13,
+        "recYds": 139,
+        "recTd": 2,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Charcandrick West",
+        "position": "RB",
+        "team": "KC",
+        "salary": 4100,
+        "points": 28.6,
+        "ownershipPercent": 2.1,
+        "rushYdsRb": 58,
+        "recRb": 5,
+        "recYdsRb": 58,
+        "recTdRb": 2,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "SD",
+        "opponentTeam": "SD"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 3000,
+        "points": 26,
+        "ownershipPercent": 21.4,
+        "sacks": 7,
+        "takeaways": 3,
+        "defTd": 1,
+        "qbFaced": "Jared Goff",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup captures Week 17 through an aggressive game concentration in Atlanta and a set of secondary scores which all carried tournament winning ceilings on their own. Matt Ryan anchors a five player cluster from New Orleans at Atlanta. The roster takes Ryan, Julio Jones, and Devonta Freeman from the Falcons, then brings back Mark Ingram and Michael Thomas from the Saints. This is a full commitment to the game environment rather than a light touch stack. Atlanta scored 38 and New Orleans answered with 32, so the lineup absorbed production from both sides without wasting roster spots on peripheral volume.\n\nThe sharp part of the build is the way the Atlanta game was captured. Many rosters would have treated Ryan with Julio as the obvious path and stopped there. This entry added Freeman, which collected the rushing score and receiving production from Atlanta's side, then used both Ingram and Thomas to cover the Saints response tree. That construction gave the lineup access to nearly every major fantasy branch in the game's box score.\n\nThe second engine is Zach Ertz. Forty one point nine from tight end is the sort of positional score which reshapes the tournament immediately. It is even stronger in a lineup already carrying a concentrated game cluster, because it removes the need for every Atlanta slot to hit absolute ceiling. Charcandrick West and Geronimo Allison then supply the two lower owned salary adjusted spikes which turn a strong first page roster into the top lineup.\n\nArizona defense against Jared Goff rounds it out. Seven sacks, two interceptions, a fumble recovery, and a defensive touchdown gave the lineup one more upper tier score from a defense many players were willing to click, but few paired with this exact five man offensive concentration.",
+    "uniquenessNotes": "The lineup is unusual because the uniqueness is structural before it is ownership based. Five roster spots are tied to one game, yet the build does not collapse into a fragile quarterback double stack. It spreads exposure across quarterback, running back, alpha wide receiver, opposing running back, and opposing alpha receiver. That gives the roster multiple paths through the same shootout.\n\nGeronimo Allison at 0.4 percent ownership is the cleanest separator on the board. A minimum salary receiver producing 19.1 points opens access to the expensive Atlanta concentration without forcing dead salary concessions elsewhere. Charcandrick West at 2.1 percent does something similar from the flex. His two receiving touchdowns gave the lineup another score few constructions had, especially among rosters spending heavily on Atlanta pieces.\n\nErtz is the quiet tournament breaker. Tight end usually compresses score differences on classic slates. Once Ertz posts 13 catches, 139 yards, and two touchdowns, the roster gains a positional gap which many strong quarterback builds cannot overcome. Arizona defense adds another large score on top of that.\n\nFor future lineup building, this roster is a reminder that a five player same game concentration can be viable when the game holds multiple elite usage nodes on both teams and the secondary pieces outside the cluster are capable of producing one of the top point per dollar outcomes on the slate. The roster did not need every slot to be low owned. It needed a coherent central script and a few slots where the field had almost no overlap.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Matt Ryan with Atlanta New Orleans five player game concentration",
+      "secondaryLever": "Zach Ertz ceiling plus low owned salary separation from Geronimo Allison and Charcandrick West",
+      "notes": {
+        "rosterConstruction": "5-1-1-1-1",
+        "gameKey": [
+          "NO@ATL: 5 (QB game)",
+          "DAL@PHI: 1",
+          "KC@SD: 1",
+          "GB@DET: 1",
+          "ARI@LAR: 1"
+        ],
+        "falconsSaintsCluster": [
+          "Matt Ryan",
+          "Devonta Freeman",
+          "Mark Ingram",
+          "Julio Jones",
+          "Michael Thomas"
+        ],
+        "tightEndCeiling": "Zach Ertz",
+        "salarySeparatorWideReceiver": "Geronimo Allison",
+        "salarySeparatorFlex": "Charcandrick West",
+        "qbFacedByCardinalsDst": "Jared Goff"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FIVE_PLAYER_GAME_CONCENTRATION",
+        "QB_STACK_WITH_OPPOSING_ALPHA_AND_RB",
+        "POSITIONAL_CEILING_TIGHT_END",
+        "MIN_SALARY_WR_SPIKE",
+        "LOW_OWNERSHIP_FLEX_TOUCHDOWN_CLUSTER",
+        "DST_VS_ROOKIE_QB_PRESSURE"
+      ],
+      "macroStory": "A first place roster built around an unusually deep Atlanta New Orleans game capture, then separated from the field through Zach Ertz at tight end, a near unowned Geronimo Allison salary release, Charcandrick West's receiving touchdown swing, and Arizona defense overwhelming Jared Goff."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "GAME_CLUSTER_HUB",
+          "FOUR_TOUCHDOWN_OUTPUT"
+        ],
+        "microStory": "Matt Ryan is the hub which allows the five player game thesis to function. Once he throws four touchdowns, every surrounding Atlanta New Orleans piece gains a path to matter."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "POSITIONAL_BREAKER",
+          "TARGET_FLOOD",
+          "TOUCHDOWN_SWING"
+        ],
+        "microStory": "Zach Ertz provides the score which bends the slate at tight end. Thirteen catches and two touchdowns created a gap the field had trouble matching."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "MIN_SALARY_RELIEF",
+          "LOW_OWNERSHIP_SPIKE",
+          "STRUCTURAL_ENABLER"
+        ],
+        "microStory": "Geronimo Allison is the salary release valve. At 0.4 percent ownership, 19.1 points made the expensive Atlanta concentration much easier to carry."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRESSURE_CEILING",
+          "ROOKIE_QB_PUNISHMENT",
+          "TURNOVER_TOUCHDOWN_PATH"
+        ],
+        "microStory": "Arizona defense finished the roster with a complete collapse outcome against Jared Goff, turning a solid defense score into one of the top defensive scores on the slate."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Matt Ryan",
+          "position": "QB",
+          "team": "ATL"
+        },
+        "teammates": [
+          {
+            "name": "Devonta Freeman",
+            "position": "RB",
+            "team": "ATL"
+          },
+          {
+            "name": "Julio Jones",
+            "position": "WR",
+            "team": "ATL"
+          }
+        ],
+        "opponent": {
+          "name": "Michael Thomas",
+          "position": "WR",
+          "team": "NO"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Devonta Freeman",
+          "position": "RB",
+          "team": "ATL"
+        },
+        "opponent": {
+          "name": "Mark Ingram",
+          "position": "RB",
+          "team": "NO"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Cardinals",
+          "position": "DST",
+          "team": "ARI",
+          "qbFaced": "Jared Goff"
+        },
+        "opponent": {
+          "name": "Jared Goff",
+          "position": "QB",
+          "team": "LAR"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,323 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 10,
+  "slateType": "MAIN",
+  "slateDate": "2019-11-10T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 10",
+  "slateTag": "KC TEN GAME STACK, CHRISTIAN KIRK TAMPA SMASH, STEELERS DST VERSUS JARED GOFF",
+  "slateGroup": "3-2-2-1-1",
+  "rosterConstruction": "3-2-2-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2019_WK10_MAIN_2019-11-10T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14620
+  },
+  "winner": {
+    "username": "Jonesr101",
+    "points": 251.64,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 251.64,
+    "totalOwnershipBp": 14620,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 7000,
+        "points": 32.84,
+        "ownershipPercent": 12.7,
+        "passTd": 3,
+        "passYds": 446,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 6400,
+        "points": 36.1,
+        "ownershipPercent": 8.5,
+        "rushYdsRb": 188,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 3,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ronald Jones II",
+        "position": "RB",
+        "team": "TB",
+        "salary": 4300,
+        "points": 23.6,
+        "ownershipPercent": 16.9,
+        "rushYdsRb": 29,
+        "rushTdRb": 1,
+        "recRb": 8,
+        "recYdsRb": 77,
+        "fumblesLost": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "KC",
+        "salary": 7700,
+        "points": 36,
+        "ownershipPercent": 12.9,
+        "rec": 10,
+        "recYds": 157,
+        "recTd": 1,
+        "rushYds": 3,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Christian Kirk",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 5200,
+        "points": 40.8,
+        "ownershipPercent": 24.7,
+        "rec": 6,
+        "recYds": 138,
+        "recTd": 3,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Thomas",
+        "position": "WR",
+        "team": "NO",
+        "salary": 8300,
+        "points": 31.2,
+        "ownershipPercent": 44.6,
+        "rec": 13,
+        "recYds": 152,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Austin Hooper",
+        "position": "TE",
+        "team": "ATL",
+        "salary": 5500,
+        "points": 11.7,
+        "ownershipPercent": 10.6,
+        "rec": 4,
+        "recYds": 17,
+        "recTd": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kareem Hunt",
+        "position": "RB",
+        "team": "CLE",
+        "salary": 3000,
+        "points": 14.4,
+        "ownershipPercent": 6.3,
+        "rushYdsRb": 30,
+        "recRb": 7,
+        "recYdsRb": 44,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Steelers",
+        "position": "DST",
+        "team": "PIT",
+        "salary": 2600,
+        "points": 25,
+        "ownershipPercent": 9.9,
+        "sacks": 4,
+        "takeaways": 4,
+        "defTd": 1,
+        "qbFaced": "Jared Goff",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins by marrying a strong game level thesis with disciplined acceptance of the slate's most bankable volume. Patrick Mahomes with Tyreek Hill and Derrick Henry is the central structure. Kansas City against Tennessee had the ingredients for concentrated fantasy output, and the build captured both the Kansas City passing explosion and the Tennessee side through Henry's rushing punishment. Mahomes threw for 446 yards, Hill cleared 150 receiving yards, and Henry answered with 188 rushing yards and two touchdowns. The quarterback slot did not need to be exotic. It needed to be attached to the correct environment and paired with the right opposing force.\n\nThe second engine sits in the Arizona Tampa game, which the field was starting to understand by this point in the season. Tampa Bay was becoming a recurring source of usable fantasy environments because its defense invited passing success and its own offense could keep games alive. Christian Kirk at 24.7 percent ownership was no secret, but he did not need to be hidden. He needed to convert one of the most attackable pass defenses on the slate into a ceiling score, and he did it with three touchdowns. Ronald Jones II added the other side of the same game without forcing a full quarterback commitment. That kept the build flexible while still extracting the fantasy density Tampa games were creating.\n\nMichael Thomas at 44.6 percent ownership is another example of a decision that did not require creativity. His target floor and reception volume were so extreme that fading him was more of an ego exercise than a sound tournament decision. The sharper wrinkle was Austin Hooper coming back from the Atlanta side. Hooper did not post a tournament winning raw score by himself, but he gave the lineup direct access to Atlanta's passing answer and prevented the Thomas slot from becoming dead one way volume.\n\nThe true separators were the less glamorous salary decisions. Kareem Hunt was inexpensive and functional in his first game back, which mattered because he kept the roster structurally intact. Steelers defense against Jared Goff was the sharper defensive read. Pittsburgh generated the exact kind of scoring path required to matter in a Milly Maker, with pressure, interceptions, a fumble recovery, and a defensive touchdown. This was a lineup that accepted obvious volume where the slate demanded it, then used the right game environments and one excellent defense read to turn a solid build into first place.",
+    "uniquenessNotes": "The uniqueness came from how the chalk was arranged, not from avoiding it. Michael Thomas and Christian Kirk were both popular, and both delivered. The edge was in understanding that popularity alone was not a reason to move away from players whose roles and matchups were this strong. The field often gets into trouble by trying to beat good plays instead of asking where the lineup can create its edge around them.\n\nMahomes with Hill and Henry is a good example of concentrated correlation without unnecessary decoration. Many lineups from that game could have used Mahomes. Fewer captured the specific combination of Mahomes raw passing ceiling, Hill's explosive share of it, and Henry's direct response from the Tennessee side. That shape preserved access to the game's defining outcomes without overcommitting salary.\n\nSteelers defense and Kareem Hunt are where the lineup gained important structural flexibility. Hunt did enough at minimum salary to keep the stars affordable. Pittsburgh defense provided a score that most defenses cannot reach. Once those two slots land, the lineup no longer needs every expensive piece to be perfect. That is how a roster with multiple popular players still clears the field.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Patrick Mahomes with Tyreek Hill and Derrick Henry in the Kansas City Tennessee game",
+      "secondaryLever": "Christian Kirk against Tampa Bay plus the Steelers defense against Jared Goff",
+      "notes": {
+        "rosterConstruction": "3-2-2-1-1",
+        "gameKey": [
+          "KC@TEN: 3 (QB game)",
+          "ARI@TB: 2",
+          "ATL@NO: 2",
+          "BUF@CLE: 1",
+          "LAR@PIT: 1"
+        ],
+        "chiefsTitansCluster": [
+          "Patrick Mahomes",
+          "Tyreek Hill",
+          "Derrick Henry"
+        ],
+        "cardinalsBuccaneersPair": [
+          "Christian Kirk",
+          "Ronald Jones II"
+        ],
+        "saintsFalconsPair": [
+          "Michael Thomas",
+          "Austin Hooper"
+        ],
+        "salaryReliefBack": "Kareem Hunt",
+        "qbFacedBySteelersDst": "Jared Goff"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "GAME_STACK_WITH_OPPOSING_RB",
+        "POPULAR_WR_SMASH_SPOT",
+        "HIGH_OWNERSHIP_PPR_ANCHOR",
+        "CHEAP_RB_GLUE_PLAY",
+        "DST_TURNOVER_TOUCHDOWN_CEILING"
+      ],
+      "macroStory": "A first place roster anchored by the Kansas City Tennessee game, strengthened by the Tampa Bay environment through Christian Kirk, and finished by a sharp Steelers defense call against Jared Goff."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "YARDAGE_CEILING",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Patrick Mahomes gave the roster access to the slate's premier passing score without needing rushing production to get there."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "POPULAR_MATCHUP_SMASH",
+          "MULTI_TOUCHDOWN_CEILING",
+          "ENVIRONMENT_LEVER"
+        ],
+        "microStory": "Christian Kirk punished Tampa Bay exactly the way the matchup suggested he could, turning a popular read into a slate breaking score."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "PPR_FOUNDATION",
+          "HIGH_OWNERSHIP_THAT_HIT",
+          "RAW_POINTS_ANCHOR"
+        ],
+        "microStory": "Michael Thomas gave the lineup the reception floor and raw points it could not afford to miss on this slate."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRESSURE_ENVIRONMENT",
+          "TURNOVER_CLUSTER",
+          "DEFENSIVE_TOUCHDOWN"
+        ],
+        "microStory": "Steelers defense was the non offensive hammer. Jared Goff turned pressure into mistakes, and Pittsburgh converted those mistakes into a tournament winning score."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Patrick Mahomes",
+          "position": "QB",
+          "team": "KC"
+        },
+        "teammates": [
+          {
+            "name": "Tyreek Hill",
+            "position": "WR",
+            "team": "KC"
+          }
+        ],
+        "opponent": {
+          "name": "Derrick Henry",
+          "position": "RB",
+          "team": "TEN"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Christian Kirk",
+          "position": "WR",
+          "team": "ARI"
+        },
+        "opponent": {
+          "name": "Ronald Jones II",
+          "position": "RB",
+          "team": "TB"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Michael Thomas",
+          "position": "WR",
+          "team": "NO"
+        },
+        "opponent": {
+          "name": "Austin Hooper",
+          "position": "TE",
+          "team": "ATL"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Steelers",
+          "position": "DST",
+          "team": "PIT",
+          "qbFaced": "Jared Goff"
+        },
+        "opponent": {
+          "name": "Jared Goff",
+          "position": "QB",
+          "team": "LAR"
+        }
+      }
+    ]
+  }
+}

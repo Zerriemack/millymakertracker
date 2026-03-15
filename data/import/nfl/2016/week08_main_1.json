@@ -1,0 +1,324 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 8,
+  "slateType": "MAIN",
+  "slateDate": "2016-10-30T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 8",
+  "slateTag": "CARR COOPER TAMPA STACK, BOOKER BRONCOS CONTROL, DAVANTE TARGET FLOOD",
+  "slateGroup": "2-2-2-1-1-1",
+  "rosterConstruction": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK08_MAIN_2016-10-30T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 17150
+  },
+  "winner": {
+    "username": "Jakz101",
+    "points": 231.32,
+    "maxEntries": 74
+  },
+  "lineup": {
+    "salaryUsed": 49600,
+    "totalPoints": 231.32,
+    "totalOwnershipBp": 17150,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Derek Carr",
+        "position": "QB",
+        "team": "OAK",
+        "salary": 5900,
+        "points": 39.82,
+        "ownershipPercent": 7.0,
+        "passTd": 4,
+        "passYds": 513,
+        "passBonus": 1,
+        "fumblesLost": 1,
+        "rushYds": 13,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Johnson",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 7700,
+        "points": 17.8,
+        "ownershipPercent": 16.1,
+        "rushYdsRb": 24,
+        "recRb": 7,
+        "recYdsRb": 84,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Theo Riddick",
+        "position": "RB",
+        "team": "DET",
+        "salary": 5000,
+        "points": 27.3,
+        "ownershipPercent": 5.9,
+        "rushYdsRb": 56,
+        "recRb": 8,
+        "recYdsRb": 77,
+        "recTdRb": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "GB",
+        "salary": 4900,
+        "points": 19.4,
+        "ownershipPercent": 41.4,
+        "rec": 12,
+        "recYds": 74,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Amari Cooper",
+        "position": "WR",
+        "team": "OAK",
+        "salary": 7600,
+        "points": 38.3,
+        "ownershipPercent": 8.6,
+        "rec": 12,
+        "recYds": 173,
+        "recTd": 1,
+        "recBonus": 1,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mohamed Sanu",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 4100,
+        "points": 23.4,
+        "ownershipPercent": 5.8,
+        "rec": 9,
+        "recYds": 84,
+        "recTd": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Rob Gronkowski",
+        "position": "TE",
+        "team": "NE",
+        "salary": 7000,
+        "points": 24.9,
+        "ownershipPercent": 10.3,
+        "rec": 5,
+        "recYds": 109,
+        "recTd": 1,
+        "recBonus": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Devontae Booker",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 3700,
+        "points": 18.4,
+        "ownershipPercent": 65.5,
+        "rushTdRb": 1,
+        "rushYdsRb": 54,
+        "recRb": 5,
+        "recYdsRb": 30,
+        "fumblesLost": 1,
+        "gameAwayTeam": "SD",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "SD"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Broncos",
+        "position": "DST",
+        "team": "DEN",
+        "salary": 3700,
+        "points": 22,
+        "ownershipPercent": 10.9,
+        "sacks": 4,
+        "takeaways": 4,
+        "defTd": 1,
+        "qbFaced": "Philip Rivers",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "SD",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "SD"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is anchored by a direct read on where ceiling passing volume would be concentrated. Derek Carr at 5,900 gives access to a huge passing outcome without paying elite quarterback salary, and the lineup correctly pairs him with Amari Cooper instead of spreading exposure across secondary Raiders pieces. Carr throws for 513 yards and four touchdowns, which means the winning decision is not merely choosing the right game. It is isolating the player through whom the game would flow. Cooper turns that read into a tournament winner by commanding 12 catches, 173 yards, and a touchdown.\n\nThe second layer is how the lineup treats the Green Bay Atlanta environment. Davante Adams was popular because the role had become undeniable, but this build does not stop at eating the obvious target volume. It brings back Mohamed Sanu at 4,100, which captures Atlanta production through a cheaper access point while Julio Jones failed to bury the slate. That matters because it lets the roster keep pace with the field on Adams while gaining leverage through the specific Falcon who scored.\n\nThe backfield construction is sharper than it first appears. David Johnson was a high floor star with receiving access, yet he was not asked to carry the roster. Theo Riddick and Devontae Booker were the structural pieces. Riddick provided rare receiving back upside at modest ownership, and Booker was overwhelming chalk because his workload had changed. Rather than avoiding Booker out of fear, the lineup accepted the salary value and searched for separation elsewhere.\n\nRob Gronkowski serves a similar purpose. He is expensive for a tight end, yet the slate did not punish paying for elite tight end scoring. His 100 yard bonus and touchdown prevented cheap tight ends from closing the gap. The Broncos defense completed the construction by turning Philip Rivers dropbacks into sacks, interceptions, and a defensive score. That outcome gave the lineup a second source of raw points from the same game as Booker without relying on a fragile game script guess. Denver could score through defense while Booker could still get there on volume and touchdown access.",
+    "uniquenessNotes": "The lineup does not rely on a strange build. It wins by being correct on where to be conventional and where to be selective. Booker and Davante Adams were both heavily owned, but they were paired with lower owned ceiling outcomes in Carr, Cooper, Sanu, and Riddick.\n\nThe Carr Cooper combination is the primary separator. A 500 yard passing game from a quarterback under 6,000 is slate warping on its own, and pairing it with the correct receiver converts the outlier into a first place path. Many lineups from that game would have split between Cooper and Michael Crabtree or avoided the full commitment altogether. This roster took the cleanest version of the thesis.\n\nThe Green Bay Atlanta mini correlation is another pressure point. Adams by himself was fine, but Adams plus Sanu is what turned a common play into a differentiated game capture. Sanu was inexpensive, active in the scoring areas, and did enough to keep the lineup from needing a second miracle.\n\nThe roster also leaves 400 on the table. In a week where Booker created easy salary relief, leaving salary unused becomes part of the combinational uniqueness. It reduces duplication while preserving projection because the expensive slots still carry elite ceilings through Cooper, Johnson, and Gronkowski.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Derek Carr with Amari Cooper in the Tampa Bay shootout",
+      "secondaryLever": "Davante Adams plus Mohamed Sanu game capture with Devontae Booker and Broncos defense in the same roster",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "OAK@TB: 2 (QB game)",
+          "GB@ATL: 2",
+          "SD@DEN: 2",
+          "ARI@CAR: 1",
+          "DET@HOU: 1",
+          "NE@BUF: 1"
+        ],
+        "raidersCluster": [
+          "Derek Carr",
+          "Amari Cooper"
+        ],
+        "falconsPackersMini": [
+          "Davante Adams",
+          "Mohamed Sanu"
+        ],
+        "denverControlPair": [
+          "Devontae Booker",
+          "Broncos"
+        ],
+        "eliteTightEndSpend": "Rob Gronkowski",
+        "qbFacedByBroncosDst": "Philip Rivers"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WR_PRIMARY_STACK",
+        "OPPOSING_WR_MINI_CORRELATION",
+        "RB_PASS_GAME_CEILING",
+        "CHALK_RB_VALUE_ACCEPTED",
+        "DST_PLUS_RB_SAME_TEAM",
+        "ELITE_TE_RAW_POINTS"
+      ],
+      "macroStory": "A first place roster built around a low owned quarterback eruption, the correct expensive receiver attachment, disciplined acceptance of obvious running back value, and a secondary game capture that turned popular Davante Adams exposure into a differentiated structure."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_CEILING",
+          "POCKET_PASSER_EXPLOSION"
+        ],
+        "microStory": "Derek Carr is the roster's central decision. At 5,900, a 500 yard bonus game with four passing touchdowns breaks quarterback salary structure and lets the lineup spend aggressively elsewhere."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_STACK_MATE",
+          "ALPHA_TARGET",
+          "YARDAGE_PLUS_TOUCHDOWN"
+        ],
+        "microStory": "Amari Cooper converts the Carr ceiling into a usable tournament stack. Twelve catches and 173 yards means the lineup attached itself to the correct Raiders receiver outcome."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PASS_GAME_RB",
+          "MID_OWNERSHIP_SPIKE",
+          "STRUCTURAL_SEPARATOR"
+        ],
+        "microStory": "Theo Riddick supplied one of the slate's most valuable point per dollar scores from a running back because his receiving role created access to ceiling without requiring goal line dominance."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_CEILING",
+          "DEFENSIVE_TOUCHDOWN",
+          "FRANCHISE_QB_TARGET"
+        ],
+        "microStory": "Denver defense mattered because it did not need an incompetent opposing quarterback to get there. Even against Philip Rivers, the pressure and takeaway path was strong enough to create a slate level defensive score."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Derek Carr",
+          "position": "QB",
+          "team": "OAK"
+        },
+        "teammates": [
+          {
+            "name": "Amari Cooper",
+            "position": "WR",
+            "team": "OAK"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Davante Adams",
+          "position": "WR",
+          "team": "GB"
+        },
+        "opponent": {
+          "name": "Mohamed Sanu",
+          "position": "WR",
+          "team": "ATL"
+        }
+      },
+      {
+        "type": "TEAM_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Devontae Booker",
+          "position": "RB",
+          "team": "DEN"
+        },
+        "opponent": {
+          "name": "Broncos",
+          "position": "DST",
+          "team": "DEN"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Broncos",
+          "position": "DST",
+          "team": "DEN",
+          "qbFaced": "Philip Rivers"
+        },
+        "opponent": {
+          "name": "Philip Rivers",
+          "position": "QB",
+          "team": "SD"
+        }
+      }
+    ]
+  }
+}

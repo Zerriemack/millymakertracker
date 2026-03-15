@@ -1,0 +1,323 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 13,
+  "slateType": "MAIN",
+  "slateDate": "2016-12-04T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 13",
+  "slateTag": "FLACCO DOUBLE STACK, DAVID JOHNSON PPR HAMMER, GOLDEN TATE SEPARATION",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $8M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK13_MAIN_2016-12-04T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10630
+  },
+  "winner": {
+    "username": "Imsparticus",
+    "points": 236.14,
+    "maxEntries": 15
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 236.14,
+    "totalOwnershipBp": 10630,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Joe Flacco",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 5300,
+        "points": 33.24,
+        "ownershipPercent": 0.4,
+        "passTd": 4,
+        "passYds": 381,
+        "interceptions": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jordan Howard",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 6900,
+        "points": 32.7,
+        "ownershipPercent": 24.3,
+        "rushYdsRb": 117,
+        "rushTdRb": 3,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Johnson",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 9500,
+        "points": 38.5,
+        "ownershipPercent": 31.1,
+        "rushYdsRb": 84,
+        "rushTdRb": 1,
+        "recRb": 9,
+        "recYdsRb": 91,
+        "recTdRb": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 8700,
+        "points": 21.3,
+        "ownershipPercent": 23.6,
+        "rec": 7,
+        "recYds": 113,
+        "recTd": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Golden Tate",
+        "position": "WR",
+        "team": "DET",
+        "salary": 6200,
+        "points": 31.5,
+        "ownershipPercent": 13.2,
+        "rec": 8,
+        "recYds": 145,
+        "recTd": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mike Wallace",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 5000,
+        "points": 11.9,
+        "ownershipPercent": 3.0,
+        "rec": 6,
+        "recYds": 59,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Ladarius Green",
+        "position": "TE",
+        "team": "PIT",
+        "salary": 2800,
+        "points": 26.0,
+        "ownershipPercent": 4.5,
+        "rec": 6,
+        "recYds": 110,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dennis Pitta",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 3100,
+        "points": 29.0,
+        "ownershipPercent": 1.2,
+        "rec": 9,
+        "recYds": 90,
+        "recTd": 2,
+        "fumblesLost": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Buccaneers",
+        "position": "DST",
+        "team": "TB",
+        "salary": 2500,
+        "points": 12,
+        "ownershipPercent": 5.0,
+        "sacks": 2,
+        "takeaways": 2,
+        "dstTd": 1,
+        "qbFaced": "Philip Rivers",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "SD",
+        "opponentTeam": "SD"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is built around one sharp read. Baltimore's passing game was underpriced across multiple access points, and Joe Flacco at 0.4 percent ownership became the door into a ceiling outcome almost nobody held. The build does not stop at a standard quarterback with one wide receiver pairing. It doubles into Mike Wallace and Dennis Pitta, which captures four passing touchdowns through two different usage channels. Wallace handles perimeter speed and splash gain equity. Pitta handles short area volume and red zone access. When a low salary quarterback throws 381 yards and four scores, the slate changes immediately. When two pass catchers from his team are attached, first place becomes reachable without needing a full game stack.\n\nThe second pillar is raw running back certainty. David Johnson was expensive and popular, yet he still had to be taken seriously because his role was closer to a wide receiver one and workhorse running back combined into one salary slot. Nine catches and a receiving touchdown confirm why he was still capable of burying balanced builds. Jordan Howard then gives the roster a second back with direct touchdown access. His three rushing scores matter because this lineup did not need every wide receiver slot to produce 30 plus points. Howard handled one of those ceiling jobs from the running back position.\n\nGolden Tate is the wide receiver who turns a strong roster into a tournament winner. Julio Jones did his part, though Tate delivered the cleaner separation score relative to salary and ownership. Ladarius Green adds a second tight end through the FLEX, which mattered in 2016 when pricing and role shifts at tight end could produce wide receiver style ceilings at a discount. Dennis Pitta and Ladarius Green together gave this build two roster spots where the field was not allocating enough ceiling expectation.\n\nThe Buccaneers defense closes the build with a useful tournament lesson. Tampa Bay did not need a soft backup quarterback matchup. The defense scored against Philip Rivers, a franchise level passer, by creating a defensive touchdown and collecting enough disruption to stay relevant. In a week where Baltimore passing smashed and the expensive running back hit, the defense slot only needed to avoid failure and provide one swing event. It did exactly that.",
+    "uniquenessNotes": "The uniqueness comes from concentration in the correct low owned offense, not from random detours. Joe Flacco with Mike Wallace and Dennis Pitta is a direct stand on a passing environment the field ignored. Baltimore scored 38 points, and this lineup held three pieces from the touchdown source. There is no bring back from Miami because none was needed. The lineup chose to maximize access to Baltimore scoring instead of forcing a symmetrical game script.\n\nThe second structural edge is tight end allocation. Most lineups treat tight end as a box to survive. This roster used two tight ends and gained 55 fantasy points from those spots. Dennis Pitta at 1.2 percent ownership is one of the biggest leverage points in the lineup because he scores twice in the same passing stack while preserving salary. Ladarius Green then gives the roster another athletic spike week from a position many opponents handled conservatively.\n\nThere is also discipline in where chalk was accepted. David Johnson and Jordan Howard were popular for sound reasons, and fading both would have introduced unnecessary fragility. The lineup took the clear volume where it belonged, then found separation through Flacco, Pitta, Wallace, and Green. This is how low owned quarterback builds win large field tournaments. They do not need nine contrarian plays. They need a few underplayed outcomes attached to a lineup shell sturdy enough to absorb them.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Joe Flacco double stack with Mike Wallace and Dennis Pitta",
+      "secondaryLever": "David Johnson and Jordan Howard carrying running back ceiling while Golden Tate and Ladarius Green create mid salary separation",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "MIA@BAL: 3 (QB game)",
+          "SF@CHI: 1",
+          "WAS@ARI: 1",
+          "KC@ATL: 1",
+          "DET@NO: 1",
+          "NYG@PIT: 1",
+          "TB@SD: 1"
+        ],
+        "ravensPassingCluster": [
+          "Joe Flacco",
+          "Mike Wallace",
+          "Dennis Pitta"
+        ],
+        "runningBackCore": [
+          "Jordan Howard",
+          "David Johnson"
+        ],
+        "midSalarySeparators": [
+          "Golden Tate",
+          "Ladarius Green"
+        ],
+        "qbFacedByBuccaneersDst": "Philip Rivers"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_DOUBLE_STACK",
+        "DOUBLE_TE_BUILD",
+        "EXPENSIVE_RB_RAW_POINTS_ANCHOR",
+        "MID_SALARY_WR_SEPARATION",
+        "DST_TOUCHDOWN_VERSUS_FRANCHISE_QB"
+      ],
+      "macroStory": "A first place roster built on an overlooked Baltimore passing eruption, reinforced by elite running back raw points and finished by two tight end ceiling scores plus a defense touchdown against a respected quarterback."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_CEILING",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Joe Flacco is the lineup's defining decision. At 5,300 and 0.4 percent ownership, 381 passing yards and four touchdowns give the roster a unique raw point source without paying premium quarterback salary."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_AMPLIFIER",
+          "LOW_OWNERSHIP_TOUCHDOWN_ACCESS",
+          "DOUBLE_TE_EDGE"
+        ],
+        "microStory": "Dennis Pitta is the pressure point. Two receiving touchdowns from a 3,100 FLEX tight end turns the Flacco stack from viable into slate winning."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "DUAL_THREAT_WORKLOAD",
+          "POPULAR_PLAY_THAT_HIT"
+        ],
+        "microStory": "David Johnson justified his salary by functioning as a full offense. His receiving volume protected the score floor, and the touchdown plus 175 total yards delivered true raw point power."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "MID_SALARY_SEPARATOR",
+          "YARDAGE_BONUS_PATH",
+          "OWNERSHIP_LEVER"
+        ],
+        "microStory": "Golden Tate gave the lineup a second wave of separation. His 145 yards and touchdown created a receiver score strong enough to keep pace with the elite names while coming at a lower salary and lower ownership."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Joe Flacco",
+          "position": "QB",
+          "team": "BAL"
+        },
+        "teammates": [
+          {
+            "name": "Mike Wallace",
+            "position": "WR",
+            "team": "BAL"
+          },
+          {
+            "name": "Dennis Pitta",
+            "position": "TE",
+            "team": "BAL"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Joe Flacco",
+          "position": "QB",
+          "team": "BAL"
+        },
+        "opponent": {
+          "name": "Mike Wallace",
+          "position": "WR",
+          "team": "BAL"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Joe Flacco",
+          "position": "QB",
+          "team": "BAL"
+        },
+        "opponent": {
+          "name": "Dennis Pitta",
+          "position": "TE",
+          "team": "BAL"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Buccaneers",
+          "position": "DST",
+          "team": "TB",
+          "qbFaced": "Philip Rivers"
+        },
+        "opponent": {
+          "name": "Philip Rivers",
+          "position": "QB",
+          "team": "SD"
+        }
+      }
+    ]
+  }
+}

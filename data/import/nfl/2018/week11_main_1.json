@@ -1,0 +1,343 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 11,
+  "slateType": "MAIN",
+  "slateDate": "2018-11-18T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 11",
+  "slateTag": "BREES SMITH DOME STACK, TEXANS DST ALEX SMITH, BARKLEY ZEKE RAW CEILING",
+  "slateGroup": "2-2-2-1-1-1",
+  "rosterConstruction": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK11_MAIN_2018-11-18T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 13920
+  },
+  "winner": {
+    "username": "BillyVonElds",
+    "points": 253.72,
+    "maxEntries": 20
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 253.72,
+    "totalOwnershipBp": 13920,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Drew Brees",
+        "position": "QB",
+        "team": "NO",
+        "salary": 6500,
+        "points": 33.52,
+        "ownershipPercent": 14.8,
+        "passTd": 4,
+        "passYds": 363,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 8700,
+        "points": 38.2,
+        "ownershipPercent": 29.8,
+        "rushTdRb": 2,
+        "rushYdsRb": 142,
+        "recRb": 1,
+        "recYdsRb": 10,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 8500,
+        "points": 36.1,
+        "ownershipPercent": 25.4,
+        "rushTdRb": 1,
+        "rushYdsRb": 122,
+        "recRb": 7,
+        "recYdsRb": 79,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Corey Davis",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 5600,
+        "points": 4.9,
+        "ownershipPercent": 20.1,
+        "rec": 2,
+        "recYds": 30,
+        "rushYds": -1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "T.Y. Hilton",
+        "position": "WR",
+        "team": "IND",
+        "salary": 6100,
+        "points": 39.5,
+        "ownershipPercent": 15.2,
+        "rec": 9,
+        "recYds": 155,
+        "recTd": 2,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "D.J. Moore",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 4200,
+        "points": 31.7,
+        "ownershipPercent": 5.0,
+        "rec": 7,
+        "recYds": 157,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Jordan Reed",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 3800,
+        "points": 20.1,
+        "ownershipPercent": 8.4,
+        "rec": 7,
+        "recYds": 71,
+        "recTd": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tre'Quan Smith",
+        "position": "WR",
+        "team": "NO",
+        "salary": 4000,
+        "points": 34.7,
+        "ownershipPercent": 7.6,
+        "rec": 10,
+        "recYds": 157,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Texans",
+        "position": "DST",
+        "team": "HOU",
+        "salary": 2600,
+        "points": 15,
+        "ownershipPercent": 12.9,
+        "sacks": 5,
+        "takeaways": 2,
+        "defTd": 1,
+        "qbFaced": "Alex Smith",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins by combining elite raw running back scoring with two passing environments that delivered concentrated production in very different ways. Drew Brees and Tre'Quan Smith form the quarterback game anchor in New Orleans. The bet there is simple. If Brees posts one of his efficient four touchdown home games, Tre'Quan Smith can pay off as the cheaper path into the same passing output. That angle lands perfectly when Smith turns 4,000 dollars into 157 yards and a touchdown.\n\nThe second passing environment is Tennessee at Indianapolis. Corey Davis and T.Y. Hilton create a two player game pairing with completely uneven results. Davis fails, but Hilton detonates for 155 yards and two touchdowns. This matters because the lineup did not need symmetrical success from both sides. It needed access to a game where one passing piece could carry tournament winning weight. Hilton did exactly that.\n\nThe true scoring base comes from the running backs. Saquon Barkley and Ezekiel Elliott combine for 74.3 points. Those are not decorative scores. Those are structural anchors that let the rest of the roster be aggressive without becoming fragile. Barkley supplies the all purpose ceiling. Elliott gives the lineup another workload monster with receiving equity. Together they create the raw point floor a first place build needs.\n\nHouston defense against Alex Smith rounds out the roster with a smart pressure stance. Smith was still viewed through a stability lens, but this was the type of setup where a conservative quarterback could still create fantasy value for the opposing defense through sacks, stalled drives, and a defensive score opportunity. Jordan Reed on the other side gives the lineup direct access to Washington volume without forcing a full passing stack. D.J. Moore is the final separator. At 5 percent ownership he provides a young receiver spike week that keeps the roster from being overly dependent on the more popular stars.",
+    "uniquenessNotes": "The lineup is not built on some exotic theory. It is built on identifying where raw ceiling and concentrated scoring could coexist on the same roster. Barkley and Elliott were expensive, but they were expensive for a reason. Brees was an efficient quarterback anchor in the dome. The separation came from the lower owned companions and the willingness to accept one failure when the surrounding hits were large enough.\n\nTre'Quan Smith is the most important salary decision. He turns the Saints passing game into an affordable ceiling cluster with Brees. D.J. Moore serves a similar role as a lower owned wide receiver capable of posting a score far above his salary tier.\n\nThe Texans defense also matters more than the box score label suggests. Fifteen points from a 2,600 defense against Alex Smith changes the entire lineup because it gives a value score at a position where many entries were trying to survive rather than win.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Drew Brees with Tre'Quan Smith plus Barkley and Elliott as the dual running back ceiling base",
+      "secondaryLever": "Texans defense against Alex Smith with Hilton as the game breaking pass catcher from Tennessee at Indianapolis",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "PHI@NO: 2 (QB game)",
+          "TEN@IND: 2",
+          "HOU@WAS: 2",
+          "TB@NYG: 1",
+          "DAL@ATL: 1",
+          "CAR@DET: 1"
+        ],
+        "saintsCluster": [
+          "Drew Brees",
+          "Tre'Quan Smith"
+        ],
+        "titansColtsPair": [
+          "Corey Davis",
+          "T.Y. Hilton"
+        ],
+        "texansWashingtonPair": [
+          "Texans",
+          "Jordan Reed"
+        ],
+        "eliteRbBase": [
+          "Saquon Barkley",
+          "Ezekiel Elliott"
+        ],
+        "youngWrSeparator": "D.J. Moore",
+        "qbFacedByTexansDst": "Alex Smith"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "DUAL_ELITE_RB_BASE",
+        "QB_WITH_CHEAP_WR_STACK",
+        "DEFENSE_AGAINST_CONSERVATIVE_QB",
+        "ASYMMETRIC_GAME_PAIR",
+        "LOW_OWNERSHIP_WR_BREAKOUT"
+      ],
+      "macroStory": "A first place roster anchored by Barkley and Elliott raw point domination, then pushed over the top by the Brees to Tre'Quan Smith connection, Hilton's eruption, and a Texans defense score against Alex Smith."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "EFFICIENCY_CEILING",
+          "DOME_ANCHOR"
+        ],
+        "microStory": "Drew Brees gives the roster a clean quarterback ceiling without forcing a bloated salary commitment. Four passing touchdowns keep the Saints stack efficient."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_BREAKER",
+          "STACK_COMPLETER",
+          "LOWER_OWNED_CEILING"
+        ],
+        "microStory": "Tre'Quan Smith is the salary release valve that becomes a slate level score. His production turns Brees from a strong play into a winning build."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "ALL_PURPOSE_CEILING",
+          "FOUNDATIONAL_SCORE"
+        ],
+        "microStory": "Saquon Barkley supplies one of the slate's defining scores and gives the lineup elite production without needing a correlated game partner."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": [
+          "WORKLOAD_MONSTER",
+          "RECEIVING_EQUITY",
+          "FOUNDATIONAL_SCORE"
+        ],
+        "microStory": "Ezekiel Elliott forms the second half of the running back base. His receiving volume makes him more than a rushing dependent score."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "GAME_BREAKER",
+          "YARDAGE_PLUS_TD",
+          "ASYMMETRIC_PAIR_WINNER"
+        ],
+        "microStory": "T.Y. Hilton is the player who rescues the Tennessee Indianapolis pairing from Corey Davis failing. One side of the game was enough."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "VALUE_DEFENSE",
+          "PRESSURE_PLUS_TAKEAWAYS",
+          "DST_VS_QB_EDGE"
+        ],
+        "microStory": "Houston defense turns a conservative Washington offense into fantasy value through sacks, interceptions, and a defensive touchdown."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Drew Brees",
+          "position": "QB",
+          "team": "NO"
+        },
+        "teammates": [
+          {
+            "name": "Tre'Quan Smith",
+            "position": "WR",
+            "team": "NO"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Corey Davis",
+          "position": "WR",
+          "team": "TEN"
+        },
+        "opponent": {
+          "name": "T.Y. Hilton",
+          "position": "WR",
+          "team": "IND"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Texans",
+          "position": "DST",
+          "team": "HOU"
+        },
+        "opponent": {
+          "name": "Jordan Reed",
+          "position": "TE",
+          "team": "WAS"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Texans",
+          "position": "DST",
+          "team": "HOU",
+          "qbFaced": "Alex Smith"
+        },
+        "opponent": {
+          "name": "Alex Smith",
+          "position": "QB",
+          "team": "WAS"
+        }
+      }
+    ]
+  }
+}

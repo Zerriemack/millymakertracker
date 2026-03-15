@@ -1,0 +1,352 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 14,
+  "slateType": "MAIN",
+  "slateDate": "2018-12-09T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 14",
+  "slateTag": "DAK COWBOYS ONSLAUGHT, AMARI SLATE BREAKER, GIANTS DST JOSH JOHNSON",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK14_MAIN_2018-12-09T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11800
+  },
+  "winner": {
+    "username": "Crk3250",
+    "points": 244.3,
+    "maxEntries": 9
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 244.3,
+    "totalOwnershipBp": 11800,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 5600,
+        "points": 30.4,
+        "ownershipPercent": 2.0,
+        "passTd": 3,
+        "passYds": 455,
+        "interceptions": 2,
+        "rushYds": 2,
+        "fumblesLost": 1,
+        "threeHundredYdPass": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 8600,
+        "points": 34.2,
+        "ownershipPercent": 26.0,
+        "rushYdsRb": 113,
+        "recRb": 12,
+        "recYdsRb": 79,
+        "recTd": 1,
+        "threeHundredYdRush": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 9300,
+        "points": 28.1,
+        "ownershipPercent": 23.8,
+        "rushTdRb": 2,
+        "rushYdsRb": 63,
+        "recRb": 6,
+        "recYdsRb": 38,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Amari Cooper",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 6600,
+        "points": 52.7,
+        "ownershipPercent": 12.4,
+        "rec": 10,
+        "recYds": 217,
+        "recTd": 3,
+        "threeHundredYdRec": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Robert Foster",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 3300,
+        "points": 20.4,
+        "ownershipPercent": 2.4,
+        "rec": 7,
+        "recYds": 104,
+        "threeHundredYdRec": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DaeSean Hamilton",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 3000,
+        "points": 17.7,
+        "ownershipPercent": 4.5,
+        "rec": 7,
+        "recYds": 47,
+        "recTd": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Rob Gronkowski",
+        "position": "TE",
+        "team": "NE",
+        "salary": 4800,
+        "points": 27.7,
+        "ownershipPercent": 13.6,
+        "rec": 8,
+        "recYds": 107,
+        "recTd": 1,
+        "threeHundredYdRec": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Phillip Lindsay",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 6300,
+        "points": 15.1,
+        "ownershipPercent": 18.7,
+        "rushTdRb": 1,
+        "rushYdsRb": 30,
+        "recRb": 4,
+        "recYdsRb": 21,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Giants",
+        "position": "DST",
+        "team": "NYG",
+        "salary": 2500,
+        "points": 18,
+        "ownershipPercent": 14.6,
+        "sacks": 5,
+        "takeaways": 3,
+        "defTd": 1,
+        "qbFaced": "Josh Johnson",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is built around one of the sharpest full offense captures of the 2018 season. Dak Prescott, Ezekiel Elliott, and Amari Cooper turn Philadelphia at Dallas into a three man onslaught, and every part of the bet lands. Dak throws for 455 yards, Cooper posts 217 yards and three touchdowns, and Elliott adds twelve catches plus a receiving touchdown. This is not a narrow quarterback stack. This is complete capture of how Dallas chose to move the ball.\n\nThe reason this build wins a large field tournament is not only Cooper's eruption. It is how the roster paired a low owned Dallas core with enough stable raw scoring elsewhere to let the onslaught breathe. Christian McCaffrey remains one of the slate's strongest running back scores. Rob Gronkowski supplies a rare ceiling game at tight end. Robert Foster and DaeSean Hamilton provide low salary wide receiver production without collapsing the lineup.\n\nThe Denver mini cluster with DaeSean Hamilton and Phillip Lindsay is subtle but important. It gives two pieces from the same offense at modest ownership and modest salary, which creates a salary bridge into McCaffrey, Elliott, and Gronkowski. Neither Denver player had to break the slate. They only had to hold structure, and Hamilton in particular did more than enough.\n\nThe Giants defense against Josh Johnson closes the roster with a clean backup quarterback attack. Five sacks, three takeaways, and a touchdown give the lineup a strong defensive score at a low salary. Diagnosticly, this roster won because it concentrated on a Dallas passing eruption while avoiding wasted salary elsewhere. Predictively, it shows how a quarterback plus alpha receiver plus pass game running back can outperform more standard double stack shapes. Prescriptively, when a team funnels offense through one receiver and one all purpose back, the quarterback can become the access point to nearly every fantasy touchdown without needing a second pass catcher.",
+    "uniquenessNotes": "Dak Prescott at 2 percent ownership is the first pressure point. Most of the field respected Dallas pieces individually, but very few lineups committed to the full Prescott, Elliott, Cooper triangle. Once Cooper erupted, lineups without Dak had trouble catching up because so much of his production flowed through the same quarterback slot.\n\nRobert Foster and DaeSean Hamilton kept the build from becoming a stars and scrubs caricature. Foster gave yardage upside at 3,300. Hamilton gave touchdown access at 3,000. Both let the lineup hold expensive anchors without turning the cheap receiver section into dead weight.\n\nThe Giants defense also deserves more attention than a closing note. Josh Johnson was exactly the type of backup profile a tournament winner can attack without overpaying. A low salary defense with a touchdown path is a strong complement to a low owned quarterback onslaught because it gives ceiling from a second position where the field often settles for survival.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Dak Prescott with Ezekiel Elliott and Amari Cooper in a full Dallas onslaught",
+      "secondaryLever": "Giants defense versus Josh Johnson plus low salary receiver hits from Robert Foster and DaeSean Hamilton",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "PHI@DAL: 3 (QB game)",
+          "DEN@SF: 2",
+          "CAR@CLE: 1",
+          "NYJ@BUF: 1",
+          "MIA@NE: 1",
+          "NYG@WAS: 1"
+        ],
+        "cowboysCluster": [
+          "Dak Prescott",
+          "Ezekiel Elliott",
+          "Amari Cooper"
+        ],
+        "broncosPair": [
+          "DaeSean Hamilton",
+          "Phillip Lindsay"
+        ],
+        "salaryReliefReceivers": [
+          "Robert Foster",
+          "DaeSean Hamilton"
+        ],
+        "tightEndCeiling": "Rob Gronkowski",
+        "qbFacedByGiantsDst": "Josh Johnson"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_RB_WR_SAME_TEAM_ONSLAUGHT",
+        "LOW_OWNERSHIP_QB_CEILING",
+        "CHEAP_WR_DOUBLE_SALARY_PATCH",
+        "BACKUP_QB_DST_ATTACK",
+        "ELITE_RB_RAW_POINT_BASE"
+      ],
+      "macroStory": "A first place roster built around a low owned Dallas offensive eruption, then reinforced by McCaffrey, Gronkowski, and a Giants defense stance against backup quarterback Josh Johnson."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Dak Prescott is the roster's defining leverage point. His huge passing day turns an otherwise strong lineup into a tournament winner because Cooper and Elliott absorb so much of the same offense."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "YARDAGE_PLUS_TD",
+          "ALPHA_RECEIVER"
+        ],
+        "microStory": "Amari Cooper delivered the nuclear score. Three touchdowns and over 200 receiving yards made him impossible to catch without direct Dallas exposure."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PASS_GAME_RB",
+          "RAW_POINTS_ANCHOR",
+          "ONSLAUGHT_COMPLETER"
+        ],
+        "microStory": "Ezekiel Elliott completed the Dallas capture by turning heavy receiving involvement into a second major score from the same offense."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "SALARY_RELIEF",
+          "LOW_OWNERSHIP",
+          "YARDAGE_SPIKE"
+        ],
+        "microStory": "Robert Foster gave the lineup an inexpensive 100 yard receiver score, which kept pressure off the rest of the cheap slots."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "TIGHT_END_CEILING",
+          "VETERAN_BOUNCE",
+          "RAW_POINTS"
+        ],
+        "microStory": "Rob Gronkowski gave rare separation at tight end with a 100 yard touchdown game in a roster already loaded with ceiling paths."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_CEILING",
+          "BACKUP_QB_ATTACK",
+          "LOW_SALARY_DEFENSE"
+        ],
+        "microStory": "Giants defense capitalized on a backup quarterback spot in the cleanest possible way through sacks, takeaways, and a defensive touchdown."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Dak Prescott",
+          "position": "QB",
+          "team": "DAL"
+        },
+        "teammates": [
+          {
+            "name": "Ezekiel Elliott",
+            "position": "RB",
+            "team": "DAL"
+          },
+          {
+            "name": "Amari Cooper",
+            "position": "WR",
+            "team": "DAL"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "DaeSean Hamilton",
+          "position": "WR",
+          "team": "DEN"
+        },
+        "opponent": {
+          "name": "Phillip Lindsay",
+          "position": "RB",
+          "team": "DEN"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Dak Prescott",
+          "position": "QB",
+          "team": "DAL"
+        },
+        "opponent": {
+          "name": "Amari Cooper",
+          "position": "WR",
+          "team": "DAL"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Giants",
+          "position": "DST",
+          "team": "NYG",
+          "qbFaced": "Josh Johnson"
+        },
+        "opponent": {
+          "name": "Josh Johnson",
+          "position": "QB",
+          "team": "WAS"
+        }
+      }
+    ]
+  }
+}

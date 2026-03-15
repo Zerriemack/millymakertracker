@@ -1,0 +1,312 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 10,
+  "slateType": "MAIN",
+  "slateDate": "2016-11-13T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 10",
+  "slateTag": "MARIOTA WALKER JORDY ONSLAUGHT, ZEKE NUCLEAR GAME, DIGGS BALDWIN MIDRANGE CEILINGS",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "rosterConstruction": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK10_MAIN_2016-11-13T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10080
+  },
+  "winner": {
+    "username": "MortyIce",
+    "points": 242.9,
+    "maxEntries": 92
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 242.9,
+    "totalOwnershipBp": 10080,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Marcus Mariota",
+        "position": "QB",
+        "team": "TEN",
+        "salary": 5700,
+        "points": 28.6,
+        "ownershipPercent": 11.8,
+        "passTd": 4,
+        "passYds": 295,
+        "rushYds": 8,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 7900,
+        "points": 43.9,
+        "ownershipPercent": 17.3,
+        "rushTdRb": 2,
+        "rushYdsRb": 114,
+        "rushBonus": 1,
+        "recRb": 2,
+        "recYdsRb": 95,
+        "recTdRb": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Darren Sproles",
+        "position": "RB",
+        "team": "PHI",
+        "salary": 4300,
+        "points": 15.6,
+        "ownershipPercent": 26.4,
+        "rushYdsRb": 19,
+        "recRb": 8,
+        "recYdsRb": 57,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Doug Baldwin",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 5800,
+        "points": 29.9,
+        "ownershipPercent": 5.8,
+        "rec": 6,
+        "recYds": 59,
+        "recTd": 3,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Stefon Diggs",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 6200,
+        "points": 32.4,
+        "ownershipPercent": 8.8,
+        "rec": 13,
+        "recYds": 164,
+        "recBonus": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyrell Williams",
+        "position": "WR",
+        "team": "SD",
+        "salary": 5700,
+        "points": 26.5,
+        "ownershipPercent": 6.5,
+        "rec": 5,
+        "recYds": 125,
+        "recTd": 1,
+        "recBonus": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "SD",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Delanie Walker",
+        "position": "TE",
+        "team": "TEN",
+        "salary": 4600,
+        "points": 30.4,
+        "ownershipPercent": 9.0,
+        "rec": 9,
+        "recYds": 124,
+        "recTd": 1,
+        "recBonus": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jordy Nelson",
+        "position": "WR",
+        "team": "GB",
+        "salary": 7500,
+        "points": 33.6,
+        "ownershipPercent": 8.1,
+        "rec": 12,
+        "recYds": 126,
+        "recTd": 1,
+        "recBonus": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Jaguars",
+        "position": "DST",
+        "team": "JAX",
+        "salary": 2300,
+        "points": 2,
+        "ownershipPercent": 7.1,
+        "sacks": 1,
+        "qbFaced": "Brock Osweiler",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "HOU"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winning roster starts with a sharp call on how Green Bay against Tennessee would actually distribute fantasy scoring. Instead of forcing an expensive Aaron Rodgers stack, the build takes Marcus Mariota on the Tennessee side, pairs him with Delanie Walker, and brings it back with Jordy Nelson. That structure matters because Mariota produced four passing touchdowns without needing 300 yards, Walker handled the middle of the field and red zone work, and Jordy concentrated the Green Bay response. It is a three man game capture built around touchdown concentration rather than around brand name quarterback attachment.\n\nThe second pillar is Ezekiel Elliott's raw score. He did not merely get there. He gave the roster a true slate level running back outcome with rushing production, receiving production, and three total touchdowns. In a build where the quarterback stack was efficient rather than overwhelming, Elliott supplied the pure point mass needed to beat every balanced roster that landed in the low 230s.\n\nThe rest of the lineup is where the combinational edge becomes visible. Doug Baldwin scores three touchdowns in Foxborough at modest ownership. Stefon Diggs posts a 13 catch, 164 yard game. Tyrell Williams adds another 100 yard touchdown performance. None of those plays were impossible to click individually. The edge was getting all three into the same build while still maintaining the Mariota Walker Jordy core and Elliott. That is what turned a strong roster into a first place roster.\n\nDarren Sproles and Jacksonville defense are the stabilizers, though in very different ways. Sproles was popular cheap receiving back value and did enough to avoid sinking the lineup. Jacksonville defense did almost nothing, which is part of what makes this roster instructive. The lineup still wins with a two point defense because the offensive ceiling was so concentrated and so efficient across the other eight slots.",
+    "uniquenessNotes": "The most important structural point is that this roster wins without a high scoring defense and without a full four player game stack. Many tournament winners are remembered through one obvious story. This one is more subtle. It combines one efficient game environment bet with multiple isolated ceiling receivers from different games.\n\nMariota plus Walker plus Jordy is strong because it captures the best Tennessee pass catcher and the best Green Bay pass catcher while avoiding salary inflation at quarterback. That extra room helped preserve access to Elliott and a loaded wide receiver group.\n\nDoug Baldwin and Stefon Diggs were the real separators after the core was set. Baldwin's three touchdown game was not a volume based box score that everyone naturally landed on. Diggs produced one of the strongest yardage and reception games on the slate without a touchdown, which meant his path to 32.4 points was less duplicated by touchdown clustering lineups. Tyrell Williams then completed the receiver room with another spike score at modest ownership.\n\nThe roster also shows that low defense output does not kill a lineup when offensive concentration is strong enough. The field often overstates the need for a complete nine of nine outcome. This roster won because eight slots created overwhelming offensive leverage.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Marcus Mariota with Delanie Walker and Jordy Nelson from the Green Bay Tennessee shootout",
+      "secondaryLever": "Ezekiel Elliott raw point avalanche plus Baldwin, Diggs, and Tyrell Williams as isolated receiver ceilings",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "GB@TEN: 3 (QB game)",
+          "DAL@PIT: 1",
+          "ATL@PHI: 1",
+          "SEA@NE: 1",
+          "MIN@WAS: 1",
+          "MIA@SD: 1",
+          "HOU@JAX: 1"
+        ],
+        "titansPackersCluster": [
+          "Marcus Mariota",
+          "Delanie Walker",
+          "Jordy Nelson"
+        ],
+        "rawPointsAnchor": "Ezekiel Elliott",
+        "receiverCeilingLayer": [
+          "Doug Baldwin",
+          "Stefon Diggs",
+          "Tyrell Williams"
+        ],
+        "cheapValueFloor": "Darren Sproles",
+        "qbFacedByJaguarsDst": "Brock Osweiler"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_TE_BRING_BACK_STACK",
+        "RAW_POINTS_RB_ANCHOR",
+        "MULTI_GAME_WR_CEILING_CAPTURE",
+        "CHALK_VALUE_RB_COMPLEMENT",
+        "LOW_OUTPUT_DST_SURVIVED",
+        "OFFENSIVE_CONCENTRATION_OVER_DST_POINTS"
+      ],
+      "macroStory": "A first place roster built on an efficient Mariota Walker Jordy game capture, then pushed over the top by Ezekiel Elliott's monster score and three separate wide receiver ceiling outcomes from unrelated games."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "EFFICIENT_TOUCHDOWN_CONCENTRATION",
+          "MID_SALARY_QB"
+        ],
+        "microStory": "Marcus Mariota did not need a passing yardage bonus to matter. Four passing touchdowns at 5,700 created one of the slate's best quarterback salary adjusted scores and unlocked the rest of the build."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "THREE_TOUCHDOWN_OUTCOME",
+          "SLATE_BREAKER"
+        ],
+        "microStory": "Ezekiel Elliott supplied the offensive foundation. His combination of rushing, receiving, and touchdown production gave the lineup a score band few other running backs could touch."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "TOUCHDOWN_CLUSTER",
+          "LOWER_OWNERSHIP_SPIKE",
+          "SEPARATOR"
+        ],
+        "microStory": "Doug Baldwin turned six catches into three touchdowns, which gave the lineup a receiver score that was hard to replicate through median projection based builds."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PUNT_DST",
+          "SURVIVED_LOW_OUTPUT",
+          "REPLACEMENT_LEVEL_QB_TARGET"
+        ],
+        "microStory": "Jacksonville defense barely contributed, and that is part of the lesson. The roster's offensive concentration was so strong that a two point defense did not remove the path to first."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Marcus Mariota",
+          "position": "QB",
+          "team": "TEN"
+        },
+        "teammates": [
+          {
+            "name": "Delanie Walker",
+            "position": "TE",
+            "team": "TEN"
+          }
+        ],
+        "opponent": {
+          "name": "Jordy Nelson",
+          "position": "WR",
+          "team": "GB"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Marcus Mariota",
+          "position": "QB",
+          "team": "TEN"
+        },
+        "opponent": {
+          "name": "Jordy Nelson",
+          "position": "WR",
+          "team": "GB"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Jaguars",
+          "position": "DST",
+          "team": "JAX",
+          "qbFaced": "Brock Osweiler"
+        },
+        "opponent": {
+          "name": "Brock Osweiler",
+          "position": "QB",
+          "team": "HOU"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,342 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 9,
+  "slateType": "MAIN",
+  "slateDate": "2018-11-04T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 9",
+  "slateTag": "FITZPATRICK BUCS ONSLAUGHT, VIKINGS DST DET LEVERAGE, THOMAS KAMARA DOME CEILING",
+  "slateGroup": "4-2-2-1",
+  "rosterConstruction": "4-2-2-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK09_MAIN_2018-11-04T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14610
+  },
+  "winner": {
+    "username": "Jab76r",
+    "points": 245.42,
+    "maxEntries": 21
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 245.42,
+    "totalOwnershipBp": 14610,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Ryan Fitzpatrick",
+        "position": "QB",
+        "team": "TB",
+        "salary": 5500,
+        "points": 26.02,
+        "ownershipPercent": 12.6,
+        "passTd": 4,
+        "passYds": 243,
+        "rushYds": 23,
+        "interceptions": 2,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Kareem Hunt",
+        "position": "RB",
+        "team": "KC",
+        "salary": 7700,
+        "points": 33.1,
+        "ownershipPercent": 33.9,
+        "rushTdRb": 2,
+        "rushYdsRb": 91,
+        "recRb": 1,
+        "recYdsRb": 50,
+        "recTd": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 7800,
+        "points": 32.7,
+        "ownershipPercent": 26.5,
+        "rushTdRb": 2,
+        "rushYdsRb": 79,
+        "recRb": 5,
+        "recYdsRb": 78,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Adam Humphries",
+        "position": "WR",
+        "team": "TB",
+        "salary": 3600,
+        "points": 28.9,
+        "ownershipPercent": 0.8,
+        "rec": 8,
+        "recYds": 82,
+        "recTd": 2,
+        "rushYds": 7,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Thomas",
+        "position": "WR",
+        "team": "NO",
+        "salary": 7600,
+        "points": 42.1,
+        "ownershipPercent": 16.6,
+        "rec": 12,
+        "recYds": 211,
+        "recTd": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Laquon Treadwell",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 3300,
+        "points": 5.7,
+        "ownershipPercent": 5.7,
+        "rec": 2,
+        "recYds": 37,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "O.J. Howard",
+        "position": "TE",
+        "team": "TB",
+        "salary": 4300,
+        "points": 21.3,
+        "ownershipPercent": 20.8,
+        "rec": 4,
+        "recYds": 53,
+        "recTd": 2,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "team": "NO",
+        "salary": 7300,
+        "points": 33.6,
+        "ownershipPercent": 25.8,
+        "rushTdRb": 2,
+        "rushYdsRb": 82,
+        "recRb": 4,
+        "recYdsRb": 34,
+        "recTd": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Vikings",
+        "position": "DST",
+        "team": "MIN",
+        "salary": 2900,
+        "points": 22,
+        "ownershipPercent": 4.4,
+        "sacks": 10,
+        "takeaways": 2,
+        "defTd": 1,
+        "qbFaced": "Matthew Stafford",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "DET"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster follows the same winning blueprint as the prior week. Start with the best plays on the slate, accept the ownership on a few of them, then search for a less crowded branch inside those same scoring environments. Kareem Hunt, Christian McCaffrey, Michael Thomas, Alvin Kamara, and the Tampa Bay Carolina game were already pulling attention. The first place lineup separates by choosing the right subpaths around those same cores.\n\nRyan Fitzpatrick at 5,500 is the access point. He is paired with Adam Humphries and O.J. Howard while Christian McCaffrey comes back on the other side. That creates a four man cluster from the highest scoring game on the slate without paying for the widest ownership path. Humphries at 0.8 percent is the decision that changes the entire build. Tampa Bay throws four passing touchdowns, and two land on a near minimum salary receiver. Howard adds two more. Fitzpatrick does not need a monster raw total because the touchdown distribution is captured efficiently.\n\nThe second engine sits in the dome. Michael Thomas and Alvin Kamara combine for 75.7 points in Rams at Saints. This is where the lineup leans into elite offense without overcomplicating the read. Rather than force a quarterback stack there, the roster captures the two New Orleans players most capable of burying the slate on volume and scoring concentration.\n\nThe sharp edge was Detroit at Minnesota. Vikings defense at 4.4 percent against Matthew Stafford looks uncomfortable on paper because Stafford carries franchise level respect. The field did not push hard enough into the possibility of a Minnesota pressure avalanche at home. Ten sacks, takeaways, and a defensive touchdown create a slate breaking score from a defense almost nobody had. Laquon Treadwell adds a cheap second piece from the same game, which lets the lineup benefit from Minnesota controlling the environment while still preserving salary for the elite skill players.",
+    "uniquenessNotes": "The uniqueness comes from leverage within the best game environments, not from random detours. The Tampa Bay Carolina stack is the clearest example. Many rosters wanted exposure to that game. Fewer landed on Fitzpatrick with Humphries and Howard instead of chasing a more crowded wide receiver tree. The lineup still plays McCaffrey because his role was too strong to ignore, so the differentiation happens through touchdown allocation rather than through avoiding the game.\n\nDetroit at Minnesota is the true tournament separator. The Vikings defense was low owned against a quarterback the field still viewed through a talent first lens. The winning read focused on pressure, home control, and the chance that Stafford's dropback volume could create defensive scoring. That call changed the contest.\n\nLaquon Treadwell matters because he completes the roster salary map. He does not need a slate breaking score. He only needs to avoid disaster while allowing the roster to hold Hunt, McCaffrey, Thomas, Kamara, and the Buccaneers passing pieces together.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Ryan Fitzpatrick with Adam Humphries and O.J. Howard plus Christian McCaffrey bring back in Tampa Bay at Carolina",
+      "secondaryLever": "Low owned Vikings defense against Matthew Stafford with Michael Thomas and Alvin Kamara carrying the dome ceiling",
+      "notes": {
+        "rosterConstruction": "4-2-2-1",
+        "gameKey": [
+          "TB@CAR: 4 (QB game)",
+          "LAR@NO: 2",
+          "DET@MIN: 2",
+          "KC@CLE: 1"
+        ],
+        "bucsPanthersCluster": [
+          "Ryan Fitzpatrick",
+          "Adam Humphries",
+          "O.J. Howard",
+          "Christian McCaffrey"
+        ],
+        "saintsCluster": [
+          "Michael Thomas",
+          "Alvin Kamara"
+        ],
+        "vikingsLionsCluster": [
+          "Vikings",
+          "Laquon Treadwell"
+        ],
+        "oneOffStud": "Kareem Hunt",
+        "qbFacedByVikingsDst": "Matthew Stafford"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "BEST_PLAYS_WITHIN_ENVIRONMENT_LEVERAGE",
+        "QB_DOUBLE_STACK_WITH_RB_BRING_BACK",
+        "LOW_OWNERSHIP_DST_SLATE_BREAKER",
+        "DOME_SKILL_PLAYER_CONCENTRATION",
+        "CHEAP_WR_SALARY_PATCH"
+      ],
+      "macroStory": "A first place roster built by following the strongest raw plays on the slate, then gaining separation through Adam Humphries in the Buccaneers Panthers shootout and a sharp low owned Minnesota defense stance against Matthew Stafford."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "SALARY_EFFICIENCY",
+          "TOUCHDOWN_DISTRIBUTION_HUB"
+        ],
+        "microStory": "Ryan Fitzpatrick gives the lineup cheap access to a 42 point team total path and allows the roster to pay for multiple elite running backs and Michael Thomas."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_BREAKER",
+          "LOW_OWNERSHIP",
+          "MULTI_TOUCHDOWN_OUTCOME"
+        ],
+        "microStory": "Adam Humphries is the lineup's most important separation point. Two touchdowns at 0.8 percent ownership change the shape of the entire contest."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "PRESSURE_CEILING",
+          "LOW_OWNERSHIP"
+        ],
+        "microStory": "Minnesota defense is the sharpest call on the roster. The sack avalanche and defensive touchdown against Matthew Stafford create a score the field never came close to matching."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "TARGET_COMMAND",
+          "DOME_CEILING"
+        ],
+        "microStory": "Michael Thomas delivers the true elite raw score at wide receiver and gives the lineup an anchor score in the highest class of offensive environment."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "ELITE_RB_CEILING",
+          "TD_CONCENTRATION",
+          "PAIR_WITH_TEAMMATE"
+        ],
+        "microStory": "Alvin Kamara completes the New Orleans concentration angle. The lineup captures both receiving dominance from Thomas and touchdown concentration from Kamara."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Ryan Fitzpatrick",
+          "position": "QB",
+          "team": "TB"
+        },
+        "teammates": [
+          {
+            "name": "Adam Humphries",
+            "position": "WR",
+            "team": "TB"
+          },
+          {
+            "name": "O.J. Howard",
+            "position": "TE",
+            "team": "TB"
+          }
+        ],
+        "opponent": {
+          "name": "Christian McCaffrey",
+          "position": "RB",
+          "team": "CAR"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Michael Thomas",
+          "position": "WR",
+          "team": "NO"
+        },
+        "opponent": {
+          "name": "Alvin Kamara",
+          "position": "RB",
+          "team": "NO"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Vikings",
+          "position": "DST",
+          "team": "MIN"
+        },
+        "opponent": {
+          "name": "Laquon Treadwell",
+          "position": "WR",
+          "team": "MIN"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Vikings",
+          "position": "DST",
+          "team": "MIN",
+          "qbFaced": "Matthew Stafford"
+        },
+        "opponent": {
+          "name": "Matthew Stafford",
+          "position": "QB",
+          "team": "DET"
+        }
+      }
+    ]
+  }
+}

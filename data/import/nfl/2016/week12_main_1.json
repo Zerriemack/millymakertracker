@@ -1,0 +1,313 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 12,
+  "slateType": "MAIN",
+  "slateDate": "2016-11-27T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 12",
+  "slateTag": "KAEP RUSHING SPREAD STACK, GIANTS DST CLE COLLAPSE, INGRAM AND MITCHELL SALARY BREAKERS",
+  "slateGroup": "1-2-2-2-1-1-1",
+  "rosterConstruction": "1-2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK12_MAIN_2016-11-27T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8240
+  },
+  "winner": {
+    "username": "Travman8",
+    "points": 234.34,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 234.34,
+    "totalOwnershipBp": 8240,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Colin Kaepernick",
+        "position": "QB",
+        "team": "SF",
+        "salary": 5700,
+        "points": 37.14,
+        "ownershipPercent": 2.3,
+        "passTd": 3,
+        "passYds": 296,
+        "rushYds": 113,
+        "rushBonus": 1,
+        "interceptions": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Chris Ivory",
+        "position": "RB",
+        "team": "JAX",
+        "salary": 4200,
+        "points": 12.5,
+        "ownershipPercent": 3.6,
+        "rushTdRb": 1,
+        "rushYdsRb": 11,
+        "recRb": 1,
+        "recYdsRb": 44,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Johnson",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 8900,
+        "points": 33.1,
+        "ownershipPercent": 39.4,
+        "rushTdRb": 1,
+        "rushYdsRb": 58,
+        "recRb": 8,
+        "recYdsRb": 103,
+        "recBonus": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mike Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 7500,
+        "points": 33.4,
+        "ownershipPercent": 4.9,
+        "rec": 8,
+        "recYds": 104,
+        "recTd": 2,
+        "recBonus": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Terrelle Pryor Sr.",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 5600,
+        "points": 22.1,
+        "ownershipPercent": 8.9,
+        "rec": 6,
+        "recYds": 131,
+        "recBonus": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Emmanuel Sanders",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 6200,
+        "points": 32.2,
+        "ownershipPercent": 2.8,
+        "rec": 7,
+        "recYds": 162,
+        "recTd": 1,
+        "recBonus": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "C.J. Fiedorowicz",
+        "position": "TE",
+        "team": "HOU",
+        "salary": 3300,
+        "points": 8.2,
+        "ownershipPercent": 13.6,
+        "rec": 4,
+        "recYds": 42,
+        "gameAwayTeam": "SD",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "SD"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mark Ingram",
+        "position": "RB",
+        "team": "NO",
+        "salary": 5000,
+        "points": 32.7,
+        "ownershipPercent": 0.3,
+        "rushTdRb": 1,
+        "rushYdsRb": 146,
+        "rushBonus": 1,
+        "recRb": 1,
+        "recYdsRb": 21,
+        "gameAwayTeam": "LA",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "LA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Giants",
+        "position": "DST",
+        "team": "NYG",
+        "salary": 3600,
+        "points": 23,
+        "ownershipPercent": 6.6,
+        "sacks": 7,
+        "takeaways": 4,
+        "defTd": 1,
+        "qbFaced": "Josh McCown",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by building around an uncommon quarterback path for the 2016 tournament environment. Colin Kaepernick was not used as a tidy quarterback plus pass catcher stack. He was used as a solo ceiling engine. That distinction matters because his score came from a blended profile. He threw for 296 yards and three touchdowns, then added 113 rushing yards and the rushing bonus. Once a quarterback creates this much production through both passing and rushing, the need to force one receiver with him drops. The lineup used Kaepernick as a standalone offensive hub and spent the remaining salary on isolated ceiling scores across the slate.\n\nThe running back room shows two different forms of leverage. David Johnson was massive chalk and still had to be used because his workload was too large and too stable to fade in a vacuum. Chris Ivory was the cheaper complement, but Mark Ingram was the true structural separator. At 0.3 percent ownership and 5,000 salary, a 146 rushing yard game with a touchdown and the rushing bonus changed the entire contest. This was the key low owned eruption that let the lineup beat more duplicated David Johnson builds.\n\nThe wide receiver room is where the offensive ceiling fully compounds. Mike Evans produced the touchdown driven spike against Seattle at modest ownership. Emmanuel Sanders turned seven catches and 162 yards into a slate level yardage score at 2.8 percent ownership. Terrelle Pryor Sr. gave the roster one more 100 yard bonus and paired naturally with the Giants defense from the opposite side of that game. This is a strong example of a roster winning through separate but complementary pockets of ceiling rather than through one overbuilt game stack.\n\nThe Giants defense completed the construction with the cleanest defensive outcome on the slate. Seven sacks, multiple takeaways, and a defensive touchdown against Josh McCown gave the roster a true difference maker at defense. That mattered even more because the tight end slot did not need to win. C.J. Fiedorowicz merely kept the build structurally sound while the rest of the lineup delivered the outlier scoring.",
+    "uniquenessNotes": "The most important structural choice was treating Kaepernick as a naked quarterback. In a slate where many lineups would have wanted direct stacking partners, this build accepted that his rushing profile could carry enough of the total on its own. That opened space for the lineup to chase stronger individual scores elsewhere.\n\nMark Ingram was the tournament swing. Low salary and almost no ownership created a path that very few competing lineups could match once he crossed 30 points. This is the type of running back outcome that shifts first place equity more than a moderately contrarian wide receiver score because it rewrites salary allocation across the whole lineup.\n\nThe Giants defense and Terrelle Pryor Sr. from the same game created a useful tension rather than a conflict. The defense benefited from sacks, pressure, and a touchdown, while Pryor still accumulated enough receiving volume to clear 100 yards. That combination captures how one failed offense can still funnel almost everything through a single survivor.\n\nDavid Johnson at 39.4 percent ownership did not hurt uniqueness because the rest of the build did the separating. This roster is a reminder that large field winners do not need nine obscure plays. They need the right chalk, the right low owned detonator, and a construction that does not follow the field's most obvious correlation tree.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Colin Kaepernick used as a solo rushing and passing ceiling engine without a forced stack",
+      "secondaryLever": "Mark Ingram and Emmanuel Sanders as low owned ceiling scores with Giants defense against Josh McCown",
+      "notes": {
+        "rosterConstruction": "1-2-2-2-1-1-1",
+        "gameKey": [
+          "SF@MIA: 1 (QB game)",
+          "SEA@TB: 2",
+          "NYG@CLE: 2",
+          "ARI@ATL: 2",
+          "JAX@BUF: 1",
+          "KC@DEN: 1",
+          "SD@HOU: 1"
+        ],
+        "soloQuarterback": "Colin Kaepernick",
+        "receiverCeilingLayer": [
+          "Mike Evans",
+          "Emmanuel Sanders",
+          "Terrelle Pryor Sr."
+        ],
+        "runningBackLeverage": [
+          "David Johnson",
+          "Mark Ingram"
+        ],
+        "defenseGamePair": [
+          "Giants",
+          "Terrelle Pryor Sr."
+        ],
+        "qbFacedByGiantsDst": "Josh McCown"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "NAKED_DUAL_THREAT_QB",
+        "CHALK_RB_WITH_LOW_OWNED_RB_BREAKER",
+        "DST_PLUS_OPPOSING_ALPHA_WR",
+        "MULTI_GAME_WR_CEILING_CAPTURE",
+        "PUNT_TE_SURVIVAL",
+        "LOW_OWNERSHIP_RB_NUCLEAR_OUTCOME"
+      ],
+      "macroStory": "A first place roster built on a solo dual threat quarterback eruption, chalk David Johnson, a near unowned Mark Ingram avalanche, and a defense plus opposing alpha receiver combination that still stayed live because Cleveland's offense collapsed around Terrelle Pryor Sr."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "NAKED_QB",
+          "DUAL_THREAT_CEILING"
+        ],
+        "microStory": "Colin Kaepernick supplied one of the slate's best quarterback scores without requiring a direct stack partner. His rushing bonus and three passing touchdowns gave the lineup an unusual but efficient foundation."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_BREAKER",
+          "RUSHING_BONUS",
+          "TOURNAMENT_SWING"
+        ],
+        "microStory": "Mark Ingram was the score almost nobody had. At 0.3 percent ownership, his 146 rushing yards and touchdown transformed a strong lineup into a first place lineup."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "DEFENSIVE_TOUCHDOWN",
+          "PRESSURE_CEILING",
+          "BACKUP_QB_TARGET"
+        ],
+        "microStory": "The Giants defense delivered the type of score that can decide the entire slate. Seven sacks, multiple takeaways, and a touchdown against Josh McCown created a genuine separation point."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "YARDAGE_PLUS_TOUCHDOWN",
+          "LOW_OWNERSHIP_CEILING",
+          "ISOLATED_SPIKE"
+        ],
+        "microStory": "Emmanuel Sanders provided one of the cleanest wide receiver separators on the slate. Seven catches, 162 yards, and a touchdown at 2.8 percent ownership was premium leverage."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "TEAM_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "David Johnson",
+          "position": "RB",
+          "team": "ARI"
+        },
+        "opponent": {
+          "name": "Mike Evans",
+          "position": "WR",
+          "team": "TB"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Giants",
+          "position": "DST",
+          "team": "NYG",
+          "qbFaced": "Josh McCown"
+        },
+        "opponent": {
+          "name": "Terrelle Pryor Sr.",
+          "position": "WR",
+          "team": "CLE"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Giants",
+          "position": "DST",
+          "team": "NYG",
+          "qbFaced": "Josh McCown"
+        },
+        "opponent": {
+          "name": "Josh McCown",
+          "position": "QB",
+          "team": "CLE"
+        }
+      }
+    ]
+  }
+}

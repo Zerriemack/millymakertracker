@@ -1,0 +1,318 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 17,
+  "slateType": "MAIN",
+  "slateDate": "2019-12-29T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 17",
+  "slateTag": "WAS DAL FULL GAME STACK, DERRICK HENRY 211 AND 3, BEARS DST CHALK LANDS",
+  "slateGroup": "4-1-1-1-1-1",
+  "rosterConstruction": "4-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2019_WK17_MAIN_2019-12-29T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 15860
+  },
+  "winner": {
+    "username": "Johnfenelly",
+    "points": 241.02,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 241.02,
+    "totalOwnershipBp": 15860,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 6300,
+        "points": 33.62,
+        "ownershipPercent": 9.0,
+        "passTd": 4,
+        "passYds": 303,
+        "rushYds": 35,
+        "fumblesLost": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 8000,
+        "points": 30.4,
+        "ownershipPercent": 32.3,
+        "rushYdsRb": 122,
+        "rushTdRb": 1,
+        "recRb": 1,
+        "recYdsRb": 2,
+        "recTdRb": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Damien Williams",
+        "position": "RB",
+        "team": "KC",
+        "salary": 4700,
+        "points": 34.4,
+        "ownershipPercent": 18.9,
+        "rushYdsRb": 124,
+        "rushTdRb": 2,
+        "recRb": 4,
+        "recYdsRb": 30,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Gallup",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 5400,
+        "points": 32.8,
+        "ownershipPercent": 13.4,
+        "rec": 5,
+        "recYds": 98,
+        "recTd": 3,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Steven Sims Jr.",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 4700,
+        "points": 18.5,
+        "ownershipPercent": 15.2,
+        "rec": 5,
+        "recYds": 81,
+        "recTd": 1,
+        "rushYds": -6,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Golden Tate",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 5100,
+        "points": 17.8,
+        "ownershipPercent": 12.1,
+        "rec": 5,
+        "recYds": 68,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Tyler Higbee",
+        "position": "TE",
+        "team": "LAR",
+        "salary": 5600,
+        "points": 22.4,
+        "ownershipPercent": 14.8,
+        "rec": 8,
+        "recYds": 84,
+        "recTd": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 8100,
+        "points": 42.1,
+        "ownershipPercent": 13.8,
+        "rushYdsRb": 211,
+        "rushTdRb": 3,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bears",
+        "position": "DST",
+        "team": "CHI",
+        "salary": 2100,
+        "points": 9,
+        "ownershipPercent": 29.1,
+        "takeaways": 3,
+        "sacks": 0,
+        "defTd": 1,
+        "qbFaced": "Sean Mannion",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "Week 17 changed the normal rules, so roster building leaned harder into motivation, playing time clarity, and weak defensive resistance. This winner chose one game and pushed it. Washington at Dallas accounts for four roster spots, with Dak Prescott, Ezekiel Elliott, Michael Gallup, and Steven Sims Jr. carrying the structure. Dallas still had enough incentive to play offense with intent, Washington still had enough weakness to allow concentrated scoring, and the full stack captured nearly every touchdown path that mattered. Prescott threw four touchdowns, Elliott scored through the air and on the ground, Gallup turned modest target volume into three touchdowns, and Sims gave the roster a bring back that kept the game environment fully monetized.\n\nThe rest of the build is more straightforward. Derrick Henry delivered the highest raw point score on the roster and gave the lineup its most violent individual outcome. Damien Williams provided a second running back score that was fully capable of winning a slate on its own. Tyler Higbee remained one of the cleanest role based tight end plays in football and paid it off again. Golden Tate added another stable touchdown score from a game where pricing and late season personnel shifts left room for veteran target earners to matter.\n\nThe Bears defense against Sean Mannion was a Week 17 ownership concession that still held enough value. Chicago did not need a huge defensive game because the Dallas stack and Henry were already carrying most of the burden. A defensive touchdown and turnovers were enough. That is the larger story of this roster. The slate winner did not need thin creativity across every slot. It needed one aggressive game concentration read and enough clean production elsewhere to keep pace.\n\nFrom a diagnostic angle, the build won because the Dallas cluster and Henry absorbed the slate's highest leverage touchdowns. From a predictive angle, late season slates continue to reward aggressive stacking when one side still has reason to play hard and the opposing defense cannot hold up. From a prescriptive angle, the takeaway is to push harder into one clear Week 17 game script when motivation, personnel stability, and defensive weakness all point in the same direction.",
+    "uniquenessNotes": "The key choice was not a hidden player pool find. It was the willingness to treat Washington at Dallas as the central scoring event and allocate four roster spots to it. Many entries would stop at Prescott with one pass catcher or pair Prescott with Elliott and move on. This build kept going and captured both Dallas touchdown concentration and the Washington response.\n\nHenry gave the roster separation without forcing a fragile shape. His score was large enough to stand on its own, yet the lineup still had enough salary to keep the Dallas game intact. Damien Williams helped there. He gave the roster another ceiling score from a lower salary tier and made the rest of the construction possible.\n\nWeek 17 often produces odd first place lineups because uncertainty drives softer conviction across the field. This roster handled uncertainty by narrowing its focus rather than spreading out. That is the part worth carrying forward. When late season conditions turn messy, concentrated conviction can beat broad exposure.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Dak Prescott with Ezekiel Elliott and Michael Gallup, brought back by Steven Sims Jr. in a four player Washington Dallas game stack",
+      "secondaryLever": "Derrick Henry as the raw point hammer with Damien Williams and Tyler Higbee supplying strong secondary production",
+      "notes": {
+        "rosterConstruction": "4-1-1-1-1-1",
+        "gameKey": [
+          "WAS@DAL: 4 (QB game)",
+          "LAC@KC: 1",
+          "PHI@NYG: 1",
+          "ARI@LAR: 1",
+          "TEN@HOU: 1",
+          "CHI@MIN: 1"
+        ],
+        "cowboysWashingtonCluster": [
+          "Dak Prescott",
+          "Ezekiel Elliott",
+          "Michael Gallup",
+          "Steven Sims Jr."
+        ],
+        "rawPointsAnchor": "Derrick Henry",
+        "secondaryCeilingBack": "Damien Williams",
+        "tightEndRolePlay": "Tyler Higbee",
+        "qbFacedByBearsDst": "Sean Mannion"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_GAME_STACK_WEEK17",
+        "RAW_POINTS_RB_HAMMER",
+        "SECOND_RB_CEILING_SCORE",
+        "ROLE_BASED_TE_SCORE",
+        "CHEAP_DST_WITH_TURNOVER_PAYOFF"
+      ],
+      "macroStory": "A first place roster driven by a four player Washington Dallas game stack, then finished by Derrick Henry's 211 yard explosion and enough secondary production to cover the rest of the slate."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "GAME_STACK_HUB",
+          "TOUCHDOWN_CONCENTRATION"
+        ],
+        "microStory": "Dak Prescott gave the roster access to nearly every meaningful Dallas touchdown in the game's most important environment."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_PAYOFF",
+          "MULTI_TOUCHDOWN_CEILING",
+          "RED_ZONE_CONVERSION"
+        ],
+        "microStory": "Michael Gallup was the real spike inside the Dallas side. Three touchdown catches turned a strong stack into a first place stack."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_HAMMER",
+          "YARDAGE_BONUS",
+          "THREE_TOUCHDOWN_SCORE"
+        ],
+        "microStory": "Derrick Henry supplied the largest individual score on the roster and made every lineup without him chase from behind."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_PAYOFF",
+          "CHEAP_COMPLEMENT",
+          "BACKUP_QB_TARGET"
+        ],
+        "microStory": "The Bears defense did enough against Sean Mannion. On this roster, enough was all it needed to be."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Dak Prescott",
+          "position": "QB",
+          "team": "DAL"
+        },
+        "teammates": [
+          {
+            "name": "Ezekiel Elliott",
+            "position": "RB",
+            "team": "DAL"
+          },
+          {
+            "name": "Michael Gallup",
+            "position": "WR",
+            "team": "DAL"
+          }
+        ],
+        "opponent": {
+          "name": "Steven Sims Jr.",
+          "position": "WR",
+          "team": "WAS"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Derrick Henry",
+          "position": "RB",
+          "team": "TEN"
+        },
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Damien Williams",
+          "position": "RB",
+          "team": "KC"
+        },
+        "opponent": null
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Bears",
+          "position": "DST",
+          "team": "CHI",
+          "qbFaced": "Sean Mannion"
+        },
+        "opponent": {
+          "name": "Sean Mannion",
+          "position": "QB",
+          "team": "MIN"
+        }
+      }
+    ]
+  }
+}

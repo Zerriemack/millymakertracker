@@ -1,0 +1,309 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 2,
+  "slateType": "MAIN",
+  "slateDate": "2016-09-18T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 2",
+  "slateTag": "CAM DOUBLE WITH DIGGS RETURN, TRAVIS BENJAMIN NUCLEAR, BRONCOS DST AGAINST LUCK",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK02_MAIN_2016-09-18T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8830
+  },
+  "winner": {
+    "username": "AI_smizzle",
+    "points": 230.12,
+    "maxEntries": 97
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 230.12,
+    "totalOwnershipBp": 8830,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Cam Newton",
+        "position": "QB",
+        "team": "CAR",
+        "salary": 7900,
+        "points": 34.82,
+        "ownershipPercent": 9.6,
+        "passTd": 4,
+        "passYds": 353,
+        "interceptions": 1,
+        "rushYds": 37,
+        "fumblesLost": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "LeGarrette Blount",
+        "position": "RB",
+        "team": "NE",
+        "salary": 4000,
+        "points": 21.3,
+        "ownershipPercent": 12.1,
+        "rushTdRb": 1,
+        "rushYdsRb": 123,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Johnson",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 7600,
+        "points": 17.3,
+        "ownershipPercent": 14.7,
+        "rushYdsRb": 45,
+        "recRb": 3,
+        "recYdsRb": 98,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Kelvin Benjamin",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 6500,
+        "points": 32.8,
+        "ownershipPercent": 13.6,
+        "rec": 7,
+        "recYds": 108,
+        "recTd": 2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Travis Benjamin",
+        "position": "WR",
+        "team": "SD",
+        "salary": 4400,
+        "points": 32.4,
+        "ownershipPercent": 15.6,
+        "rec": 6,
+        "recYds": 115,
+        "recTd": 2,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "SD",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Marvin Jones Jr.",
+        "position": "WR",
+        "team": "DET",
+        "salary": 5500,
+        "points": 22.8,
+        "ownershipPercent": 8.8,
+        "rec": 8,
+        "recYds": 118,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Antonio Gates",
+        "position": "TE",
+        "team": "SD",
+        "salary": 4500,
+        "points": 10.5,
+        "ownershipPercent": 3.9,
+        "rec": 3,
+        "recYds": 15,
+        "recTd": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "SD",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Stefon Diggs",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 5100,
+        "points": 36.2,
+        "ownershipPercent": 5.4,
+        "rec": 9,
+        "recYds": 182,
+        "recTd": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Broncos",
+        "position": "DST",
+        "team": "DEN",
+        "salary": 3600,
+        "points": 22,
+        "ownershipPercent": 4.6,
+        "sacks": 5,
+        "takeaways": 1,
+        "dstTd": 2,
+        "qbFaced": "Andrew Luck",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "IND"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by building around two separate passing explosions without paying for a traditional double stack on both. Cam Newton plus Kelvin Benjamin captures Carolina's direct touchdown production in a home bounce back spot, then Stefon Diggs serves as the return from a different game and gives the lineup a second elite receiver ceiling at modest ownership. The structure matters because Diggs gave access to a slate breaking score without forcing a Sam Bradford commitment, which kept the build open for stronger point per dollar choices at running back and wide receiver.\n\nThe San Diego mini stack is the second hinge point. Travis Benjamin and Antonio Gates combine for three receiving touchdowns from Philip Rivers, yet the lineup avoids spending quarterback salary there. In a large field tournament, this is a sharp way to absorb concentrated receiving output from a game environment without paying the full stack tax. Travis Benjamin carried the slate level spike. Gates did not need a monster game because his touchdown at low ownership finished the correlation and preserved salary.\n\nLeGarrette Blount and David Johnson were not decorative plays. Blount gave the roster an underpriced rushing role in a New England offense with touchdown equity near the goal line. David Johnson added dual usage from both rushing and receiving, which protected the lineup from a single path outcome. Marvin Jones Jr. then gave a third wide receiver score with volume and yardage, so the build did not rely on one game script to survive.\n\nDenver defense against Andrew Luck looks uncomfortable on first glance because Luck was an upper tier quarterback, but this is where lineup intelligence shows up. The bet was not about targeting a weak player. The bet was about targeting a road offensive line against Denver's pass rush and betting on pressure events creating defensive scores. Two return touchdowns turned a strong roster into a first place roster.",
+    "uniquenessNotes": "The lineup does not chase uniqueness through obscurity. It finds separation through allocation. Cam Newton was popular enough to be usable, but the roster avoided the more obvious full Carolina passing cluster and instead used Kelvin Benjamin as the direct touchdown partner, then moved to Diggs for the second ceiling receiver outcome. That decision split exposure across two high impact passing environments instead of forcing every point to come from one game.\n\nThe Travis Benjamin and Antonio Gates pairing is a clean example of selective concentration. Both players scored through the same quarterback, but salary stayed free because Philip Rivers never entered the build. In a contest of this size, capturing touchdowns from an offense without carrying its quarterback can be stronger than a full stack when the quarterback score does not separate enough on its own.\n\nDenver defense also gave the lineup a path few builds were comfortable taking. Most players prefer defenses facing backup level quarterbacks or lower total offenses. Using a defense against Andrew Luck required a stronger read on pass rush leverage, sack potential, and short field equity. Once Denver found two touchdowns, the lineup had a score source the field rarely gets from a defense against a franchise quarterback.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Cam Newton with Kelvin Benjamin, then Stefon Diggs as the cross game ceiling receiver",
+      "secondaryLever": "Travis Benjamin and Antonio Gates capturing San Diego passing touchdowns without Philip Rivers",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "SF@CAR: 2 (QB game)",
+          "JAX@SD: 2",
+          "GB@MIN: 1",
+          "MIA@NE: 1",
+          "TB@ARI: 1",
+          "TEN@DET: 1",
+          "IND@DEN: 1"
+        ],
+        "panthersCluster": [
+          "Cam Newton",
+          "Kelvin Benjamin"
+        ],
+        "chargersCluster": [
+          "Travis Benjamin",
+          "Antonio Gates"
+        ],
+        "ceilingReturn": "Stefon Diggs",
+        "pressureBetDefense": "Broncos against Andrew Luck"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WR_DOUBLE_ANCHOR",
+        "NON_QB_PASS_CATCHER_PAIR",
+        "CROSS_GAME_WR_CEILING",
+        "DUAL_USAGE_RB_FLOOR_PLUS_UPSIDE",
+        "DST_PRESSURE_TOUCHDOWN_OUTCOME"
+      ],
+      "macroStory": "A first place roster built from two passing clusters without paying for both quarterbacks, then pushed over the top by a rare defense eruption against a franchise quarterback."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "DUAL_THREAT_SCORING",
+          "TOUCHDOWN_CONCENTRATION"
+        ],
+        "microStory": "Cam Newton supplied the central score through four passing touchdowns and rushing yardage, which gave the roster a high raw point base without forcing an expensive game stack."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "DIRECT_QB_PAIR",
+          "MULTI_TOUCHDOWN_CEILING",
+          "RED_ZONE_CONVERSION"
+        ],
+        "microStory": "Kelvin Benjamin turned Cam Newton's efficiency into direct tournament points and gave the lineup immediate leverage on all other Carolina touchdown paths."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "SALARY_EFFICIENCY",
+          "DEEP_THREAT_SPIKE",
+          "OFFENSE_CAPTURE_WITHOUT_QB"
+        ],
+        "microStory": "Travis Benjamin delivered the explosive receiver outcome from San Diego while the roster saved quarterback salary for stronger total roster balance."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "SEPARATION_SCORE",
+          "LOW_OWNERSHIP_CEILING",
+          "CROSS_GAME_LEVER"
+        ],
+        "microStory": "Stefon Diggs gave the lineup a second elite receiver score from outside the primary stack, which prevented the roster from being trapped inside one game environment."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRESSURE_BET",
+          "DEFENSIVE_TOUCHDOWN_SWING",
+          "LOW_OWNERSHIP_FINISHER"
+        ],
+        "microStory": "Denver defense was the tournament breaker. Five sacks and two defensive touchdowns against Andrew Luck created a scoring swing almost no other construction could replicate."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Cam Newton",
+          "position": "QB",
+          "team": "CAR"
+        },
+        "teammates": [
+          {
+            "name": "Kelvin Benjamin",
+            "position": "WR",
+            "team": "CAR"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Travis Benjamin",
+          "position": "WR",
+          "team": "SD"
+        },
+        "opponent": {
+          "name": "Antonio Gates",
+          "position": "TE",
+          "team": "SD"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Broncos",
+          "position": "DST",
+          "team": "DEN",
+          "qbFaced": "Andrew Luck"
+        },
+        "opponent": {
+          "name": "Andrew Luck",
+          "position": "QB",
+          "team": "IND"
+        }
+      }
+    ]
+  }
+}

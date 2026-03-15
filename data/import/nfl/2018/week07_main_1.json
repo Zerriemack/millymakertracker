@@ -1,0 +1,323 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 7,
+  "slateType": "MAIN",
+  "slateDate": "2018-10-21T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 7",
+  "slateTag": "CHICAGO GAME ENVIRONMENT META, TRUBISKY WITH COHEN BURTON, RAMS DST AGAINST C.J. BEATHARD",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK07_MAIN_2018-10-21T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10100
+  },
+  "winner": {
+    "username": "Bassinmatt",
+    "points": 228.62,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 228.62,
+    "totalOwnershipBp": 10100,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Mitchell Trubisky",
+        "position": "QB",
+        "team": "CHI",
+        "salary": 5600,
+        "points": 36.42,
+        "ownershipPercent": 8.8,
+        "passTd": 2,
+        "passYds": 333,
+        "rushTd": 1,
+        "rushYds": 81,
+        "interceptions": 2,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Tarik Cohen",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 5100,
+        "points": 22.3,
+        "ownershipPercent": 22.7,
+        "recRb": 8,
+        "recYdsRb": 69,
+        "recTdRb": 1,
+        "rushYdsRb": 14,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Latavius Murray",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 5000,
+        "points": 22.3,
+        "ownershipPercent": 8.1,
+        "rushYdsRb": 69,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 14,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "John Brown",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 5700,
+        "points": 29.4,
+        "ownershipPercent": 11.8,
+        "rec": 7,
+        "recYds": 134,
+        "recTd": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Brandin Cooks",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 7100,
+        "points": 17.1,
+        "ownershipPercent": 11.8,
+        "rec": 4,
+        "recYds": 64,
+        "recTd": 1,
+        "rushYds": 7,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jarvis Landry",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 7300,
+        "points": 25.7,
+        "ownershipPercent": 11.6,
+        "rec": 10,
+        "recYds": 97,
+        "recTd": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Trey Burton",
+        "position": "TE",
+        "team": "CHI",
+        "salary": 4300,
+        "points": 30.6,
+        "ownershipPercent": 6.5,
+        "rec": 9,
+        "recYds": 126,
+        "recTd": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Alshon Jeffery",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 6300,
+        "points": 21.8,
+        "ownershipPercent": 12.2,
+        "rec": 7,
+        "recYds": 88,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Rams",
+        "position": "DST",
+        "team": "LAR",
+        "salary": 3500,
+        "points": 23,
+        "ownershipPercent": 7.5,
+        "sacks": 7,
+        "takeaways": 4,
+        "qbFaced": "CJ Beathard",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster captures a turning point in the 2018 season. Chicago game environments were becoming far more fantasy friendly than the field's earlier assumptions suggested, and this build leaned into that shift before the market fully caught up. Mitchell Trubisky was no longer a thin rushing quarterback with occasional passing volume. In this game environment, he became a ceiling quarterback tied to concentrated usage through Tarik Cohen and Trey Burton. The lineup uses all three. Trubisky supplies 333 passing yards and 81 rushing yards, Cohen captures the underneath and space touches, and Burton lands the tight end ceiling. The stack did not need a New England bring back because Chicago itself produced enough concentrated offense.\n\nThe rest of the roster is built with a clean distribution of independent scoring pockets. Latavius Murray stepped into an expanded role and converted it into two rushing touchdowns. John Brown delivered the high aDOT eruption against New Orleans. Jarvis Landry gave the lineup another target driven score in a game where Cleveland had to keep throwing. Alshon Jeffery added one more stable touchdown and yardage contribution from a separate environment. None of those plays needed to interact with each other. They only needed to convert their own role into ceiling efficiency.\n\nThe final structural layer is the Rams defense with Brandin Cooks from the same game. That is an efficient use of a dominant team script. Cooks benefits from Los Angeles offensive efficiency, while the defense crushes a San Francisco offense led by backup quarterback C.J. Beathard. Seven sacks, takeaways, and a blocked kick created one of the strongest defensive scores on the slate. This lineup won because it combined an emerging offensive environment in Chicago with a dominant defensive environment in San Francisco, then filled the remaining slots with volume driven receivers and running back opportunity rather than dead salary relief.",
+    "uniquenessNotes": "The key decision was recognizing that Chicago was no longer a low ceiling spot. Earlier in the season, the field could still treat Bears games as defense first and fantasy second. This roster took the opposite stance. It treated Trubisky, Cohen, and Burton as a concentrated offensive cluster with both volume and explosive potential. That call mattered because Burton was still modestly owned and Trubisky had not yet become a default tournament quarterback.\n\nThe lineup also shows a disciplined approach to correlation. It stacked the Chicago game where offensive concentration was clear, then used one more two player same game cluster through Brandin Cooks and Rams defense. That combination sounds awkward to inexperienced tournament players, though it makes sense when one team can control both scoring and pass rush conditions. If the Rams offense succeeds early, the backup quarterback on the other side is pushed into obvious passing situations. That creates more sack and turnover chances for the defense.\n\nThe rest of the roster stayed away from forced creativity. John Brown, Jarvis Landry, and Alshon Jeffery were all capable of winning through target share and yardage without requiring exotic game scripts. Latavius Murray handled the running back salary slot efficiently. This is a strong example of using one or two decisive structural calls and allowing the other slots to remain fundamentally sound.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Mitchell Trubisky stacked with Tarik Cohen and Trey Burton as Chicago game environments became exploitable",
+      "secondaryLever": "Rams defense against C.J. Beathard paired with Brandin Cooks from the same game",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "NE@CHI: 3 (QB game)",
+          "LAR@SF: 2",
+          "MIN@NYJ: 1",
+          "NO@BAL: 1",
+          "CLE@TB: 1",
+          "CAR@PHI: 1"
+        ],
+        "bearsCluster": [
+          "Mitchell Trubisky",
+          "Tarik Cohen",
+          "Trey Burton"
+        ],
+        "ramsCluster": [
+          "Brandin Cooks",
+          "Rams"
+        ],
+        "independentReceivers": [
+          "John Brown",
+          "Jarvis Landry",
+          "Alshon Jeffery"
+        ],
+        "qbFacedByRamsDst": "C.J. Beathard"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "EMERGING_OFFENSIVE_ENVIRONMENT_STACK",
+        "QB_RB_TE_CONCENTRATION",
+        "DST_WITH_SAME_GAME_WR",
+        "BACKUP_QB_PRESSURE_TARGET",
+        "INDEPENDENT_TARGET_EARNER_WRS"
+      ],
+      "macroStory": "A first place roster built around the market being late to Chicago's offensive ceiling, then reinforced by a Rams defense spot against a backup quarterback and a set of target earning receivers from separate games."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "DUAL_THREAT_OUTPUT",
+          "ENVIRONMENT_REPRICING"
+        ],
+        "microStory": "Mitchell Trubisky was the central read. The roster treated Chicago as an offense capable of carrying a winning lineup instead of a team to attack only through defense."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_EXTENSION",
+          "PPR_ACCESS",
+          "SPACE_PLAYER"
+        ],
+        "microStory": "Tarik Cohen added the reception driven layer of the Chicago stack and gave the build access to points beyond standard rushing production."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOWER_OWNERSHIP_STACK_PARTNER",
+          "MIDDLE_FIELD_CONCENTRATION",
+          "TE_CEILING"
+        ],
+        "microStory": "Trey Burton completed the stack with one of the stronger tight end scores on the slate, which gave the roster leverage at a position where the field often settles for survival."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRESSURE_CEILING",
+          "BACKUP_QB_ATTACK",
+          "SCRIPT_ACCELERATOR"
+        ],
+        "microStory": "The Rams defense attacked C.J. Beathard from a position of game control and turned that edge into sacks, takeaways, and special teams scoring."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SAME_GAME_OFFENSIVE_PAIR",
+          "TOUCHDOWN_ACCESS",
+          "TEAM_STRENGTH_ALIGNMENT"
+        ],
+        "microStory": "Brandin Cooks aligned with the same Los Angeles dominance that fueled the defensive score, giving the roster two ways to profit from one team controlling the game."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Mitchell Trubisky",
+          "position": "QB",
+          "team": "CHI"
+        },
+        "teammates": [
+          {
+            "name": "Tarik Cohen",
+            "position": "RB",
+            "team": "CHI"
+          },
+          {
+            "name": "Trey Burton",
+            "position": "TE",
+            "team": "CHI"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Brandin Cooks",
+          "position": "WR",
+          "team": "LAR"
+        },
+        "opponent": {
+          "name": "Rams",
+          "position": "DST",
+          "team": "LAR"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Rams",
+          "position": "DST",
+          "team": "LAR",
+          "qbFaced": "C.J. Beathard"
+        },
+        "opponent": {
+          "name": "C.J. Beathard",
+          "position": "QB",
+          "team": "SF"
+        }
+      }
+    ]
+  }
+}

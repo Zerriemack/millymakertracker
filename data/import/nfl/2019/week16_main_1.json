@@ -1,0 +1,330 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 16,
+  "slateType": "MAIN",
+  "slateDate": "2019-12-22T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 16",
+  "slateTag": "DALTON MIAMI ONSLAUGHT, SAQUON NUCLEAR, COLTS DST VERSUS WILL GRIER",
+  "slateGroup": "5-2-1-1",
+  "rosterConstruction": "5-2-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire [$500K to 1st]",
+    "siteContestId": "NFL_2019_WK16_MAIN_2019-12-22T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 8750
+  },
+  "winner": {
+    "username": "Jbyriel",
+    "points": 261.24,
+    "maxEntries": 4
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 261.24,
+    "totalOwnershipBp": 8750,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Andy Dalton",
+        "position": "QB",
+        "team": "CIN",
+        "salary": 5200,
+        "points": 37.84,
+        "ownershipPercent": 3.2,
+        "passTd": 4,
+        "passYds": 396,
+        "twoPtPass": 1,
+        "twoPtConv": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 8300,
+        "points": 46.9,
+        "ownershipPercent": 10.1,
+        "rushYdsRb": 189,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 90,
+        "recTdRb": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Marlon Mack",
+        "position": "RB",
+        "team": "IND",
+        "salary": 6200,
+        "points": 18.1,
+        "ownershipPercent": 12.3,
+        "rushYdsRb": 95,
+        "rushTdRb": 1,
+        "recRb": 2,
+        "recYdsRb": 6,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyler Boyd",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 5800,
+        "points": 36.8,
+        "ownershipPercent": 13.9,
+        "rec": 9,
+        "recYds": 128,
+        "recTd": 2,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "John Ross III",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 4200,
+        "points": 15,
+        "ownershipPercent": 7.5,
+        "rec": 6,
+        "recYds": 84,
+        "rushYds": 6,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Albert Wilson",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 3800,
+        "points": 15.8,
+        "ownershipPercent": 2.4,
+        "rec": 7,
+        "recYds": 79,
+        "rushYds": 9,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Mike Gesicki",
+        "position": "TE",
+        "team": "MIA",
+        "salary": 3600,
+        "points": 26.2,
+        "ownershipPercent": 7.1,
+        "rec": 6,
+        "recYds": 82,
+        "recTd": 2,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Michael Thomas",
+        "position": "WR",
+        "team": "NO",
+        "salary": 9300,
+        "points": 34.6,
+        "ownershipPercent": 25,
+        "rec": 12,
+        "recYds": 136,
+        "recTd": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Colts",
+        "position": "DST",
+        "team": "IND",
+        "salary": 3300,
+        "points": 30,
+        "ownershipPercent": 6,
+        "sacks": 5,
+        "takeaways": 3,
+        "defTd": 2,
+        "qbFaced": "Will Grier",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "CAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is the purest expression of how broken late season 2019 could become when bad teams, rookie quarterbacks, and collapsing defenses all met on the same slate. The center of the build is Andy Dalton in Miami with Tyler Boyd, John Ross III, Albert Wilson, and Mike Gesicki orbiting the same game. Five roster spots from Bengals Dolphins is an aggressive statement, yet the logic is plain. Miami kept allowing passing efficiency, Cincinnati was poor enough on defense to keep the game alive, and neither side had enough structure to suppress volume. Dalton only needed 5,200 salary to unlock four touchdown passes and nearly 400 passing yards. Boyd gave the Bengals side its true payoff score. Wilson and Gesicki supplied the Miami response. Ross did not break the slate on his own, but he completed the game environment capture.\n\nThe rest of the lineup reflects a season where incompetence and tanking behavior created repeated opportunities for explosive fantasy scores. Saquon Barkley against Washington was not subtle. It was a direct attack on a defense with no resistance, and Barkley answered with 46.9 points. Michael Thomas remained the high floor premium receiver who could still reach a true ceiling through volume alone. Marlon Mack was not a separator, but paired with the Colts defense he captured a Carolina offense turning to rookie quarterback Will Grier in a situation that was almost begging for mistakes.\n\nThe most violent secondary event on the roster is the Colts defense. Five sacks, three interceptions, and two defensive touchdowns is not normal defensive scoring. It is the sort of outcome that happens when a team is structurally broken and the quarterback situation is not ready for NFL speed. That is where the user's reaction makes sense. This slate was not built on elegant football. It was built on recognizing where the game quality had collapsed and turning that collapse into fantasy points.\n\nIt also finished in a tie for first. That matters. Tied wins often signal a week where the highest scoring paths were visible enough for multiple players to reach them, provided they chose the correct pressure points. Here those pressure points were the Bengals Dolphins passing game, Barkley's nuclear score, and Indianapolis facing Will Grier.",
+    "uniquenessNotes": "The main differentiator is not one obscure dart. It is the willingness to push game concentration harder than most of the field. Five players from Cincinnati against Miami is an extreme stance on one environment. Many lineups would stop at Dalton and Boyd or add one Miami bring back. This build kept going and captured nearly all of the useful pass game production.\n\nThe tied first place finish tells an important story. This lineup was strong, but it was also built on conditions other sharp players could identify. Late season 2019 created ugly football and very clear DFS targets. That combination lowers the barrier for tied outcomes because the strongest paths are easier to see than usual.\n\nThe Colts defense is still the slot that changes the build from a good onslaught lineup into a first place lineup. Without 30 points from defense, the roster is very good. With it, the lineup clears a massive field even though much of the construction is understandable on first pass. That is the core lesson. In weeks driven by football dysfunction, the slate can swing harder through defense than normal.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Andy Dalton with Tyler Boyd and John Ross III, brought back by Albert Wilson and Mike Gesicki in a five player Cincinnati Miami onslaught",
+      "secondaryLever": "Saquon Barkley raw point eruption and the Colts defense against rookie quarterback Will Grier",
+      "notes": {
+        "rosterConstruction": "5-2-1-1",
+        "gameKey": [
+          "CIN@MIA: 5 (QB game)",
+          "CAR@IND: 2",
+          "NYG@WAS: 1",
+          "NO@TEN: 1"
+        ],
+        "bengalsDolphinsCluster": [
+          "Andy Dalton",
+          "Tyler Boyd",
+          "John Ross III",
+          "Albert Wilson",
+          "Mike Gesicki"
+        ],
+        "coltsPanthersPair": [
+          "Marlon Mack",
+          "Colts"
+        ],
+        "rawPointsHammer": "Saquon Barkley",
+        "premiumVolumeAnchor": "Michael Thomas",
+        "qbFacedByColtsDst": "Will Grier",
+        "finishType": "TIE_FOR_FIRST"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FIVE_MAN_GAME_ONSLAUGHT",
+        "LATE_SEASON_DYSFUNCTION_ATTACK",
+        "ROOKIE_QB_DST_SMASH",
+        "ELITE_RB_RAW_POINTS_NUCLEAR",
+        "TIED_FIRST_PLACE_OUTCOME"
+      ],
+      "macroStory": "A tied first place roster built on an extreme Cincinnati Miami passing game onslaught, then pushed over the top by Saquon Barkley and a Colts defense facing a rookie quarterback in a broken Carolina offense."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_QB",
+          "GAME_CLUSTER_HUB"
+        ],
+        "microStory": "Andy Dalton was the correct access point to a game environment where both defenses were weak enough to allow full passing volume."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_SWINGER",
+          "ROOKIE_QB_PUNISHER",
+          "DOUBLE_DEFENSIVE_TOUCHDOWN"
+        ],
+        "microStory": "The Colts defense was the most punishing roster decision on the slate outside Barkley. Will Grier and Carolina gave Indianapolis repeated chances to create defensive points."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "NUCLEAR_RAW_POINTS",
+          "ELITE_WORKLOAD",
+          "BEST_PLAY_THAT_HIT"
+        ],
+        "microStory": "Saquon Barkley delivered the sort of score that removes all doubt. Once he reached 46.9, every roster without him had to be nearly perfect."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_PAYOFF",
+          "TOUCHDOWN_CONCENTRATION",
+          "YARDAGE_BONUS"
+        ],
+        "microStory": "Tyler Boyd was the true Bengals payoff inside the onslaught. He turned Dalton's efficiency into a ceiling score the stack needed."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Andy Dalton",
+          "position": "QB",
+          "team": "CIN"
+        },
+        "teammates": [
+          {
+            "name": "Tyler Boyd",
+            "position": "WR",
+            "team": "CIN"
+          },
+          {
+            "name": "John Ross III",
+            "position": "WR",
+            "team": "CIN"
+          }
+        ],
+        "opponent": {
+          "name": "Mike Gesicki",
+          "position": "TE",
+          "team": "MIA"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Albert Wilson",
+          "position": "WR",
+          "team": "MIA"
+        },
+        "opponent": {
+          "name": "Tyler Boyd",
+          "position": "WR",
+          "team": "CIN"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Marlon Mack",
+          "position": "RB",
+          "team": "IND"
+        },
+        "opponent": {
+          "name": "Colts",
+          "position": "DST",
+          "team": "IND"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Colts",
+          "position": "DST",
+          "team": "IND",
+          "qbFaced": "Will Grier"
+        },
+        "opponent": {
+          "name": "Will Grier",
+          "position": "QB",
+          "team": "CAR"
+        }
+      }
+    ]
+  }
+}

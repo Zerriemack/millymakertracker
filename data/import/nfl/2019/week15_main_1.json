@@ -1,0 +1,316 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 15,
+  "slateType": "MAIN",
+  "slateDate": "2019-12-15T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 15",
+  "slateTag": "KENYAN DRAKE BREAKS THE SLATE, JAMEIS TAMPA DOUBLE, HIGBEE CHALK LANDS",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "rosterConstruction": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2019_WK15_MAIN_2019-12-15T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 15350
+  },
+  "winner": {
+    "username": "Rbx88",
+    "points": 260.02,
+    "maxEntries": 147
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 260.02,
+    "totalOwnershipBp": 15350,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Jameis Winston",
+        "position": "QB",
+        "team": "TB",
+        "salary": 6900,
+        "points": 36.72,
+        "ownershipPercent": 6.1,
+        "passTd": 4,
+        "passYds": 458,
+        "rushYds": 4,
+        "interceptions": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 7700,
+        "points": 33.3,
+        "ownershipPercent": 25.4,
+        "rushYdsRb": 112,
+        "rushTdRb": 2,
+        "recRb": 4,
+        "recYdsRb": 31,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Chris Carson",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 7500,
+        "points": 29.7,
+        "ownershipPercent": 33.8,
+        "rushYdsRb": 133,
+        "rushTdRb": 2,
+        "recRb": 1,
+        "recYdsRb": 4,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Conley",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 3600,
+        "points": 20.9,
+        "ownershipPercent": 12.3,
+        "rec": 4,
+        "recYds": 49,
+        "recTd": 2,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 7700,
+        "points": 20.1,
+        "ownershipPercent": 22.3,
+        "rec": 5,
+        "recYds": 121,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Breshad Perriman",
+        "position": "WR",
+        "team": "TB",
+        "salary": 4500,
+        "points": 37.6,
+        "ownershipPercent": 7.8,
+        "rec": 5,
+        "recYds": 113,
+        "recTd": 3,
+        "rushYds": 3,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Tyler Higbee",
+        "position": "TE",
+        "team": "LAR",
+        "salary": 3900,
+        "points": 26.1,
+        "ownershipPercent": 34.7,
+        "rec": 12,
+        "recYds": 111,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kenyan Drake",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 5000,
+        "points": 42.6,
+        "ownershipPercent": 5.2,
+        "rushYdsRb": 137,
+        "rushTdRb": 4,
+        "recRb": 1,
+        "recYdsRb": 9,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Packers",
+        "position": "DST",
+        "team": "GB",
+        "salary": 3000,
+        "points": 13,
+        "ownershipPercent": 5.9,
+        "sacks": 3,
+        "takeaways": 3,
+        "qbFaced": "Mitch Trubisky",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "CHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is the cleanest example of a slate being decided by one violent outcome layered on top of an otherwise recognizable construction. Kenyan Drake is the event that changed everything. At 5.2 percent ownership and 5,000 salary, he posted 42.6 DraftKings points through four rushing touchdowns and a 100 yard bonus. Once that score landed, the rest of the lineup did not need to be exotic. It needed to stay attached to the strongest volume and passing environments on the slate, and it did.\n\nThe quarterback build is straightforward but well chosen. Jameis Winston against Detroit was one of the best passing environment reads on the board. Tampa Bay games kept producing inflated receiver outcomes because Winston pushed the ball downfield, invited volatility, and kept both sides alive. This roster captured the Tampa side through a double stack with Chris Godwin and Breshad Perriman. Godwin gave the build stable yardage and volume. Perriman supplied the true separation inside the stack with three touchdowns at 7.8 percent ownership. That is the kind of internal distribution bet that wins tournaments. The roster did not need the bring back because the Tampa production was concentrated enough on its own.\n\nOutside the stack, the lineup leaned on familiar raw point anchors. Saquon Barkley and Chris Carson were popular for a reason and both paid off. Tyler Higbee was another strong role play the field recognized, and his score held up. Chris Conley was the lighter salary addition who kept the build from becoming too top heavy. Then Drake detonated the slate from the flex slot and turned a strong lineup into a first place lineup.\n\nGreen Bay defense against Mitch Trubiskey was the final complementary score. It was not the whole story, but it gave the build another underowned point source through sacks and turnovers. The larger truth of this lineup is simple. Most of the roster is standard because the slate allowed it to be standard. Drake was the pressure point. Once that one slot hit its extreme upper tail, the rest of the roster only needed to avoid failure and stay connected to the best offensive environments.",
+    "uniquenessNotes": "This lineup is unusual because it did not need a complicated chain of thin outcomes. Much of the build was accessible to the field. Barkley, Carson, Higbee, and the Tampa passing game were all logical selections. What separated the roster was getting the exact right low owned player in the one slot where a slate breaking score was available without being widely owned.\n\nDrake is the obvious separator, but Perriman matters almost as much. Many Winston rosters would have landed on Godwin. Fewer captured Perriman's three touchdown eruption as part of the same passing tree. That gave the lineup a high end quarterback stack while still preserving ownership flexibility.\n\nThis is also a good reminder that a lineup does not need to look strange to win. When the slate presents several strong chalk or near chalk plays, the sharper move is often to keep them and identify where the true leverage ceiling sits. In this case it sat in Drake, then got reinforced by Perriman and a low owned defense.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Jameis Winston with Chris Godwin and Breshad Perriman in the Tampa Bay Detroit passing environment",
+      "secondaryLever": "Kenyan Drake as the low owned slate breaker, with Barkley, Carson, and Higbee supplying the standard raw point structure",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "TB@DET: 3 (QB game)",
+          "MIA@NYG: 1",
+          "SEA@CAR: 1",
+          "JAX@OAK: 1",
+          "LAR@DAL: 1",
+          "CLE@ARI: 1",
+          "CHI@GB: 1"
+        ],
+        "buccaneersLionsCluster": [
+          "Jameis Winston",
+          "Chris Godwin",
+          "Breshad Perriman"
+        ],
+        "rawPointsCore": [
+          "Saquon Barkley",
+          "Chris Carson",
+          "Tyler Higbee"
+        ],
+        "slateBreaker": "Kenyan Drake",
+        "salarySupport": "Chris Conley",
+        "qbFacedByPackersDst": "Mitch Trubiskey"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_DOUBLE_STACK_NO_BRING_BACK",
+        "SLATE_BREAKING_FLEX_RB",
+        "STANDARD_CORE_WITH_ONE_NUCLEAR_SEPARATOR",
+        "POPULAR_TE_ROLE_THAT_HIT",
+        "LOW_OWNERSHIP_DST_COMPLEMENT"
+      ],
+      "macroStory": "A first place roster built around a familiar Tampa passing environment and strong volume backs, then taken over the top by Kenyan Drake's four touchdown eruption."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "LOW_OWNERSHIP_CEILING",
+          "TOUCHDOWN_CLUSTER"
+        ],
+        "microStory": "Kenyan Drake was the deciding score on the slate. Four rushing touchdowns at modest ownership changed the tournament immediately."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "PASSING_ENVIRONMENT_BET",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Jameis Winston was the correct quarterback environment read. Detroit could not contain the passing volume, and Tampa condensed the output through its receivers."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_PAYOFF",
+          "MULTI_TOUCHDOWN_SEPARATOR",
+          "LOWER_OWNERSHIP_THAN_STACK_MATE"
+        ],
+        "microStory": "Breshad Perriman was the sharper piece inside the Tampa stack. The three touchdown outcome created separation even among lineups that also had Winston."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "ROLE_SECURITY",
+          "POPULAR_SCORE_THAT_HELD",
+          "STRUCTURAL_STABILITY"
+        ],
+        "microStory": "Tyler Higbee kept the lineup stable at a position where many rosters fail. His volume prevented the build from needing perfection everywhere else."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Jameis Winston",
+          "position": "QB",
+          "team": "TB"
+        },
+        "teammates": [
+          {
+            "name": "Chris Godwin",
+            "position": "WR",
+            "team": "TB"
+          },
+          {
+            "name": "Breshad Perriman",
+            "position": "WR",
+            "team": "TB"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Saquon Barkley",
+          "position": "RB",
+          "team": "NYG"
+        },
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Chris Carson",
+          "position": "RB",
+          "team": "SEA"
+        },
+        "opponent": null
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Packers",
+          "position": "DST",
+          "team": "GB",
+          "qbFaced": "Mitch Trubiskey"
+        },
+        "opponent": {
+          "name": "Mitch Trubiskey",
+          "position": "QB",
+          "team": "CHI"
+        }
+      }
+    ]
+  }
+}

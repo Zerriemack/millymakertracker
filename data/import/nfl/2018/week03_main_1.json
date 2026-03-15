@@ -1,0 +1,319 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 3,
+  "slateType": "MAIN",
+  "slateDate": "2018-09-23T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 3",
+  "slateTag": "NO ATL GAME STACK, KAMARA PPR MONSTER, ROBERT WOODS DOMINATES",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "rosterConstruction": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK03_MAIN_2018-09-23T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12460
+  },
+  "winner": {
+    "username": "TheHodgesFactor",
+    "points": 251.86,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 251.86,
+    "totalOwnershipBp": 12460,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Matt Ryan",
+        "position": "QB",
+        "team": "ATL",
+        "salary": 5700,
+        "points": 43.16,
+        "ownershipPercent": 16.7,
+        "passTd": 5,
+        "passYds": 374,
+        "rushYds": 12,
+        "twoPtPass": 2,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 7600,
+        "points": 22.7,
+        "ownershipPercent": 7.2,
+        "rushYdsRb": 82,
+        "rushTdRb": 1,
+        "recRb": 5,
+        "recYdsRb": 35,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "team": "NO",
+        "salary": 9500,
+        "points": 37.0,
+        "ownershipPercent": 20.4,
+        "rushYdsRb": 66,
+        "recRb": 15,
+        "recYdsRb": 124,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyler Boyd",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 3700,
+        "points": 28.7,
+        "ownershipPercent": 10.7,
+        "rec": 6,
+        "recYds": 132,
+        "recTd": 1,
+        "rushYds": 5,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Calvin Ridley",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 3700,
+        "points": 43.5,
+        "ownershipPercent": 12.0,
+        "rec": 7,
+        "recYds": 146,
+        "recTd": 3,
+        "rushYds": 9,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Robert Woods",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 5100,
+        "points": 36.7,
+        "ownershipPercent": 7.5,
+        "rec": 10,
+        "recYds": 104,
+        "recTd": 2,
+        "rushYds": 13,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Eric Ebron",
+        "position": "TE",
+        "team": "IND",
+        "salary": 3400,
+        "points": 8.3,
+        "ownershipPercent": 24.8,
+        "rec": 5,
+        "recYds": 33,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 7700,
+        "points": 18.8,
+        "ownershipPercent": 6.9,
+        "rushYdsRb": 127,
+        "recRb": 3,
+        "recYdsRb": 11,
+        "fumblesLost": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bears",
+        "position": "DST",
+        "team": "CHI",
+        "salary": 3500,
+        "points": 13.0,
+        "ownershipPercent": 18.4,
+        "sacks": 4,
+        "takeaways": 4,
+        "qbFaced": "Sam Bradford",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is anchored by the New Orleans Atlanta game and reads the environment correctly from the start. Matt Ryan at 5,700 gives access to a ceiling game without forcing the roster into a fragile salary structure. Alvin Kamara and Calvin Ridley complete the three man cluster from the same game, which turns a back and forth dome shootout into the lineup’s scoring center. Ryan produces five passing touchdowns, Ridley catches three of them, and Kamara piles up reception volume in a script where Drew Brees kept feeding him underneath. The build captures both touchdown concentration and PPR accumulation from the slate’s best environment.\n\nThe rest of the roster fills in around ceiling outcomes from underpriced skill players. Robert Woods posts a complete wide receiver score through target volume, yardage, and two touchdowns. Tyler Boyd adds another mid range eruption at 3,700, which gives the lineup a second salary release valve without sacrificing raw points. Saquon Barkley and Ezekiel Elliott bring high touch running back volume from separate games, which keeps the roster stable while the passing game pieces do the heavy lifting.\n\nEric Ebron is the one thin score, yet his salary and ownership serve a purpose. He keeps the structure intact and lets the roster spend for Kamara while still reaching multiple receiver ceilings. Chicago defense closes the build with pressure and takeaways against Sam Bradford, a quarterback archetype who carried sack and mistake risk at this stage. This lineup wins because the quarterback game stack lands at full strength, then two underpriced receivers post slate changing numbers on top of it.",
+    "uniquenessNotes": "The most important separation point is the way the lineup handled the New Orleans Atlanta game. Many rosters could identify the dome environment. Fewer captured it through Matt Ryan plus Calvin Ridley while also using Alvin Kamara from the other side. Kamara was functioning as a reception vacuum in this offense, so his scoring path did not need rushing touchdowns. He could reach tournament winning output through catch volume and yardage alone, which is exactly what happened.\n\nRobert Woods and Tyler Boyd gave this lineup two independent ceiling events outside the primary game. Both were priced well below their final output, and both won through receiver usage rather than fluky scoring. Woods dominated his game through double digit catches and two touchdowns. Boyd punished a weak price point through strong target conversion and a 100 yard bonus. Those two pieces kept the lineup from living or dying on a single game environment.\n\nChicago defense at moderate ownership gave the lineup another clean source of points without asking for a defensive touchdown. Four sacks, three interceptions, and a fumble recovery were enough. In a large field contest, a defense score is helpful, though this roster did not need one because the offensive core already reached a rare point ceiling.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Matt Ryan with Calvin Ridley and Alvin Kamara in the New Orleans Atlanta shootout",
+      "secondaryLever": "Robert Woods and Tyler Boyd as underpriced wide receiver ceiling scores",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "NO@ATL: 3 (QB game)",
+          "NYG@HOU: 1",
+          "CIN@CAR: 1",
+          "LAC@LAR: 1",
+          "IND@PHI: 1",
+          "DAL@SEA: 1",
+          "CHI@ARI: 1"
+        ],
+        "primaryGameStack": [
+          "Matt Ryan",
+          "Alvin Kamara",
+          "Calvin Ridley"
+        ],
+        "secondaryCeilings": [
+          "Robert Woods",
+          "Tyler Boyd"
+        ],
+        "salaryStabilizer": "Eric Ebron",
+        "qbFacedByBearsDst": "Sam Bradford"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "GAME_STACK_SHOOTOUT",
+        "PPR_RUNNING_BACK_CEILING",
+        "DOUBLE_MID_RANGE_WR_BREAKOUT",
+        "SALARY_EFFICIENCY_AT_QB",
+        "DST_VERSUS_REPLACEMENT_LEVEL_QB"
+      ],
+      "macroStory": "A first place roster built around a correctly identified dome shootout, then elevated by two underpriced wide receiver ceiling games and a defense facing a mistake prone quarterback."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "SALARY_EFFICIENCY",
+          "GAME_STACK_HUB"
+        ],
+        "microStory": "Matt Ryan was the access point to the slate’s highest value ceiling. At 5,700, five passing touchdowns and 374 yards created an elite point per dollar outcome while keeping the full roster flexible."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "TOUCHDOWN_CONCENTRATION",
+          "ROOKIE_BREAKOUT",
+          "CORRELATED_SPIKE"
+        ],
+        "microStory": "Calvin Ridley turned the quarterback stack into a tournament winner by catching three touchdowns in the same game environment Ryan was built to exploit."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PPR_MONSTER",
+          "OPPOSING_GAME_CORRELATION",
+          "RAW_POINTS_ANCHOR"
+        ],
+        "microStory": "Alvin Kamara did not need a rushing touchdown because the reception volume carried the score. Fifteen catches and 124 receiving yards gave the roster a rare running back path to slate level output."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "UNDERPRICED_CEILING",
+          "TARGET_DOMINANCE",
+          "INDEPENDENT_WIN_CONDITION"
+        ],
+        "microStory": "Robert Woods delivered a full alpha receiver score outside the primary stack, which gave the lineup a second route to first place instead of relying on one game alone."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_SOURCE",
+          "PRESSURE_ENVIRONMENT",
+          "QB_MISTAKE_TARGET"
+        ],
+        "microStory": "Chicago defense closed the lineup with a clean pressure and turnover game against Sam Bradford, whose profile created a credible path to sacks and interceptions."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Matt Ryan",
+          "position": "QB",
+          "team": "ATL"
+        },
+        "teammates": [
+          {
+            "name": "Calvin Ridley",
+            "position": "WR",
+            "team": "ATL"
+          }
+        ],
+        "opponent": {
+          "name": "Alvin Kamara",
+          "position": "RB",
+          "team": "NO"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Matt Ryan",
+          "position": "QB",
+          "team": "ATL"
+        },
+        "opponent": {
+          "name": "Alvin Kamara",
+          "position": "RB",
+          "team": "NO"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Bears",
+          "position": "DST",
+          "team": "CHI",
+          "qbFaced": "Sam Bradford"
+        },
+        "opponent": {
+          "name": "Sam Bradford",
+          "position": "QB",
+          "team": "ARI"
+        }
+      }
+    ]
+  }
+}

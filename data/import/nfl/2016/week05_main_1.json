@@ -1,0 +1,311 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 5,
+  "slateType": "MAIN",
+  "slateDate": "2016-10-09T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 5",
+  "slateTag": "NAKED RIVERS WITH HILTON, TWO TWO PLAYER GAME CLUSTERS, VIKINGS DST CHALK AGAINST OSWEILER",
+  "slateGroup": "1-2-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $4.44M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK05_MAIN_2016-10-09T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 13730
+  },
+  "winner": {
+    "username": "Jamal07",
+    "points": 247.2,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 247.2,
+    "totalOwnershipBp": 13730,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Philip Rivers",
+        "position": "QB",
+        "team": "SD",
+        "salary": 6900,
+        "points": 31.36,
+        "ownershipPercent": 4.1,
+        "passTd": 4,
+        "passYds": 359,
+        "interceptions": 1,
+        "gameAwayTeam": "SD",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Todd Gurley",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 6500,
+        "points": 18.8,
+        "ownershipPercent": 11.2,
+        "rushTdRb": 1,
+        "rushYdsRb": 72,
+        "recRb": 3,
+        "recYdsRb": 36,
+        "fumblesLost": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jordan Howard",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 5200,
+        "points": 28.3,
+        "ownershipPercent": 35.3,
+        "rushTdRb": 1,
+        "rushYdsRb": 118,
+        "recRb": 3,
+        "recYdsRb": 45,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Randall Cobb",
+        "position": "WR",
+        "team": "GB",
+        "salary": 6200,
+        "points": 22.8,
+        "ownershipPercent": 4.3,
+        "rec": 9,
+        "recYds": 108,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "T.Y. Hilton",
+        "position": "WR",
+        "team": "IND",
+        "salary": 7400,
+        "points": 36.1,
+        "ownershipPercent": 12.8,
+        "rec": 10,
+        "recYds": 171,
+        "recTd": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Brandon Marshall",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 7100,
+        "points": 28.4,
+        "ownershipPercent": 17.5,
+        "rec": 8,
+        "recYds": 114,
+        "recTd": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Martellus Bennett",
+        "position": "TE",
+        "team": "NE",
+        "salary": 3700,
+        "points": 30.7,
+        "ownershipPercent": 12.3,
+        "rec": 6,
+        "recYds": 67,
+        "recTd": 3,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Sammie Coates",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 3600,
+        "points": 34.9,
+        "ownershipPercent": 9.5,
+        "rec": 6,
+        "recYds": 139,
+        "recTd": 2,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Vikings",
+        "position": "DST",
+        "team": "MIN",
+        "salary": 3400,
+        "points": 16,
+        "ownershipPercent": 30.3,
+        "sacks": 4,
+        "takeaways": 2,
+        "dstTd": 1,
+        "pointsAllowedBucket": 13,
+        "qbFaced": "Brock Osweiler",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "HOU"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins by refusing the standard requirement that a tournament quarterback must be paired with his own pass catchers. Philip Rivers stands alone as a naked quarterback, and that decision is the hinge. Rivers throws four touchdowns and clears 300 yards, but the roster does not spend any of his salary tree on San Diego receivers. That freed the build to chase ceiling receivers and game clusters elsewhere while still capturing elite quarterback output at 4.1 percent ownership.\n\nThe structure after Rivers is what made the lineup hard to duplicate. The roster carried two separate two player game clusters. Jordan Howard and T.Y. Hilton came from Chicago at Indianapolis, which gave the build a running back volume side and a deep target alpha side from the same environment. Brandon Marshall and Sammie Coates came from New York at Pittsburgh, which gave the lineup one side of the Jets passing game and one side of Pittsburgh's explosive downfield response. These were not full game stacks in the modern sense. They were selective extractions of the most valuable scoring channels from two different games.\n\nMartellus Bennett is another major pressure point. With Tom Brady back, Bennett turned a modest tight end salary into a three touchdown score. Randall Cobb then served as a low owned alternative to the more popular Green Bay receiver paths. Todd Gurley did not break the slate, but he gave the lineup credible running back production without forcing a miss at the position.\n\nMinnesota defense against Brock Osweiler was the one spot the field largely agreed on, and the roster accepted it. That choice matters because it shows the lineup was not trying to be different in every slot. It took the defense the field wanted, then created separation through Rivers without stacking, two cross game two player clusters, and Cobb instead of a more obvious Green Bay receiver direction.",
+    "uniquenessNotes": "The strongest form of uniqueness here is structural. Most rosters pairing a four touchdown quarterback would try to collect at least one of his receivers. This build did the opposite. It treated Rivers as a pure quarterback score and used the saved receiver slots to capture ceilings from Hilton, Marshall, Coates, Cobb, and Bennett. That is a sharper allocation read than a routine stack because it recognized quarterback points could be harvested without insisting on direct attachment.\n\nThe second layer is how the lineup mixed chalk with lower owned separation. Jordan Howard and the Vikings defense were popular enough to be shared assumptions. They were not the reason the lineup won. Rivers at 4.1 percent, Cobb at 4.3 percent, and Coates at 9.5 percent created the edge. Bennett also added a score at a position where three touchdown outcomes are rare and where the field often accepts much lower ceilings.\n\nThere is also a subtle lesson in the Brandon Marshall and Sammie Coates pairing. The lineup did not need Ben Roethlisberger or Ryan Fitzpatrick to make use of that game. It only needed the correct receivers. That approach matters in large field contests because it can capture the touchdown concentration from a game without forcing exposure to quarterbacks whose ownership or salary may not be as attractive.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Philip Rivers as a naked quarterback with ceiling pulled from other games",
+      "secondaryLever": "Two selective two player game clusters in CHI at IND and NYJ at PIT plus Vikings defense against Brock Osweiler",
+      "notes": {
+        "rosterConstruction": "1-2-2-1-1-1-1",
+        "gameKey": [
+          "SD@OAK: 1 (QB game)",
+          "CHI@IND: 2",
+          "NYJ@PIT: 2",
+          "BUF@LAR: 1",
+          "NYG@GB: 1",
+          "NE@CLE: 1",
+          "HOU@MIN: 1"
+        ],
+        "nakedQuarterback": "Philip Rivers",
+        "bearsColtsPair": [
+          "Jordan Howard",
+          "T.Y. Hilton"
+        ],
+        "jetsSteelersPair": [
+          "Brandon Marshall",
+          "Sammie Coates"
+        ],
+        "tightEndSpike": "Martellus Bennett",
+        "qbFacedByVikingsDst": "Brock Osweiler"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "NAKED_QB_CEILING",
+        "TWO_SEPARATE_TWO_PLAYER_GAME_CLUSTERS",
+        "TE_TOUCHDOWN_SPIKE",
+        "CHALK_DST_ANCHOR",
+        "LOW_OWNERSHIP_WR_LEVERAGE"
+      ],
+      "macroStory": "A first place roster built around a naked Philip Rivers score, then finished by selective two player game clusters and a tight end touchdown eruption."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "NAKED_QB",
+          "LOW_OWNERSHIP_SCORING_BASE"
+        ],
+        "microStory": "Philip Rivers provided the quarterback ceiling without consuming receiver slots, which allowed the roster to hunt spike scores across the rest of the slate."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_PIVOT",
+          "ALTERNATIVE_TEAM_WR_PATH",
+          "YARDAGE_FLOOR"
+        ],
+        "microStory": "Randall Cobb gave the roster Green Bay production through a less crowded route than the field preferred."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "TOUCHDOWN_CONCENTRATION",
+          "POSITIONAL_SEPARATOR",
+          "BRADY_RETURN_BENEFIT"
+        ],
+        "microStory": "Martellus Bennett turned a mid range tight end salary into one of the slate's strongest position adjusted scores."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "DOWNFIELD_CEILING",
+          "GAME_CLUSTER_PAYOFF",
+          "MID_OWNERSHIP_SEPARATOR"
+        ],
+        "microStory": "Sammie Coates completed the Jets Steelers cluster and brought the explosive touchdown element the lineup needed."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "CHALK_THAT_HIT",
+          "PRESSURE_PLUS_TURNOVER",
+          "DEFENSIVE_TOUCHDOWN"
+        ],
+        "microStory": "Minnesota defense gave the lineup the shared defensive score the field expected, which let the offensive structure do the separating."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Jordan Howard",
+          "position": "RB",
+          "team": "CHI"
+        },
+        "opponent": {
+          "name": "T.Y. Hilton",
+          "position": "WR",
+          "team": "IND"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Brandon Marshall",
+          "position": "WR",
+          "team": "NYJ"
+        },
+        "opponent": {
+          "name": "Sammie Coates",
+          "position": "WR",
+          "team": "PIT"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Vikings",
+          "position": "DST",
+          "team": "MIN",
+          "qbFaced": "Brock Osweiler"
+        },
+        "opponent": {
+          "name": "Brock Osweiler",
+          "position": "QB",
+          "team": "HOU"
+        }
+      }
+    ]
+  }
+}

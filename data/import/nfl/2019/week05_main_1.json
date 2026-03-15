@@ -1,0 +1,340 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 5,
+  "slateType": "MAIN",
+  "slateDate": "2019-10-06T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 5",
+  "slateTag": "MCCAFFREY CHALK NUCLEAR, TB NO FULL GAME STACK, AARON JONES 50 PLUS IN ALL TIME 331.86",
+  "slateGroup": "4-1-1-1-1-1",
+  "rosterConstruction": "4-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2019_WK05_MAIN_2019-10-06T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11890
+  },
+  "winner": {
+    "username": "Thechek182",
+    "points": 331.86,
+    "maxEntries": 49
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 331.86,
+    "totalOwnershipBp": 11890,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Teddy Bridgewater",
+        "position": "QB",
+        "team": "NO",
+        "salary": 5200,
+        "points": 31.26,
+        "ownershipPercent": 2.7,
+        "passTd": 4,
+        "passYds": 314,
+        "rushYds": 7,
+        "interceptions": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 8700,
+        "points": 50.7,
+        "ownershipPercent": 24.7,
+        "rushYdsRb": 176,
+        "rushTdRb": 2,
+        "recRb": 6,
+        "recYdsRb": 61,
+        "recTdRb": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "James White",
+        "position": "RB",
+        "team": "NE",
+        "salary": 5000,
+        "points": 13.2,
+        "ownershipPercent": 12.1,
+        "rushYdsRb": 26,
+        "recRb": 6,
+        "recYdsRb": 46,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Will Fuller V",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 4500,
+        "points": 56.7,
+        "ownershipPercent": 18.5,
+        "rec": 14,
+        "recYds": 217,
+        "recTd": 3,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6900,
+        "points": 34.5,
+        "ownershipPercent": 14.8,
+        "rec": 7,
+        "recYds": 125,
+        "recTd": 2,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Thomas",
+        "position": "WR",
+        "team": "NO",
+        "salary": 6600,
+        "points": 44.2,
+        "ownershipPercent": 23.7,
+        "rec": 11,
+        "recYds": 182,
+        "recTd": 2,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Jared Cook",
+        "position": "TE",
+        "team": "NO",
+        "salary": 3400,
+        "points": 14.1,
+        "ownershipPercent": 3.6,
+        "rec": 4,
+        "recYds": 41,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Aaron Jones",
+        "position": "RB",
+        "team": "GB",
+        "salary": 5900,
+        "points": 52.2,
+        "ownershipPercent": 12.0,
+        "rushYdsRb": 107,
+        "rushTdRb": 4,
+        "recRb": 7,
+        "recYdsRb": 75,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Eagles",
+        "position": "DST",
+        "team": "PHI",
+        "salary": 3700,
+        "points": 35,
+        "ownershipPercent": 6.8,
+        "sacks": 10,
+        "takeaways": 3,
+        "defTd": 2,
+        "qbFaced": "Luke Falk",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "NYJ"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster reached a historic score by combining the slate's most explosive raw point outcomes with one concentrated passing environment that the field did not prioritize through Teddy Bridgewater. Christian McCaffrey delivered the kind of score that erased any chance of winning without him, and Aaron Jones joined him with another massive outcome at a salary that left room for the rest of the build. Will Fuller V then supplied the highest individual receiver score on the slate from the mid range, which meant the roster captured three separate eruption points before the quarterback stack was even fully counted.\n\nThe central structural decision sat in Tampa Bay at New Orleans. Bridgewater came in at 2.7 percent ownership and threw four touchdown passes, which immediately created separation at quarterback. Michael Thomas and Jared Cook absorbed three of those touchdowns, and Chris Godwin completed the game environment from the other side with two scores of his own. That four player cluster gave the lineup access to nearly every meaningful passing event from the best game in the tournament, while still leaving room for McCaffrey, Fuller, and Jones to provide the raw point base.\n\nPhiladelphia defense against Luke Falk finished the roster in exactly the right way. Backup quarterback pressure spots always carry sack and turnover upside, but this game turned into a complete collapse. Ten sacks and two defensive touchdowns pushed the defense slot into true slate changing territory. Once that happened, James White no longer needed a tournament winning score. His role was to hold the roster together with functional production while the major ceiling events carried the lineup past the field.\n\nThe reason this roster finished at 331.86 becomes clear once the scoring is separated into categories. McCaffrey, Jones, Fuller, and the Eagles defense provided the slate breaking totals. The Bridgewater stack supplied leverage, touchdown concentration, and game environment access. White filled the one stability slot. This was a #PLAYTHEBESTPLAYS build, but it still required precise assembly. The winner accepted the obvious ceilings, then arranged them through a low owned quarterback path and a full game stack that captured the right passing touchdowns.",
+    "uniquenessNotes": "A large share of the field had access to McCaffrey, Fuller, Thomas, and Jones, so duplication risk would normally rise around a roster built from so many strong plays. The winning entry avoided that problem through quarterback selection and stack shape. Bridgewater gave access to the same game environment many players wanted, yet he did so from a salary tier and ownership range that kept the total build distinct.\n\nJared Cook mattered because he extended the New Orleans passing cluster without forcing another wide receiver slot from the same game. That detail is important in a roster carrying several premium point scorers from other games. Tight end rarely requires a 30 point score to matter in a first place lineup. It requires clean access to a touchdown path that fits the broader construction, and Cook delivered exactly that within the Bridgewater setup.\n\nPhiladelphia defense also changed the duplication equation. The field had reason to target Luke Falk, but sub seven percent ownership on a defense that posts ten sacks and two touchdowns creates a major structural swing. Once that score was paired with Bridgewater at 2.7 percent, the roster could comfortably carry McCaffrey's 24.7 percent ownership and still remain highly live for first. The lineup was popular in the right places and rare in the places that carried direct tournament leverage.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Teddy Bridgewater with Michael Thomas and Jared Cook, brought back by Chris Godwin in a full Tampa Bay at New Orleans game stack",
+      "secondaryLever": "Christian McCaffrey chalk plus Aaron Jones and Will Fuller V ceiling scores, with Eagles defense against Luke Falk",
+      "notes": {
+        "rosterConstruction": "4-1-1-1-1-1",
+        "gameKey": [
+          "TB@NO: 4 (QB game)",
+          "JAX@CAR: 1",
+          "NE@WAS: 1",
+          "ATL@HOU: 1",
+          "GB@DAL: 1",
+          "NYJ@PHI: 1"
+        ],
+        "qbGameCluster": [
+          "Teddy Bridgewater",
+          "Michael Thomas",
+          "Jared Cook",
+          "Chris Godwin"
+        ],
+        "bestPlaysCore": [
+          "Christian McCaffrey",
+          "Will Fuller V",
+          "Aaron Jones"
+        ],
+        "defensePressurePoint": "Eagles defense versus Luke Falk"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "PLAY_THE_BEST_PLAYS",
+        "LOW_OWNERSHIP_QB_WITH_FULL_GAME_STACK",
+        "MULTIPLE_50_PLUS_SCORES",
+        "BACKUP_QB_DST_ATTACK",
+        "ONE_OFF_NUCLEAR_WR"
+      ],
+      "macroStory": "A historic first place roster that paired the slate's strongest raw point plays with a low owned quarterback and a four player Tampa Bay at New Orleans passing cluster, then added a defense outcome strong enough to function as another ceiling score."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_QB",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Teddy Bridgewater created the most important ownership gap in the lineup by delivering four passing touchdowns from a low salary, low ownership quarterback slot while anchoring the highest leverage game environment in the build."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "CHALK_THAT_HAD_TO_BE_OWNED",
+          "RAW_POINTS_ANCHOR",
+          "SLATE_SURVIVAL"
+        ],
+        "microStory": "Christian McCaffrey supplied one of the foundational scores of the slate, and his presence allowed the roster to keep pace with the strongest raw point builds before its lower owned pieces created separation."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "NUCLEAR_ONE_OFF",
+          "YARDAGE_AND_TOUCHDOWN_SPIKE",
+          "MID_RANGE_SMASH"
+        ],
+        "microStory": "Will Fuller V gave the lineup elite receiver production at a mid range salary, which opened the salary structure needed to fit McCaffrey, Thomas, and the full New Orleans game cluster."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "SECOND_RAW_POINTS_ANCHOR",
+          "TOUCHDOWN_CONCENTRATION",
+          "SLATE_BREAKER"
+        ],
+        "microStory": "Aaron Jones added another 50 plus score from outside the quarterback game, giving the lineup a second independent eruption at running back and raising the overall ceiling to a historic level."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "BACKUP_QB_ATTACK",
+          "TURNOVER_CEILING",
+          "DEFENSIVE_TOUCHDOWN_SWING"
+        ],
+        "microStory": "Philadelphia defense turned a favorable backup quarterback matchup into one of the strongest defense scores of the season, and that outcome gave the roster a major advantage in a slot where most entries were drawing thin on ceiling."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Teddy Bridgewater",
+          "position": "QB",
+          "team": "NO"
+        },
+        "teammates": [
+          {
+            "name": "Michael Thomas",
+            "position": "WR",
+            "team": "NO"
+          },
+          {
+            "name": "Jared Cook",
+            "position": "TE",
+            "team": "NO"
+          }
+        ],
+        "opponent": {
+          "name": "Chris Godwin",
+          "position": "WR",
+          "team": "TB"
+        }
+      },
+      {
+        "type": "ONE_OFF",
+        "qb": null,
+        "teammate": {
+          "name": "Will Fuller V",
+          "position": "WR",
+          "team": "HOU"
+        },
+        "opponent": null
+      },
+      {
+        "type": "ONE_OFF",
+        "qb": null,
+        "teammate": {
+          "name": "Christian McCaffrey",
+          "position": "RB",
+          "team": "CAR"
+        },
+        "opponent": null
+      },
+      {
+        "type": "ONE_OFF",
+        "qb": null,
+        "teammate": {
+          "name": "Aaron Jones",
+          "position": "RB",
+          "team": "GB"
+        },
+        "opponent": null
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Eagles",
+          "position": "DST",
+          "team": "PHI",
+          "qbFaced": "Luke Falk"
+        },
+        "opponent": {
+          "name": "Luke Falk",
+          "position": "QB",
+          "team": "NYJ"
+        }
+      }
+    ]
+  }
+}

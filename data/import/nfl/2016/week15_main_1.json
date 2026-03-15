@@ -1,0 +1,309 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 15,
+  "slateType": "MAIN",
+  "slateDate": "2016-12-18T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 15",
+  "slateTag": "PALMER WITH SAINTS, DEVONTA 37.5, MCCOY ELLIOTT DOUBLE SPEND RB",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "rosterConstruction": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK15_MAIN_2016-12-18T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11230
+  },
+  "winner": {
+    "username": "Malen21",
+    "points": 239.42,
+    "maxEntries": 43
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 239.42,
+    "totalOwnershipBp": 11230,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Carson Palmer",
+        "position": "QB",
+        "team": "ARI",
+        "salary": 6000,
+        "points": 23.72,
+        "ownershipPercent": 7.9,
+        "passTd": 2,
+        "passYds": 318,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 8200,
+        "points": 30.1,
+        "ownershipPercent": 13.9,
+        "rushYdsRb": 152,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 29,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Devonta Freeman",
+        "position": "RB",
+        "team": "ATL",
+        "salary": 6700,
+        "points": 37.5,
+        "ownershipPercent": 22.3,
+        "rushYdsRb": 139,
+        "rushTdRb": 3,
+        "recRb": 2,
+        "recYdsRb": 16,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Brandin Cooks",
+        "position": "WR",
+        "team": "NO",
+        "salary": 6200,
+        "points": 40.6,
+        "ownershipPercent": 3.0,
+        "rec": 7,
+        "recYds": 186,
+        "recTd": 2,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Ty Montgomery",
+        "position": "WR",
+        "team": "GB",
+        "salary": 4800,
+        "points": 33.3,
+        "ownershipPercent": 13.4,
+        "rushYds": 162,
+        "rushTd": 2,
+        "rec": 2,
+        "recYds": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "J.J. Nelson",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 3900,
+        "points": 14.8,
+        "ownershipPercent": 14.8,
+        "rec": 5,
+        "recYds": 38,
+        "recTd": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Ryan Griffin",
+        "position": "TE",
+        "team": "HOU",
+        "salary": 2500,
+        "points": 16.5,
+        "ownershipPercent": 6.2,
+        "rec": 8,
+        "recYds": 85,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "LeSean McCoy",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 8900,
+        "points": 34.9,
+        "ownershipPercent": 28.2,
+        "rushYdsRb": 153,
+        "rushTdRb": 2,
+        "recRb": 3,
+        "recYdsRb": 16,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Raiders",
+        "position": "DST",
+        "team": "OAK",
+        "salary": 2700,
+        "points": 8,
+        "ownershipPercent": 3.5,
+        "sacks": 3,
+        "takeaways": 2,
+        "qbFaced": "Philip Rivers",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "SD",
+        "opponentTeam": "SD"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins through a concentrated passing bet in Arizona and a blunt salary allocation at running back. Carson Palmer is paired with J.J. Nelson and brought back with Brandin Cooks, which captures the fastest access points from the New Orleans Arizona game without paying for David Johnson or Larry Fitzgerald. The stack is not built to absorb every touchdown from the game. It is built to capture explosive receiving events through a quarterback priced at 6,000 and a run back sitting at only 3.0 percent ownership.\n\nBrandin Cooks is the lineup's sharpest leverage point. When a player scores 40.6 at that ownership level, the lineup immediately separates from every construction built around safer wide receiver combinations. The second Arizona piece matters because J.J. Nelson gives the stack a lower salary attachment to Palmer, which preserves room for a double premium running back spend.\n\nThat double spend is the other defining choice. Ezekiel Elliott and LeSean McCoy combine for 65.0 DraftKings points, and Devonta Freeman adds another 37.5. Three running back slots produce 102.4 points. That is the slate. Once the running back room delivers that level of raw production, the rest of the lineup only needs targeted ceiling hits rather than universal perfection.\n\nThe final layer is structural cleanliness. Ryan Griffin at 2,500 keeps the lineup alive at tight end. Ty Montgomery adds hybrid rushing production from a wide receiver slot. Raiders defense does not need to win the slate. It only needs to avoid failure while the high value positions do the damage.",
+    "uniquenessNotes": "The lineup does not chase uniqueness through chaos. It gets there by combining one low owned eruption with a salary map the field had trouble carrying to completion. Cooks at 3.0 percent is the obvious separator, though the more important detail is how the lineup made room for him while still holding Elliott, McCoy, and Freeman together.\n\nPalmer with Nelson and Cooks is a focused game environment position. It is not a full game stack and it does not force unnecessary volume. Palmer supplies access to the game. Nelson gives inexpensive attachment to the quarterback. Cooks handles the opposing ceiling. This is a narrower and more efficient way to capture upside than forcing more bodies from the same matchup.\n\nThe running back allocation is where the lineup becomes difficult to duplicate. Elliott and McCoy were both expensive. Freeman was not cheap either. Most builds carrying this much salary at running back would need cheap wide receivers who merely survive. This roster gets a true slate breaker from Cooks and a strong hybrid score from Montgomery while still landing functional value at tight end and defense.\n\nFor future tournament research, this lineup is a reminder that an expensive running back block can coexist with a tournament winning passing stack when the quarterback is modestly priced and the pass catcher chosen for the return side is under-owned and explosive. The lineup is not balanced. It is selectively overbuilt where the slate offered raw point ceilings and selectively thin where price sensitivity could be absorbed.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Carson Palmer with J.J. Nelson and Brandin Cooks plus an aggressive three running back spend",
+      "secondaryLever": "Brandin Cooks at 3.0 percent ownership as the true separation event",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "NO@ARI: 3 (QB game)",
+          "TB@DAL: 1",
+          "SF@ATL: 1",
+          "GB@CHI: 1",
+          "JAX@HOU: 1",
+          "CLE@BUF: 1",
+          "OAK@SD: 1"
+        ],
+        "cardinalsSaintsCluster": [
+          "Carson Palmer",
+          "J.J. Nelson",
+          "Brandin Cooks"
+        ],
+        "runningBackSpend": [
+          "Ezekiel Elliott",
+          "Devonta Freeman",
+          "LeSean McCoy"
+        ],
+        "cheapTightEndRelief": "Ryan Griffin",
+        "hybridReceiverScore": "Ty Montgomery",
+        "qbFacedByRaidersDst": "Philip Rivers"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "DOUBLE_PREMIUM_PLUS_ONE_RB_SPEND",
+        "LOW_OWNERSHIP_OPPONENT_WR_RUNBACK",
+        "VALUE_QB_WITH_EXPLOSIVE_GAME_ACCESS",
+        "CHEAP_TE_SALARY_RELIEF",
+        "HYBRID_WR_RUSHING_CEILING",
+        "LOW_OWNERSHIP_DST_SURVIVAL"
+      ],
+      "macroStory": "A first place roster built on a concentrated Arizona New Orleans passing thesis, then pushed over the top by a massive three running back allocation and a low owned Brandin Cooks eruption that the field largely did not carry."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SEPARATION_EVENT",
+          "LOW_OWNERSHIP_CEILING",
+          "OPPOSING_GAME_BREAKER"
+        ],
+        "microStory": "Brandin Cooks is the score that turns a strong roster into the winning roster. Forty plus points at 3.0 percent ownership changes the entire tournament."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_FOUNDATION",
+          "DOUBLE_SPEND_CORE",
+          "WORKLOAD_CEILING"
+        ],
+        "microStory": "LeSean McCoy is one pillar of the running back overbuild. The lineup does not trim salary here. It leans into touch concentration and touchdown access."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": [
+          "SLATE_CONTROL",
+          "ELITE_VOLUME",
+          "PRICE_ACCEPTANCE"
+        ],
+        "microStory": "Ezekiel Elliott gives the roster another expensive back who returns full value, which keeps the build from being dependent on one premium salary slot."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "VALUE_ENGINE",
+          "GAME_ACCESS",
+          "SALARY_ENABLER"
+        ],
+        "microStory": "Carson Palmer is the financial hinge. At 6,000 he provides access to a high scoring game while preserving room for the three running back spend."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Carson Palmer",
+          "position": "QB",
+          "team": "ARI"
+        },
+        "teammates": [
+          {
+            "name": "J.J. Nelson",
+            "position": "WR",
+            "team": "ARI"
+          }
+        ],
+        "opponent": {
+          "name": "Brandin Cooks",
+          "position": "WR",
+          "team": "NO"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Carson Palmer",
+          "position": "QB",
+          "team": "ARI"
+        },
+        "opponent": {
+          "name": "Brandin Cooks",
+          "position": "WR",
+          "team": "NO"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Raiders",
+          "position": "DST",
+          "team": "OAK",
+          "qbFaced": "Philip Rivers"
+        },
+        "opponent": {
+          "name": "Philip Rivers",
+          "position": "QB",
+          "team": "SD"
+        }
+      }
+    ]
+  }
+}

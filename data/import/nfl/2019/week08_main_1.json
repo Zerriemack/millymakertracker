@@ -1,0 +1,327 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 8,
+  "slateType": "MAIN",
+  "slateDate": "2019-10-27T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 8",
+  "slateTag": "DANIEL JONES GIANTS LIONS ONSLAUGHT, LATAVIUS MURRAY BACK TO BACK SMASH, TEVIN COLEMAN CAROLINA DEMOLITION",
+  "slateGroup": "4-1-1-1-1-1",
+  "rosterConstruction": "4-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2019_WK08_MAIN_2019-10-27T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11950
+  },
+  "winner": {
+    "username": "Nawmsayin",
+    "points": 258.58,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 258.58,
+    "totalOwnershipBp": 11950,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Daniel Jones",
+        "position": "QB",
+        "team": "NYG",
+        "salary": 5800,
+        "points": 32.18,
+        "ownershipPercent": 1.6,
+        "passTd": 4,
+        "passYds": 322,
+        "rushYds": 13,
+        "fumblesLost": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Tevin Coleman",
+        "position": "RB",
+        "team": "SF",
+        "salary": 5000,
+        "points": 40.8,
+        "ownershipPercent": 4.0,
+        "rushYdsRb": 105,
+        "rushTdRb": 3,
+        "recRb": 2,
+        "recYdsRb": 13,
+        "recTdRb": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Latavius Murray",
+        "position": "RB",
+        "team": "NO",
+        "salary": 5800,
+        "points": 39.7,
+        "ownershipPercent": 34.8,
+        "rushYdsRb": 102,
+        "rushTdRb": 1,
+        "recRb": 9,
+        "recYdsRb": 55,
+        "recTdRb": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mike Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6600,
+        "points": 45.8,
+        "ownershipPercent": 8.7,
+        "rec": 11,
+        "recYds": 198,
+        "recTd": 2,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Kenny Golladay",
+        "position": "WR",
+        "team": "DET",
+        "salary": 6400,
+        "points": 32.3,
+        "ownershipPercent": 24.3,
+        "rec": 6,
+        "recYds": 123,
+        "recTd": 2,
+        "fumblesLost": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Golden Tate",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 5800,
+        "points": 16.5,
+        "ownershipPercent": 8.6,
+        "rec": 8,
+        "recYds": 85,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Evan Engram",
+        "position": "TE",
+        "team": "NYG",
+        "salary": 5300,
+        "points": 14,
+        "ownershipPercent": 10.9,
+        "rec": 4,
+        "recYds": 40,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DK Metcalf",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 5000,
+        "points": 16.3,
+        "ownershipPercent": 10.3,
+        "rec": 3,
+        "recYds": 13,
+        "recTd": 2,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 4300,
+        "points": 21,
+        "ownershipPercent": 16.3,
+        "sacks": 5,
+        "takeaways": 3,
+        "defTd": 1,
+        "qbFaced": "Baker Mayfield",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins with a sharp read on where 2019 ceiling was concentrating. The central decision is Daniel Jones in a full New York Detroit game stack, then surrounding him with volume and touchdown concentration from other spots where role clarity was unusually high. Jones is only 1.6 percent owned, yet he is tied to the most fantasy rich game on the roster. Golden Tate and Evan Engram give him direct access to New York passing production, while Kenny Golladay serves as the Detroit return. Once Jones throws four touchdowns, the entire build gets lifted by a quarterback score the field barely touched.\n\nThe second pillar is accepting obvious running back volume without apology. Latavius Murray was stepping into a featured role for a second straight week and the field knew it. He still had to produce the score. He did more than clear value. He delivered a complete tournament score through rushing volume, receiving volume, and touchdown access. Tevin Coleman filled the same function in a different form. His role against Carolina gave him red zone control and explosive path density, and four touchdowns from a 5,000 running back changes the slate immediately.\n\nMike Evans is the high ceiling receiver who finished the job. Nearly 200 receiving yards and two touchdowns gave the roster another slate level score without forcing a fragile construction. DK Metcalf did not need yardage to matter because his two touchdown game solved the final flex slot. Patriots defense closed the lineup with pressure, turnovers, and a defensive touchdown against Baker Mayfield. This was a top end score from defense, but more important, it came from a roster where every major salary decision carried direct access to touchdowns.",
+    "uniquenessNotes": "The uniqueness is rooted in a four man New York Detroit cluster led by Daniel Jones rather than Matthew Stafford. Detroit games were becoming a recurring pressure point in the 2019 season, and this roster treated that pattern as signal. Instead of taking the obvious Stafford route, it used Jones as the lower owned access point and still captured Detroit scoring through Golladay. That is a stronger tournament decision because it preserved the game environment while changing the ownership profile of the quarterback slot.\n\nMurray at 34.8 percent ownership did not hurt the lineup because the roster already had enough separation elsewhere. This is a strong example of how ownership should be evaluated through the whole build instead of by isolated players. Fading Murray would have meant fading one of the cleanest workloads on the slate. The lineup accepted the gift and searched for leverage in quarterback, game stack shape, and Tevin Coleman.\n\nColeman is the hidden accelerator. Murray was obvious. Coleman was less obvious, cheaper, and every bit as destructive once San Francisco buried Carolina. The roster also used a defense from a game unrelated to the main stack, which kept the lineup from becoming overdependent on one script. Patriots defense gave the build another route to first place through field position and non offensive scoring.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Daniel Jones leading a four man New York Detroit game stack from the quarterback side instead of the more popular Detroit passing tree",
+      "secondaryLever": "Latavius Murray chalk paired with Tevin Coleman as dual workload backs who combined for seven total touchdowns",
+      "notes": {
+        "rosterConstruction": "4-1-1-1-1-1",
+        "gameKey": [
+          "NYG@DET: 4 (QB game)",
+          "ARI@NO: 1",
+          "CAR@SF: 1",
+          "TB@TEN: 1",
+          "SEA@ATL: 1",
+          "CLE@NE: 1"
+        ],
+        "giantsLionsCluster": [
+          "Daniel Jones",
+          "Golden Tate",
+          "Evan Engram",
+          "Kenny Golladay"
+        ],
+        "obviousRoleBack": "Latavius Murray",
+        "lowOwnedBackBreaker": "Tevin Coleman",
+        "ceilingReceiver": "Mike Evans",
+        "qbFacedByPatriotsDst": "Baker Mayfield"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_GAME_STACK",
+        "FOUR_MAN_GAME_CLUSTER",
+        "OBVIOUS_CHALK_RB_THAT_HIT",
+        "SECOND_RB_NUCLEAR_SCORE",
+        "DEFENSE_TOUCHDOWN_COMPLETION"
+      ],
+      "macroStory": "A first place roster built on the Daniel Jones side of the New York Detroit environment, then reinforced by taking the slate's clearest running back role and pairing it with a second running back eruption the field did not prioritize enough."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_GAME_STACK_QB",
+          "TOUCHDOWN_ACCESS"
+        ],
+        "microStory": "Daniel Jones gave the roster quarterback separation without giving up ceiling. Four passing touchdowns from a 1.6 percent quarterback is the structural swing."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_BACK_BREAKER",
+          "MULTI_TOUCHDOWN_CEILING",
+          "PRICE_EFFICIENCY"
+        ],
+        "microStory": "Tevin Coleman supplied the score that let the roster survive Murray chalk and still move past the field. Four touchdowns at 5,000 created immense leverage."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": [
+          "CHALK_THAT_HIT",
+          "ROLE_SECURITY",
+          "RAW_POINTS_FOUNDATION"
+        ],
+        "microStory": "Latavius Murray was the obvious decision and the correct one. Volume, catches, and touchdown access were all in place before lock, and the game delivered every part of it."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_CEILING",
+          "DEFENSIVE_TOUCHDOWN",
+          "PRESSURE_ENVIRONMENT"
+        ],
+        "microStory": "Patriots defense converted pressure into the highest scoring defense on the slate and gave the roster a non offensive path to separation."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Daniel Jones",
+          "position": "QB",
+          "team": "NYG"
+        },
+        "teammates": [
+          {
+            "name": "Golden Tate",
+            "position": "WR",
+            "team": "NYG"
+          },
+          {
+            "name": "Evan Engram",
+            "position": "TE",
+            "team": "NYG"
+          }
+        ],
+        "opponent": {
+          "name": "Kenny Golladay",
+          "position": "WR",
+          "team": "DET"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Daniel Jones",
+          "position": "QB",
+          "team": "NYG"
+        },
+        "opponent": {
+          "name": "Kenny Golladay",
+          "position": "WR",
+          "team": "DET"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Golden Tate",
+          "position": "WR",
+          "team": "NYG"
+        },
+        "opponent": {
+          "name": "Kenny Golladay",
+          "position": "WR",
+          "team": "DET"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Patriots",
+          "position": "DST",
+          "team": "NE",
+          "qbFaced": "Baker Mayfield"
+        },
+        "opponent": {
+          "name": "Baker Mayfield",
+          "position": "QB",
+          "team": "CLE"
+        }
+      }
+    ]
+  }
+}

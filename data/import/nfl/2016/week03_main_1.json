@@ -1,0 +1,304 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 3,
+  "slateType": "MAIN",
+  "slateDate": "2016-09-25T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 3",
+  "slateTag": "STAFFORD TO MARVIN JONES JR, LOW OWNERSHIP SWEEP, PRIOR AND ZACH MILLER SALARY SURGE",
+  "slateGroup": "2-1-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK03_MAIN_2016-09-25T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 6380
+  },
+  "winner": {
+    "username": "Papagates",
+    "points": 247.2,
+    "maxEntries": 120
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 247.2,
+    "totalOwnershipBp": 6380,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Matthew Stafford",
+        "position": "QB",
+        "team": "DET",
+        "salary": 6800,
+        "points": 30.5,
+        "ownershipPercent": 2.4,
+        "passTd": 3,
+        "passYds": 385,
+        "interceptions": 1,
+        "rushYds": 11,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "LeSean McCoy",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 6500,
+        "points": 29.6,
+        "ownershipPercent": 1.8,
+        "rushTdRb": 2,
+        "rushYdsRb": 110,
+        "recRb": 3,
+        "recYdsRb": 6,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Shane Vereen",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 3700,
+        "points": 16.5,
+        "ownershipPercent": 11.3,
+        "rushTdRb": 1,
+        "rushYdsRb": 67,
+        "rushAttRb": 11,
+        "recRb": 2,
+        "recYdsRb": 28,
+        "fumblesLost": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Antonio Brown",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 9600,
+        "points": 29,
+        "ownershipPercent": 22.4,
+        "rec": 12,
+        "recYds": 140,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Marvin Jones Jr.",
+        "position": "WR",
+        "team": "DET",
+        "salary": 6200,
+        "points": 41.5,
+        "ownershipPercent": 10.4,
+        "rec": 6,
+        "recYds": 205,
+        "recTd": 2,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Terrelle Pryor Sr.",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 3400,
+        "points": 34.9,
+        "ownershipPercent": 2.9,
+        "rushTd": 1,
+        "rushYds": 21,
+        "passYds": 35,
+        "rec": 8,
+        "recYds": 144,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Zach Miller",
+        "position": "TE",
+        "team": "CHI",
+        "salary": 2900,
+        "points": 27.8,
+        "ownershipPercent": 0.7,
+        "rec": 8,
+        "recYds": 78,
+        "recTd": 2,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T.Y. Hilton",
+        "position": "WR",
+        "team": "IND",
+        "salary": 6800,
+        "points": 34.4,
+        "ownershipPercent": 4.5,
+        "rec": 8,
+        "recYds": 174,
+        "recTd": 1,
+        "gameAwayTeam": "SD",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "SD"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Seahawks",
+        "position": "DST",
+        "team": "SEA",
+        "salary": 4100,
+        "points": 3,
+        "ownershipPercent": 7.4,
+        "takeaways": 1,
+        "pointsAllowedBucket": 20,
+        "qbFaced": "Blaine Gabbert",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SF"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is anchored by a low owned Matthew Stafford and Marvin Jones Jr. pairing in Green Bay, and the core read is exactly the one in your context. Stafford was already showing early season willingness to funnel vertical and intermediate volume into Marvin Jones Jr., and this roster captured the full receiver detonation at modest ownership. When a quarterback can create a true alpha receiver week without carrying massive ownership himself, the stack becomes far more valuable than a standard good game environment target. Stafford did not need rushing or perfect efficiency. He needed concentrated receiver production, and Marvin Jones Jr. gave him a 200 yard, two touchdown outcome.\n\nThe second layer is how aggressively this build embraced low owned ceiling across the non quarterback slots. LeSean McCoy at 1.8 percent, Terrelle Pryor Sr. at 2.9 percent, Zach Miller at 0.7 percent, and T.Y. Hilton at 4.5 percent created a lineup with first place scoring power before defense even entered the picture. This was not blind contrarianism. Each player had a path to volume or concentrated scoring. McCoy had full backfield control and red zone access. Pryor had already become Cleveland's entire offense in multiple phases. Zach Miller was a thin salary tight end attached to a pass volume path. Hilton always carried slate breaking speed against a San Diego defense willing to allow explosive production.\n\nAntonio Brown is the stabilizer. His 22.4 percent ownership is high relative to the rest of the lineup, yet his role here is structural. He keeps the build tied to elite raw points while the lower owned plays attempt to separate. Shane Vereen also matters more than his salary suggests. He gave the roster a cheap running back slot with receiving utility and touchdown access, which let the build pay for Brown and still keep enough room for Hilton and McCoy.\n\nSeattle defense did almost nothing by winning lineup standards, and that is part of what makes this roster instructive. The winner did not need every slot to spike. The roster won because the right low owned pass catchers and the correct quarterback wide receiver concentration produced so much offensive separation that a three point defense did not kill the lineup.",
+    "uniquenessNotes": "The uniqueness here comes from distribution, not novelty for its own sake. Stafford to Marvin Jones Jr. was a concentrated bet on one receiver earning the full benefit of quarterback efficiency, yet the rest of the lineup refused to cluster around one game or one fragile script. Eight different paths to points were spread across the slate, and several of those paths were underpriced relative to role.\n\nTerrelle Pryor Sr. and Zach Miller are the two clearest examples of tournament level separation. Pryor gave access to receiving volume, rushing usage, and emergency passing involvement, which is a rare profile at 3,400. Zach Miller supplied a two touchdown tight end score at almost no ownership, which is the kind of outcome that turns a solid roster into a first place roster because the tight end slot often compresses scoring. Hilton then added a second low owned receiver ceiling without forcing an Andrew Luck stack.\n\nSeattle defense also shaped the lineup in a subtle way. Paying 4,100 for a defense and getting only three points should sink most builds. It did not here because the offensive selections were so aggressive and so correct. This is a useful reminder for large field research. When a roster captures multiple low owned offensive ceiling outcomes, the defense slot can survive as a miss and still finish first."
+    ,
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Matthew Stafford paired with Marvin Jones Jr. in an early version of the Stafford wide receiver king maker pattern",
+      "secondaryLever": "A broad low owned offensive sweep through LeSean McCoy, Terrelle Pryor Sr., Zach Miller, and T.Y. Hilton",
+      "notes": {
+        "rosterConstruction": "2-1-1-1-1-1-1-1",
+        "gameKey": [
+          "DET@GB: 2 (QB game)",
+          "ARI@BUF: 1",
+          "WAS@NYG: 1",
+          "PIT@PHI: 1",
+          "CLE@MIA: 1",
+          "CHI@DAL: 1",
+          "SD@IND: 1",
+          "SF@SEA: 1"
+        ],
+        "lionsCluster": [
+          "Matthew Stafford",
+          "Marvin Jones Jr."
+        ],
+        "offBoardCeilingPieces": [
+          "LeSean McCoy",
+          "Terrelle Pryor Sr.",
+          "Zach Miller",
+          "T.Y. Hilton"
+        ],
+        "rawPointsAnchor": "Antonio Brown",
+        "qbFacedBySeahawksDst": "Blaine Gabbert"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WR_ALPHA_STACK",
+        "LOW_OWNERSHIP_OFFENSIVE_SWEEP",
+        "ELITE_WR_RAW_POINTS_ANCHOR",
+        "CHEAP_TE_TOUCHDOWN_LEVER",
+        "DEFENSE_MISS_SURVIVED_BY_OFFENSE"
+      ],
+      "macroStory": "A first place roster built on the Stafford to Marvin Jones Jr. concentration call, then pushed into an unreachable range by multiple low owned offensive ceilings across the slate."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "ALPHA_RECEIVER_FEEDER",
+          "LOW_OWNERSHIP_QB"
+        ],
+        "microStory": "Matthew Stafford drove the roster through concentrated receiver production rather than spread scoring, which made him far more valuable than his ownership suggested."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_PARTNER",
+          "SLATE_BREAKER",
+          "YARDAGE_PLUS_TOUCHDOWN_CONCENTRATION"
+        ],
+        "microStory": "Marvin Jones Jr. supplied the defining receiver score of the week and converted Stafford's volume into the exact outcome this lineup needed."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "OFFENSE_ENTIRETY",
+          "SALARY_RELIEF_CEILING",
+          "MULTI_PATH_SCORING"
+        ],
+        "microStory": "Terrelle Pryor Sr. gave the roster one of the strongest salary adjusted ceiling outcomes on the slate because Cleveland used him in every possible way."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_TOUCHDOWN_SWING",
+          "CHEAP_TIGHT_END_CEILING",
+          "RED_ZONE_ACCESS"
+        ],
+        "microStory": "Zach Miller changed the shape of the tournament because a near minimum salary tight end with two touchdowns is a score few lineups can absorb from the same slot."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "MODEST_OUTPUT",
+          "SALARY_ALLOCATION_TENSION",
+          "NON_DECISIVE_SLOT"
+        ],
+        "microStory": "Seattle defense did not carry the lineup. The offense was so correct across multiple low owned pressure points that the defense only needed to avoid disaster."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Matthew Stafford",
+          "position": "QB",
+          "team": "DET"
+        },
+        "teammates": [
+          {
+            "name": "Marvin Jones Jr.",
+            "position": "WR",
+            "team": "DET"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Seahawks",
+          "position": "DST",
+          "team": "SEA",
+          "qbFaced": "Blaine Gabbert"
+        },
+        "opponent": {
+          "name": "Blaine Gabbert",
+          "position": "QB",
+          "team": "SF"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 14,
+  "slateType": "MAIN",
+  "slateDate": "2016-12-11T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 14",
+  "slateTag": "LEVEON BELL 54.8, COUSINS WITH DESEAN AND ERTZ, FALCONS DST 2 DEFENSIVE TDS",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK14_MAIN_2016-12-11T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12510
+  },
+  "winner": {
+    "username": "Amorris525",
+    "points": 233.86,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 233.86,
+    "totalOwnershipBp": 12510,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Kirk Cousins",
+        "position": "QB",
+        "team": "WAS",
+        "salary": 6300,
+        "points": 16.96,
+        "ownershipPercent": 11.5,
+        "passTd": 2,
+        "passYds": 234,
+        "interceptions": 1,
+        "rushYds": 6,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Le'Veon Bell",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 9000,
+        "points": 54.8,
+        "ownershipPercent": 23.1,
+        "rushYdsRb": 236,
+        "rushTdRb": 3,
+        "recRb": 4,
+        "recYdsRb": 62,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jeremy Hill",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 5800,
+        "points": 26.2,
+        "ownershipPercent": 24.3,
+        "rushYdsRb": 111,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 31,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Taylor Gabriel",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 4300,
+        "points": 17.2,
+        "ownershipPercent": 31.1,
+        "rec": 3,
+        "recYds": 82,
+        "recTd": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jarvis Landry",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 5600,
+        "points": 16.3,
+        "ownershipPercent": 3.2,
+        "rec": 4,
+        "recYds": 103,
+        "fumblesLost": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Emmanuel Sanders",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 5700,
+        "points": 30,
+        "ownershipPercent": 13.3,
+        "rec": 11,
+        "recYds": 100,
+        "recTd": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Zach Ertz",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 4900,
+        "points": 24.2,
+        "ownershipPercent": 4.5,
+        "rec": 10,
+        "recYds": 112,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeSean Jackson",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 5200,
+        "points": 22.2,
+        "ownershipPercent": 9.8,
+        "rec": 3,
+        "recYds": 102,
+        "recTd": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Falcons",
+        "position": "DST",
+        "team": "ATL",
+        "salary": 3100,
+        "points": 26,
+        "ownershipPercent": 4.3,
+        "sacks": 3,
+        "takeaways": 5,
+        "defTd": 2,
+        "qbFaced": "Jared Goff",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "The roster starts with a narrow thesis on Washington at Philadelphia. Kirk Cousins is not asked to carry the lineup with a nuclear score. He only needs to keep pace while two pass catchers from the same game, DeSean Jackson and Zach Ertz, capture the touchdown and yardage concentration. This creates a three man game cluster from one of the softer owned passing environments near the top of the standings.\n\nThe slate winner, though, is Le'Veon Bell. His 54.8 point eruption does far more than fill an running back slot. It changes the entire roster math. Once Bell delivers a score few lineups can match, the rest of the build only needs strong auxiliary hits rather than perfection across all nine spots.\n\nAtlanta defense against Jared Goff is where the lineup becomes first place instead of merely competitive. Facing a rookie quarterback on a struggling Rams offense, the defense produces three sacks, five takeaways, and two defensive touchdowns. Taylor Gabriel from the same game adds a second Atlanta piece without forcing Matt Ryan. This matters because the roster captures a concentrated game outcome while avoiding the quarterback ownership and salary tied to the obvious Atlanta passing route.\n\nThe remaining pieces are clean ceiling access at modest ownership. Emmanuel Sanders posts a high volume touchdown game. Jarvis Landry supplies low owned yardage relief. Jeremy Hill lands an efficient touchdown score at running back. The result is a lineup where the largest raw point source, the largest leverage point, and the most damaging defensive score all come from different parts of the roster.",
+    "uniquenessNotes": "This build wins through score distribution more than through exotic structure. Bell provides the raw point hammer. Atlanta defense provides the leverage event. The Washington Philadelphia mini cluster provides correlation without exposing the roster to a chalk quarterback stack tree.\n\nThe most important structural choice is Atlanta without Matt Ryan. Many rosters reaching for Atlanta points would have pushed through Ryan and one or two pass catchers. This lineup takes Taylor Gabriel plus the defense, which is a far more specific script. It assumes Atlanta can create short fields, defensive scores, and enough passing efficiency for one receiver to matter while Ryan himself remains unnecessary. That is a sharper read on how a lopsided rookie quarterback matchup can unfold.\n\nZach Ertz also changes the roster shape. Tight end scoring often flattens on large slates. A 24.2 point tight end at 4.5 percent ownership gives this lineup one more separation point without burning salary. Jarvis Landry adds another pressure point. He does not need a touchdown to matter because 103 receiving yards at 3.2 percent ownership keeps the lineup away from duplicated mid range receiver combinations.\n\nFrom a future build standpoint, the lesson is clear. When a slate carries one massive running back ceiling and one fragile rookie quarterback spot, the best tournament path can be a non quarterback attack on the vulnerable game while letting a different game provide the salary anchor. Correlation still exists, though it arrives through script capture rather than through standard stack templates.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Le'Veon Bell as the raw point anchor with Falcons defense versus rookie Jared Goff",
+      "secondaryLever": "Washington Philadelphia three player passing cluster through Kirk Cousins, DeSean Jackson, and Zach Ertz",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "WAS@PHI: 3 (QB game)",
+          "ATL@LAR: 2",
+          "PIT@BUF: 1",
+          "CIN@CLE: 1",
+          "ARI@MIA: 1",
+          "DEN@TEN: 1"
+        ],
+        "washingtonPhiladelphiaCluster": [
+          "Kirk Cousins",
+          "DeSean Jackson",
+          "Zach Ertz"
+        ],
+        "atlantaRamsLeverage": [
+          "Taylor Gabriel",
+          "Falcons DST"
+        ],
+        "bellAnchor": "Le'Veon Bell",
+        "lowOwnedSeparator": "Jarvis Landry",
+        "qbFacedByFalconsDst": "Jared Goff"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "BELL_RAW_POINTS_ANCHOR",
+        "DST_VS_ROOKIE_QB_SPIKE",
+        "NON_QB_TEAM_CAPTURE",
+        "QB_GAME_MINI_CLUSTER",
+        "LOW_OWNERSHIP_TE_EDGE",
+        "LOW_OWNERSHIP_WR_YARDAGE_RELIEF"
+      ],
+      "macroStory": "A first place roster driven by Bell's slate breaking running back score, Atlanta defense versus a rookie quarterback, and a three player Washington Philadelphia passing cluster which captured concentrated production without relying on an obvious quarterback stack template."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "SLATE_BREAKER",
+          "THREE_TOUCHDOWN_ENGINE"
+        ],
+        "microStory": "Le'Veon Bell is the lineup's center of gravity. Once 54.8 points land in one running back slot, the roster no longer needs fringe outcomes everywhere else."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LEVERAGE_EVENT",
+          "TURNOVER_CEILING",
+          "ROOKIE_QB_PRESSURE"
+        ],
+        "microStory": "Atlanta defense turns a vulnerable rookie quarterback matchup into a tournament deciding event through sacks, takeaways, and two defensive touchdowns."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_EDGE",
+          "POSITIONAL_SEPARATION",
+          "YARDAGE_VOLUME"
+        ],
+        "microStory": "Zach Ertz gives the lineup one more non duplicated point source at a position where many rosters settled for far less."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SCRIPT_CAPTURE",
+          "TEAM_ACCESS_WITHOUT_QB",
+          "EFFICIENT_TOUCHDOWN"
+        ],
+        "microStory": "Taylor Gabriel captures Atlanta scoring without forcing Matt Ryan, which aligns cleanly with a script where defense and short field offense drive the game."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Kirk Cousins",
+          "position": "QB",
+          "team": "WAS"
+        },
+        "teammates": [
+          {
+            "name": "DeSean Jackson",
+            "position": "WR",
+            "team": "WAS"
+          }
+        ],
+        "opponent": {
+          "name": "Zach Ertz",
+          "position": "TE",
+          "team": "PHI"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Taylor Gabriel",
+          "position": "WR",
+          "team": "ATL"
+        },
+        "opponent": {
+          "name": "Falcons",
+          "position": "DST",
+          "team": "ATL"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Falcons",
+          "position": "DST",
+          "team": "ATL",
+          "qbFaced": "Jared Goff"
+        },
+        "opponent": {
+          "name": "Jared Goff",
+          "position": "QB",
+          "team": "LAR"
+        }
+      }
+    ]
+  }
+}

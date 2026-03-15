@@ -1,0 +1,323 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 11,
+  "slateType": "MAIN",
+  "slateDate": "2016-11-20T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 11",
+  "slateTag": "WASHINGTON FOUR MAN ONSLAUGHT, BELL AND DAVID JOHNSON RAW POINTS, MALCOLM MITCHELL MIN PRICE SEPARATOR",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK11_MAIN_2016-11-20T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11630
+  },
+  "winner": {
+    "username": "Moykiss",
+    "points": 223.1,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 223.1,
+    "totalOwnershipBp": 11630,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Kirk Cousins",
+        "position": "QB",
+        "team": "WAS",
+        "salary": 5800,
+        "points": 30.4,
+        "ownershipPercent": 12.8,
+        "passTd": 3,
+        "passYds": 375,
+        "passBonus": 1,
+        "rushYds": 4,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Le'Veon Bell",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 8800,
+        "points": 37.1,
+        "ownershipPercent": 37.2,
+        "rushTdRb": 1,
+        "rushYdsRb": 146,
+        "rushBonus": 1,
+        "recRb": 8,
+        "recYdsRb": 55,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Johnson",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 7900,
+        "points": 38,
+        "ownershipPercent": 7.6,
+        "rushTdRb": 1,
+        "rushYdsRb": 103,
+        "rushBonus": 1,
+        "recTdRb": 1,
+        "recRb": 7,
+        "recYdsRb": 57,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Doug Baldwin",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 5700,
+        "points": 22,
+        "ownershipPercent": 15.5,
+        "rec": 4,
+        "recYds": 104,
+        "recTd": 1,
+        "recBonus": 1,
+        "passYds": 15,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jamison Crowder",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 5400,
+        "points": 22.2,
+        "ownershipPercent": 16.3,
+        "rec": 3,
+        "recYds": 102,
+        "recTd": 1,
+        "recBonus": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Malcolm Mitchell",
+        "position": "WR",
+        "team": "NE",
+        "salary": 3000,
+        "points": 19.8,
+        "ownershipPercent": 0.6,
+        "rec": 4,
+        "recYds": 98,
+        "recTd": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Jordan Reed",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 5900,
+        "points": 12.9,
+        "ownershipPercent": 14.5,
+        "rec": 5,
+        "recYds": 79,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Rob Kelley",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 4400,
+        "points": 34.7,
+        "ownershipPercent": 5.1,
+        "rushTdRb": 3,
+        "rushYdsRb": 137,
+        "rushBonus": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 3100,
+        "points": 6,
+        "ownershipPercent": 6.7,
+        "sacks": 2,
+        "takeaways": 1,
+        "blocks": 1,
+        "qbFaced": "Sam Bradford",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by taking a far more aggressive position on Washington Green Bay than the field was willing to take. Kirk Cousins is the quarterback anchor, but the roster does not stop at a standard quarterback with one pass catcher structure. It adds Jamison Crowder, Jordan Reed, and Rob Kelley, which creates a four player onslaught from the same offense. That matters because Washington reached 42 points, and the touchdowns were distributed in a way that let one offense support multiple ceiling scores without forcing the roster to guess on Green Bay bring backs. Cousins delivered the yardage bonus and three passing touchdowns, Crowder handled an explosive receiving score, Reed added stable volume, and Kelley captured the rushing touchdowns. It is a complete offensive capture of one team rather than a neat, balanced game stack.\n\nThe second driver is raw running back scoring. Le'Veon Bell and David Johnson were two of the strongest volume backs in football, yet this roster could still afford both because Cousins was underpriced and Malcolm Mitchell was near the minimum. Bell posted a classic slate shaping workload through rushing and receiving. David Johnson added the same kind of dual access, then paired naturally with the Cardinals defense from the same game. Arizona against Sam Bradford did not explode, but the roster did not need a monster defensive score. It needed the pairing to stay live while Johnson did the real offensive damage.\n\nMalcolm Mitchell is the clearest structural separator. At 0.6 percent ownership and 3,000 salary, a 98 yard touchdown game changed the combinational math of the slate. This was not empty salary relief. It was a near ceiling performance from the cheapest meaningful slot on the roster. Once that landed, the build could carry Bell, David Johnson, Reed, and still retain offensive access to the Washington game through four different pieces.\n\nDoug Baldwin rounds out the construction with another 100 yard receiving bonus plus passing yardage on a trick play. That score mattered because it prevented the roster from depending on only one game environment. The winning formula here was concentrated Washington exposure, elite raw point backs, and one minimum salary receiver who broke the slate's pricing logic.",
+    "uniquenessNotes": "The Washington four man onslaught is the defining trait of the build. Most tournament players are comfortable with quarterback plus one or quarterback plus two. This roster went one step further and captured almost every meaningful Washington touchdown path. That is a stronger stance than a traditional stack because it assumes offensive concentration at the team level, not merely at one receiver slot.\n\nRob Kelley is the key detail inside that structure. Quarterback stacks often fail when rushing touchdowns go elsewhere. Here, the roster solved that problem by taking the early down back along with the passing pieces. When Washington scored through the air, Cousins and Crowder benefited. When the offense moved into close range, Kelley finished drives. That made the onslaught far harder to block.\n\nMalcolm Mitchell is the second major separator. At 0.6 percent ownership, he provided access to a score band usually reserved for much more expensive receivers. This gave the lineup a path to Bell and David Johnson together without sacrificing upside.\n\nThe Arizona mini pair is also sharper than it may seem. David Johnson was the priority, yet pairing him with the Cardinals defense against Sam Bradford kept the lineup aligned with one game script. Minnesota could struggle, Arizona could control the flow, and Johnson could still handle the scoring load. The defense gave only six points, but it did enough because the offensive architecture of the roster had already done the heavy lifting.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Kirk Cousins with a four player Washington onslaught through Jamison Crowder, Jordan Reed, and Rob Kelley",
+      "secondaryLever": "Le'Veon Bell plus David Johnson raw points with Malcolm Mitchell as the minimum salary separator",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "GB@WAS: 4 (QB game)",
+          "ARI@MIN: 2",
+          "PIT@CLE: 1",
+          "PHI@SEA: 1",
+          "NE@SF: 1"
+        ],
+        "washingtonCluster": [
+          "Kirk Cousins",
+          "Jamison Crowder",
+          "Jordan Reed",
+          "Rob Kelley"
+        ],
+        "cardinalsMini": [
+          "David Johnson",
+          "Cardinals"
+        ],
+        "rawPointsBacks": [
+          "Le'Veon Bell",
+          "David Johnson"
+        ],
+        "salaryBreaker": "Malcolm Mitchell",
+        "qbFacedByCardinalsDst": "Sam Bradford"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FOUR_PLAYER_TEAM_ONSLAUGHT",
+        "QB_WITH_WR_TE_RB_SAME_TEAM",
+        "DOUBLE_ELITE_RB_RAW_POINTS",
+        "MIN_SALARY_WR_CEILING",
+        "RB_PLUS_DST_SAME_GAME_SCRIPT",
+        "OFFENSE_FIRST_CONSTRUCTION"
+      ],
+      "macroStory": "A first place roster built around a full Washington offensive capture, backed by two elite volume running backs and a near minimum salary receiver score that unlocked the entire structure."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "TEAM_ONSLAUGHT_HUB",
+          "YARDAGE_BONUS"
+        ],
+        "microStory": "Kirk Cousins was the entry point into Washington's 42 point output. The yardage bonus and three passing touchdowns made him the correct quarterback for a team level onslaught."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "RUSHING_TOUCHDOWN_CAPTURE",
+          "LOW_OWNERSHIP_SPIKE",
+          "ONSLAUGHT_COMPLETER"
+        ],
+        "microStory": "Rob Kelley is what completed the Washington thesis. Three rushing touchdowns prevented the offense from fragmenting away from the rest of the stack."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "MIN_SALARY_SEPARATOR",
+          "LOW_OWNERSHIP_CEILING",
+          "PRICE_STRUCTURE_BREAKER"
+        ],
+        "microStory": "Malcolm Mitchell changed the slate's salary math. At 3,000 and 0.6 percent ownership, his touchdown and near 100 yard game gave the roster a ceiling score where the field had almost none."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "DUAL_THREAT_VOLUME",
+          "ELITE_WORKLOAD"
+        ],
+        "microStory": "Le'Veon Bell supplied one of the slate's safest and highest scoring workloads. His rushing and receiving production gave the lineup premium running back raw points without needing multiple touchdowns."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Kirk Cousins",
+          "position": "QB",
+          "team": "WAS"
+        },
+        "teammates": [
+          {
+            "name": "Jamison Crowder",
+            "position": "WR",
+            "team": "WAS"
+          },
+          {
+            "name": "Jordan Reed",
+            "position": "TE",
+            "team": "WAS"
+          },
+          {
+            "name": "Rob Kelley",
+            "position": "RB",
+            "team": "WAS"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "TEAM_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "David Johnson",
+          "position": "RB",
+          "team": "ARI"
+        },
+        "opponent": {
+          "name": "Cardinals",
+          "position": "DST",
+          "team": "ARI"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Cardinals",
+          "position": "DST",
+          "team": "ARI",
+          "qbFaced": "Sam Bradford"
+        },
+        "opponent": {
+          "name": "Sam Bradford",
+          "position": "QB",
+          "team": "MIN"
+        }
+      }
+    ]
+  }
+}

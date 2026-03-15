@@ -1,0 +1,327 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 9,
+  "slateType": "MAIN",
+  "slateDate": "2019-11-03T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 9",
+  "slateTag": "RUSSELL WILSON TAMPA SHOOTOUT, JAYLEN SAMUELS FREE SQUARE, PRESTON WILLIAMS AND NOAH FANT SEPARATORS",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2019_WK09_MAIN_2019-11-03T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 15080
+  },
+  "winner": {
+    "username": "Richardzu",
+    "points": 269.32,
+    "maxEntries": 8
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 269.32,
+    "totalOwnershipBp": 15080,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Russell Wilson",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 7100,
+        "points": 42.22,
+        "ownershipPercent": 13.2,
+        "passTd": 5,
+        "passYds": 378,
+        "rushYds": 21,
+        "twoPtPass": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 10000,
+        "points": 40.6,
+        "ownershipPercent": 24.5,
+        "rushYdsRb": 146,
+        "rushTdRb": 2,
+        "recRb": 3,
+        "recYdsRb": 20,
+        "recTdRb": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jaylen Samuels",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 4000,
+        "points": 20.3,
+        "ownershipPercent": 50.7,
+        "rushYdsRb": 10,
+        "recRb": 13,
+        "recYdsRb": 73,
+        "fumblesLost": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mike Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 7200,
+        "points": 39,
+        "ownershipPercent": 13,
+        "rec": 12,
+        "recYds": 180,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyler Lockett",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 7500,
+        "points": 43.2,
+        "ownershipPercent": 15.7,
+        "rec": 13,
+        "recYds": 152,
+        "recTd": 2,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Preston Williams",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 4200,
+        "points": 24.2,
+        "ownershipPercent": 8.7,
+        "rec": 5,
+        "recYds": 72,
+        "recTd": 2,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Noah Fant",
+        "position": "TE",
+        "team": "DEN",
+        "salary": 3000,
+        "points": 23.5,
+        "ownershipPercent": 3.4,
+        "rec": 3,
+        "recYds": 115,
+        "recTd": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mike Williams",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 4600,
+        "points": 17.3,
+        "ownershipPercent": 9.8,
+        "rec": 3,
+        "recYds": 111,
+        "rushYds": 2,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Steelers",
+        "position": "DST",
+        "team": "PIT",
+        "salary": 2400,
+        "points": 19,
+        "ownershipPercent": 11.8,
+        "sacks": 5,
+        "takeaways": 3,
+        "defTd": 1,
+        "blocks": 1,
+        "qbFaced": "Jacoby Brissett",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "IND"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins by treating two slate truths as non negotiable, then hunting separation in small places with massive touchdown density. Jaylen Samuels at 50.7 percent ownership was one of those truths. His role was too clean for large field stubbornness. Christian McCaffrey was the other. His workload had reached a point where salary stopped being the main question. The question was whether the roster could survive his ceiling. This build refused to get cute on either spot, took both, and used the rest of the lineup to create first place paths.\n\nThe quarterback decision is Russell Wilson in the Tampa Bay game, and this is where the lineup starts to become elite. Jameis Winston kept generating games where both sides could blow past expectation because his style invited pace, volatility, short fields, and repeated downfield exchanges. Wilson captured five passing touchdowns, Tyler Lockett caught two of them, and Mike Evans brought back 180 yards and a score. It is a classic three man quarterback game stack, but the quality comes from choosing the correct shootout and pairing it with enough raw volume elsewhere to prevent fragility.\n\nThe true separation comes from Preston Williams and Noah Fant. Neither needed extreme ownership discount to matter. They needed touchdown concentration at modest salaries, and both delivered. Preston Williams caught two touchdowns in Miami. Noah Fant broke the slate at tight end for 3,000 with 115 yards and a score. Those two slots changed the lineup from strong to almost unreachable because they solved scarce salary and scarce positional ceiling at the same time.\n\nSteelers defense finished the job against Jacoby Brissett with sacks, takeaways, a defensive score, and a block. Mike Williams added another 100 yard bonus without demanding a touchdown. This was not a roster trying to be different in every spot. It locked in the best role plays, targeted the correct passing environment, and let the low salary touchdown scorers do the separating.",
+    "uniquenessNotes": "The roster is unique because it understands where ownership mattered and where it did not. Samuels at over 50 percent ownership was not a problem to solve. He was part of the slate's starting point. Fading him would have created unnecessary fragility because his salary and role gave the field too much structural freedom. The sharper decision was to accept him and separate elsewhere.\n\nThe Wilson, Lockett, Evans construction did serious damage because many builds with expensive McCaffrey plus Samuels salary relief still had to choose which passing game to emphasize. This roster chose the game most likely to turn into an exchange of downfield touchdowns and was rewarded with ceiling on both sides. Wilson was not low owned, but he did not need to be. Once he became the top quarterback on the slate, the game stack became one of the roster's strongest edges.\n\nFant and Preston Williams are the pressure points. Fant solved tight end with a score few lineups had access to at his salary. Preston Williams gave the build a second cheap touchdown cluster outside the main stack. Those are the decisions that matter in first place contests. They do not need to be impossible to find. They need to be strong enough to turn a chalk foundation into a unique ceiling outcome.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Russell Wilson with Tyler Lockett and Mike Evans in the Tampa Bay Seattle shootout",
+      "secondaryLever": "Accepting Jaylen Samuels chalk and Christian McCaffrey raw points, then using Preston Williams and Noah Fant as low salary touchdown separators",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "TB@SEA: 3 (QB game)",
+          "IND@PIT: 2",
+          "TEN@CAR: 1",
+          "NYJ@MIA: 1",
+          "CLE@DEN: 1",
+          "GB@LAC: 1"
+        ],
+        "seahawksBuccaneersCluster": [
+          "Russell Wilson",
+          "Tyler Lockett",
+          "Mike Evans"
+        ],
+        "steelersColtsPair": [
+          "Jaylen Samuels",
+          "Steelers"
+        ],
+        "premiumAnchor": "Christian McCaffrey",
+        "salarySeparators": [
+          "Preston Williams",
+          "Noah Fant"
+        ],
+        "qbFacedBySteelersDst": "Jacoby Brissett"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "OBVIOUS_CHALK_RB_THAT_HAD_TO_BE_PLAYED",
+        "PREMIUM_RB_RAW_POINTS_ANCHOR",
+        "SHOOTOUT_QB_GAME_STACK",
+        "LOW_SALARY_TOUCHDOWN_SEPARATORS",
+        "DST_SCORING_COMPLETION"
+      ],
+      "macroStory": "A first place roster built on accepting the slate's two clearest running back decisions, then capturing the Wilson and Winston shootout while Noah Fant and Preston Williams handled the separation."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "CHALK_THAT_HAD_TO_BE_EATEN",
+          "ROLE_LOCK",
+          "SALARY_STRUCTURE_ENABLER"
+        ],
+        "microStory": "Jaylen Samuels was not a leverage spot. He was the slate's easiest role based decision, and the lineup treated him that way."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "SHOOTOUT_CAPTAIN",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Russell Wilson was attached to the game's highest ceiling passing environment and converted it into the top quarterback score on the slate."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_BREAKER",
+          "POSITIONAL_ADVANTAGE",
+          "LOW_OWNERSHIP_CEILING"
+        ],
+        "microStory": "Noah Fant gave the roster an elite tight end outcome at a bargain salary, which opened the path for every expensive decision around him."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_SALARY_TOUCHDOWN_CLUSTER",
+          "SEPARATOR",
+          "RED_ZONE_PAYOFF"
+        ],
+        "microStory": "Preston Williams supplied the type of cheap multi touchdown outcome that wins first place contests when the expensive core already lands."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Russell Wilson",
+          "position": "QB",
+          "team": "SEA"
+        },
+        "teammates": [
+          {
+            "name": "Tyler Lockett",
+            "position": "WR",
+            "team": "SEA"
+          }
+        ],
+        "opponent": {
+          "name": "Mike Evans",
+          "position": "WR",
+          "team": "TB"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Jaylen Samuels",
+          "position": "RB",
+          "team": "PIT"
+        },
+        "opponent": {
+          "name": "Steelers",
+          "position": "DST",
+          "team": "PIT"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Russell Wilson",
+          "position": "QB",
+          "team": "SEA"
+        },
+        "opponent": {
+          "name": "Mike Evans",
+          "position": "WR",
+          "team": "TB"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Steelers",
+          "position": "DST",
+          "team": "PIT",
+          "qbFaced": "Jacoby Brissett"
+        },
+        "opponent": {
+          "name": "Jacoby Brissett",
+          "position": "QB",
+          "team": "IND"
+        }
+      }
+    ]
+  }
+}

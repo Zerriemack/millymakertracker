@@ -1,0 +1,319 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 12,
+  "slateType": "MAIN",
+  "slateDate": "2019-11-24T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 12",
+  "slateTag": "MIAMI CLEVELAND GAME STACK, DERRICK HENRY DOMINATION, JAMES WASHINGTON BRINGS IT HOME",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2019_WK12_MAIN_2019-11-24T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10030
+  },
+  "winner": {
+    "username": "Nam2312",
+    "points": 229.18,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 229.18,
+    "totalOwnershipBp": 10030,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Baker Mayfield",
+        "position": "QB",
+        "team": "CLE",
+        "salary": 5900,
+        "points": 27.58,
+        "ownershipPercent": 14.6,
+        "passTd": 3,
+        "passYds": 327,
+        "rushYds": 5,
+        "interceptions": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 6900,
+        "points": 32.5,
+        "ownershipPercent": 30.6,
+        "rushYdsRb": 159,
+        "rushTdRb": 2,
+        "recRb": 1,
+        "recYdsRb": 16,
+        "fumblesLost": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Bo Scarbrough",
+        "position": "RB",
+        "team": "DET",
+        "salary": 4200,
+        "points": 8.8,
+        "ownershipPercent": 14.8,
+        "rushYdsRb": 98,
+        "fumblesLost": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jarvis Landry",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 6300,
+        "points": 39.8,
+        "ownershipPercent": 11.7,
+        "rec": 10,
+        "recYds": 148,
+        "recTd": 2,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DJ Moore",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 6400,
+        "points": 34.4,
+        "ownershipPercent": 5.2,
+        "rec": 6,
+        "recYds": 126,
+        "recTd": 2,
+        "rushYds": 8,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "James Washington",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 5000,
+        "points": 18.8,
+        "ownershipPercent": 3.4,
+        "rec": 3,
+        "recYds": 98,
+        "recTd": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Jared Cook",
+        "position": "TE",
+        "team": "NO",
+        "salary": 4500,
+        "points": 21.9,
+        "ownershipPercent": 3.1,
+        "rec": 6,
+        "recYds": 99,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Nick Chubb",
+        "position": "RB",
+        "team": "CLE",
+        "salary": 8100,
+        "points": 28.4,
+        "ownershipPercent": 12.7,
+        "rushYdsRb": 106,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 58,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Seahawks",
+        "position": "DST",
+        "team": "SEA",
+        "salary": 2600,
+        "points": 17,
+        "ownershipPercent": 4.2,
+        "sacks": 3,
+        "takeaways": 5,
+        "qbFaced": "Carson Wentz",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is built on one of the clearest truths of the 2019 season. Bad defenses kept staying bad, and the field could keep attacking them without needing a complicated story. Miami at Cleveland was one of those spots. Baker Mayfield with Jarvis Landry and Nick Chubb gave the roster direct access to nearly every useful Cleveland outcome, while the salary at quarterback stayed manageable. Mayfield did not need to post a historic score. He needed to clear the position while feeding the right teammates, and that is exactly what happened. Landry turned the stack into a first place path with 148 yards and two touchdowns, while Chubb supplied the rushing floor and touchdown equity that made the cluster hard to fail.\n\nDerrick Henry was the other major pillar. Tennessee against Jacksonville was another case where the slate did not require invention. Henry had the exact workload profile needed to bury a field when game flow cooperated, and once he got downhill the score took care of itself. Thirty plus percent ownership can scare people away from first place combinations, but this roster understood that some plays are too strong to fade when the role is that clean.\n\nThe Carolina New Orleans game reflects another 2019 theme. The NFC South kept producing receiver ceilings because coverage quality and game control were weak across the division. DJ Moore and Jared Cook captured both sides of that environment without tying up the quarterback slot. Moore posted a true spike game at 5.2 percent ownership, and Cook gave the lineup one of the best tight end scores on the slate at 3.1 percent. That pair mattered because it gave the roster access to another high scoring game without spending extra salary on a second full stack.\n\nJames Washington is the final turn of the key. He did not need to break the slate in the way Landry did. He needed to post an explosive score at modest ownership and salary, and he did. That score finished the lineup and kept it from collapsing into a collection of obvious plays. Seattle defense against Carson Wentz added the final push through sacks and takeaways. This roster won because it attacked weak defenses, accepted one of the slate's strongest running back outcomes, and found the low owned receiver and tight end scores that completed the build.",
+    "uniquenessNotes": "The Miami Cleveland stack is the main differentiator because it was aggressive without being reckless. Many lineups had interest in Cleveland pieces. Fewer took Baker, Landry, and Chubb together. That combination captured both passing and rushing touchdowns from one of the most attackable defenses in football. Once Miami failed to resist, the roster was positioned to absorb almost the entire offensive output.\n\nHenry at 30.6 percent ownership did not hurt the lineup because the separation came from Moore, Cook, Washington, and Seattle defense. This is one of those builds where the chalk was handled correctly. The lineup did not try to manufacture leverage by fading the most obvious elite workload on the slate. It took the points and found its distance elsewhere.\n\nJames Washington is the slot that gives this lineup its finish. He was not a mandatory play. He was a sharp one. At 3.4 percent ownership, he gave the roster another explosive outcome from a downfield receiver in a game where one long connection could change everything. When that score is layered on top of Landry, Moore, and Cook, the roster has enough non chalk ceiling to beat a very large field.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Baker Mayfield with Jarvis Landry and Nick Chubb against the Miami defense",
+      "secondaryLever": "Derrick Henry as the dominant raw point running back, then DJ Moore, Jared Cook, and James Washington providing the low owned receiver and tight end ceilings",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "MIA@CLE: 3 (QB game)",
+          "CAR@NO: 2",
+          "JAX@TEN: 1",
+          "PIT@CIN: 1",
+          "DET@WAS: 1",
+          "SEA@PHI: 1"
+        ],
+        "brownsDolphinsCluster": [
+          "Baker Mayfield",
+          "Jarvis Landry",
+          "Nick Chubb"
+        ],
+        "saintsPanthersPair": [
+          "DJ Moore",
+          "Jared Cook"
+        ],
+        "rawPointsAnchor": "Derrick Henry",
+        "closingSeparator": "James Washington",
+        "qbFacedBySeahawksDst": "Carson Wentz"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "BAD_DEFENSE_ATTACK",
+        "QB_STACK_WITH_TEAM_RB",
+        "HIGH_OWNERSHIP_RB_THAT_HIT",
+        "LOW_OWNERSHIP_WR_FINISHER",
+        "SECONDARY_GAME_PAIR_CEILING"
+      ],
+      "macroStory": "A first place roster anchored by a full Cleveland attack against Miami, backed by Derrick Henry's dominant workload and completed by the low owned ceiling of DJ Moore, Jared Cook, and James Washington."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "BAD_DEFENSE_ATTACK",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Baker Mayfield did not need to outrun every quarterback by a wide margin. He needed to unlock the right Cleveland pieces against Miami, and he did."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_PAYOFF",
+          "TOUCHDOWN_CLUSTER",
+          "YARDAGE_BONUS"
+        ],
+        "microStory": "Jarvis Landry was the true payoff inside the Cleveland stack. The double touchdown game gave the lineup its main passing explosion."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "LOW_OWNERSHIP_CEILING",
+          "EXPLOSIVE_FINISHER",
+          "SEPARATOR"
+        ],
+        "microStory": "James Washington was the final separator. His salary and ownership let the lineup keep its stars while still adding another high leverage ceiling score."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_FOUNDATION",
+          "WORKLOAD_MONSTER",
+          "CHALK_THAT_HIT"
+        ],
+        "microStory": "Derrick Henry gave the roster the rushing score it could not afford to miss. Once Tennessee fed him volume, the slate had to deal with it."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Baker Mayfield",
+          "position": "QB",
+          "team": "CLE"
+        },
+        "teammates": [
+          {
+            "name": "Jarvis Landry",
+            "position": "WR",
+            "team": "CLE"
+          },
+          {
+            "name": "Nick Chubb",
+            "position": "RB",
+            "team": "CLE"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "DJ Moore",
+          "position": "WR",
+          "team": "CAR"
+        },
+        "opponent": {
+          "name": "Jared Cook",
+          "position": "TE",
+          "team": "NO"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Derrick Henry",
+          "position": "RB",
+          "team": "TEN"
+        },
+        "opponent": null
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Seahawks",
+          "position": "DST",
+          "team": "SEA",
+          "qbFaced": "Carson Wentz"
+        },
+        "opponent": {
+          "name": "Carson Wentz",
+          "position": "QB",
+          "team": "PHI"
+        }
+      }
+    ]
+  }
+}

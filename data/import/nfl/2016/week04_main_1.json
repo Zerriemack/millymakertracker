@@ -1,0 +1,327 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 4,
+  "slateType": "MAIN",
+  "slateDate": "2016-10-02T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 4",
+  "slateTag": "MATT RYAN TO JULIO NUCLEAR, WASHINGTON CLEVELAND THREE MAN CLUSTER, EDDIE ROYAL SALARY BREAKER",
+  "slateGroup": "2-3-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $4.44M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK04_MAIN_2016-10-02T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9770
+  },
+  "winner": {
+    "username": "Steiniscool",
+    "points": 245.12,
+    "maxEntries": 6
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 245.12,
+    "totalOwnershipBp": 9770,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Matt Ryan",
+        "position": "QB",
+        "team": "ATL",
+        "salary": 7000,
+        "points": 39.52,
+        "ownershipPercent": 1.3,
+        "passTd": 4,
+        "passYds": 503,
+        "interceptions": 1,
+        "rushYds": 14,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Isaiah Crowell",
+        "position": "RB",
+        "team": "CLE",
+        "salary": 4400,
+        "points": 25.4,
+        "ownershipPercent": 5.8,
+        "rushTdRb": 1,
+        "rushYdsRb": 112,
+        "recRb": 3,
+        "recYdsRb": 22,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 6900,
+        "points": 25.7,
+        "ownershipPercent": 10.6,
+        "rushTdRb": 1,
+        "rushYdsRb": 138,
+        "recRb": 1,
+        "recYdsRb": 19,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 9200,
+        "points": 51,
+        "ownershipPercent": 7.6,
+        "rec": 12,
+        "recYds": 300,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Terrelle Pryor Sr.",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 4300,
+        "points": 15,
+        "ownershipPercent": 33.7,
+        "rec": 5,
+        "recYds": 46,
+        "rushYds": -6,
+        "recTd": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Steve Smith Sr.",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 4500,
+        "points": 28.1,
+        "ownershipPercent": 11.6,
+        "rec": 8,
+        "recYds": 111,
+        "recTd": 1,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Jordan Reed",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 6300,
+        "points": 28.3,
+        "ownershipPercent": 11.1,
+        "rec": 9,
+        "recYds": 73,
+        "recTd": 2,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Eddie Royal",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 3500,
+        "points": 27.1,
+        "ownershipPercent": 0.4,
+        "rec": 7,
+        "recYds": 111,
+        "recTd": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 3900,
+        "points": 5,
+        "ownershipPercent": 15.6,
+        "sacks": 2,
+        "takeaways": 1,
+        "pointsAllowedBucket": 20,
+        "qbFaced": "Case Keenum",
+        "qbFacedArchetype": "BRIDGE",
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner starts with the most violent version of the Matt Ryan and Julio Jones thesis possible. Ryan throws for more than 500 yards, Julio Jones posts 300 receiving yards, and the roster captures almost the entire Atlanta passing detonation through a simple two man stack. The context matters here because this is another example of the quarterback as wide receiver king maker. Ryan did not spread the damage around. He made one receiver outcome so massive that the field could not keep pace unless it had both pieces.\n\nThe next hinge point is the Washington Cleveland three man cluster. Isaiah Crowell, Terrelle Pryor Sr., and Jordan Reed all came from the same game, but the lineup did not use it as a conventional quarterback stack. Instead it captured three separate paths to production. Crowell handled the efficient rushing damage for Cleveland. Pryor stayed attached to Cleveland's passing touchdown access. Reed took the Washington side through elite target concentration and red zone conversion. This is a more flexible way to mine a game than a standard quarterback centered build because it allows multiple scoring channels without overcommitting salary to a single passing tree.\n\nEzekiel Elliott and Steve Smith Sr. gave the lineup veteran balance. Elliott provided clean rushing volume and touchdown equity against San Francisco. Steve Smith Sr. brought a strong target floor plus touchdown access in a soft matchup. Neither play needed to be the slate breaker because Ryan, Julio, and the Washington Cleveland cluster had already supplied the lineup's peak outcomes.\n\nEddie Royal is the true tournament lever. At 0.4 percent ownership, he produced a 100 yard touchdown game from a salary slot the field ignored. This is the type of score that changes the entire contest because it creates salary relief without sacrificing ceiling. Arizona defense did not smash. It only posted five points. The roster still won because the offensive allocation was so sharp that the defense slot only needed to avoid collapse.",
+    "uniquenessNotes": "The lineup's uniqueness comes from combining one obvious ceiling game with several less comfortable supporting choices. Julio Jones was not hidden, but pairing him with Matt Ryan at 1.3 percent quarterback ownership created immediate leverage because the field was far less willing to commit to the full passing bet. Once Ryan reached 503 yards, every partial Atlanta exposure became inadequate.\n\nThe Washington Cleveland cluster is also more nuanced than it looks. Terrelle Pryor Sr. carried heavy ownership, but pairing him with Crowell and Reed changed the function of the game inside the lineup. It was no longer a single chalk wide receiver decision. It became a broad claim on the game's scoring structure. Crowell scored on the ground, Reed dominated through the air, and Pryor stayed attached to Cleveland's most bankable receiving path. This gave the lineup a layered return from one environment instead of one fragile dependency.\n\nEddie Royal separated the roster from every other Matt Ryan and Julio Jones construction. When a near minimum salary receiver at almost no ownership posts 27.1 points, the lineup can afford premium pieces without losing access to another ceiling score. That is the swing point. Arizona defense underperforming and the lineup still finishing first shows how overwhelming the offensive advantage was.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Matt Ryan paired with Julio Jones in the full Atlanta eruption",
+      "secondaryLever": "A three man Washington Cleveland cluster plus Eddie Royal as the near zero owned salary breaker",
+      "notes": {
+        "rosterConstruction": "2-3-1-1-1-1",
+        "gameKey": [
+          "CAR@ATL: 2 (QB game)",
+          "CLE@WAS: 3",
+          "DAL@SF: 1",
+          "OAK@BAL: 1",
+          "DET@CHI: 1",
+          "LAR@ARI: 1"
+        ],
+        "falconsCluster": [
+          "Matt Ryan",
+          "Julio Jones"
+        ],
+        "washingtonClevelandCluster": [
+          "Isaiah Crowell",
+          "Terrelle Pryor Sr.",
+          "Jordan Reed"
+        ],
+        "salaryBreaker": "Eddie Royal",
+        "qbFacedByCardinalsDst": "Case Keenum"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WR_ALPHA_STACK",
+        "THREE_MAN_GAME_CLUSTER_WITHOUT_QB",
+        "LOW_OWNERSHIP_SALARY_RELIEF_WR_CEILING",
+        "RB_VOLUME_STABILITY",
+        "DEFENSE_MISS_SURVIVED_BY_OFFENSE"
+      ],
+      "macroStory": "A first place roster driven by the full Ryan to Julio detonation, then widened by a three man Washington Cleveland cluster and a near unowned Eddie Royal score."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_QB",
+          "ALPHA_RECEIVER_FEEDER"
+        ],
+        "microStory": "Matt Ryan created the roster's raw point base through extreme passing volume and direct concentration into Julio Jones."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_PARTNER",
+          "SLATE_BREAKER",
+          "HISTORIC_YARDAGE_OUTCOME"
+        ],
+        "microStory": "Julio Jones was the defining score of the slate and turned a strong quarterback play into a tournament winning stack."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "GAME_CLUSTER_ANCHOR",
+          "RED_ZONE_CONCENTRATION",
+          "ELITE_TARGET_SHARE"
+        ],
+        "microStory": "Jordan Reed gave the Washington Cleveland game its Washington side payoff and made the cluster more than a one team bet."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_BREAKER",
+          "LOW_OWNERSHIP_CEILING",
+          "STRUCTURAL_SWING"
+        ],
+        "microStory": "Eddie Royal changed the shape of the contest because almost nobody had his score at that salary and ownership."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "MODEST_OUTPUT",
+          "NON_DECISIVE_SLOT",
+          "PRICEY_DEFENSE_MISS"
+        ],
+        "microStory": "Arizona defense was not a winning score on its own, but the roster's offensive edge was large enough to absorb the miss."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Matt Ryan",
+          "position": "QB",
+          "team": "ATL"
+        },
+        "teammates": [
+          {
+            "name": "Julio Jones",
+            "position": "WR",
+            "team": "ATL"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Isaiah Crowell",
+          "position": "RB",
+          "team": "CLE"
+        },
+        "opponent": {
+          "name": "Jordan Reed",
+          "position": "TE",
+          "team": "WAS"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Terrelle Pryor Sr.",
+          "position": "WR",
+          "team": "CLE"
+        },
+        "opponent": {
+          "name": "Jordan Reed",
+          "position": "TE",
+          "team": "WAS"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Cardinals",
+          "position": "DST",
+          "team": "ARI",
+          "qbFaced": "Case Keenum"
+        },
+        "opponent": {
+          "name": "Case Keenum",
+          "position": "QB",
+          "team": "LAR"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 15,
+  "slateType": "MAIN",
+  "slateDate": "2018-12-16T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 15",
+  "slateTag": "MATT RYAN FALCONS DST, DALVIN COOK MINI CLUSTER, LOW OWNED WR ONE OFFS",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK15_MAIN_2018-12-16T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9950
+  },
+  "winner": {
+    "username": "Mbonson",
+    "points": 206.44,
+    "maxEntries": 61
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 206.44,
+    "totalOwnershipBp": 9950,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Matt Ryan",
+        "position": "QB",
+        "team": "ATL",
+        "salary": 6100,
+        "points": 25.04,
+        "ownershipPercent": 4.3,
+        "passTd": 2,
+        "passYds": 231,
+        "rushTd": 1,
+        "rushYds": 18,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Marlon Mack",
+        "position": "RB",
+        "team": "IND",
+        "salary": 4500,
+        "points": 29.9,
+        "ownershipPercent": 2.0,
+        "rushTdRb": 2,
+        "rushYdsRb": 139,
+        "recRb": 1,
+        "recYdsRb": 10,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 6100,
+        "points": 30,
+        "ownershipPercent": 41.6,
+        "rushTdRb": 2,
+        "rushYdsRb": 129,
+        "recRb": 2,
+        "recYdsRb": 1,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mike Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6700,
+        "points": 19.1,
+        "ownershipPercent": 2.5,
+        "rec": 4,
+        "recYds": 121,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Kenny Golladay",
+        "position": "WR",
+        "team": "DET",
+        "salary": 5400,
+        "points": 24.6,
+        "ownershipPercent": 4.9,
+        "rec": 7,
+        "recYds": 146,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 8400,
+        "points": 20.2,
+        "ownershipPercent": 7.4,
+        "rec": 6,
+        "recYds": 82,
+        "recTd": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Kyle Rudolph",
+        "position": "TE",
+        "team": "MIN",
+        "salary": 3500,
+        "points": 5.3,
+        "ownershipPercent": 5.5,
+        "rec": 3,
+        "recYds": 23,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dalvin Cook",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 6500,
+        "points": 32.3,
+        "ownershipPercent": 24.5,
+        "rushTdRb": 2,
+        "rushYdsRb": 136,
+        "recRb": 1,
+        "recYdsRb": 27,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Falcons",
+        "position": "DST",
+        "team": "ATL",
+        "salary": 2700,
+        "points": 20,
+        "ownershipPercent": 6.8,
+        "sacks": 7,
+        "takeaways": 3,
+        "defTd": 1,
+        "qbFaced": "Josh Rosen",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ARI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is built around a controlled Atlanta script. Matt Ryan, Julio Jones, and Falcons defense form the primary cluster, which is an unusual but coherent combination. Ryan did not need 350 passing yards because the Atlanta side of the game could score through short fields, defensive pressure, and one concentrated touchdown catch from Julio Jones while still allowing Ryan to collect the offensive points. Against rookie Josh Rosen, the defense supplied sacks, takeaways, and a touchdown, which made the quarterback plus defense pairing viable through team control rather than through pure shootout volume.\n\nThe second layer is selective pressure on undervalued one off ceilings. Marlon Mack at 2 percent ownership gave the roster a cheap 139 yard, two touchdown rushing score. Kenny Golladay at 4.9 percent ownership gave another large yardage outcome without requiring touchdown variance. Mike Evans at 2.5 percent ownership did not score, but 121 yards still cleared the bar in a week where the winning lineup only needed 206.44 points. This roster did not need every low owned receiver to erupt. It needed several of them to clear value while the running backs and defense carried the heaviest point burden.\n\nJoe Mixon and Dalvin Cook were the true structural anchors. Mixon was massive chalk and delivered. Cook gave the lineup another 30 plus score from a different game environment, while Kyle Rudolph functioned as the attachment point to the same Minnesota offense at low ownership and low salary. Rudolph did very little, but Cook's ceiling made the mini cluster worthwhile anyway.\n\nThe main lesson is diagnostic. The winning score was modest for a Milly Maker, which meant avoiding dead money mattered more than chasing perfection. Predictively, this type of slate rewards disciplined low owned one offs attached to strong volume roles more than fragile galaxy brain correlation. Prescriptively, when the slate projects lower and ownership condenses around one back such as Mixon, there is room to keep the best running back score and separate with a quarterback plus defense stance, a second ceiling back, and two or three low owned yardage driven receivers.",
+    "uniquenessNotes": "The most interesting decision is Matt Ryan with Falcons defense. Many lineups are comfortable pairing a rushing quarterback with his defense. Ryan is a different case. The reason it works here is game environment control. Atlanta's defense produced enough scoring and field position value against Josh Rosen that Ryan could get there on efficiency instead of on overwhelming pass volume.\n\nMarlon Mack and Kenny Golladay are the roster's hidden levers. Both were priced accessibly and both came in under 5 percent ownership. Those scores allowed the lineup to absorb a weak Kyle Rudolph outcome and a non touchdown Mike Evans game without losing first place equity.\n\nThis was also a slate where salary had to be spent with purpose, not for aesthetics. The roster reaches 50,000, but it does so by emphasizing actual workload and yardage paths. Mixon and Cook carried touch concentration. Mack carried game flow. Golladay and Evans carried target based ceiling. Nothing here needed a miracle.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Matt Ryan with Julio Jones and Falcons defense against rookie Josh Rosen",
+      "secondaryLever": "Marlon Mack, Kenny Golladay, and Mike Evans as low owned yardage driven one offs around Mixon and Dalvin Cook",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "ARI@ATL: 3 (QB game)",
+          "MIA@MIN: 2",
+          "DAL@IND: 1",
+          "OAK@CIN: 1",
+          "TB@BAL: 1",
+          "DET@BUF: 1"
+        ],
+        "falconsCluster": [
+          "Matt Ryan",
+          "Julio Jones",
+          "Falcons"
+        ],
+        "vikingsPair": [
+          "Dalvin Cook",
+          "Kyle Rudolph"
+        ],
+        "lowOwnedOneOffs": [
+          "Marlon Mack",
+          "Mike Evans",
+          "Kenny Golladay"
+        ],
+        "chalkAnchor": "Joe Mixon",
+        "qbFacedByFalconsDst": "Josh Rosen"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WR_DST_CONTROL_SCRIPT",
+        "CHALK_RB_ANCHOR",
+        "SECOND_RB_CEILING_MINI_STACK",
+        "LOW_OWNERSHIP_YARDAGE_ONE_OFFS",
+        "MODEST_WINNING_SCORE_SLATE_ADAPTATION"
+      ],
+      "macroStory": "A first place roster built on an Atlanta control script through Matt Ryan, Julio Jones, and Falcons defense, then stabilized by Mixon and Cook while low owned one offs handled the separation."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "CONTROL_SCRIPT_QB",
+          "LOW_OWNERSHIP"
+        ],
+        "microStory": "Matt Ryan delivered enough offensive scoring to cash the Atlanta thesis while the defense handled the field position and turnover side of the game."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_CEILING",
+          "ROOKIE_QB_ATTACK",
+          "GAME_CONTROL"
+        ],
+        "microStory": "Atlanta defense made the lineup construction possible. Seven sacks and a defensive touchdown turned Josh Rosen's rookie volatility into tournament leverage."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_BREAKER",
+          "GAME_FLOW_RUSHER",
+          "TWO_TOUCHDOWN_SCORE"
+        ],
+        "microStory": "Marlon Mack supplied one of the most important scores on the roster because it came at low ownership and modest salary with true rushing domination."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": [
+          "CHALK_THAT_HIT",
+          "WORKHORSE_VOLUME",
+          "FOUNDATIONAL_SCORE"
+        ],
+        "microStory": "Joe Mixon was too strong to move off on this slate. His score gave the roster needed stability while the lower owned pieces separated."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "CEILING_BACK",
+          "MINI_STACK_DRIVER",
+          "RAW_POINTS"
+        ],
+        "microStory": "Dalvin Cook carried the Minnesota mini cluster by himself and gave the lineup another elite running back score from a different environment."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_YARDAGE",
+          "TARGET_EARNER",
+          "NON_TD_SUCCESS"
+        ],
+        "microStory": "Kenny Golladay showed how a receiver can matter without multiple touchdowns. Pure yardage at low ownership was enough on this slate."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Matt Ryan",
+          "position": "QB",
+          "team": "ATL"
+        },
+        "teammates": [
+          {
+            "name": "Julio Jones",
+            "position": "WR",
+            "team": "ATL"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Matt Ryan",
+          "position": "QB",
+          "team": "ATL"
+        },
+        "opponent": {
+          "name": "Falcons",
+          "position": "DST",
+          "team": "ATL"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Dalvin Cook",
+          "position": "RB",
+          "team": "MIN"
+        },
+        "opponent": {
+          "name": "Kyle Rudolph",
+          "position": "TE",
+          "team": "MIN"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Falcons",
+          "position": "DST",
+          "team": "ATL",
+          "qbFaced": "Josh Rosen"
+        },
+        "opponent": {
+          "name": "Josh Rosen",
+          "position": "QB",
+          "team": "ARI"
+        }
+      }
+    ]
+  }
+}

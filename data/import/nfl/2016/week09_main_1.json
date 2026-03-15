@@ -1,0 +1,326 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 9,
+  "slateType": "MAIN",
+  "slateDate": "2016-11-06T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 9",
+  "slateTag": "MARIOTA GORDON SHOOTOUT, LATAVIUS THREE TOUCHDOWN BREAKER, DALLAS PASS CATCHER DOUBLE",
+  "slateGroup": "2-2-2-1-1-1",
+  "rosterConstruction": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK09_MAIN_2016-11-06T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 7660
+  },
+  "winner": {
+    "username": "Ph1982",
+    "points": 225.32,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 225.32,
+    "totalOwnershipBp": 7660,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Marcus Mariota",
+        "position": "QB",
+        "team": "TEN",
+        "salary": 5900,
+        "points": 31.92,
+        "ownershipPercent": 3.2,
+        "passTd": 3,
+        "passYds": 313,
+        "passBonus": 1,
+        "interceptions": 2,
+        "rushTd": 1,
+        "rushYds": 14,
+        "fumblesLost": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "SD",
+        "opponentTeam": "SD"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jay Ajayi",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 6000,
+        "points": 25,
+        "ownershipPercent": 13.1,
+        "rushTdRb": 1,
+        "rushYdsRb": 111,
+        "rushBonus": 1,
+        "recRb": 1,
+        "recYdsRb": 19,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Latavius Murray",
+        "position": "RB",
+        "team": "OAK",
+        "salary": 4000,
+        "points": 34.7,
+        "ownershipPercent": 2.6,
+        "rushTdRb": 3,
+        "rushYdsRb": 114,
+        "rushBonus": 1,
+        "recRb": 1,
+        "recYdsRb": 13,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Cole Beasley",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 5300,
+        "points": 17.6,
+        "ownershipPercent": 5.1,
+        "rec": 6,
+        "recYds": 56,
+        "recTd": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "T.Y. Hilton",
+        "position": "WR",
+        "team": "IND",
+        "salary": 7600,
+        "points": 14.2,
+        "ownershipPercent": 14.5,
+        "rec": 6,
+        "recYds": 82,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jordy Nelson",
+        "position": "WR",
+        "team": "GB",
+        "salary": 7800,
+        "points": 22.4,
+        "ownershipPercent": 11.5,
+        "rec": 7,
+        "recYds": 94,
+        "recTd": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Jason Witten",
+        "position": "TE",
+        "team": "DAL",
+        "salary": 3700,
+        "points": 30.4,
+        "ownershipPercent": 3.5,
+        "rec": 8,
+        "recYds": 134,
+        "recTd": 1,
+        "recBonus": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Melvin Gordon",
+        "position": "RB",
+        "team": "SD",
+        "salary": 6300,
+        "points": 39.1,
+        "ownershipPercent": 14.4,
+        "rushTdRb": 1,
+        "rushYdsRb": 196,
+        "rushBonus": 1,
+        "recRb": 4,
+        "recYdsRb": 65,
+        "recTdRb": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "SD",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Panthers",
+        "position": "DST",
+        "team": "CAR",
+        "salary": 3400,
+        "points": 10,
+        "ownershipPercent": 8.7,
+        "sacks": 4,
+        "takeaways": 2,
+        "qbFaced": "Case Keenum",
+        "qbFacedArchetype": "BRIDGE",
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by identifying two separate sources of slate distortion and combining them without forcing a fragile full game stack. The first source is the Tennessee San Diego environment. Marcus Mariota at 3.2 percent ownership posts a 300 yard bonus game with four total touchdowns, while Melvin Gordon answers on the other side with 261 yards from scrimmage and two touchdowns. That pairing matters because it captures the game environment through the two players most capable of turning pace and efficiency into raw fantasy points. The build does not waste salary or slots on secondary correlation. It takes the quarterback engine and the opposing bell cow, then moves on.\n\nThe second source is price based asymmetry through Latavius Murray. At 4,000 against Denver, a large portion of the field would have treated him as thin touchdown hunting against an elite defense. Instead, he posts 114 rushing yards and three touchdowns. This is the true slate breaker because it changes the salary map. Once a 4,000 running back scores 34.7, the lineup can carry strong raw point plays elsewhere without needing every expensive slot to lead its position.\n\nThe Dallas Cleveland cluster is where the roster gains combinational sharpness. Dak Prescott spreads production, yet the lineup lands on both Cole Beasley and Jason Witten. That is not a conventional double in the sense of chasing a quarterback stack. It is a targeted read on how Dallas would move the ball in a game they controlled. Witten brings the true ceiling with 134 yards and a touchdown. Beasley adds a complementary touchdown at modest ownership. Together they extract passing production from a game most players would have treated as Ezekiel Elliott territory.\n\nJay Ajayi and the Carolina defense stabilize the construction. Ajayi had already shown slate breaking rushing upside in this stretch of the season, so 25 points at 13.1 percent ownership kept the lineup from falling behind the strongest running back score bands. Carolina against Case Keenum was less about needing a defensive touchdown and more about harvesting sacks and mistakes from a quarterback archetype prone to capped offensive output. Jordy Nelson and T.Y. Hilton form a clean mini correlation in a high quality passing game, with Nelson delivering the touchdown needed to keep the lineup's wide receiver room competitive while the rest of the roster did the heavy lifting.",
+    "uniquenessNotes": "The lineup is unusual in a disciplined way. It does not chase uniqueness through obscure players across every slot. It creates separation by being concentrated on a few low owned ceiling outcomes that had direct paths to first place.\n\nMariota plus Melvin Gordon is the first pressure point. The field often treats game environments through quarterback plus wide receiver language. This roster captured the same game through quarterback scoring and opposing running back domination. When the game shoots past expectation and the touchdowns are distributed in a way that favors a dual threat quarterback and a receiving back, this shape becomes extremely dangerous.\n\nLatavius Murray is the second pressure point. A three touchdown game from a low salary running back against Denver creates a structural advantage few lineups can match. This was not a volume only outcome. It was a full goal line capture outcome in a matchup where many players would have dismissed the possibility.\n\nThe Dallas pair is the final separator. Witten at 3.5 percent ownership with a 100 yard bonus is a major event on a slate where many rosters would have saved money at tight end without true ceiling. Beasley alongside him is what prevents the production from being isolated. It turns a single Dallas pass catcher hit into a more complete extraction of the passing pie.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Marcus Mariota paired with Melvin Gordon from the Tennessee San Diego shootout",
+      "secondaryLever": "Latavius Murray as a 4,000 salary eruption plus the Dallas Beasley Witten double",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "TEN@SD: 2 (QB game)",
+          "DAL@CLE: 2",
+          "IND@GB: 2",
+          "NYJ@MIA: 1",
+          "DEN@OAK: 1",
+          "CAR@LAR: 1"
+        ],
+        "titansChargersPair": [
+          "Marcus Mariota",
+          "Melvin Gordon"
+        ],
+        "cowboysPassCatchers": [
+          "Cole Beasley",
+          "Jason Witten"
+        ],
+        "coltsPackersMini": [
+          "T.Y. Hilton",
+          "Jordy Nelson"
+        ],
+        "salaryBreaker": "Latavius Murray",
+        "qbFacedByPanthersDst": "Case Keenum"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_OPPOSING_RB_GAME_CAPTURE",
+        "LOW_SALARY_RB_TOUCHDOWN_OUTLIER",
+        "DOUBLE_PASS_CATCHER_SAME_TEAM_WITHOUT_QB",
+        "WR_WR_OPPOSITE_GAME_MINI",
+        "DST_VERSUS_BRIDGE_QB",
+        "BALANCED_OWNERSHIP_WITH_HIDDEN_CEILING"
+      ],
+      "macroStory": "A first place roster built on a low owned quarterback eruption, an opposing running back avalanche from the same game, a low salary running back nuclear outcome against a feared defense, and a Dallas pass catcher double that captured scoring from an overlooked angle."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_CEILING",
+          "DUAL_THREAT_ACCESS"
+        ],
+        "microStory": "Marcus Mariota opened the slate by delivering efficient passing volume, rushing equity, and four total touchdowns at 5,900. At 3.2 percent ownership, he gave the roster quarterback separation without needing an expensive stack."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_BREAKER",
+          "GOAL_LINE_CAPTURE",
+          "LOW_OWNERSHIP_OUTLIER"
+        ],
+        "microStory": "Latavius Murray is the tournament breaking decision. Three rushing touchdowns at 4,000 against Denver changed the salary structure of the entire slate."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "SAME_TEAM_PASSING_DOUBLE",
+          "BONUS_YARDAGE",
+          "LOW_OWNERSHIP_CEILING"
+        ],
+        "microStory": "Jason Witten turned a controlled Dallas win into a ceiling score through volume rather than randomness. The 100 yard bonus at tight end gave the lineup a major positional edge."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "OPPOSING_GAME_CORRELATION",
+          "BELL_COW_CEILING",
+          "RAW_POINTS_DRIVER"
+        ],
+        "microStory": "Melvin Gordon completed the Mariota game thesis from the opposite side. His rushing volume, receiving production, and touchdown access created one of the slate's strongest raw point scores."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_PAIR",
+        "qb": {
+          "name": "Marcus Mariota",
+          "position": "QB",
+          "team": "TEN"
+        },
+        "teammates": [],
+        "opponent": {
+          "name": "Melvin Gordon",
+          "position": "RB",
+          "team": "SD"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Cole Beasley",
+          "position": "WR",
+          "team": "DAL"
+        },
+        "opponent": {
+          "name": "Jason Witten",
+          "position": "TE",
+          "team": "DAL"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "T.Y. Hilton",
+          "position": "WR",
+          "team": "IND"
+        },
+        "opponent": {
+          "name": "Jordy Nelson",
+          "position": "WR",
+          "team": "GB"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Panthers",
+          "position": "DST",
+          "team": "CAR",
+          "qbFaced": "Case Keenum"
+        },
+        "opponent": {
+          "name": "Case Keenum",
+          "position": "QB",
+          "team": "LAR"
+        }
+      }
+    ]
+  }
+}

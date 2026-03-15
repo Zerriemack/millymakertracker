@@ -1,0 +1,323 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 13,
+  "slateType": "MAIN",
+  "slateDate": "2019-12-01T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 13",
+  "slateTag": "PHI MIA GAME STACK, RARE MILLY TIE, CHALK CORE GOES TOO FAR",
+  "slateGroup": "4-1-1-1-1-1",
+  "rosterConstruction": "4-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire",
+    "siteContestId": "NFL_2019_WK13_MAIN_2019-12-01T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 55000000,
+    "totalOwnershipBp": 17710
+  },
+  "winner": {
+    "username": "Mtw13002",
+    "points": 228.8,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 228.8,
+    "totalOwnershipBp": 17710,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Carson Wentz",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 5800,
+        "points": 28.4,
+        "ownershipPercent": 7.9,
+        "passTd": 3,
+        "passYds": 310,
+        "interceptions": 1,
+        "twoPtPass": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 10500,
+        "points": 17.2,
+        "ownershipPercent": 40.8,
+        "rushYdsRb": 44,
+        "recRb": 7,
+        "recYdsRb": 58,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Miles Sanders",
+        "position": "RB",
+        "team": "PHI",
+        "salary": 5400,
+        "points": 21.5,
+        "ownershipPercent": 30.2,
+        "rushYdsRb": 83,
+        "recRb": 5,
+        "recYdsRb": 22,
+        "recTdRb": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "GB",
+        "salary": 7000,
+        "points": 24.4,
+        "ownershipPercent": 27.1,
+        "rec": 6,
+        "recYds": 64,
+        "recTd": 2,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DeVante Parker",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 5700,
+        "points": 37.9,
+        "ownershipPercent": 12.2,
+        "rec": 7,
+        "recYds": 159,
+        "recTd": 2,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Dede Westbrook",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 5000,
+        "points": 19,
+        "ownershipPercent": 11.5,
+        "rec": 5,
+        "recYds": 60,
+        "recTd": 1,
+        "twoPtConv": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Tyler Higbee",
+        "position": "TE",
+        "team": "LAR",
+        "salary": 2500,
+        "points": 26.7,
+        "ownershipPercent": 24.6,
+        "rec": 7,
+        "recYds": 107,
+        "recTd": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Alshon Jeffery",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 5100,
+        "points": 31.7,
+        "ownershipPercent": 17,
+        "rec": 9,
+        "recYds": 137,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Chiefs",
+        "position": "DST",
+        "team": "KC",
+        "salary": 2700,
+        "points": 22,
+        "ownershipPercent": 5.8,
+        "sacks": 2,
+        "takeaways": 3,
+        "defTd": 1,
+        "blocks": 1,
+        "twoPtReturn": 1,
+        "qbFaced": "Derek Carr",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "OAK"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup captures the 2019 environment in a very pure form. Weak defenses kept failing in repeatable ways, and the winning build stayed attached to one of the cleanest versions of that pattern with Philadelphia at Miami. Carson Wentz was modestly owned, Miles Sanders carried heavy ownership, Alshon Jeffery was a strong mid range attachment, and DeVante Parker gave the lineup the Miami side. The stack is not subtle. It is a direct statement that Miami would keep allowing efficient passing and that the game could stay alive long enough for the bring back to matter. Wentz did enough, Jeffery and Parker both posted major scores, and Sanders gave the stack a second path through receiving production from the backfield.\n\nThe rest of the roster shows how far the 2019 play the best plays instinct had progressed by this point. Christian McCaffrey at 10,500 and 40.8 percent ownership was treated as unavoidable by a huge portion of the field, yet he delivered a floor game. Davante Adams was another popular click that got there well enough. Tyler Higbee was cheap, popular, and in one of the friendliest tight end environments on the slate, so the roster accepted that too. Dede Westbrook against Tampa Bay follows the same season long principle. Tampa games kept giving opposing pass catchers room to matter, and Westbrook converted the matchup into a usable score.\n\nThe most important finishing touch is the defense. Kansas City against Derek Carr was an excellent read because the field did not need many conditions for that defense to matter at 2,700. Turnovers, a defensive touchdown, and even the blocked kick plus two point return swung the tournament. On a slate where the popular core did not truly bury the field, that kind of defensive score becomes one of the deciding events.\n\nThis is also one of the stranger first place outcomes of the season because it finished in a tie. That matters when interpreting the roster. A tie tells you the slate did not require a flawless construction. It required enough access to the right game environments and one or two high leverage swing outcomes. This lineup found them, even with McCaffrey failing at a massive salary and ownership level.",
+    "uniquenessNotes": "The Philadelphia Miami cluster is the main reason the lineup still had first place equity after eating so much popularity elsewhere. Wentz with Sanders and Jeffery, brought back by Parker, gave the roster four players from the game without pushing ownership into a range that made the entire build unusable. That is where the lineup found its lift.\n\nThe popular core shows how forgiving the slate was. McCaffrey, Miles Sanders, Davante Adams, and Tyler Higbee combined for a huge amount of ownership, and one of them flat out failed. In many weeks that would be enough to end the lineup. This week it was not, because the field was carrying similar baggage and because Parker plus the Chiefs defense supplied the necessary swing scores.\n\nJames Washington is absent here, which matters when comparing this week to cleaner tournament wins from the same season. This build did not win through a deep chain of low owned spikes. It won through game environment concentration, a cheap defense eruption, and a slate where the strongest salary adjusted chalk did not fully pay off. That is why the tie makes sense. It was a weaker first place threshold than many other weeks.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Carson Wentz with Miles Sanders and Alshon Jeffery, brought back by DeVante Parker in the Philadelphia Miami game",
+      "secondaryLever": "Chiefs defense against Derek Carr on a slate where the popular core was heavy and imperfect",
+      "notes": {
+        "rosterConstruction": "4-1-1-1-1-1",
+        "gameKey": [
+          "PHI@MIA: 4 (QB game)",
+          "WAS@CAR: 1",
+          "GB@NYG: 1",
+          "TB@JAX: 1",
+          "LAR@ARI: 1",
+          "OAK@KC: 1"
+        ],
+        "eaglesDolphinsCluster": [
+          "Carson Wentz",
+          "Miles Sanders",
+          "Alshon Jeffery",
+          "DeVante Parker"
+        ],
+        "highOwnedCore": [
+          "Christian McCaffrey",
+          "Davante Adams",
+          "Tyler Higbee"
+        ],
+        "tampaAttackPiece": "Dede Westbrook",
+        "qbFacedByChiefsDst": "Derek Carr",
+        "finishType": "TIE_FOR_FIRST"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FOUR_MAN_GAME_CLUSTER",
+        "HEAVY_CHALK_CORE_WITH_ONE_MAJOR_FAIL",
+        "BAD_DEFENSE_ATTACK",
+        "CHEAP_DST_SLATE_SWINGER",
+        "TIED_FIRST_PLACE_OUTCOME"
+      ],
+      "macroStory": "A tied first place roster built around the Philadelphia Miami environment, carried by DeVante Parker and the Chiefs defense, and surviving an expensive McCaffrey floor because the slate itself was softer than usual."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_SWINGER",
+          "TURNOVER_CLUSTER",
+          "DEFENSIVE_TOUCHDOWN"
+        ],
+        "microStory": "Kansas City defense was the score that changed the roster from solid to first place viable. The price was low and the return was enormous."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "BRING_BACK_PAYOFF",
+          "YARDAGE_BONUS",
+          "DOUBLE_TOUCHDOWN"
+        ],
+        "microStory": "DeVante Parker was the Miami answer the stack needed. Without him, the Philadelphia bet would have lacked the proper game pressure."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "HIGH_OWNERSHIP_FAIL",
+          "RAW_POINTS_DISAPPOINTMENT",
+          "SURVIVED_BY_CONTEXT"
+        ],
+        "microStory": "Christian McCaffrey was the roster's biggest flaw. The lineup absorbed it because the rest of the slate did not demand a perfect score at that salary."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "GAME_CLUSTER_HUB",
+          "MID_RANGE_QB"
+        ],
+        "microStory": "Carson Wentz served as the access point to the week's most exploitable defense and let the roster stack four pieces from the same environment."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Carson Wentz",
+          "position": "QB",
+          "team": "PHI"
+        },
+        "teammates": [
+          {
+            "name": "Miles Sanders",
+            "position": "RB",
+            "team": "PHI"
+          },
+          {
+            "name": "Alshon Jeffery",
+            "position": "WR",
+            "team": "PHI"
+          }
+        ],
+        "opponent": {
+          "name": "DeVante Parker",
+          "position": "WR",
+          "team": "MIA"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Dede Westbrook",
+          "position": "WR",
+          "team": "JAX"
+        },
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Tyler Higbee",
+          "position": "TE",
+          "team": "LAR"
+        },
+        "opponent": null
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Chiefs",
+          "position": "DST",
+          "team": "KC",
+          "qbFaced": "Derek Carr"
+        },
+        "opponent": {
+          "name": "Derek Carr",
+          "position": "QB",
+          "team": "OAK"
+        }
+      }
+    ]
+  }
+}

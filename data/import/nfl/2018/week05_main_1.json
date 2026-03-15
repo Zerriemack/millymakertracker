@@ -1,0 +1,334 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 5,
+  "slateType": "MAIN",
+  "slateDate": "2018-10-07T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 5",
+  "slateTag": "AARON RODGERS TRIPLE, ODELL REVENGE GAME, YELDON AND JOHNSON CHALK",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK05_MAIN_2018-10-07T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11390
+  },
+  "winner": {
+    "username": "Slaytations",
+    "points": 234.36,
+    "maxEntries": 35
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 234.36,
+    "totalOwnershipBp": 11390,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Aaron Rodgers",
+        "position": "QB",
+        "team": "GB",
+        "salary": 6300,
+        "points": 33.68,
+        "ownershipPercent": 3.1,
+        "passTd": 3,
+        "passYds": 442,
+        "rushYds": 10,
+        "fumblesLost": 2,
+        "twoPtPass": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Johnson",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 6300,
+        "points": 21.1,
+        "ownershipPercent": 27.2,
+        "rushYdsRb": 55,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 16,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "T.J. Yeldon",
+        "position": "RB",
+        "team": "JAX",
+        "salary": 5600,
+        "points": 26.2,
+        "ownershipPercent": 32.2,
+        "rushYdsRb": 53,
+        "recRb": 8,
+        "recYdsRb": 69,
+        "recTdRb": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "GB",
+        "salary": 7600,
+        "points": 32.0,
+        "ownershipPercent": 3.0,
+        "rec": 9,
+        "recYds": 140,
+        "recTd": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Odell Beckham Jr.",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 8000,
+        "points": 35.38,
+        "ownershipPercent": 3.4,
+        "passTd": 1,
+        "passYds": 57,
+        "rec": 8,
+        "recYds": 131,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Marquez Valdes-Scantling",
+        "position": "WR",
+        "team": "GB",
+        "salary": 3300,
+        "points": 19.8,
+        "ownershipPercent": 13.4,
+        "rec": 7,
+        "recYds": 68,
+        "recTd": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Austin Hooper",
+        "position": "TE",
+        "team": "ATL",
+        "salary": 3000,
+        "points": 16.7,
+        "ownershipPercent": 7.8,
+        "rec": 9,
+        "recYds": 77,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "James Conner",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 7500,
+        "points": 37.5,
+        "ownershipPercent": 16.8,
+        "rushYdsRb": 110,
+        "rushTdRb": 2,
+        "recRb": 4,
+        "recYdsRb": 75,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bills",
+        "position": "DST",
+        "team": "BUF",
+        "salary": 2300,
+        "points": 12,
+        "ownershipPercent": 7.0,
+        "sacks": 2,
+        "takeaways": 3,
+        "qbFaced": "Marcus Mariota",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "TEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster starts with a direct read on where ceiling could emerge without paying the ownership tax. Aaron Rodgers was priced at 6,300, carried suppressed popularity, and still had access to one of the slate's highest passing volume paths. Pairing him with Davante Adams and Marquez Valdes-Scantling created a true triple stack rather than a token attachment. Rodgers throws for 442 yards, Adams commands the premium production, and Valdes-Scantling supplies low salary touchdown access. The triple is not decorative. It is the main engine of the lineup.\n\nThe rest of the build shows restraint in the right places. T.J. Yeldon and David Johnson were chalky, though both had strong workload cases and passing game access. This roster did not burn equity by fading productive running back volume for the sake of novelty. It accepted strong median and ceiling inputs where they were available, then looked for separation through quarterback structure and select low owned pass catchers.\n\nOdell Beckham Jr. supplied one of the lineup's most important independent ceilings. He reached his score through a broad stat line, not a narrow one, with receiving production, a passing touchdown, and enough explosive usage to matter at low ownership. Austin Hooper and James Conner formed a sharp skinny correlation from Atlanta Pittsburgh. Hooper was a clean salary release into target volume, while Conner was the premium payoff piece from the other side. Bills defense rounded the lineup out with pressure and takeaway production against Marcus Mariota. The winning shape is clear. A low owned quarterback triple creates access to first place, the chalk running backs do their job, and the lineup layers in two more ceiling pockets through Beckham and the Hooper Conner game pair.",
+    "uniquenessNotes": "The strongest decision was not simply Aaron Rodgers. It was choosing the full Green Bay passing concentration. Many rosters could land Rodgers or Adams. Fewer carried the conviction to add Marquez Valdes-Scantling and turn the game into a three player passing cluster. When Rodgers approached 450 yards, that extra layer mattered because it captured one more touchdown channel from a low salary receiver.\n\nThe second separator is how the roster handled ownership. David Johnson and T.J. Yeldon were popular, though they were popular for good reason. This build did not waste effort trying to beat strong projections at running back. Instead, it used those plays as structural support and pushed differentiation into places where the field was less comfortable, especially quarterback stacking depth and low owned elite wide receiver access.\n\nThe Hooper Conner skinny stack is another sharp detail. It did not ask Atlanta Pittsburgh to carry the entire lineup. It simply extracted a cheap volume tight end from one side and the dominant back from the other. That is a much cleaner use of game environment than forcing an oversized cluster. Bills defense against Marcus Mariota added one more leveraged outcome because a low salary defense with turnover access can complement an aggressive offensive build without straining salary.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Aaron Rodgers triple stack with Davante Adams and Marquez Valdes-Scantling",
+      "secondaryLever": "Odell Beckham Jr. ceiling plus Austin Hooper and James Conner skinny correlation",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "GB@DET: 3 (QB game)",
+          "ATL@PIT: 2",
+          "ARI@SF: 1",
+          "JAX@KC: 1",
+          "NYG@CAR: 1",
+          "TEN@BUF: 1"
+        ],
+        "packersTriple": [
+          "Aaron Rodgers",
+          "Davante Adams",
+          "Marquez Valdes-Scantling"
+        ],
+        "chalkRbCore": [
+          "David Johnson",
+          "T.J. Yeldon"
+        ],
+        "atlantaPittsburghSkinny": [
+          "Austin Hooper",
+          "James Conner"
+        ],
+        "qbFacedByBillsDst": "Marcus Mariota"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_TRIPLE",
+        "CHALK_RB_VOLUME_ACCEPTED",
+        "ELITE_WR_CEILING_AT_LOW_OWNERSHIP",
+        "TE_RB_SKINNY_CORRELATION",
+        "DST_VERSUS_REPLACEMENT_LEVEL_QB"
+      ],
+      "macroStory": "A first place roster built around an underowned Rodgers triple, supported by high volume chalk running backs, then pushed over the top by Beckham's ceiling game and a precise Hooper Conner mini correlation."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_CEILING",
+          "VOLUME_PASSER"
+        ],
+        "microStory": "Aaron Rodgers gave the roster its clearest route to first place because the salary, ownership, and passing volume lined up with a true ceiling outcome."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "ALPHA_STACK_PARTNER",
+          "TARGET_DOMINANCE",
+          "TOUCHDOWN_ACCESS"
+        ],
+        "microStory": "Davante Adams carried the premium share of the Rodgers ceiling and made the triple stack strong enough to matter at the top of a large field."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "SALARY_RELIEF_STACK_EXTENSION",
+          "LOW_COST_TOUCHDOWN_PATH",
+          "TRIPLE_STACK_COMPLETION"
+        ],
+        "microStory": "Marquez Valdes-Scantling completed the passing concentration and turned a great quarterback outcome into a lineup level payoff."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 2,
+        "roleTags": [
+          "INDEPENDENT_CEILING",
+          "LOW_OWNERSHIP_ELITE_WR",
+          "MULTI_STAT_PRODUCTION"
+        ],
+        "microStory": "Odell Beckham Jr. gave the roster a second high end receiver score through a broader stat profile than a standard touchdown dependent outing."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "SKINNY_CORRELATION_PAYOFF",
+          "RAW_POINTS_ANCHOR",
+          "WORKLOAD_DOMINANCE"
+        ],
+        "microStory": "James Conner was the payoff side of the Atlanta Pittsburgh skinny, bringing elite volume and touchdown production without requiring a larger game stack."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_SALARY_DST",
+          "TURNOVER_ACCESS",
+          "QB_PRESSURE_POINT"
+        ],
+        "microStory": "Bills defense added efficient points through sacks and takeaways against Marcus Mariota, which helped the roster preserve salary for the passing core."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Aaron Rodgers",
+          "position": "QB",
+          "team": "GB"
+        },
+        "teammates": [
+          {
+            "name": "Davante Adams",
+            "position": "WR",
+            "team": "GB"
+          },
+          {
+            "name": "Marquez Valdes-Scantling",
+            "position": "WR",
+            "team": "GB"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Austin Hooper",
+          "position": "TE",
+          "team": "ATL"
+        },
+        "opponent": {
+          "name": "James Conner",
+          "position": "RB",
+          "team": "PIT"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Bills",
+          "position": "DST",
+          "team": "BUF",
+          "qbFaced": "Marcus Mariota"
+        },
+        "opponent": {
+          "name": "Marcus Mariota",
+          "position": "QB",
+          "team": "TEN"
+        }
+      }
+    ]
+  }
+}

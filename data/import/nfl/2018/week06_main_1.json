@@ -1,0 +1,328 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 6,
+  "slateType": "MAIN",
+  "slateDate": "2018-10-14T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 6",
+  "slateTag": "BROCK OSWEILER WITH ALBERT WILSON, RAVENS VS MARIOTA AGAIN, JULIO HOOPER CONNER MINI",
+  "slateGroup": "2-2-2-1-1-1",
+  "rosterConstruction": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK06_MAIN_2018-10-14T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12560
+  },
+  "winner": {
+    "username": "Davematt123",
+    "points": 245.9,
+    "maxEntries": 34
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 245.9,
+    "totalOwnershipBp": 12560,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Brock Osweiler",
+        "position": "QB",
+        "team": "MIA",
+        "salary": 4300,
+        "points": 31.0,
+        "ownershipPercent": 0.4,
+        "passTd": 3,
+        "passYds": 380,
+        "rushYds": 8,
+        "interceptions": 2,
+        "twoPtPass": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "James Conner",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 7700,
+        "points": 31.9,
+        "ownershipPercent": 15.0,
+        "rushYdsRb": 111,
+        "rushTdRb": 2,
+        "recRb": 4,
+        "recYdsRb": 18,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Melvin Gordon",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 8200,
+        "points": 38.0,
+        "ownershipPercent": 15.9,
+        "rushYdsRb": 132,
+        "rushTdRb": 3,
+        "recRb": 2,
+        "recYdsRb": 18,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 7900,
+        "points": 27.3,
+        "ownershipPercent": 39.5,
+        "rec": 10,
+        "recYds": 143,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "JuJu Smith-Schuster",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 7300,
+        "points": 23.1,
+        "ownershipPercent": 11.4,
+        "rec": 7,
+        "recYds": 111,
+        "twoPtConv": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Albert Wilson",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 3800,
+        "points": 36.0,
+        "ownershipPercent": 0.8,
+        "rec": 6,
+        "recYds": 155,
+        "recTd": 2,
+        "rushYds": -5,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Austin Hooper",
+        "position": "TE",
+        "team": "ATL",
+        "salary": 3500,
+        "points": 22.1,
+        "ownershipPercent": 19.6,
+        "rec": 9,
+        "recYds": 71,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chester Rogers",
+        "position": "WR",
+        "team": "IND",
+        "salary": 4500,
+        "points": 15.5,
+        "ownershipPercent": 16.3,
+        "rec": 4,
+        "recYds": 55,
+        "recTd": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Ravens",
+        "position": "DST",
+        "team": "BAL",
+        "salary": 2800,
+        "points": 21.0,
+        "ownershipPercent": 6.7,
+        "sacks": 11,
+        "qbFaced": "Marcus Mariota",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins through one decision most of the field could not stomach. Brock Osweiler at 0.4 percent ownership became the slate breaker once Miami Chicago turned into a passing environment and Albert Wilson captured two touchdowns plus 155 receiving yards at 0.8 percent ownership. At 4,300, Osweiler did not need perfection. He needed one ceiling path. The roster paired him with the exact teammate who could turn low salary volume into a tournament winning score, and both hit together.\n\nThe rest of the construction did not chase contrarian points for their own sake. Melvin Gordon, James Conner, Julio Jones, Austin Hooper, and Chester Rogers gave the lineup a stable scoring floor with legitimate upside. Julio and Hooper formed a compact Tampa Bay Atlanta cluster. Conner and JuJu gave exposure to Pittsburgh Cincinnati without overcommitting roster space. This is a strong example of using concentrated skill volume around a fragile low owned quarterback stack rather than forcing every slot into a low probability outcome.\n\nRavens defense against Marcus Mariota for a second straight week in the winning pool was another sharp pressure point. Mariota was carrying sack risk and limited offensive stability, and Baltimore turned that into an 11 sack shutout. This roster did not need a defensive touchdown because the pressure volume alone created elite defensive scoring. The winning formula is clear. One nearly unowned quarterback stack creates separation, strong volume backs keep raw points intact, and a defense facing a compromised quarterback profile closes the build.",
+    "uniquenessNotes": "The largest separation point was not Brock Osweiler by himself. It was Brock Osweiler plus Albert Wilson. A near zero percent quarterback can still fail to matter if his production spreads across multiple pass catchers. This build captured the exact Miami receiver who turned yardage and touchdown concentration into a first place outcome. That is why the stack broke the slate rather than merely outperforming salary.\n\nThe lineup also understood where not to get cute. Julio Jones was massive chalk, though his role and ceiling remained too strong to ignore. James Conner and Melvin Gordon were premium touch backs who could score through rushing and receiving volume. Those three plays gave the roster enough dependable raw production to support an aggressive quarterback stance.\n\nThe compact Atlanta Pittsburgh and Pittsburgh Cincinnati exposures are also instructive. Hooper paired with Julio kept Atlanta concentration efficient. JuJu gave access to Pittsburgh's passing output while Conner owned the backfield. Chester Rogers functioned as a clean filler score rather than a pure separator. Ravens defense finished the roster with one more leverage point, and the back to back attack on Marcus Mariota shows a useful principle. When the market still prices a quarterback above his actual protection and efficiency profile, pressure defenses can remain viable across multiple weeks.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Brock Osweiler paired with Albert Wilson at nearly no ownership",
+      "secondaryLever": "Ravens defense versus Marcus Mariota plus efficient Julio Jones, Austin Hooper, James Conner, and JuJu Smith-Schuster game concentration",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "CHI@MIA: 2 (QB game)",
+          "PIT@CIN: 2",
+          "TB@ATL: 2",
+          "LAC@CLE: 1",
+          "IND@NYJ: 1",
+          "BAL@TEN: 1"
+        ],
+        "osweilerWilsonStack": [
+          "Brock Osweiler",
+          "Albert Wilson"
+        ],
+        "pittsburghCincinnatiPair": [
+          "James Conner",
+          "JuJu Smith-Schuster"
+        ],
+        "tampaAtlantaPair": [
+          "Julio Jones",
+          "Austin Hooper"
+        ],
+        "qbFacedByRavensDst": "Marcus Mariota"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "NEAR_ZERO_OWNERSHIP_QB_STACK",
+        "DST_VERSUS_REPLACEMENT_LEVEL_QB",
+        "HIGH_FLOOR_RB_CORE",
+        "DOUBLE_TWO_PLAYER_GAME_CLUSTERS",
+        "LOW_OWNERSHIP_WR_EXPLOSION"
+      ],
+      "macroStory": "A first place roster driven by an almost unowned Osweiler to Wilson stack, supported by elite running back volume and closed by a Ravens defense that overwhelmed Marcus Mariota."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "NEAR_ZERO_OWNERSHIP",
+          "SALARY_LEVER"
+        ],
+        "microStory": "Brock Osweiler was the lineup's decisive swing. The salary created flexibility, though the real value came from landing a ceiling quarterback score almost nobody else had."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "DIRECT_STACK_PARTNER",
+          "YARDAGE_AND_TOUCHDOWN_CONCENTRATION",
+          "LOW_OWNERSHIP_BREAKER"
+        ],
+        "microStory": "Albert Wilson converted the Osweiler call into a tournament winning stack by absorbing the explosive part of Miami's passing output."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_CORE",
+          "WORKLOAD_DOMINANCE",
+          "MULTI_PATH_SCORING"
+        ],
+        "microStory": "Melvin Gordon gave the roster elite non fragile scoring through rushing volume, receiving usage, and touchdown concentration."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "CHALK_CEILING",
+          "TARGET_ALPHA",
+          "RAW_POINTS_STABILIZER"
+        ],
+        "microStory": "Julio Jones served as the premium volume anchor. The roster accepted his ownership because his ceiling remained too strong to fade in this environment."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRESSURE_CEILING",
+          "SACK_VOLUME",
+          "BACK_TO_BACK_QB_ATTACK"
+        ],
+        "microStory": "Baltimore defense punished Marcus Mariota with relentless pressure and produced a 21 point defensive outcome without needing a return touchdown."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Brock Osweiler",
+          "position": "QB",
+          "team": "MIA"
+        },
+        "teammates": [
+          {
+            "name": "Albert Wilson",
+            "position": "WR",
+            "team": "MIA"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "James Conner",
+          "position": "RB",
+          "team": "PIT"
+        },
+        "opponent": {
+          "name": "JuJu Smith-Schuster",
+          "position": "WR",
+          "team": "PIT"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Julio Jones",
+          "position": "WR",
+          "team": "ATL"
+        },
+        "opponent": {
+          "name": "Austin Hooper",
+          "position": "TE",
+          "team": "ATL"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Ravens",
+          "position": "DST",
+          "team": "BAL",
+          "qbFaced": "Marcus Mariota"
+        },
+        "opponent": {
+          "name": "Marcus Mariota",
+          "position": "QB",
+          "team": "TEN"
+        }
+      }
+    ]
+  }
+}

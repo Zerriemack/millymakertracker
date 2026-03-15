@@ -1,0 +1,355 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 16,
+  "slateType": "MAIN",
+  "slateDate": "2018-12-23T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 16",
+  "slateTag": "RODGERS FULL GB NYJ ONSLAUGHT, ANTONIO BROWN NUCLEAR, DOLPHINS DST BORTLES",
+  "slateGroup": "6-1-1-1",
+  "rosterConstruction": "6-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK16_MAIN_2018-12-23T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11420
+  },
+  "winner": {
+    "username": "Cupcake19",
+    "points": 263.08,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 263.08,
+    "totalOwnershipBp": 11420,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Aaron Rodgers",
+        "position": "QB",
+        "team": "GB",
+        "salary": 6300,
+        "points": 45.88,
+        "ownershipPercent": 3.1,
+        "passTd": 2,
+        "passYds": 442,
+        "rushTd": 2,
+        "rushYds": 32,
+        "twoPtPass": 1,
+        "threeHundredYdPass": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Elijah McGuire",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 4700,
+        "points": 23.5,
+        "ownershipPercent": 9.9,
+        "rushTdRb": 1,
+        "rushYdsRb": 35,
+        "recRb": 3,
+        "recYdsRb": 50,
+        "recTd": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jamaal Williams",
+        "position": "RB",
+        "team": "GB",
+        "salary": 5400,
+        "points": 27.6,
+        "ownershipPercent": 9.8,
+        "rushTdRb": 1,
+        "rushYdsRb": 95,
+        "recRb": 6,
+        "recYdsRb": 61,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "GB",
+        "salary": 8500,
+        "points": 24.1,
+        "ownershipPercent": 14.9,
+        "rec": 11,
+        "recYds": 71,
+        "recTd": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Robby Anderson",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 4500,
+        "points": 32,
+        "ownershipPercent": 36.4,
+        "rec": 9,
+        "recYds": 140,
+        "recTd": 1,
+        "threeHundredYdRec": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Marquez Valdes-Scantling",
+        "position": "WR",
+        "team": "GB",
+        "salary": 3700,
+        "points": 12.5,
+        "ownershipPercent": 1.9,
+        "rec": 5,
+        "recYds": 75,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Zach Ertz",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 5900,
+        "points": 38,
+        "ownershipPercent": 14.7,
+        "rec": 12,
+        "recYds": 110,
+        "recTd": 2,
+        "threeHundredYdRec": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Antonio Brown",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 8300,
+        "points": 47.5,
+        "ownershipPercent": 15.0,
+        "rec": 14,
+        "recYds": 185,
+        "recTd": 2,
+        "threeHundredYdRec": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Dolphins",
+        "position": "DST",
+        "team": "MIA",
+        "salary": 2700,
+        "points": 12,
+        "ownershipPercent": 8.5,
+        "sacks": 6,
+        "takeaways": 1,
+        "qbFaced": "Blake Bortles",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "JAX"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup takes an aggressive stance on one game and lets the rest of the roster function as finishing power. Green Bay at New York Jets accounts for six roster spots. Aaron Rodgers is paired with Jamaal Williams, Davante Adams, and Marquez Valdes-Scantling, then brought back with Elijah McGuire and Robby Anderson. That is a full game onslaught in the clearest form. The read was simple. If this game turned into a back and forth scoring environment, Rodgers could touch nearly every Green Bay touchdown while the Jets could answer through concentrated volume on their side.\n\nThat is exactly what happened. Rodgers posted 442 passing yards, two passing touchdowns, two rushing touchdowns, and the bonus. Jamaal Williams added a strong all purpose score. Davante Adams handled double digit receptions. Marquez Valdes-Scantling did not need a touchdown because the rest of the Green Bay cluster already delivered. On the Jets side, Robby Anderson gave the lineup a massive return score and Elijah McGuire supplied dual threat production from the backfield. The game stack was deep, and the scoring stayed concentrated enough for all six pieces to remain live together.\n\nThe remaining three slots were chosen for pure ceiling. Zach Ertz dropped a two touchdown, 110 yard line from the tight end slot. Antonio Brown produced a classic alpha receiver eruption with 185 yards and two touchdowns. Miami defense added pressure and sack volume against Blake Bortles, which gave the lineup one more score without needing another expensive offensive commitment.\n\nDiagnosticly, the roster won because it captured one game at an unusually deep level while still preserving elite one off ceiling outside the stack. Predictively, this shows the value of expanding beyond the standard quarterback plus two pass catcher shell when a game carries concentrated volume on both sides. Prescriptively, when the quarterback has touchdown access through both arm and legs, and the opponent has condensed volume through one wide receiver and one receiving back, a five or six player game onslaught can carry a large field tournament if the remaining slots are reserved for true ceiling positions.",
+    "uniquenessNotes": "The deepest edge here was conviction on the Green Bay Jets environment. Most rosters stop after a quarterback stack with one bring back. This build went much further and still stayed coherent because every added piece had a role capable of mattering. Jamaal Williams was not dead weight in a Rodgers build because his receiving role kept him attached to the same scoring flow. Elijah McGuire served the same purpose on the Jets side.\n\nRodgers at 3.1 percent ownership is the structural hinge. Once he hits 45.88, every Green Bay teammate becomes more dangerous in combination because the quarterback score already paid for the stack. Robby Anderson then forced the game to remain live from the opponent side.\n\nAntonio Brown and Zach Ertz were the perfect complements. Neither depended on the main stack. Both brought independent slate winning ability. That is why the lineup got all the way to 263.08. The game onslaught created the core, then Brown and Ertz turned a strong build into a runaway first place score.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Aaron Rodgers six player Green Bay at New York Jets game onslaught",
+      "secondaryLever": "Antonio Brown and Zach Ertz as independent ceiling one offs with Miami defense against Blake Bortles",
+      "notes": {
+        "rosterConstruction": "6-1-1-1",
+        "gameKey": [
+          "GB@NYJ: 6 (QB game)",
+          "HOU@PHI: 1",
+          "PIT@NO: 1",
+          "JAX@MIA: 1"
+        ],
+        "packersJetsOnslaught": [
+          "Aaron Rodgers",
+          "Jamaal Williams",
+          "Davante Adams",
+          "Marquez Valdes-Scantling",
+          "Elijah McGuire",
+          "Robby Anderson"
+        ],
+        "eliteOneOffs": [
+          "Zach Ertz",
+          "Antonio Brown"
+        ],
+        "qbFacedByDolphinsDst": "Blake Bortles"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_GAME_ONSLAUGHT",
+        "QB_WITH_MULTIPLE_TEAMMATES_AND_DOUBLE_BRING_BACK",
+        "DUAL_THREAT_QB_CEILING",
+        "ELITE_ONE_OFF_RECEIVER_CEILING",
+        "DST_ATTACK_ON_REPLACEMENT_LEVEL_QB"
+      ],
+      "macroStory": "A first place roster built around a six player Green Bay at New York Jets onslaught, then finished by Antonio Brown, Zach Ertz, and Miami defense."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "DUAL_THREAT_CEILING",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Aaron Rodgers was the entire lineup's center of gravity. His passing volume and two rushing touchdowns allowed a massive game stack to stay connected from every angle."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "OPPONENT_BRING_BACK_CEILING",
+          "YARDAGE_PLUS_TD",
+          "GAME_ENVIRONMENT_DRIVER"
+        ],
+        "microStory": "Robby Anderson forced the Green Bay stack to keep accelerating. His 140 yard touchdown game made the six player onslaught viable all the way through the final whistle."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "ONSLAUGHT_COMPLETER",
+          "PASS_GAME_BACK",
+          "MULTI_PATH_SCORE"
+        ],
+        "microStory": "Jamaal Williams gave the lineup another Green Bay path to points without needing him to dominate carries only. His receiving work made him fit the Rodgers build cleanly."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "TIGHT_END_NUKE",
+          "INDEPENDENT_CEILING",
+          "RAW_POINTS"
+        ],
+        "microStory": "Zach Ertz provided the type of tight end score that can separate a lineup from the field even when the main stack already lands."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "ALPHA_RECEIVER",
+          "SLATE_BREAKER",
+          "INDEPENDENT_CEILING"
+        ],
+        "microStory": "Antonio Brown gave the roster another score that could have anchored a winner by itself. His output removed any need for the weaker parts of the game onslaught to overperform."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRESSURE_CEILING",
+          "LOW_SALARY_DEFENSE",
+          "DST_VS_QB_EDGE"
+        ],
+        "microStory": "Miami defense turned Blake Bortles dropbacks into sacks and drive killing pressure, which rounded out the build with another position win."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Aaron Rodgers",
+          "position": "QB",
+          "team": "GB"
+        },
+        "teammates": [
+          {
+            "name": "Jamaal Williams",
+            "position": "RB",
+            "team": "GB"
+          },
+          {
+            "name": "Davante Adams",
+            "position": "WR",
+            "team": "GB"
+          },
+          {
+            "name": "Marquez Valdes-Scantling",
+            "position": "WR",
+            "team": "GB"
+          }
+        ],
+        "opponent": {
+          "name": "Robby Anderson",
+          "position": "WR",
+          "team": "NYJ"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Elijah McGuire",
+          "position": "RB",
+          "team": "NYJ"
+        },
+        "opponent": {
+          "name": "Aaron Rodgers",
+          "position": "QB",
+          "team": "GB"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Aaron Rodgers",
+          "position": "QB",
+          "team": "GB"
+        },
+        "opponent": {
+          "name": "Robby Anderson",
+          "position": "WR",
+          "team": "NYJ"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Dolphins",
+          "position": "DST",
+          "team": "MIA",
+          "qbFaced": "Blake Bortles"
+        },
+        "opponent": {
+          "name": "Blake Bortles",
+          "position": "QB",
+          "team": "JAX"
+        }
+      }
+    ]
+  }
+}

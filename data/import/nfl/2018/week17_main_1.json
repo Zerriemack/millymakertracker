@@ -1,0 +1,359 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 17,
+  "slateType": "MAIN",
+  "slateDate": "2018-12-30T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 17",
+  "slateTag": "FALCONS BUCS ONSLAUGHT, RYAN DOUBLE WITH GODWIN, CHIEFS DST DEREK CARR",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK17_MAIN_2018-12-30T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12050
+  },
+  "winner": {
+    "username": "Giantsquid",
+    "points": 243.22,
+    "maxEntries": 150
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 243.22,
+    "totalOwnershipBp": 12050,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Matt Ryan",
+        "position": "QB",
+        "team": "ATL",
+        "salary": 6300,
+        "points": 33.32,
+        "ownershipPercent": 6.7,
+        "passTd": 2,
+        "passYds": 378,
+        "interceptions": 1,
+        "rushYds": 7,
+        "rec": 1,
+        "recYds": 5,
+        "recTd": 1,
+        "threeHundredYdPass": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 8200,
+        "points": 27.2,
+        "ownershipPercent": 28.6,
+        "rushTdRb": 1,
+        "rushYdsRb": 109,
+        "recRb": 4,
+        "recYdsRb": 33,
+        "threeHundredYdRush": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Dwayne Washington",
+        "position": "RB",
+        "team": "NO",
+        "salary": 3000,
+        "points": 13.8,
+        "ownershipPercent": 10.4,
+        "rushYdsRb": 108,
+        "threeHundredYdRush": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 4300,
+        "points": 32.4,
+        "ownershipPercent": 10.9,
+        "rec": 6,
+        "recYds": 114,
+        "recTd": 2,
+        "threeHundredYdRec": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 8500,
+        "points": 31.8,
+        "ownershipPercent": 11.2,
+        "rec": 9,
+        "recYds": 138,
+        "recTd": 1,
+        "threeHundredYdRec": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Mohamed Sanu",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 4800,
+        "points": 20.4,
+        "ownershipPercent": 3.5,
+        "passTd": 1,
+        "passYds": 5,
+        "rushYds": 2,
+        "rec": 7,
+        "recYds": 90,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "George Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 6300,
+        "points": 32.9,
+        "ownershipPercent": 15.5,
+        "rec": 9,
+        "recYds": 149,
+        "recTd": 1,
+        "threeHundredYdRec": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "C.J. Anderson",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 5400,
+        "points": 27.4,
+        "ownershipPercent": 29.4,
+        "rushTdRb": 2,
+        "rushYdsRb": 132,
+        "recRb": 3,
+        "recYdsRb": 22,
+        "threeHundredYdRush": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Chiefs",
+        "position": "DST",
+        "team": "KC",
+        "salary": 2600,
+        "points": 24,
+        "ownershipPercent": 4.3,
+        "sacks": 3,
+        "takeaways": 4,
+        "defTd": 1,
+        "qbFaced": "Derek Carr",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "OAK"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is built around the highest leverage version of Atlanta at Tampa Bay. Matt Ryan is paired with Julio Jones and Mohamed Sanu, then brought back with Chris Godwin. The scoring concentration was sharp enough for all four pieces to matter together. Ryan threw for 378 yards, caught a touchdown, and still had two passing scores. Julio handled the alpha receiver role. Godwin turned Tampa Bay's side into a true bring back ceiling. Sanu completed the structure with both receiving production and a passing touchdown. This was a full game read, not a loose collection of good players.\n\nThe second pillar came from San Francisco at Los Angeles Rams. George Kittle and C.J. Anderson formed a clean two player game pair built on concentrated volume rather than quarterback dependency. Kittle gave elite tight end ceiling through yardage and a touchdown. Anderson gave immediate replacement workload after the Rams backfield changed late in the year. That pairing added 60.3 points without consuming the quarterback slot.\n\nThe rest of the roster handled game theory and slate dynamics well. Saquon Barkley remained one of the strongest all purpose running back scores on the board. Dwayne Washington at 3,000 gave cheap access to unexpected Week 17 rushing volume. Chiefs defense against Derek Carr finished the lineup with a low owned path to sacks, takeaways, and a defensive touchdown.\n\nDiagnosticly, this lineup won because it captured one of the most fantasy fertile environments on the slate at deep enough breadth to absorb nearly every meaningful Atlanta touchdown path, then supported it with one elite tight end game pair and two strong running back allocations. Predictively, Week 17 remains a week where role shifts and motivation can outpace median projections. Prescriptively, when late season usage changes create cheap backs with secure volume, they can be used to support aggressive game environment concentration without weakening overall ceiling.",
+    "uniquenessNotes": "The strongest decision was not Matt Ryan alone. It was the commitment to the full Atlanta Tampa Bay scoring tree. Many lineups would stop at Ryan with Julio Jones and one bring back. Adding Mohamed Sanu gave this build access to a less crowded touchdown branch, and it paid off because he contributed as both passer and receiver.\n\nChris Godwin mattered because he gave the opponent side enough force to keep the main stack live. Without that return score, the Atlanta concentration could still have been good. With it, the entire game reached tournament winning density.\n\nDwayne Washington and Chiefs defense completed the uniqueness in a disciplined way. Washington was cheap role based volume. Chiefs defense attacked Derek Carr at low ownership. Neither choice needed to be perfect. Both simply had to preserve salary and add paths the field was not carrying heavily.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Matt Ryan with Julio Jones and Mohamed Sanu plus Chris Godwin bring back in Atlanta at Tampa Bay",
+      "secondaryLever": "George Kittle with C.J. Anderson plus Chiefs defense against Derek Carr",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "ATL@TB: 4 (QB game)",
+          "SF@LAR: 2",
+          "DAL@NYG: 1",
+          "CAR@NO: 1",
+          "OAK@KC: 1"
+        ],
+        "falconsBucsCluster": [
+          "Matt Ryan",
+          "Julio Jones",
+          "Mohamed Sanu",
+          "Chris Godwin"
+        ],
+        "ninersRamsPair": [
+          "George Kittle",
+          "C.J. Anderson"
+        ],
+        "runningBackSupport": [
+          "Saquon Barkley",
+          "Dwayne Washington"
+        ],
+        "qbFacedByChiefsDst": "Derek Carr"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_DOUBLE_STACK_WITH_BRING_BACK",
+        "WEEK_17_ROLE_SHIFT_RB",
+        "TE_RB_CROSS_GAME_PAIR",
+        "LOW_OWNERSHIP_DST_LEVERAGE",
+        "FULL_GAME_ENVIRONMENT_CAPTURE"
+      ],
+      "macroStory": "A first place roster anchored by deep Atlanta Tampa Bay concentration, then elevated by the Kittle Anderson game pair and a low owned Chiefs defense score against Derek Carr."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "CORRELATION_HUB",
+          "LOWER_OWNED_QB_PATH"
+        ],
+        "microStory": "Matt Ryan served as the entry point to the slate's most productive passing environment and added a receiving touchdown to widen the path."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "BRING_BACK_CEILING",
+          "TWO_TOUCHDOWN_OUTCOME",
+          "GAME_ENVIRONMENT_DRIVER"
+        ],
+        "microStory": "Chris Godwin forced the Atlanta stack to remain live all game and turned the environment into a true back and forth fantasy exchange."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "ALPHA_RECEIVER",
+          "RAW_POINTS",
+          "STACK_ANCHOR"
+        ],
+        "microStory": "Julio Jones gave the lineup the dependable top end Atlanta score the rest of the game stack could build around."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 2,
+        "roleTags": [
+          "AUXILIARY_TD_BRANCH",
+          "MULTI_PATH_SCORING",
+          "LOWER_OWNED_STACK_COMPLETER"
+        ],
+        "microStory": "Mohamed Sanu was the branch many lineups skipped. His receiving line plus passing touchdown created structural separation inside a popular game."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "TIGHT_END_NUKE",
+          "YARDAGE_PLUS_TD",
+          "INDEPENDENT_CEILING"
+        ],
+        "microStory": "George Kittle brought elite tight end scoring without relying on the main stack, which made the lineup less fragile."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_CEILING",
+          "LOW_OWNERSHIP",
+          "DST_VS_QB_EDGE"
+        ],
+        "microStory": "Kansas City defense converted Derek Carr dropbacks into a difference making score through takeaways and a touchdown."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Matt Ryan",
+          "position": "QB",
+          "team": "ATL"
+        },
+        "teammates": [
+          {
+            "name": "Julio Jones",
+            "position": "WR",
+            "team": "ATL"
+          },
+          {
+            "name": "Mohamed Sanu",
+            "position": "WR",
+            "team": "ATL"
+          }
+        ],
+        "opponent": {
+          "name": "Chris Godwin",
+          "position": "WR",
+          "team": "TB"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "George Kittle",
+          "position": "TE",
+          "team": "SF"
+        },
+        "opponent": {
+          "name": "C.J. Anderson",
+          "position": "RB",
+          "team": "LAR"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Matt Ryan",
+          "position": "QB",
+          "team": "ATL"
+        },
+        "opponent": {
+          "name": "Chris Godwin",
+          "position": "WR",
+          "team": "TB"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Chiefs",
+          "position": "DST",
+          "team": "KC",
+          "qbFaced": "Derek Carr"
+        },
+        "opponent": {
+          "name": "Derek Carr",
+          "position": "QB",
+          "team": "OAK"
+        }
+      }
+    ]
+  }
+}

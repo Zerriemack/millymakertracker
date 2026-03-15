@@ -1,0 +1,310 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 16,
+  "slateType": "MAIN",
+  "slateDate": "2016-12-24T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 16",
+  "slateTag": "WILSON ARI BRINGBACK, THIELEN 47.6 NUKE, DOUBLE RB SPEND WITH DAVID JOHNSON AND LESEAN MCCOY",
+  "slateGroup": "3-2-1-1-1-1",
+  "rosterConstruction": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK16_MAIN_2016-12-24T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8060
+  },
+  "winner": {
+    "username": "Mjp334512",
+    "points": 267.1,
+    "maxEntries": 19
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 267.1,
+    "totalOwnershipBp": 8060,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Russell Wilson",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 6300,
+        "points": 37.6,
+        "ownershipPercent": 2.1,
+        "passTd": 4,
+        "passYds": 350,
+        "rushYds": 36,
+        "fumblesLost": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Johnson",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 9200,
+        "points": 34.6,
+        "ownershipPercent": 7.2,
+        "rushYdsRb": 95,
+        "rushTdRb": 3,
+        "recRb": 4,
+        "recYdsRb": 41,
+        "fumblesLost": 1,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "LeSean McCoy",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 9000,
+        "points": 28.5,
+        "ownershipPercent": 18.8,
+        "rushYdsRb": 128,
+        "rushTdRb": 1,
+        "recRb": 5,
+        "recYdsRb": 17,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Doug Baldwin",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 6000,
+        "points": 39.7,
+        "ownershipPercent": 7.8,
+        "rec": 13,
+        "recYds": 171,
+        "recTd": 1,
+        "rushYds": 6,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Allen Robinson",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 4600,
+        "points": 26.7,
+        "ownershipPercent": 12.6,
+        "rec": 9,
+        "recYds": 147,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Adam Thielen",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 4600,
+        "points": 47.6,
+        "ownershipPercent": 2.2,
+        "rec": 12,
+        "recYds": 202,
+        "recTd": 2,
+        "rushYds": 4,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Charles Clay",
+        "position": "TE",
+        "team": "BUF",
+        "salary": 3200,
+        "points": 28.5,
+        "ownershipPercent": 3.3,
+        "rec": 8,
+        "recYds": 85,
+        "recTd": 2,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Duke Johnson Jr.",
+        "position": "RB",
+        "team": "CLE",
+        "salary": 3500,
+        "points": 6.9,
+        "ownershipPercent": 0.5,
+        "rushYdsRb": 28,
+        "recRb": 2,
+        "recYdsRb": 21,
+        "gameAwayTeam": "SD",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "SD"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 3600,
+        "points": 17,
+        "ownershipPercent": 26.1,
+        "sacks": 2,
+        "takeaways": 2,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NYJ",
+        "qbFaced": "Ryan Fitzpatrick",
+        "qbFacedArchetype": "JOURNEYMAN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster attacks Week 16 through one game environment and two slate level ceiling pockets. Russell Wilson with Doug Baldwin, plus David Johnson on the other side, is the central thesis. Arizona against Seattle carried enough offensive talent for a tournament winner, yet this build narrows exposure into a very specific script. Wilson captures passing volume and touchdown concentration, Baldwin captures target domination, and Johnson covers Arizona's entire offense through rushing, receiving, and goal line control.\n\nThe roster then adds a second ceiling layer through Buffalo. LeSean McCoy and Charles Clay combine for 57.0 points from the same offense. This is not random overlap. Buffalo scored 33, and this lineup captured nearly all of it through the running back and tight end. When an offense condenses production into two players at modest ownership, a roster can extract almost full game value without needing the quarterback.\n\nAdam Thielen is the eruption which blows the slate apart. At 2.2 percent ownership, 47.6 points from a mid range receiver changes the tournament immediately. This is the type of score which does not need help from roster duplication dynamics or thin payout edges. It creates raw point distance. Allen Robinson adds another strong score from a separate game, which keeps this roster from depending on one single environment.\n\nThe Patriots defense is popular and successful, though it is not the reason this lineup wins. It supplies baseline production in a favorable home spot against Ryan Fitzpatrick, while the path to first place comes from the Wilson Baldwin Johnson game stack, the Buffalo concentration, and the Thielen detonation.",
+    "uniquenessNotes": "The ownership profile tells the story. Total ownership lands at 80.6 percent, which is extremely low for a classic winner with this much raw scoring. Wilson at 2.1 percent and Thielen at 2.2 percent form the core separation. Cooks last week was one form of low owned eruption. This week, the winner compounds two of them and pairs both with premium running back raw points.\n\nThe Wilson Baldwin Johnson construction is stronger than a standard quarterback stack because it captures both sides of a game through players with secure offensive command. There is no wasted salary on accessory volume. Every roster slot tied to Arizona Seattle carries a route to direct scoring concentration. This is the type of game bet which can survive many different touchdown distributions.\n\nThe Buffalo pairing is another sharp decision. McCoy brought heavy ownership, though Charles Clay at 3.3 percent turns a common running back play into a less common team capture. Buffalo produced enough offense for both to matter, and Clay's two touchdown game gave the lineup access to a scoring branch many McCoy rosters did not own.\n\nDuke Johnson Jr. is the one miss, yet a 0.5 percent flex score does not sink anything because the rest of the lineup is so far above replacement. This matters for future large field thinking. A roster does not need perfect efficiency in every slot when three or four positions post truly rare outcomes. The goal is not universal success. The goal is concentrated domination in a handful of slots with enough structural logic to let those scores coexist.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Russell Wilson with Doug Baldwin and David Johnson in a concentrated Arizona Seattle game script",
+      "secondaryLever": "Adam Thielen at 2.2 percent ownership plus Buffalo offense concentration through LeSean McCoy and Charles Clay",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "ARI@SEA: 3 (QB game)",
+          "MIA@BUF: 2",
+          "TEN@JAX: 1",
+          "MIN@GB: 1",
+          "SD@CLE: 1",
+          "NYJ@NE: 1"
+        ],
+        "cardinalsSeahawksCluster": [
+          "Russell Wilson",
+          "Doug Baldwin",
+          "David Johnson"
+        ],
+        "billsConcentration": [
+          "LeSean McCoy",
+          "Charles Clay"
+        ],
+        "lowOwnedSlateBreaker": "Adam Thielen",
+        "cheapFlexMiss": "Duke Johnson Jr.",
+        "qbFacedByPatriotsDst": "Ryan Fitzpatrick"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_STACK",
+        "OPPOSING_RB_BRINGBACK",
+        "TEAM_CONCENTRATION_WITHOUT_QB",
+        "LOW_OWNERSHIP_WR_NUKE",
+        "POPULAR_DST_STABILITY",
+        "ONE_SLOT_MISS_ABSORBED_BY_CEILING"
+      ],
+      "macroStory": "A first place roster driven by an under-owned Wilson Baldwin stack with David Johnson on the other side, then pushed into a different scoring tier by Adam Thielen's near unique eruption and Buffalo's concentrated offense through McCoy and Clay."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_QUARTERBACK",
+          "GAME_ENVIRONMENT_HUB"
+        ],
+        "microStory": "Russell Wilson is the central engine. At 2.1 percent ownership, four passing touchdowns and rushing support create one of the cleanest leverage quarterback outcomes of the season."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "LOW_OWNERSHIP_ERUPTION",
+          "RAW_POINTS_WINNER"
+        ],
+        "microStory": "Adam Thielen is the decisive score. A 47.6 point receiver game at 2.2 percent ownership gives the lineup a ceiling band most entries never approached."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "STACK_PAYOFF",
+          "TARGET_DOMINANCE",
+          "YARDAGE_ANCHOR"
+        ],
+        "microStory": "Doug Baldwin completes the Seattle thesis through 13 receptions and 171 yards, converting Wilson's spike game into a stack outcome rather than a quarterback only outcome."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "TEAM_CAPTURE_EXTENSION",
+          "LOW_OWNERSHIP_TOUCHDOWN_ACCESS",
+          "POSITIONAL_EDGE"
+        ],
+        "microStory": "Charles Clay turns Buffalo scoring into a second concentrated cluster beside McCoy, giving the roster two touchdowns at a position many lineups treated as a punt."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Russell Wilson",
+          "position": "QB",
+          "team": "SEA"
+        },
+        "teammates": [
+          {
+            "name": "Doug Baldwin",
+            "position": "WR",
+            "team": "SEA"
+          }
+        ],
+        "opponent": {
+          "name": "David Johnson",
+          "position": "RB",
+          "team": "ARI"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "LeSean McCoy",
+          "position": "RB",
+          "team": "BUF"
+        },
+        "opponent": {
+          "name": "Charles Clay",
+          "position": "TE",
+          "team": "BUF"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Patriots",
+          "position": "DST",
+          "team": "NE",
+          "qbFaced": "Ryan Fitzpatrick"
+        },
+        "opponent": {
+          "name": "Ryan Fitzpatrick",
+          "position": "QB",
+          "team": "NYJ"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 7,
+  "slateType": "MAIN",
+  "slateDate": "2019-10-20T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 7",
+  "slateTag": "RODGERS FIVE TOTAL TDS, MARVIN JONES JR FOUR TDS, DALVIN COOK CHALK LANDS",
+  "slateGroup": "3-3-2-1",
+  "rosterConstruction": "3-3-2-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2019_WK07_MAIN_2019-10-20T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10910
+  },
+  "winner": {
+    "username": "Goaky",
+    "points": 246.36,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 246.36,
+    "totalOwnershipBp": 10910,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Aaron Rodgers",
+        "position": "QB",
+        "team": "GB",
+        "salary": 6400,
+        "points": 46.76,
+        "ownershipPercent": 2.2,
+        "passTd": 5,
+        "passYds": 429,
+        "rushTd": 1,
+        "rushYds": 6,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": "OAK",
+        "salary": 5000,
+        "points": 19.4,
+        "ownershipPercent": 27.8,
+        "rushYdsRb": 124,
+        "recRb": 3,
+        "recYdsRb": 10,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Latavius Murray",
+        "position": "RB",
+        "team": "NO",
+        "salary": 5100,
+        "points": 35,
+        "ownershipPercent": 9.7,
+        "rushTdRb": 2,
+        "rushYdsRb": 119,
+        "recRb": 5,
+        "recYdsRb": 31,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "John Brown",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 5500,
+        "points": 19.3,
+        "ownershipPercent": 16.6,
+        "rec": 5,
+        "recYds": 83,
+        "recTd": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Stefon Diggs",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 6300,
+        "points": 24.2,
+        "ownershipPercent": 5,
+        "rec": 7,
+        "recYds": 142,
+        "recTd": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Marvin Jones Jr.",
+        "position": "WR",
+        "team": "DET",
+        "salary": 5000,
+        "points": 43.3,
+        "ownershipPercent": 2.3,
+        "rec": 10,
+        "recYds": 93,
+        "recTd": 4,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Jimmy Graham",
+        "position": "TE",
+        "team": "GB",
+        "salary": 4200,
+        "points": 16.5,
+        "ownershipPercent": 2.8,
+        "rec": 4,
+        "recYds": 65,
+        "recTd": 1,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dalvin Cook",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 8000,
+        "points": 30.9,
+        "ownershipPercent": 25.9,
+        "rushTdRb": 2,
+        "rushYdsRb": 142,
+        "recRb": 1,
+        "recYdsRb": 7,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bills",
+        "position": "DST",
+        "team": "BUF",
+        "salary": 4300,
+        "points": 11,
+        "ownershipPercent": 16.8,
+        "sacks": 1,
+        "takeaways": 2,
+        "defTd": 1,
+        "qbFaced": "Ryan Fitzpatrick",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "MIA"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by concentrating almost all of its leverage into two game environments and refusing to spend salary on decorative pieces. Aaron Rodgers at 2.2 percent ownership becomes the entire quarterback slate when he throws for 429 yards and accounts for six total touchdowns. The pairing with Jimmy Graham gives direct access to one of those scores, and Josh Jacobs on the other side completes a three man game stack built around the idea that Green Bay would keep scoring and Oakland would answer through its lead back. That structure gives the roster access to the best passing score on the slate without paying premium quarterback salary.\n\nThe second engine is Minnesota at Detroit. Dalvin Cook carries heavy ownership and delivers anyway, which matters because fading him would have required finding a comparable raw score at running back. The sharper move is not Cook himself. It is combining Cook with Stefon Diggs and Marvin Jones Jr. in the same game. That is where the lineup becomes lean and dangerous. Cook handles the popular Minnesota production, Diggs captures explosive receiving efficiency, and Marvin Jones Jr. supplies the nuclear Detroit response with four touchdowns at 2.3 percent ownership. Matthew Stafford did what he often does in ceiling environments. He dragged one of his wide receivers into a slate breaking score even in a loss.\n\nThe rest of the lineup is disciplined. Latavius Murray steps into a featured role and delivers a complete workload game. John Brown adds another direct touchdown in a Buffalo onslaught. Bills defense closes the loop against Ryan Fitzpatrick with a defensive touchdown. Nothing in the build is wasted. Salary used stops at 49,800 because the roster is not chasing price tags. It is chasing access to the few outcomes that could actually decide first place.",
+    "uniquenessNotes": "The uniqueness comes from shape, not chaos. Rodgers with Graham and Jacobs is a compact game stack that most of the field did not need because Rodgers was priced in a range where several quarterbacks projected similarly. Once Rodgers becomes the clear top scorer, the lineup immediately separates from all of the more popular builds.\n\nThe Minnesota Detroit cluster is even more important. Many lineups could have landed on Dalvin Cook. Far fewer lineups paired him with both Stefon Diggs and Marvin Jones Jr. That combination captures nearly all of the fantasy violence from one of the slate's defining games without spending a quarterback slot on Stafford or Kirk Cousins. It is a strong example of using a game stack to harvest touchdown concentration while leaving the quarterback position attached to a different ceiling.\n\nBills defense at 16.8 percent ownership is not a leverage play in isolation, but the roster does not need every slot to be contrarian. The defense is there because Buffalo could pressure an unstable Miami offense into the exact errors that create tournament winning defensive scoring. When a lineup already has Rodgers at 2.2 percent and Marvin Jones Jr. at 2.3 percent, there is no need to force thin differentiation elsewhere.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Aaron Rodgers with Jimmy Graham and Josh Jacobs in the Oakland Green Bay game while Rodgers delivered the top quarterback score on the slate at minimal ownership",
+      "secondaryLever": "Dalvin Cook plus Stefon Diggs plus Marvin Jones Jr. capturing nearly all of the ceiling production from Minnesota at Detroit",
+      "notes": {
+        "rosterConstruction": "3-3-2-1",
+        "gameKey": [
+          "OAK@GB: 3 (QB game)",
+          "MIN@DET: 3",
+          "MIA@BUF: 2",
+          "NO@CHI: 1"
+        ],
+        "packersRaidersCluster": [
+          "Aaron Rodgers",
+          "Jimmy Graham",
+          "Josh Jacobs"
+        ],
+        "vikingsLionsCluster": [
+          "Dalvin Cook",
+          "Stefon Diggs",
+          "Marvin Jones Jr."
+        ],
+        "saintsBearsOneOff": "Latavius Murray",
+        "billsDolphinsPair": [
+          "John Brown",
+          "Bills"
+        ],
+        "qbFacedByBillsDst": "Ryan Fitzpatrick"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_NUCLEAR",
+        "DOUBLE_GAME_STACK_CLASSIC",
+        "CHALK_RB_WITH_RIGHT_CONTRARIAN_WR",
+        "LEAN_SALARY_STRUCTURE",
+        "DST_TOUCHDOWN_COMPLETION"
+      ],
+      "macroStory": "A lean first place roster built around Aaron Rodgers erupting at minimal ownership, then amplified by a full capture of the Minnesota Detroit ceiling through Dalvin Cook, Stefon Diggs, and Marvin Jones Jr."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_NUCLEAR_SCORE",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Aaron Rodgers is the tournament winner. The price was modest, the ownership was tiny, and the output buried the rest of the quarterback pool."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "LOW_OWNERSHIP_TOUCHDOWN_CLUSTER",
+          "GAME_STACK_PAYOFF"
+        ],
+        "microStory": "Marvin Jones Jr. is the violent separator. Four touchdown receptions at 2.3 percent ownership turn a strong roster into a first place roster."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "CHALK_THAT_HIT",
+          "RAW_POINTS_FOUNDATION",
+          "GAME_ENVIRONMENT_ANCHOR"
+        ],
+        "microStory": "Dalvin Cook gives the lineup the score it could not afford to miss. His success allowed the contrarian parts of the roster to matter instead of having to rescue a bad fade."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "COMPLEMENTARY_SCORING",
+          "TURNOVER_PATH",
+          "DEFENSIVE_TOUCHDOWN"
+        ],
+        "microStory": "Bills defense completed the Buffalo side of the roster by turning Ryan Fitzpatrick volatility into defensive scoring."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Aaron Rodgers",
+          "position": "QB",
+          "team": "GB"
+        },
+        "teammates": [
+          {
+            "name": "Jimmy Graham",
+            "position": "TE",
+            "team": "GB"
+          }
+        ],
+        "opponent": {
+          "name": "Josh Jacobs",
+          "position": "RB",
+          "team": "OAK"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Dalvin Cook",
+          "position": "RB",
+          "team": "MIN"
+        },
+        "opponent": {
+          "name": "Marvin Jones Jr.",
+          "position": "WR",
+          "team": "DET"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Stefon Diggs",
+          "position": "WR",
+          "team": "MIN"
+        },
+        "opponent": {
+          "name": "Marvin Jones Jr.",
+          "position": "WR",
+          "team": "DET"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Bills",
+          "position": "DST",
+          "team": "BUF",
+          "qbFaced": "Ryan Fitzpatrick"
+        },
+        "opponent": {
+          "name": "Ryan Fitzpatrick",
+          "position": "QB",
+          "team": "MIA"
+        }
+      }
+    ]
+  }
+}

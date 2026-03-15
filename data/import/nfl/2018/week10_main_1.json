@@ -1,0 +1,358 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 10,
+  "slateType": "MAIN",
+  "slateDate": "2018-11-11T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 10",
+  "slateTag": "DET CHI FULL GAME STACK, TRUBISKY BEARS ONSLAUGHT, HILL JULIO RAW POINTS",
+  "slateGroup": "5-2-1-1",
+  "rosterConstruction": "5-2-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK10_MAIN_2018-11-11T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8750
+  },
+  "winner": {
+    "username": "BearDown247",
+    "points": 248.2,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 248.2,
+    "totalOwnershipBp": 8750,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Mitchell Trubisky",
+        "position": "QB",
+        "team": "CHI",
+        "salary": 5600,
+        "points": 39,
+        "ownershipPercent": 6.4,
+        "passTd": 3,
+        "passYds": 355,
+        "rushTd": 1,
+        "rushYds": 18,
+        "threeHundredYdPass": 1,
+        "twoPtPass": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Nick Chubb",
+        "position": "RB",
+        "team": "CLE",
+        "salary": 5500,
+        "points": 38.9,
+        "ownershipPercent": 8.4,
+        "rushTdRb": 1,
+        "rushYdsRb": 176,
+        "recRb": 3,
+        "recYdsRb": 33,
+        "recTd": 1,
+        "threeHundredYdRush": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Tarik Cohen",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 5500,
+        "points": 16.4,
+        "ownershipPercent": 7.1,
+        "rushTdRb": 1,
+        "rushYdsRb": 29,
+        "recRb": 6,
+        "recYdsRb": 15,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "KC",
+        "salary": 7300,
+        "points": 35.7,
+        "ownershipPercent": 10.8,
+        "rec": 7,
+        "recYds": 117,
+        "recTd": 2,
+        "rushYds": 20,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 8300,
+        "points": 26.7,
+        "ownershipPercent": 12.1,
+        "rec": 7,
+        "recYds": 107,
+        "recTd": 1,
+        "threeHundredYdRec": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Allen Robinson II",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 5000,
+        "points": 34.3,
+        "ownershipPercent": 2.4,
+        "rec": 6,
+        "recYds": 133,
+        "recTd": 2,
+        "threeHundredYdRec": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Trey Burton",
+        "position": "TE",
+        "team": "CHI",
+        "salary": 3900,
+        "points": 10,
+        "ownershipPercent": 15.0,
+        "rec": 4,
+        "recYds": 40,
+        "twoPt": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Aaron Jones",
+        "position": "RB",
+        "team": "GB",
+        "salary": 5000,
+        "points": 35.2,
+        "ownershipPercent": 13.8,
+        "rushTdRb": 2,
+        "rushYdsRb": 145,
+        "recRb": 3,
+        "recYdsRb": 27,
+        "threeHundredYdRush": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bears",
+        "position": "DST",
+        "team": "CHI",
+        "salary": 3600,
+        "points": 12,
+        "ownershipPercent": 11.5,
+        "sacks": 6,
+        "takeaways": 3,
+        "qbFaced": "Matthew Stafford",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "DET"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup leans all the way into Detroit at Chicago and treats that game as the slate's central event. Mitchell Trubisky, Tarik Cohen, Allen Robinson II, Trey Burton, and Bears defense create a five piece onslaught built around one premise. Chicago controls the game, Trubisky produces through both passing and rushing, and Matthew Stafford is forced into enough dropbacks for the defense to keep stacking pressure and takeaways. That is a full game stance without needing a Detroit skill player bring back because the opposing production is being captured through Stafford's mistakes.\n\nThe winning decision inside that environment is Allen Robinson II. Trubisky was playable. Bears defense was playable. Tarik Cohen was playable. Robinson at 2.4 percent ownership was the less crowded branch. When he posts 133 yards and two touchdowns, the Chicago cluster stops being a good stack and becomes the defining structure of the slate.\n\nThe rest of the lineup is disciplined raw point acquisition. Nick Chubb and Julio Jones attack Atlanta at Cleveland from opposite sides of a game capable of producing explosive plays. Tyreek Hill is a direct bet on Kansas City speed and touchdown concentration. Aaron Jones is the final ceiling back, giving the roster another 30 plus point score without forcing a fragile punt elsewhere.\n\nDiagnosticly, the lineup wins because the Chicago environment did not need a conventional shootout script to matter. Prescriptively, it shows how a defense can function as the opposing access point in a full game construction when the quarterback on the other side is aggressive enough to create sack and turnover volume. Predictively, this is the template for identifying concentrated team domination spots where the quarterback, pass catchers, backfield accessory, and defense can all score together.",
+    "uniquenessNotes": "The lineup is aggressive but not reckless. Every major choice is tied to an offense or defense with a clear path to concentrated scoring. The separation comes from how those pieces are combined. Most entries that wanted Chicago exposure were unlikely to commit to five pieces from the same game, especially with defense included and no Detroit pass catcher brought back.\n\nAllen Robinson II is the pressure point. He is the low owned ceiling branch inside a game environment the field already respected. Trey Burton does not need a tournament winning score on his own because he completes touchdown and conversion capture for the quarterback stack while preserving salary.\n\nThe roster also avoids forcing correlation where raw scoring is enough. Tyreek Hill and Aaron Jones are standalone ceiling purchases. Nick Chubb and Julio Jones form a two player cross game pairing built on explosive touch expectation. The result is a lineup where every non Chicago slot still carries independent first place capability.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Five piece Chicago onslaught with Mitchell Trubisky, Tarik Cohen, Allen Robinson II, Trey Burton, and Bears defense against Matthew Stafford",
+      "secondaryLever": "Nick Chubb plus Julio Jones game pairing with Tyreek Hill and Aaron Jones as raw point ceiling one offs",
+      "notes": {
+        "rosterConstruction": "5-2-1-1",
+        "gameKey": [
+          "DET@CHI: 5 (QB game)",
+          "ATL@CLE: 2",
+          "ARI@KC: 1",
+          "MIA@GB: 1"
+        ],
+        "bearsCluster": [
+          "Mitchell Trubisky",
+          "Tarik Cohen",
+          "Allen Robinson II",
+          "Trey Burton",
+          "Bears"
+        ],
+        "falconsBrownsPair": [
+          "Nick Chubb",
+          "Julio Jones"
+        ],
+        "oneOffStuds": [
+          "Tyreek Hill",
+          "Aaron Jones"
+        ],
+        "qbFacedByBearsDst": "Matthew Stafford"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_GAME_TEAM_ONSLAUGHT",
+        "QB_WITH_MULTI_PASS_CATCHERS_AND_DST",
+        "LOW_OWNERSHIP_WR_WITHIN_STACK",
+        "CROSS_GAME_STAR_PAIR",
+        "RAW_POINT_ONE_OFFS"
+      ],
+      "macroStory": "A first place roster built around a five piece Chicago domination script, then finished by elite standalone ceilings from Nick Chubb, Tyreek Hill, Julio Jones, and Aaron Jones."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "DUAL_THREAT_CEILING",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Mitchell Trubisky is the hub for the entire construction. His passing volume, rushing touchdown, and conversion bonus allow the Chicago onslaught to pay off across multiple roster spots."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_BREAKER",
+          "TD_CONCENTRATION",
+          "STACK_SEPARATOR"
+        ],
+        "microStory": "Allen Robinson II is the lineup's sharpest leverage point. At 2.4 percent ownership he turns the Bears stack from popular offense exposure into a first place structure."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRESSURE_ANCHOR",
+          "GAME_SCRIPT_ENFORCER",
+          "DST_VS_QB_LEVER"
+        ],
+        "microStory": "Bears defense completes the full game read. Stafford's dropbacks become a source of sacks and takeaways, which lets the defense function as the Detroit side of the environment."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "EXPLOSIVE_TOUCH_CEILING",
+          "RAW_POINTS_ANCHOR",
+          "STANDALONE_SMASH"
+        ],
+        "microStory": "Nick Chubb provides one of the slate's cleanest raw point scores and removes pressure from the Chicago stack needing every single slot to hit a ceiling."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "SPEED_CEILING",
+          "ONE_PLAY_SWING",
+          "RAW_POINTS"
+        ],
+        "microStory": "Tyreek Hill gives the lineup access to Kansas City's explosive touchdown distribution without adding unnecessary secondary exposure from the same game."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "LATE_SLOT_CEILING",
+          "EFFICIENCY_SPIKE",
+          "STANDALONE_RB"
+        ],
+        "microStory": "Aaron Jones is the final ceiling layer. His efficiency and touchdown output make the roster far less dependent on the lower scoring pieces inside the main stack."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Mitchell Trubisky",
+          "position": "QB",
+          "team": "CHI"
+        },
+        "teammates": [
+          {
+            "name": "Tarik Cohen",
+            "position": "RB",
+            "team": "CHI"
+          },
+          {
+            "name": "Allen Robinson II",
+            "position": "WR",
+            "team": "CHI"
+          },
+          {
+            "name": "Trey Burton",
+            "position": "TE",
+            "team": "CHI"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Nick Chubb",
+          "position": "RB",
+          "team": "CLE"
+        },
+        "opponent": {
+          "name": "Julio Jones",
+          "position": "WR",
+          "team": "ATL"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Mitchell Trubisky",
+          "position": "QB",
+          "team": "CHI"
+        },
+        "opponent": {
+          "name": "Bears",
+          "position": "DST",
+          "team": "CHI"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Bears",
+          "position": "DST",
+          "team": "CHI",
+          "qbFaced": "Matthew Stafford"
+        },
+        "opponent": {
+          "name": "Matthew Stafford",
+          "position": "QB",
+          "team": "DET"
+        }
+      }
+    ]
+  }
+}

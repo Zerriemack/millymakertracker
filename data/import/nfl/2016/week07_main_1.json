@@ -1,0 +1,299 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 7,
+  "slateType": "MAIN",
+  "slateDate": "2016-10-23T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 7",
+  "slateTag": "TEAMPLAYTHEBESTPLAYS, COUSINS WITH NO DIRECT STACK, EAGLES DST BREAKS THE SLATE",
+  "slateGroup": "1-2-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $4.44M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK07_MAIN_2016-10-23T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 19080
+  },
+  "winner": {
+    "username": "Jtortona",
+    "points": 238.64,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 238.64,
+    "totalOwnershipBp": 19080,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Kirk Cousins",
+        "position": "QB",
+        "team": "WAS",
+        "salary": 5900,
+        "points": 25.94,
+        "ownershipPercent": 6.8,
+        "passTd": 1,
+        "passYds": 301,
+        "rushTd": 1,
+        "rushYds": 19,
+        "fumblesLost": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "DeMarco Murray",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 7200,
+        "points": 24.7,
+        "ownershipPercent": 41.7,
+        "rushTdRb": 1,
+        "rushYdsRb": 107,
+        "recRb": 3,
+        "recYdsRb": 20,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jacquizz Rodgers",
+        "position": "RB",
+        "team": "TB",
+        "salary": 4300,
+        "points": 20.3,
+        "ownershipPercent": 39.0,
+        "rushYdsRb": 154,
+        "recRb": 1,
+        "recYdsRb": 9,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A.J. Green",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 8600,
+        "points": 33.9,
+        "ownershipPercent": 35.2,
+        "rec": 8,
+        "recYds": 169,
+        "recTd": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 9200,
+        "points": 29.4,
+        "ownershipPercent": 41.9,
+        "rec": 9,
+        "recYds": 174,
+        "gameAwayTeam": "SD",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "SD"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Thomas",
+        "position": "WR",
+        "team": "NO",
+        "salary": 4700,
+        "points": 26,
+        "ownershipPercent": 10.3,
+        "rec": 10,
+        "recYds": 130,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Jack Doyle",
+        "position": "TE",
+        "team": "IND",
+        "salary": 2500,
+        "points": 22.8,
+        "ownershipPercent": 13.9,
+        "rec": 9,
+        "recYds": 78,
+        "recTd": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jay Ajayi",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 4500,
+        "points": 31.6,
+        "ownershipPercent": 4.1,
+        "rushTdRb": 1,
+        "rushYdsRb": 214,
+        "recRb": 1,
+        "recYdsRb": 2,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Eagles",
+        "position": "DST",
+        "team": "PHI",
+        "salary": 3100,
+        "points": 24,
+        "ownershipPercent": 3.6,
+        "sacks": 6,
+        "takeaways": 4,
+        "dstTd": 1,
+        "pointsAllowedBucket": 13,
+        "qbFaced": "Sam Bradford",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "MIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is the cleanest possible expression of your context. Team play the best plays. The winner did not force a decorative stack tree or chase uniqueness through awkward construction. It identified the strongest raw plays, accepted ownership where necessary, and found the few pressure points that could still separate a roster in a field this large.\n\nKirk Cousins is the starting point because he solved quarterback without forcing expensive attachment. He threw for more than 300 yards, added a rushing touchdown, and came at a salary that opened the rest of the roster. The important detail is what the lineup did with the savings. Instead of forcing a direct Washington pass catcher, it spent the salary on premium wide receiver raw points and running back touch consolidation across the slate.\n\nA.J. Green, Julio Jones, and DeMarco Murray were not subtle selections. They were elite role bets. Jacquizz Rodgers was also one of the strongest volume plays on the board. This is why the roster construction matters. Rather than fading the obvious, the lineup embraced strong ownership where projection and role were too good to ignore. The separation came elsewhere.\n\nThe separation came from Jay Ajayi, Michael Thomas, Jack Doyle, and Philadelphia defense. Ajayi at 4.1 percent delivered the true slate shifter. A 200 yard rushing game from a sub 5 percent flex play changes the entire tournament. Michael Thomas gave a strong mid salary receiver score without requiring Drew Brees. Jack Doyle turned a near minimum tight end salary into a nine catch touchdown game. Philadelphia defense then supplied the knockout result with six sacks, multiple takeaways, and a defensive touchdown against Sam Bradford. This is the key point. The lineup did not win by being different everywhere. It won by pairing the best popular plays with a few exact low owned ceiling outcomes.",
+    "uniquenessNotes": "The first uniqueness layer is the quarterback decision. Cousins was productive, inexpensive, and structurally useful, but he was not paired with a Washington receiver. That choice preserved salary and receiver slots for stronger standalone ceilings. In a week where premium skill players were producing, that was the sharper allocation.\n\nThe second layer is how the lineup handled ownership. A.J. Green, Julio Jones, DeMarco Murray, and Jacquizz Rodgers were all heavily rostered. Many lineups had some combination of those names. Far fewer paired them with Jay Ajayi at 4.1 percent, Eagles defense at 3.6 percent, and Jack Doyle at 2,500. That is the difference between eating chalk and building a winner. The chalk formed the floor. The low owned pieces created first place.\n\nPhiladelphia defense deserves special attention because it did more than merely hit. It posted a score large enough to act as an offensive player. In weeks where the field spends its uniqueness budget on low probability skill position darts, a defense touchdown at low ownership can become the cleanest separator on the slate. This roster had that outcome on top of the Ajayi eruption, which is why it cleared the field even while carrying several of the slate's most popular plays.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "A best plays build centered on raw point earners rather than forced correlation",
+      "secondaryLever": "Jay Ajayi and Eagles defense as the low owned separation points around a popular core",
+      "notes": {
+        "rosterConstruction": "1-2-1-1-1-1-1-1",
+        "gameKey": [
+          "WAS@DET: 1 (QB game)",
+          "IND@TEN: 2",
+          "TB@SF: 1",
+          "CLE@CIN: 1",
+          "SD@ATL: 1",
+          "NO@KC: 1",
+          "BUF@MIA: 1",
+          "MIN@PHI: 1"
+        ],
+        "bestPlaysCore": [
+          "DeMarco Murray",
+          "Jacquizz Rodgers",
+          "A.J. Green",
+          "Julio Jones"
+        ],
+        "separationPieces": [
+          "Jay Ajayi",
+          "Jack Doyle",
+          "Eagles"
+        ],
+        "qbFacedByEaglesDst": "Sam Bradford"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "BEST_PLAYS_OVER_FORCED_STACKS",
+        "VALUE_QB_NO_DIRECT_STACK",
+        "POPULAR_CORE_WITH_LOW_OWNED_SEPARATORS",
+        "CHEAP_TE_VOLUME_SPIKE",
+        "LOW_OWNERSHIP_DST_TOUCHDOWN"
+      ],
+      "macroStory": "A first place roster built by accepting the slate's strongest popular plays, then creating distance through Jay Ajayi, Jack Doyle, and a low owned Philadelphia defense eruption."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_SOLVER",
+          "PRIMARY_ENGINE",
+          "NO_DIRECT_STACK"
+        ],
+        "microStory": "Kirk Cousins solved quarterback efficiently and let the roster spend up for a stronger collection of running back and wide receiver raw points."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_BREAKER",
+          "RUSHING_DETONATION",
+          "SLATE_SWING"
+        ],
+        "microStory": "Jay Ajayi was the true tournament breaker because a 214 yard rushing game at 4.1 percent ownership changed the range of outcomes for every lineup around him."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF",
+          "VOLUME_SPIKE",
+          "POSITIONAL_LEVER"
+        ],
+        "microStory": "Jack Doyle created a major positional advantage by turning a 2,500 salary into nine catches and a touchdown."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "ELITE_RAW_POINTS",
+          "POPULAR_CORNERSTONE",
+          "YARDAGE_TOUCHDOWN_ALPHA"
+        ],
+        "microStory": "A.J. Green supplied one of the slate's foundational receiver scores and helped make the best plays thesis viable."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_TOUCHDOWN",
+          "PRESSURE_PLUS_TAKEAWAYS",
+          "TOURNAMENT_FINISHER"
+        ],
+        "microStory": "Philadelphia defense provided the kind of low owned defensive score that can function as a full offensive separator in a large field contest."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "DeMarco Murray",
+          "position": "RB",
+          "team": "TEN"
+        },
+        "opponent": {
+          "name": "Jack Doyle",
+          "position": "TE",
+          "team": "IND"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Eagles",
+          "position": "DST",
+          "team": "PHI",
+          "qbFaced": "Sam Bradford"
+        },
+        "opponent": {
+          "name": "Sam Bradford",
+          "position": "QB",
+          "team": "MIN"
+        }
+      }
+    ]
+  }
+}

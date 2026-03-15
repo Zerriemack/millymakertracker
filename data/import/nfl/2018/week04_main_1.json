@@ -1,0 +1,331 @@
+{
+  "sport": "NFL",
+  "year": 2018,
+  "week": 4,
+  "slateType": "MAIN",
+  "slateDate": "2018-09-30T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 4",
+  "slateTag": "TRUBISKY 6 TDS, TEAM PLAY THE BEST PLAYS, DET DAL SKINNY",
+  "slateGroup": "2-2-2-1-1-1",
+  "rosterConstruction": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2018_WK04_MAIN_2018-09-30T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11190
+  },
+  "winner": {
+    "username": "Nickelback4Lyfe",
+    "points": 273.56,
+    "maxEntries": 50
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 273.56,
+    "totalOwnershipBp": 11190,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Mitchell Trubisky",
+        "position": "QB",
+        "team": "CHI",
+        "salary": 5200,
+        "points": 46.46,
+        "ownershipPercent": 1.5,
+        "passTd": 6,
+        "passYds": 354,
+        "rushYds": 53,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 7700,
+        "points": 37.0,
+        "ownershipPercent": 31.0,
+        "rushYdsRb": 152,
+        "recRb": 4,
+        "recYdsRb": 88,
+        "recTdRb": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Melvin Gordon",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 8300,
+        "points": 33.9,
+        "ownershipPercent": 22.0,
+        "rushYdsRb": 104,
+        "recRb": 7,
+        "recYdsRb": 55,
+        "recTdRb": 1,
+        "twoPtConv": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Will Fuller",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 6800,
+        "points": 14.9,
+        "ownershipPercent": 13.7,
+        "rec": 4,
+        "recYds": 49,
+        "recTd": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Sterling Shepard",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 4900,
+        "points": 25.7,
+        "ownershipPercent": 29.9,
+        "rec": 10,
+        "recYds": 77,
+        "recTd": 1,
+        "twoPtConv": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Golden Tate",
+        "position": "WR",
+        "team": "DET",
+        "salary": 6600,
+        "points": 36.2,
+        "ownershipPercent": 1.3,
+        "rec": 8,
+        "recYds": 132,
+        "recTd": 2,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Jared Cook",
+        "position": "TE",
+        "team": "OAK",
+        "salary": 4100,
+        "points": 34.0,
+        "ownershipPercent": 6.2,
+        "rec": 8,
+        "recYds": 110,
+        "recTd": 2,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Taylor Gabriel",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 3900,
+        "points": 33.4,
+        "ownershipPercent": 5.1,
+        "rec": 7,
+        "recYds": 104,
+        "recTd": 2,
+        "rushYds": 10,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Raiders",
+        "position": "DST",
+        "team": "OAK",
+        "salary": 2500,
+        "points": 12.0,
+        "ownershipPercent": 1.2,
+        "sacks": 2,
+        "takeaways": 4,
+        "defTd": 1,
+        "qbFaced": "Baker Mayfield",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup starts with a simple premise and executes it better than almost every roster in the field. Mitchell Trubisky was mispriced for his range of outcomes, underplayed by the field, and tied to a Tampa Bay defense that had already shown it could be attacked through the air. Pairing him with Taylor Gabriel turned the quarterback slot into the lineup's main accelerant. Trubisky throws six touchdowns, Gabriel catches two, and the stack gives first place access at almost no ownership cost.\n\nThe rest of the build follows a disciplined rule. Take strong projection when ownership is not suffocating, then use low owned ceiling receivers as separation. Ezekiel Elliott and Melvin Gordon were premium volume backs with multi path scoring. There is no need to be cute with both. They gave the roster touch certainty, touchdown access, and enough receiving usage to keep pace with any script. This is the #TEAMPLAYTHEBESTPLAYS portion of the lineup.\n\nThe second layer comes from isolated ceiling events outside the quarterback game. The Detroit Dallas skinny stack is sharp because it captures concentrated production without spending an extra slot on a lower value attachment. Golden Tate erupts at 1.3 percent ownership while Ezekiel Elliott answers on the other side. Jared Cook gives a similar payoff in Oakland, where his target load and yardage role were stronger than his price. Sterling Shepard brought heavy volume in New York, and Will Fuller added a modest but usable touchdown score. Raiders defense against rookie Baker Mayfield added one more low owned outcome through takeaways and a defensive touchdown. The lineup won because it combined the slate's best quarterback value, premium running back volume, and multiple sub 10 percent ceiling scores in one coherent construction.",
+    "uniquenessNotes": "The most important separator is not Raiders defense. It is the choice to treat Mitchell Trubisky as a ceiling quarterback rather than a salary saver. At 1.5 percent ownership, six passing touchdowns created a gap the field could not recover from unless it also landed several low probability receiver outcomes. Taylor Gabriel being the direct partner made the stack far more powerful than a naked quarterback path.\n\nGolden Tate is the next major swing. Detroit Dallas was not ignored, though the field largely concentrated on Ezekiel Elliott and moved on. Adding Tate at 1.3 percent ownership turned a popular running back game environment into a one sided access point for a wide receiver eruption. This was a sharp use of a skinny correlation because Tate did not need a full game stack around him. He only needed his own target funnel and Dallas pushing Detroit into more passing volume.\n\nJared Cook and Raiders defense from the same game added another layer of leverage without forcing a traditional onslaught. Cook captured Oakland's offensive concentration, while the defense benefited from rookie volatility on the other side. This is a strong example of how a lineup can hold multiple low owned ceilings without becoming fragile, because the running back core carried enough baseline production to support the swings.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Mitchell Trubisky paired with Taylor Gabriel in a near unowned six touchdown quarterback eruption",
+      "secondaryLever": "Detroit Dallas skinny correlation through Ezekiel Elliott and Golden Tate plus Raiders defense against Baker Mayfield",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "TB@CHI: 2 (QB game)",
+          "DET@DAL: 2",
+          "CLE@OAK: 2",
+          "SF@LAC: 1",
+          "HOU@IND: 1",
+          "NO@NYG: 1"
+        ],
+        "primaryGameStack": [
+          "Mitchell Trubisky",
+          "Taylor Gabriel"
+        ],
+        "detroitDallasSkinny": [
+          "Ezekiel Elliott",
+          "Golden Tate"
+        ],
+        "oaklandCluster": [
+          "Jared Cook",
+          "Raiders"
+        ],
+        "qbFacedByRaidersDst": "Baker Mayfield"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_STACK_CEILING",
+        "PLAY_THE_BEST_PLAYS_RB_CORE",
+        "SKINNY_GAME_CORRELATION",
+        "MULTIPLE_SUB_10_PERCENT_CEILINGS",
+        "DST_VERSUS_ROOKIE_QB"
+      ],
+      "macroStory": "A first place roster driven by a near unowned quarterback stack, protected by two elite volume running backs, and finished by several low owned ceiling events across separate games."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_CEILING",
+          "SLATE_BREAKER"
+        ],
+        "microStory": "Mitchell Trubisky was the lineup's defining decision. The salary opened every path, and the six touchdown outcome broke the slate from a 1.5 percent ownership base."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "DIRECT_STACK_PARTNER",
+          "SALARY_EFFICIENCY",
+          "TOUCHDOWN_CONCENTRATION"
+        ],
+        "microStory": "Taylor Gabriel turned the Trubisky call from a strong quarterback outcome into a first place combination by absorbing two touchdowns at 5.1 percent ownership."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_WR_CEILING",
+          "SKINNY_CORRELATION_PAYOFF",
+          "TARGET_CONCENTRATION"
+        ],
+        "microStory": "Golden Tate gave the lineup an elite wide receiver score at 1.3 percent ownership and converted the Detroit Dallas mini correlation into a major source of separation."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "VOLUME_ANCHOR",
+          "BEST_PLAY",
+          "RAW_POINTS_CORE"
+        ],
+        "microStory": "Ezekiel Elliott supplied the secure running back core through rushing volume, receiving production, and touchdown access, which let the roster carry several lower owned ceiling paths."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_DST",
+          "TURNOVER_CEILING",
+          "ROOKIE_QB_PRESSURE_POINT"
+        ],
+        "microStory": "Raiders defense gave the lineup one more path to separation by forcing takeaways against Baker Mayfield and finding a defensive touchdown at 1.2 percent ownership."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Mitchell Trubisky",
+          "position": "QB",
+          "team": "CHI"
+        },
+        "teammates": [
+          {
+            "name": "Taylor Gabriel",
+            "position": "WR",
+            "team": "CHI"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Ezekiel Elliott",
+          "position": "RB",
+          "team": "DAL"
+        },
+        "opponent": {
+          "name": "Golden Tate",
+          "position": "WR",
+          "team": "DET"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Jared Cook",
+          "position": "TE",
+          "team": "OAK"
+        },
+        "opponent": {
+          "name": "Raiders",
+          "position": "DST",
+          "team": "OAK"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Raiders",
+          "position": "DST",
+          "team": "OAK",
+          "qbFaced": "Baker Mayfield"
+        },
+        "opponent": {
+          "name": "Baker Mayfield",
+          "position": "QB",
+          "team": "CLE"
+        }
+      }
+    ]
+  }
+}

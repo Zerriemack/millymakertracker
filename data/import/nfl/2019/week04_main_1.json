@@ -1,0 +1,330 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 4,
+  "slateType": "MAIN",
+  "slateDate": "2019-09-29T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 4",
+  "slateTag": "GOFF FOUR MAN GAME STACK, GODWIN ARRIVES, CHUBB BURIES BALTIMORE",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker",
+    "siteContestId": "NFL_2019_WK04_MAIN_2019-09-29T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 7420
+  },
+  "winner": {
+    "username": "Fourdouble",
+    "points": 266.28,
+    "maxEntries": 127
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 266.28,
+    "totalOwnershipBp": 7420,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Jared Goff",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 6300,
+        "points": 27.68,
+        "ownershipPercent": 4.0,
+        "passTd": 2,
+        "passYds": 517,
+        "interceptions": 3,
+        "fumblesLost": 1,
+        "bonusPass300": true,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Nick Chubb",
+        "position": "RB",
+        "team": "CLE",
+        "salary": 6400,
+        "points": 42.3,
+        "ownershipPercent": 3.4,
+        "rushTdRb": 3,
+        "rushYdsRb": 165,
+        "recRb": 3,
+        "recYdsRb": 18,
+        "bonusRush100": true,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "David Johnson",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 6800,
+        "points": 21.9,
+        "ownershipPercent": 7.2,
+        "rushYdsRb": 40,
+        "recRb": 8,
+        "recYdsRb": 99,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 6000,
+        "points": 44.2,
+        "ownershipPercent": 0.7,
+        "rec": 12,
+        "recYds": 172,
+        "recTd": 2,
+        "bonusRec100": true,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 6500,
+        "points": 29.9,
+        "ownershipPercent": 16.5,
+        "rec": 9,
+        "recYds": 121,
+        "recTd": 1,
+        "rushYds": -2,
+        "bonusRec100": true,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Robert Woods",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 6100,
+        "points": 32.4,
+        "ownershipPercent": 3.1,
+        "rec": 13,
+        "recYds": 164,
+        "bonusRec100": true,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Will Dissly",
+        "position": "TE",
+        "team": "SEA",
+        "salary": 3600,
+        "points": 18.7,
+        "ownershipPercent": 27.0,
+        "rec": 7,
+        "recYds": 57,
+        "recTd": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Courtland Sutton",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 4600,
+        "points": 24.2,
+        "ownershipPercent": 1.3,
+        "rec": 6,
+        "recYds": 62,
+        "recTd": 2,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 3700,
+        "points": 25.0,
+        "ownershipPercent": 11.0,
+        "sacks": 5,
+        "takeaways": 4,
+        "dstTd": 1,
+        "pointsAllowedBucket": 13,
+        "qbFaced": "Josh Allen",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner attacked Week 4 through concentration, not decoration. Jared Goff is paired with Cooper Kupp and Robert Woods, then brought back with Chris Godwin in the Rams Buccaneers track meet. That game turned into the kind of passing environment where a pocket passer could drag multiple receivers with him, and that is the core structural read behind the roster. Goff threw for 517 yards despite mistakes, which is an important detail. The lineup did not need a clean quarterback box score. It needed overwhelming passing volume, concentrated target distribution, and a game script that refused to slow down.\n\nChris Godwin is the true separator inside the primary game stack. Kupp carried healthy ownership, Woods was modest, but Godwin at 0.7 percent was the inflection point. This was the coming out game in a practical tournament sense. Tampa Bay did not simply keep pace. Godwin became the most explosive piece in the entire environment, which meant the lineup captured the full game without paying for the obvious Buccaneers angle most of the field would have preferred.\n\nThe rest of the build is sharp because it does not wander. Nick Chubb smashed Baltimore for 42.3 points at 3.4 percent ownership, giving the lineup an independent ceiling event outside the Rams Buccaneers shootout. David Johnson added receiving volume from an Arizona role that still had wide receiver traits inside the running back slot. Will Dissly came from the same game and offered popular tight end efficiency without forcing a full Seattle stack. Courtland Sutton added another low owned touchdown path. The Patriots defense finished the job against Josh Allen with pressure and takeaways, giving the lineup a second source of leverage through defensive scoring rather than through fragile dart throwing.",
+    "uniquenessNotes": "The total ownership tells the story immediately. At 74.2 percent, this is not a roster trying to be different everywhere. It is a roster choosing very specific points of divergence and letting the rest of the build remain structurally sound. Chris Godwin at 0.7 percent, Nick Chubb at 3.4 percent, Robert Woods at 3.1 percent, and Courtland Sutton at 1.3 percent created all the separation needed.\n\nThe most important uniqueness decision was how the Rams Buccaneers game was stacked. A lot of lineups could have landed on Goff, and many could have landed on Kupp. The sharper move was adding Woods and bringing it back with Godwin rather than building a thinner one to one version of the game. That gave the roster access to nearly all of the usable passing production in the highest leverage environment on the slate.\n\nNick Chubb was the second major ownership hinge. His Baltimore demolition provided the kind of isolated running back score that can rescue a lineup from needing perfection at every other slot. Once Chubb buried the early window, the primary game stack only had to confirm the read rather than carry the entire roster by itself.\n\nThe Patriots defense is another subtle point. Josh Allen was already showing long term franchise traits, which meant this was not a case of clicking a defense against a dead offense. The edge came from acknowledging that a good young quarterback could still produce sacks, interceptions, and defensive touchdown paths when facing an elite pressure unit.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Jared Goff double stack with Cooper Kupp and Robert Woods plus Chris Godwin bring back",
+      "secondaryLever": "Nick Chubb as the isolated low owned running back ceiling and Patriots defense versus Josh Allen",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "TB@LAR: 4 (QB game)",
+          "SEA@ARI: 2",
+          "CLE@BAL: 1",
+          "JAX@DEN: 1",
+          "NE@BUF: 1"
+        ],
+        "ramsBuccaneersCluster": [
+          "Jared Goff",
+          "Cooper Kupp",
+          "Robert Woods",
+          "Chris Godwin"
+        ],
+        "seahawksCardinalsPair": [
+          "David Johnson",
+          "Will Dissly"
+        ],
+        "isolatedCeilingPlay": "Nick Chubb",
+        "qbFacedByPatriotsDst": "Josh Allen"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "POCKET_PASSER_GAME_STACK",
+        "LOW_OWNERSHIP_WR_BRING_BACK",
+        "ISOLATED_RB_CEILING",
+        "RECEIVING_ROLE_RUNNING_BACK",
+        "ELITE_DEFENSE_VS_AGGRESSIVE_QB"
+      ],
+      "macroStory": "A first place roster built on the Rams Buccaneers passing avalanche, elevated by Chris Godwin's arrival as a true tournament breaking receiver, then reinforced by Nick Chubb's solo demolition of Baltimore and a Patriots defense that converted Josh Allen volatility into points."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "POCKET_VOLUME",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Jared Goff did not need rushing points because the game handed him impossible passing volume. In this type of environment, a pocket passer can still be the central slate engine when the target tree is concentrated."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_BREAKER",
+          "BRING_BACK_NUCLEAR_SCORE",
+          "ARRIVAL_GAME"
+        ],
+        "microStory": "Chris Godwin was the defining separator. At 0.7 percent ownership, 172 yards and two touchdowns turned a strong game stack into a first place construction."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "ISOLATED_SMASH",
+          "LOW_OWNERSHIP_RAW_POINTS",
+          "SLATE_SWING"
+        ],
+        "microStory": "Nick Chubb gave the lineup a second independent ceiling source. Three rushing touchdowns against Baltimore changed the entire leverage map of the slate."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": [
+          "HYBRID_ROLE",
+          "RECEIVING_BACK_UPSIDE",
+          "STRUCTURAL_STABILITY"
+        ],
+        "microStory": "David Johnson mattered because his role still carried wide receiver characteristics from the running back slot. Eight catches created stability, and the yardage total kept him from being a mere floor play."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRESSURE_CEILING",
+          "TURNOVER_LEVER",
+          "DEFENSIVE_FINISHER"
+        ],
+        "microStory": "The Patriots defense closed the roster with pressure, interceptions, and a touchdown. Against an aggressive quarterback such as Josh Allen, defensive ceiling could come from chaos rather than from offensive collapse."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Jared Goff",
+          "position": "QB",
+          "team": "LAR"
+        },
+        "teammates": [
+          {
+            "name": "Cooper Kupp",
+            "position": "WR",
+            "team": "LAR"
+          },
+          {
+            "name": "Robert Woods",
+            "position": "WR",
+            "team": "LAR"
+          }
+        ],
+        "opponent": {
+          "name": "Chris Godwin",
+          "position": "WR",
+          "team": "TB"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "David Johnson",
+          "position": "RB",
+          "team": "ARI"
+        },
+        "opponent": {
+          "name": "Will Dissly",
+          "position": "TE",
+          "team": "SEA"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Patriots",
+          "position": "DST",
+          "team": "NE",
+          "qbFaced": "Josh Allen"
+        },
+        "opponent": {
+          "name": "Josh Allen",
+          "position": "QB",
+          "team": "BUF"
+        }
+      }
+    ],
+    "diagnosticAnalysis": "The 80 20 explanation begins with two events. The first was correctly identifying Rams Buccaneers as the slate's primary volume engine and then building it through the exact players who captured the most useful production. The second was landing on Nick Chubb as the isolated running back nuke outside the main game environment. Once those two elements hit, the rest of the lineup only needed to avoid failure.\n\nThe finer detail is what made the game stack first place quality instead of merely good. Chris Godwin was the underowned bridge to the full shootout, while Robert Woods gave the lineup broader capture of Goff's 517 yards. A one receiver Goff stack would have left too much production on the table. This roster understood that the quarterback's value came from passing density, not from touchdown efficiency alone.\n\nDavid Johnson and Will Dissly also mattered more than their raw totals suggest. That Seattle Arizona pairing pulled value from a game where Arizona's pace and Johnson's receiving role created ongoing opportunity. The Patriots defense then supplied the non offensive ceiling that pushed the lineup beyond the field.",
+    "predictiveAnalysis": "For future lineup building, this roster reinforces a strong rule for classic slates. When a non rushing quarterback projects for extreme passing volume in a narrow target tree, double stacking can still be the correct choice even without a mobile floor. The key is whether the game is capable of dragging multiple pass catchers above ceiling at the same time. Rams Buccaneers clearly met that threshold.\n\nIt also shows the value of separating running back ceilings into different buckets. Nick Chubb represented the classic isolated touchdown and yardage detonation. David Johnson represented hybrid role accumulation through receiving usage. Those are different routes to the same endpoint. Research becomes sharper when those archetypes are treated separately instead of lumping all running backs together.\n\nThe Patriots defense against Josh Allen is a useful reminder that franchise quarterbacks are not automatic fades for opposing defenses. Aggressive passers can still create fantasy conditions for elite defenses through sacks, forced throws, and short field turnovers.",
+    "prescriptiveAnalysis": "In similar slates, start by identifying whether the top scoring game should be stacked through one pass catcher or through a fuller passing concentration. If the quarterback is a pocket passer and the offense distributes heavily through two or three central receivers, lean toward the fuller concentration. Goff's Week 4 outcome is a clear example.\n\nNext, search for one isolated ceiling running back whose price and ownership lag behind true blowup potential. That player does not need game stack support if his workload and matchup can independently decide the position. Nick Chubb filled that role here.\n\nFinally, do not reduce defense selection to bad quarterback hunting. Sometimes the sharper angle is an aggressive quarterback facing a unit capable of manufacturing sacks, interceptions, and touchdown chances. That is the version of the Josh Allen matchup this lineup captured, and it gave the build a strong finishing edge."
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "sport": "NFL",
+  "year": 2016,
+  "week": 6,
+  "slateType": "MAIN",
+  "slateDate": "2016-10-16T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 6",
+  "slateTag": "STAFFORD DOUBLE WITH TATE AND KENNY BRITT RETURN, DOUBLE PAY UP RBS SMASH, EAGLES DST TOUCHDOWN",
+  "slateGroup": "3-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $4.44M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2016_WK06_MAIN_2016-10-16T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12740
+  },
+  "winner": {
+    "username": "Malen21",
+    "points": 254.4,
+    "maxEntries": 39
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 254.4,
+    "totalOwnershipBp": 12740,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Matthew Stafford",
+        "position": "QB",
+        "team": "DET",
+        "salary": 6200,
+        "points": 28.2,
+        "ownershipPercent": 4.7,
+        "passTd": 4,
+        "passYds": 270,
+        "rushYds": 14,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Le'Veon Bell",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 7900,
+        "points": 18.8,
+        "ownershipPercent": 40.6,
+        "rushYdsRb": 53,
+        "recRb": 6,
+        "recYdsRb": 55,
+        "twoPtConversions": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Lamar Miller",
+        "position": "RB",
+        "team": "HOU",
+        "salary": 6600,
+        "points": 35.8,
+        "ownershipPercent": 17.3,
+        "rushTdRb": 1,
+        "rushYdsRb": 149,
+        "recRb": 3,
+        "recYdsRb": 29,
+        "recTdRb": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Kenny Britt",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 3700,
+        "points": 35.6,
+        "ownershipPercent": 2.9,
+        "rec": 7,
+        "recYds": 136,
+        "recTd": 2,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Golden Tate",
+        "position": "WR",
+        "team": "DET",
+        "salary": 4400,
+        "points": 33.8,
+        "ownershipPercent": 4.5,
+        "rec": 8,
+        "recYds": 165,
+        "recTd": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Thomas",
+        "position": "WR",
+        "team": "NO",
+        "salary": 4300,
+        "points": 18.8,
+        "ownershipPercent": 15.1,
+        "rec": 5,
+        "recYds": 78,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Rob Gronkowski",
+        "position": "TE",
+        "team": "NE",
+        "salary": 6700,
+        "points": 32.2,
+        "ownershipPercent": 5.7,
+        "rec": 7,
+        "recYds": 162,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "LeSean McCoy",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 6900,
+        "points": 37.2,
+        "ownershipPercent": 35.7,
+        "rushTdRb": 3,
+        "rushYdsRb": 140,
+        "recRb": 2,
+        "recYdsRb": 2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Eagles",
+        "position": "DST",
+        "team": "PHI",
+        "salary": 3100,
+        "points": 14,
+        "ownershipPercent": 6.5,
+        "takeaways": 1,
+        "dstTd": 1,
+        "qbFaced": "Kirk Cousins",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner attacks the slate through a game environment the field did not fully price for ceiling. Matthew Stafford is paired with Golden Tate, then brought back with Kenny Britt, which creates a three player cluster from Los Angeles at Detroit. Your context matters here because Stafford again functions as the wide receiver king maker, but the sharper detail is who benefits. The field often wanted Marvin Jones Jr. as the clean vertical piece in this stretch of the season. This roster instead lands on Golden Tate at lower salary and similar ownership, then captures the opposing eruption through Kenny Britt. Stafford throws four touchdowns, Tate clears 160 receiving yards, and Britt answers with two scores. That is enough concentrated production from one game to anchor a first place build.\n\nThe second layer is raw running back force. Lamar Miller and LeSean McCoy both post high end scores, and they do it through very different paths. Miller gives Houston both rushing dominance and receiving touchdown access. McCoy completely buries San Francisco with three rushing touchdowns and 140 yards. Le'Veon Bell does not post a classic tournament nuclear score, yet his role still matters because six catches and a two point conversion give the lineup stable elite volume at a position where many rosters missed. This roster did not need every expensive running back slot to detonate once Miller and McCoy did the heavy lifting.\n\nRob Gronkowski is another major separator. Tight end is often a survival slot in large field contests, but Gronkowski turned it into a true ceiling position with 162 yards and a touchdown at 5.7 percent ownership. Michael Thomas then filled the last wide receiver slot with a modest but useful touchdown score at a salary that kept the rest of the build intact.\n\nPhiladelphia defense against Kirk Cousins is the final pressure point. It is not the highest defensive score on the slate, but the touchdown matters. The roster did not overpay for defense and did not need a defensive avalanche. It needed enough from the slot to preserve the offensive gains already created by the Detroit game cluster, the double pay up running back approach, and Gronkowski.",
+    "uniquenessNotes": "The strongest form of uniqueness in this lineup is the exact shape of the Detroit game bet. Stafford was low owned, Tate was low owned, and Kenny Britt was low owned. That meant the lineup did not need a bizarre roster to separate. It needed one game stack where the touchdown allocation landed in the correct places. The field had access to Detroit points, but this roster captured them in a more precise way than most constructions.\n\nThe lineup also mixed highly owned volume with lower owned ceiling rather than trying to fade every popular play. Le'Veon Bell and LeSean McCoy were widely rostered, yet the roster still won because the separator came from Tate, Britt, Stafford, and Gronkowski. This is an important tournament lesson. Shared chalk at running back can be completely acceptable when the unique pressure points sit at quarterback, pass catcher, and tight end.\n\nGronkowski deserves separate mention because his score changed the position from neutral to decisive. Many lineups had strong running backs in this week. Far fewer had the right Detroit cluster plus a 32 point tight end. Philadelphia defense also helped because it supplied a touchdown without forcing the roster into expensive chalk defense. The lineup's edge came from offensive concentration and position level separation, not from trying to be contrarian in every slot.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Matthew Stafford with Golden Tate and Kenny Britt as the bring back in the Detroit game shootout",
+      "secondaryLever": "Lamar Miller and LeSean McCoy combining for elite raw running back output while Rob Gronkowski broke tight end scoring",
+      "notes": {
+        "rosterConstruction": "3-1-1-1-1-1-1",
+        "gameKey": [
+          "LAR@DET: 3 (QB game)",
+          "PIT@MIA: 1",
+          "IND@HOU: 1",
+          "CAR@NO: 1",
+          "CIN@NE: 1",
+          "SF@BUF: 1",
+          "PHI@WAS: 1"
+        ],
+        "lionsRamsCluster": [
+          "Matthew Stafford",
+          "Golden Tate",
+          "Kenny Britt"
+        ],
+        "doublePayUpRbs": [
+          "Lamar Miller",
+          "LeSean McCoy"
+        ],
+        "tightEndBreaker": "Rob Gronkowski",
+        "qbFacedByEaglesDst": "Kirk Cousins"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WR_BRING_BACK_STACK",
+        "DOUBLE_PAY_UP_RB_RAW_POINTS",
+        "LOW_OWNERSHIP_WR_LEVERAGE",
+        "ELITE_TE_SEPARATOR",
+        "MID_SALARY_DST_TOUCHDOWN"
+      ],
+      "macroStory": "A first place roster built on a precise Stafford game stack through Tate and Britt, then driven into first by double running back raw points and a Gronkowski ceiling score."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_QB",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Matthew Stafford supplied the quarterback ceiling while concentrating his production into the exact receiver path the field underweighted."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_PARTNER",
+          "LOW_OWNERSHIP_LEVERAGE",
+          "YARDAGE_PLUS_TOUCHDOWN"
+        ],
+        "microStory": "Golden Tate was the sharper Detroit receiver choice and turned Stafford's four touchdown game into a unique passing cluster."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "BRING_BACK",
+          "MULTI_TOUCHDOWN_SPIKE",
+          "GAME_ENVIRONMENT_CAPTURE"
+        ],
+        "microStory": "Kenny Britt completed the game story by taking the Rams side of the same shootout and turning it into a full three player payoff."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "POSITIONAL_SEPARATOR",
+          "ELITE_TIGHT_END_CEILING",
+          "LOW_OWNERSHIP_RAW_POINTS"
+        ],
+        "microStory": "Rob Gronkowski made tight end a winning slot rather than a survivable slot, which widened the lineup's offensive edge."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "DEFENSIVE_TOUCHDOWN",
+          "NON_CHALK_PATH",
+          "SUPPORTING_FINISHER"
+        ],
+        "microStory": "Philadelphia defense added the touchdown the roster needed without asking the defense slot to carry the lineup."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Matthew Stafford",
+          "position": "QB",
+          "team": "DET"
+        },
+        "teammates": [
+          {
+            "name": "Golden Tate",
+            "position": "WR",
+            "team": "DET"
+          }
+        ],
+        "opponent": {
+          "name": "Kenny Britt",
+          "position": "WR",
+          "team": "LAR"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Eagles",
+          "position": "DST",
+          "team": "PHI",
+          "qbFaced": "Kirk Cousins"
+        },
+        "opponent": {
+          "name": "Kirk Cousins",
+          "position": "QB",
+          "team": "WAS"
+        }
+      }
+    ]
+  }
+}

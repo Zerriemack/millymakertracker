@@ -1,0 +1,319 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 11,
+  "slateType": "MAIN",
+  "slateDate": "2019-11-17T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 11",
+  "slateTag": "BUF MIA ONSLAUGHT, MCCAFFREY PRICE DOES NOT MATTER, RYAN GRIFFIN SALARY BREAKER",
+  "slateGroup": "4-2-1-1-1",
+  "rosterConstruction": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire Maker [$1M to 1st]",
+    "siteContestId": "NFL_2019_WK11_MAIN_2019-11-17T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9790
+  },
+  "winner": {
+    "username": "Nhpain",
+    "points": 221.64,
+    "maxEntries": 29
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 221.64,
+    "totalOwnershipBp": 9790,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 6600,
+        "points": 33.84,
+        "ownershipPercent": 3.8,
+        "passTd": 3,
+        "passYds": 256,
+        "rushTd": 1,
+        "rushYds": 56,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 10500,
+        "points": 33.1,
+        "ownershipPercent": 23.4,
+        "rushYdsRb": 70,
+        "recRb": 11,
+        "recYdsRb": 121,
+        "recTdRb": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Devin Singletary",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 6000,
+        "points": 8.9,
+        "ownershipPercent": 12.3,
+        "rushYdsRb": 75,
+        "recRb": 1,
+        "recYdsRb": 4,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "John Brown",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 6400,
+        "points": 37.7,
+        "ownershipPercent": 5.9,
+        "rec": 9,
+        "recYds": 137,
+        "recTd": 2,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DeVante Parker",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 4700,
+        "points": 23.5,
+        "ownershipPercent": 3.9,
+        "rec": 7,
+        "recYds": 135,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Calvin Ridley",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 5500,
+        "points": 31.3,
+        "ownershipPercent": 6.1,
+        "rec": 8,
+        "recYds": 143,
+        "recTd": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Ryan Griffin",
+        "position": "TE",
+        "team": "NYJ",
+        "salary": 2900,
+        "points": 24.9,
+        "ownershipPercent": 3.8,
+        "rec": 5,
+        "recYds": 109,
+        "recTd": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Deebo Samuel",
+        "position": "WR",
+        "team": "SF",
+        "salary": 4000,
+        "points": 24.4,
+        "ownershipPercent": 25.5,
+        "rec": 8,
+        "recYds": 134,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Vikings",
+        "position": "DST",
+        "team": "MIN",
+        "salary": 3400,
+        "points": 4,
+        "ownershipPercent": 13.2,
+        "sacks": 2,
+        "takeaways": 1,
+        "qbFaced": "Brandon Allen",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "DEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster wins by leaning hard into a four man Buffalo Miami build, then surrounding it with isolated ceiling scores from the rest of the slate. Josh Allen at 3.8 percent ownership is the entry point. Buffalo was in position to score efficiently, but the sharper part of the build is how the lineup captured both the obvious and the response. Allen, Devin Singletary, and John Brown gave direct exposure to Buffalo touchdowns, while DeVante Parker captured Miami's pass volume on the other side. That shape let the roster absorb almost all of the meaningful fantasy production from the game without forcing a fragile double bring back or unnecessary stacking excess.\n\nChristian McCaffrey remained expensive enough to scare people in theory and unavoidable in practice. His role had reached a point where price did not solve the problem for the field. He kept producing too much receiving volume, too much touchdown equity, and too much raw yardage. The build accepted that and then used Calvin Ridley as the Atlanta side of the same game. That was the better way to create leverage off McCaffrey. Instead of fading him, the roster paired him with the most likely Atlanta counterpunch and captured a high scoring outcome from both sides.\n\nRyan Griffin is one of the key decisions in the lineup. Tight end is a weak position most weeks, so a low salary player who can post a true difference making score changes the entire roster. Griffin gave the lineup 109 yards and a touchdown at 2,900. That is the kind of salary release that does not merely help construction. It creates a positional edge.\n\nDeebo Samuel against Arizona was another case where the field had the broad idea right. Arizona games were turning into fertile environments for receiver scoring, and Deebo had the role to capitalize. Even with ownership attached, the play still mattered because his score let the lineup stay balanced while the Buffalo Miami stack did the heavy lifting. The Vikings defense did not carry the roster, but it did enough against Brandon Allen. This lineup did not need a defensive touchdown because the passing cluster and the skill position efficiency were already doing the damage.",
+    "uniquenessNotes": "The strongest point of separation is the Buffalo Miami onslaught. Many rosters would use Josh Allen with John Brown. Fewer would add Devin Singletary and still bring it back with DeVante Parker. That structure made a strong statement about how the game would score. Buffalo would create touchdowns through Allen, Brown would capture a large share of the receiver ceiling, Singletary would stay involved enough to matter, and Miami would answer through concentrated passing volume rather than through a more balanced distribution.\n\nMcCaffrey and Deebo Samuel were both popular enough to make some players uncomfortable, but discomfort was not the sharp concern. The sharper concern was whether their roles were strong enough to justify ownership. They were. This roster accepted that the field had identified certain good plays, then moved its differentiation into quarterback, game stack density, Parker, Ridley, and Griffin.\n\nRyan Griffin is the slot that changes the lineup's shape. Without him, the roster is still strong. With him, the roster gains salary flexibility and a tight end score that a large portion of the field could not match. That is often where first place contests turn. Not in the obvious stars, but in the modest salary slot that posts a score too large for its position and price.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Josh Allen with Devin Singletary and John Brown, brought back by DeVante Parker in a four man Buffalo Miami game onslaught",
+      "secondaryLever": "Christian McCaffrey paired with Calvin Ridley and supported by Ryan Griffin as the low salary positional separator",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "BUF@MIA: 4 (QB game)",
+          "ATL@CAR: 2",
+          "NYJ@WAS: 1",
+          "ARI@SF: 1",
+          "DEN@MIN: 1"
+        ],
+        "billsDolphinsCluster": [
+          "Josh Allen",
+          "Devin Singletary",
+          "John Brown",
+          "DeVante Parker"
+        ],
+        "falconsPanthersPair": [
+          "Christian McCaffrey",
+          "Calvin Ridley"
+        ],
+        "tightEndSeparator": "Ryan Griffin",
+        "arizonaSanFranciscoPiece": "Deebo Samuel",
+        "qbFacedByVikingsDst": "Brandon Allen"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_ONSLAUGHT",
+        "EXPENSIVE_RB_THAT_STILL_MATTERED",
+        "OPPOSING_WR_BRING_BACK",
+        "LOW_SALARY_TE_BREAKER",
+        "POPULAR_WR_IN_SHOOTOUT_ENVIRONMENT"
+      ],
+      "macroStory": "A first place roster anchored by a four man Buffalo Miami build through Josh Allen, then elevated by McCaffrey raw points, Calvin Ridley as the opposing answer, and Ryan Griffin solving tight end."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_QB",
+          "GAME_ONSLAUGHT_HUB"
+        ],
+        "microStory": "Josh Allen gave the lineup quarterback separation while also acting as the center of the game's touchdown concentration."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_BREAKER",
+          "POSITIONAL_ADVANTAGE",
+          "LOW_OWNERSHIP_CEILING"
+        ],
+        "microStory": "Ryan Griffin delivered the rare low salary tight end eruption that allows a lineup to clear the field without asking every expensive slot to be perfect."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "OPPOSING_BRING_BACK",
+          "YARDAGE_CONCENTRATION",
+          "LOW_OWNERSHIP"
+        ],
+        "microStory": "DeVante Parker completed the Buffalo Miami thesis by capturing the Miami side through concentrated receiver volume instead of chasing a thinner run back."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_FOUNDATION",
+          "HIGH_SALARY_VOLUME",
+          "CHALK_THAT_HIT"
+        ],
+        "microStory": "Christian McCaffrey remained the roster's raw point anchor. The salary was extreme, but so was the workload."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Josh Allen",
+          "position": "QB",
+          "team": "BUF"
+        },
+        "teammates": [
+          {
+            "name": "John Brown",
+            "position": "WR",
+            "team": "BUF"
+          },
+          {
+            "name": "Devin Singletary",
+            "position": "RB",
+            "team": "BUF"
+          }
+        ],
+        "opponent": {
+          "name": "DeVante Parker",
+          "position": "WR",
+          "team": "MIA"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Christian McCaffrey",
+          "position": "RB",
+          "team": "CAR"
+        },
+        "opponent": {
+          "name": "Calvin Ridley",
+          "position": "WR",
+          "team": "ATL"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Deebo Samuel",
+          "position": "WR",
+          "team": "SF"
+        },
+        "opponent": null
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Vikings",
+          "position": "DST",
+          "team": "MIN",
+          "qbFaced": "Brandon Allen"
+        },
+        "opponent": {
+          "name": "Brandon Allen",
+          "position": "QB",
+          "team": "DEN"
+        }
+      }
+    ]
+  }
+}

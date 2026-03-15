@@ -1,0 +1,322 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 14,
+  "slateType": "MAIN",
+  "slateDate": "2019-12-08T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 14",
+  "slateTag": "JIMMY GAROPPOLO AT NEW ORLEANS, SIX PLAYERS UNDER TEN PERCENT, EMMANUEL SANDERS CEILING FIND",
+  "slateGroup": "2-1-1-1-1-1-1-1",
+  "rosterConstruction": "2-1-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2019_WK14_MAIN_2019-12-08T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 6840
+  },
+  "winner": {
+    "username": "Gsh1963",
+    "points": 240.86,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 240.86,
+    "totalOwnershipBp": 6840,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Jimmy Garoppolo",
+        "position": "QB",
+        "team": "SF",
+        "salary": 5600,
+        "points": 32.06,
+        "ownershipPercent": 2.1,
+        "passTd": 4,
+        "passYds": 349,
+        "rushYds": 1,
+        "interceptions": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 6300,
+        "points": 37.3,
+        "ownershipPercent": 4.5,
+        "rushYdsRb": 101,
+        "recRb": 4,
+        "recYdsRb": 112,
+        "recTdRb": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Aaron Jones",
+        "position": "RB",
+        "team": "GB",
+        "salary": 6700,
+        "points": 34.2,
+        "ownershipPercent": 11.4,
+        "rushYdsRb": 134,
+        "rushTdRb": 1,
+        "recRb": 6,
+        "recYdsRb": 58,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Robby Anderson",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 5100,
+        "points": 28,
+        "ownershipPercent": 16.3,
+        "rec": 7,
+        "recYds": 116,
+        "recTd": 1,
+        "rushYds": 4,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 5300,
+        "points": 36.6,
+        "ownershipPercent": 6.2,
+        "rec": 5,
+        "recYds": 153,
+        "recTd": 2,
+        "rushYds": 13,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Emmanuel Sanders",
+        "position": "WR",
+        "team": "SF",
+        "salary": 5800,
+        "points": 37.1,
+        "ownershipPercent": 2.1,
+        "passTd": 1,
+        "passYds": 35,
+        "rec": 7,
+        "recYds": 157,
+        "recTd": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Austin Hooper",
+        "position": "TE",
+        "team": "ATL",
+        "salary": 6000,
+        "points": 5.2,
+        "ownershipPercent": 2,
+        "rec": 2,
+        "recYds": 32,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "James White",
+        "position": "RB",
+        "team": "NE",
+        "salary": 5500,
+        "points": 12.4,
+        "ownershipPercent": 16,
+        "passYds": 35,
+        "rushYdsRb": 33,
+        "recRb": 5,
+        "recYdsRb": 27,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Steelers",
+        "position": "DST",
+        "team": "PIT",
+        "salary": 3500,
+        "points": 18,
+        "ownershipPercent": 7.8,
+        "sacks": 5,
+        "takeaways": 3,
+        "defTd": 1,
+        "qbFaced": "Kyler Murray",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins because it found the actual ceiling players instead of settling for the most comfortable ones. Jimmy Garoppolo at 2.1 percent ownership in New Orleans is the center of the roster. San Francisco at New Orleans carried a strong game environment, yet Garoppolo was still largely ignored relative to the ceiling available in that dome shootout. Pairing him with Emmanuel Sanders gave the lineup direct access to one of the biggest quarterback receiver combinations on the slate. Sanders then added a passing touchdown of his own, which turned an already strong stack into a tournament breaking outcome.\n\nThe rest of the build stays aligned with the broader 2019 pattern. Weak defenses kept failing in ways the field could predict. Robby Anderson against Miami fits that pattern. A.J. Brown against Oakland fits it too. Austin Ekeler against Jacksonville belongs in the same bucket. These are not random one offs. They are direct attacks on defenses that kept allowing explosive skill player production. The lineup was willing to keep pulling that thread, and the scores followed.\n\nAaron Jones added another elite running back score, while James White held the roster together with enough secondary production to avoid creating a dead slot. Austin Hooper was the miss. That matters, because the roster still won with a very light tight end score. It could absorb that failure because the quarterback stack, wide receiver selections, and running back ceiling were doing far more damage than the field could cover.\n\nSteelers defense completed the roster with pressure and a defensive touchdown against Kyler Murray. Six players on the roster came in under 10 percent ownership. That is the real story. This lineup was built around a cluster of underowned ceiling outcomes, and the quarterback decision was the key that unlocked all of it.",
+    "uniquenessNotes": "The strongest separator is the Garoppolo and Sanders pairing. Most lineups looking at San Francisco and New Orleans were drawn to the obvious names on the New Orleans side or were hesitant to trust Garoppolo in a game where San Francisco had multiple ways to score. This roster ignored that hesitation and captured the most important San Francisco passing outcome on the slate.\n\nAustin Ekeler, A.J. Brown, Emmanuel Sanders, and Steelers defense all landed under 10 percent ownership. That is the leverage engine of the build. None of those selections were reckless. Each one had a clean path to a top percentile score. Taken together, they gave the lineup enough distance to survive Austin Hooper's weak output and still clear the field.\n\nThe Miami and Tampa related pieces also show a sharp read on the season. Robby Anderson against Miami and A.J. Brown plus the earlier Westbrook type logic against bad pass defenses all point to the same lesson. 2019 kept rewarding direct attacks on defenses that could not hold up on the perimeter. This roster leaned into that pattern without apology.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Jimmy Garoppolo with Emmanuel Sanders in the San Francisco New Orleans shootout",
+      "secondaryLever": "A cluster of under 10 percent ceiling plays led by Austin Ekeler, A.J. Brown, Emmanuel Sanders, and Steelers defense",
+      "notes": {
+        "rosterConstruction": "2-1-1-1-1-1-1-1",
+        "gameKey": [
+          "SF@NO: 2 (QB game)",
+          "LAC@JAX: 1",
+          "WAS@GB: 1",
+          "MIA@NYJ: 1",
+          "TEN@OAK: 1",
+          "CAR@ATL: 1",
+          "KC@NE: 1",
+          "PIT@ARI: 1"
+        ],
+        "fortyNinersSaintsCluster": [
+          "Jimmy Garoppolo",
+          "Emmanuel Sanders"
+        ],
+        "underTenPercentCore": [
+          "Jimmy Garoppolo",
+          "Austin Ekeler",
+          "A.J. Brown",
+          "Emmanuel Sanders",
+          "Austin Hooper",
+          "Steelers"
+        ],
+        "badDefenseTargets": [
+          "Robby Anderson vs Miami",
+          "A.J. Brown vs Oakland",
+          "Austin Ekeler vs Jacksonville"
+        ],
+        "qbFacedBySteelersDst": "Kyler Murray"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_STACK",
+        "UNDER_10_PERCENT_CEILING_CLUSTER",
+        "BAD_DEFENSE_ATTACK",
+        "DEFENSE_TOUCHDOWN_COMPLETION",
+        "SURVIVED_LOW_TIGHT_END_SCORE"
+      ],
+      "macroStory": "A first place roster driven by a low owned quarterback stack in the San Francisco New Orleans game and supported by a deep collection of underowned ceiling plays across the rest of the slate."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_QB",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Jimmy Garoppolo was the decisive call. The ownership was tiny, the environment was strong, and the passing ceiling was far higher than the field treated it."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_PAYOFF",
+          "MULTI_PATH_SCORING",
+          "LOW_OWNERSHIP"
+        ],
+        "microStory": "Emmanuel Sanders turned the San Francisco stack into a slate breaker through both receiving production and a passing touchdown."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_CEILING",
+          "DUAL_THREAT_BACK",
+          "MATCHUP_PUNISHER"
+        ],
+        "microStory": "Austin Ekeler attacked a soft Jacksonville defense through rushing and receiving volume and gave the roster another underowned elite score."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_CEILING",
+          "DEFENSIVE_TOUCHDOWN",
+          "PRESSURE_ENVIRONMENT"
+        ],
+        "microStory": "Steelers defense supplied the final separation through sacks, interceptions, and a defensive touchdown against a rookie quarterback."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Jimmy Garoppolo",
+          "position": "QB",
+          "team": "SF"
+        },
+        "teammates": [
+          {
+            "name": "Emmanuel Sanders",
+            "position": "WR",
+            "team": "SF"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Robby Anderson",
+          "position": "WR",
+          "team": "NYJ"
+        },
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "A.J. Brown",
+          "position": "WR",
+          "team": "TEN"
+        },
+        "opponent": null
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Steelers",
+          "position": "DST",
+          "team": "PIT",
+          "qbFaced": "Kyler Murray"
+        },
+        "opponent": {
+          "name": "Kyler Murray",
+          "position": "QB",
+          "team": "ARI"
+        }
+      }
+    ]
+  }
+}
