@@ -100,44 +100,6 @@ function toFolderTag(tag: string) {
   return safeUpper(tag).replace(/\s+/g, "_");
 }
 
-function findShowdownImportMatch(year: number, slateKey: string) {
-  const baseDir = path.join(process.cwd(), "data", "import", "nfl", String(year), "showdown");
-  if (!fs.existsSync(baseDir)) return null;
-
-  const folders = fs.readdirSync(baseDir, { withFileTypes: true }).filter((d) => d.isDirectory());
-  for (const folder of folders) {
-    const folderPath = path.join(baseDir, folder.name);
-    const files = fs
-      .readdirSync(folderPath, { withFileTypes: true })
-      .filter((f) => f.isFile() && f.name.toLowerCase().endsWith(".json"));
-
-    for (const file of files) {
-      const filePath = path.join(folderPath, file.name);
-      try {
-        const raw = fs.readFileSync(filePath, "utf8");
-        const data = JSON.parse(raw);
-        const contestKey = String(data?.contest?.siteContestId || data?.slateKey || "").trim();
-        const slateKeyNorm = slateKey.trim();
-        const contestKeyNorm = contestKey.trim();
-        const matches =
-          contestKeyNorm &&
-          slateKeyNorm &&
-          (contestKeyNorm === slateKeyNorm ||
-            contestKeyNorm.includes(slateKeyNorm) ||
-            slateKeyNorm.includes(contestKeyNorm));
-        if (matches) {
-          const base = file.name.slice(0, -5);
-          return { folder: folder.name, base };
-        }
-      } catch {
-        // ignore malformed JSON
-      }
-    }
-  }
-
-  return null;
-}
-
 function normalizeAnalysis(raw: any) {
   if (!raw) return null;
 
@@ -166,14 +128,7 @@ const slateTypeUpper = safeUpper((slate as any)?.slateType);
 const isShowdown = lineupTypeUpper === "SHOWDOWN" || slateTypeUpper === "SHOWDOWN";
 const contest = slate.contest || null;
 const preferredShowdownKey = String(contest?.siteContestId || slateKey || "").trim();
-const showdownImportMatch = isShowdown
-  ? findShowdownImportMatch(Number(season.year), preferredShowdownKey || slateKey)
-  : null;
-const showdownFolder = showdownImportMatch?.folder || slateTagFolder;
-const showdownBase = showdownImportMatch?.base || "";
-const showdownImportPath = showdownImportMatch
-  ? path.join(process.cwd(), "data", "import", "nfl", String(season.year), "showdown", showdownImportMatch.folder, `${showdownImportMatch.base}.json`)
-  : "";
+const showdownFolder = slateTagFolder;
 
 const parsed = parseSlateKey(slateKey);
 const matchupAbbr =
@@ -208,13 +163,6 @@ const sportLower = String(season.sport).toLowerCase();
 
 const screenshotCandidates: string[] = isShowdown
   ? [
-      ...(showdownBase
-        ? [
-            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/${showdownBase}.png`,
-            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/${showdownBase}.jpg`,
-            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/${showdownBase}.jpeg`,
-          ]
-        : []),
       `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.png`,
       `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.jpg`,
       `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.jpeg`,
@@ -235,61 +183,6 @@ const screenshotCandidates: string[] = isShowdown
     ];
 
 const screenshotUrl = pickFirstExistingPublicPath(screenshotCandidates);
-
-const debugShowdownRuntime =
-  isShowdown && Number(season.year) === 2023 && safeUpper(slateTagFolder) === "MNF" && weekNum === 4;
-
-if (debugShowdownRuntime) {
-  const publicDir = path.join(process.cwd(), "public");
-  console.log("[showdown screenshot runtime debug]");
-  screenshotCandidates.forEach((c) => {
-    const rel = c.startsWith("/") ? c.slice(1) : c;
-    const abs = path.join(publicDir, rel);
-    const exists = fs.existsSync(abs);
-    console.log("  candidate:", c);
-    console.log("  abs:", abs);
-    console.log("  exists:", exists);
-  });
-  console.log("  screenshotUrl:", screenshotUrl || "(none)");
-  console.log("  showdownFolder:", showdownFolder || "(none)");
-  console.log("  showdownBase:", showdownBase || "(none)");
-  console.log("  preferredShowdownKey:", preferredShowdownKey || "(none)");
-  console.log("  slateKey:", slateKey || "(none)");
-}
-
-const debugShowdownScreenshot =
-  isShowdown && Number(season.year) === 2024 && safeUpper(slateTagFolder) === "SUPER_BOWL";
-
-if (debugShowdownScreenshot) {
-  console.log("[showdown screenshot debug]");
-  console.log("  matched import JSON path:", showdownImportPath || "(none)");
-  console.log("  matched basename:", showdownBase || "(none)");
-  console.log("  matched folder:", showdownFolder || "(none)");
-  console.log("  candidates:");
-  const publicDir = path.join(process.cwd(), "public");
-  screenshotCandidates.forEach((c, i) => {
-    const rel = c.startsWith("/") ? c.slice(1) : c;
-    const abs = path.join(publicDir, rel);
-    const exists = fs.existsSync(abs);
-    console.log(`    ${i + 1}. ${c} ${exists ? "[exists]" : ""}`);
-  });
-  console.log("  resolved:", screenshotUrl || "(none)");
-  const imageDir = path.join(
-    process.cwd(),
-    "public",
-    "slates",
-    sportLower,
-    String(season.year),
-    "showdown",
-    "SUPER_BOWL"
-  );
-  if (fs.existsSync(imageDir)) {
-    const files = fs.readdirSync(imageDir);
-    console.log("  files in public/slates/nfl/2024/showdown/SUPER_BOWL:", files);
-  } else {
-    console.log("  image dir not found:", imageDir);
-  }
-}
 
 const items = Array.isArray(lineup?.items) ? [...lineup.items] : [];
 items.sort((a, b) => {
