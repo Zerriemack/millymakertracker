@@ -164,7 +164,11 @@ const weekNum = Number(slate.week ?? 0);
 const lineupTypeUpper = safeUpper((slate as any)?.lineupType);
 const slateTypeUpper = safeUpper((slate as any)?.slateType);
 const isShowdown = lineupTypeUpper === "SHOWDOWN" || slateTypeUpper === "SHOWDOWN";
-const showdownImportMatch = isShowdown ? findShowdownImportMatch(Number(season.year), slateKey) : null;
+const contest = slate.contest || null;
+const preferredShowdownKey = String(contest?.siteContestId || slateKey || "").trim();
+const showdownImportMatch = isShowdown
+  ? findShowdownImportMatch(Number(season.year), preferredShowdownKey || slateKey)
+  : null;
 const showdownFolder = showdownImportMatch?.folder || slateTagFolder;
 const showdownBase = showdownImportMatch?.base || "";
 const showdownImportPath = showdownImportMatch
@@ -178,7 +182,6 @@ const matchupAbbr =
 const slateDateIso = slate.slateDate || parsed.datePart || "";
 const slateDateHuman = formatDateHuman(slateDateIso);
 
-const contest = slate.contest || null;
 const winner = contest?.winner || null;
 const lineup = winner?.lineup || null;
 
@@ -216,8 +219,8 @@ const screenshotCandidates: string[] = isShowdown
       `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.jpg`,
       `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}.png`,
       `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}.jpg`,
-      `/slates/${sportLower}/${season.year}/${slateKey}.png`,
-      `/slates/${sportLower}/${season.year}/${slateKey}.jpg`,
+      `/slates/${sportLower}/${season.year}/${preferredShowdownKey || slateKey}.png`,
+      `/slates/${sportLower}/${season.year}/${preferredShowdownKey || slateKey}.jpg`,
     ]
   : [
       `/slates/${sportLower}/${season.year}/classic/week${pad2(weekNum)}.png`,
