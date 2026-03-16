@@ -217,19 +217,45 @@ const screenshotCandidates: string[] = isShowdown
         : []),
       `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.png`,
       `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.jpg`,
+      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.jpeg`,
       `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}.png`,
       `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}.jpg`,
+      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}.jpeg`,
       `/slates/${sportLower}/${season.year}/${preferredShowdownKey || slateKey}.png`,
       `/slates/${sportLower}/${season.year}/${preferredShowdownKey || slateKey}.jpg`,
+      `/slates/${sportLower}/${season.year}/${preferredShowdownKey || slateKey}.jpeg`,
     ]
   : [
       `/slates/${sportLower}/${season.year}/classic/week${pad2(weekNum)}.png`,
       `/slates/${sportLower}/${season.year}/classic/week${pad2(weekNum)}.jpg`,
+      `/slates/${sportLower}/${season.year}/classic/week${pad2(weekNum)}.jpeg`,
       `/slates/${sportLower}/${season.year}/${slateKey}.png`,
       `/slates/${sportLower}/${season.year}/${slateKey}.jpg`,
+      `/slates/${sportLower}/${season.year}/${slateKey}.jpeg`,
     ];
 
 const screenshotUrl = pickFirstExistingPublicPath(screenshotCandidates);
+
+const debugShowdownRuntime =
+  isShowdown && Number(season.year) === 2023 && safeUpper(slateTagFolder) === "MNF" && weekNum === 4;
+
+if (debugShowdownRuntime) {
+  const publicDir = path.join(process.cwd(), "public");
+  console.log("[showdown screenshot runtime debug]");
+  screenshotCandidates.forEach((c) => {
+    const rel = c.startsWith("/") ? c.slice(1) : c;
+    const abs = path.join(publicDir, rel);
+    const exists = fs.existsSync(abs);
+    console.log("  candidate:", c);
+    console.log("  abs:", abs);
+    console.log("  exists:", exists);
+  });
+  console.log("  screenshotUrl:", screenshotUrl || "(none)");
+  console.log("  showdownFolder:", showdownFolder || "(none)");
+  console.log("  showdownBase:", showdownBase || "(none)");
+  console.log("  preferredShowdownKey:", preferredShowdownKey || "(none)");
+  console.log("  slateKey:", slateKey || "(none)");
+}
 
 const debugShowdownScreenshot =
   isShowdown && Number(season.year) === 2024 && safeUpper(slateTagFolder) === "SUPER_BOWL";
