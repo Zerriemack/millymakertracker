@@ -8203,5 +8203,11 @@
 { "sport": "NFL", "name": "CeeDee Lamb", "position": "WR", "teamAbbreviation": "DAL" },
 { "sport": "NFL", "name": "Brandin Cooks", "position": "WR", "teamAbbreviation": "DAL" },
 { "sport": "NFL", "name": "Brandon Aubrey", "position": "K", "teamAbbreviation": "DAL" },
-{ "sport": "NFL", "name": "Gerald Everett", "position": "TE", "teamAbbreviation": "LAC" }
+{ "sport": "NFL", "name": "Gerald Everett", "position": "TE", "teamAbbreviation": "LAC" },
+{ "sport": "NFL", "name": "Jordan Addison", "position": "WR", "teamAbbreviation": "MIN" },
+{ "sport": "NFL", "name": "Christian McCaffrey", "position": "RB", "teamAbbreviation": "SF" },
+{ "sport": "NFL", "name": "Kirk Cousins", "position": "QB", "teamAbbreviation": "MIN" },
+{ "sport": "NFL", "name": "T.J. Hockenson", "position": "TE", "teamAbbreviation": "MIN" },
+{ "sport": "NFL", "name": "Greg Joseph", "position": "K", "teamAbbreviation": "MIN" },
+{ "sport": "NFL", "name": "Brandon Powell", "position": "WR", "teamAbbreviation": "MIN" }
 ]

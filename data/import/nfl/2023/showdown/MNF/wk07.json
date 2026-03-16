@@ -1,0 +1,146 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 7,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-10-23",
+  "slateName": "49ers at Vikings Showdown",
+  "slateTag": "ADDISON CPT WITH VIKINGS ONSLAUGHT AND MCCAFFREY RUNBACK",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown 49ers at Vikings Week 7 MNF",
+    "siteContestId": "NFL_2023_WK07_MNF_SHOWDOWN_2023-10-23_sf_min",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2491667,
+    "totalOwnershipBp": 21390
+  },
+  "winner": {
+    "username": "mythicalrhymer01",
+    "points": 142.57,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 142.57,
+    "totalOwnershipBp": 21390,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Jordan Addison",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 11400,
+        "points": 51.45,
+        "ownershipPercent": 38.7,
+        "rec": 7,
+        "recYds": 123,
+        "recTd": 2,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 12000,
+        "points": 23.6,
+        "ownershipPercent": 57.3,
+        "rec": 3,
+        "recYds": 51,
+        "recTd": 1,
+        "rushTd": 1,
+        "rushYds": 45,
+        "fumblesLost": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kirk Cousins",
+        "position": "QB",
+        "team": "MIN",
+        "salary": 10600,
+        "points": 25.02,
+        "ownershipPercent": 34.8,
+        "passTd": 2,
+        "passYds": 378,
+        "interceptions": 1,
+        "bonus300PassYds": 1,
+        "rushYds": -1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T.J. Hockenson",
+        "position": "TE",
+        "team": "MIN",
+        "salary": 8800,
+        "points": 19.6,
+        "ownershipPercent": 39.3,
+        "rec": 11,
+        "recYds": 86,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Greg Joseph",
+        "position": "K",
+        "team": "MIN",
+        "salary": 4400,
+        "points": 12.0,
+        "ownershipPercent": 16.0,
+        "xpm": 1,
+        "fg0to39": 2,
+        "fg50plus": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brandon Powell",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 2800,
+        "points": 10.9,
+        "ownershipPercent": 27.8,
+        "rec": 4,
+        "recYds": 64,
+        "rushYds": 5,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "SF"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by taking a firm stand that Minnesota passing production would be far more concentrated and far more tournament relevant than the field expected against San Francisco. Jordan Addison captain was the central decision. The field respected Addison, but captaining him at 38.7 percent while bypassing Brock Purdy entirely and limiting San Francisco exposure to Christian McCaffrey created a very specific bet on how the game would actually distribute fantasy points. That call proved right because Addison captured the two highest value Minnesota receiving events and added the 100 yard bonus.\n\nThe lineup then built around that captain outcome with a heavy Minnesota pass game onslaught. Kirk Cousins was necessary because 378 passing yards and two passing touchdowns meant Minnesota offense could not be reduced to a one off captain hit. T.J. Hockenson added reception volume without needing a touchdown, which is important because it allowed the build to capture the full width of the Vikings passing environment rather than chase only touchdown variance. Brandon Powell was the lower salary release valve, but he was not dead salary filler. His 64 receiving yards and 5 rushing yards gave the lineup a fourth Minnesota pathway at a price point the field had trouble treating as part of a serious ceiling build.\n\nGreg Joseph completed the Minnesota side by covering the drives that produced points without another touchdown. That matters in a 22 point team total because a full onslaught can still fail if every roster spot requires a touchdown. Joseph let the lineup monetize imperfect red zone sequences while still staying aligned with a Minnesota control script.\n\nThe single San Francisco runback was Christian McCaffrey, which was the cleanest way to keep exposure to elite 49ers scoring without overcommitting to a passing environment that never fully broke open. McCaffrey still delivered both a rushing touchdown and a receiving touchdown, but San Francisco ancillary pieces did not combine in a way that forced multiple 49ers into the optimal build. The lineup understood that one opposing superstar could be enough when the winning side owned most of the volume and most of the pass distribution.",
+    "uniquenessNotes": "The sharpest feature in the build was not merely Jordan Addison at captain. It was Jordan Addison captain inside a five man Minnesota onslaught against a San Francisco team the field was still inclined to treat as the stronger offense. Many rosters were willing to captain Addison as a leverage response to Justin Jefferson being out. Fewer were willing to let Minnesota occupy five of six slots while leaving off Brock Purdy and every other 49ers pass catcher.\n\nThe salary structure also mattered. Using the full 50000 did not create uniqueness through salary left, so the lineup had to separate through structure instead. It did that by identifying where Minnesota scoring would cluster. Cousins, Addison, Hockenson, Joseph, and Powell all scored through different branches of the same team success story. That made the lineup more stable than a thinner build asking two or three cheap Vikings to spike on isolated plays.\n\nDuplication clearly held the lineup back from the top uniqueness grade. The reduced first place payout points to a split outcome, which means the structural read was sharp but not rare enough to stand alone. That is why the final grade lands at B. The captain was correct, Greg Joseph provided useful sub 20 percent leverage, and the no Purdy construction gave the lineup real tension. Even so, full salary usage and the apparent duplication outcome keep it out of the highest tier.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Jordan Addison",
+          "position": "WR",
+          "team": "MIN"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Wide receiver captain with a five man Vikings onslaught, one opposing superstar runback, no Brock Purdy, and no second 49ers pass catcher",
+        "includesQBs": false
+      },
+      "primaryLever": "Jordan Addison captain captured the highest value Minnesota receiving outcome while the build pressed into a five man Vikings scoring concentration thesis",
+      "secondaryLever": "The lineup used Christian McCaffrey as the only San Francisco runback and omitted Brock Purdy, forcing the slate through Minnesota pass concentration rather than balanced game stacking"
+    }
+  }
+}
