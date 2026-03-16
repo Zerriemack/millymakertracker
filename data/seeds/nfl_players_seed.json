@@ -8191,5 +8191,11 @@
 { "sport": "NFL", "name": "Jets", "position": "DST", "teamAbbreviation": "NYJ" },
 { "sport": "NFL", "name": "Jeff Wilson Jr.", "position": "RB", "teamAbbreviation": "MIA" },
 { "sport": "NFL", "name": "Tim Boyle", "position": "QB", "teamAbbreviation": "NYJ" },
-{ "sport": "NFL", "name": "Tua Tagovailoa", "position": "QB", "teamAbbreviation": "MIA" }
+{ "sport": "NFL", "name": "Tua Tagovailoa", "position": "QB", "teamAbbreviation": "MIA" },
+{ "sport": "NFL", "name": "Seahawks", "position": "DST", "teamAbbreviation": "SEA" },
+{ "sport": "NFL", "name": "Kenneth Walker III", "position": "RB", "teamAbbreviation": "SEA" },
+{ "sport": "NFL", "name": "Geno Smith", "position": "QB", "teamAbbreviation": "SEA" },
+{ "sport": "NFL", "name": "Daniel Jones", "position": "QB", "teamAbbreviation": "NYG" },
+{ "sport": "NFL", "name": "DK Metcalf", "position": "WR", "teamAbbreviation": "SEA" },
+{ "sport": "NFL", "name": "Wan'Dale Robinson", "position": "WR", "teamAbbreviation": "NYG" }
 ]

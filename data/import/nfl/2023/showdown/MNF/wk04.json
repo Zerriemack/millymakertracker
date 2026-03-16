@@ -1,0 +1,146 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 4,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-10-02",
+  "slateName": "MNF Showdown",
+  "slateTag": "SEAHAWKS DST CPT WITH DANIEL JONES ON THE OTHER SIDE",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "MNF Showdown",
+    "siteContestId": "NFL_2023_WK04_MNF_SHOWDOWN_2023-10-02_seahawks_giants",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 4040322,
+    "totalOwnershipBp": 31880
+  },
+  "winner": {
+    "username": "meaganjoy",
+    "points": 101.92,
+    "maxEntries": 140
+  },
+  "lineup": {
+    "salaryUsed": 48800,
+    "totalPoints": 101.92,
+    "totalOwnershipBp": 31880,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Seahawks",
+        "position": "DST",
+        "team": "SEA",
+        "salary": 6600,
+        "points": 45.0,
+        "ownershipPercent": 1.8,
+        "sacks": 11,
+        "interceptionsDst": 2,
+        "defFumbleRecoveries": 1,
+        "defTd": 1,
+        "pointsAllowed": 6,
+        "qbFaced": "Daniel Jones",
+        "qbFacedArchetype": "BRIDGE",
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kenneth Walker III",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 10800,
+        "points": 13.9,
+        "ownershipPercent": 64.9,
+        "rushTdRb": 1,
+        "rushYdsRb": 79,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Geno Smith",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 10000,
+        "points": 9.2,
+        "ownershipPercent": 75.1,
+        "passTd": 1,
+        "passYds": 110,
+        "rec": 1,
+        "recYds": -2,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Daniel Jones",
+        "position": "QB",
+        "team": "NYG",
+        "salary": 9600,
+        "points": 11.72,
+        "ownershipPercent": 78.5,
+        "passYds": 203,
+        "rushYds": 66,
+        "interceptions": 2,
+        "fumblesLost": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DK Metcalf",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 8800,
+        "points": 12.4,
+        "ownershipPercent": 66.0,
+        "rec": 3,
+        "recYds": 34,
+        "recTd": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Wan'Dale Robinson",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 3000,
+        "points": 9.7,
+        "ownershipPercent": 21.8,
+        "rec": 5,
+        "recYds": 40,
+        "rushYds": 7,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "SEA"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it leaned fully into the idea that one defense could own the slate while the opposing quarterback still remained viable enough to survive optimal construction. Seattle defense at captain was the entire wager. Eleven sacks, two interceptions, a fumble recovery, a defensive touchdown, and only six points allowed turned one roster spot into the dominant scoring event of the game. At 1.8 percent captain ownership, that outcome broke the slate immediately.\n\nThe interesting part is what came next. This was not a pure anti-Daniel Jones build. Jones still made the winning lineup because quarterback rushing and raw volume can coexist with a catastrophic real-life performance. He produced 203 passing yards and 66 rushing yards even while taking sacks, throwing interceptions, and losing a fumble. That is the showdown tension many lineups miss. A defense can be the slate winner and the opposing quarterback can still stay alive because the same broken game environment that feeds the defense also feeds quarterback dropback volume and scrambling.\n\nThe Seattle side stayed compact. Kenneth Walker III and DK Metcalf gave the roster direct access to the touchdown equity Seattle actually converted, while Geno Smith functioned more as a control piece than a ceiling driver. That matters because the build did not need a huge Geno game once Seattle defense absorbed so much of the scoring. It needed enough Seattle offense to cover the points that were not created by the defense.\n\nWan'Dale Robinson was the final structural hinge. He was not a full game-stack bring-back in the expensive sense. He was a cheap access point to the New York passing volume created by game script. That let the lineup keep 1,200 in salary unused, which reduced duplication without sacrificing the core thesis. The roster did not try to tell six different stories. It told one strong story and then made sure each remaining slot was consistent with it.",
+    "uniquenessNotes": "The slate-breaking choice was Seahawks defense at captain, but the sharper decision was refusing to turn that into a zero Giants construction. Many lineups with a defense captain remove the opposing quarterback because it feels cleaner. This lineup accepted the discomfort and used Daniel Jones anyway. That is where the build separated from a simpler defensive onslaught script.\n\nThe ownership shape was also unusual in a productive way. The captain was extremely low owned, but the lineup did not force low ownership everywhere else. Geno Smith, Daniel Jones, Kenneth Walker III, and DK Metcalf were all common enough pieces. That balance matters in showdown. Once a 1.8 percent captain gets there for 45 points, the rest of the lineup can be more stable and still win. Wan'Dale Robinson then supplied enough secondary differentiation while also matching the actual game flow.\n\nThe final grade lands at B. The captain choice was elite, the opposing quarterback with captain defense construction carried real tension, and the salary left helped. It stops short of the top range because the flex shell was otherwise fairly common and the winner was part of a duplicated outcome rather than a truly rare one.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Seahawks",
+          "position": "DST",
+          "team": "SEA"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Defense captain eruption with opposing quarterback retained, Seattle touchdown coverage through running back and primary receiver, and cheap Giants volume bring-back",
+        "includesQBs": true
+      },
+      "primaryLever": "Seahawks defense captain delivered an overwhelming event-driven score at 1.8 percent captain ownership",
+      "secondaryLever": "Daniel Jones remained in the winning build opposite the captain defense while Wan'Dale Robinson provided low-cost game-script access and 1,200 salary was left unused"
+    }
+  }
+}
