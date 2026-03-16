@@ -1,0 +1,333 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 8,
+  "slateType": "MAIN",
+  "slateDate": "2017-10-29T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 8",
+  "slateTag": "RUSSELL WILSON GAME ONSLAUGHT, HOU SEA SHOOTOUT, COWBOYS DST PUNISHES COUSINS",
+  "slateGroup": "6-2-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK08_MAIN_2017-10-29T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8930
+  },
+  "winner": {
+    "username": "Cubsfan333",
+    "points": 247.88,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 247.88,
+    "totalOwnershipBp": 8930,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Russell Wilson",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 6500,
+        "points": 39.08,
+        "ownershipPercent": 11.1,
+        "passTd": 4,
+        "passYds": 452,
+        "rushYds": 30,
+        "interceptions": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 9200,
+        "points": 30.4,
+        "ownershipPercent": 16.0,
+        "rushYdsRb": 150,
+        "rushTdRb": 2,
+        "recRb": 4,
+        "recYdsRb": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "LeSean McCoy",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 8700,
+        "points": 32.3,
+        "ownershipPercent": 26.2,
+        "rushYdsRb": 151,
+        "rushTdRb": 1,
+        "recRb": 6,
+        "recYdsRb": 22,
+        "recTdRb": 1,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Will Fuller V",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 5300,
+        "points": 32.5,
+        "ownershipPercent": 7.4,
+        "rec": 5,
+        "recYds": 125,
+        "recTd": 2,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyler Lockett",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 4100,
+        "points": 20.9,
+        "ownershipPercent": 4.7,
+        "rec": 6,
+        "recYds": 121,
+        "rushYds": 2,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Paul Richardson",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 4000,
+        "points": 31.5,
+        "ownershipPercent": 3.7,
+        "rec": 6,
+        "recYds": 105,
+        "recTd": 2,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Jimmy Graham",
+        "position": "TE",
+        "team": "SEA",
+        "salary": 4600,
+        "points": 19.9,
+        "ownershipPercent": 8.4,
+        "rec": 4,
+        "recYds": 39,
+        "recTd": 2,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Lamar Miller",
+        "position": "RB",
+        "team": "HOU",
+        "salary": 5200,
+        "points": 22.3,
+        "ownershipPercent": 3.8,
+        "rushYdsRb": 54,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 19,
+        "recTdRb": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cowboys",
+        "position": "DST",
+        "team": "DAL",
+        "salary": 2300,
+        "points": 19,
+        "ownershipPercent": 8.0,
+        "sacks": 4,
+        "takeaways": 3,
+        "qbFaced": "Kirk Cousins",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is an all-in position on one game environment, but it is not a random onslaught. It is a very specific read on how Houston at Seattle would score. Russell Wilson is used as the central engine, then the roster captures four of the five non quarterback skill players who scored touchdowns in that game. Will Fuller V brings back the Houston side with two touchdowns and 125 yards. Tyler Lockett, Paul Richardson, and Jimmy Graham split Seattle's touchdown distribution, while Lamar Miller handles the Houston backfield scoring. The build does not need to identify one narrow passing tree. It absorbs nearly the entire fantasy output of the game.\n\nThe score distribution explains why this roster won. Wilson throws for 452 yards and four touchdowns. Fuller scores twice on the other side. Richardson scores twice. Graham scores twice. Lockett clears 100 receiving yards. Lamar Miller adds a rushing touchdown and a receiving touchdown. Once the game became the slate's central scoring hub, this roster was positioned to collect nearly every meaningful event.\n\nThe second layer is restraint. Instead of overextending into fragile one offs, the lineup uses Ezekiel Elliott and LeSean McCoy as raw point anchors from separate games. Both were expensive, both had secure volume, and both delivered ceiling scores. That gave the game onslaught room to miss on one or two details and still survive, although in this case it barely missed anything.\n\nDallas defense against Washington is the final push. This was not a build that needed a minimum salary defense to stumble into ten points. It found a cheap defense that created short field value through sacks, takeaways, and a defensive touchdown. Facing Kirk Cousins, an established high volume starter, makes the choice more aggressive than a routine defense against an obvious backup. The lineup did not hunt weakness at quarterback. It hunted volatility in a divisional game and got paid for it.",
+    "uniquenessNotes": "The sharpest part of the build is the six man game allocation in Houston at Seattle. Many rosters would have treated Wilson plus one or two pass catchers as enough exposure. This lineup takes the stronger stance that the game can carry the slate at multiple positions at once. That read turned out correct because touchdowns were fragmented across Seattle pass catchers rather than concentrated in one obvious teammate. A thinner stack would have missed too much.\n\nThere is also structure inside the chaos. Wilson is paired with three Seattle pass catchers, but the bring backs are selected with purpose. Fuller captures Houston's explosive perimeter scoring. Lamar Miller captures the backfield scoring, including the receiving touchdown. Together they cover two different Houston scoring channels. The lineup is not guessing at one script. It is covering the most likely ways Houston could keep pace.\n\nElliott and McCoy are important because they prevent the roster from becoming too dependent on pure variance. Both were expensive and popular enough to keep the lineup connected to the slate's strongest running back outcomes. The lower owned leverage comes from Richardson, Lockett, and Miller. Dallas defense then adds a non obvious separator because it posts 19 points against a quarterback many players would not target with defense.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Russell Wilson game onslaught with three Seattle pass catchers and two Houston bring backs",
+      "secondaryLever": "Ezekiel Elliott and LeSean McCoy as raw point anchors plus Cowboys defense against Kirk Cousins",
+      "notes": {
+        "rosterConstruction": "6-2-1",
+        "gameKey": [
+          "HOU@SEA: 6 (QB game)",
+          "DAL@WAS: 2",
+          "OAK@BUF: 1"
+        ],
+        "houstonSeattleCluster": [
+          "Russell Wilson",
+          "Will Fuller V",
+          "Tyler Lockett",
+          "Paul Richardson",
+          "Jimmy Graham",
+          "Lamar Miller"
+        ],
+        "runningBackAnchors": [
+          "Ezekiel Elliott",
+          "LeSean McCoy"
+        ],
+        "cheapDefenseCeiling": "Cowboys",
+        "qbFacedByCowboysDst": "Kirk Cousins"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_GAME_ONSLAUGHT",
+        "QB_TRIPLE_STACK",
+        "DOUBLE_BRING_BACK",
+        "DOUBLE_ELITE_RB_ANCHOR",
+        "CHEAP_DST_AGAINST_STABLE_QB"
+      ],
+      "macroStory": "A first place roster built on the conviction that Houston at Seattle would produce enough touchdowns for a six man onslaught, then stabilized by two elite volume running backs and finished by a cheap Dallas defense ceiling against Washington."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "YARDAGE_BONUS",
+          "ONSLAUGHT_HUB"
+        ],
+        "microStory": "Russell Wilson is the center of the roster and the center of the slate. His 452 passing yards and four touchdowns create the environment that makes a six player game allocation viable."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 2,
+        "roleTags": [
+          "TOUCHDOWN_FRAGMENT_CAPTURE",
+          "LOWER_OWNERSHIP_LEVER",
+          "DOUBLE_SPIKE"
+        ],
+        "microStory": "Paul Richardson matters because he captures two of Wilson's touchdowns at modest ownership and modest salary, which allows the lineup to stay heavy in the game without collapsing salary structure."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "DUAL_THREAT_RB",
+          "POPULAR_CEILING"
+        ],
+        "microStory": "LeSean McCoy gives the roster one of the safest ceiling paths on the slate through both rushing and receiving. He keeps the lineup from becoming fully dependent on one game."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_SALARY_LEVER",
+          "DEFENSIVE_TOUCHDOWN",
+          "AGGRESSIVE_QB_TARGET"
+        ],
+        "microStory": "Dallas defense is a pressure point few lineups would treat as a true tournament winner against Kirk Cousins. The sacks, takeaways, and touchdown turn a cheap filler slot into a slate level contributor."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Russell Wilson",
+          "position": "QB",
+          "team": "SEA"
+        },
+        "teammates": [
+          {
+            "name": "Tyler Lockett",
+            "position": "WR",
+            "team": "SEA"
+          },
+          {
+            "name": "Paul Richardson",
+            "position": "WR",
+            "team": "SEA"
+          },
+          {
+            "name": "Jimmy Graham",
+            "position": "TE",
+            "team": "SEA"
+          }
+        ],
+        "opponent": {
+          "name": "Will Fuller V",
+          "position": "WR",
+          "team": "HOU"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Will Fuller V",
+          "position": "WR",
+          "team": "HOU"
+        },
+        "opponent": {
+          "name": "Lamar Miller",
+          "position": "RB",
+          "team": "HOU"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Ezekiel Elliott",
+          "position": "RB",
+          "team": "DAL"
+        },
+        "opponent": {
+          "name": "Cowboys",
+          "position": "DST",
+          "team": "DAL"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Cowboys",
+          "position": "DST",
+          "team": "DAL",
+          "qbFaced": "Kirk Cousins"
+        },
+        "opponent": {
+          "name": "Kirk Cousins",
+          "position": "QB",
+          "team": "WAS"
+        }
+      }
+    ]
+  }
+}

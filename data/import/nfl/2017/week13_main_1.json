@@ -1,0 +1,335 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 13,
+  "slateType": "MAIN",
+  "slateDate": "2017-12-03T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 13",
+  "slateTag": "ALEX SMITH WITH DOUBLE JETS BRING BACK, KENYAN DRAKE BREAKOUT WITH MIAMI DST, TYREEK HILL NUCLEAR GAME",
+  "slateGroup": "5-2-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK13_MAIN_2017-12-03T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8730
+  },
+  "winner": {
+    "username": "Chess_is_ok",
+    "points": 241.14,
+    "maxEntries": 104
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 241.14,
+    "totalOwnershipBp": 8730,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Alex Smith",
+        "position": "QB",
+        "team": "KC",
+        "salary": 5900,
+        "points": 40.64,
+        "ownershipPercent": 1.7,
+        "passTd": 4,
+        "passYds": 366,
+        "rushYds": 70,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Kenyan Drake",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 4900,
+        "points": 26.1,
+        "ownershipPercent": 11.6,
+        "rushTdRb": 1,
+        "rushYdsRb": 120,
+        "recRb": 3,
+        "recYdsRb": 21,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Todd Gurley",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 8200,
+        "points": 21.8,
+        "ownershipPercent": 20.7,
+        "rushYdsRb": 74,
+        "recRb": 6,
+        "recYdsRb": 84,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Robby Anderson",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 6300,
+        "points": 22.4,
+        "ownershipPercent": 20.4,
+        "rec": 8,
+        "recYds": 107,
+        "rushYds": 7,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "KC",
+        "salary": 6700,
+        "points": 39.5,
+        "ownershipPercent": 4.6,
+        "rec": 6,
+        "recYds": 185,
+        "recTd": 2,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jermaine Kearse",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 4300,
+        "points": 27.7,
+        "ownershipPercent": 6.7,
+        "rec": 9,
+        "recYds": 157,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 7000,
+        "points": 25.4,
+        "ownershipPercent": 7.7,
+        "rec": 4,
+        "recYds": 94,
+        "recTd": 2,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Seth Roberts",
+        "position": "WR",
+        "team": "OAK",
+        "salary": 3700,
+        "points": 9.6,
+        "ownershipPercent": 11.6,
+        "rec": 5,
+        "recYds": 46,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Dolphins",
+        "position": "DST",
+        "team": "MIA",
+        "salary": 2900,
+        "points": 28,
+        "ownershipPercent": 2.3,
+        "sacks": 3,
+        "takeaways": 3,
+        "defensiveTd": 1,
+        "safeties": 2,
+        "blockedKicks": 1,
+        "qbFaced": "Trevor Siemian",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "DEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster is built around one game and one read. Kansas City at New York had hidden tournament value because Alex Smith had lost his premium tag by late season, yet his path to a slate winning score still existed when game flow forced him back into aggression. The lineup captures five pieces from this game, with Smith paired to Tyreek Hill and Travis Kelce, then brought back with Robby Anderson and Jermaine Kearse. This is a full game environment thesis without forcing a running back from either side. The build assumes passing volume, concentrated target distribution, and enough resistance from the Jets offense to keep Smith active for four quarters.\n\nTyreek Hill is the detonation point. His 185 receiving yards and two touchdowns turn a low owned quarterback into a first place quarterback. Kelce gives the stack a second layer of touchdown access, which matters because it prevents Hill from carrying all Kansas City touchdown concentration by himself. On the other side, Anderson and Kearse both clear 100 yards, which validates the central game script read. This is a rare case where a quarterback stack plus two opposing pass catchers captures nearly every meaningful fantasy event from one game.\n\nThe second pillar comes from Miami. Kenyan Drake and the Dolphins defense work together through field position, pace, and offensive control against Trevor Siemian. Miami does not need extreme ownership discount here because the defense score is enormous at 2.3 percent. Two safeties, a defensive touchdown, and three interceptions create one of those outlier defense outcomes which can decide the entire slate. Drake then supplies the offensive side of team control with 120 rushing yards, receiving usage, and a touchdown.\n\nTodd Gurley provides premium raw points without forcing fragile salary relief elsewhere. Seth Roberts is the smallest score in the build, yet his 3,700 salary keeps the five man KC NYJ game cluster and the Miami mini in place. This lineup wins through concentration. It does not scatter exposure across the slate. It identifies one passing game capable of supplying a huge share of first place points, then pairs it with a low owned defense eruption and a strong volume back from the same team environment.",
+    "uniquenessNotes": "The first separation point is Alex Smith at 1.7 percent. In 2017, many tournament builds still treated Smith as a lower ceiling distributor unless matchup and efficiency aligned perfectly. This lineup leans into a week where his rushing contribution and downfield connection with Hill reopened a ceiling outcome few entries captured.\n\nThe second separation point is roster shape. A 5-2-1-1 build is aggressive for Classic because five roster spots are tied to one passing environment. Most entries stop at a quarterback with one teammate and one bring back. This winner goes further and makes a stronger claim. If Kansas City against New York turns into a pass driven shootout with narrow target concentration, first place can live inside a dense cluster rather than a balanced spread.\n\nThe third separation point is Miami defense at 2.3 percent. Defense ownership usually compresses around obvious pressure spots. Here, the roster finds a backup quarterback target in Trevor Siemian and gains the full reward when the game breaks apart. Once Dolphins defense posts 28 points, Seth Roberts no longer needs to do more than hold salary structure together.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Alex Smith with Tyreek Hill and Travis Kelce plus two Jets pass catchers in the same game",
+      "secondaryLever": "Kenyan Drake paired with Dolphins defense against Trevor Siemian",
+      "notes": {
+        "rosterConstruction": "5-2-1-1",
+        "gameKey": [
+          "KC@NYJ: 5 (QB game)",
+          "DEN@MIA: 2",
+          "LAR@ARI: 1",
+          "NYG@OAK: 1"
+        ],
+        "chiefsJetsCluster": [
+          "Alex Smith",
+          "Tyreek Hill",
+          "Travis Kelce",
+          "Robby Anderson",
+          "Jermaine Kearse"
+        ],
+        "dolphinsBroncosMini": [
+          "Kenyan Drake",
+          "Dolphins"
+        ],
+        "premiumRawPoints": "Todd Gurley",
+        "salaryReliefConnector": "Seth Roberts",
+        "qbFacedByDolphinsDst": "Trevor Siemian"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_GAME_PASSING_CLUSTER",
+        "DOUBLE_OPPONENT_BRING_BACK",
+        "LOW_OWNERSHIP_QB_CEILING",
+        "RB_DST_TEAM_CONTROL_PAIR",
+        "LOW_OWNERSHIP_DST_ERUPTION"
+      ],
+      "macroStory": "A first place lineup built from an extreme concentration bet on Chiefs Jets passing volume, then finished with a Miami team control mini where Kenyan Drake and the Dolphins defense captured both offensive and defensive scoring paths against a backup quarterback."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_CEILING",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Alex Smith is the hinge point for the entire lineup. His rushing yards push the score from strong pocket production into slate winning territory, and every major KC NYJ receiver outcome in the build runs through him."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "DEEP_THREAT_CEILING",
+          "TOUCHDOWN_CONCENTRATION"
+        ],
+        "microStory": "Tyreek Hill supplies the explosive layer. Once he reaches 185 yards and two touchdowns, Smith no longer needs perfect distribution across multiple teammates for the stack to win."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_NUCLEAR_SCORE",
+          "TURNOVER_ENGINE",
+          "GAME_SCRIPT_ACCELERATOR"
+        ],
+        "microStory": "Miami defense turns a solid roster into an untouchable roster. At 2.3 percent, a 28 point defense score creates separation few lineups can recover from."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "TEAM_CONTROL_PAIR",
+          "RUSHING_VOLUME",
+          "OFFENSE_DEFENSE_LINK"
+        ],
+        "microStory": "Kenyan Drake complements the defense by capturing Miami's offensive control. His score makes the Dolphins game environment worth two roster spots rather than a one off defense chase."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "DOUBLE_BRING_BACK",
+          "TARGET_VOLUME",
+          "GAME_ENVIRONMENT_VALIDATION"
+        ],
+        "microStory": "Robby Anderson and Jermaine Kearse together confirm the game thesis. New York pushes back through the air, which keeps Kansas City's passing offense active and raises the ceiling for every piece tied to Alex Smith."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Alex Smith",
+          "position": "QB",
+          "team": "KC"
+        },
+        "teammates": [
+          {
+            "name": "Tyreek Hill",
+            "position": "WR",
+            "team": "KC"
+          },
+          {
+            "name": "Travis Kelce",
+            "position": "TE",
+            "team": "KC"
+          }
+        ],
+        "opponent": {
+          "name": "Robby Anderson",
+          "position": "WR",
+          "team": "NYJ"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Robby Anderson",
+          "position": "WR",
+          "team": "NYJ"
+        },
+        "opponent": {
+          "name": "Jermaine Kearse",
+          "position": "WR",
+          "team": "NYJ"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Kenyan Drake",
+          "position": "RB",
+          "team": "MIA"
+        },
+        "opponent": {
+          "name": "Dolphins",
+          "position": "DST",
+          "team": "MIA",
+          "qbFaced": "Trevor Siemian"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Dolphins",
+          "position": "DST",
+          "team": "MIA",
+          "qbFaced": "Trevor Siemian"
+        },
+        "opponent": {
+          "name": "Trevor Siemian",
+          "position": "QB",
+          "team": "DEN"
+        }
+      }
+    ]
+  }
+}

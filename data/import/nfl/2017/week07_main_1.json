@@ -1,0 +1,307 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 7,
+  "slateType": "MAIN",
+  "slateDate": "2017-10-22T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 7",
+  "slateTag": "RUSSELL WILSON DOUBLE WITH BALDWIN, EZEKIEL ELLIOTT CEILING, BEARS DST SCORES TWICE",
+  "slateGroup": "2-1-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK07_MAIN_2017-10-22T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 9760
+  },
+  "winner": {
+    "username": "ROB2622",
+    "points": 229.66,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 229.66,
+    "totalOwnershipBp": 9760,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Russell Wilson",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 6400,
+        "points": 29.36,
+        "ownershipPercent": 7.0,
+        "passTd": 3,
+        "passYds": 334,
+        "rushYds": 10,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 9000,
+        "points": 43.9,
+        "ownershipPercent": 23.0,
+        "rushYdsRb": 147,
+        "rushTdRb": 2,
+        "recRb": 1,
+        "recYdsRb": 72,
+        "recTdRb": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Mark Ingram",
+        "position": "RB",
+        "team": "NO",
+        "salary": 6700,
+        "points": 24.0,
+        "ownershipPercent": 16.1,
+        "rushYdsRb": 105,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 5,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Doug Baldwin",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 6600,
+        "points": 24.2,
+        "ownershipPercent": 6.7,
+        "rec": 9,
+        "recYds": 92,
+        "recTd": 1,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Marqise Lee",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 4300,
+        "points": 11.2,
+        "ownershipPercent": 4.5,
+        "rec": 4,
+        "recYds": 72,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Kenny Stills",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 4400,
+        "points": 26.5,
+        "ownershipPercent": 1.6,
+        "rec": 6,
+        "recYds": 85,
+        "recTd": 2,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Tyler Kroft",
+        "position": "TE",
+        "team": "CIN",
+        "salary": 3000,
+        "points": 12.3,
+        "ownershipPercent": 2.4,
+        "rec": 4,
+        "recYds": 23,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "LeSean McCoy",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 7400,
+        "points": 28.2,
+        "ownershipPercent": 30.2,
+        "rushYdsRb": 91,
+        "rushTdRb": 2,
+        "recRb": 5,
+        "recYdsRb": 31,
+        "fumblesLost": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bears",
+        "position": "DST",
+        "team": "CHI",
+        "salary": 2200,
+        "points": 30,
+        "ownershipPercent": 6.1,
+        "sacks": 5,
+        "takeaways": 3,
+        "qbFaced": "Cam Newton",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "The winning core starts with Russell Wilson and Doug Baldwin in a road matchup against the Giants. Seattle scores 24 points, which does not look slate breaking at team level, yet Wilson creates enough on his own through passing volume, three touchdowns, and rushing add on points to make the quarterback slot highly efficient. Baldwin gives him direct access to one touchdown and nine catches, so the stack does not need a full game eruption. It needs concentrated production, and it gets it.\n\nFrom there, the roster pivots into raw ceiling at running back. Ezekiel Elliott posts the slate defining score with 147 rushing yards, 72 receiving yards, and three total touchdowns. Mark Ingram adds another 24 points in a separate game, which means the roster does not rely on one narrow script. It carries one nuclear outcome plus another upper tier running back score.\n\nThe swing comes from Kenny Stills. At 4,400 and 1.6 percent ownership, two touchdowns from a low salary receiver change the shape of the tournament. Tyler Kroft at 3,000 gives the lineup a second inexpensive touchdown source, which keeps salary available for Elliott and McCoy. LeSean McCoy then delivers a premium score from the flex spot, even with a lost fumble, because his rushing role and touchdown share remain intact.\n\nChicago defense is the final separator. A 2,200 defense facing Cam Newton would not project as a field favorite in most roster sets. Two defensive touchdowns change the slate. This was not a spot built on chasing a weak opposing quarterback. It was a bet on a volatile game producing a defensive eruption at minimal salary.",
+    "uniquenessNotes": "The lineup wins through distribution, not through one oversized onslaught stack. Wilson with Baldwin gives direct correlation in the quarterback slot, then the rest of the roster spreads across seven additional games. That creates room to capture isolated ceiling events without forcing extra teammates from spots where volume was less certain.\n\nElliott and McCoy carry 23.0 percent and 30.2 percent ownership, so the roster is willing to absorb popular running back scores when usage and touchdown paths are hard to replace. Separation comes from where salary relief lands. Stills at 1.6 percent and Kroft at 2.4 percent both score touchdowns. Marqise Lee does not post a tournament winning score on his own, yet 11.2 points at 4,300 keeps the build from collapsing. Chicago defense then supplies a first place defensive outcome at 6.1 percent ownership.\n\nThere is also an important structural point. The quarterback stack remains compact. Wilson is paired with one receiver instead of a forced double. That decision leaves room for two expensive running backs plus McCoy in flex. The build keeps access to three different backfield ceilings rather than overcommitting salary to one passing environment.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Russell Wilson paired with Doug Baldwin, then ceiling running backs led by Ezekiel Elliott",
+      "secondaryLever": "Kenny Stills and Tyler Kroft as low salary touchdown sources plus Bears defense scoring twice against Cam Newton",
+      "notes": {
+        "rosterConstruction": "2-1-1-1-1-1-1-1",
+        "gameKey": [
+          "SEA@NYG: 2 (QB game)",
+          "DAL@SF: 1",
+          "NO@GB: 1",
+          "JAX@IND: 1",
+          "NYJ@MIA: 1",
+          "CIN@PIT: 1",
+          "TB@BUF: 1",
+          "CAR@CHI: 1"
+        ],
+        "qbStack": [
+          "Russell Wilson",
+          "Doug Baldwin"
+        ],
+        "runningBackCeilings": [
+          "Ezekiel Elliott",
+          "Mark Ingram",
+          "LeSean McCoy"
+        ],
+        "salaryReliefTouchdowns": [
+          "Kenny Stills",
+          "Tyler Kroft"
+        ],
+        "qbFacedByBearsDst": "Cam Newton"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "COMPACT_QB_WR_STACK",
+        "TRIPLE_RB_RAW_POINTS_BUILD",
+        "LOW_OWNERSHIP_WR_TOUCHDOWN_SPIKE",
+        "SALARY_RELIEF_TE_TOUCHDOWN",
+        "DST_TOUCHDOWN_OUTLIER"
+      ],
+      "macroStory": "A compact Seattle passing stack created quarterback correlation, three running back ceilings supplied raw points, and low salary touchdowns from Kenny Stills, Tyler Kroft, and the Bears defense pushed the lineup past the field."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "DUAL_THREAT_SCORING",
+          "COMPACT_STACK_HUB"
+        ],
+        "microStory": "Russell Wilson gives the lineup efficient quarterback scoring without requiring a full Seattle team avalanche. His rushing production and passing bonus lift the floor, while Baldwin captures one touchdown and nine receptions."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "THREE_TOUCHDOWN_CEILING",
+          "POPULAR_RAW_POINTS"
+        ],
+        "microStory": "Ezekiel Elliott is the roster's highest leverage spend. He produces through rushing, receiving, and touchdowns, which means his score is difficult for non Elliott builds to match."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 2,
+        "roleTags": [
+          "LOW_OWNERSHIP_BREAKER",
+          "DOUBLE_TOUCHDOWN_SPIKE",
+          "SALARY_RELIEF"
+        ],
+        "microStory": "Kenny Stills turns a cheap receiver slot into a ceiling slot. At 1.6 percent ownership, two touchdowns create the gap between a strong roster and a first place roster."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "OUTLIER_DEFENSIVE_SCORE",
+          "LOW_SALARY_CEILING",
+          "TURNOVER_TOUCHDOWN_PATH"
+        ],
+        "microStory": "Chicago defense provides the rare tournament winning defensive result against a franchise quarterback. Five sacks, three takeaways, and two defensive touchdowns give the lineup access to points the field rarely captures from a cheap defense."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Russell Wilson",
+          "position": "QB",
+          "team": "SEA"
+        },
+        "teammates": [
+          {
+            "name": "Doug Baldwin",
+            "position": "WR",
+            "team": "SEA"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Russell Wilson",
+          "position": "QB",
+          "team": "SEA"
+        },
+        "opponent": {
+          "name": "Doug Baldwin",
+          "position": "WR",
+          "team": "SEA"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Bears",
+          "position": "DST",
+          "team": "CHI",
+          "qbFaced": "Cam Newton"
+        },
+        "opponent": {
+          "name": "Cam Newton",
+          "position": "QB",
+          "team": "CAR"
+        }
+      }
+    ]
+  }
+}

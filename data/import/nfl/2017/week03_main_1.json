@@ -1,0 +1,304 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 3,
+  "slateType": "MAIN",
+  "slateDate": "2017-09-24T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 3",
+  "slateTag": "ENTIRE LINEUP UNDER 10 PERCENT, DIGGS THIELEN DOUBLE, PATRIOTS DST VERSUS DESHAUN WATSON",
+  "slateGroup": "1-2-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $4M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK03_MAIN_2017-09-24T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 3810
+  },
+  "winner": {
+    "username": "Chuckchuck8",
+    "points": 229.38,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 229.38,
+    "totalOwnershipBp": 3810,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "DeShone Kizer",
+        "position": "QB",
+        "team": "CLE",
+        "salary": 5000,
+        "points": 25.08,
+        "ownershipPercent": 3.8,
+        "passTd": 2,
+        "passYds": 242,
+        "interceptions": 3,
+        "rushTd": 1,
+        "rushYds": 44,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jordan Howard",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 4900,
+        "points": 35.4,
+        "ownershipPercent": 0.6,
+        "rushTdRb": 2,
+        "rushYdsRb": 138,
+        "rushBonus": true,
+        "recRb": 1,
+        "recYdsRb": 26,
+        "fumblesLost": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Chris Thompson",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 4500,
+        "points": 33.8,
+        "ownershipPercent": 8.8,
+        "rushYdsRb": 7,
+        "recRb": 6,
+        "recYdsRb": 150,
+        "recTdRb": 1,
+        "recBonus": true,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Doug Baldwin",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 6400,
+        "points": 29.5,
+        "ownershipPercent": 5.3,
+        "rec": 10,
+        "recYds": 105,
+        "recTd": 1,
+        "recBonus": true,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Stefon Diggs",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 6500,
+        "points": 40.3,
+        "ownershipPercent": 1.5,
+        "rec": 8,
+        "recYds": 173,
+        "recTd": 2,
+        "recBonus": true,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Adam Thielen",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 5700,
+        "points": 14.8,
+        "ownershipPercent": 2.7,
+        "rec": 5,
+        "recYds": 98,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Rob Gronkowski",
+        "position": "TE",
+        "team": "NE",
+        "salary": 6800,
+        "points": 22.9,
+        "ownershipPercent": 3.0,
+        "rec": 8,
+        "recYds": 89,
+        "recTd": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeVante Parker",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 6300,
+        "points": 21.6,
+        "ownershipPercent": 5.8,
+        "rec": 8,
+        "recYds": 76,
+        "recTd": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 3800,
+        "points": 6,
+        "ownershipPercent": 6.6,
+        "sacks": 2,
+        "takeaways": 2,
+        "qbFaced": "Deshaun Watson",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "HOU"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is a clean example of what happens when ownership collapses across an entire roster and the scoring still lands in concentrated ways. Every slot stayed under 10 percent. In a contest with massive duplication pressure, this build did not need an exotic construction trick. It needed multiple ceiling outcomes from players the field largely ignored at the same time.\n\nThe quarterback choice tells the story. DeShone Kizer at 5,000 was not paired with a pass catcher, which means the build treated quarterback as a salary efficiency slot instead of a traditional correlation hub. Kizer reached value through combined passing and rushing production, then the roster spent salary and correlation bandwidth elsewhere. That choice matters because it opened room for high impact skill players without dragging in a fragile Cleveland stack.\n\nThe true scoring engine came from the Vikings double. Stefon Diggs and Adam Thielen captured nearly the entire useful passing output from Minnesota, and Diggs delivered the slate breaking portion with 173 yards and two touchdowns. Thielen did not need a monster score. He needed enough volume to keep the double stack live while Diggs handled the explosion. When both receivers stay low owned, a same team wide receiver double can function as a direct bet on target concentration rather than a bet on total game chaos.\n\nJordan Howard and Chris Thompson gave the lineup two lower owned running back ceiling outcomes from different paths. Howard won through rushing control and touchdown conversion. Thompson won through receiving production and long gain ability. Doug Baldwin, Rob Gronkowski, and DeVante Parker each added strong point totals without carrying major ownership. The Patriots defense against rookie Deshaun Watson was another bet on pressure and mistake potential, but this roster did not depend on a defense touchdown. The lineup won because almost every offensive slot produced tournament level efficiency at modest ownership.",
+    "uniquenessNotes": "The uniqueness here is total portfolio uniqueness rather than a single dart throw. Most winning lineups have one or two obvious ownership pivots wrapped around a more popular shell. This build is different because the entire shell stayed light. A 38.10 percent cumulative ownership lineup with nine useful scoring decisions changes the contest math immediately.\n\nThe Vikings receiver double is the sharpest structural decision. Most lineups in this range would prefer one receiver plus quarterback, or one receiver as a one off. Pairing Stefon Diggs with Adam Thielen without Sam Bradford made the construction less common while still keeping exposure to concentrated passing production.\n\nJordan Howard at 0.6 percent and Stefon Diggs at 1.5 percent are the two biggest leverage swings. Howard supplied a feature back score at near zero ownership. Diggs supplied a slate level receiver score at similarly low ownership. Once those two land together, the rest of the roster only needs to stay efficient, which it did.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Stefon Diggs and Adam Thielen as a same team wide receiver double in a low owned passing concentration bet",
+      "secondaryLever": "An entire roster under 10 percent with Jordan Howard and Chris Thompson delivering ceiling scores",
+      "notes": {
+        "rosterConstruction": "1-2-2-1-1-1-1",
+        "gameKey": [
+          "CLE@IND: 1 (QB game)",
+          "TB@MIN: 2",
+          "HOU@NE: 2",
+          "PIT@CHI: 1",
+          "OAK@WAS: 1",
+          "SEA@TEN: 1",
+          "MIA@NYJ: 1"
+        ],
+        "vikingsDouble": [
+          "Stefon Diggs",
+          "Adam Thielen"
+        ],
+        "lowOwnedRunningBacks": [
+          "Jordan Howard",
+          "Chris Thompson"
+        ],
+        "qbFacedByPatriotsDst": "Deshaun Watson"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "FULL_ROSTER_LOW_OWNERSHIP",
+        "SAME_TEAM_WR_DOUBLE",
+        "UNSTACKED_VALUE_QB",
+        "LOW_OWNERSHIP_RB_CEILINGS",
+        "ROOKIE_QB_DST_ATTACK"
+      ],
+      "macroStory": "A first place lineup built from low cumulative ownership across every slot, anchored by a Minnesota wide receiver double and two low owned running back eruptions, while the quarterback slot served as a low cost access point instead of a full stack centerpiece."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_CEILING",
+          "LOW_OWNERSHIP_ALPHA",
+          "TARGET_CONCENTRATION"
+        ],
+        "microStory": "Stefon Diggs supplied the score that changed the slate. At 1.5 percent ownership, 173 yards and two touchdowns created separation few rosters could answer."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_RUSHING_CEILING",
+          "TOUCHDOWN_CONVERSION",
+          "FEATURE_BACK_VOLUME"
+        ],
+        "microStory": "Jordan Howard was the hidden hammer. A sub one percent running back posting 35.4 points gives a lineup immediate leverage across the entire contest."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_EFFICIENCY_ENGINE",
+          "DUAL_PATH_SCORING",
+          "ROSTER_ENABLER"
+        ],
+        "microStory": "DeShone Kizer did not need a pass catcher attachment. His passing output plus rushing score gave the lineup enough quarterback production to spend salary elsewhere."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRESSURE_BET",
+          "ROOKIE_QB_ATTACK",
+          "SUPPORTING_LEVERAGE"
+        ],
+        "microStory": "The Patriots defense was a process play against a rookie quarterback. Six points was enough because the offense carried nearly all of the winning load."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Stefon Diggs",
+          "position": "WR",
+          "team": "MIN"
+        },
+        "opponent": {
+          "name": "Adam Thielen",
+          "position": "WR",
+          "team": "MIN"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Rob Gronkowski",
+          "position": "TE",
+          "team": "NE"
+        },
+        "opponent": {
+          "name": "Patriots",
+          "position": "DST",
+          "team": "NE",
+          "qbFaced": "Deshaun Watson"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Patriots",
+          "position": "DST",
+          "team": "NE",
+          "qbFaced": "Deshaun Watson"
+        },
+        "opponent": {
+          "name": "Deshaun Watson",
+          "position": "QB",
+          "team": "HOU"
+        }
+      }
+    ]
+  }
+}

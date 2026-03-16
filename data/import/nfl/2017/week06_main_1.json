@@ -1,0 +1,325 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 6,
+  "slateType": "MAIN",
+  "slateDate": "2017-10-15T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 6",
+  "slateTag": "STAFFORD TATE INGRAM DOME CORE",
+  "slateGroup": "3-2-2-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK06_MAIN_2017-10-15T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11990
+  },
+  "winner": {
+    "username": "Chrismdead",
+    "points": 231.48,
+    "maxEntries": 6
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 231.48,
+    "totalOwnershipBp": 11990,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Matthew Stafford",
+        "position": "QB",
+        "team": "DET",
+        "salary": 6500,
+        "points": 22.88,
+        "ownershipPercent": 2.2,
+        "passTd": 3,
+        "passYds": 312,
+        "interceptions": 3,
+        "rushYds": 4,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Melvin Gordon",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 7800,
+        "points": 36,
+        "ownershipPercent": 8.8,
+        "rushYdsRb": 83,
+        "rushTdRb": 1,
+        "recRb": 9,
+        "recYdsRb": 67,
+        "recTdRb": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jerick McKinnon",
+        "position": "RB",
+        "team": "MIN",
+        "salary": 4100,
+        "points": 25.9,
+        "ownershipPercent": 24,
+        "rushYdsRb": 69,
+        "rushTdRb": 1,
+        "recRb": 5,
+        "recYdsRb": 30,
+        "recTdRb": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Larry Fitzgerald",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 6800,
+        "points": 31.8,
+        "ownershipPercent": 9.1,
+        "rec": 10,
+        "recYds": 138,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Golden Tate",
+        "position": "WR",
+        "team": "DET",
+        "salary": 6800,
+        "points": 22.6,
+        "ownershipPercent": 10.6,
+        "rec": 7,
+        "recYds": 96,
+        "recTd": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Adam Thielen",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 6000,
+        "points": 18.7,
+        "ownershipPercent": 20.1,
+        "rec": 9,
+        "recYds": 97,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Cameron Brate",
+        "position": "TE",
+        "team": "TB",
+        "salary": 3900,
+        "points": 19.6,
+        "ownershipPercent": 12.8,
+        "rec": 6,
+        "recYds": 76,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mark Ingram",
+        "position": "RB",
+        "team": "NO",
+        "salary": 4400,
+        "points": 34,
+        "ownershipPercent": 21,
+        "rushYdsRb": 114,
+        "rushTdRb": 2,
+        "recRb": 5,
+        "recYdsRb": 36,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Ravens",
+        "position": "DST",
+        "team": "BAL",
+        "salary": 3700,
+        "points": 20,
+        "ownershipPercent": 14.3,
+        "sacks": 4,
+        "takeaways": 2,
+        "defTd": 2,
+        "qbFaced": "Mitch Trubisky",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "CHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "The winning roster starts with a three man concentration from Detroit at New Orleans, but it is not a conventional quarterback double stack. Matthew Stafford is paired with Golden Tate, then brought back with Mark Ingram. This tells a sharper story than a standard Lions passing build. The lineup is not chasing pure Stafford ceiling through two pass catchers. It is capturing one Detroit receiver and using Ingram as the counterweight in a game expected to stay live for four quarters inside the dome. Stafford did not post a clean box score. He threw three interceptions and still got there because volume, yardage bonus, and touchdown access held the structure together at 2.2 percent ownership.\n\nThe second layer is where the roster separates from a simple dome stack build. Tampa Bay at Arizona contributes both Larry Fitzgerald and Cameron Brate. Fitzgerald supplies the true alpha score with 10 catches for 138 yards and a touchdown. Brate answers from the other side at tight end, which gives the lineup cross game access without paying for a quarterback. This is a refined way to harvest a strong environment while keeping salary and ownership in line.\n\nGreen Bay at Minnesota delivers the running back and wide receiver pair. Jerick McKinnon at 4,100 was one of the slate's most accessible volume backs, so 24 percent ownership made sense. Adam Thielen was moving into a role the field had not fully priced correctly, and his 9 catch game kept the roster stable. Those two pieces were not pure separation. They were structural support. They prevented failure while the lower owned quarterback path and the double touchdown Ingram game did the lifting.\n\nMelvin Gordon is the other hinge point. A nine catch running back score at modest ownership is a slate changing result because it adds wide receiver type receiving volume at running back. Once Gordon lands a receiving touchdown on top of 83 rushing yards and a rushing score, the lineup no longer needs every receiver slot to break the slate. Ravens defense completes the build with the rookie quarterback angle turning into the ceiling outcome. Four sacks, two takeaways, and two defensive touchdowns against Mitch Trubisky is the sort of DST result that buries large chunks of the field.",
+    "uniquenessNotes": "This roster wins because it combines stable chalk with targeted deviation instead of trying to be different in every slot. Jerick McKinnon, Adam Thielen, Mark Ingram, and Ravens defense all carried meaningful ownership. None of those clicks were reckless. The edge came from how the high owned pieces were arranged around lower owned leverage.\n\nMatthew Stafford at 2.2 percent is the main pressure point. In a dome game against New Orleans, the field had paths to roster Lions pass catchers without fully committing to Stafford. This build took the direct route, accepted turnover risk, and captured the yardage and touchdown volume. Golden Tate was the chosen Detroit receiver, not Marvin Jones Jr., which narrowed scoring access in a sharper way.\n\nThe lineup also avoids the easy trap of over stacking one game. Detroit New Orleans gives three players, Tampa Bay Arizona gives two, Green Bay Minnesota gives two, then the remaining two slots come from isolated spike outcomes. That distribution matters. It keeps the roster from becoming overdependent on one script while still allowing concentrated access to environments producing fantasy volume.\n\nMark Ingram at 4,400 is one of the slate's most valuable pieces. His salary did not match his touchdown path in a dome environment where New Orleans could score in multiple ways. Once he posts 114 rushing yards, five catches, and two rushing touchdowns, he becomes the raw points accelerator for the entire roster.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Matthew Stafford with Golden Tate and Mark Ingram in the Detroit at New Orleans dome game",
+      "secondaryLever": "Larry Fitzgerald plus Cameron Brate mini stack with Ravens defense against rookie Mitch Trubisky",
+      "notes": {
+        "rosterConstruction": "3-2-2-1-1",
+        "gameKey": [
+          "DET@NO: 3 (QB game)",
+          "TB@ARI: 2",
+          "GB@MIN: 2",
+          "LAC@OAK: 1",
+          "CHI@BAL: 1"
+        ],
+        "qbGameCluster": [
+          "Matthew Stafford",
+          "Golden Tate",
+          "Mark Ingram"
+        ],
+        "cardinalsBuccaneersMini": [
+          "Larry Fitzgerald",
+          "Cameron Brate"
+        ],
+        "vikingsPackersSupport": [
+          "Jerick McKinnon",
+          "Adam Thielen"
+        ],
+        "oneOffCeilingBack": "Melvin Gordon",
+        "qbFacedByRavensDst": "Mitch Trubisky"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_ANCHOR",
+        "DOME_GAME_PRIMARY_STACK",
+        "CROSS_GAME_TE_WR_MINI_STACK",
+        "RB_ONE_OFF_RECEIVING_CEILING",
+        "ROOKIE_QB_DST_TARGET"
+      ],
+      "macroStory": "A first place roster built on a low owned Stafford anchor in the Detroit at New Orleans dome game, reinforced by concentrated mini stacks and finished by two slate swinging outcomes from Melvin Gordon and Ravens defense."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP_QB",
+          "VOLUME_PASSER"
+        ],
+        "microStory": "Matthew Stafford is the central leverage point. Three interceptions would sink most rosters, but 312 passing yards and three touchdowns at 2.2 percent ownership gave this build access to a path the field left behind."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "GAME_BRING_BACK",
+          "RAW_POINTS_ACCELERATOR",
+          "TOUCHDOWN_CONVERSION"
+        ],
+        "microStory": "Mark Ingram turns the Detroit stack into a complete game script. He does not merely answer with volume. He posts a multi touchdown ceiling game while still adding receiving usage."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": [
+          "ONE_OFF_CEILING",
+          "RECEIVING_BACK_SMASH",
+          "MID_OWNERSHIP_DIFFERENCE"
+        ],
+        "microStory": "Melvin Gordon supplies a wide receiver type receiving line from the running back slot, then adds rushing production on top. This is the type of one off score that removes pressure from the rest of the build."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_CEILING",
+          "ROOKIE_QB_ATTACK",
+          "SLATE_SWING_DST"
+        ],
+        "microStory": "Ravens defense against Mitch Trubisky produced the nuclear DST outcome. Two defensive touchdowns is the result capable of reshaping an entire tournament."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Matthew Stafford",
+          "position": "QB",
+          "team": "DET"
+        },
+        "teammates": [
+          {
+            "name": "Golden Tate",
+            "position": "WR",
+            "team": "DET"
+          }
+        ],
+        "opponent": {
+          "name": "Mark Ingram",
+          "position": "RB",
+          "team": "NO"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Larry Fitzgerald",
+          "position": "WR",
+          "team": "ARI"
+        },
+        "opponent": {
+          "name": "Cameron Brate",
+          "position": "TE",
+          "team": "TB"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Jerick McKinnon",
+          "position": "RB",
+          "team": "MIN"
+        },
+        "opponent": {
+          "name": "Adam Thielen",
+          "position": "WR",
+          "team": "MIN"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Ravens",
+          "position": "DST",
+          "team": "BAL",
+          "qbFaced": "Mitch Trubisky"
+        },
+        "opponent": {
+          "name": "Mitch Trubisky",
+          "position": "QB",
+          "team": "CHI"
+        }
+      }
+    ]
+  }
+}

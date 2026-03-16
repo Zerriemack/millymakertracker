@@ -1,0 +1,307 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 1,
+  "slateType": "MAIN",
+  "slateDate": "2017-09-10T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 1",
+  "slateTag": "TEAM PLAY THE BEST PLAYS, TARIK COHEN SALARY BREAKER, RAMS DST VERSUS BACKUP QB",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK01_MAIN_2017-09-10T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 16010
+  },
+  "winner": {
+    "username": "Bearsfan247",
+    "points": 199.38,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 199.38,
+    "totalOwnershipBp": 16010,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Carson Wentz",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 5300,
+        "points": 23.88,
+        "ownershipPercent": 8.4,
+        "passTd": 2,
+        "passYds": 307,
+        "passBonus": true,
+        "interceptions": 1,
+        "rushYds": 6,
+        "fumblesLost": 1,
+        "twoPtConversions": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Todd Gurley II",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 6000,
+        "points": 20.6,
+        "ownershipPercent": 33.7,
+        "rushTdRb": 1,
+        "rushYdsRb": 40,
+        "recRb": 5,
+        "recYdsRb": 56,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "LeSean McCoy",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 8200,
+        "points": 23.9,
+        "ownershipPercent": 19.2,
+        "rushTdRb": 1,
+        "rushYdsRb": 110,
+        "rushBonus": true,
+        "recRb": 5,
+        "recYdsRb": 49,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Antonio Brown",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 8800,
+        "points": 32.2,
+        "ownershipPercent": 13.9,
+        "rec": 11,
+        "recYds": 182,
+        "recBonus": true,
+        "recTd": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Crabtree",
+        "position": "WR",
+        "team": "OAK",
+        "salary": 6000,
+        "points": 14.3,
+        "ownershipPercent": 14.5,
+        "rec": 6,
+        "recYds": 83,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Larry Fitzgerald",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 5900,
+        "points": 13.4,
+        "ownershipPercent": 20.2,
+        "rec": 6,
+        "recYds": 74,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Zach Ertz",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 3500,
+        "points": 17.3,
+        "ownershipPercent": 41.0,
+        "rec": 8,
+        "recYds": 93,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tarik Cohen",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 3000,
+        "points": 25.3,
+        "ownershipPercent": 0.2,
+        "rushYdsRb": 66,
+        "recRb": 8,
+        "recYdsRb": 47,
+        "recTdRb": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Rams",
+        "position": "DST",
+        "team": "LAR",
+        "salary": 3200,
+        "points": 28,
+        "ownershipPercent": 21.8,
+        "sacks": 4,
+        "takeaways": 3,
+        "defTd": 2,
+        "pointsAllowed": 9,
+        "qbFaced": "Jacoby Brissett",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "IND"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is an early season example of a sharp roster taking the slate at face value and refusing to get cute. The context line says it cleanly. Team play the best plays. That is exactly what happened. The build accepts strong ownership on Todd Gurley II, LeSean McCoy, Zach Ertz, Larry Fitzgerald, and the Rams defense, then creates separation through quarterback salary, pass catcher allocation, and one extreme value eruption.\n\nCarson Wentz to Zach Ertz is the central stack, but it is a price driven stack more than a game environment stack. Wentz at 5,300 did not need to lead the slate in raw points. He needed to clear salary pressure while still accessing a stable passing role, and Ertz at 3,500 gave direct attachment to Philadelphia volume without paying wide receiver pricing. That pairing opened the door to jam in Antonio Brown and LeSean McCoy while still keeping the Rams defense.\n\nThe lineup wins because Tarik Cohen breaks the salary structure. At 3,000 and 0.2 percent ownership, he functions as the one slot that turns a strong cash style core into a tournament winning roster. His receiving score plus rushing contribution gave the build a ceiling path the field did not have at that salary.\n\nThe Rams defense against Jacoby Brissett is the other pillar. This was the classic backup quarterback punishment spot, and the defense did not merely get there. It produced a tournament swinging outcome with multiple takeaways and two defensive touchdowns. Once that lands, the rest of the lineup only needs to avoid failure. Gurley, McCoy, Brown, and Ertz do much more than that.",
+    "uniquenessNotes": "The roster is unique in a disciplined way. It does not try to manufacture uniqueness across every slot. Most of the lineup is built from players the field already understood were strong plays. The edge comes from where the lineup chose to be different.\n\nFirst, the Wentz plus Ertz combination is a salary allocation decision that let the roster spend aggressively at running back and wide receiver without sacrificing correlation. Second, Tarik Cohen at 0.2 percent ownership is the true pressure point. He is the one player who turns a popular roster shell into a first place lineup.\n\nThere is also restraint in leaving 100 dollars on the table. In Week 1, when pricing certainty is weaker and ownership condenses around obvious names, leaving a small amount unused can matter because duplicated roster paths are easier to create. This build stayed close enough to optimal projection to remain structurally sound, but different enough in the right slot to clear the field.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Carson Wentz paired with Zach Ertz as a low cost quarterback stack that opened salary for elite raw point plays",
+      "secondaryLever": "Tarik Cohen as the near unowned salary breaker alongside Rams defense versus Jacoby Brissett",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "PHI@WAS: 2 (QB game)",
+          "IND@LAR: 2",
+          "PIT@CLE: 1",
+          "NYJ@BUF: 1",
+          "OAK@TEN: 1",
+          "ARI@DET: 1",
+          "ATL@CHI: 1"
+        ],
+        "qbStack": [
+          "Carson Wentz",
+          "Zach Ertz"
+        ],
+        "salaryBreaker": "Tarik Cohen",
+        "eliteRawPoints": [
+          "Antonio Brown",
+          "LeSean McCoy",
+          "Todd Gurley II"
+        ],
+        "qbFacedByRamsDst": "Jacoby Brissett"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_COST_QB_TE_STACK",
+        "BEST_PLAYS_CORE",
+        "BACKUP_QB_DST_ATTACK",
+        "SALARY_RELIEF_CEILING",
+        "OWNED_FLOOR_WITH_ONE_LEVERAGE_BREAKER"
+      ],
+      "macroStory": "A Week 1 roster built on accepting the strongest median projections on the slate, then using a cheap quarterback stack and a near unowned rookie value eruption to unlock first place upside without sacrificing structural stability."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "BASELINE_ANCHOR",
+          "BACKUP_QB_PUNISHMENT",
+          "DEFENSIVE_TOUCHDOWN_CEILING"
+        ],
+        "microStory": "The Rams defense is the slate stabilizer and the slate breaker at the same time. Facing Jacoby Brissett in a compromised offensive environment, it produced the exact defensive ceiling outcome the roster needed."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_BREAKER",
+          "LOW_OWNERSHIP_SPIKE",
+          "ROOKIE_ROLE_SURPRISE"
+        ],
+        "microStory": "Tarik Cohen is the winning slot. At minimum salary and almost no ownership, his dual usage as a runner and receiver gave the lineup a score the rest of the field did not have access to."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_EFFICIENCY_ENGINE",
+          "CORRELATION_HUB",
+          "ROSTER_ENABLER"
+        ],
+        "microStory": "Carson Wentz did not need to be the highest scoring quarterback. He needed to clear value cleanly and bring Zach Ertz with him so the rest of the roster could pay for elite skill players."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "RAW_POINTS_ANCHOR",
+          "ALPHA_RECEIVER",
+          "SLATE_WINNING_CEILING"
+        ],
+        "microStory": "Antonio Brown supplied the true premium receiver ceiling. Once the cheap quarterback stack and Cohen value opened the salary, Brown became the clean way to add a score few lower tier wide receivers could match."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Carson Wentz",
+          "position": "QB",
+          "team": "PHI"
+        },
+        "teammates": [
+          {
+            "name": "Zach Ertz",
+            "position": "TE",
+            "team": "PHI"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Todd Gurley II",
+          "position": "RB",
+          "team": "LAR"
+        },
+        "opponent": {
+          "name": "Rams",
+          "position": "DST",
+          "team": "LAR"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Rams",
+          "position": "DST",
+          "team": "LAR",
+          "qbFaced": "Jacoby Brissett"
+        },
+        "opponent": {
+          "name": "Jacoby Brissett",
+          "position": "QB",
+          "team": "IND"
+        }
+      }
+    ]
+  }
+}

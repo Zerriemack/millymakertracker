@@ -1,0 +1,312 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 2,
+  "slateType": "MAIN",
+  "slateDate": "2017-09-17T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 2",
+  "slateTag": "DST AGAINST BRISSETT BACK TO BACK, BRADY GRONK NUCLEUS, JERMAINE KEARSE VALUE TDs",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $4M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK02_MAIN_2017-09-17T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 13450
+  },
+  "winner": {
+    "username": "Timwoodbury10",
+    "points": 229.08,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 229.08,
+    "totalOwnershipBp": 13450,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Tom Brady",
+        "position": "QB",
+        "team": "NE",
+        "salary": 7900,
+        "points": 33.78,
+        "ownershipPercent": 17.0,
+        "passTd": 3,
+        "passYds": 447,
+        "passBonus": true,
+        "rushYds": 9,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "C.J. Anderson",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 4700,
+        "points": 33.4,
+        "ownershipPercent": 4.5,
+        "rushTdRb": 1,
+        "rushYdsRb": 118,
+        "rushBonus": true,
+        "recRb": 3,
+        "recYdsRb": 36,
+        "recTdRb": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Ty Montgomery",
+        "position": "RB",
+        "team": "GB",
+        "salary": 5800,
+        "points": 29,
+        "ownershipPercent": 37.4,
+        "rushTdRb": 1,
+        "rushYdsRb": 35,
+        "recRb": 6,
+        "recYdsRb": 75,
+        "recTdRb": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 5800,
+        "points": 22,
+        "ownershipPercent": 20.7,
+        "rec": 9,
+        "recYds": 100,
+        "recBonus": true,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jermaine Kearse",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 3900,
+        "points": 22.4,
+        "ownershipPercent": 1.1,
+        "rec": 4,
+        "recYds": 64,
+        "recTd": 2,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "J.J. Nelson",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 3800,
+        "points": 26,
+        "ownershipPercent": 12.3,
+        "rec": 5,
+        "recYds": 120,
+        "recTd": 1,
+        "recBonus": true,
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Rob Gronkowski",
+        "position": "TE",
+        "team": "NE",
+        "salary": 6900,
+        "points": 26.6,
+        "ownershipPercent": 15.6,
+        "rec": 6,
+        "recYds": 116,
+        "recTd": 1,
+        "recBonus": true,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kareem Hunt",
+        "position": "RB",
+        "team": "KC",
+        "salary": 6800,
+        "points": 25.9,
+        "ownershipPercent": 19.2,
+        "rushTdRb": 2,
+        "rushYdsRb": 81,
+        "recRb": 3,
+        "recYdsRb": 28,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 4100,
+        "points": 10,
+        "ownershipPercent": 6.7,
+        "sacks": 4,
+        "takeaways": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Jacoby Brissett",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "ARI",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster tells a clean Week 2 story. The field had fresh proof from Week 1 that attacking Jacoby Brissett with a defense could produce a slate changing outcome, and this winner went right back to that well. Arizona did not match the Rams ceiling from the prior week, but the roster did not need another 28 point defense. It needed a defense attached to sacks, pressure, and a backup quarterback environment, then it needed the rest of the lineup to carry first place raw scoring.\n\nThe main engine is Tom Brady with Rob Gronkowski in New Orleans. This was not a thin one off quarterback decision. It was a direct bet on concentrated passing production in a dome game where New England could access multiple touchdowns through one passing channel. Brady gave 447 yards and the bonus. Gronk added 116 yards, a touchdown, and the bonus. Once that pairing lands, the quarterback slot becomes a true anchor rather than a placeholder.\n\nThe second layer is underpriced running back production. C.J. Anderson at 4,700 and Ty Montgomery at 5,800 both produced ceiling scores while keeping salary open for Brady, Gronkowski, and Kareem Hunt. This is where the lineup becomes sharper than a broad stars and scrubs label would suggest. It is not chasing cheap volume with blind hope. It is selecting players whose roles and pricing had not caught up to the slate context.\n\nJermaine Kearse is the pressure point. At 3,900 and 1.1 percent ownership, two touchdowns from a low salary receiver gave this build separation without forcing a fragile roster shell. J.J. Nelson served a similar structural function at 3,800, but Kearse is the true leverage slot because he paired access to ceiling with almost no field overlap. Keenan Allen and Kareem Hunt kept the lineup connected to strong median projection while the lower salary receivers did the separating.",
+    "uniquenessNotes": "The roster is unique because it chose selective divergence instead of total divergence. Brady and Gronkowski were expensive, well understood, and fully viable. Ty Montgomery, Keenan Allen, and Kareem Hunt were strong volume plays. The winner did not run from ownership. It chose two lower salary wide receivers who could outscore entire pricing tiers.\n\nThe Arizona defense matters in a more strategic way than its 10 points suggest. Back to back weeks of targeting Brissett created a repeatable process decision. Week 1 had already shown how fragile Indianapolis could look in this setup. Returning to that angle in Week 2 was not lazy copying. It was recognition that the underlying condition had not changed enough.\n\nLeaving 300 dollars on the table also helped lower duplication risk. In an early season slate where ownership condenses around obvious role changes and fresh box score reactions, a small salary gap can matter when paired with one low owned receiver swing.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Tom Brady paired with Rob Gronkowski in a dome environment with concentrated passing output",
+      "secondaryLever": "Back to back defense versus Jacoby Brissett plus Jermaine Kearse as the low owned touchdown separator",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "NE@NO: 2 (QB game)",
+          "ARI@IND: 2",
+          "DAL@DEN: 1",
+          "GB@ATL: 1",
+          "MIA@LAC: 1",
+          "NYJ@OAK: 1",
+          "PHI@KC: 1"
+        ],
+        "qbStack": [
+          "Tom Brady",
+          "Rob Gronkowski"
+        ],
+        "brissettAttack": [
+          "Cardinals",
+          "J.J. Nelson"
+        ],
+        "salaryLeverage": [
+          "Jermaine Kearse",
+          "C.J. Anderson"
+        ],
+        "qbFacedByCardinalsDst": "Jacoby Brissett"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "ELITE_QB_TE_STACK",
+        "BACKUP_QB_DST_ATTACK",
+        "MID_RANGE_RB_CEILINGS",
+        "LOW_SALARY_WR_TOUCHDOWN_LEVERAGE",
+        "OWNED_CORE_WITH_TARGETED_SEPARATION"
+      ],
+      "macroStory": "A first place Week 2 roster anchored by premium New England passing production, discounted running back ceilings, and a disciplined return to the Brissett defense attack, then finished by one low owned receiver touchdown eruption."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "YARDAGE_BONUS",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Tom Brady supplied the slate level passing score. The 447 yard bonus gave the roster access to raw points very few quarterback paths could match."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_PARTNER",
+          "CONCENTRATED_TOUCHDOWN_ACCESS",
+          "ELITE_TE_CEILING"
+        ],
+        "microStory": "Rob Gronkowski turned the Brady decision into a concentrated ceiling stack. New England passing production flowed through a narrow channel, and the roster captured it."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_SEPARATOR",
+          "TWO_TOUCHDOWN_SPIKE",
+          "SALARY_RELIEF_CEILING"
+        ],
+        "microStory": "Jermaine Kearse is the slot that created first place separation. Two touchdowns from a 3,900 receiver at 1.1 percent ownership changed the payout outcome."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PROCESS_ANCHOR",
+          "BACKUP_QB_PUNISHMENT",
+          "PRESSURE_BASE"
+        ],
+        "microStory": "Arizona defense carried the process angle from the prior week forward. Targeting Jacoby Brissett again kept the roster tied to a pressure and sack environment with clean failure paths for Indianapolis."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Tom Brady",
+          "position": "QB",
+          "team": "NE"
+        },
+        "teammates": [
+          {
+            "name": "Rob Gronkowski",
+            "position": "TE",
+            "team": "NE"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Cardinals",
+          "position": "DST",
+          "team": "ARI",
+          "qbFaced": "Jacoby Brissett"
+        },
+        "opponent": {
+          "name": "J.J. Nelson",
+          "position": "WR",
+          "team": "ARI"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Cardinals",
+          "position": "DST",
+          "team": "ARI",
+          "qbFaced": "Jacoby Brissett"
+        },
+        "opponent": {
+          "name": "Jacoby Brissett",
+          "position": "QB",
+          "team": "IND"
+        }
+      }
+    ]
+  }
+}

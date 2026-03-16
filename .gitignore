@@ -27,3 +27,4 @@ dist/
 .vercel/
 
 .astro/
+analytics/.venv/

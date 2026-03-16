@@ -1,0 +1,314 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 14,
+  "slateType": "MAIN",
+  "slateDate": "2017-12-10T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 14",
+  "slateTag": "HUNDLEY ADAMS MINI, HOPKINS RAW CEILING, BRONCOS VS MCCOWN",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "rosterConstruction": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker",
+    "siteContestId": "NFL_2017_WK14_MAIN_2017-12-10T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11460
+  },
+  "winner": {
+    "username": "TwoGun",
+    "points": 220.6,
+    "maxEntries": 41
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 220.6,
+    "totalOwnershipBp": 11460,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Brett Hundley",
+        "position": "QB",
+        "team": "GB",
+        "salary": 5700,
+        "points": 25.7,
+        "ownershipPercent": 0.6,
+        "passTd": 3,
+        "passYds": 265,
+        "rushYds": 31,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Giovani Bernard",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 3100,
+        "points": 19.0,
+        "ownershipPercent": 51.6,
+        "rushYdsRb": 62,
+        "recRb": 6,
+        "recYdsRb": 68,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Leonard Fournette",
+        "position": "RB",
+        "team": "JAX",
+        "salary": 7000,
+        "points": 24.9,
+        "ownershipPercent": 3.2,
+        "rushYdsRb": 101,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 18,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "GB",
+        "salary": 6600,
+        "points": 30.4,
+        "ownershipPercent": 2.4,
+        "rec": 10,
+        "recYds": 84,
+        "recTd": 2,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "DeAndre Hopkins",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 8500,
+        "points": 39.9,
+        "ownershipPercent": 26.5,
+        "rec": 11,
+        "recYds": 149,
+        "recTd": 2,
+        "fumblesLost": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Demaryius Thomas",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 5000,
+        "points": 23.3,
+        "ownershipPercent": 5.0,
+        "rec": 8,
+        "recYds": 93,
+        "recTd": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Trey Burton",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 2900,
+        "points": 24.1,
+        "ownershipPercent": 4.9,
+        "rec": 5,
+        "recYds": 71,
+        "recTd": 2,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Melvin Gordon",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 7800,
+        "points": 15.3,
+        "ownershipPercent": 18.4,
+        "rushYdsRb": 78,
+        "rushTdRb": 1,
+        "recRb": 1,
+        "recYdsRb": 5,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Broncos",
+        "position": "DST",
+        "team": "DEN",
+        "salary": 3400,
+        "points": 18.0,
+        "ownershipPercent": 2.0,
+        "sacks": 4,
+        "takeaways": 2,
+        "qbFaced": "Josh McCown",
+        "qbFacedArchetype": "JOURNEYMAN",
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "NYJ"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This roster starts with a low owned quarterback receiver pair from Green Bay and lets the rest of the build attack isolated ceiling pockets across the slate. Brett Hundley plus Davante Adams is the anchor. At a combined 3.0 percent ownership, the pairing gives first place access without forcing a full game stack. Cleveland kept Green Bay functional enough for passing production, and Adams absorbed the touchdown equity in concentrated form.\n\nThe second pillar is raw wide receiver scoring outside the primary stack. DeAndre Hopkins posts the best receiver score in the lineup and does it as a stand alone spend. Demaryius Thomas adds a second Denver piece alongside the Broncos defense, which creates a direct bet on Denver controlling field position and forcing New York into a dead offensive environment with Josh McCown offering little resistance.\n\nThe rest of the lineup is built from high leverage one offs rather than fragile over stacking. Leonard Fournette supplies efficient touchdown driven rushing output at modest ownership. Trey Burton gives the lineup a cheap tight end score few rosters reached. Giovani Bernard is the ownership sink at 51.6 percent, but here he functions as a stabilizer rather than the reason the roster wins. The winning separation comes from the Green Bay mini stack, the Hopkins ceiling game, and Denver crushing the Jets while Demaryius Thomas captures part of the same game script.",
+    "uniquenessNotes": "The lineup does not chase novelty for its own sake. It accepts Bernard chalk, keeps Melvin Gordon in a strong role based build, and then finds separation in places where ceiling was available but not heavily purchased by the field.\n\nHundley to Adams is the most important structural decision. A sub one percent quarterback attached to a 30 point receiver score is how a roster leaps over duplicated mid range constructions. Most entries needed their quarterback slot to feel safe. This lineup used the slot as an ownership vacuum.\n\nThe Denver cluster matters because it is coherent. Broncos defense against a journeyman quarterback creates sack and turnover access, while Demaryius Thomas gives the roster a path to benefit from shorter fields and sustained offensive control. Trey Burton is the final pressure point. At 2,900, two touchdown production from tight end changes the entire salary map and lets Hopkins remain in the build without sacrificing ceiling elsewhere.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Brett Hundley paired with Davante Adams at almost no ownership",
+      "secondaryLever": "Broncos defense with Demaryius Thomas against Josh McCown plus DeAndre Hopkins as the raw score hammer",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "GB@CLE: 2 (QB game)",
+          "NYJ@DEN: 2",
+          "CHI@CIN: 1",
+          "SEA@JAX: 1",
+          "SF@HOU: 1",
+          "PHI@LAR: 1",
+          "WAS@LAC: 1"
+        ],
+        "packersBrownsMini": [
+          "Brett Hundley",
+          "Davante Adams"
+        ],
+        "broncosControlCluster": [
+          "Demaryius Thomas",
+          "Broncos"
+        ],
+        "rawCeilingSpend": "DeAndre Hopkins",
+        "salaryReliefBreaker": "Trey Burton",
+        "qbFacedByBroncosDst": "Josh McCown"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_WR_STACK",
+        "DST_WR_GAME_SCRIPT_PAIR",
+        "RAW_CEILING_WR_ONE_OFF",
+        "CHEAP_TE_TOUCHDOWN_SPIKE",
+        "CHALK_RB_STABILIZER"
+      ],
+      "macroStory": "A first place roster built on a near invisible quarterback receiver stack, then reinforced with isolated ceiling games from Hopkins and Burton while Denver defense and Demaryius Thomas captured the Jets collapse."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Brett Hundley is the defining choice. The lineup needed a quarterback score few opponents had, and his three passing touchdowns created immediate lift through both raw points and ownership separation."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_STACK_PARTNER",
+          "TOUCHDOWN_CONCENTRATION",
+          "LOW_OWNERSHIP"
+        ],
+        "microStory": "Davante Adams converts the Hundley bet into a slate level outcome. Ten catches and two touchdowns gave the stack enough volume and scoring to compete with far more popular quarterback constructions."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "RAW_CEILING",
+          "TARGET_ALPHA",
+          "SLATE_HAMMER"
+        ],
+        "microStory": "DeAndre Hopkins supplies the roster's cleanest raw points. He did not need correlation help because his target share and touchdown access were enough to function as a self contained ceiling block."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_CEILING",
+          "GAME_SCRIPT_LEVER",
+          "QB_PRESSURE_SPOT"
+        ],
+        "microStory": "Denver defense against Josh McCown was a direct attack on offensive fragility. Four sacks and two takeaways gave the lineup defensive ceiling without needing a defensive touchdown."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF",
+          "TOUCHDOWN_SPIKE",
+          "ROSTER_UNLOCK"
+        ],
+        "microStory": "Trey Burton changed the build economics. A 2,900 tight end reaching 24.1 points made Hopkins viable and kept the roster from needing compromises at multiple slots."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Brett Hundley",
+          "position": "QB",
+          "team": "GB"
+        },
+        "teammates": [
+          {
+            "name": "Davante Adams",
+            "position": "WR",
+            "team": "GB"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Demaryius Thomas",
+          "position": "WR",
+          "team": "DEN"
+        },
+        "opponent": {
+          "name": "Broncos",
+          "position": "DST",
+          "team": "DEN",
+          "qbFaced": "Josh McCown"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Broncos",
+          "position": "DST",
+          "team": "DEN",
+          "qbFaced": "Josh McCown"
+        },
+        "opponent": {
+          "name": "Josh McCown",
+          "position": "QB",
+          "team": "NYJ"
+        }
+      }
+    ]
+  }
+}

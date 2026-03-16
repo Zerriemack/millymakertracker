@@ -1,0 +1,314 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 15,
+  "slateType": "MAIN",
+  "slateDate": "2017-12-17T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 15",
+  "slateTag": "CAM OLSEN REUNION, GURLEY NUCLEAR, VIKINGS BREAK DALTON",
+  "slateGroup": "2-1-1-1-1-1-1-1",
+  "rosterConstruction": "2-1-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker",
+    "siteContestId": "NFL_2017_WK15_MAIN_2017-12-17T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 7780
+  },
+  "winner": {
+    "username": "JWest64",
+    "points": 243.98,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 243.98,
+    "totalOwnershipBp": 7780,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Cam Newton",
+        "position": "QB",
+        "team": "CAR",
+        "salary": 6400,
+        "points": 31.48,
+        "ownershipPercent": 15.6,
+        "passTd": 4,
+        "passYds": 242,
+        "rushYds": 58,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Todd Gurley II",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 8300,
+        "points": 48.0,
+        "ownershipPercent": 8.3,
+        "rushYdsRb": 152,
+        "rushTdRb": 3,
+        "recRb": 3,
+        "recYdsRb": 28,
+        "recTdRb": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "LeSean McCoy",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 8400,
+        "points": 25.6,
+        "ownershipPercent": 7.8,
+        "rushYdsRb": 50,
+        "rushTdRb": 1,
+        "recRb": 4,
+        "recYdsRb": 46,
+        "recTdRb": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keelan Cole",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 3700,
+        "points": 34.6,
+        "ownershipPercent": 4.3,
+        "rec": 7,
+        "recYds": 186,
+        "recTd": 1,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Marquise Goodwin",
+        "position": "WR",
+        "team": "SF",
+        "salary": 6000,
+        "points": 25.4,
+        "ownershipPercent": 16.4,
+        "rec": 10,
+        "recYds": 114,
+        "rushYds": 10,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Alshon Jeffery",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 5900,
+        "points": 14.9,
+        "ownershipPercent": 5.3,
+        "rec": 4,
+        "recYds": 49,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Benjamin Watson",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 3800,
+        "points": 17.4,
+        "ownershipPercent": 4.1,
+        "rec": 4,
+        "recYds": 74,
+        "recTd": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Greg Olsen",
+        "position": "TE",
+        "team": "CAR",
+        "salary": 4000,
+        "points": 29.6,
+        "ownershipPercent": 6.6,
+        "rec": 9,
+        "recYds": 116,
+        "recTd": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Vikings",
+        "position": "DST",
+        "team": "MIN",
+        "salary": 3500,
+        "points": 17.0,
+        "ownershipPercent": 9.4,
+        "sacks": 3,
+        "takeaways": 2,
+        "qbFaced": "Andy Dalton",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "CIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner is built on two ideas which fit together cleanly. The first is a concentrated Carolina passing bet through Cam Newton and Greg Olsen. The second is a roster wide search for ceiling scores at ownership levels the field did not fully respect. Cam lands four passing touchdowns, and Olsen returns as a featured target at a price the market treated as injury discounted rather than role adjusted. The result is a quarterback stack with elite output and modest ownership pressure.\n\nTodd Gurley is the slate breaker, but he is not the full story. Plenty of rosters had access to Gurley. This one paired him with the correct midrange and value receivers. Keelan Cole at 3,700 changed the entire build. He gave the lineup a receiver score usually reserved for premium salary slots, which allowed Gurley and LeSean McCoy to coexist without sacrificing upside elsewhere. Marquise Goodwin added another high yardage receiver score, so the lineup did not need every touchdown to come through one game environment.\n\nThe Minnesota defense against Andy Dalton was a clean pressure bet against a quarterback archetype vulnerable when the pocket collapses and the game moves onto the defense's terms. Alshon Jeffery and Benjamin Watson were not slate defining plays on their own, but both produced enough to keep the roster from carrying dead salary. This is a first place build because every slot had a purpose. The Carolina stack created structure, Gurley supplied the nuclear score, Cole broke salary, and the defense added another path to ceiling.",
+    "uniquenessNotes": "The lineup did not need a strange construction. It needed the correct version of a strong construction. Cam plus Olsen was not a common pairing at its eventual payoff level because the field had not fully recalibrated to Olsen's immediate target share once he was active again. Many entries preferred Cam with wider receiver exposure or used Cam naked. This roster chose direct pass catching concentration.\n\nThe sharpest decision may be Keelan Cole rather than Gurley. Gurley was a premium spend with clear upside. Cole was the piece which let the roster absorb elite running back salary while still producing a true tournament receiver score. Once Cole reached 186 yards and a touchdown, the lineup no longer needed cheap survival. It had another slate level score in a low salary slot.\n\nMinnesota defense also matters in a different way. The field often treats defense as an isolated position. Here it functioned as a volatility capture point against Andy Dalton in Minnesota. Sacks, interceptions, and a defensive touchdown gave the roster extra separation without demanding extreme ownership sacrifice.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Cam Newton paired with Greg Olsen in Olsen's underpriced return role",
+      "secondaryLever": "Todd Gurley ceiling plus Keelan Cole as the low salary receiver eruption with Vikings defense against Andy Dalton",
+      "notes": {
+        "rosterConstruction": "2-1-1-1-1-1-1-1",
+        "gameKey": [
+          "GB@CAR: 2 (QB game)",
+          "LAR@SEA: 1",
+          "MIA@BUF: 1",
+          "HOU@JAX: 1",
+          "TEN@SF: 1",
+          "PHI@NYG: 1",
+          "BAL@CLE: 1",
+          "CIN@MIN: 1"
+        ],
+        "panthersStack": [
+          "Cam Newton",
+          "Greg Olsen"
+        ],
+        "eliteRunningBackSpend": [
+          "Todd Gurley II",
+          "LeSean McCoy"
+        ],
+        "salaryReliefBreaker": "Keelan Cole",
+        "qbFacedByVikingsDst": "Andy Dalton"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_TE_CONCENTRATION_STACK",
+        "ELITE_RB_DOUBLE_PAYUP",
+        "SALARY_RELIEF_WR_CEILING",
+        "DEFENSE_VS_REPLACEMENT_LEVEL_QB",
+        "MULTI_GAME_ONE_OFF_CEILING"
+      ],
+      "macroStory": "A first place roster anchored by a Cam Newton and Greg Olsen reunion stack, then elevated by Todd Gurley's slate detonation and Keelan Cole giving premium receiver output from a value slot."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "TOUCHDOWN_DISTRIBUTOR",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Cam Newton held the roster together through four passing touchdowns and enough rushing yardage to preserve his ceiling even without a rushing score."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_STACK_PARTNER",
+          "RETURNING_ROLE_EXPANSION",
+          "TARGET_CONCENTRATION"
+        ],
+        "microStory": "Greg Olsen was priced for uncertainty and used as though his role was intact. Nine catches, 116 yards, and a touchdown turned the Carolina stack into a tournament winning core."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "RAW_POINTS_HAMMER",
+          "PAYUP_THAT_WON"
+        ],
+        "microStory": "Todd Gurley delivered the score which forced every competing lineup to keep pace. Four touchdowns and dual phase production made him the raw points center of the slate."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_BREAKER",
+          "EXPLOSIVE_YARDAGE",
+          "LOW_OWNERSHIP"
+        ],
+        "microStory": "Keelan Cole changed roster geometry. A 3,700 receiver reaching 34.6 points gave the lineup access to double premium running back salary without giving away ceiling."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_CEILING",
+          "PRESSURE_SPOT",
+          "DEFENSIVE_SEPARATION"
+        ],
+        "microStory": "Minnesota defense attacked the exact type of game script where Andy Dalton could be forced into mistakes. The sacks, interceptions, and touchdown added another ceiling lane."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Cam Newton",
+          "position": "QB",
+          "team": "CAR"
+        },
+        "teammates": [
+          {
+            "name": "Greg Olsen",
+            "position": "TE",
+            "team": "CAR"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Cam Newton",
+          "position": "QB",
+          "team": "CAR"
+        },
+        "opponent": {
+          "name": "Greg Olsen",
+          "position": "TE",
+          "team": "CAR"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Vikings",
+          "position": "DST",
+          "team": "MIN",
+          "qbFaced": "Andy Dalton"
+        },
+        "opponent": {
+          "name": "Andy Dalton",
+          "position": "QB",
+          "team": "CIN"
+        }
+      }
+    ]
+  }
+}

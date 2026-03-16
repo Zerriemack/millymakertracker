@@ -156,8 +156,8 @@ const rows = rowsRaw
     const u1k = typeof r.u1kCount === "number" ? r.u1kCount : n(r.u1kCount);
     const ge50 = typeof r.ge50Count === "number" ? r.ge50Count : n(r.ge50Count);
 
-    const tag = String(r.slateTag ?? r.slate?.slateTag ?? "");
-    const group = String(r.slateGroup ?? r.slate?.slateGroup ?? "");
+    const tag = String(r.tag ?? r.slateTag ?? r.slate?.slateTag ?? "");
+    const group = String(r.group ?? r.slateGroup ?? r.slate?.slateGroup ?? "");
 
     const link =
       typeof r.link === "string" && r.link

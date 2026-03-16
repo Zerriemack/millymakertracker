@@ -1,0 +1,324 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 4,
+  "slateType": "MAIN",
+  "slateDate": "2017-10-01T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 4",
+  "slateTag": "CAM FUNCHESS, BELL CEILING, CARDINALS VERSUS HOYER",
+  "slateGroup": "2-2-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $4M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK04_MAIN_2017-10-01T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 8240
+  },
+  "winner": {
+    "username": "Rkennedy23",
+    "points": 230.74,
+    "maxEntries": 26
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 230.74,
+    "totalOwnershipBp": 8240,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Cam Newton",
+        "position": "QB",
+        "team": "CAR",
+        "salary": 5900,
+        "points": 37.04,
+        "ownershipPercent": 2.7,
+        "passTd": 3,
+        "passYds": 316,
+        "passBonus": true,
+        "interceptions": 1,
+        "rushTd": 1,
+        "rushYds": 44,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Le'Veon Bell",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 8700,
+        "points": 37.6,
+        "ownershipPercent": 8.2,
+        "rushTdRb": 2,
+        "rushYdsRb": 144,
+        "rushBonus": true,
+        "recRb": 4,
+        "recYdsRb": 42,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Leonard Fournette",
+        "position": "RB",
+        "team": "JAX",
+        "salary": 6700,
+        "points": 24.5,
+        "ownershipPercent": 23.3,
+        "rushYdsRb": 86,
+        "recRb": 4,
+        "recYdsRb": 59,
+        "recTdRb": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Devin Funchess",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 5300,
+        "points": 26,
+        "ownershipPercent": 2.4,
+        "rec": 7,
+        "recYds": 70,
+        "recTd": 2,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A.J. Green",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 8600,
+        "points": 17.3,
+        "ownershipPercent": 15.3,
+        "rec": 5,
+        "recYds": 63,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Tyrell Williams",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 4400,
+        "points": 25.5,
+        "ownershipPercent": 7.4,
+        "rec": 5,
+        "recYds": 115,
+        "recTd": 1,
+        "recBonus": true,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Tyler Kroft",
+        "position": "TE",
+        "team": "CIN",
+        "salary": 2600,
+        "points": 24.8,
+        "ownershipPercent": 1.6,
+        "rec": 6,
+        "recYds": 68,
+        "recTd": 2,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Bilal Powell",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 4600,
+        "points": 32,
+        "ownershipPercent": 9.7,
+        "rushTdRb": 1,
+        "rushYdsRb": 163,
+        "rushBonus": true,
+        "recRb": 1,
+        "recYdsRb": 27,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 3200,
+        "points": 6,
+        "ownershipPercent": 11.5,
+        "sacks": 3,
+        "takeaways": 1,
+        "pointsAllowed": 20,
+        "qbFaced": "Brian Hoyer",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "SF"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins by combining one concentrated quarterback stack with two separate game pairs that each captured a narrow path to scoring. Cam Newton with Devin Funchess is the anchor. Carolina went into Foxborough and kept attacking, which gave Newton both passing volume and rushing equity. Funchess converted two of the passing touchdowns, so the stack delivered more than enough at modest ownership and moderate salary.\n\nThe next layer came from pairing Leonard Fournette with Bilal Powell in the same game. This is where the build becomes sharper than a standard running back collection. Jacksonville against the Jets produced usable scoring on both sides through different channels. Fournette handled the touchdown and receiving role for Jacksonville. Powell answered with a rushing outlier game and a bonus at low ownership. The roster did not need that game to become a passing shootout. It needed both backfields to matter, and they did.\n\nThe Cincinnati Cleveland pair did even more damage. A.J. Green carried the name value, but Tyler Kroft was the hidden accelerator. At 2,600 and 1.6 percent ownership, two touchdowns from tight end completely changed the salary structure of the build. Once Kroft lands, the lineup can afford Bell and Green while still preserving a viable quarterback stack.\n\nLe'Veon Bell was the raw points spine. Tyrell Williams was the clean price adjusted receiver ceiling. Arizona defense against Brian Hoyer was a process based attachment to a replacement level quarterback, but it was not the reason the lineup finished first. The lineup finished first because Newton, Bell, Powell, and Kroft all cleared tournament winning thresholds together.",
+    "uniquenessNotes": "The roster did not rely on one strange click. It created separation through a chain of low owned outcomes that still made football sense. Newton with Funchess was a direct concentration play once Carolina wide receiver roles narrowed. Kroft was the salary release valve in a game where most attention stayed on Green. Powell was the overlooked side of a game the field treated as a Jacksonville running environment.\n\nThe structure matters. This is a 2-2-2-1-1-1 build, which means the roster leaned into multiple narrow game level convictions instead of forcing one oversized onslaught. That spread of conviction lowered fragility. If one cluster underperformed, the other clusters could still carry the lineup.\n\nThe ownership mix was strong. Fournette and Arizona defense gave the roster enough shared chalk to keep the floor intact. Newton, Funchess, Kroft, and Powell created the movement needed to separate from duplicated Bell builds.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Cam Newton paired with Devin Funchess while preserving salary for Le'Veon Bell",
+      "secondaryLever": "Tyler Kroft and Bilal Powell as low owned scoring levers around popular Fournette and Cardinals pieces",
+      "notes": {
+        "rosterConstruction": "2-2-2-1-1-1",
+        "gameKey": [
+          "CAR@NE: 2 (QB game)",
+          "JAX@NYJ: 2",
+          "CIN@CLE: 2",
+          "PIT@BAL: 1",
+          "PHI@LAC: 1",
+          "SF@ARI: 1"
+        ],
+        "qbStack": [
+          "Cam Newton",
+          "Devin Funchess"
+        ],
+        "jetsJaguarsPair": [
+          "Leonard Fournette",
+          "Bilal Powell"
+        ],
+        "bengalsBrownsPair": [
+          "A.J. Green",
+          "Tyler Kroft"
+        ],
+        "qbFacedByCardinalsDst": "Brian Hoyer"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_WR_STACK",
+        "DOUBLE_GAME_PAIR",
+        "LOW_OWNERSHIP_TE_TOUCHDOWNS",
+        "RAW_POINTS_RB_ANCHOR",
+        "DST_VS_REPLACEMENT_LEVEL_QB"
+      ],
+      "macroStory": "A first place build anchored by Cam Newton and Devin Funchess, then elevated by two separate game pairs where Bilal Powell and Tyler Kroft supplied the low owned scoring turns needed to clear the field."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "DUAL_THREAT_SCORING",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Cam Newton carried the lineup through both passing production and rushing equity. The combined path gave the roster access to a top end quarterback score without premium ownership."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_TOUCHDOWN_SPIKE",
+          "LOW_OWNERSHIP",
+          "STRUCTURAL_SWING"
+        ],
+        "microStory": "Tyler Kroft is the slot that changed the build. Two touchdowns from a near minimum salary tight end opened every expensive path around him."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_RUSHING_BONUS",
+          "GAME_PAIR_RETURN",
+          "LEVERAGE_BACK"
+        ],
+        "microStory": "Bilal Powell turned the Jacksonville New York game from a one sided assumption into a two sided scoring source. His rushing bonus and touchdown gave the roster separation."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "PROCESS_PLAY",
+          "QB_PRESSURE_ANGLE",
+          "SUPPORTING_SCORE"
+        ],
+        "microStory": "Arizona defense was a stable attachment against Brian Hoyer. Six points was enough because the offensive ceiling outcomes did the heavy lifting."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Cam Newton",
+          "position": "QB",
+          "team": "CAR"
+        },
+        "teammates": [
+          {
+            "name": "Devin Funchess",
+            "position": "WR",
+            "team": "CAR"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Leonard Fournette",
+          "position": "RB",
+          "team": "JAX"
+        },
+        "opponent": {
+          "name": "Bilal Powell",
+          "position": "RB",
+          "team": "NYJ"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "A.J. Green",
+          "position": "WR",
+          "team": "CIN"
+        },
+        "opponent": {
+          "name": "Tyler Kroft",
+          "position": "TE",
+          "team": "CIN"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Cardinals",
+          "position": "DST",
+          "team": "ARI",
+          "qbFaced": "Brian Hoyer"
+        },
+        "opponent": {
+          "name": "Brian Hoyer",
+          "position": "QB",
+          "team": "SF"
+        }
+      }
+    ]
+  }
+}

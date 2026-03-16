@@ -1,0 +1,315 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 11,
+  "slateType": "MAIN",
+  "slateDate": "2017-11-19T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 11",
+  "slateTag": "COUSINS THOMPSON GAME BET ON SHOOTOUT, KEENAN ALLEN NUCLEAR, JAGUARS DEFENSE DESTROYS KIZER",
+  "slateGroup": "2-1-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK11_MAIN_2017-11-19T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14270
+  },
+  "winner": {
+    "username": "RobKaufman",
+    "points": 221.18,
+    "maxEntries": 43
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 221.18,
+    "totalOwnershipBp": 14270,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Kirk Cousins",
+        "position": "QB",
+        "team": "WAS",
+        "salary": 6100,
+        "points": 28.98,
+        "ownershipPercent": 7.8,
+        "passTd": 3,
+        "passYds": 322,
+        "rushYds": 11,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Jordan Howard",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 6200,
+        "points": 21.5,
+        "ownershipPercent": 8.4,
+        "rushYdsRb": 125,
+        "rushTdRb": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Chris Thompson",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 5400,
+        "points": 10.3,
+        "ownershipPercent": 26.0,
+        "rushYdsRb": 17,
+        "recRb": 1,
+        "recYdsRb": 16,
+        "recTdRb": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 5900,
+        "points": 43.2,
+        "ownershipPercent": 6.1,
+        "rec": 12,
+        "recYds": 159,
+        "recTd": 2,
+        "rushYds": 3,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jeremy Maclin",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 4500,
+        "points": 7.4,
+        "ownershipPercent": 18.2,
+        "rec": 4,
+        "recYds": 34,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Kenny Stills",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 4000,
+        "points": 34.0,
+        "ownershipPercent": 1.5,
+        "rec": 7,
+        "recYds": 180,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 7300,
+        "points": 20.9,
+        "ownershipPercent": 22.1,
+        "rec": 8,
+        "recYds": 109,
+        "interceptions": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brandin Cooks",
+        "position": "WR",
+        "team": "NE",
+        "salary": 6600,
+        "points": 29.9,
+        "ownershipPercent": 28.1,
+        "rec": 6,
+        "recYds": 149,
+        "recTd": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "OAK",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Jaguars",
+        "position": "DST",
+        "team": "JAX",
+        "salary": 4000,
+        "points": 25,
+        "ownershipPercent": 24.5,
+        "sacks": 5,
+        "takeaways": 5,
+        "qbFaced": "DeShone Kizer",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner starts with a clear stance on game environment. Kirk Cousins plus Chris Thompson attacks Washington at New Orleans through pace, passing volume, and running back receiving equity. Cousins throws for 322 yards and three touchdowns, which gives the lineup an efficient quarterback score at modest ownership. Thompson does not post a slate winning total on his own, though his receiving touchdown keeps direct access to one part of Cousins' output while preserving salary for stronger ceiling pockets elsewhere.\n\nThe roster then shifts away from heavy team concentration and chases isolated eruptions across the slate. Keenan Allen supplies the largest receiver score with 12 catches, 159 yards, and two touchdowns at 6.1 percent ownership. Kenny Stills gives a second massive receiver outcome at 1.5 percent ownership with 180 yards and a touchdown. Brandin Cooks adds 149 yards and a touchdown from a separate game window. Once those three wide receiver slots combine for 107.1 points, the tournament turns into a matter of survival in the remaining positions.\n\nJacksonville defense against DeShone Kizer is the stabilizing chalk anchor. Unlike cheap defense roulette, this is an expensive defense with a clean path toward sacks, takeaways, and a touchdown. It gets all three. The lineup accepts 24.5 percent ownership because the matchup profile against a mistake prone rookie quarterback is too strong to ignore. Travis Kelce at tight end serves a similar role. He gives premium tight end volume and the 100 yard bonus, which prevents the roster from bleeding points in a position where many lineups collapsed.\n\nJordan Howard rounds out the structure with 125 rushing yards and a touchdown. Jeremy Maclin is the only thin outcome, yet the rest of the roster carries enough concentrated ceiling for one underperforming slot. This was a build where the quarterback stack created a usable base, while the tournament was actually won by low owned receiver eruption and high conviction defense chalk.",
+    "uniquenessNotes": "The strongest structural decision is refusing to overstack the Washington New Orleans game. Cousins is paired with Thompson and then left alone. Many builds would have forced an additional Washington receiver or a New Orleans bring back. This roster keeps the quarterback correlation lean, then reallocates exposure toward better per dollar ceiling spots across the slate.\n\nKeenan Allen and Kenny Stills are where separation truly forms. Allen gave elite target volume at modest ownership, while Stills delivered one of the slate's least duplicated tournament swings. Together they created enough distance from the field that popular scores from Kelce, Cooks, Thompson, and Jacksonville defense became assets rather than duplication risk.\n\nThere is also a strong lesson in how chalk was handled. Jacksonville defense, Kelce, Thompson, and Cooks all carried ownership, though each came from a different structural role. Defense anchored turnover ceiling. Kelce protected tight end raw points. Cooks preserved exposure to a high value passing spot. Thompson completed quarterback correlation. The lineup did not chase contrarian points in every slot. It chose selective leverage where upside could actually change first place equity.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Kirk Cousins with Chris Thompson as a compact game environment stance, then massive isolated wide receiver ceiling from Keenan Allen and Kenny Stills",
+      "secondaryLever": "Jaguars defense chalk against DeShone Kizer plus premium tight end raw points from Travis Kelce",
+      "notes": {
+        "rosterConstruction": "2-1-1-1-1-1-1-1",
+        "gameKey": [
+          "WAS@NO: 2 (QB game)",
+          "DET@CHI: 1",
+          "BUF@LAC: 1",
+          "BAL@GB: 1",
+          "TB@MIA: 1",
+          "KC@NYG: 1",
+          "NE@OAK: 1",
+          "JAX@CLE: 1"
+        ],
+        "qbStack": [
+          "Kirk Cousins",
+          "Chris Thompson"
+        ],
+        "receiverEruptions": [
+          "Keenan Allen",
+          "Kenny Stills",
+          "Brandin Cooks"
+        ],
+        "tightEndRawPoints": "Travis Kelce",
+        "defenseAnchor": "Jaguars",
+        "qbFacedByJaguarsDst": "DeShone Kizer"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "COMPACT_QB_RB_RECEIVING_STACK",
+        "ISOLATED_WR_CEILING_HUNT",
+        "PREMIUM_DST_CHALK_ANCHOR",
+        "ELITE_TE_RAW_POINTS",
+        "ONE_MISS_TOLERATED_BY_TRIPLE_WR_ERUPTION"
+      ],
+      "macroStory": "A first place roster built on a compact Cousins Thompson correlation, then pushed over the field by Keenan Allen and Kenny Stills ceiling games, with Jacksonville defense and Travis Kelce locking down two premium leverage neutral positions."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "TARGET_MONSTER",
+          "LOWER_OWNERSHIP_CEILING"
+        ],
+        "microStory": "Keenan Allen is the largest offensive score in the lineup and one of the most damaging receiver outcomes on the slate. Twelve catches and two touchdowns at 6.1 percent ownership gave this roster first place level separation."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 2,
+        "roleTags": [
+          "LOW_OWNERSHIP_LEVER",
+          "YARDAGE_EXPLOSION",
+          "TOUCHDOWN_SPIKE"
+        ],
+        "microStory": "Kenny Stills is the tournament swing. At 4,000 and 1.5 percent ownership, 180 receiving yards plus a touchdown changes the entire duplication landscape of the lineup."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "CHALK_THAT_PAID_OFF",
+          "TURNOVER_CEILING",
+          "ROOKIE_QB_PRESSURE"
+        ],
+        "microStory": "Jacksonville defense gives the lineup a premium defensive outcome in a spot where ownership was earned. Five sacks, five takeaways, and a touchdown against DeShone Kizer created a score few non Jaguars builds could overcome."
+      },
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "COMPACT_CORRELATION_HUB",
+          "EFFICIENCY_WITHOUT_OVERSTACK"
+        ],
+        "microStory": "Kirk Cousins supplies quarterback efficiency and keeps the build on pace early, though the roster wisely stops at one teammate and spends the remaining receiver slots on larger standalone ceiling bets."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Kirk Cousins",
+          "position": "QB",
+          "team": "WAS"
+        },
+        "teammates": [
+          {
+            "name": "Chris Thompson",
+            "position": "RB",
+            "team": "WAS"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Keenan Allen",
+          "position": "WR",
+          "team": "LAC"
+        },
+        "opponent": {
+          "name": "Jaguars",
+          "position": "DST",
+          "team": "JAX"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Kirk Cousins",
+          "position": "QB",
+          "team": "WAS"
+        },
+        "opponent": {
+          "name": "Chris Thompson",
+          "position": "RB",
+          "team": "WAS"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Jaguars",
+          "position": "DST",
+          "team": "JAX",
+          "qbFaced": "DeShone Kizer"
+        },
+        "opponent": {
+          "name": "DeShone Kizer",
+          "position": "QB",
+          "team": "CLE"
+        }
+      }
+    ]
+  }
+}

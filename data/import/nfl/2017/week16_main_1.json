@@ -1,0 +1,319 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 16,
+  "slateType": "MAIN",
+  "slateDate": "2017-12-24T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 16",
+  "slateTag": "BORTLES COLE DOUBLE HIT, GURLEY ENDS THE SLATE, BEARS VS KIZER",
+  "slateGroup": "2-2-1-1-1-1-1",
+  "rosterConstruction": "2-2-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker",
+    "siteContestId": "NFL_2017_WK16_MAIN_2017-12-24T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12950
+  },
+  "winner": {
+    "username": "Stlaza40",
+    "points": 238.12,
+    "maxEntries": 4
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 238.12,
+    "totalOwnershipBp": 12950,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Blake Bortles",
+        "position": "QB",
+        "team": "JAX",
+        "salary": 6500,
+        "points": 28.38,
+        "ownershipPercent": 7.8,
+        "passTd": 2,
+        "passYds": 382,
+        "interceptions": 3,
+        "rushYds": 31,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "C.J. Anderson",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 5500,
+        "points": 28.3,
+        "ownershipPercent": 5.3,
+        "rushYdsRb": 88,
+        "rushTdRb": 1,
+        "recRb": 7,
+        "recYdsRb": 45,
+        "twoPt": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Dion Lewis",
+        "position": "RB",
+        "team": "NE",
+        "salary": 6000,
+        "points": 35.3,
+        "ownershipPercent": 25.1,
+        "rushYdsRb": 129,
+        "rushTdRb": 1,
+        "recRb": 5,
+        "recYdsRb": 24,
+        "recTdRb": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keelan Cole",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 4700,
+        "points": 19.8,
+        "ownershipPercent": 25.5,
+        "rec": 6,
+        "recYds": 108,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Larry Fitzgerald",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 6800,
+        "points": 30.74,
+        "ownershipPercent": 9.9,
+        "rec": 9,
+        "recYds": 119,
+        "recTd": 1,
+        "passYds": 21,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Kendall Wright",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 3800,
+        "points": 6.7,
+        "ownershipPercent": 14.7,
+        "rec": 4,
+        "recYds": 27,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Eric Ebron",
+        "position": "TE",
+        "team": "DET",
+        "salary": 3700,
+        "points": 19.3,
+        "ownershipPercent": 14.9,
+        "rec": 5,
+        "recYds": 83,
+        "recTd": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Todd Gurley II",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 9100,
+        "points": 55.6,
+        "ownershipPercent": 12.2,
+        "rushYdsRb": 118,
+        "rushTdRb": 2,
+        "recRb": 10,
+        "recYdsRb": 158,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Bears",
+        "position": "DST",
+        "team": "CHI",
+        "salary": 3500,
+        "points": 14.0,
+        "ownershipPercent": 14.1,
+        "sacks": 1,
+        "takeaways": 3,
+        "qbFaced": "DeShone Kizer",
+        "qbFacedArchetype": "ROOKIE",
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins because it identified a rare combination the field did not fully respect. Jacksonville's passing game had become viable late in the season, but many rosters still treated Blake Bortles as a fragile tournament quarterback rather than a legitimate volume ceiling option. He throws for 382 yards and two touchdowns even while absorbing three interceptions. That detail matters. The lineup did not need a clean game from Bortles. It needed yardage volume and enough touchdown production to unlock the stack. Keelan Cole was the direct attachment, and his 108 yard bonus game gave the quarterback build structural payoff without demanding a double stack.\n\nThe true slate detonation came from Todd Gurley II. Fifty five point running back outcomes do not need elaborate explanation, but they do need correct context. Gurley was expensive, yet not owned at a level that matched his raw scoring potential. Once he cleared 100 rushing yards, 100 receiving yards, and scored twice on the ground, he became the one score the rest of the roster had to orbit. The winning lineup did not stop there. Dion Lewis posted a second elite running back result, so the build effectively captured two of the most punishing touch based outcomes on the slate.\n\nThe rest of the construction is what turned a great score into first place. C.J. Anderson brought a low owned receiving enriched rushing score. Larry Fitzgerald delivered a veteran target funnel game with passing yardage layered on top. Eric Ebron added tight end efficiency in a scoring environment where Detroit still leaned on him near the goal line. Chicago defense against rookie DeShone Kizer added turnover access, and Kendall Wright did not need to be special because every other pressure point in the lineup already carried the roster into a winning range.",
+    "uniquenessNotes": "The sharp part of this build is not strange ownership theater. It is allocation discipline. The roster paid for Gurley, accepted popular Dion Lewis, then found separation through the quarterback, the secondary running back, and the specific wide receiver mix.\n\nBortles to Keelan Cole was a measured stack rather than an all in Jacksonville passing bet. That distinction matters. Jacksonville scored 33 points, yet the lineup kept the correlation tight and left room for elite one off ceilings from other games. Many losing builds from the same slate likely overcommitted to game environments. This roster let one Jacksonville receiver pay off the quarterback and moved the rest of its exposure into cleaner standalone ceilings.\n\nChicago defense with Kendall Wright is another useful tension point. The lineup did not treat the Bears defense as a pure standalone block. It accepted a cheap receiver from the same game who did very little, but Wright's weak score did not kill the lineup because the defense hit against the rookie quarterback, and the roster had already banked enough elite outcomes elsewhere. That is a large field lesson in itself. Every slot does not need to spike when the true leverage positions do enough damage.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Blake Bortles paired with Keelan Cole while Jacksonville passing remained under respected by the field",
+      "secondaryLever": "Todd Gurley II as the slate destroying raw score with Bears defense attacking DeShone Kizer",
+      "notes": {
+        "rosterConstruction": "2-2-1-1-1-1-1",
+        "gameKey": [
+          "JAX@SF: 2 (QB game)",
+          "CLE@CHI: 2",
+          "DEN@WAS: 1",
+          "BUF@NE: 1",
+          "NYG@ARI: 1",
+          "DET@CIN: 1",
+          "LAR@TEN: 1"
+        ],
+        "jaguarsMiniStack": [
+          "Blake Bortles",
+          "Keelan Cole"
+        ],
+        "bearsBrownsCluster": [
+          "Kendall Wright",
+          "Bears"
+        ],
+        "eliteRunningBackCore": [
+          "Dion Lewis",
+          "Todd Gurley II"
+        ],
+        "rawCeilingVeteran": "Larry Fitzgerald",
+        "qbFacedByBearsDst": "DeShone Kizer"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOWER_OWNED_QB_WR_STACK",
+        "DOUBLE_RB_RAW_POINTS_CORE",
+        "DST_VS_ROOKIE_QB",
+        "VETERAN_WR_TARGET_FUNNEL",
+        "ONE_OFF_TE_RED_ZONE_EFFICIENCY"
+      ],
+      "macroStory": "A first place roster anchored by a late season Jacksonville passing bet, then carried over the finish line by Todd Gurley II and Dion Lewis combining for overpowering running back raw points."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "VOLUME_CEILING",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Blake Bortles was the hinge point of the roster. The three interceptions scare away fragile lineups, but 382 passing yards and two touchdowns were enough to turn him into a tournament winning quarterback when paired correctly."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "RAW_POINTS_HAMMER",
+          "PAYUP_THAT_ENDED_IT"
+        ],
+        "microStory": "Todd Gurley II delivered the outcome no balanced build could comfortably absorb. Dual 100 yard bonuses plus two rushing touchdowns made him the most important raw score on the slate."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 0,
+        "roleTags": [
+          "SECONDARY_HAMMER",
+          "TOUCH_VOLUME",
+          "POPULAR_SCORE_THAT_HAD_TO_BE_HANDLED"
+        ],
+        "microStory": "Dion Lewis gave the lineup a second elite running back output. Once he added receiving production to the rushing bonus and touchdown, the roster had pressure coming from both premium back slots."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "STACK_PARTNER",
+          "BONUS_YARDAGE",
+          "OWNERSHIP_DENSITY"
+        ],
+        "microStory": "Keelan Cole did enough for the Jacksonville stack to function without overextending lineup exposure. His 100 yard bonus turned a modest stack into a profitable one."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "TURNOVER_ACCESS",
+          "ROOKIE_QB_PRESSURE",
+          "DEFENSIVE_FLOOR_PLUS_CEILING"
+        ],
+        "microStory": "Chicago defense did not need a monster sack total. Against DeShone Kizer, the interceptions and fumble recovery were enough to create another strong point source from a game the roster already touched."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Blake Bortles",
+          "position": "QB",
+          "team": "JAX"
+        },
+        "teammates": [
+          {
+            "name": "Keelan Cole",
+            "position": "WR",
+            "team": "JAX"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Kendall Wright",
+          "position": "WR",
+          "team": "CHI"
+        },
+        "opponent": {
+          "name": "Bears",
+          "position": "DST",
+          "team": "CHI",
+          "qbFaced": "DeShone Kizer"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Bears",
+          "position": "DST",
+          "team": "CHI",
+          "qbFaced": "DeShone Kizer"
+        },
+        "opponent": {
+          "name": "DeShone Kizer",
+          "position": "QB",
+          "team": "CLE"
+        }
+      }
+    ]
+  }
+}

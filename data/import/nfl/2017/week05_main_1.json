@@ -1,0 +1,314 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 5,
+  "slateType": "MAIN",
+  "slateDate": "2017-10-08T17:00:00.000Z",
+  "slateName": "NFL Main Slate Week 5",
+  "slateTag": "HOYER DOUBLE VALUE, AJ GREEN CEILING, DOLPHINS DST VERSUS CASSELL",
+  "slateGroup": "3-2-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $4M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK05_MAIN_2017-10-08T17:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 6510
+  },
+  "winner": {
+    "username": "GrindersCal",
+    "points": 217.42,
+    "maxEntries": 17
+  },
+  "lineup": {
+    "salaryUsed": 49700,
+    "totalPoints": 217.42,
+    "totalOwnershipBp": 6510,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Brian Hoyer",
+        "position": "QB",
+        "team": "SF",
+        "salary": 4700,
+        "points": 25.12,
+        "ownershipPercent": 7.7,
+        "passTd": 2,
+        "passYds": 353,
+        "passBonus": true,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Melvin Gordon",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 6000,
+        "points": 37.3,
+        "ownershipPercent": 15.3,
+        "rushTdRb": 2,
+        "rushYdsRb": 105,
+        "rushBonus": true,
+        "recRb": 6,
+        "recYdsRb": 58,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Aaron Jones",
+        "position": "RB",
+        "team": "GB",
+        "salary": 5100,
+        "points": 23.4,
+        "ownershipPercent": 5.1,
+        "rushTdRb": 1,
+        "rushYdsRb": 125,
+        "rushBonus": true,
+        "recRb": 1,
+        "recYdsRb": 9,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Odell Beckham Jr.",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 8500,
+        "points": 21.5,
+        "ownershipPercent": 9.1,
+        "rec": 5,
+        "recYds": 97,
+        "recTd": 1,
+        "rushYds": 8,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "A.J. Green",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 8200,
+        "points": 33.9,
+        "ownershipPercent": 3.8,
+        "rec": 7,
+        "recYds": 189,
+        "recBonus": true,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Donte Moncrief",
+        "position": "WR",
+        "team": "IND",
+        "salary": 3900,
+        "points": 6.2,
+        "ownershipPercent": 3.3,
+        "rec": 3,
+        "recYds": 32,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "George Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 2500,
+        "points": 21.3,
+        "ownershipPercent": 1.3,
+        "rec": 7,
+        "recYds": 83,
+        "recTd": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Antonio Brown",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 8400,
+        "points": 28.7,
+        "ownershipPercent": 12.5,
+        "rec": 10,
+        "recYds": 157,
+        "recBonus": true,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Dolphins",
+        "position": "DST",
+        "team": "MIA",
+        "salary": 2700,
+        "points": 20,
+        "ownershipPercent": 7.0,
+        "sacks": 6,
+        "takeaways": 2,
+        "defTd": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Matt Cassel",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "MIA",
+        "opponentTeam": "TEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup wins through an aggressive salary reallocation built around a cheap quarterback double and then finished with elite receiver raw points. Brian Hoyer at 4,700 is not a random survival click. He is the entry point to a 3-2-1-1-1-1 structure where the quarterback game carries three roster spots, yet the total spend on those three spots stays low enough to buy A.J. Green, Antonio Brown, and Odell Beckham Jr. Hoyer delivered 353 yards and the passing bonus. George Kittle gave a first spike at 2,500. Donte Moncrief did not bury the build. He merely had to remain live within the same game so the cheap game stack could hold together.\n\nThe second driver was raw running back efficiency. Melvin Gordon and Aaron Jones combined for 60.7 points on 11,100 in salary. Gordon handled the entire scoring load against the Giants through rushing touchdowns and receiving volume. Aaron Jones gave the lineup a second underpriced back who turned limited salary into a rushing bonus and a touchdown. Once those two landed, the roster had enough cap room and enough points to support three expensive receivers.\n\nA.J. Green is the true slate breaker in the receiver room. Seven catches for 189 yards and a touchdown at 3.8 percent ownership gave the lineup a premium outcome without premium duplication. Antonio Brown added the familiar target floor plus yardage bonus. Beckham rounded out the game pair with Gordon and gave the lineup access to the only New York Giant offensive piece who could punish Gordon lineups.\n\nMiami defense against Matt Cassel is the final structural edge. A low salary defense facing a backup quarterback created access to sacks, turnovers, and a touchdown without forcing a heavy ownership tax. This roster did not need every slot to smash. It needed the cheap quarterback cluster to unlock the expensive ceiling pieces, and it needed the defense to turn a backup quarterback spot into an efficiency gain. Both happened.",
+    "uniquenessNotes": "The lineup is unique because it embraced a cheap quarterback game stack while still paying for three premium wide receivers. Most Hoyer builds would have stayed balanced and avoided double spending at receiver. This one used Hoyer, Kittle, and Moncrief as the salary engine, then pushed the saved cap into Green, Brown, and Beckham.\n\nThe construction also avoided a common failure path in low salary quarterback builds. It did not ask Hoyer to win the slate alone. It asked him to clear value with concentrated attachment to the same game. Kittle delivered ceiling relative to price. Moncrief remained usable. That was enough.\n\nMelvin Gordon plus Beckham is another sharp pairing. Gordon drove scoring for the Chargers while Beckham served as the direct path for the Giants to answer. Miami defense against Cassel completed the roster with another low cost ceiling slot at a position where the field often paid up for comfort.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Brian Hoyer with George Kittle and Donte Moncrief as a low salary quarterback game cluster",
+      "secondaryLever": "A.J. Green, Antonio Brown, and Odell Beckham Jr. layered onto Melvin Gordon and Dolphins defense versus Matt Cassel",
+      "notes": {
+        "rosterConstruction": "3-2-1-1-1-1",
+        "gameKey": [
+          "SF@IND: 3 (QB game)",
+          "LAC@NYG: 2",
+          "BUF@CIN: 1",
+          "GB@DAL: 1",
+          "JAX@PIT: 1",
+          "TEN@MIA: 1"
+        ],
+        "qbCluster": [
+          "Brian Hoyer",
+          "George Kittle",
+          "Donte Moncrief"
+        ],
+        "chargersGiantsPair": [
+          "Melvin Gordon",
+          "Odell Beckham Jr."
+        ],
+        "premiumReceivers": [
+          "A.J. Green",
+          "Antonio Brown",
+          "Odell Beckham Jr."
+        ],
+        "qbFacedByDolphinsDst": "Matt Cassel"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "CHEAP_QB_GAME_CLUSTER",
+        "THREE_PREMIUM_WR_BUILD",
+        "LOW_SALARY_TE_CEILING",
+        "RB_PLUS_OPPOSING_ALPHA_WR",
+        "DST_VS_BACKUP_QB"
+      ],
+      "macroStory": "A first place roster built on a cheap San Francisco Indianapolis quarterback cluster, which opened salary for three expensive wide receivers and still left room for Melvin Gordon and a backup quarterback defense attack."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_EFFICIENCY_ENGINE",
+          "PASSING_BONUS",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Brian Hoyer did everything this construction needed. He cleared value, reached the passing bonus, and allowed the rest of the salary map to become aggressive."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_SPIKE",
+          "LOW_OWNERSHIP",
+          "STRUCTURAL_SWING"
+        ],
+        "microStory": "George Kittle is the slot that made the cheap quarterback cluster dangerous. A 2,500 tight end scoring 21.3 points changed the entire lineup ceiling."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "LOW_OWNERSHIP_ALPHA",
+          "PREMIUM_RAW_POINTS"
+        ],
+        "microStory": "A.J. Green supplied the premium score that pushed the build into first. His 189 yard game gave the lineup a ceiling few rosters owned."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "BACKUP_QB_ATTACK",
+          "TURNOVER_CEILING",
+          "LOW_SALARY_DEFENSE"
+        ],
+        "microStory": "Miami defense turned Matt Cassel into a high leverage target. Six sacks, takeaways, and a defensive touchdown gave the lineup one more underpriced ceiling outcome."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Brian Hoyer",
+          "position": "QB",
+          "team": "SF"
+        },
+        "teammates": [
+          {
+            "name": "George Kittle",
+            "position": "TE",
+            "team": "SF"
+          }
+        ],
+        "opponent": {
+          "name": "Donte Moncrief",
+          "position": "WR",
+          "team": "IND"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Melvin Gordon",
+          "position": "RB",
+          "team": "LAC"
+        },
+        "opponent": {
+          "name": "Odell Beckham Jr.",
+          "position": "WR",
+          "team": "NYG"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Dolphins",
+          "position": "DST",
+          "team": "MIA",
+          "qbFaced": "Matt Cassel"
+        },
+        "opponent": {
+          "name": "Matt Cassel",
+          "position": "QB",
+          "team": "TEN"
+        }
+      }
+    ]
+  }
+}

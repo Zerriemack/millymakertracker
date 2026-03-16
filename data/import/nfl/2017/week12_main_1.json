@@ -1,0 +1,318 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 12,
+  "slateType": "MAIN",
+  "slateDate": "2017-11-26T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 12",
+  "slateTag": "WENTZ ERTZ MINI STACK, JULIO 250 YARD NUCLEAR GAME, JERMAINE KEARSE 1.3 PERCENT BREAKER",
+  "slateGroup": "2-1-1-1-1-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK12_MAIN_2017-11-26T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 10630
+  },
+  "winner": {
+    "username": "Ending",
+    "points": 233.68,
+    "maxEntries": 147
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 233.68,
+    "totalOwnershipBp": 10630,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Carson Wentz",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 7200,
+        "points": 23.98,
+        "ownershipPercent": 3.5,
+        "passTd": 3,
+        "passYds": 227,
+        "rushYds": 29,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Carlos Hyde",
+        "position": "RB",
+        "team": "SF",
+        "salary": 5500,
+        "points": 13.8,
+        "ownershipPercent": 17.2,
+        "rushYdsRb": 47,
+        "recRb": 7,
+        "recYdsRb": 21,
+        "gameAwayTeam": "SEA",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 4400,
+        "points": 28.5,
+        "ownershipPercent": 12.6,
+        "rushYdsRb": 114,
+        "rushTdRb": 1,
+        "recRb": 3,
+        "recYdsRb": 51,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 7700,
+        "points": 53.8,
+        "ownershipPercent": 24.7,
+        "rec": 12,
+        "recYds": 253,
+        "recTd": 2,
+        "rushYds": 15,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "ATL",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Jermaine Kearse",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 4000,
+        "points": 26.5,
+        "ownershipPercent": 1.3,
+        "rec": 7,
+        "recYds": 105,
+        "recTd": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 5000,
+        "points": 22.6,
+        "ownershipPercent": 23.8,
+        "rec": 8,
+        "recYds": 116,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Rob Gronkowski",
+        "position": "TE",
+        "team": "NE",
+        "salary": 6900,
+        "points": 25.2,
+        "ownershipPercent": 17.1,
+        "rec": 5,
+        "recYds": 82,
+        "recTd": 2,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Zach Ertz",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 6600,
+        "points": 29.3,
+        "ownershipPercent": 3.0,
+        "rec": 10,
+        "recYds": 103,
+        "recTd": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 2700,
+        "points": 10,
+        "ownershipPercent": 3.1,
+        "sacks": 3,
+        "takeaways": 3,
+        "qbFaced": "Blake Bortles",
+        "qbFacedArchetype": "GAME_MANAGER",
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "JAX"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner is built on a narrow quarterback stance and then an aggressive search for isolated eruption. Carson Wentz is paired only with Zach Ertz in Philadelphia's home game against Chicago. The stack is compact, but it captures exactly what mattered. Wentz throws three touchdowns, Ertz commands ten catches and clears the bonus, and the roster avoids wasting salary on secondary pieces from the same offense. It is a precise use of quarterback correlation rather than a broad one.\n\nThe tournament was decided at wide receiver. Julio Jones posts the type of score that bends the entire slate around one slot. Twelve catches, 253 yards, and two touchdowns creates a raw point burden the field cannot solve without him. Jermaine Kearse is the second pressure point. At 1.3 percent ownership and 4,000 salary, a 100 yard touchdown game gives the roster a low duplication ceiling spike where most entries were carrying dead salary relief. Cooper Kupp adds another 100 yard bonus in a popular game environment, which keeps the build connected to one of the slate's strongest projection buckets without forcing a full Rams stack.\n\nThe running back choices are disciplined. Joe Mixon gives the roster its most important backfield score with 114 rushing yards, 51 receiving yards, and a touchdown at mid range salary. Carlos Hyde is less explosive, but his seven catches give the lineup needed stability. Neither running back had to break the slate because the receiver room already did that work.\n\nRob Gronkowski and the Cardinals defense finish the construction in a sharp way. Gronkowski gives premium tight end raw points with two touchdowns, which matters on a slate where paying for ceiling at tight end separated from thinner mid range builds. Arizona defense against Blake Bortles was not the obvious field choice, but it produced enough through sacks and takeaways while the rest of the lineup carried first place level offense.",
+    "uniquenessNotes": "The cleanest structural edge is the double tight end choice with actual ceiling at both spots. Ertz is not being used as a thin flex gamble. He is part of the quarterback stack and one of the strongest target earners on the slate. Gronkowski is not being used for safety. He is being used because tight end raw points were available there in a way the field could not easily match with cheaper options. The lineup treats tight end as a ceiling position twice, and that gave it a scoring path most builds did not have.\n\nKearse is the true separator. Julio Jones was expensive and popular enough that plenty of lineups had access to the nuclear score. Kearse at 1.3 percent is where duplication breaks. Once he delivers a 100 yard touchdown game, the rest of the roster can absorb popular scores from Julio Jones, Cooper Kupp, Joe Mixon, and Gronkowski without losing first place equity.\n\nThere is also a strong lesson in what the roster refused to do. It did not force a bring back into the Wentz stack. It did not overstack the Rams Saints game. It did not chase a cheap defense against a backup. The build accepted one compact stack, paid for premium receiving ceilings, and used one low owned receiver to change the contest.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Carson Wentz with Zach Ertz as a compact stack, then Julio Jones and Jermaine Kearse as the receiver ceiling engine",
+      "secondaryLever": "Double tight end raw points with Ertz and Gronkowski plus Cardinals defense against Blake Bortles",
+      "notes": {
+        "rosterConstruction": "2-1-1-1-1-1-1-1",
+        "gameKey": [
+          "CHI@PHI: 2 (QB game)",
+          "SEA@SF: 1",
+          "CLE@CIN: 1",
+          "TB@ATL: 1",
+          "CAR@NYJ: 1",
+          "NO@LAR: 1",
+          "MIA@NE: 1",
+          "JAX@ARI: 1"
+        ],
+        "qbStack": [
+          "Carson Wentz",
+          "Zach Ertz"
+        ],
+        "receiverCeilings": [
+          "Julio Jones",
+          "Jermaine Kearse",
+          "Cooper Kupp"
+        ],
+        "doubleTightEndStructure": [
+          "Rob Gronkowski",
+          "Zach Ertz"
+        ],
+        "qbFacedByCardinalsDst": "Blake Bortles"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "COMPACT_QB_TE_STACK",
+        "DOUBLE_TE_CEILING_BUILD",
+        "LOW_OWNERSHIP_WR_BREAKER",
+        "ALPHA_WR_SLATE_ANCHOR",
+        "LOW_SALARY_DST_STABILIZER"
+      ],
+      "macroStory": "A first place roster built on a compact Wentz Ertz stack, then powered by Julio Jones destroying the slate and Jermaine Kearse breaking duplication, with double tight end ceiling giving the build uncommon raw point strength."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "RAW_POINTS_ANCHOR",
+          "ALPHA_TARGET_SHARE"
+        ],
+        "microStory": "Julio Jones is the score that warps the slate. Once he posts 253 receiving yards and two touchdowns, the roster no longer needs perfection elsewhere. It needs enough surrounding structure to hold the lead."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 1,
+        "roleTags": [
+          "LOW_OWNERSHIP_LEVER",
+          "SALARY_RELIEF_CEILING",
+          "DUPLICATION_BREAKER"
+        ],
+        "microStory": "Jermaine Kearse is the tournament swing. A 4,000 receiver at 1.3 percent ownership clearing 100 yards with a touchdown gives the lineup a scoring branch the field barely accessed."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 1,
+        "roleTags": [
+          "STACK_ENGINE",
+          "TARGET_MONSTER",
+          "FLEX_CEILING"
+        ],
+        "microStory": "Zach Ertz turns the quarterback stack from good into dangerous. Ten catches, 103 yards, and a touchdown from a flex tight end gives the roster uncommon leverage through position allocation."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "LOW_OWNERSHIP_COMPLEMENT",
+          "TURNOVER_PATH",
+          "SCRIPT_NEUTRAL_VALUE"
+        ],
+        "microStory": "Arizona defense did not need to win the slate on its own. It needed to avoid losing it while supplying enough pressure and turnover value to complement an offense heavy roster. That is exactly what happened."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Carson Wentz",
+          "position": "QB",
+          "team": "PHI"
+        },
+        "teammates": [
+          {
+            "name": "Zach Ertz",
+            "position": "TE",
+            "team": "PHI"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Carson Wentz",
+          "position": "QB",
+          "team": "PHI"
+        },
+        "opponent": {
+          "name": "Zach Ertz",
+          "position": "TE",
+          "team": "PHI"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Rob Gronkowski",
+          "position": "TE",
+          "team": "NE"
+        },
+        "opponent": {
+          "name": "Julio Jones",
+          "position": "WR",
+          "team": "ATL"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Cardinals",
+          "position": "DST",
+          "team": "ARI",
+          "qbFaced": "Blake Bortles"
+        },
+        "opponent": {
+          "name": "Blake Bortles",
+          "position": "QB",
+          "team": "JAX"
+        }
+      }
+    ]
+  }
+}

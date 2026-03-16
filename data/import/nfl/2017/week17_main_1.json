@@ -1,0 +1,335 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 17,
+  "slateType": "MAIN",
+  "slateDate": "2017-12-31T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 17",
+  "slateTag": "WINSTON SAINTS GAME STACK, SF OPPOSITION CLUSTER, GODWIN MIN PRICE BREAKER",
+  "slateGroup": "4-3-1-1",
+  "rosterConstruction": "4-3-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Millionaire Maker",
+    "siteContestId": "NFL_2017_WK17_MAIN_2017-12-31T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 11680
+  },
+  "winner": {
+    "username": "Powermoves",
+    "points": 222.62,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 222.62,
+    "totalOwnershipBp": 11680,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Jameis Winston",
+        "position": "QB",
+        "team": "TB",
+        "salary": 5800,
+        "points": 29.72,
+        "ownershipPercent": 2.1,
+        "passTd": 1,
+        "passYds": 363,
+        "interceptions": 3,
+        "rushTd": 1,
+        "rushYds": 32,
+        "twoPt": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Carlos Hyde",
+        "position": "RB",
+        "team": "SF",
+        "salary": 4900,
+        "points": 23.0,
+        "ownershipPercent": 15.6,
+        "rushYdsRb": 90,
+        "rushTdRb": 2,
+        "recRb": 2,
+        "recYdsRb": 10,
+        "fumblesLost": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Dion Lewis",
+        "position": "RB",
+        "team": "NE",
+        "salary": 6800,
+        "points": 31.3,
+        "ownershipPercent": 24.0,
+        "rushYdsRb": 93,
+        "rushTdRb": 1,
+        "recRb": 6,
+        "recYdsRb": 40,
+        "recTdRb": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 7800,
+        "points": 37.3,
+        "ownershipPercent": 22.6,
+        "rec": 9,
+        "recYds": 133,
+        "recTd": 1,
+        "gameAwayTeam": "OAK",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "OAK"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 4000,
+        "points": 27.1,
+        "ownershipPercent": 0.3,
+        "rec": 7,
+        "recYds": 111,
+        "recTd": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Michael Thomas",
+        "position": "WR",
+        "team": "NO",
+        "salary": 7700,
+        "points": 15.4,
+        "ownershipPercent": 10.3,
+        "rec": 6,
+        "recYds": 94,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "George Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 2800,
+        "points": 17.0,
+        "ownershipPercent": 3.8,
+        "rec": 4,
+        "recYds": 100,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "team": "NO",
+        "salary": 7900,
+        "points": 30.8,
+        "ownershipPercent": 22.0,
+        "rushYdsRb": 44,
+        "rushTdRb": 1,
+        "recRb": 6,
+        "recYdsRb": 84,
+        "recTdRb": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "49ers",
+        "position": "DST",
+        "team": "SF",
+        "salary": 2100,
+        "points": 11.0,
+        "ownershipPercent": 16.1,
+        "sacks": 3,
+        "takeaways": 2,
+        "qbFaced": "Sean Mannion",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup attacks Week 17 exactly where the slate was most unstable. Late season chaos usually pushes the field toward surface level certainty, but this build leaned into roles that had quietly expanded and game environments where defensive resistance had already eroded. The centerpiece is Tampa Bay against New Orleans. Jameis Winston carried only 2.1 percent ownership, yet he still had full game access through volume, scrambling ability, and a concentrated path to pass catchers. Chris Godwin at 0.3 percent is the real pressure point. He was priced as an afterthought and scored as a featured option. Michael Thomas and Alvin Kamara on the other side completed a four player cluster from the same game without turning the build into a rigid all in shootout thesis.\n\nThe second pillar is the San Francisco opposition cluster against the Rams resting structure. Carlos Hyde, George Kittle, and the 49ers defense all benefited from the same underlying condition. Los Angeles was not deploying its normal offensive engine, and Sean Mannion lowered the quality of the opposing environment. Hyde got scoring access on the ground. Kittle produced a 100 yard bonus at near minimum tight end salary. The defense captured sacks and takeaways without needing a touchdown. That is the type of three player cluster that wins late season tournaments because it is driven by context rather than by obvious box score chasing.\n\nThe remaining two pieces kept the roster from becoming too dependent on any one game script. Dion Lewis was a high quality volume back in a New England offense still capable of sharp touchdown distribution. Keenan Allen gave the build a premium receiver score with target certainty and yardage ceiling. Once Godwin broke the slate from the value range, the rest of the roster only needed its expensive pieces to behave like strong versions of themselves. They did.",
+    "uniquenessNotes": "The field usually treats Week 17 as a survival test. This lineup treated it as an information test. The Winston decision is the clearest example. Three interceptions usually kill tournament quarterback outcomes, but Winston still reached 363 passing yards, added rushing value, and created enough total offense to justify the bet. The lesson is that raw volume can overpower mistakes when the ownership is low and the pass catcher attachment is correct.\n\nGodwin was the most important player relative to salary and duplication. At 4,000 and 0.3 percent ownership, he gave the lineup a score the field could not reproduce through normal value construction. He turned the Tampa New Orleans game stack from interesting into decisive. Kamara and Thomas were popular enough to keep the build tied to proven ceilings, but Godwin made the cluster asymmetric.\n\nThe San Francisco side is also sharper than it looks. Hyde, Kittle, and the 49ers defense were not random mini correlations. They all traced back to the Rams backup quarterback situation and a softer game environment than a normal Los Angeles matchup would imply. The lineup did not guess at randomness. It identified where late season context changed the baseline assumptions and then allocated into the adjusted version of the slate.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Jameis Winston with Chris Godwin, Michael Thomas, and Alvin Kamara in the highest leverage game cluster on the slate",
+      "secondaryLever": "San Francisco three player opposition cluster against Sean Mannion with Carlos Hyde, George Kittle, and the 49ers defense",
+      "notes": {
+        "rosterConstruction": "4-3-1-1",
+        "gameKey": [
+          "NO@TB: 4 (QB game)",
+          "SF@LAR: 3",
+          "NYJ@NE: 1",
+          "OAK@LAC: 1"
+        ],
+        "saintsBuccaneersCluster": [
+          "Jameis Winston",
+          "Chris Godwin",
+          "Michael Thomas",
+          "Alvin Kamara"
+        ],
+        "fortyNinersRamsCluster": [
+          "Carlos Hyde",
+          "George Kittle",
+          "49ers"
+        ],
+        "premiumOneOff": "Keenan Allen",
+        "highFloorCeilingBack": "Dion Lewis",
+        "qbFacedBy49ersDst": "Sean Mannion"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "LOW_OWNERSHIP_QB_GAME_STACK",
+        "MIN_PRICE_WR_BREAKER",
+        "OPPOSITION_CLUSTER_VS_BACKUP_QB",
+        "PREMIUM_WR_ONE_OFF",
+        "WEEK_17_CONTEXT_LEVERAGE"
+      ],
+      "macroStory": "A first place roster built around a low owned Tampa Bay and New Orleans game stack, then strengthened by a San Francisco three player cluster attacking the Rams backup environment and a premium Keenan Allen one off."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "QB",
+        "slotIndex": 0,
+        "roleTags": [
+          "PRIMARY_ENGINE",
+          "LOW_OWNERSHIP",
+          "CORRELATION_HUB"
+        ],
+        "microStory": "Jameis Winston was the entry point into the slate's most underused ceiling environment. The interceptions hurt his real life box score, but 363 passing yards, a rushing touchdown, and a two point conversion preserved tournament winning output."
+      },
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF_BREAKER",
+          "ULTRA_LOW_OWNERSHIP",
+          "STACK_PARTNER"
+        ],
+        "microStory": "Chris Godwin was the swing piece. At 0.3 percent ownership, a 111 yard and one touchdown game gave the lineup a score almost no competing roster could mirror at the same salary."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "OPPOSING_GAME_HAMMER",
+          "DUAL_PHASE_SCORING",
+          "GAME_ENVIRONMENT_CAPTURE"
+        ],
+        "microStory": "Alvin Kamara kept the New Orleans side of the stack alive through both rushing and receiving scores. He ensured the game cluster could pay off even without Michael Thomas finding the end zone."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "BACKUP_QB_ATTACK",
+          "TURNOVER_ACCESS",
+          "CONTEXT_DRIVEN_PLAY"
+        ],
+        "microStory": "The 49ers defense was not a talent bet as much as a situation bet. Sean Mannion lowered the Rams baseline enough for San Francisco to produce sacks and takeaways at a thin salary."
+      },
+      {
+        "rosterSpot": "TE",
+        "slotIndex": 0,
+        "roleTags": [
+          "SALARY_RELIEF",
+          "BONUS_YARDAGE",
+          "CLUSTER_EXTENSION"
+        ],
+        "microStory": "George Kittle turned the San Francisco game read into a more complete position. A 2,800 tight end reaching the 100 yard bonus gave the lineup room to afford premium ceilings elsewhere."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Jameis Winston",
+          "position": "QB",
+          "team": "TB"
+        },
+        "teammates": [
+          {
+            "name": "Chris Godwin",
+            "position": "WR",
+            "team": "TB"
+          }
+        ],
+        "opponent": {
+          "name": "Michael Thomas",
+          "position": "WR",
+          "team": "NO"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Michael Thomas",
+          "position": "WR",
+          "team": "NO"
+        },
+        "opponent": {
+          "name": "Alvin Kamara",
+          "position": "RB",
+          "team": "NO"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Carlos Hyde",
+          "position": "RB",
+          "team": "SF"
+        },
+        "opponent": {
+          "name": "George Kittle",
+          "position": "TE",
+          "team": "SF"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "49ers",
+          "position": "DST",
+          "team": "SF",
+          "qbFaced": "Sean Mannion"
+        },
+        "opponent": {
+          "name": "Sean Mannion",
+          "position": "QB",
+          "team": "LAR"
+        }
+      }
+    ]
+  }
+}

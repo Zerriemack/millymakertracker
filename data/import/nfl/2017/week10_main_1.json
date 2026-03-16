@@ -1,0 +1,319 @@
+{
+  "sport": "NFL",
+  "year": 2017,
+  "week": 10,
+  "slateType": "MAIN",
+  "slateDate": "2017-11-12T18:00:00.000Z",
+  "slateName": "NFL Main Slate Week 10",
+  "slateTag": "GOFF RAMS ONSLAUGHT, ROBERT WOODS BREAKS THE SLATE, DEMARCO MURRAY 0.7 PERCENT",
+  "slateGroup": "4-2-1-1-1",
+  "isMain": true,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL $3.5M Fantasy Football Millionaire [$1M to 1st]",
+    "siteContestId": "NFL_2017_WK10_MAIN_2017-11-12T18:00:00.000Z_DK_MAIN_MILLY",
+    "entryFeeCents": 2000,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 12580
+  },
+  "winner": {
+    "username": "Sugarland59",
+    "points": 215.9,
+    "maxEntries": 0
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 215.9,
+    "totalOwnershipBp": 12580,
+    "items": [
+      {
+        "rosterSpot": "QB",
+        "name": "Jared Goff",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 6700,
+        "points": 29.5,
+        "ownershipPercent": 10.1,
+        "passTd": 3,
+        "passYds": 355,
+        "rushYds": 3,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "Todd Gurley II",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 8700,
+        "points": 19.6,
+        "ownershipPercent": 14.9,
+        "rushYdsRb": 68,
+        "recRb": 6,
+        "recYdsRb": 68,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "RB",
+        "name": "DeMarco Murray",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 5000,
+        "points": 29.2,
+        "ownershipPercent": 0.7,
+        "rushYdsRb": 42,
+        "rushTdRb": 2,
+        "recRb": 4,
+        "recYdsRb": 30,
+        "recTdRb": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "TEN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "JuJu Smith-Schuster",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 5600,
+        "points": 20.7,
+        "ownershipPercent": 15.7,
+        "rec": 5,
+        "recYds": 97,
+        "recTd": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Golden Tate",
+        "position": "WR",
+        "team": "DET",
+        "salary": 6800,
+        "points": 21.7,
+        "ownershipPercent": 20.2,
+        "rec": 6,
+        "recYds": 97,
+        "recTd": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "WR",
+        "name": "Robert Woods",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 5000,
+        "points": 40.1,
+        "ownershipPercent": 14.9,
+        "rec": 8,
+        "recYds": 171,
+        "recTd": 2,
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "TE",
+        "name": "Eric Ebron",
+        "position": "TE",
+        "team": "DET",
+        "salary": 3100,
+        "points": 11.9,
+        "ownershipPercent": 7.0,
+        "rec": 2,
+        "recYds": 39,
+        "recTd": 1,
+        "gameAwayTeam": "CLE",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Sterling Shepard",
+        "position": "WR",
+        "team": "NYG",
+        "salary": 5500,
+        "points": 28.2,
+        "ownershipPercent": 25.1,
+        "rec": 11,
+        "recYds": 142,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "DST",
+        "name": "Rams",
+        "position": "DST",
+        "team": "LAR",
+        "salary": 3600,
+        "points": 15,
+        "ownershipPercent": 17.2,
+        "sacks": 3,
+        "takeaways": 4,
+        "qbFaced": "Tom Savage",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "HOU",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "HOU"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This winner starts with a hard stance on one offense and one opponent collapse. Jared Goff, Todd Gurley II, Robert Woods, and Rams defense create a four piece capture of Houston at Los Angeles. The game does not turn into a back and forth track meet. It turns into Rams control. Goff throws for 355 yards and three touchdowns, Woods detonates for 171 yards and two touchdowns, Gurley adds six catches, and the defense collects sacks and takeaways against Tom Savage. The lineup captures the full shape of the outcome rather than one narrow lane through it.\n\nRobert Woods is the true hinge. His 40.1 point score at 5,000 changes the entire slate because he does not need elite salary to reach elite output. Once Woods clears the bonus and adds two touchdowns, the roster can carry high end volume elsewhere without sacrificing ceiling. Goff then becomes more than a functional quarterback score. He becomes the distributor attached to the slate's top wide receiver result.\n\nThe next layer is DeMarco Murray at 0.7 percent ownership. This is where the tournament gets decided. Murray had been ceding attention and backfield enthusiasm to Derrick Henry, yet the lineup lands on a three touchdown game from a nearly unowned running back. That is not small field differentiation. That is a direct hit on a branch of the slate the field barely touched.\n\nThe remaining pieces are disciplined rather than flashy. Golden Tate with Eric Ebron captures Detroit scoring concentration against Cleveland. JuJu Smith-Schuster gets his touchdown and near 100 yard day in Indianapolis. Sterling Shepard supplies a target driven 11 catch game without needing a touchdown. Each of those selections serves the same purpose. They keep pressure on every slot while the Rams cluster and Murray do the heavy lifting.",
+    "uniquenessNotes": "The sharpest decision in this build is pairing Rams offense with Rams defense in the same game. Many players treat quarterback stacks and defense as separate allocation problems. This lineup treats them as one script decision. If Los Angeles controls the game, the passing game can still deliver through efficiency and field position while Houston's offense hands extra possessions back through sacks and takeaways. Against Tom Savage, those outcomes were more connected than the field tends to price.\n\nMurray is the cleanest separator, though the construction around him matters too. The roster does not force a Houston bring back into the Rams stack. It accepts a one sided script and spends the saved slot on a near dead ownership running back who scores three times. That is a sharper use of correlation discipline than a reflexive game stack.\n\nThere is also a useful ownership lesson in the secondary pairings. Tate and Shepard were popular enough to keep the lineup tied to strong projection buckets. Ebron stayed cheap and caught a touchdown next to Tate. JuJu brought his own touchdown on a separate island. The lineup did not try to fade every popular score. It chose one major leverage point in Murray, then built around concentrated offense and high certainty volume.",
+    "stackMeta": {
+      "lineupType": "CLASSIC",
+      "primaryLever": "Jared Goff with Robert Woods and Todd Gurley II paired with Rams defense against Tom Savage",
+      "secondaryLever": "DeMarco Murray as a 0.7 percent three touchdown separator",
+      "notes": {
+        "rosterConstruction": "4-2-1-1-1",
+        "gameKey": [
+          "HOU@LAR: 4 (QB game)",
+          "CLE@DET: 2",
+          "CIN@TEN: 1",
+          "PIT@IND: 1",
+          "NYG@SF: 1"
+        ],
+        "ramsCluster": [
+          "Jared Goff",
+          "Todd Gurley II",
+          "Robert Woods",
+          "Rams"
+        ],
+        "lionsPair": [
+          "Golden Tate",
+          "Eric Ebron"
+        ],
+        "leverageBack": "DeMarco Murray",
+        "highVolumeFlex": "Sterling Shepard",
+        "qbFacedByRamsDst": "Tom Savage"
+      }
+    },
+    "lineupAnalysis": {
+      "archetypeTags": [
+        "QB_DOUBLE_STACK_WITH_DST",
+        "ONE_SIDED_GAME_SCRIPT_BUILD",
+        "LOW_OWNERSHIP_RB_TOUCHDOWN_SPIKE",
+        "PASS_CATCHER_PAIR_WITHOUT_QB",
+        "TARGET_VOLUME_FLEX"
+      ],
+      "macroStory": "A first place roster built on a one sided Rams domination script, where Goff, Woods, Gurley, and the defense captured nearly every useful angle of the game, then separated from the field through a near unowned DeMarco Murray eruption."
+    },
+    "lineupItemAnalysis": [
+      {
+        "rosterSpot": "WR",
+        "slotIndex": 2,
+        "roleTags": [
+          "SLATE_BREAKER",
+          "YARDAGE_BONUS",
+          "DOUBLE_TOUCHDOWN_SPIKE"
+        ],
+        "microStory": "Robert Woods is the score that pushes the roster into first place range. At 5,000, 171 yards and two touchdowns create elite output without forcing fragile salary compromises elsewhere."
+      },
+      {
+        "rosterSpot": "RB",
+        "slotIndex": 1,
+        "roleTags": [
+          "LOW_OWNERSHIP_LEVER",
+          "THREE_TOUCHDOWN_OUTCOME",
+          "BACKFIELD_CONTRARIAN"
+        ],
+        "microStory": "DeMarco Murray is the tournament swing. The field had cooled on him, yet he turns limited ownership into a three touchdown result that almost no competing roster can duplicate."
+      },
+      {
+        "rosterSpot": "DST",
+        "slotIndex": 0,
+        "roleTags": [
+          "SCRIPT_AMPLIFIER",
+          "TURNOVER_CEILING",
+          "QB_PRESSURE_TARGET"
+        ],
+        "microStory": "Rams defense is not an isolated defense play. It amplifies the full game script by creating takeaways and short fields against Tom Savage, which supports both floor and ceiling for the Rams offense."
+      },
+      {
+        "rosterSpot": "FLEX",
+        "slotIndex": 0,
+        "roleTags": [
+          "TARGET_MONSTER",
+          "NON_TOUCHDOWN_CEILING",
+          "PPR_STABILIZER"
+        ],
+        "microStory": "Sterling Shepard gives the lineup an 11 catch, 142 yard flex score without needing the end zone. In a slate with several touchdown driven results, that reception volume adds a different path to ceiling."
+      }
+    ],
+    "correlations": [
+      {
+        "type": "STACK",
+        "qb": {
+          "name": "Jared Goff",
+          "position": "QB",
+          "team": "LAR"
+        },
+        "teammates": [
+          {
+            "name": "Todd Gurley II",
+            "position": "RB",
+            "team": "LAR"
+          },
+          {
+            "name": "Robert Woods",
+            "position": "WR",
+            "team": "LAR"
+          }
+        ],
+        "opponent": null
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Golden Tate",
+          "position": "WR",
+          "team": "DET"
+        },
+        "opponent": {
+          "name": "Eric Ebron",
+          "position": "TE",
+          "team": "DET"
+        }
+      },
+      {
+        "type": "GAME_PAIR",
+        "qb": null,
+        "teammate": {
+          "name": "Jared Goff",
+          "position": "QB",
+          "team": "LAR"
+        },
+        "opponent": {
+          "name": "Rams",
+          "position": "DST",
+          "team": "LAR"
+        }
+      },
+      {
+        "type": "DST_VS_QB",
+        "qb": null,
+        "teammate": {
+          "name": "Rams",
+          "position": "DST",
+          "team": "LAR",
+          "qbFaced": "Tom Savage"
+        },
+        "opponent": {
+          "name": "Tom Savage",
+          "position": "QB",
+          "team": "HOU"
+        }
+      }
+    ]
+  }
+}

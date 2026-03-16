@@ -175,6 +175,8 @@ export const GET: APIRoute = async () => {
           slateType: true,
           slateDate: true,
           slateKey: true,
+          slateTag: true,
+          slateGroup: true,
           season: { select: { year: true } },
         },
       },
@@ -265,6 +267,10 @@ export const GET: APIRoute = async () => {
       slateDate: c.slate.slateDate,
       slateKey: c.slate.slateKey,
       link: year ? `/nfl/${year}/slate/${c.slate.id}` : "",
+      slateTag: c.slate.slateTag ?? null,
+      slateGroup: c.slate.slateGroup ?? null,
+      tag: c.slate.slateTag ?? null,
+      group: c.slate.slateGroup ?? null,
 
       salaryUsed,
       salaryLeft,
@@ -294,6 +300,12 @@ export const GET: APIRoute = async () => {
       analysisKeys: c.analysis && typeof c.analysis === "object" ? Object.keys(c.analysis as any) : [],
     };
   });
+
+  for (const r of rows) {
+    if (r.year === 2024 && r.week === 22 && String(r.slateType || "") === "SUPER_BOWL") {
+      console.log("[showdown api debug] 2024 week 22 SUPER_BOWL row:", r);
+    }
+  }
 
   const totalLineups = rows.length;
 
