@@ -123,10 +123,30 @@ const slateTag = safeUpper(slate.slateTag || slate.slateType);
 const slateTagFolder = toFolderTag(slateTag);
 const parsed = parseSlateKey(slateKey);
 const weekNum = Number(slate.week || parsed.week || 0);
+const slateNameUpper = safeUpper(slate.slateName);
 
 const lineupTypeUpper = safeUpper((slate as any)?.lineupType);
 const slateTypeUpper = safeUpper((slate as any)?.slateType);
 const isShowdown = lineupTypeUpper === "SHOWDOWN" || slateTypeUpper === "SHOWDOWN";
+const knownShowdownFolders = new Set([
+  "MNF",
+  "TNF",
+  "SNF",
+  "SUPER_BOWL",
+  "THANKSGIVING",
+  "BLACK_FRIDAY",
+  "PLAYOFFS",
+  "SATURDAY",
+]);
+const superBowlNumMatch = slateNameUpper.match(/SUPER BOWL\s*(\d+)/);
+const superBowlNum = superBowlNumMatch ? superBowlNumMatch[1] : "";
+const showdownFolder = isShowdown
+  ? knownShowdownFolders.has(slateTypeUpper)
+    ? slateTypeUpper
+    : slateNameUpper.includes("BLACK FRIDAY")
+      ? "BLACK_FRIDAY"
+      : slateTagFolder
+  : slateTagFolder;
 
 const matchupAbbr =
   isShowdown && parsed.away && parsed.home ? `${parsed.away} vs ${parsed.home}` : "";
@@ -161,12 +181,32 @@ const sportLower = String(season.sport).toLowerCase();
 
 const screenshotCandidates: string[] = isShowdown
   ? [
+      ...(showdownFolder === "SUPER_BOWL" && superBowlNum
+        ? [
+            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/superbowl ${superBowlNum}.png`,
+            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/superbowl ${superBowlNum}.jpg`,
+            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/superbowl ${superBowlNum}.jpeg`,
+          ]
+        : []),
+      ...(showdownFolder === "BLACK_FRIDAY"
+        ? [
+            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}_black_friday.png`,
+            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}_black_friday.jpg`,
+            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}_black_friday.jpeg`,
+            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}_black_friday.png`,
+            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}_black_friday.jpg`,
+            `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}_black_friday.jpeg`,
+          ]
+        : []),
       `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${pad2(weekNum)}.png`,
       `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${pad2(weekNum)}.jpg`,
       `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${pad2(weekNum)}.jpeg`,
-      `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${weekNum}.png`,
-      `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${weekNum}.jpg`,
-      `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${weekNum}.jpeg`,
+      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.png`,
+      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.jpg`,
+      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.jpeg`,
+      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}.png`,
+      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}.jpg`,
+      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}.jpeg`,
       `/slates/${sportLower}/${season.year}/${slateKey}.png`,
       `/slates/${sportLower}/${season.year}/${slateKey}.jpg`,
       `/slates/${sportLower}/${season.year}/${slateKey}.jpeg`,
@@ -180,7 +220,7 @@ const screenshotCandidates: string[] = isShowdown
       `/slates/${sportLower}/${season.year}/${slateKey}.jpeg`,
     ];
 
-const screenshotUrl = screenshotCandidates[0] ?? null;
+const screenshotUrl = pickFirstExistingPublicPath(screenshotCandidates);
 
 const items = Array.isArray(lineup?.items) ? [...lineup.items] : [];
 items.sort((a, b) => {
