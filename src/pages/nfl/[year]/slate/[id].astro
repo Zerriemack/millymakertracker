@@ -1,6 +1,4 @@
 ---
-import fs from "node:fs";
-import path from "node:path";
 import Layout from "../../../../layouts/Layout.astro";
 
 const { id } = Astro.params;
@@ -84,16 +82,6 @@ function classicRosterOrder(spot: string) {
   if (s === "FLEX") return 4;
   if (s === "DST") return 5;
   return 9;
-}
-
-function pickFirstExistingPublicPath(candidates: string[]) {
-  const publicDir = path.join(process.cwd(), "public");
-  for (const p of candidates) {
-    const rel = p.startsWith("/") ? p.slice(1) : p;
-    const abs = path.join(publicDir, rel);
-    if (fs.existsSync(abs)) return p;
-  }
-  return null;
 }
 
 function toFolderTag(tag: string) {
@@ -182,7 +170,7 @@ const screenshotCandidates: string[] = isShowdown
       `/slates/${sportLower}/${season.year}/${slateKey}.jpeg`,
     ];
 
-const screenshotUrl = pickFirstExistingPublicPath(screenshotCandidates);
+const screenshotUrl = screenshotCandidates[0] || null;
 
 const items = Array.isArray(lineup?.items) ? [...lineup.items] : [];
 items.sort((a, b) => {
