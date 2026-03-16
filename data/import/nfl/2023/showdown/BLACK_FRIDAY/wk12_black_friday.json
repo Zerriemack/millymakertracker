@@ -1,0 +1,147 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 12,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-11-24",
+  "slateName": "Black Friday Showdown",
+  "slateTag": "DOUBLE DST WITH HILL CPT AND WILSON JR SALARY RELIEF",
+  "slateGroup": "C+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "Black Friday Showdown",
+    "siteContestId": "NFL_2023_WK12_BLACK_FRIDAY_SHOWDOWN_2023-11-24_dolphins_jets",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2886842,
+    "totalOwnershipBp": 21350
+  },
+  "winner": {
+    "username": "ej1082",
+    "points": 130.7,
+    "maxEntries": 6
+  },
+  "lineup": {
+    "salaryUsed": 49200,
+    "totalPoints": 130.7,
+    "totalOwnershipBp": 21350,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 18600,
+        "points": 42.6,
+        "ownershipPercent": 24.3,
+        "rec": 9,
+        "recYds": 102,
+        "recTd": 1,
+        "rushYds": 2,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Raheem Mostert",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 10200,
+        "points": 21.4,
+        "ownershipPercent": 66.2,
+        "rushYdsRb": 94,
+        "rushTdRb": 2,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jaylen Waddle",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 9600,
+        "points": 22.4,
+        "ownershipPercent": 36.4,
+        "rec": 8,
+        "recYds": 114,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dolphins",
+        "position": "DST",
+        "team": "MIA",
+        "salary": 5200,
+        "points": 21.0,
+        "ownershipPercent": 42.0,
+        "sacks": 7,
+        "interceptionsDst": 2,
+        "defTd": 1,
+        "qbFaced": "Tim Boyle",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jets",
+        "position": "DST",
+        "team": "NYJ",
+        "salary": 3800,
+        "points": 13.0,
+        "ownershipPercent": 13.4,
+        "sacks": 2,
+        "interceptionsDst": 2,
+        "defFumbleRecoveries": 1,
+        "defTd": 1,
+        "qbFaced": "Tua Tagovailoa",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jeff Wilson Jr.",
+        "position": "RB",
+        "team": "MIA",
+        "salary": 1800,
+        "points": 10.3,
+        "ownershipPercent": 31.2,
+        "rushYdsRb": 56,
+        "recRb": 3,
+        "recYdsRb": 17,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by reading the game as a Miami-controlled environment where raw offensive concentration and defensive scoring could coexist without needing a competitive script. Tyreek Hill captain was still the central engine because Miami did not spread ceiling production across too many expensive pieces. Hill cleared the 100-yard bonus, scored once through the air, and added rushing output, which gave the lineup the correct multiplier decision in a game where Miami’s passing offense still owned the highest-end fantasy ceiling.\n\nThe sharper layer sits underneath that captain choice. This build did not stop at a standard Hill plus quarterback shell. It pushed further into the Miami domination script with Raheem Mostert, Jaylen Waddle, Dolphins defense, and Jeff Wilson Jr. That gave the roster access to nearly every major Miami scoring channel while still using Wilson as the salary release valve that made the rest of the structure possible. Wilson did not need a touchdown to matter. At 1,800, his rushing and receiving usage was enough to keep the build alive while the expensive Miami pieces delivered the real ceiling.\n\nThe double defense decision is where the lineup separates from more obvious constructions. Miami defense was easy to justify because the Jets offense was unstable and prone to sacks and turnovers. The more interesting call was carrying Jets defense back on the other side. That was not a contradiction. It was an acceptance that showdown defense scoring is event-driven. A losing defense can still matter through takeaways, sacks, and a touchdown, especially when the opposing offense is aggressive and still creates enough play volume for splash events. That is exactly what happened here.\n\nThe result is a lineup built around concentrated Miami offense, a cheap Miami accessory piece, and both defenses monetizing volatility. It is not a pure blowout build and it is not a pure back-and-forth build. It sits in the tension between those outcomes, which is why it had enough paths to first place.",
+    "uniquenessNotes": "The lineup gets credit for two things. First, it understood that Tyreek Hill captain could still be viable even at visible ownership because the rest of the build did the separating. Second, it used both defenses in a game where the field could easily have talked itself into choosing only one side of the turnover environment.\n\nJets defense at 13.4 percent was the main structural lever. That slot gave the roster one of its only true ownership discounts while still matching the way showdown scoring can behave. A defense does not need game control to matter. It needs sacks, takeaways, and one swing play. The Jets got there through exactly that route.\n\nThe final grade lands at C plus. The lineup had a clear captain thesis, one true sub-20 percent separator, some salary left, and a double defense construction that most players would not land on naturally. It stops short of B territory because the captain was still popular, the total ownership was heavy, and the lineup was duplicated six ways. The build was good enough to win, but not clean enough structurally to grade as one of the stronger showdown constructions.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Tyreek Hill",
+          "position": "WR",
+          "team": "MIA"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Alpha wide receiver captain with four additional Miami pieces, double defense scoring, and cheap same-team running back salary relief",
+        "includesQBs": false
+      },
+      "primaryLever": "Tyreek Hill captain captured Miami’s most concentrated ceiling outcome while the rest of the build absorbed the remaining scoring channels",
+      "secondaryLever": "Double defense construction with Jets defense as the low-owned tension point and Jeff Wilson Jr. as the salary relief link"
+    }
+  }
+}

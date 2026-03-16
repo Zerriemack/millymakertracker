@@ -8183,5 +8183,13 @@
 { "sport": "NFL", "name": "Patrick Mahomes", "position": "QB", "teamAbbreviation": "KC" },
 { "sport": "NFL", "name": "DeVonta Smith", "position": "WR", "teamAbbreviation": "PHI" },
 { "sport": "NFL", "name": "Jake Elliott", "position": "K", "teamAbbreviation": "PHI" },
-{ "sport": "NFL", "name": "Eagles", "position": "DST", "teamAbbreviation": "PHI" }
+{ "sport": "NFL", "name": "Eagles", "position": "DST", "teamAbbreviation": "PHI" },
+{ "sport": "NFL", "name": "Tyreek Hill", "position": "WR", "teamAbbreviation": "MIA" },
+{ "sport": "NFL", "name": "Raheem Mostert", "position": "RB", "teamAbbreviation": "MIA" },
+{ "sport": "NFL", "name": "Jaylen Waddle", "position": "WR", "teamAbbreviation": "MIA" },
+{ "sport": "NFL", "name": "Dolphins", "position": "DST", "teamAbbreviation": "MIA" },
+{ "sport": "NFL", "name": "Jets", "position": "DST", "teamAbbreviation": "NYJ" },
+{ "sport": "NFL", "name": "Jeff Wilson Jr.", "position": "RB", "teamAbbreviation": "MIA" },
+{ "sport": "NFL", "name": "Tim Boyle", "position": "QB", "teamAbbreviation": "NYJ" },
+{ "sport": "NFL", "name": "Tua Tagovailoa", "position": "QB", "teamAbbreviation": "MIA" }
 ]
