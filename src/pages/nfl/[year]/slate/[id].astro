@@ -1,6 +1,4 @@
 ---
-import fs from "node:fs";
-import path from "node:path";
 import Layout from "../../../../layouts/Layout.astro";
 
 const { id } = Astro.params;
@@ -84,16 +82,6 @@ function classicRosterOrder(spot: string) {
   if (s === "FLEX") return 4;
   if (s === "DST") return 5;
   return 9;
-}
-
-function pickFirstExistingPublicPath(candidates: string[]) {
-  const publicDir = path.join(process.cwd(), "public");
-  for (const p of candidates) {
-    const rel = p.startsWith("/") ? p.slice(1) : p;
-    const abs = path.join(publicDir, rel);
-    if (fs.existsSync(abs)) return p;
-  }
-  return null;
 }
 
 function toFolderTag(tag: string) {
@@ -182,7 +170,7 @@ const screenshotCandidates: string[] = isShowdown
       `/slates/${sportLower}/${season.year}/${slateKey}.jpeg`,
     ];
 
-const screenshotUrl = pickFirstExistingPublicPath(screenshotCandidates);
+const screenshotUrl = screenshotCandidates[0] ?? null;
 
 const items = Array.isArray(lineup?.items) ? [...lineup.items] : [];
 items.sort((a, b) => {
@@ -246,14 +234,19 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
 
         {screenshotUrl ? (
           <a class="shotLink" href={screenshotUrl} target="_blank" rel="noreferrer">
-            <img class="shotImg" src={screenshotUrl} alt={headerTitle} loading="eager" />
+            <img
+              class="shotImg"
+              src={screenshotUrl}
+              alt={headerTitle}
+              loading="eager"
+              data-candidates={JSON.stringify(screenshotCandidates)}
+            />
           </a>
-        ) : (
-          <div class="shotMissing">
-            <div class="shotMissingTitle">Screenshot not available</div>
-            <div class="shotMissingSub">Add a PNG or JPG using your naming pattern.</div>
-          </div>
-        )}
+        ) : null}
+        <div class="shotMissing" data-missing>
+          <div class="shotMissingTitle">Screenshot not available</div>
+          <div class="shotMissingSub">Add a PNG or JPG using your naming pattern.</div>
+        </div>
       </div>
 
       <aside class="sideCard">
@@ -390,6 +383,42 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
     </section>
   </main>
 </Layout>
+
+<script is:inline>
+  (() => {
+    const img = document.querySelector(".shotImg");
+    const missing = document.querySelector("[data-missing]");
+    if (!img) {
+      if (missing) missing.style.display = "block";
+      return;
+    }
+
+    const raw = img.getAttribute("data-candidates") || "[]";
+    let candidates = [];
+    try {
+      candidates = JSON.parse(raw);
+    } catch {}
+    if (!Array.isArray(candidates) || candidates.length === 0) {
+      if (missing) missing.style.display = "block";
+      return;
+    }
+
+    let idx = 0;
+    if (missing) missing.style.display = "none";
+
+    img.addEventListener("error", () => {
+      idx += 1;
+      if (idx < candidates.length) {
+        const next = candidates[idx];
+        img.src = next;
+        img.parentElement && img.parentElement.setAttribute("href", next);
+      } else {
+        img.style.display = "none";
+        if (missing) missing.style.display = "block";
+      }
+    });
+  })();
+</script>
 
 <style>
   .page {
