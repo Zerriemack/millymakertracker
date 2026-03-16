@@ -8197,5 +8197,11 @@
 { "sport": "NFL", "name": "Geno Smith", "position": "QB", "teamAbbreviation": "SEA" },
 { "sport": "NFL", "name": "Daniel Jones", "position": "QB", "teamAbbreviation": "NYG" },
 { "sport": "NFL", "name": "DK Metcalf", "position": "WR", "teamAbbreviation": "SEA" },
-{ "sport": "NFL", "name": "Wan'Dale Robinson", "position": "WR", "teamAbbreviation": "NYG" }
+{ "sport": "NFL", "name": "Wan'Dale Robinson", "position": "WR", "teamAbbreviation": "NYG" },
+{ "sport": "NFL", "name": "Dak Prescott", "position": "QB", "teamAbbreviation": "DAL" },
+{ "sport": "NFL", "name": "Keenan Allen", "position": "WR", "teamAbbreviation": "LAC" },
+{ "sport": "NFL", "name": "CeeDee Lamb", "position": "WR", "teamAbbreviation": "DAL" },
+{ "sport": "NFL", "name": "Brandin Cooks", "position": "WR", "teamAbbreviation": "DAL" },
+{ "sport": "NFL", "name": "Brandon Aubrey", "position": "K", "teamAbbreviation": "DAL" },
+{ "sport": "NFL", "name": "Gerald Everett", "position": "TE", "teamAbbreviation": "LAC" }
 ]
