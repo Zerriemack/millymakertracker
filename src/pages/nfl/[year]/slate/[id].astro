@@ -1,4 +1,6 @@
 ---
+import fs from "node:fs";
+import path from "node:path";
 import Layout from "../../../../layouts/Layout.astro";
 
 const { id } = Astro.params;
@@ -84,6 +86,16 @@ function classicRosterOrder(spot: string) {
   return 9;
 }
 
+function pickFirstExistingPublicPath(candidates: string[]) {
+  const publicDir = path.join(process.cwd(), "public");
+  for (const p of candidates) {
+    const rel = p.startsWith("/") ? p.slice(1) : p;
+    const abs = path.join(publicDir, rel);
+    if (fs.existsSync(abs)) return p;
+  }
+  return null;
+}
+
 function toFolderTag(tag: string) {
   return safeUpper(tag).replace(/\s+/g, "_");
 }
@@ -109,22 +121,20 @@ function normalizeAnalysis(raw: any) {
 const slateKey = String(slate.slateKey || "").trim();
 const slateTag = safeUpper(slate.slateTag || slate.slateType);
 const slateTagFolder = toFolderTag(slateTag);
-const parsed = parseSlateKey(slateKey);
-const weekNum = Number(slate.week || parsed.week || 0);
+const weekNum = Number(slate.week ?? 0);
 
 const lineupTypeUpper = safeUpper((slate as any)?.lineupType);
 const slateTypeUpper = safeUpper((slate as any)?.slateType);
 const isShowdown = lineupTypeUpper === "SHOWDOWN" || slateTypeUpper === "SHOWDOWN";
-const contest = slate.contest || null;
-const preferredShowdownKey = String(contest?.siteContestId || slateKey || "").trim();
-const showdownFolder = slateTagFolder;
 
+const parsed = parseSlateKey(slateKey);
 const matchupAbbr =
   isShowdown && parsed.away && parsed.home ? `${parsed.away} vs ${parsed.home}` : "";
 
 const slateDateIso = slate.slateDate || parsed.datePart || "";
 const slateDateHuman = formatDateHuman(slateDateIso);
 
+const contest = slate.contest || null;
 const winner = contest?.winner || null;
 const lineup = winner?.lineup || null;
 
@@ -151,26 +161,21 @@ const sportLower = String(season.sport).toLowerCase();
 
 const screenshotCandidates: string[] = isShowdown
   ? [
-      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.png`,
-      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.jpg`,
-      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${pad2(weekNum)}.jpeg`,
-      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}.png`,
-      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}.jpg`,
-      `/slates/${sportLower}/${season.year}/showdown/${showdownFolder}/wk${weekNum}.jpeg`,
-      `/slates/${sportLower}/${season.year}/${preferredShowdownKey || slateKey}.png`,
-      `/slates/${sportLower}/${season.year}/${preferredShowdownKey || slateKey}.jpg`,
-      `/slates/${sportLower}/${season.year}/${preferredShowdownKey || slateKey}.jpeg`,
+      `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${pad2(weekNum)}.png`,
+      `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${pad2(weekNum)}.jpg`,
+      `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${weekNum}.png`,
+      `/slates/${sportLower}/${season.year}/showdown/${slateTagFolder}/wk${weekNum}.jpg`,
+      `/slates/${sportLower}/${season.year}/${slateKey}.png`,
+      `/slates/${sportLower}/${season.year}/${slateKey}.jpg`,
     ]
   : [
       `/slates/${sportLower}/${season.year}/classic/week${pad2(weekNum)}.png`,
       `/slates/${sportLower}/${season.year}/classic/week${pad2(weekNum)}.jpg`,
-      `/slates/${sportLower}/${season.year}/classic/week${pad2(weekNum)}.jpeg`,
       `/slates/${sportLower}/${season.year}/${slateKey}.png`,
       `/slates/${sportLower}/${season.year}/${slateKey}.jpg`,
-      `/slates/${sportLower}/${season.year}/${slateKey}.jpeg`,
     ];
 
-const screenshotUrl = screenshotCandidates[0] || null;
+const screenshotUrl = pickFirstExistingPublicPath(screenshotCandidates);
 
 const items = Array.isArray(lineup?.items) ? [...lineup.items] : [];
 items.sort((a, b) => {
