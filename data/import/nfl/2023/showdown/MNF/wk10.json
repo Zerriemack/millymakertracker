@@ -1,0 +1,148 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 10,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-11-13",
+  "slateName": "NFL Week 10 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2023_WK10_MNF_SHOWDOWN_2023-11-13_den_buf",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 357363,
+    "totalOwnershipBp": 23930
+  },
+  "winner": {
+    "username": "shawnzhan",
+    "points": 116.9,
+    "maxEntries": 38
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 116.9,
+    "totalOwnershipBp": 23930,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Javonte Williams",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 10800,
+        "points": 31.5,
+        "ownershipPercent": 9.5,
+        "rushYds": 79,
+        "rec": 4,
+        "recYds": 31,
+        "recTd": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 12600,
+        "points": 17.38,
+        "ownershipPercent": 88.0,
+        "passTd": 1,
+        "rushTd": 1,
+        "passYds": 177,
+        "rushYds": 13,
+        "interceptions": 2,
+        "fumblesLost": 1,
+        "twoPtPass": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Russell Wilson",
+        "position": "QB",
+        "team": "DEN",
+        "salary": 9400,
+        "points": 18.72,
+        "ownershipPercent": 38.9,
+        "passTd": 2,
+        "passYds": 193,
+        "rushYds": 30,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dalton Kincaid",
+        "position": "TE",
+        "team": "BUF",
+        "salary": 8400,
+        "points": 16.1,
+        "ownershipPercent": 49.9,
+        "rec": 5,
+        "recYds": 51,
+        "recTd": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Courtland Sutton",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 7000,
+        "points": 18.3,
+        "ownershipPercent": 33.5,
+        "rec": 8,
+        "recYds": 53,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Latavius Murray",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 1800,
+        "points": 14.9,
+        "ownershipPercent": 19.5,
+        "rushTd": 1,
+        "rushYds": 68,
+        "rec": 2,
+        "recYds": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "DEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it captured the game through Denver offensive concentration while still respecting Buffalo’s raw touch monopoly. Javonte Williams captain was the lineup’s controlling decision. At 9.5 percent captain ownership, the build gained leverage through a Denver player whose role could absorb both neutral script and comeback script touches. He was not a thin touchdown bet. He was the Broncos skill player most capable of producing through rushing volume, checkdown access, and red zone involvement.\n\nThe game environment validated that read. Buffalo made enough mistakes to keep the slate from turning into a clean Josh Allen captain outcome. Two interceptions, a lost fumble, and a generally disjointed offensive flow lowered the value of paying Allen’s captain ownership premium, but not the value of carrying his flex production. That distinction matters. Allen still handled nearly every meaningful Buffalo scoring channel, so fading him entirely would have been too aggressive. Flex was the efficient exposure point.\n\nRussell Wilson and Courtland Sutton gave the lineup controlled access to Denver passing production without overbuilding the Broncos aerial side. Wilson accounted for both passing touchdowns. Sutton captured one of them and remained the most stable Denver receiver conduit. That pairing complemented rather than conflicted with the Javonte Williams captain thesis because Denver did not need a pass-heavy eruption to produce a winning showdown structure.\n\nLatavius Murray was the low-salary piece that made the lineup structurally dangerous. At 1,800, he gave the build access to Buffalo rushing output and a touchdown without forcing a more duplicated midrange play. He functioned as a pressure-release valve inside the construction. The lineup did not need Buffalo to dominate. It only needed Buffalo to produce enough concentrated scoring through Allen, Kincaid, and one cheap complementary piece.\n\nDalton Kincaid completed the roster by capturing Buffalo’s cleanest pass-catching production. This was a narrow Buffalo game tree. Kincaid scored, Allen remained central, and Murray got there on value plus touchdown equity. The lineup extracted the usable parts of Buffalo without building around a version of the game Buffalo never actually delivered.",
+    "uniquenessNotes": "The strongest decision was not simply Javonte Williams captain. It was Javonte Williams captain in a lineup that still kept both quarterbacks while refusing to spend the final spot on a more conventional Buffalo receiver build. That kept the lineup live across multiple scoring paths without collapsing into the field’s most duplicated quarterback constructions.\n\nLatavius Murray was the true structural separator. Cheap running backs from the underperforming side often get ignored because the field reads them as fragile accessories. Here, Murray served a precise purpose. He captured Buffalo touchdown equity and enough rushing production to matter while letting the lineup pay for both quarterbacks and preserve captain leverage.\n\nThe Denver side of the build also stayed disciplined. Javonte Williams, Russell Wilson, and Courtland Sutton covered the major Denver scoring channels without forcing an unnecessary fourth Denver piece. That restraint helped the lineup avoid a lopsided game script assumption in a game that stayed messy deep into the fourth quarter.\n\nThe final grade lands at B. The lineup had a strong captain choice, one meaningful low-owned value separator, and a balanced way of extracting Buffalo production without overcommitting to the wrong Bills script. It does not grade higher because salary usage was maxed out, the total ownership profile remained fairly dense, and much of the lineup’s uniqueness was concentrated in captain plus one salary-release lever rather than spread across the full build.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Javonte Williams",
+          "position": "RB",
+          "team": "DEN"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Running back captain with both quarterbacks, one primary Denver receiver, one primary Buffalo receiver substitute through tight end, and a low-salary Buffalo running back value piece",
+        "includesQBs": true
+      },
+      "primaryLever": "Javonte Williams captain created the slate’s main leverage point through a 9.5 percent captain outcome tied to Denver offensive concentration",
+      "secondaryLever": "Latavius Murray gave the lineup a low-salary Buffalo touchdown path that supported both-quarterback construction without forcing a more duplicated Bills receiver combination"
+    }
+  }
+}

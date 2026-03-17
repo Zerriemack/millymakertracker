@@ -4,18 +4,18 @@
   "week": 6,
   "slateType": "SHOWDOWN",
   "slateDate": "2023-10-16",
-  "slateName": "Cowboys at Chargers Showdown",
-  "slateTag": "PRESCOTT CPT WITHOUT HERBERT DOUBLE CHARGERS PASS CATCHERS",
-  "slateGroup": "A-",
+  "slateName": "NFL Week 6 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "B+",
   "isMain": false,
   "contest": {
     "site": "DraftKings",
-    "contestName": "NFL Showdown Cowboys at Chargers Week 6 MNF",
+    "contestName": "NFL Showdown Monday Night Contest",
     "siteContestId": "NFL_2023_WK06_MNF_SHOWDOWN_2023-10-16_dal_lac",
     "entryFeeCents": null,
     "entries": null,
     "topPrizeCents": 38000000,
-    "totalOwnershipBp": 21360
+    "totalOwnershipBp": 17370
   },
   "winner": {
     "username": "Atlfan13579",
@@ -25,7 +25,7 @@
   "lineup": {
     "salaryUsed": 49600,
     "totalPoints": 114.32,
-    "totalOwnershipBp": 21360,
+    "totalOwnershipBp": 17370,
     "items": [
       {
         "rosterSpot": "CAPTAIN",
@@ -34,7 +34,7 @@
         "team": "DAL",
         "salary": 15000,
         "points": 37.32,
-        "ownershipPercent": 45.1,
+        "ownershipPercent": 5.2,
         "passTd": 1,
         "rushTd": 1,
         "passYds": 272,
@@ -51,9 +51,9 @@
         "salary": 10600,
         "points": 21.5,
         "ownershipPercent": 58.6,
-        "recTd": 1,
-        "recYds": 85,
         "rec": 7,
+        "recYds": 85,
+        "recTd": 1,
         "gameAwayTeam": "DAL",
         "gameHomeTeam": "LAC",
         "opponentTeam": "DAL"
@@ -66,8 +66,8 @@
         "salary": 9000,
         "points": 21.7,
         "ownershipPercent": 58.3,
-        "recYds": 117,
         "rec": 7,
+        "recYds": 117,
         "bonus100RecYds": 1,
         "gameAwayTeam": "DAL",
         "gameHomeTeam": "LAC",
@@ -79,12 +79,12 @@
         "position": "WR",
         "team": "DAL",
         "salary": 5400,
-        "points": 15.0,
+        "points": 15,
         "ownershipPercent": 16.1,
-        "recTd": 1,
-        "recYds": 36,
-        "rushYds": 14,
         "rec": 4,
+        "recYds": 36,
+        "recTd": 1,
+        "rushYds": 14,
         "gameAwayTeam": "DAL",
         "gameHomeTeam": "LAC",
         "opponentTeam": "LAC"
@@ -95,7 +95,7 @@
         "position": "K",
         "team": "DAL",
         "salary": 5000,
-        "points": 8.0,
+        "points": 8,
         "ownershipPercent": 21.6,
         "xpm": 2,
         "fg0to39": 2,
@@ -111,10 +111,10 @@
         "salary": 4600,
         "points": 10.8,
         "ownershipPercent": 13.9,
-        "recTd": 1,
-        "recYds": 16,
-        "rushYds": 2,
         "rec": 3,
+        "recYds": 16,
+        "recTd": 1,
+        "rushYds": 2,
         "gameAwayTeam": "DAL",
         "gameHomeTeam": "LAC",
         "opponentTeam": "DAL"
@@ -122,8 +122,8 @@
     ]
   },
   "analysis": {
-    "stackSummary": "This lineup won by taking a very narrow stand on where fantasy scoring would concentrate and then refusing to pay for volume that did not need to be owned directly. Dak Prescott captain was the hinge point. The field had strong interest in Prescott overall, but far less willingness to make him the multiplier while still bypassing Justin Herbert. That choice captured Dallas through the most concentrated route available because Prescott accounted for both a passing touchdown and a rushing touchdown while adding 272 passing yards and 40 rushing yards.\n\nThe next decision was even sharper. The lineup played Keenan Allen and Gerald Everett without Herbert. That is the sort of move that only holds when the opposing passing game funnels touchdowns to a small number of pass catchers while the quarterback score stays beneath the threshold needed for optimal inclusion. That is exactly what happened here. Los Angeles kept enough of the game alive for Allen and Everett to matter, but Herbert did not score enough to force his way into the winner.\n\nDallas was then built in layers instead of in a single straight line. CeeDee Lamb handled yardage concentration and the 100 yard bonus. Brandin Cooks supplied the lower owned touchdown path. Brandon Aubrey captured the drives that stalled before the end zone. This matters because Prescott captain lineups often get duplicated through a more obvious pairing structure. Adding Aubrey instead of another popular skill player gave Dallas four different scoring channels without breaking internal logic.\n\nThe salary left on the table was modest at 400, yet it still helped separate the lineup from cleaner looking constructions. Total ownership sat at 213.60 percent, which is not extreme for a showdown winner, so the edge here came less from raw ownership collapse and more from the exact combination of Prescott captain, no Herbert, and double Chargers pass catchers.",
-    "uniquenessNotes": "The most valuable leverage point was not Dak Prescott captain by itself. It was Dak Prescott captain paired with two Los Angeles pass catchers while omitting Justin Herbert. Many rosters would either captain Prescott with a more Dallas only build or bring Herbert back automatically in any double Charger pass catcher construction. This lineup rejected both habits.\n\nBrandin Cooks and Gerald Everett did different jobs in the build. Cooks gave Dallas access to the lower owned touchdown branch of the Cowboys passing game. Everett captured a secondary Chargers scoring event at 13.9 percent ownership. That lowered duplication pressure without forcing a fragile thin outcome.\n\nBrandon Aubrey also mattered more than he appears at first glance. On a slate where Dallas scored 20, Prescott captain plus Aubrey remained coherent because Dallas production was split across a rushing touchdown, a passing touchdown, and two field goals. Aubrey did not block the captain path. He complemented it.\n\nThe final grade lands at A minus. Captain ownership was favorable, two sub 20 percent flex plays landed, the no Herbert decision created meaningful structural separation, and the lineup stayed coherent from a game distribution standpoint. It stops short of the top grade because salary left was present but not large, total ownership was still fairly healthy, and there is no visible duplication data in the screenshot to push it higher.",
+    "stackSummary": "This lineup won through one decision the field did not price correctly in captain. Dak Prescott carried only 5.2 percent captain ownership, yet his path to leading the slate was broad. He could reach first through passing volume, rushing production near the goal line, or concentrated scoring spread across multiple Dallas pieces. All three showed up. Once Prescott landed in captain, the lineup did not need an exotic Dallas onslaught. It needed the right Dallas attachments and the right Los Angeles return points.\n\nCeeDee Lamb handled Dallas receiving volume in the most bankable way. Brandin Cooks added a second Dallas receiver without forcing an expensive second star from Los Angeles. Brandon Aubrey kept Dallas scoring exposure intact even on drives ending short of the end zone. On the other side, Keenan Allen remained too central to Chargers production to fade, while Gerald Everett gave the lineup direct access to a secondary touchdown path from Los Angeles at modest ownership.\n\nThe deeper edge sits in how the build balanced leverage and stability. Prescott captain delivered separation. Keenan Allen and CeeDee Lamb provided high floor volume from both passing games. Brandin Cooks and Gerald Everett were the lower owned pieces carrying direct touchdown equity. This was not a random mixed build. It was a lineup built around the idea that Prescott would outscore the expensive captain alternatives while the game still produced enough pass game concentration for the main skill players to matter.\n\nThe corrected ownership makes the lineup much sharper than the broken version suggested. At 173.7 percent total ownership instead of 213.6 percent, this build reads as a leveraged quarterback captain with two sub 20 percent flex pieces, not a bloated chalk construction. That changes the interpretation of why it won.",
+    "uniquenessNotes": "Prescott captain was the hinge. Many lineups were comfortable playing Dak Prescott in flex. Far fewer were willing to use him in the multiplier slot over wider receiver captain builds from the same game. The field preferred the more obvious ceiling stories through Keenan Allen or CeeDee Lamb. This lineup took the broader quarterback scoring tree instead.\n\nBrandin Cooks and Gerald Everett gave the roster its second layer of separation. Neither needed monster volume. They needed touchdowns or efficient complementary production inside a game where the stars still handled most of the yardage. That is exactly what happened. Their presence also kept the lineup from collapsing into the most duplicated Dallas plus Keenan Allen shell.\n\nLeaving 400 in salary did enough. This was not a dramatic salary sacrifice build, yet it still stepped off the most crowded price combinations. In a contest this large, small structural shifts matter when the captain choice already carries leverage.\n\nThe final grade lands at B plus. The lineup had a strong captain leverage point, two sub 20 percent flex pieces, coherent game concentration, and a total ownership profile well below the broken reading. It stops short of the top tier because the overall shell still contained two very popular flex plays and did not use a more aggressive salary leave behind.",
     "stackMeta": {
       "lineupType": "SHOWDOWN",
       "construction": {
@@ -133,11 +133,11 @@
           "team": "DAL"
         },
         "teamSplit": "4-2",
-        "buildType": "Quarterback captain with two Dallas pass catchers, Dallas kicker, and two opposing Chargers pass catchers without the opposing quarterback",
-        "includesQBs": false
+        "buildType": "Quarterback captain with two Dallas wide receivers, Dallas kicker, and two Chargers pass catchers without Justin Herbert",
+        "includesQBs": true
       },
-      "primaryLever": "Dak Prescott captain created the main leverage point because the lineup captured all of his fantasy pathways while avoiding the more duplicated wide receiver captain routes",
-      "secondaryLever": "The lineup used Keenan Allen and Gerald Everett as direct touchdown capture from Los Angeles without paying for Justin Herbert"
+      "primaryLever": "Dak Prescott captain created the main leverage point through a 5.2 percent captain outcome tied to both passing and rushing scoring paths",
+      "secondaryLever": "Brandin Cooks and Gerald Everett supplied the secondary separation by capturing lower owned touchdown paths while Keenan Allen and CeeDee Lamb handled the volume base"
     }
   }
 }

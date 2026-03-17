@@ -1,0 +1,148 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 8,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-10-30",
+  "slateName": "NFL Week 8 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "B-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2023_WK08_MNF_SHOWDOWN_2023-10-30_lv_det",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 30000000,
+    "totalOwnershipBp": 18360
+  },
+  "winner": {
+    "username": "scout326",
+    "points": 135.65,
+    "maxEntries": 106
+  },
+  "lineup": {
+    "salaryUsed": 48300,
+    "totalPoints": 135.65,
+    "totalOwnershipBp": 18360,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Jahmyr Gibbs",
+        "position": "RB",
+        "team": "DET",
+        "salary": 12900,
+        "points": 49.35,
+        "ownershipPercent": 29.6,
+        "rushTd": 1,
+        "rushYds": 152,
+        "bonus100RushYds": 1,
+        "rec": 5,
+        "recYds": 37,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Amon-Ra St. Brown",
+        "position": "WR",
+        "team": "DET",
+        "salary": 11200,
+        "points": 19.8,
+        "ownershipPercent": 53.7,
+        "rec": 6,
+        "recYds": 108,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": "LV",
+        "salary": 8400,
+        "points": 16.8,
+        "ownershipPercent": 35.0,
+        "rushTd": 1,
+        "rushYds": 61,
+        "rec": 2,
+        "recYds": 27,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Sam LaPorta",
+        "position": "TE",
+        "team": "DET",
+        "salary": 7400,
+        "points": 19.7,
+        "ownershipPercent": 44.1,
+        "rec": 8,
+        "recYds": 57,
+        "recTd": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Riley Patterson",
+        "position": "K",
+        "team": "DET",
+        "salary": 4800,
+        "points": 17.0,
+        "ownershipPercent": 15.2,
+        "xpm": 2,
+        "fg0to39": 2,
+        "fg40to49": 1,
+        "fg50plus": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Raiders",
+        "position": "DST",
+        "team": "LV",
+        "salary": 3600,
+        "points": 13.0,
+        "ownershipPercent": 6.0,
+        "sacks": 1,
+        "interceptionsDst": 1,
+        "defFumbleRecoveries": 2,
+        "defTd": 1,
+        "qbFaced": "Jared Goff",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "DET",
+        "opponentTeam": "DET"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by accepting a shape the field usually resists. Jahmyr Gibbs captain was not obscure in absolute terms at 29.6 percent captain ownership, but the build around him created the edge. The lineup bet on Detroit scoring through Gibbs first, then through secondary passing and kicking branches, while allowing Las Vegas to contribute through narrow, event driven sources rather than through a full passing game response.\n\nThe sharpest choice was pairing a Detroit onslaught core with Raiders defense. On the surface, that looks uncomfortable because Gibbs captain implies Detroit offensive success. In practice, the game produced enough concentrated Detroit scoring for Gibbs, Amon Ra St. Brown, Sam LaPorta, and Riley Patterson to all matter, while Las Vegas defense still found its way there through turnover driven scoring. That is the key distinction. The lineup did not need Detroit to fail. It needed Jared Goff to give back a few high value defensive events while Detroit skill production stayed concentrated.\n\nJosh Jacobs completed the structure cleanly. He was the only Raiders offensive piece, which signaled a view that Las Vegas scoring would stay narrow and mostly flow through Jacobs rather than through a spread passing distribution. That read proved correct. Once the lineup locked Gibbs captain and a four man Detroit shell, forcing a second Raiders pass catcher would have weakened the thesis.\n\nThe result was a build that captured Detroit efficiency without overpaying for the most duplicated Detroit quarterback centered version of the game. Gibbs handled the ceiling. St. Brown and LaPorta absorbed passing concentration. Patterson monetized stalled drives. Raiders defense and Josh Jacobs covered the limited but still relevant Las Vegas side. That is a much more precise construction than a simple favorite onslaught reading.",
+    "uniquenessNotes": "The uniqueness did not come from a hidden captain. It came from structural tension. Jahmyr Gibbs captain was strong but visible. What separated the lineup was the willingness to combine that captain with Raiders defense against Jared Goff, then stop the Raiders bring back at Josh Jacobs alone.\n\nThat combination created two different scoring channels from the underdog side. Jacobs captured ordinary offensive production. Raiders defense captured volatility. Those are separate paths, which is why the lineup stayed live even without a Raiders wide receiver or quarterback. The build was not guessing at a broad Raiders comeback. It was isolating the only two Las Vegas routes most compatible with a Detroit skill driven win.\n\nRiley Patterson at 15.2 percent and Raiders defense at 6.0 percent did most of the uniqueness lifting underneath the captain slot. Patterson is especially important because he allowed the lineup to keep pressing Detroit scoring without forcing Jared Goff. In a game where Detroit moved the ball well but did not convert every drive into a passing touchdown, the kicker became a better complement than the quarterback.\n\nThe final grade lands at B minus. The lineup had genuine structural intelligence, two sub 20 percent flex pieces, and useful salary left. It stays out of the higher tier because the captain itself was still fairly popular, and the Detroit skill shell around Gibbs remained accessible to a large part of the field.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Jahmyr Gibbs",
+          "position": "RB",
+          "team": "DET"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Running back captain with a Detroit skill onslaught, Detroit kicker, Raiders defense against Jared Goff, and Josh Jacobs as the only Las Vegas offensive bring back",
+        "includesQBs": false
+      },
+      "primaryLever": "The lineup faded the duplicated Jared Goff centered Detroit construction and used Jahmyr Gibbs captain as the lead scoring branch",
+      "secondaryLever": "Raiders defense with Josh Jacobs created a narrow underdog capture that fit a Detroit win without forcing a broader Las Vegas passing response"
+    }
+  }
+}

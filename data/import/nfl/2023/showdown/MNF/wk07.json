@@ -4,18 +4,18 @@
   "week": 7,
   "slateType": "SHOWDOWN",
   "slateDate": "2023-10-23",
-  "slateName": "49ers at Vikings Showdown",
-  "slateTag": "ADDISON CPT WITH VIKINGS ONSLAUGHT AND MCCAFFREY RUNBACK",
+  "slateName": "NFL Week 7 Monday Night Showdown",
+  "slateTag": "mnf",
   "slateGroup": "B",
   "isMain": false,
   "contest": {
     "site": "DraftKings",
-    "contestName": "NFL Showdown 49ers at Vikings Week 7 MNF",
+    "contestName": "NFL Showdown Monday Night Contest",
     "siteContestId": "NFL_2023_WK07_MNF_SHOWDOWN_2023-10-23_sf_min",
     "entryFeeCents": null,
     "entries": null,
     "topPrizeCents": 2491667,
-    "totalOwnershipBp": 21390
+    "totalOwnershipBp": 18130
   },
   "winner": {
     "username": "mythicalrhymer01",
@@ -25,7 +25,7 @@
   "lineup": {
     "salaryUsed": 50000,
     "totalPoints": 142.57,
-    "totalOwnershipBp": 21390,
+    "totalOwnershipBp": 18130,
     "items": [
       {
         "rosterSpot": "CAPTAIN",
@@ -34,7 +34,7 @@
         "team": "MIN",
         "salary": 11400,
         "points": 51.45,
-        "ownershipPercent": 38.7,
+        "ownershipPercent": 6.1,
         "rec": 7,
         "recYds": 123,
         "recTd": 2,
@@ -125,8 +125,8 @@
     ]
   },
   "analysis": {
-    "stackSummary": "This lineup won by taking a firm stand that Minnesota passing production would be far more concentrated and far more tournament relevant than the field expected against San Francisco. Jordan Addison captain was the central decision. The field respected Addison, but captaining him at 38.7 percent while bypassing Brock Purdy entirely and limiting San Francisco exposure to Christian McCaffrey created a very specific bet on how the game would actually distribute fantasy points. That call proved right because Addison captured the two highest value Minnesota receiving events and added the 100 yard bonus.\n\nThe lineup then built around that captain outcome with a heavy Minnesota pass game onslaught. Kirk Cousins was necessary because 378 passing yards and two passing touchdowns meant Minnesota offense could not be reduced to a one off captain hit. T.J. Hockenson added reception volume without needing a touchdown, which is important because it allowed the build to capture the full width of the Vikings passing environment rather than chase only touchdown variance. Brandon Powell was the lower salary release valve, but he was not dead salary filler. His 64 receiving yards and 5 rushing yards gave the lineup a fourth Minnesota pathway at a price point the field had trouble treating as part of a serious ceiling build.\n\nGreg Joseph completed the Minnesota side by covering the drives that produced points without another touchdown. That matters in a 22 point team total because a full onslaught can still fail if every roster spot requires a touchdown. Joseph let the lineup monetize imperfect red zone sequences while still staying aligned with a Minnesota control script.\n\nThe single San Francisco runback was Christian McCaffrey, which was the cleanest way to keep exposure to elite 49ers scoring without overcommitting to a passing environment that never fully broke open. McCaffrey still delivered both a rushing touchdown and a receiving touchdown, but San Francisco ancillary pieces did not combine in a way that forced multiple 49ers into the optimal build. The lineup understood that one opposing superstar could be enough when the winning side owned most of the volume and most of the pass distribution.",
-    "uniquenessNotes": "The sharpest feature in the build was not merely Jordan Addison at captain. It was Jordan Addison captain inside a five man Minnesota onslaught against a San Francisco team the field was still inclined to treat as the stronger offense. Many rosters were willing to captain Addison as a leverage response to Justin Jefferson being out. Fewer were willing to let Minnesota occupy five of six slots while leaving off Brock Purdy and every other 49ers pass catcher.\n\nThe salary structure also mattered. Using the full 50000 did not create uniqueness through salary left, so the lineup had to separate through structure instead. It did that by identifying where Minnesota scoring would cluster. Cousins, Addison, Hockenson, Joseph, and Powell all scored through different branches of the same team success story. That made the lineup more stable than a thinner build asking two or three cheap Vikings to spike on isolated plays.\n\nDuplication clearly held the lineup back from the top uniqueness grade. The reduced first place payout points to a split outcome, which means the structural read was sharp but not rare enough to stand alone. That is why the final grade lands at B. The captain was correct, Greg Joseph provided useful sub 20 percent leverage, and the no Purdy construction gave the lineup real tension. Even so, full salary usage and the apparent duplication outcome keep it out of the highest tier.",
+    "stackSummary": "This lineup won by reading the game through Minnesota pass concentration rather than through broad balance or San Francisco control. Jordan Addison at captain was the central decision. At 6.1 percent captain ownership, he gave the lineup access to a ceiling outcome the field acknowledged in flex but did not prioritize in the multiplier slot. Once Addison became the captain, the rest of the lineup followed a clear internal logic. Kirk Cousins and T.J. Hockenson captured the high volume core of the Minnesota passing game, while Brandon Powell served as a low salary accessory to the same passing environment.\n\nThe sharper detail is how the build handled San Francisco. Instead of forcing Brock Purdy or a second 49ers piece, it isolated Christian McCaffrey as the only bring back. That mattered because San Francisco scoring was narrow. McCaffrey still produced enough to remain necessary, but the slate was not won by treating the 49ers offense as a full stack environment. It was won by recognizing that Minnesota could lose the real game and still provide the winning showdown construction through concentrated pass volume and touchdown distribution.\n\nGreg Joseph completed the story in an understated way. He allowed the lineup to capture stalled drive scoring from the same team concentration without paying for a thinner secondary Vikings skill bet. In other words, the lineup did not chase six separate outcomes. It targeted one dominant engine, Minnesota drop back volume, then spread exposure across the most rational touchdown and yardage branches tied to that engine.\n\nThe total ownership profile matters here. At 181.3 percent, this was not an extreme galaxy build. Its edge came from choosing the right low owned captain and then refusing to dilute the thesis. The field was more comfortable treating Addison as an accessory. This lineup treated him as the slate breaker.",
+    "uniquenessNotes": "The leverage came from captain selection first and roster discipline second. Jordan Addison captain at 6.1 percent was the decisive separator, but the lineup did not stop there. It used a five one team split with no Brock Purdy and no San Francisco pass catcher, which made the roster uncomfortable for anyone building around a more symmetric game environment.\n\nThat discomfort was coherent because Minnesota passing production was concentrated enough to support it. Kirk Cousins, T.J. Hockenson, Jordan Addison, and Brandon Powell all scored through the same volume channel, while Greg Joseph captured the drives that did not finish in the end zone. The lineup turned one team tendency into multiple fantasy paths without scattering exposure across disconnected outcomes.\n\nThere is a limit to the grade. Full salary usage reduced one avenue of uniqueness, and Brandon Powell at 27.8 percent was not a deep ownership outlier even though his price helped the build function. The lineup also lived inside a recognizable Vikings onslaught shell once Addison captain was chosen. What lifts it above average is the captain ownership, the willingness to isolate McCaffrey as the lone San Francisco bring back, and the refusal to spend on a more duplicated 49ers response.\n\nThe final grade lands at B. The captain leverage was strong and the build had a clear structural stance, but full salary usage and a still playable duplication shell keep it out of the top band.",
     "stackMeta": {
       "lineupType": "SHOWDOWN",
       "construction": {
@@ -136,11 +136,11 @@
           "team": "MIN"
         },
         "teamSplit": "5-1",
-        "buildType": "Wide receiver captain with a five man Vikings onslaught, one opposing superstar runback, no Brock Purdy, and no second 49ers pass catcher",
-        "includesQBs": false
+        "buildType": "Low-owned wide receiver captain with a Minnesota pass-heavy onslaught, Minnesota kicker, and Christian McCaffrey as the lone San Francisco bring back",
+        "includesQBs": true
       },
-      "primaryLever": "Jordan Addison captain captured the highest value Minnesota receiving outcome while the build pressed into a five man Vikings scoring concentration thesis",
-      "secondaryLever": "The lineup used Christian McCaffrey as the only San Francisco runback and omitted Brock Purdy, forcing the slate through Minnesota pass concentration rather than balanced game stacking"
+      "primaryLever": "Jordan Addison captain created the slate's main leverage point through a 6.1 percent captain outcome tied to concentrated Minnesota passing production",
+      "secondaryLever": "The lineup isolated Christian McCaffrey as the only San Francisco piece while using Greg Joseph and Brandon Powell to complete a full Minnesota volume capture without paying for a more duplicated opposing response"
     }
   }
 }

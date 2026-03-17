@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 11,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-11-20",
+  "slateName": "NFL Week 11 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2023_WK11_MNF_SHOWDOWN_2023-11-20_phi_kc",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 102266700,
+    "totalOwnershipBp": 28080
+  },
+  "winner": {
+    "username": "marcf",
+    "points": 106.45,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49200,
+    "totalPoints": 106.45,
+    "totalOwnershipBp": 28080,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Justin Watson",
+        "position": "WR",
+        "team": "KC",
+        "salary": 3600,
+        "points": 24.45,
+        "ownershipPercent": 2.2,
+        "rec": 5,
+        "recYds": 53,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jalen Hurts",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 11000,
+        "points": 19.9,
+        "ownershipPercent": 79.0,
+        "passYds": 150,
+        "rushYds": 29,
+        "rushTd": 2,
+        "interceptions": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 10000,
+        "points": 16.4,
+        "ownershipPercent": 66.0,
+        "rec": 7,
+        "recYds": 44,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeVonta Smith",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 9000,
+        "points": 15.9,
+        "ownershipPercent": 30.2,
+        "rec": 6,
+        "recYds": 99,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D'Andre Swift",
+        "position": "RB",
+        "team": "PHI",
+        "salary": 8400,
+        "points": 19.7,
+        "ownershipPercent": 39.4,
+        "rushYds": 76,
+        "rushTd": 1,
+        "rec": 3,
+        "recYds": 31,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Isiah Pacheco",
+        "position": "RB",
+        "team": "KC",
+        "salary": 7200,
+        "points": 10.1,
+        "ownershipPercent": 31.2,
+        "rushYds": 89,
+        "rec": 1,
+        "recYds": 2,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "PHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by taking the slate’s most explosive leverage point and placing it in the captain slot without compromising access to the game’s core scoring pieces. Justin Watson captain at 2.2 percent was the entire separator. In a game dominated by expensive names and quarterback-centric roster builds, the winning construction shifted the multiplier to a low-salary Kansas City receiver who could still access touchdown equity and enough yardage to break the slate.\n\nThe rest of the lineup stayed grounded in where fantasy production was most concentrated. Jalen Hurts remained necessary because Philadelphia’s offense ran directly through his rushing touchdowns. Travis Kelce still captured the most bankable Kansas City target concentration. DeVonta Smith and D'Andre Swift gave the build strong exposure to Philadelphia’s receiving and rushing output without forcing a more duplicated premium shell.\n\nThe sharper edge was the willingness to leave Patrick Mahomes off entirely while still betting on a Kansas City captain receiver. That is where the structure became uncomfortable enough to matter. The lineup was saying Kansas City could produce a winning captain through a secondary receiver while Mahomes himself failed to post a must-have score. That was the exact outcome the field was least prepared to build for at scale.\n\nIsiah Pacheco completed the roster by covering Kansas City rushing production and preserving a balanced game environment. The build did not need one narrow script. It allowed Kansas City to generate enough offensive volume through multiple channels while still making Watson the central leverage point.\n\nBecause this lineup won a showdown Milly with a true low-owned captain and a quarterback omission the field rarely embraces cleanly, the structural result is top tier. Under your showdown grading rule, a Milly-winning showdown build is graded A plus.",
+    "uniquenessNotes": "The defining choice was Justin Watson captain without Patrick Mahomes. That is not decorative uniqueness. That is a direct bet against the field’s default way of allocating Kansas City ceiling. Most rosters needed Mahomes to unlock a Kansas City pass catcher captain. This lineup did not.\n\nThe Philadelphia side of the construction stayed disciplined. Jalen Hurts, DeVonta Smith, and D'Andre Swift gave the lineup access to Philadelphia’s major production channels without overcommitting to a bloated Eagles stack. That balance mattered because the slate did not require a full one-sided interpretation.\n\nKelce and Pacheco also served distinct jobs. Kelce carried Kansas City receiving concentration. Pacheco carried ground volume and kept the lineup from becoming too fragile around one passing path. Once Watson hit captain, those two flex pieces gave the roster enough Kansas City stability without forcing Mahomes.\n\nThe final grade is A plus. The lineup won a showdown Milly, used a 2.2 percent captain, left salary on the table, and embraced a structurally uncomfortable Mahomes fade. Under the showdown grading rule, that result automatically qualifies as A plus.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Justin Watson",
+          "position": "WR",
+          "team": "KC"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Low-owned Kansas City wide receiver captain without Patrick Mahomes, paired with Jalen Hurts, two Philadelphia skill players, Travis Kelce, and Isiah Pacheco",
+        "includesQBs": false
+      },
+      "primaryLever": "Justin Watson captain created the slate’s main leverage point through a 2.2 percent captain outcome in a Mahomes fade construction",
+      "secondaryLever": "The build balanced that leverage with Hurts, Kelce, Swift, Smith, and Pacheco to capture the game’s concentrated scoring without reverting to the field’s most duplicated premium structure"
+    }
+  }
+}

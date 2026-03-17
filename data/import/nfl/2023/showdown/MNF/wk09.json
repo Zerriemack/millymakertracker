@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 9,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-11-06",
+  "slateName": "NFL Week 9 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2023_WK09_MNF_SHOWDOWN_2023-11-06_lac_nyj",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 13800000,
+    "totalOwnershipBp": 23810
+  },
+  "winner": {
+    "username": "oxenduck",
+    "points": 114.8,
+    "maxEntries": 66
+  },
+  "lineup": {
+    "salaryUsed": 48300,
+    "totalPoints": 114.8,
+    "totalOwnershipBp": 23810,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Chargers",
+        "position": "DST",
+        "team": "LAC",
+        "salary": 7500,
+        "points": 40.5,
+        "ownershipPercent": 2.8,
+        "sacks": 8,
+        "defFumbleRecoveries": 3,
+        "defTd": 1,
+        "pointsAllowedBucket": 6,
+        "qbFaced": "Zach Wilson",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 12000,
+        "points": 21.0,
+        "ownershipPercent": 68.4,
+        "rushTd": 2,
+        "rushYds": 47,
+        "rec": 2,
+        "recYds": 23,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 11600,
+        "points": 15.7,
+        "ownershipPercent": 41.0,
+        "rec": 8,
+        "recYds": 77,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Garrett Wilson",
+        "position": "WR",
+        "team": "NYJ",
+        "salary": 9600,
+        "points": 14.0,
+        "ownershipPercent": 61.6,
+        "rec": 7,
+        "recYds": 80,
+        "fumblesLost": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cameron Dicker",
+        "position": "K",
+        "team": "LAC",
+        "salary": 4600,
+        "points": 11.0,
+        "ownershipPercent": 22.3,
+        "xpm": 3,
+        "fg0to39": 1,
+        "fg50plus": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tyler Conklin",
+        "position": "TE",
+        "team": "NYJ",
+        "salary": 3000,
+        "points": 12.6,
+        "ownershipPercent": 26.0,
+        "rec": 6,
+        "recYds": 66,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "LAC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by rejecting the field’s default quarterback-centered reading of showdown roster construction and replacing it with a pressure-and-failure thesis. Chargers defense at captain was the entire slate hinge. The field treated the Chargers defense as a secondary piece. This build treated the Jets offensive collapse as the main event and captured it in the multiplier slot at 2.8 percent captain ownership.\n\nFrom there, the lineup stayed internally coherent. Austin Ekeler and Cameron Dicker converted defensive control into offensive follow-through. Ekeler captured the short-field touchdown equity created by turnovers and field position. Dicker captured the version of the game where Chargers drives were good enough to sustain scoring but not clean enough to require a full Justin Herbert stack.\n\nThe two Jets pass catchers were the sharpest part of the construction after captain. Garrett Wilson and Tyler Conklin gave the lineup access to New York volume without forcing Zach Wilson onto the roster. In a game where the Jets trailed, pass volume could still accumulate through short and intermediate targets even while the offense failed in high-value situations. This build separated raw opportunity from quarterback requirement.\n\nKeenan Allen completed the structure by preserving exposure to the Chargers passing offense without paying the quarterback tax. Once the lineup chose defense captain and an anti-Jets efficiency stance, Herbert became less necessary than the field assumed. Allen could still produce enough as the primary receiver, while Ekeler and Dicker absorbed much of the remaining Chargers scoring.\n\nLeaving 1700 in salary was a strong decision, not a sacrifice. On a showdown slate with a defense captain and no quarterbacks, full salary usage would have moved the lineup closer to more duplicated constructions. The unused salary reinforced uniqueness while still preserving a clear scoring thesis.",
+    "uniquenessNotes": "The lineup’s strongest feature was captain leverage tied to the correct failure point. Defense captain builds can still be too thin when they rely on a defensive touchdown and little else. This one did not. Eight sacks, three fumble recoveries, and a defensive touchdown created a score profile strong enough to support captain while the rest of the lineup captured the downstream effects of offensive dysfunction.\n\nThe second differentiator was the deliberate omission of both quarterbacks. Most showdown players are willing to fade one quarterback. Far fewer are willing to fade both while still using two opposing pass catchers from the losing side. This build understood a nuanced game truth: trailing pass volume can remain fantasy-viable even when quarterback efficiency collapses and the defense on the other side posts a tournament-winning score.\n\nThe Chargers pieces also avoided redundancy. Ekeler, Allen, and Dicker were not three versions of the same bet. Ekeler captured touchdown consolidation. Allen captured target concentration. Dicker captured stalled-drive scoring. Those channels could coexist without requiring a ceiling Herbert outcome.\n\nThe final grade lands at A minus. The lineup had elite captain leverage, meaningful salary left, strong structural tension, and a game-script read the field did not build aggressively enough. It stops short of A or A plus because the total ownership shape outside captain was still fairly substantial, so the construction leaned on one massive leverage point rather than a fully distributed low-owned profile.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Chargers",
+          "position": "DST",
+          "team": "LAC"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Defense captain without either quarterback, paired with Chargers touchdown and field goal capture, plus two opposing Jets pass catchers",
+        "includesQBs": false
+      },
+      "primaryLever": "Chargers defense captain created the slate’s main leverage point through a 2.8 percent captain outcome tied directly to Jets offensive failure",
+      "secondaryLever": "The lineup faded both quarterbacks and used Garrett Wilson plus Tyler Conklin as trailing-volume capture while Ekeler, Allen, and Dicker absorbed Chargers scoring through separate channels"
+    }
+  }
+}

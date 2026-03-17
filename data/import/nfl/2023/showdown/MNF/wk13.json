@@ -1,0 +1,149 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 13,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-12-04",
+  "slateName": "NFL Week 13 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2023_WK13_MNF_SHOWDOWN_2023-12-04_cin_jax",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 22420
+  },
+  "winner": {
+    "username": "bgott1",
+    "points": 177.71,
+    "maxEntries": 12
+  },
+  "lineup": {
+    "salaryUsed": 47200,
+    "totalPoints": 177.71,
+    "totalOwnershipBp": 22420,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Ja'Marr Chase",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 14100,
+        "points": 51.93,
+        "ownershipPercent": 10.1,
+        "rec": 11,
+        "recYds": 149,
+        "recTd": 1,
+        "rushYds": -7,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Trevor Lawrence",
+        "position": "QB",
+        "team": "JAX",
+        "salary": 10800,
+        "points": 25.12,
+        "ownershipPercent": 79.4,
+        "passTd": 2,
+        "rushTd": 1,
+        "passYds": 258,
+        "rushYds": 8,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jake Browning",
+        "position": "QB",
+        "team": "CIN",
+        "salary": 8800,
+        "points": 29.66,
+        "ownershipPercent": 35.5,
+        "passTd": 1,
+        "rushTd": 1,
+        "passYds": 354,
+        "rushYds": 22,
+        "rec": 1,
+        "recYds": -7,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 7000,
+        "points": 29.7,
+        "ownershipPercent": 45.1,
+        "rec": 6,
+        "recYds": 49,
+        "rushYds": 68,
+        "rushTd": 2,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Evan Engram",
+        "position": "TE",
+        "team": "JAX",
+        "salary": 6200,
+        "points": 23.2,
+        "ownershipPercent": 54,
+        "rec": 9,
+        "recYds": 82,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Parker Washington",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 200,
+        "points": 18.1,
+        "ownershipPercent": 0.1,
+        "rec": 6,
+        "recYds": 61,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "CIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it treated the game as an offense driven shootout while finding its leverage through salary allocation and the final Jacksonville pass catcher slot rather than through an obscure captain stunt. Ja'Marr Chase captain at 10.1 percent was a strong starting point because his ceiling was fully capable of ending the slate, yet the field still left him well behind the most popular multiplier constructions.\n\nThe next layer is what made the build dangerous. Both quarterbacks remained in place because the game demanded full access to aggregate offensive volume. Jake Browning delivered a 300 yard bonus and rushing touchdown at a salary level far below the elite quarterback tier. Trevor Lawrence answered from the other side with dual threat production. The build did not force a one sided script. It captured both engines and let the skill positions sort out the winning distribution.\n\nJoe Mixon gave Cincinnati access to touchdown concentration without needing a second Bengals receiver. Evan Engram captured Jacksonville volume in the middle of the field and brought back a major share of the Jaguars passing production. Parker Washington was the slate breaker underneath the stars. At 0.1 percent flex ownership and a 200 salary, he changed the entire construction. He opened room for Chase captain plus both quarterbacks while still producing an actual touchdown based score instead of a dead salary sacrifice.\n\nLeaving 2,800 in salary was part of the edge, not a leftover accident. In a showdown with obvious stars on both sides, the field tends to spend aggressively once it lands on two quarterbacks and a premium captain. This build stopped where the game tree stopped. It did not pay for one extra name when the final receiver slot could achieve the same structural job with far less duplication.",
+    "uniquenessNotes": "Parker Washington is the hinge. A 0.1 percent player at 200 salary who posts 18.1 fantasy points changes more than ownership. He changes the entire duplication landscape because very few lineups are willing to carry a near minimum receiver unless they believe he can earn legitimate route based volume. Once Washington gets there, the rest of the lineup becomes far more flexible and far less duplicated.\n\nChase captain strengthened the leverage profile because the field had stronger comfort with quarterback captain routes and more balanced salary usage. This build instead used Chase as the ceiling bet while Browning and Lawrence handled the combined volume floor underneath him. Mixon and Engram then filled the remaining high probability production zones without overcrowding either team.\n\nThe final grade lands at A minus. Chase captain came in at 10.1 percent, Parker Washington came in at 0.1 percent, 2,800 in salary remained unused, and the construction balanced both quarterbacks with a near minimum difference maker. The build misses the very top grade only because several flex pieces still carried healthy ownership and duplication data is not present in the screenshot.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Ja'Marr Chase",
+          "position": "WR",
+          "team": "CIN"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Wide receiver captain with both quarterbacks, one primary running back, one opposing tight end volume bring back, and one near minimum salary leverage receiver",
+        "includesQBs": true
+      },
+      "primaryLever": "Ja'Marr Chase captain created the main leverage point through a 10.1 percent captain outcome in a game with concentrated passing ceilings",
+      "secondaryLever": "Parker Washington at 0.1 percent flex ownership and 200 salary unlocked the full build while still delivering meaningful touchdown driven production"
+    }
+  }
+}
