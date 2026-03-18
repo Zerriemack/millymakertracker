@@ -1,0 +1,147 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 22,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-02-12",
+  "slateName": "Super Bowl 57 Showdown",
+  "slateTag": "SUPER_BOWL",
+  "slateGroup": "C+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Super Bowl LVII Contest",
+    "siteContestId": "NFL_2022_WK22_SUPER_BOWL_SHOWDOWN_2023-02-12_kc_phi",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 5287879,
+    "totalOwnershipBp": 17390
+  },
+  "winner": {
+    "username": "ckwilson15",
+    "points": 142.12,
+    "maxEntries": 6
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 142.12,
+    "totalOwnershipBp": 17390,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Jalen Hurts",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 16800,
+        "points": 67.74,
+        "ownershipPercent": 21.0,
+        "passTd": 1,
+        "rushTd": 3,
+        "passYds": 304,
+        "rushYds": 70,
+        "fumblesLost": 1,
+        "twoPtPass": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 11000,
+        "points": 23.68,
+        "ownershipPercent": 65.1,
+        "passTd": 3,
+        "passYds": 182,
+        "rushYds": 44,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 9200,
+        "points": 21.6,
+        "ownershipPercent": 40.2,
+        "rec": 6,
+        "recYds": 96,
+        "recTd": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeVonta Smith",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 8600,
+        "points": 20.0,
+        "ownershipPercent": 34.5,
+        "rec": 7,
+        "recYds": 100,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chiefs",
+        "position": "DST",
+        "team": "KC",
+        "salary": 3400,
+        "points": 6.0,
+        "ownershipPercent": 9.5,
+        "sacks": 2,
+        "defFumbleRecoveries": 1,
+        "defTd": 1,
+        "pointsAllowed": 35,
+        "qbFaced": "Jalen Hurts",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Zach Pascal",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 800,
+        "points": 3.1,
+        "ownershipPercent": 3.6,
+        "rec": 2,
+        "recYds": 11,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "KC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by leaning into the Super Bowl's most concentrated truth. Philadelphia scoring flowed through Jalen Hurts to an extreme degree, so captain did not need to be cute. It needed to be right. Hurts reached 21.0 percent captain ownership, which is hardly forgotten by the field, yet the multiplier slot still carried leverage because his scoring path was so complete. He threw for 304 yards, ran for 70 more, and scored three times on the ground. Once that happened, every non Hurts captain lineup was drawing dead unless it found a far narrower touchdown map.\n\nThe sharper decision sat underneath him. The build paired Hurts captain with Patrick Mahomes, A.J. Brown, and DeVonta Smith, then used Chiefs defense and Zach Pascal as the two ownership release valves. Chiefs defense against a Hurts captain build is the tension point that made this roster viable in a massive field. Kansas City did not need to suppress Hurts entirely. It needed one scoring event, and it got it through the defensive touchdown. That six point DST result looks thin in isolation, though in roster construction terms it mattered because it fit a game where Philadelphia still piled up yards and fantasy scoring while Kansas City created one decisive defensive event.\n\nZach Pascal was the second separator. He was not a ceiling play by himself. He was a structural salary unlock at 3.6 percent ownership that allowed the lineup to carry the expensive Philadelphia concentration without sliding into a more duplicated midrange piece. Brown and Smith then captured nearly all of the high value Eagles receiving production without forcing a thin guess on Dallas Goedert or ancillary Kansas City skill players. The lineup left 200 on the table, which did little by itself, though the total ownership shape stayed manageable because Pascal and Chiefs defense carried the burden of separation.",
+    "uniquenessNotes": "The field could see Hurts captain. What it did not build often enough was Hurts captain with two premium Eagles receivers, Mahomes on the way back, Chiefs defense, and Zach Pascal as the last salary release point. That combination asked the roster to tell two stories at once. One story said Hurts would dominate raw fantasy scoring. The other said Kansas City could still force one defensive event and win the game. Super Bowl slates often reward this kind of partial contradiction because every snap carries so much ownership concentration.\n\nThis lineup does not grade into B plus or A territory because the captain itself was still popular and the rest of the shell contained obvious pieces. Mahomes was standard. Brown and Smith were standard. The build needed Pascal and Chiefs defense to separate, and the payout figure suggests it still landed in a materially duplicated zone. That matters on a slate this large.\n\nStill, this was better than a bland stars and scrub build. Pascal was not random. He was a deliberate acceptance of a low volume Philadelphia accessory in order to preserve the exact high end allocation the slate demanded. Chiefs defense was not random either. It functioned as a bet on one event based scoring channel inside a game where Philadelphia offensive volume remained intact. The final grade lands at C plus because the lineup had legitimate structural tension and two sub 10 percent pieces, but the captain was popular, the total shape remained readable, and duplication kept the build from reaching the upper bands.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Jalen Hurts",
+          "position": "QB",
+          "team": "PHI"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Popular quarterback captain with opposing quarterback, double Eagles alpha receivers, opposing defense against captain, and a sub 5 percent salary release wide receiver",
+        "includesQBs": true
+      },
+      "primaryLever": "Chiefs defense against Jalen Hurts captain created the lineup's main structural tension without forcing the build off the slate's highest raw scorer",
+      "secondaryLever": "Zach Pascal at 3.6 percent provided the salary and ownership release needed to keep Brown, Smith, Mahomes, and Hurts together"
+    }
+  }
+}

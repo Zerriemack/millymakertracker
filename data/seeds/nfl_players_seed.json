@@ -8399,5 +8399,11 @@
 { "sport": "NFL", "name": "Tom Brady", "position": "QB", "teamAbbreviation": "TB" },
 { "sport": "NFL", "name": "Chris Godwin", "position": "WR", "teamAbbreviation": "TB" },
 { "sport": "NFL", "name": "Michael Gallup", "position": "WR", "teamAbbreviation": "DAL" },
-{ "sport": "NFL", "name": "Julio Jones", "position": "WR", "teamAbbreviation": "TB" }
+{ "sport": "NFL", "name": "Julio Jones", "position": "WR", "teamAbbreviation": "TB" },
+{ "sport": "NFL", "name": "Jalen Hurts", "position": "QB", "teamAbbreviation": "PHI" },
+{ "sport": "NFL", "name": "Patrick Mahomes", "position": "QB", "teamAbbreviation": "KC" },
+{ "sport": "NFL", "name": "A.J. Brown", "position": "WR", "teamAbbreviation": "PHI" },
+{ "sport": "NFL", "name": "DeVonta Smith", "position": "WR", "teamAbbreviation": "PHI" },
+{ "sport": "NFL", "name": "Chiefs", "position": "DST", "teamAbbreviation": "KC" },
+{ "sport": "NFL", "name": "Zach Pascal", "position": "WR", "teamAbbreviation": "PHI" }
 ]
