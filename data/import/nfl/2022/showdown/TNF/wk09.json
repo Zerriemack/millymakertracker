@@ -1,0 +1,144 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 9,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-11-03",
+  "slateName": "NFL Week 9 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2022_WK09_TNF_SHOWDOWN_2022-11-03_phi_hou",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 7000000,
+    "totalOwnershipBp": 24570
+  },
+  "winner": {
+    "username": "Awesemo",
+    "points": 116.78,
+    "maxEntries": 51
+  },
+  "lineup": {
+    "salaryUsed": 48700,
+    "totalPoints": 116.78,
+    "totalOwnershipBp": 24570,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Dallas Goedert",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 9900,
+        "points": 40.5,
+        "ownershipPercent": 5.8,
+        "rec": 8,
+        "recYds": 100,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jalen Hurts",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 11800,
+        "points": 21.02,
+        "ownershipPercent": 97.2,
+        "passTd": 2,
+        "passYds": 243,
+        "rushYds": 23,
+        "fumblesLost": 1,
+        "twoPtPass": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "HOU"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Davis Mills",
+        "position": "QB",
+        "team": "HOU",
+        "salary": 9000,
+        "points": 13.96,
+        "ownershipPercent": 32.1,
+        "passTd": 2,
+        "passYds": 154,
+        "rushYds": 18,
+        "interceptions": 2,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dameon Pierce",
+        "position": "RB",
+        "team": "HOU",
+        "salary": 8600,
+        "points": 16.9,
+        "ownershipPercent": 64.0,
+        "rushYds": 139,
+        "bonus100RushYds": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chris Moore",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 5400,
+        "points": 14.5,
+        "ownershipPercent": 19.5,
+        "rec": 4,
+        "recYds": 43,
+        "recTd": 1,
+        "rushYds": 2,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Phillip Dorsett",
+        "position": "WR",
+        "team": "HOU",
+        "salary": 4000,
+        "points": 9.9,
+        "ownershipPercent": 27.1,
+        "rec": 3,
+        "recYds": 69,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "HOU",
+        "opponentTeam": "PHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it did not treat Philadelphia control as a reason to captain the quarterback. It treated Philadelphia control as a reason to identify which pass catcher could absorb the most efficient share of that control. Dallas Goedert at 5.8 percent captain ownership was the entire hinge. Jalen Hurts was overwhelmingly popular in flex, but Goedert captain let the lineup capture two layers at once: Philadelphia scoring concentration and a captain slot the field did not prioritize enough.\n\nThe game environment helped this shape. Houston was competitive enough to keep Philadelphia throwing, but not dynamic enough to force a full Eagles spread across multiple expensive pieces. Goedert turned that into the slate's cleanest multiplier outcome with eight catches, 100 yards, and a touchdown. Once that line landed, many Hurts based builds were drawing thin because the wrong Philadelphia piece held the ceiling.\n\nThe Houston side is where the lineup became more interesting. Instead of pairing Goedert captain with a tighter Philadelphia onslaught, the roster took Davis Mills, Dameon Pierce, Chris Moore, and Phillip Dorsett. That is four Texans with no Eagles defense. The assumption was simple: Houston volume could still be useful even in a loss, and the value would come through concentrated underdog usage rather than team level efficiency. Pierce carried the ground game. Mills was needed because two Houston passing scores had to land somewhere. Moore and Dorsett captured the affordable receiver production tied to that script.\n\nLeaving 1,300 in salary mattered, but it was secondary to the actual structural decision. The sharper call was accepting a Philadelphia captain with a 4-2 style supporting shell around him if the opposing offense stayed concentrated enough. That is what happened. Goedert won the multiplier slot, Hurts remained necessary, and Houston supplied the rest of the usable volume at lower cost.",
+    "uniquenessNotes": "The defining edge was not merely Goedert captain at 5.8 percent. It was Goedert captain paired with four Houston flex pieces and no A.J. Brown, no DeVonta Smith, and no Eagles defense. That removed the most common Philadelphia stack extensions and redirected salary toward an underdog offense the field did not want to trust this heavily.\n\nChris Moore at 19.5 percent flex ownership was an important pressure point because he gave the roster a second sub 20 percent piece without moving into fringe territory. Phillip Dorsett was not sub 20 percent, but he still functioned as a lower salary receiver bet on Houston passing concentration. Together, those two Texans let the lineup access Mills without paying for a more duplicated Houston pairing.\n\nThe grade lands at B plus. Goedert captain was a high quality leverage call. The lineup had one additional sub 20 percent flex piece, salary left, and a construction the field would not build often enough because four underdog bring backs feels excessive on first pass. It stops short of A range because the flex shell still carried extremely popular pieces in Hurts and Pierce, and the construction tension was more volume based than truly hostile or uncomfortable.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Dallas Goedert",
+          "position": "TE",
+          "team": "PHI"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low-owned tight end captain with quarterback correlation and four opposing bring backs built around concentrated underdog volume",
+        "includesQBs": true
+      },
+      "primaryLever": "Dallas Goedert captain created the slate's main leverage point through a 5.8 percent captain outcome while Jalen Hurts remained popular only in flex",
+      "secondaryLever": "The lineup leaned into Houston concentration through Davis Mills, Dameon Pierce, Chris Moore, and Phillip Dorsett instead of adding more duplicated Eagles flex pieces"
+    }
+  }
+}

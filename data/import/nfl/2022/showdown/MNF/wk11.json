@@ -1,0 +1,141 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 11,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-11-21",
+  "slateName": "NFL Week 11 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK11_MNF_SHOWDOWN_2022-11-21_sf_ari",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 16750000,
+    "totalOwnershipBp": 20250
+  },
+  "winner": {
+    "username": "powda112",
+    "points": 140.82,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 49300,
+    "totalPoints": 140.82,
+    "totalOwnershipBp": 20250,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "George Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 10500,
+        "points": 36.6,
+        "ownershipPercent": 10.0,
+        "recTd": 2,
+        "recYds": 84,
+        "rec": 4,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeAndre Hopkins",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 10400,
+        "points": 18.1,
+        "ownershipPercent": 46.2,
+        "rec": 9,
+        "recYds": 91,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jimmy Garoppolo",
+        "position": "QB",
+        "team": "SF",
+        "salary": 9600,
+        "points": 25.42,
+        "ownershipPercent": 57.6,
+        "passTd": 4,
+        "passYds": 228,
+        "rushYds": 3,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Deebo Samuel",
+        "position": "WR",
+        "team": "SF",
+        "salary": 8200,
+        "points": 22.4,
+        "ownershipPercent": 45.1,
+        "rushTd": 1,
+        "rec": 7,
+        "recYds": 57,
+        "rushYds": 37,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brandon Aiyuk",
+        "position": "WR",
+        "team": "SF",
+        "salary": 7600,
+        "points": 16.0,
+        "ownershipPercent": 40.3,
+        "recTd": 2,
+        "rec": 2,
+        "recYds": 20,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Greg Dortch",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 3000,
+        "points": 22.3,
+        "ownershipPercent": 3.3,
+        "rec": 9,
+        "recYds": 103,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "SF"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by taking the San Francisco passing explosion and assigning the multiplier to the pass catcher the field did not prioritize first. George Kittle captain at 10.0 percent ownership was the hinge point. Jimmy Garoppolo threw four touchdowns, yet the captain slot did not go to the quarterback or to the wider volume expectation around Deebo Samuel or DeAndre Hopkins. It went to the tight end who captured two of the passing scores and delivered the cleanest touchdown concentration on the San Francisco side.\n\nThe rest of the roster stayed aligned with how the game distributed production. Garoppolo remained necessary because four passing touchdowns pulled too much of the slate through him to fade. Deebo Samuel and Brandon Aiyuk completed the San Francisco shell without forcing a running back or a defense. That mattered because San Francisco scored through the air and through Deebo's hybrid role, not through a narrow run heavy structure. Aiyuk's two touchdown outcome gave the lineup a second San Francisco receiver branch, while Deebo supplied floor and ceiling through both receiving and rushing.\n\nThe Arizona bring backs were precise. DeAndre Hopkins handled the stable volume role and kept the lineup attached to the Cardinals' most bankable pass game piece. Greg Dortch was the separator. At 3.3 percent flex ownership and only 3,000 in salary, he gave the build a second Arizona receiver without paying for a more crowded midrange option. His 103 receiving yards and bonus point were slate changing because they created a cheap way to keep pace with San Francisco's pass centric production.\n\nLeaving 700 in salary added useful separation, though the larger edge came from captain assignment and the specific Arizona secondary bring back. This roster did not need an exotic team split. It needed the correct pass game concentration and the willingness to captain the touchdown scorer instead of the more obvious centerpiece.",
+    "uniquenessNotes": "The lineup had two players under 20 percent ownership and both carried real jobs. George Kittle captain created the multiplier leverage. Greg Dortch supplied the salary relief and secondary Arizona volume path the field did not build often enough.\n\nThe sharpest structural choice was how the San Francisco stack was shaped. Many Garoppolo builds would have landed on one of his main receivers plus a running back or a defense to balance the construction. This roster chose the fully aerial version. Garoppolo with Kittle, Samuel, and Aiyuk captured all four passing touchdowns plus Deebo's rushing score. Once the game tilted into concentrated passing efficiency, that structure became overwhelming.\n\nThe Arizona side also avoided waste. Hopkins and Dortch were enough. The lineup did not force Colt McCoy, did not chase ancillary touchdown guesses, and did not spend extra salary on a thinner route to Arizona production. Hopkins absorbed the high percentage targets. Dortch absorbed the lower cost volume and the yardage bonus. Together they covered the Cardinals' relevant fantasy output.\n\nThe final grade lands at A minus. The lineup had strong captain leverage, a near minimum salary differentiator, and a concentrated 4 to 2 build tied directly to the way San Francisco scored. It stays below A territory because several flex spots still carried healthy ownership and the construction becomes more natural once Garoppolo's four passing touchdowns are known.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "George Kittle",
+          "position": "TE",
+          "team": "SF"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low owned tight end captain with his quarterback, two additional same team pass catchers, and two opposing volume receivers including one near minimum salary option",
+        "includesQBs": true
+      },
+      "primaryLever": "George Kittle captain created the slate's main leverage point through a 10.0 percent captain outcome tied to two receiving touchdowns",
+      "secondaryLever": "Greg Dortch at 3.3 percent and 3,000 salary gave the lineup the low cost Arizona volume branch that completed the pass game focused build"
+    }
+  }
+}

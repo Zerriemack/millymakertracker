@@ -1,0 +1,144 @@
+{
+  "sport": "NFL",
+  "year": 2019,
+  "week": 22,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2020-02-02",
+  "slateName": "Super Bowl 54 Showdown",
+  "slateTag": "super_bowl",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown $4M Super Bowl LIV Millionaire",
+    "siteContestId": "NFL_2019_WK22_SUPER_BOWL_SHOWDOWN_2020-02-02_sf_kc",
+    "entryFeeCents": 1000,
+    "entries": 470588,
+    "topPrizeCents": 6454348,
+    "totalOwnershipBp": 16560
+  },
+  "winner": {
+    "username": "Quiddity",
+    "points": 131.19,
+    "maxEntries": 144
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 131.19,
+    "totalOwnershipBp": 16560,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Damien Williams",
+        "position": "RB",
+        "team": "KC",
+        "salary": 14700,
+        "points": 48.45,
+        "ownershipPercent": 5.4,
+        "rec": 4,
+        "recYds": 29,
+        "recTd": 1,
+        "rushYds": 104,
+        "rushTd": 1,
+        "bonus100RushYds": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 12600,
+        "points": 26.34,
+        "ownershipPercent": 77.6,
+        "passTd": 2,
+        "rushTd": 1,
+        "passYds": 286,
+        "rushYds": 29,
+        "interceptions": 2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "KC",
+        "salary": 11000,
+        "points": 22.5,
+        "ownershipPercent": 33.4,
+        "rec": 9,
+        "recYds": 105,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Sammy Watkins",
+        "position": "WR",
+        "team": "KC",
+        "salary": 7000,
+        "points": 14.8,
+        "ownershipPercent": 26.3,
+        "rec": 5,
+        "recYds": 98,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kendrick Bourne",
+        "position": "WR",
+        "team": "SF",
+        "salary": 3400,
+        "points": 6.2,
+        "ownershipPercent": 15.3,
+        "rec": 2,
+        "recYds": 42,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kyle Juszczyk",
+        "position": "RB",
+        "team": "SF",
+        "salary": 1200,
+        "points": 12.9,
+        "ownershipPercent": 7.6,
+        "rec": 3,
+        "recYds": 39,
+        "recTd": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won through a very specific read on how Kansas City scoring would concentrate after the field spent most of its captain allocation elsewhere. Damien Williams at captain carried only 5.4 percent captain ownership and ended up absorbing the slate’s most valuable scoring package through rushing volume, a receiving score, and the 100 yard rushing bonus. Once Williams became the multiplier, the rest of the build no longer needed to chase fringe Kansas City outcomes. Patrick Mahomes, Tyreek Hill, and Sammy Watkins covered the central Chiefs passing production while keeping the lineup attached to every major Kansas City touchdown path.\n\nThe two San Francisco bring backs were where the construction separated from a more common Chiefs onslaught build. Kendrick Bourne and Kyle Juszczyk were not volume anchors. They were salary relief pieces tied to narrow touchdown and role based paths, which gave the lineup access to differentiated 4 2 construction without paying for the more duplicated San Francisco responses. Juszczyk mattered more than Bourne because he turned a low salary roster spot into a touchdown outcome while preserving access to the expensive Chiefs core.\n\nFrom a diagnostic angle, the lineup captured the game’s scoring concentration correctly. Kansas City supplied four of six roster spots and all three expensive flex pieces came from the same passing environment. San Francisco exposure stayed thin and selective. The lineup did not attempt to spread across too many secondary game branches. It chose one primary thesis, then used two cheap 49ers to complete it.",
+    "uniquenessNotes": "The main leverage point was Damien Williams captain at 5.4 percent. That decision created immediate separation from Patrick Mahomes captain builds and from Tyreek Hill captain builds while still allowing both Mahomes and Hill in flex. This is an important distinction because the lineup did not fade Kansas City concentration. It changed where the multiplier sat.\n\nThe second separator was the double cheap San Francisco bring back. Kendrick Bourne at 15.3 percent and Kyle Juszczyk at 7.6 percent gave the lineup two roster spots under 20 percent ownership, plus a captain under 10 percent. Those were not random low owned clicks. They matched a game where San Francisco produced enough secondary scoring to support two salary savers without requiring George Kittle or Raheem Mostert.\n\nThe final grade lands at B. The captain choice was sharp, the ownership curve stayed healthy, and the lineup used a low salary accessory path from the losing side instead of a more duplicated star response. It stops short of A range because duplication was still heavy at 23 entries in a contest this large. The structure was good enough to win, though not rare enough to keep a larger share of first place equity.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Damien Williams",
+          "position": "RB",
+          "team": "KC"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low-owned running back captain with Patrick Mahomes plus two Kansas City pass catchers and two cheap San Francisco bring backs",
+        "includesQBs": true
+      },
+      "primaryLever": "Damien Williams captain created the slate’s main leverage point through a 5.4 percent captain outcome",
+      "secondaryLever": "Kyle Juszczyk and Kendrick Bourne completed the 4-2 build through low-owned San Francisco salary relief instead of a more duplicated star bring back"
+    }
+  }
+}

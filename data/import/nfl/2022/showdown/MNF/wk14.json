@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 14,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-12-12",
+  "slateName": "NFL Week 14 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK14_MNF_SHOWDOWN_2022-12-12_ne_ari",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 8440
+  },
+  "winner": {
+    "username": "Hollywizzle",
+    "points": 100.0,
+    "maxEntries": 30
+  },
+  "lineup": {
+    "salaryUsed": 35600,
+    "totalPoints": 100.0,
+    "totalOwnershipBp": 8440,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "James Conner",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 15000,
+        "points": 35.1,
+        "ownershipPercent": 5.6,
+        "rushTd": 1,
+        "rushYds": 85,
+        "rec": 6,
+        "recYds": 29,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Hunter Henry",
+        "position": "TE",
+        "team": "NE",
+        "salary": 5600,
+        "points": 10.0,
+        "ownershipPercent": 30.3,
+        "rec": 3,
+        "recYds": 70,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kendrick Bourne",
+        "position": "WR",
+        "team": "NE",
+        "salary": 5400,
+        "points": 9.7,
+        "ownershipPercent": 7.4,
+        "rec": 5,
+        "recYds": 47,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Nelson Agholor",
+        "position": "WR",
+        "team": "NE",
+        "salary": 5000,
+        "points": 8.2,
+        "ownershipPercent": 25.0,
+        "rec": 5,
+        "recYds": 32,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 4400,
+        "points": 20.0,
+        "ownershipPercent": 15.0,
+        "sacks": 6,
+        "interceptionsDst": 1,
+        "defFumbleRecoveries": 1,
+        "defTd": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Colt McCoy",
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Pierre Strong Jr.",
+        "position": "RB",
+        "team": "NE",
+        "salary": 200,
+        "points": 17.0,
+        "ownershipPercent": 1.1,
+        "rushTd": 1,
+        "rushYds": 70,
+        "rec": 2,
+        "recYds": 20,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by taking the slate's most uncomfortable but still coherent construction and carrying it all the way through. James Conner captain at 5.6 percent ownership was the core leverage point. Arizona lost 27 to 13, yet Conner still handled enough rushing and receiving volume to post the best multiplier score on the slate. The build did not need Arizona to win. It needed Arizona scoring to stay concentrated through Conner while New England spread its offense thinly enough for cheap Patriots pieces to matter.\n\nThe New England side of the roster is where the lineup separated from almost everyone else. Rather than pay for Mac Jones or a more traditional Patriots skill core, the build used Hunter Henry, Kendrick Bourne, Nelson Agholor, Patriots defense, and Pierre Strong Jr. That gave the roster access to New England's passing volume at modest ownership while also capturing the defensive touchdown and the near minimum salary Strong touchdown. The lineup effectively said New England would score enough to win and cover the slate, but would do it without forcing expensive chalk around the quarterback.\n\nPatriots defense was the structural hinge. Once Arizona lost Kyler Murray early and the game tilted toward backup quarterback play, the defense became a direct source of separation through sacks, a takeaway return touchdown, and suppressed Arizona efficiency. That defensive success still did not kill Conner because his role remained intact through both rushing and receiving usage. That balance is what made the build so hard for the field to reach.\n\nLeaving 14,400 in salary was not decorative. It was the entire point. This roster used a massive amount of unused salary to avoid duplicated construction space and to embrace the exact version of the game the field was least willing to build.",
+    "uniquenessNotes": "The defining trait was the combination of a losing team running back captain with five players from the winning defense and offense, including a 200 salary running back. That structure looks broken until the game is understood correctly. Arizona scoring stayed almost entirely with Conner. New England scoring and fantasy usefulness spread across defense, cheap receivers, a tight end, and Strong's late production. Once that happened, the lineup had access to nearly every valuable scoring branch without paying for the field's preferred names.\n\nPierre Strong Jr. at 1.1 percent was the slate breaker inside the build. At 200 salary, he unlocked a construction the field would rarely land on and still gave real production through a touchdown, rushing yardage, and receiving output. Patriots defense at 15.0 percent and Kendrick Bourne at 7.4 percent added more low owned paths without depending on one fragile correlation.\n\nThe roster also avoided the common mistake of forcing New England's quarterback into a Patriots heavy onslaught. That would have raised salary, ownership, and duplication pressure while not being necessary for how the game actually distributed fantasy points. Henry, Bourne, and Agholor were enough to absorb the useful passing volume.\n\nThe final grade lands at A plus. The lineup had elite captain leverage, multiple sub 20 percent flex pieces, extreme salary left, a highly unusual but coherent game script, and a construction the field was not building at scale. This is one of the clearest examples of showdown uniqueness creating a massive edge without abandoning logic.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "James Conner",
+          "position": "RB",
+          "team": "ARI"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Low owned losing team running back captain with five opposing players, including defense, three secondary pass catchers, and a near minimum salary running back",
+        "includesQBs": false
+      },
+      "primaryLever": "James Conner captain created the slate's main leverage point through a 5.6 percent captain outcome in a losing script",
+      "secondaryLever": "The lineup paired Patriots defense with Pierre Strong Jr. at 200 salary and left 14,400 in salary unused to create extreme structural separation"
+    }
+  }
+}

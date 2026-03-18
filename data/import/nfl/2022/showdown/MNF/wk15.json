@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 15,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-12-19",
+  "slateName": "NFL Week 15 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK15_MNF_SHOWDOWN_2022-12-19_lar_gb",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 16830
+  },
+  "winner": {
+    "username": "BruBru",
+    "points": 101.95,
+    "maxEntries": 6
+  },
+  "lineup": {
+    "salaryUsed": 46900,
+    "totalPoints": 101.95,
+    "totalOwnershipBp": 16830,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "AJ Dillon",
+        "position": "RB",
+        "team": "GB",
+        "salary": 9300,
+        "points": 33.15,
+        "ownershipPercent": 10.8,
+        "rushTd": 2,
+        "rushYds": 36,
+        "rec": 3,
+        "recYds": 35,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Aaron Jones",
+        "position": "RB",
+        "team": "GB",
+        "salary": 11200,
+        "points": 21.6,
+        "ownershipPercent": 63.8,
+        "recTd": 1,
+        "rushYds": 90,
+        "rec": 4,
+        "recYds": 36,
+        "fumblesLost": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cam Akers",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 8200,
+        "points": 13.0,
+        "ownershipPercent": 38.0,
+        "rushYds": 65,
+        "rec": 3,
+        "recYds": 35,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Romeo Doubs",
+        "position": "WR",
+        "team": "GB",
+        "salary": 6800,
+        "points": 10.5,
+        "ownershipPercent": 9.8,
+        "rec": 5,
+        "recYds": 55,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tyler Higbee",
+        "position": "TE",
+        "team": "LAR",
+        "salary": 6400,
+        "points": 12.7,
+        "ownershipPercent": 15.9,
+        "recTd": 1,
+        "rec": 4,
+        "recYds": 27,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Packers",
+        "position": "DST",
+        "team": "GB",
+        "salary": 5000,
+        "points": 11.0,
+        "ownershipPercent": 30.0,
+        "sacks": 5,
+        "interceptionsDst": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Baker Mayfield",
+        "qbFacedArchetype": "REPLACEMENT_LEVEL",
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by identifying the exact Green Bay rushing concentration the field was not prioritizing in the captain slot. AJ Dillon captain at 10.8 percent ownership was the slate's defining lever. Green Bay scored 24 points, and Dillon captured two rushing touchdowns plus receiving production. That gave the build access to the best multiplier score without paying for the more obvious Aaron Rodgers or Aaron Jones captain paths.\n\nThe second sharp decision was pairing Dillon with Aaron Jones instead of treating the Green Bay backfield as mutually exclusive. On this slate, both backs mattered because Green Bay's offense leaned heavily into running back touches near the goal line and in the short passing game. Jones added 90 rushing yards and a receiving touchdown, so the lineup captured nearly all of Green Bay's usable skill position scoring without needing the quarterback.\n\nThe Rams bring backs were also disciplined. Cam Akers and Tyler Higbee were enough. Akers handled the stable rushing and checkdown volume for Los Angeles, while Higbee captured the lone receiving touchdown. That gave the roster access to the Rams offense without paying for thinner wide receiver outcomes. Romeo Doubs then served as the low owned Green Bay pass catcher layer at 9.8 percent flex ownership, giving the build one more path into Green Bay's yardage without pushing salary back into crowded constructions.\n\nPackers defense completed the script. Five sacks and an interception fit a game where Los Angeles struggled to sustain offense despite Higbee and Akers remaining fantasy viable. Leaving 3,100 in salary was a major part of the edge because the build already had an unusual captain and no quarterback. The unused salary pushed it even farther away from the dense duplication zone.",
+    "uniquenessNotes": "The strongest structural trait was the willingness to captain AJ Dillon while still using Aaron Jones. Many lineups would treat those two as competing outcomes. This build treated them as complementary because Green Bay could score through both backs in different ways. That read was accurate.\n\nThe lineup also had three sub 20 percent pieces, and each had a clean job. Dillon captain created the leverage. Romeo Doubs captured the low owned Green Bay receiver branch. Tyler Higbee preserved access to the Rams touchdown at moderate cost while staying below the field's more popular routes. Even Packers defense, though not sub 20 percent, reinforced the broader game call by leaning into Green Bay control without needing a Green Bay quarterback.\n\nAnother strong choice was the refusal to force either quarterback. This game did not require it. Green Bay scoring ran through the backfield. The Rams produced only enough offense for Akers and Higbee to matter. By skipping both passers, the roster avoided expensive ownership and opened a much cleaner path to structural separation.\n\nThe final grade lands at A. The lineup had meaningful captain leverage, three sub 20 percent roster spots, 3,100 in salary left, and a game script built around backfield concentration plus defense. It stays below A plus because the Jones plus Dillon pairing, while sharp, still becomes understandable once the final scoring is known, and Packers defense carried enough ownership to keep the build from the rarest range of showdown outliers.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "AJ Dillon",
+          "position": "RB",
+          "team": "GB"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low owned running back captain with same team running back, same team defense, one low owned same team receiver, and two opposing bring backs without either quarterback",
+        "includesQBs": false
+      },
+      "primaryLever": "AJ Dillon captain created the slate's main leverage point through a 10.8 percent captain outcome tied to two rushing touchdowns",
+      "secondaryLever": "Leaving 3,100 in salary while fading both quarterbacks and pairing Dillon with Aaron Jones gave the lineup its separation"
+    }
+  }
+}

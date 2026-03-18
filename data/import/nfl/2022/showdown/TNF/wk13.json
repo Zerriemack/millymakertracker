@@ -1,0 +1,140 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 13,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-12-01",
+  "slateName": "NFL Week 13 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "C+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2022_WK13_TNF_SHOWDOWN_2022-12-01_buf_ne",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 7280000,
+    "totalOwnershipBp": 17600
+  },
+  "winner": {
+    "username": "wiley77",
+    "points": 96.42,
+    "maxEntries": 96
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 96.42,
+    "totalOwnershipBp": 17600,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Stefon Diggs",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 17400,
+        "points": 33.3,
+        "ownershipPercent": 9.8,
+        "rec": 7,
+        "recYds": 92,
+        "recTd": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 12200,
+        "points": 17.92,
+        "ownershipPercent": 90.3,
+        "passTd": 2,
+        "passYds": 223,
+        "rushYds": 20,
+        "fumblesLost": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mac Jones",
+        "position": "QB",
+        "team": "NE",
+        "salary": 9400,
+        "points": 12.5,
+        "ownershipPercent": 28.7,
+        "passTd": 1,
+        "passYds": 195,
+        "rushYds": 7,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Devin Singletary",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 7000,
+        "points": 11.1,
+        "ownershipPercent": 27.7,
+        "rushTd": 1,
+        "rushYds": 51,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "James Cook",
+        "position": "RB",
+        "team": "BUF",
+        "salary": 3600,
+        "points": 16.5,
+        "ownershipPercent": 8.6,
+        "rec": 6,
+        "recYds": 41,
+        "rushYds": 64,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tyquan Thornton",
+        "position": "WR",
+        "team": "NE",
+        "salary": 400,
+        "points": 5.1,
+        "ownershipPercent": 10.9,
+        "rec": 2,
+        "recYds": 31,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "BUF"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it treated Buffalo control as a concentrated passing and backfield distribution rather than a broad team stack. Stefon Diggs at 9.8 percent captain ownership was the main lever. Buffalo scored only 24 points, so first place did not require a full eruption from Josh Allen. It required the right Buffalo scorer in the multiplier slot, and Diggs owned the most valuable receiving touchdown while still carrying strong target volume.\n\nThe second layer came from how the Buffalo production was divided behind Diggs. Allen remained necessary because both passing touchdowns still flowed through him. Devin Singletary captured the rushing touchdown. James Cook handled a more explosive mixed workload than his salary implied. That combination gave the lineup access to every Buffalo touchdown without paying for a second expensive Buffalo pass catcher.\n\nThe New England side stayed thin and salary driven. Mac Jones gave the roster access to the Patriots' lone passing touchdown and enough yardage to remain usable. Tyquan Thornton served a different job. At 400 in salary and 10.9 percent flex ownership, he was not asked to post a ceiling score. He only needed to stay live enough to unlock the Buffalo core while keeping the overall build away from more common constructions.\n\nUsing all 50,000 did not create separation, so the lineup had to win through ownership shape and player selection. It did. Diggs captain, Cook, and Thornton supplied the leverage. The rest of the roster stayed attached to the game's most bankable scoring paths.",
+    "uniquenessNotes": "The strongest decision was pairing Diggs captain with both Buffalo running backs. Many Buffalo captain builds would have chosen one backfield piece or shifted salary toward another Bills receiver. This lineup accepted a narrower read: Buffalo could score modestly, still win comfortably, and split usable production among Diggs, Allen, Singletary, and Cook.\n\nCook at 8.6 percent flex ownership did a large share of the separation work. Thornton at 10.9 percent added another sub 20 percent flex piece, even though his raw score was small. Those two choices mattered because Allen flex at 90.3 percent gave the roster almost no room for duplication protection elsewhere.\n\nThe duplicated finish drags the grade down. A 9.8 percent captain with two sub 20 percent flex pieces is a strong starting point, but full salary and a highly clickable Buffalo shell kept the lineup more accessible to the field than the raw ownership total might suggest.\n\nThe final grade lands at C plus. The build had a sharp captain call and two useful low owned flex pieces, but the duplication outcome and zero salary left keep it out of the upper tier.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Stefon Diggs",
+          "position": "WR",
+          "team": "BUF"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Wide receiver captain with quarterback correlation, both same-team running backs, opposing quarterback, and a punt opposing receiver",
+        "includesQBs": true
+      },
+      "primaryLever": "Stefon Diggs captain created the lineup's main leverage point through a 9.8 percent captain outcome tied to Buffalo's most valuable receiving score",
+      "secondaryLever": "James Cook and Tyquan Thornton gave the build two sub 20 percent flex pieces while the roster captured all Buffalo touchdowns through Allen, Diggs, Singletary, and Cook"
+    }
+  }
+}

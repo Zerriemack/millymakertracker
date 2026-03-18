@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 8,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-10-27",
+  "slateName": "NFL Week 8 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2022_WK08_TNF_SHOWDOWN_2022-10-27_bal_tb",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 19833334,
+    "totalOwnershipBp": 23210
+  },
+  "winner": {
+    "username": "Yahtzee",
+    "points": 124.27,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 48600,
+    "totalPoints": 124.27,
+    "totalOwnershipBp": 23210,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Isaiah Likely",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 2400,
+        "points": 29.55,
+        "ownershipPercent": 0.6,
+        "rec": 6,
+        "recYds": 77,
+        "recTd": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 11800,
+        "points": 21.82,
+        "ownershipPercent": 80.4,
+        "passTd": 2,
+        "passYds": 238,
+        "rushYds": 43,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mike Evans",
+        "position": "WR",
+        "team": "TB",
+        "salary": 11000,
+        "points": 21.3,
+        "ownershipPercent": 37.9,
+        "rec": 6,
+        "recYds": 123,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tom Brady",
+        "position": "QB",
+        "team": "TB",
+        "salary": 10000,
+        "points": 20.1,
+        "ownershipPercent": 56.7,
+        "passTd": 1,
+        "passYds": 325,
+        "rushYds": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Leonard Fournette",
+        "position": "RB",
+        "team": "TB",
+        "salary": 8800,
+        "points": 14.8,
+        "ownershipPercent": 47.1,
+        "rushTd": 1,
+        "rushYds": 24,
+        "rec": 3,
+        "recYds": 34,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kenyan Drake",
+        "position": "RB",
+        "team": "BAL",
+        "salary": 4600,
+        "points": 16.7,
+        "ownershipPercent": 9.4,
+        "rushYds": 62,
+        "rec": 4,
+        "recYds": 5,
+        "recTd": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it identified the one Baltimore pass catcher the field would not captain, then let the rest of the roster stay close enough to the game’s main production. Isaiah Likely at 0.6 percent captain ownership was the entire slate hinge. Mark Andrews missed the game, Baltimore still needed a secondary receiving outlet behind Lamar Jackson, and Likely converted that opening into a six catch, 77 yard, one touchdown line. Once that happened, the captain slot became almost impossible to catch because the multiplier was attached to a player almost nobody prioritized there.\n\nThe rest of the build did not overcomplicate the scoring map. Lamar Jackson stayed in because Likely captain still needed the quarterback conduit. Tom Brady and Mike Evans captured Tampa Bay’s comeback volume. Leonard Fournette added a touchdown plus enough peripheral usage to remain viable even in a game where his rushing efficiency did not carry the score. Kenyan Drake then completed the lineup as the second low owned piece, giving Baltimore exposure beyond Lamar without paying for a more obvious construction.\n\nThe sharper read sat in how the lineup balanced leverage with stability. The captain slot created nearly all of the structural separation. After that, the roster accepted popular pieces where the game demanded them. Brady threw for 325 yards. Lamar handled Baltimore’s offense. Evans accounted for the Buccaneers’ most important receiving production. The lineup did not try to be unique in every slot. It found one massive leverage point, then supported it with high probability volume.\n\nLeaving 1,400 in salary helped, though it was not the main story. The bigger driver was captain ownership asymmetry. Likely was a reasonable flex value many players considered, but almost no one was willing to multiply him. That difference between flex viability and captain conviction is where this lineup separated.",
+    "uniquenessNotes": "The defining choice was Isaiah Likely captain, but the second layer mattered too. Kenyan Drake at 9.4 percent flex ownership gave the build another under 20 percent piece without forcing a dead roster spot. That kept the lineup from becoming a pure one click miracle. It had a second source of leverage tied directly to live Baltimore offense.\n\nAt the same time, the overall ownership shape remained expensive and popular. Lamar Jackson, Tom Brady, Leonard Fournette, and Mike Evans were all common selections. That combination made sense because the game concentrated fantasy production through recognizable volume leaders, but it also raised duplication risk. The split payout confirms that the field was still close enough to this construction once Likely captain landed.\n\nThat is why the grade settles at B. A 0.6 percent captain and a 9.4 percent flex are powerful uniqueness drivers, and 1,400 in salary left gave the build extra separation. Still, the duplicated finish pulls it down. The lineup had elite captain leverage, but the surrounding shell was common enough to keep it out of A range.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Isaiah Likely",
+          "position": "TE",
+          "team": "BAL"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Low-owned tight end captain with both quarterbacks, one opposing alpha receiver, one opposing running back, and a secondary low-owned Baltimore running back",
+        "includesQBs": true
+      },
+      "primaryLever": "Isaiah Likely captain created the slate's main leverage point through a 0.6 percent captain outcome after Mark Andrews was absent",
+      "secondaryLever": "Kenyan Drake added a second low-owned scoring path while the rest of the build held onto the game's most bankable volume pieces"
+    }
+  }
+}

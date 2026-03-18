@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 3,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-09-26",
+  "slateName": "NFL Week 3 Monday Night Showdown",
+  "slateTag": "MNF",
+  "slateGroup": "F",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK03_MNF_SHOWDOWN_2022-09-26_dal_nyg",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 1053374,
+    "totalOwnershipBp": 24550
+  },
+  "winner": {
+    "username": "ImRatherUnique",
+    "points": 109.04,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 109.04,
+    "totalOwnershipBp": 24550,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Graham Gano",
+        "position": "K",
+        "team": "NYG",
+        "salary": 6000,
+        "points": 22.5,
+        "ownershipPercent": 1.6,
+        "xpm": 1,
+        "fg40to49": 1,
+        "fg50plus": 2,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 11800,
+        "points": 22.6,
+        "ownershipPercent": 79.8,
+        "rushTd": 1,
+        "rushYds": 81,
+        "rec": 4,
+        "recYds": 45,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 10200,
+        "points": 22.7,
+        "ownershipPercent": 53.0,
+        "rec": 8,
+        "recYds": 87,
+        "recTd": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Daniel Jones",
+        "position": "QB",
+        "team": "NYG",
+        "salary": 9400,
+        "points": 14.74,
+        "ownershipPercent": 57.8,
+        "passYds": 196,
+        "rushYds": 79,
+        "interceptions": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 8400,
+        "points": 14.5,
+        "ownershipPercent": 33.2,
+        "rushTd": 1,
+        "rushYds": 73,
+        "rec": 1,
+        "recYds": 2,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brett Maher",
+        "position": "K",
+        "team": "DAL",
+        "salary": 4200,
+        "points": 12.0,
+        "ownershipPercent": 20.1,
+        "xpm": 2,
+        "fg0to39": 2,
+        "fg40to49": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "NYG",
+        "opponentTeam": "NYG"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because Graham Gano captain hit the exact scoring texture the game produced. New York moved the ball enough to create repeated field goal chances, and Gano converted all of them, including two from beyond 50 yards. At 1.6 percent captain ownership, that outcome immediately created separation from the field's preferred quarterback and running back captain routes.\n\nAfter that captain call, though, the rest of the build was far more conventional. Saquon Barkley remained the clear New York priority. CeeDee Lamb captured Dallas receiving production. Daniel Jones supplied rushing volume. Ezekiel Elliott and Brett Maher rounded out the Cowboys side through rushing and field goal scoring. The build correctly identified a lower scoring divisional game with enough stalled drives for both kickers to matter.\n\nThe problem is that the lineup did not build enough additional separation around the captain. It used the full 50,000 salary, carried two kickers, and leaned on a very visible flex shell. Once the game landed in this range, the captain was the one truly uncomfortable choice. The rest of the roster was highly findable.",
+    "uniquenessNotes": "Graham Gano captain carried almost the entire uniqueness burden. At 1.6 percent captain ownership, the roster immediately stepped outside the field's preferred scoring paths. After that, the build became much less impressive. It used the full 50,000 salary, included two kickers, and had only one player under 20 percent ownership. Barkley, Lamb, Jones, Elliott, and Maher formed a shell the field could reach easily once the game settled into a lower scoring divisional grind.\n\nThe double kicker structure gave the lineup a clear game texture read, but structure alone does not earn a strong grade when duplication gets crushed by a fully spent salary build with so few true separation points. In a massive field, one contrarian captain does not fully rescue a lineup that is otherwise this visible.\n\nThe final grade lands at F. Gano captain was correct, but the lineup was massively duplicated, left no salary on the table, relied on two kickers, and did not carry enough low owned pieces to earn a stronger structural grade.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Graham Gano",
+          "position": "K",
+          "team": "NYG"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Low owned kicker captain with both teams' kickers, one quarterback, two primary running backs, and the lead Dallas receiver",
+        "includesQBs": true
+      },
+      "primaryLever": "Graham Gano captain at 1.6 percent created the main leverage point by betting on stalled drives and long field goal volume",
+      "secondaryLever": "The rest of the roster stayed highly visible, which is why the captain hit still did not save the lineup from a poor structural grade"
+    }
+  }
+}

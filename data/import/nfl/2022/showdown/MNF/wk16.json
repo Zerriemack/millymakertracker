@@ -1,0 +1,142 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 16,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-12-26",
+  "slateName": "NFL Week 16 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK16_MNF_SHOWDOWN_2022-12-26_lac_ind",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 13800000,
+    "totalOwnershipBp": 19410
+  },
+  "winner": {
+    "username": "gmartoccio",
+    "points": 107.4,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 49500,
+    "totalPoints": 107.4,
+    "totalOwnershipBp": 19410,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 14700,
+        "points": 36.6,
+        "ownershipPercent": 9.4,
+        "rec": 11,
+        "recYds": 104,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 11000,
+        "points": 23.9,
+        "ownershipPercent": 79.1,
+        "rushTd": 2,
+        "rushYds": 67,
+        "rec": 4,
+        "recYds": 12,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mike Williams",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 9400,
+        "points": 11.6,
+        "ownershipPercent": 36.0,
+        "rec": 4,
+        "recYds": 76,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Zack Moss",
+        "position": "RB",
+        "team": "IND",
+        "salary": 7000,
+        "points": 8.0,
+        "ownershipPercent": 29.8,
+        "rec": 1,
+        "recYds": 5,
+        "rushYds": 65,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chargers",
+        "position": "DST",
+        "team": "LAC",
+        "salary": 4600,
+        "points": 20.0,
+        "ownershipPercent": 17.9,
+        "sacks": 7,
+        "interceptionsDst": 3,
+        "pointsAllowed": 6,
+        "qbFaced": "Nick Foles",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jelani Woods",
+        "position": "TE",
+        "team": "IND",
+        "salary": 2800,
+        "points": 7.3,
+        "ownershipPercent": 21.9,
+        "rec": 3,
+        "recYds": 43,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "LAC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by leaning into the Chargers passing volume without paying for the most common captain path. Keenan Allen captain at 9.4 percent ownership was the main lever. In a 20 to 3 game, the field could easily have landed on Austin Ekeler captain because he scored twice. This build chose the receiver who commanded 11 catches and the 100 yard bonus. That decision mattered because Allen delivered the slate's best combination of volume, stability, and relative captain leverage.\n\nThe lineup then stayed tight around how Los Angeles actually moved the ball. Ekeler remained mandatory because both rushing touchdowns ran through him, and Mike Williams added the deeper yardage branch without forcing a quarterback salary commitment. The build did not need Justin Herbert because Allen captain already captured the heaviest passing concentration, and Ekeler handled the touchdown equity on the ground. By skipping the quarterback, the roster gained room for a stronger defensive and value layer.\n\nThe defensive angle was a major part of the win. Chargers defense scored 20 points through seven sacks and three interceptions against Nick Foles. That gave the lineup a second path to separation that matched the game perfectly. Indianapolis could still provide two usable bring backs through Zack Moss and Jelani Woods because short field position, dump offs, and cheap volume can survive even when the offense collapses. The build did not need Colts scoring. It needed Colts survivors.\n\nLeaving 500 in salary helped, but the stronger edge came from how cleanly the roster separated passing concentration from touchdown concentration. Allen captain absorbed the catch volume and yardage. Ekeler absorbed the rushing scores. Chargers defense absorbed the chaos. Those three lanes gave the build almost the full story of the game.",
+    "uniquenessNotes": "The strongest choice was fading Justin Herbert in a Chargers heavy win. Many lineups would have assumed a wide receiver captain required the quarterback. This roster showed otherwise. Herbert did not need to be present because Allen captured the target flood and Ekeler captured the touchdowns. Once the defense added a ceiling outcome, the quarterback became less necessary than the field expected.\n\nThe lineup had two sub 20 percent pieces and both carried real weight. Keenan Allen captain created the multiplier edge. Chargers defense gave the build access to the slate's volatility scoring. Zack Moss sat above that threshold, but still served a useful role by covering the Colts rushing volume without forcing a more expensive and lower utility Indianapolis choice.\n\nThere is also a precise game script in the bring backs. Indianapolis scored only three points, so the correct way to use them was not through a quarterback or a touchdown hunt. It was through Moss on the ground and Woods on cheap receiving volume. That is a narrow read, but it matches what ugly losing offenses can still produce in showdown.\n\nThe final grade lands at A minus. The lineup had a strong captain decision, a high value defense outcome, a quarterback fade in a comfortable win, and a coherent losing team mini return. It stays below A territory because the salary left was modest and several flex spots still carried enough ownership to keep duplication pressure present.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Keenan Allen",
+          "position": "WR",
+          "team": "LAC"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low owned wide receiver captain without his quarterback, paired with same team running back, same team secondary receiver, same team defense, and two losing team volume bring backs",
+        "includesQBs": false
+      },
+      "primaryLever": "Keenan Allen captain created the slate's main leverage point through a 9.4 percent captain outcome tied to 11 catches and the 100 yard bonus",
+      "secondaryLever": "Fading Justin Herbert while pairing Allen, Ekeler, and Chargers defense created the main structural separation"
+    }
+  }
+}

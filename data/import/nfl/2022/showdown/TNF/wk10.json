@@ -1,0 +1,142 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 10,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-11-10",
+  "slateName": "NFL Week 10 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "C+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2022_WK10_TNF_SHOWDOWN_2022-11-10_atl_car",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 30000000,
+    "totalOwnershipBp": 16130
+  },
+  "winner": {
+    "username": "nerdytenor",
+    "points": 103.16,
+    "maxEntries": 109
+  },
+  "lineup": {
+    "salaryUsed": 48700,
+    "totalPoints": 103.16,
+    "totalOwnershipBp": 16130,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "D'Onta Foreman",
+        "position": "RB",
+        "team": "CAR",
+        "salary": 11700,
+        "points": 33.0,
+        "ownershipPercent": 12.9,
+        "rushTd": 1,
+        "rushYds": 130,
+        "bonus100RushYds": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Marcus Mariota",
+        "position": "QB",
+        "team": "ATL",
+        "salary": 10200,
+        "points": 18.74,
+        "ownershipPercent": 65.0,
+        "passTd": 2,
+        "passYds": 186,
+        "rushYds": 43,
+        "interceptions": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "P.J. Walker",
+        "position": "QB",
+        "team": "CAR",
+        "salary": 9600,
+        "points": 5.72,
+        "ownershipPercent": 32.2,
+        "passYds": 108,
+        "rushYds": 14,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Drake London",
+        "position": "WR",
+        "team": "ATL",
+        "salary": 8200,
+        "points": 14.8,
+        "ownershipPercent": 22.1,
+        "rec": 5,
+        "recYds": 38,
+        "recTd": 1,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Eddy Pineiro",
+        "position": "K",
+        "team": "CAR",
+        "salary": 4000,
+        "points": 16.0,
+        "ownershipPercent": 20.4,
+        "xpm": 1,
+        "fg0to39": 1,
+        "fg40to49": 3,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "ATL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Laviska Shenault Jr.",
+        "position": "WR",
+        "team": "CAR",
+        "salary": 3000,
+        "points": 14.9,
+        "ownershipPercent": 8.7,
+        "rushTd": 1,
+        "rushYds": 42,
+        "rec": 3,
+        "recYds": 17,
+        "gameAwayTeam": "ATL",
+        "gameHomeTeam": "CAR",
+        "opponentTeam": "ATL"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it built around Carolina's rushing control instead of chasing quarterback scoring in a game with very little clean passing volume. D'Onta Foreman at 12.9 percent captain ownership was the central call. Once Carolina took the game on the ground and Foreman cleared 100 rushing yards with a touchdown, the captain slot swung toward a script the field respected in theory but did not prioritize enough in the multiplier.\n\nThe rest of the build stayed aligned with that script. P.J. Walker was included without asking him to do much. His presence was less about ceiling and more about preserving access to any Carolina passing or rushing spillover while the roster leaned into Panthers control. Eddy Pineiro and Laviska Shenault Jr. added two more Carolina scoring channels. Pineiro captured stalled drives. Shenault captured manufactured offense and converted it into a rushing touchdown plus extra yardage.\n\nThe Atlanta side was handled through Marcus Mariota and Drake London rather than through a deeper Falcons stack. That was a narrow but coherent read. Mariota still carried enough of Atlanta's offense through his rushing and two passing touchdowns to remain viable, and London absorbed one of those scores. Beyond that, the lineup did not waste roster spots on a Falcons offense that produced only 15 points and spread too little fantasy value to support broader exposure.\n\nLeaving 1,300 in salary helped reduce duplication, but the larger story is that this lineup accepted ugly score distributions and won with them. A captain running back from the home favorite, a losing quarterback from the other side, a nearly dead quarterback score from the winning side, a kicker, and a gadget receiver is not a clean aesthetic build. It matched the way this game actually scored.",
+    "uniquenessNotes": "The strongest part of this construction was the willingness to let Carolina dominate the roster without forcing Carolina pass catchers into traditional roles. Foreman captain and Pineiro made immediate sense together if Carolina moved the ball but did not finish every drive through the air. Shenault then gave the lineup a second sub 20 percent piece through a less conventional usage profile.\n\nThe weaker part is duplication. A lineup can carry leverage and still lose structural credit when more than 100 entries land on the same first place combination. Foreman captain was sharp enough, and Shenault at 8.7 percent helped, but the surrounding shell remained accessible. Mariota was popular. P.J. Walker was playable because of quarterback status. Pineiro was a natural salary release in a low total game. Those decisions were not obscure to the field.\n\nThe final grade lands at C plus. The lineup had a good captain call, one strong low owned flex, salary left, and a coherent low scoring script. The duplicated finish drags it down hard. This was a correct build for the game, but not a rare enough one to deserve upper tier structural credit.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "D'Onta Foreman",
+          "position": "RB",
+          "team": "CAR"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Running back captain from the winning team with both quarterbacks, kicker correlation, and a low-owned gadget teammate in a low-scoring game",
+        "includesQBs": true
+      },
+      "primaryLever": "D'Onta Foreman captain created the lineup's main edge through a 12.9 percent captain outcome tied to Carolina's ground control",
+      "secondaryLever": "Laviska Shenault Jr. and Eddy Pineiro captured two separate Carolina scoring paths while the build limited Atlanta exposure to Marcus Mariota and Drake London"
+    }
+  }
+}

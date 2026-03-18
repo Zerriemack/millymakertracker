@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 4,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-09-29",
+  "slateName": "NFL Week 4 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2022_WK04_TNF_SHOWDOWN_2022-09-29_mia_cin",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2778125,
+    "totalOwnershipBp": 20580
+  },
+  "winner": {
+    "username": "fjbourne",
+    "points": 130.43,
+    "maxEntries": 114
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 130.43,
+    "totalOwnershipBp": 20580,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 16200,
+        "points": 43.35,
+        "ownershipPercent": 11.0,
+        "recYds": 160,
+        "rushYds": -1,
+        "rec": 10,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Joe Burrow",
+        "position": "QB",
+        "team": "CIN",
+        "salary": 9600,
+        "points": 20.08,
+        "ownershipPercent": 74.0,
+        "passTd": 2,
+        "passYds": 287,
+        "rushYds": 6,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 9000,
+        "points": 17.4,
+        "ownershipPercent": 42.8,
+        "rushTd": 1,
+        "recYds": 13,
+        "rushYds": 61,
+        "rec": 4,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tee Higgins",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 8200,
+        "points": 28.4,
+        "ownershipPercent": 46.7,
+        "recTd": 1,
+        "recYds": 124,
+        "rec": 7,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Hayden Hurst",
+        "position": "TE",
+        "team": "CIN",
+        "salary": 5400,
+        "points": 11.7,
+        "ownershipPercent": 18.7,
+        "recTd": 1,
+        "recYds": 27,
+        "rec": 3,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Trent Sherfield",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 1400,
+        "points": 9.5,
+        "ownershipPercent": 12.6,
+        "recYds": 55,
+        "rec": 4,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it split the game into two different truths and captured both. Tyreek Hill was still the most explosive ceiling piece on the slate, even in a losing script, and Cincinnati still controlled enough of the actual scoring to justify a standard 4-2 Bengal lean underneath him. Hill captain at 11.0 percent was the core decision because the field respected his flex ceiling more than his multiplier ceiling in a game where Miami failed to keep pace on the scoreboard.\n\nThe Cincinnati side was built around scoring concentration rather than raw onslaught. Joe Burrow, Joe Mixon, Tee Higgins, and Hayden Hurst gave the lineup access to both Bengal passing touchdowns and the ground score without wasting salary on thinner branches. Higgins carried the true ceiling outcome. Burrow kept the passing production connected. Mixon supplied the rushing touchdown and touch floor. Hurst added a lower owned touchdown path that fit the same passing environment.\n\nThe sharper layer was the decision to leave off Tua Tagovailoa while still captaining Hill. That is the part many players struggle to click because it asks for a star receiver ceiling without forcing full quarterback attachment. On this slate, Hill created so much of Miami's usable offense by himself that the lineup did not need Tua's salary or his full box score. Trent Sherfield then served as the low cost accessory from the same side, giving the roster one more Miami receiver without overcommitting to the Dolphins offense.\n\nLeaving 200 in salary did not drive the win, but it kept the construction from falling directly into the most common salary endpoints. The larger edge came from understanding that Hill could still be the slate breaker while Cincinnati supplied the more reliable collection of secondary scores.",
+    "uniquenessNotes": "The defining choice was Tyreek Hill captain without Tua Tagovailoa. That is the tension point that made the build matter. Many Hill captain builds naturally pull in the quarterback because players want the full passing link. This lineup treated Hill as a stand alone eruption candidate and used the saved salary to buy a more complete Cincinnati scoring shell.\n\nThe second important choice was Hayden Hurst over a more duplicated Bengal piece. At 18.7 percent flex ownership, he was not invisible, but he did give the lineup another sub-20 percent slot tied directly to Burrow's touchdown distribution. Trent Sherfield at 12.6 percent created the other lower owned lane. Together they gave the roster two modest but useful separation points around a popular Bengal core.\n\nThis earns a B grade. Hill captain brought legitimate leverage, the no Tua construction added structural discomfort, and Sherfield plus Hurst helped keep the roster from becoming too obvious. It stops short of B plus or A range because the rest of the lineup was still fairly sturdy and ownership dense, with Burrow, Mixon, and Higgins doing much of the scoring load in paths the field already understood.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Tyreek Hill",
+          "position": "WR",
+          "team": "MIA"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Wide receiver captain without his quarterback, paired with a four man opposing scoring shell and one cheap same-team accessory receiver",
+        "includesQBs": true
+      },
+      "primaryLever": "Tyreek Hill captain at 11.0 percent created the slate's main leverage point without forcing quarterback attachment",
+      "secondaryLever": "Hayden Hurst and Trent Sherfield gave the lineup two sub-20 percent roster spots around a concentrated Cincinnati core"
+    }
+  }
+}

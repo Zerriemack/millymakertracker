@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 13,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-12-05",
+  "slateName": "NFL Week 13 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "B+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK13_MNF_SHOWDOWN_2022-12-05_no_tb",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 11700000,
+    "totalOwnershipBp": 23450
+  },
+  "winner": {
+    "username": "mpendle",
+    "points": 101.65,
+    "maxEntries": 91
+  },
+  "lineup": {
+    "salaryUsed": 48800,
+    "totalPoints": 101.65,
+    "totalOwnershipBp": 23450,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Tom Brady",
+        "position": "QB",
+        "team": "TB",
+        "salary": 15600,
+        "points": 27.21,
+        "ownershipPercent": 12.2,
+        "passTd": 2,
+        "passYds": 281,
+        "rushYds": -1,
+        "interceptions": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 10600,
+        "points": 14.3,
+        "ownershipPercent": 68.1,
+        "rec": 8,
+        "recYds": 63,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Leonard Fournette",
+        "position": "RB",
+        "team": "TB",
+        "salary": 7400,
+        "points": 14.1,
+        "ownershipPercent": 21.5,
+        "rec": 6,
+        "recYds": 32,
+        "rushYds": 49,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Rachaad White",
+        "position": "RB",
+        "team": "TB",
+        "salary": 7000,
+        "points": 17.9,
+        "ownershipPercent": 35.6,
+        "recTd": 1,
+        "rec": 6,
+        "recYds": 41,
+        "rushYds": 28,
+        "fumblesLost": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Taysom Hill",
+        "position": "TE",
+        "team": "NO",
+        "salary": 6400,
+        "points": 13.34,
+        "ownershipPercent": 14.6,
+        "passYds": 21,
+        "recTd": 1,
+        "rec": 2,
+        "recYds": 35,
+        "rushYds": 10,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cade Otton",
+        "position": "TE",
+        "team": "TB",
+        "salary": 1800,
+        "points": 14.8,
+        "ownershipPercent": 20.7,
+        "recTd": 1,
+        "rec": 6,
+        "recYds": 28,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "NO"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by treating the slate as a Tampa Bay passing accumulation game rather than a clean quarterback plus alpha receiver build. Tom Brady captain at 12.2 percent created leverage through role concentration more than raw captain obscurity. Tampa Bay scored only 17 points, yet Brady still accounted for nearly everything that mattered through 281 passing yards and two touchdowns. In a game with limited touchdown volume, captaining the quarterback captured the broadest share of the productive offense without needing any single Buccaneers pass catcher to fully bury the field on his own.\n\nThe sharper layer came from how the build spread Brady across the correct teammates. Chris Godwin handled the stable underneath volume. Rachaad White added receiving production and a touchdown from the backfield. Cade Otton delivered the cheap touchdown branch at 20.7 percent flex ownership and 1,800 salary. Leonard Fournette then added six catches and rushing yardage, which let the lineup soak up one more Tampa Bay scoring lane without paying for a wider New Orleans bring back shell.\n\nThe Saints side stayed narrow. Taysom Hill at 14.6 percent was the only New Orleans piece, and that made sense for this game environment. He could reach value through hybrid usage even while the conventional Saints offense underperformed. That is what happened. He created fantasy points through passing, receiving, and rushing while the rest of the New Orleans offense failed to produce enough to demand broader exposure.\n\nLeaving 1,200 in salary mattered because Brady captain lineups often spend more aggressively around him. This roster used salary relief through Otton and restraint on the Saints side to create distance from more common Brady plus Godwin plus opposing pass catcher constructions.",
+    "uniquenessNotes": "The defining trait was the 5 to 1 Tampa Bay heavy build in a game where the winning team scored only 17 points. Many lineups would have treated that final score as a reason to distribute exposure more evenly. This roster took the opposite stance and concentrated on the offense that still produced the slate's usable passing volume.\n\nThe low owned leverage points were Taysom Hill and the overall roster shape around Brady captain. Hill supplied the lone New Orleans touchdown and did it through a role the field never prices cleanly. Cade Otton was another important separator because he gave Brady captain access to a second touchdown receiver without forcing a more expensive and more duplicated salary structure.\n\nUsing both Tampa Bay backs with Brady also deserves attention. In many scripts that combination overlaps too much. Here it matched the game. Tampa Bay funneled short area work and outlet volume to the backs, and White turned one of those sequences into a receiving touchdown. Fournette still contributed enough catches and rushing yards to stay viable. The backfield combination did not crowd Brady out. It widened the ways Brady's passing volume could pay off.\n\nThe final grade lands at B plus. The lineup had meaningful salary left, one sub 20 percent bring back, a cheap touchdown catcher, and a strong read on where Tampa Bay volume would settle. It stays below A range because Brady captain still carried a reachable ownership level and several flex pieces remained popular enough to keep duplication pressure alive.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Tom Brady",
+          "position": "QB",
+          "team": "TB"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Quarterback captain with four same team pass game and backfield pieces, plus one hybrid opposing bring back",
+        "includesQBs": true
+      },
+      "primaryLever": "Tom Brady captain captured nearly all Tampa Bay scoring in a low touchdown game through passing volume and two touchdown responsibility",
+      "secondaryLever": "Cade Otton salary relief and a one player Taysom Hill bring back gave the lineup separation from more balanced Brady captain constructions"
+    }
+  }
+}

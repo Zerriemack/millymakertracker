@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 5,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-10-06",
+  "slateName": "NFL Week 5 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "A+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Millionaire Contest",
+    "siteContestId": "NFL_2022_WK05_TNF_SHOWDOWN_2022-10-06_ind_den",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 14410
+  },
+  "winner": {
+    "username": "JaguarLou",
+    "points": 92.55,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 32900,
+    "totalPoints": 92.55,
+    "totalOwnershipBp": 14410,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Alec Pierce",
+        "position": "WR",
+        "team": "IND",
+        "salary": 8100,
+        "points": 24.15,
+        "ownershipPercent": 1.9,
+        "recYds": 81,
+        "rec": 8,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Courtland Sutton",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 9400,
+        "points": 12.4,
+        "ownershipPercent": 74.9,
+        "recYds": 74,
+        "rec": 5,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Broncos",
+        "position": "DST",
+        "team": "DEN",
+        "salary": 4200,
+        "points": 14.0,
+        "ownershipPercent": 29.2,
+        "sacks": 6,
+        "interceptionsDst": 2,
+        "dstPointsAllowed": 13,
+        "qbFaced": "Matt Ryan",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brandon McManus",
+        "position": "K",
+        "team": "DEN",
+        "salary": 4000,
+        "points": 11.0,
+        "ownershipPercent": 22.4,
+        "fg0to39": 1,
+        "fg40to49": 2,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chase McLaughlin",
+        "position": "K",
+        "team": "IND",
+        "salary": 3800,
+        "points": 17.0,
+        "ownershipPercent": 9.9,
+        "fg0to39": 1,
+        "fg40to49": 1,
+        "fg50plus": 2,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Colts",
+        "position": "DST",
+        "team": "IND",
+        "salary": 3400,
+        "points": 14.0,
+        "ownershipPercent": 5.8,
+        "sacks": 4,
+        "interceptionsDst": 2,
+        "dstPointsAllowed": 13,
+        "blockedKicks": 1,
+        "gameAwayTeam": "IND",
+        "gameHomeTeam": "DEN",
+        "opponentTeam": "DEN",
+        "qbFaced": "Russell Wilson",
+        "qbFacedArchetype": "FRANCHISE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it accepted the game for what it was instead of what the field wanted it to be. Indianapolis at Denver turned into a stalled drive contest, a sack contest, and a field goal contest. The winning roster did not try to force quarterback scoring into a game environment that never supported it. It built directly into failure, then let the field drown in bad assumptions.\n\nAlec Pierce captain at 1.9 percent was the clean separator. He did not need a multi touchdown eruption. He needed to be the one pass catcher in the game who could gather enough volume to finish first in raw ceiling relative to price and ownership. Eight catches for 81 yards was enough because the slate collapsed around him. On a normal total, this captain score would not hold. In this game, it was exactly the kind of thin but slate leading outcome that mattered.\n\nThe rest of the roster was brutally consistent with the game environment. Both defenses captured pressure, takeaways, and scoring prevention. Both kickers captured the repeated failure to finish drives. Courtland Sutton gave the lineup exposure to the one Denver pass catcher most likely to survive the mess through target share alone. No quarterback made the cut because neither passer created enough value for salary. That is the part the field struggled to accept, even as the game kept telling them exactly where the scoring was coming from.\n\nLeaving 17,100 in salary was not a gimmick. It was the construction edge. On a slate this broken, spending salary would have forced the lineup into lower quality fantasy points. The winner understood that raw salary usage had almost no relationship to optimal scoring once the game turned into a defensive and kicking grind.",
+    "uniquenessNotes": "This lineup is rare because every element of it resisted normal showdown habits. A low owned rookie receiver captain. Both defenses. Both kickers. No quarterback. Seventeen thousand one hundred in salary left. Any one of those choices would make a roster uncomfortable. Putting all of them together created a lineup the field barely occupied.\n\nThe deeper edge was not random ugliness. It was accurate ugliness. The lineup mapped the highest value scoring buckets on the slate and ignored salary based status. Russell Wilson and Matt Ryan carried name value and roster gravity, yet neither belonged in the winning build once sacks, turnovers, and stalled red zone possessions started piling up. The winner redirected those roster spots into kickers and defenses, then used Alec Pierce as the only ceiling bet needed from the pass catching pool.\n\nThis earns an A plus grade. The captain leverage was elite. There were three roster spots under 10 percent ownership. The salary left was extreme and fully intentional. The structure carried major discomfort while remaining coherent from start to finish. In showdown, there are slates where trying to be sharp means getting weird around the edges. This was different. This was a slate where first place came from abandoning the center entirely.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Alec Pierce",
+          "position": "WR",
+          "team": "IND"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Low-owned rookie wide receiver captain with both defenses, both kickers, one alpha opposing receiver, and no quarterbacks",
+        "includesQBs": false
+      },
+      "primaryLever": "Alec Pierce captain at 1.9 percent created the slate's main leverage point in a game where modest raw points could still win captain",
+      "secondaryLever": "Both defenses, both kickers, and 17,100 in salary left turned a broken game environment into a structurally dominant roster"
+    }
+  }
+}

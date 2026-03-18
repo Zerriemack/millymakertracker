@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 6,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-10-13",
+  "slateName": "NFL Week 6 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Millionaire Contest",
+    "siteContestId": "NFL_2022_WK06_TNF_SHOWDOWN_2022-10-13_was_chi",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 18270
+  },
+  "winner": {
+    "username": "Msteinberg09",
+    "points": 95.3,
+    "maxEntries": 38
+  },
+  "lineup": {
+    "salaryUsed": 45000,
+    "totalPoints": 95.3,
+    "totalOwnershipBp": 18270,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Justin Fields",
+        "position": "QB",
+        "team": "CHI",
+        "salary": 15000,
+        "points": 29.1,
+        "ownershipPercent": 14.1,
+        "passTd": 1,
+        "passYds": 190,
+        "rushYds": 88,
+        "interceptions": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "David Montgomery",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 10400,
+        "points": 9.0,
+        "ownershipPercent": 67.0,
+        "recYds": 13,
+        "rushYds": 67,
+        "rec": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Darnell Mooney",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 7600,
+        "points": 13.8,
+        "ownershipPercent": 38.2,
+        "recYds": 68,
+        "rec": 7,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brian Robinson Jr.",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 6600,
+        "points": 12.0,
+        "ownershipPercent": 37.0,
+        "rushTd": 1,
+        "rushYds": 60,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Commanders",
+        "position": "DST",
+        "team": "WAS",
+        "salary": 3600,
+        "points": 13.0,
+        "ownershipPercent": 21.8,
+        "sacks": 5,
+        "interceptionsDst": 1,
+        "defFumbleRecoveries": 1,
+        "dstPointsAllowed": 13,
+        "qbFaced": "Justin Fields",
+        "qbFacedArchetype": "RUSHING",
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dante Pettis",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 1800,
+        "points": 18.4,
+        "ownershipPercent": 4.6,
+        "recTd": 1,
+        "recYds": 84,
+        "rec": 4,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "WAS"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it accepted a sloppy, low scoring game and still found the one player whose fantasy output could outrun the environment. Justin Fields captain at 14.1 percent was the central call. He did not need a polished passing game. He needed rushing control, one passing touchdown, and enough total offensive share to become the slate's most important multiplier. That happened.\n\nThe sharper part of the build came from how the Chicago pieces were chosen under him. David Montgomery gave the roster access to backfield volume, even though his box score stayed modest. Darnell Mooney handled the most stable receiver role. Dante Pettis supplied the actual eruption point at 4.6 percent flex ownership. That matters because Fields captain lineups become much harder to separate when they stop at the obvious Bears names. Pettis gave this one the extra lane the field barely occupied.\n\nThe Washington side stayed disciplined. Brian Robinson Jr. captured the only Washington touchdown that mattered. Commanders defense handled sacks, a turnover, and the kind of pressure driven scoring that can coexist with a rushing quarterback on the other side. That is the uncomfortable detail many players avoid. Fields can still captain a winning lineup while the opposing defense scores well, because his rushing and total usage keep him afloat even inside a messy offensive performance.\n\nLeaving 5,000 in salary was a major part of the win. On a slate this ugly, forcing every dollar into the lineup would have pushed the roster toward more duplicated and lower value combinations. The winner treated salary usage as optional and game environment as the real guide.",
+    "uniquenessNotes": "The defining feature was Fields captain with Commanders defense. That pairing looks wrong on first glance, but it actually matched the game. Chicago's quarterback handled nearly all of the offense through passing and rushing, while Washington still created sacks, an interception, and a fumble recovery. Those two outcomes were not in conflict. They were linked by the way Fields concentrated volume while the Chicago offense still remained fragile.\n\nDante Pettis was the second real separator. At 4.6 percent flex ownership, he gave the lineup an actual leverage slot rather than a cosmetic low owned inclusion. His touchdown and yardage turned a popular Chicago centered shell into something the field did not build often enough. Without Pettis, this lineup becomes much easier to find.\n\nThis earns a B plus grade. Fields captain had meaningful leverage, Pettis supplied a true low owned payoff, the opposing defense created structural tension, and 5,000 in salary left cut duplication risk in a major way. It stops short of A range because the rest of the roster still leaned on several fairly visible pieces, especially Montgomery and Mooney, rather than stacking multiple thin outcomes together.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Justin Fields",
+          "position": "QB",
+          "team": "CHI"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Quarterback captain with three same-team pass or rush accessories, opposing defense against the captain quarterback, and one low-owned touchdown receiver",
+        "includesQBs": true
+      },
+      "primaryLever": "Justin Fields captain at 14.1 percent created the slate's main leverage point through concentrated rushing and total offensive share",
+      "secondaryLever": "Dante Pettis and 5,000 in salary left gave the roster its cleanest separation from more obvious Fields builds"
+    }
+  }
+}

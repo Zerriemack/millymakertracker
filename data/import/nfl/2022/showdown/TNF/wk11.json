@@ -1,0 +1,147 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 11,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-11-17",
+  "slateName": "NFL Week 11 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "A-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2022_WK11_TNF_SHOWDOWN_2022-11-17_ten_gb",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 7280000,
+    "totalOwnershipBp": 18400
+  },
+  "winner": {
+    "username": "rikkidee",
+    "points": 134.59,
+    "maxEntries": 86
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 134.59,
+    "totalOwnershipBp": 18400,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Ryan Tannehill",
+        "position": "QB",
+        "team": "TEN",
+        "salary": 14400,
+        "points": 34.53,
+        "ownershipPercent": 3.1,
+        "passTd": 2,
+        "passYds": 333,
+        "rushYds": -3,
+        "interceptions": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 11600,
+        "points": 25.36,
+        "ownershipPercent": 85.3,
+        "passTd": 1,
+        "rushTd": 1,
+        "passYds": 4,
+        "rushYds": 87,
+        "rec": 2,
+        "recYds": 45,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Christian Watson",
+        "position": "WR",
+        "team": "GB",
+        "salary": 7400,
+        "points": 21.1,
+        "ownershipPercent": 41.9,
+        "rec": 4,
+        "recYds": 48,
+        "recTd": 2,
+        "rushYds": 3,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Robert Woods",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 6800,
+        "points": 12.9,
+        "ownershipPercent": 13.9,
+        "rec": 6,
+        "recYds": 69,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Treylon Burks",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 5200,
+        "points": 21.1,
+        "ownershipPercent": 25.4,
+        "rec": 7,
+        "recYds": 111,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Austin Hooper",
+        "position": "TE",
+        "team": "TEN",
+        "salary": 4600,
+        "points": 19.6,
+        "ownershipPercent": 14.4,
+        "rec": 4,
+        "recYds": 36,
+        "recTd": 2,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it treated Tennessee's passing eruption as the slate's hidden ceiling instead of treating Derrick Henry as the only Titan worthy of the multiplier. Ryan Tannehill at 3.1 percent captain ownership was the decision point. The field was willing to play Henry and willing to use Tannehill in flex at modest rates, but very few lineups were built around a version of this game where Tennessee reached first place through quarterback efficiency and receiver concentration.\n\nThe build then pressed fully into that read. Derrick Henry stayed in because Tennessee's offense still ran through him, and his passing touchdown kept him tied to the same scoring environment. Robert Woods, Treylon Burks, and Austin Hooper completed a full Tennessee passing concentration bet. Once Tannehill threw for 333 yards and spread touchdowns across Burks and Hooper, with Woods adding volume underneath, the lineup captured nearly every profitable Titan pathway in one shell.\n\nThe Green Bay side stayed narrow. Christian Watson was the only bring back, and he was the correct one. Green Bay did not need a broader comeback stack because most of its useful fantasy output flowed through Watson's two receiving touchdowns. That single choice gave the lineup enough Packers exposure without wasting salary on lower impact Green Bay volume.\n\nUsing all 50,000 in salary did not hurt because the uniqueness came from captain and structure rather than from leftover salary. A 3.1 percent quarterback captain paired with four pass game teammates and Henry was already far from the field's preferred construction. This roster did not need artificial salary relief. It needed the correct read on where Tennessee's ceiling actually lived.",
+    "uniquenessNotes": "The strongest trait here was conviction. Many lineups could reach Tannehill captain and still stop halfway by pairing him with one or two Titans. This build kept going. Four Tennessee flex spots around Tannehill created a full concentration thesis: if Tannehill broke the slate, most of the reward would remain inside a narrow Tennessee distribution. That is exactly what happened.\n\nRobert Woods at 13.9 percent and Austin Hooper at 14.4 percent gave the lineup two sub 20 percent flex pieces beyond the low owned captain. Those were not dead salary savers. They were direct extensions of the Tannehill call. Burks then completed the stack with a stronger ceiling outcome, while Henry preserved access to the Titans offense in any form.\n\nThe grade lands at A minus. The lineup had elite captain leverage, two additional sub 20 percent flex pieces, a strong ownership shape, and a clear concentration build. It stops short of A plus because it used full salary and did not add a more uncomfortable tension element such as opposing defense or a lower probability secondary bring back. Still, this was a sharp, forceful first place structure.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Ryan Tannehill",
+          "position": "QB",
+          "team": "TEN"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Low-owned quarterback captain with four same-team flex teammates and one opposing touchdown-focused bring back",
+        "includesQBs": true
+      },
+      "primaryLever": "Ryan Tannehill captain created the lineup's main leverage point through a 3.1 percent captain outcome tied to concentrated Tennessee passing production",
+      "secondaryLever": "Robert Woods and Austin Hooper added two sub 20 percent Titan pass catchers while Christian Watson served as the only Green Bay run back"
+    }
+  }
+}

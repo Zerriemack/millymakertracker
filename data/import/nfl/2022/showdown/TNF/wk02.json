@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 2,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-09-15",
+  "slateName": "NFL Week 2 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "A",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Millionaire Contest",
+    "siteContestId": "NFL_2022_WK02_TNF_SHOWDOWN_2022-09-15_lac_kc",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 17210
+  },
+  "winner": {
+    "username": "onthemoney511",
+    "points": 130.21,
+    "maxEntries": 28
+  },
+  "lineup": {
+    "salaryUsed": 48500,
+    "totalPoints": 130.21,
+    "totalOwnershipBp": 17210,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Mike Williams",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 13500,
+        "points": 42.45,
+        "ownershipPercent": 7.9,
+        "recTd": 1,
+        "recYds": 113,
+        "rec": 8,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Justin Herbert",
+        "position": "QB",
+        "team": "LAC",
+        "salary": 11200,
+        "points": 27.46,
+        "ownershipPercent": 67.8,
+        "passTd": 3,
+        "passYds": 334,
+        "rushYds": 1,
+        "interceptions": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Austin Ekeler",
+        "position": "RB",
+        "team": "LAC",
+        "salary": 10200,
+        "points": 18.4,
+        "ownershipPercent": 37.0,
+        "rushYds": 39,
+        "recYds": 55,
+        "rec": 9,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Clyde Edwards-Helaire",
+        "position": "RB",
+        "team": "KC",
+        "salary": 8600,
+        "points": 15.8,
+        "ownershipPercent": 23.2,
+        "rushYds": 74,
+        "recYds": 44,
+        "rec": 4,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Gerald Everett",
+        "position": "TE",
+        "team": "LAC",
+        "salary": 4800,
+        "points": 13.1,
+        "ownershipPercent": 35.1,
+        "recYds": 71,
+        "rec": 6,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Justin Watson",
+        "position": "WR",
+        "team": "KC",
+        "salary": 200,
+        "points": 13.0,
+        "ownershipPercent": 1.1,
+        "recTd": 1,
+        "recYds": 50,
+        "rec": 2,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LAC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it attacked the game through a narrow but coherent Los Angeles passing concentration while still preserving access to the Kansas City side through the right salary breaking piece. Mike Williams captain at 7.9 percent was the swing point. The field respected him as a flex option, but did not give him enough captain exposure relative to what a downfield, touchdown driven ceiling could do in this environment.\n\nThe Chargers side of the build stayed focused. Justin Herbert, Austin Ekeler, Gerald Everett, and Mike Williams gave the lineup a heavy share of Los Angeles offensive volume without wasting salary on secondary pieces. Herbert to Williams handled the ceiling connection. Ekeler added short area receiving equity and total touch stability. Everett captured middle field production at a price point that kept the build structurally flexible.\n\nThe second hinge was Justin Watson at 1.1 percent in flex. That was the roster spot that turned a strong captain choice into a million dollar construction. Watson did not need to dominate volume. He only needed to convert one narrow path to relevance, and he did. His salary relief also allowed the build to leave 1,500 on the table, which matters on a showdown slate where many rosters cluster around tighter salary usage.\n\nClyde Edwards-Helaire completed the Kansas City side without forcing Patrick Mahomes or Travis Kelce. That matters because it gave the lineup exposure to Chiefs scoring while fading the field's most obvious salary anchors. In a game Kansas City won by three, this build captured enough back and forth scoring without paying for every headline piece.",
+    "uniquenessNotes": "The lineup's best trait was not Mike Williams captain in isolation. It was Mike Williams captain paired with a full Los Angeles core and then finished with Justin Watson instead of the more duplicated Kansas City answers. That combination created separation from builds that used Williams captain but still landed on the same expensive Chiefs pieces everyone else wanted.\n\nJustin Watson was the true structural release valve. At 1.1 percent flex ownership and minimum salary, he opened salary paths the field was reluctant to take because he looked thin before kickoff. Once he scored, the lineup gained leverage through both ownership and construction. Leaving 1,500 in salary amplified that edge and reduced the chance of landing in a crowded finishing block.\n\nThis earns an A grade. The captain had legitimate leverage, the build carried one true near dead zone ownership piece, the unused salary created distance from duplicated roster shells, and the overall 4-2 structure remained coherent from a game script standpoint. It stops short of A plus because the lineup still leaned on several popular Chargers flex pieces, so the uniqueness was concentrated more in captain and the final value slot than across the entire roster.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Mike Williams",
+          "position": "WR",
+          "team": "LAC"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low-owned wide receiver captain with a concentrated Chargers passing core, one Chiefs running back, and a near-minimum salary Chiefs leverage receiver",
+        "includesQBs": true
+      },
+      "primaryLever": "Mike Williams captain at 7.9 percent created the main leverage point on the slate",
+      "secondaryLever": "Justin Watson at 1.1 percent and 1,500 in salary left gave the roster its strongest separation from duplicated builds"
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 10,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-11-14",
+  "slateName": "NFL Week 10 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK10_MNF_SHOWDOWN_2022-11-14_was_phi",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 21333333,
+    "totalOwnershipBp": 21110
+  },
+  "winner": {
+    "username": "fjbourne",
+    "points": 121.8,
+    "maxEntries": 56
+  },
+  "lineup": {
+    "salaryUsed": 48500,
+    "totalPoints": 121.8,
+    "totalOwnershipBp": 21110,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Terry McLaurin",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 12300,
+        "points": 35.7,
+        "ownershipPercent": 4.0,
+        "rec": 8,
+        "recYds": 128,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jalen Hurts",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 12200,
+        "points": 22.8,
+        "ownershipPercent": 91.8,
+        "passTd": 2,
+        "rushTd": 1,
+        "passYds": 175,
+        "rushYds": 28,
+        "interceptions": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeVonta Smith",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 8000,
+        "points": 14.9,
+        "ownershipPercent": 43.9,
+        "recTd": 1,
+        "rec": 6,
+        "recYds": 39,
+        "fumblesLost": 1,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Antonio Gibson",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 6800,
+        "points": 14.8,
+        "ownershipPercent": 38.7,
+        "rushTd": 1,
+        "rushYds": 44,
+        "rec": 3,
+        "recYds": 14,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brian Robinson Jr.",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 5400,
+        "points": 14.6,
+        "ownershipPercent": 17.1,
+        "rushTd": 1,
+        "rushYds": 86,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Joey Slye",
+        "position": "K",
+        "team": "WAS",
+        "salary": 3800,
+        "points": 19.0,
+        "ownershipPercent": 15.6,
+        "xpm": 2,
+        "fg0to39": 1,
+        "fg40to49": 1,
+        "fg50plus": 2,
+        "gameAwayTeam": "WAS",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by building around the version of the game the field had trouble embracing all the way through. Terry McLaurin captain at 4.0 percent ownership was the slate breaking decision. Washington scored 32 points as a road underdog, and the lineup captured the passing centerpiece of that upset without forcing a Commanders quarterback slot. That was the sharpest read on the slate. The lineup treated McLaurin as the main Washington ceiling carrier while letting the rest of the Commanders scoring come through the backfield and the kicker.\n\nThe next strong decision was keeping Jalen Hurts and DeVonta Smith on the other side instead of trying to fully bury Philadelphia. Hurts still produced enough through two passing touchdowns and one rushing touchdown to remain necessary, and Smith captured one of those touchdowns while staying cheaper than the most crowded Philadelphia paths. The lineup did not need Philadelphia to win. It needed Philadelphia to score enough to keep its core fantasy pieces viable while Washington controlled pace, possessions, and finishing drives.\n\nThe Washington shell around McLaurin was what made the roster complete. Antonio Gibson, Brian Robinson Jr., and Joey Slye covered three separate scoring channels. Gibson handled mixed usage and found the end zone. Robinson converted game control into rushing production and his own touchdown. Slye punished drives that stalled short of touchdowns and added distance scoring with two kicks from 50 plus. That gave the lineup exposure to almost every meaningful Washington scoring branch without spending on fragile ancillary pass catchers.\n\nLeaving 1,500 in salary mattered because McLaurin captain already pushed the roster away from the field's most duplicated Eagles centered builds. The unused salary added another layer of separation while staying tied to a coherent game script. This was not an inefficient leftover. It was structural distance attached to the correct read.",
+    "uniquenessNotes": "The lineup had three players under 20 percent ownership, and each served a separate purpose. Terry McLaurin captain was the leverage engine. Brian Robinson Jr. captured touchdown equity from Washington's control based run game. Joey Slye added a low owned scoring path through field goals, including long range attempts, which gave the lineup access to points many touchdown only constructions would miss.\n\nThe most interesting choice was the refusal to roster Taylor Heinicke in a Commanders captain build. That looks uncomfortable at first glance because McLaurin led the slate. In practice, it was accurate. McLaurin delivered enough raw receiving production to break the slate without forcing the quarterback, and the rest of Washington's scoring came through rushing touchdowns and kicking. By skipping Heinicke, the lineup avoided one of the most natural but less necessary correlations.\n\nUsing both Washington running backs in the same build also deserves attention. In many games that would create overlap without purpose. Here it matched the exact shape of the upset. Washington controlled the game on the ground, won time of possession, and produced enough red zone volume for both backs to matter. That made the double running back layer additive rather than conflicting.\n\nThe final grade lands at A. The lineup had elite captain leverage, three sub 20 percent pieces, salary left, and a sharp anti consensus game read built around a Washington upset without the quarterback. It stops short of A plus because the roster still anchored through Jalen Hurts and a popular Philadelphia bring back, so the overall ownership shape, while strong, was not as extreme as the very best showdown outliers.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Terry McLaurin",
+          "position": "WR",
+          "team": "WAS"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low owned wide receiver captain without his quarterback, paired with two running backs and a kicker from the same team, plus opposing quarterback and opposing touchdown catcher",
+        "includesQBs": true
+      },
+      "primaryLever": "Terry McLaurin captain created the slate's main leverage point through a 4.0 percent captain outcome tied to Washington's upset win",
+      "secondaryLever": "The lineup separated further by leaving 1,500 in salary and building a Washington heavy shell without Taylor Heinicke"
+    }
+  }
+}

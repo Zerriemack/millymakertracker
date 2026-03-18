@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 15,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-12-15",
+  "slateName": "NFL Week 15 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "D-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2022_WK15_TNF_SHOWDOWN_2022-12-15_sf_sea",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 1052639,
+    "totalOwnershipBp": 20630
+  },
+  "winner": {
+    "username": "Dawgpound32",
+    "points": 118.33,
+    "maxEntries": 4
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 118.33,
+    "totalOwnershipBp": 20630,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "George Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 12000,
+        "points": 37.95,
+        "ownershipPercent": 8.1,
+        "rec": 4,
+        "recYds": 93,
+        "recTd": 2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 11400,
+        "points": 28.8,
+        "ownershipPercent": 86.1,
+        "rushTd": 1,
+        "rushYds": 108,
+        "bonus100RushYds": 1,
+        "rec": 6,
+        "recYds": 30,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brock Purdy",
+        "position": "QB",
+        "team": "SF",
+        "salary": 9600,
+        "points": 16.48,
+        "ownershipPercent": 34.9,
+        "passTd": 2,
+        "passYds": 217,
+        "rushYds": -2,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kenneth Walker III",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 7600,
+        "points": 11.9,
+        "ownershipPercent": 32.3,
+        "rushYds": 47,
+        "rec": 4,
+        "recYds": 32,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "49ers",
+        "position": "DST",
+        "team": "SF",
+        "salary": 5000,
+        "points": 9.0,
+        "ownershipPercent": 32.4,
+        "sacks": 3,
+        "defFumbleRecoveries": 1,
+        "pointsAllowedBucket": 13,
+        "qbFaced": "Geno Smith",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Noah Fant",
+        "position": "TE",
+        "team": "SEA",
+        "salary": 4400,
+        "points": 14.2,
+        "ownershipPercent": 12.5,
+        "rec": 5,
+        "recYds": 32,
+        "recTd": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SF"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup got first because George Kittle was the correct captain, but the build itself was far less impressive than a first glance suggests. Kittle at 8.1 percent captain ownership gave the roster its one true edge. He caught both Brock Purdy touchdown passes and became the slate breaker. Without that exact captain outcome, this construction does not stand out.\n\nEverything around Kittle stayed close to the most obvious click path. Christian McCaffrey was an extremely popular flex lock. Brock Purdy was the natural quarterback pairing. The 49ers defense fit a standard San Francisco control script. Kenneth Walker III and Noah Fant were the most reasonable Seattle run backs once the game stayed competitive enough for volume but not explosive enough for a full Seattle passing stack.\n\nEven the game script was standard. San Francisco controlled the game through its stars, the defense held Seattle down, and one Seattle pass catcher still found the end zone. That is a clean, familiar showdown story. The lineup landed on the right version of it, but it did not arrive there through a structurally rare path.\n\nUsing all 50,000 in salary removed one of the easiest ways to reduce duplication. On a showdown slate where the winning roster already leaned into common construction pieces, that mattered. The lineup won because the captain was right, not because the overall shell created meaningful separation.",
+    "uniquenessNotes": "The duplication outcome is the biggest reason the grade drops. A lineup can survive full salary if the structure is sharp enough or uncomfortable enough. This one was neither. It used a common 4 to 2 build, a standard quarterback plus captain pairing, a highly popular Christian McCaffrey flex, a common defense inclusion, and straightforward opponent run backs.\n\nNoah Fant at 12.5 percent was the only lower-owned flex piece doing any meaningful separation work, and even that was still a sensible touchdown capture from the underdog side rather than a truly uncomfortable click. The rest of the lineup was built from pieces the field was already willing to play together.\n\nThe final grade lands at D minus. George Kittle captain was correct and carried the lineup to first, but the build used all the salary, stayed structurally conventional, and was heavily duplicated. This was more a case of hitting the right captain inside a very accessible shell than building a truly sharp first place roster.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "George Kittle",
+          "position": "TE",
+          "team": "SF"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Tight end captain with quarterback correlation, same-team running back and defense, plus two standard opposing bring backs",
+        "includesQBs": true
+      },
+      "primaryLever": "George Kittle captain created the only real leverage point through an 8.1 percent captain outcome tied to both Brock Purdy touchdown passes",
+      "secondaryLever": "Noah Fant provided the lone lower-owned bring back while the rest of the roster followed a highly accessible San Francisco control build"
+    }
+  }
+}

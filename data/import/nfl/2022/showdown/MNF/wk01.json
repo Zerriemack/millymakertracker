@@ -1,0 +1,144 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 1,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-09-12",
+  "slateName": "NFL Week 1 Monday Night Showdown",
+  "slateTag": "MNF",
+  "slateGroup": "B+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK01_MNF_SHOWDOWN_2022-09-12_den_sea",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 29375000,
+    "totalOwnershipBp": 20400
+  },
+  "winner": {
+    "username": "k1nkz",
+    "points": 117.9,
+    "maxEntries": 34
+  },
+  "lineup": {
+    "salaryUsed": 47900,
+    "totalPoints": 117.9,
+    "totalOwnershipBp": 20400,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Jerry Jeudy",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 12300,
+        "points": 34.8,
+        "ownershipPercent": 9.8,
+        "rec": 4,
+        "recYds": 102,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Russell Wilson",
+        "position": "QB",
+        "team": "DEN",
+        "salary": 11800,
+        "points": 20.8,
+        "ownershipPercent": 83.1,
+        "passTd": 1,
+        "passYds": 340,
+        "rushYds": 2,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Javonte Williams",
+        "position": "RB",
+        "team": "DEN",
+        "salary": 10200,
+        "points": 20.8,
+        "ownershipPercent": 49.5,
+        "rushYds": 43,
+        "rec": 11,
+        "recYds": 65,
+        "fumblesLost": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Geno Smith",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 8600,
+        "points": 17.2,
+        "ownershipPercent": 29.8,
+        "passTd": 2,
+        "passYds": 195,
+        "rushYds": 14,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brandon McManus",
+        "position": "K",
+        "team": "DEN",
+        "salary": 4200,
+        "points": 11.0,
+        "ownershipPercent": 26.5,
+        "xpm": 1,
+        "fg0to39": 2,
+        "fg40to49": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Will Dissly",
+        "position": "TE",
+        "team": "SEA",
+        "salary": 800,
+        "points": 13.3,
+        "ownershipPercent": 5.3,
+        "rec": 3,
+        "recYds": 43,
+        "recTd": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "DEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by attacking the Denver passing tree through a narrower lens than the field used. Russell Wilson drew massive flex ownership because the field viewed him as the obvious center of any Broncos ceiling. The winner agreed with the volume case, though the multiplier went to Jerry Jeudy at 9.8 percent captain ownership. That single choice turned a popular team environment into a leverage build. Jeudy did not need double digit catches or multiple touchdowns. He needed one long scoring play and the 100 yard bonus, and he got both.\n\nThe second layer came from how Denver scoring was distributed around him. Javonte Williams and Brandon McManus captured two very different outcomes from the same offense. Williams soaked up checkdown volume and still reached 20.8 points despite the lost fumble. McManus converted the stalled drive element of the game into eleven points. That pairing matters because this was not a pure all touchdowns through Wilson construction. It allowed the lineup to absorb Denver inefficiency near the goal line while still benefiting from overall offensive control.\n\nSeattle production was handled with restraint. Geno Smith at 29.8 percent and Will Dissly at 5.3 percent gave the build access to both Seahawks passing touchdowns without paying for the more obvious wide receiver paths. Dissly was the key finishing touch. At 800 salary and 5.3 percent ownership, he solved salary, ownership, and correlation in one move. Leaving 2,100 on the table further reduced overlap. In a contest of this size, the salary gap mattered because the roster already carried Wilson and Williams, two highly visible Denver plays.",
+    "uniquenessNotes": "The captain choice did most of the heavy lifting, though the full build stayed sharp from top to bottom. Jeudy captain at 9.8 percent gave the lineup access to Denver's best receiving outcome without following the more crowded Russell Wilson captain route. Will Dissly then supplied the low owned bring back many lineups ignored because they assumed Seattle production would run through wider receiver ownership clusters.\n\nThe lineup also avoided overbuilding the game through Broncos onslaught scoring. Four Denver players can look straightforward on first pass, though McManus changed the texture of the build. He gave the lineup a path through red zone failure, which matched the game far better than a thinner search for an extra Denver touchdown scorer. That is where the roster showed real control over game distribution instead of simple team stacking.\n\nThe grade lands at B plus. Jeudy captain, Dissly, and 2,100 in unused salary created meaningful separation. The build stops short of the top band because Wilson and Williams remained heavily rostered, Geno still carried moderate ownership, and the overall story stayed coherent enough for duplicate pressure to remain part of the equation. Even so, this was a high quality showdown construction because the leverage came from concentrated choices tied directly to how the game actually scored.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Jerry Jeudy",
+          "position": "WR",
+          "team": "DEN"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low owned wide receiver captain with both quarterbacks, Denver kicker, high owned receiving back, and a sub 10 percent salary release tight end bring back",
+        "includesQBs": true
+      },
+      "primaryLever": "Jerry Jeudy captain at 9.8 percent created the main leverage point through Denver receiving concentration instead of the far more crowded Russell Wilson captain path",
+      "secondaryLever": "Will Dissly at 5.3 percent and 800 salary gave the roster a low owned Seattle touchdown path while preserving 2,100 in unused salary"
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 7,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-10-24",
+  "slateName": "NFL Week 7 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK07_MNF_SHOWDOWN_2022-10-24_chi_ne",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 16750000,
+    "totalOwnershipBp": 19270
+  },
+  "winner": {
+    "username": "rikkidee",
+    "points": 115.44,
+    "maxEntries": 41
+  },
+  "lineup": {
+    "salaryUsed": 48200,
+    "totalPoints": 115.44,
+    "totalOwnershipBp": 19270,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Justin Fields",
+        "position": "QB",
+        "team": "CHI",
+        "salary": 15600,
+        "points": 36.54,
+        "ownershipPercent": 10.0,
+        "passTd": 1,
+        "rushTd": 1,
+        "passYds": 179,
+        "rushYds": 82,
+        "interceptions": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Rhamondre Stevenson",
+        "position": "RB",
+        "team": "NE",
+        "salary": 10800,
+        "points": 23.8,
+        "ownershipPercent": 73.5,
+        "rushTd": 1,
+        "rushYds": 39,
+        "rec": 8,
+        "recYds": 59,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jakobi Meyers",
+        "position": "WR",
+        "team": "NE",
+        "salary": 8200,
+        "points": 11.4,
+        "ownershipPercent": 52.9,
+        "recTd": 1,
+        "rec": 2,
+        "recYds": 34,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Khalil Herbert",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 5400,
+        "points": 15.7,
+        "ownershipPercent": 21.8,
+        "rushYds": 62,
+        "rec": 1,
+        "recYds": 25,
+        "recTd": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cairo Santos",
+        "position": "K",
+        "team": "CHI",
+        "salary": 4200,
+        "points": 18.0,
+        "ownershipPercent": 23.0,
+        "xpm": 3,
+        "fg0to39": 2,
+        "fg40to49": 1,
+        "fg50plus": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Bears",
+        "position": "DST",
+        "team": "CHI",
+        "salary": 4000,
+        "points": 10.0,
+        "ownershipPercent": 11.5,
+        "sacks": 1,
+        "interceptionsDst": 3,
+        "defFumbleRecoveries": 1,
+        "pointsAllowed": 20,
+        "qbFaced": "Mac Jones",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "NE",
+        "opponentTeam": "NE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by centering the slate on Justin Fields without forcing a full Bears onslaught. Fields captain at 10.0 percent captured the most important leverage point on the board because his scoring came through both passing and rushing, and his rushing production gave him access to a ceiling path the field still had not fully priced into captain ownership at this stage of the 2022 season.\n\nThe next key decision was accepting a mixed script instead of a clean team level story. The build used Fields captain with Bears defense, Bears kicker, and Khalil Herbert, but it also kept Rhamondre Stevenson and Jakobi Meyers from New England. That matters because Chicago won the game 33 to 14, yet New England still produced concentrated fantasy scoring through Stevenson volume and a Meyers touchdown. The lineup did not overread the final score. It isolated where fantasy points would still survive even inside a lopsided result.\n\nBears defense completed the build by converting New England mistakes into event scoring. Three interceptions and a fumble recovery gave Chicago a second path to separate from more standard Fields captain builds. Cairo Santos then captured the non touchdown scoring layer from Chicago drives. Herbert added another Bears score source at modest ownership without forcing David Montgomery exposure.\n\nLeaving 1,800 in salary was a major part of the win. In a large field showdown, unused salary can create needed distance from lineups built through more obvious price efficient combinations. Here, salary left was not cosmetic. It was attached to a coherent game read and a low owned captain.",
+    "uniquenessNotes": "The lineup used only two players above 50 percent flex ownership, and both had direct reasons to remain. Rhamondre Stevenson handled heavy receiving volume and functioned as New England's safest touch bet in negative script. Jakobi Meyers brought touchdown access at a midrange salary without forcing Mac Jones into the build.\n\nThe sharper angle sat in what the lineup refused to do. It did not include Mac Jones. It did not force a Patriots bring back stack around the quarterback. It accepted a version of the game where New England failed as an offense while still producing two usable fantasy pieces. That is a narrower and more accurate read than many balanced constructions the field likely preferred.\n\nFields captain plus Bears defense can look thin if Chicago scoring comes through isolated rushing pieces or if New England avoids turnovers. Once Chicago controlled the game and Fields created explosive fantasy output, the defense became a powerful complementary piece instead of a conflicting one. Herbert and Santos then rounded out separate Bears scoring channels, which reduced reliance on one fragile outcome.\n\nThe final grade lands at A minus. The lineup had strong captain leverage, one clear sub 20 percent flex piece in Bears defense, meaningful salary left, and a disciplined mixed script build. It stops short of A or A plus because the rest of the roster still carried a good amount of ownership and the structure, while sharp, was not wildly uncomfortable once Fields became the correct captain.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Justin Fields",
+          "position": "QB",
+          "team": "CHI"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Rushing quarterback captain with opposing running back and wide receiver, paired with own defense, own kicker, and secondary running back",
+        "includesQBs": false
+      },
+      "primaryLever": "Justin Fields captain created the slate's main leverage point through a 10.0 percent captain outcome tied to dual threat scoring",
+      "secondaryLever": "Unused salary, Bears defense, and refusal to roster Mac Jones gave the build its separation from more standard game stack constructions"
+    }
+  }
+}

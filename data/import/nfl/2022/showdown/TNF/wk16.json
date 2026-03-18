@@ -1,0 +1,146 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 16,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-12-22",
+  "slateName": "NFL Week 16 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "A-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2022_WK16_TNF_SHOWDOWN_2022-12-22_jax_nyj",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 30000000,
+    "totalOwnershipBp": 19510
+  },
+  "winner": {
+    "username": "weiss13",
+    "points": 104.41,
+    "maxEntries": 4
+  },
+  "lineup": {
+    "salaryUsed": 46600,
+    "totalPoints": 104.41,
+    "totalOwnershipBp": 19510,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Evan Engram",
+        "position": "TE",
+        "team": "JAX",
+        "salary": 11400,
+        "points": 31.95,
+        "ownershipPercent": 7.6,
+        "rec": 7,
+        "recYds": 113,
+        "bonus100RecYds": 1,
+        "recTd": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Trevor Lawrence",
+        "position": "QB",
+        "team": "JAX",
+        "salary": 11400,
+        "points": 19.26,
+        "ownershipPercent": 63.6,
+        "passYds": 229,
+        "rushYds": 51,
+        "rushTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Travis Etienne Jr.",
+        "position": "RB",
+        "team": "JAX",
+        "salary": 9600,
+        "points": 14.2,
+        "ownershipPercent": 59.9,
+        "rushYds": 83,
+        "rec": 3,
+        "recYds": 29,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Michael Carter",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 6400,
+        "points": 10.0,
+        "ownershipPercent": 20.6,
+        "rushYds": 6,
+        "rec": 5,
+        "recYds": 44,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Riley Patterson",
+        "position": "K",
+        "team": "JAX",
+        "salary": 4000,
+        "points": 15.0,
+        "ownershipPercent": 14.0,
+        "xpm": 1,
+        "fg0to39": 2,
+        "fg40to49": 2,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jaguars",
+        "position": "DST",
+        "team": "JAX",
+        "salary": 3800,
+        "points": 14.0,
+        "ownershipPercent": 29.4,
+        "sacks": 3,
+        "interceptionsDst": 1,
+        "defFumbleRecoveries": 1,
+        "pointsAllowedBucket": 6,
+        "qbFaced": "Zach Wilson",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NYJ",
+        "opponentTeam": "NYJ"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it treated Jacksonville control as a tight end driven passing outcome rather than a quarterback or running back captain game. Evan Engram at 7.6 percent captain ownership was the clear separator. The field had access to Jacksonville's offense, but the multiplier decision mattered. Engram turned a modest scoring environment into a winning captain through seven catches, 113 yards, and the team's only passing touchdown.\n\nThe rest of the Jacksonville side stayed coherent. Trevor Lawrence had to be present because Engram's ceiling still flowed through quarterback access, and Lawrence added enough rushing production to stay relevant even without a passing explosion. Travis Etienne Jr. remained part of the build because Jacksonville still leaned on him for volume, even though he did not fully bury the slate. Riley Patterson and the Jaguars defense completed the control script. Patterson captured stalled red zone possessions. The defense captured pressure, takeaways, and the Jets' inability to reach even a modest offensive output.\n\nThe New York side was handled with restraint. Michael Carter was the only Jets skill player included, and that was the sharper choice than forcing a Jets pass catcher into a low efficiency offense. Carter at least preserved access to underneath work and checkdown volume. The lineup did not waste salary guessing at a Jets ceiling outcome that never showed up.\n\nLeaving 3,400 in salary was a major part of the win. In a low scoring showdown, the field still tends to spend aggressively on the most obvious combinations. This build accepted that the right construction did not need every dollar. It needed the correct captain and the correct Jacksonville control shell around him.",
+    "uniquenessNotes": "The main edge was Engram captain, but the larger build deserves credit too. A 4 to 2 structure is standard on paper, yet this one gained separation through how the four Jacksonville slots were chosen. Lawrence, Etienne, Patterson, and the Jaguars defense covered four different Jacksonville scoring channels around Engram. Passing volume, rushing volume, field goals, and defensive pressure all stayed live together.\n\nRiley Patterson at 14.0 percent flex ownership was an important second lever because he gave the lineup another sub 20 percent piece tied directly to a game where drives moved but touchdowns did not pile up. The 3,400 left on the table then cut away a large chunk of duplicated builds without forcing a dead spot.\n\nThe grade lands at A minus. Engram captain was a strong leverage call, Patterson added a second lower-owned piece, salary left was substantial, and the full shell told a clear story. It stops short of the very top tier because the construction itself still stayed within a familiar favorite control template rather than introducing a more hostile or uncomfortable tension point.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Evan Engram",
+          "position": "TE",
+          "team": "JAX"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low-owned tight end captain with quarterback correlation, same-team running back, kicker, defense, and one opposing running back bring back",
+        "includesQBs": true
+      },
+      "primaryLever": "Evan Engram captain created the lineup's main leverage point through a 7.6 percent captain outcome tied to Jacksonville's only passing touchdown and 100-yard bonus",
+      "secondaryLever": "Riley Patterson and 3,400 in salary left gave the build a second layer of separation while the Jaguars defense captured the Jets collapse"
+    }
+  }
+}

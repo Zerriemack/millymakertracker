@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 5,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-10-10",
+  "slateName": "NFL Week 5 Monday Night Showdown",
+  "slateTag": "MNF",
+  "slateGroup": "C+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK05_MNF_SHOWDOWN_2022-10-10_lv_kc",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 6863889,
+    "totalOwnershipBp": 17080
+  },
+  "winner": {
+    "username": "Legit-Storm",
+    "points": 156.95,
+    "maxEntries": 45
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 156.95,
+    "totalOwnershipBp": 17080,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 16200,
+        "points": 50.25,
+        "ownershipPercent": 16.0,
+        "rec": 7,
+        "recYds": 25,
+        "recTd": 4,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "LV",
+        "salary": 11400,
+        "points": 30.4,
+        "ownershipPercent": 49.6,
+        "rec": 3,
+        "recYds": 124,
+        "recTd": 2,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": "LV",
+        "salary": 8800,
+        "points": 33.3,
+        "ownershipPercent": 33.6,
+        "rushTd": 1,
+        "rushYds": 154,
+        "bonus100RushYds": 1,
+        "rec": 5,
+        "recYds": 39,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Marquez Valdes-Scantling",
+        "position": "WR",
+        "team": "KC",
+        "salary": 5200,
+        "points": 15.0,
+        "ownershipPercent": 32.4,
+        "rec": 6,
+        "recYds": 90,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mecole Hardman",
+        "position": "WR",
+        "team": "KC",
+        "salary": 4600,
+        "points": 12.0,
+        "ownershipPercent": 10.8,
+        "rec": 4,
+        "recYds": 73,
+        "rushYds": 7,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Daniel Carlson",
+        "position": "K",
+        "team": "LV",
+        "salary": 3800,
+        "points": 16.0,
+        "ownershipPercent": 28.4,
+        "xpm": 2,
+        "fg40to49": 1,
+        "fg50plus": 2,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by making one uncomfortable but correct omission. Travis Kelce captain was the centerpiece, though the sharper decision was building around his four touchdown ceiling without Patrick Mahomes. Most of the field treats a nuclear Kelce game as an automatic Mahomes pairing. This roster rejected that assumption and treated the touchdowns as so concentrated through Kelce that Mahomes could miss the winning six despite Kansas City scoring 30 points.\n\nThe rest of the construction leaned into Las Vegas offensive concentration. Davante Adams and Josh Jacobs accounted for nearly all of the Raiders' high value production, while Daniel Carlson captured the drives that stalled before the end zone. That gave the lineup strong access to the side of the game many Mahomes based builds only handled partially. On the Kansas City side, Marquez Valdes-Scantling and Mecole Hardman were not ceiling bets on their own. They were lower cost ways to absorb the remaining pass game volume once Kelce consumed the touchdowns.\n\nWhat happened in the game supports the logic. Kelce monopolized touchdown equity. Adams still hit for two scores and the 100 yard bonus. Jacobs put up a dominant rushing and receiving line. Carlson added sixteen points through field goals and extra points. The lineup captured both teams' scoring concentration while refusing to spend salary on the quarterback the field expected to be mandatory.",
+    "uniquenessNotes": "The strongest part of this build was the Kelce captain without Mahomes structure. That is the hinge point. It created real tension because most winning Kelce captain paths are naturally paired with Mahomes by the field. Fading Mahomes while still using two secondary Chiefs pass catchers was a much narrower call. It said Kelce would dominate the touchdown scoring while the rest of Kansas City's passing production would be spread thin enough for Mahomes to miss the optimal.\n\nThe grade does not climb into the top band because the lineup still used the full 50,000 salary, Kelce captain was not low owned, and only one roster spot came in under 20 percent ownership. Adams and Jacobs were highly visible bring backs from the Raiders side, and Carlson was a reasonable game environment fit. Even so, this was not a bland stars build. The no Mahomes choice gave the lineup its identity and separated it from a large share of otherwise similar Kelce captain constructions.\n\nThe final grade lands at C plus. Full salary usage and a fairly visible flex shell keep it from the upper range. The Mahomes fade inside a four touchdown Kelce captain build is strong enough to keep it out of the bottom tier.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Travis Kelce",
+          "position": "TE",
+          "team": "KC"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Kelce captain without Mahomes, double Raiders alpha skill players, Raiders kicker, and two secondary Chiefs receivers",
+        "includesQBs": false
+      },
+      "primaryLever": "Travis Kelce captain without Patrick Mahomes created the lineup's main leverage point by treating Kansas City touchdown scoring as fully concentrated through one pass catcher",
+      "secondaryLever": "Josh Jacobs, Davante Adams, and Daniel Carlson captured nearly all meaningful Las Vegas production without forcing the lineup onto a more common quarterback based shell"
+    }
+  }
+}

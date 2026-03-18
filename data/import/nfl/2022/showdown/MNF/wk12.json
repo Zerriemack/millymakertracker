@@ -1,0 +1,144 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 12,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-11-28",
+  "slateName": "NFL Week 12 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK12_MNF_SHOWDOWN_2022-11-28_pit_ind",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 19020
+  },
+  "winner": {
+    "username": "eppy12588",
+    "points": 103.37,
+    "maxEntries": 44
+  },
+  "lineup": {
+    "salaryUsed": 47700,
+    "totalPoints": 103.37,
+    "totalOwnershipBp": 19020,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Michael Pittman Jr.",
+        "position": "WR",
+        "team": "IND",
+        "salary": 15300,
+        "points": 28.65,
+        "ownershipPercent": 10.8,
+        "recTd": 1,
+        "recYds": 61,
+        "rec": 7,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jonathan Taylor",
+        "position": "RB",
+        "team": "IND",
+        "salary": 11400,
+        "points": 18.8,
+        "ownershipPercent": 72.5,
+        "rushTd": 1,
+        "rushYds": 86,
+        "rec": 3,
+        "recYds": 12,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kenny Pickett",
+        "position": "QB",
+        "team": "PIT",
+        "salary": 9800,
+        "points": 12.16,
+        "ownershipPercent": 40.2,
+        "passYds": 174,
+        "rushYds": 32,
+        "twoPtPass": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Matt Ryan",
+        "position": "QB",
+        "team": "IND",
+        "salary": 9600,
+        "points": 12.16,
+        "ownershipPercent": 51.1,
+        "passTd": 1,
+        "passYds": 199,
+        "rushYds": 22,
+        "interceptions": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jelani Woods",
+        "position": "TE",
+        "team": "IND",
+        "salary": 1400,
+        "points": 17.8,
+        "ownershipPercent": 12.3,
+        "rec": 8,
+        "recYds": 98,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Benny Snell Jr.",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 200,
+        "points": 13.8,
+        "ownershipPercent": 3.3,
+        "rushTd": 1,
+        "rushYds": 62,
+        "rec": 1,
+        "recYds": 6,
+        "gameAwayTeam": "PIT",
+        "gameHomeTeam": "IND",
+        "opponentTeam": "IND"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by reading an ugly game through concentrated Indianapolis volume and two cheap access points the field did not carry often enough. Michael Pittman Jr. captain at 10.8 percent was the main lever. In a game where scoring stayed modest and no quarterback posted a slate breaking total, the correct captain did not need a nuclear outcome. He needed to lead the game in bankable receiving production, score once, and separate from the more popular Jonathan Taylor and quarterback captain routes. Pittman did exactly that.\n\nThe rest of the build shows a strong understanding of how low scoring showdowns can break. Jonathan Taylor remained necessary because Indianapolis still ran plenty of offense through him and he found the end zone. Matt Ryan stayed in because Pittman captain and Jelani Woods flex pulled enough Colts passing production through Ryan to keep him live even with turnovers. On the Pittsburgh side, Kenny Pickett gave the roster access to the full Steelers offense without forcing a fragile pass catcher guess in the expensive range.\n\nThe two cheap pieces decided the slate. Jelani Woods at 12.3 percent flex ownership gave the lineup a second Indianapolis receiver channel at near punt salary and nearly reached the 100 yard bonus. Benny Snell Jr. at 3.3 percent was the true separator. He turned a 200 salary slot into a touchdown and 62 rushing yards, which let the lineup pay for Pittman, Taylor, and both quarterbacks while still carrying real uniqueness.\n\nLeaving 2,300 in salary mattered because this build already leaned into low scoring discomfort. The unused salary pushed it farther away from the dense cluster of more conventional double quarterback constructions. In a game where raw points were modest, structural distance carried extra value.",
+    "uniquenessNotes": "The lineup had three sub 20 percent roster spots and all three had a clear role. Pittman captain was the multiplier choice. Woods gave the build low cost Indianapolis volume. Snell supplied the near minimum salary touchdown outcome the field barely owned.\n\nThe strongest decision was keeping both quarterbacks in a game that did not reward quarterback salary in a standard way, then offsetting that cost with Woods and Snell instead of dropping one passer for a middling skill player. That kept the roster attached to every passing touchdown and the Pittsburgh two point conversion while preserving enough salary flexibility to build a far less duplicated shell.\n\nThere is also a precise game script embedded here. Indianapolis won, Pittman led the passing attack, Taylor scored on the ground, Woods soaked up secondary receiving volume, and Pittsburgh stayed close enough for Pickett to matter. Snell then captured a low owned rushing branch from the trailing side. Every slot has a job inside the final score.\n\nThe final grade lands at A. The lineup had a strong captain decision, three sub 20 percent pieces, 2,300 in salary left, and one near minimum salary outcome that dramatically changed duplication pressure. It stays below A plus because Pittman captain was still a reasonable path the field could find, and both quarterbacks kept the core structure more accessible than the rarest showdown outliers.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Michael Pittman Jr.",
+          "position": "WR",
+          "team": "IND"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low owned wide receiver captain with both quarterbacks, same team running back and cheap tight end, plus near minimum salary opposing running back",
+        "includesQBs": true
+      },
+      "primaryLever": "Michael Pittman Jr. captain created the slate's main leverage point through a 10.8 percent captain outcome in a low scoring game",
+      "secondaryLever": "Jelani Woods and Benny Snell Jr. gave the roster two low cost paths the field did not combine often enough, while 2,300 in unused salary added more separation"
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 1,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-09-08",
+  "slateName": "NFL Week 1 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "C-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2022_WK01_TNF_SHOWDOWN_2022-09-08_buf_lar",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 939278,
+    "totalOwnershipBp": 27270
+  },
+  "winner": {
+    "username": "shrek4224",
+    "points": 151.68,
+    "maxEntries": 57
+  },
+  "lineup": {
+    "salaryUsed": 49300,
+    "totalPoints": 151.68,
+    "totalOwnershipBp": 27270,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Bills",
+        "position": "DST",
+        "team": "BUF",
+        "salary": 6300,
+        "points": 25.5,
+        "ownershipPercent": 1.6,
+        "sacks": 7,
+        "interceptionsDst": 3,
+        "dstPointsAllowed": 13,
+        "qbFaced": "Matthew Stafford",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 12400,
+        "points": 34.8,
+        "ownershipPercent": 59.4,
+        "recTd": 1,
+        "recYds": 128,
+        "rec": 13,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 12000,
+        "points": 33.48,
+        "ownershipPercent": 82.1,
+        "passTd": 3,
+        "rushTd": 1,
+        "passYds": 297,
+        "rushYds": 56,
+        "interceptions": 2,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Stefon Diggs",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 9000,
+        "points": 29.2,
+        "ownershipPercent": 48.7,
+        "recTd": 1,
+        "recYds": 122,
+        "rec": 8,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Gabriel Davis",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 7200,
+        "points": 18.8,
+        "ownershipPercent": 43.8,
+        "recTd": 1,
+        "recYds": 88,
+        "rec": 4,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Isaiah McKenzie",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 2400,
+        "points": 9.9,
+        "ownershipPercent": 37.1,
+        "recTd": 1,
+        "recYds": 19,
+        "rec": 2,
+        "gameAwayTeam": "BUF",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it hit the narrowest leverage point on the slate, Buffalo defense at captain, while still riding the obvious Buffalo passing production. The 5-1 build against the defending champions was a sharp read because it assumed Los Angeles would fail across most of the roster while Cooper Kupp still vacuumed up enough volume to remain necessary. That part was correct.\n\nThe captain decision did the heavy lifting. Buffalo defense at 1.6 percent captain ownership gave the roster access to a ceiling outcome the field barely used in the multiplier slot. Seven sacks and three interceptions created enough raw scoring for the defense to matter more than a typical skill player captain.\n\nBeyond that, the lineup was far less creative than the finish suggests. Josh Allen, Stefon Diggs, Gabriel Davis, and Cooper Kupp were all highly owned and highly logical. Isaiah McKenzie gave the build needed salary relief, but he was still a usable Buffalo value the field had access to. The roster did leave 700 in salary, which helped, but the overall construction still leaned heavily on popular pieces once the defense captain was in place.",
+    "uniquenessNotes": "The strongest part of the lineup was simple. Buffalo defense captain was uncomfortable, low owned, and tied directly to how the game broke. The second best part was the 5-1 angle against a team many players were still willing to treat with more balance because of the banner night setting and their recent title.\n\nAfter those two decisions, the build becomes much less impressive. It did not uncover multiple low owned scoring lanes. It did not create layered tension across the full roster. It mostly jammed in the most bankable Buffalo pieces and added the most obvious Rams run back. That is a winning combination on this slate because the captain choice was strong enough to carry it, not because the full structure was especially rare.\n\nThis earns a C minus grade. The low owned defensive captain deserves real credit, and the 5-1 build against the defending Super Bowl champions was a smart stand. Outside of those two choices, the lineup was fairly plain, ownership dense, and reliant on a lot of chalk production landing exactly where the field expected.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Bills",
+          "position": "DST",
+          "team": "BUF"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Low-owned defense captain with a 5-1 Buffalo onslaught and one obvious opposing volume bring back",
+        "includesQBs": true
+      },
+      "primaryLever": "Bills defense captain at 1.6 percent was the lineup's only major leverage point",
+      "secondaryLever": "The 5-1 Buffalo build against the defending Super Bowl champions gave the roster a stronger game script stance than the field's more balanced constructions"
+    }
+  }
+}

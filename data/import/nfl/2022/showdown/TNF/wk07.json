@@ -1,0 +1,147 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 7,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-10-20",
+  "slateName": "NFL Week 7 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "A",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2022_WK07_TNF_SHOWDOWN_2022-10-20_no_ari",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 19100
+  },
+  "winner": {
+    "username": "TURBOS2K",
+    "points": 153.21,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 47300,
+    "totalPoints": 153.21,
+    "totalOwnershipBp": 19100,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Andy Dalton",
+        "position": "QB",
+        "team": "NO",
+        "salary": 14100,
+        "points": 48.81,
+        "ownershipPercent": 1.5,
+        "passTd": 4,
+        "passYds": 361,
+        "rushYds": 21,
+        "interceptions": 3,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeAndre Hopkins",
+        "position": "WR",
+        "team": "ARI",
+        "salary": 10200,
+        "points": 23.3,
+        "ownershipPercent": 56.9,
+        "rec": 10,
+        "recYds": 103,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Eno Benjamin",
+        "position": "RB",
+        "team": "ARI",
+        "salary": 8200,
+        "points": 23.3,
+        "ownershipPercent": 32.0,
+        "rushTd": 1,
+        "rushYds": 92,
+        "rec": 4,
+        "recYds": 21,
+        "twoPtRush": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chris Olave",
+        "position": "WR",
+        "team": "NO",
+        "salary": 7400,
+        "points": 20.6,
+        "ownershipPercent": 52.3,
+        "rec": 7,
+        "recYds": 106,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cardinals",
+        "position": "DST",
+        "team": "ARI",
+        "salary": 4400,
+        "points": 17.0,
+        "ownershipPercent": 16.9,
+        "interceptionsDst": 3,
+        "defTd": 2,
+        "pointsAllowedBucket": 34,
+        "qbFaced": "Andy Dalton",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Juwan Johnson",
+        "position": "TE",
+        "team": "NO",
+        "salary": 3000,
+        "points": 20.2,
+        "ownershipPercent": 31.4,
+        "rec": 5,
+        "recYds": 32,
+        "recTd": 2,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "ARI",
+        "opponentTeam": "ARI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it isolated the exact form of chaos this game produced instead of building around a cleaner median script. Andy Dalton captain at 1.5 percent captain ownership was the slate breaker. The field was willing to play him in flex, but almost nobody was willing to elevate him into captain after a season profile built more around competence than ceiling. Once Dalton threw for 361 yards and four touchdowns, the lineup gained immediate separation through the least popular high volume engine on the slate.\n\nThe lineup then captured New Orleans passing concentration through Chris Olave and Juwan Johnson. Olave handled the downfield yardage and Johnson captured two touchdowns at a low salary point, which gave the build access to Dalton's full ceiling without paying for a more duplicated Saints construction. That mattered because Dalton's fantasy output was not spread evenly across the roster. It flowed through a narrow passing tree.\n\nThe Arizona side was handled through DeAndre Hopkins and Eno Benjamin rather than through Kyler Murray. That was the sharper game read. Hopkins returned to an alpha target role immediately and Benjamin picked up both rushing and receiving work. Arizona scored enough for those two to matter, but Murray himself was not required for first place because the offense did not consolidate through quarterback scoring in the way the field often assumes.\n\nThe most uncomfortable decision was Cardinals defense with Dalton captain. That combination looks contradictory until the game is viewed through event scoring. Dalton was productive enough to lead the slate and reckless enough to feed the opposing defense. Three interceptions and two defensive touchdowns let both sides of that tension score together. Leaving 2,700 in salary completed the build by cutting away a large portion of duplicated combinations without weakening the actual scoring core.",
+    "uniquenessNotes": "The defining edge was understanding the difference between flex popularity and captain conviction. Dalton was not hidden from the field. Dalton captain was. That gap is where the leverage came from.\n\nArizona defense gave the lineup a second sub 20 percent piece through a path the field rarely wants to pair with its captain quarterback. Yet this was not random discomfort. It matched a fragile veteran quarterback profile in a high event game. Dalton could pile up yards and touchdowns while still creating short fields and defensive touchdowns for the opponent. That exact overlap is what happened.\n\nThe Murray fade is another strong signal. Many builds would have treated a 42 point Arizona output as automatic quarterback exposure. This lineup chose the narrower path that Hopkins and Benjamin could absorb enough Arizona production on their own. That saved salary, avoided duplication, and opened the door for the defense slot.\n\nThe final grade stays at A. A 1.5 percent captain, one additional sub 20 percent flex piece, 2,700 in salary left, and a coherent quarterback captain with opposing defense build gives this lineup genuine first place structure rather than surface level weirdness.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Andy Dalton",
+          "position": "QB",
+          "team": "NO"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Quarterback captain with two pass catchers, two opponent bring backs, opposing defense, and salary left on the table",
+        "includesQBs": true
+      },
+      "primaryLever": "Andy Dalton captain created the slate's main leverage point through a 1.5 percent captain outcome tied to concentrated Saints passing production",
+      "secondaryLever": "Cardinals defense against Dalton and the decision to fade Kyler Murray while still capturing Arizona scoring through DeAndre Hopkins and Eno Benjamin gave the lineup its separation"
+    }
+  }
+}

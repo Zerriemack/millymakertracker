@@ -1,0 +1,142 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 9,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-11-07",
+  "slateName": "NFL Week 9 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK09_MNF_SHOWDOWN_2022-11-07_bal_no",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 21140
+  },
+  "winner": {
+    "username": "thehomebrew",
+    "points": 100.17,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 45200,
+    "totalPoints": 100.17,
+    "totalOwnershipBp": 21140,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Kenyan Drake",
+        "position": "RB",
+        "team": "BAL",
+        "salary": 10800,
+        "points": 37.35,
+        "ownershipPercent": 4.7,
+        "rushTd": 2,
+        "rushYds": 93,
+        "rec": 2,
+        "recYds": 16,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 12400,
+        "points": 17.52,
+        "ownershipPercent": 87.8,
+        "passTd": 1,
+        "passYds": 133,
+        "rushYds": 82,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chris Olave",
+        "position": "WR",
+        "team": "NO",
+        "salary": 8600,
+        "points": 13.1,
+        "ownershipPercent": 58.2,
+        "rec": 6,
+        "recYds": 71,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Ravens",
+        "position": "DST",
+        "team": "BAL",
+        "salary": 4800,
+        "points": 10.0,
+        "ownershipPercent": 12.6,
+        "sacks": 4,
+        "interceptionsDst": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Andy Dalton",
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Juwan Johnson",
+        "position": "TE",
+        "team": "NO",
+        "salary": 4400,
+        "points": 12.2,
+        "ownershipPercent": 10.1,
+        "recTd": 1,
+        "rec": 2,
+        "recYds": 42,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Justin Tucker",
+        "position": "K",
+        "team": "BAL",
+        "salary": 4200,
+        "points": 10.0,
+        "ownershipPercent": 38.0,
+        "xpm": 3,
+        "fg0to39": 1,
+        "fg40to49": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by isolating the exact Baltimore scoring concentration the field was least prepared to captain. Kenyan Drake at 4.7 percent captain ownership was the decisive separator. Baltimore scored 27 points, and this roster captured the game through the running back who absorbed the touchdown concentration rather than through a Lamar Jackson captain build or a wider Baltimore pass game spread. Once Drake scored twice, the lineup gained a multiplier edge that much of the field could not recover from.\n\nThe second sharp decision was keeping Lamar Jackson in flex without overbuilding around Baltimore receivers. That preserved exposure to Baltimore's central offensive engine while avoiding thin attempts to predict which secondary Ravens pass catcher would matter. Lamar still contributed 82 rushing yards and stayed tied to nearly every meaningful Baltimore drive, even in a game where the passing volume was modest.\n\nThe remaining construction stayed disciplined. Ravens defense and Justin Tucker completed a Baltimore heavy shell that matched how the game unfolded. Baltimore controlled the environment, kept New Orleans at 13 points, created pressure through sacks and an interception, and turned sustained drives into both touchdowns and field goals. On the New Orleans side, Chris Olave and Juwan Johnson were enough. Olave captured the stable target share, while Johnson supplied the touchdown channel at 10.1 percent flex ownership.\n\nLeaving 4,800 in salary was a major part of the win. This was not decorative salary left on the table. It was purposeful separation attached to a narrow but correct read of how Baltimore would score and how little of the expensive middle tier was actually needed.",
+    "uniquenessNotes": "The lineup had three sub 20 percent roster spots, and each one solved a different problem. Kenyan Drake captain created the slate's largest leverage swing. Ravens defense captured game control and disruption. Juwan Johnson gave the Saints side a low owned touchdown path without forcing Andy Dalton or a second expensive New Orleans skill player.\n\nThe strongest structural trait was restraint. A Baltimore onslaught build can become fragile when it tries to name every correlated Raven. This roster did not force that. It used Lamar Jackson, Drake, Ravens defense, and Justin Tucker, then stopped. That gave the lineup exposure to rushing production, quarterback rushing, defensive events, and kicking points without wasting salary on uncertain auxiliary volume.\n\nThe New Orleans bring backs were also precise. Chris Olave was the most bankable Saints volume bet. Juwan Johnson was the touchdown lever. Together they covered the only parts of the Saints offense that truly mattered for showdown scoring while the rest of the lineup remained committed to Baltimore control.\n\nThe final grade lands at A plus. The lineup had elite captain leverage, multiple sub 20 percent pieces, massive salary left, a clean 4 to 2 structure, and a solo style construction that avoided the most duplicated Lamar captain or balanced midrange builds. This is the kind of showdown winner that separates because the uncomfortable version of the correct game script was built all the way through.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Kenyan Drake",
+          "position": "RB",
+          "team": "BAL"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low owned running back captain with mobile quarterback, own defense, own kicker, and two concentrated opposing pass catchers",
+        "includesQBs": true
+      },
+      "primaryLever": "Kenyan Drake captain created the slate's main leverage point through a 4.7 percent captain outcome tied to Baltimore touchdown concentration",
+      "secondaryLever": "Leaving 4,800 in salary while pairing Ravens defense and Justin Tucker with a narrow Saints bring back shell gave the lineup uncommon separation"
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 14,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-12-08",
+  "slateName": "NFL Week 14 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "A",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2022_WK14_TNF_SHOWDOWN_2022-12-08_lv_lar",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 30000000,
+    "totalOwnershipBp": 18020
+  },
+  "winner": {
+    "username": "steelcitymafia",
+    "points": 91.3,
+    "maxEntries": 2
+  },
+  "lineup": {
+    "salaryUsed": 49100,
+    "totalPoints": 91.3,
+    "totalOwnershipBp": 18020,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Baker Mayfield",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 13500,
+        "points": 21.3,
+        "ownershipPercent": 1.0,
+        "passTd": 1,
+        "passYds": 230,
+        "rushYds": 10,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "team": "LV",
+        "salary": 12400,
+        "points": 19.4,
+        "ownershipPercent": 67.8,
+        "rushTd": 1,
+        "rushYds": 99,
+        "rec": 2,
+        "recYds": 15,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cam Akers",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 7800,
+        "points": 10.3,
+        "ownershipPercent": 35.1,
+        "rushTd": 1,
+        "rushYds": 42,
+        "rec": 1,
+        "recYds": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Van Jefferson",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 6400,
+        "points": 12.4,
+        "ownershipPercent": 19.7,
+        "rec": 2,
+        "recYds": 44,
+        "recTd": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Ben Skowronek",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 4800,
+        "points": 15.9,
+        "ownershipPercent": 13.2,
+        "rec": 7,
+        "recYds": 89,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Daniel Carlson",
+        "position": "K",
+        "team": "LV",
+        "salary": 4200,
+        "points": 12.0,
+        "ownershipPercent": 43.4,
+        "xpm": 1,
+        "fg0to39": 2,
+        "fg50plus": 1,
+        "gameAwayTeam": "LV",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it leaned into the least trusted version of the game and then stayed disciplined around it. Baker Mayfield at 1.0 percent captain ownership was the separator. He had only recently landed with the Rams, so the field had almost no appetite to place him in the multiplier. Once he threw for 230 yards and led the late comeback, the slate turned on a result the field barely built for.\n\nThe Rams side around him was compact and coherent. Ben Skowronek handled the volume role. Van Jefferson caught the touchdown. Cam Akers added the rushing touchdown even with the lost fumble. That gave the lineup access to the three main Los Angeles scoring channels without paying for a wider Rams spread. It did not need every Ram. It needed the right three around the quarterback captain.\n\nThe Raiders side stayed narrow. Josh Jacobs remained too central to leave off because Las Vegas still scored through him and still leaned on him for offense. Daniel Carlson captured the extra stalled drive value. That pairing let the lineup absorb the Raiders production without dragging in a more fragile pass game guess.\n\nLeaving 900 in salary helped, though the larger driver was the captain decision itself. This was a game where the winning path did not come from a cleaner median projection. It came from accepting that a newly arrived quarterback could still command enough short area passing and late drive equity to beat the slate if the touchdown distribution stayed tight.",
+    "uniquenessNotes": "The first edge was obvious. Baker Mayfield captain at 1.0 percent is elite leverage. The second edge was subtler. The roster did not overreact by stacking him with every affordable Rams receiver. It stopped at the pieces most connected to how his production actually showed up: Skowronek through volume, Jefferson through the touchdown, and Akers through the ground score.\n\nVan Jefferson at 19.7 percent and Ben Skowronek at 13.2 percent gave the build two sub 20 percent flex pieces behind the low owned captain. That matters because Josh Jacobs and Daniel Carlson were both common enough to keep the shell from becoming invisible. The lineup needed those lower owned Rams receivers to keep first place structure.\n\nThe grade lands at A. The captain leverage was elite, the duplication outcome was excellent, the build left salary, and the 4 to 2 shape stayed within a standard showdown frame while still arriving there through a very uncomfortable quarterback call. This was not random discomfort. It was a clear read on where the game could break away from expectation.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Baker Mayfield",
+          "position": "QB",
+          "team": "LAR"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low-owned quarterback captain with three same-team skill players, opposing running back, and opposing kicker",
+        "includesQBs": true
+      },
+      "primaryLever": "Baker Mayfield captain created the slate's main leverage point through a 1.0 percent captain outcome",
+      "secondaryLever": "Van Jefferson and Ben Skowronek gave the build two lower-owned Rams pass catchers while Josh Jacobs and Daniel Carlson captured the Raiders scoring without forcing a second Las Vegas skill bet"
+    }
+  }
+}

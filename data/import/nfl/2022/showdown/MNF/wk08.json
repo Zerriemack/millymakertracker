@@ -1,0 +1,150 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 8,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-10-31",
+  "slateName": "NFL Week 8 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK08_MNF_SHOWDOWN_2022-10-31_cin_cle",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2081389,
+    "totalOwnershipBp": 18440
+  },
+  "winner": {
+    "username": "uhhuhbro",
+    "points": 129.02,
+    "maxEntries": 112
+  },
+  "lineup": {
+    "salaryUsed": 49200,
+    "totalPoints": 129.02,
+    "totalOwnershipBp": 18440,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Nick Chubb",
+        "position": "RB",
+        "team": "CLE",
+        "salary": 15600,
+        "points": 42.6,
+        "ownershipPercent": 13.3,
+        "rushTd": 2,
+        "rushYds": 101,
+        "bonus100RushYds": 1,
+        "rec": 1,
+        "recYds": 3,
+        "twoPtRush": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jacoby Brissett",
+        "position": "QB",
+        "team": "CLE",
+        "salary": 9200,
+        "points": 21.32,
+        "ownershipPercent": 23.9,
+        "passTd": 1,
+        "rushTd": 1,
+        "passYds": 278,
+        "rushYds": 12,
+        "fumblesLost": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tee Higgins",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 8000,
+        "points": 13.9,
+        "ownershipPercent": 66.7,
+        "recTd": 1,
+        "rec": 3,
+        "recYds": 49,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Amari Cooper",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 7600,
+        "points": 26.1,
+        "ownershipPercent": 46.8,
+        "recTd": 1,
+        "rec": 5,
+        "recYds": 131,
+        "bonus100RecYds": 1,
+        "interceptions": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Donovan Peoples-Jones",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 5000,
+        "points": 12.1,
+        "ownershipPercent": 27.6,
+        "rec": 4,
+        "recYds": 81,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Browns",
+        "position": "DST",
+        "team": "CLE",
+        "salary": 3800,
+        "points": 13.0,
+        "ownershipPercent": 6.1,
+        "sacks": 5,
+        "interceptionsDst": 1,
+        "defFumbleRecoveries": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Joe Burrow",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by building around the most concentrated Cleveland outcome on the slate and then tightening the rest of the roster around how scoring would flow once Cleveland controlled both efficiency and game texture. Nick Chubb captain at 13.3 percent was the central lever. He did not need a pass game eruption to break the slate. He needed rushing dominance, touchdown concentration, and enough offensive success for Cleveland to keep feeding him. He got all three.\n\nThe sharper layer came from how the lineup treated Cleveland passing production. Many Chubb captain builds would stop at Chubb plus defense and hope raw rushing volume carried the rest. This roster went further. It kept Jacoby Brissett, Amari Cooper, and Donovan Peoples Jones, which let the build absorb nearly every valuable Cleveland touchdown path. Brissett scored through one passing touchdown and one rushing touchdown. Cooper handled the high ceiling wide receiver production. Donovan Peoples Jones gave the build a lower salary access point into the same passing environment without forcing a second Bengal pass catcher.\n\nThe Browns defense completed the game read. Five sacks, one interception, and one fumble recovery meant Cleveland did not merely win on the scoreboard. Cleveland won through pressure and disruption. Pairing Browns defense with Tee Higgins instead of Joe Burrow kept exposure to Cincinnati narrow and efficient. Higgins still found the end zone and delivered enough receiving volume to remain viable even while the rest of Cincinnati failed to support a full passing stack.\n\nLeaving 800 in salary mattered because this construction already had a narrow stance. The unused salary added separation without sacrificing projection. In a showdown of this kind, a roster can win by identifying the offense worth overloading and then choosing the lone opponent piece most capable of surviving adverse conditions.",
+    "uniquenessNotes": "The lineup had two players under 20 percent ownership and both served distinct jobs. Nick Chubb captain was the ceiling lever. Browns defense was the volatility lever. Those choices interacted well because Cleveland could get ahead through Chubb and then force Cincinnati into obvious passing situations. Once that happened, the defense gained access to sack and turnover scoring.\n\nThe roster also showed discipline in how it handled Cincinnati exposure. Tee Higgins was enough. There was no need to force Joe Burrow, Evan McPherson, or a second Bengal receiver. Cincinnati scored only 13 points, so the winning construction isolated the one Bengal who could still matter while allowing Cleveland to dominate the rest of the lineup.\n\nAnother strong choice was the double Cleveland wide receiver layer with Amari Cooper and Donovan Peoples Jones. Chubb captain lineups often become too one dimensional and miss the chance to capture a full team ceiling. This roster avoided that trap. It treated Chubb as the multiplier but still reserved room for Cleveland passing production, which made the lineup more complete and less fragile.\n\nThe final grade lands at A. The lineup had captain leverage, a 6.1 percent defense, mild salary left, and a coherent 5 to 1 Cleveland heavy structure built around a narrow but accurate script. It stops short of A plus because the roster still included several popular flex pieces and the salary left was useful rather than extreme.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Nick Chubb",
+          "position": "RB",
+          "team": "CLE"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Low owned running back captain with quarterback, two wide receivers from the same team, own defense, and one opposing touchdown catcher",
+        "includesQBs": true
+      },
+      "primaryLever": "Nick Chubb captain created the slate's main leverage point through a 13.3 percent captain outcome tied to concentrated rushing touchdowns",
+      "secondaryLever": "Browns defense at 6.1 percent and a Cleveland heavy 5 to 1 build gave the roster separation from flatter game stack constructions"
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 4,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-10-03",
+  "slateName": "NFL Week 4 Monday Night Showdown",
+  "slateTag": "MNF",
+  "slateGroup": "F",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2022_WK04_MNF_SHOWDOWN_2022-10-03_lar_sf",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 565496,
+    "totalOwnershipBp": 22450
+  },
+  "winner": {
+    "username": "shawnzhan",
+    "points": 131.2,
+    "maxEntries": 140
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 131.2,
+    "totalOwnershipBp": 22450,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 18000,
+        "points": 43.8,
+        "ownershipPercent": 32.5,
+        "rec": 14,
+        "recYds": 122,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Deebo Samuel",
+        "position": "WR",
+        "team": "SF",
+        "salary": 10400,
+        "points": 26.7,
+        "ownershipPercent": 68.6,
+        "rec": 6,
+        "recYds": 115,
+        "recTd": 1,
+        "rushYds": 2,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jeff Wilson Jr.",
+        "position": "RB",
+        "team": "SF",
+        "salary": 8200,
+        "points": 13.4,
+        "ownershipPercent": 33.2,
+        "rushTd": 1,
+        "rushYds": 74,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tyler Higbee",
+        "position": "TE",
+        "team": "LAR",
+        "salary": 5200,
+        "points": 17.3,
+        "ownershipPercent": 46.0,
+        "rec": 10,
+        "recYds": 73,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "49ers",
+        "position": "DST",
+        "team": "SF",
+        "salary": 4200,
+        "points": 21.0,
+        "ownershipPercent": 21.1,
+        "sacks": 7,
+        "interceptionsDst": 1,
+        "defFumbleRecoveries": 1,
+        "defTd": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Matthew Stafford",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Matt Gay",
+        "position": "K",
+        "team": "LAR",
+        "salary": 3800,
+        "points": 9.0,
+        "ownershipPercent": 23.1,
+        "fg0to39": 3,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because the game condensed almost all meaningful fantasy production into the most obvious pieces, and Cooper Kupp captain captured the highest raw outcome on the slate. Kupp saw 14 catches and cleared the 100 yard bonus, which gave the lineup a massive anchor. Deebo Samuel then handled the major San Francisco skill position ceiling, while Jeff Wilson Jr. and the 49ers defense captured the home team rushing and defensive scoring paths.\n\nThe issue is that this was an extremely field visible construction. Kupp captain was a popular multiplier choice. Deebo Samuel was one of the most natural bring backs. Tyler Higbee was already a strong volume driven attachment to the Rams passing game. The 49ers defense made sense against a Rams offense under constant pressure. Matt Gay gave the lineup another conventional access point to Los Angeles scoring. Nothing in the shell forced the field into a difficult structural decision.\n\nThe lineup left only 200 in salary, which provided almost no duplication relief. On a six man showdown slate, that matters. When a roster uses one of the most obvious captain outcomes, then follows it with a heavily owned supporting cast and almost full salary usage, duplication pressure becomes the central story. That is exactly what happened here.",
+    "uniquenessNotes": "This build had no true secondary separator. Kupp captain was not low owned. None of the five flex spots came in under 20 percent ownership. Even the defense slot sat at 21.1 percent, which is still within easy reach for the field. Once the game landed on Kupp volume, Deebo production, and a strong 49ers defensive outcome, this lineup shape became highly accessible.\n\nThere is some internal coherence in the way it handled the slate. It paired Kupp with Higbee for concentrated Rams target volume, then allowed San Francisco to score through Deebo, Jeff Wilson Jr., and the defense. That read matched the game. Still, getting the game right is not the same as building a structurally strong showdown winner. The payout and max entry count point toward heavy duplication, and the construction supports that conclusion.\n\nThe final grade lands at F. Popular captain, zero sub 20 percent flex pieces, almost no salary left, and a shell the field could assemble without strain is not a strong showdown build even when it finishes first. This lineup won because the slate scored through obvious paths, not because the roster created meaningful structural separation.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Cooper Kupp",
+          "position": "WR",
+          "team": "LAR"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Popular wide receiver captain with a concentrated Rams passing shell, primary San Francisco skill pieces, opposing defense, and near full salary usage",
+        "includesQBs": false
+      },
+      "primaryLever": "Cooper Kupp captain captured the slate's highest raw outcome, but it did so through one of the field's clearest multiplier paths",
+      "secondaryLever": "There was no meaningful secondary leverage point because the flex shell carried zero sub 20 percent pieces and almost no salary based separation"
+    }
+  }
+}
