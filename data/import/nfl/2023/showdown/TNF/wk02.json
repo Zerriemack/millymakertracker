@@ -1,0 +1,144 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 2,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-09-14",
+  "slateName": "NFL Week 2 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "C+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK02_TNF_SHOWDOWN_2023-09-14_min_phi",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 405647,
+    "totalOwnershipBp": 23630
+  },
+  "winner": {
+    "username": "Spartan1011",
+    "points": 174.51,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 174.51,
+    "totalOwnershipBp": 23630,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "D'Andre Swift",
+        "position": "RB",
+        "team": "PHI",
+        "salary": 6000,
+        "points": 45.15,
+        "ownershipPercent": 10.3,
+        "rushTd": 1,
+        "rushYds": 175,
+        "rec": 3,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 12400,
+        "points": 28.9,
+        "ownershipPercent": 60.2,
+        "rec": 11,
+        "recYds": 159,
+        "bonus100RecYds": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kirk Cousins",
+        "position": "QB",
+        "team": "MIN",
+        "salary": 9200,
+        "points": 32.56,
+        "ownershipPercent": 50.4,
+        "passTd": 4,
+        "passYds": 364,
+        "bonus300PassYds": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeVonta Smith",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 9000,
+        "points": 26.1,
+        "ownershipPercent": 45.9,
+        "rec": 4,
+        "recYds": 131,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "T.J. Hockenson",
+        "position": "TE",
+        "team": "MIN",
+        "salary": 6800,
+        "points": 25.6,
+        "ownershipPercent": 42.1,
+        "rec": 7,
+        "recYds": 66,
+        "recTd": 2,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jordan Addison",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 6400,
+        "points": 16.2,
+        "ownershipPercent": 27.4,
+        "rec": 3,
+        "recYds": 72,
+        "recTd": 1,
+        "gameAwayTeam": "MIN",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it captured the exact scoring concentration of the game rather than chasing uniqueness through thin auxiliary pieces. Minnesota threw for 364 yards and four touchdowns, so Kirk Cousins plus three Vikings pass catchers gave the roster access to nearly all of the visiting side’s fantasy production. On the Philadelphia side, D'Andre Swift captain was the hinge. He was not an obscure player, but 10.3 percent captain ownership was low enough relative to his eventual workload and ceiling outcome to function as the lineup’s main leverage point.\n\nThe game created an unusual split. Philadelphia won, yet Minnesota supplied a large share of the slate’s pass game scoring. This build captured both truths at once. Swift absorbed the most important Philadelphia outcome through rushing volume and explosive efficiency, while Justin Jefferson, T.J. Hockenson, and Jordan Addison covered the Viking receiving tree around Cousins. DeVonta Smith completed the structure by taking the most efficient non Swift Philadelphia skill production without spending up for a more duplicated quarterback captain route.\n\nWhat makes the lineup sharp is its willingness to let one side win on the field while the other side wins through fantasy distribution. Minnesota lost the game, fumbled twice, and still produced a showdown winning passing stack because the volume remained high and the touchdowns condensed heavily through Cousins and his pass catchers. Philadelphia did not need a broad team stack because Swift alone captured the most valuable Eagles outcome.\n\nThis was a concentration bet on elite volume, condensed touchdown equity, and one underowned captain outcome in a game that produced enough offense to support a 4 to 2 Minnesota leaning build. The lineup did not need salary gimmicks. It needed the correct map of where the points would actually land.",
+    "uniquenessNotes": "The final grade lands at C plus. D'Andre Swift captain did provide meaningful leverage at 10.3 percent captain ownership, but the rest of the build was very ownership heavy. There were no flex pieces under 20 percent. Salary usage left only 200 on the table. The lineup also avoided any structural discomfort such as defense against quarterback or a highly asymmetric game script build.\n\nThat does not make it weak. It makes it narrow. The lineup won by being exactly right about point concentration, not by creating a broad uniqueness shell. Cousins with Jefferson, Hockenson, and Addison captured an unusually high percentage of Minnesota scoring. Swift captain captured the slate's most underplayed ceiling slot. DeVonta Smith then served as the efficient Philadelphia attachment rather than a lower probability filler.\n\nThe subtle strength is that the lineup did not overstack Philadelphia after choosing Swift captain. Many builds would have felt pressure to include Jalen Hurts or additional Eagles because Philadelphia scored 34 points. This roster stayed disciplined and recognized that Swift could be the only Eagle needed in the multiplier slot if Minnesota concentrated enough fantasy production through the air on the other side.\n\nThis is why the lineup grades above the truly replaceable chalk builds but below the strongest showdown winners. The captain choice was sharp and necessary. The overall ownership shape was still dense enough that the build depended heavily on near perfect score concentration rather than multiple independent leverage channels.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "D'Andre Swift",
+          "position": "RB",
+          "team": "PHI"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Running back captain with a four player Minnesota passing concentration, one opposing Philadelphia wide receiver, and near full salary usage",
+        "includesQBs": true
+      },
+      "primaryLever": "D'Andre Swift captain created the lineup’s main leverage point through a 10.3 percent captain outcome tied to a slate breaking rushing performance",
+      "secondaryLever": "The lineup paired that captain choice with an aggressive Minnesota pass concentration through Kirk Cousins, Justin Jefferson, T.J. Hockenson, and Jordan Addison"
+    }
+  }
+}

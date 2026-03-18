@@ -1,0 +1,144 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 15,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-12-17",
+  "slateName": "NFL Week 15 Sunday Night Showdown",
+  "slateTag": "snf",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Sunday Night Contest",
+    "siteContestId": "NFL_2023_WK15_SNF_SHOWDOWN_2023-12-17_bal_jax",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 20000000,
+    "totalOwnershipBp": 15230
+  },
+  "winner": {
+    "username": "Standish",
+    "points": 104.17,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 48800,
+    "totalPoints": 104.17,
+    "totalOwnershipBp": 15230,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 18600,
+        "points": 29.31,
+        "ownershipPercent": 26.4,
+        "passTd": 1,
+        "passYds": 171,
+        "rushYds": 97,
+        "interceptions": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Trevor Lawrence",
+        "position": "QB",
+        "team": "JAX",
+        "salary": 10400,
+        "points": 16.66,
+        "ownershipPercent": 47.5,
+        "passTd": 1,
+        "passYds": 264,
+        "rushYds": 41,
+        "fumblesLost": 2,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Gus Edwards",
+        "position": "RB",
+        "team": "BAL",
+        "salary": 7400,
+        "points": 13.2,
+        "ownershipPercent": 11.1,
+        "rushTd": 1,
+        "rushYds": 51,
+        "rec": 1,
+        "recYds": 11,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Isaiah Likely",
+        "position": "TE",
+        "team": "BAL",
+        "salary": 6800,
+        "points": 18.0,
+        "ownershipPercent": 35.1,
+        "rec": 5,
+        "recYds": 70,
+        "recTd": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Justin Tucker",
+        "position": "K",
+        "team": "BAL",
+        "salary": 5400,
+        "points": 12.0,
+        "ownershipPercent": 23.8,
+        "xpm": 2,
+        "fg0to39": 2,
+        "fg40to49": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jamal Agnew",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 200,
+        "points": 15.0,
+        "ownershipPercent": 8.4,
+        "rec": 2,
+        "recYds": 70,
+        "recTd": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "JAX",
+        "opponentTeam": "BAL"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by taking the slate’s most bankable raw ceiling in captain, then separating through the secondary structure rather than through the multiplier slot itself. Lamar Jackson captain was popular, but it was still correct. Baltimore controlled the game, Jackson handled the offense through both passing and rushing, and his 97 rushing yards gave the build access to the strongest floor to ceiling profile on the slate.\n\nThe sharper part of the lineup came from how Baltimore scoring was distributed underneath him. Gus Edwards, Isaiah Likely, and Justin Tucker each captured a different piece of the Ravens offense. Edwards took the rushing touchdown path. Likely handled the receiving touchdown path. Tucker collected the drives which ended in field goals instead of touchdowns. That spread mattered because Baltimore scored 23 points without forcing all production into one narrow branch. The lineup covered the offense from three distinct angles while still keeping Jackson as the central engine.\n\nThe Jacksonville side was handled with restraint. Trevor Lawrence stayed on because he still accounted for nearly every viable Jaguar route to usable fantasy output. Even in a poor team result, he reached enough passing and rushing volume to remain relevant. Jamal Agnew was the real unlock. At 200 salary and 8.4 percent flex ownership, he changed the geometry of the roster and gave the build access to a touchdown the field rarely carried at meaningful frequency.\n\nThe lineup left 1,200 in salary, which helped reduce overlap, but the stronger point is where the unused money came from. It did not come from random dead salary. It came from a minimum priced Jacksonville receiver attached to the underdog quarterback, while the Baltimore core still preserved the most likely winning offense. This was a controlled build, not a chaotic one.",
+    "uniquenessNotes": "The first defining decision was accepting Lamar Jackson captain without trying to be clever in the most visible slot. On some slates, the field overreacts to captain ownership and fades the strongest ceiling. This build did not do that. It kept Lamar, then searched for separation elsewhere.\n\nThe second defining decision was the Agnew inclusion. He was not a filler click. He was the salary release point that allowed the lineup to hold Lawrence plus three secondary Baltimore scorers without drifting into a more duplicated midrange structure. His touchdown turned the entire build from solid into first place.\n\nThere is also a subtle structural tension in playing Lawrence against a Ravens heavy scoring shell. Baltimore captain with three Baltimore flex pieces can easily push lineups toward a game script where the opposing quarterback is unnecessary. This roster still kept Lawrence because Jacksonville volume remained centralized enough to matter even in a trailing, mistake filled game. That is an uncomfortable combination for many entrants, yet it matched how the scoring actually landed.\n\nThe final grade lands at B. The lineup had one clear low owned unlock, another sub 20 percent Baltimore scorer, some salary left, and a coherent explanation for keeping the opposing quarterback in a Ravens centered build. It does not grade higher because Lamar captain was popular, the total ownership shape remained manageable for the field, and most of the separation sat in one main salary release point rather than in multiple independent leverage channels.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Lamar Jackson",
+          "position": "QB",
+          "team": "BAL"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Popular quarterback captain with three secondary Ravens scorers, opposing quarterback, and a near minimum Jacksonville touchdown catcher",
+        "includesQBs": true
+      },
+      "primaryLever": "The main edge came from preserving Lamar Jackson captain while routing uniqueness through Jamal Agnew and a secondary Baltimore scoring mix",
+      "secondaryLever": "Gus Edwards, Isaiah Likely, and Justin Tucker split Baltimore production across rushing, receiving, and field goal scoring while Trevor Lawrence kept the Jacksonville side concentrated"
+    }
+  }
+}

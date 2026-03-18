@@ -1,0 +1,149 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 12,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-11-26",
+  "slateName": "NFL Week 12 Sunday Night Showdown",
+  "slateTag": "snf",
+  "slateGroup": "B+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Sunday Night Contest",
+    "siteContestId": "NFL_2023_WK12_SNF_SHOWDOWN_2023-11-26_bal_lac",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 12000000,
+    "totalOwnershipBp": 16360
+  },
+  "winner": {
+    "username": "ddry",
+    "points": 116.98,
+    "maxEntries": 129
+  },
+  "lineup": {
+    "salaryUsed": 50000,
+    "totalPoints": 116.98,
+    "totalOwnershipBp": 16360,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Zay Flowers",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 12000,
+        "points": 34.8,
+        "ownershipPercent": 6.7,
+        "rec": 5,
+        "recYds": 25,
+        "recTd": 1,
+        "rushYds": 37,
+        "rushTd": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Keenan Allen",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 11200,
+        "points": 26.6,
+        "ownershipPercent": 58.1,
+        "rec": 14,
+        "recYds": 106,
+        "bonus100RecYds": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Justin Herbert",
+        "position": "QB",
+        "team": "LAC",
+        "salary": 11000,
+        "points": 15.38,
+        "ownershipPercent": 48.4,
+        "passTd": 1,
+        "passYds": 217,
+        "rushYds": 47,
+        "interceptions": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Keaton Mitchell",
+        "position": "RB",
+        "team": "BAL",
+        "salary": 6800,
+        "points": 10.9,
+        "ownershipPercent": 19.9,
+        "rec": 2,
+        "recYds": 25,
+        "rushYds": 64,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Gerald Everett",
+        "position": "TE",
+        "team": "LAC",
+        "salary": 4800,
+        "points": 14.3,
+        "ownershipPercent": 9.5,
+        "rec": 4,
+        "recYds": 43,
+        "recTd": 1,
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Ravens",
+        "position": "DST",
+        "team": "BAL",
+        "salary": 4200,
+        "points": 15.0,
+        "ownershipPercent": 21.0,
+        "sacks": 3,
+        "interceptionsDst": 1,
+        "defFumbleRecoveries": 3,
+        "pointsAllowed": 13,
+        "qbFaced": "Justin Herbert",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "BAL",
+        "gameHomeTeam": "LAC",
+        "opponentTeam": "LAC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by identifying the one Baltimore non quarterback ceiling outcome the field was not weighting aggressively enough in captain and then building a game environment around Los Angeles catch up volume under pressure. Zay Flowers captain at 6.7 percent was the main separator. His score did not come through one narrow path. He reached the top through both receiving and rushing usage, which gave the lineup access to a first place captain outcome without needing Lamar Jackson attached.\n\nThat decision shaped the rest of the roster. Once Flowers handled the Baltimore multiplier slot, the lineup did not force a second expensive Baltimore core play. It moved across the game and captured the Chargers side through Keenan Allen, Justin Herbert, and Gerald Everett. That was a sharp read on how trailing volume could still generate fantasy output even against an elite defense. Allen vacuumed targets. Herbert added enough rushing to remain viable despite an inefficient passing line. Everett supplied touchdown access from a lower owned salary band.\n\nThe most uncomfortable part of the construction was Herbert paired with Ravens defense. In a lower scoring game with heavy pressure and turnover risk, those outcomes can coexist. Herbert still accounted for nearly all Los Angeles offensive pathways, while Baltimore defense accumulated fantasy value through sacks, an interception, and multiple fumble recoveries. The lineup did not need Herbert to be efficient. It needed him to stay central.\n\nKeaton Mitchell completed the build by giving Baltimore explosive yardage access at 19.9 percent flex ownership without forcing a duplicated Ravens onslaught. He was not a volume anchor. He was an efficiency lever. That mattered because the lineup already had enough expensive Chargers concentration and needed one more Baltimore path that could outperform salary without reshaping the roster into a standard Lamar Jackson build.\n\nThe lineup used the full 50,000, so uniqueness did not come from salary left. It came from captain selection, the Herbert with Ravens defense tension, and the choice to build around Chargers pass game concentration without using Austin Ekeler or a second premium Baltimore centerpiece.",
+    "uniquenessNotes": "The defining choice was Zay Flowers captain with no Lamar Jackson. That is where the lineup separated from the most natural Baltimore branches. Many players could reach Flowers captain. Far fewer would stop there and trust the rest of the lineup to tell a different story.\n\nThe second separator was the Herbert and Ravens defense pairing. This is the kind of construction many entries avoid because it feels internally unstable. In this game, the instability was the point. Herbert could still compile through volume and rushing, while Baltimore defense harvested the failed drives and turnover events around him.\n\nGerald Everett mattered more than he appears to at first glance. His 9.5 percent flex ownership gave the lineup a second clean ownership release point beyond Flowers captain. He also gave the Chargers stack a tighter scoring concentration, which reduced the need to spray exposure across more fragile Los Angeles options.\n\nThe final grade lands at B plus. The lineup had a genuinely low owned captain, two flex plays under 20 percent, strong structural tension, and a coherent explanation for why opposing quarterback and defense could both land. It stops short of A territory because salary was fully spent, Keenan Allen and Justin Herbert still carried heavy ownership, and part of the uniqueness profile depends on one primary captain lever rather than multiple separate low owned branches.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Zay Flowers",
+          "position": "WR",
+          "team": "BAL"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Low owned wide receiver captain without his quarterback, paired with an opposing volume stack and opposing defense against that quarterback",
+        "includesQBs": true
+      },
+      "primaryLever": "Zay Flowers captain at 6.7 percent created the lineup’s main leverage point through a non Lamar Baltimore ceiling path",
+      "secondaryLever": "Justin Herbert with Ravens defense and Gerald Everett created a second layer of separation through pressure driven volume and lower owned touchdown capture"
+    }
+  }
+}

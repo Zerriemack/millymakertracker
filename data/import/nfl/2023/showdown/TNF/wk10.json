@@ -1,0 +1,141 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 10,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-11-09",
+  "slateName": "NFL Week 10 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK10_TNF_SHOWDOWN_2023-11-09_car_chi",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 30000000,
+    "totalOwnershipBp": 20290
+  },
+  "winner": {
+    "username": "Forsaken",
+    "points": 74.7,
+    "maxEntries": 134
+  },
+  "lineup": {
+    "salaryUsed": 48500,
+    "totalPoints": 74.7,
+    "totalOwnershipBp": 20290,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "D'Onta Foreman",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 12900,
+        "points": 25.8,
+        "ownershipPercent": 20.5,
+        "rushTd": 1,
+        "rushYds": 80,
+        "rec": 2,
+        "recYds": 12,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "D.J. Moore",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 10600,
+        "points": 10.9,
+        "ownershipPercent": 46.5,
+        "rec": 5,
+        "recYds": 58,
+        "rushYds": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Bryce Young",
+        "position": "QB",
+        "team": "CAR",
+        "salary": 9800,
+        "points": 9.2,
+        "ownershipPercent": 53.4,
+        "passYds": 185,
+        "rushYds": 18,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cole Kmet",
+        "position": "TE",
+        "team": "CHI",
+        "salary": 6600,
+        "points": 9.6,
+        "ownershipPercent": 53.7,
+        "rec": 5,
+        "recYds": 45,
+        "rushYds": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cairo Santos",
+        "position": "K",
+        "team": "CHI",
+        "salary": 5000,
+        "points": 12.0,
+        "ownershipPercent": 17.6,
+        "xpm": 1,
+        "fg0to39": 2,
+        "fg50plus": 1,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Roschon Johnson",
+        "position": "RB",
+        "team": "CHI",
+        "salary": 3600,
+        "points": 7.2,
+        "ownershipPercent": 11.2,
+        "rec": 4,
+        "recYds": 14,
+        "rushYds": 18,
+        "gameAwayTeam": "CAR",
+        "gameHomeTeam": "CHI",
+        "opponentTeam": "CAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it treated an ugly game as a narrow Chicago control script and then built around the exact fantasy channels that survived inside a 16 to 13 final. D'Onta Foreman captain was the central decision. He was not low owned in absolute terms at 20.5 percent captain ownership, but he was still far less duplicated than the more natural quarterback centered builds on a single game slate. Once Foreman handled 80 rushing yards and the only Chicago touchdown, the captain slot immediately pushed the roster toward the right version of a bad game.\n\nThe rest of the build stayed consistent with that read. Chicago did not need a quarterback score to win the slate because Tyson Bagent never became mandatory. Instead, the roster took D.J. Moore for the clearest Bears receiving volume, Cole Kmet for short area pass game involvement, Cairo Santos for stalled drive value, and Roschon Johnson for low salary peripheral usage. That gave the lineup access to nearly every meaningful Bears scoring path without paying for an unnecessary quarterback attachment.\n\nOn the Carolina side, Bryce Young was the only bring back. That is the sharper part of the build. Carolina lost, scored only 13 points, and never produced a must have skill position score. Young at least absorbed nearly all of the Panthers passing environment and added rushing yards. In a slate this thin, that can be enough when the opposing side spreads its production across running back, kicker, and ancillary pieces.\n\nThis lineup won because it embraced how little fantasy had to happen for first place to become available. It did not force correlation from a cleaner offensive game. It accepted the mess, picked the one captain outcome with real separation, and then harvested the most stable leftover scoring from Chicago.",
+    "uniquenessNotes": "The final grade lands at B. Under a stricter grading lens, this lineup does not belong in the top range. The captain was above 20 percent. Bryce Young, D.J. Moore, and Cole Kmet were all common enough flex pieces. The winner also had 134 max entries, and this type of low scoring script build was still accessible to the field once Foreman captain landed.\n\nWhat lifts the lineup above the lower tier is the combination of two sub 20 percent flex pieces and meaningful salary left on the table. Cairo Santos at 17.6 percent and Roschon Johnson at 11.2 percent gave the roster two cleaner separators than most lineups in this game had. Leaving 1,500 in salary also mattered because low total showdown slates get duplicated easily when rosters stay too tidy.\n\nThe most important structural point is the no Bears quarterback decision. Chicago scored 16 points, yet the lineup still used five Bears because the production was spread across the run game, short passing, and field goals rather than quarterback fantasy accumulation. That is a more precise read than forcing Tyson Bagent into the lineup merely because Chicago won.\n\nThis is a good example of a winner that came from discipline rather than raw aggression. The build identified the right captain, accepted an ugly total, used the kicker correctly, and found a low salary backfield attachment that kept the roster away from more duplicated constructions. It still stays in the B tier because the captain was not especially thin and the overall shell was not rare enough to justify a higher grade.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "D'Onta Foreman",
+          "position": "RB",
+          "team": "CHI"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Running back captain in a low scoring home win with no home quarterback, one opposing quarterback bring back, a home kicker, and a low salary secondary running back attachment",
+        "includesQBs": true
+      },
+      "primaryLever": "D'Onta Foreman captain created the lineup’s main leverage point by capturing the only Chicago touchdown in a game where quarterback scoring never became necessary",
+      "secondaryLever": "Cairo Santos and Roschon Johnson gave the lineup two sub 20 percent flex pieces while 1,500 in unused salary reduced duplication pressure"
+    }
+  }
+}

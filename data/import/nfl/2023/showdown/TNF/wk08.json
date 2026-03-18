@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 8,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-10-26",
+  "slateName": "NFL Week 8 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK08_TNF_SHOWDOWN_2023-10-26_tb_buf",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 4113889,
+    "totalOwnershipBp": 17540
+  },
+  "winner": {
+    "username": "youdacao",
+    "points": 145.27,
+    "maxEntries": 102
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 145.27,
+    "totalOwnershipBp": 17540,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 17700,
+        "points": 49.59,
+        "ownershipPercent": 20.2,
+        "passTd": 2,
+        "rushTd": 1,
+        "passYds": 324,
+        "rushYds": 41,
+        "interceptions": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Baker Mayfield",
+        "position": "QB",
+        "team": "TB",
+        "salary": 9200,
+        "points": 21.38,
+        "ownershipPercent": 27.7,
+        "passTd": 2,
+        "passYds": 237,
+        "rushYds": 19,
+        "twoPtPass": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Rachaad White",
+        "position": "RB",
+        "team": "TB",
+        "salary": 8000,
+        "points": 17.9,
+        "ownershipPercent": 30.6,
+        "rec": 7,
+        "recYds": 70,
+        "rushYds": 39,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Gabe Davis",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 6800,
+        "points": 23.7,
+        "ownershipPercent": 32.0,
+        "rec": 9,
+        "recYds": 87,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dalton Kincaid",
+        "position": "TE",
+        "team": "BUF",
+        "salary": 5000,
+        "points": 17.5,
+        "ownershipPercent": 55.6,
+        "rec": 5,
+        "recYds": 65,
+        "recTd": 1,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Khalil Shakir",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 3200,
+        "points": 15.2,
+        "ownershipPercent": 9.3,
+        "rec": 6,
+        "recYds": 92,
+        "gameAwayTeam": "TB",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "TB"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won through score concentration, not through broad structural discomfort. Josh Allen captain carried heavy captain ownership at 20.2 percent, so first place came from how the final five spots were arranged around him. Buffalo passing production condensed sharply into Gabe Davis, Dalton Kincaid, and Khalil Shakir. Allen captain captured the full engine, then the roster stacked three of the four most relevant Buffalo receiving outcomes beneath him.\n\nThe Tampa Bay side was handled with restraint. Baker Mayfield and Rachaad White gave the lineup access to nearly all of Tampa Bay's viable fantasy output without forcing an extra Buccaneers pass catcher. Mayfield handled both passing touchdowns and enough yardage to stay optimal in a losing effort. White absorbed seven catches and functioned as the cleanest secondary Tampa Bay attachment in a trailing script.\n\nKhalil Shakir was the hinge inside the flex build. At 9.3 percent flex ownership and 3,200 salary, he opened the salary map while still producing a meaningful yardage outcome. That choice let the lineup keep Allen captain, Baker Mayfield, Rachaad White, Gabe Davis, and Dalton Kincaid without falling into a more duplicated midrange alternative.\n\nThis was a disciplined 4 to 2 game read. Buffalo offensive volume was concentrated enough to support quarterback captain with three pass catchers. Tampa Bay still produced enough response volume for Baker Mayfield and Rachaad White to remain optimal bring-backs. The lineup did not need exotic tension. It needed the correct concentration map.",
+    "uniquenessNotes": "The final grade lands at B minus. Josh Allen captain was productive, though not especially rare. Salary left was only 100. There was only one flex player under 20 percent ownership. Those traits pull the lineup down immediately under a stricter grading lens.\n\nThe separation point was Khalil Shakir. Without him, this build starts to look far more common. Gabe Davis and Dalton Kincaid were both active Buffalo pass-game paths the field could reach easily, especially once Allen captain was selected. Baker Mayfield and Rachaad White were also natural Tampa Bay run-backs in a competitive script. So while the lineup was sharp, the overall shell was still duplication-prone.\n\nWhat keeps it above the lower tiers is internal precision. The roster did not waste salary on a dead sixth slot, and it did not spread exposure across too many Tampa Bay players. It captured Buffalo through Allen plus three receivers, then took Tampa Bay's two cleanest volume outlets and stopped there.\n\nThe broader takeaway is simple. A popular captain can still win when the stack underneath him lands on the precise secondary pieces the field underused. But with only one sub-20 percent flex piece and almost no salary left, this type of build should stay in the B range unless duplication is unusually low."
+  ,
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Josh Allen",
+          "position": "QB",
+          "team": "BUF"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Quarterback captain with three Buffalo pass catchers and two Tampa Bay bring-backs built around quarterback and receiving back volume",
+        "includesQBs": true
+      },
+      "primaryLever": "Khalil Shakir supplied the main leverage point through a 9.3 percent flex outcome inside an otherwise accessible Josh Allen captain shell",
+      "secondaryLever": "The lineup paired Allen captain with Gabe Davis and Dalton Kincaid instead of paying up for a more duplicated Buffalo pass-game combination"
+    }
+  }
+}

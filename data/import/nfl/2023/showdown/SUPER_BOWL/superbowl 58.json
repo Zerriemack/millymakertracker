@@ -1,0 +1,146 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 22,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2024-02-11",
+  "slateName": "Super Bowl 58 Showdown",
+  "slateTag": "super_bowl",
+  "slateGroup": "A+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Super Bowl 58 Contest",
+    "siteContestId": "NFL_2023_WK22_SUPER_BOWL_SHOWDOWN_2024-02-11_sf_kc",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 100000000,
+    "totalOwnershipBp": 17530
+  },
+  "winner": {
+    "username": "TKBoston1017",
+    "points": 140.92,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 48700,
+    "totalPoints": 140.92,
+    "totalOwnershipBp": 17530,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 15900,
+        "points": 44.88,
+        "ownershipPercent": 10.1,
+        "passTd": 2,
+        "passYds": 333,
+        "rushYds": 66,
+        "interceptions": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 12000,
+        "points": 29.0,
+        "ownershipPercent": 72.7,
+        "rec": 8,
+        "recYds": 80,
+        "recTd": 1,
+        "rushYds": 80,
+        "fumblesLost": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 10200,
+        "points": 18.3,
+        "ownershipPercent": 56.2,
+        "rec": 9,
+        "recYds": 93,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Harrison Butker",
+        "position": "K",
+        "team": "KC",
+        "salary": 5000,
+        "points": 15.0,
+        "ownershipPercent": 24.1,
+        "xpm": 1,
+        "fg0to39": 3,
+        "fg50plus": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jauan Jennings",
+        "position": "WR",
+        "team": "SF",
+        "salary": 4000,
+        "points": 19.04,
+        "ownershipPercent": 9.3,
+        "passTd": 1,
+        "passYds": 21,
+        "rec": 4,
+        "recYds": 42,
+        "recTd": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mecole Hardman Jr.",
+        "position": "WR",
+        "team": "KC",
+        "salary": 1600,
+        "points": 14.7,
+        "ownershipPercent": 2.9,
+        "rec": 3,
+        "recYds": 57,
+        "recTd": 1,
+        "gameAwayTeam": "SF",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "SF"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup is an A plus because it won the solo Milly on the biggest showdown stage of the season. On a Super Bowl slate with enormous entry volume, a first place solo takedown is the cleanest signal possible that the build achieved both ceiling capture and true separation. Patrick Mahomes captain gave the roster the correct championship game engine, but the lineup did not stop at the obvious core. It paired Mahomes with Travis Kelce and Harrison Butker, then found the decisive separation through Jauan Jennings and Mecole Hardman Jr., two low owned touchdown branches the field did not carry often enough.\n\nThe lineup captured the full shape of the game. Mahomes handled the raw quarterback ceiling through passing volume, rushing production, and the 300 yard bonus. Kelce remained attached to Kansas City’s highest value target concentration. Butker collected the stalled drive scoring which often decides championship slates. Christian McCaffrey stayed in because his role was too central to ignore even at major ownership.\n\nThe real edge came from understanding where secondary touchdown variance would land. Jennings produced through both a passing touchdown and a receiving touchdown. Hardman closed the game with the winning touchdown at almost no ownership. Those were not cosmetic pieces. They were the elements that turned a strong Super Bowl shell into a solo million dollar winner.\n\nThe lineup also left 1,300 in salary, which further reduced overlap without weakening the core. Every important layer was present. Correct captain. Correct primary star exposure. Correct low owned touchdown branches. Correct salary discipline. On this slate, that combination deserves the top grade.",
+    "uniquenessNotes": "The defining point is the solo result itself. In showdown, duplication is part of the outcome, not an afterthought. This lineup did not merely win. It won alone on the largest standalone showdown slate of the season. That pushes the structural grade to A plus.\n\nMahomes captain at 10.1 percent was already strong leverage for a quarterback with both passing and rushing ceiling. Jennings at 9.3 percent and Hardman at 2.9 percent gave the lineup two separate low owned touchdown channels from opposite sides of the game. That is the kind of distribution that creates true first place uniqueness rather than fragile thin variance.\n\nButker also deserves more credit than a surface read gives him. In a Super Bowl, long field goals and stalled drives can sit right beside a winning quarterback captain build. He gave the roster a third scoring channel from Kansas City beyond Kelce volume and Hardman touchdown capture.\n\nThe final grade is A plus. Solo Milly takedown, Super Bowl scale, low owned captain relative to ceiling, two low owned touchdown branches, salary left, and a structure that still held the game’s primary stars. There is no reason to grade this lower.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Patrick Mahomes",
+          "position": "QB",
+          "team": "KC"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Super Bowl 58 solo takedown with quarterback captain, premium bring back, primary tight end, kicker, and two low salary touchdown scorers from opposite teams",
+        "includesQBs": true
+      },
+      "primaryLever": "Patrick Mahomes captain at 10.1 percent created the slate’s main leverage point through a passing and rushing Super Bowl ceiling outcome",
+      "secondaryLever": "Jauan Jennings and Mecole Hardman Jr. gave the lineup two low owned touchdown branches, and the solo Milly outcome confirms the build achieved true separation"
+    }
+  }
+}

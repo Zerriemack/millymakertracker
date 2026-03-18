@@ -1,0 +1,148 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 7,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-10-22",
+  "slateName": "NFL Week 7 Sunday Night Showdown",
+  "slateTag": "snf",
+  "slateGroup": "A-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Sunday Night Contest",
+    "siteContestId": "NFL_2023_WK07_SNF_SHOWDOWN_2023-10-22_mia_phi",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 20000
+  },
+  "winner": {
+    "username": "giantsquid",
+    "points": 137.61,
+    "maxEntries": 140
+  },
+  "lineup": {
+    "salaryUsed": 48000,
+    "totalPoints": 137.61,
+    "totalOwnershipBp": 20000,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 15000,
+        "points": 49.05,
+        "ownershipPercent": 11.4,
+        "rec": 10,
+        "recYds": 137,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tyreek Hill",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 12000,
+        "points": 25.8,
+        "ownershipPercent": 68.8,
+        "rec": 11,
+        "recYds": 88,
+        "recTd": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jalen Hurts",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 11400,
+        "points": 25.26,
+        "ownershipPercent": 74.6,
+        "passTd": 2,
+        "rushTd": 1,
+        "passYds": 279,
+        "rushYds": 21,
+        "interceptions": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dallas Goedert",
+        "position": "TE",
+        "team": "PHI",
+        "salary": 6200,
+        "points": 18.7,
+        "ownershipPercent": 29.2,
+        "rec": 5,
+        "recYds": 77,
+        "recTd": 1,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "MIA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dolphins",
+        "position": "DST",
+        "team": "MIA",
+        "salary": 3200,
+        "points": 12.0,
+        "ownershipPercent": 8.5,
+        "sacks": 3,
+        "interceptionsDst": 1,
+        "defFumbleRecoveries": 1,
+        "defTd": 1,
+        "pointsAllowed": 34,
+        "qbFaced": "Jalen Hurts",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cedrick Wilson Jr.",
+        "position": "WR",
+        "team": "MIA",
+        "salary": 200,
+        "points": 6.8,
+        "ownershipPercent": 7.5,
+        "rec": 2,
+        "recYds": 48,
+        "gameAwayTeam": "MIA",
+        "gameHomeTeam": "PHI",
+        "opponentTeam": "PHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it captured the game’s scoring concentration through the correct Philadelphia ceiling piece while still preserving Miami’s most explosive paths back across the roster. A.J. Brown captain was the hinge. At 11.4 percent captain ownership, the build gained access to a slate breaking wide receiver outcome without paying captain level ownership. Brown delivered the type of score which can carry a tournament on his own, and he did it in a way the field did not prioritize enough in the multiplier slot.\n\nThe next layer was how the lineup handled correlation without becoming formulaic. Jalen Hurts stayed in flex because Brown’s ceiling still ran through quarterback production, yet the build did not stop there. Dallas Goedert gave Philadelphia a second concentrated receiving channel, which mattered because Hurts threw for two touchdowns and Philadelphia’s passing production stayed narrow enough for Brown and Goedert to coexist cleanly.\n\nFrom Miami’s side, Tyreek Hill was a necessary inclusion because his role was too large for a game of this quality to end without him threatening the winning lineup. Cedrick Wilson Jr. served a very different purpose. He was a near minimum salary release point at 7.5 percent flex ownership who still had access to live offensive volume. His 48 yards were enough. He did not need a touchdown because his salary unlocked a stronger overall structure.\n\nThe sharpest tension point was Dolphins defense against Jalen Hurts. Philadelphia still scored 31 points, which makes the click uncomfortable on surface view, yet Miami reached fantasy value through sacks, a takeaway, a fumble recovery, and a defensive touchdown. That combination gave the lineup access to event scoring separate from offensive efficiency. In showdown, those are distinct paths, and this roster captured both.\n\nLeaving 2,000 in salary mattered. The lineup already had leverage through Brown captain, Dolphins defense, and Wilson. The unused salary reduced collision risk even further while preserving every major scoring lane the game actually produced.",
+    "uniquenessNotes": "The defining decision was A.J. Brown captain paired with Dolphins defense. Brown captain alone was strong. Dolphins defense alone was uncomfortable but defensible in a high play volume environment. Putting both together with Hurts created a roster construction many players would reject even though the game could support it.\n\nThe lineup also understood where Miami exposure should concentrate. Tyreek Hill was the premium bring back. Cedrick Wilson Jr. was the salary release point. There was no need to spread exposure across lower value Miami pieces once those two roles were filled. One captured elite volume. The other changed roster geometry.\n\nThis build handled salary with purpose. Brown captain and Hurts flex still left room for Tyreek Hill because Cedrick Wilson Jr. cost 200 and because Dolphins defense provided leverage at a modest salary instead of forcing a midrange filler play with less ceiling impact. Every slot had a specific job.\n\nThe final grade lands at A minus. The lineup had a low owned captain, three sub 20 percent roster spots, 2,000 left in salary, and genuine structural tension through Hurts paired against Dolphins defense. It stops short of the very top tier because Hurts and Tyreek Hill still carried heavy ownership, so part of the construction remained accessible to the field even before duplication is considered.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "A.J. Brown",
+          "position": "WR",
+          "team": "PHI"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Low owned elite wide receiver captain with his quarterback and secondary teammate, run back by Miami’s top receiver, opposing defense, and a near minimum salary ancillary receiver",
+        "includesQBs": true
+      },
+      "primaryLever": "A.J. Brown captain at 11.4 percent created the lineup’s main leverage point through a true slate ceiling outcome",
+      "secondaryLever": "Dolphins defense with Jalen Hurts and Cedrick Wilson Jr. at 200 salary gave the build separate uniqueness channels without sacrificing access to Miami production"
+    }
+  }
+}

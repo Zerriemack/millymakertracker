@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 3,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-09-21",
+  "slateName": "NFL Week 3 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK03_TNF_SHOWDOWN_2023-09-21_nyg_sf",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 1037000,
+    "totalOwnershipBp": 23130
+  },
+  "winner": {
+    "username": "malibu67",
+    "points": 125.55,
+    "maxEntries": 13
+  },
+  "lineup": {
+    "salaryUsed": 49600,
+    "totalPoints": 125.55,
+    "totalOwnershipBp": 23130,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Deebo Samuel",
+        "position": "WR",
+        "team": "SF",
+        "salary": 13200,
+        "points": 42.15,
+        "ownershipPercent": 16.4,
+        "rec": 6,
+        "recYds": 129,
+        "recTd": 1,
+        "rushYds": 2,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Christian McCaffrey",
+        "position": "RB",
+        "team": "SF",
+        "salary": 13200,
+        "points": 22.9,
+        "ownershipPercent": 83.3,
+        "rushTd": 1,
+        "rushYds": 85,
+        "rec": 5,
+        "recYds": 34,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brock Purdy",
+        "position": "QB",
+        "team": "SF",
+        "salary": 9400,
+        "points": 23.3,
+        "ownershipPercent": 57.8,
+        "passTd": 2,
+        "passYds": 310,
+        "rushYds": -1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Matt Breida",
+        "position": "RB",
+        "team": "NYG",
+        "salary": 7000,
+        "points": 10.8,
+        "ownershipPercent": 18.4,
+        "rushTd": 1,
+        "rushYds": 17,
+        "rec": 3,
+        "recYds": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "SF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "George Kittle",
+        "position": "TE",
+        "team": "SF",
+        "salary": 6600,
+        "points": 16.0,
+        "ownershipPercent": 46.4,
+        "rec": 7,
+        "recYds": 90,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "NYG"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Ronnie Bell",
+        "position": "WR",
+        "team": "SF",
+        "salary": 200,
+        "points": 10.4,
+        "ownershipPercent": 9.0,
+        "rec": 2,
+        "recYds": 24,
+        "recTd": 1,
+        "gameAwayTeam": "NYG",
+        "gameHomeTeam": "SF",
+        "opponentTeam": "NYG"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it leaned into San Francisco dominance without turning the build into a fully duplicated Christian McCaffrey captain shell. Deebo Samuel at captain was the key decision. At 16.4 percent captain ownership, he gave the lineup exposure to an elite San Francisco ceiling outcome through a route the field used far less often than the most obvious running back captain construction.\n\nThe rest of the build stayed tightly aligned with how the game actually played. Brock Purdy cleared the 300 yard bonus and distributed enough volume for both Deebo Samuel and George Kittle to matter, while Christian McCaffrey still remained too central to leave off because San Francisco scoring continued to flow through him near the goal line and in the passing game. Ronnie Bell then became the salary release and low owned touchdown capture that made the overall structure first place viable rather than merely solid.\n\nThe most interesting choice was the single Giants bring back. Matt Breida was not included because the lineup needed a competitive game in the traditional sense. He was included because the Giants backfield was condensed enough for one touchdown and modest reception volume to be useful at his ownership, even in a game San Francisco controlled. That is a sharper read than forcing a Giants pass catcher into a script that never fully materialized.\n\nLeaving 400 in salary did not create the lineup, but it helped prevent the roster from landing on a more common Deebo captain combination. The lineup won by combining a strong but not overwhelming captain leverage point with one true low owned touchdown piece and a disciplined read on San Francisco point concentration.",
+    "uniquenessNotes": "The final grade lands at B. Deebo Samuel captain provided meaningful leverage, and the flex build added two players under 20 percent ownership in Matt Breida and Ronnie Bell. Ronnie Bell in particular changed the lineup’s duplication profile because he gave the roster access to a near minimum salary touchdown without forcing a bad overall construction.\n\nWhat keeps this from climbing higher is the amount of concentrated San Francisco chalk packed into the middle of the build. Christian McCaffrey, Brock Purdy, and George Kittle were all highly active routes the field had easy access to. Once those three are combined with a popular favorite onslaught script, the lineup still carries a dense ownership shape despite the low owned tail pieces.\n\nThe structural edge came from choosing the correct version of the blowout. Many players would read a lopsided San Francisco win and immediately default to McCaffrey captain with scattered salary relief. This roster instead treated Deebo Samuel as the ceiling lever, kept Purdy for volume capture, held McCaffrey for touchdown access, and used Ronnie Bell to capture an overlooked receiving outcome within the same offense.\n\nThe single Giants bring back also deserves attention. In a game where New York struggled to sustain offense, the build did not chase broad opposition exposure. It selected the most practical one man return path and then stopped. That restraint is part of what separates a coherent 5 to 1 onslaught from a lineup that loses focus.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Deebo Samuel",
+          "position": "WR",
+          "team": "SF"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Wide receiver captain in a heavy favorite onslaught with the starting quarterback, the lead running back, one primary tight end, one near minimum touchdown receiver, and a single opposing running back bring back",
+        "includesQBs": true
+      },
+      "primaryLever": "Deebo Samuel captain created the lineup’s main leverage point through a 16.4 percent captain outcome on the slate’s most explosive San Francisco receiving performance",
+      "secondaryLever": "Ronnie Bell at 9.0 percent flex ownership supplied the low owned touchdown path that separated this build from the field’s more standard San Francisco onslaught constructions"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 14,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-12-10",
+  "slateName": "NFL Week 14 Sunday Night Showdown",
+  "slateTag": "snf",
+  "slateGroup": "A-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Sunday Night Contest",
+    "siteContestId": "NFL_2023_WK14_SNF_SHOWDOWN_2023-12-10_phi_dal",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 9800000,
+    "totalOwnershipBp": 23070
+  },
+  "winner": {
+    "username": "bgott1",
+    "points": 114.74,
+    "maxEntries": 127
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 114.74,
+    "totalOwnershipBp": 23070,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Michael Gallup",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 4800,
+        "points": 20.7,
+        "ownershipPercent": 0.8,
+        "rec": 3,
+        "recYds": 48,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 11200,
+        "points": 19.1,
+        "ownershipPercent": 68.7,
+        "rec": 6,
+        "recYds": 71,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 10600,
+        "points": 18.94,
+        "ownershipPercent": 74.6,
+        "passTd": 2,
+        "passYds": 271,
+        "rushYds": 11,
+        "fumblesLost": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "team": "PHI",
+        "salary": 10200,
+        "points": 17.4,
+        "ownershipPercent": 35.7,
+        "rec": 9,
+        "recYds": 94,
+        "fumblesLost": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tony Pollard",
+        "position": "RB",
+        "team": "DAL",
+        "salary": 8000,
+        "points": 16.6,
+        "ownershipPercent": 30.3,
+        "rec": 7,
+        "recYds": 37,
+        "rushYds": 59,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brandon Aubrey",
+        "position": "K",
+        "team": "DAL",
+        "salary": 5000,
+        "points": 22.0,
+        "ownershipPercent": 20.6,
+        "xpm": 3,
+        "fg40to49": 1,
+        "fg50plus": 3,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "PHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by taking a Dallas passing onslaught stance, then finding its leverage through the least obvious touchdown carrier in the same offense. Michael Gallup captain at 0.8 percent was the hinge. Dallas scored 33 points, Dak Prescott threw two touchdowns, and the field concentrated heavily on CeeDee Lamb, Dak Prescott, and the more obvious premium branches. This build accepted the same offensive environment, but redirected captain salary and captain ownership into a secondary receiver whose path to relevance depended on one touchdown and enough ancillary volume. On this slate, that was enough.\n\nThe rest of the roster was built with discipline. CeeDee Lamb and Dak Prescott stayed intact because fading them would have created too much structural damage in a Dallas ceiling script. Tony Pollard added another Dallas scoring lane through rushing and receiving volume, while Brandon Aubrey harvested the stalled drive residue. Aubrey mattered more than surface view suggests because Dallas moved the ball consistently without forcing every drive into another touchdown. Three field goals from 50 plus and one from 40 to 49 created a second high value Dallas scoring channel independent of Gallup.\n\nThe lone Philadelphia bring back was A.J. Brown. That was an efficient choice. Brown absorbed enough target volume to remain viable even in a losing script, and his inclusion avoided overcommitting salary to an Eagles offense that never truly matched Dallas on the scoreboard. The lineup did not need Jalen Hurts. It needed one concentrated Philadelphia producer and a Dallas offense broad enough to support multiple fantasy outcomes.\n\nThe central diagnostic point is straightforward. The build was not trying to invent a strange game script. It was trying to capture a very popular Dallas success story through an unpopular touchdown distributor. That is a different type of leverage than a full contrarian construction. It kept the right environment, kept the right quarterback, kept the right alpha receiver, and then moved captain exposure onto the branch the field largely ignored.",
+    "uniquenessNotes": "Gallup captain was the defining decision. At 0.8 percent captain ownership, it created immediate separation without requiring a low total ownership build across every remaining slot. This is an important distinction because many winning showdown lineups do not need six unpopular clicks. They need one or two ownership breaks attached to the correct scoring concentration.\n\nThe lineup also handled Dallas saturation well. Gallup captain, Lamb, Prescott, Pollard, and Aubrey gave five roster spots to one offense, which can become fragile when scoring narrows too tightly. Here, Dallas production was distributed across passing touchdowns, receiving volume, running back usage, and long field goals. That scoring breadth is why the onslaught held together.\n\nA.J. Brown was the right Philadelphia bring back because he allowed the roster to acknowledge Eagle volume without paying for a quarterback whose final line did not separate enough. This kept the build centered on Dallas rather than drifting into a more duplicated stars and scrub style game stack.\n\nThe final grade lands at A minus. The lineup had extreme captain leverage, a coherent Dallas onslaught, and enough internal logic to support five players from one offense without forcing dead salary. It stops short of the top tier because salary left was minor, total ownership remained heavy through Lamb and Prescott, and the uniqueness story was driven overwhelmingly by one massive captain decision rather than several separate low owned branches.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Michael Gallup",
+          "position": "WR",
+          "team": "DAL"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Extremely low owned secondary wide receiver captain inside a Dallas offensive onslaught with quarterback, alpha receiver, running back, kicker, and one opposing bring back",
+        "includesQBs": true
+      },
+      "primaryLever": "Michael Gallup captain at 0.8 percent created the slate's main leverage point through a low probability but coherent Dallas touchdown branch",
+      "secondaryLever": "The build paired Gallup with Lamb, Prescott, Pollard, and Aubrey to capture Dallas scoring breadth while using A.J. Brown as the only Philadelphia volume return"
+    }
+  }
+}

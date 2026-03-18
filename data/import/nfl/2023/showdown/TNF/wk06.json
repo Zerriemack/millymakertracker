@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 6,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-10-12",
+  "slateName": "NFL Week 6 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK06_TNF_SHOWDOWN_2023-10-12_den_kc",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 6861112,
+    "totalOwnershipBp": 21330
+  },
+  "winner": {
+    "username": "CodyTheGreat",
+    "points": 108.04,
+    "maxEntries": 106
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 108.04,
+    "totalOwnershipBp": 21330,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Courtland Sutton",
+        "position": "WR",
+        "team": "DEN",
+        "salary": 11700,
+        "points": 21.9,
+        "ownershipPercent": 3.1,
+        "rec": 4,
+        "recYds": 46,
+        "recTd": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 12800,
+        "points": 21.34,
+        "ownershipPercent": 85.4,
+        "passTd": 1,
+        "passYds": 306,
+        "rushYds": 31,
+        "interceptions": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Travis Kelce",
+        "position": "TE",
+        "team": "KC",
+        "salary": 11000,
+        "points": 24.4,
+        "ownershipPercent": 49.3,
+        "rec": 9,
+        "recYds": 124,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chiefs",
+        "position": "DST",
+        "team": "KC",
+        "salary": 5600,
+        "points": 14.0,
+        "ownershipPercent": 27.2,
+        "sacks": 4,
+        "interceptionsDst": 2,
+        "defFumbleRecoveries": 1,
+        "ptsAllowed": 13,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Harrison Butker",
+        "position": "K",
+        "team": "KC",
+        "salary": 4800,
+        "points": 17.0,
+        "ownershipPercent": 25.5,
+        "xpm": 1,
+        "fg0to39": 2,
+        "fg50plus": 2,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "DEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kadarius Toney",
+        "position": "WR",
+        "team": "KC",
+        "salary": 4000,
+        "points": 9.4,
+        "ownershipPercent": 22.8,
+        "rec": 3,
+        "recYds": 9,
+        "recTd": 1,
+        "rushYds": -5,
+        "gameAwayTeam": "DEN",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "DEN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it isolated the only Denver outcome that mattered and then concentrated nearly the entire rest of the roster into Kansas City control. Courtland Sutton captain was the defining choice. At 3.1 percent captain ownership, the lineup captured Denver's lone touchdown through the one Bronco most capable of turning limited team success into a viable multiplier outcome.\n\nThe Kansas City side was built around control rather than explosion. Patrick Mahomes and Travis Kelce handled yardage concentration and the highest probability passing production. Chiefs defense and Harrison Butker fit the same game script from different angles. The defense benefited from Denver mistakes and stalled drives. Butker benefited from Kansas City moving the ball but not fully converting every possession into touchdowns. Kadarius Toney then gave the lineup one thinner touchdown branch inside an otherwise concentrated Chiefs shell.\n\nWhat made this build functional was not a broad set of independent contrarian bets. It was one strong captain stance attached to a very coherent favorite-control roster. Sutton absorbed the only meaningful Denver score. The other five spots harvested the most stable Kansas City scoring channels in a game where the Chiefs won without needing a full offensive eruption.\n\nThis was a sharp read on a low-scoring home favorite win, but it was still a relatively clean construction after the captain slot. The lineup won because the captain was correct and the remaining pieces matched the way Kansas City accumulated fantasy value in a controlled game.",
+    "uniquenessNotes": "The final grade lands at B minus. Courtland Sutton captain at 3.1 percent was excellent leverage, but the rest of the lineup was far less rare than the final result might imply. There was only one roster spot under 20 percent ownership. Salary left was only 100. The shell of Patrick Mahomes, Travis Kelce, Chiefs defense, and Harrison Butker in a Chiefs home win was very accessible to the field.\n\nThat is the key distinction. This lineup had one major separator, not a full six-man uniqueness profile. Once Sutton captain is set aside, the structure becomes fairly chalky and very duplication-prone. Kadarius Toney was helpful as a secondary touchdown branch, but even he sat above 20 percent flex ownership. This is not the profile of an elite uniqueness lineup across the full build.\n\nThe construction still deserves credit for coherence. It did not waste salary or force dead Denver pieces into the lineup. It correctly treated Sutton as the only Denver piece worth serious exposure, then funneled the rest of the salary into the most likely Chiefs control outcomes. That gave the lineup a clean and logical shape.\n\nEven so, stricter grading matters here. One sub-20 percent player, almost no salary left, and a lineup that was duplicated heavily should not live in the A range. The captain decision carried the build. The overall roster composition was strong enough to win, but not rare enough to earn an elite structural grade.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Courtland Sutton",
+          "position": "WR",
+          "team": "DEN"
+        },
+        "teamSplit": "5-1",
+        "buildType": "Low-owned opposing wide receiver captain with favorite quarterback, primary pass catcher, defense, kicker, and one secondary touchdown receiver from the favored team",
+        "includesQBs": true
+      },
+      "primaryLever": "Courtland Sutton captain created the lineup’s main leverage point through a 3.1 percent captain outcome tied to Denver’s only meaningful scoring event",
+      "secondaryLever": "The lineup concentrated the remaining five spots into Kansas City control through Patrick Mahomes, Travis Kelce, Chiefs defense, Harrison Butker, and Kadarius Toney"
+    }
+  }
+}

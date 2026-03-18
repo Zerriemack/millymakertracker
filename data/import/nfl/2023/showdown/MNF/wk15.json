@@ -1,0 +1,141 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 15,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-12-18",
+  "slateName": "NFL Week 15 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2023_WK15_MNF_SHOWDOWN_2023-12-18_phi_sea",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 22500000,
+    "totalOwnershipBp": 15680
+  },
+  "winner": {
+    "username": "hishboo",
+    "points": 98.7,
+    "maxEntries": 148
+  },
+  "lineup": {
+    "salaryUsed": 49500,
+    "totalPoints": 98.7,
+    "totalOwnershipBp": 15680,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Jalen Hurts",
+        "position": "QB",
+        "team": "PHI",
+        "salary": 17100,
+        "points": 35.88,
+        "ownershipPercent": 16.6,
+        "passYds": 143,
+        "rushYds": 82,
+        "rushTd": 2,
+        "interceptions": 2,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "SEA"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DK Metcalf",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 9600,
+        "points": 12.8,
+        "ownershipPercent": 51.5,
+        "rec": 5,
+        "recYds": 78,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Drew Lock",
+        "position": "QB",
+        "team": "SEA",
+        "salary": 9200,
+        "points": 12.12,
+        "ownershipPercent": 32.3,
+        "passTd": 1,
+        "passYds": 208,
+        "rushYds": -2,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kenneth Walker III",
+        "position": "RB",
+        "team": "SEA",
+        "salary": 7800,
+        "points": 20.2,
+        "ownershipPercent": 22.1,
+        "rushTd": 1,
+        "rushYds": 86,
+        "rec": 3,
+        "recYds": 26,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jaxon Smith-Njigba",
+        "position": "WR",
+        "team": "SEA",
+        "salary": 5600,
+        "points": 14.8,
+        "ownershipPercent": 31.4,
+        "rec": 4,
+        "recYds": 48,
+        "recTd": 1,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "PHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Will Dissly",
+        "position": "TE",
+        "team": "SEA",
+        "salary": 200,
+        "points": 2.9,
+        "ownershipPercent": 2.9,
+        "rec": 2,
+        "recYds": 9,
+        "gameAwayTeam": "PHI",
+        "gameHomeTeam": "SEA",
+        "opponentTeam": "PHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by reading the game as a Jalen Hurts captain slate without forcing a clean Eagles onslaught build behind him. Hurts accounted for the highest scoring slot on the roster through rushing production, but the rest of the lineup leaned into Seattle’s side of the distribution instead of paying up for the more obvious Philadelphia attachments.\n\nThat is the key tension in the build. Hurts captain usually pulls the field toward double Philadelphia pass catchers, a tighter Philadelphia game script, or a more balanced 3 to 3 roster. This roster did not do that. It accepted Hurts as the multiplier because his rushing equity could separate on its own, then treated the flex spots as a bet on Seattle volume and concentrated secondary scoring.\n\nDrew Lock, DK Metcalf, Kenneth Walker III, and Jaxon Smith-Njigba gave the lineup access to nearly every meaningful Seattle scoring path. Lock did not post a slate-breaking score, but he was part of the final pass touchdown, kept the game live deep into the fourth quarter, and served as the connector tying together the Seattle pass catchers. Walker handled the most efficient rushing production and added receiving points. Smith-Njigba brought touchdown access at a more manageable salary. Metcalf added stable volume.\n\nWill Dissly is where the lineup turns from solid to first place. At 200 salary and 2.9 percent flex ownership, he created a structural release valve the field barely used. He did not need a spike game. He only needed to avoid a zero while allowing the rest of the build to hold together in a way the field was not building often enough.\n\nThe lineup used 49,500 in salary, so it was not driven by dramatic money left on the table. Its edge came from how the salary was arranged. The construction captured the captain ceiling, kept the opposing quarterback, covered Seattle’s main touchdown channels, and inserted a near-ignored low-salary piece to break duplication pressure.",
+    "uniquenessNotes": "The strongest decision was separating Hurts captain from the standard Philadelphia stacking logic. Many lineups would accept Hurts captain, but far fewer would follow it with four Seattle flex pieces and no Eagles pass catcher. That matters because it created a lineup that still made football sense while avoiding the most duplicated captain branches.\n\nDissly was the second separator. He was not a raw points play in isolation. He was a construction play. His presence unlocked a lineup shape the field was not comfortable using, especially in combination with Hurts captain and four total Seahawks.\n\nThis build also stayed away from an all-or-nothing version of Seattle. It did not overstack fringe options. It held the quarterback, the lead running back, the top wide receiver, the rookie wide receiver with touchdown access, and then used one thin salary release point. That is a far more coherent way to attack an underdog comeback path than scattering exposure across multiple low-probability pieces.\n\nThe final grade lands at B. The lineup had meaningful captain leverage, one true low-owned unlock, and strong structural tension through a 4 to 2 Seattle-heavy flex build behind an Eagles quarterback captain. It does not reach A territory because salary left was modest, the total ownership shape was still very playable for the field, and the uniqueness story relies heavily on one thin piece rather than multiple independent leverage points.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Jalen Hurts",
+          "position": "QB",
+          "team": "PHI"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Quarterback captain with four opposing flex pieces, including the opposing quarterback and a near-minimum salary tight end",
+        "includesQBs": true
+      },
+      "primaryLever": "Jalen Hurts captain at 16.6 percent created the main leverage point because the field had to pair that stance with a non-standard flex construction to gain real separation",
+      "secondaryLever": "Will Dissly at 2.9 percent flex ownership gave the lineup its cleanest uniqueness release while the Seattle flex core captured the comeback script"
+    }
+  }
+}

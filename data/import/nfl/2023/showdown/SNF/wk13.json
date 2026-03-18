@@ -1,0 +1,141 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 13,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-12-03",
+  "slateName": "NFL Week 13 Sunday Night Showdown",
+  "slateTag": "snf",
+  "slateGroup": "B+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Sunday Night Contest",
+    "siteContestId": "NFL_2023_WK13_SNF_SHOWDOWN_2023-12-03_kc_gb",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 12000000,
+    "totalOwnershipBp": 18550
+  },
+  "winner": {
+    "username": "jaydude1b",
+    "points": 125.98,
+    "maxEntries": 146
+  },
+  "lineup": {
+    "salaryUsed": 49200,
+    "totalPoints": 125.98,
+    "totalOwnershipBp": 18550,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Christian Watson",
+        "position": "WR",
+        "team": "GB",
+        "salary": 10200,
+        "points": 41.4,
+        "ownershipPercent": 6.8,
+        "rec": 7,
+        "recYds": 71,
+        "recTd": 2,
+        "rushYds": 15,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Isiah Pacheco",
+        "position": "RB",
+        "team": "KC",
+        "salary": 10200,
+        "points": 24.3,
+        "ownershipPercent": 59.0,
+        "rec": 3,
+        "recYds": 13,
+        "rushYds": 110,
+        "rushTd": 1,
+        "bonus100RushYds": 1,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jordan Love",
+        "position": "QB",
+        "team": "GB",
+        "salary": 9600,
+        "points": 23.68,
+        "ownershipPercent": 52.5,
+        "passTd": 3,
+        "passYds": 267,
+        "rushYds": 10,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Rashee Rice",
+        "position": "WR",
+        "team": "KC",
+        "salary": 8400,
+        "points": 14.4,
+        "ownershipPercent": 31.7,
+        "rec": 8,
+        "recYds": 64,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Romeo Doubs",
+        "position": "WR",
+        "team": "GB",
+        "salary": 6400,
+        "points": 11.2,
+        "ownershipPercent": 22.3,
+        "rec": 4,
+        "recYds": 72,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Anders Carlson",
+        "position": "K",
+        "team": "GB",
+        "salary": 4400,
+        "points": 11.0,
+        "ownershipPercent": 13.2,
+        "xpm": 3,
+        "fg40to49": 2,
+        "gameAwayTeam": "KC",
+        "gameHomeTeam": "GB",
+        "opponentTeam": "KC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by capturing Green Bay's passing concentration through the correct captain while still preserving enough Kansas City volume to keep the game competitive inside the build. Christian Watson captain was the separator. At 6.8 percent captain ownership, the lineup gained access to the slate's most explosive receiving outcome through a player the field did not prioritize enough in the multiplier slot. His score came from two touchdowns plus added rushing yards, which widened the path beyond a standard deep ball only outcome.\n\nThe rest of the lineup stayed disciplined around that read. Jordan Love was the necessary Green Bay attachment because Watson's ceiling still ran through quarterback production. Romeo Doubs and Anders Carlson then tightened the Green Bay scoring tree without forcing an overbuilt onslaught. Doubs kept the passing concentration narrow enough for multiple Packers receivers to matter together, while Carlson converted the drives which stalled short of another touchdown.\n\nOn the Kansas City side, the lineup took a measured approach rather than a full game stack. Isiah Pacheco was the correct bring back because he handled the most bankable Chiefs volume and still reached the rushing bonus with a touchdown. Rashee Rice served as the passing access point without paying for a more duplicated Patrick Mahomes branch. That mattered because Kansas City did produce usable offense, but it did not flow through enough concentrated quarterback scoring to require Mahomes on the winning build.\n\nLeaving 800 in salary was not the central story, but it still helped. The more important edge came from how the lineup distributed salary. It used a low owned captain, avoided the most obvious Chiefs quarterback pairing, and captured Green Bay scoring across separate channels without drifting into thin filler. In a game where Green Bay's offense outperformed expectation, this construction stayed aligned with how the production was actually distributed.",
+    "uniquenessNotes": "The defining choice was Christian Watson captain without Patrick Mahomes. Many lineups were willing to captain a Packers receiver if they were taking a Green Bay stance. Far fewer were willing to do it while betting against the need for Mahomes in flex. That is where the lineup gained its structural edge.\n\nThe second important choice was using Pacheco and Rice as the only Chiefs exposure. That gave the lineup access to both Kansas City rushing volume and target concentration without paying for a quarterback whose fantasy line did not separate enough. It was a selective game stack rather than a blanket game stack.\n\nAnders Carlson did more than save salary. He gave the lineup a second sub 20 percent flex piece tied directly to Green Bay offensive success. When a lower owned kicker lands inside a winning captain story instead of against it, the roster becomes harder to duplicate because the field tends to spend those slots differently around a premium game environment.\n\nThe final grade lands at B plus. The lineup had a low owned captain, one additional flex piece under 20 percent, some salary left, and a strong decision to fade the most natural Patrick Mahomes branch. It stops short of A territory because the total ownership shape was still fairly playable, the salary left was helpful but not extreme, and much of the leverage ran through one primary captain call rather than several separate uncomfortable combinations.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Christian Watson",
+          "position": "WR",
+          "team": "GB"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low owned Green Bay wide receiver captain with his quarterback, secondary Packers pass catcher, Packers kicker, and two selective Chiefs bring backs without Patrick Mahomes",
+        "includesQBs": true
+      },
+      "primaryLever": "Christian Watson captain at 6.8 percent created the lineup's main leverage point through a two touchdown Green Bay ceiling outcome",
+      "secondaryLever": "The build used Isiah Pacheco and Rashee Rice as the only Chiefs exposure, which kept Kansas City access while fading the more duplicated Mahomes path"
+    }
+  }
+}

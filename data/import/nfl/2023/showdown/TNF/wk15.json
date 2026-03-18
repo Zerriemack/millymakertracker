@@ -1,0 +1,148 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 15,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-12-14",
+  "slateName": "NFL Week 15 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "F",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK15_TNF_SHOWDOWN_2023-12-14_lac_lv",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 741699,
+    "totalOwnershipBp": 23210
+  },
+  "winner": {
+    "username": "DraftCheat",
+    "points": 153.75,
+    "maxEntries": 3
+  },
+  "lineup": {
+    "salaryUsed": 49200,
+    "totalPoints": 153.75,
+    "totalOwnershipBp": 23210,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Davante Adams",
+        "position": "WR",
+        "team": "LV",
+        "salary": 16800,
+        "points": 40.65,
+        "ownershipPercent": 18.1,
+        "rec": 8,
+        "recYds": 101,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Aidan O'Connell",
+        "position": "QB",
+        "team": "LV",
+        "salary": 9600,
+        "points": 25.92,
+        "ownershipPercent": 49.8,
+        "passTd": 4,
+        "passYds": 248,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Easton Stick",
+        "position": "QB",
+        "team": "LAC",
+        "salary": 9400,
+        "points": 20.38,
+        "ownershipPercent": 49.4,
+        "passTd": 3,
+        "passYds": 257,
+        "rushYds": 11,
+        "interceptions": 1,
+        "fumblesLost": 2,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Joshua Palmer",
+        "position": "WR",
+        "team": "LAC",
+        "salary": 6200,
+        "points": 24.3,
+        "ownershipPercent": 31.3,
+        "rec": 4,
+        "recYds": 113,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LV"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Raiders",
+        "position": "DST",
+        "team": "LV",
+        "salary": 4200,
+        "points": 25.0,
+        "ownershipPercent": 31.6,
+        "sacks": 3,
+        "interceptionsDst": 1,
+        "defFumbleRecoveries": 4,
+        "defTd": 2,
+        "qbFaced": "Easton Stick",
+        "qbFacedArchetype": "BACKUP",
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LAC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Zamir White",
+        "position": "RB",
+        "team": "LV",
+        "salary": 3000,
+        "points": 17.5,
+        "ownershipPercent": 51.9,
+        "rushTd": 1,
+        "rushYds": 69,
+        "rec": 3,
+        "recYds": 16,
+        "gameAwayTeam": "LAC",
+        "gameHomeTeam": "LV",
+        "opponentTeam": "LAC"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won the actual slate, but from a structural grading standpoint it is a weak showdown build and earns an F. The score got there because the game broke in an extreme way. Las Vegas scored 63 points, the Raiders defense returned two touchdowns, and a huge share of the offensive ceiling condensed into Davante Adams, Aidan O'Connell, and Zamir White. That outcome covered up a roster shape that would usually be far too popular and too fragile to deserve a strong process grade.\n\nThe core problem is that the lineup did not create much true leverage outside of the captain slot. Davante Adams at 18.1 percent captain ownership was a useful captain choice, but every flex spot after that was either plainly popular or attached to a very available game story. Aidan O'Connell at 49.8 percent, Easton Stick at 49.4 percent, Joshua Palmer at 31.3 percent, Raiders defense at 31.6 percent, and Zamir White at 51.9 percent is not a rare ownership shape. It is a heavily owned build that happened to be on the exact right side of a massive outlier game.\n\nThe lineup also carries a construction problem. Raiders defense against Easton Stick is uncomfortable, but on this slate it was not especially sharp once the backup quarterback environment and sack turnover risk were already obvious to the field. Pairing both quarterbacks, the favored defense, the favored alpha receiver, and the cheap starting running back from the same team is much closer to an expensive capture of the most visible game pieces than to a genuinely difficult roster stance.\n\nLeaving 800 in salary helps only a little. It is not enough to rescue a lineup with this much chalk concentration, especially when the total ownership still finished at 232.1 percent. This was a result-driven winner, not a lineup that should be presented as a strong structural template.",
+    "uniquenessNotes": "The right way to read this lineup is to separate outcome from process. Outcome was elite. Process grade is poor. An F grade here does not mean the lineup failed to score. It means the build itself does not clear the bar for a structurally strong showdown roster when judged by leverage, ownership shape, and repeatable uniqueness.\n\nThere is only one player under 20 percent ownership, and that is the captain. Every flex spot sits in a range the field was already comfortable clicking. That creates a lineup where the main path to first place is not superior structural tension but perfect outcome ordering. Once Davante Adams was the winning captain and the Raiders defense produced defensive touchdowns, the rest of the lineup mostly followed obvious access points to the same game.\n\nThe duplication risk profile is also part of the downgrade. A build with Adams captain, both quarterbacks, Raiders defense, and Zamir White is exactly the type of lineup family many entrants can arrive at once they accept a Raiders onslaught script. Even if this exact six man combination was not massively duplicated, the structure itself is far too close to a common branch of the game tree to deserve a positive grade.\n\nThe final grade lands at F because the lineup was carried by an extreme game environment rather than by standout showdown construction. The captain was good. The rest of the roster was too available, too popular, and too dependent on a near perfect outcome sequence to qualify as sharp from a repeatable process standpoint.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Davante Adams",
+          "position": "WR",
+          "team": "LV"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Wide receiver captain with both quarterbacks, favored defense against opposing backup quarterback, and popular Raiders onslaught pieces",
+        "includesQBs": true
+      },
+      "primaryLever": "Davante Adams at 18.1 percent captain ownership was the only meaningful leverage point in an otherwise widely available build",
+      "secondaryLever": "The lineup relied on a perfect Raiders blowout script where offensive concentration and defensive touchdowns hit at the same time"
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 16,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-12-21",
+  "slateName": "NFL Week 16 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "C+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK16_TNF_SHOWDOWN_2023-12-21_no_lar",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2386956,
+    "totalOwnershipBp": 18940
+  },
+  "winner": {
+    "username": "tomjk321",
+    "points": 160.08,
+    "maxEntries": 47
+  },
+  "lineup": {
+    "salaryUsed": 49300,
+    "totalPoints": 160.08,
+    "totalOwnershipBp": 18940,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Demarcus Robinson",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 8100,
+        "points": 30.3,
+        "ownershipPercent": 1.7,
+        "rec": 6,
+        "recYds": 82,
+        "recTd": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Matthew Stafford",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 10000,
+        "points": 23.72,
+        "ownershipPercent": 51.1,
+        "passTd": 2,
+        "passYds": 328,
+        "rushYds": -4,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Puka Nacua",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 9600,
+        "points": 36.0,
+        "ownershipPercent": 37.9,
+        "rec": 9,
+        "recYds": 164,
+        "rushYds": 16,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Derek Carr",
+        "position": "QB",
+        "team": "NO",
+        "salary": 9000,
+        "points": 28.96,
+        "ownershipPercent": 36.1,
+        "passTd": 3,
+        "passYds": 319,
+        "rushYds": 2,
+        "interceptions": 1,
+        "twoPtPass": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chris Olave",
+        "position": "WR",
+        "team": "NO",
+        "salary": 8600,
+        "points": 26.3,
+        "ownershipPercent": 48.6,
+        "rec": 9,
+        "recYds": 123,
+        "bonus100RecYds": 1,
+        "twoPtRec": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Juwan Johnson",
+        "position": "TE",
+        "team": "NO",
+        "salary": 4000,
+        "points": 14.8,
+        "ownershipPercent": 14.0,
+        "rec": 4,
+        "recYds": 48,
+        "recTd": 1,
+        "gameAwayTeam": "NO",
+        "gameHomeTeam": "LAR",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won through raw game environment and salary mechanics more than through truly strong showdown construction, which is why the final grade drops to C plus. Demarcus Robinson at 1.7 percent captain ownership looks sharp at first glance, but the more important question is why the field would land there. In this case the captain was functioning less as a conviction play and more as the clean affordability lever that unlocked Matthew Stafford, Puka Nacua, Derek Carr, Chris Olave, and the most practical cheap pass catcher on the slate in Juwan Johnson.\n\nThat is the key distinction. A low owned captain is not automatically a high quality captain. Sometimes it is simply the cheapest viable path into an expensive stars and quarterbacks shell. This build falls into that category. Robinson gave the lineup access to the Rams passing game without forcing a sacrifice elsewhere, but the surrounding roster is almost entirely made of the slate's most obvious volume and talent pieces. Both quarterbacks were included. The Rams alpha remained in place. The Saints alpha remained in place. Juwan Johnson was the natural salary release from the New Orleans side. Structurally, this is much closer to a practical stars and scrubs construction than to a deeply uncomfortable or original showdown stance.\n\nThe game itself did the heavy lifting. Matthew Stafford and Derek Carr both cleared 300 passing yards. Puka Nacua and Chris Olave both delivered ceiling receiving production. Juwan Johnson scored. Robinson scored. Once the game turned into a fully concentrated passing environment, the lineup had access to nearly every major scoring node. That is why it won. The issue is that many other entrants could reach the same logic tree without making an especially difficult set of decisions.\n\nLeaving 700 in salary helped some, but not enough to transform the structure. The duplication result is the clearest giveaway. A lineup duplicated around fifteen times is telling you the underlying build was far more available than the captain ownership alone would suggest. The field may not have clicked Robinson captain at massive rates, but enough people recognized the same salary unlock and same stars and quarterbacks configuration for the lineup to cluster heavily.",
+    "uniquenessNotes": "The trap with this roster is stopping at the captain ownership and calling it sharp. The better read is to examine what the captain allowed the rest of the lineup to do. Robinson was not creating a radically different game story. He was serving as the affordable Rams touchdown carrier that kept the expensive skeleton intact. That matters because showdown uniqueness is not only about the captain. It is about whether the full six man combination forces the field into a place it does not want to go.\n\nThis build did not do that. Stafford, Puka Nacua, Derek Carr, and Chris Olave are all premium usage pieces in a game that finished as a pass heavy shootout. Juwan Johnson was the obvious cheaper attachment once salary got tight. Robinson captain merely solved the budget problem. It did not create major structural tension. In fact, the lineup is fairly comfortable once the salary puzzle is solved, which is exactly why the duplication came in much higher than the captain percentage alone would imply.\n\nThe duplication outcome matters here because it exposes the difference between surface leverage and practical leverage. Surface leverage says 1.7 percent captain must be strong. Practical leverage says a captain can still be part of a highly reachable lineup family if he is the most convenient price adjusted path into the field's favorite core. That is what happened here.\n\nThe final grade lands at C plus. The lineup still deserves some credit because the captain was low owned, Juwan Johnson gave it a second sub 20 percent piece, and the build left salary on the table. But once duplication enters the picture, the roster reads far less like a sharp outlier and far more like a common stars and quarterbacks shell that happened to use the correct cheap captain to make the math work.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Demarcus Robinson",
+          "position": "WR",
+          "team": "LAR"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Cheap wide receiver captain used to unlock both quarterbacks, both primary alpha receivers, and the practical low cost Saints attachment",
+        "includesQBs": true
+      },
+      "primaryLever": "Demarcus Robinson at 1.7 percent captain ownership looked contrarian, but functioned mainly as the affordability piece that opened the preferred expensive core",
+      "secondaryLever": "Juwan Johnson at 14.0 percent flex ownership completed the most practical salary saving route needed to fit the stars and both quarterbacks build"
+    }
+  }
+}

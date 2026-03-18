@@ -1,0 +1,148 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 7,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-10-19",
+  "slateName": "NFL Week 7 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK07_TNF_SHOWDOWN_2023-10-19_jax_no",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 8193334,
+    "totalOwnershipBp": 19670
+  },
+  "winner": {
+    "username": "mrcpuguru",
+    "points": 132.39,
+    "maxEntries": 51
+  },
+  "lineup": {
+    "salaryUsed": 49200,
+    "totalPoints": 132.39,
+    "totalOwnershipBp": 19670,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Alvin Kamara",
+        "position": "RB",
+        "team": "NO",
+        "salary": 15600,
+        "points": 43.95,
+        "ownershipPercent": 15.9,
+        "rec": 12,
+        "recYds": 91,
+        "rushYds": 62,
+        "twoPtRush": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Travis Etienne Jr.",
+        "position": "RB",
+        "team": "JAX",
+        "salary": 10200,
+        "points": 22.7,
+        "ownershipPercent": 55.2,
+        "rushTd": 2,
+        "rec": 3,
+        "recYds": 24,
+        "rushYds": 53,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Derek Carr",
+        "position": "QB",
+        "team": "NO",
+        "salary": 8800,
+        "points": 21.44,
+        "ownershipPercent": 52.3,
+        "passTd": 1,
+        "passYds": 301,
+        "rushYds": 14,
+        "interceptions": 1,
+        "bonus300PassYds": 1,
+        "twoPtPass": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Christian Kirk",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 8000,
+        "points": 20.0,
+        "ownershipPercent": 46.7,
+        "rec": 6,
+        "recYds": 90,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Taysom Hill",
+        "position": "TE",
+        "team": "NO",
+        "salary": 6200,
+        "points": 16.8,
+        "ownershipPercent": 14.6,
+        "rec": 4,
+        "recYds": 50,
+        "rushYds": 18,
+        "rushTd": 1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "JAX"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jamal Agnew",
+        "position": "WR",
+        "team": "JAX",
+        "salary": 400,
+        "points": 7.5,
+        "ownershipPercent": 12.0,
+        "rec": 4,
+        "recYds": 36,
+        "rushYds": -1,
+        "gameAwayTeam": "JAX",
+        "gameHomeTeam": "NO",
+        "opponentTeam": "NO"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it treated the game as a concentrated running back and short-area volume environment instead of a pure quarterback ceiling slate. Alvin Kamara captain was the decisive call. At 15.9 percent captain ownership, he gave the roster access to New Orleans offense through the most stable touch concentration on the field. Twelve catches from the captain slot changed the slate because Kamara did not need multiple rushing touchdowns to become optimal. He absorbed possession volume, red zone utility, and the two point conversion in one roster spot.\n\nThe rest of the lineup stayed aligned with how the game actually distributed fantasy production. Derek Carr was paired with Kamara, but the build did not force a full Saints passing stack around him. Taysom Hill handled the secondary New Orleans scoring branch through hybrid usage rather than traditional receiver volume. On the Jacksonville side, Travis Etienne Jr. and Christian Kirk captured the two most valuable Jaguars outcomes, one through rushing touchdowns and one through efficient receiving production. Jamal Agnew then provided the cheap salary release needed to preserve both premium backs and both midrange core pieces.\n\nThe sharper point is the decision to use Agnew instead of chasing a more expensive sixth piece. At 400 salary and 12.0 percent flex ownership, he did not need to do much. He only needed to prevent the lineup from collapsing into the field's more common Kamara captain builds. That salary relief made the roster structurally possible while still keeping exposure to a live Jacksonville auxiliary role.\n\nThis lineup won because it read the game as concentrated but not extreme. The captain captured the Saints offense through receptions and all-purpose usage. Jacksonville scoring was split between Etienne and Kirk. Hill supplied an alternate Saints touchdown path. Agnew gave the lineup enough flexibility to hold the rest together without overpaying for a low-value final slot.",
+    "uniquenessNotes": "The final grade lands at B. Kamara captain was a strong but not ultra-thin leverage point, and the roster added two sub-20 percent flex pieces in Taysom Hill and Jamal Agnew. Agnew mattered more than his raw score suggests because he changed the salary map and prevented the construction from landing on more duplicated combinations.\n\nAt the same time, this was not an elite uniqueness lineup across all six spots. Derek Carr, Travis Etienne Jr., and Christian Kirk were all popular and highly available paths. Salary left was 800, which helped, but not enough by itself to push the build into the top range. The structure was sharp, though still fairly accessible once Kamara captain was selected.\n\nWhat gives the roster strength is its internal discipline. It did not overload New Orleans receivers after choosing Kamara captain. It did not force Trevor Lawrence into the build when Jacksonville production could be captured more cleanly through Etienne, Kirk, and Agnew. That restraint kept the lineup coherent and prevented wasted exposure.\n\nThe broader lesson is that showdown winners in mid-range scoring games do not always need a dramatic tension point. Sometimes the edge comes from identifying the player who can absorb the most stable touch concentration in the multiplier slot, then using one cheap secondary piece to make the rest of the roster construction possible. This lineup followed that path well, but the overall ownership and duplication profile keep the grade out of the higher tiers.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Alvin Kamara",
+          "position": "RB",
+          "team": "NO"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Running back captain with one quarterback, one hybrid secondary scorer, Jacksonville running back and primary receiver, plus a near minimum auxiliary receiver salary release",
+        "includesQBs": true
+      },
+      "primaryLever": "Alvin Kamara captain created the lineup’s main leverage point through a 15.9 percent captain outcome driven by extreme reception volume",
+      "secondaryLever": "Jamal Agnew at 12.0 percent flex ownership supplied the salary relief that made the premium core fit without forcing a more duplicated final construction"
+    }
+  }
+}

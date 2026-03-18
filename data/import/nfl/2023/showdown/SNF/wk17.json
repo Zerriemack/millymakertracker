@@ -1,0 +1,142 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 17,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-12-31",
+  "slateName": "NFL Week 17 Sunday Night Showdown",
+  "slateTag": "snf",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Sunday Night Contest",
+    "siteContestId": "NFL_2023_WK17_SNF_SHOWDOWN_2023-12-31_gb_min",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 1346775,
+    "totalOwnershipBp": 20870
+  },
+  "winner": {
+    "username": "CrickeyMaster",
+    "points": 136.09,
+    "maxEntries": 5
+  },
+  "lineup": {
+    "salaryUsed": 49100,
+    "totalPoints": 136.09,
+    "totalOwnershipBp": 20870,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Jayden Reed",
+        "position": "WR",
+        "team": "GB",
+        "salary": 11100,
+        "points": 40.35,
+        "ownershipPercent": 15.4,
+        "rec": 6,
+        "recYds": 89,
+        "recTd": 2,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Justin Jefferson",
+        "position": "WR",
+        "team": "MIN",
+        "salary": 12000,
+        "points": 10.9,
+        "ownershipPercent": 70.9,
+        "rec": 5,
+        "recYds": 59,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jordan Love",
+        "position": "QB",
+        "team": "GB",
+        "salary": 11000,
+        "points": 28.44,
+        "ownershipPercent": 56.0,
+        "passTd": 3,
+        "rushTd": 1,
+        "passYds": 256,
+        "rushYds": 2,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Aaron Jones",
+        "position": "RB",
+        "team": "GB",
+        "salary": 9800,
+        "points": 17.0,
+        "ownershipPercent": 39.1,
+        "rec": 1,
+        "rushYds": 120,
+        "bonus100RushYds": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Johnny Mundt",
+        "position": "TE",
+        "team": "MIN",
+        "salary": 2800,
+        "points": 13.9,
+        "ownershipPercent": 11.2,
+        "rec": 4,
+        "recYds": 39,
+        "recTd": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "GB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Bo Melton",
+        "position": "WR",
+        "team": "GB",
+        "salary": 2400,
+        "points": 25.5,
+        "ownershipPercent": 16.1,
+        "rec": 6,
+        "recYds": 105,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "GB",
+        "gameHomeTeam": "MIN",
+        "opponentTeam": "MIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by leaning hard into Green Bay offensive concentration and then placing the multiplier on the Packers receiver whose touchdown path the field respected far less than the quarterback and primary Minnesota star. Jayden Reed captain at 15.4 percent was the main separator. He delivered two receiving touchdowns and nearly reached the 100 yard bonus, which gave the build a first place captain score without forcing one of the more obvious premium captain routes.\n\nThe rest of the build stayed tightly connected to that read. Jordan Love had to be present because Reed captain still ran through quarterback production, and Aaron Jones gave the roster access to Green Bay's rushing dominance and the 100 yard rushing bonus. Bo Melton was the second major unlock. At 16.1 percent flex ownership and 2,400 salary, he gave the lineup a second Green Bay receiver who turned a concentrated passing game into a tournament winning score. This mattered because Green Bay scored 33 points and Love's production was distributed across multiple pass catchers rather than one isolated stack partner.\n\nMinnesota exposure was kept narrow. Justin Jefferson remained too central to leave off entirely, even though his final score fell short of a true slate breaking return. Johnny Mundt was the sharper choice. His 11.2 percent flex ownership and touchdown capture gave the lineup a low salary Minnesota path without forcing a more duplicated Viking construction. The build did not need Minnesota to match Green Bay. It needed two usable return channels from the trailing side while Green Bay handled most of the scoring weight.\n\nLeaving 900 in salary helped reduce overlap, but the more important edge came from roster geometry. This lineup accepted Green Bay control, captured the quarterback, lead running back, captain receiver, and low salary secondary receiver, then used two Minnesota pieces whose roles were clear enough to survive a losing script.",
+    "uniquenessNotes": "The defining choice was Reed captain combined with Bo Melton. Reed captain alone gave the lineup leverage, but pairing him with another lower salary Packers receiver made the Green Bay passing tree far less conventional than the field's preferred routes. Most rosters built around Love were more likely to concentrate on one high salary partner and stop there.\n\nJohnny Mundt served a similar purpose on the Minnesota side. He was not merely a cheap attachment. He created salary flexibility while still capturing one of the Vikings' few touchdown paths. That let the roster preserve Justin Jefferson without drifting into a more crowded midrange shape.\n\nThis lineup also handled team concentration well. Four Packers can become fragile when the offense narrows too aggressively or when the scoring channels do not spread far enough. Here, Green Bay scoring came through Reed, Melton, Love, and Jones, so the onslaught remained coherent from start to finish.\n\nThe final grade lands at B. The lineup had a solid captain leverage point, two flex plays under 20 percent, some salary left, and a strong Green Bay concentration call. It does not reach A territory because total ownership stayed fairly high through Justin Jefferson, Jordan Love, and Aaron Jones, and the build did not need a more uncomfortable structural stance to get there.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Jayden Reed",
+          "position": "WR",
+          "team": "GB"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Green Bay passing and rushing concentration with a mid owned wide receiver captain, low salary secondary receiver, and two narrow Minnesota bring backs",
+        "includesQBs": true
+      },
+      "primaryLever": "Jayden Reed captain at 15.4 percent created the main leverage point through a two touchdown Green Bay ceiling outcome",
+      "secondaryLever": "Bo Melton and Johnny Mundt gave the roster two lower owned salary release points while preserving the strongest Green Bay scoring shell"
+    }
+  }
+}

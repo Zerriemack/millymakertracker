@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 17,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-12-30",
+  "slateName": "NFL Week 17 Saturday Showdown",
+  "slateTag": "saturday",
+  "slateGroup": "C+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Saturday Contest",
+    "siteContestId": "NFL_2023_WK17_SATURDAY_SHOWDOWN_2023-12-30_det_dal",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 1467631,
+    "totalOwnershipBp": 22860
+  },
+  "winner": {
+    "username": "sdface20",
+    "points": 143.4,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 47700,
+    "totalPoints": 143.4,
+    "totalOwnershipBp": 22860,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 17100,
+        "points": 66.3,
+        "ownershipPercent": 22.2,
+        "rec": 13,
+        "recYds": 227,
+        "rushYds": 5,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 10600,
+        "points": 24.2,
+        "ownershipPercent": 74.6,
+        "passTd": 2,
+        "passYds": 345,
+        "rushYds": 4,
+        "interceptions": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Sam LaPorta",
+        "position": "TE",
+        "team": "DET",
+        "salary": 7200,
+        "points": 15.4,
+        "ownershipPercent": 39.1,
+        "rec": 7,
+        "recYds": 84,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brandin Cooks",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 5400,
+        "points": 17.0,
+        "ownershipPercent": 33.2,
+        "rec": 5,
+        "recYds": 60,
+        "recTd": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brandon Aubrey",
+        "position": "K",
+        "team": "DAL",
+        "salary": 4800,
+        "points": 11.0,
+        "ownershipPercent": 25.5,
+        "xpm": 2,
+        "fg40to49": 1,
+        "fg50plus": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jameson Williams",
+        "position": "WR",
+        "team": "DET",
+        "salary": 3400,
+        "points": 9.5,
+        "ownershipPercent": 34.0,
+        "rec": 2,
+        "recYds": 69,
+        "rushYds": 6,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "DAL",
+        "opponentTeam": "DAL"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by identifying where the slate’s scoring would actually condense and then accepting duplication risk at the top in exchange for overwhelming raw point capture. CeeDee Lamb captain was not a hidden angle. It was the correct ceiling call on a slate where his target share, yardage concentration, and after-catch volume gave him access to a score the rest of the player pool could not match. Once Lamb posted 227 receiving yards and the 100-yard bonus, the captain slot itself became the engine of the tournament.\n\nThe sharper part of the lineup sits underneath that decision. Dak Prescott stayed attached to the captain outcome, which preserved the Dallas passing concentration without overcomplicating the core. Brandin Cooks added direct access to one of Prescott’s two passing touchdowns, so the lineup captured Dallas aerial scoring through its two most efficient channels. Brandon Aubrey then collected the stalled-drive residue, which mattered because Dallas moved the ball well enough to support both touchdown scoring and field goal scoring.\n\nThe Detroit side was handled with restraint. Instead of forcing Jared Goff or a more balanced back-and-forth game tree, the build used Sam LaPorta and Jameson Williams as narrower access points to Detroit production. That is an important distinction. The lineup did not need a full Detroit eruption. It needed enough Lions scoring to keep Dallas aggressive and enough concentrated Detroit fantasy output to avoid dead roster spots. LaPorta supplied stable receiving volume. Jameson Williams gave the build a thinner but still live explosive pathway at a modest salary.\n\nLeaving 2,300 in salary is what gave this construction a path to first rather than a high finish that got buried in duplication. The lineup still rode a very popular captain and a very popular quarterback, but the unused salary created separation without forcing bad players onto the roster. In this case the money left was not cosmetic. It was the main structural release point in an otherwise field-friendly build.",
+    "uniquenessNotes": "The lineup is a strong example of a build that won through elite point concentration first and uniqueness second. Lamb captain and Prescott flex were both popular. LaPorta was popular as well. On surface view, this looks close to a lineup the field could have built in large numbers.\n\nWhat kept it from collapsing into a pure duplication trap was the exact salary arrangement and the decision to avoid several more natural pairings. The build left 2,300 on the table, did not include Jared Goff, and did not force Amon-Ra St. Brown into the Detroit bring-back role. Those omissions matter because they pull the roster away from the most intuitive high-salary branches the field tends to prefer around a Lamb captain outcome.\n\nJameson Williams also served a specific job. He was not merely a cheap attachment. He gave the lineup access to explosive Detroit production without pushing salary all the way back up into a more duplicated shape. That let the build preserve Aubrey, who quietly mattered because kickers often become awkward clicks when the field spends aggressively around a premium captain.\n\nThe final grade lands at C plus. The lineup had meaningful salary left and enough structural discipline to separate from cleaner chalk constructions. It does not grade higher because the captain was popular, the total ownership shape remained heavy, there were no true low-owned flex levers, and the uniqueness story depends much more on salary allocation than on multiple uncomfortable combinations.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "CeeDee Lamb",
+          "position": "WR",
+          "team": "DAL"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Popular wide receiver captain paired with his quarterback, secondary Dallas pass catcher, kicker, and two restrained Detroit bring-backs while leaving significant salary unused",
+        "includesQBs": true
+      },
+      "primaryLever": "The main edge came from accepting CeeDee Lamb captain as the raw ceiling anchor and then creating separation through 2,300 in unused salary",
+      "secondaryLever": "The lineup avoided Jared Goff and Amon-Ra St. Brown while using Sam LaPorta and Jameson Williams as narrower Detroit access points"
+    }
+  }
+}

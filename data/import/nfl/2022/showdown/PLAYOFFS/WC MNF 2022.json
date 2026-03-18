@@ -1,0 +1,144 @@
+{
+  "sport": "NFL",
+  "year": 2022,
+  "week": 19,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-01-16",
+  "slateName": "Wild Card Monday Night Showdown",
+  "slateTag": "PLAYOFFS",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Wild Card Monday Night Showdown Contest",
+    "siteContestId": "NFL_2022_WK19_PLAYOFFS_SHOWDOWN_2023-01-16_dal_tb",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 8757143,
+    "totalOwnershipBp": 23880
+  },
+  "winner": {
+    "username": "Rod7355",
+    "points": 162.89,
+    "maxEntries": 13
+  },
+  "lineup": {
+    "salaryUsed": 48600,
+    "totalPoints": 162.89,
+    "totalOwnershipBp": 23880,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Dalton Schultz",
+        "position": "TE",
+        "team": "DAL",
+        "salary": 9600,
+        "points": 42.75,
+        "ownershipPercent": 8.1,
+        "rec": 7,
+        "recYds": 95,
+        "recTd": 2,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 10400,
+        "points": 39.6,
+        "ownershipPercent": 51.6,
+        "passTd": 4,
+        "rushTd": 1,
+        "passYds": 305,
+        "rushYds": 24,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tom Brady",
+        "position": "QB",
+        "team": "TB",
+        "salary": 10000,
+        "points": 26.04,
+        "ownershipPercent": 63.4,
+        "passTd": 2,
+        "passYds": 351,
+        "interceptions": 1,
+        "twoPtPass": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 9200,
+        "points": 18.5,
+        "ownershipPercent": 57.6,
+        "rec": 10,
+        "recYds": 85,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Michael Gallup",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 5000,
+        "points": 15.6,
+        "ownershipPercent": 15.0,
+        "rec": 5,
+        "recYds": 46,
+        "recTd": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Julio Jones",
+        "position": "WR",
+        "team": "TB",
+        "salary": 4400,
+        "points": 20.4,
+        "ownershipPercent": 8.6,
+        "rec": 7,
+        "recYds": 74,
+        "recTd": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "DAL"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by reading the game through pass concentration instead of through a broad Dallas onslaught build. Dallas scored 31 points, yet the captain slot went to Dalton Schultz rather than Dak Prescott or CeeDee Lamb. Schultz carried only 8.1 percent captain ownership and turned two red zone scores into the slate's best leverage outcome. Once Schultz became the multiplier, Prescott still had to remain in the build because nearly every Dallas ceiling branch still flowed through him.\n\nThe sharper layer came from how Tampa Bay production was selected. Tom Brady and Chris Godwin were popular, though they remained necessary because Tampa Bay threw for volume while trailing all night. The separator was Julio Jones at 8.6 percent in flex. He gave the lineup a second low owned pass catcher from the losing side without forcing a dead roster spot. In a one game format, losing teams still matter when raw volume stays intact, and Brady reached 351 passing yards even in a poor on field result.\n\nMichael Gallup completed the construction with a third scoring channel tied to Dallas passing efficiency. His 15.0 percent flex ownership stayed low enough to matter, and his salary allowed access to both quarterbacks plus Godwin without collapsing the build into thin punts. Salary left on the table helped, though the larger story sits in where leverage came from. Schultz captain, Julio flex, and Gallup flex gave this roster enough separation while the two quarterbacks and Godwin kept it attached to the game's most bankable volume.",
+    "uniquenessNotes": "This was a coherent but still fairly visible passing stack build. Schultz captain created the true wedge. Julio Jones and Michael Gallup gave the roster two more ownership pockets under 20 percent, which is where much of the uniqueness came from. Those choices mattered because Brady, Prescott, and Godwin were all heavily rostered and could not carry uniqueness on their own.\n\nThe lineup does not land in A range because the overall shape still followed a readable script. Both quarterbacks made sense. Godwin made sense. Schultz captain became more accessible once Dallas pass catchers started scoring early. The payout figure points to a split outcome rather than a fully isolated solo finish, which pulls the grade down.\n\nEven so, this was far from a lazy duplicated stars build. The winner identified a specific Dallas touchdown distribution, then used Tampa Bay pass volume as a bring back source instead of chasing thin secondary pieces. Julio Jones was the most useful part of that decision because he gave access to a score and mid range target volume at a salary and ownership level the field did not push hard enough.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Dalton Schultz",
+          "position": "TE",
+          "team": "DAL"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Low owned tight end captain with both quarterbacks, one popular Tampa Bay volume receiver, and two sub 20 percent secondary wide receivers",
+        "includesQBs": true
+      },
+      "primaryLever": "Dalton Schultz captain at 8.1 percent created the main leverage point through Dallas touchdown concentration",
+      "secondaryLever": "Julio Jones and Michael Gallup supplied two separate sub 20 percent flex paths without forcing the lineup into fragile salary filler"
+    }
+  }
+}

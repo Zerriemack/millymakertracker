@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 14,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-12-07",
+  "slateName": "NFL Week 14 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK14_TNF_SHOWDOWN_2023-12-07_ne_pit",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 2122308,
+    "totalOwnershipBp": 22030
+  },
+  "winner": {
+    "username": "rbx88",
+    "points": 126.7,
+    "maxEntries": 86
+  },
+  "lineup": {
+    "salaryUsed": 49100,
+    "totalPoints": 126.7,
+    "totalOwnershipBp": 22030,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Hunter Henry",
+        "position": "TE",
+        "team": "NE",
+        "salary": 7800,
+        "points": 28.5,
+        "ownershipPercent": 2.5,
+        "rec": 3,
+        "recYds": 40,
+        "recTd": 2,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Diontae Johnson",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 9900,
+        "points": 14.7,
+        "ownershipPercent": 45.2,
+        "rec": 3,
+        "recYds": 57,
+        "recTd": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Ezekiel Elliott",
+        "position": "RB",
+        "team": "NE",
+        "salary": 9400,
+        "points": 27.0,
+        "ownershipPercent": 73.1,
+        "rushYds": 68,
+        "rec": 7,
+        "recYds": 72,
+        "recTd": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Mitchell Trubisky",
+        "position": "QB",
+        "team": "PIT",
+        "salary": 9200,
+        "points": 21.6,
+        "ownershipPercent": 56.1,
+        "passTd": 1,
+        "rushTd": 1,
+        "passYds": 190,
+        "rushYds": 30,
+        "interceptions": 1,
+        "twoPtPass": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Bailey Zappe",
+        "position": "QB",
+        "team": "NE",
+        "salary": 9000,
+        "points": 21.9,
+        "ownershipPercent": 22.8,
+        "passTd": 3,
+        "passYds": 240,
+        "rushYds": 13,
+        "interceptions": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "JuJu Smith-Schuster",
+        "position": "WR",
+        "team": "NE",
+        "salary": 3800,
+        "points": 13.0,
+        "ownershipPercent": 20.6,
+        "rec": 4,
+        "recYds": 90,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by identifying a very specific New England scoring concentration path and putting the least expected touchdown finisher into the captain slot. Hunter Henry at 2.5 percent captain ownership was the fulcrum. That was the separation point. The field had access to Henry as a flex piece, but far fewer were willing to elevate him into the multiplier and bet that New England passing touchdowns would flow through him instead of through a more standard captain route.\n\nThe lineup then tightened the story around Bailey Zappe. Hunter Henry, Ezekiel Elliott, and JuJu Smith-Schuster gave Bailey Zappe three different ways to monetize New England passing production. Elliott mattered because he was not only a rushing volume piece. He also handled seven catches and one receiving touchdown, which let the build absorb a massive ownership number while still fitting the same passing concentration thesis.\n\nMitchell Trubisky and Diontae Johnson completed the opposing side without bloating the Steelers exposure. That matters. The lineup did not need Pittsburgh to fully bury New England. It needed enough back and forth for both quarterbacks to remain viable, while New England's fantasy production stayed more tightly funneled than Pittsburgh's. Diontae Johnson gave the lineup direct access to Pittsburgh's cleanest wide receiver touchdown path without forcing extra Steelers pieces into a build already anchored by New England efficiency.\n\nLeaving 900 in salary also helped. On a slate where many lineups likely clustered around more expensive and more obvious captain constructions, this build used a low owned tight end captain, accepted salary left over, and still captured both quarterbacks. That combination created a sharper uniqueness profile than the raw player names might suggest at first glance.",
+    "uniquenessNotes": "The captain slot is the entire story here. Hunter Henry at 2.5 percent captain ownership transformed an otherwise somewhat recognizable roster into a first place construction. Without that choice, this would have looked much closer to a common both quarterbacks showdown build with Ezekiel Elliott volume and a bring back wide receiver. With that choice, the lineup became a bet on New England touchdown distribution rather than on broad game environment chalk.\n\nThe ownership shape is more interesting once captain ownership is handled correctly. The lineup still carried popular flex pieces in Ezekiel Elliott and Mitchell Trubisky, but the real leverage came from putting the rarest touchdown concentration outcome in the multiplier. Bailey Zappe at 22.8 percent flex ownership and JuJu Smith-Schuster at 20.6 percent flex ownership added enough separation around that thesis without turning the lineup into a thin, fragile construction.\n\nThe final grade stays at B, but the path to that grade is now clearer. This lineup had true captain leverage, useful salary left, and a narrow scoring funnel that the field did not build heavily enough through the multiplier. It does not push into A range because several flex pieces remained popular and the overall lineup still had enough familiar elements to keep the total structure from being elite on a pure uniqueness scale.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Hunter Henry",
+          "position": "TE",
+          "team": "NE"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low-owned tight end captain with both quarterbacks, concentrated New England receiving production, and one primary Pittsburgh runback",
+        "includesQBs": true
+      },
+      "primaryLever": "Hunter Henry at 2.5 percent captain ownership created the slate's main leverage point through a rare New England touchdown concentration outcome",
+      "secondaryLever": "Bailey Zappe with Hunter Henry, Ezekiel Elliott, and JuJu Smith-Schuster concentrated New England scoring while Mitchell Trubisky and Diontae Johnson preserved opposing game access"
+    }
+  }
+}

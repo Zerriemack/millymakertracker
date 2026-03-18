@@ -1,0 +1,140 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 1,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-09-07",
+  "slateName": "NFL Week 1 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK01_TNF_SHOWDOWN_2023-09-07_det_kc",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 10772224,
+    "totalOwnershipBp": 22430
+  },
+  "winner": {
+    "username": "uhhuhhbro",
+    "points": 98.53,
+    "maxEntries": 119
+  },
+  "lineup": {
+    "salaryUsed": 47500,
+    "totalPoints": 98.53,
+    "totalOwnershipBp": 22430,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Patrick Mahomes",
+        "position": "QB",
+        "team": "KC",
+        "salary": 18300,
+        "points": 30.81,
+        "ownershipPercent": 30.6,
+        "passTd": 2,
+        "passYds": 226,
+        "rushYds": 45,
+        "interceptions": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "DET"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Amon-Ra St. Brown",
+        "position": "WR",
+        "team": "DET",
+        "salary": 10200,
+        "points": 19.1,
+        "ownershipPercent": 77.9,
+        "rec": 6,
+        "recYds": 71,
+        "recTd": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jared Goff",
+        "position": "QB",
+        "team": "DET",
+        "salary": 9400,
+        "points": 14.02,
+        "ownershipPercent": 69.3,
+        "passTd": 1,
+        "passYds": 253,
+        "rushYds": -1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "David Montgomery",
+        "position": "RB",
+        "team": "DET",
+        "salary": 6600,
+        "points": 13.4,
+        "ownershipPercent": 32.0,
+        "rushTd": 1,
+        "rushYds": 74,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Reynolds",
+        "position": "WR",
+        "team": "DET",
+        "salary": 2800,
+        "points": 12.0,
+        "ownershipPercent": 12.0,
+        "rec": 4,
+        "recYds": 80,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "KC"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Blake Bell",
+        "position": "TE",
+        "team": "KC",
+        "salary": 200,
+        "points": 9.2,
+        "ownershipPercent": 2.5,
+        "rec": 2,
+        "recYds": 12,
+        "recTd": 1,
+        "gameAwayTeam": "DET",
+        "gameHomeTeam": "KC",
+        "opponentTeam": "DET"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by accepting a lower scoring game environment and then concentrating salary around the two quarterbacks plus Detroit’s target and touchdown concentration. Patrick Mahomes at captain was a popular multiplier choice, so the path to first place did not come from captain leverage by itself. The separator came from how the final two salary slots were handled.\n\nJosh Reynolds and Blake Bell changed the lineup from a standard Mahomes captain construction into a build with genuine separation. Reynolds gave the roster access to Detroit passing production outside the Amon Ra St. Brown and Jared Goff pairing most lineups already carried. Bell solved the slate with a near stone minimum salary slot that still found the end zone. That single decision opened enough salary flexibility to keep both quarterbacks, St. Brown, and David Montgomery without collapsing into a duplicated midrange filler build.\n\nThe game finished 21 to 20, which mattered. Detroit scoring was distributed across St. Brown, Montgomery, Reynolds, and Jared Goff, while Kansas City scoring remained concentrated enough for Mahomes captain to stay live even without an explosive passing box score. Bell’s touchdown became the low owned event that allowed a chalk captain build to survive the duplication problem most Mahomes captain rosters usually run into.\n\nLeaving 2,500 in salary was part of the winning structure, not an accident. On a one game slate with a popular captain and both quarterbacks, unused salary is often the cleanest route to preserving ceiling while avoiding the most duplicated constructions.",
+    "uniquenessNotes": "The final grade lands at B plus. Patrick Mahomes captain carried substantial ownership, and both quarterbacks together pushed the lineup into a familiar structural lane. On surface view, this can look closer to a standard optimizer shell than a truly rare build.\n\nWhat lifts the grade is the back end of the roster. Blake Bell at 2.5 percent flex ownership was the true slate breaker. He was not a broad volume play. He was a salary release attached to a narrow touchdown path, and the roster needed that exact outcome. Josh Reynolds at 12.0 percent flex ownership added a second under 20 percent piece from the same side of the game without forcing an implausible Detroit onslaught build.\n\nThere is also strong internal logic in the 4 to 2 Detroit leaning split around a Chiefs captain. Mahomes remained the most bankable individual ceiling candidate, yet Detroit controlled more of the secondary scoring layers across rushing volume, chain moving targets, and ancillary receiving production. The build read the game as competitive, moderately efficient, and spread across Detroit more than public captain ownership patterns assumed.\n\nThis is a sharp lineup, though not an A range lineup, because the captain slot itself did not create leverage. The uniqueness came from salary allocation, the Bell touchdown path, and the Reynolds inclusion. In other words, the lineup won by mixing one obvious anchor with two highly specific secondary decisions.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Patrick Mahomes",
+          "position": "QB",
+          "team": "KC"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Quarterback captain with both quarterbacks, Detroit skill concentration, one deep value touchdown piece, and 2,500 salary left on the table",
+        "includesQBs": true
+      },
+      "primaryLever": "Blake Bell created the lineup’s main separation point through a 2.5 percent flex outcome attached to a 200 salary slot",
+      "secondaryLever": "Josh Reynolds plus 2,500 in unused salary kept a popular Mahomes captain build from collapsing into the field’s most duplicated combinations"
+    }
+  }
+}

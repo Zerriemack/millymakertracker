@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 5,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-10-05",
+  "slateName": "NFL Week 5 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK05_TNF_SHOWDOWN_2023-10-05_chi_was",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": null,
+    "totalOwnershipBp": 22630
+  },
+  "winner": {
+    "username": "unknown",
+    "points": 191.0,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49400,
+    "totalPoints": 191.0,
+    "totalOwnershipBp": 22630,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "D.J. Moore",
+        "position": "WR",
+        "team": "CHI",
+        "salary": 15000,
+        "points": 78.0,
+        "ownershipPercent": 6.4,
+        "rec": 8,
+        "recYds": 230,
+        "recTd": 3,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Justin Fields",
+        "position": "QB",
+        "team": "CHI",
+        "salary": 11000,
+        "points": 32.98,
+        "ownershipPercent": 76.2,
+        "passTd": 4,
+        "passYds": 282,
+        "rushYds": 57,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "WAS"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Sam Howell",
+        "position": "QB",
+        "team": "WAS",
+        "salary": 9400,
+        "points": 29.42,
+        "ownershipPercent": 67.2,
+        "passTd": 2,
+        "passYds": 388,
+        "rushYds": 19,
+        "interceptions": 1,
+        "bonus300PassYds": 1,
+        "twoPtPass": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Curtis Samuel",
+        "position": "WR",
+        "team": "WAS",
+        "salary": 5600,
+        "points": 18.5,
+        "ownershipPercent": 31.9,
+        "rec": 6,
+        "recYds": 65,
+        "recTd": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Logan Thomas",
+        "position": "TE",
+        "team": "WAS",
+        "salary": 5200,
+        "points": 21.7,
+        "ownershipPercent": 20.7,
+        "rec": 9,
+        "recYds": 77,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "CHI"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Antonio Gibson",
+        "position": "RB",
+        "team": "WAS",
+        "salary": 3200,
+        "points": 10.4,
+        "ownershipPercent": 23.9,
+        "rec": 4,
+        "recYds": 64,
+        "gameAwayTeam": "CHI",
+        "gameHomeTeam": "WAS",
+        "opponentTeam": "CHI"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it identified the game’s true scoring center and then built outward from it without diluting the thesis. D.J. Moore captain was the entire slate. At 6.4 percent captain ownership, the lineup captured an eruption the field did not prioritize strongly enough in the multiplier slot. Once Moore reached 230 receiving yards and three touchdowns, the slate stopped being about balance and became about whether the rest of the build could preserve access to the game’s remaining passing volume.\n\nJustin Fields was mandatory alongside that captain choice because Moore’s ceiling outcome was directly tied to Fields finally converting passing efficiency into tournament-winning production. The more interesting part came from not treating Chicago control as a reason to fade Washington volume. Sam Howell threw for 388 yards because Washington trailed and had to keep pressing. That kept the game alive from both sides and turned the optimal construction into a quarterback on each team with four pass catchers and one secondary receiving back.\n\nCurtis Samuel, Logan Thomas, and Antonio Gibson were not random Washington fillers. They were a direct read on where catch volume would settle behind Terry McLaurin. Samuel gave the lineup another touchdown channel. Thomas captured intermediate target density and red zone utility. Gibson functioned as cheap receiving exposure to the comeback script. Together, those three pieces let the roster absorb Washington passing volume without overspending on a more duplicated two star response.\n\nLeaving 600 in salary helped, but the decisive factor was not salary relief by itself. It was the willingness to see this game as a concentrated passing environment built around one explosive Chicago receiver and a Washington side forced into catch-up mode for nearly the entire second half.",
+    "uniquenessNotes": "The final grade lands at B plus. D.J. Moore captain did the heavy lifting from a leverage standpoint. A 6.4 percent captain outcome on a slate-breaking score is the type of decision that can carry a winning showdown lineup even when the flex build stays fairly ownership dense.\n\nWhat keeps this build below the very top range is that the rest of the roster is structurally clean rather than structurally uncomfortable. Both quarterbacks were obvious fits in a shootout. Washington catch-up volume was also visible to the field. Logan Thomas at 20.7 percent and Antonio Gibson at 23.9 percent were useful separators, but they were not truly rare. This lineup won more through precision than through multiple independent leverage paths.\n\nThe sharper point is how the Washington side was selected. Instead of forcing a thin one-play option, the build spread its Washington exposure across three distinct target roles beneath Sam Howell. Samuel handled touchdown upside. Thomas handled volume and red zone access. Gibson handled underneath receiving production. That gave the lineup coverage across the most likely ways trailing offense accumulates fantasy points.\n\nThe roster also avoided an unnecessary third Bears piece after locking in Moore captain and Fields. That restraint mattered. Once the captain slot captured the dominant Chicago outcome, the better path was to harvest Washington response volume rather than overstack the winning team. This build understood that a lopsided scoreboard can still create dense fantasy value on the trailing side when the dropback count gets pushed high enough.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "D.J. Moore",
+          "position": "WR",
+          "team": "CHI"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Low-owned wide receiver captain with both quarterbacks and a three man Washington pass game response built around volume chasing roles",
+        "includesQBs": true
+      },
+      "primaryLever": "D.J. Moore captain created the slate’s main leverage point through a 6.4 percent captain outcome attached to the game’s clear ceiling performance",
+      "secondaryLever": "The lineup paired both quarterbacks with three Washington receiving outlets instead of forcing a third Chicago attachment after Moore and Fields"
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 17,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-12-28",
+  "slateName": "NFL Week 17 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "D+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK17_TNF_SHOWDOWN_2023-12-28_nyj_cle",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 1168542,
+    "totalOwnershipBp": 25550
+  },
+  "winner": {
+    "username": "salami428",
+    "points": 136.99,
+    "maxEntries": 1
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 136.99,
+    "totalOwnershipBp": 25550,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Joe Flacco",
+        "position": "QB",
+        "team": "CLE",
+        "salary": 15900,
+        "points": 39.99,
+        "ownershipPercent": 9.5,
+        "passTd": 3,
+        "passYds": 309,
+        "rushYds": 3,
+        "interceptions": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Breece Hall",
+        "position": "RB",
+        "team": "NYJ",
+        "salary": 11000,
+        "points": 27.6,
+        "ownershipPercent": 73.4,
+        "rushYds": 84,
+        "rec": 9,
+        "recYds": 42,
+        "recTd": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jerome Ford",
+        "position": "RB",
+        "team": "CLE",
+        "salary": 8400,
+        "points": 26.1,
+        "ownershipPercent": 55.9,
+        "rushYds": 64,
+        "rec": 2,
+        "recYds": 57,
+        "recTd": 2,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "David Njoku",
+        "position": "TE",
+        "team": "CLE",
+        "salary": 7800,
+        "points": 21.4,
+        "ownershipPercent": 77.8,
+        "rec": 6,
+        "recYds": 134,
+        "bonus100RecYds": 1,
+        "fumblesLost": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Elijah Moore",
+        "position": "WR",
+        "team": "CLE",
+        "salary": 6600,
+        "points": 17.1,
+        "ownershipPercent": 37.9,
+        "rec": 5,
+        "recYds": 61,
+        "recTd": 1,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "NYJ"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kenny Yeboah",
+        "position": "TE",
+        "team": "NYJ",
+        "salary": 200,
+        "points": 4.8,
+        "ownershipPercent": 1.0,
+        "rec": 2,
+        "recYds": 28,
+        "gameAwayTeam": "NYJ",
+        "gameHomeTeam": "CLE",
+        "opponentTeam": "CLE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup still grades poorly on structure, but D plus is the better landing spot than F because there was at least some willingness to step outside the most comfortable captain and value combinations. Joe Flacco at 9.5 percent captain ownership carried more risk than the final roster makes it look. The field had to trust an aging quarterback in a late career heater to keep pushing volume and efficiency, and that part of the bet paid off immediately.\n\nKenny Yeboah also matters in the grading discussion. At 1.0 percent flex ownership, he was not a strong ceiling piece, but he was low owned enough to give the build a thin layer of separation beyond the obvious Cleveland core. He functioned as a pure salary release valve, yet he was still a name most of the field would not have been excited to click. That keeps this lineup out of the absolute basement.\n\nThe larger issue remains the surrounding shell. Breece Hall, Jerome Ford, David Njoku, and Elijah Moore formed a very available group once the game tilted toward Cleveland offense and Breece Hall pass game volume. That is why the grade cannot climb very far. The lineup won because the game delivered a highly concentrated scoring pattern and because Joe Flacco captain let the roster jam almost every major producer.\n\nSo the correct read is mixed. Old Joe Flacco captain was a better stand than a pure salary based captain click, and Kenny Yeboah added a legitimate low owned detail. But the lineup still leaned heavily on a chalky flex core and very accessible salary mechanics, which keeps the final grade in the lower range.",
+    "uniquenessNotes": "The reason this lineup avoids an F is that two details carried more discomfort than a dead simple jam build. Joe Flacco captain was not the cleanest or most popular captain route, and Kenny Yeboah was not a field favorite salary saver. Those two choices gave the lineup at least some texture.\n\nStill, the structure was far from rare once the rest of the pieces snapped in. Breece Hall was the clear Jets runback. David Njoku and Jerome Ford were premium Cleveland skill pieces. Elijah Moore was the next logical Cleveland attachment. The captain and the punt created enough room to fit that expensive center.\n\nThat is why D plus fits better than F. There was some separation, but not enough to call the lineup sharp on a repeatable basis. It had a little more personality than a fully dead chalk shell, but not enough to overcome the fact that most of the roster was built from very reachable pieces.\n\nThe final grade lands at D plus because Joe Flacco captain and Kenny Yeboah gave the lineup just enough edge and discomfort to stay above the bottom tier, even though the overall construction still relied on a heavily owned core and a very practical stars plus punt framework.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Joe Flacco",
+          "position": "QB",
+          "team": "CLE"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Quarterback captain with a popular Cleveland core, clear Jets runback, and an ultra cheap low-owned punt to complete the salary structure",
+        "includesQBs": false
+      },
+      "primaryLever": "Joe Flacco at 9.5 percent captain ownership gave the lineup a better than average leverage point for a quarterback centered build",
+      "secondaryLever": "Kenny Yeboah at 1.0 percent flex ownership added a low-owned salary release piece that kept the lineup from being a completely dead chalk construction"
+    }
+  }
+}

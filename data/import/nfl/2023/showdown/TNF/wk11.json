@@ -1,0 +1,143 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 11,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-11-16",
+  "slateName": "NFL Week 11 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK11_TNF_SHOWDOWN_2023-11-16_cin_bal",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 50000000,
+    "totalOwnershipBp": 12910
+  },
+  "winner": {
+    "username": "bronsonnimmer",
+    "points": 117.54,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 47400,
+    "totalPoints": 117.54,
+    "totalOwnershipBp": 12910,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "team": "BAL",
+        "salary": 16200,
+        "points": 35.94,
+        "ownershipPercent": 21.9,
+        "passTd": 2,
+        "passYds": 264,
+        "rushYds": 54,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 9600,
+        "points": 21.0,
+        "ownershipPercent": 25.9,
+        "rushYds": 69,
+        "rec": 5,
+        "recYds": 31,
+        "recTd": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Gus Edwards",
+        "position": "RB",
+        "team": "BAL",
+        "salary": 7000,
+        "points": 21.0,
+        "ownershipPercent": 22.4,
+        "rushYds": 62,
+        "rec": 2,
+        "recYds": 8,
+        "rushTd": 2,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Justin Tucker",
+        "position": "K",
+        "team": "BAL",
+        "salary": 5400,
+        "points": 11.0,
+        "ownershipPercent": 22.8,
+        "xpm": 4,
+        "fg0to39": 1,
+        "fg40to49": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Odell Beckham Jr.",
+        "position": "WR",
+        "team": "BAL",
+        "salary": 5200,
+        "points": 18.6,
+        "ownershipPercent": 12.5,
+        "rec": 4,
+        "recYds": 116,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Evan McPherson",
+        "position": "K",
+        "team": "CIN",
+        "salary": 4000,
+        "points": 10.0,
+        "ownershipPercent": 23.6,
+        "xpm": 2,
+        "fg0to39": 1,
+        "fg50plus": 1,
+        "gameAwayTeam": "CIN",
+        "gameHomeTeam": "BAL",
+        "opponentTeam": "BAL"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by treating the game as a quarterback and scoring environment slate, but then expressing that view through rushing efficiency, kickers, and one underused Baltimore receiver rather than a standard pass catcher stack. Lamar Jackson captain was productive, though not especially rare at 21.9 percent captain ownership. The edge came from what was placed around him. Instead of pairing Lamar Jackson with a dense cluster of expensive Baltimore receivers or forcing Joe Burrow on the other side, the build leaned into the exact way Baltimore actually scored.\n\nGus Edwards and Justin Tucker gave the lineup two separate Baltimore scoring channels attached to the same game script. Edwards captured touchdown concentration near the goal line. Tucker captured stalled drive value and the steady floor of a team controlling large portions of the game. Odell Beckham Jr. then became the piece that turned a fairly accessible Lamar Jackson captain shell into a winning roster. At 12.5 percent flex ownership, he brought the only meaningful sub 20 percent flex leverage while still fitting the actual passing distribution from Baltimore.\n\nThe Cincinnati side was handled with similar restraint. Joe Mixon absorbed the most stable Bengals production through rushing and receiving volume, while Evan McPherson captured the rest of the Bengals scoring through field goals in a game where Cincinnati never fully converted its offense into a mandatory passing stack. That is the sharper read. The lineup did not chase more Bengals pass game exposure than the final score justified.\n\nLeaving 2,600 in salary mattered because it separated the build from more natural Lamar Jackson captain constructions. On a slate where the captain was still fairly popular, that unused salary and the Odell Beckham Jr. inclusion were needed to keep the roster from collapsing into a highly duplicated shell.",
+    "uniquenessNotes": "The final grade lands at B minus. Under a stricter grading lens, this lineup does not belong above that range. Lamar Jackson captain was over 20 percent. There was only one flex player under 20 percent ownership. The rest of the build, especially Joe Mixon, Gus Edwards, Justin Tucker, and Evan McPherson, was very reachable for the field.\n\nWhat keeps the lineup from sliding lower is the combination of 2,600 in salary left and the way the scoring channels were selected. The roster avoided the more obvious Lamar Jackson captain structures tied to a fuller Baltimore pass stack or a Bengals quarterback bring back. It instead used both kickers, the Baltimore goal line back, and one low owned Baltimore receiver. That is a more specific construction than it first appears.\n\nThe most important choice after captain was Odell Beckham Jr. Without him, the lineup starts to look much more duplicated. His 100 yard bonus and modest ownership gave the build its clearest secondary separator. He was the one piece that made the Baltimore passing side useful without turning the roster into a common Lamar Jackson plus primary pass catcher build.\n\nThe broader takeaway is that a popular captain can still win when salary is left, the scoring channels are diversified correctly, and one lower owned piece lands in the right place. But with only one sub 20 percent flex piece and a captain above 20 percent, the structural grade should stay disciplined.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Lamar Jackson",
+          "position": "QB",
+          "team": "BAL"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Quarterback captain with Baltimore rushing and kicking scoring channels, one lower owned Baltimore receiver, one Cincinnati running back, and the opposing kicker",
+        "includesQBs": true
+      },
+      "primaryLever": "Odell Beckham Jr. created the lineup’s main secondary leverage point through a 12.5 percent flex outcome inside an otherwise accessible Lamar Jackson captain shell",
+      "secondaryLever": "Leaving 2,600 in salary and using both kickers kept the roster away from more duplicated quarterback captain constructions"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "sport": "NFL",
+  "year": 2023,
+  "week": 9,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2023-11-02",
+  "slateName": "NFL Week 9 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Football Contest",
+    "siteContestId": "NFL_2023_WK09_TNF_SHOWDOWN_2023-11-02_ten_pit",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 8975000,
+    "totalOwnershipBp": 18870
+  },
+  "winner": {
+    "username": "12General",
+    "points": 103.4,
+    "maxEntries": 20
+  },
+  "lineup": {
+    "salaryUsed": 49800,
+    "totalPoints": 103.4,
+    "totalOwnershipBp": 18870,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Diontae Johnson",
+        "position": "WR",
+        "team": "PIT",
+        "salary": 12600,
+        "points": 33.0,
+        "ownershipPercent": 17.8,
+        "rec": 7,
+        "recYds": 90,
+        "recTd": 1,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Derrick Henry",
+        "position": "RB",
+        "team": "TEN",
+        "salary": 11600,
+        "points": 19.2,
+        "ownershipPercent": 65.6,
+        "rushTd": 1,
+        "rushYds": 75,
+        "rec": 3,
+        "recYds": 27,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "DeAndre Hopkins",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 11200,
+        "points": 10.5,
+        "ownershipPercent": 45.4,
+        "rec": 4,
+        "recYds": 60,
+        "rushYds": 5,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Najee Harris",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 7200,
+        "points": 15.6,
+        "ownershipPercent": 28.0,
+        "rushTd": 1,
+        "rushYds": 69,
+        "rec": 2,
+        "recYds": 7,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jaylen Warren",
+        "position": "RB",
+        "team": "PIT",
+        "salary": 6400,
+        "points": 14.3,
+        "ownershipPercent": 25.5,
+        "rushYds": 88,
+        "rec": 3,
+        "recYds": 25,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "TEN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Kyle Philips",
+        "position": "WR",
+        "team": "TEN",
+        "salary": 800,
+        "points": 10.8,
+        "ownershipPercent": 6.4,
+        "rec": 4,
+        "recYds": 68,
+        "gameAwayTeam": "TEN",
+        "gameHomeTeam": "PIT",
+        "opponentTeam": "PIT"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won because it treated a low scoring game as a touch concentration slate rather than a quarterback slate. Diontae Johnson captain was the key decision. At 17.8 percent captain ownership, he was not a thin captain in absolute terms, but he still sat below the most duplicated quarterback and Derrick Henry captain paths while carrying Pittsburgh's clearest receiving ceiling. Once he scored and commanded seven catches, the multiplier slot immediately separated from the more common constructions tied to passers or blunt touchdown chasing.\n\nThe next sharp choice was leaving both quarterbacks off the roster. In a 20 to 16 game with limited passing efficiency and no quarterback score truly forcing its way into optimal builds, the lineup redirected salary toward skill player touch concentration. Derrick Henry still handled Tennessee's most bankable touchdown path. Najee Harris and Jaylen Warren together captured nearly all meaningful Pittsburgh backfield production. DeAndre Hopkins and Kyle Philips absorbed enough Tennessee receiving volume to make the Titans side viable without paying for a mediocre quarterback score.\n\nThis is where the build becomes more interesting than it first appears. It did not read the game through conventional team stacks. It read the game through who actually accumulated fantasy value in a grind. Pittsburgh scoring split between a Diontae Johnson touchdown and a rushing touchdown from Najee Harris, while Jaylen Warren piled up yardage without needing a score. Tennessee concentrated around Derrick Henry on the ground and two receivers underneath a passing game that never became mandatory.\n\nKyle Philips was the roster pressure release. At 800 salary and 6.4 percent flex ownership, he let the lineup hold the expensive volume pieces from both teams without collapsing into a more duplicated final construction. In a slate where raw quarterback scores were replaceable, that salary allocation mattered more than forcing a standard signal caller into the build.",
+    "uniquenessNotes": "The final grade lands at B minus. The lineup deserves credit for the no quarterback build, the Diontae Johnson captain choice, and the Kyle Philips salary release. Those are meaningful separators in a game where the field still leans toward cleaner, more conventional constructions.\n\nAt the same time, stricter grading pulls it down. There was only one flex player under 20 percent ownership. Salary left was only 200. Derrick Henry, DeAndre Hopkins, Najee Harris, and Jaylen Warren were all very accessible pieces, and the overall shell was not rare enough to support a higher grade once duplication is considered.\n\nWhat saves the lineup from the lower range is structural coherence. The roster had a clear read and followed it all the way through. It faded mediocre quarterback scores, captured both rushing environments, used Diontae Johnson as the passing ceiling from Pittsburgh, and used Kyle Philips as the one thin Tennessee attachment needed to make the math and ownership shape functional.\n\nThe broader lesson is that ugly showdown winners can still come from disciplined volume concentration rather than chaos. But under a stricter rubric, one low owned flex piece, minimal salary left, and a lineup likely duplicated many times should keep this build in the B minus tier rather than pushing it toward the top of the board.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Diontae Johnson",
+          "position": "WR",
+          "team": "PIT"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Wide receiver captain with no quarterbacks, both Pittsburgh running backs, Tennessee lead running back, Tennessee primary receiver, and one low salary auxiliary receiver",
+        "includesQBs": false
+      },
+      "primaryLever": "Diontae Johnson captain created the lineup’s main leverage point by giving the roster Pittsburgh receiving ceiling without paying for a more duplicated quarterback path",
+      "secondaryLever": "Kyle Philips at 6.4 percent flex ownership made the no quarterback construction possible while preserving expensive touch concentration across both backfields"
+    }
+  }
+}
