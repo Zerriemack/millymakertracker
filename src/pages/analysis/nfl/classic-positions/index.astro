@@ -16,6 +16,7 @@ const pageTitle = "NFL Classic Positions";
 <Layout title={pageTitle}>
   <main class="page">
     <header class="hero">
+      <a class="backLink" href="/analysis">Back to Review</a>
       <h1 class="title">{pageTitle}</h1>
       <p class="sub">Micro analysis for winning Classic lineups by roster spot.</p>
     </header>
@@ -50,6 +51,8 @@ const pageTitle = "NFL Classic Positions";
   }
 
   .hero{margin:10px 0 18px}
+  .backLink { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.10); background: #1f1f1f; color: rgba(255,255,255,0.88); text-decoration: none; font-weight: 900; font-size: 12px; letter-spacing: 0.02em; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  .backLink:hover { color: #fff; background: #232323; border-color: rgba(255,255,255,0.16); }
   .title{margin:0;font-size:44px;letter-spacing:-0.02em;font-weight:950}
   .sub{margin:10px 0 0;max-width:78ch;color:var(--muted);line-height:1.65;font-weight:650}
 

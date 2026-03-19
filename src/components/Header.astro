@@ -156,6 +156,27 @@ import HeaderLink from "./HeaderLink.astro";
     color: rgba(255, 255, 255, 0.98);
   }
 
+  @media (max-width: 1120px) {
+    .brand {
+      gap: 12px;
+      flex: 0 0 auto;
+    }
+
+    .brand-logo {
+      height: 78px;
+    }
+
+    .nav-links {
+      gap: 8px;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    nav a {
+      padding: 0.85em 0.45em;
+    }
+  }
+
   @media (max-width: 1020px) {
     .brand-title {
       font-size: 1.7rem;
