@@ -1,0 +1,149 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 1,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2021-09-09",
+  "slateName": "NFL Week 1 Thursday Night Showdown",
+  "slateTag": "tnf",
+  "slateGroup": "B-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Thursday Night Contest",
+    "siteContestId": "NFL_2021_WK01_TNF_SHOWDOWN_2021-09-09_dal_tb",
+    "entryFeeCents": 1000,
+    "entries": null,
+    "topPrizeCents": 3977059,
+    "totalOwnershipBp": 23790
+  },
+  "winner": {
+    "username": "SMKNBBQ",
+    "points": 197.42,
+    "maxEntries": 33
+  },
+  "lineup": {
+    "salaryUsed": 49300,
+    "totalPoints": 197.42,
+    "totalOwnershipBp": 23790,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Rob Gronkowski",
+        "position": "TE",
+        "team": "TB",
+        "salary": 8100,
+        "points": 43.5,
+        "ownershipPercent": 2.4,
+        "rec": 8,
+        "recYds": 90,
+        "recTd": 2,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Dak Prescott",
+        "position": "QB",
+        "team": "DAL",
+        "salary": 10400,
+        "points": 31.42,
+        "ownershipPercent": 62.4,
+        "passTd": 3,
+        "passYds": 403,
+        "rushYds": 13,
+        "interceptions": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Chris Godwin",
+        "position": "WR",
+        "team": "TB",
+        "salary": 8600,
+        "points": 27.5,
+        "ownershipPercent": 38.1,
+        "rec": 9,
+        "recYds": 105,
+        "recTd": 1,
+        "fumblesLost": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "DAL"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Amari Cooper",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 8400,
+        "points": 41.9,
+        "ownershipPercent": 36.2,
+        "rec": 13,
+        "recYds": 139,
+        "recTd": 2,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "CeeDee Lamb",
+        "position": "WR",
+        "team": "DAL",
+        "salary": 8200,
+        "points": 26.4,
+        "ownershipPercent": 48.6,
+        "rec": 7,
+        "recYds": 104,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "TB"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Antonio Brown",
+        "position": "WR",
+        "team": "TB",
+        "salary": 5600,
+        "points": 26.7,
+        "ownershipPercent": 50.2,
+        "rec": 5,
+        "recYds": 121,
+        "recTd": 1,
+        "rushYds": 6,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "DAL",
+        "gameHomeTeam": "TB",
+        "opponentTeam": "DAL"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by attacking a game that turned into concentrated wide receiver and tight end scoring on both sides, then placing the multiplier on the least popular access point to Tampa Bay’s touchdown distribution. Rob Gronkowski at captain carried only 2.4 percent captain ownership, which was the defining separator. Tampa Bay spread volume across several pass catchers, but Gronkowski captured two of Tom Brady’s touchdowns and turned a modest salary slot into the highest leverage captain outcome on the slate.\n\nThe Dallas side of the build was a direct read on how the Cowboys would keep pace. Dak Prescott threw for 403 yards, Amari Cooper caught 13 passes for 139 yards and two touchdowns, and CeeDee Lamb added 104 yards and a score. Rather than trying to guess at thin accessory pieces from Dallas, the lineup stayed attached to the actual passing concentration. That gave it access to nearly all of the Cowboys scoring without wasting roster spots on lower value branches.\n\nTampa Bay exposure beyond Gronkowski stayed disciplined as well. Chris Godwin and Antonio Brown each cleared 100 receiving yards, and both found the end zone. The result was a 3 to 3 build that fully embraced the passing environment on both sides without forcing a quarterback into the captain slot. From a diagnostic standpoint, the winning decision was not merely Gronkowski captain. It was Gronkowski captain inside a full game environment build where the field’s most important fantasy production came overwhelmingly through receivers and tight ends.",
+    "uniquenessNotes": "The captain slot carried almost all of the lineup’s leverage. Gronkowski at 2.4 percent captain ownership was the narrow gate. Everything else in the lineup was popular enough that the build needed the captain to be right in a very exact way. That happened because Gronkowski was underpriced for his role relative to how Tampa Bay distributed touchdown equity in this game.\n\nThe lineup also used 700 in salary left, which helped, but not enough to make the full shell rare on its own. Prescott, Cooper, Lamb, Godwin, and Antonio Brown were all live and fairly natural in a game that produced this much receiver scoring. That means the captain did the heavy lifting while the flex body absorbed the most projectable output from the shootout.\n\nThe final grade lands at B minus. The captain leverage was elite, and the game capture was excellent. The build falls out of higher territory because the total ownership shape remained dense and the flex shell was still fairly obvious once the game environment became clear. For future lineup building, the actionable lesson is to pair an uncomfortable but coherent captain with the most concentrated flex production from the shootout, rather than trying to get cute across every slot.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Rob Gronkowski",
+          "position": "TE",
+          "team": "TB"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Low-owned tight end captain with a double Dallas wide receiver pairing, Dak Prescott, and two additional Tampa Bay pass catchers in a full passing-environment game stack",
+        "includesQBs": true
+      },
+      "primaryLever": "Rob Gronkowski captain created the slate’s main leverage point through a 2.4 percent captain outcome",
+      "secondaryLever": "The lineup stacked the entire Dallas passing concentration through Dak Prescott, Amari Cooper, and CeeDee Lamb while keeping Tampa Bay touchdown concentration through Chris Godwin and Antonio Brown"
+    }
+  }
+}

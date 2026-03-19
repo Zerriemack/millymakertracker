@@ -1,0 +1,144 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 22,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2022-02-13",
+  "slateName": "Super Bowl 56 Showdown",
+  "slateTag": "super_bowl",
+  "slateGroup": "A-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Super Bowl Contest",
+    "siteContestId": "NFL_2021_WK22_SUPER_BOWL_SHOWDOWN_2022-02-13_lar_cin",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 16000000,
+    "totalOwnershipBp": 21700
+  },
+  "winner": {
+    "username": "GrindersCal",
+    "points": 130.36,
+    "maxEntries": 6
+  },
+  "lineup": {
+    "salaryUsed": 49000,
+    "totalPoints": 130.36,
+    "totalOwnershipBp": 21700,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Tee Higgins",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 11400,
+        "points": 43.5,
+        "ownershipPercent": 9.4,
+        "rec": 4,
+        "recYds": 100,
+        "recTd": 2,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 11600,
+        "points": 29.9,
+        "ownershipPercent": 74.3,
+        "rec": 8,
+        "recYds": 92,
+        "recTd": 2,
+        "rushYds": 7,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Matthew Stafford",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 10800,
+        "points": 21.92,
+        "ownershipPercent": 59.5,
+        "passTd": 3,
+        "passYds": 283,
+        "rushYds": 6,
+        "interceptions": 2,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Joe Mixon",
+        "position": "RB",
+        "team": "CIN",
+        "salary": 9600,
+        "points": 16.54,
+        "ownershipPercent": 29.4,
+        "passTd": 1,
+        "passYds": 6,
+        "recYds": 1,
+        "rushYds": 72,
+        "rec": 5,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tyler Boyd",
+        "position": "WR",
+        "team": "CIN",
+        "salary": 5400,
+        "points": 9.8,
+        "ownershipPercent": 32.3,
+        "rec": 5,
+        "recYds": 48,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Brycen Hopkins",
+        "position": "TE",
+        "team": "LAR",
+        "salary": 200,
+        "points": 8.7,
+        "ownershipPercent": 2.1,
+        "rec": 4,
+        "recYds": 47,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "CIN",
+        "opponentTeam": "CIN"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by identifying the one Cincinnati receiver outcome that could outscore the field’s preferred captain choices while still preserving direct access to the Rams passing nucleus. Tee Higgins at captain carried only 9.4 percent captain ownership and delivered the exact multiplier score needed to break the slate. His two receiving touchdowns and 100 yard bonus gave Cincinnati its highest value ceiling outcome, and that mattered because most lineups built around this game were still leaning first toward Cooper Kupp, Matthew Stafford, Joe Burrow, or Ja'Marr Chase as the central multiplier decision.\n\nThe Rams side of the lineup stayed attached to the production that was hardest to fade. Cooper Kupp and Matthew Stafford were the necessary spine because Los Angeles touchdowns still flowed through them, especially late. Rather than forcing a third expensive Rams piece, the build dropped all the way down to Brycen Hopkins at 2.1 percent flex ownership and 200 salary. That was the key release valve. Hopkins did not need a touchdown. He only needed enough receiving production to make the salary structure hold together while the expensive core scored the slate.\n\nThe Cincinnati complement around Higgins was also selective instead of bloated. Joe Mixon remained live through rushing volume, receiving usage, and the passing touchdown he threw. Tyler Boyd gave the lineup a midrange Bengal pass catcher without paying up for a more popular alternate star route. From a diagnostic angle, the lineup solved the game by capturing both ends of the scoring distribution. It took the correct low-owned captain from Cincinnati, then used Hopkins as the thin Rams accessory to afford the Rams stars who still had to matter if Los Angeles won.",
+    "uniquenessNotes": "The construction is stronger than it looks at first glance because the leverage did not come from one slot alone. Higgins captain at 9.4 percent was the headline choice, but Brycen Hopkins at 2.1 percent flex ownership was what turned the lineup into a structurally uncommon 3-3 build. Many lineups could get to Higgins captain. Far fewer arrived there with Kupp, Stafford, Mixon, Boyd, and a near-minimum Rams tight end instead of a more natural midrange piece.\n\nLeaving 1000 in salary mattered here. On a Super Bowl showdown slate, small salary differences can still reshape duplication when the field gravitates toward obvious balanced shells. This lineup did not leave salary in a random way. It left salary because Hopkins let the build keep the exact expensive players who still controlled the game’s most bankable fantasy production.\n\nThe final grade lands at A minus. The lineup had real captain leverage, a true low-owned salary release piece, healthy salary left, and a coherent 3-3 game capture that fit the actual scoring distribution. It stops short of the very top tier because the flex body still carried significant ownership through Kupp and Stafford, but the overall structure was sharp enough to separate on the biggest stage.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Tee Higgins",
+          "position": "WR",
+          "team": "CIN"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Low-owned wide receiver captain with Rams passing core, a near-minimum tight end salary release, and two additional Cincinnati skill players",
+        "includesQBs": true
+      },
+      "primaryLever": "Tee Higgins captain created the slate’s main leverage point through a 9.4 percent captain outcome",
+      "secondaryLever": "Brycen Hopkins at 2.1 percent flex ownership and 200 salary unlocked the full 3-3 stars build while preserving 1000 in salary left"
+    }
+  }
+}

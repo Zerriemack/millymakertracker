@@ -1,0 +1,141 @@
+{
+  "sport": "NFL",
+  "year": 2021,
+  "week": 13,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2021-12-06",
+  "slateName": "NFL Week 13 Monday Night Showdown",
+  "slateTag": "mnf",
+  "slateGroup": "A-",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Monday Night Contest",
+    "siteContestId": "NFL_2021_WK13_MNF_SHOWDOWN_2021-12-06_ne_buf",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 38701755,
+    "totalOwnershipBp": 25920
+  },
+  "winner": {
+    "username": "dahladino",
+    "points": 78.75,
+    "maxEntries": 90
+  },
+  "lineup": {
+    "salaryUsed": 47300,
+    "totalPoints": 78.75,
+    "totalOwnershipBp": 25920,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Damien Harris",
+        "position": "RB",
+        "team": "NE",
+        "salary": 14700,
+        "points": 30.15,
+        "ownershipPercent": 9.7,
+        "rushTd": 1,
+        "rushYds": 111,
+        "bonus100RushYds": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 11200,
+        "points": 12.7,
+        "ownershipPercent": 88.7,
+        "passTd": 1,
+        "passYds": 145,
+        "rushYds": 39,
+        "fumblesLost": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Stefon Diggs",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 10600,
+        "points": 9.1,
+        "ownershipPercent": 52.3,
+        "rec": 4,
+        "recYds": 51,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "NE"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Rhamondre Stevenson",
+        "position": "RB",
+        "team": "NE",
+        "salary": 5600,
+        "points": 7.8,
+        "ownershipPercent": 33.9,
+        "rushYds": 78,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Patriots",
+        "position": "DST",
+        "team": "NE",
+        "salary": 4000,
+        "points": 8,
+        "ownershipPercent": 29.9,
+        "sacks": 2,
+        "defFumbleRecoveries": 1,
+        "pointsAllowed": 13,
+        "qbFaced": "Josh Allen",
+        "qbFacedArchetype": "FRANCHISE",
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Gabriel Davis",
+        "position": "WR",
+        "team": "BUF",
+        "salary": 1200,
+        "points": 11,
+        "ownershipPercent": 5.8,
+        "rec": 2,
+        "recYds": 30,
+        "recTd": 1,
+        "gameAwayTeam": "NE",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "NE"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by embracing the fact that this was not a normal passing volume showdown slate. The weather compressed the game into a low play, low scoring, run and field position battle, yet the field still carried ownership as if Buffalo’s passing tree would deliver a more standard ceiling. Damien Harris at captain became the slate’s hinge point. At 9.7 percent captain ownership, he captured the only offensive score for New England, cleared the 100 yard rushing bonus, and did it in a game where raw fantasy scoring was so depressed that 30.15 captain points became a dominant multiplier outcome.\n\nThe rest of the build reflected a very specific read on where usable fantasy points could still come from in an ugly environment. Rhamondre Stevenson gave New England a second rushing based path without needing Mac Jones, whose passing volume was nearly nonexistent. Patriots defense added pressure and a takeaway while benefiting from the game staying in a low scoring range. On the Buffalo side, Josh Allen was still too central to omit because he accounted for the Bills touchdown and nearly all meaningful yardage creation. Stefon Diggs stayed in as the most stable Buffalo receiving container even in a failed environment, while Gabriel Davis at 5.8 percent flex ownership provided the one Buffalo touchdown catch from a near-minimum salary slot.\n\nThe diagnostic core is the lineup’s refusal to force normal showdown logic onto an abnormal game. It did not try to win through broad offensive correlation. It won through weather adjusted scoring concentration, backfield control, defensive support, and one cheap touchdown attachment from the trailing side.",
+    "uniquenessNotes": "The largest separator was not Damien Harris captain by itself. It was Damien Harris captain with 2700 in salary left and a three player New England block that excluded Mac Jones entirely. That construction required a strong stance that New England could control the game on the ground without producing enough passing volume to matter. The actual game landed directly on that script.\n\nThe second lever was Gabriel Davis at 5.8 percent flex ownership. In a slate where Buffalo pass catcher ownership was concentrated toward higher salary names, Davis gave the lineup access to the only Bills receiving touchdown without paying for a more popular midrange option. That one slot mattered because it let the lineup keep Josh Allen and Stefon Diggs while still preserving substantial salary on the table.\n\nThe Patriots defense alongside Josh Allen created structural tension, but it was coherent tension. Allen still had to create nearly everything Buffalo did, while New England’s defense could score through sacks, a takeaway, and points allowed. In a game environment this thin, both can survive together.\n\nThe final grade lands at A minus. The lineup had meaningful captain leverage, one true low-owned touchdown piece, major salary left, weather-aware structural tension, and a build the field was not assembling often enough around a low total outcome. It misses full A territory because Josh Allen and Stefon Diggs still kept a large portion of the build tied to popular Buffalo volume, but the overall construction was sharp and fully aligned with how this game actually had to be won.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Damien Harris",
+          "position": "RB",
+          "team": "NE"
+        },
+        "teamSplit": "3-3",
+        "buildType": "Running back captain in a weather-suppressed game with a New England ground-and-defense block, Josh Allen retained for total Buffalo control, and a low-owned Gabriel Davis touchdown attachment",
+        "includesQBs": true
+      },
+      "primaryLever": "Damien Harris captain created the slate’s main leverage point through a 9.7 percent captain outcome in a game where raw scoring was heavily suppressed",
+      "secondaryLever": "Gabriel Davis at 5.8 percent flex ownership plus 2700 in salary left turned a low-total weather game into a structurally uncommon build"
+    }
+  }
+}

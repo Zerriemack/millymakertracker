@@ -1,0 +1,154 @@
+{
+  "sport": "NFL",
+  "year": 2020,
+  "week": 3,
+  "slateType": "SHOWDOWN",
+  "slateDate": "2020-09-27",
+  "slateName": "NFL Week 3 Sunday Night Showdown",
+  "slateTag": "snf",
+  "slateGroup": "B+",
+  "isMain": false,
+  "contest": {
+    "site": "DraftKings",
+    "contestName": "NFL Showdown Sunday Night Contest",
+    "siteContestId": "NFL_2020_WK03_SNF_SHOWDOWN_2020-09-27_lar_buf",
+    "entryFeeCents": null,
+    "entries": null,
+    "topPrizeCents": 625000,
+    "totalOwnershipBp": 23140
+  },
+  "winner": {
+    "username": "mayamaya",
+    "points": 172.33,
+    "maxEntries": null
+  },
+  "lineup": {
+    "salaryUsed": 49900,
+    "totalPoints": 172.33,
+    "totalOwnershipBp": 23140,
+    "items": [
+      {
+        "rosterSpot": "CAPTAIN",
+        "name": "Cooper Kupp",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 12300,
+        "points": 43.05,
+        "ownershipPercent": 6.3,
+        "rec": 9,
+        "recYds": 107,
+        "recTd": 1,
+        "bonus100RecYds": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Josh Allen",
+        "position": "QB",
+        "team": "BUF",
+        "salary": 12400,
+        "points": 36.24,
+        "ownershipPercent": 82.9,
+        "passTd": 4,
+        "rushTd": 1,
+        "passYds": 311,
+        "rushYds": 8,
+        "interceptions": 1,
+        "fumblesLost": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "LAR"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Jared Goff",
+        "position": "QB",
+        "team": "LAR",
+        "salary": 10400,
+        "points": 31.24,
+        "ownershipPercent": 51.4,
+        "passTd": 2,
+        "rushTd": 1,
+        "passYds": 321,
+        "rushYds": 4,
+        "interceptions": 1,
+        "fumblesLost": 1,
+        "twoPtPass": 1,
+        "bonus300PassYds": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Robert Woods",
+        "position": "WR",
+        "team": "LAR",
+        "salary": 7600,
+        "points": 21.4,
+        "ownershipPercent": 45.0,
+        "rec": 5,
+        "recYds": 74,
+        "recTd": 1,
+        "rushYds": 30,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Darrell Henderson Jr.",
+        "position": "RB",
+        "team": "LAR",
+        "salary": 7000,
+        "points": 22.0,
+        "ownershipPercent": 29.5,
+        "rec": 1,
+        "recYds": 6,
+        "rushYds": 114,
+        "rushTd": 1,
+        "bonus100RushYds": 1,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "BUF"
+      },
+      {
+        "rosterSpot": "FLEX",
+        "name": "Tyler Kroft",
+        "position": "TE",
+        "team": "BUF",
+        "salary": 200,
+        "points": 18.4,
+        "ownershipPercent": 16.3,
+        "rec": 4,
+        "recYds": 24,
+        "recTd": 2,
+        "gameAwayTeam": "LAR",
+        "gameHomeTeam": "BUF",
+        "opponentTeam": "LAR"
+      }
+    ]
+  },
+  "analysis": {
+    "stackSummary": "This lineup won by capturing a game environment that blew past the field’s comfort level, then placing the multiplier on the cheapest elite access point to the Rams passing ceiling. Cooper Kupp at captain carried only 6.3 percent captain ownership, yet he landed on a 100 yard bonus game with a touchdown in a back and forth scoring environment where both quarterbacks cleared 300 passing yards. The field clearly understood Josh Allen and Jared Goff could both matter, but it did not concentrate enough captain exposure on Kupp relative to the way the Rams offense distributed fantasy scoring.\n\nThe next layer was structural discipline. Instead of treating the shootout as a random everything game, this build anchored itself to four Rams pieces who covered distinct scoring lanes. Jared Goff handled the passing volume. Cooper Kupp captured the primary multiplier outcome. Robert Woods added another receiving touchdown plus rushing usage. Darrell Henderson Jr. captured the Rams rushing touchdown and the 100 yard rushing bonus. That gave the lineup deep exposure to the Rams scoring tree without becoming fragile through overreliance on a single role.\n\nThe Buffalo side was handled differently. Josh Allen was mandatory because his production was too broad to leave behind in a game of this shape. Tyler Kroft was the separator. At 16.3 percent flex ownership and only 200 dollars in salary, he turned two short receiving touchdowns into a slate shifting salary release valve. That one decision is what allowed the lineup to keep both quarterbacks, captain Kupp, Woods, and Henderson together. Diagnosticly, the winning formula was not merely both quarterbacks plus a low owned captain. It was both quarterbacks plus a low owned captain plus the correct minimum salary touchdown source.",
+    "uniquenessNotes": "The lineup’s strongest trait was how cleanly it balanced leverage and raw scoring access. Kupp captain created the main ownership gap, but the build did not sacrifice projection to get there. It still kept Josh Allen at 82.9 percent flex ownership and Jared Goff at 51.4 percent flex ownership because those were the most reliable containers of total offensive production in this game.\n\nTyler Kroft did the heavier uniqueness lifting than his raw point total alone suggests. Minimum salary tight ends do not become valuable because they are cheap. They become valuable when their scoring unlocks a top heavy game stack without forcing a projection collapse elsewhere. Kroft’s two touchdown result gave this lineup permission to spend nearly everywhere else and still remain structurally uncommon. He also prevented the build from needing a thinner midrange Buffalo piece who would have been more popular.\n\nThe final grade lands at B plus. The lineup had legitimate captain leverage, one flex piece under 20 percent ownership, near full salary usage without becoming duplicated through obvious construction, and a strong 4 to 2 game capture across both offenses. It does not reach A range because the overall ownership shape remained fairly dense once both quarterbacks, Woods, and Henderson were added. Even so, the captain choice and Kroft salary release created enough separation to win a slate where the scoring concentration was massive.",
+    "stackMeta": {
+      "lineupType": "SHOWDOWN",
+      "construction": {
+        "captain": {
+          "name": "Cooper Kupp",
+          "position": "WR",
+          "team": "LAR"
+        },
+        "teamSplit": "4-2",
+        "buildType": "Low-owned wide receiver captain with both quarterbacks, a four-man Rams concentration, and a minimum-salary Buffalo touchdown bring-back",
+        "includesQBs": true
+      },
+      "primaryLever": "Cooper Kupp captain created the slate’s main leverage point through a 6.3 percent captain outcome",
+      "secondaryLever": "Tyler Kroft unlocked the full game stack at 200 salary while providing two touchdown scoring from a 16.3 percent flex roster spot"
+    }
+  }
+}
