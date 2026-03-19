@@ -1,0 +1,109 @@
+---
+import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
+import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import StatCard from "../../../../components/nfl/classic/StatCard.astro";
+import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
+import { classicDistributionSections } from "../../../../data/nflClassicReviewMock";
+
+const pageTitle = "NFL Classic Review | Game Environment";
+const teamSection = classicDistributionSections.find((s) => s.title === "Max From One Team");
+const gameSection = classicDistributionSections.find((s) => s.title === "Max From One Game");
+---
+
+<ClassicReviewShell
+  title={pageTitle}
+  headline="Game Environment"
+  subtitle="How concentrated winners get by team and by game environment."
+  accent="slate"
+>
+  <div slot="subnav">
+    <ClassicReviewSubnav active="environment" />
+  </div>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Team Concentration</h2>
+        <p class="sectionSub">How many players winners roster from a single team.</p>
+      </div>
+      <div class="sectionPill">Core</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        {teamSection?.charts?.map((chart) => (
+          <ChartPanel
+            title={chart.title}
+            meta={chart.meta}
+            helper={chart.helper}
+            footer={chart.footer}
+            series={chart.series}
+            accent="slate"
+            variant="lead"
+          />
+        ))}
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Interpretation</h3>
+              <p class="sectionSub">Use this to cap or stretch team stacks.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            {teamSection?.stats?.map((stat, idx) => (
+              <StatCard
+                label={stat.label}
+                value={stat.value}
+                accent={idx === 0 ? "slate" : "slate"}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Game Concentration</h2>
+        <p class="sectionSub">How often winners focus on a single game environment.</p>
+      </div>
+      <div class="sectionPill">Support</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        {gameSection?.charts?.map((chart) => (
+          <ChartPanel
+            title={chart.title}
+            meta={chart.meta}
+            helper={chart.helper}
+            footer={chart.footer}
+            series={chart.series}
+            accent="slate"
+          />
+        ))}
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Signal Read</h3>
+              <p class="sectionSub">Use this to gauge when a single game dominates.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            {gameSection?.stats?.map((stat, idx) => (
+              <StatCard
+                label={stat.label}
+                value={stat.value}
+                accent={idx === 0 ? "slate" : "slate"}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</ClassicReviewShell>

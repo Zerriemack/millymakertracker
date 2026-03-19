@@ -1,0 +1,104 @@
+---
+import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
+import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import StatCard from "../../../../components/nfl/classic/StatCard.astro";
+import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
+import { classicDistributionSections, classicTrendCharts } from "../../../../data/nflClassicReviewMock";
+
+const pageTitle = "NFL Classic Review | Salary";
+const salarySection = classicDistributionSections.find((s) => s.title === "Salary Left");
+const salaryTrend = classicTrendCharts.find((c) => c.title === "Salary Left by Year");
+---
+
+<ClassicReviewShell
+  title={pageTitle}
+  headline="Salary Discipline"
+  subtitle="How winners spend salary, where they leave room, and how that shifts over time."
+  accent="blue"
+>
+  <div slot="subnav">
+    <ClassicReviewSubnav active="salary" />
+  </div>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Salary Left Distribution</h2>
+        <p class="sectionSub">Where Classic winners typically leave salary on the table.</p>
+      </div>
+      <div class="sectionPill">Core</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        {salarySection?.charts?.map((chart) => (
+          <ChartPanel
+            title={chart.title}
+            meta={chart.meta}
+            helper={chart.helper}
+            footer={chart.footer}
+            series={chart.series}
+            accent="blue"
+            variant="lead"
+          />
+        ))}
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Interpretation</h3>
+              <p class="sectionSub">Use these baselines to calibrate salary pressure.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            {salarySection?.stats?.map((stat, idx) => (
+              <StatCard
+                label={stat.label}
+                value={stat.value}
+                accent={idx === 0 ? "blue" : "slate"}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Salary Trend</h2>
+        <p class="sectionSub">Year-over-year shifts in median salary left.</p>
+      </div>
+      <div class="sectionPill">Trend</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        {salaryTrend ? (
+          <ChartPanel
+            title={salaryTrend.title}
+            meta={salaryTrend.meta}
+            helper={salaryTrend.helper}
+            footer={salaryTrend.footer}
+            series={salaryTrend.series}
+            accent="blue"
+          />
+        ) : null}
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Signal Read</h3>
+              <p class="sectionSub">Watch for shifts toward tighter or looser builds.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            <StatCard label="Current Bias" value="Balanced" note="No extreme drift." accent="slate" />
+            <StatCard label="If Rising" value="Leave More" note="Capture uniqueness." accent="blue" />
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</ClassicReviewShell>

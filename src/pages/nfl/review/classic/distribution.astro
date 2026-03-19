@@ -1,0 +1,144 @@
+---
+import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
+import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import StatCard from "../../../../components/nfl/classic/StatCard.astro";
+import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
+import { classicDistributionSections } from "../../../../data/nflClassicReviewMock";
+
+const pageTitle = "NFL Classic Review | Distribution Index";
+
+const salarySection = classicDistributionSections.find((s) => s.title === "Salary Left");
+const ownershipSection = classicDistributionSections.find((s) => s.title === "Total Ownership");
+const pointsSection = classicDistributionSections.find((s) => s.title === "Winner Points");
+---
+
+<ClassicReviewShell
+  title={pageTitle}
+  headline="Distribution Index"
+  subtitle="A clean index of the core distribution lenses. Use this page to pick the exact surface you want to study next."
+  accent="blue"
+>
+  <div slot="subnav">
+    <ClassicReviewSubnav active="distribution" />
+  </div>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Headline Benchmarks</h2>
+        <p class="sectionSub">Quick baselines that frame the three distribution surfaces.</p>
+      </div>
+      <div class="sectionPill">Benchmarks</div>
+    </div>
+    <div class="statGrid">
+      <StatCard
+        label={salarySection?.stats?.[0]?.label || "Median Salary Left"}
+        value={salarySection?.stats?.[0]?.value || "$1,200"}
+        accent="blue"
+      />
+      <StatCard
+        label={ownershipSection?.stats?.[0]?.label || "Median Ownership"}
+        value={ownershipSection?.stats?.[0]?.value || "137.4%"}
+        accent="green"
+      />
+      <StatCard
+        label={pointsSection?.stats?.[0]?.label || "Median Winner Points"}
+        value={pointsSection?.stats?.[0]?.value || "194.2"}
+        accent="gold"
+      />
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Featured Distributions</h2>
+        <p class="sectionSub">Two primary lenses that anchor most Classic review sessions.</p>
+      </div>
+      <div class="sectionPill">Featured</div>
+    </div>
+    <div class="chartGrid twoCol">
+      {salarySection?.charts?.[0] ? (
+        <ChartPanel
+          title={salarySection.charts[0].title}
+          meta={salarySection.charts[0].meta}
+          helper={salarySection.charts[0].helper}
+          footer={salarySection.charts[0].footer}
+          series={salarySection.charts[0].series}
+          accent="blue"
+        />
+      ) : null}
+      {ownershipSection?.charts?.[0] ? (
+        <ChartPanel
+          title={ownershipSection.charts[0].title}
+          meta={ownershipSection.charts[0].meta}
+          helper={ownershipSection.charts[0].helper}
+          footer={ownershipSection.charts[0].footer}
+          series={ownershipSection.charts[0].series}
+          accent="green"
+        />
+      ) : null}
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Where to Go Next</h2>
+        <p class="sectionSub">Jump directly to the surface that answers your question.</p>
+      </div>
+      <div class="sectionPill">Next</div>
+    </div>
+    <div class="nextGrid">
+      <a class="nextCard" href="/nfl/review/classic/salary">
+        <div class="nextLabel">Salary</div>
+        <div class="nextSub">How winners leave room.</div>
+      </a>
+      <a class="nextCard" href="/nfl/review/classic/ownership">
+        <div class="nextLabel">Ownership</div>
+        <div class="nextSub">How chalk and leverage balance.</div>
+      </a>
+      <a class="nextCard" href="/nfl/review/classic/game-environment">
+        <div class="nextLabel">Game Environment</div>
+        <div class="nextSub">Where concentration shows up.</div>
+      </a>
+    </div>
+  </section>
+</ClassicReviewShell>
+
+<style>
+  .nextGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+  }
+
+  .nextCard {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 12px;
+    text-decoration: none;
+    background: #141414;
+    color: rgba(255, 255, 255, 0.9);
+    display: grid;
+    gap: 4px;
+    transition: border-color 120ms ease, transform 120ms ease;
+  }
+
+  .nextCard:hover {
+    border-color: rgba(255, 255, 255, 0.24);
+    transform: translateY(-1px);
+  }
+
+  .nextLabel {
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+
+  .nextSub {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>

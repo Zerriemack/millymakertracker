@@ -1,0 +1,116 @@
+---
+import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
+import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import StatCard from "../../../../components/nfl/classic/StatCard.astro";
+import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
+import { classicConstructionSections } from "../../../../data/nflClassicReviewMock";
+
+const pageTitle = "NFL Classic Review | Patterns";
+const [stackShape, bringBack] = classicConstructionSections;
+---
+
+<ClassicReviewShell
+  title={pageTitle}
+  headline="Winning Patterns"
+  subtitle="The repeatable stack shapes and bring-back patterns that define Classic winners."
+  accent="gold"
+>
+  <div slot="subnav">
+    <ClassicReviewSubnav active="patterns" />
+  </div>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Core Stack Shapes</h2>
+        <p class="sectionSub">The most frequent QB stack constructions that keep showing up.</p>
+      </div>
+      <div class="sectionPill">Patterns</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        <div class="sectionGrid">
+          <div class="chartCol">
+            {stackShape?.charts?.map((chart) => (
+              <ChartPanel
+                title={chart.title}
+                meta={chart.meta}
+                helper={chart.helper}
+                footer={chart.footer}
+                series={chart.series}
+                accent="gold"
+                variant="lead"
+              />
+            ))}
+          </div>
+          <div class="statCol">
+            {stackShape?.stats?.map((stat, idx) => (
+              <StatCard
+                label={stat.label}
+                value={stat.value}
+                accent={idx === 0 ? "gold" : "slate"}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Pattern Notes</h3>
+              <p class="sectionSub">Use this as the default build shape unless the slate demands otherwise.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            <StatCard label="Top Pattern" value="QB+2" note="Primary winning shape." accent="gold" />
+            <StatCard label="Secondary" value="QB+1" note="Still viable." accent="slate" />
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Bring-Back Patterns</h2>
+        <p class="sectionSub">How often winning stacks include opposing correlations.</p>
+      </div>
+      <div class="sectionPill">Bring-Back</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        {bringBack?.charts?.map((chart) => (
+          <ChartPanel
+            title={chart.title}
+            meta={chart.meta}
+            helper={chart.helper}
+            footer={chart.footer}
+            series={chart.series}
+            accent="green"
+          />
+        ))}
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Bring-Back Read</h3>
+              <p class="sectionSub">Treat bring-backs as the default, not the exception.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            {bringBack?.stats?.map((stat, idx) => (
+              <StatCard
+                label={stat.label}
+                value={stat.value}
+                accent={idx === 0 ? "green" : "slate"}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</ClassicReviewShell>

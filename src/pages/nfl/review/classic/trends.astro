@@ -1,0 +1,100 @@
+---
+import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
+import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
+import StatCard from "../../../../components/nfl/classic/StatCard.astro";
+import { classicTrendCharts } from "../../../../data/nflClassicReviewMock";
+
+const pageTitle = "NFL Classic Review | Trends";
+const [leadChart, ...restCharts] = classicTrendCharts;
+---
+
+<ClassicReviewShell
+  title={pageTitle}
+  headline="Year-over-Year Shifts"
+  subtitle="A high-level trend deck for Classic winners across seasons. Use this to sanity-check how the meta drifts." 
+  accent="gold"
+>
+  <div slot="subnav">
+    <ClassicReviewSubnav active="trends" />
+  </div>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Lead Trend</h2>
+        <p class="sectionSub">The defining trend line that anchors the season-over-season story.</p>
+      </div>
+      <div class="sectionPill">Macro</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        {leadChart ? (
+          <ChartPanel
+            variant="lead"
+            title={leadChart.title}
+            meta={leadChart.meta}
+            helper={leadChart.helper}
+            footer={leadChart.footer}
+            series={leadChart.series}
+            accent="gold"
+          />
+        ) : null}
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Trend Brief</h3>
+              <p class="sectionSub">Headline takeaways to carry into research.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            <StatCard label="Momentum" value="Uptrend" note="Macro line is rising." accent="green" />
+            <StatCard label="Priority" value="Gold Signal" note="Use as north star." accent="gold" />
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Supporting Signals</h2>
+        <p class="sectionSub">Secondary indicators that move with the Classic environment.</p>
+      </div>
+      <div class="sectionPill">Signals</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        <div class="chartGrid twoCol">
+          {restCharts.map((chart, idx) => (
+            <ChartPanel
+              title={chart.title}
+              meta={chart.meta}
+              helper={chart.helper}
+              footer={chart.footer}
+              series={chart.series}
+              accent={idx === 0 ? "blue" : idx === 1 ? "green" : "slate"}
+            />
+          ))}
+        </div>
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Signal Discipline</h3>
+              <p class="sectionSub">Use color as meaning, not decoration.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            <StatCard label="Neutral Read" value="Hold" note="Wait for a shift." accent="slate" />
+            <StatCard label="Positive Edge" value="Lean In" note="When green persists." accent="green" />
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</ClassicReviewShell>

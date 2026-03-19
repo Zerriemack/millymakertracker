@@ -1,0 +1,167 @@
+---
+const {
+  title,
+  helper,
+  meta,
+  series = [],
+  footer,
+  accent = "blue",
+  variant = "default",
+  class: className = "",
+} = Astro.props;
+const bars = Array.isArray(series) ? series : [];
+const defaultBars = bars.length ? bars : [72, 56, 44, 68, 38, 80, 60, 52, 40, 70];
+const clamp = (v) => Math.max(6, Math.min(100, Number(v) || 0));
+---
+
+<section class={`panel ${variant === "lead" ? "panelLead" : ""} ${className}`} data-accent={accent}>
+  <header class="panelHead">
+    <div>
+      <div class="title">{title}</div>
+      {meta ? <div class="meta">{meta}</div> : null}
+    </div>
+    <div class="pill">Chart Shell</div>
+  </header>
+
+  <div class="chart">
+    <div class="grid"></div>
+    <div class="bars">
+      {defaultBars.map((v) => (
+        <span class="bar" style={`--value:${clamp(v)}%`}></span>
+      ))}
+    </div>
+  </div>
+
+  {helper ? <p class="helper">{helper}</p> : null}
+  {footer ? <div class="footer">{footer}</div> : null}
+</section>
+
+<style>
+  .panel {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(25, 25, 25, 0.95) 0%, rgba(16, 16, 16, 0.98) 100%);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .panel::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: color-mix(in srgb, var(--accent, #3c6eff) 70%, transparent);
+    opacity: 0.55;
+  }
+
+  .panelLead {
+    min-height: 230px;
+  }
+
+  .panelLead .chart {
+    height: 170px;
+  }
+
+  .panelHead {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 15px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.94);
+    letter-spacing: -0.01em;
+  }
+
+  .meta {
+    margin-top: 3px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 700;
+  }
+
+  .pill {
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: #141414;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .panel[data-accent="gold"] .pill {
+    color: color-mix(in srgb, var(--accent) 70%, #fff 30%);
+    border-color: color-mix(in srgb, var(--accent) 35%, rgba(255, 255, 255, 0.18));
+  }
+
+  .panel[data-accent="green"] .pill {
+    color: color-mix(in srgb, var(--accent) 65%, #fff 35%);
+    border-color: color-mix(in srgb, var(--accent) 30%, rgba(255, 255, 255, 0.18));
+  }
+
+  .chart {
+    position: relative;
+    height: 140px;
+    border-radius: 14px;
+    background: radial-gradient(120px 180px at 20% 20%, rgba(255, 255, 255, 0.06), transparent 70%), #101010;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+  }
+
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 100% 25%, 60px 100%;
+    opacity: 0.4;
+  }
+
+  .bars {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+    padding: 12px;
+    align-items: end;
+  }
+
+  .bar {
+    height: var(--value);
+    border-radius: 8px 8px 4px 4px;
+    background: linear-gradient(180deg, color-mix(in srgb, var(--accent, #3c6eff) 60%, #fff 40%), rgba(85, 85, 85, 0.7));
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+  }
+
+  .helper {
+    margin: 0;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.4;
+    font-weight: 650;
+  }
+
+  .footer {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 700;
+  }
+
+  .panel[data-accent="blue"] { --accent: var(--accent-blue, #3c6eff); }
+  .panel[data-accent="gold"] { --accent: var(--accent-gold, #d8b566); }
+  .panel[data-accent="green"] { --accent: var(--accent-green, #3fb77a); }
+  .panel[data-accent="red"] { --accent: var(--accent-red, #d26b6b); }
+  .panel[data-accent="slate"] { --accent: var(--accent-slate, #8c93a1); }
+</style>

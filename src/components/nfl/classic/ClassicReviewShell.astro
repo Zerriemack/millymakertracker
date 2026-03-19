@@ -1,0 +1,354 @@
+---
+import ClassicReviewFrame from "./ClassicReviewFrame.astro";
+
+const {
+  title,
+  headline,
+  subtitle,
+  accent = "blue",
+  backHref = "/analysis",
+  backLabel = "Back to Review",
+} = Astro.props;
+
+---
+
+<ClassicReviewFrame title={title || headline || "NFL Classic Review"} accent={accent} class="classic-shell">
+  <header class={`hero ${Astro.slots.has("heroSide") ? "" : "heroSolo"}`}>
+    <div class="heroText">
+      <a class="backLink" href={backHref}>{backLabel}</a>
+      <div class="kicker">NFL Classic Review</div>
+      <h1 class="heroTitle">{headline}</h1>
+      {subtitle ? <p class="heroSub">{subtitle}</p> : null}
+    </div>
+    {Astro.slots.has("heroSide") ? (
+      <div class="heroSide">
+        <slot name="heroSide" />
+      </div>
+    ) : null}
+  </header>
+
+  <div class="subnavWrap">
+    <slot name="subnav" />
+  </div>
+
+  <div class="content">
+    <slot />
+  </div>
+</ClassicReviewFrame>
+
+<style>
+  .classic-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+    gap: 16px;
+    align-items: end;
+    padding: 16px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, rgba(22, 22, 22, 0.94), rgba(14, 14, 14, 0.98));
+    box-shadow: var(--shadow);
+    min-width: 0;
+  }
+
+  .heroSolo {
+    grid-template-columns: 1fr;
+  }
+
+  .heroText {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(22, 22, 22, 0.9);
+    color: rgba(255, 255, 255, 0.82);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 10px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .backLink:hover {
+    border-color: var(--border-strong);
+    color: #fff;
+  }
+
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    font-weight: 800;
+  }
+
+  .heroTitle {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 950;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  .heroSub {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 650;
+    max-width: 75ch;
+    line-height: 1.5;
+  }
+
+  .heroSide {
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  :global(.heroPanel) {
+    height: 100%;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(18, 18, 18, 0.92), rgba(12, 12, 12, 0.98));
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  :global(.heroPanelTitle) {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+    font-weight: 900;
+  }
+
+  :global(.heroList) {
+    display: grid;
+    gap: 6px;
+  }
+
+  :global(.heroRow) {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  :global(.heroRow:last-child) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  :global(.heroLabel) {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  :global(.heroValue) {
+    font-size: 16px;
+    font-weight: 900;
+    color: color-mix(in srgb, var(--accent) 60%, #fff 40%);
+  }
+
+  :global(.heroCTA) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 75%, #fff 25%), #f4f4f4);
+    color: #0b0b0b;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+
+  :global(.heroCTA:hover) {
+    filter: brightness(1.04);
+  }
+
+  .subnavWrap {
+    margin-top: 8px;
+  }
+
+  .content {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  :global(.sectionPanel) {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(23, 23, 23, 0.96), rgba(14, 14, 14, 0.98));
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  :global(.sectionHeader) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  :global(.sectionTitle) {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+  }
+
+  :global(.sectionSub) {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 650;
+  }
+
+  :global(.sectionPill) {
+    padding: 3px 8px;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+    background: rgba(12, 12, 12, 0.8);
+    color: color-mix(in srgb, var(--accent) 75%, #fff 25%);
+    font-weight: 900;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  :global(.bandGrid) {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 10px;
+    align-items: start;
+    min-width: 0;
+  }
+
+  :global(.span-12) { grid-column: 1 / -1; }
+  :global(.span-8) { grid-column: span 8; }
+  :global(.span-7) { grid-column: span 7; }
+  :global(.span-6) { grid-column: span 6; }
+  :global(.span-5) { grid-column: span 5; }
+  :global(.span-4) { grid-column: span 4; }
+
+  :global(.panelSplit) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 10px;
+    align-items: start;
+  }
+
+  :global(.railStack) {
+    display: grid;
+    gap: 8px;
+  }
+
+  :global(.statGrid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    min-width: 0;
+  }
+
+  :global(.chartGrid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px;
+    min-width: 0;
+  }
+
+  :global(.chartGrid.twoCol) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  :global(.span2) {
+    grid-column: 1 / -1;
+  }
+
+  :global(.sectionGrid) {
+    display: grid;
+    grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    min-width: 0;
+  }
+
+  :global(.sectionGrid.isFlip) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  :global(.statCol) {
+    display: grid;
+    gap: 10px;
+  }
+
+  :global(.chartCol) {
+    display: grid;
+    gap: 10px;
+  }
+
+  @media (max-width: 1200px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+    :global(.chartGrid.twoCol) {
+      grid-template-columns: 1fr;
+    }
+    :global(.bandGrid) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+    :global(.span-8),
+    :global(.span-7),
+    :global(.span-6),
+    :global(.span-5),
+    :global(.span-4) {
+      grid-column: 1 / -1;
+    }
+    :global(.panelSplit) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 900px) {
+    :global(.sectionGrid),
+    :global(.sectionGrid.isFlip) {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

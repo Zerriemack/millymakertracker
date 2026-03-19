@@ -1,0 +1,885 @@
+---
+// src/components/nfl/classic/ClassicReviewRaw.astro
+import ClassicReviewFrame from "./ClassicReviewFrame.astro";
+import ClassicReviewSubnav from "./ClassicReviewSubnav.astro";
+
+const apiUrl = `${Astro.url.origin}/api/analysis/nfl/classic`;
+const res = await fetch(apiUrl);
+
+if (!res.ok) {
+  throw new Error(`Analysis API failed: ${res.status} ${res.statusText} (${apiUrl})`);
+}
+
+const data = await res.json();
+const rowsRaw = Array.isArray(data?.rows) ? data.rows : Array.isArray(data?.items) ? data.items : [];
+
+function n(v: any) {
+  const x = Number(v);
+  return Number.isFinite(x) ? x : null;
+}
+
+function moneyCents(v: any) {
+  const x = n(v);
+  if (x === null) return "—";
+  return `$${(x / 100).toLocaleString("en-US")}`;
+}
+
+function ynFromCount(v: any) {
+  const x = n(v);
+  if (x === null) return "";
+  return x > 0 ? "YES" : "NO";
+}
+
+const rows = rowsRaw
+  .map((r: any) => {
+    const slateId = String(r.slateId ?? r.id ?? r.slate?.id ?? "");
+    const week = Number(r.week ?? r.slate?.week ?? null);
+    const slateType = String(r.slateType ?? r.slate?.slateType ?? "");
+    const venue = String(r.slateDate ?? r.slate?.slateDate ?? r.date ?? "");
+
+    const year =
+      typeof r.year === "number"
+        ? r.year
+        : typeof r.slate?.season?.year === "number"
+          ? r.slate.season.year
+          : null;
+
+    const salaryCap =
+      typeof r.salaryCapCents === "number"
+        ? r.salaryCapCents
+        : typeof r.slate?.salaryCapCents === "number"
+          ? r.slate.salaryCapCents
+          : 50000;
+
+    const salaryUsed = typeof r.salaryUsed === "number" ? r.salaryUsed : n(r.lineup?.salaryUsed);
+    const salaryLeft =
+      typeof r.salaryLeft === "number"
+        ? r.salaryLeft
+        : typeof salaryUsed === "number" && typeof salaryCap === "number"
+          ? salaryCap - salaryUsed
+          : null;
+
+    const ownPct =
+      typeof r.totalOwnershipPct === "number"
+        ? r.totalOwnershipPct
+        : typeof r.totalOwnershipBp === "number"
+          ? r.totalOwnershipBp / 100
+          : typeof r.contest?.totalOwnershipBp === "number"
+            ? r.contest.totalOwnershipBp / 100
+            : typeof r.lineup?.totalOwnershipBp === "number"
+              ? r.lineup.totalOwnershipBp / 100
+              : null;
+
+    const pts =
+      typeof r.points === "number"
+        ? r.points
+        : typeof r.winnerPoints === "number"
+          ? r.winnerPoints
+          : typeof r.winner?.points === "number"
+            ? r.winner.points
+            : typeof r.totalPoints === "number"
+              ? r.totalPoints
+              : typeof r.lineup?.totalPoints === "number"
+                ? r.lineup.totalPoints
+                : null;
+
+    const topPrizeCents =
+      typeof r.topPrizeCents === "number"
+        ? r.topPrizeCents
+        : typeof r.contest?.topPrizeCents === "number"
+          ? r.contest.topPrizeCents
+          : null;
+
+    const qbStack = String(r.qbStack ?? r.stack ?? r.construction?.qbStack ?? "");
+
+    const maxFromTeam = typeof r.maxFromTeam === "number" ? r.maxFromTeam : n(r.construction?.maxFromTeam);
+    const maxFromGame = typeof r.maxFromGame === "number" ? r.maxFromGame : n(r.construction?.maxFromGame);
+
+    const stackCount = typeof r.stackCount === "number" ? r.stackCount : n(r.construction?.stackCount);
+    const bringbackCount = typeof r.bringbackCount === "number" ? r.bringbackCount : n(r.construction?.bringbackCount);
+    const hasBringback = String(r.hasBringback ?? ynFromCount(bringbackCount));
+
+    const earlyCount =
+      typeof r.earlyCount === "number"
+        ? r.earlyCount
+        : typeof r.lineup?.analysis?.earlyCount === "number"
+          ? r.lineup.analysis.earlyCount
+          : n(r.construction?.earlyCount);
+
+    const lateCount =
+      typeof r.lateCount === "number"
+        ? r.lateCount
+        : typeof r.lineup?.analysis?.lateCount === "number"
+          ? r.lineup.analysis.lateCount
+          : n(r.construction?.lateCount);
+
+    const own0_10 = typeof r.own0_10 === "number" ? r.own0_10 : n(r.ownership_0_10 ?? r.construction?.own0_10);
+    const own11_19 = typeof r.own11_19 === "number" ? r.own11_19 : n(r.ownership_11_19 ?? r.construction?.own11_19);
+    const own20p = typeof r.own20p === "number" ? r.own20p : n(r.ownership_20p ?? r.construction?.own20p);
+
+    const ownBucketTotal =
+      (typeof own0_10 === "number" ? own0_10 : 0) +
+      (typeof own11_19 === "number" ? own11_19 : 0) +
+      (typeof own20p === "number" ? own20p : 0);
+
+    const tag = String(r.tag ?? "");
+    const group = String(r.group ?? "");
+
+    const link =
+      typeof r.link === "string" && r.link
+        ? r.link
+        : typeof r.url === "string" && r.url
+          ? r.url
+          : slateId && year
+            ? `/nfl/${year}/slate/${slateId}`
+            : "";
+
+    return {
+      slateId,
+      year,
+      week,
+      slateType,
+      venue,
+      tag,
+      group,
+      link,
+
+      qbStack,
+      stackCount,
+      bringbackCount,
+      hasBringback,
+
+      maxFromTeam,
+      maxFromGame,
+
+      earlyCount,
+      lateCount,
+
+      own0_10,
+      own11_19,
+      own20p,
+      ownBucketTotal,
+
+      salaryLeft,
+      ownPct,
+      pts,
+      topPrizeCents,
+    };
+  })
+  .filter((r: any) => r.slateId);
+
+const pageTitle = "NFL Classic Review";
+---
+
+<ClassicReviewFrame title={pageTitle} accent="blue" class="classic-raw">
+  <section class="page">
+    <header class="topbar">
+      <div class="titleBlock">
+        <a class="backLink" href="/analysis">Back to Review</a>
+        <h1 class="h1">{pageTitle}</h1>
+        <ClassicReviewSubnav active="raw" />
+        <div class="sub">
+          Rows: <span id="shownCount">{rows.length}</span> / {rows.length}
+        </div>
+      </div>
+
+      <div class="searchWrap">
+        <label class="srOnly" for="q">Search</label>
+        <input
+          id="q"
+          class="search"
+          type="text"
+          placeholder="Search: 2018, WK 2, MAIN, QB+2, YES, max 4, early 6, TAG, GROUP"
+        />
+        <button id="resetAllTop" class="resetAll" type="button">Reset all</button>
+      </div>
+    </header>
+
+    <section class="main">
+      <div class="tableWrap">
+        <table id="t">
+          <thead>
+            <tr>
+              <th class="colYear"><button class="thBtn" type="button" data-col="year">YEAR</button></th>
+              <th class="colWk"><button class="thBtn" type="button" data-col="week">WEEK</button></th>
+              <th class="colType"><button class="thBtn" type="button" data-col="type">TYPE</button></th>
+              <th class="colVenue"><button class="thBtn" type="button" data-col="venue">VENUE</button></th>
+
+              <th class="colStack"><button class="thBtn" type="button" data-col="stack">STACK</button></th>
+              <th class="colBring"><button class="thBtn" type="button" data-col="bring">BRING BACK</button></th>
+
+              <th class="colMax"><button class="thBtn" type="button" data-col="maxTeam">MAX FROM TEAM</button></th>
+              <th class="colMaxG"><button class="thBtn" type="button" data-col="maxGame">MAX FROM GAME</button></th>
+
+              <th class="colEarly"><button class="thBtn" type="button" data-col="early">EARLY PLAYERS</button></th>
+              <th class="colLate"><button class="thBtn" type="button" data-col="late">LATE PLAYERS</button></th>
+
+              <th class="colLeft"><button class="thBtn" type="button" data-col="left">SALARY LEFT</button></th>
+              <th class="colOwn"><button class="thBtn" type="button" data-col="own">TOTAL OWNERSHIP</button></th>
+
+              <th class="colB0"><button class="thBtn" type="button" data-col="b0">OWN 0–10</button></th>
+              <th class="colB11"><button class="thBtn" type="button" data-col="b11">OWN 11–19</button></th>
+              <th class="colB20"><button class="thBtn" type="button" data-col="b20">OWN 20+</button></th>
+              <th class="colBtot"><button class="thBtn" type="button" data-col="btot">BUCKET TOTAL</button></th>
+
+              <th class="colPts"><button class="thBtn" type="button" data-col="pts">WINNER POINTS</button></th>
+              <th class="colPrize"><button class="thBtn" type="button" data-col="top">TOP PRIZE</button></th>
+              <th class="colTag"><button class="thBtn" type="button" data-col="tag">TAG</button></th>
+              <th class="colGroup"><button class="thBtn" type="button" data-col="group">GROUP</button></th>
+              <th class="colLink"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {rows.map((r) => {
+              const year = Number.isFinite(r.year as any) ? String(r.year) : "";
+              const wk = Number.isFinite(r.week as any) ? String(r.week) : "";
+
+              const left = n(r.salaryLeft);
+              const own = n(r.ownPct);
+              const pts = n(r.pts);
+              const top = n(r.topPrizeCents);
+
+              const maxTeam = n(r.maxFromTeam);
+              const maxGame = n(r.maxFromGame);
+
+              const early = n(r.earlyCount);
+              const late = n(r.lateCount);
+
+              const b0 = n(r.own0_10);
+              const b11 = n(r.own11_19);
+              const b20 = n(r.own20p);
+              const btot = n(r.ownBucketTotal);
+
+              const bring = String(r.hasBringback || "").trim();
+              const tag = String(r.tag || "").trim();
+              const group = String(r.group || "").trim();
+
+              const badBucket = typeof btot === "number" && btot !== 9;
+
+              return (
+                <tr
+                  data-year={year}
+                  data-week={wk}
+                  data-type={r.slateType || ""}
+                  data-venue={r.venue || ""}
+                  data-stack={r.qbStack || ""}
+                  data-bring={bring}
+                  data-maxteam={maxTeam === null ? "" : String(maxTeam)}
+                  data-maxgame={maxGame === null ? "" : String(maxGame)}
+                  data-early={early === null ? "" : String(early)}
+                  data-late={late === null ? "" : String(late)}
+                  data-left={left === null ? "" : String(left)}
+                  data-own={own === null ? "" : String(own)}
+                  data-b0={b0 === null ? "" : String(b0)}
+                  data-b11={b11 === null ? "" : String(b11)}
+                  data-b20={b20 === null ? "" : String(b20)}
+                  data-btot={btot === null ? "" : String(btot)}
+                  data-pts={pts === null ? "" : String(pts)}
+                  data-top={top === null ? "" : String(top)}
+                  data-tag={tag}
+                  data-group={group}
+                >
+                  <td class="mono">{year || "—"}</td>
+                  <td class="mono">{wk || "—"}</td>
+                  <td class="mono">{r.slateType || "—"}</td>
+                  <td class="mono">{r.venue || "—"}</td>
+
+                  <td class="capCell"><div class="capMain">{r.qbStack || "—"}</div></td>
+                  <td class="mono">{bring || "—"}</td>
+
+                  <td class="mono">{maxTeam === null ? "—" : maxTeam.toFixed(0)}</td>
+                  <td class="mono">{maxGame === null ? "—" : maxGame.toFixed(0)}</td>
+
+                  <td class="mono">{early === null ? "—" : early.toFixed(0)}</td>
+                  <td class="mono">{late === null ? "—" : late.toFixed(0)}</td>
+
+                  <td class="mono">{left === null ? "—" : left.toFixed(0)}</td>
+                  <td class="mono">{own === null ? "—" : `${own.toFixed(2)}%`}</td>
+
+                  <td class={"mono " + (badBucket ? "bad" : "")}>{b0 === null ? "—" : b0.toFixed(0)}</td>
+                  <td class={"mono " + (badBucket ? "bad" : "")}>{b11 === null ? "—" : b11.toFixed(0)}</td>
+                  <td class={"mono " + (badBucket ? "bad" : "")}>{b20 === null ? "—" : b20.toFixed(0)}</td>
+                  <td class={"mono " + (badBucket ? "bad" : "")}>{btot === null ? "—" : btot.toFixed(0)}</td>
+
+                  <td class="mono">{pts === null ? "—" : pts.toFixed(2)}</td>
+                  <td class="mono">{moneyCents(r.topPrizeCents)}</td>
+                  <td class="mono">{tag || "—"}</td>
+                  <td class="mono">{group || "—"}</td>
+                  <td class="mono">
+                    {r.link ? (
+                      <a class="link" href={r.link} target="_blank" rel="noreferrer">View</a>
+                    ) : (
+                      "—"
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+
+        <div id="colMenu" class="menu" style="display:none;">
+          <div class="menuTitle" id="menuTitle">Column</div>
+
+          <div class="menuRow">
+            <button class="menuBtn" type="button" data-action="sortAsc">Sort</button>
+            <button class="menuBtn" type="button" data-action="sortDesc">Sort</button>
+          </div>
+
+          <div class="menuBlock" id="menuFilterBlock"></div>
+
+          <div class="menuRow">
+            <button class="menuBtn secondary" type="button" data-action="clearCol">Clear column</button>
+            <button class="menuBtn secondary" type="button" data-action="clearAll">Clear all</button>
+          </div>
+        </div>
+
+        <script is:inline>
+            function byId(id) { return document.getElementById(id); }
+            function numOrNull(v) {
+              if (v === "" || v == null) return null;
+              const x = Number(v);
+              return Number.isFinite(x) ? x : null;
+            }
+            function text(v) { return String(v == null ? "" : v).trim(); }
+
+            const q = byId("q");
+            const shownCount = byId("shownCount");
+            const resetAllTop = byId("resetAllTop");
+
+            const tbody = document.querySelector("#t tbody");
+            const menu = byId("colMenu");
+            const menuTitle = byId("menuTitle");
+            const menuFilterBlock = byId("menuFilterBlock");
+
+            const thButtons = Array.from(document.querySelectorAll(".thBtn"));
+            const trs = tbody ? Array.from(tbody.querySelectorAll("tr")) : [];
+
+            const state = {
+              q: "",
+              filters: {
+                year: "",
+                week: "",
+                type: "",
+                venue: "",
+                stack: "",
+                bring: "",
+                tag: "",
+                group: "",
+
+                maxTeamMin: "",
+                maxTeamMax: "",
+                maxGameMin: "",
+                maxGameMax: "",
+                earlyMin: "",
+                earlyMax: "",
+                lateMin: "",
+                lateMax: "",
+
+                leftMin: "",
+                leftMax: "",
+                ownMin: "",
+                ownMax: "",
+                b0Min: "",
+                b0Max: "",
+                b11Min: "",
+                b11Max: "",
+                b20Min: "",
+                b20Max: "",
+                btotMin: "",
+                btotMax: "",
+
+                ptsMin: "",
+                ptsMax: "",
+                topMin: "",
+                topMax: ""
+              },
+              sort: { col: "", dir: "" }
+            };
+
+            const colMeta = {
+              year: { kind: "catNum", label: "YEAR", key: "year" },
+              week: { kind: "catNum", label: "WEEK", key: "week" },
+              type: { kind: "cat", label: "TYPE", key: "type" },
+              venue: { kind: "cat", label: "VENUE", key: "venue" },
+
+              stack: { kind: "cat", label: "STACK", key: "stack" },
+              bring: { kind: "cat", label: "BRING", key: "bring" },
+
+              maxTeam: { kind: "num", label: "MAX FROM TEAM", key: "maxteam" },
+              maxGame: { kind: "num", label: "MAX FROM GAME", key: "maxgame" },
+              early: { kind: "num", label: "EARLY", key: "early" },
+              late: { kind: "num", label: "LATE", key: "late" },
+
+              left: { kind: "num", label: "LEFT", key: "left" },
+              own: { kind: "num", label: "OWN", key: "own" },
+
+              b0: { kind: "num", label: "OWN 0–10", key: "b0" },
+              b11: { kind: "num", label: "OWN 11–19", key: "b11" },
+              b20: { kind: "num", label: "OWN 20+", key: "b20" },
+              btot: { kind: "num", label: "BUCKET TOTAL", key: "btot" },
+
+              pts: { kind: "num", label: "PTS", key: "pts" },
+              top: { kind: "num", label: "TOP", key: "top" },
+
+              tag: { kind: "cat", label: "TAG", key: "tag" },
+              group: { kind: "cat", label: "GROUP", key: "group" }
+            };
+
+            function uniqueValues(colKey) {
+              const set = new Set();
+              for (const tr of trs) {
+                const v = text(tr.dataset[colKey]);
+                if (v) set.add(v);
+              }
+              return Array.from(set).sort((a, b) => {
+                const na = Number(a), nb = Number(b);
+                if (Number.isFinite(na) && Number.isFinite(nb)) return na - nb;
+                return a.localeCompare(b);
+              });
+            }
+
+            function withinNum(v, minStr, maxStr) {
+              const x = numOrNull(v);
+              if (x == null) return false;
+              const minV = numOrNull(minStr);
+              const maxV = numOrNull(maxStr);
+              if (minV != null && x < minV) return false;
+              if (maxV != null && x > maxV) return false;
+              return true;
+            }
+
+            function hay(tr) {
+              const parts = [
+                tr.dataset.year, tr.dataset.week, tr.dataset.type, tr.dataset.venue,
+                tr.dataset.stack, tr.dataset.bring,
+                tr.dataset.maxteam, tr.dataset.maxgame, tr.dataset.early, tr.dataset.late,
+                tr.dataset.left, tr.dataset.own,
+                tr.dataset.b0, tr.dataset.b11, tr.dataset.b20, tr.dataset.btot,
+                tr.dataset.pts, tr.dataset.top,
+                tr.dataset.tag, tr.dataset.group
+              ];
+              return parts.map((x) => text(x).toLowerCase()).join(" ");
+            }
+
+            function passesFilters(tr) {
+              const f = state.filters;
+
+              if (f.year && text(tr.dataset.year) !== f.year) return false;
+              if (f.week && text(tr.dataset.week) !== f.week) return false;
+              if (f.type && text(tr.dataset.type) !== f.type) return false;
+              if (f.venue && text(tr.dataset.venue) !== f.venue) return false;
+              if (f.stack && text(tr.dataset.stack) !== f.stack) return false;
+              if (f.bring && text(tr.dataset.bring) !== f.bring) return false;
+              if (f.tag && text(tr.dataset.tag) !== f.tag) return false;
+              if (f.group && text(tr.dataset.group) !== f.group) return false;
+
+              if (f.maxTeamMin || f.maxTeamMax) {
+                if (!withinNum(tr.dataset.maxteam, f.maxTeamMin, f.maxTeamMax)) return false;
+              }
+              if (f.maxGameMin || f.maxGameMax) {
+                if (!withinNum(tr.dataset.maxgame, f.maxGameMin, f.maxGameMax)) return false;
+              }
+              if (f.earlyMin || f.earlyMax) {
+                if (!withinNum(tr.dataset.early, f.earlyMin, f.earlyMax)) return false;
+              }
+              if (f.lateMin || f.lateMax) {
+                if (!withinNum(tr.dataset.late, f.lateMin, f.lateMax)) return false;
+              }
+
+              if (f.leftMin || f.leftMax) {
+                if (!withinNum(tr.dataset.left, f.leftMin, f.leftMax)) return false;
+              }
+              if (f.ownMin || f.ownMax) {
+                if (!withinNum(tr.dataset.own, f.ownMin, f.ownMax)) return false;
+              }
+
+              if (f.b0Min || f.b0Max) {
+                if (!withinNum(tr.dataset.b0, f.b0Min, f.b0Max)) return false;
+              }
+              if (f.b11Min || f.b11Max) {
+                if (!withinNum(tr.dataset.b11, f.b11Min, f.b11Max)) return false;
+              }
+              if (f.b20Min || f.b20Max) {
+                if (!withinNum(tr.dataset.b20, f.b20Min, f.b20Max)) return false;
+              }
+              if (f.btotMin || f.btotMax) {
+                if (!withinNum(tr.dataset.btot, f.btotMin, f.btotMax)) return false;
+              }
+
+              if (f.ptsMin || f.ptsMax) {
+                if (!withinNum(tr.dataset.pts, f.ptsMin, f.ptsMax)) return false;
+              }
+              if (f.topMin || f.topMax) {
+                if (!withinNum(tr.dataset.top, f.topMin, f.topMax)) return false;
+              }
+
+              return true;
+            }
+
+            function compare(trA, trB, col, dir) {
+              const meta = colMeta[col];
+              if (!meta) return 0;
+
+              const a = trA.dataset[meta.key];
+              const b = trB.dataset[meta.key];
+
+              if (meta.kind === "catNum" || meta.kind === "num") {
+                const av = numOrNull(a);
+                const bv = numOrNull(b);
+                const aa = av == null ? -Infinity : av;
+                const bb = bv == null ? -Infinity : bv;
+                return dir === "asc" ? aa - bb : bb - aa;
+              }
+
+              const as = text(a).toLowerCase();
+              const bs = text(b).toLowerCase();
+              if (as < bs) return dir === "asc" ? -1 : 1;
+              if (as > bs) return dir === "asc" ? 1 : -1;
+              return 0;
+            }
+
+            function applyAll() {
+              const qv = state.q;
+              let shown = 0;
+
+              for (const tr of trs) {
+                let ok = true;
+                if (qv) {
+                  if (!hay(tr).includes(qv)) ok = false;
+                }
+                if (ok && !passesFilters(tr)) ok = false;
+
+                tr.style.display = ok ? "" : "none";
+                if (ok) shown += 1;
+              }
+
+              if (shownCount) shownCount.textContent = String(shown);
+
+              if (tbody && state.sort.col && state.sort.dir) {
+                const visible = trs.filter((tr) => tr.style.display !== "none");
+                visible.sort((a, b) => compare(a, b, state.sort.col, state.sort.dir));
+                for (const tr of visible) tbody.appendChild(tr);
+              }
+            }
+
+            let activeCol = "";
+
+            function closeMenu() {
+              if (menu) menu.style.display = "none";
+              if (menuFilterBlock) menuFilterBlock.innerHTML = "";
+              activeCol = "";
+            }
+
+            function positionMenu(anchorEl) {
+              if (!menu) return;
+              const r = anchorEl.getBoundingClientRect();
+              const top = Math.round(r.bottom + 8);
+              const left = Math.round(Math.min(window.innerWidth - 340, Math.max(12, r.left)));
+              menu.style.top = top + "px";
+              menu.style.left = left + "px";
+            }
+
+            function buildFilterUI(col) {
+              const meta = colMeta[col];
+              if (!meta || !menuFilterBlock) return;
+
+              if (meta.kind === "cat" || meta.kind === "catNum") {
+                const values = uniqueValues(meta.key);
+                const current = state.filters[col] || "";
+
+                menuFilterBlock.innerHTML =
+                  '<div class="menuLabel">Filter</div>' +
+                  '<select id="menuSelect" class="menuInput">' +
+                  '<option value="">All</option>' +
+                  values.map((v) => '<option value="' + v + '">' + v + "</option>").join("") +
+                  "</select>";
+
+                const sel = byId("menuSelect");
+                if (sel) {
+                  sel.value = current;
+                  sel.addEventListener("change", () => {
+                    state.filters[col] = sel.value;
+                    applyAll();
+                  });
+                }
+                return;
+              }
+
+              if (meta.kind === "num") {
+                const map = {
+                  maxTeam: ["maxTeamMin", "maxTeamMax"],
+                  maxGame: ["maxGameMin", "maxGameMax"],
+                  early: ["earlyMin", "earlyMax"],
+                  late: ["lateMin", "lateMax"],
+                  left: ["leftMin", "leftMax"],
+                  own: ["ownMin", "ownMax"],
+                  b0: ["b0Min", "b0Max"],
+                  b11: ["b11Min", "b11Max"],
+                  b20: ["b20Min", "b20Max"],
+                  btot: ["btotMin", "btotMax"],
+                  pts: ["ptsMin", "ptsMax"],
+                  top: ["topMin", "topMax"]
+                };
+                const pair = map[col];
+                if (!pair) return;
+
+                const minKey = pair[0];
+                const maxKey = pair[1];
+
+                const minVal = state.filters[minKey] || "";
+                const maxVal = state.filters[maxKey] || "";
+
+                menuFilterBlock.innerHTML =
+                  '<div class="menuLabel">Range</div>' +
+                  '<div class="menuGrid2">' +
+                  '<div><div class="mini">Min</div><input id="menuNumMin" class="menuInput" type="number" step="any" value="' + minVal + '" /></div>' +
+                  '<div><div class="mini">Max</div><input id="menuNumMax" class="menuInput" type="number" step="any" value="' + maxVal + '" /></div>' +
+                  "</div>";
+
+                const minEl = byId("menuNumMin");
+                const maxEl = byId("menuNumMax");
+
+                function sync() {
+                  state.filters[minKey] = minEl ? minEl.value : "";
+                  state.filters[maxKey] = maxEl ? maxEl.value : "";
+                  applyAll();
+                }
+
+                if (minEl) minEl.addEventListener("input", sync);
+                if (maxEl) maxEl.addEventListener("input", sync);
+              }
+            }
+
+            function updateSortButtonLabels(col) {
+              const meta = colMeta[col];
+              const ascBtn = menu ? menu.querySelector('[data-action="sortAsc"]') : null;
+              const descBtn = menu ? menu.querySelector('[data-action="sortDesc"]') : null;
+              if (!ascBtn || !descBtn) return;
+
+              if (meta && meta.kind === "num") {
+                ascBtn.textContent = "Sort Low → High";
+                descBtn.textContent = "Sort High → Low";
+                return;
+              }
+
+              ascBtn.textContent = "Sort A → Z";
+              descBtn.textContent = "Sort Z → A";
+            }
+
+            function openMenuFor(col, anchorEl) {
+              if (!menu || !menuTitle) return;
+              activeCol = col;
+              const meta = colMeta[col];
+              menuTitle.textContent = meta ? meta.label : "Column";
+              buildFilterUI(col);
+              updateSortButtonLabels(col);
+              positionMenu(anchorEl);
+              menu.style.display = "block";
+            }
+
+            function clearColumn(col) {
+              if (col === "year") state.filters.year = "";
+              if (col === "week") state.filters.week = "";
+              if (col === "type") state.filters.type = "";
+              if (col === "venue") state.filters.venue = "";
+              if (col === "stack") state.filters.stack = "";
+              if (col === "bring") state.filters.bring = "";
+              if (col === "tag") state.filters.tag = "";
+              if (col === "group") state.filters.group = "";
+
+              if (col === "maxTeam") { state.filters.maxTeamMin = ""; state.filters.maxTeamMax = ""; }
+              if (col === "maxGame") { state.filters.maxGameMin = ""; state.filters.maxGameMax = ""; }
+              if (col === "early") { state.filters.earlyMin = ""; state.filters.earlyMax = ""; }
+              if (col === "late") { state.filters.lateMin = ""; state.filters.lateMax = ""; }
+
+              if (col === "left") { state.filters.leftMin = ""; state.filters.leftMax = ""; }
+              if (col === "own") { state.filters.ownMin = ""; state.filters.ownMax = ""; }
+
+              if (col === "b0") { state.filters.b0Min = ""; state.filters.b0Max = ""; }
+              if (col === "b11") { state.filters.b11Min = ""; state.filters.b11Max = ""; }
+              if (col === "b20") { state.filters.b20Min = ""; state.filters.b20Max = ""; }
+              if (col === "btot") { state.filters.btotMin = ""; state.filters.btotMax = ""; }
+
+              if (col === "pts") { state.filters.ptsMin = ""; state.filters.ptsMax = ""; }
+              if (col === "top") { state.filters.topMin = ""; state.filters.topMax = ""; }
+
+              applyAll();
+            }
+
+            function clearAll() {
+              state.q = "";
+              for (const k in state.filters) state.filters[k] = "";
+              state.sort.col = "";
+              state.sort.dir = "";
+              if (q) q.value = "";
+              applyAll();
+            }
+
+            for (const btn of thButtons) {
+              btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const col = btn.dataset.col;
+                if (!col) return;
+                openMenuFor(col, btn);
+              });
+            }
+
+            if (q) {
+              q.addEventListener("input", () => {
+                state.q = q.value.trim().toLowerCase();
+                applyAll();
+              });
+            }
+
+            if (resetAllTop) {
+              resetAllTop.addEventListener("click", () => {
+                clearAll();
+                closeMenu();
+              });
+            }
+
+            if (menu) {
+              menu.addEventListener("click", (e) => {
+                const t = e.target;
+                if (!t || !t.dataset) return;
+                const action = t.dataset.action;
+                if (!action) return;
+
+                if (action === "sortAsc" && activeCol) {
+                  state.sort.col = activeCol;
+                  state.sort.dir = "asc";
+                  applyAll();
+                  closeMenu();
+                  return;
+                }
+
+                if (action === "sortDesc" && activeCol) {
+                  state.sort.col = activeCol;
+                  state.sort.dir = "desc";
+                  applyAll();
+                  closeMenu();
+                  return;
+                }
+
+                if (action === "clearCol" && activeCol) {
+                  clearColumn(activeCol);
+                  buildFilterUI(activeCol);
+                  updateSortButtonLabels(activeCol);
+                  return;
+                }
+
+                if (action === "clearAll") {
+                  clearAll();
+                  closeMenu();
+                  return;
+                }
+              });
+            }
+
+            document.addEventListener("click", (e) => {
+              const target = e.target;
+              if (!target) return;
+              if (menu && menu.contains(target)) return;
+              if (target.classList && target.classList.contains("thBtn")) return;
+              closeMenu();
+            });
+
+            applyAll();
+        </script>
+      </div>
+    </section>
+  </section>
+</ClassicReviewFrame>
+
+<style>
+  .page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+  }
+  .topbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: start;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.94), rgba(14, 14, 14, 0.98));
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+    min-width: 0;
+  }
+  .titleBlock { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+  .backLink { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 4px; padding: 5px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.10); background: #1f1f1f; color: rgba(255,255,255,0.88); text-decoration: none; font-weight: 900; font-size: 10px; letter-spacing: 0.02em; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  .backLink:hover { color: #fff; background: #232323; border-color: rgba(255,255,255,0.16); }
+  .h1 { margin: 0; font-size: 23px; font-weight: 950; line-height: 1.1; letter-spacing: -0.02em; }
+  .sub { margin-top: 2px; color: rgba(255,255,255,0.55); font-size: 11px; }
+
+  .searchWrap { display: flex; justify-content: flex-end; gap: 6px; align-items: center; min-width: 0; }
+  .search { width: min(480px, 100%); padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); background: #141414; color: rgba(255,255,255,0.92); font-size: 12px; outline: none; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  .search::placeholder { color: rgba(255,255,255,0.45); }
+  .resetAll { padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); background: #1f1f1f; color: rgba(255,255,255,0.88); font-weight: 900; cursor: pointer; white-space: nowrap; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  .srOnly { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .main { min-height: 0; display: flex; flex-direction: column; }
+
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-weight: 700; }
+
+  .tableWrap { width: 100%; max-width: 100%; min-width: 0; border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; overflow: auto; background: #181818; box-shadow: 0 22px 50px rgba(0,0,0,0.5); }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { position: sticky; top: 0; background: #141414; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 10px 8px; z-index: 2; text-align: left; }
+  tbody td { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 10px 8px; vertical-align: top; font-size: 12px; color: rgba(255,255,255,0.88); }
+  tbody tr:hover td { background: #202020; }
+
+  .bad { color: #ffb3b3; }
+
+  .capCell .capMain { font-weight: 900; color: rgba(255,255,255,0.92); }
+  .link { font-weight: 900; text-decoration: none; color: rgba(255,255,255,0.88); }
+  .link:hover { color: #fff; }
+
+  .thBtn { width: 100%; text-align: left; border: 0; background: transparent; padding: 0; font-size: 10px; color: var(--text-2, rgba(255,255,255,0.78)); font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; }
+
+  .menu { position: fixed; width: 320px; background: #141414; border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; box-shadow: 0 18px 44px rgba(0,0,0,0.6); padding: 12px; z-index: 9999; color: rgba(255,255,255,0.88); }
+  .menuTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
+  .menuRow { display: flex; gap: 8px; margin-bottom: 10px; }
+  .menuBtn { flex: 1 1 auto; padding: 9px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.10); background: #1f1f1f; color: rgba(255,255,255,0.88); font-weight: 900; cursor: pointer; font-size: 13px; }
+  .menuBtn.secondary { background: #141414; }
+  .menuBlock { margin-bottom: 10px; }
+  .menuLabel { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; }
+  .menuInput { width: 100%; padding: 9px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.10); background: #141414; color: rgba(255,255,255,0.92); font-size: 13px; outline: none; }
+  .menuGrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: end; }
+  .mini { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; }
+
+  .colYear { width: 78px; }
+  .colWk { width: 56px; }
+  .colType { width: 90px; }
+  .colVenue { width: 140px; }
+
+  .colStack { width: 140px; }
+  .colBring { width: 70px; }
+
+  .colMax { width: 90px; }
+  .colMaxG { width: 90px; }
+
+  .colEarly { width: 90px; }
+  .colLate { width: 90px; }
+
+  .colLeft { width: 80px; }
+  .colOwn { width: 95px; }
+
+  .colB0 { width: 80px; }
+  .colB11 { width: 90px; }
+  .colB20 { width: 80px; }
+  .colBtot { width: 95px; }
+
+  .colPts { width: 90px; }
+  .colPrize { width: 110px; }
+  .colTag { width: 100px; }
+  .colGroup { width: 120px; }
+  .colLink { width: 70px; }
+
+  @media (max-width: 900px) { .topbar { grid-template-columns: 1fr; } .searchWrap { justify-content: stretch; flex-wrap: wrap; } .search { width: 100%; } }
+</style>

@@ -1,0 +1,126 @@
+---
+const { active = "overview" } = Astro.props;
+
+const groups = [
+  {
+    label: "Start",
+    items: [
+      { key: "overview", label: "Overview", href: "/nfl/review/classic/overview" },
+      { key: "distribution", label: "Distribution Index", href: "/nfl/review/classic/distribution" },
+    ],
+  },
+  {
+    label: "Patterns",
+    items: [
+      { key: "patterns", label: "Patterns", href: "/nfl/review/classic/patterns" },
+      { key: "construction", label: "Construction", href: "/nfl/review/classic/construction" },
+    ],
+  },
+  {
+    label: "Market",
+    items: [
+      { key: "ownership", label: "Ownership", href: "/nfl/review/classic/ownership" },
+      { key: "salary", label: "Salary", href: "/nfl/review/classic/salary" },
+      { key: "environment", label: "Game Environment", href: "/nfl/review/classic/game-environment" },
+    ],
+  },
+  {
+    label: "Time",
+    items: [
+      { key: "trends", label: "Trends", href: "/nfl/review/classic/trends" },
+    ],
+  },
+  {
+    label: "Research",
+    items: [
+      { key: "raw", label: "Raw Review", href: "/nfl/review/classic" },
+    ],
+  },
+];
+---
+
+<nav class="subnav" aria-label="Classic Review">
+  {groups.map((group) => (
+    <div class="group">
+      <div class="groupLabel">{group.label}</div>
+      <div class="groupTabs">
+        {group.items.map((t) => (
+          <a
+            class={`tab ${active === t.key ? "tabActive" : ""}`}
+            href={t.href}
+            aria-current={active === t.key ? "page" : undefined}
+          >{t.label}</a>
+        ))}
+      </div>
+    </div>
+  ))}
+</nav>
+
+<style>
+  .subnav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+    align-items: start;
+  }
+
+  .group {
+    display: grid;
+    gap: 4px;
+  }
+
+  .groupLabel {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 800;
+  }
+
+  .groupTabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: #151515;
+    color: rgba(255, 255, 255, 0.68);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 10px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
+  }
+
+  .tab:hover {
+    color: rgba(255, 255, 255, 0.92);
+    border-color: rgba(255, 255, 255, 0.28);
+    background: #1f1f1f;
+  }
+
+  .tabActive {
+    color: #0b0b0b;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent, #3c6eff) 75%, #fff 25%), #f3f3f3);
+    border-color: color-mix(in srgb, var(--accent, #3c6eff) 70%, transparent);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+  }
+
+  @media (max-width: 700px) {
+    .subnav {
+      grid-template-columns: 1fr;
+    }
+    .tab {
+      font-size: 9px;
+      padding: 6px 8px;
+    }
+  }
+</style>

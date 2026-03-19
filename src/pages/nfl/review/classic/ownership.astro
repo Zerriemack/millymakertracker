@@ -1,0 +1,104 @@
+---
+import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
+import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import StatCard from "../../../../components/nfl/classic/StatCard.astro";
+import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
+import { classicDistributionSections, classicTrendCharts } from "../../../../data/nflClassicReviewMock";
+
+const pageTitle = "NFL Classic Review | Ownership";
+const ownershipSection = classicDistributionSections.find((s) => s.title === "Total Ownership");
+const ownershipTrend = classicTrendCharts.find((c) => c.title === "Ownership by Year");
+---
+
+<ClassicReviewShell
+  title={pageTitle}
+  headline="Ownership Balance"
+  subtitle="How winners balance chalk, leverage, and total ownership exposure."
+  accent="green"
+>
+  <div slot="subnav">
+    <ClassicReviewSubnav active="ownership" />
+  </div>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Ownership Distribution</h2>
+        <p class="sectionSub">The spread of total ownership on Classic winners.</p>
+      </div>
+      <div class="sectionPill">Core</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        {ownershipSection?.charts?.map((chart) => (
+          <ChartPanel
+            title={chart.title}
+            meta={chart.meta}
+            helper={chart.helper}
+            footer={chart.footer}
+            series={chart.series}
+            accent="green"
+            variant="lead"
+          />
+        ))}
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Interpretation</h3>
+              <p class="sectionSub">Use this to calibrate how aggressive your build can be.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            {ownershipSection?.stats?.map((stat, idx) => (
+              <StatCard
+                label={stat.label}
+                value={stat.value}
+                accent={idx === 0 ? "green" : "slate"}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Ownership Trend</h2>
+        <p class="sectionSub">Year-over-year shifts in how chalky winners are.</p>
+      </div>
+      <div class="sectionPill">Trend</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        {ownershipTrend ? (
+          <ChartPanel
+            title={ownershipTrend.title}
+            meta={ownershipTrend.meta}
+            helper={ownershipTrend.helper}
+            footer={ownershipTrend.footer}
+            series={ownershipTrend.series}
+            accent="green"
+          />
+        ) : null}
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Signal Read</h3>
+              <p class="sectionSub">Track whether leverage is tightening or loosening.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            <StatCard label="Current Bias" value="Moderate" note="No extreme chalk trend." accent="slate" />
+            <StatCard label="If Rising" value="Lean Contrarian" note="Be selective." accent="red" />
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</ClassicReviewShell>

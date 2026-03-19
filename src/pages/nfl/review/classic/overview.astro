@@ -1,0 +1,151 @@
+---
+import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
+import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import StatCard from "../../../../components/nfl/classic/StatCard.astro";
+import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
+import { classicOverviewStats, classicOverviewCharts } from "../../../../data/nflClassicReviewMock";
+
+const pageTitle = "NFL Classic Review";
+const heroRows = classicOverviewStats.slice(0, 2);
+const [leadChart, secondaryChart] = classicOverviewCharts;
+---
+
+<ClassicReviewShell
+  title={pageTitle}
+  headline="Classic Review Overview"
+  subtitle="An editorial lens on how Classic winners are built — salary pressure, ownership balance, and the stacks that keep showing up."
+  accent="blue"
+>
+  <div slot="heroSide" class="heroPanel">
+    <div>
+      <div class="heroPanelTitle">Quick Pulse</div>
+      <div class="heroList">
+        {heroRows.map((row) => (
+          <div class="heroRow">
+            <span class="heroLabel">{row.label}</span>
+            <span class="heroValue">{row.value}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+    <a class="heroCTA" href="/nfl/review/classic">Open Raw Review Table</a>
+  </div>
+
+  <div slot="subnav">
+    <ClassicReviewSubnav active="overview" />
+  </div>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Headline Cards</h2>
+        <p class="sectionSub">Fast benchmarks that define the Classic winner profile.</p>
+      </div>
+      <div class="sectionPill">Baseline</div>
+    </div>
+    <div class="statGrid">
+      {classicOverviewStats.slice(0, 4).map((stat, idx) => (
+        <StatCard
+          label={stat.label}
+          value={stat.value}
+          note={stat.note}
+          accent={idx === 2 ? "blue" : idx === 3 ? "gold" : "slate"}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Featured Modules</h2>
+        <p class="sectionSub">Two core surfaces that anchor most reviews.</p>
+      </div>
+      <div class="sectionPill">Featured</div>
+    </div>
+    <div class="chartGrid twoCol">
+      {leadChart ? (
+        <ChartPanel
+          variant="lead"
+          title={leadChart.title}
+          meta={leadChart.meta}
+          helper={leadChart.helper}
+          footer={leadChart.footer}
+          series={leadChart.series}
+          accent="blue"
+        />
+      ) : null}
+      {secondaryChart ? (
+        <ChartPanel
+          title={secondaryChart.title}
+          meta={secondaryChart.meta}
+          helper={secondaryChart.helper}
+          footer={secondaryChart.footer}
+          series={secondaryChart.series}
+          accent="gold"
+        />
+      ) : null}
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Where to Go Next</h2>
+        <p class="sectionSub">Pick the exact surface you want to explore.</p>
+      </div>
+      <div class="sectionPill">Next</div>
+    </div>
+    <div class="nextGrid">
+      <a class="nextCard" href="/nfl/review/classic/patterns">
+        <div class="nextLabel">Patterns</div>
+        <div class="nextSub">Winning shapes and stack profiles.</div>
+      </a>
+      <a class="nextCard" href="/nfl/review/classic/ownership">
+        <div class="nextLabel">Ownership</div>
+        <div class="nextSub">Chalk balance and leverage.</div>
+      </a>
+      <a class="nextCard" href="/nfl/review/classic/trends">
+        <div class="nextLabel">Trends</div>
+        <div class="nextSub">How the meta shifts over time.</div>
+      </a>
+    </div>
+  </section>
+</ClassicReviewShell>
+
+<style>
+  .nextGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+  }
+
+  .nextCard {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 12px;
+    text-decoration: none;
+    background: #141414;
+    color: rgba(255, 255, 255, 0.9);
+    display: grid;
+    gap: 4px;
+    transition: border-color 120ms ease, transform 120ms ease;
+  }
+
+  .nextCard:hover {
+    border-color: rgba(255, 255, 255, 0.24);
+    transform: translateY(-1px);
+  }
+
+  .nextLabel {
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+
+  .nextSub {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>

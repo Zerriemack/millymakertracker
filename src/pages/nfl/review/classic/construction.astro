@@ -1,0 +1,130 @@
+---
+import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
+import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import StatCard from "../../../../components/nfl/classic/StatCard.astro";
+import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
+import { classicConstructionSections } from "../../../../data/nflClassicReviewMock";
+
+const pageTitle = "NFL Classic Review | Construction";
+
+const [, , stackLinks, bringBackLinks, slateType] = classicConstructionSections;
+const linkStats = [...stackLinks.stats, ...bringBackLinks.stats];
+---
+
+<ClassicReviewShell
+  title={pageTitle}
+  headline="Construction Structure"
+  subtitle="Correlation density, link types, and slate context that shape how winners are assembled."
+  accent="green"
+>
+  <div slot="subnav">
+    <ClassicReviewSubnav active="construction" />
+  </div>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Correlation Density</h2>
+        <p class="sectionSub">How many total correlation links winners typically carry.</p>
+      </div>
+      <div class="sectionPill">Core</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        <div class="chartGrid twoCol">
+          {stackLinks.charts.map((chart) => (
+            <ChartPanel
+              title={chart.title}
+              meta={chart.meta}
+              helper={chart.helper}
+              footer={chart.footer}
+              series={chart.series}
+              accent="blue"
+              variant="lead"
+            />
+          ))}
+          {bringBackLinks.charts.map((chart) => (
+            <ChartPanel
+              title={chart.title}
+              meta={chart.meta}
+              helper={chart.helper}
+              footer={chart.footer}
+              series={chart.series}
+              accent="slate"
+            />
+          ))}
+        </div>
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Construction Read</h3>
+              <p class="sectionSub">Use this to set your default correlation load.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            {linkStats.map((stat, idx) => (
+              <StatCard
+                label={stat.label}
+                value={stat.value}
+                accent={idx === 0 ? "blue" : "slate"}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Slate Type Influence</h2>
+        <p class="sectionSub">Construction shifts across main, afternoon, and primetime slates.</p>
+      </div>
+      <div class="sectionPill">Context</div>
+    </div>
+    <div class="bandGrid">
+      <div class="span-8">
+        <div class="sectionGrid isFlip">
+          <div class="chartCol">
+            {slateType?.charts?.map((chart) => (
+              <ChartPanel
+                title={chart.title}
+                meta={chart.meta}
+                helper={chart.helper}
+                footer={chart.footer}
+                series={chart.series}
+                accent="gold"
+              />
+            ))}
+          </div>
+          <div class="statCol">
+            {slateType?.stats?.map((stat, idx) => (
+              <StatCard
+                label={stat.label}
+                value={stat.value}
+                accent={idx === 0 ? "gold" : "slate"}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="span-4 railStack">
+        <section class="sectionPanel">
+          <div class="sectionHeader">
+            <div>
+              <h3 class="sectionTitle">Slate Bias</h3>
+              <p class="sectionSub">Adjust correlation expectations by slate size.</p>
+            </div>
+          </div>
+          <div class="statGrid">
+            <StatCard label="Main Slate" value="Baseline" note="Default builds." accent="slate" />
+            <StatCard label="Short Slate" value="Higher Volatility" note="Be flexible." accent="red" />
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</ClassicReviewShell>
