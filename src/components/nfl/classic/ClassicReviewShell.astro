@@ -8,11 +8,16 @@ const {
   accent = "blue",
   backHref = "/analysis",
   backLabel = "Back to Review",
+  class: className = "",
 } = Astro.props;
 
 ---
 
-<ClassicReviewFrame title={title || headline || "NFL Classic Review"} accent={accent} class="classic-shell">
+<ClassicReviewFrame
+  title={title || headline || "NFL Classic Review"}
+  accent={accent}
+  class={`classic-shell ${className}`}
+>
   <header class={`hero ${Astro.slots.has("heroSide") ? "" : "heroSolo"}`}>
     <div class="heroText">
       <a class="backLink" href={backHref}>{backLabel}</a>

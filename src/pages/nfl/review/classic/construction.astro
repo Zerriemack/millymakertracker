@@ -1,6 +1,6 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
-import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
 import StatCard from "../../../../components/nfl/classic/StatCard.astro";
 import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
 import { classicConstructionSections } from "../../../../data/nflClassicReviewMock";
@@ -16,10 +16,9 @@ const linkStats = [...stackLinks.stats, ...bringBackLinks.stats];
   headline="Construction Structure"
   subtitle="Correlation density, link types, and slate context that shape how winners are assembled."
   accent="green"
+  class="with-drawer"
 >
-  <div slot="subnav">
-    <ClassicReviewSubnav active="construction" />
-  </div>
+  <ClassicReviewDrawer active="construction" mode="hover" />
 
   <section class="sectionPanel">
     <div class="sectionHeader">

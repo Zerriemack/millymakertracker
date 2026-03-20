@@ -1,0 +1,152 @@
+---
+const {
+  active = "overview",
+  mode = "hover",
+  railLabel = "Review",
+} = Astro.props;
+const isHover = mode === "hover";
+---
+
+<nav
+  class={`reviewDrawer ${isHover ? "isHover" : "isPersistent"}`}
+  aria-label="Classic Review Navigation"
+  style="--drawer-width: 280px; --drawer-rail: 34px;"
+>
+  <div class="drawerRail" aria-hidden="true">
+    <span>{railLabel}</span>
+  </div>
+  <div class="drawerPanel">
+    <div class="drawerGroup">
+      <div class="drawerLabel">Review</div>
+      <a class={`drawerLink ${active === "overview" ? "isActive" : ""}`} href="/nfl/review/classic/overview">Overview</a>
+      <a class={`drawerLink ${active === "distribution" ? "isActive" : ""}`} href="/nfl/review/classic/distribution">Distribution Index</a>
+    </div>
+    <div class="drawerGroup">
+      <div class="drawerLabel">Patterns</div>
+      <a class={`drawerLink ${active === "patterns" ? "isActive" : ""}`} href="/nfl/review/classic/patterns">Patterns</a>
+      <a class={`drawerLink ${active === "construction" ? "isActive" : ""}`} href="/nfl/review/classic/construction">Construction</a>
+    </div>
+    <div class="drawerGroup">
+      <div class="drawerLabel">Market</div>
+      <a class={`drawerLink ${active === "ownership" ? "isActive" : ""}`} href="/nfl/review/classic/ownership">Ownership</a>
+      <a class={`drawerLink ${active === "salary" ? "isActive" : ""}`} href="/nfl/review/classic/salary">Salary</a>
+      <a class={`drawerLink ${active === "environment" ? "isActive" : ""}`} href="/nfl/review/classic/game-environment">Game Environment</a>
+    </div>
+    <div class="drawerGroup">
+      <div class="drawerLabel">Time</div>
+      <a class={`drawerLink ${active === "trends" ? "isActive" : ""}`} href="/nfl/review/classic/trends">Trends</a>
+    </div>
+    <div class="drawerGroup">
+      <div class="drawerLabel">Research</div>
+      <a class={`drawerLink ${active === "raw" ? "isActive" : ""}`} href="/nfl/review/classic">Raw Review</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  :global(.classic-frame.with-drawer) {
+    padding-left: calc(clamp(16px, 2.2vw, 44px) + var(--drawer-rail));
+  }
+
+  .reviewDrawer {
+    position: absolute;
+    top: 18px;
+    left: 0;
+    width: var(--drawer-width);
+    z-index: 5;
+  }
+
+  .reviewDrawer.isHover {
+    transform: translateX(calc(-1 * (var(--drawer-width) - var(--drawer-rail))));
+    transition: transform 180ms ease;
+  }
+
+  .reviewDrawer.isHover:hover,
+  .reviewDrawer.isHover:focus-within {
+    transform: translateX(0);
+  }
+
+  .drawerRail {
+    position: absolute;
+    right: calc(-1 * var(--drawer-rail));
+    top: 0;
+    width: var(--drawer-rail);
+    height: 148px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.92), rgba(14, 14, 14, 0.98));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+    pointer-events: auto;
+  }
+
+  .drawerRail span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 800;
+  }
+
+  .drawerPanel {
+    width: var(--drawer-width);
+    padding: 14px 14px 14px 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.98), rgba(12, 12, 12, 0.98));
+    display: grid;
+    gap: 14px;
+  }
+
+  .drawerGroup {
+    display: grid;
+    gap: 10px;
+  }
+
+  .drawerLabel {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.42);
+    font-weight: 800;
+  }
+
+  .drawerLink {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color 140ms ease, background 140ms ease, color 140ms ease;
+    line-height: 1.2;
+  }
+
+  .drawerLink:hover,
+  .drawerLink:focus {
+    color: rgba(255, 255, 255, 0.92);
+    border-color: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .drawerLink.isActive {
+    color: #fff;
+    border-color: color-mix(in srgb, var(--accent) 70%, rgba(255, 255, 255, 0.2));
+    background: color-mix(in srgb, var(--accent) 45%, rgba(15, 20, 40, 0.6));
+    box-shadow: 0 8px 20px rgba(18, 60, 140, 0.35);
+  }
+
+  @media (max-width: 900px) {
+    .reviewDrawer {
+      display: none;
+    }
+  }
+</style>

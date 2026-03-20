@@ -1,144 +1,1060 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
-import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
-import StatCard from "../../../../components/nfl/classic/StatCard.astro";
-import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
-import { classicDistributionSections } from "../../../../data/nflClassicReviewMock";
+import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
+import { classicDistributionDashboard } from "../../../../data/nflClassicReviewMock";
 
 const pageTitle = "NFL Classic Review | Distribution Index";
 
-const salarySection = classicDistributionSections.find((s) => s.title === "Salary Left");
-const ownershipSection = classicDistributionSections.find((s) => s.title === "Total Ownership");
-const pointsSection = classicDistributionSections.find((s) => s.title === "Winner Points");
+const formatMoney = (value) => `$${Math.round(value).toLocaleString("en-US")}`;
+const formatNumber = (value) => value.toLocaleString("en-US");
+const formatMetricValue = (metric, value) => {
+  if (metric.unit === "%") return `${formatNumber(value)}%`;
+  if (metric.unit === "$") return formatMoney(value);
+  return formatNumber(value);
+};
+
+const scaleLinear = (value, min, max, outMin, outMax) => {
+  if (max === min) return (outMin + outMax) / 2;
+  return outMin + ((value - min) / (max - min)) * (outMax - outMin);
+};
+
+const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+const hero = classicDistributionDashboard.hero;
+const trend = classicDistributionDashboard.trend;
+const distributionField = classicDistributionDashboard.distributionField;
+const ecosystem = classicDistributionDashboard.ecosystem;
+const comparisonLab = classicDistributionDashboard.comparisonLab;
+
+const trendSeries = trend.series;
+const trendValues = trendSeries.flatMap((s) => s.values);
+const trendMin = Math.min(...trendValues);
+const trendMax = Math.max(...trendValues);
+
+const trendWidth = 1320;
+const trendHeight = 330;
+const trendPadding = { left: 72, right: 24, top: 18, bottom: 42 };
+const trendXStep =
+  (trendWidth - trendPadding.left - trendPadding.right) / (trend.xLabels.length - 1);
+const trendX = (index) => trendPadding.left + trendXStep * index;
+const trendY = (value) =>
+  scaleLinear(value, trendMin, trendMax, trendHeight - trendPadding.bottom, trendPadding.top);
+
+const trendYTicks = Array.from({ length: 4 }, (_, index) =>
+  Math.round(
+    trendMin + ((trendMax - trendMin) * index) / 3
+  )
+);
+
+const trendAnnotationPositions = trend.annotations.map((annotation, index) => {
+  const seasonIndex = trend.xLabels.findIndex((label) => label === annotation.season);
+  const value = trend.series[annotation.seriesIndex]?.values?.[seasonIndex];
+  if (seasonIndex < 0 || value === undefined) return null;
+
+  const x = trendX(seasonIndex);
+  const y = trendY(value);
+  const dx = seasonIndex > trend.xLabels.length - 3 ? -120 : 16;
+  const dy = index % 2 === 0 ? -18 : 20;
+
+  return {
+    ...annotation,
+    x,
+    y,
+    labelX: clamp(x + dx, trendPadding.left + 10, trendWidth - trendPadding.right - 150),
+    labelY: clamp(y + dy, trendPadding.top + 12, trendHeight - trendPadding.bottom - 12),
+  };
+}).filter(Boolean);
+
+const distributionRows = distributionField.rows;
+const distributionValues = distributionRows.flatMap((row) => row.values);
+const distributionMin = Math.min(...distributionValues);
+const distributionMax = Math.max(...distributionValues);
+
+const distributionWidth = 1320;
+const distributionHeight = 310;
+const distributionPadding = { left: 84, right: 30, top: 16, bottom: 34 };
+const distributionRowGap =
+  (distributionHeight - distributionPadding.top - distributionPadding.bottom) /
+  Math.max(distributionRows.length - 1, 1);
+
+const distributionX = (value) =>
+  scaleLinear(
+    value,
+    distributionMin,
+    distributionMax,
+    distributionPadding.left,
+    distributionWidth - distributionPadding.right
+  );
+
+const distributionY = (rowIndex) =>
+  distributionPadding.top + distributionRowGap * rowIndex;
+
+const distributionPoints = distributionRows.flatMap((row, rowIndex) =>
+  row.values.map((value, pointIndex) => {
+    const jitter = ((pointIndex % 5) - 2) * 5.5;
+    return {
+      value,
+      rowIndex,
+      x: distributionX(value),
+      y: distributionY(rowIndex) + jitter,
+      r: pointIndex % 4 === 0 ? 4 : 3.1,
+    };
+  })
+);
+
+const ecosystemPoints = ecosystem.points;
+const ecosystemXValues = ecosystemPoints.map((point) => point.x);
+const ecosystemYValues = ecosystemPoints.map((point) => point.y);
+const ecosystemMinX = Math.min(...ecosystemXValues);
+const ecosystemMaxX = Math.max(...ecosystemXValues);
+const ecosystemMinY = Math.min(...ecosystemYValues);
+const ecosystemMaxY = Math.max(...ecosystemYValues);
+
+const ecosystemWidth = 1320;
+const ecosystemHeight = 340;
+const ecosystemPadding = { left: 78, right: 28, top: 20, bottom: 50 };
+
+const ecosystemX = (value) =>
+  scaleLinear(
+    value,
+    ecosystemMinX,
+    ecosystemMaxX,
+    ecosystemPadding.left,
+    ecosystemWidth - ecosystemPadding.right
+  );
+
+const ecosystemY = (value) =>
+  scaleLinear(
+    value,
+    ecosystemMinY,
+    ecosystemMaxY,
+    ecosystemHeight - ecosystemPadding.bottom,
+    ecosystemPadding.top
+  );
+
+const ecosystemXTicks = Array.from(new Set(ecosystemXValues)).sort((a, b) => a - b);
+const ecosystemYTicks = Array.from({ length: 4 }, (_, index) =>
+  Math.round(ecosystemMinY + ((ecosystemMaxY - ecosystemMinY) * index) / 3)
+).reverse();
+
+const labBuckets = comparisonLab.buckets;
+const labMetrics = comparisonLab.metrics;
+const labBucketColors = [
+  "rgba(96, 170, 255, 0.95)",
+  "rgba(120, 215, 165, 0.95)",
+  "rgba(240, 188, 88, 0.95)",
+];
 ---
 
 <ClassicReviewShell
   title={pageTitle}
   headline="Distribution Index"
-  subtitle="A clean index of the core distribution lenses. Use this page to pick the exact surface you want to study next."
+  subtitle="A premium DFS research spread on how Milly-winning pockets form and move."
   accent="blue"
+  class="with-drawer distribution-editorial"
 >
-  <div slot="subnav">
-    <ClassicReviewSubnav active="distribution" />
-  </div>
+  <ClassicReviewDrawer active="distribution" mode="hover" />
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Headline Benchmarks</h2>
-        <p class="sectionSub">Quick baselines that frame the three distribution surfaces.</p>
-      </div>
-      <div class="sectionPill">Benchmarks</div>
+  <section class="lede">
+    <div class="ledeRail">
+      <span class="heroKicker">{hero.kicker}</span>
+      <h2>{hero.title}</h2>
+      <p>{hero.lede}</p>
     </div>
-    <div class="statGrid">
-      <StatCard
-        label={salarySection?.stats?.[0]?.label || "Median Salary Left"}
-        value={salarySection?.stats?.[0]?.value || "$1,200"}
-        accent="blue"
-      />
-      <StatCard
-        label={ownershipSection?.stats?.[0]?.label || "Median Ownership"}
-        value={ownershipSection?.stats?.[0]?.value || "137.4%"}
-        accent="green"
-      />
-      <StatCard
-        label={pointsSection?.stats?.[0]?.label || "Median Winner Points"}
-        value={pointsSection?.stats?.[0]?.value || "194.2"}
-        accent="gold"
-      />
+
+    <div class="storyStats">
+      {hero.stats.map((stat) => (
+        <article class="storyStat">
+          <span class="storyStatLabel">{stat.label}</span>
+          <strong class="storyStatValue">{stat.value}</strong>
+          <p class="storyStatNote">{stat.note}</p>
+        </article>
+      ))}
     </div>
   </section>
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Featured Distributions</h2>
-        <p class="sectionSub">Two primary lenses that anchor most Classic review sessions.</p>
-      </div>
-      <div class="sectionPill">Featured</div>
+  <section class="chapter story">
+    <div class="chapterHead">
+      <div class="eyebrow">Top Story</div>
+      <h3>{trend.title}</h3>
+      <p>{trend.subtitle}</p>
     </div>
-    <div class="chartGrid twoCol">
-      {salarySection?.charts?.[0] ? (
-        <ChartPanel
-          title={salarySection.charts[0].title}
-          meta={salarySection.charts[0].meta}
-          helper={salarySection.charts[0].helper}
-          footer={salarySection.charts[0].footer}
-          series={salarySection.charts[0].series}
-          accent="blue"
-        />
-      ) : null}
-      {ownershipSection?.charts?.[0] ? (
-        <ChartPanel
-          title={ownershipSection.charts[0].title}
-          meta={ownershipSection.charts[0].meta}
-          helper={ownershipSection.charts[0].helper}
-          footer={ownershipSection.charts[0].footer}
-          series={ownershipSection.charts[0].series}
-          accent="green"
-        />
-      ) : null}
+
+    <div class="chartWrap storyWrap">
+      <svg viewBox={`0 0 ${trendWidth} ${trendHeight}`} role="img" aria-label="Winning pocket share over time">
+        <g class="storyGrid">
+          {trendYTicks.map((tick) => (
+            <line
+              x1={trendPadding.left}
+              y1={trendY(tick)}
+              x2={trendWidth - trendPadding.right}
+              y2={trendY(tick)}
+            />
+          ))}
+        </g>
+
+        <g class="storyAxis storyAxisY">
+          {trendYTicks.map((tick) => (
+            <text x={trendPadding.left - 12} y={trendY(tick) + 4} text-anchor="end">
+              {tick}%
+            </text>
+          ))}
+        </g>
+
+        <g class="storyAxis storyAxisX">
+          {trend.xLabels.map((label, index) => (
+            <text x={trendX(index)} y={trendHeight - 12} text-anchor="middle">
+              {label}
+            </text>
+          ))}
+        </g>
+
+        {trendSeries.map((series) => {
+          const points = series.values
+            .map((value, index) => `${trendX(index)},${trendY(value)}`)
+            .join(" ");
+          return (
+            <g class="storySeries">
+              <polyline points={points} style={`stroke:${series.color}`} />
+              {series.values.map((value, index) => (
+                <circle
+                  cx={trendX(index)}
+                  cy={trendY(value)}
+                  r="4.8"
+                  style={`fill:${series.color}`}
+                />
+              ))}
+            </g>
+          );
+        })}
+
+        {trendAnnotationPositions.map((annotation) => (
+          <g class="storyAnnotation">
+            <line x1={annotation.x} y1={annotation.y} x2={annotation.labelX} y2={annotation.labelY - 6} />
+            <circle cx={annotation.x} cy={annotation.y} r="8" class="annotationHalo" />
+            <text x={annotation.labelX} y={annotation.labelY} class="annotationLabel">
+              {annotation.label}
+            </text>
+            <text x={annotation.labelX} y={annotation.labelY + 13} class="annotationNote">
+              {annotation.note}
+            </text>
+          </g>
+        ))}
+      </svg>
+
+      <div class="storyMeta">
+        <div class="storyLegend">
+          {trendSeries.map((series) => (
+            <div class="legendItem">
+              <span class="legendSwatch" style={`background:${series.color}`}></span>
+              <span>{series.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="annotationRail">
+          {trend.annotations.map((annotation) => (
+            <div class="annotationRailItem">
+              <strong>{annotation.label}</strong>
+              <span>{annotation.note}</span>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Where to Go Next</h2>
-        <p class="sectionSub">Jump directly to the surface that answers your question.</p>
-      </div>
-      <div class="sectionPill">Next</div>
+  <section class="chapter distribution">
+    <div class="chapterHead">
+      <div class="eyebrow">Distribution Field</div>
+      <h3>{distributionField.title}</h3>
+      <p>{distributionField.subtitle}</p>
     </div>
-    <div class="nextGrid">
-      <a class="nextCard" href="/nfl/review/classic/salary">
-        <div class="nextLabel">Salary</div>
-        <div class="nextSub">How winners leave room.</div>
-      </a>
-      <a class="nextCard" href="/nfl/review/classic/ownership">
-        <div class="nextLabel">Ownership</div>
-        <div class="nextSub">How chalk and leverage balance.</div>
-      </a>
-      <a class="nextCard" href="/nfl/review/classic/game-environment">
-        <div class="nextLabel">Game Environment</div>
-        <div class="nextSub">Where concentration shows up.</div>
-      </a>
+
+    <div class="chartWrap">
+      <svg
+        viewBox={`0 0 ${distributionWidth} ${distributionHeight}`}
+        role="img"
+        aria-label="Winning slate distribution field"
+      >
+        <g class="distributionGrid">
+          {distributionRows.map((row, rowIndex) => (
+            <line
+              x1={distributionPadding.left}
+              y1={distributionY(rowIndex)}
+              x2={distributionWidth - distributionPadding.right}
+              y2={distributionY(rowIndex)}
+            />
+          ))}
+        </g>
+
+        <g class="distributionLabels">
+          {distributionRows.map((row, rowIndex) => (
+            <text x={distributionPadding.left - 12} y={distributionY(rowIndex) + 4} text-anchor="end">
+              {row.label}
+            </text>
+          ))}
+        </g>
+
+        <g class="distributionDots">
+          {distributionPoints.map((point) => (
+            <circle cx={point.x} cy={point.y} r={point.r} />
+          ))}
+        </g>
+
+        <g class="distributionAxis">
+          <text x={distributionPadding.left} y={distributionHeight - 10} text-anchor="start">
+            {formatMoney(distributionMin)}
+          </text>
+          <text
+            x={(distributionWidth - distributionPadding.right + distributionPadding.left) / 2}
+            y={distributionHeight - 10}
+            text-anchor="middle"
+          >
+            Salary left range
+          </text>
+          <text
+            x={distributionWidth - distributionPadding.right}
+            y={distributionHeight - 10}
+            text-anchor="end"
+          >
+            {formatMoney(distributionMax)}
+          </text>
+        </g>
+      </svg>
+
+      <div class="chapterFoot">
+        Denser clusters show where Classic winners actually live. Wider rows show seasons where construction windows opened up.
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter ecosystem">
+    <div class="chapterHead">
+      <div class="eyebrow">Ecosystem Map</div>
+      <h3>{ecosystem.title}</h3>
+      <p>{ecosystem.subtitle}</p>
+    </div>
+
+    <div class="ecosystemFrame">
+      <div class="chartWrap">
+        <svg viewBox={`0 0 ${ecosystemWidth} ${ecosystemHeight}`} role="img" aria-label="Slate ecosystem map">
+          <g class="ecosystemGrid">
+            {ecosystemYTicks.map((tick) => (
+              <line
+                x1={ecosystemPadding.left}
+                y1={ecosystemY(tick)}
+                x2={ecosystemWidth - ecosystemPadding.right}
+                y2={ecosystemY(tick)}
+              />
+            ))}
+          </g>
+
+          <g class="ecosystemAxis ecosystemAxisY">
+            {ecosystemYTicks.map((tick) => (
+              <text x={ecosystemPadding.left - 12} y={ecosystemY(tick) + 4} text-anchor="end">
+                {tick}
+              </text>
+            ))}
+          </g>
+
+          <g class="ecosystemAxis ecosystemAxisX">
+            {ecosystemXTicks.map((year) => (
+              <text x={ecosystemX(year)} y={ecosystemHeight - 16} text-anchor="middle">
+                {year}
+              </text>
+            ))}
+          </g>
+
+          {ecosystemPoints.map((point) => (
+            <circle
+              cx={ecosystemX(point.x)}
+              cy={ecosystemY(point.y)}
+              r={point.size}
+              class={`ecosystemDot is-${point.group}`}
+            />
+          ))}
+        </svg>
+
+        <div class="chapterFoot">
+          Bubble size scales with prize pool. Higher placement on the field means higher total ownership pressure.
+        </div>
+      </div>
+
+      <aside class="ecosystemKey">
+        <div class="ecosystemKeyTitle">Archetype Families</div>
+        <div class="ecosystemLegendList">
+          {ecosystem.legend.map((item) => (
+            <div class="legendRow">
+              <span class={`legendChip is-${item.key}`}></span>
+              <div>
+                <strong>{item.label}</strong>
+                <span>{item.detail}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="chapter comparison">
+    <div class="comparisonHead">
+      <div class="chapterHead">
+        <div class="eyebrow">Comparison Lab</div>
+        <h3>{comparisonLab.title}</h3>
+        <p>{comparisonLab.subtitle}</p>
+      </div>
+      <p class="comparisonNarrative">{comparisonLab.narrative}</p>
+    </div>
+
+    <div class="comparisonGrid">
+      <div class="comparisonTable">
+        <div class="tableHeader">
+          <span>Build bucket</span>
+          <span>Ownership</span>
+          <span>Salary left</span>
+          <span>Winner score</span>
+          <span>Top 10 rate</span>
+        </div>
+
+        {labBuckets.map((bucket, index) => (
+          <div class="tableRow">
+            <span class="bucketLabel">
+              <i style={`background:${labBucketColors[index]}`}></i>
+              {bucket.label}
+            </span>
+            <span>{formatNumber(bucket.ownership)}%</span>
+            <span>{formatMoney(bucket.salaryLeft)}</span>
+            <span>{formatNumber(bucket.winnerScore)}</span>
+            <span>{formatNumber(bucket.top10Rate)}%</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="comparisonMetrics">
+        {labMetrics.map((metric) => (
+          <div class="metricRow">
+            <div class="metricLabel">
+              <span>{metric.label}</span>
+              <em>
+                {formatMetricValue(metric, metric.min)}
+                <span> to </span>
+                {formatMetricValue(metric, metric.max)}
+              </em>
+            </div>
+
+            <div class="metricTrack">
+              <div class="metricBaseline"></div>
+              {labBuckets.map((bucket, index) => {
+                const value = bucket[metric.key];
+                const position = scaleLinear(value, metric.min, metric.max, 4, 96);
+                return (
+                  <span
+                    class="metricDot"
+                    style={`--x:${position}%; --tone:${labBucketColors[index]}`}
+                    title={`${bucket.label}: ${formatMetricValue(metric, value)}`}
+                  ></span>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 </ClassicReviewShell>
 
 <style>
-  .nextGrid {
+  :global(.classic-frame.with-drawer.distribution-editorial) {
+    padding-left: calc(clamp(18px, 2vw, 26px) + 54px);
+    padding-right: clamp(20px, 3vw, 36px);
+  }
+
+  :global(.classic-frame.with-drawer.distribution-editorial .reviewDrawer) {
+    --drawer-width: 236px;
+    --drawer-rail: 22px;
+    top: 16px;
+    left: 0;
+  }
+
+  :global(.classic-frame.with-drawer.distribution-editorial .drawerRail) {
+    transform: translateX(-4px);
+  }
+
+  :global(.classic-frame.with-drawer.distribution-editorial .backLink) {
+    display: none;
+  }
+
+  :global(.classic-frame.with-drawer.distribution-editorial .hero) {
+    padding: 0 0 8px;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  :global(.classic-frame.with-drawer.distribution-editorial .heroTitle) {
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  :global(.classic-frame.with-drawer.distribution-editorial .heroSub) {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  :global(.classic-frame.with-drawer.distribution-editorial .content) {
+    gap: 0;
+    margin-top: 4px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 1240px;
+    width: min(1220px, calc(100vw - 128px));
+    margin-left: auto;
+    margin-right: auto;
+    margin-inline: auto;
+  }
+
+  :global(.classic-frame.with-drawer.distribution-editorial .sectionPanel) {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .lede {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 18px;
+    padding: 18px 0 0;
+    margin-bottom: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .ledeRail {
+    display: grid;
+    gap: 10px;
+    max-width: 980px;
+  }
+
+  .heroKicker,
+  .eyebrow {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.44);
+  }
+
+  .ledeRail h2 {
+    margin: 0;
+    max-width: 930px;
+    font-size: clamp(36px, 3.8vw, 60px);
+    line-height: 0.97;
+    letter-spacing: -0.05em;
+    font-weight: 1000;
+    color: rgba(255, 255, 255, 0.98);
+  }
+
+  .ledeRail p {
+    margin: 0;
+    max-width: 860px;
+    font-size: 14px;
+    line-height: 1.58;
+    color: rgba(255, 255, 255, 0.72);
+    font-weight: 560;
+  }
+
+  .storyStats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .storyStat {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .storyStatLabel {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.48);
+  }
+
+  .storyStatValue {
+    font-size: clamp(22px, 1.9vw, 30px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  .storyStatNote {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.67);
+    font-style: italic;
+  }
+
+  .chapter {
+    padding: 22px 22px 22px;
+    margin-top: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(22, 24, 28, 0.82) 0%, rgba(14, 16, 20, 0.78) 100%);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+  }
+
+  .chapter:first-of-type {
+    margin-top: 24px;
+  }
+
+  .chapterHead {
+    display: grid;
+    gap: 6px;
+    max-width: 760px;
+    margin-bottom: 12px;
+  }
+
+  .chapterHead h3 {
+    margin: 0;
+    font-size: clamp(22px, 1.8vw, 30px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .chapterHead p,
+  .comparisonNarrative {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.68);
+    font-weight: 560;
+  }
+
+  .chartWrap {
+    display: grid;
     gap: 10px;
   }
 
-  .nextCard {
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    padding: 12px;
-    text-decoration: none;
-    background: #141414;
-    color: rgba(255, 255, 255, 0.9);
-    display: grid;
-    gap: 4px;
-    transition: border-color 120ms ease, transform 120ms ease;
+  .storyWrap {
+    gap: 12px;
   }
 
-  .nextCard:hover {
-    border-color: rgba(255, 255, 255, 0.24);
-    transform: translateY(-1px);
+  .storyWrap svg,
+  .distributionChart svg,
+  .ecosystemChart svg,
+  .chartWrap svg {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
-  .nextLabel {
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  .storyGrid line,
+  .distributionGrid line,
+  .ecosystemGrid line {
+    stroke: rgba(255, 255, 255, 0.065);
+    stroke-width: 1;
+  }
+
+  .storyAxis text,
+  .distributionLabels text,
+  .distributionAxis text,
+  .ecosystemAxis text {
     font-size: 10px;
+    fill: rgba(255, 255, 255, 0.48);
+    font-weight: 700;
   }
 
-  .nextSub {
+  .storySeries polyline {
+    fill: none;
+    stroke-width: 2.6;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+
+  .storySeries circle {
+    stroke: rgba(8, 8, 10, 0.65);
+    stroke-width: 1.1;
+  }
+
+  .storyAnnotation line {
+    stroke: rgba(255, 255, 255, 0.22);
+    stroke-width: 1;
+  }
+
+  .storyAnnotation .annotationHalo {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 1;
+  }
+
+  .storyAnnotation .annotationLabel {
+    font-size: 10px;
+    fill: rgba(255, 255, 255, 0.82);
+    font-weight: 800;
+  }
+
+  .storyAnnotation .annotationNote {
+    font-size: 9px;
+    fill: rgba(255, 255, 255, 0.58);
+    font-weight: 600;
+  }
+
+  .storyMeta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+    gap: 18px;
+    align-items: start;
+  }
+
+  .storyLegend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.74);
+    font-weight: 700;
+  }
+
+  .legendItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .legendSwatch {
+    width: 14px;
+    height: 4px;
+    border-radius: 999px;
+    display: inline-block;
+  }
+
+  .annotationRail {
+    display: grid;
+    gap: 10px;
+    align-content: start;
+  }
+
+  .annotationRailItem {
+    display: grid;
+    gap: 2px;
+    padding-left: 12px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .annotationRailItem strong {
+    font-size: 11px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.86);
+  }
+
+  .annotationRailItem span {
+    font-size: 11px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.58);
+    font-weight: 560;
+  }
+
+  .distributionDots circle {
+    fill: rgba(91, 140, 255, 0.76);
+    stroke: rgba(10, 10, 12, 0.82);
+    stroke-width: 0.8;
+  }
+
+  .chapterFoot,
+  .ecosystemKeyTitle {
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.56);
+    font-weight: 650;
+  }
+
+  .ecosystemFrame {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .ecosystemDot {
+    stroke: rgba(255, 255, 255, 0.22);
+    stroke-width: 1;
+  }
+
+  .ecosystemDot.is-chalk {
+    fill: rgba(96, 170, 255, 0.45);
+  }
+
+  .ecosystemDot.is-balanced {
+    fill: rgba(120, 215, 165, 0.48);
+  }
+
+  .ecosystemDot.is-leverage {
+    fill: rgba(240, 188, 88, 0.48);
+  }
+
+  .ecosystemKey {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+    padding-top: 2px;
+  }
+
+  .ecosystemLegendList {
+    display: grid;
+    gap: 12px;
+  }
+
+  .legendRow {
+    display: grid;
+    grid-template-columns: 14px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+  }
+
+  .legendRow strong {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.86);
+    margin-bottom: 2px;
+  }
+
+  .legendRow span {
+    font-size: 11px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.58);
+  }
+
+  .legendChip {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    margin-top: 3px;
+    display: inline-block;
+  }
+
+  .legendChip.is-chalk {
+    background: rgba(96, 170, 255, 0.85);
+  }
+
+  .legendChip.is-balanced {
+    background: rgba(120, 215, 165, 0.85);
+  }
+
+  .legendChip.is-leverage {
+    background: rgba(240, 188, 88, 0.85);
+  }
+
+  .comparisonHead {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+    gap: 20px;
+    align-items: end;
+    margin-bottom: 14px;
+  }
+
+  .comparisonGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  .comparisonTable {
+    display: grid;
+    gap: 0;
+  }
+
+  .tableHeader,
+  .tableRow {
+    display: grid;
+    grid-template-columns: 1.45fr repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    align-items: center;
+  }
+
+  .tableHeader {
+    padding: 0 0 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(255, 255, 255, 0.48);
+    font-weight: 900;
+  }
+
+  .tableRow {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.82);
+    font-weight: 700;
+  }
+
+  .tableRow:last-child {
+    border-bottom: none;
+  }
+
+  .bucketLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bucketLabel i {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    display: inline-block;
+  }
+
+  .comparisonMetrics {
+    display: grid;
+    gap: 16px;
+    padding-top: 2px;
+  }
+
+  .metricRow {
+    display: grid;
+    gap: 8px;
+  }
+
+  .metricLabel {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .metricLabel span {
+    font-size: 11px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.84);
+  }
+
+  .metricLabel em {
+    font-style: normal;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.54);
+    white-space: nowrap;
+  }
+
+  .metricTrack {
+    position: relative;
+    height: 18px;
+  }
+
+  .metricBaseline {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    right: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .metricDot {
+    position: absolute;
+    top: 3px;
+    left: var(--x);
+    width: 11px;
+    height: 11px;
+    border-radius: 999px;
+    background: var(--tone);
+    box-shadow: 0 0 0 4px rgba(10, 10, 12, 0.86);
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 1240px) {
+    :global(.classic-frame.with-drawer.distribution-editorial .content) {
+      width: min(1160px, calc(100vw - 112px));
+    }
+
+    .storyMeta,
+    .ecosystemFrame,
+    .comparisonHead,
+    .comparisonGrid {
+      grid-template-columns: 1fr;
+    }
+
+    .annotationRail {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 900px) {
+    :global(.classic-frame.with-drawer.distribution-editorial) {
+      padding-left: calc(clamp(14px, 4vw, 20px) + 46px);
+    }
+
+    :global(.classic-frame.with-drawer.distribution-editorial .reviewDrawer) {
+      left: -20px;
+    }
+
+    :global(.classic-frame.with-drawer.distribution-editorial .content) {
+      width: min(100%, calc(100vw - 80px));
+    }
+
+    .ledeRail h2 {
+      font-size: clamp(32px, 8vw, 48px);
+    }
+
+    .storyStats {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .annotationRail {
+      grid-template-columns: 1fr;
+    }
+
+    .chapter {
+      padding: 20px 18px 20px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .chapterHead h3 {
+      font-size: 22px;
+    }
+
+    .chapterHead p,
+    .comparisonNarrative,
+    .ledeRail p,
+    .storyStatNote {
+      font-size: 13px;
+    }
+
+    .tableHeader,
+    .tableRow {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    .metricLabel {
+      flex-direction: column;
+      align-items: start;
+      gap: 4px;
+    }
   }
 </style>

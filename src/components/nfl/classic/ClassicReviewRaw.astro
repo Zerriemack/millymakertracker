@@ -1,7 +1,7 @@
 ---
 // src/components/nfl/classic/ClassicReviewRaw.astro
 import ClassicReviewFrame from "./ClassicReviewFrame.astro";
-import ClassicReviewSubnav from "./ClassicReviewSubnav.astro";
+import ClassicReviewDrawer from "./ClassicReviewDrawer.astro";
 
 const apiUrl = `${Astro.url.origin}/api/analysis/nfl/classic`;
 const res = await fetch(apiUrl);
@@ -171,13 +171,13 @@ const rows = rowsRaw
 const pageTitle = "NFL Classic Review";
 ---
 
-<ClassicReviewFrame title={pageTitle} accent="blue" class="classic-raw">
+<ClassicReviewFrame title={pageTitle} accent="blue" class="classic-raw with-drawer">
+  <ClassicReviewDrawer active="raw" mode="hover" />
   <section class="page">
     <header class="topbar">
       <div class="titleBlock">
         <a class="backLink" href="/analysis">Back to Review</a>
         <h1 class="h1">{pageTitle}</h1>
-        <ClassicReviewSubnav active="raw" />
         <div class="sub">
           Rows: <span id="shownCount">{rows.length}</span> / {rows.length}
         </div>

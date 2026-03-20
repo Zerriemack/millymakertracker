@@ -1,6 +1,6 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
-import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
 import StatCard from "../../../../components/nfl/classic/StatCard.astro";
 import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
 import { classicDistributionSections, classicTrendCharts } from "../../../../data/nflClassicReviewMock";
@@ -15,10 +15,9 @@ const salaryTrend = classicTrendCharts.find((c) => c.title === "Salary Left by Y
   headline="Salary Discipline"
   subtitle="How winners spend salary, where they leave room, and how that shifts over time."
   accent="blue"
+  class="with-drawer"
 >
-  <div slot="subnav">
-    <ClassicReviewSubnav active="salary" />
-  </div>
+  <ClassicReviewDrawer active="salary" mode="hover" />
 
   <section class="sectionPanel">
     <div class="sectionHeader">

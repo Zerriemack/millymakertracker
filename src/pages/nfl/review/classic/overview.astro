@@ -1,151 +1,530 @@
 ---
-import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
-import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
-import StatCard from "../../../../components/nfl/classic/StatCard.astro";
-import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
-import { classicOverviewStats, classicOverviewCharts } from "../../../../data/nflClassicReviewMock";
+import ClassicReviewFrame from "../../../../components/nfl/classic/ClassicReviewFrame.astro";
+import { classicReviewRowsMock } from "../../../../data/nflClassicReviewMock";
 
-const pageTitle = "NFL Classic Review";
-const heroRows = classicOverviewStats.slice(0, 2);
-const [leadChart, secondaryChart] = classicOverviewCharts;
+const rows = Array.isArray(classicReviewRowsMock) ? classicReviewRowsMock : [];
+const total = rows.length;
+
+const num = (v) => (Number.isFinite(Number(v)) ? Number(v) : null);
+const normalize = (v) => String(v ?? "").trim();
+const normalizeKey = (v) => normalize(v).toUpperCase();
+
+const mean = (arr) =>
+  arr.length ? arr.reduce((sum, v) => sum + v, 0) / arr.length : null;
+const min = (arr) => (arr.length ? Math.min(...arr) : null);
+const max = (arr) => (arr.length ? Math.max(...arr) : null);
+
+const counts = (values) => {
+  const map = new Map();
+  values.forEach((v) => {
+    const key = normalizeKey(v);
+    if (!key) return;
+    map.set(key, (map.get(key) || 0) + 1);
+  });
+  return map;
+};
+
+const mode = (values) => {
+  const map = counts(values);
+  let top = { value: "—", count: 0 };
+  map.forEach((count, value) => {
+    if (count > top.count) top = { value, count };
+  });
+  return top;
+};
+
+const least = (values) => {
+  const map = counts(values);
+  let low = { value: "—", count: Number.POSITIVE_INFINITY };
+  map.forEach((count, value) => {
+    if (count < low.count) low = { value, count };
+  });
+  if (low.count === Number.POSITIVE_INFINITY) return { value: "—", count: 0 };
+  return low;
+};
+
+const uniqueCount = (values) => counts(values).size;
+const pct = (count, totalCount) =>
+  totalCount ? `${((count / totalCount) * 100).toFixed(1)}%` : "—";
+
+const fmtNum = (v, digits = 0) =>
+  v === null ? "—" : v.toLocaleString("en-US", { maximumFractionDigits: digits, minimumFractionDigits: digits });
+const fmtMoney = (v) => (v === null ? "—" : `$${Math.round(v).toLocaleString("en-US")}`);
+const fmtPct = (v) => (v === null ? "—" : `${v.toFixed(1)}%`);
+
+const years = rows.map((r) => num(r.year)).filter((v) => v !== null);
+const weeks = rows.map((r) => num(r.week)).filter((v) => v !== null);
+const types = rows.map((r) => r.type);
+const venues = rows.map((r) => r.venue);
+
+const stacks = rows.map((r) => r.stack);
+const bringbacks = rows.map((r) => r.bringBack);
+
+const maxFromTeam = rows.map((r) => num(r.maxFromTeam)).filter((v) => v !== null);
+const maxFromGame = rows.map((r) => num(r.maxFromGame)).filter((v) => v !== null);
+
+const earlyPlayers = rows.map((r) => num(r.earlyPlayers)).filter((v) => v !== null);
+const latePlayers = rows.map((r) => num(r.latePlayers)).filter((v) => v !== null);
+const salaryLeft = rows.map((r) => num(r.salaryLeft)).filter((v) => v !== null);
+const totalOwnership = rows.map((r) => num(r.totalOwnership)).filter((v) => v !== null);
+
+const own0_10 = rows.map((r) => num(r.own0_10)).filter((v) => v !== null);
+const own11_19 = rows.map((r) => num(r.own11_19)).filter((v) => v !== null);
+const own20p = rows.map((r) => num(r.own20p)).filter((v) => v !== null);
+const bucketTotal = rows.map((r) => num(r.bucketTotal ?? (num(r.own0_10) || 0) + (num(r.own11_19) || 0) + (num(r.own20p) || 0))).filter((v) => v !== null);
+
+const winnerPoints = rows.map((r) => num(r.winnerPoints)).filter((v) => v !== null);
+
+const tags = rows.map((r) => r.tag);
+const groups = rows.map((r) => r.group);
+
+const bringYes = bringbacks.filter((v) => normalizeKey(v) === "YES").length;
+const bringNo = bringbacks.filter((v) => normalizeKey(v) === "NO").length;
+
+const salaryLeftWins = salaryLeft.filter((v) => v > 0).length;
+const ownershipHigh = totalOwnership.filter((v) => v >= 150).length;
+const venueTopShare = pct(mode(venues).count, total);
 ---
 
-<ClassicReviewShell
-  title={pageTitle}
-  headline="Classic Review Overview"
-  subtitle="An editorial lens on how Classic winners are built — salary pressure, ownership balance, and the stacks that keep showing up."
-  accent="blue"
->
-  <div slot="heroSide" class="heroPanel">
-    <div>
-      <div class="heroPanelTitle">Quick Pulse</div>
-      <div class="heroList">
-        {heroRows.map((row) => (
-          <div class="heroRow">
-            <span class="heroLabel">{row.label}</span>
-            <span class="heroValue">{row.value}</span>
-          </div>
-        ))}
+<ClassicReviewFrame title="NFL Classic Review" accent="blue" class="classic-overview">
+  <section class="overviewLayout">
+    <aside class="drawer" aria-label="Classic Review Navigation">
+      <div class="drawerBody">
+        <div class="drawerGroup">
+          <div class="drawerLabel">Review</div>
+          <a class="drawerLink isActive" href="/nfl/review/classic/overview">Overview</a>
+          <a class="drawerLink" href="/nfl/review/classic/distribution">Distribution Index</a>
+        </div>
+        <div class="drawerGroup">
+          <div class="drawerLabel">Patterns</div>
+          <a class="drawerLink" href="/nfl/review/classic/patterns">Patterns</a>
+          <a class="drawerLink" href="/nfl/review/classic/construction">Construction</a>
+        </div>
+        <div class="drawerGroup">
+          <div class="drawerLabel">Market</div>
+          <a class="drawerLink" href="/nfl/review/classic/ownership">Ownership</a>
+          <a class="drawerLink" href="/nfl/review/classic/salary">Salary</a>
+          <a class="drawerLink" href="/nfl/review/classic/game-environment">Game Environment</a>
+        </div>
+        <div class="drawerGroup">
+          <div class="drawerLabel">Time</div>
+          <a class="drawerLink" href="/nfl/review/classic/trends">Trends</a>
+        </div>
+        <div class="drawerGroup">
+          <div class="drawerLabel">Research</div>
+          <a class="drawerLink" href="/nfl/review/classic">Raw Review</a>
+        </div>
       </div>
-    </div>
-    <a class="heroCTA" href="/nfl/review/classic">Open Raw Review Table</a>
-  </div>
+    </aside>
 
-  <div slot="subnav">
-    <ClassicReviewSubnav active="overview" />
-  </div>
+    <div class="overviewMain">
+      <header class="introStrip">
+        <div>
+          <h1 class="title">Classic Review Overview</h1>
+          <p class="sub">Classic winner summary board</p>
+        </div>
+      </header>
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Headline Cards</h2>
-        <p class="sectionSub">Fast benchmarks that define the Classic winner profile.</p>
+      <section class="summaryGrid" aria-label="Classic Review Summary Boxes">
+      <div class="summaryCard">
+        <div class="cardTitle">Slate Context</div>
+        <div class="cardMain">Rows tracked: {fmtNum(total)}</div>
+        <div class="cardRows">
+          <div class="row"><span>Years</span><span>{fmtNum(min(years))}–{fmtNum(max(years))}</span></div>
+          <div class="row"><span>Type</span><span>{mode(types).value}</span></div>
+          <div class="row"><span>Weeks</span><span>{fmtNum(min(weeks))}–{fmtNum(max(weeks))}</span></div>
+        </div>
       </div>
-      <div class="sectionPill">Baseline</div>
-    </div>
-    <div class="statGrid">
-      {classicOverviewStats.slice(0, 4).map((stat, idx) => (
-        <StatCard
-          label={stat.label}
-          value={stat.value}
-          note={stat.note}
-          accent={idx === 2 ? "blue" : idx === 3 ? "gold" : "slate"}
-        />
-      ))}
+
+      <div class="summaryCard">
+        <div class="cardTitle">Venue</div>
+        <div class="cardMain">Most: {mode(venues).value}</div>
+        <div class="cardRows">
+          <div class="row"><span>Least</span><span>{least(venues).value}</span></div>
+          <div class="row"><span>Unique</span><span>{fmtNum(uniqueCount(venues))}</span></div>
+          <div class="row"><span>Top share</span><span>{venueTopShare}</span></div>
+        </div>
+      </div>
+
+      <div class="summaryCard">
+        <div class="cardTitle">Stack</div>
+        <div class="cardMain">Most: {mode(stacks).value}</div>
+        <div class="cardRows">
+          <div class="row"><span>Least</span><span>{least(stacks).value}</span></div>
+          <div class="row"><span>Unique</span><span>{fmtNum(uniqueCount(stacks))}</span></div>
+          <div class="row"><span>Top share</span><span>{pct(mode(stacks).count, total)}</span></div>
+        </div>
+      </div>
+
+      <div class="summaryCard">
+        <div class="cardTitle">Bring Back</div>
+        <div class="cardMain">Yes rate: {pct(bringYes, total)}</div>
+        <div class="cardRows">
+          <div class="row"><span>No rate</span><span>{pct(bringNo, total)}</span></div>
+          <div class="row"><span>Most</span><span>{mode(bringbacks).value}</span></div>
+          <div class="row"><span>Least</span><span>{least(bringbacks).value}</span></div>
+        </div>
+      </div>
+
+      <div class="summaryCard">
+        <div class="cardTitle">Salary Left</div>
+        <div class="cardMain">Mean: {fmtMoney(mean(salaryLeft))}</div>
+        <div class="cardRows">
+          <div class="row"><span>High</span><span>{fmtMoney(max(salaryLeft))}</span></div>
+          <div class="row"><span>Low</span><span>{fmtMoney(min(salaryLeft))}</span></div>
+          <div class="row"><span>Leave salary</span><span>{pct(salaryLeftWins, total)}</span></div>
+        </div>
+      </div>
+
+      <div class="summaryCard">
+        <div class="cardTitle">Total Ownership</div>
+        <div class="cardMain">Mean: {fmtPct(mean(totalOwnership))}</div>
+        <div class="cardRows">
+          <div class="row"><span>High</span><span>{fmtPct(max(totalOwnership))}</span></div>
+          <div class="row"><span>Low</span><span>{fmtPct(min(totalOwnership))}</span></div>
+          <div class="row"><span>≥ 150%</span><span>{pct(ownershipHigh, total)}</span></div>
+        </div>
+      </div>
+
+      <div class="summaryCard spanWide">
+        <div class="cardTitle">Ownership Buckets</div>
+        <div class="cardMain">Most common total: {mode(bucketTotal).value}</div>
+        <div class="cardRows">
+          <div class="row"><span>Own 0–10</span><span>{fmtNum(mean(own0_10), 1)}</span></div>
+          <div class="row"><span>Own 11–19</span><span>{fmtNum(mean(own11_19), 1)}</span></div>
+          <div class="row"><span>Own 20+</span><span>{fmtNum(mean(own20p), 1)}</span></div>
+          <div class="row"><span>Mean total</span><span>{fmtNum(mean(bucketTotal), 1)}</span></div>
+        </div>
+      </div>
+
+      <div class="summaryCard">
+        <div class="cardTitle">Max From Team</div>
+        <div class="cardMain">Mean: {fmtNum(mean(maxFromTeam), 1)}</div>
+        <div class="cardRows">
+          <div class="row"><span>High</span><span>{fmtNum(max(maxFromTeam))}</span></div>
+          <div class="row"><span>Low</span><span>{fmtNum(min(maxFromTeam))}</span></div>
+          <div class="row"><span>Most</span><span>{mode(maxFromTeam).value}</span></div>
+        </div>
+      </div>
+
+      <div class="summaryCard">
+        <div class="cardTitle">Max From Game</div>
+        <div class="cardMain">Mean: {fmtNum(mean(maxFromGame), 1)}</div>
+        <div class="cardRows">
+          <div class="row"><span>High</span><span>{fmtNum(max(maxFromGame))}</span></div>
+          <div class="row"><span>Low</span><span>{fmtNum(min(maxFromGame))}</span></div>
+          <div class="row"><span>Most</span><span>{mode(maxFromGame).value}</span></div>
+        </div>
+      </div>
+
+      <div class="summaryCard">
+        <div class="cardTitle">Early Players</div>
+        <div class="cardMain">Mean: {fmtNum(mean(earlyPlayers), 1)}</div>
+        <div class="cardRows">
+          <div class="row"><span>High</span><span>{fmtNum(max(earlyPlayers))}</span></div>
+          <div class="row"><span>Low</span><span>{fmtNum(min(earlyPlayers))}</span></div>
+          <div class="row"><span>Most</span><span>{mode(earlyPlayers).value}</span></div>
+        </div>
+      </div>
+
+      <div class="summaryCard">
+        <div class="cardTitle">Late Players</div>
+        <div class="cardMain">Mean: {fmtNum(mean(latePlayers), 1)}</div>
+        <div class="cardRows">
+          <div class="row"><span>High</span><span>{fmtNum(max(latePlayers))}</span></div>
+          <div class="row"><span>Low</span><span>{fmtNum(min(latePlayers))}</span></div>
+          <div class="row"><span>Most</span><span>{mode(latePlayers).value}</span></div>
+        </div>
+      </div>
+
+      <div class="summaryCard">
+        <div class="cardTitle">Winner Points</div>
+        <div class="cardMain">Mean: {fmtNum(mean(winnerPoints), 1)}</div>
+        <div class="cardRows">
+          <div class="row"><span>High</span><span>{fmtNum(max(winnerPoints), 1)}</span></div>
+          <div class="row"><span>Low</span><span>{fmtNum(min(winnerPoints), 1)}</span></div>
+          <div class="row"><span>200+</span><span>{pct(winnerPoints.filter((v) => v >= 200).length, total)}</span></div>
+        </div>
+      </div>
+
+      <div class="summaryCard">
+        <div class="cardTitle">Tag + Group</div>
+        <div class="cardMain">Top tag: {mode(tags).value}</div>
+        <div class="cardRows">
+          <div class="row"><span>Least tag</span><span>{least(tags).value}</span></div>
+          <div class="row"><span>Unique tags</span><span>{fmtNum(uniqueCount(tags))}</span></div>
+          <div class="row"><span>Top group</span><span>{mode(groups).value}</span></div>
+        </div>
+      </div>
+      </section>
     </div>
   </section>
-
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Featured Modules</h2>
-        <p class="sectionSub">Two core surfaces that anchor most reviews.</p>
-      </div>
-      <div class="sectionPill">Featured</div>
-    </div>
-    <div class="chartGrid twoCol">
-      {leadChart ? (
-        <ChartPanel
-          variant="lead"
-          title={leadChart.title}
-          meta={leadChart.meta}
-          helper={leadChart.helper}
-          footer={leadChart.footer}
-          series={leadChart.series}
-          accent="blue"
-        />
-      ) : null}
-      {secondaryChart ? (
-        <ChartPanel
-          title={secondaryChart.title}
-          meta={secondaryChart.meta}
-          helper={secondaryChart.helper}
-          footer={secondaryChart.footer}
-          series={secondaryChart.series}
-          accent="gold"
-        />
-      ) : null}
-    </div>
-  </section>
-
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Where to Go Next</h2>
-        <p class="sectionSub">Pick the exact surface you want to explore.</p>
-      </div>
-      <div class="sectionPill">Next</div>
-    </div>
-    <div class="nextGrid">
-      <a class="nextCard" href="/nfl/review/classic/patterns">
-        <div class="nextLabel">Patterns</div>
-        <div class="nextSub">Winning shapes and stack profiles.</div>
-      </a>
-      <a class="nextCard" href="/nfl/review/classic/ownership">
-        <div class="nextLabel">Ownership</div>
-        <div class="nextSub">Chalk balance and leverage.</div>
-      </a>
-      <a class="nextCard" href="/nfl/review/classic/trends">
-        <div class="nextLabel">Trends</div>
-        <div class="nextSub">How the meta shifts over time.</div>
-      </a>
-    </div>
-  </section>
-</ClassicReviewShell>
+</ClassicReviewFrame>
 
 <style>
-  .nextGrid {
+  :global(.classic-frame.classic-overview) {
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+  }
+
+  :global(.classic-frame.classic-overview::before),
+  :global(.classic-frame.classic-overview::after) {
+    content: none !important;
+  }
+
+  .overviewLayout,
+  .overviewMain,
+  .introStrip,
+  .summaryGrid {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .overviewLayout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+  }
+
+  .overviewMain {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .introStrip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 2px;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  .sub {
+    margin: 4px 0 0;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+  }
+
+  .drawer {
+    position: sticky;
+    top: 18px;
+    height: fit-content;
+    width: 320px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 4;
+  }
+
+
+  .drawerBody {
+    width: 280px;
+    padding: 14px 14px 14px 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.98), rgba(12, 12, 12, 0.98));
+    display: grid;
+    gap: 14px;
+    transform: none;
+    opacity: 1;
+    transition: none;
+    pointer-events: auto;
+  }
+
+  .drawerGroup {
+    display: grid;
     gap: 10px;
   }
 
-  .nextCard {
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    padding: 12px;
-    text-decoration: none;
-    background: #141414;
-    color: rgba(255, 255, 255, 0.9);
-    display: grid;
-    gap: 4px;
-    transition: border-color 120ms ease, transform 120ms ease;
-  }
-
-  .nextCard:hover {
-    border-color: rgba(255, 255, 255, 0.24);
-    transform: translateY(-1px);
-  }
-
-  .nextLabel {
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    font-size: 10px;
-  }
-
-  .nextSub {
+  .drawerLabel {
     font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 800;
+  }
+
+  .drawerLink {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: rgba(255, 255, 255, 0.6);
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color 140ms ease, background 140ms ease, color 140ms ease;
+    line-height: 1.2;
+  }
+
+  .drawerLink:hover,
+  .drawerLink:focus {
+    color: rgba(255, 255, 255, 0.92);
+    border-color: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .drawerLink.isActive {
+    color: #fff;
+    border-color: color-mix(in srgb, var(--accent) 70%, rgba(255, 255, 255, 0.2));
+    background: color-mix(in srgb, var(--accent) 45%, rgba(15, 20, 40, 0.6));
+    box-shadow: 0 8px 20px rgba(18, 60, 140, 0.35);
+  }
+
+  .summaryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 14px;
+  }
+
+  .summaryCard {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 16px 18px;
+    background:
+      radial-gradient(200px 180px at 18% 18%, rgba(255, 255, 255, 0.04), transparent 70%),
+      linear-gradient(180deg, rgba(30, 30, 34, 0.98), rgba(20, 20, 24, 0.98));
+    display: grid;
+    gap: 8px;
+    min-width: 0;
+    min-height: 178px;
+    transition: transform 140ms ease, border-color 140ms ease, box-shadow 160ms ease, background 160ms ease;
+    animation: cardEnter 320ms ease both;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .summaryCard::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 8px 8px;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  .cardTitle {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 900;
+  }
+
+  .cardMain {
+    font-size: 14px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .cardRows {
+    display: grid;
+    gap: 6px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 650;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .row span:last-child {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .summaryCard:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+    background:
+      radial-gradient(220px 200px at 18% 18%, rgba(255, 255, 255, 0.06), transparent 70%),
+      linear-gradient(180deg, rgba(34, 34, 38, 0.98), rgba(22, 22, 26, 0.99));
+  }
+
+  .summaryCard:nth-child(1) { animation-delay: 0ms; }
+  .summaryCard:nth-child(2) { animation-delay: 40ms; }
+  .summaryCard:nth-child(3) { animation-delay: 80ms; }
+  .summaryCard:nth-child(4) { animation-delay: 120ms; }
+  .summaryCard:nth-child(5) { animation-delay: 160ms; }
+  .summaryCard:nth-child(6) { animation-delay: 200ms; }
+  .summaryCard:nth-child(7) { animation-delay: 240ms; }
+  .summaryCard:nth-child(8) { animation-delay: 280ms; }
+  .summaryCard:nth-child(9) { animation-delay: 320ms; }
+  .summaryCard:nth-child(10) { animation-delay: 360ms; }
+  .summaryCard:nth-child(11) { animation-delay: 400ms; }
+  .summaryCard:nth-child(12) { animation-delay: 440ms; }
+  .summaryCard:nth-child(13) { animation-delay: 480ms; }
+
+  @keyframes cardEnter {
+    from {
+      opacity: 0;
+      transform: translateX(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media (max-width: 700px) {
+    .introStrip {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .overviewLayout {
+      grid-template-columns: 1fr;
+    }
+
+    .drawer {
+      display: none;
+    }
+  }
+
+  .spanWide {
+    grid-column: span 2;
+  }
+
+  @media (max-width: 1100px) {
+    .overviewLayout {
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .drawer {
+      width: 280px;
+    }
+
+    .drawerBody {
+      width: 240px;
+      transform: translateX(-170px);
+    }
+
+    .spanWide {
+      grid-column: span 1;
+    }
   }
 </style>

@@ -1,6 +1,6 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
-import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
 import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
 import StatCard from "../../../../components/nfl/classic/StatCard.astro";
 import { classicTrendCharts } from "../../../../data/nflClassicReviewMock";
@@ -14,10 +14,9 @@ const [leadChart, ...restCharts] = classicTrendCharts;
   headline="Year-over-Year Shifts"
   subtitle="A high-level trend deck for Classic winners across seasons. Use this to sanity-check how the meta drifts." 
   accent="gold"
+  class="with-drawer"
 >
-  <div slot="subnav">
-    <ClassicReviewSubnav active="trends" />
-  </div>
+  <ClassicReviewDrawer active="trends" mode="hover" />
 
   <section class="sectionPanel">
     <div class="sectionHeader">

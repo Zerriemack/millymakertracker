@@ -1,6 +1,6 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
-import ClassicReviewSubnav from "../../../../components/nfl/classic/ClassicReviewSubnav.astro";
+import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
 import StatCard from "../../../../components/nfl/classic/StatCard.astro";
 import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
 import { classicDistributionSections } from "../../../../data/nflClassicReviewMock";
@@ -15,10 +15,9 @@ const gameSection = classicDistributionSections.find((s) => s.title === "Max Fro
   headline="Game Environment"
   subtitle="How concentrated winners get by team and by game environment."
   accent="slate"
+  class="with-drawer"
 >
-  <div slot="subnav">
-    <ClassicReviewSubnav active="environment" />
-  </div>
+  <ClassicReviewDrawer active="environment" mode="hover" />
 
   <section class="sectionPanel">
     <div class="sectionHeader">
