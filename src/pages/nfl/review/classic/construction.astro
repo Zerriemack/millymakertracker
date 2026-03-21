@@ -1,129 +1,718 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
-import StatCard from "../../../../components/nfl/classic/StatCard.astro";
-import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
-import { classicConstructionSections } from "../../../../data/nflClassicReviewMock";
 
-const pageTitle = "NFL Classic Review | Construction";
+const pageTitle = "NFL Classic Review | Build Relationship Matrix";
 
-const [, , stackLinks, bringBackLinks, slateType] = classicConstructionSections;
-const linkStats = [...stackLinks.stats, ...bringBackLinks.stats];
+const metrics = [
+  "QB Naked",
+  "QB+1",
+  "QB+2",
+  "Double Stack",
+  "Bring Back",
+  "Double Bring Back",
+  "Secondary Stack",
+  "Onslaught",
+  "Max From Team",
+  "Max From Game",
+  "Early Players",
+  "Late Players",
+  "Indoor Count",
+  "Outdoor Count",
+  "Salary Left",
+  "Total Own",
+  "Own 0-10",
+  "Own 11-19",
+  "Own 20+",
+  "Winner Pts",
+];
+
+const matrix = [
+  [1.00, -0.62, -0.74, -0.58, -0.41, -0.17, -0.22, 0.16, -0.08, 0.05, 0.09, -0.06, 0.03, -0.03, 0.18, -0.12, 0.10, -0.08, 0.02, -0.09],
+  [-0.62, 1.00, 0.69, 0.56, 0.48, 0.16, 0.34, -0.09, 0.21, 0.17, 0.12, -0.11, 0.04, -0.04, -0.14, 0.09, -0.06, 0.07, -0.01, 0.11],
+  [-0.74, 0.69, 1.00, 0.73, 0.61, 0.29, 0.44, -0.05, 0.26, 0.22, 0.08, -0.08, 0.06, -0.06, -0.19, 0.13, -0.04, 0.10, 0.03, 0.17],
+  [-0.58, 0.56, 0.73, 1.00, 0.64, 0.36, 0.52, 0.08, 0.29, 0.24, 0.05, -0.04, 0.07, -0.07, -0.16, 0.11, -0.02, 0.08, 0.04, 0.15],
+  [-0.41, 0.48, 0.61, 0.64, 1.00, 0.58, 0.33, -0.06, 0.19, 0.31, 0.04, -0.02, 0.02, -0.02, -0.08, 0.14, -0.03, 0.09, 0.06, 0.13],
+  [-0.17, 0.16, 0.29, 0.36, 0.58, 1.00, 0.21, 0.04, 0.14, 0.26, 0.03, -0.01, 0.01, -0.01, -0.02, 0.09, -0.01, 0.06, 0.05, 0.07],
+  [-0.22, 0.34, 0.44, 0.52, 0.33, 0.21, 1.00, 0.24, 0.18, 0.16, 0.02, -0.03, 0.05, -0.05, -0.11, 0.07, 0.00, 0.04, 0.03, 0.08],
+  [0.16, -0.09, -0.05, 0.08, -0.06, 0.04, 0.24, 1.00, 0.41, 0.37, -0.04, 0.05, 0.02, -0.02, -0.01, 0.03, -0.02, 0.02, 0.07, 0.05],
+  [-0.08, 0.21, 0.26, 0.29, 0.19, 0.14, 0.18, 0.41, 1.00, 0.66, -0.03, 0.04, 0.00, 0.00, -0.05, 0.08, -0.01, 0.03, 0.09, 0.06],
+  [0.05, 0.17, 0.22, 0.24, 0.31, 0.26, 0.16, 0.37, 0.66, 1.00, -0.02, 0.02, 0.01, -0.01, -0.03, 0.06, -0.01, 0.03, 0.08, 0.09],
+  [0.09, 0.12, 0.08, 0.05, 0.04, 0.03, 0.02, -0.04, -0.03, -0.02, 1.00, -0.92, -0.11, 0.11, 0.02, 0.03, -0.01, 0.02, 0.01, 0.04],
+  [-0.06, -0.11, -0.08, -0.04, -0.02, -0.01, -0.03, 0.05, 0.04, 0.02, -0.92, 1.00, 0.11, -0.11, -0.02, -0.03, 0.01, -0.02, -0.01, -0.04],
+  [0.03, 0.04, 0.06, 0.07, 0.02, 0.01, 0.05, 0.02, 0.00, 0.01, -0.11, 0.11, 1.00, -1.00, -0.04, 0.02, -0.01, 0.01, 0.00, 0.02],
+  [-0.03, -0.04, -0.06, -0.07, -0.02, -0.01, -0.05, -0.02, 0.00, -0.01, 0.11, -0.11, -1.00, 1.00, 0.04, -0.02, 0.01, -0.01, 0.00, -0.02],
+  [0.18, -0.14, -0.19, -0.16, -0.08, -0.02, -0.11, -0.01, -0.05, -0.03, 0.02, -0.02, -0.04, 0.04, 1.00, -0.46, 0.29, -0.18, -0.21, 0.06],
+  [-0.12, 0.09, 0.13, 0.11, 0.14, 0.09, 0.07, 0.03, 0.08, 0.06, 0.03, -0.03, 0.02, -0.02, -0.46, 1.00, -0.62, 0.54, 0.48, 0.11],
+  [0.10, -0.06, -0.04, -0.02, -0.03, -0.01, 0.00, -0.02, -0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.29, -0.62, 1.00, -0.38, -0.41, -0.03],
+  [-0.08, 0.07, 0.10, 0.08, 0.09, 0.06, 0.04, 0.02, 0.03, 0.03, 0.02, -0.02, 0.01, -0.01, -0.18, 0.54, -0.38, 1.00, -0.57, 0.05],
+  [0.02, -0.01, 0.03, 0.04, 0.06, 0.05, 0.03, 0.07, 0.09, 0.08, 0.01, -0.01, 0.00, 0.00, -0.21, 0.48, -0.41, -0.57, 1.00, 0.09],
+  [-0.09, 0.11, 0.17, 0.15, 0.13, 0.07, 0.08, 0.05, 0.06, 0.09, 0.04, -0.04, 0.02, -0.02, 0.06, 0.11, -0.03, 0.05, 0.09, 1.00],
+];
+
+const headlineSignals = [
+  {
+    title: "Strongest positive",
+    pair: "QB+2 × Double Stack",
+    value: "+0.73",
+    tone: "pos",
+    note: "As primary stack density rises, classic double stack builds rise with it.",
+  },
+  {
+    title: "Strongest negative",
+    pair: "Indoor Count × Outdoor Count",
+    value: "-1.00",
+    tone: "neg",
+    note: "Venue exposure is a direct tradeoff inside a fixed nine player build.",
+  },
+  {
+    title: "Ownership tension",
+    pair: "Total Ownership × Own 0-10",
+    value: "-0.62",
+    tone: "neg",
+    note: "The more true low owned pieces a winner carries, the harder it is for total ownership to stay elevated.",
+  },
+  {
+    title: "Concentration link",
+    pair: "Max From Team × Max From Game",
+    value: "+0.66",
+    tone: "pos",
+    note: "Single team concentration and single game concentration often rise together.",
+  },
+  {
+    title: "Timing split",
+    pair: "Early Players × Late Players",
+    value: "-0.92",
+    tone: "neg",
+    note: "Window allocation is almost pure tradeoff. Heavy early builds naturally suppress late game exposure.",
+  },
+  {
+    title: "Bring back pressure",
+    pair: "Bring Back × Double Bring Back",
+    value: "+0.58",
+    tone: "pos",
+    note: "Once a build leans into opposing correlation, second layer game capture shows up more often.",
+  },
+];
+
+const faqs = [
+  {
+    q: "What does this page measure?",
+    a: "It measures how winner level build variables move together across DraftKings NFL Classic Milly Maker lineups. The goal is to separate real structural pairings from simple tradeoffs or one off noise.",
+  },
+  {
+    q: "What does a positive number mean?",
+    a: "A positive value means two variables tend to rise together across the winner sample. The stronger the value, the more often those traits show up in the same type of build.",
+  },
+  {
+    q: "What does a negative number mean?",
+    a: "A negative value means one variable usually rises as the other falls. Some negative relationships reflect real strategic tension, while others come from fixed lineup tradeoffs.",
+  },
+  {
+    q: "How should this be used with the matrix?",
+    a: "Start with the cells that stand out most, then ask whether the relationship is structural, contextual, or automatic. Strong values matter most when they reveal a usable build tendency rather than a simple constraint.",
+  },
+  {
+    q: "What should this become later?",
+    a: "A filterable research surface where any metric can be isolated by year, week, slate type, salary band, ownership pocket, tag cluster, and lineup family.",
+  },
+];
 ---
 
 <ClassicReviewShell
   title={pageTitle}
-  headline="Construction Structure"
-  subtitle="Correlation density, link types, and slate context that shape how winners are assembled."
   accent="green"
-  class="with-drawer"
+  class="with-drawer build-relationship-lab"
+  hideHero
 >
   <ClassicReviewDrawer active="construction" mode="hover" />
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Correlation Density</h2>
-        <p class="sectionSub">How many total correlation links winners typically carry.</p>
-      </div>
-      <div class="sectionPill">Core</div>
-    </div>
-    <div class="bandGrid">
-      <div class="span-8">
-        <div class="chartGrid twoCol">
-          {stackLinks.charts.map((chart) => (
-            <ChartPanel
-              title={chart.title}
-              meta={chart.meta}
-              helper={chart.helper}
-              footer={chart.footer}
-              series={chart.series}
-              accent="blue"
-              variant="lead"
-            />
-          ))}
-          {bringBackLinks.charts.map((chart) => (
-            <ChartPanel
-              title={chart.title}
-              meta={chart.meta}
-              helper={chart.helper}
-              footer={chart.footer}
-              series={chart.series}
-              accent="slate"
-            />
-          ))}
+  <div class="labPage">
+    <section class="topBand">
+      <section class="labHero">
+        <div class="labHeroRail">
+          <span class="heroKicker">Classic Review</span>
+          <h1>Build Relationship Matrix</h1>
+          <p class="labHeroSummary">
+            A research surface for how winner-level build variables align, trade off, and cluster across first-place Classic Milly Maker lineups.
+          </p>
         </div>
-      </div>
-      <div class="span-4 railStack">
-        <section class="sectionPanel">
-          <div class="sectionHeader">
-            <div>
-              <h3 class="sectionTitle">Construction Read</h3>
-              <p class="sectionSub">Use this to set your default correlation load.</p>
-            </div>
-          </div>
-          <div class="statGrid">
-            {linkStats.map((stat, idx) => (
-              <StatCard
-                label={stat.label}
-                value={stat.value}
-                accent={idx === 0 ? "blue" : "slate"}
-              />
-            ))}
-          </div>
-        </section>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Slate Type Influence</h2>
-        <p class="sectionSub">Construction shifts across main, afternoon, and primetime slates.</p>
-      </div>
-      <div class="sectionPill">Context</div>
-    </div>
-    <div class="bandGrid">
-      <div class="span-8">
-        <div class="sectionGrid isFlip">
-          <div class="chartCol">
-            {slateType?.charts?.map((chart) => (
-              <ChartPanel
-                title={chart.title}
-                meta={chart.meta}
-                helper={chart.helper}
-                footer={chart.footer}
-                series={chart.series}
-                accent="gold"
-              />
-            ))}
-          </div>
-          <div class="statCol">
-            {slateType?.stats?.map((stat, idx) => (
-              <StatCard
-                label={stat.label}
-                value={stat.value}
-                accent={idx === 0 ? "gold" : "slate"}
-              />
-            ))}
-          </div>
+      <div class="topBandHeader">
+        <div class="topBandSearch">
+          <div class="searchMock">Search: 2018, WK 2, MAIN, QB+2, YES, max 4, early 6, TAG, GROUP</div>
+          <button type="button" class="resetBtn">Reset all</button>
         </div>
       </div>
-      <div class="span-4 railStack">
-        <section class="sectionPanel">
-          <div class="sectionHeader">
-            <div>
-              <h3 class="sectionTitle">Slate Bias</h3>
-              <p class="sectionSub">Adjust correlation expectations by slate size.</p>
+      <div class="topInsightGrid">
+        <article class="signalPanel">
+          <div class="signalPanelHead">
+            <h3>Headline relationships</h3>
+            <span>Top reads</span>
+          </div>
+
+          <div class="signalGrid">
+            {headlineSignals.map((item) => (
+              <div class="signalCard">
+                <div class="signalTop">
+                  <span class="signalLabel">{item.title}</span>
+                  <span class:list={["pairValue", item.tone === "pos" ? "positive" : "negative"]}>
+                    {item.value}
+                  </span>
+                </div>
+                <strong class="signalPair">{item.pair}</strong>
+                <p>{item.note}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <div class="guideStack">
+          <article class="guideCard scaleGuideCard">
+            <div class="scaleHead">MMT Relationship Scale</div>
+            <div class="legendBar"></div>
+            <div class="legendLabels">
+              <span>Negative</span>
+              <span>Neutral</span>
+              <span>Positive</span>
             </div>
-          </div>
-          <div class="statGrid">
-            <StatCard label="Main Slate" value="Baseline" note="Default builds." accent="slate" />
-            <StatCard label="Short Slate" value="Higher Volatility" note="Be flexible." accent="red" />
-          </div>
-        </section>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="matrixSection">
+      <div class="sectionHeader">
+        <div>
+          <span class="eyebrow">Core Matrix</span>
+          <h3>Winner build relationship matrix</h3>
+          <p>
+            This is the main surface. It should be able to hold any random tracked variable that helps explain how first place builds are actually assembled.
+          </p>
+        </div>
+      </div>
+
+      <div class="matrixFrame">
+        <div class="matrixGrid">
+          {metrics.map((metric, metricIndex) => (
+            <div
+              class="axisCell axisTop"
+              title={metric}
+              style={`grid-column:${metricIndex + 2}; grid-row:1;`}
+            >
+              <span>{metric}</span>
+            </div>
+          ))}
+
+          {metrics.map((rowLabel, rowIndex) => (
+            <>
+              <div
+                class="axisCell axisLeft"
+                title={rowLabel}
+                style={`grid-column:1; grid-row:${rowIndex + 2};`}
+              >
+                <span>{rowLabel}</span>
+              </div>
+
+              {matrix[rowIndex].map((value, colIndex) => {
+                const abs = Math.abs(value);
+                const positive = value >= 0;
+                const diagonal = rowIndex === colIndex;
+
+                return (
+                  <div
+                    class:list={[
+                      "matrixCell",
+                      positive ? "isPositive" : "isNegative",
+                      diagonal && "isDiagonal",
+                    ]}
+                    style={`--intensity:${abs}; grid-column:${colIndex + 2}; grid-row:${rowIndex + 2};`}
+                    title={`${rowLabel} × ${metrics[colIndex]} = ${value.toFixed(2)}`}
+                  >
+                    <span>{value.toFixed(2)}</span>
+                  </div>
+                );
+              })}
+            </>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="faqSection">
+      <div class="sectionHeader">
+        <div>
+          <span class="eyebrow">FAQ</span>
+          <h3>Matrix notes</h3>
+        </div>
+      </div>
+
+      <div class="faqGrid">
+        {faqs.map((item) => (
+          <article class="faqCard">
+            <h4>{item.q}</h4>
+            <p>{item.a}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
 </ClassicReviewShell>
+
+<style>
+  :global(.classic-frame.with-drawer.build-relationship-lab) {
+    padding-left: calc(clamp(18px, 2vw, 26px) + 54px);
+    padding-right: clamp(20px, 3vw, 36px);
+  }
+
+  :global(.build-relationship-lab .content) {
+    gap: 0;
+    margin-top: 4px;
+    width: min(1220px, calc(100vw - 128px));
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-inline: auto;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+  }
+
+  .labPage {
+    display: grid;
+    gap: 18px;
+    padding-bottom: 26px;
+  }
+
+  .matrixSection,
+  .signalPanel,
+  .signalCard,
+  .guideCard,
+  .faqCard {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    background:
+      radial-gradient(circle at top left, rgba(58, 134, 255, 0.09), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(39, 201, 126, 0.08), transparent 24%),
+      linear-gradient(180deg, rgba(14, 18, 27, 0.97), rgba(8, 11, 18, 0.99));
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.03),
+      0 18px 42px rgba(0,0,0,0.24);
+  }
+
+  .matrixSection {
+    padding: 18px;
+  }
+
+  .topBand,
+  .faqSection {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .heroKicker,
+  .eyebrow,
+  .signalPanelHead span,
+  .scaleHead {
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    font-size: 10px;
+    font-weight: 900;
+    color: rgba(227, 234, 243, 0.52);
+  }
+
+  .topBand {
+    display: grid;
+    gap: 16px;
+  }
+
+  .labHero {
+    display: grid;
+    gap: 18px;
+    padding: 24px 26px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(28, 28, 30, 0.92) 0%, rgba(20, 20, 22, 0.96) 100%);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+  }
+
+  .labHeroRail {
+    display: grid;
+    gap: 14px;
+    max-width: 980px;
+  }
+
+  .labHero h1 {
+    margin: 0;
+    max-width: 1080px;
+    font-size: clamp(36px, 3.8vw, 60px);
+    line-height: 0.94;
+    letter-spacing: -0.05em;
+    font-weight: 1000;
+    color: rgba(255, 255, 255, 0.98);
+  }
+
+  .labHeroSummary {
+    margin: 0;
+    max-width: 900px;
+    font-size: 14px;
+    line-height: 1.58;
+    color: rgba(225, 225, 225, 0.72);
+    font-weight: 560;
+  }
+
+  .topBandHeader {
+    display: grid;
+    gap: 12px;
+  }
+
+  .sectionHeader p,
+  .faqCard p,
+  .signalCard p,
+  .guideCard p,
+  .signalPair {
+    color: rgba(224, 230, 239, 0.74);
+  }
+
+  .topBandSearch {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+
+  .searchMock,
+  .resetBtn {
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.03);
+    color: rgba(235, 240, 247, 0.74);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    font-size: 0.84rem;
+  }
+
+  .resetBtn {
+    background: rgba(255,255,255,0.05);
+    font-weight: 700;
+    cursor: default;
+  }
+
+  .signalPanel,
+  .guideCard,
+  .faqCard {
+    padding: 16px 18px;
+  }
+
+  .topInsightGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) 340px;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .signalPanelHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .signalPanelHead h3,
+  .sectionHeader h3,
+  .faqCard h4 {
+    margin: 0;
+    letter-spacing: -0.03em;
+  }
+
+  .signalPanelHead h3,
+  .sectionHeader h3 {
+    font-size: clamp(1.2rem, 1.7vw, 1.65rem);
+  }
+
+  .signalGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .signalCard {
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .signalTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .signalLabel {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: rgba(227, 234, 243, 0.64);
+  }
+
+  .signalPair {
+    display: block;
+    font-size: 0.96rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .signalCard p {
+    margin: 8px 0 0;
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+
+  .guideStack {
+    display: grid;
+    align-content: start;
+  }
+
+  .guideCard {
+    display: grid;
+    gap: 8px;
+    min-height: 100%;
+  }
+
+  .pairValue {
+    white-space: nowrap;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    font-size: 0.9rem;
+  }
+
+  .pairValue.positive {
+    color: rgba(111, 226, 160, 0.96);
+  }
+
+  .pairValue.negative {
+    color: rgba(241, 176, 129, 0.96);
+  }
+
+  .legendBar {
+    height: 14px;
+    border-radius: 999px;
+    margin: 12px 0 10px;
+    background: linear-gradient(
+      90deg,
+      rgba(188, 68, 16, 1) 0%,
+      rgba(255, 164, 76, 0.94) 24%,
+      rgba(100, 107, 120, 0.42) 50%,
+      rgba(26, 214, 255, 0.92) 76%,
+      rgba(58, 134, 255, 1) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.28),
+      0 0 18px rgba(58, 134, 255, 0.16);
+  }
+
+  .legendLabels {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(224,230,239,0.7);
+    font-size: 0.78rem;
+  }
+
+  .sectionHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+
+  .sectionHeader p {
+    margin: 8px 0 0;
+    max-width: 78ch;
+    line-height: 1.58;
+  }
+
+  .faqSection .sectionHeader p {
+    display: none;
+  }
+
+  .matrixFrame {
+    overflow: hidden;
+  }
+
+  .matrixGrid {
+    display: grid;
+    grid-template-columns: 112px repeat(20, minmax(0, 1fr));
+    gap: 6px;
+    width: 100%;
+  }
+
+  .axisCell,
+  .matrixCell {
+    min-height: 44px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .axisCell {
+    background: rgba(255,255,255,0.03);
+  }
+
+  .axisCell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+  }
+
+  .axisTop span,
+  .axisLeft span {
+    font-size: 0.66rem;
+    font-weight: 900;
+    color: rgba(233, 239, 247, 0.88);
+    line-height: 1.05;
+  }
+
+  .axisTop {
+    text-align: center;
+  }
+
+  .axisLeft {
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  .matrixCell {
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 0.74rem;
+    letter-spacing: -0.02em;
+    color: rgba(244, 247, 252, 0.92);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.12),
+      0 0 calc(2px + (var(--intensity) * 8px)) rgba(255,255,255,0.04);
+  }
+
+  .matrixCell.isPositive {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(14, 28, 44, calc(0.82 - (var(--intensity) * 0.42))) 0%,
+        rgba(18, 213, 255, calc(0.10 + (var(--intensity) * 0.54))) 52%,
+        rgba(58, 134, 255, calc(0.16 + (var(--intensity) * 0.72))) 100%
+      ),
+      radial-gradient(
+        circle at 24% 20%,
+        rgba(198, 250, 255, calc(var(--intensity) * 0.42)),
+        transparent 44%
+      );
+    border-color: rgba(97, 222, 255, calc(0.10 + (var(--intensity) * 0.40)));
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.18),
+      0 0 calc(4px + (var(--intensity) * 16px)) rgba(41, 192, 255, calc(var(--intensity) * 0.30));
+  }
+
+  .matrixCell.isNegative {
+    background:
+      linear-gradient(
+        135deg,
+        rgba(52, 28, 18, calc(0.84 - (var(--intensity) * 0.38))) 0%,
+        rgba(255, 158, 66, calc(0.12 + (var(--intensity) * 0.56))) 52%,
+        rgba(216, 92, 30, calc(0.18 + (var(--intensity) * 0.68))) 100%
+      ),
+      radial-gradient(
+        circle at 24% 20%,
+        rgba(255, 227, 176, calc(var(--intensity) * 0.32)),
+        transparent 44%
+      );
+    border-color: rgba(255, 171, 92, calc(0.12 + (var(--intensity) * 0.36)));
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.16),
+      0 0 calc(4px + (var(--intensity) * 14px)) rgba(255, 122, 52, calc(var(--intensity) * 0.24));
+  }
+
+  .matrixCell.isDiagonal {
+    outline: 1px solid rgba(255,255,255,0.30);
+  }
+
+  .faqSection .sectionHeader {
+    margin-bottom: 14px;
+    padding: 0 2px;
+  }
+
+  .faqSection .sectionHeader h3 {
+    font-size: clamp(1.2rem, 1.7vw, 1.65rem);
+  }
+
+  .faqGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .faqCard h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .faqCard p {
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 1460px) {
+    .topInsightGrid,
+    .signalGrid,
+    .faqGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 1180px) {
+    .labHero {
+      padding: 20px 20px 16px;
+    }
+
+    .matrixSection,
+    .signalPanel,
+    .signalCard,
+    .guideCard,
+    .faqCard {
+      border-radius: 22px;
+    }
+
+    .topBandSearch {
+      grid-template-columns: 1fr;
+    }
+
+    .faqGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .labHero h1 {
+      font-size: clamp(30px, 11vw, 44px);
+    }
+
+    .labHeroSummary {
+      font-size: 13px;
+    }
+  }
+</style>

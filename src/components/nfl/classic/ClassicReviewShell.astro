@@ -9,6 +9,7 @@ const {
   backHref = "/analysis",
   backLabel = "Back to Review",
   class: className = "",
+  hideHero = false,
 } = Astro.props;
 
 ---
@@ -18,19 +19,21 @@ const {
   accent={accent}
   class={`classic-shell ${className}`}
 >
-  <header class={`hero ${Astro.slots.has("heroSide") ? "" : "heroSolo"}`}>
-    <div class="heroText">
-      <a class="backLink" href={backHref}>{backLabel}</a>
-      <div class="kicker">NFL Classic Review</div>
-      <h1 class="heroTitle">{headline}</h1>
-      {subtitle ? <p class="heroSub">{subtitle}</p> : null}
-    </div>
-    {Astro.slots.has("heroSide") ? (
-      <div class="heroSide">
-        <slot name="heroSide" />
+  {!hideHero ? (
+    <header class={`hero ${Astro.slots.has("heroSide") ? "" : "heroSolo"}`}>
+      <div class="heroText">
+        <a class="backLink" href={backHref}>{backLabel}</a>
+        <div class="kicker">NFL Classic Review</div>
+        <h1 class="heroTitle">{headline}</h1>
+        {subtitle ? <p class="heroSub">{subtitle}</p> : null}
       </div>
-    ) : null}
-  </header>
+      {Astro.slots.has("heroSide") ? (
+        <div class="heroSide">
+          <slot name="heroSide" />
+        </div>
+      ) : null}
+    </header>
+  ) : null}
 
   <div class="subnavWrap">
     <slot name="subnav" />
