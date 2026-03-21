@@ -487,13 +487,7 @@ const labBucketColors = [
   }
 
   :global(.classic-frame.with-drawer.distribution-editorial .hero) {
-    padding: 0 0 8px;
-    border: none;
-    background: transparent;
-    box-shadow: none;
-    border-radius: 0;
-    position: relative;
-    z-index: 1;
+    display: none;
   }
 
   :global(.classic-frame.with-drawer.distribution-editorial .heroTitle) {
@@ -531,14 +525,17 @@ const labBucketColors = [
   .lede {
     display: grid;
     gap: 18px;
-    padding: 18px 0 0;
-    margin-bottom: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 24px 26px 18px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(28, 28, 30, 0.92) 0%, rgba(20, 20, 22, 0.96) 100%);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
   }
 
   .ledeRail {
     display: grid;
-    gap: 10px;
+    gap: 14px;
     max-width: 980px;
   }
 
@@ -553,9 +550,9 @@ const labBucketColors = [
 
   .ledeRail h2 {
     margin: 0;
-    max-width: 930px;
+    max-width: 1080px;
     font-size: clamp(36px, 3.8vw, 60px);
-    line-height: 0.97;
+    line-height: 0.94;
     letter-spacing: -0.05em;
     font-weight: 1000;
     color: rgba(255, 255, 255, 0.98);
@@ -563,10 +560,10 @@ const labBucketColors = [
 
   .ledeRail p {
     margin: 0;
-    max-width: 860px;
+    max-width: 980px;
     font-size: 14px;
     line-height: 1.58;
-    color: rgba(255, 255, 255, 0.72);
+    color: rgba(225, 225, 225, 0.72);
     font-weight: 560;
   }
 
@@ -574,7 +571,8 @@ const labBucketColors = [
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 26px;
-    padding-top: 16px;
+    padding-top: 20px;
+    margin-top: 2px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
@@ -594,7 +592,7 @@ const labBucketColors = [
     text-transform: uppercase;
     letter-spacing: 0.16em;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.48);
+    color: rgba(225, 225, 225, 0.72);
   }
 
   .storyStatValue {
@@ -609,7 +607,7 @@ const labBucketColors = [
     margin: 0;
     font-size: 13px;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.67);
+    color: rgba(225, 225, 225, 0.72);
     font-style: italic;
   }
 
@@ -618,7 +616,7 @@ const labBucketColors = [
     margin-top: 28px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
-    background: linear-gradient(180deg, rgba(22, 24, 28, 0.82) 0%, rgba(14, 16, 20, 0.78) 100%);
+    background: linear-gradient(180deg, rgba(28, 28, 30, 0.92) 0%, rgba(20, 20, 22, 0.96) 100%);
     box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
   }
 
@@ -647,7 +645,7 @@ const labBucketColors = [
     margin: 0;
     font-size: 13px;
     line-height: 1.55;
-    color: rgba(255, 255, 255, 0.68);
+    color: rgba(225, 225, 225, 0.72);
     font-weight: 560;
   }
 
@@ -681,7 +679,7 @@ const labBucketColors = [
   .distributionAxis text,
   .ecosystemAxis text {
     font-size: 10px;
-    fill: rgba(255, 255, 255, 0.48);
+    fill: rgba(225, 225, 225, 0.72);
     font-weight: 700;
   }
 
@@ -716,7 +714,7 @@ const labBucketColors = [
 
   .storyAnnotation .annotationNote {
     font-size: 9px;
-    fill: rgba(255, 255, 255, 0.58);
+    fill: rgba(225, 225, 225, 0.72);
     font-weight: 600;
   }
 
@@ -732,7 +730,7 @@ const labBucketColors = [
     flex-wrap: wrap;
     gap: 12px;
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.74);
+    color: rgba(225, 225, 225, 0.72);
     font-weight: 700;
   }
 
@@ -771,7 +769,7 @@ const labBucketColors = [
   .annotationRailItem span {
     font-size: 11px;
     line-height: 1.45;
-    color: rgba(255, 255, 255, 0.58);
+    color: rgba(225, 225, 225, 0.72);
     font-weight: 560;
   }
 
@@ -785,7 +783,7 @@ const labBucketColors = [
   .ecosystemKeyTitle {
     font-size: 11px;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.56);
+    color: rgba(225, 225, 225, 0.72);
     font-weight: 650;
   }
 
@@ -843,7 +841,7 @@ const labBucketColors = [
   .legendRow span {
     font-size: 11px;
     line-height: 1.45;
-    color: rgba(255, 255, 255, 0.58);
+    color: rgba(225, 225, 225, 0.72);
   }
 
   .legendChip {
@@ -900,7 +898,7 @@ const labBucketColors = [
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-    color: rgba(255, 255, 255, 0.48);
+    color: rgba(225, 225, 225, 0.72);
     font-weight: 900;
   }
 
@@ -956,7 +954,7 @@ const labBucketColors = [
   .metricLabel em {
     font-style: normal;
     font-size: 10px;
-    color: rgba(255, 255, 255, 0.54);
+    color: rgba(225, 225, 225, 0.72);
     white-space: nowrap;
   }
 
@@ -1017,6 +1015,11 @@ const labBucketColors = [
 
     .ledeRail h2 {
       font-size: clamp(32px, 8vw, 48px);
+    }
+
+    .lede {
+      padding: 20px 18px 16px;
+      margin-bottom: 20px;
     }
 
     .storyStats {

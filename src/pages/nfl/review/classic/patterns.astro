@@ -1,115 +1,743 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
-import StatCard from "../../../../components/nfl/classic/StatCard.astro";
-import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
-import { classicConstructionSections } from "../../../../data/nflClassicReviewMock";
 
 const pageTitle = "NFL Classic Review | Patterns";
-const [stackShape, bringBack] = classicConstructionSections;
+
+type Row = {
+  label: string;
+  value: number;
+  meta?: string;
+};
+
+const stackRows: Row[] = [
+  { label: "QB+2", value: 28 },
+  { label: "QB+1", value: 22 },
+  { label: "Naked QB", value: 16 },
+  { label: "Double Stack", value: 12 },
+  { label: "Onslaught", value: 9 },
+  { label: "Skinny Stack", value: 6 },
+];
+
+const bringBackRows: Row[] = [
+  { label: "1 bring-back", value: 34 },
+  { label: "No bring-back", value: 24 },
+  { label: "2 bring-backs", value: 18 },
+  { label: "WR bring-back", value: 12 },
+  { label: "RB bring-back", value: 7 },
+  { label: "TE bring-back", value: 5 },
+];
+
+const stackMax = Math.max(...stackRows.map((r) => r.value), 1);
+const bringBackMax = Math.max(...bringBackRows.map((r) => r.value), 1);
+
+const stackAverage =
+  stackRows.length > 0
+    ? Math.round(stackRows.reduce((sum, row) => sum + row.value, 0) / stackRows.length)
+    : 0;
+
+const bringBackAverage =
+  bringBackRows.length > 0
+    ? Math.round(bringBackRows.reduce((sum, row) => sum + row.value, 0) / bringBackRows.length)
+    : 0;
+
+const stackLeader = stackRows[0];
+const stackRunnerUp = stackRows[1];
+const bringBackLeader = bringBackRows[0];
+const bringBackRunnerUp = bringBackRows[1];
+
+const stackSummary =
+  "Ranked patterns in Classic winners.";
+
+const bringBackSummary =
+  "Ranked by frequency across first-place Classic builds.";
+
+const stackFooter = "Sorted by frequency across Classic winning lineups.";
+const bringBackFooter = "Sorted by frequency across Classic winning lineups.";
+
+const stackRefLeft = `${(stackAverage / stackMax) * 100}%`;
+const bringBackRefLeft = `${(bringBackAverage / bringBackMax) * 100}%`;
 ---
 
 <ClassicReviewShell
   title={pageTitle}
   headline="Winning Patterns"
-  subtitle="The repeatable stack shapes and bring-back patterns that define Classic winners."
+  subtitle="The repeatable stack shapes and bring-back structures that keep resurfacing in Classic winners."
   accent="gold"
-  class="with-drawer"
+  class="with-drawer patternsEditorialShell"
 >
   <ClassicReviewDrawer active="patterns" mode="hover" />
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Core Stack Shapes</h2>
-        <p class="sectionSub">The most frequent QB stack constructions that keep showing up.</p>
-      </div>
-      <div class="sectionPill">Patterns</div>
-    </div>
-    <div class="bandGrid">
-      <div class="span-8">
-        <div class="sectionGrid">
-          <div class="chartCol">
-            {stackShape?.charts?.map((chart) => (
-              <ChartPanel
-                title={chart.title}
-                meta={chart.meta}
-                helper={chart.helper}
-                footer={chart.footer}
-                series={chart.series}
-                accent="gold"
-                variant="lead"
-              />
-            ))}
-          </div>
-          <div class="statCol">
-            {stackShape?.stats?.map((stat, idx) => (
-              <StatCard
-                label={stat.label}
-                value={stat.value}
-                accent={idx === 0 ? "gold" : "slate"}
-              />
-            ))}
-          </div>
+  <section class="patternEditorialBoard">
+    <section class="patternHeroModule">
+      <div class="patternHero">
+        <div class="heroTitleBlock">
+          <p class="eyebrow">Classic Review</p>
+          <h1 class="heroHeadline">
+            WINNING PATTERNS
+            <br />
+            IN NFL CLASSIC
+            <br />
+            MILLY MAKER BUILDS
+          </h1>
+        </div>
+
+        <div class="heroNarrative">
+          <p>
+            Which stack structures and opposing correlations keep showing up in first place
+            builds.
+          </p>
         </div>
       </div>
-      <div class="span-4 railStack">
-        <section class="sectionPanel">
-          <div class="sectionHeader">
-            <div>
-              <h3 class="sectionTitle">Pattern Notes</h3>
-              <p class="sectionSub">Use this as the default build shape unless the slate demands otherwise.</p>
-            </div>
-          </div>
-          <div class="statGrid">
-            <StatCard label="Top Pattern" value="QB+2" note="Primary winning shape." accent="gold" />
-            <StatCard label="Secondary" value="QB+1" note="Still viable." accent="slate" />
-          </div>
-        </section>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Bring-Back Patterns</h2>
-        <p class="sectionSub">How often winning stacks include opposing correlations.</p>
-      </div>
-      <div class="sectionPill">Bring-Back</div>
-    </div>
-    <div class="bandGrid">
-      <div class="span-8">
-        {bringBack?.charts?.map((chart) => (
-          <ChartPanel
-            title={chart.title}
-            meta={chart.meta}
-            helper={chart.helper}
-            footer={chart.footer}
-            series={chart.series}
-            accent="green"
-          />
-        ))}
-      </div>
-      <div class="span-4 railStack">
-        <section class="sectionPanel">
-          <div class="sectionHeader">
-            <div>
-              <h3 class="sectionTitle">Bring-Back Read</h3>
-              <p class="sectionSub">Treat bring-backs as the default, not the exception.</p>
+    <section class="patternModule">
+      <div class="vizSection">
+        <div class="vizMain">
+          <div class="vizTitleRow">
+            <h2>QB Stack Shape Distribution</h2>
+            <p>{stackSummary}</p>
+          </div>
+
+          <div class="rankedViz">
+            <div class="rankedVizHeader">
+              <div class="headerLabel">Pattern</div>
+              <div class="headerMetric">Share of winning lineups</div>
+            </div>
+
+            <div class="rankedVizBody">
+              <div class="referenceLine" style={`left:${stackRefLeft};`} />
+              {stackRows.map((row) => (
+                <div class="rankRow">
+                  <div class="rankLabel">{row.label}</div>
+                  <div class="barLane">
+                    <div class="barTrack" />
+                    <div
+                      class="barFill gold"
+                      style={`width:${(row.value / stackMax) * 100}%;`}
+                    />
+                    <div
+                      class="barValue"
+                      style={`left:${(row.value / stackMax) * 100}%;`}
+                    >
+                      {row.value}%
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div class="rankedVizFooter">
+              <span>{stackFooter}</span>
+              <span>Reference line = average pattern frequency ({stackAverage}%).</span>
             </div>
           </div>
-          <div class="statGrid">
-            {bringBack?.stats?.map((stat, idx) => (
-              <StatCard
-                label={stat.label}
-                value={stat.value}
-                accent={idx === 0 ? "green" : "slate"}
-              />
-            ))}
+
+          <div class="vizNotes">
+            <div>
+              <span>NOTES:</span> QB-led roster construction among first-place Classic winners.
+            </div>
+            <div>
+              <span>SOURCE:</span> Milly Maker Tracker contest winner database.
+            </div>
           </div>
-        </section>
+        </div>
+
+        <aside class="vizRail">
+          <div class="railBlock">
+            <h3>Pattern key</h3>
+            <div class="legendList">
+              <div class="legendItem">
+                <span class="swatch gold"></span>
+                <span>Primary stack family</span>
+              </div>
+              <div class="legendItem">
+                <span class="swatch slate"></span>
+                <span>Background frequency rail</span>
+              </div>
+              <div class="legendItem">
+                <span class="swatch line"></span>
+                <span>Average pattern line</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="railBlock">
+            <p class="railNoteKicker">Most common</p>
+            <p class="railNoteValue">{stackLeader?.label ?? "N/A"}</p>
+            <p class="railNoteText">
+              {stackLeader?.value ?? 0}% of winners in the current sample.
+            </p>
+          </div>
+
+          <div class="railBlock">
+            <p class="railNoteKicker">Runner up</p>
+            <p class="railNoteValue">{stackRunnerUp?.label ?? "N/A"}</p>
+            <p class="railNoteText">
+              {stackRunnerUp?.value ?? 0}% of winners in the current sample.
+            </p>
+          </div>
+
+          <div class="railBlock railCallout">
+            Default build unless slate conditions push elsewhere.
+          </div>
+        </aside>
       </div>
-    </div>
+    </section>
+
+    <section class="patternModule">
+      <div class="vizSection second">
+        <div class="vizMain">
+          <div class="vizTitleRow">
+            <h2>Bring Back Usage</h2>
+            <p>{bringBackSummary}</p>
+          </div>
+
+          <div class="rankedViz greenTheme">
+            <div class="rankedVizHeader">
+              <div class="headerLabel">Bring-back pattern</div>
+              <div class="headerMetric">Share of winning lineups</div>
+            </div>
+
+            <div class="rankedVizBody">
+              <div class="referenceLine greenLine" style={`left:${bringBackRefLeft};`} />
+              {bringBackRows.map((row) => (
+                <div class="rankRow">
+                  <div class="rankLabel">{row.label}</div>
+                  <div class="barLane">
+                    <div class="barTrack greenTrack" />
+                    <div
+                      class="barFill green"
+                      style={`width:${(row.value / bringBackMax) * 100}%;`}
+                    />
+                    <div
+                      class="barValue"
+                      style={`left:${(row.value / bringBackMax) * 100}%;`}
+                    >
+                      {row.value}%
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div class="rankedVizFooter">
+              <span>{bringBackFooter}</span>
+              <span>Reference line = average bring-back frequency ({bringBackAverage}%).</span>
+            </div>
+          </div>
+
+          <div class="vizNotes">
+            <div>
+              <span>NOTES:</span> Opposing correlation among Classic winners.
+            </div>
+            <div>
+              <span>SOURCE:</span> Milly Maker Tracker contest winner database.
+            </div>
+          </div>
+        </div>
+
+        <aside class="vizRail">
+          <div class="railBlock">
+            <h3>Bring-back read</h3>
+            <div class="legendList">
+              <div class="legendItem">
+                <span class="swatch green"></span>
+                <span>Bring-back frequency</span>
+              </div>
+              <div class="legendItem">
+                <span class="swatch slate"></span>
+                <span>Background comparison rail</span>
+              </div>
+              <div class="legendItem">
+                <span class="swatch line greenLineSwatch"></span>
+                <span>Average frequency line</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="railBlock greenAccent">
+            <p class="railNoteKicker">Most common</p>
+            <p class="railNoteValue">{bringBackLeader?.label ?? "N/A"}</p>
+            <p class="railNoteText">
+              {bringBackLeader?.value ?? 0}% of winners in the current sample.
+            </p>
+          </div>
+
+          <div class="railBlock">
+            <p class="railNoteKicker">Runner up</p>
+            <p class="railNoteValue">{bringBackRunnerUp?.label ?? "N/A"}</p>
+            <p class="railNoteText">
+              {bringBackRunnerUp?.value ?? 0}% of winners in the current sample.
+            </p>
+          </div>
+
+          <div class="railBlock railCallout greenText">
+            Use bring-backs as structure, not decoration.
+          </div>
+        </aside>
+      </div>
+    </section>
   </section>
 </ClassicReviewShell>
+
+<style>
+  :global(.classic-frame.with-drawer.patternsEditorialShell) {
+    padding-left: calc(clamp(18px, 2vw, 26px) + 54px);
+    padding-right: clamp(20px, 3vw, 36px);
+  }
+
+  :global(.patternsEditorialShell .content) {
+    gap: 0;
+    margin-top: 4px;
+    width: min(1220px, calc(100vw - 128px));
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-inline: auto;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+  }
+
+  :global(.classic-frame.with-drawer.patternsEditorialShell),
+  :global(.patternsEditorialShell .classic-shell) {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+  }
+
+  :global(.patternsEditorialShell .heroPanel) {
+    display: none;
+  }
+
+  :global(.patternsEditorialShell .hero) {
+    display: none;
+  }
+
+  :global(.classic-frame.with-drawer.patternsEditorialShell::before),
+  :global(.classic-frame.with-drawer.patternsEditorialShell::after),
+  :global(.patternsEditorialShell .classic-shell::before),
+  :global(.patternsEditorialShell .classic-shell::after),
+  :global(.patternsEditorialShell .content::before),
+  :global(.patternsEditorialShell .content::after) {
+    content: none !important;
+  }
+
+  .patternEditorialBoard {
+    display: grid;
+    gap: 18px;
+    padding: 2px 0 26px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .patternHeroModule {
+    padding: 16px 20px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(28, 28, 30, 0.92), rgba(20, 20, 22, 0.96));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.02),
+      0 12px 22px rgba(0, 0, 0, 0.24);
+  }
+
+.patternModule {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+  .patternHero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.85fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255, 232, 187, 0.72);
+  }
+
+  .heroHeadline {
+    margin: 0;
+    max-width: 760px;
+    font-size: clamp(2.2rem, 3.6vw, 4.25rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    font-weight: 900;
+    color: rgba(255, 248, 230, 0.98);
+  }
+
+  .heroNarrative {
+    align-self: stretch;
+    padding-top: 8px;
+  }
+
+  .heroNarrative p {
+    margin: 0 0 12px;
+    max-width: 420px;
+    font-size: 0.96rem;
+    line-height: 1.45;
+    color: rgba(225, 225, 225, 0.72);
+  }
+
+  .vizSection {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 18px;
+    align-items: start;
+    padding: 14px 20px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(28, 28, 30, 0.92), rgba(20, 20, 22, 0.96));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.02),
+      0 12px 22px rgba(0, 0, 0, 0.24);
+  }
+
+  .vizSection.second {
+    padding-top: 2px;
+  }
+
+  .vizMain {
+    min-width: 0;
+  }
+
+  .vizTitleRow {
+    margin-bottom: 8px;
+  }
+
+  .vizTitleRow h2 {
+    margin: 0 0 4px;
+    font-size: 1.12rem;
+    line-height: 1.1;
+    font-weight: 800;
+    color: rgba(249, 250, 252, 0.96);
+  }
+
+  .vizTitleRow p {
+    margin: 0;
+    font-size: 0.84rem;
+    line-height: 1.4;
+    color: rgba(225, 225, 225, 0.72);
+  }
+
+  .rankedViz {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(22, 22, 24, 0.94);
+    overflow: hidden;
+  }
+
+  .greenTheme {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .rankedVizHeader {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 14px;
+    padding: 8px 12px 7px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(225, 225, 225, 0.72);
+  }
+
+  .rankedVizBody {
+    position: relative;
+    padding: 6px 12px 8px;
+  }
+
+  .referenceLine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1.5px;
+    background: rgba(236, 221, 186, 0.82);
+    opacity: 0.95;
+    pointer-events: none;
+  }
+
+  .greenLine {
+    background: rgba(160, 240, 213, 0.92);
+  }
+
+  .rankRow {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    min-height: 30px;
+  }
+
+  .rankLabel {
+    padding-right: 10px;
+    font-size: 0.84rem;
+    line-height: 1.2;
+    color: rgba(245, 245, 245, 0.96);
+  }
+
+  .barLane {
+    position: relative;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    padding-right: 34px;
+  }
+
+  .barTrack,
+  .greenTrack {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(205, 216, 228, 0.12) 0%,
+      rgba(205, 216, 228, 0.12) 1px,
+      transparent 1px,
+      transparent 10%
+    );
+  }
+
+  .greenTrack {
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(179, 220, 209, 0.14) 0%,
+      rgba(179, 220, 209, 0.14) 1px,
+      transparent 1px,
+      transparent 10%
+    );
+  }
+
+  .barFill {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .barFill.gold {
+    background: linear-gradient(90deg, rgba(182, 139, 47, 0.9), rgba(232, 208, 160, 0.92));
+  }
+
+  .barFill.green {
+    background: linear-gradient(90deg, rgba(74, 183, 148, 0.92), rgba(170, 240, 217, 0.9));
+  }
+
+  .barValue {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: rgba(236, 241, 246, 0.92);
+    transform: translate(6px, -50%);
+  }
+
+  .rankedVizFooter {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 12px 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.72rem;
+    line-height: 1.35;
+    color: rgba(225, 225, 225, 0.72);
+  }
+
+  .vizNotes {
+    margin-top: 8px;
+    padding: 6px 2px 0;
+    display: grid;
+    gap: 4px;
+    font-size: 0.7rem;
+    color: rgba(225, 225, 225, 0.72);
+  }
+
+  .vizNotes span {
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(225, 225, 225, 0.72);
+    margin-right: 6px;
+  }
+
+  .vizRail {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+    padding-left: 14px;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .railBlock {
+    padding: 0 0 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .vizRail > .railBlock:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .railBlock h3 {
+    margin: 0 0 10px;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245, 245, 245, 0.96);
+  }
+
+  .legendList {
+    display: grid;
+    gap: 8px;
+  }
+
+  .legendItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.74rem;
+    color: rgba(225, 225, 225, 0.72);
+  }
+
+  .swatch {
+    width: 14px;
+    height: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    flex: 0 0 auto;
+  }
+
+  .swatch.gold {
+    background: linear-gradient(90deg, rgba(182, 139, 47, 0.92), rgba(244, 224, 176, 0.98));
+  }
+
+  .swatch.green {
+    background: linear-gradient(90deg, rgba(74, 183, 148, 0.95), rgba(170, 240, 217, 0.98));
+  }
+
+  .swatch.slate {
+    background: rgba(199, 213, 227, 0.24);
+  }
+
+  .swatch.line,
+  .greenLineSwatch {
+    width: 4px;
+    background: rgba(236, 221, 186, 0.9);
+    border: 0;
+  }
+
+  .greenLineSwatch {
+    background: rgba(160, 240, 213, 0.92);
+  }
+
+  .railNoteKicker {
+    margin: 0 0 8px;
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(225, 225, 225, 0.72);
+  }
+
+  .railNoteValue {
+    margin: 0 0 4px;
+    font-size: 1.32rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: rgba(250, 241, 215, 0.98);
+  }
+
+  .greenAccent .railNoteValue {
+    color: rgba(176, 243, 219, 0.98);
+  }
+
+  .railNoteText {
+    margin: 0;
+    font-size: 0.76rem;
+    line-height: 1.35;
+    color: rgba(225, 225, 225, 0.72);
+  }
+
+  .railCallout {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: rgba(225, 225, 225, 0.72);
+  }
+
+  .greenText {
+    color: rgba(208, 238, 228, 0.82);
+  }
+
+  @media (max-width: 1180px) {
+    .patternHero,
+    .vizSection {
+      grid-template-columns: 1fr;
+    }
+
+    .heroNarrative p {
+      max-width: none;
+    }
+
+    .vizRail {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-left: none;
+      padding-left: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 12px;
+    }
+
+    .railCallout {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 820px) {
+    :global(.classic-frame.with-drawer.patternsEditorialShell) {
+      padding-left: calc(clamp(14px, 4vw, 20px) + 46px);
+    }
+
+    :global(.patternsEditorialShell .content) {
+      width: min(100%, calc(100vw - 80px));
+    }
+
+    .patternHeroModule,
+    .vizSection {
+      padding: 14px;
+    }
+
+    .rankedVizHeader,
+    .rankRow {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    .rankLabel {
+      padding-right: 0;
+    }
+
+    .rankedVizFooter {
+      flex-direction: column;
+    }
+
+    .vizRail {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

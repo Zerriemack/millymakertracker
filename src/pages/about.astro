@@ -124,10 +124,10 @@ import Layout from "../layouts/Layout.astro";
     display: inline-block;
     max-width: 760px;
     padding: 16px 16px 16px;
-    border-radius: 14px;
-    background: #1f1f1f;
-    border: 1px solid rgba(255,255,255,0.10);
-    box-shadow: 0 18px 44px rgba(0,0,0,0.55);
+    border-radius: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
   }
 
   .eyebrow {
@@ -160,9 +160,40 @@ import Layout from "../layouts/Layout.astro";
     width: min(1080px, calc(100% - 32px));
     margin: 0 auto;
     padding: 44px 0 68px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    outline: 0;
   }
 
-  .content { display: grid; gap: 28px; }
+  .wrap::before,
+  .wrap::after {
+    content: none;
+  }
+
+  .content {
+    display: grid;
+    gap: 28px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    outline: 0;
+  }
+
+  .content::before,
+  .content::after {
+    content: none;
+  }
+
+  .block {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
 
   .block h2 {
     margin: 0 0 10px;
@@ -185,6 +216,16 @@ import Layout from "../layouts/Layout.astro";
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    outline: 0;
+  }
+
+  .grid::before,
+  .grid::after {
+    content: none;
   }
 
   @media (min-width: 900px) {
@@ -192,11 +233,11 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .card {
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
-    padding: 18px;
-    background: #1f1f1f;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.40);
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .card h3 {
@@ -217,8 +258,11 @@ import Layout from "../layouts/Layout.astro";
   .card p:last-child { margin-bottom: 0; }
 
   .fineprint {
-    padding-top: 10px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .fineprint h2 {
