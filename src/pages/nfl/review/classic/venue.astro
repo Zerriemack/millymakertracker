@@ -1,0 +1,1253 @@
+---
+import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
+import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
+
+const pageTitle = "NFL Classic Review | Venue";
+
+type VenueType = "Indoor" | "Outdoor";
+
+type StadiumRow = {
+  stadium: string;
+  team: string;
+  venueType: VenueType;
+  playersTracked: number;
+  winnerGamesHosted: number;
+  playersPerWinnerGame: number;
+  winnerSharePct: number;
+  signalIndex: number;
+};
+
+const stadiumRows: StadiumRow[] = [
+  { stadium: "State Farm Stadium", team: "ARI", venueType: "Indoor", playersTracked: 34, winnerGamesHosted: 7, playersPerWinnerGame: 4.9, winnerSharePct: 3.0, signalIndex: 120 },
+  { stadium: "Mercedes-Benz Stadium", team: "ATL", venueType: "Indoor", playersTracked: 36, winnerGamesHosted: 8, playersPerWinnerGame: 4.5, winnerSharePct: 3.1, signalIndex: 117 },
+  { stadium: "M&T Bank Stadium", team: "BAL", venueType: "Outdoor", playersTracked: 33, winnerGamesHosted: 7, playersPerWinnerGame: 4.7, winnerSharePct: 2.9, signalIndex: 107 },
+  { stadium: "Highmark Stadium", team: "BUF", venueType: "Outdoor", playersTracked: 31, winnerGamesHosted: 7, playersPerWinnerGame: 4.4, winnerSharePct: 2.7, signalIndex: 101 },
+  { stadium: "Bank of America Stadium", team: "CAR", venueType: "Outdoor", playersTracked: 22, winnerGamesHosted: 5, playersPerWinnerGame: 4.4, winnerSharePct: 1.9, signalIndex: 92 },
+  { stadium: "Soldier Field", team: "CHI", venueType: "Outdoor", playersTracked: 18, winnerGamesHosted: 4, playersPerWinnerGame: 4.5, winnerSharePct: 1.6, signalIndex: 95 },
+  { stadium: "Paycor Stadium", team: "CIN", venueType: "Outdoor", playersTracked: 35, winnerGamesHosted: 8, playersPerWinnerGame: 4.4, winnerSharePct: 3.1, signalIndex: 103 },
+  { stadium: "Cleveland Browns Stadium", team: "CLE", venueType: "Outdoor", playersTracked: 19, winnerGamesHosted: 4, playersPerWinnerGame: 4.8, winnerSharePct: 1.7, signalIndex: 98 },
+  { stadium: "AT&T Stadium", team: "DAL", venueType: "Indoor", playersTracked: 48, winnerGamesHosted: 10, playersPerWinnerGame: 4.8, winnerSharePct: 4.2, signalIndex: 125 },
+  { stadium: "Empower Field at Mile High", team: "DEN", venueType: "Outdoor", playersTracked: 17, winnerGamesHosted: 4, playersPerWinnerGame: 4.3, winnerSharePct: 1.5, signalIndex: 88 },
+  { stadium: "Ford Field", team: "DET", venueType: "Indoor", playersTracked: 39, winnerGamesHosted: 8, playersPerWinnerGame: 4.9, winnerSharePct: 3.4, signalIndex: 128 },
+  { stadium: "Lambeau Field", team: "GB", venueType: "Outdoor", playersTracked: 29, winnerGamesHosted: 6, playersPerWinnerGame: 4.8, winnerSharePct: 2.5, signalIndex: 109 },
+  { stadium: "NRG Stadium", team: "HOU", venueType: "Indoor", playersTracked: 24, winnerGamesHosted: 5, playersPerWinnerGame: 4.8, winnerSharePct: 2.1, signalIndex: 118 },
+  { stadium: "Lucas Oil Stadium", team: "IND", venueType: "Indoor", playersTracked: 30, winnerGamesHosted: 6, playersPerWinnerGame: 5.0, winnerSharePct: 2.6, signalIndex: 131 },
+  { stadium: "EverBank Stadium", team: "JAX", venueType: "Outdoor", playersTracked: 27, winnerGamesHosted: 6, playersPerWinnerGame: 4.5, winnerSharePct: 2.3, signalIndex: 99 },
+  { stadium: "Arrowhead Stadium", team: "KC", venueType: "Outdoor", playersTracked: 43, winnerGamesHosted: 9, playersPerWinnerGame: 4.8, winnerSharePct: 3.8, signalIndex: 112 },
+  { stadium: "Allegiant Stadium", team: "LV", venueType: "Indoor", playersTracked: 26, winnerGamesHosted: 5, playersPerWinnerGame: 5.2, winnerSharePct: 2.3, signalIndex: 136 },
+  { stadium: "SoFi Stadium", team: "LAC", venueType: "Indoor", playersTracked: 29, winnerGamesHosted: 6, playersPerWinnerGame: 4.8, winnerSharePct: 2.5, signalIndex: 121 },
+  { stadium: "SoFi Stadium", team: "LAR", venueType: "Indoor", playersTracked: 46, winnerGamesHosted: 9, playersPerWinnerGame: 5.1, winnerSharePct: 4.0, signalIndex: 133 },
+  { stadium: "Hard Rock Stadium", team: "MIA", venueType: "Outdoor", playersTracked: 32, winnerGamesHosted: 7, playersPerWinnerGame: 4.6, winnerSharePct: 2.8, signalIndex: 104 },
+  { stadium: "U.S. Bank Stadium", team: "MIN", venueType: "Indoor", playersTracked: 41, winnerGamesHosted: 8, playersPerWinnerGame: 5.1, winnerSharePct: 3.6, signalIndex: 132 },
+  { stadium: "Gillette Stadium", team: "NE", venueType: "Outdoor", playersTracked: 20, winnerGamesHosted: 5, playersPerWinnerGame: 4.0, winnerSharePct: 1.8, signalIndex: 84 },
+  { stadium: "Caesars Superdome", team: "NO", venueType: "Indoor", playersTracked: 37, winnerGamesHosted: 7, playersPerWinnerGame: 5.3, winnerSharePct: 3.2, signalIndex: 138 },
+  { stadium: "MetLife Stadium", team: "NYG", venueType: "Outdoor", playersTracked: 21, winnerGamesHosted: 5, playersPerWinnerGame: 4.2, winnerSharePct: 1.8, signalIndex: 86 },
+  { stadium: "MetLife Stadium", team: "NYJ", venueType: "Outdoor", playersTracked: 20, winnerGamesHosted: 5, playersPerWinnerGame: 4.0, winnerSharePct: 1.8, signalIndex: 82 },
+  { stadium: "Lincoln Financial Field", team: "PHI", venueType: "Outdoor", playersTracked: 34, winnerGamesHosted: 7, playersPerWinnerGame: 4.9, winnerSharePct: 3.0, signalIndex: 108 },
+  { stadium: "Acrisure Stadium", team: "PIT", venueType: "Outdoor", playersTracked: 23, winnerGamesHosted: 5, playersPerWinnerGame: 4.6, winnerSharePct: 2.0, signalIndex: 94 },
+  { stadium: "Levi's Stadium", team: "SF", venueType: "Outdoor", playersTracked: 37, winnerGamesHosted: 8, playersPerWinnerGame: 4.6, winnerSharePct: 3.2, signalIndex: 106 },
+  { stadium: "Lumen Field", team: "SEA", venueType: "Outdoor", playersTracked: 25, winnerGamesHosted: 5, playersPerWinnerGame: 5.0, winnerSharePct: 2.2, signalIndex: 102 },
+  { stadium: "Raymond James Stadium", team: "TB", venueType: "Outdoor", playersTracked: 33, winnerGamesHosted: 7, playersPerWinnerGame: 4.7, winnerSharePct: 2.9, signalIndex: 105 },
+  { stadium: "Nissan Stadium", team: "TEN", venueType: "Outdoor", playersTracked: 24, winnerGamesHosted: 5, playersPerWinnerGame: 4.8, winnerSharePct: 2.1, signalIndex: 97 },
+  { stadium: "Northwest Stadium", team: "WAS", venueType: "Outdoor", playersTracked: 19, winnerGamesHosted: 4, playersPerWinnerGame: 4.8, winnerSharePct: 1.7, signalIndex: 96 },
+];
+
+const totalPlayersTracked = stadiumRows.reduce((sum, row) => sum + row.playersTracked, 0);
+const indoorRows = stadiumRows.filter((row) => row.venueType === "Indoor");
+const outdoorRows = stadiumRows.filter((row) => row.venueType === "Outdoor");
+
+const indoorPlayers = indoorRows.reduce((sum, row) => sum + row.playersTracked, 0);
+const outdoorPlayers = outdoorRows.reduce((sum, row) => sum + row.playersTracked, 0);
+
+const indoorPct = (indoorPlayers / totalPlayersTracked) * 100;
+const outdoorPct = (outdoorPlayers / totalPlayersTracked) * 100;
+
+const indoorPerStadium = indoorPlayers / indoorRows.length;
+const outdoorPerStadium = outdoorPlayers / outdoorRows.length;
+const leaguePerStadium = totalPlayersTracked / stadiumRows.length;
+
+const indoorIndex = (indoorPerStadium / leaguePerStadium) * 100;
+const outdoorIndex = (outdoorPerStadium / leaguePerStadium) * 100;
+const indoorEdgePct = ((indoorPerStadium / outdoorPerStadium) - 1) * 100;
+const outdoorGapPct = ((outdoorPerStadium / indoorPerStadium) - 1) * 100;
+const venueLean =
+  indoorIndex > outdoorIndex
+    ? `Indoor venues generate ${indoorEdgePct.toFixed(1)}% more players per stadium than outdoor venues once slate volume is corrected.`
+    : `Outdoor venues generate ${outdoorGapPct.toFixed(1)}% more players per stadium than indoor venues once slate volume is corrected.`;
+
+const strongestIndoor = [...indoorRows].sort((a, b) => b.signalIndex - a.signalIndex).slice(0, 3);
+const strongestOutdoor = [...outdoorRows].sort((a, b) => b.signalIndex - a.signalIndex).slice(0, 3);
+
+const maxPlayers = Math.max(...stadiumRows.map((row) => row.playersTracked));
+const maxPerGame = Math.max(...stadiumRows.map((row) => row.playersPerWinnerGame));
+const maxSignal = Math.max(...stadiumRows.map((row) => row.signalIndex));
+const avgSignal = stadiumRows.reduce((sum, row) => sum + row.signalIndex, 0) / stadiumRows.length;
+const sortedBySignal = [...stadiumRows].sort((a, b) => b.signalIndex - a.signalIndex);
+const signalRankMap = new Map(sortedBySignal.map((row, index) => [`${row.team}-${row.stadium}`, index + 1]));
+
+const cx = 360;
+const cy = 360;
+const labelRadius = 314;
+const trackInner = 118;
+const wedgeGap = 1.6;
+const total = stadiumRows.length;
+const sweep = 360 / total;
+
+function polarToCartesian(centerX: number, centerY: number, radius: number, angleDeg: number) {
+  const angleRad = ((angleDeg - 90) * Math.PI) / 180.0;
+  return {
+    x: centerX + radius * Math.cos(angleRad),
+    y: centerY + radius * Math.sin(angleRad),
+  };
+}
+
+function ringPath(cx: number, cy: number, innerR: number, outerR: number, startAngle: number, endAngle: number) {
+  const startOuter = polarToCartesian(cx, cy, outerR, endAngle);
+  const endOuter = polarToCartesian(cx, cy, outerR, startAngle);
+  const startInner = polarToCartesian(cx, cy, innerR, startAngle);
+  const endInner = polarToCartesian(cx, cy, innerR, endAngle);
+  const largeArc = endAngle - startAngle <= 180 ? "0" : "1";
+
+  return [
+    `M ${startOuter.x.toFixed(3)} ${startOuter.y.toFixed(3)}`,
+    `A ${outerR} ${outerR} 0 ${largeArc} 0 ${endOuter.x.toFixed(3)} ${endOuter.y.toFixed(3)}`,
+    `L ${startInner.x.toFixed(3)} ${startInner.y.toFixed(3)}`,
+    `A ${innerR} ${innerR} 0 ${largeArc} 1 ${endInner.x.toFixed(3)} ${endInner.y.toFixed(3)}`,
+    "Z",
+  ].join(" ");
+}
+
+const chartRows = stadiumRows.map((row, index) => {
+  const start = index * sweep + wedgeGap / 2;
+  const end = (index + 1) * sweep - wedgeGap / 2;
+  const mid = (start + end) / 2;
+  const signalRank = signalRankMap.get(`${row.team}-${row.stadium}`) ?? total;
+  const signalDelta = row.signalIndex - avgSignal;
+
+  const playersOuter = trackInner + 30 + (row.playersTracked / maxPlayers) * 72;
+  const perGameOuter = trackInner + 6 + (row.playersPerWinnerGame / maxPerGame) * 50;
+  const signalOuter = trackInner + 84 + (row.signalIndex / maxSignal) * 96;
+
+  const labelPoint = polarToCartesian(cx, cy, labelRadius, mid);
+  const textRotate = mid > 180 ? mid + 90 : mid - 90;
+  const textAnchor = mid > 180 ? "end" : "start";
+
+  return {
+    ...row,
+    signalRank,
+    signalDelta,
+    start,
+    end,
+    mid,
+    playersPath: ringPath(cx, cy, trackInner + 34, playersOuter, start, end),
+    perGamePath: ringPath(cx, cy, trackInner, perGameOuter, start, end),
+    signalPath: ringPath(cx, cy, trackInner + 92, signalOuter, start, end),
+    playersTrackPath: ringPath(cx, cy, trackInner + 34, trackInner + 106, start, end),
+    perGameTrackPath: ringPath(cx, cy, trackInner, trackInner + 58, start, end),
+    signalTrackPath: ringPath(cx, cy, trackInner + 92, trackInner + 192, start, end),
+    labelX: labelPoint.x,
+    labelY: labelPoint.y,
+    textRotate,
+    textAnchor,
+  };
+});
+---
+
+<ClassicReviewShell
+  title={pageTitle}
+  headline="Venue"
+  subtitle="Indoor and outdoor venue signal across winning NFL Classic lineups."
+  accent="blue"
+  class="with-drawer venue-page"
+  hideHero
+>
+  <ClassicReviewDrawer active="venue" mode="hover" />
+
+  <section class="sectionPanel venueHeroPanel">
+    <div class="heroHeader">
+      <div>
+        <p class="eyebrow">Classic Review</p>
+        <h1 class="heroHeadline">Venue Signal</h1>
+        <p class="heroSubline">
+          Indoor and outdoor player share, corrected for how many stadiums each side puts on the slate.
+        </p>
+      </div>
+
+      <div class="heroMeta">
+        <span>Total players tracked</span>
+        <strong>{totalPlayersTracked}</strong>
+        <small>{stadiumRows.length} stadium entries tracked</small>
+      </div>
+    </div>
+
+    <div class="venueRenderGrid">
+      <article class="venueRenderCard venueRenderCardIndoor">
+        <div class="venueRenderHead">
+          <div>
+            <span class="venueLabel">Indoor</span>
+            <strong>{indoorPct.toFixed(1)}%</strong>
+          </div>
+          <div class="venueMetaStack">
+            <span>{indoorPlayers} players</span>
+            <span>{indoorRows.length} stadiums</span>
+            <span>{indoorIndex.toFixed(0)} index</span>
+          </div>
+        </div>
+
+        <div class="venuePhotoFrame" aria-hidden="true">
+          <img
+            class="venuePhoto"
+            src="/slates/nfl/stadiums/dome-stadium.jpg"
+            alt=""
+            loading="eager"
+            decoding="async"
+          />
+          <div class="venuePhotoOverlay venuePhotoOverlayIndoor"></div>
+        </div>
+
+        <div class="venueRead">
+          <span>Per stadium</span>
+          <strong>{indoorPerStadium.toFixed(1)}</strong>
+          <small>Indoor beats league average of {leaguePerStadium.toFixed(1)}</small>
+        </div>
+      </article>
+
+      <article class="venueRenderCard venueRenderCardOutdoor">
+        <div class="venueRenderHead">
+          <div>
+            <span class="venueLabel">Outdoor</span>
+            <strong>{outdoorPct.toFixed(1)}%</strong>
+          </div>
+          <div class="venueMetaStack">
+            <span>{outdoorPlayers} players</span>
+            <span>{outdoorRows.length} stadiums</span>
+            <span>{outdoorIndex.toFixed(0)} index</span>
+          </div>
+        </div>
+
+        <div class="venuePhotoFrame" aria-hidden="true">
+          <img
+            class="venuePhoto"
+            src="/slates/nfl/stadiums/outdoor-stadium.jpg"
+            alt=""
+            loading="eager"
+            decoding="async"
+          />
+          <div class="venuePhotoOverlay venuePhotoOverlayOutdoor"></div>
+        </div>
+
+        <div class="venueRead">
+          <span>Per stadium</span>
+          <strong>{outdoorPerStadium.toFixed(1)}</strong>
+          <small>Outdoor has more map volume, so raw share alone is not the read</small>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sectionPanel venueWheelPanel">
+    <div class="wheelHeader">
+      <div>
+        <p class="sectionEyebrow">Full stadium map</p>
+        <h2 class="sectionTitle">Hover any stadium to isolate it</h2>
+        <p class="wheelSubline">{venueLean}</p>
+      </div>
+
+      <div class="wheelControls" id="venue-filter-controls">
+        <button class="wheelChip isActive" type="button" data-filter="All">All</button>
+        <button class="wheelChip" type="button" data-filter="Indoor">Indoor</button>
+        <button class="wheelChip" type="button" data-filter="Outdoor">Outdoor</button>
+      </div>
+    </div>
+
+    <div class="venueQuickRead">
+      <div class="quickReadCard">
+        <span>Normalized winner signal</span>
+        <strong>{indoorIndex.toFixed(0)} indoor index</strong>
+        <small>Indoor beats outdoor by {Math.abs(indoorIndex - outdoorIndex).toFixed(0)} index points after venue count correction.</small>
+      </div>
+      <div class="quickReadCard">
+        <span>Raw map share</span>
+        <strong>{outdoorPct.toFixed(1)}% outdoor share</strong>
+        <small>Outdoor owns more raw volume because the slate has more outdoor stadiums in the pool.</small>
+      </div>
+      <div class="quickReadCard">
+        <span>Best corrected spots</span>
+        <strong>{strongestIndoor[0].team} and {strongestOutdoor[0].team}</strong>
+        <small>{strongestIndoor[0].stadium} leads indoor. {strongestOutdoor[0].stadium} leads outdoor.</small>
+      </div>
+    </div>
+
+    <div class="wheelGrid">
+      <div class="wheelWrap">
+        <svg
+          viewBox="0 0 720 720"
+          class="venueWheel"
+          id="venue-wheel"
+          role="img"
+          aria-label="Interactive radial stadium chart"
+        >
+          <defs>
+            <linearGradient id="playersBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f4fbff" />
+              <stop offset="38%" stop-color="#beddff" />
+              <stop offset="100%" stop-color="#6faaf0" />
+            </linearGradient>
+            <linearGradient id="signalBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7cc0ff" />
+              <stop offset="42%" stop-color="#4294f0" />
+              <stop offset="100%" stop-color="#1f5fae" />
+            </linearGradient>
+            <linearGradient id="perGameOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ffd08a" />
+              <stop offset="40%" stop-color="#f2a23c" />
+              <stop offset="100%" stop-color="#c86a16" />
+            </linearGradient>
+            <linearGradient id="trackShade" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#3a3d45" />
+              <stop offset="100%" stop-color="#1f232b" />
+            </linearGradient>
+            <linearGradient id="trackShadeActive" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4c5058" />
+              <stop offset="100%" stop-color="#252a33" />
+            </linearGradient>
+            <pattern id="ringTexture" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+              <rect width="8" height="8" fill="transparent" />
+              <path d="M 0 0 L 0 8" stroke="rgba(255,255,255,0.055)" stroke-width="1" />
+            </pattern>
+          </defs>
+
+          <circle cx={cx} cy={cy} r="244" class="wheelOuterRing" />
+          <circle cx={cx} cy={cy} r="246" class="wheelOuterHalo" />
+          <circle cx={cx} cy={cy} r="110" class="wheelInnerHole" />
+
+          {chartRows.map((row) => (
+            <g
+              class:list={[
+                "stadiumSlice",
+                row.venueType === "Indoor" ? "isIndoor" : "isOutdoor",
+              ]}
+              data-team={row.team}
+              data-stadium={row.stadium}
+              data-type={row.venueType}
+              data-players={row.playersTracked}
+              data-games={row.winnerGamesHosted}
+              data-pergame={row.playersPerWinnerGame.toFixed(1)}
+              data-signal={row.signalIndex}
+              data-share={row.winnerSharePct.toFixed(1)}
+              data-rank={row.signalRank}
+              data-delta={row.signalDelta.toFixed(0)}
+            >
+              <path d={row.perGameTrackPath} class="trackBand perGameTrack" />
+              <path d={row.playersTrackPath} class="trackBand playersTrack" />
+              <path d={row.signalTrackPath} class="trackBand signalTrack" />
+
+              <path d={row.perGamePath} class="metricBand perGameBand" />
+              <path d={row.playersPath} class="metricBand playersBand" />
+              <path d={row.signalPath} class="metricBand signalBand" />
+              <path d={row.perGamePath} class="metricTextureBand metricTextureBandWarm" />
+              <path d={row.playersPath} class="metricTextureBand metricTextureBandCool" />
+              <path d={row.signalPath} class="metricTextureBand metricTextureBandCool" />
+
+              <g
+                transform={`translate(${row.labelX.toFixed(2)} ${row.labelY.toFixed(2)}) rotate(${row.textRotate.toFixed(2)})`}
+                class="teamLabelWrap"
+              >
+                <text text-anchor={row.textAnchor} class="teamLabel">{row.team}</text>
+              </g>
+            </g>
+          ))}
+
+          <g class="wheelCenterText">
+            <text x={cx} y={cy - 42} text-anchor="middle" class="centerEyebrow" id="wheel-center-eyebrow">Venue signal</text>
+            <text x={cx} y={cy - 2} text-anchor="middle" class="centerTitle" id="wheel-center-title">Indoor edge</text>
+            <text x={cx} y={cy + 34} text-anchor="middle" class="centerSub" id="wheel-center-sub"></text>
+          </g>
+        </svg>
+      </div>
+
+      <aside class="wheelAside">
+        <article class="detailCard" id="venue-detail-card">
+          <span class="detailEyebrow">Selected stadium</span>
+          <h3 id="detail-title">Hover a stadium</h3>
+          <p id="detail-subtitle"></p>
+
+          <div class="detailStats">
+            <div>
+              <span>Type</span>
+              <strong id="detail-type">All</strong>
+            </div>
+            <div>
+              <span>Players tracked</span>
+              <strong id="detail-players">--</strong>
+            </div>
+            <div>
+              <span>Winner games</span>
+              <strong id="detail-games">--</strong>
+            </div>
+            <div>
+              <span>Per winner game</span>
+              <strong id="detail-pergame">--</strong>
+            </div>
+            <div>
+              <span>Signal index</span>
+              <strong id="detail-signal">--</strong>
+            </div>
+            <div>
+              <span>Player share</span>
+              <strong id="detail-share">--</strong>
+            </div>
+            <div>
+              <span>Signal rank</span>
+              <strong id="detail-rank">--</strong>
+            </div>
+            <div>
+              <span>Vs league avg</span>
+              <strong id="detail-delta">--</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="metricLegend">
+          <div class="legendRow">
+            <span class="legendSwatch legendSwatchOrange"></span>
+            <div>
+              <strong>Inner ring</strong>
+              <small>Players per winner game</small>
+            </div>
+          </div>
+          <div class="legendRow">
+            <span class="legendSwatch legendSwatchLightBlue"></span>
+            <div>
+              <strong>Middle ring</strong>
+              <small>Players tracked</small>
+            </div>
+          </div>
+          <div class="legendRow">
+            <span class="legendSwatch legendSwatchBlue"></span>
+            <div>
+              <strong>Outer ring</strong>
+              <small>Corrected signal index</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="pocketGrid">
+          <div class="pocketColumn">
+            <span class="pocketTitle">Best indoor</span>
+            {strongestIndoor.map((row) => (
+              <div class="pocketCard">
+                <strong>{row.team}</strong>
+                <span>{row.stadium}</span>
+                <b>{row.signalIndex}</b>
+              </div>
+            ))}
+          </div>
+
+          <div class="pocketColumn">
+            <span class="pocketTitle">Best outdoor</span>
+            {strongestOutdoor.map((row) => (
+              <div class="pocketCard">
+                <strong>{row.team}</strong>
+                <span>{row.stadium}</span>
+                <b>{row.signalIndex}</b>
+              </div>
+            ))}
+          </div>
+        </article>
+      </aside>
+    </div>
+  </section>
+</ClassicReviewShell>
+
+<script>
+  (() => {
+    const chips = Array.from(document.querySelectorAll(".wheelChip"));
+    const slices = Array.from(document.querySelectorAll(".stadiumSlice"));
+    const detailTitle = document.getElementById("detail-title");
+    const detailSubtitle = document.getElementById("detail-subtitle");
+    const detailType = document.getElementById("detail-type");
+    const detailPlayers = document.getElementById("detail-players");
+    const detailGames = document.getElementById("detail-games");
+    const detailPerGame = document.getElementById("detail-pergame");
+    const detailSignal = document.getElementById("detail-signal");
+    const detailShare = document.getElementById("detail-share");
+    const detailRank = document.getElementById("detail-rank");
+    const detailDelta = document.getElementById("detail-delta");
+    const wheelCenterEyebrow = document.getElementById("wheel-center-eyebrow");
+    const wheelCenterTitle = document.getElementById("wheel-center-title");
+    const wheelCenterSub = document.getElementById("wheel-center-sub");
+    if (!chips.length || !slices.length) return;
+
+    let activeFilter = "All";
+    let pinnedSlice = null;
+
+    const resetDetail = () => {
+      if (detailTitle) detailTitle.textContent = "Hover a stadium";
+      if (detailSubtitle) detailSubtitle.textContent = "";
+      if (detailType) detailType.textContent = activeFilter;
+      if (detailPlayers) detailPlayers.textContent = "--";
+      if (detailGames) detailGames.textContent = "--";
+      if (detailPerGame) detailPerGame.textContent = "--";
+      if (detailSignal) detailSignal.textContent = "--";
+      if (detailShare) detailShare.textContent = "--";
+      if (detailRank) detailRank.textContent = "--";
+      if (detailDelta) detailDelta.textContent = "--";
+      if (wheelCenterEyebrow) wheelCenterEyebrow.textContent = "Venue signal";
+      if (wheelCenterTitle) wheelCenterTitle.textContent = "Indoor edge";
+      if (wheelCenterSub) wheelCenterSub.textContent = "";
+    };
+
+    const applyFilter = () => {
+      slices.forEach((slice) => {
+        const type = slice.getAttribute("data-type");
+        const visible = activeFilter === "All" || type === activeFilter;
+        slice.classList.toggle("isFilteredOut", !visible);
+        slice.classList.remove("isDimmed");
+        if (slice !== pinnedSlice) {
+          slice.classList.remove("isActive");
+        }
+      });
+
+      if (pinnedSlice) {
+        const pinnedType = pinnedSlice.getAttribute("data-type");
+        const stillVisible = activeFilter === "All" || pinnedType === activeFilter;
+        if (!stillVisible) {
+          pinnedSlice.classList.remove("isPinned");
+          pinnedSlice.classList.remove("isActive");
+          pinnedSlice = null;
+          resetDetail();
+        } else {
+          showSlice(pinnedSlice, true);
+        }
+      } else {
+        resetDetail();
+      }
+    };
+
+    const showSlice = (slice, locked = false) => {
+      const type = slice.getAttribute("data-type");
+      if (activeFilter !== "All" && type !== activeFilter) return;
+
+      slices.forEach((item) => {
+        const sameFilter = activeFilter === "All" || item.getAttribute("data-type") === activeFilter;
+        item.classList.toggle("isDimmed", sameFilter && item !== slice);
+        item.classList.toggle("isActive", item === slice || item === pinnedSlice);
+      });
+
+      if (detailTitle) detailTitle.textContent = `${slice.getAttribute("data-team")} · ${slice.getAttribute("data-stadium")}`;
+      if (detailSubtitle) {
+        detailSubtitle.textContent = locked
+          ? ""
+          : "";
+      }
+      if (detailType) detailType.textContent = slice.getAttribute("data-type") || "--";
+      if (detailPlayers) detailPlayers.textContent = slice.getAttribute("data-players") || "--";
+      if (detailGames) detailGames.textContent = slice.getAttribute("data-games") || "--";
+      if (detailPerGame) detailPerGame.textContent = slice.getAttribute("data-pergame") || "--";
+      if (detailSignal) detailSignal.textContent = slice.getAttribute("data-signal") || "--";
+      if (detailShare) detailShare.textContent = `${slice.getAttribute("data-share") || "--"}%`;
+      if (detailRank) detailRank.textContent = `#${slice.getAttribute("data-rank") || "--"}`;
+
+      const deltaValue = Number(slice.getAttribute("data-delta") || "0");
+      if (detailDelta) {
+        detailDelta.textContent = deltaValue > 0 ? `+${deltaValue}` : `${deltaValue}`;
+      }
+
+      if (wheelCenterEyebrow) wheelCenterEyebrow.textContent = slice.getAttribute("data-type") || "Venue";
+      if (wheelCenterTitle) wheelCenterTitle.textContent = slice.getAttribute("data-team") || "Hover";
+      if (wheelCenterSub) {
+        const rank = slice.getAttribute("data-rank") || "--";
+        const signal = slice.getAttribute("data-signal") || "--";
+        wheelCenterSub.textContent = `#${rank} signal · ${signal}`;
+      }
+    };
+
+    const clearHover = () => {
+      if (pinnedSlice) {
+        showSlice(pinnedSlice, true);
+        return;
+      }
+      slices.forEach((slice) => {
+        slice.classList.remove("isDimmed");
+        slice.classList.remove("isActive");
+      });
+      resetDetail();
+    };
+
+    const pinSlice = (slice) => {
+      const type = slice.getAttribute("data-type");
+      if (activeFilter !== "All" && type !== activeFilter) return;
+
+      if (pinnedSlice === slice) {
+        slice.classList.remove("isPinned");
+        slice.classList.remove("isActive");
+        pinnedSlice = null;
+        clearHover();
+        return;
+      }
+
+      slices.forEach((item) => item.classList.remove("isPinned"));
+      pinnedSlice = slice;
+      slice.classList.add("isPinned");
+      showSlice(slice, true);
+    };
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        activeFilter = chip.getAttribute("data-filter") || "All";
+        chips.forEach((item) => item.classList.remove("isActive"));
+        chip.classList.add("isActive");
+        applyFilter();
+      });
+    });
+
+    slices.forEach((slice) => {
+      slice.addEventListener("mouseenter", () => showSlice(slice));
+      slice.addEventListener("focus", () => showSlice(slice), true);
+      slice.addEventListener("mouseleave", clearHover);
+      slice.addEventListener("blur", clearHover, true);
+      slice.addEventListener("click", () => pinSlice(slice));
+    });
+
+    applyFilter();
+  })();
+</script>
+
+<style>
+  :global(.classic-frame.with-drawer.venue-page) {
+    padding-left: calc(clamp(18px, 2vw, 26px) + 54px);
+    padding-right: clamp(20px, 3vw, 36px);
+  }
+
+  :global(.classic-frame.with-drawer.venue-page .content) {
+    width: min(1280px, calc(100vw - 124px));
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 18px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  :global(.classic-frame.with-drawer.venue-page .hero) {
+    display: none;
+  }
+
+  :global(.venue-page .sectionPanel) {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .venueHeroPanel,
+  .venueWheelPanel {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+      radial-gradient(circle at 14% 10%, rgba(59, 130, 246, 0.12), transparent 24%),
+      radial-gradient(circle at 84% 14%, rgba(14, 165, 233, 0.1), transparent 22%),
+      linear-gradient(180deg, rgba(24, 24, 28, 0.96), rgba(12, 12, 16, 0.98));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.03),
+      0 16px 40px rgba(0, 0, 0, 0.24);
+  }
+
+  .heroHeader,
+  .wheelHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: end;
+    margin-bottom: 18px;
+  }
+
+  .eyebrow,
+  .sectionEyebrow,
+  .detailEyebrow,
+  .pocketTitle {
+    margin: 0 0 8px;
+    color: rgba(148, 163, 184, 0.82);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .heroHeadline,
+  .sectionTitle {
+    margin: 0;
+    color: #f8fafc;
+    letter-spacing: -0.04em;
+    line-height: 0.96;
+    font-weight: 900;
+  }
+
+  .heroHeadline {
+    font-size: clamp(2.3rem, 4.1vw, 4.6rem);
+  }
+
+  .sectionTitle {
+    font-size: clamp(1.35rem, 2vw, 2.2rem);
+  }
+
+  .heroSubline {
+    margin: 10px 0 0;
+    max-width: 760px;
+    color: rgba(226, 232, 240, 0.76);
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .wheelSubline {
+    margin: 10px 0 0;
+    max-width: 760px;
+    color: rgba(226, 232, 240, 0.76);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .heroMeta {
+    min-width: 220px;
+    padding: 16px 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: rgba(255, 255, 255, 0.03);
+    text-align: right;
+  }
+
+  .heroMeta span,
+  .venueRead span,
+  .detailStats span {
+    display: block;
+    color: rgba(148, 163, 184, 0.82);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .heroMeta strong {
+    display: block;
+    margin-top: 8px;
+    color: #f8fafc;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  .heroMeta small,
+  .venueRead small,
+  .legendRow small,
+  .pocketCard span {
+    display: block;
+    margin-top: 6px;
+    color: rgba(226, 232, 240, 0.7);
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  .venueRenderGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .venueRenderCard,
+  .detailCard,
+  .metricLegend,
+  .pocketGrid,
+  .pocketCard {
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: linear-gradient(180deg, rgba(10, 16, 28, 0.9), rgba(5, 8, 16, 0.98));
+    border-radius: 22px;
+  }
+
+  .venueRenderCard {
+    padding: 18px;
+  }
+
+  .venueRenderHead {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: start;
+    margin-bottom: 14px;
+  }
+
+  .venueLabel {
+    display: block;
+    color: rgba(226, 232, 240, 0.82);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .venueRenderHead strong {
+    color: #f8fafc;
+    font-size: clamp(2.3rem, 3vw, 3.2rem);
+    line-height: 0.94;
+    font-weight: 900;
+  }
+
+  .venueMetaStack {
+    display: grid;
+    gap: 6px;
+    text-align: right;
+    color: rgba(226, 232, 240, 0.8);
+    font-size: 0.82rem;
+  }
+
+  .venuePhotoFrame {
+    position: relative;
+    height: 290px;
+    border-radius: 22px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    background: #05070c;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+      0 10px 30px rgba(0, 0, 0, 0.28);
+  }
+
+  .venuePhoto {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.03);
+    filter: saturate(0.98) contrast(1.05) brightness(0.76);
+  }
+
+  .venuePhotoOverlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .venuePhotoOverlayIndoor {
+    background:
+      linear-gradient(180deg, rgba(2, 6, 16, 0.06) 0%, rgba(2, 6, 16, 0.18) 28%, rgba(2, 6, 16, 0.56) 100%),
+      radial-gradient(circle at 50% 0%, rgba(96, 165, 250, 0.22), transparent 46%),
+      linear-gradient(90deg, rgba(2, 6, 16, 0.24) 0%, rgba(2, 6, 16, 0) 22%, rgba(2, 6, 16, 0) 78%, rgba(2, 6, 16, 0.2) 100%);
+  }
+
+  .venuePhotoOverlayOutdoor {
+    background:
+      linear-gradient(180deg, rgba(2, 6, 16, 0.05) 0%, rgba(2, 6, 16, 0.14) 30%, rgba(2, 6, 16, 0.52) 100%),
+      radial-gradient(circle at 78% 16%, rgba(250, 204, 21, 0.18), transparent 18%),
+      linear-gradient(90deg, rgba(2, 6, 16, 0.22) 0%, rgba(2, 6, 16, 0) 22%, rgba(2, 6, 16, 0) 78%, rgba(2, 6, 16, 0.18) 100%);
+  }
+
+  .venueRead {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: end;
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .venueRead strong {
+    display: block;
+    color: #f8fafc;
+    font-size: 1.4rem;
+    line-height: 1;
+    font-weight: 900;
+    margin-top: 8px;
+  }
+
+  .wheelControls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .wheelChip {
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(226, 232, 240, 0.84);
+    padding: 9px 13px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    cursor: pointer;
+  }
+
+  .wheelChip.isActive {
+    background: rgba(59, 130, 246, 0.14);
+    border-color: rgba(96, 165, 250, 0.34);
+    color: #f8fafc;
+  }
+
+  .wheelGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) 360px;
+    gap: 18px;
+    align-items: start;
+  }
+
+  .venueQuickRead {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .quickReadCard {
+    padding: 14px 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: linear-gradient(180deg, rgba(8, 13, 24, 0.9), rgba(5, 8, 16, 0.98));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  }
+
+  .quickReadCard span {
+    display: block;
+    color: rgba(148, 163, 184, 0.82);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .quickReadCard strong {
+    display: block;
+    margin-top: 8px;
+    color: #f8fafc;
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .quickReadCard small {
+    display: block;
+    margin-top: 6px;
+    color: rgba(226, 232, 240, 0.72);
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .wheelWrap {
+    padding: 8px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+  }
+
+  .venueWheel {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .wheelOuterRing {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.12);
+    stroke-width: 8.5;
+  }
+
+  .wheelOuterHalo {
+    fill: none;
+    stroke: rgba(87, 133, 205, 0.12);
+    stroke-width: 22;
+    filter: blur(8px);
+  }
+
+  .wheelInnerHole {
+    fill: rgba(34, 35, 41, 0.94);
+    stroke: rgba(255, 255, 255, 0.045);
+    stroke-width: 2.5;
+  }
+
+  .trackBand {
+    fill: url(#trackShade);
+    opacity: 0.96;
+  }
+
+  .perGameBand {
+    fill: url(#perGameOrange);
+  }
+
+  .playersBand {
+    fill: url(#playersBlue);
+  }
+
+  .signalBand {
+    fill: url(#signalBlue);
+  }
+
+  .metricTextureBand {
+    fill: url(#ringTexture);
+    opacity: 0.22;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  .metricTextureBandWarm {
+    opacity: 0.18;
+  }
+
+  .metricTextureBandCool {
+    opacity: 0.2;
+  }
+
+  .teamLabel {
+    fill: rgba(248, 250, 252, 0.95);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  .wheelCenterText .centerTitle,
+  .wheelCenterText .centerSub {
+    fill: rgba(240, 242, 246, 0.84);
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .wheelCenterText .centerEyebrow {
+    fill: rgba(162, 176, 197, 0.84);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .wheelCenterText .centerSub {
+    font-size: 20px;
+  }
+
+  .stadiumSlice {
+    cursor: pointer;
+    transition: opacity 140ms ease, transform 140ms ease, filter 140ms ease;
+    transform-origin: 360px 360px;
+  }
+
+  .stadiumSlice.isDimmed {
+    opacity: 0.14;
+  }
+
+  .stadiumSlice.isFilteredOut {
+    opacity: 0.08;
+  }
+
+  .stadiumSlice.isActive .trackBand {
+    fill: url(#trackShadeActive);
+  }
+
+  .stadiumSlice.isActive .metricBand {
+    filter: drop-shadow(0 0 12px rgba(95, 157, 233, 0.26));
+  }
+
+  .stadiumSlice.isActive.isIndoor .metricBand {
+    filter: drop-shadow(0 0 14px rgba(112, 181, 255, 0.28));
+  }
+
+  .stadiumSlice.isActive.isOutdoor .metricBand {
+    filter: drop-shadow(0 0 14px rgba(236, 158, 62, 0.26));
+  }
+
+  .stadiumSlice.isActive .teamLabel {
+    fill: #ffffff;
+  }
+
+  .stadiumSlice.isPinned .trackBand {
+    fill: url(#trackShadeActive);
+  }
+
+  .stadiumSlice.isPinned .teamLabel {
+    fill: #ffffff;
+  }
+
+  .stadiumSlice.isPinned.isIndoor .metricBand {
+    filter:
+      drop-shadow(0 0 8px rgba(255, 255, 255, 0.12))
+      drop-shadow(0 0 16px rgba(112, 181, 255, 0.32));
+  }
+
+  .stadiumSlice.isPinned.isOutdoor .metricBand {
+    filter:
+      drop-shadow(0 0 8px rgba(255, 255, 255, 0.1))
+      drop-shadow(0 0 16px rgba(236, 158, 62, 0.3));
+  }
+
+  .stadiumSlice.isPinned .metricTextureBand,
+  .stadiumSlice.isActive .metricTextureBand {
+    opacity: 0.3;
+  }
+
+  .wheelWrap {
+    position: relative;
+  }
+
+  .wheelWrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: 22px;
+    background:
+      radial-gradient(circle at 50% 50%, transparent 0 28%, rgba(6, 8, 14, 0.04) 46%, rgba(6, 8, 14, 0.16) 68%, rgba(6, 8, 14, 0.28) 100%),
+      linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0) 18%, rgba(0,0,0,0.08) 100%);
+    mix-blend-mode: normal;
+  }
+
+  .wheelAside {
+    display: grid;
+    gap: 14px;
+  }
+
+  .detailCard,
+  .metricLegend,
+  .pocketGrid {
+    padding: 18px;
+  }
+
+  .detailCard h3 {
+    margin: 0;
+    color: #f8fafc;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    font-weight: 900;
+  }
+
+  .detailCard p {
+    margin: 8px 0 0;
+    color: rgba(226, 232, 240, 0.72);
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .detailStats {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .detailStats strong {
+    display: block;
+    margin-top: 6px;
+    color: #f8fafc;
+    font-size: 1.12rem;
+    font-weight: 800;
+  }
+
+  .metricLegend {
+    display: grid;
+    gap: 12px;
+  }
+
+  .legendRow {
+    display: grid;
+    grid-template-columns: 14px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .legendRow strong,
+  .pocketCard strong,
+  .pocketCard b {
+    color: #f8fafc;
+  }
+
+  .legendSwatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    margin-top: 4px;
+  }
+
+  .legendSwatchOrange { background: #ea7a10; }
+  .legendSwatchLightBlue { background: #8ab6e9; }
+  .legendSwatchBlue { background: #1267c5; }
+
+  .pocketGrid {
+    display: grid;
+    gap: 14px;
+  }
+
+  .pocketColumn {
+    display: grid;
+    gap: 8px;
+  }
+
+  .pocketCard {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 12px 14px;
+  }
+
+  .pocketCard strong {
+    font-size: 0.95rem;
+  }
+
+  .pocketCard b {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 1120px) {
+    .venueQuickRead {
+      grid-template-columns: 1fr;
+    }
+
+    .wheelGrid {
+      grid-template-columns: 1fr;
+    }
+
+    .wheelAside {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+    }
+  }
+
+  @media (max-width: 920px) {
+    .heroHeader,
+    .wheelHeader,
+    .venueRenderGrid,
+    .wheelAside {
+      grid-template-columns: 1fr;
+      display: grid;
+    }
+
+    .heroMeta {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 780px) {
+    :global(.classic-frame.with-drawer.venue-page) {
+      padding-left: calc(clamp(14px, 4vw, 20px) + 46px);
+      padding-right: 14px;
+    }
+
+    :global(.classic-frame.with-drawer.venue-page .content) {
+      width: min(100%, calc(100vw - 74px));
+    }
+
+    .venuePhotoFrame {
+      height: 240px;
+    }
+
+    .detailStats {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .pocketCard {
+      grid-template-columns: 42px 1fr auto;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .detailStats,
+    .wheelAside {
+      grid-template-columns: 1fr;
+    }
+
+    .teamLabel {
+      font-size: 12px;
+    }
+  }
+</style>

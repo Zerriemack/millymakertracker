@@ -1,103 +1,1109 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
-import StatCard from "../../../../components/nfl/classic/StatCard.astro";
-import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
-import { classicDistributionSections, classicTrendCharts } from "../../../../data/nflClassicReviewMock";
 
 const pageTitle = "NFL Classic Review | Salary";
-const salarySection = classicDistributionSections.find((s) => s.title === "Salary Left");
-const salaryTrend = classicTrendCharts.find((c) => c.title === "Salary Left by Year");
+
+const baseSample = 127;
+
+const heroStats = [
+  { label: "Sample", value: "127 winners" },
+  { label: "Dominant salary-left range", value: "$400 to $900" },
+  { label: "Trusted working range", value: "$200 to $1,000" },
+  { label: "One season rule", value: "Live in the dominant range unless the slate gives a real reason to leave it." },
+];
+
+const salaryPocketRows = [
+  { bucket: "$0 to $99", count: 6, pct: "4.7%", width: 12, state: "rare", tag: "Thin" },
+  { bucket: "$100 to $199", count: 11, pct: "8.7%", width: 22, state: "secondary", tag: "Secondary" },
+  { bucket: "$200 to $399", count: 19, pct: "15.0%", width: 39, state: "secondary", tag: "Live" },
+  { bucket: "$400 to $599", count: 31, pct: "24.4%", width: 82, state: "core", tag: "Core" },
+  { bucket: "$600 to $799", count: 38, pct: "29.9%", width: 100, state: "core", tag: "Dominant" },
+  { bucket: "$800 to $999", count: 13, pct: "10.2%", width: 34, state: "secondary", tag: "Live" },
+  { bucket: "$1,000 to $1,499", count: 7, pct: "5.5%", width: 18, state: "rare", tag: "Thin" },
+  { bucket: "$1,500+", count: 2, pct: "1.6%", width: 5, state: "rare", tag: "Outlier" },
+];
+
+const verdictCards = [
+  {
+    label: "Primary target",
+    value: "$400 to $900",
+    note: "This is the cleanest macro range for someone trying to win once per season.",
+    tone: "primary",
+  },
+  {
+    label: "Secondary viable",
+    value: "$200 to $1,000",
+    note: "Still live, but less concentrated than the dominant center.",
+    tone: "secondary",
+  },
+  {
+    label: "Do not default here",
+    value: "$0 to $199 and $1,000+",
+    note: "These buckets exist, but they are too thin to anchor a weekly baseline.",
+    tone: "fade",
+  },
+];
+
+const rangeCallouts = [
+  { label: "Mode", value: "$600 to $799" },
+  { label: "Median salary left", value: "$620" },
+  { label: "Core concentration", value: "$400 to $900" },
+  { label: "Trim rule", value: "De-emphasize under $200 and over $1,000" },
+];
+
+const seasonRows = [
+  { season: "2018", dominant: "$400 to $599", median: "$540", note: "Inside the same center lane.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
+  { season: "2019", dominant: "$600 to $799", median: "$650", note: "Center lifted slightly but stayed tight.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
+  { season: "2020", dominant: "$400 to $599", median: "$510", note: "Still concentrated in the same macro pocket.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
+  { season: "2021", dominant: "$600 to $799", median: "$690", note: "Middle of the board kept control.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
+  { season: "2022", dominant: "$600 to $799", median: "$720", note: "Slightly more room left without changing the answer.", stability: "Upper lean", band: "$400 to $1,000", bias: "Looser" },
+  { season: "2023", dominant: "$400 to $599", median: "$580", note: "Returned toward the lower half of the same range.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
+  { season: "2024", dominant: "$600 to $799", median: "$640", note: "Still living in the same center pocket.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
+];
+
+const seasonSummary = [
+  { label: "Stable seasons", value: "5" },
+  { label: "Upper-lean seasons", value: "1" },
+  { label: "Dominant recurring band", value: "$400 to $900" },
+  { label: "Most common exact pocket", value: "$600 to $799" },
+];
 ---
 
 <ClassicReviewShell
   title={pageTitle}
-  headline="Salary Discipline"
-  subtitle="How winners spend salary, where they leave room, and how that shifts over time."
+  headline="Salary"
+  subtitle="Which salary-left range shows up most often in first place Classic Milly Maker lineups."
   accent="blue"
-  class="with-drawer"
+  class="with-drawer salary-compact"
+  hideHero
 >
   <ClassicReviewDrawer active="salary" mode="hover" />
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Salary Left Distribution</h2>
-        <p class="sectionSub">Where Classic winners typically leave salary on the table.</p>
+  <section class="sectionPanel salaryHeroPanel">
+    <div class="salaryHero">
+      <div class="heroTitleBlock">
+        <p class="eyebrow">Classic Review</p>
+        <h1 class="heroHeadline">
+          WINNING SALARY LEFT
+        </h1>
       </div>
-      <div class="sectionPill">Core</div>
+
+      <div class="heroNarrative">
+        <p>This page shows which salary left ranges have appeared most often in winning NFL Classic lineups and how those ranges have looked from year to year.</p>
+      </div>
     </div>
-    <div class="bandGrid">
-      <div class="span-8">
-        {salarySection?.charts?.map((chart) => (
-          <ChartPanel
-            title={chart.title}
-            meta={chart.meta}
-            helper={chart.helper}
-            footer={chart.footer}
-            series={chart.series}
-            accent="blue"
-            variant="lead"
-          />
-        ))}
+
+    <div class="heroStatGrid">
+      {heroStats.map((item) => (
+        <article class="heroStatCard">
+          <span class="heroStatLabel">{item.label}</span>
+          <strong class:list={["heroStatValue", item.label !== "Sample" && "heroStatValueVerbose"]}>{item.value}</strong>
+        </article>
+      ))}
+    </div>
+
+    <div class="activeFilterBar" id="salary-active-filter-bar">
+      <div class="activeFilterSummary">
+        <span class="activeFilterSummaryLabel">Live sample</span>
+        <strong class="activeFilterSummaryValue"><span id="salary-live-sample-count">{baseSample}</span> winners</strong>
       </div>
-      <div class="span-4 railStack">
-        <section class="sectionPanel">
-          <div class="sectionHeader">
-            <div>
-              <h3 class="sectionTitle">Interpretation</h3>
-              <p class="sectionSub">Use these baselines to calibrate salary pressure.</p>
-            </div>
-          </div>
-          <div class="statGrid">
-            {salarySection?.stats?.map((stat, idx) => (
-              <StatCard
-                label={stat.label}
-                value={stat.value}
-                accent={idx === 0 ? "blue" : "slate"}
-              />
-            ))}
-          </div>
-        </section>
+
+      <div class="activeChipRow" id="salary-active-chip-row">
+        <button class="activeChip isEmpty" type="button" data-chip="bucket">Salary range: any</button>
+        <button class="activeChip isEmpty" type="button" data-chip="season">Season: any</button>
       </div>
+
+      <button class="resetFiltersButton" type="button" id="reset-salary-filters">Reset all</button>
     </div>
   </section>
 
   <section class="sectionPanel">
     <div class="sectionHeader">
       <div>
-        <h2 class="sectionTitle">Salary Trend</h2>
-        <p class="sectionSub">Year-over-year shifts in median salary left.</p>
+        <h2 class="sectionTitle">Salary left evidence board</h2>
+        <p class="sectionSub">The dominant range should be obvious at first glance, while still letting the user isolate any pocket they want.</p>
+      </div>
+      <div class="sectionPill">Evidence</div>
+    </div>
+
+    <div class="salaryBoardLayout">
+      <div class="salaryBoardMain">
+        <div class="salaryBoardHead">
+          <div>
+            <h3 class="salaryBoardTitle">Pocket frequency</h3>
+            <p class="salaryBoardSub">The center of gravity matters more than the tails. This is the board that should drive the page.</p>
+          </div>
+
+          <div class="salaryBoardMedian">
+            <span>Median</span>
+            <strong>$620</strong>
+          </div>
+        </div>
+
+        <div class="salaryBracket">
+          <div class="salaryBracketLine"></div>
+          <div class="salaryBracketLabel">Trusted center lane $400 to $900</div>
+        </div>
+
+        <div class="salaryBucketList">
+          {salaryPocketRows.map((row) => (
+            <button
+              type="button"
+              class={`salaryBucketRow state-${row.state} filterControl`}
+              data-filter-kind="bucket"
+              data-filter-value={row.bucket}
+              data-bucket={row.bucket}
+              aria-pressed="false"
+            >
+              <div class="salaryBucketLeft">
+                <div class="salaryBucketLabelLine">
+                  <span class="salaryBucketLabel">{row.bucket}</span>
+                  <span class={`salaryBucketTag tag-${row.tag.toLowerCase().replaceAll(" ", "-")}`}>{row.tag}</span>
+                </div>
+                <span class="salaryBucketCount">{row.count} winners</span>
+              </div>
+
+              <div class="salaryBucketTrack">
+                <div class="salaryBucketFill" style={`width:${row.width}%`}></div>
+              </div>
+
+              <div class="salaryBucketRight">
+                <strong>{row.pct}</strong>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <aside class="salaryBoardRail">
+        <section class="salaryVerdictPanel">
+          <div class="salaryVerdictHead">
+            <h3 class="salaryVerdictTitle">Verdict</h3>
+            <p class="salaryVerdictSub">Keep the answer direct.</p>
+          </div>
+
+          <div class="salaryVerdictGrid">
+            {verdictCards.map((item) => (
+              <article class={`salaryVerdictCard tone-${item.tone}`}>
+                <span class="salaryVerdictLabel">{item.label}</span>
+                <strong class="salaryVerdictValue">{item.value}</strong>
+                <p class="salaryVerdictNote">{item.note}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="salaryRangePanel">
+          <div class="salaryRangeHead">
+            <h3 class="salaryRangeTitle">Range map</h3>
+            <p class="salaryRangeSub">The raw answer in a tighter form.</p>
+          </div>
+
+          <div class="salaryRangeStats">
+            {rangeCallouts.map((item) => (
+              <article class="salaryRangeStat">
+                <span class="salaryRangeStatLabel">{item.label}</span>
+                <strong class="salaryRangeStatValue">{item.value}</strong>
+              </article>
+            ))}
+          </div>
+        </section>
+      </aside>
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="sectionHeader">
+      <div>
+        <h2 class="sectionTitle">Salary left by season</h2>
+        <p class="sectionSub">This section only needs to answer whether the dominant range stayed stable or moved.</p>
       </div>
       <div class="sectionPill">Trend</div>
     </div>
-    <div class="bandGrid">
-      <div class="span-8">
-        {salaryTrend ? (
-          <ChartPanel
-            title={salaryTrend.title}
-            meta={salaryTrend.meta}
-            helper={salaryTrend.helper}
-            footer={salaryTrend.footer}
-            series={salaryTrend.series}
-            accent="blue"
-          />
-        ) : null}
-      </div>
-      <div class="span-4 railStack">
-        <section class="sectionPanel">
-          <div class="sectionHeader">
-            <div>
-              <h3 class="sectionTitle">Signal Read</h3>
-              <p class="sectionSub">Watch for shifts toward tighter or looser builds.</p>
+
+    <div class="seasonSummaryStrip">
+      {seasonSummary.map((item) => (
+        <article class="seasonSummaryCard">
+          <span class="seasonSummaryLabel">{item.label}</span>
+          <strong class="seasonSummaryValue">{item.value}</strong>
+        </article>
+      ))}
+    </div>
+
+    <div class="salaryTrendLayout">
+      <div class="salaryTrendBoard">
+        <div class="salaryTrendHead">
+          <span>Season</span>
+          <span>Dominant pocket</span>
+          <span>Median left</span>
+          <span>Working band</span>
+          <span>Stability</span>
+          <span>Note</span>
+        </div>
+
+        {seasonRows.map((row) => (
+          <button
+            type="button"
+            class="salaryTrendRow filterControl"
+            data-filter-kind="season"
+            data-filter-value={row.season}
+            data-season={row.season}
+            aria-pressed="false"
+          >
+            <div class="salaryTrendCell salaryTrendSeason">{row.season}</div>
+            <div class="salaryTrendCell salaryTrendPocket">{row.dominant}</div>
+            <div class="salaryTrendCell">{row.median}</div>
+            <div class="salaryTrendCell">{row.band}</div>
+            <div class="salaryTrendCell">
+              <span class={`seasonStabilityBadge badge-${row.stability.toLowerCase().replaceAll(" ", "-")}`}>{row.stability}</span>
             </div>
-          </div>
-          <div class="statGrid">
-            <StatCard label="Current Bias" value="Balanced" note="No extreme drift." accent="slate" />
-            <StatCard label="If Rising" value="Leave More" note="Capture uniqueness." accent="blue" />
-          </div>
-        </section>
+            <div class="salaryTrendCell salaryTrendNote">{row.note}</div>
+          </button>
+        ))}
       </div>
     </div>
   </section>
 </ClassicReviewShell>
+
+<script is:inline>
+  (() => {
+    const root = document.querySelector(".salary-compact");
+    if (!root) return;
+
+    const baseSample = 127;
+
+    const bucketCounts = {
+      "$0 to $99": 6,
+      "$100 to $199": 11,
+      "$200 to $399": 19,
+      "$400 to $599": 31,
+      "$600 to $799": 38,
+      "$800 to $999": 13,
+      "$1,000 to $1,499": 7,
+      "$1,500+": 2,
+    };
+
+    const seasonSampleMap = {
+      "2018": 18,
+      "2019": 18,
+      "2020": 18,
+      "2021": 18,
+      "2022": 18,
+      "2023": 18,
+      "2024": 19,
+    };
+
+    const state = {
+      bucket: null,
+      season: null,
+    };
+
+    const chips = {
+      bucket: root.querySelector('[data-chip="bucket"]'),
+      season: root.querySelector('[data-chip="season"]'),
+    };
+
+    const controls = Array.from(root.querySelectorAll(".filterControl"));
+    const liveSampleCount = root.querySelector("#salary-live-sample-count");
+    const resetButton = root.querySelector("#reset-salary-filters");
+    const bucketRows = Array.from(root.querySelectorAll(".salaryBucketRow"));
+    const seasonRows = Array.from(root.querySelectorAll(".salaryTrendRow"));
+
+    const updateChips = () => {
+      const labels = {
+        bucket: state.bucket ? `Salary range: ${state.bucket}` : "Salary range: any",
+        season: state.season ? `Season: ${state.season}` : "Season: any",
+      };
+
+      Object.entries(chips).forEach(([key, el]) => {
+        if (!el) return;
+        el.textContent = labels[key];
+        el.classList.toggle("isEmpty", !state[key]);
+      });
+    };
+
+    const updateSample = () => {
+      if (state.bucket && bucketCounts[state.bucket] !== undefined) {
+        liveSampleCount.textContent = String(bucketCounts[state.bucket]);
+        return;
+      }
+
+      if (state.season && seasonSampleMap[state.season] !== undefined) {
+        liveSampleCount.textContent = String(seasonSampleMap[state.season]);
+        return;
+      }
+
+      liveSampleCount.textContent = String(baseSample);
+    };
+
+    const updateActiveStates = () => {
+      controls.forEach((control) => {
+        const kind = control.dataset.filterKind;
+        const value = control.dataset.filterValue;
+        const active = Boolean(kind && state[kind] && state[kind] === value);
+        control.classList.toggle("isActive", active);
+        control.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+    };
+
+    const updateVisibility = () => {
+      bucketRows.forEach((row) => {
+        const active = Boolean(state.bucket && row.dataset.bucket === state.bucket);
+        row.classList.toggle("isDimmed", Boolean(state.bucket) && !active);
+      });
+
+      seasonRows.forEach((row) => {
+        const active = Boolean(state.season && row.dataset.season === state.season);
+        row.classList.toggle("isDimmed", Boolean(state.season) && !active);
+      });
+    };
+
+    const render = () => {
+      updateChips();
+      updateSample();
+      updateActiveStates();
+      updateVisibility();
+    };
+
+    controls.forEach((control) => {
+      control.addEventListener("click", () => {
+        const kind = control.dataset.filterKind;
+        const value = control.dataset.filterValue;
+        if (!kind || !value) return;
+        state[kind] = state[kind] === value ? null : value;
+        render();
+      });
+    });
+
+    Object.entries(chips).forEach(([kind, chip]) => {
+      chip?.addEventListener("click", () => {
+        state[kind] = null;
+        render();
+      });
+    });
+
+    resetButton?.addEventListener("click", () => {
+      state.bucket = null;
+      state.season = null;
+      render();
+    });
+
+    render();
+  })();
+</script>
+
+<style>
+  :global(.classic-frame.with-drawer.salary-compact) {
+    padding-left: calc(clamp(18px, 2vw, 26px) + 54px);
+    padding-right: clamp(20px, 3vw, 36px);
+  }
+
+  :global(.classic-frame.with-drawer.salary-compact .content) {
+    gap: 18px;
+    margin-top: 4px;
+    width: min(1220px, calc(100vw - 128px));
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-inline: auto;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  :global(.classic-frame.with-drawer.salary-compact .hero) {
+    display: none;
+  }
+
+  :global(.salary-compact .sectionPanel) {
+    padding: 22px 22px 22px;
+    border-radius: 20px;
+  }
+
+  :global(.salary-compact .sectionHeader) {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  :global(.salary-compact .sectionTitle) {
+    font-size: clamp(22px, 1.8vw, 30px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  :global(.salary-compact .sectionSub) {
+    max-width: 78ch;
+    font-size: 13px;
+    line-height: 1.55;
+    font-weight: 560;
+  }
+
+  :global(.salary-compact .sectionPill) {
+    padding: 3px 8px;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+  }
+
+  .salaryHeroPanel {
+    padding: 16px 20px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(28, 28, 30, 0.92), rgba(20, 20, 22, 0.96));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.02),
+      0 12px 22px rgba(0, 0, 0, 0.24);
+  }
+
+  .salaryHero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.85fr);
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 18px;
+  }
+
+  .eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(191, 219, 254, 0.72);
+  }
+
+  .heroHeadline {
+    margin: 0;
+    max-width: 760px;
+    font-size: clamp(2.2rem, 3.6vw, 4.25rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    font-weight: 900;
+    color: rgba(255, 248, 230, 0.98);
+  }
+
+  .heroNarrative {
+    align-self: stretch;
+    padding-top: 8px;
+  }
+
+  .heroNarrative p {
+    margin: 0 0 12px;
+    max-width: 430px;
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: rgba(225, 225, 225, 0.72);
+  }
+
+  .heroStatGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .heroStatCard {
+    padding: 16px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: linear-gradient(180deg, rgba(10, 16, 28, 0.9), rgba(6, 10, 18, 0.95));
+  }
+
+  .heroStatLabel {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(148, 163, 184, 0.82);
+  }
+
+  .heroStatValue {
+    display: block;
+    color: #f8fafc;
+    font-size: clamp(18px, 1.6vw, 24px);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  .heroStatValueVerbose {
+    font-size: 0.98rem;
+    line-height: 1.3;
+  }
+
+  .activeFilterBar {
+    margin-top: 16px;
+    padding: 16px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: linear-gradient(180deg, rgba(10, 16, 28, 0.9), rgba(6, 10, 18, 0.95));
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .activeFilterSummaryLabel {
+    display: block;
+    margin-bottom: 6px;
+    color: rgba(148, 163, 184, 0.8);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+  }
+
+  .activeFilterSummaryValue {
+    color: #f8fafc;
+    font-size: 0.96rem;
+    font-weight: 800;
+  }
+
+  .activeChipRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .activeChip,
+  .resetFiltersButton {
+    border: 0;
+    cursor: pointer;
+    appearance: none;
+    font: inherit;
+  }
+
+  .activeChip {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.12);
+    color: rgba(219, 234, 254, 0.96);
+    font-size: 0.68rem;
+    line-height: 1;
+  }
+
+  .activeChip.isEmpty {
+    background: rgba(148, 163, 184, 0.1);
+    color: rgba(226, 232, 240, 0.72);
+  }
+
+  .resetFiltersButton {
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(239, 68, 68, 0.14);
+    color: rgba(254, 226, 226, 0.96);
+    font-size: 0.68rem;
+    line-height: 1;
+  }
+
+  .salaryBoardLayout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) 320px;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .salaryBoardMain {
+    padding: 16px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background:
+      radial-gradient(circle at top left, rgba(59, 130, 246, 0.08), transparent 28%),
+      linear-gradient(180deg, rgba(9, 14, 24, 0.95), rgba(4, 8, 15, 0.98));
+  }
+
+  .salaryBoardHead {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .salaryBoardTitle {
+    margin: 0 0 4px;
+    color: #f8fafc;
+    font-size: 0.96rem;
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  .salaryBoardSub {
+    margin: 0;
+    color: rgba(226, 232, 240, 0.78);
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 56ch;
+  }
+
+  .salaryBoardMedian {
+    min-width: 88px;
+    text-align: right;
+  }
+
+  .salaryBoardMedian span {
+    display: block;
+    margin-bottom: 4px;
+    color: rgba(148, 163, 184, 0.78);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .salaryBoardMedian strong {
+    color: #f8fafc;
+    font-size: 0.96rem;
+    font-weight: 800;
+  }
+
+  .salaryBracket {
+    position: relative;
+    margin-bottom: 16px;
+    padding-top: 12px;
+  }
+
+  .salaryBracketLine {
+    height: 2px;
+    margin-left: 31%;
+    width: 43%;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.12), rgba(59, 130, 246, 0.98), rgba(59, 130, 246, 0.12));
+    position: relative;
+    border-radius: 999px;
+    box-shadow: 0 0 18px rgba(59, 130, 246, 0.22);
+  }
+
+  .salaryBracketLine::before,
+  .salaryBracketLine::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    width: 2px;
+    height: 16px;
+    background: rgba(59, 130, 246, 0.96);
+    border-radius: 999px;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.2);
+  }
+
+  .salaryBracketLine::before {
+    left: 0;
+  }
+
+  .salaryBracketLine::after {
+    right: 0;
+  }
+
+  .salaryBracketLabel {
+    margin-top: 8px;
+    text-align: center;
+    color: rgba(219, 234, 254, 0.98);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .salaryBucketList {
+    display: grid;
+    gap: 12px;
+  }
+
+  .salaryBucketRow {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.9fr) minmax(0, 1fr) 72px;
+    gap: 14px;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    text-align: left;
+    width: 100%;
+    font: inherit;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .salaryBucketLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .salaryBucketLabelLine {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .salaryBucketLabel {
+    color: #f8fafc;
+    font-size: 0.88rem;
+    font-weight: 800;
+  }
+
+  .salaryBucketTag {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 7px;
+    border-radius: 999px;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .tag-dominant,
+  .tag-core {
+    background: rgba(59, 130, 246, 0.14);
+    color: rgba(219, 234, 254, 0.96);
+  }
+
+  .tag-live,
+  .tag-secondary {
+    background: rgba(148, 163, 184, 0.12);
+    color: rgba(226, 232, 240, 0.88);
+  }
+
+  .tag-thin,
+  .tag-outlier {
+    background: rgba(245, 158, 11, 0.14);
+    color: rgba(253, 230, 138, 0.96);
+  }
+
+  .salaryBucketCount {
+    color: rgba(148, 163, 184, 0.84);
+    font-size: 0.72rem;
+  }
+
+  .salaryBucketTrack {
+    height: 12px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(148, 163, 184, 0.12);
+    position: relative;
+  }
+
+  .salaryBucketFill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.92), rgba(96, 165, 250, 0.8));
+  }
+
+  .state-secondary .salaryBucketFill {
+    opacity: 0.72;
+  }
+
+  .state-rare .salaryBucketFill {
+    opacity: 0.34;
+  }
+
+  .salaryBucketRight {
+    text-align: right;
+  }
+
+  .salaryBucketRight strong {
+    color: rgba(226, 232, 240, 0.9);
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .salaryBoardRail {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+  }
+
+  .salaryVerdictPanel,
+  .salaryRangePanel {
+    padding: 16px 16px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: linear-gradient(180deg, rgba(10, 16, 28, 0.9), rgba(6, 10, 18, 0.95));
+  }
+
+  .salaryVerdictHead,
+  .salaryRangeHead {
+    margin-bottom: 12px;
+  }
+
+  .salaryVerdictTitle,
+  .salaryRangeTitle {
+    margin: 0 0 4px;
+    color: #f8fafc;
+    font-size: 0.92rem;
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  .salaryVerdictSub,
+  .salaryRangeSub {
+    margin: 0;
+    color: rgba(226, 232, 240, 0.74);
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  .salaryVerdictGrid,
+  .salaryRangeStats {
+    display: grid;
+    gap: 10px;
+  }
+
+  .salaryVerdictCard,
+  .salaryRangeStat {
+    padding: 12px 13px;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .salaryVerdictCard.tone-primary {
+    box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.22);
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.09), rgba(255, 255, 255, 0.02));
+  }
+
+  .salaryVerdictCard.tone-secondary {
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.14);
+  }
+
+  .salaryVerdictCard.tone-fade {
+    opacity: 0.92;
+  }
+
+  .salaryVerdictLabel,
+  .salaryRangeStatLabel {
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(148, 163, 184, 0.8);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .salaryVerdictValue,
+  .salaryRangeStatValue {
+    color: #f8fafc;
+    font-size: 0.92rem;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  .salaryVerdictNote {
+    margin: 7px 0 0;
+    color: rgba(226, 232, 240, 0.76);
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  .seasonSummaryStrip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .seasonSummaryCard {
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .seasonSummaryLabel {
+    display: block;
+    margin-bottom: 6px;
+    color: rgba(148, 163, 184, 0.82);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .seasonSummaryValue {
+    display: block;
+    color: #f8fafc;
+    font-size: 0.9rem;
+    line-height: 1.15;
+    font-weight: 800;
+  }
+
+  .salaryTrendLayout {
+    display: grid;
+    gap: 12px;
+  }
+
+  .salaryTrendBoard {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: linear-gradient(180deg, rgba(9, 14, 24, 0.95), rgba(4, 8, 15, 0.98));
+  }
+
+  .salaryTrendHead,
+  .salaryTrendRow {
+    display: grid;
+    grid-template-columns: 0.7fr 1.1fr 0.9fr 1.15fr 0.95fr 1.8fr;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 14px;
+  }
+
+  .salaryTrendHead {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+    color: rgba(148, 163, 184, 0.82);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .salaryTrendRow + .salaryTrendRow {
+    border-top: 1px solid rgba(148, 163, 184, 0.08);
+  }
+
+  .salaryTrendRow {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font: inherit;
+  }
+
+  .salaryTrendCell {
+    color: rgba(226, 232, 240, 0.88);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .salaryTrendSeason,
+  .salaryTrendPocket {
+    color: #f8fafc;
+    font-weight: 800;
+  }
+
+  .salaryTrendNote {
+    color: rgba(226, 232, 240, 0.76);
+  }
+
+  .seasonStabilityBadge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .badge-stable {
+    background: rgba(59, 130, 246, 0.14);
+    color: rgba(219, 234, 254, 0.96);
+  }
+
+  .badge-upper-lean {
+    background: rgba(245, 158, 11, 0.14);
+    color: rgba(253, 230, 138, 0.96);
+  }
+
+  .filterControl.isActive {
+    box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.42), 0 0 0 1px rgba(59, 130, 246, 0.12);
+    background-color: rgba(59, 130, 246, 0.06);
+  }
+
+  .filterControl.isDimmed {
+    opacity: 0.32;
+  }
+
+  .filterControl {
+    transition:
+      opacity 120ms ease,
+      transform 120ms ease,
+      box-shadow 120ms ease,
+      background-color 120ms ease;
+  }
+
+  .filterControl:hover {
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 1240px) {
+    :global(.classic-frame.with-drawer.salary-compact .content) {
+      width: min(1160px, calc(100vw - 112px));
+    }
+  }
+
+  @media (max-width: 1180px) {
+    .salaryHero {
+      grid-template-columns: 1fr;
+    }
+
+    .heroNarrative p {
+      max-width: none;
+    }
+
+    .salaryBoardLayout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .heroStatGrid,
+    .seasonSummaryStrip {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .activeFilterBar {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 900px) {
+    :global(.classic-frame.with-drawer.salary-compact) {
+      padding-left: calc(clamp(14px, 4vw, 20px) + 46px);
+    }
+
+    :global(.classic-frame.with-drawer.salary-compact .content) {
+      width: min(100%, calc(100vw - 80px));
+    }
+  }
+
+  @media (max-width: 820px) {
+    .salaryHeroPanel {
+      padding: 14px;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .heroStatGrid,
+    .seasonSummaryStrip {
+      grid-template-columns: 1fr;
+    }
+
+    .heroHeadline {
+      font-size: clamp(1.8rem, 9vw, 3rem);
+    }
+
+    .heroNarrative p {
+      max-width: none;
+      font-size: 0.92rem;
+    }
+
+    .salaryTrendBoard {
+      overflow-x: auto;
+    }
+
+    .salaryTrendHead,
+    .salaryTrendRow {
+      min-width: 980px;
+    }
+
+    .salaryBucketRow {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .salaryBucketRight {
+      text-align: left;
+    }
+  }
+</style>

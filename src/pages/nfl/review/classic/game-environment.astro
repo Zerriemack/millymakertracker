@@ -1,108 +1,1024 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
-import StatCard from "../../../../components/nfl/classic/StatCard.astro";
-import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
-import { classicDistributionSections } from "../../../../data/nflClassicReviewMock";
 
 const pageTitle = "NFL Classic Review | Game Environment";
-const teamSection = classicDistributionSections.find((s) => s.title === "Max From One Team");
-const gameSection = classicDistributionSections.find((s) => s.title === "Max From One Game");
+
+const heroCards = [
+  {
+    label: "Primary read",
+    value: "Closing total",
+    note: "Best single market read on scoring pressure before lock.",
+  },
+  {
+    label: "Second read",
+    value: "Closing spread",
+    note: "Best single market read on whether a game stayed live.",
+  },
+  {
+    label: "Working rule",
+    value: "46 to 53.5 total",
+    note: "Most of the usable environment sample should live here first.",
+  },
+  {
+    label: "Spread guardrail",
+    value: "4.5 or less",
+    note: "Closer games keep both sides live longer.",
+  },
+];
+
+const decisionBoard = [
+  {
+    title: "Core lane",
+    total: "46 to 53.5",
+    spread: "Pick to 4.5",
+    share: "52%",
+    tone: "core",
+    note: "This is the center of the page. Strong scoring expectation with enough game pressure to keep both teams active.",
+  },
+  {
+    title: "Score first lane",
+    total: "50+",
+    spread: "5 to 6.5",
+    share: "17%",
+    tone: "secondary",
+    note: "Still viable, but the game starts losing some four quarter tension.",
+  },
+  {
+    title: "Closer than expected lane",
+    total: "42 to 45.5",
+    spread: "Pick to 2.5",
+    share: "14%",
+    tone: "secondary",
+    note: "Lower total can still win when the game stays tight and volume holds.",
+  },
+  {
+    title: "Thin lane",
+    total: "Below 42 or spread 10+",
+    spread: "Any",
+    share: "9%",
+    tone: "thin",
+    note: "Keep for reference. Do not let this drive weekly construction rules.",
+  },
+];
+
+const marketMap = [
+  { total: "58+", spread: "Pick to 2.5", winners: 2, size: 14, x: 90, y: 18, tone: "thin" },
+  { total: "54 to 57.5", spread: "Pick to 2.5", winners: 6, size: 18, x: 76, y: 18, tone: "secondary" },
+  { total: "50 to 53.5", spread: "Pick to 2.5", winners: 14, size: 26, x: 61, y: 18, tone: "core" },
+  { total: "46 to 49.5", spread: "Pick to 2.5", winners: 18, size: 30, x: 46, y: 18, tone: "core" },
+  { total: "42 to 45.5", spread: "Pick to 2.5", winners: 9, size: 20, x: 31, y: 18, tone: "secondary" },
+  { total: "Below 42", spread: "Pick to 2.5", winners: 4, size: 16, x: 16, y: 18, tone: "thin" },
+
+  { total: "58+", spread: "3 to 4.5", winners: 1, size: 12, x: 90, y: 34, tone: "thin" },
+  { total: "54 to 57.5", spread: "3 to 4.5", winners: 4, size: 16, x: 76, y: 34, tone: "secondary" },
+  { total: "50 to 53.5", spread: "3 to 4.5", winners: 11, size: 22, x: 61, y: 34, tone: "core" },
+  { total: "46 to 49.5", spread: "3 to 4.5", winners: 15, size: 26, x: 46, y: 34, tone: "core" },
+  { total: "42 to 45.5", spread: "3 to 4.5", winners: 6, size: 17, x: 31, y: 34, tone: "secondary" },
+  { total: "Below 42", spread: "3 to 4.5", winners: 2, size: 13, x: 16, y: 34, tone: "thin" },
+
+  { total: "58+", spread: "5 to 6.5", winners: 1, size: 12, x: 90, y: 50, tone: "thin" },
+  { total: "54 to 57.5", spread: "5 to 6.5", winners: 5, size: 17, x: 76, y: 50, tone: "secondary" },
+  { total: "50 to 53.5", spread: "5 to 6.5", winners: 6, size: 18, x: 61, y: 50, tone: "secondary" },
+  { total: "46 to 49.5", spread: "5 to 6.5", winners: 6, size: 18, x: 46, y: 50, tone: "secondary" },
+  { total: "42 to 45.5", spread: "5 to 6.5", winners: 4, size: 16, x: 31, y: 50, tone: "thin" },
+  { total: "Below 42", spread: "5 to 6.5", winners: 2, size: 13, x: 16, y: 50, tone: "thin" },
+
+  { total: "58+", spread: "7+", winners: 2, size: 13, x: 90, y: 69, tone: "thin" },
+  { total: "54 to 57.5", spread: "7+", winners: 2, size: 13, x: 76, y: 69, tone: "thin" },
+  { total: "50 to 53.5", spread: "7+", winners: 3, size: 15, x: 61, y: 69, tone: "thin" },
+  { total: "46 to 49.5", spread: "7+", winners: 2, size: 13, x: 46, y: 69, tone: "thin" },
+  { total: "42 to 45.5", spread: "7+", winners: 4, size: 16, x: 31, y: 69, tone: "thin" },
+  { total: "Below 42", spread: "7+", winners: 3, size: 15, x: 16, y: 69, tone: "thin" },
+];
+
+const seasonLanes = [
+  {
+    season: "2018",
+    totalMode: "46 to 49.5",
+    spreadMode: "3 to 4.5",
+    drift: "Balanced",
+    xpos: 46,
+    note: "Strong total, healthy tension, no major drift from center.",
+  },
+  {
+    season: "2019",
+    totalMode: "46 to 49.5",
+    spreadMode: "Pick to 2.5",
+    drift: "Closer",
+    xpos: 42,
+    note: "Tighter spread pulled the center toward more back and forth game flow.",
+  },
+  {
+    season: "2020",
+    totalMode: "50 to 53.5",
+    spreadMode: "3 to 4.5",
+    drift: "Higher total",
+    xpos: 58,
+    note: "Scoring pressure rose, but the page still stayed inside the same broad lane.",
+  },
+  {
+    season: "2021",
+    totalMode: "46 to 49.5",
+    spreadMode: "Pick to 2.5",
+    drift: "Closer",
+    xpos: 43,
+    note: "Returned toward the live game center.",
+  },
+  {
+    season: "2022",
+    totalMode: "50 to 53.5",
+    spreadMode: "Pick to 2.5",
+    drift: "Higher total",
+    xpos: 59,
+    note: "Ceiling weeks pushed scoring expectation up without losing competitiveness.",
+  },
+  {
+    season: "2023",
+    totalMode: "46 to 49.5",
+    spreadMode: "3 to 4.5",
+    drift: "Balanced",
+    xpos: 47,
+    note: "Stayed near the long term center.",
+  },
+  {
+    season: "2024",
+    totalMode: "50 to 53.5",
+    spreadMode: "Pick to 2.5",
+    drift: "Higher total",
+    xpos: 60,
+    note: "Total lifted again, spread stayed tight enough for full game pressure.",
+  },
+];
+
+const pipelineSteps = [
+  {
+    step: "01",
+    title: "Get the historical market numbers",
+    note: "Pull closing total and closing spread for every slate game. If you want one back check, add actual combined points after the market fields are in place.",
+  },
+  {
+    step: "02",
+    title: "Store environment on the game record",
+    note: "Do not place environment numbers on lineup rows. Attach them to each game once, then join them into winner analysis from there.",
+  },
+  {
+    step: "03",
+    title: "Anchor each winner to its main game",
+    note: "Use the quarterback game as the default anchor. If your lineup analysis already tags a different primary game stack, allow the page to follow that tag.",
+  },
+  {
+    step: "04",
+    title: "Reduce the page to two first reads",
+    note: "Lead with total and spread. Keep weather, roof, pace, and injuries in a secondary layer after the market center is stable.",
+  },
+];
+
+const buildRules = [
+  "Start weekly research inside totals of 46 to 53.5.",
+  "Prefer games with spreads of 4.5 or less until a slate gives strong reason to move.",
+  "Treat high total blowouts as thinner paths than high total close games.",
+  "Use actual combined points as a check on market accuracy, not as the lead sorting field.",
+];
+
+const filterChips = ["Sample: 127 winners", "Total band: any", "Spread band: any", "Season: any", "Roof: any", "Weather: any"];
 ---
 
 <ClassicReviewShell
   title={pageTitle}
   headline="Game Environment"
-  subtitle="How concentrated winners get by team and by game environment."
-  accent="slate"
-  class="with-drawer"
+  subtitle="Where winning NFL Classic lineups came from once market context is reduced to the two numbers that carry most of the page."
+  accent="blue"
+  class="with-drawer gameenv-page"
+  hideHero
 >
-  <ClassicReviewDrawer active="environment" mode="hover" />
+  <ClassicReviewDrawer active="game-environment" mode="hover" />
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Team Concentration</h2>
-        <p class="sectionSub">How many players winners roster from a single team.</p>
+  <section class="sectionPanel gameHeroPanel">
+    <div class="gameHeroTop">
+      <div class="gameHeroCopy">
+        <p class="eyebrow">Classic Review</p>
+        <h1 class="gameHeroHeadline">WINNING GAME ENVIRONMENTS</h1>
       </div>
-      <div class="sectionPill">Core</div>
+
+      <div class="gameHeroText">
+        <p>
+          This page tracks where winning NFL Classic lineups came from when the game is reduced to scoring pressure and game tension.
+        </p>
+      </div>
     </div>
-    <div class="bandGrid">
-      <div class="span-8">
-        {teamSection?.charts?.map((chart) => (
-          <ChartPanel
-            title={chart.title}
-            meta={chart.meta}
-            helper={chart.helper}
-            footer={chart.footer}
-            series={chart.series}
-            accent="slate"
-            variant="lead"
-          />
-        ))}
-      </div>
-      <div class="span-4 railStack">
-        <section class="sectionPanel">
-          <div class="sectionHeader">
-            <div>
-              <h3 class="sectionTitle">Interpretation</h3>
-              <p class="sectionSub">Use this to cap or stretch team stacks.</p>
-            </div>
-          </div>
-          <div class="statGrid">
-            {teamSection?.stats?.map((stat, idx) => (
-              <StatCard
-                label={stat.label}
-                value={stat.value}
-                accent={idx === 0 ? "slate" : "slate"}
-              />
-            ))}
-          </div>
-        </section>
-      </div>
+
+    <div class="heroCards">
+      {heroCards.map((card) => (
+        <article class="heroCard">
+          <span class="heroCardLabel">{card.label}</span>
+          <strong class="heroCardValue">{card.value}</strong>
+          <p class="heroCardNote">{card.note}</p>
+        </article>
+      ))}
+    </div>
+
+    <div class="filterRail">
+      {filterChips.map((chip, index) => (
+        <span class:list={["filterChip", index === 0 && "filterChipStrong"]}>{chip}</span>
+      ))}
+      <button type="button" class="filterReset">Reset all</button>
     </div>
   </section>
 
   <section class="sectionPanel">
-    <div class="sectionHeader">
+    <div class="splitHeader">
       <div>
-        <h2 class="sectionTitle">Game Concentration</h2>
-        <p class="sectionSub">How often winners focus on a single game environment.</p>
+        <p class="sectionEyebrow">Decision board</p>
+        <h2 class="sectionTitle">Where the page should start</h2>
       </div>
-      <div class="sectionPill">Support</div>
+      <p class="sectionSub">
+        The goal here is not to chase every input. It is to find the center of the winner sample, separate the usable lanes from the thin ones, and give the page a rule set.
+      </p>
     </div>
-    <div class="bandGrid">
-      <div class="span-8">
-        {gameSection?.charts?.map((chart) => (
-          <ChartPanel
-            title={chart.title}
-            meta={chart.meta}
-            helper={chart.helper}
-            footer={chart.footer}
-            series={chart.series}
-            accent="slate"
-          />
-        ))}
-      </div>
-      <div class="span-4 railStack">
-        <section class="sectionPanel">
-          <div class="sectionHeader">
+
+    <div class="decisionGrid">
+      {decisionBoard.map((row) => (
+        <article class={`decisionCard tone-${row.tone}`}>
+          <div class="decisionTop">
+            <span class="decisionTitle">{row.title}</span>
+            <strong class="decisionShare">{row.share}</strong>
+          </div>
+          <div class="decisionStats">
             <div>
-              <h3 class="sectionTitle">Signal Read</h3>
-              <p class="sectionSub">Use this to gauge when a single game dominates.</p>
+              <span>Total</span>
+              <strong>{row.total}</strong>
+            </div>
+            <div>
+              <span>Spread</span>
+              <strong>{row.spread}</strong>
             </div>
           </div>
-          <div class="statGrid">
-            {gameSection?.stats?.map((stat, idx) => (
-              <StatCard
-                label={stat.label}
-                value={stat.value}
-                accent={idx === 0 ? "slate" : "slate"}
-              />
-            ))}
-          </div>
-        </section>
+          <p class="decisionNote">{row.note}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="sectionPanel marketMapPanel">
+    <div class="splitHeader">
+      <div>
+        <p class="sectionEyebrow">Market map</p>
+        <h2 class="sectionTitle">Winner environment field</h2>
       </div>
+      <p class="sectionSub">
+        Each node is an environment pocket. Position shows total and spread. Size shows how many winners landed there.
+      </p>
+    </div>
+
+    <div class="marketMapWrap">
+      <div class="spreadLabels">
+        <span>Pick to 2.5</span>
+        <span>3 to 4.5</span>
+        <span>5 to 6.5</span>
+        <span>7+</span>
+      </div>
+
+      <div class="marketMap">
+        <div class="marketGrid"></div>
+
+        {marketMap.map((node) => (
+          <div
+            class={`marketNode tone-${node.tone}`}
+            style={`left:${node.x}%; top:${node.y}%; width:${node.size}px; height:${node.size}px;`}
+            title={`${node.total} • ${node.spread} • ${node.winners} winners`}
+          >
+            <span>{node.winners}</span>
+          </div>
+        ))}
+
+        <div class="totalAxis">
+          <span>Below 42</span>
+          <span>42 to 45.5</span>
+          <span>46 to 49.5</span>
+          <span>50 to 53.5</span>
+          <span>54 to 57.5</span>
+          <span>58+</span>
+        </div>
+      </div>
+
+      <div class="marketLegend">
+        <article class="legendCard">
+          <span class="legendDot legendCore"></span>
+          <div>
+            <strong>Core field</strong>
+            <p>Main center of the sample.</p>
+          </div>
+        </article>
+
+        <article class="legendCard">
+          <span class="legendDot legendSecondary"></span>
+          <div>
+            <strong>Secondary field</strong>
+            <p>Still live, but thinner.</p>
+          </div>
+        </article>
+
+        <article class="legendCard">
+          <span class="legendDot legendThin"></span>
+          <div>
+            <strong>Thin field</strong>
+            <p>Keep for reference, not for default weekly rules.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionPanel seasonPanel">
+    <div class="splitHeader">
+      <div>
+        <p class="sectionEyebrow">Season movement</p>
+        <h2 class="sectionTitle">Where the center moved by year</h2>
+      </div>
+      <p class="sectionSub">
+        This is the year by year check on whether the strongest environment stayed near the same center or drifted.
+      </p>
+    </div>
+
+    <div class="seasonLaneWrap">
+      {seasonLanes.map((row) => (
+        <article class="seasonLane">
+          <div class="seasonMeta">
+            <strong>{row.season}</strong>
+            <span>{row.drift}</span>
+          </div>
+
+          <div class="seasonTrack">
+            <div class="seasonTrackFill"></div>
+            <div class="seasonMarker" style={`left:${row.xpos}%`}>
+              <span></span>
+            </div>
+          </div>
+
+          <div class="seasonRead">
+            <div class="seasonReadTop">
+              <strong>{row.totalMode}</strong>
+              <span>{row.spreadMode}</span>
+            </div>
+            <p>{row.note}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="sectionPanel">
+    <div class="splitHeader">
+      <div>
+        <p class="sectionEyebrow">Data flow</p>
+        <h2 class="sectionTitle">How to wire this into imported winners</h2>
+      </div>
+      <p class="sectionSub">
+        The page stays clean once environment belongs to games first and winner analysis joins into it second.
+      </p>
+    </div>
+
+    <div class="pipelineGrid">
+      {pipelineSteps.map((step) => (
+        <article class="pipeCard">
+          <span class="pipeStep">{step.step}</span>
+          <h3 class="pipeTitle">{step.title}</h3>
+          <p class="pipeNote">{step.note}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="sectionPanel rulePanel">
+    <div class="ruleHeader">
+      <div>
+        <p class="sectionEyebrow">Build rules</p>
+        <h2 class="sectionTitle">What the page should tell a player</h2>
+      </div>
+
+      <div class="ruleBadge">2 lead metrics</div>
+    </div>
+
+    <div class="ruleBody">
+      <div class="ruleList">
+        {buildRules.map((rule, index) => (
+          <article class="ruleCard">
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <p>{rule}</p>
+          </article>
+        ))}
+      </div>
+
+      <aside class="ruleAside">
+        <span class="ruleAsideLabel">Best first schema add</span>
+        <strong class="ruleAsideValue">games.closingTotal</strong>
+        <strong class="ruleAsideValue">games.closingSpread</strong>
+        <p class="ruleAsideNote">
+          Add actualCombinedPoints after the market layer is stable.
+        </p>
+      </aside>
     </div>
   </section>
 </ClassicReviewShell>
+
+<style>
+  :global(.classic-frame.with-drawer.gameenv-page) {
+    padding-left: calc(clamp(18px, 2vw, 26px) + 54px);
+    padding-right: clamp(20px, 3vw, 36px);
+  }
+
+  :global(.classic-frame.with-drawer.gameenv-page .content) {
+    gap: 18px;
+    margin-top: 4px;
+    width: min(1220px, calc(100vw - 128px));
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  :global(.classic-frame.with-drawer.gameenv-page .hero) {
+    display: none;
+  }
+
+  :global(.gameenv-page .sectionPanel) {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .gameHeroPanel {
+    padding: 18px 20px 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+      radial-gradient(circle at 18% 0%, rgba(59, 130, 246, 0.24), transparent 34%),
+      radial-gradient(circle at 85% 20%, rgba(16, 185, 129, 0.14), transparent 28%),
+      linear-gradient(180deg, rgba(28, 28, 30, 0.92), rgba(20, 20, 22, 0.96));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.02),
+      0 12px 22px rgba(0, 0, 0, 0.24);
+  }
+
+  .gameHeroTop {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 18px;
+  }
+
+  .eyebrow,
+  .sectionEyebrow {
+    margin: 0 0 8px;
+    font-size: 0.72rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: rgba(191, 219, 254, 0.72);
+  }
+
+  .gameHeroHeadline {
+    margin: 0;
+    max-width: 760px;
+    font-size: clamp(2.2rem, 3.7vw, 4.35rem);
+    line-height: 0.94;
+    letter-spacing: -0.045em;
+    font-weight: 900;
+    color: rgba(248, 250, 252, 0.98);
+  }
+
+  .gameHeroText p,
+  .sectionSub,
+  .heroCardNote,
+  .decisionNote,
+  .pipeNote,
+  .seasonRead p,
+  .ruleCard p,
+  .ruleAsideNote,
+  .legendCard p {
+    margin: 0;
+    color: rgba(226, 232, 240, 0.76);
+    font-size: 0.92rem;
+    line-height: 1.58;
+  }
+
+  .heroCards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .heroCard,
+  .decisionCard,
+  .legendCard,
+  .pipeCard,
+  .ruleCard,
+  .ruleAside,
+  .seasonLane {
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: linear-gradient(180deg, rgba(10, 16, 28, 0.9), rgba(6, 10, 18, 0.95));
+  }
+
+  .heroCard {
+    padding: 16px 16px 14px;
+    min-height: 126px;
+  }
+
+  .heroCardLabel,
+  .ruleAsideLabel {
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(148, 163, 184, 0.82);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .heroCardValue {
+    display: block;
+    margin-bottom: 8px;
+    color: #f8fafc;
+    font-size: clamp(1.05rem, 1.7vw, 1.45rem);
+    line-height: 1.05;
+    font-weight: 800;
+  }
+
+  .filterRail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .filterChip,
+  .filterReset {
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    padding: 8px 10px;
+    font-size: 0.72rem;
+    line-height: 1;
+    color: rgba(226, 232, 240, 0.82);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .filterChipStrong {
+    color: #f8fafc;
+    background: rgba(59, 130, 246, 0.14);
+    border-color: rgba(59, 130, 246, 0.22);
+  }
+
+  .filterReset {
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .splitHeader,
+  .ruleHeader {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+    gap: 18px;
+    align-items: end;
+    margin-bottom: 14px;
+  }
+
+  .sectionTitle {
+    margin: 0;
+    color: #f8fafc;
+    font-size: clamp(1.45rem, 2vw, 2.1rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-weight: 850;
+  }
+
+  .decisionGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .decisionCard {
+    padding: 14px;
+    min-height: 190px;
+  }
+
+  .decisionTop {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .decisionTitle {
+    color: #f8fafc;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .decisionShare {
+    color: #f8fafc;
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+
+  .decisionStats {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .decisionStats div {
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .decisionStats span {
+    display: block;
+    margin-bottom: 4px;
+    color: rgba(148, 163, 184, 0.82);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .decisionStats strong {
+    color: #f8fafc;
+    font-size: 0.96rem;
+    font-weight: 800;
+  }
+
+  .tone-core {
+    box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.2);
+  }
+
+  .tone-secondary {
+    box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.16);
+  }
+
+  .tone-thin {
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.1);
+  }
+
+  .marketMapPanel {
+    overflow: hidden;
+  }
+
+  .marketMapWrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 230px;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .spreadLabels {
+    display: grid;
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    position: absolute;
+    left: 8px;
+    top: 20px;
+    bottom: 44px;
+    width: 90px;
+    pointer-events: none;
+  }
+
+  .spreadLabels span {
+    align-self: center;
+    color: rgba(148, 163, 184, 0.8);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .marketMap {
+    position: relative;
+    min-height: 430px;
+    padding: 26px 20px 48px 96px;
+    border-radius: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background:
+      linear-gradient(180deg, rgba(10, 16, 28, 0.9), rgba(6, 10, 18, 0.95)),
+      radial-gradient(circle at center, rgba(59, 130, 246, 0.08), transparent 55%);
+    overflow: hidden;
+  }
+
+  .marketGrid {
+    position: absolute;
+    inset: 20px 20px 44px 96px;
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: calc(100% / 5) calc(100% / 4);
+    border-radius: 14px;
+  }
+
+  .marketNode {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.6), 0 0 24px rgba(59, 130, 246, 0.14);
+  }
+
+  .marketNode span {
+    color: #f8fafc;
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+
+  .marketNode.tone-core {
+    background: radial-gradient(circle at 30% 30%, rgba(96, 165, 250, 1), rgba(37, 99, 235, 0.98));
+  }
+
+  .marketNode.tone-secondary {
+    background: radial-gradient(circle at 30% 30%, rgba(52, 211, 153, 1), rgba(5, 150, 105, 0.98));
+  }
+
+  .marketNode.tone-thin {
+    background: radial-gradient(circle at 30% 30%, rgba(100, 116, 139, 0.9), rgba(51, 65, 85, 0.95));
+  }
+
+  .totalAxis {
+    position: absolute;
+    left: 96px;
+    right: 20px;
+    bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .totalAxis span {
+    text-align: center;
+    color: rgba(148, 163, 184, 0.82);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .marketLegend {
+    display: grid;
+    gap: 10px;
+  }
+
+  .legendCard {
+    display: grid;
+    grid-template-columns: 14px 1fr;
+    gap: 12px;
+    padding: 14px;
+    align-items: start;
+  }
+
+  .legendDot {
+    width: 14px;
+    height: 14px;
+    margin-top: 3px;
+    border-radius: 999px;
+  }
+
+  .legendCore {
+    background: rgba(59, 130, 246, 0.96);
+  }
+
+  .legendSecondary {
+    background: rgba(16, 185, 129, 0.96);
+  }
+
+  .legendThin {
+    background: rgba(100, 116, 139, 0.9);
+  }
+
+  .legendCard strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #f8fafc;
+    font-size: 0.95rem;
+  }
+
+  .seasonLaneWrap {
+    display: grid;
+    gap: 12px;
+  }
+
+  .seasonLane {
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr) minmax(260px, 0.9fr);
+    gap: 14px;
+    align-items: center;
+  }
+
+  .seasonMeta strong,
+  .seasonReadTop strong,
+  .pipeTitle,
+  .ruleAsideValue {
+    color: #f8fafc;
+  }
+
+  .seasonMeta strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .seasonMeta span,
+  .seasonReadTop span,
+  .pipeStep,
+  .ruleBadge {
+    color: rgba(148, 163, 184, 0.84);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .seasonTrack {
+    position: relative;
+    height: 22px;
+    display: flex;
+    align-items: center;
+  }
+
+  .seasonTrackFill {
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(100, 116, 139, 0.2) 0%,
+        rgba(16, 185, 129, 0.25) 25%,
+        rgba(59, 130, 246, 0.35) 50%,
+        rgba(16, 185, 129, 0.25) 75%,
+        rgba(100, 116, 139, 0.2) 100%
+      );
+  }
+
+  .seasonMarker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .seasonMarker span {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background: #f8fafc;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18);
+  }
+
+  .seasonReadTop {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+
+  .seasonReadTop strong {
+    font-size: 0.94rem;
+    font-weight: 800;
+  }
+
+  .pipelineGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .pipeCard {
+    padding: 16px;
+    min-height: 168px;
+  }
+
+  .pipeStep {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .pipeTitle {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  .rulePanel {
+    overflow: hidden;
+  }
+
+  .ruleBadge {
+    justify-self: start;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .ruleBody {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) 260px;
+    gap: 14px;
+  }
+
+  .ruleList {
+    display: grid;
+    gap: 10px;
+  }
+
+  .ruleCard {
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .ruleCard span {
+    color: rgba(148, 163, 184, 0.82);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding-top: 3px;
+  }
+
+  .ruleAside {
+    padding: 16px;
+    display: grid;
+    gap: 8px;
+    align-content: start;
+  }
+
+  .ruleAsideValue {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.15;
+    font-weight: 800;
+  }
+
+  @media (max-width: 1180px) {
+    .heroCards,
+    .decisionGrid,
+    .pipelineGrid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .marketMapWrap,
+    .ruleBody {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 920px) {
+    .gameHeroTop,
+    .splitHeader,
+    .ruleHeader,
+    .seasonLane {
+      grid-template-columns: 1fr;
+    }
+
+    .filterReset {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 780px) {
+    :global(.classic-frame.with-drawer.gameenv-page) {
+      padding-left: calc(clamp(14px, 4vw, 20px) + 46px);
+    }
+
+    :global(.classic-frame.with-drawer.gameenv-page .content) {
+      width: min(100%, calc(100vw - 80px));
+    }
+
+    .heroCards,
+    .decisionGrid,
+    .pipelineGrid {
+      grid-template-columns: 1fr;
+    }
+
+    .marketMap {
+      min-height: 480px;
+      padding-left: 80px;
+    }
+
+    .marketGrid {
+      left: 80px;
+    }
+
+    .totalAxis {
+      left: 80px;
+    }
+
+    .spreadLabels {
+      width: 72px;
+    }
+  }
+</style>
