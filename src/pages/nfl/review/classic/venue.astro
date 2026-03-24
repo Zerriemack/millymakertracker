@@ -360,7 +360,10 @@ const chartRows = stadiumRows.map((row, index) => {
 
           <g class="wheelCenterText">
             <text x={cx} y={cy - 42} text-anchor="middle" class="centerEyebrow" id="wheel-center-eyebrow">Venue signal</text>
-            <text x={cx} y={cy - 2} text-anchor="middle" class="centerTitle" id="wheel-center-title">Indoor edge</text>
+            <text x={cx} y={cy - 15} text-anchor="middle" class="centerTitle" id="wheel-center-title">
+              <tspan x={cx} dy="0">Stadium</tspan>
+              <tspan x={cx} dy="30">Edge</tspan>
+            </text>
             <text x={cx} y={cy + 34} text-anchor="middle" class="centerSub" id="wheel-center-sub"></text>
           </g>
         </svg>
@@ -494,7 +497,10 @@ const chartRows = stadiumRows.map((row, index) => {
       if (detailRank) detailRank.textContent = "--";
       if (detailDelta) detailDelta.textContent = "--";
       if (wheelCenterEyebrow) wheelCenterEyebrow.textContent = "Venue signal";
-      if (wheelCenterTitle) wheelCenterTitle.textContent = "Indoor edge";
+      if (wheelCenterTitle) {
+        const centerX = wheelCenterTitle.getAttribute("x") || "50%";
+        wheelCenterTitle.innerHTML = `<tspan x="${centerX}" dy="0">Stadium</tspan><tspan x="${centerX}" dy="30">Edge</tspan>`;
+      }
       if (wheelCenterSub) wheelCenterSub.textContent = "";
     };
 

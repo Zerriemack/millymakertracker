@@ -1,99 +1,853 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
-import ChartPanel from "../../../../components/nfl/classic/ChartPanel.astro";
-import StatCard from "../../../../components/nfl/classic/StatCard.astro";
-import { classicTrendCharts } from "../../../../data/nflClassicReviewMock";
 
-const pageTitle = "NFL Classic Review | Trends";
-const [leadChart, ...restCharts] = classicTrendCharts;
+const pageTitle = "NFL Classic Review | Time Trends";
+
+const earlyWindow = [
+  { count: 2, wins: 1, pct: 1.9 },
+  { count: 3, wins: 4, pct: 7.7 },
+  { count: 4, wins: 10, pct: 19.2 },
+  { count: 5, wins: 17, pct: 32.7 },
+  { count: 6, wins: 12, pct: 23.1 },
+  { count: 7, wins: 6, pct: 11.5 },
+  { count: 8, wins: 2, pct: 3.9 },
+];
+
+const lateWindow = [
+  { count: 1, wins: 1, pct: 1.9 },
+  { count: 2, wins: 3, pct: 5.8 },
+  { count: 3, wins: 10, pct: 19.2 },
+  { count: 4, wins: 18, pct: 34.6 },
+  { count: 5, wins: 13, pct: 25.0 },
+  { count: 6, wins: 5, pct: 9.6 },
+  { count: 7, wins: 2, pct: 3.9 },
+];
+
+const totalTracked = earlyWindow.reduce((sum, item) => sum + item.wins, 0);
+const earlyMaxWins = Math.max(...earlyWindow.map((item) => item.wins));
+const lateMaxWins = Math.max(...lateWindow.map((item) => item.wins));
+
+const earlyTooltipNotes: Record<number, string> = {
+  2: "Too light on the early slate.",
+  3: "Still thin for a one lineup approach.",
+  4: "Inside the winning range.",
+  5: "The strongest early window count.",
+  6: "Still inside the winning range.",
+  7: "Starts to lean too far early.",
+  8: "Rare outcome."
+};
+
+const lateTooltipNotes: Record<number, string> = {
+  1: "Too little late flexibility.",
+  2: "Still light for the late window.",
+  3: "Inside the winning range.",
+  4: "The strongest late window count.",
+  5: "Still inside the winning range.",
+  6: "Starts to lean too far late.",
+  7: "Rare outcome."
+};
 ---
 
 <ClassicReviewShell
   title={pageTitle}
-  headline="Year-over-Year Shifts"
-  subtitle="A high-level trend deck for Classic winners across seasons. Use this to sanity-check how the meta drifts." 
-  accent="gold"
-  class="with-drawer"
+  headline="Time Trends"
+  subtitle="Early vs late player count frequency across winning Classic Milly Maker lineups."
+  accent="blue"
+  class="with-drawer trends-page"
+  hideHero
 >
   <ClassicReviewDrawer active="trends" mode="hover" />
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Lead Trend</h2>
-        <p class="sectionSub">The defining trend line that anchors the season-over-season story.</p>
-      </div>
-      <div class="sectionPill">Macro</div>
-    </div>
-    <div class="bandGrid">
-      <div class="span-8">
-        {leadChart ? (
-          <ChartPanel
-            variant="lead"
-            title={leadChart.title}
-            meta={leadChart.meta}
-            helper={leadChart.helper}
-            footer={leadChart.footer}
-            series={leadChart.series}
-            accent="gold"
-          />
-        ) : null}
-      </div>
-      <div class="span-4 railStack">
-        <section class="sectionPanel">
-          <div class="sectionHeader">
-            <div>
-              <h3 class="sectionTitle">Trend Brief</h3>
-              <p class="sectionSub">Headline takeaways to carry into research.</p>
-            </div>
-          </div>
-          <div class="statGrid">
-            <StatCard label="Momentum" value="Uptrend" note="Macro line is rising." accent="green" />
-            <StatCard label="Priority" value="Gold Signal" note="Use as north star." accent="gold" />
-          </div>
-        </section>
-      </div>
-    </div>
-  </section>
+  <section class="sectionPanel trendHeroPanel">
+      <div class="heroTop">
+        <div class="heroCopy">
+          <p class="eyebrow">Classic Time Trends</p>
+          <h1>How many early and late players should a Milly lineup carry?</h1>
+        </div>
 
-  <section class="sectionPanel">
-    <div class="sectionHeader">
-      <div>
-        <h2 class="sectionTitle">Supporting Signals</h2>
-        <p class="sectionSub">Secondary indicators that move with the Classic environment.</p>
-      </div>
-      <div class="sectionPill">Signals</div>
-    </div>
-    <div class="bandGrid">
-      <div class="span-8">
-        <div class="chartGrid twoCol">
-          {restCharts.map((chart, idx) => (
-            <ChartPanel
-              title={chart.title}
-              meta={chart.meta}
-              helper={chart.helper}
-              footer={chart.footer}
-              series={chart.series}
-              accent={idx === 0 ? "blue" : idx === 1 ? "green" : "slate"}
-            />
-          ))}
+        <div class="heroMeta">
+          <p>
+            Winning lineups cluster around five early players and four late players. The range stays pretty tight on both sides.
+          </p>
         </div>
       </div>
-      <div class="span-4 railStack">
-        <section class="sectionPanel">
-          <div class="sectionHeader">
-            <div>
-              <h3 class="sectionTitle">Signal Discipline</h3>
-              <p class="sectionSub">Use color as meaning, not decoration.</p>
+
+      <div class="lottoTop">
+        <article class="lottoBlock">
+          <p class="lottoLabel">Early window</p>
+          <div class="lottoBalls">
+            <div class="lottoBall lottoBallSecondary">
+              <span>4</span>
+              <small>At least</small>
+            </div>
+            <div class="lottoBall lottoBallPrimary">
+              <span>5</span>
+              <small>Most often</small>
+            </div>
+            <div class="lottoBall lottoBallSecondary">
+              <span>6</span>
+              <small>At most</small>
             </div>
           </div>
-          <div class="statGrid">
-            <StatCard label="Neutral Read" value="Hold" note="Wait for a shift." accent="slate" />
-            <StatCard label="Positive Edge" value="Lean In" note="When green persists." accent="green" />
+        </article>
+
+        <article class="lottoBlock">
+          <p class="lottoLabel">Late window</p>
+          <div class="lottoBalls">
+            <div class="lottoBall lottoBallSecondary">
+              <span>3</span>
+              <small>At least</small>
+            </div>
+            <div class="lottoBall lottoBallPrimary">
+              <span>4</span>
+              <small>Most often</small>
+            </div>
+            <div class="lottoBall lottoBallSecondary">
+              <span>5</span>
+              <small>At most</small>
+            </div>
           </div>
-        </section>
+        </article>
+
+        <article class="sampleCard">
+          <p class="lottoLabel">Sample</p>
+          <strong>{totalTracked}</strong>
+          <span>Classic winners tracked</span>
+        </article>
       </div>
-    </div>
+  </section>
+
+  <section class="sectionPanel chartPanel">
+      <div class="chartHeader">
+        <div>
+          <p class="sectionLabel">Early window</p>
+          <h2>Early player count frequency</h2>
+        </div>
+        <div class="recommendationPill">Play 5 most often</div>
+      </div>
+
+      <p class="chartNote">
+        Four to six is the playable band. Five is the center.
+      </p>
+
+      <div class="rangeStrip" aria-label="Early window rule">
+        <span class="rangePill">At least 4</span>
+        <span class="rangePill rangePillStrong">Best count 5</span>
+        <span class="rangePill">At most 6</span>
+      </div>
+
+      <div class="chartArea earlyArea">
+        {
+          earlyWindow.map((item) => (
+            <button
+              type="button"
+              class:list={[
+                "freqBar",
+                item.count === 5 && "recommended",
+                (item.count === 4 || item.count === 6) && "secondary",
+              ]}
+              title={`${item.count} early players • ${item.wins} wins • ${item.pct}%`}
+              data-window="early"
+              data-count={String(item.count)}
+              data-wins={String(item.wins)}
+              data-pct={String(item.pct)}
+              data-note={earlyTooltipNotes[item.count]}
+              style={`--bar-h:${(item.wins / earlyMaxWins) * 100}%`}
+            >
+              <span class="barValue">{item.wins}</span>
+              <span class="barFill"></span>
+              <span class="barLabel">{item.count}</span>
+              <span class="barPct">{item.pct}%</span>
+            </button>
+          ))
+        }
+
+        <div class="chartHoverCard" id="early-hover-card" aria-hidden="true">
+          <strong class="chartHoverTitle"></strong>
+          <p class="chartHoverBody"></p>
+          <span class="chartHoverMeta"></span>
+        </div>
+      </div>
+  </section>
+
+  <section class="sectionPanel chartPanel">
+      <div class="chartHeader">
+        <div>
+          <p class="sectionLabel">Late window</p>
+          <h2>Late player count frequency</h2>
+        </div>
+        <div class="recommendationPill">Play 4 most often</div>
+      </div>
+
+      <p class="chartNote">
+        Three to five is the playable band. Four is the center.
+      </p>
+
+      <div class="rangeStrip" aria-label="Late window rule">
+        <span class="rangePill">At least 3</span>
+        <span class="rangePill rangePillStrong">Best count 4</span>
+        <span class="rangePill">At most 5</span>
+      </div>
+
+      <div class="chartArea lateArea">
+        {
+          lateWindow.map((item) => (
+            <button
+              type="button"
+              class:list={[
+                "freqBar",
+                item.count === 4 && "recommended",
+                (item.count === 3 || item.count === 5) && "secondary",
+              ]}
+              title={`${item.count} late players • ${item.wins} wins • ${item.pct}%`}
+              data-window="late"
+              data-count={String(item.count)}
+              data-wins={String(item.wins)}
+              data-pct={String(item.pct)}
+              data-note={lateTooltipNotes[item.count]}
+              style={`--bar-h:${(item.wins / lateMaxWins) * 100}%`}
+            >
+              <span class="barValue">{item.wins}</span>
+              <span class="barFill"></span>
+              <span class="barLabel">{item.count}</span>
+              <span class="barPct">{item.pct}%</span>
+            </button>
+          ))
+        }
+
+        <div class="chartHoverCard" id="late-hover-card" aria-hidden="true">
+          <strong class="chartHoverTitle"></strong>
+          <p class="chartHoverBody"></p>
+          <span class="chartHoverMeta"></span>
+        </div>
+      </div>
   </section>
 </ClassicReviewShell>
+
+<script is:inline>
+  const bindTrendHoverCard = (chartSelector, cardSelector) => {
+    const chart = document.querySelector(chartSelector);
+    const card = document.querySelector(cardSelector);
+    if (!chart || !card) return;
+
+    const bars = Array.from(chart.querySelectorAll(".freqBar"));
+    const title = card.querySelector(".chartHoverTitle");
+    const body = card.querySelector(".chartHoverBody");
+    const meta = card.querySelector(".chartHoverMeta");
+
+    const clearState = () => {
+      bars.forEach((bar) => {
+        bar.classList.remove("is-active", "is-dimmed");
+      });
+      card.classList.remove("is-visible");
+      card.setAttribute("aria-hidden", "true");
+    };
+
+    const showCard = (bar) => {
+      const chartRect = chart.getBoundingClientRect();
+      const barRect = bar.getBoundingClientRect();
+      const count = Number(bar.dataset.count);
+      const wins = Number(bar.dataset.wins);
+      const pct = Number(bar.dataset.pct);
+      const note = bar.dataset.note || "";
+      const windowLabel = bar.dataset.window === "early" ? "early" : "late";
+
+      title.textContent = `${count} ${windowLabel} players`;
+      body.textContent = note;
+      meta.textContent = `${wins} winning lineups • ${pct.toFixed(1)}% of sample`;
+
+      bars.forEach((node) => {
+        node.classList.toggle("is-active", node === bar);
+        node.classList.toggle("is-dimmed", node !== bar);
+      });
+
+      card.classList.add("is-visible");
+      card.setAttribute("aria-hidden", "false");
+
+      const cardWidth = Math.min(420, chartRect.width - 28);
+      card.style.width = `${cardWidth}px`;
+
+      const centeredLeft = barRect.left - chartRect.left + (barRect.width / 2) - (cardWidth / 2);
+      const clampedLeft = Math.max(14, Math.min(centeredLeft, chartRect.width - cardWidth - 14));
+      const preferredTop = barRect.top - chartRect.top - 116;
+      const fallbackTop = 18;
+      const finalTop = Math.max(fallbackTop, preferredTop);
+
+      card.style.left = `${clampedLeft}px`;
+      card.style.top = `${finalTop}px`;
+    };
+
+    bars.forEach((bar) => {
+      bar.addEventListener("mouseenter", () => showCard(bar));
+      bar.addEventListener("focus", () => showCard(bar));
+    });
+
+    chart.addEventListener("mouseleave", clearState);
+    chart.addEventListener("focusout", (event) => {
+      if (!chart.contains(event.relatedTarget)) clearState();
+    });
+  };
+
+  bindTrendHoverCard(".earlyArea", "#early-hover-card");
+  bindTrendHoverCard(".lateArea", "#late-hover-card");
+</script>
+
+<style>
+  :global(.classic-frame.trends-page) {
+    --panel: linear-gradient(180deg, rgba(24, 24, 24, 0.96), rgba(14, 14, 14, 0.98));
+    --panel-border: var(--border);
+    --blue: var(--accent);
+    --blue-2: color-mix(in srgb, var(--accent) 65%, #fff 35%);
+    --gold: #d8b566;
+    --shadow: var(--shadow-soft);
+  }
+
+  :global(.classic-frame.with-drawer.trends-page) {
+    padding-left: calc(clamp(18px, 2vw, 26px) + 54px);
+    padding-right: clamp(20px, 3vw, 36px);
+  }
+
+  :global(.classic-frame.with-drawer.trends-page .content) {
+    gap: 18px;
+    margin-top: 4px;
+    width: min(1220px, calc(100vw - 128px));
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  :global(.classic-frame.with-drawer.trends-page .hero) {
+    display: none;
+  }
+
+  :global(.trends-page .sectionPanel) {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+
+  .trendHeroPanel {
+    background:
+      radial-gradient(circle at top right, rgba(40, 74, 160, 0.14), transparent 28%),
+      radial-gradient(circle at bottom left, rgba(157, 108, 42, 0.08), transparent 22%),
+      var(--panel);
+    border: 1px solid var(--panel-border);
+    box-shadow: var(--shadow);
+  }
+
+  .heroTop {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.9fr);
+    gap: 18px;
+    align-items: end;
+  }
+
+  .eyebrow,
+  .sectionLabel,
+  .lottoLabel {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(232, 237, 246, 0.78);
+  }
+
+  .heroCopy h1 {
+    margin: 10px 0 0;
+    font-size: clamp(32px, 3.6vw, 54px);
+    line-height: 1;
+    letter-spacing: -0.045em;
+    max-width: 720px;
+  }
+
+  .heroMeta {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .heroMeta p,
+  .chartNote {
+    margin: 0;
+    color: rgba(229, 233, 241, 0.82);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .lottoTop {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 210px;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .lottoBlock,
+  .sampleCard {
+    border-radius: 18px;
+    border: 1px solid rgba(122, 147, 202, 0.22);
+    background:
+      radial-gradient(circle at top, rgba(24, 48, 100, 0.2), transparent 58%),
+      linear-gradient(180deg, rgba(5, 10, 20, 0.96) 0%, rgba(4, 8, 16, 0.98) 100%);
+    box-shadow:
+      0 14px 34px rgba(0, 0, 0, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    padding: 16px;
+  }
+
+  .lottoBlock {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .lottoBalls {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .lottoBall {
+    width: 112px;
+    height: 112px;
+    border-radius: 999px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border: 1px solid rgba(145, 171, 230, 0.34);
+    background:
+      radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.26), transparent 24%),
+      radial-gradient(circle at 50% 38%, rgba(103, 152, 255, 0.14), transparent 48%),
+      linear-gradient(180deg, rgba(24, 33, 54, 0.98) 0%, rgba(8, 13, 24, 0.98) 100%);
+    box-shadow:
+      0 10px 26px rgba(6, 12, 28, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      inset 0 -14px 22px rgba(0, 0, 0, 0.26);
+  }
+
+  .lottoBall span {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    color: rgba(255, 255, 255, 0.98);
+    text-shadow: 0 2px 16px rgba(255, 255, 255, 0.12);
+  }
+
+  .lottoBall small {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(231, 237, 247, 0.88);
+  }
+
+  .lottoBallPrimary {
+    border-color: rgba(230, 191, 96, 0.52);
+    background:
+      radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.3), transparent 22%),
+      radial-gradient(circle at 50% 38%, rgba(255, 212, 128, 0.2), transparent 48%),
+      linear-gradient(180deg, rgba(86, 62, 24, 0.98) 0%, rgba(42, 30, 12, 0.98) 100%);
+    box-shadow:
+      0 16px 34px rgba(190, 143, 57, 0.24),
+      0 0 28px rgba(190, 143, 57, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      inset 0 -14px 22px rgba(0, 0, 0, 0.22);
+  }
+
+  .lottoBallSecondary {
+    border-color: rgba(99, 148, 255, 0.44);
+    box-shadow:
+      0 14px 30px rgba(25, 53, 118, 0.22),
+      0 0 24px rgba(70, 119, 235, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      inset 0 -14px 22px rgba(0, 0, 0, 0.24);
+  }
+
+  .sampleCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+      radial-gradient(circle at top, rgba(56, 101, 213, 0.18), transparent 56%),
+      linear-gradient(180deg, rgba(7, 11, 21, 0.98) 0%, rgba(4, 8, 16, 0.98) 100%);
+    border-color: rgba(130, 155, 212, 0.24);
+  }
+
+  .sampleCard strong {
+    display: block;
+    margin-top: 12px;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    color: rgba(255, 255, 255, 0.98);
+    text-shadow: 0 2px 18px rgba(255, 255, 255, 0.08);
+  }
+
+  .sampleCard span {
+    margin-top: 8px;
+    font-size: 14px;
+    color: rgba(230, 234, 241, 0.82);
+  }
+
+  .chartHeader {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: end;
+  }
+
+  .chartHeader h2 {
+    margin: 10px 0 0;
+    font-size: clamp(24px, 2.4vw, 36px);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .recommendationPill {
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(90, 148, 255, 0.42);
+    background:
+      linear-gradient(180deg, rgba(28, 55, 122, 0.96) 0%, rgba(16, 34, 81, 0.96) 100%);
+    color: rgba(255, 255, 255, 0.98);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow:
+      0 10px 20px rgba(18, 54, 138, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .chartNote {
+    margin-top: 14px;
+    font-size: 14px;
+    max-width: 760px;
+  }
+
+  .rangeStrip {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .rangePill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(66, 108, 198, 0.26);
+    background: linear-gradient(180deg, rgba(10, 19, 39, 0.96) 0%, rgba(8, 13, 27, 0.96) 100%);
+    color: rgba(235, 240, 248, 0.94);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .rangePillStrong {
+    border-color: rgba(95, 150, 255, 0.44);
+    background:
+      linear-gradient(180deg, rgba(26, 55, 126, 0.96) 0%, rgba(17, 35, 86, 0.96) 100%);
+    color: rgba(255, 255, 255, 0.98);
+    box-shadow:
+      0 10px 18px rgba(18, 54, 138, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .chartArea {
+    min-height: 320px;
+    margin-top: 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(52, 103, 220, 0.28);
+    background:
+      radial-gradient(circle at 50% 108%, rgba(0, 106, 255, 0.18), transparent 42%),
+      radial-gradient(circle at 50% -8%, rgba(0, 76, 200, 0.14), transparent 34%),
+      linear-gradient(180deg, rgba(7, 14, 29, 0.98) 0%, rgba(4, 8, 18, 0.99) 100%);
+    box-shadow:
+      0 20px 44px rgba(0, 0, 0, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      inset 0 0 0 1px rgba(36, 84, 192, 0.12);
+    padding: 22px 20px 16px;
+    display: grid;
+    align-items: end;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .earlyArea,
+  .lateArea {
+    grid-template-columns: repeat(7, minmax(58px, 1fr));
+  }
+
+  .chartArea::before {
+    content: "";
+    position: absolute;
+    inset: 16px 20px 52px;
+    background:
+      linear-gradient(to top, rgba(67, 112, 214, 0.22) 1px, transparent 1px) 0 0 / 100% 25%;
+    pointer-events: none;
+  }
+
+  .freqBar {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    gap: 8px;
+    align-items: end;
+    cursor: pointer;
+    z-index: 1;
+    transition: opacity 120ms ease, transform 120ms ease;
+  }
+
+  .freqBar.is-dimmed {
+    opacity: 0.3;
+  }
+
+  .freqBar.is-active {
+    opacity: 1;
+    z-index: 3;
+  }
+
+  .barValue {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.98);
+    text-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
+  }
+
+  .barFill {
+    display: block;
+    width: 100%;
+    min-height: 36px;
+    height: max(36px, var(--bar-h));
+    border-radius: 14px 14px 10px 10px;
+    background:
+      linear-gradient(180deg, rgba(104, 120, 152, 0.84) 0%, rgba(58, 70, 96, 0.94) 100%);
+    box-shadow:
+      0 6px 14px rgba(7, 12, 22, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+  }
+
+  .freqBar.secondary .barFill {
+    background:
+      linear-gradient(180deg, rgba(88, 210, 160, 1) 0%, rgba(10, 116, 72, 1) 54%, rgba(3, 62, 38, 1) 100%);
+    box-shadow:
+      0 0 0 1px rgba(44, 146, 103, 0.24),
+      0 6px 14px rgba(4, 32, 20, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  .freqBar.recommended .barFill {
+    background:
+      linear-gradient(180deg, rgba(255, 112, 72, 1) 0%, rgba(244, 66, 54, 1) 50%, rgba(214, 46, 35, 1) 100%);
+    box-shadow:
+      0 0 0 1px rgba(244, 66, 54, 0.24),
+      0 6px 14px rgba(88, 18, 12, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+
+  .freqBar.is-active .barFill {
+    transform: translateY(-2px);
+  }
+
+  .barLabel {
+    display: block;
+    text-align: center;
+    color: rgba(244, 247, 252, 0.98);
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .barPct {
+    display: block;
+    text-align: center;
+    color: rgba(186, 198, 224, 0.9);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .chartHoverCard {
+    position: absolute;
+    left: 14px;
+    top: 18px;
+    z-index: 5;
+    max-width: 420px;
+    padding: 14px 16px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(80, 122, 214, 0.26);
+    background:
+      radial-gradient(circle at top left, rgba(58, 110, 228, 0.12), transparent 42%),
+      linear-gradient(180deg, rgba(10, 16, 31, 0.97) 0%, rgba(7, 11, 22, 0.98) 100%);
+    box-shadow:
+      0 14px 28px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
+  }
+
+  .chartHoverCard.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .chartHoverTitle {
+    display: block;
+    color: rgba(247, 249, 252, 0.98);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .chartHoverBody {
+    margin: 8px 0 0;
+    color: rgba(215, 223, 239, 0.9);
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .chartHoverMeta {
+    display: block;
+    margin-top: 10px;
+    color: rgba(148, 167, 205, 0.86);
+    font-size: 12px;
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+  }
+
+  .chartHoverCard::after {
+    content: "";
+    position: absolute;
+    left: 28px;
+    bottom: -7px;
+    width: 14px;
+    height: 14px;
+    background: rgba(8, 13, 26, 0.98);
+    border-right: 1px solid rgba(80, 122, 214, 0.26);
+    border-bottom: 1px solid rgba(80, 122, 214, 0.26);
+    transform: rotate(45deg);
+  }
+
+  @media (max-width: 1280px) {
+    :global(.classic-frame.with-drawer.trends-page) {
+      padding-left: clamp(18px, 3vw, 30px);
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .heroTop,
+    .lottoTop {
+      grid-template-columns: 1fr;
+    }
+
+    .heroCopy h1 {
+      max-width: none;
+    }
+
+    .chartArea {
+      min-height: 300px;
+    }
+
+    .earlyArea,
+    .lateArea {
+      grid-template-columns: repeat(7, minmax(42px, 1fr));
+    }
+  }
+
+  @media (max-width: 780px) {
+    :global(.classic-frame.with-drawer.trends-page .content) {
+      width: min(100vw - 24px, 100%);
+    }
+
+    .trendHeroPanel {
+      padding: 16px;
+    }
+
+
+    .heroCopy h1 {
+      font-size: clamp(28px, 9vw, 42px);
+    }
+
+    .chartHeader {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .chartArea {
+      gap: 10px;
+      padding: 18px 12px 12px;
+    }
+
+    .chartHoverCard {
+      max-width: calc(100% - 24px);
+      padding: 12px 14px 10px;
+    }
+
+    .lottoBalls {
+      gap: 12px;
+    }
+
+    .lottoBall {
+      width: 98px;
+      height: 98px;
+    }
+
+    .lottoBall span {
+      font-size: 40px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .earlyArea,
+    .lateArea {
+      grid-template-columns: repeat(7, minmax(30px, 1fr));
+      gap: 8px;
+    }
+
+    .barLabel {
+      font-size: 14px;
+    }
+
+    .barValue {
+      font-size: 13px;
+    }
+
+    .rangeStrip {
+      gap: 8px;
+    }
+
+    .chartHoverCard {
+      max-width: calc(100% - 20px);
+    }
+  }
+</style>
