@@ -1,7 +1,6 @@
 ---
 // src/components/nfl/classic/ClassicReviewRaw.astro
 import ClassicReviewFrame from "./ClassicReviewFrame.astro";
-import ClassicReviewDrawer from "./ClassicReviewDrawer.astro";
 
 const apiUrl = `${Astro.url.origin}/api/analysis/nfl/classic`;
 const res = await fetch(apiUrl);
@@ -169,10 +168,22 @@ const rows = rowsRaw
   .filter((r: any) => r.slateId);
 
 const pageTitle = "NFL Classic Review";
+
+const navItems = [
+  { key: "overview", label: "Overview", href: "/nfl/review/classic/overview" },
+  { key: "distribution", label: "Distribution Index", href: "/nfl/review/classic/distribution" },
+  { key: "patterns", label: "Patterns", href: "/nfl/review/classic/patterns" },
+  { key: "construction", label: "Build Relationship Matrix", href: "/nfl/review/classic/buildrelationshipmatrix" },
+  { key: "ownership", label: "Ownership", href: "/nfl/review/classic/ownership" },
+  { key: "salary", label: "Salary", href: "/nfl/review/classic/salary" },
+  { key: "environment", label: "Game Environment", href: "/nfl/review/classic/game-environment" },
+  { key: "venue", label: "Venue", href: "/nfl/review/classic/venue" },
+  { key: "trends", label: "Trends", href: "/nfl/review/classic/trends" },
+  { key: "raw", label: "Raw Review", href: "/nfl/review/classic" },
+];
 ---
 
-<ClassicReviewFrame title={pageTitle} accent="blue" class="classic-raw with-drawer">
-  <ClassicReviewDrawer active="raw" mode="hover" />
+<ClassicReviewFrame title={pageTitle} accent="blue" class="classic-raw">
   <section class="page">
     <header class="topbar">
       <div class="titleBlock">
@@ -194,6 +205,16 @@ const pageTitle = "NFL Classic Review";
         <button id="resetAllTop" class="resetAll" type="button">Reset all</button>
       </div>
     </header>
+
+    <nav class="rawNav" aria-label="Classic Review Pages">
+      {navItems.map((item) => (
+        <a
+          class={`rawNavLink ${item.key === "raw" ? "is-active" : ""}`}
+          href={item.href}
+          aria-current={item.key === "raw" ? "page" : undefined}
+        >{item.label}</a>
+      ))}
+    </nav>
 
     <section class="main">
       <div class="tableWrap">
@@ -800,17 +821,17 @@ const pageTitle = "NFL Classic Review";
     flex-direction: column;
     gap: 12px;
     min-width: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
   }
   .topbar {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     align-items: start;
-    gap: 10px;
-    padding: 12px;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.94), rgba(14, 14, 14, 0.98));
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+    gap: 12px;
+    padding: 2px 0 0;
     min-width: 0;
   }
   .titleBlock { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
@@ -824,7 +845,100 @@ const pageTitle = "NFL Classic Review";
   .search::placeholder { color: rgba(255,255,255,0.45); }
   .resetAll { padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); background: #1f1f1f; color: rgba(255,255,255,0.88); font-weight: 900; cursor: pointer; white-space: nowrap; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
   .srOnly { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  .main { min-height: 0; display: flex; flex-direction: column; }
+  .main {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .rawNav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 4px 0 0;
+    margin: 0 0 16px;
+  }
+
+  .rawNavLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 100%),
+      rgba(11, 14, 20, 0.92);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 8px 20px rgba(0, 0, 0, 0.24);
+    color: rgba(234, 239, 246, 0.88);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      transform 140ms ease,
+      border-color 140ms ease,
+      background 140ms ease,
+      color 140ms ease,
+      box-shadow 140ms ease;
+  }
+
+  .rawNavLink:hover {
+    transform: translateY(-1px);
+    border-color: rgba(122, 162, 255, 0.32);
+    background:
+      linear-gradient(180deg, rgba(122, 162, 255, 0.12) 0%, rgba(122, 162, 255, 0.04) 100%),
+      rgba(14, 18, 26, 0.96);
+    color: rgba(245, 248, 255, 0.98);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 10px 24px rgba(0, 0, 0, 0.28),
+      0 0 0 1px rgba(122, 162, 255, 0.08);
+  }
+
+  .rawNavLink:focus-visible {
+    outline: none;
+    border-color: rgba(122, 162, 255, 0.5);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 0 0 3px rgba(64, 105, 255, 0.2);
+  }
+
+  .rawNavLink.is-active {
+    border-color: rgba(92, 130, 255, 0.5);
+    background:
+      linear-gradient(180deg, rgba(88, 128, 255, 0.3) 0%, rgba(44, 83, 209, 0.2) 100%),
+      rgba(22, 34, 74, 0.95);
+    color: #f5f8ff;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.14),
+      inset 0 0 28px rgba(90, 132, 255, 0.12),
+      0 12px 28px rgba(6, 10, 24, 0.34);
+  }
+
+  @media (max-width: 900px) {
+    .rawNav {
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .rawNavLink {
+      min-height: 34px;
+      padding: 0 12px;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+    }
+  }
 
   .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-weight: 700; }
 
