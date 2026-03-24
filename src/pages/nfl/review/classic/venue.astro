@@ -1,8 +1,16 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
+import {
+  fetchClassicReviewRows,
+  toNumber,
+  mean,
+} from "../../../../lib/nfl/classicReview";
 
 const pageTitle = "NFL Classic Review | Venue";
+
+const rows = await fetchClassicReviewRows(Astro.url.origin);
+const hasData = rows.length > 0;
 
 type VenueType = "Indoor" | "Outdoor";
 
@@ -17,44 +25,50 @@ type StadiumRow = {
   signalIndex: number;
 };
 
-const stadiumRows: StadiumRow[] = [
-  { stadium: "State Farm Stadium", team: "ARI", venueType: "Indoor", playersTracked: 34, winnerGamesHosted: 7, playersPerWinnerGame: 4.9, winnerSharePct: 3.0, signalIndex: 120 },
-  { stadium: "Mercedes-Benz Stadium", team: "ATL", venueType: "Indoor", playersTracked: 36, winnerGamesHosted: 8, playersPerWinnerGame: 4.5, winnerSharePct: 3.1, signalIndex: 117 },
-  { stadium: "M&T Bank Stadium", team: "BAL", venueType: "Outdoor", playersTracked: 33, winnerGamesHosted: 7, playersPerWinnerGame: 4.7, winnerSharePct: 2.9, signalIndex: 107 },
-  { stadium: "Highmark Stadium", team: "BUF", venueType: "Outdoor", playersTracked: 31, winnerGamesHosted: 7, playersPerWinnerGame: 4.4, winnerSharePct: 2.7, signalIndex: 101 },
-  { stadium: "Bank of America Stadium", team: "CAR", venueType: "Outdoor", playersTracked: 22, winnerGamesHosted: 5, playersPerWinnerGame: 4.4, winnerSharePct: 1.9, signalIndex: 92 },
-  { stadium: "Soldier Field", team: "CHI", venueType: "Outdoor", playersTracked: 18, winnerGamesHosted: 4, playersPerWinnerGame: 4.5, winnerSharePct: 1.6, signalIndex: 95 },
-  { stadium: "Paycor Stadium", team: "CIN", venueType: "Outdoor", playersTracked: 35, winnerGamesHosted: 8, playersPerWinnerGame: 4.4, winnerSharePct: 3.1, signalIndex: 103 },
-  { stadium: "Cleveland Browns Stadium", team: "CLE", venueType: "Outdoor", playersTracked: 19, winnerGamesHosted: 4, playersPerWinnerGame: 4.8, winnerSharePct: 1.7, signalIndex: 98 },
-  { stadium: "AT&T Stadium", team: "DAL", venueType: "Indoor", playersTracked: 48, winnerGamesHosted: 10, playersPerWinnerGame: 4.8, winnerSharePct: 4.2, signalIndex: 125 },
-  { stadium: "Empower Field at Mile High", team: "DEN", venueType: "Outdoor", playersTracked: 17, winnerGamesHosted: 4, playersPerWinnerGame: 4.3, winnerSharePct: 1.5, signalIndex: 88 },
-  { stadium: "Ford Field", team: "DET", venueType: "Indoor", playersTracked: 39, winnerGamesHosted: 8, playersPerWinnerGame: 4.9, winnerSharePct: 3.4, signalIndex: 128 },
-  { stadium: "Lambeau Field", team: "GB", venueType: "Outdoor", playersTracked: 29, winnerGamesHosted: 6, playersPerWinnerGame: 4.8, winnerSharePct: 2.5, signalIndex: 109 },
-  { stadium: "NRG Stadium", team: "HOU", venueType: "Indoor", playersTracked: 24, winnerGamesHosted: 5, playersPerWinnerGame: 4.8, winnerSharePct: 2.1, signalIndex: 118 },
-  { stadium: "Lucas Oil Stadium", team: "IND", venueType: "Indoor", playersTracked: 30, winnerGamesHosted: 6, playersPerWinnerGame: 5.0, winnerSharePct: 2.6, signalIndex: 131 },
-  { stadium: "EverBank Stadium", team: "JAX", venueType: "Outdoor", playersTracked: 27, winnerGamesHosted: 6, playersPerWinnerGame: 4.5, winnerSharePct: 2.3, signalIndex: 99 },
-  { stadium: "Arrowhead Stadium", team: "KC", venueType: "Outdoor", playersTracked: 43, winnerGamesHosted: 9, playersPerWinnerGame: 4.8, winnerSharePct: 3.8, signalIndex: 112 },
-  { stadium: "Allegiant Stadium", team: "LV", venueType: "Indoor", playersTracked: 26, winnerGamesHosted: 5, playersPerWinnerGame: 5.2, winnerSharePct: 2.3, signalIndex: 136 },
-  { stadium: "SoFi Stadium", team: "LAC", venueType: "Indoor", playersTracked: 29, winnerGamesHosted: 6, playersPerWinnerGame: 4.8, winnerSharePct: 2.5, signalIndex: 121 },
-  { stadium: "SoFi Stadium", team: "LAR", venueType: "Indoor", playersTracked: 46, winnerGamesHosted: 9, playersPerWinnerGame: 5.1, winnerSharePct: 4.0, signalIndex: 133 },
-  { stadium: "Hard Rock Stadium", team: "MIA", venueType: "Outdoor", playersTracked: 32, winnerGamesHosted: 7, playersPerWinnerGame: 4.6, winnerSharePct: 2.8, signalIndex: 104 },
-  { stadium: "U.S. Bank Stadium", team: "MIN", venueType: "Indoor", playersTracked: 41, winnerGamesHosted: 8, playersPerWinnerGame: 5.1, winnerSharePct: 3.6, signalIndex: 132 },
-  { stadium: "Gillette Stadium", team: "NE", venueType: "Outdoor", playersTracked: 20, winnerGamesHosted: 5, playersPerWinnerGame: 4.0, winnerSharePct: 1.8, signalIndex: 84 },
-  { stadium: "Caesars Superdome", team: "NO", venueType: "Indoor", playersTracked: 37, winnerGamesHosted: 7, playersPerWinnerGame: 5.3, winnerSharePct: 3.2, signalIndex: 138 },
-  { stadium: "MetLife Stadium", team: "NYG", venueType: "Outdoor", playersTracked: 21, winnerGamesHosted: 5, playersPerWinnerGame: 4.2, winnerSharePct: 1.8, signalIndex: 86 },
-  { stadium: "MetLife Stadium", team: "NYJ", venueType: "Outdoor", playersTracked: 20, winnerGamesHosted: 5, playersPerWinnerGame: 4.0, winnerSharePct: 1.8, signalIndex: 82 },
-  { stadium: "Lincoln Financial Field", team: "PHI", venueType: "Outdoor", playersTracked: 34, winnerGamesHosted: 7, playersPerWinnerGame: 4.9, winnerSharePct: 3.0, signalIndex: 108 },
-  { stadium: "Acrisure Stadium", team: "PIT", venueType: "Outdoor", playersTracked: 23, winnerGamesHosted: 5, playersPerWinnerGame: 4.6, winnerSharePct: 2.0, signalIndex: 94 },
-  { stadium: "Levi's Stadium", team: "SF", venueType: "Outdoor", playersTracked: 37, winnerGamesHosted: 8, playersPerWinnerGame: 4.6, winnerSharePct: 3.2, signalIndex: 106 },
-  { stadium: "Lumen Field", team: "SEA", venueType: "Outdoor", playersTracked: 25, winnerGamesHosted: 5, playersPerWinnerGame: 5.0, winnerSharePct: 2.2, signalIndex: 102 },
-  { stadium: "Raymond James Stadium", team: "TB", venueType: "Outdoor", playersTracked: 33, winnerGamesHosted: 7, playersPerWinnerGame: 4.7, winnerSharePct: 2.9, signalIndex: 105 },
-  { stadium: "Nissan Stadium", team: "TEN", venueType: "Outdoor", playersTracked: 24, winnerGamesHosted: 5, playersPerWinnerGame: 4.8, winnerSharePct: 2.1, signalIndex: 97 },
-  { stadium: "Northwest Stadium", team: "WAS", venueType: "Outdoor", playersTracked: 19, winnerGamesHosted: 4, playersPerWinnerGame: 4.8, winnerSharePct: 1.7, signalIndex: 96 },
-];
+const venueMap = rows.reduce((acc, row) => {
+  const key = String(row.venue || "").trim();
+  if (!key) return acc;
+  const entry = acc[key] ?? { rows: [] as typeof rows, isIndoor: null as boolean | null };
+  entry.rows.push(row);
+  if (entry.isIndoor === null && typeof row.venueIsIndoor === "boolean") {
+    entry.isIndoor = row.venueIsIndoor;
+  }
+  acc[key] = entry;
+  return acc;
+}, {} as Record<string, { rows: typeof rows; isIndoor: boolean | null }>);
 
-const totalPlayersTracked = stadiumRows.reduce((sum, row) => sum + row.playersTracked, 0);
-const indoorRows = stadiumRows.filter((row) => row.venueType === "Indoor");
-const outdoorRows = stadiumRows.filter((row) => row.venueType === "Outdoor");
+const stadiumRows: StadiumRow[] = Object.entries(venueMap)
+  .map(([venue, entry]) => {
+    if (entry.isIndoor === null) return null;
+    const venueRows = entry.rows;
+    const playersTracked = venueRows.length;
+    const winnerGamesHosted = new Set(venueRows.map((row) => row.slateId)).size;
+    const playersPerWinnerGame = mean(venueRows.map((row) => toNumber(row.maxFromGame))) ?? 0;
+    const winnerSharePct = rows.length ? (playersTracked / rows.length) * 100 : 0;
+    const venueType = entry.isIndoor ? "Indoor" : "Outdoor";
+    return {
+      stadium: venue,
+      team: venueType,
+      venueType,
+      playersTracked,
+      winnerGamesHosted,
+      playersPerWinnerGame: Number(playersPerWinnerGame.toFixed(1)),
+      winnerSharePct: Number(winnerSharePct.toFixed(1)),
+      signalIndex: 0,
+    } satisfies StadiumRow;
+  })
+  .filter((row): row is StadiumRow => Boolean(row));
+
+const stadiumRowsWithVenue = stadiumRows.length ? stadiumRows : [];
+
+const avgShare = stadiumRowsWithVenue.length ? 100 / stadiumRowsWithVenue.length : 0;
+stadiumRowsWithVenue.forEach((row) => {
+  row.signalIndex = avgShare ? Math.round((row.winnerSharePct / avgShare) * 100) : 0;
+});
+
+const totalPlayersTracked = stadiumRowsWithVenue.reduce((sum, row) => sum + row.playersTracked, 0);
+const indoorRows = stadiumRowsWithVenue.filter((row) => row.venueType === "Indoor");
+const outdoorRows = stadiumRowsWithVenue.filter((row) => row.venueType === "Outdoor");
 
 const indoorPlayers = indoorRows.reduce((sum, row) => sum + row.playersTracked, 0);
 const outdoorPlayers = outdoorRows.reduce((sum, row) => sum + row.playersTracked, 0);
@@ -62,14 +76,14 @@ const outdoorPlayers = outdoorRows.reduce((sum, row) => sum + row.playersTracked
 const indoorPct = (indoorPlayers / totalPlayersTracked) * 100;
 const outdoorPct = (outdoorPlayers / totalPlayersTracked) * 100;
 
-const indoorPerStadium = indoorPlayers / indoorRows.length;
-const outdoorPerStadium = outdoorPlayers / outdoorRows.length;
-const leaguePerStadium = totalPlayersTracked / stadiumRows.length;
+const indoorPerStadium = indoorRows.length ? indoorPlayers / indoorRows.length : 0;
+const outdoorPerStadium = outdoorRows.length ? outdoorPlayers / outdoorRows.length : 0;
+const leaguePerStadium = stadiumRowsWithVenue.length ? totalPlayersTracked / stadiumRowsWithVenue.length : 0;
 
-const indoorIndex = (indoorPerStadium / leaguePerStadium) * 100;
-const outdoorIndex = (outdoorPerStadium / leaguePerStadium) * 100;
-const indoorEdgePct = ((indoorPerStadium / outdoorPerStadium) - 1) * 100;
-const outdoorGapPct = ((outdoorPerStadium / indoorPerStadium) - 1) * 100;
+const indoorIndex = leaguePerStadium ? (indoorPerStadium / leaguePerStadium) * 100 : 0;
+const outdoorIndex = leaguePerStadium ? (outdoorPerStadium / leaguePerStadium) * 100 : 0;
+const indoorEdgePct = outdoorPerStadium ? ((indoorPerStadium / outdoorPerStadium) - 1) * 100 : 0;
+const outdoorGapPct = indoorPerStadium ? ((outdoorPerStadium / indoorPerStadium) - 1) * 100 : 0;
 const venueLean =
   indoorIndex > outdoorIndex
     ? `Indoor venues generate ${indoorEdgePct.toFixed(1)}% more players per stadium than outdoor venues once slate volume is corrected.`
@@ -78,20 +92,22 @@ const venueLean =
 const strongestIndoor = [...indoorRows].sort((a, b) => b.signalIndex - a.signalIndex).slice(0, 3);
 const strongestOutdoor = [...outdoorRows].sort((a, b) => b.signalIndex - a.signalIndex).slice(0, 3);
 
-const maxPlayers = Math.max(...stadiumRows.map((row) => row.playersTracked));
-const maxPerGame = Math.max(...stadiumRows.map((row) => row.playersPerWinnerGame));
-const maxSignal = Math.max(...stadiumRows.map((row) => row.signalIndex));
-const avgSignal = stadiumRows.reduce((sum, row) => sum + row.signalIndex, 0) / stadiumRows.length;
-const sortedBySignal = [...stadiumRows].sort((a, b) => b.signalIndex - a.signalIndex);
-const signalRankMap = new Map(sortedBySignal.map((row, index) => [`${row.team}-${row.stadium}`, index + 1]));
+const maxPlayers = Math.max(1, ...stadiumRowsWithVenue.map((row) => row.playersTracked));
+const maxPerGame = Math.max(1, ...stadiumRowsWithVenue.map((row) => row.playersPerWinnerGame));
+const maxSignal = Math.max(1, ...stadiumRowsWithVenue.map((row) => row.signalIndex));
+const avgSignal = stadiumRowsWithVenue.length
+  ? stadiumRowsWithVenue.reduce((sum, row) => sum + row.signalIndex, 0) / stadiumRowsWithVenue.length
+  : 0;
+const sortedBySignal = [...stadiumRowsWithVenue].sort((a, b) => b.signalIndex - a.signalIndex);
+const signalRankMap = new Map(sortedBySignal.map((row, index) => [row.stadium, index + 1]));
 
 const cx = 360;
 const cy = 360;
 const labelRadius = 314;
 const trackInner = 118;
 const wedgeGap = 1.6;
-const total = stadiumRows.length;
-const sweep = 360 / total;
+const total = stadiumRowsWithVenue.length;
+const sweep = total ? 360 / total : 0;
 
 function polarToCartesian(centerX: number, centerY: number, radius: number, angleDeg: number) {
   const angleRad = ((angleDeg - 90) * Math.PI) / 180.0;
@@ -117,11 +133,11 @@ function ringPath(cx: number, cy: number, innerR: number, outerR: number, startA
   ].join(" ");
 }
 
-const chartRows = stadiumRows.map((row, index) => {
+const chartRows = stadiumRowsWithVenue.map((row, index) => {
   const start = index * sweep + wedgeGap / 2;
   const end = (index + 1) * sweep - wedgeGap / 2;
   const mid = (start + end) / 2;
-  const signalRank = signalRankMap.get(`${row.team}-${row.stadium}`) ?? total;
+  const signalRank = signalRankMap.get(row.stadium) ?? total;
   const signalDelta = row.signalIndex - avgSignal;
 
   const playersOuter = trackInner + 30 + (row.playersTracked / maxPlayers) * 72;
@@ -163,6 +179,8 @@ const chartRows = stadiumRows.map((row, index) => {
 >
   <ClassicReviewDrawer active="venue" mode="hover" />
 
+  {hasData && stadiumRows.length ? (
+  <>
   <section class="sectionPanel venueHeroPanel">
     <div class="heroHeader">
       <div>
@@ -327,7 +345,7 @@ const chartRows = stadiumRows.map((row, index) => {
                 "stadiumSlice",
                 row.venueType === "Indoor" ? "isIndoor" : "isOutdoor",
               ]}
-              data-team={row.team}
+              data-team={row.team || "Venue"}
               data-stadium={row.stadium}
               data-type={row.venueType}
               data-players={row.playersTracked}
@@ -389,7 +407,7 @@ const chartRows = stadiumRows.map((row, index) => {
               <strong id="detail-games">--</strong>
             </div>
             <div>
-              <span>Per winner game</span>
+              <span>Avg max from game</span>
               <strong id="detail-pergame">--</strong>
             </div>
             <div>
@@ -416,7 +434,7 @@ const chartRows = stadiumRows.map((row, index) => {
             <span class="legendSwatch legendSwatchOrange"></span>
             <div>
               <strong>Inner ring</strong>
-              <small>Players per winner game</small>
+              <small>Avg max from game</small>
             </div>
           </div>
           <div class="legendRow">
@@ -461,6 +479,10 @@ const chartRows = stadiumRows.map((row, index) => {
       </aside>
     </div>
   </section>
+  </>
+  ) : (
+    <section class="sectionPanel emptyState">No Classic review data available yet.</section>
+  )}
 </ClassicReviewShell>
 
 <script>
@@ -1255,5 +1277,14 @@ const chartRows = stadiumRows.map((row, index) => {
     .teamLabel {
       font-size: 12px;
     }
+  }
+
+  .emptyState {
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 700;
   }
 </style>

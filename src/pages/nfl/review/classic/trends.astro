@@ -1,32 +1,43 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
+import { fetchClassicReviewRows, toNumber } from "../../../../lib/nfl/classicReview";
 
 const pageTitle = "NFL Classic Review | Time Trends";
 
-const earlyWindow = [
-  { count: 2, wins: 1, pct: 1.9 },
-  { count: 3, wins: 4, pct: 7.7 },
-  { count: 4, wins: 10, pct: 19.2 },
-  { count: 5, wins: 17, pct: 32.7 },
-  { count: 6, wins: 12, pct: 23.1 },
-  { count: 7, wins: 6, pct: 11.5 },
-  { count: 8, wins: 2, pct: 3.9 },
-];
+const rows = await fetchClassicReviewRows(Astro.url.origin);
+const hasData = rows.length > 0;
 
-const lateWindow = [
-  { count: 1, wins: 1, pct: 1.9 },
-  { count: 2, wins: 3, pct: 5.8 },
-  { count: 3, wins: 10, pct: 19.2 },
-  { count: 4, wins: 18, pct: 34.6 },
-  { count: 5, wins: 13, pct: 25.0 },
-  { count: 6, wins: 5, pct: 9.6 },
-  { count: 7, wins: 2, pct: 3.9 },
-];
+const buildWindow = (values) => {
+  const map = new Map();
+  values.forEach((value) => {
+    if (typeof value !== "number") return;
+    map.set(value, (map.get(value) || 0) + 1);
+  });
+  const total = values.length || 1;
+  return Array.from(map.entries())
+    .map(([count, wins]) => ({ count, wins, pct: Number(((wins / total) * 100).toFixed(1)) }))
+    .sort((a, b) => a.count - b.count);
+};
 
-const totalTracked = earlyWindow.reduce((sum, item) => sum + item.wins, 0);
-const earlyMaxWins = Math.max(...earlyWindow.map((item) => item.wins));
-const lateMaxWins = Math.max(...lateWindow.map((item) => item.wins));
+const earlyCounts = rows.map((row) => toNumber(row.earlyCount)).filter((v) => v !== null);
+const lateCounts = rows.map((row) => toNumber(row.lateCount)).filter((v) => v !== null);
+
+const earlyWindow = buildWindow(earlyCounts);
+const lateWindow = buildWindow(lateCounts);
+
+const totalTracked = rows.length;
+const earlyMaxWins = Math.max(1, ...earlyWindow.map((item) => item.wins));
+const lateMaxWins = Math.max(1, ...lateWindow.map((item) => item.wins));
+
+const topEarly = [...earlyWindow].sort((a, b) => b.wins - a.wins).slice(0, 3);
+const topLate = [...lateWindow].sort((a, b) => b.wins - a.wins).slice(0, 3);
+const earlyMost = topEarly[0]?.count ?? "—";
+const lateMost = topLate[0]?.count ?? "—";
+const earlyAtLeast = topEarly.length ? Math.min(...topEarly.map((t) => t.count)) : "—";
+const earlyAtMost = topEarly.length ? Math.max(...topEarly.map((t) => t.count)) : "—";
+const lateAtLeast = topLate.length ? Math.min(...topLate.map((t) => t.count)) : "—";
+const lateAtMost = topLate.length ? Math.max(...topLate.map((t) => t.count)) : "—";
 
 const earlyTooltipNotes: Record<number, string> = {
   2: "Too light on the early slate.",
@@ -47,6 +58,8 @@ const lateTooltipNotes: Record<number, string> = {
   6: "Starts to lean too far late.",
   7: "Rare outcome."
 };
+
+const tooltipNote = (map, count) => map[count] ?? "Live range in the current sample.";
 ---
 
 <ClassicReviewShell
@@ -59,6 +72,8 @@ const lateTooltipNotes: Record<number, string> = {
 >
   <ClassicReviewDrawer active="trends" mode="hover" />
 
+  {hasData ? (
+  <>
   <section class="sectionPanel trendHeroPanel">
       <div class="heroTop">
         <div class="heroCopy">
@@ -68,7 +83,7 @@ const lateTooltipNotes: Record<number, string> = {
 
         <div class="heroMeta">
           <p>
-            Winning lineups cluster around five early players and four late players. The range stays pretty tight on both sides.
+            Winning lineups cluster around {earlyMost} early players and {lateMost} late players. The range stays pretty tight on both sides.
           </p>
         </div>
       </div>
@@ -78,15 +93,15 @@ const lateTooltipNotes: Record<number, string> = {
           <p class="lottoLabel">Early window</p>
           <div class="lottoBalls">
             <div class="lottoBall lottoBallSecondary">
-              <span>4</span>
+              <span>{earlyAtLeast}</span>
               <small>At least</small>
             </div>
             <div class="lottoBall lottoBallPrimary">
-              <span>5</span>
+              <span>{earlyMost}</span>
               <small>Most often</small>
             </div>
             <div class="lottoBall lottoBallSecondary">
-              <span>6</span>
+              <span>{earlyAtMost}</span>
               <small>At most</small>
             </div>
           </div>
@@ -96,15 +111,15 @@ const lateTooltipNotes: Record<number, string> = {
           <p class="lottoLabel">Late window</p>
           <div class="lottoBalls">
             <div class="lottoBall lottoBallSecondary">
-              <span>3</span>
+              <span>{lateAtLeast}</span>
               <small>At least</small>
             </div>
             <div class="lottoBall lottoBallPrimary">
-              <span>4</span>
+              <span>{lateMost}</span>
               <small>Most often</small>
             </div>
             <div class="lottoBall lottoBallSecondary">
-              <span>5</span>
+              <span>{lateAtMost}</span>
               <small>At most</small>
             </div>
           </div>
@@ -124,17 +139,17 @@ const lateTooltipNotes: Record<number, string> = {
           <p class="sectionLabel">Early window</p>
           <h2>Early player count frequency</h2>
         </div>
-        <div class="recommendationPill">Play 5 most often</div>
+        <div class="recommendationPill">Play {earlyMost} most often</div>
       </div>
 
       <p class="chartNote">
-        Four to six is the playable band. Five is the center.
+        {earlyAtLeast} to {earlyAtMost} is the playable band. {earlyMost} is the center.
       </p>
 
       <div class="rangeStrip" aria-label="Early window rule">
-        <span class="rangePill">At least 4</span>
-        <span class="rangePill rangePillStrong">Best count 5</span>
-        <span class="rangePill">At most 6</span>
+        <span class="rangePill">At least {earlyAtLeast}</span>
+        <span class="rangePill rangePillStrong">Best count {earlyMost}</span>
+        <span class="rangePill">At most {earlyAtMost}</span>
       </div>
 
       <div class="chartArea earlyArea">
@@ -152,7 +167,7 @@ const lateTooltipNotes: Record<number, string> = {
               data-count={String(item.count)}
               data-wins={String(item.wins)}
               data-pct={String(item.pct)}
-              data-note={earlyTooltipNotes[item.count]}
+              data-note={tooltipNote(earlyTooltipNotes, item.count)}
               style={`--bar-h:${(item.wins / earlyMaxWins) * 100}%`}
             >
               <span class="barValue">{item.wins}</span>
@@ -170,6 +185,10 @@ const lateTooltipNotes: Record<number, string> = {
         </div>
       </div>
   </section>
+  </>
+  ) : (
+    <section class="sectionPanel emptyState">No Classic review data available yet.</section>
+  )}
 
   <section class="sectionPanel chartPanel">
       <div class="chartHeader">
@@ -177,17 +196,17 @@ const lateTooltipNotes: Record<number, string> = {
           <p class="sectionLabel">Late window</p>
           <h2>Late player count frequency</h2>
         </div>
-        <div class="recommendationPill">Play 4 most often</div>
+        <div class="recommendationPill">Play {lateMost} most often</div>
       </div>
 
       <p class="chartNote">
-        Three to five is the playable band. Four is the center.
+        {lateAtLeast} to {lateAtMost} is the playable band. {lateMost} is the center.
       </p>
 
       <div class="rangeStrip" aria-label="Late window rule">
-        <span class="rangePill">At least 3</span>
-        <span class="rangePill rangePillStrong">Best count 4</span>
-        <span class="rangePill">At most 5</span>
+        <span class="rangePill">At least {lateAtLeast}</span>
+        <span class="rangePill rangePillStrong">Best count {lateMost}</span>
+        <span class="rangePill">At most {lateAtMost}</span>
       </div>
 
       <div class="chartArea lateArea">
@@ -205,7 +224,7 @@ const lateTooltipNotes: Record<number, string> = {
               data-count={String(item.count)}
               data-wins={String(item.wins)}
               data-pct={String(item.pct)}
-              data-note={lateTooltipNotes[item.count]}
+              data-note={tooltipNote(lateTooltipNotes, item.count)}
               style={`--bar-h:${(item.wins / lateMaxWins) * 100}%`}
             >
               <span class="barValue">{item.wins}</span>
@@ -849,5 +868,14 @@ const lateTooltipNotes: Record<number, string> = {
     .chartHoverCard {
       max-width: calc(100% - 20px);
     }
+  }
+
+  .emptyState {
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 700;
   }
 </style>

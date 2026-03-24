@@ -1,9 +1,22 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
-import { classicDistributionDashboard } from "../../../../data/nflClassicReviewMock";
+import {
+  fetchClassicReviewRows,
+  toNumber,
+  mean,
+  median,
+  bucketByStep,
+  groupByYear,
+  pct,
+  min,
+  max,
+} from "../../../../lib/nfl/classicReview";
 
 const pageTitle = "NFL Classic Review | Distribution Index";
+
+const rows = await fetchClassicReviewRows(Astro.url.origin);
+const hasData = rows.length > 0;
 
 const formatMoney = (value) => `$${Math.round(value).toLocaleString("en-US")}`;
 const formatNumber = (value) => value.toLocaleString("en-US");
@@ -20,16 +33,234 @@ const scaleLinear = (value, min, max, outMin, outMax) => {
 
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
-const hero = classicDistributionDashboard.hero;
-const trend = classicDistributionDashboard.trend;
-const distributionField = classicDistributionDashboard.distributionField;
-const ecosystem = classicDistributionDashboard.ecosystem;
-const comparisonLab = classicDistributionDashboard.comparisonLab;
+let hero = {
+  kicker: "Classic Distribution Index",
+  title: "Milly winners cluster in tight pockets, and those pockets keep moving.",
+  lede:
+    "This research spread tracks where Classic winners actually land across ownership, salary left, and score. The goal: identify the recurring pockets that win most often, then watch how those pockets migrate by era.",
+  stats: [],
+};
+
+let trend = {
+  title: "Winning Pocket Share Over Time",
+  subtitle:
+    "Each line tracks the share of seasons where a pocket led its category. This is the page’s core argument chart.",
+  xLabels: [],
+  series: [],
+  annotations: [],
+};
+
+let distributionField = {
+  title: "Winning Slate Distribution Field",
+  subtitle:
+    "Each dot is a winning slate. Clustering shows how tight or loose the salary-left spread is by season.",
+  rows: [],
+};
+
+let ecosystem = {
+  title: "Slate Ecosystem Map",
+  subtitle: "Ownership pressure and score ceilings across seasons.",
+  points: [],
+  legend: [],
+};
+
+let comparisonLab = {
+  title: "Pocket Comparison Lab",
+  subtitle: "How each ownership band performs on salary left and score.",
+  narrative: "Buckets are grouped by ownership pressure to compare build windows.",
+  buckets: [],
+  metrics: [],
+};
+
+if (hasData) {
+  const ownValues = rows.map((r) => toNumber(r.ownPct)).filter((v) => v !== null);
+  const salaryValues = rows.map((r) => toNumber(r.salaryLeft)).filter((v) => v !== null);
+  const scoreValues = rows.map((r) => toNumber(r.pts)).filter((v) => v !== null);
+
+  const ownBuckets = bucketByStep(ownValues, 10, { unit: "%" });
+  const salaryBuckets = bucketByStep(salaryValues, 500, { unit: "$" });
+  const scoreBuckets = bucketByStep(scoreValues, 10);
+
+  const topOwn = ownBuckets.sort((a, b) => b.count - a.count)[0];
+  const topSalary = salaryBuckets.sort((a, b) => b.count - a.count)[0];
+  const topScore = scoreBuckets.sort((a, b) => b.count - a.count)[0];
+
+  hero.stats = [
+    {
+      label: "Ownership Pocket That Wins Most Often",
+      value: topOwn?.label ?? "—",
+      note: "Most frequent ownership band in the live sample.",
+    },
+    {
+      label: "Most Frequent Salary-Left Pocket",
+      value: topSalary?.label ?? "—",
+      note: "Most common salary-left band across winners.",
+    },
+    {
+      label: "Most Frequent Winner Score Pocket",
+      value: topScore?.label ?? "—",
+      note: "Score band that appears most often in first place.",
+    },
+  ];
+
+  const yearsBy = groupByYear(rows);
+  const years = Object.keys(yearsBy)
+    .filter((key) => key !== "Unknown")
+    .sort((a, b) => Number(a) - Number(b));
+
+  trend.xLabels = years;
+
+  const ownBand = topOwn ? { min: topOwn.min, max: topOwn.max } : null;
+  const salaryBand = topSalary ? { min: topSalary.min, max: topSalary.max } : null;
+  const scoreBand = topScore ? { min: topScore.min, max: topScore.max } : null;
+
+  const series = [
+    { label: "Ownership Pocket Share", color: "rgba(73, 192, 133, 0.95)", values: [] },
+    { label: "Salary-Left Pocket Share", color: "rgba(91, 140, 255, 0.95)", values: [] },
+    { label: "Winner-Points Pocket Share", color: "rgba(212, 176, 98, 0.95)", values: [] },
+  ];
+
+  years.forEach((year) => {
+    const yearRows = yearsBy[year] ?? [];
+    const yearTotal = yearRows.length || 1;
+    const ownShare = ownBand
+      ? (yearRows.filter((r) => {
+          const v = toNumber(r.ownPct);
+          return v !== null && v >= ownBand.min && v <= ownBand.max;
+        }).length / yearTotal) * 100
+      : 0;
+    const salaryShare = salaryBand
+      ? (yearRows.filter((r) => {
+          const v = toNumber(r.salaryLeft);
+          return v !== null && v >= salaryBand.min && v <= salaryBand.max;
+        }).length / yearTotal) * 100
+      : 0;
+    const scoreShare = scoreBand
+      ? (yearRows.filter((r) => {
+          const v = toNumber(r.pts);
+          return v !== null && v >= scoreBand.min && v <= scoreBand.max;
+        }).length / yearTotal) * 100
+      : 0;
+
+    series[0].values.push(Number(ownShare.toFixed(1)));
+    series[1].values.push(Number(salaryShare.toFixed(1)));
+    series[2].values.push(Number(scoreShare.toFixed(1)));
+  });
+
+  trend.series = series;
+
+  const ownMaxIndex = series[0].values.indexOf(Math.max(...series[0].values));
+  const scoreMaxIndex = series[2].values.indexOf(Math.max(...series[2].values));
+  trend.annotations = [
+    {
+      label: "Ownership pocket leads",
+      season: years[ownMaxIndex],
+      seriesIndex: 0,
+      note: "Peak share for the leading ownership band.",
+    },
+    {
+      label: "Score pocket lifts",
+      season: years[scoreMaxIndex],
+      seriesIndex: 2,
+      note: "Score band peaks in share of winners.",
+    },
+  ].filter((a) => a.season);
+
+  distributionField.rows = years.map((year) => {
+    const salary = (yearsBy[year] ?? [])
+      .map((r) => toNumber(r.salaryLeft))
+      .filter((v) => v !== null)
+      .sort((a, b) => a - b);
+    const sample = salary.length <= 10
+      ? salary
+      : Array.from({ length: 10 }, (_, i) => salary[Math.floor((i / 9) * (salary.length - 1))]);
+    return { label: year, values: sample };
+  });
+
+  const ownershipMedian = median(ownValues) ?? 0;
+  const ownershipHigh = ownershipMedian + 10;
+  const ownershipLow = ownershipMedian - 10;
+
+  const points = rows
+    .filter((r) => r.year != null)
+    .map((r) => {
+      const own = toNumber(r.ownPct) ?? 0;
+      const prize = toNumber(r.topPrizeCents) ?? 0;
+      let group = "balanced";
+      if (own >= ownershipHigh) group = "chalk";
+      if (own <= ownershipLow) group = "leverage";
+      return {
+        x: r.year,
+        y: own,
+        size: Math.max(4, Math.min(14, Math.round(prize / 100000))),
+        group,
+      };
+    });
+
+  ecosystem.points = points.slice(0, 140);
+  ecosystem.legend = [
+    { key: "chalk", label: "Chalk heavy", detail: "Above-average ownership pressure." },
+    { key: "balanced", label: "Balanced", detail: "Near the median ownership pocket." },
+    { key: "leverage", label: "Leverage", detail: "Below-average ownership exposure." },
+  ];
+
+  const bucketDefs = [
+    { key: "leverage", label: "Leverage builds", test: (v) => v < ownershipLow },
+    { key: "balanced", label: "Balanced builds", test: (v) => v >= ownershipLow && v <= ownershipHigh },
+    { key: "chalk", label: "Chalk builds", test: (v) => v > ownershipHigh },
+  ];
+
+  const buckets = bucketDefs.map((def) => {
+    const bucketRows = rows.filter((r) => {
+      const own = toNumber(r.ownPct);
+      return own !== null && def.test(own);
+    });
+    return {
+      label: def.label,
+      ownership: mean(bucketRows.map((r) => toNumber(r.ownPct))) ?? 0,
+      salaryLeft: mean(bucketRows.map((r) => toNumber(r.salaryLeft))) ?? 0,
+      winnerScore: mean(bucketRows.map((r) => toNumber(r.pts))) ?? 0,
+      top10Rate: (bucketRows.length / rows.length) * 100,
+    };
+  });
+
+  comparisonLab.buckets = buckets;
+  comparisonLab.metrics = [
+    {
+      label: "Ownership",
+      key: "ownership",
+      min: min(buckets.map((b) => b.ownership)) ?? 0,
+      max: max(buckets.map((b) => b.ownership)) ?? 1,
+      unit: "%",
+    },
+    {
+      label: "Salary left",
+      key: "salaryLeft",
+      min: min(buckets.map((b) => b.salaryLeft)) ?? 0,
+      max: max(buckets.map((b) => b.salaryLeft)) ?? 1,
+      unit: "$",
+    },
+    {
+      label: "Winner score",
+      key: "winnerScore",
+      min: min(buckets.map((b) => b.winnerScore)) ?? 0,
+      max: max(buckets.map((b) => b.winnerScore)) ?? 1,
+      unit: "",
+    },
+    {
+      label: "Share of sample",
+      key: "top10Rate",
+      min: min(buckets.map((b) => b.top10Rate)) ?? 0,
+      max: max(buckets.map((b) => b.top10Rate)) ?? 1,
+      unit: "%",
+    },
+  ];
+}
 
 const trendSeries = trend.series;
 const trendValues = trendSeries.flatMap((s) => s.values);
-const trendMin = Math.min(...trendValues);
-const trendMax = Math.max(...trendValues);
+const trendMin = trendValues.length ? Math.min(...trendValues) : 0;
+const trendMax = trendValues.length ? Math.max(...trendValues) : 1;
 
 const trendWidth = 1320;
 const trendHeight = 330;
@@ -67,8 +298,8 @@ const trendAnnotationPositions = trend.annotations.map((annotation, index) => {
 
 const distributionRows = distributionField.rows;
 const distributionValues = distributionRows.flatMap((row) => row.values);
-const distributionMin = Math.min(...distributionValues);
-const distributionMax = Math.max(...distributionValues);
+const distributionMin = distributionValues.length ? Math.min(...distributionValues) : 0;
+const distributionMax = distributionValues.length ? Math.max(...distributionValues) : 1;
 
 const distributionWidth = 1320;
 const distributionHeight = 310;
@@ -105,10 +336,10 @@ const distributionPoints = distributionRows.flatMap((row, rowIndex) =>
 const ecosystemPoints = ecosystem.points;
 const ecosystemXValues = ecosystemPoints.map((point) => point.x);
 const ecosystemYValues = ecosystemPoints.map((point) => point.y);
-const ecosystemMinX = Math.min(...ecosystemXValues);
-const ecosystemMaxX = Math.max(...ecosystemXValues);
-const ecosystemMinY = Math.min(...ecosystemYValues);
-const ecosystemMaxY = Math.max(...ecosystemYValues);
+const ecosystemMinX = ecosystemXValues.length ? Math.min(...ecosystemXValues) : 0;
+const ecosystemMaxX = ecosystemXValues.length ? Math.max(...ecosystemXValues) : 1;
+const ecosystemMinY = ecosystemYValues.length ? Math.min(...ecosystemYValues) : 0;
+const ecosystemMaxY = ecosystemYValues.length ? Math.max(...ecosystemYValues) : 1;
 
 const ecosystemWidth = 1320;
 const ecosystemHeight = 340;
@@ -155,6 +386,8 @@ const labBucketColors = [
 >
   <ClassicReviewDrawer active="distribution" mode="hover" />
 
+  {hasData ? (
+  <>
   <section class="lede">
     <div class="patternHero">
       <div class="heroTitleBlock">
@@ -468,6 +701,10 @@ const labBucketColors = [
       </div>
     </div>
   </section>
+  </>
+  ) : (
+    <section class="chapter emptyState">No Classic review data available yet.</section>
+  )}
 </ClassicReviewShell>
 
 <style>
@@ -1068,5 +1305,14 @@ const labBucketColors = [
       align-items: start;
       gap: 4px;
     }
+  }
+
+  .emptyState {
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 700;
   }
 </style>

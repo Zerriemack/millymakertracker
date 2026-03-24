@@ -1,16 +1,9 @@
 ---
 // src/components/nfl/classic/ClassicReviewRaw.astro
 import ClassicReviewFrame from "./ClassicReviewFrame.astro";
+import { fetchClassicReviewRows } from "../../../lib/nfl/classicReview";
 
-const apiUrl = `${Astro.url.origin}/api/analysis/nfl/classic`;
-const res = await fetch(apiUrl);
-
-if (!res.ok) {
-  throw new Error(`Analysis API failed: ${res.status} ${res.statusText} (${apiUrl})`);
-}
-
-const data = await res.json();
-const rowsRaw = Array.isArray(data?.rows) ? data.rows : Array.isArray(data?.items) ? data.items : [];
+const rows = await fetchClassicReviewRows(Astro.url.origin);
 
 function n(v: any) {
   const x = Number(v);
@@ -22,150 +15,6 @@ function moneyCents(v: any) {
   if (x === null) return "—";
   return `$${(x / 100).toLocaleString("en-US")}`;
 }
-
-function ynFromCount(v: any) {
-  const x = n(v);
-  if (x === null) return "";
-  return x > 0 ? "YES" : "NO";
-}
-
-const rows = rowsRaw
-  .map((r: any) => {
-    const slateId = String(r.slateId ?? r.id ?? r.slate?.id ?? "");
-    const week = Number(r.week ?? r.slate?.week ?? null);
-    const slateType = String(r.slateType ?? r.slate?.slateType ?? "");
-    const venue = String(r.slateDate ?? r.slate?.slateDate ?? r.date ?? "");
-
-    const year =
-      typeof r.year === "number"
-        ? r.year
-        : typeof r.slate?.season?.year === "number"
-          ? r.slate.season.year
-          : null;
-
-    const salaryCap =
-      typeof r.salaryCapCents === "number"
-        ? r.salaryCapCents
-        : typeof r.slate?.salaryCapCents === "number"
-          ? r.slate.salaryCapCents
-          : 50000;
-
-    const salaryUsed = typeof r.salaryUsed === "number" ? r.salaryUsed : n(r.lineup?.salaryUsed);
-    const salaryLeft =
-      typeof r.salaryLeft === "number"
-        ? r.salaryLeft
-        : typeof salaryUsed === "number" && typeof salaryCap === "number"
-          ? salaryCap - salaryUsed
-          : null;
-
-    const ownPct =
-      typeof r.totalOwnershipPct === "number"
-        ? r.totalOwnershipPct
-        : typeof r.totalOwnershipBp === "number"
-          ? r.totalOwnershipBp / 100
-          : typeof r.contest?.totalOwnershipBp === "number"
-            ? r.contest.totalOwnershipBp / 100
-            : typeof r.lineup?.totalOwnershipBp === "number"
-              ? r.lineup.totalOwnershipBp / 100
-              : null;
-
-    const pts =
-      typeof r.points === "number"
-        ? r.points
-        : typeof r.winnerPoints === "number"
-          ? r.winnerPoints
-          : typeof r.winner?.points === "number"
-            ? r.winner.points
-            : typeof r.totalPoints === "number"
-              ? r.totalPoints
-              : typeof r.lineup?.totalPoints === "number"
-                ? r.lineup.totalPoints
-                : null;
-
-    const topPrizeCents =
-      typeof r.topPrizeCents === "number"
-        ? r.topPrizeCents
-        : typeof r.contest?.topPrizeCents === "number"
-          ? r.contest.topPrizeCents
-          : null;
-
-    const qbStack = String(r.qbStack ?? r.stack ?? r.construction?.qbStack ?? "");
-
-    const maxFromTeam = typeof r.maxFromTeam === "number" ? r.maxFromTeam : n(r.construction?.maxFromTeam);
-    const maxFromGame = typeof r.maxFromGame === "number" ? r.maxFromGame : n(r.construction?.maxFromGame);
-
-    const stackCount = typeof r.stackCount === "number" ? r.stackCount : n(r.construction?.stackCount);
-    const bringbackCount = typeof r.bringbackCount === "number" ? r.bringbackCount : n(r.construction?.bringbackCount);
-    const hasBringback = String(r.hasBringback ?? ynFromCount(bringbackCount));
-
-    const earlyCount =
-      typeof r.earlyCount === "number"
-        ? r.earlyCount
-        : typeof r.lineup?.analysis?.earlyCount === "number"
-          ? r.lineup.analysis.earlyCount
-          : n(r.construction?.earlyCount);
-
-    const lateCount =
-      typeof r.lateCount === "number"
-        ? r.lateCount
-        : typeof r.lineup?.analysis?.lateCount === "number"
-          ? r.lineup.analysis.lateCount
-          : n(r.construction?.lateCount);
-
-    const own0_10 = typeof r.own0_10 === "number" ? r.own0_10 : n(r.ownership_0_10 ?? r.construction?.own0_10);
-    const own11_19 = typeof r.own11_19 === "number" ? r.own11_19 : n(r.ownership_11_19 ?? r.construction?.own11_19);
-    const own20p = typeof r.own20p === "number" ? r.own20p : n(r.ownership_20p ?? r.construction?.own20p);
-
-    const ownBucketTotal =
-      (typeof own0_10 === "number" ? own0_10 : 0) +
-      (typeof own11_19 === "number" ? own11_19 : 0) +
-      (typeof own20p === "number" ? own20p : 0);
-
-    const tag = String(r.tag ?? "");
-    const group = String(r.group ?? "");
-
-    const link =
-      typeof r.link === "string" && r.link
-        ? r.link
-        : typeof r.url === "string" && r.url
-          ? r.url
-          : slateId && year
-            ? `/nfl/${year}/slate/${slateId}`
-            : "";
-
-    return {
-      slateId,
-      year,
-      week,
-      slateType,
-      venue,
-      tag,
-      group,
-      link,
-
-      qbStack,
-      stackCount,
-      bringbackCount,
-      hasBringback,
-
-      maxFromTeam,
-      maxFromGame,
-
-      earlyCount,
-      lateCount,
-
-      own0_10,
-      own11_19,
-      own20p,
-      ownBucketTotal,
-
-      salaryLeft,
-      ownPct,
-      pts,
-      topPrizeCents,
-    };
-  })
-  .filter((r: any) => r.slateId);
 
 const pageTitle = "NFL Classic Review";
 
@@ -278,12 +127,14 @@ const navItems = [
 
               const badBucket = typeof btot === "number" && btot !== 9;
 
+              const venueSummary = String(r.venueSummary || "").trim();
+
               return (
                 <tr
                   data-year={year}
                   data-week={wk}
                   data-type={r.slateType || ""}
-                  data-venue={r.venue || ""}
+                  data-venue={venueSummary || ""}
                   data-stack={r.qbStack || ""}
                   data-bring={bring}
                   data-maxteam={maxTeam === null ? "" : String(maxTeam)}
@@ -304,7 +155,7 @@ const navItems = [
                   <td class="mono">{year || "—"}</td>
                   <td class="mono">{wk || "—"}</td>
                   <td class="mono">{r.slateType || "—"}</td>
-                  <td class="mono">{r.venue || "—"}</td>
+                  <td class="mono">{venueSummary || "—"}</td>
 
                   <td class="capCell"><div class="capMain">{r.qbStack || "—"}</div></td>
                   <td class="mono">{bring || "—"}</td>

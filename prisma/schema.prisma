@@ -201,6 +201,27 @@ model Team {
   @@unique([sport, abbreviation])
 }
 
+model Stadium {
+  id               String  @id @default(cuid())
+  name             String
+  city             String
+  state            String
+  isIndoor         Boolean
+  teamAbbreviation String?
+  activeFromSeason Int?
+  activeToSeason   Int?
+  aliases          Json?
+
+  games Game[]
+
+  @@index([teamAbbreviation])
+  @@index([activeFromSeason])
+  @@index([activeToSeason])
+  @@index([name])
+  @@index([city])
+  @@index([state])
+}
+
 model TeamSeason {
   id           String  @id @default(cuid())
   teamId       String
@@ -262,6 +283,8 @@ model Game {
   homeStartingQbPlayerId String?
   awayStartingQbPlayerId String?
 
+  stadiumId String?
+
   season Season @relation(fields: [seasonId], references: [id])
 
   homeTeam Team @relation("HomeTeamGames", fields: [homeTeamId], references: [id])
@@ -269,6 +292,8 @@ model Game {
 
   homeStartingQb Player? @relation("HomeStartingQb", fields: [homeStartingQbPlayerId], references: [id])
   awayStartingQb Player? @relation("AwayStartingQb", fields: [awayStartingQbPlayerId], references: [id])
+
+  stadium Stadium? @relation(fields: [stadiumId], references: [id])
 
   lineupItems    LineupItem[]
   correlations   LineupCorrelation[]
@@ -278,6 +303,7 @@ model Game {
   @@index([seasonId, week])
   @@index([homeTeamId])
   @@index([awayTeamId])
+  @@index([stadiumId])
   @@index([kickoffTimeUtc])
   @@index([window])
 }

@@ -1,116 +1,308 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
+import {
+  fetchClassicReviewRows,
+  toNumber,
+  mean,
+  median,
+  quantile,
+  groupByYear,
+  pct,
+} from "../../../../lib/nfl/classicReview";
 
 const pageTitle = "NFL Classic Review | Ownership";
 
-const baseSample = 127;
+const rows = await fetchClassicReviewRows(Astro.url.origin);
+const baseSample = rows.length;
+const hasData = baseSample > 0;
 
-const heroStats = [
-  { label: "Sample", value: "127 winners" },
-  { label: "Most common exact build", value: "4 high-owned, 3 mid-owned, 2 low-owned players" },
-  { label: "Trusted range", value: "At least 3 and at most 4 high-owned players, at least 2 and at most 3 mid-owned players, and at least 2 and at most 3 low-owned players" },
-  { label: "Outlier filter", value: "Min total ownership: 115% • Max total ownership: 154.9%" },
+const fmtPct = (value) => (value == null ? "—" : `${value.toFixed(1)}%`);
+const fmtNum = (value) => (value == null ? "—" : value.toLocaleString("en-US"));
+const fmtRange = (minValue, maxValue) =>
+  minValue == null || maxValue == null ? "—" : `${minValue.toFixed(1)}% to ${maxValue.toFixed(1)}%`;
+
+const ownershipValues = rows.map((r) => toNumber(r.ownPct)).filter((v) => v !== null);
+const highCounts = rows.map((r) => toNumber(r.own20p)).filter((v) => v !== null);
+const midCounts = rows.map((r) => toNumber(r.own11_19)).filter((v) => v !== null);
+const lowCounts = rows.map((r) => toNumber(r.own0_10)).filter((v) => v !== null);
+
+const bandDefs = [
+  { label: "<115%", min: 0, max: 114.9 },
+  { label: "115–124.9%", min: 115, max: 124.9 },
+  { label: "125–134.9%", min: 125, max: 134.9 },
+  { label: "135–144.9%", min: 135, max: 144.9 },
+  { label: "145–154.9%", min: 145, max: 154.9 },
+  { label: "155%+", min: 155, max: 999 },
 ];
+
+const bandForOwnership = (value) => {
+  if (value == null) return "";
+  const match = bandDefs.find((band) => value >= band.min && value <= band.max);
+  return match ? match.label : "";
+};
+
+const countMap = (values) => {
+  const map = new Map();
+  values.forEach((value) => {
+    if (typeof value !== "number") return;
+    map.set(value, (map.get(value) || 0) + 1);
+  });
+  return map;
+};
+
+const buildCountBars = (values, maxVisible = 5) => {
+  const map = countMap(values);
+  const total = values.length || 1;
+  let maxCount = 0;
+  const bars = [];
+
+  for (let i = 0; i <= maxVisible; i += 1) {
+    const count = map.get(i) || 0;
+    maxCount = Math.max(maxCount, count);
+    bars.push({ label: String(i), count });
+  }
+
+  let overflow = 0;
+  map.forEach((count, key) => {
+    if (key > maxVisible) overflow += count;
+  });
+
+  if (overflow > 0) {
+    maxCount = Math.max(maxCount, overflow);
+    bars.push({ label: `${maxVisible + 1}+`, count: overflow });
+  }
+
+  const ranked = [...bars].sort((a, b) => b.count - a.count);
+  const coreLabels = new Set(ranked.slice(0, 2).map((row) => row.label));
+  const secondaryLabels = new Set(ranked.slice(2, 4).map((row) => row.label));
+
+  const mostCommon = ranked[0]?.label ?? "—";
+  const topRange = ranked.slice(0, 2).map((row) => Number.parseInt(row.label, 10)).filter((v) => !Number.isNaN(v));
+  const rangeMin = topRange.length ? Math.min(...topRange) : null;
+  const rangeMax = topRange.length ? Math.max(...topRange) : null;
+
+  const insideBand = values.filter((value) => {
+    if (rangeMin == null || rangeMax == null || typeof value !== "number") return false;
+    return value >= rangeMin && value <= rangeMax;
+  }).length;
+
+  return {
+    mostCommon,
+    trustedRange: rangeMin == null || rangeMax == null ? "—" : `${rangeMin} to ${rangeMax}`,
+    insideBand,
+    insidePct: pct(insideBand, values.length),
+    bars: bars.map((row) => ({
+      label: row.label,
+      count: row.count,
+      pct: pct(row.count, total),
+      width: maxCount ? Math.round((row.count / maxCount) * 100) : 0,
+      state: coreLabels.has(row.label)
+        ? "core"
+        : secondaryLabels.has(row.label)
+          ? "secondary"
+          : "rare",
+    })),
+  };
+};
+
+const makePocketPanel = (key, bucket, values) => {
+  const panel = buildCountBars(values);
+  return {
+    key,
+    bucket,
+    mostCommon: panel.mostCommon,
+    trustedRange: panel.trustedRange,
+    insideBand: `${panel.insideBand} winners`,
+    insidePct: panel.insidePct,
+    bars: panel.bars,
+    rangeMin: panel.trustedRange.split(" to ")[0],
+    rangeMax: panel.trustedRange.split(" to ")[1],
+  };
+};
 
 const pocketPanels = [
-  {
-    key: "high",
-    bucket: "20%+ Pocket",
-    mostCommon: "4",
-    trustedRange: "3 to 4",
-    insideBand: "90 winners",
-    insidePct: "71%",
-    bars: [
-      { label: "1", count: 1, pct: "0.8%", width: 4, state: "rare" },
-      { label: "2", count: 9, pct: "7.1%", width: 19, state: "rare" },
-      { label: "3", count: 42, pct: "33.1%", width: 88, state: "core" },
-      { label: "4", count: 48, pct: "37.8%", width: 100, state: "core" },
-      { label: "5", count: 21, pct: "16.5%", width: 44, state: "secondary" },
-      { label: "6+", count: 6, pct: "4.7%", width: 13, state: "rare" },
-    ],
-  },
-  {
-    key: "mid",
-    bucket: "10 to 19% Pocket",
-    mostCommon: "2",
-    trustedRange: "2 to 3",
-    insideBand: "96 winners",
-    insidePct: "76%",
-    bars: [
-      { label: "0", count: 2, pct: "1.6%", width: 4, state: "rare" },
-      { label: "1", count: 18, pct: "14.2%", width: 36, state: "secondary" },
-      { label: "2", count: 50, pct: "39.4%", width: 100, state: "core" },
-      { label: "3", count: 46, pct: "36.2%", width: 92, state: "core" },
-      { label: "4", count: 9, pct: "7.1%", width: 18, state: "rare" },
-      { label: "5+", count: 2, pct: "1.6%", width: 4, state: "rare" },
-    ],
-  },
-  {
-    key: "low",
-    bucket: "0 to 9% Pocket",
-    mostCommon: "2",
-    trustedRange: "2 to 3",
-    insideBand: "93 winners",
-    insidePct: "73%",
-    bars: [
-      { label: "0", count: 0, pct: "0.0%", width: 0, state: "rare" },
-      { label: "1", count: 15, pct: "11.8%", width: 32, state: "secondary" },
-      { label: "2", count: 47, pct: "37.0%", width: 100, state: "core" },
-      { label: "3", count: 46, pct: "36.2%", width: 98, state: "core" },
-      { label: "4", count: 15, pct: "11.8%", width: 32, state: "secondary" },
-      { label: "5+", count: 4, pct: "3.1%", width: 9, state: "rare" },
-    ],
-  },
+  makePocketPanel("high", "20%+ Pocket", highCounts),
+  makePocketPanel("mid", "10 to 19% Pocket", midCounts),
+  makePocketPanel("low", "0 to 9% Pocket", lowCounts),
 ];
 
-const rangeCards = [
-  { bucket: "20%+ Pocket", key: "high", atLeast: "3", atMost: "4", winners: "90 winners", pct: "71% of sample" },
-  { bucket: "10 to 19% Pocket", key: "mid", atLeast: "2", atMost: "3", winners: "96 winners", pct: "76% of sample" },
-  { bucket: "0 to 9% Pocket", key: "low", atLeast: "2", atMost: "3", winners: "93 winners", pct: "73% of sample" },
-];
+const rangeCards = pocketPanels.map((panel) => ({
+  bucket: panel.bucket,
+  key: panel.key,
+  atLeast: panel.rangeMin ?? "—",
+  atMost: panel.rangeMax ?? "—",
+  winners: panel.insideBand,
+  pct: `${panel.insidePct} of sample`,
+}));
 
-const shapeRows = [
-  { shape: "4H / 3M / 2L", winners: 18, pct: "14.2%", seasons: "7 seasons", ownership: "139.1%", score: "232.4", tag: "Core", high: "4", mid: "3", low: "2", band: "135–144.9%", season: "2023" },
-  { shape: "4H / 2M / 3L", winners: 14, pct: "11.0%", seasons: "6 seasons", ownership: "134.8%", score: "229.6", tag: "Core", high: "4", mid: "2", low: "3", band: "125–134.9%", season: "2024" },
-  { shape: "3H / 3M / 3L", winners: 11, pct: "8.7%", seasons: "5 seasons", ownership: "128.7%", score: "227.9", tag: "Core", high: "3", mid: "3", low: "3", band: "125–134.9%", season: "2020" },
-  { shape: "5H / 2M / 2L", winners: 8, pct: "6.3%", seasons: "4 seasons", ownership: "145.5%", score: "230.1", tag: "Secondary", high: "5", mid: "2", low: "2", band: "145–154.9%", season: "2022" },
-  { shape: "3H / 2M / 4L", winners: 4, pct: "3.1%", seasons: "3 seasons", ownership: "121.4%", score: "231.0", tag: "Secondary", high: "3", mid: "2", low: "4", band: "115–124.9%", season: "2021" },
-  { shape: "2H / 3M / 4L", winners: 2, pct: "1.6%", seasons: "2 seasons", ownership: "115.9%", score: "233.7", tag: "Outlier", high: "2", mid: "3", low: "4", band: "115–124.9%", season: "2018" },
-];
+const heroStats = [];
 
-const totalOwnershipBins = [
-  { label: "<115%", count: 6, pct: "4.7%", width: 14, state: "rare" },
-  { label: "115–124.9%", count: 18, pct: "14.2%", width: 38, state: "secondary" },
-  { label: "125–134.9%", count: 34, pct: "26.8%", width: 72, state: "core" },
-  { label: "135–144.9%", count: 41, pct: "32.3%", width: 100, state: "core" },
-  { label: "145–154.9%", count: 21, pct: "16.5%", width: 51, state: "secondary" },
-  { label: "155%+", count: 7, pct: "5.5%", width: 17, state: "rare" },
-];
+const shapeMap = new Map();
+rows.forEach((row) => {
+  const high = toNumber(row.own20p);
+  const mid = toNumber(row.own11_19);
+  const low = toNumber(row.own0_10);
+  if (high == null || mid == null || low == null) return;
+  const shape = `${high}H / ${mid}M / ${low}L`;
+  if (!shapeMap.has(shape)) {
+    shapeMap.set(shape, {
+      shape,
+      count: 0,
+      years: new Set(),
+      ownership: [],
+      score: [],
+      bandCounts: new Map(),
+      high,
+      mid,
+      low,
+      season: row.year ?? "",
+    });
+  }
+  const entry = shapeMap.get(shape);
+  entry.count += 1;
+  if (row.year != null) entry.years.add(String(row.year));
+  entry.ownership.push(toNumber(row.ownPct));
+  entry.score.push(toNumber(row.pts));
+  const band = bandForOwnership(toNumber(row.ownPct));
+  if (band) entry.bandCounts.set(band, (entry.bandCounts.get(band) || 0) + 1);
+});
+
+const shapeRows = Array.from(shapeMap.values())
+  .sort((a, b) => b.count - a.count)
+  .slice(0, 6)
+  .map((entry) => {
+    const sortedBands = Array.from(entry.bandCounts.entries()).sort((a, b) => b[1] - a[1]);
+    const band = sortedBands[0]?.[0] ?? "";
+    const share = baseSample ? (entry.count / baseSample) * 100 : 0;
+    let tag = "Secondary";
+    if (share >= 10) tag = "Core";
+    if (share < 3) tag = "Outlier";
+    return {
+      shape: entry.shape,
+      winners: entry.count,
+      pct: pct(entry.count, baseSample),
+      seasons: `${entry.years.size} seasons`,
+      ownership: fmtPct(mean(entry.ownership)),
+      score: fmtNum(mean(entry.score)),
+      tag,
+      high: String(entry.high),
+      mid: String(entry.mid),
+      low: String(entry.low),
+      band,
+      season: entry.season ? String(entry.season) : "",
+    };
+  });
+
+const totalOwnershipBins = bandDefs.map((band) => {
+  const count = ownershipValues.filter((v) => v >= band.min && v <= band.max).length;
+  return { label: band.label, count };
+});
+
+const maxBin = Math.max(...totalOwnershipBins.map((b) => b.count), 1);
+const totalOwnershipBinsStyled = totalOwnershipBins.map((bin) => ({
+  ...bin,
+  pct: pct(bin.count, baseSample),
+  width: Math.round((bin.count / maxBin) * 100),
+  state: bin.count >= maxBin * 0.66 ? "core" : bin.count >= maxBin * 0.33 ? "secondary" : "rare",
+}));
+
+const totalOwnershipBinsDisplay = totalOwnershipBinsStyled;
+
+const q10 = quantile(ownershipValues, 0.1);
+const q90 = quantile(ownershipValues, 0.9);
+const q30 = quantile(ownershipValues, 0.3);
+const q70 = quantile(ownershipValues, 0.7);
+const ownershipMedian = median(ownershipValues);
+const recommendedRange = fmtRange(q10, q90);
+const coreRange = fmtRange(q30, q70);
+const medianBand = bandForOwnership(ownershipMedian);
+const lowCount = q10 == null ? 0 : ownershipValues.filter((v) => v < q10).length;
+const highCount = q90 == null ? 0 : ownershipValues.filter((v) => v > q90).length;
+const keptCount = baseSample - lowCount - highCount;
+
+heroStats.push(
+  { label: "Sample", value: `${baseSample} winners` },
+  {
+    label: "Most common exact build",
+    value: pocketPanels.length
+      ? `${pocketPanels[0].mostCommon} high-owned, ${pocketPanels[1].mostCommon} mid-owned, ${pocketPanels[2].mostCommon} low-owned players`
+      : "—",
+  },
+  {
+    label: "Trusted range",
+    value: pocketPanels.length
+      ? `At least ${pocketPanels[0].rangeMin} and at most ${pocketPanels[0].rangeMax} high-owned players, at least ${pocketPanels[1].rangeMin} and at most ${pocketPanels[1].rangeMax} mid-owned players, and at least ${pocketPanels[2].rangeMin} and at most ${pocketPanels[2].rangeMax} low-owned players`
+      : "—",
+  },
+  {
+    label: "Outlier filter",
+    value: q10 == null || q90 == null ? "—" : `Min total ownership: ${q10.toFixed(1)}% • Max total ownership: ${q90.toFixed(1)}%`,
+  },
+);
 
 const totalOwnershipSummary = [
-  { label: "Recommended range", value: "115% to 154.9%" },
-  { label: "Core concentration", value: "125% to 145%" },
-  { label: "Median", value: "137.4%" },
-  { label: "Trim rule", value: "Exclude <115% and 155%+" },
+  { label: "Recommended range", value: recommendedRange },
+  { label: "Core concentration", value: coreRange },
+  { label: "Median", value: fmtPct(ownershipMedian) },
+  { label: "Trim rule", value: q10 == null || q90 == null ? "—" : `Exclude <${q10.toFixed(1)}% and >${q90.toFixed(1)}%` },
 ];
 
-const seasonDriftSummary = [
-  { label: "Stable", value: "4 seasons" },
-  { label: "Wider", value: "1 season" },
-  { label: "Chalk heavier", value: "1 season" },
-  { label: "Leverage heavier", value: "1 season" },
-];
+const yearsBy = groupByYear(rows);
+const overallSpread = (quantile(ownershipValues, 0.9) ?? 0) - (quantile(ownershipValues, 0.1) ?? 0);
 
-const seasonShapeDriftRows = [
-  { season: "2018", highMode: "4", midMode: "2", lowMode: "3", topShape: "4H / 2M / 3L", medianOwn: "133.8%", note: "Lower total ownership, stronger low-end finish.", stability: "Leverage heavier" },
-  { season: "2019", highMode: "4", midMode: "3", lowMode: "2", topShape: "4H / 3M / 2L", medianOwn: "137.1%", note: "Clean chalk spine with narrower leverage tail.", stability: "Stable" },
-  { season: "2020", highMode: "3", midMode: "3", lowMode: "3", topShape: "3H / 3M / 3L", medianOwn: "129.4%", note: "Wider balance year. Less top-heavy chalk concentration.", stability: "Wider" },
-  { season: "2021", highMode: "4", midMode: "2", lowMode: "3", topShape: "4H / 2M / 3L", medianOwn: "135.9%", note: "Returned to stronger high-owned base.", stability: "Stable" },
-  { season: "2022", highMode: "4", midMode: "3", lowMode: "2", topShape: "4H / 3M / 2L", medianOwn: "138.6%", note: "Stable core architecture.", stability: "Stable" },
-  { season: "2023", highMode: "4", midMode: "3", lowMode: "2", topShape: "4H / 3M / 2L", medianOwn: "140.2%", note: "Slight ownership lift without changing the core build.", stability: "Chalk heavier" },
-  { season: "2024", highMode: "4", midMode: "2", lowMode: "3", topShape: "4H / 2M / 3L", medianOwn: "136.8%", note: "Still inside the same macro band.", stability: "Stable" },
-];
+const seasonShapeDriftRows = Object.keys(yearsBy)
+  .filter((key) => key !== "Unknown")
+  .sort((a, b) => Number(a) - Number(b))
+  .map((season) => {
+    const seasonRows = yearsBy[season];
+    const seasonOwn = seasonRows.map((r) => toNumber(r.ownPct)).filter((v) => v !== null);
+    const seasonMedian = median(seasonOwn);
+    const seasonSpread = (quantile(seasonOwn, 0.9) ?? 0) - (quantile(seasonOwn, 0.1) ?? 0);
+
+    const modeValue = (values) => {
+      const map = countMap(values);
+      let top = { value: "—", count: 0 };
+      map.forEach((count, value) => {
+        if (count > top.count) top = { value, count };
+      });
+      return String(top.value);
+    };
+
+    const highMode = modeValue(seasonRows.map((r) => toNumber(r.own20p)));
+    const midMode = modeValue(seasonRows.map((r) => toNumber(r.own11_19)));
+    const lowMode = modeValue(seasonRows.map((r) => toNumber(r.own0_10)));
+    const shapeMode = `${highMode}H / ${midMode}M / ${lowMode}L`;
+
+    let stability = "Stable";
+    let note = "Stable ownership profile.";
+    if (seasonMedian != null && ownershipMedian != null && seasonMedian > ownershipMedian + 5) {
+      stability = "Chalk heavier";
+      note = "Ownership tilted higher than the full sample.";
+    } else if (seasonMedian != null && ownershipMedian != null && seasonMedian < ownershipMedian - 5) {
+      stability = "Leverage heavier";
+      note = "Ownership dipped below the median band.";
+    } else if (seasonSpread > overallSpread * 1.1) {
+      stability = "Wider";
+      note = "Wider distribution of ownership outcomes.";
+    }
+
+    return {
+      season,
+      highMode,
+      midMode,
+      lowMode,
+      topShape: shapeMode,
+      medianOwn: fmtPct(seasonMedian),
+      note,
+      stability,
+    };
+  });
+
+const seasonDriftSummary = ["Stable", "Wider", "Chalk heavier", "Leverage heavier"].map((label) => ({
+  label,
+  value: `${seasonShapeDriftRows.filter((row) => row.stability === label).length} seasons`,
+}));
 
 const methodology = [
   "Ownership buckets are fixed at 20%+, 10–19.9%, and 0–9.9%.",
@@ -187,6 +379,8 @@ const methodology = [
     </details>
   </section>
 
+  {hasData ? (
+  <>
   <section class="sectionPanel">
     <div class="sectionHeader">
       <div>
@@ -346,41 +540,41 @@ const methodology = [
           </div>
           <div class="ownershipRangeMedian">
             <span>Median</span>
-            <strong>137.4%</strong>
+            <strong>{fmtPct(ownershipMedian)}</strong>
           </div>
         </div>
 
         <div class="ownershipBandBracket">
           <div class="ownershipBandBracketLine"></div>
-          <div class="ownershipBandBracketLabel">Core band 125% to 145%</div>
+          <div class="ownershipBandBracketLabel">Core band {coreRange}</div>
         </div>
 
         <div class="ownershipTrimStrip">
           <article class="ownershipTrimCard">
             <span class="ownershipTrimLabel">Raw floor</span>
-            <strong class="ownershipTrimValue">&lt;115%</strong>
-            <span class="ownershipTrimNote">6 winners · 4.7%</span>
+            <strong class="ownershipTrimValue">{q10 == null ? "—" : `<${q10.toFixed(1)}%`}</strong>
+            <span class="ownershipTrimNote">{lowCount} winners · {pct(lowCount, baseSample)}</span>
           </article>
           <article class="ownershipTrimCard ownershipTrimCardCore">
             <span class="ownershipTrimLabel">Trimmed range kept</span>
-            <strong class="ownershipTrimValue">115% to 154.9%</strong>
-            <span class="ownershipTrimNote">113 winners · 89.0%</span>
+            <strong class="ownershipTrimValue">{recommendedRange}</strong>
+            <span class="ownershipTrimNote">{keptCount} winners · {pct(keptCount, baseSample)}</span>
           </article>
           <article class="ownershipTrimCard">
             <span class="ownershipTrimLabel">Raw ceiling</span>
-            <strong class="ownershipTrimValue">155%+</strong>
-            <span class="ownershipTrimNote">7 winners · 5.5%</span>
+            <strong class="ownershipTrimValue">{q90 == null ? "—" : `>${q90.toFixed(1)}%`}</strong>
+            <span class="ownershipTrimNote">{highCount} winners · {pct(highCount, baseSample)}</span>
           </article>
         </div>
 
         <div class="ownershipRangeCalloutRow">
           <article class="ownershipRangeCallout ownershipRangeCalloutPrimary">
             <span class="ownershipRangeCalloutLabel">Recommended working range</span>
-            <strong class="ownershipRangeCalloutValue">115% to 154.9%</strong>
+            <strong class="ownershipRangeCalloutValue">{recommendedRange}</strong>
           </article>
           <article class="ownershipRangeCallout">
             <span class="ownershipRangeCalloutLabel">Core concentration</span>
-            <strong class="ownershipRangeCalloutValue">125% to 145%</strong>
+            <strong class="ownershipRangeCalloutValue">{coreRange}</strong>
           </article>
         </div>
 
@@ -389,7 +583,7 @@ const methodology = [
         </p>
 
         <div class="ownershipBandChart">
-          {totalOwnershipBins.map((bin) => (
+          {totalOwnershipBinsDisplay.map((bin) => (
             <button
               type="button"
               class={`ownershipBandCard state-${bin.state} filterControl`}
@@ -404,7 +598,7 @@ const methodology = [
               </div>
               <div class="ownershipBandTrack">
                 <div class="ownershipBandFill" style={`width:${bin.width}%`}></div>
-                {bin.label === "135–144.9%" ? <div class="ownershipMedianMarker"></div> : null}
+                {medianBand && bin.label === medianBand ? <div class="ownershipMedianMarker"></div> : null}
               </div>
               <div class="ownershipBandFoot">
                 <strong>{bin.count}</strong>
@@ -483,6 +677,10 @@ const methodology = [
       ))}
     </div>
   </section>
+  </>
+  ) : (
+    <section class="sectionPanel emptyState">No Classic review data available yet.</section>
+  )}
 </ClassicReviewShell>
 
 <script is:inline>
@@ -490,7 +688,7 @@ const methodology = [
     const root = document.querySelector(".ownership-compact");
     if (!root) return;
 
-    const baseSample = 127;
+    const baseSample = {baseSample};
     const state = {
       high: null,
       mid: null,
@@ -1801,5 +1999,14 @@ const methodology = [
     .seasonDriftRow {
       min-width: 1080px;
     }
+  }
+
+  .emptyState {
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 700;
   }
 </style>

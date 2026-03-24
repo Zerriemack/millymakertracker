@@ -1,79 +1,48 @@
 ---
 import ClassicReviewFrame from "../../../../components/nfl/classic/ClassicReviewFrame.astro";
-import { classicReviewRowsMock } from "../../../../data/nflClassicReviewMock";
+import {
+  fetchClassicReviewRows,
+  toNumber,
+  mean,
+  min,
+  max,
+  mode,
+  least,
+  uniqueCount,
+  pct,
+  normalizeKey,
+} from "../../../../lib/nfl/classicReview";
 
-const rows = Array.isArray(classicReviewRowsMock) ? classicReviewRowsMock : [];
+const rows = await fetchClassicReviewRows(Astro.url.origin);
 const total = rows.length;
-
-const num = (v) => (Number.isFinite(Number(v)) ? Number(v) : null);
-const normalize = (v) => String(v ?? "").trim();
-const normalizeKey = (v) => normalize(v).toUpperCase();
-
-const mean = (arr) =>
-  arr.length ? arr.reduce((sum, v) => sum + v, 0) / arr.length : null;
-const min = (arr) => (arr.length ? Math.min(...arr) : null);
-const max = (arr) => (arr.length ? Math.max(...arr) : null);
-
-const counts = (values) => {
-  const map = new Map();
-  values.forEach((v) => {
-    const key = normalizeKey(v);
-    if (!key) return;
-    map.set(key, (map.get(key) || 0) + 1);
-  });
-  return map;
-};
-
-const mode = (values) => {
-  const map = counts(values);
-  let top = { value: "—", count: 0 };
-  map.forEach((count, value) => {
-    if (count > top.count) top = { value, count };
-  });
-  return top;
-};
-
-const least = (values) => {
-  const map = counts(values);
-  let low = { value: "—", count: Number.POSITIVE_INFINITY };
-  map.forEach((count, value) => {
-    if (count < low.count) low = { value, count };
-  });
-  if (low.count === Number.POSITIVE_INFINITY) return { value: "—", count: 0 };
-  return low;
-};
-
-const uniqueCount = (values) => counts(values).size;
-const pct = (count, totalCount) =>
-  totalCount ? `${((count / totalCount) * 100).toFixed(1)}%` : "—";
 
 const fmtNum = (v, digits = 0) =>
   v === null ? "—" : v.toLocaleString("en-US", { maximumFractionDigits: digits, minimumFractionDigits: digits });
 const fmtMoney = (v) => (v === null ? "—" : `$${Math.round(v).toLocaleString("en-US")}`);
 const fmtPct = (v) => (v === null ? "—" : `${v.toFixed(1)}%`);
 
-const years = rows.map((r) => num(r.year)).filter((v) => v !== null);
-const weeks = rows.map((r) => num(r.week)).filter((v) => v !== null);
-const types = rows.map((r) => r.type);
+const years = rows.map((r) => toNumber(r.year)).filter((v) => v !== null);
+const weeks = rows.map((r) => toNumber(r.week)).filter((v) => v !== null);
+const types = rows.map((r) => r.slateType);
 const venues = rows.map((r) => r.venue);
 
-const stacks = rows.map((r) => r.stack);
-const bringbacks = rows.map((r) => r.bringBack);
+const stacks = rows.map((r) => r.qbStack);
+const bringbacks = rows.map((r) => r.hasBringback);
 
-const maxFromTeam = rows.map((r) => num(r.maxFromTeam)).filter((v) => v !== null);
-const maxFromGame = rows.map((r) => num(r.maxFromGame)).filter((v) => v !== null);
+const maxFromTeam = rows.map((r) => toNumber(r.maxFromTeam)).filter((v) => v !== null);
+const maxFromGame = rows.map((r) => toNumber(r.maxFromGame)).filter((v) => v !== null);
 
-const earlyPlayers = rows.map((r) => num(r.earlyPlayers)).filter((v) => v !== null);
-const latePlayers = rows.map((r) => num(r.latePlayers)).filter((v) => v !== null);
-const salaryLeft = rows.map((r) => num(r.salaryLeft)).filter((v) => v !== null);
-const totalOwnership = rows.map((r) => num(r.totalOwnership)).filter((v) => v !== null);
+const earlyPlayers = rows.map((r) => toNumber(r.earlyCount)).filter((v) => v !== null);
+const latePlayers = rows.map((r) => toNumber(r.lateCount)).filter((v) => v !== null);
+const salaryLeft = rows.map((r) => toNumber(r.salaryLeft)).filter((v) => v !== null);
+const totalOwnership = rows.map((r) => toNumber(r.ownPct)).filter((v) => v !== null);
 
-const own0_10 = rows.map((r) => num(r.own0_10)).filter((v) => v !== null);
-const own11_19 = rows.map((r) => num(r.own11_19)).filter((v) => v !== null);
-const own20p = rows.map((r) => num(r.own20p)).filter((v) => v !== null);
-const bucketTotal = rows.map((r) => num(r.bucketTotal ?? (num(r.own0_10) || 0) + (num(r.own11_19) || 0) + (num(r.own20p) || 0))).filter((v) => v !== null);
+const own0_10 = rows.map((r) => toNumber(r.own0_10)).filter((v) => v !== null);
+const own11_19 = rows.map((r) => toNumber(r.own11_19)).filter((v) => v !== null);
+const own20p = rows.map((r) => toNumber(r.own20p)).filter((v) => v !== null);
+const bucketTotal = rows.map((r) => toNumber(r.ownBucketTotal)).filter((v) => v !== null);
 
-const winnerPoints = rows.map((r) => num(r.winnerPoints)).filter((v) => v !== null);
+const winnerPoints = rows.map((r) => toNumber(r.pts)).filter((v) => v !== null);
 
 const tags = rows.map((r) => r.tag);
 const groups = rows.map((r) => r.group);
@@ -126,6 +95,9 @@ const venueTopShare = pct(mode(venues).count, total);
         </div>
       </header>
 
+      {total === 0 ? (
+        <div class="emptyState">No Classic review data available yet.</div>
+      ) : (
       <section class="summaryGrid" aria-label="Classic Review Summary Boxes">
       <div class="summaryCard">
         <div class="cardTitle">Slate Context</div>
@@ -258,6 +230,7 @@ const venueTopShare = pct(mode(venues).count, total);
         </div>
       </div>
       </section>
+      )}
     </div>
   </section>
 </ClassicReviewFrame>
@@ -395,6 +368,15 @@ const venueTopShare = pct(mode(venues).count, total);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap: 14px;
+  }
+
+  .emptyState {
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 700;
   }
 
   .summaryCard {

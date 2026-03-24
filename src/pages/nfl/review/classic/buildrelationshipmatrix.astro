@@ -1,99 +1,107 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
+import { fetchClassicReviewRows, toNumber } from "../../../../lib/nfl/classicReview";
 
 const pageTitle = "NFL Classic Review | Build Relationship Matrix";
 
-const metrics = [
-  "QB Naked",
-  "QB+1",
-  "QB+2",
-  "Double Stack",
-  "Bring Back",
-  "Double Bring Back",
-  "Secondary Stack",
-  "Onslaught",
-  "Max From Team",
-  "Max From Game",
-  "Early Players",
-  "Late Players",
-  "Indoor Count",
-  "Outdoor Count",
-  "Salary Left",
-  "Total Own",
-  "Own 0-10",
-  "Own 11-19",
-  "Own 20+",
-  "Winner Pts",
+const rows = await fetchClassicReviewRows(Astro.url.origin);
+const hasData = rows.length > 1;
+
+const stackCountFor = (row) => {
+  const raw = String(row.qbStack ?? "").toUpperCase();
+  const count = toNumber(row.stackCount);
+  if (count != null) return count;
+  if (raw.includes("NAKED")) return 0;
+  const match = raw.match(/QB\+(\d+)/);
+  if (match) return Number(match[1]);
+  return null;
+};
+
+const corr = (a: number[], b: number[]) => {
+  const pairs = a
+    .map((v, i) => [v, b[i]] as const)
+    .filter(([x, y]) => Number.isFinite(x) && Number.isFinite(y));
+  if (pairs.length < 2) return 0;
+  const xs = pairs.map((p) => p[0]);
+  const ys = pairs.map((p) => p[1]);
+  const meanX = xs.reduce((s, v) => s + v, 0) / xs.length;
+  const meanY = ys.reduce((s, v) => s + v, 0) / ys.length;
+  let num = 0;
+  let denX = 0;
+  let denY = 0;
+  pairs.forEach(([x, y]) => {
+    const dx = x - meanX;
+    const dy = y - meanY;
+    num += dx * dy;
+    denX += dx * dx;
+    denY += dy * dy;
+  });
+  const denom = Math.sqrt(denX * denY);
+  return denom === 0 ? 0 : num / denom;
+};
+
+const metricDefs = [
+  { label: "QB Naked", values: rows.map((r) => (stackCountFor(r) === 0 ? 1 : stackCountFor(r) == null ? null : 0)) },
+  { label: "QB+1", values: rows.map((r) => (stackCountFor(r) === 1 ? 1 : stackCountFor(r) == null ? null : 0)) },
+  { label: "QB+2", values: rows.map((r) => (stackCountFor(r) === 2 ? 1 : stackCountFor(r) == null ? null : 0)) },
+  { label: "Double Stack", values: rows.map((r) => (stackCountFor(r) != null ? (stackCountFor(r) >= 3 ? 1 : 0) : null)) },
+  { label: "Bring Back", values: rows.map((r) => {
+      const value = toNumber(r.bringbackCount);
+      if (value == null) {
+        const flag = String(r.hasBringback).toUpperCase();
+        return flag ? (flag === "YES" ? 1 : 0) : null;
+      }
+      return value >= 1 ? 1 : 0;
+    }) },
+  { label: "Double Bring Back", values: rows.map((r) => {
+      const value = toNumber(r.bringbackCount);
+      return value == null ? null : value >= 2 ? 1 : 0;
+    }) },
+  { label: "Onslaught", values: rows.map((r) => {
+      const value = toNumber(r.maxFromTeam);
+      return value == null ? null : value >= 5 ? 1 : 0;
+    }) },
+  { label: "Max From Team", values: rows.map((r) => toNumber(r.maxFromTeam)) },
+  { label: "Max From Game", values: rows.map((r) => toNumber(r.maxFromGame)) },
+  { label: "Early Players", values: rows.map((r) => toNumber(r.earlyCount)) },
+  { label: "Late Players", values: rows.map((r) => toNumber(r.lateCount)) },
+  { label: "Salary Left", values: rows.map((r) => toNumber(r.salaryLeft)) },
+  { label: "Total Own", values: rows.map((r) => toNumber(r.ownPct)) },
+  { label: "Own 0-10", values: rows.map((r) => toNumber(r.own0_10)) },
+  { label: "Own 11-19", values: rows.map((r) => toNumber(r.own11_19)) },
+  { label: "Own 20+", values: rows.map((r) => toNumber(r.own20p)) },
+  { label: "Winner Pts", values: rows.map((r) => toNumber(r.pts)) },
 ];
 
-const matrix = [
-  [1.00, -0.62, -0.74, -0.58, -0.41, -0.17, -0.22, 0.16, -0.08, 0.05, 0.09, -0.06, 0.03, -0.03, 0.18, -0.12, 0.10, -0.08, 0.02, -0.09],
-  [-0.62, 1.00, 0.69, 0.56, 0.48, 0.16, 0.34, -0.09, 0.21, 0.17, 0.12, -0.11, 0.04, -0.04, -0.14, 0.09, -0.06, 0.07, -0.01, 0.11],
-  [-0.74, 0.69, 1.00, 0.73, 0.61, 0.29, 0.44, -0.05, 0.26, 0.22, 0.08, -0.08, 0.06, -0.06, -0.19, 0.13, -0.04, 0.10, 0.03, 0.17],
-  [-0.58, 0.56, 0.73, 1.00, 0.64, 0.36, 0.52, 0.08, 0.29, 0.24, 0.05, -0.04, 0.07, -0.07, -0.16, 0.11, -0.02, 0.08, 0.04, 0.15],
-  [-0.41, 0.48, 0.61, 0.64, 1.00, 0.58, 0.33, -0.06, 0.19, 0.31, 0.04, -0.02, 0.02, -0.02, -0.08, 0.14, -0.03, 0.09, 0.06, 0.13],
-  [-0.17, 0.16, 0.29, 0.36, 0.58, 1.00, 0.21, 0.04, 0.14, 0.26, 0.03, -0.01, 0.01, -0.01, -0.02, 0.09, -0.01, 0.06, 0.05, 0.07],
-  [-0.22, 0.34, 0.44, 0.52, 0.33, 0.21, 1.00, 0.24, 0.18, 0.16, 0.02, -0.03, 0.05, -0.05, -0.11, 0.07, 0.00, 0.04, 0.03, 0.08],
-  [0.16, -0.09, -0.05, 0.08, -0.06, 0.04, 0.24, 1.00, 0.41, 0.37, -0.04, 0.05, 0.02, -0.02, -0.01, 0.03, -0.02, 0.02, 0.07, 0.05],
-  [-0.08, 0.21, 0.26, 0.29, 0.19, 0.14, 0.18, 0.41, 1.00, 0.66, -0.03, 0.04, 0.00, 0.00, -0.05, 0.08, -0.01, 0.03, 0.09, 0.06],
-  [0.05, 0.17, 0.22, 0.24, 0.31, 0.26, 0.16, 0.37, 0.66, 1.00, -0.02, 0.02, 0.01, -0.01, -0.03, 0.06, -0.01, 0.03, 0.08, 0.09],
-  [0.09, 0.12, 0.08, 0.05, 0.04, 0.03, 0.02, -0.04, -0.03, -0.02, 1.00, -0.92, -0.11, 0.11, 0.02, 0.03, -0.01, 0.02, 0.01, 0.04],
-  [-0.06, -0.11, -0.08, -0.04, -0.02, -0.01, -0.03, 0.05, 0.04, 0.02, -0.92, 1.00, 0.11, -0.11, -0.02, -0.03, 0.01, -0.02, -0.01, -0.04],
-  [0.03, 0.04, 0.06, 0.07, 0.02, 0.01, 0.05, 0.02, 0.00, 0.01, -0.11, 0.11, 1.00, -1.00, -0.04, 0.02, -0.01, 0.01, 0.00, 0.02],
-  [-0.03, -0.04, -0.06, -0.07, -0.02, -0.01, -0.05, -0.02, 0.00, -0.01, 0.11, -0.11, -1.00, 1.00, 0.04, -0.02, 0.01, -0.01, 0.00, -0.02],
-  [0.18, -0.14, -0.19, -0.16, -0.08, -0.02, -0.11, -0.01, -0.05, -0.03, 0.02, -0.02, -0.04, 0.04, 1.00, -0.46, 0.29, -0.18, -0.21, 0.06],
-  [-0.12, 0.09, 0.13, 0.11, 0.14, 0.09, 0.07, 0.03, 0.08, 0.06, 0.03, -0.03, 0.02, -0.02, -0.46, 1.00, -0.62, 0.54, 0.48, 0.11],
-  [0.10, -0.06, -0.04, -0.02, -0.03, -0.01, 0.00, -0.02, -0.01, -0.01, -0.01, 0.01, -0.01, 0.01, 0.29, -0.62, 1.00, -0.38, -0.41, -0.03],
-  [-0.08, 0.07, 0.10, 0.08, 0.09, 0.06, 0.04, 0.02, 0.03, 0.03, 0.02, -0.02, 0.01, -0.01, -0.18, 0.54, -0.38, 1.00, -0.57, 0.05],
-  [0.02, -0.01, 0.03, 0.04, 0.06, 0.05, 0.03, 0.07, 0.09, 0.08, 0.01, -0.01, 0.00, 0.00, -0.21, 0.48, -0.41, -0.57, 1.00, 0.09],
-  [-0.09, 0.11, 0.17, 0.15, 0.13, 0.07, 0.08, 0.05, 0.06, 0.09, 0.04, -0.04, 0.02, -0.02, 0.06, 0.11, -0.03, 0.05, 0.09, 1.00],
-];
+const metrics = metricDefs.map((m) => m.label);
+const matrix = metricDefs.map((row, i) =>
+  metricDefs.map((col, j) => (i === j ? 1 : Number(corr(row.values, col.values).toFixed(2))))
+);
 
-const headlineSignals = [
-  {
-    title: "Strongest positive",
-    pair: "QB+2 × Double Stack",
-    value: "+0.73",
-    tone: "pos",
-    note: "As primary stack density rises, classic double stack builds rise with it.",
-  },
-  {
-    title: "Strongest negative",
-    pair: "Indoor Count × Outdoor Count",
-    value: "-1.00",
-    tone: "neg",
-    note: "Venue exposure is a direct tradeoff inside a fixed nine player build.",
-  },
-  {
-    title: "Ownership tension",
-    pair: "Total Ownership × Own 0-10",
-    value: "-0.62",
-    tone: "neg",
-    note: "The more true low owned pieces a winner carries, the harder it is for total ownership to stay elevated.",
-  },
-  {
-    title: "Concentration link",
-    pair: "Max From Team × Max From Game",
-    value: "+0.66",
-    tone: "pos",
-    note: "Single team concentration and single game concentration often rise together.",
-  },
-  {
-    title: "Timing split",
-    pair: "Early Players × Late Players",
-    value: "-0.92",
-    tone: "neg",
-    note: "Window allocation is almost pure tradeoff. Heavy early builds naturally suppress late game exposure.",
-  },
-  {
-    title: "Bring back pressure",
-    pair: "Bring Back × Double Bring Back",
-    value: "+0.58",
-    tone: "pos",
-    note: "Once a build leans into opposing correlation, second layer game capture shows up more often.",
-  },
-];
+const correlations = [];
+matrix.forEach((row, i) => {
+  row.forEach((value, j) => {
+    if (i >= j) return;
+    correlations.push({ i, j, value });
+  });
+});
+
+const topSignals = correlations
+  .sort((a, b) => Math.abs(b.value) - Math.abs(a.value))
+  .slice(0, 6);
+
+const headlineSignals = topSignals.map((signal, index) => {
+  const value = signal.value;
+  const tone = value >= 0 ? "pos" : "neg";
+  return {
+    title: index === 0 ? "Strongest relationship" : `Top signal ${index + 1}`,
+    pair: `${metrics[signal.i]} × ${metrics[signal.j]}`,
+    value: `${value >= 0 ? "+" : ""}${value.toFixed(2)}`,
+    tone,
+    note: value >= 0 ? "These variables tend to rise together in the winner sample." : "As one rises, the other tends to fall in the winner sample.",
+  };
+});
 
 const faqs = [
   {
@@ -127,6 +135,7 @@ const faqs = [
 >
   <ClassicReviewDrawer active="construction" mode="hover" />
 
+  {hasData ? (
   <div class="labPage">
     <section class="topBand">
       <section class="patternHeroModule">
@@ -263,6 +272,11 @@ const faqs = [
       </div>
     </section>
   </div>
+  ) : (
+    <div class="labPage">
+      <div class="emptyState">No Classic review data available yet.</div>
+    </div>
+  )}
 </ClassicReviewShell>
 
 <style>
@@ -737,5 +751,14 @@ const faqs = [
     .heroNarrative p {
       font-size: 0.92rem;
     }
+  }
+
+  .emptyState {
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 700;
   }
 </style>

@@ -1,8 +1,16 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
+import {
+  fetchClassicReviewRows,
+  toNumber,
+  pct,
+} from "../../../../lib/nfl/classicReview";
 
 const pageTitle = "NFL Classic Review | Patterns";
+
+const rows = await fetchClassicReviewRows(Astro.url.origin);
+const hasData = rows.length > 0;
 
 type Row = {
   label: string;
@@ -10,23 +18,49 @@ type Row = {
   meta?: string;
 };
 
-const stackRows: Row[] = [
-  { label: "QB+2", value: 28 },
-  { label: "QB+1", value: 22 },
-  { label: "Naked QB", value: 16 },
-  { label: "Double Stack", value: 12 },
-  { label: "Onslaught", value: 9 },
-  { label: "Skinny Stack", value: 6 },
-];
+const stackLabelFor = (row) => {
+  const raw = String(row.qbStack ?? "").trim();
+  if (raw) return raw;
+  const count = toNumber(row.stackCount);
+  if (count == null) return "Unknown";
+  if (count === 0) return "Naked QB";
+  return `QB+${count}`;
+};
 
-const bringBackRows: Row[] = [
-  { label: "1 bring-back", value: 34 },
-  { label: "No bring-back", value: 24 },
-  { label: "2 bring-backs", value: 18 },
-  { label: "WR bring-back", value: 12 },
-  { label: "RB bring-back", value: 7 },
-  { label: "TE bring-back", value: 5 },
-];
+const bringBackLabelFor = (row) => {
+  const count = toNumber(row.bringbackCount);
+  if (count == null) {
+    const flag = String(row.hasBringback ?? "").toUpperCase();
+    return flag === "YES" ? "1 bring-back" : "No bring-back";
+  }
+  if (count === 0) return "No bring-back";
+  if (count === 1) return "1 bring-back";
+  if (count === 2) return "2 bring-backs";
+  return "3+ bring-backs";
+};
+
+const buildDistribution = (values) => {
+  const map = new Map();
+  values.forEach((value) => {
+    map.set(value, (map.get(value) || 0) + 1);
+  });
+  return Array.from(map.entries())
+    .map(([label, count]) => ({ label, count }))
+    .sort((a, b) => b.count - a.count);
+};
+
+const stackCounts = buildDistribution(rows.map((r) => stackLabelFor(r)));
+const bringCounts = buildDistribution(rows.map((r) => bringBackLabelFor(r)));
+
+const stackRows: Row[] = stackCounts.slice(0, 6).map((row) => ({
+  label: row.label,
+  value: Number.parseFloat(pct(row.count, rows.length).replace("%", "")) || 0,
+}));
+
+const bringBackRows: Row[] = bringCounts.slice(0, 6).map((row) => ({
+  label: row.label,
+  value: Number.parseFloat(pct(row.count, rows.length).replace("%", "")) || 0,
+}));
 
 const stackMax = Math.max(...stackRows.map((r) => r.value), 1);
 const bringBackMax = Math.max(...bringBackRows.map((r) => r.value), 1);
@@ -68,6 +102,7 @@ const bringBackRefLeft = `${(bringBackAverage / bringBackMax) * 100}%`;
 >
   <ClassicReviewDrawer active="patterns" mode="hover" />
 
+  {hasData ? (
   <section class="patternEditorialBoard">
     <section class="patternHeroModule">
       <div class="patternHero">
@@ -279,6 +314,11 @@ const bringBackRefLeft = `${(bringBackAverage / bringBackMax) * 100}%`;
       </div>
     </section>
   </section>
+  ) : (
+    <section class="patternEditorialBoard">
+      <div class="emptyState">No Classic review data available yet.</div>
+    </section>
+  )}
 </ClassicReviewShell>
 
 <style>
@@ -739,5 +779,14 @@ const bringBackRefLeft = `${(bringBackAverage / bringBackMax) * 100}%`;
     .vizRail {
       grid-template-columns: 1fr;
     }
+  }
+
+  .emptyState {
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 700;
   }
 </style>

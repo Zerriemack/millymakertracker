@@ -1,161 +1,142 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
+import {
+  fetchClassicReviewRows,
+  toNumber,
+  bucketByStep,
+  groupByYear,
+  median,
+  pct,
+} from "../../../../lib/nfl/classicReview";
 
 const pageTitle = "NFL Classic Review | Game Environment";
+
+const rows = await fetchClassicReviewRows(Astro.url.origin);
+const hasData = rows.length > 0;
+
+const totals = rows.map((r) => toNumber(r.pts)).filter((v) => v !== null);
+const spreads = rows.map((r) => toNumber(r.ownPct)).filter((v) => v !== null);
+
+const totalBands = bucketByStep(totals, 10);
+const spreadBands = bucketByStep(spreads, 10, { unit: "%" });
+
+const topTotal = [...totalBands].sort((a, b) => b.count - a.count)[0];
+const topSpread = [...spreadBands].sort((a, b) => b.count - a.count)[0];
 
 const heroCards = [
   {
     label: "Primary read",
-    value: "Closing total",
-    note: "Best single market read on scoring pressure before lock.",
+    value: "Winner points",
+    note: "Best single read on scoring pressure in the live sample.",
   },
   {
     label: "Second read",
-    value: "Closing spread",
-    note: "Best single market read on whether a game stayed live.",
+    value: "Total ownership",
+    note: "Ownership pressure pairs with score to define the sample pockets.",
   },
   {
     label: "Working rule",
-    value: "46 to 53.5 total",
+    value: topTotal?.label ?? "—",
     note: "Most of the usable environment sample should live here first.",
   },
   {
-    label: "Spread guardrail",
-    value: "4.5 or less",
-    note: "Closer games keep both sides live longer.",
+    label: "Ownership guardrail",
+    value: topSpread?.label ?? "—",
+    note: "Balance ownership pressure to keep both sides live longer.",
   },
 ];
 
-const decisionBoard = [
-  {
-    title: "Core lane",
-    total: "46 to 53.5",
-    spread: "Pick to 4.5",
-    share: "52%",
-    tone: "core",
-    note: "This is the center of the page. Strong scoring expectation with enough game pressure to keep both teams active.",
-  },
-  {
-    title: "Score first lane",
-    total: "50+",
-    spread: "5 to 6.5",
-    share: "17%",
-    tone: "secondary",
-    note: "Still viable, but the game starts losing some four quarter tension.",
-  },
-  {
-    title: "Closer than expected lane",
-    total: "42 to 45.5",
-    spread: "Pick to 2.5",
-    share: "14%",
-    tone: "secondary",
-    note: "Lower total can still win when the game stays tight and volume holds.",
-  },
-  {
-    title: "Thin lane",
-    total: "Below 42 or spread 10+",
-    spread: "Any",
-    share: "9%",
-    tone: "thin",
-    note: "Keep for reference. Do not let this drive weekly construction rules.",
-  },
-];
+const gridMax = Math.max(1, ...totalBands.flatMap((t) => spreadBands.map((s) => 0)));
+const mapNodes = [];
+const xStart = 16;
+const xEnd = 90;
+const yStart = 18;
+const yEnd = 69;
+const xStep = totalBands.length > 1 ? (xEnd - xStart) / (totalBands.length - 1) : 0;
+const yStep = spreadBands.length > 1 ? (yEnd - yStart) / (spreadBands.length - 1) : 0;
 
-const marketMap = [
-  { total: "58+", spread: "Pick to 2.5", winners: 2, size: 14, x: 90, y: 18, tone: "thin" },
-  { total: "54 to 57.5", spread: "Pick to 2.5", winners: 6, size: 18, x: 76, y: 18, tone: "secondary" },
-  { total: "50 to 53.5", spread: "Pick to 2.5", winners: 14, size: 26, x: 61, y: 18, tone: "core" },
-  { total: "46 to 49.5", spread: "Pick to 2.5", winners: 18, size: 30, x: 46, y: 18, tone: "core" },
-  { total: "42 to 45.5", spread: "Pick to 2.5", winners: 9, size: 20, x: 31, y: 18, tone: "secondary" },
-  { total: "Below 42", spread: "Pick to 2.5", winners: 4, size: 16, x: 16, y: 18, tone: "thin" },
+let maxWinners = 1;
+totalBands.forEach((tBand, tIndex) => {
+  spreadBands.forEach((sBand, sIndex) => {
+    const winners = rows.filter((row) => {
+      const total = toNumber(row.pts);
+      const spread = toNumber(row.ownPct);
+      return (
+        total != null &&
+        spread != null &&
+        total >= tBand.min &&
+        total <= tBand.max &&
+        spread >= sBand.min &&
+        spread <= sBand.max
+      );
+    }).length;
+    maxWinners = Math.max(maxWinners, winners);
+    mapNodes.push({
+      total: tBand.label,
+      spread: sBand.label,
+      winners,
+      x: xStart + tIndex * xStep,
+      y: yStart + sIndex * yStep,
+    });
+  });
+});
 
-  { total: "58+", spread: "3 to 4.5", winners: 1, size: 12, x: 90, y: 34, tone: "thin" },
-  { total: "54 to 57.5", spread: "3 to 4.5", winners: 4, size: 16, x: 76, y: 34, tone: "secondary" },
-  { total: "50 to 53.5", spread: "3 to 4.5", winners: 11, size: 22, x: 61, y: 34, tone: "core" },
-  { total: "46 to 49.5", spread: "3 to 4.5", winners: 15, size: 26, x: 46, y: 34, tone: "core" },
-  { total: "42 to 45.5", spread: "3 to 4.5", winners: 6, size: 17, x: 31, y: 34, tone: "secondary" },
-  { total: "Below 42", spread: "3 to 4.5", winners: 2, size: 13, x: 16, y: 34, tone: "thin" },
+const marketMap = mapNodes.map((node) => ({
+  ...node,
+  size: 12 + (node.winners / maxWinners) * 18,
+  tone: node.winners >= maxWinners * 0.66 ? "core" : node.winners >= maxWinners * 0.33 ? "secondary" : "thin",
+}));
 
-  { total: "58+", spread: "5 to 6.5", winners: 1, size: 12, x: 90, y: 50, tone: "thin" },
-  { total: "54 to 57.5", spread: "5 to 6.5", winners: 5, size: 17, x: 76, y: 50, tone: "secondary" },
-  { total: "50 to 53.5", spread: "5 to 6.5", winners: 6, size: 18, x: 61, y: 50, tone: "secondary" },
-  { total: "46 to 49.5", spread: "5 to 6.5", winners: 6, size: 18, x: 46, y: 50, tone: "secondary" },
-  { total: "42 to 45.5", spread: "5 to 6.5", winners: 4, size: 16, x: 31, y: 50, tone: "thin" },
-  { total: "Below 42", spread: "5 to 6.5", winners: 2, size: 13, x: 16, y: 50, tone: "thin" },
+const decisionBoard = [...marketMap]
+  .sort((a, b) => b.winners - a.winners)
+  .slice(0, 4)
+  .map((node, index) => ({
+    title: ["Core lane", "Score-first lane", "Closer-than-expected lane", "Thin lane"][index] ?? "Lane",
+    total: node.total,
+    spread: node.spread,
+    share: pct(node.winners, rows.length),
+    tone: node.tone,
+    note: "Derived from the most frequent score/ownership pockets in the sample.",
+  }));
 
-  { total: "58+", spread: "7+", winners: 2, size: 13, x: 90, y: 69, tone: "thin" },
-  { total: "54 to 57.5", spread: "7+", winners: 2, size: 13, x: 76, y: 69, tone: "thin" },
-  { total: "50 to 53.5", spread: "7+", winners: 3, size: 15, x: 61, y: 69, tone: "thin" },
-  { total: "46 to 49.5", spread: "7+", winners: 2, size: 13, x: 46, y: 69, tone: "thin" },
-  { total: "42 to 45.5", spread: "7+", winners: 4, size: 16, x: 31, y: 69, tone: "thin" },
-  { total: "Below 42", spread: "7+", winners: 3, size: 15, x: 16, y: 69, tone: "thin" },
-];
+const yearsBy = groupByYear(rows);
+const totalMedian = median(totals) ?? 0;
 
-const seasonLanes = [
-  {
-    season: "2018",
-    totalMode: "46 to 49.5",
-    spreadMode: "3 to 4.5",
-    drift: "Balanced",
-    xpos: 46,
-    note: "Strong total, healthy tension, no major drift from center.",
-  },
-  {
-    season: "2019",
-    totalMode: "46 to 49.5",
-    spreadMode: "Pick to 2.5",
-    drift: "Closer",
-    xpos: 42,
-    note: "Tighter spread pulled the center toward more back and forth game flow.",
-  },
-  {
-    season: "2020",
-    totalMode: "50 to 53.5",
-    spreadMode: "3 to 4.5",
-    drift: "Higher total",
-    xpos: 58,
-    note: "Scoring pressure rose, but the page still stayed inside the same broad lane.",
-  },
-  {
-    season: "2021",
-    totalMode: "46 to 49.5",
-    spreadMode: "Pick to 2.5",
-    drift: "Closer",
-    xpos: 43,
-    note: "Returned toward the live game center.",
-  },
-  {
-    season: "2022",
-    totalMode: "50 to 53.5",
-    spreadMode: "Pick to 2.5",
-    drift: "Higher total",
-    xpos: 59,
-    note: "Ceiling weeks pushed scoring expectation up without losing competitiveness.",
-  },
-  {
-    season: "2023",
-    totalMode: "46 to 49.5",
-    spreadMode: "3 to 4.5",
-    drift: "Balanced",
-    xpos: 47,
-    note: "Stayed near the long term center.",
-  },
-  {
-    season: "2024",
-    totalMode: "50 to 53.5",
-    spreadMode: "Pick to 2.5",
-    drift: "Higher total",
-    xpos: 60,
-    note: "Total lifted again, spread stayed tight enough for full game pressure.",
-  },
-];
+const seasonLanes = Object.keys(yearsBy)
+  .filter((key) => key !== "Unknown")
+  .sort((a, b) => Number(a) - Number(b))
+  .map((season, index) => {
+    const seasonRows = yearsBy[season];
+    const seasonTotals = seasonRows.map((r) => toNumber(r.pts)).filter((v) => v !== null);
+    const seasonSpreads = seasonRows.map((r) => toNumber(r.ownPct)).filter((v) => v !== null);
+    const totalBand = bucketByStep(seasonTotals, 10)[0]?.label ?? "—";
+    const spreadBand = bucketByStep(seasonSpreads, 10, { unit: "%" })[0]?.label ?? "—";
+    const seasonMedian = median(seasonTotals) ?? 0;
+    let drift = "Balanced";
+    let note = "Stayed near the long term center.";
+    if (seasonMedian > totalMedian + 5) {
+      drift = "Higher total";
+      note = "Scoring pressure lifted in this season.";
+    } else if (seasonMedian < totalMedian - 5) {
+      drift = "Lower total";
+      note = "Scoring pressure dipped lower than the long-term median.";
+    }
+    return {
+      season,
+      totalMode: totalBand,
+      spreadMode: spreadBand,
+      drift,
+      xpos: 16 + (totalBands.length > 1 ? (index / Math.max(Object.keys(yearsBy).length - 1, 1)) * 74 : 0),
+      note,
+    };
+  });
 
 const pipelineSteps = [
   {
     step: "01",
     title: "Get the historical market numbers",
-    note: "Pull closing total and closing spread for every slate game. If you want one back check, add actual combined points after the market fields are in place.",
+    note: "Capture winner points and total ownership for every slate. Use those as the baseline pockets first.",
   },
   {
     step: "02",
@@ -170,18 +151,18 @@ const pipelineSteps = [
   {
     step: "04",
     title: "Reduce the page to two first reads",
-    note: "Lead with total and spread. Keep weather, roof, pace, and injuries in a secondary layer after the market center is stable.",
+    note: "Lead with points and ownership. Keep weather, roof, pace, and injuries in a secondary layer after the core pockets are stable.",
   },
 ];
 
 const buildRules = [
-  "Start weekly research inside totals of 46 to 53.5.",
-  "Prefer games with spreads of 4.5 or less until a slate gives strong reason to move.",
-  "Treat high total blowouts as thinner paths than high total close games.",
-  "Use actual combined points as a check on market accuracy, not as the lead sorting field.",
+  "Start weekly research inside the dominant winner points band.",
+  "Prefer ownership bands that match the core pocket until the slate gives strong reason to move.",
+  "Treat extreme score tails as thinner paths than the center pockets.",
+  "Use betting market data as a secondary check, not the lead sorting field.",
 ];
 
-const filterChips = ["Sample: 127 winners", "Total band: any", "Spread band: any", "Season: any", "Roof: any", "Weather: any"];
+const filterChips = [`Sample: ${rows.length} winners`, "Score band: any", "Ownership band: any", "Season: any", "Roof: any", "Weather: any"];
 ---
 
 <ClassicReviewShell
@@ -194,6 +175,8 @@ const filterChips = ["Sample: 127 winners", "Total band: any", "Spread band: any
 >
   <ClassicReviewDrawer active="game-environment" mode="hover" />
 
+  {hasData ? (
+  <>
   <section class="sectionPanel gameHeroPanel">
     <div class="gameHeroTop">
       <div class="gameHeroCopy">
@@ -246,11 +229,11 @@ const filterChips = ["Sample: 127 winners", "Total band: any", "Spread band: any
           </div>
           <div class="decisionStats">
             <div>
-              <span>Total</span>
+              <span>Winner points</span>
               <strong>{row.total}</strong>
             </div>
             <div>
-              <span>Spread</span>
+              <span>Total ownership</span>
               <strong>{row.spread}</strong>
             </div>
           </div>
@@ -267,16 +250,15 @@ const filterChips = ["Sample: 127 winners", "Total band: any", "Spread band: any
         <h2 class="sectionTitle">Winner environment field</h2>
       </div>
       <p class="sectionSub">
-        Each node is an environment pocket. Position shows total and spread. Size shows how many winners landed there.
+        Each node is a pocket. Position shows winner points and total ownership. Size shows how many winners landed there.
       </p>
     </div>
 
     <div class="marketMapWrap">
       <div class="spreadLabels">
-        <span>Pick to 2.5</span>
-        <span>3 to 4.5</span>
-        <span>5 to 6.5</span>
-        <span>7+</span>
+        {spreadBands.map((band) => (
+          <span>{band.label}</span>
+        ))}
       </div>
 
       <div class="marketMap">
@@ -286,19 +268,16 @@ const filterChips = ["Sample: 127 winners", "Total band: any", "Spread band: any
           <div
             class={`marketNode tone-${node.tone}`}
             style={`left:${node.x}%; top:${node.y}%; width:${node.size}px; height:${node.size}px;`}
-            title={`${node.total} • ${node.spread} • ${node.winners} winners`}
+            title={`${node.total} winner points • ${node.spread} total ownership • ${node.winners} winners`}
           >
             <span>{node.winners}</span>
           </div>
         ))}
 
         <div class="totalAxis">
-          <span>Below 42</span>
-          <span>42 to 45.5</span>
-          <span>46 to 49.5</span>
-          <span>50 to 53.5</span>
-          <span>54 to 57.5</span>
-          <span>58+</span>
+          {totalBands.map((band) => (
+            <span>{band.label}</span>
+          ))}
         </div>
       </div>
 
@@ -329,6 +308,10 @@ const filterChips = ["Sample: 127 winners", "Total band: any", "Spread band: any
       </div>
     </div>
   </section>
+  </>
+  ) : (
+    <section class="sectionPanel emptyState">No Classic review data available yet.</section>
+  )}
 
   <section class="sectionPanel seasonPanel">
     <div class="splitHeader">
@@ -1020,5 +1003,14 @@ const filterChips = ["Sample: 127 winners", "Total band: any", "Spread band: any
     .spreadLabels {
       width: 72px;
     }
+  }
+
+  .emptyState {
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 700;
   }
 </style>

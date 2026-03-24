@@ -226,7 +226,7 @@ function indoorOutdoorCountsFromItems(items: any[]) {
   let counted = 0;
 
   for (const it of items || []) {
-    const isIndoor = it?.game?.homeTeam?.homeIsIndoor;
+    const isIndoor = it?.game?.stadium?.isIndoor;
     if (typeof isIndoor !== "boolean") continue;
     counted += 1;
     if (isIndoor) indoor += 1;
@@ -234,6 +234,31 @@ function indoorOutdoorCountsFromItems(items: any[]) {
   }
 
   return { indoor, outdoor, counted };
+}
+
+function primaryStadiumFromItems(items: any[]) {
+  const counts = new Map<
+    string,
+    { count: number; stadium: { id: string; name: string; isIndoor: boolean; city: string; state: string } }
+  >();
+
+  for (const it of items || []) {
+    const stadium = it?.game?.stadium;
+    if (!stadium?.id) continue;
+    const entry = counts.get(stadium.id);
+    if (entry) {
+      entry.count += 1;
+    } else {
+      counts.set(stadium.id, { count: 1, stadium });
+    }
+  }
+
+  let top: { count: number; stadium: { id: string; name: string; isIndoor: boolean; city: string; state: string } } | null = null;
+  for (const entry of counts.values()) {
+    if (!top || entry.count > top.count) top = entry;
+  }
+
+  return top?.stadium ?? null;
 }
 
 export const GET: APIRoute = async () => {
@@ -280,7 +305,7 @@ export const GET: APIRoute = async () => {
                   game: {
                     select: {
                       window: true,
-                      homeTeam: { select: { homeIsIndoor: true } },
+                      stadium: { select: { id: true, name: true, isIndoor: true, city: true, state: true } },
                     },
                   },
                   ownershipBp: true,
@@ -321,6 +346,7 @@ export const GET: APIRoute = async () => {
     const corrStats = stackBringbackFromItems(items);
     const ownBuckets = ownershipBucketsFromItems(items);
     const io = indoorOutdoorCountsFromItems(items);
+    const primaryStadium = primaryStadiumFromItems(items);
 
     const year = c.slate.season?.year ?? null;
     const link = year ? `/nfl/${year}/slate/${c.slate.id}` : "";
@@ -344,6 +370,7 @@ export const GET: APIRoute = async () => {
 
       // DO NOT display date in the table; show Indoor/Outdoor counts instead
       slateDate: `Indoor ${io.indoor}, Outdoor ${io.outdoor}`,
+      venueSummary: `Indoor ${io.indoor}, Outdoor ${io.outdoor}`,
 
       slateKey: c.slate.slateKey,
       link,
@@ -391,6 +418,12 @@ export const GET: APIRoute = async () => {
       indoorPlayers: io.indoor,
       outdoorPlayers: io.outdoor,
       indoorOutdoorCounted: io.counted,
+
+      venue: primaryStadium?.name ?? "",
+      stadiumName: primaryStadium?.name ?? null,
+      stadiumCity: primaryStadium?.city ?? null,
+      stadiumState: primaryStadium?.state ?? null,
+      stadiumIsIndoor: typeof primaryStadium?.isIndoor === "boolean" ? primaryStadium.isIndoor : null,
 
       hasAnalysis: Boolean(c.analysis),
       analysisKeys: c.analysis && typeof c.analysis === "object" ? Object.keys(c.analysis as any) : [],

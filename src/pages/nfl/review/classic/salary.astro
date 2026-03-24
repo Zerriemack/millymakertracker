@@ -1,72 +1,137 @@
 ---
 import ClassicReviewShell from "../../../../components/nfl/classic/ClassicReviewShell.astro";
 import ClassicReviewDrawer from "../../../../components/nfl/classic/ClassicReviewDrawer.astro";
+import {
+  fetchClassicReviewRows,
+  toNumber,
+  mean,
+  median,
+  quantile,
+  groupByYear,
+  pct,
+} from "../../../../lib/nfl/classicReview";
 
 const pageTitle = "NFL Classic Review | Salary";
 
-const baseSample = 127;
+const rows = await fetchClassicReviewRows(Astro.url.origin);
+const baseSample = rows.length;
+const hasData = baseSample > 0;
 
-const heroStats = [
-  { label: "Sample", value: "127 winners" },
-  { label: "Dominant salary-left range", value: "$400 to $900" },
-  { label: "Trusted working range", value: "$200 to $1,000" },
-  { label: "One season rule", value: "Live in the dominant range unless the slate gives a real reason to leave it." },
+const salaryValues = rows.map((r) => toNumber(r.salaryLeft)).filter((v) => v !== null);
+
+const salaryBuckets = [
+  { label: "$0 to $99", min: 0, max: 99 },
+  { label: "$100 to $199", min: 100, max: 199 },
+  { label: "$200 to $399", min: 200, max: 399 },
+  { label: "$400 to $599", min: 400, max: 599 },
+  { label: "$600 to $799", min: 600, max: 799 },
+  { label: "$800 to $999", min: 800, max: 999 },
+  { label: "$1,000 to $1,499", min: 1000, max: 1499 },
+  { label: "$1,500+", min: 1500, max: 999999 },
 ];
 
-const salaryPocketRows = [
-  { bucket: "$0 to $99", count: 6, pct: "4.7%", width: 12, state: "rare", tag: "Thin" },
-  { bucket: "$100 to $199", count: 11, pct: "8.7%", width: 22, state: "secondary", tag: "Secondary" },
-  { bucket: "$200 to $399", count: 19, pct: "15.0%", width: 39, state: "secondary", tag: "Live" },
-  { bucket: "$400 to $599", count: 31, pct: "24.4%", width: 82, state: "core", tag: "Core" },
-  { bucket: "$600 to $799", count: 38, pct: "29.9%", width: 100, state: "core", tag: "Dominant" },
-  { bucket: "$800 to $999", count: 13, pct: "10.2%", width: 34, state: "secondary", tag: "Live" },
-  { bucket: "$1,000 to $1,499", count: 7, pct: "5.5%", width: 18, state: "rare", tag: "Thin" },
-  { bucket: "$1,500+", count: 2, pct: "1.6%", width: 5, state: "rare", tag: "Outlier" },
+const salaryBucketCounts = salaryBuckets.map((bucket) => ({
+  ...bucket,
+  count: salaryValues.filter((v) => v >= bucket.min && v <= bucket.max).length,
+}));
+
+const maxCount = Math.max(...salaryBucketCounts.map((b) => b.count), 1);
+const sortedBuckets = [...salaryBucketCounts].sort((a, b) => b.count - a.count);
+const dominantBuckets = sortedBuckets.slice(0, 2);
+const dominantMin = dominantBuckets.length ? Math.min(...dominantBuckets.map((b) => b.min)) : null;
+const dominantMax = dominantBuckets.length ? Math.max(...dominantBuckets.map((b) => b.max)) : null;
+const dominantRange = dominantMin == null || dominantMax == null ? "—" : `$${dominantMin} to $${dominantMax}`;
+
+const q10 = quantile(salaryValues, 0.1);
+const q90 = quantile(salaryValues, 0.9);
+const medianSalary = median(salaryValues);
+const trustedRange = q10 == null || q90 == null ? "—" : `$${Math.round(q10)} to $${Math.round(q90)}`;
+
+const salaryPocketRows = salaryBucketCounts.map((row) => ({
+  bucket: row.label,
+  count: row.count,
+  pct: pct(row.count, baseSample),
+  width: Math.round((row.count / maxCount) * 100),
+  state: row.count >= maxCount * 0.66 ? "core" : row.count >= maxCount * 0.33 ? "secondary" : "rare",
+  tag: row.count >= maxCount * 0.66 ? "Dominant" : row.count >= maxCount * 0.33 ? "Live" : "Thin",
+}));
+
+const heroStats = [
+  { label: "Sample", value: `${baseSample} winners` },
+  { label: "Dominant salary-left range", value: dominantRange },
+  { label: "Trusted working range", value: trustedRange },
+  { label: "One season rule", value: "Live in the dominant range unless the slate gives a real reason to leave it." },
 ];
 
 const verdictCards = [
   {
     label: "Primary target",
-    value: "$400 to $900",
+    value: dominantRange,
     note: "This is the cleanest macro range for someone trying to win once per season.",
     tone: "primary",
   },
   {
     label: "Secondary viable",
-    value: "$200 to $1,000",
+    value: trustedRange,
     note: "Still live, but less concentrated than the dominant center.",
     tone: "secondary",
   },
   {
     label: "Do not default here",
-    value: "$0 to $199 and $1,000+",
+    value: q10 == null || q90 == null ? "—" : `Under $${Math.round(q10)} and over $${Math.round(q90)}`,
     note: "These buckets exist, but they are too thin to anchor a weekly baseline.",
     tone: "fade",
   },
 ];
 
 const rangeCallouts = [
-  { label: "Mode", value: "$600 to $799" },
-  { label: "Median salary left", value: "$620" },
-  { label: "Core concentration", value: "$400 to $900" },
-  { label: "Trim rule", value: "De-emphasize under $200 and over $1,000" },
+  { label: "Mode", value: sortedBuckets[0]?.label ?? "—" },
+  { label: "Median salary left", value: medianSalary == null ? "—" : `$${Math.round(medianSalary)}` },
+  { label: "Core concentration", value: dominantRange },
+  { label: "Trim rule", value: q10 == null || q90 == null ? "—" : `De-emphasize under $${Math.round(q10)} and over $${Math.round(q90)}` },
 ];
 
-const seasonRows = [
-  { season: "2018", dominant: "$400 to $599", median: "$540", note: "Inside the same center lane.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
-  { season: "2019", dominant: "$600 to $799", median: "$650", note: "Center lifted slightly but stayed tight.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
-  { season: "2020", dominant: "$400 to $599", median: "$510", note: "Still concentrated in the same macro pocket.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
-  { season: "2021", dominant: "$600 to $799", median: "$690", note: "Middle of the board kept control.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
-  { season: "2022", dominant: "$600 to $799", median: "$720", note: "Slightly more room left without changing the answer.", stability: "Upper lean", band: "$400 to $1,000", bias: "Looser" },
-  { season: "2023", dominant: "$400 to $599", median: "$580", note: "Returned toward the lower half of the same range.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
-  { season: "2024", dominant: "$600 to $799", median: "$640", note: "Still living in the same center pocket.", stability: "Stable", band: "$400 to $900", bias: "Balanced" },
-];
+const yearsBy = groupByYear(rows);
+const seasonRows = Object.keys(yearsBy)
+  .filter((key) => key !== "Unknown")
+  .sort((a, b) => Number(a) - Number(b))
+  .map((season) => {
+    const seasonRows = yearsBy[season];
+    const seasonValues = seasonRows.map((r) => toNumber(r.salaryLeft)).filter((v) => v !== null);
+    const seasonMedian = median(seasonValues);
+    const seasonBuckets = salaryBuckets.map((bucket) => ({
+      ...bucket,
+      count: seasonValues.filter((v) => v >= bucket.min && v <= bucket.max).length,
+    }));
+    const dominant = seasonBuckets.sort((a, b) => b.count - a.count)[0]?.label ?? "—";
+    let stability = "Stable";
+    let bias = "Balanced";
+    let note = "Inside the same center lane.";
+    if (seasonMedian != null && medianSalary != null && seasonMedian > medianSalary + 150) {
+      stability = "Upper lean";
+      bias = "Looser";
+      note = "Salary left drifted higher than the core band.";
+    } else if (seasonMedian != null && medianSalary != null && seasonMedian < medianSalary - 150) {
+      stability = "Lower lean";
+      bias = "Tighter";
+      note = "Salary left pressed toward the lower end.";
+    }
+    return {
+      season,
+      dominant,
+      median: seasonMedian == null ? "—" : `$${Math.round(seasonMedian)}`,
+      note,
+      stability,
+      band: dominantRange,
+      bias,
+    };
+  });
 
 const seasonSummary = [
-  { label: "Stable seasons", value: "5" },
-  { label: "Upper-lean seasons", value: "1" },
-  { label: "Dominant recurring band", value: "$400 to $900" },
-  { label: "Most common exact pocket", value: "$600 to $799" },
+  { label: "Stable seasons", value: String(seasonRows.filter((row) => row.stability === "Stable").length) },
+  { label: "Upper-lean seasons", value: String(seasonRows.filter((row) => row.stability === "Upper lean").length) },
+  { label: "Dominant recurring band", value: dominantRange },
+  { label: "Most common exact pocket", value: sortedBuckets[0]?.label ?? "—" },
 ];
 ---
 
@@ -118,6 +183,8 @@ const seasonSummary = [
     </div>
   </section>
 
+  {hasData ? (
+  <>
   <section class="sectionPanel">
     <div class="sectionHeader">
       <div>
@@ -137,13 +204,13 @@ const seasonSummary = [
 
           <div class="salaryBoardMedian">
             <span>Median</span>
-            <strong>$620</strong>
+            <strong>{medianSalary == null ? "—" : `$${Math.round(medianSalary)}`}</strong>
           </div>
         </div>
 
         <div class="salaryBracket">
           <div class="salaryBracketLine"></div>
-          <div class="salaryBracketLabel">Trusted center lane $400 to $900</div>
+          <div class="salaryBracketLabel">Trusted center lane {dominantRange}</div>
         </div>
 
         <div class="salaryBucketList">
@@ -264,6 +331,10 @@ const seasonSummary = [
       </div>
     </div>
   </section>
+  </>
+  ) : (
+    <section class="sectionPanel emptyState">No Classic review data available yet.</section>
+  )}
 </ClassicReviewShell>
 
 <script is:inline>
@@ -271,7 +342,7 @@ const seasonSummary = [
     const root = document.querySelector(".salary-compact");
     if (!root) return;
 
-    const baseSample = 127;
+    const baseSample = {baseSample};
 
     const bucketCounts = {
       "$0 to $99": 6,
@@ -1105,5 +1176,14 @@ const seasonSummary = [
     .salaryBucketRight {
       text-align: left;
     }
+  }
+
+  .emptyState {
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-weight: 700;
   }
 </style>

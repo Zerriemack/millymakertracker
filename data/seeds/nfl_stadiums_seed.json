@@ -1,0 +1,372 @@
+[
+  {
+    "name": "State Farm Stadium",
+    "city": "Glendale",
+    "state": "Arizona",
+    "isIndoor": true,
+    "teamAbbreviation": "ARI",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["University of Phoenix Stadium"]
+  },
+  {
+    "name": "Georgia Dome",
+    "city": "Atlanta",
+    "state": "Georgia",
+    "isIndoor": true,
+    "teamAbbreviation": "ATL",
+    "activeFromSeason": 2016,
+    "activeToSeason": 2016,
+    "aliases": []
+  },
+  {
+    "name": "Mercedes-Benz Stadium",
+    "city": "Atlanta",
+    "state": "Georgia",
+    "isIndoor": true,
+    "teamAbbreviation": "ATL",
+    "activeFromSeason": 2017,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "M&T Bank Stadium",
+    "city": "Baltimore",
+    "state": "Maryland",
+    "isIndoor": false,
+    "teamAbbreviation": "BAL",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Highmark Stadium",
+    "city": "Orchard Park",
+    "state": "New York",
+    "isIndoor": false,
+    "teamAbbreviation": "BUF",
+    "activeFromSeason": 2016,
+    "activeToSeason": 2025,
+    "aliases": ["New Era Field", "Bills Stadium", "Ralph Wilson Stadium"]
+  },
+  {
+    "name": "Bank of America Stadium",
+    "city": "Charlotte",
+    "state": "North Carolina",
+    "isIndoor": false,
+    "teamAbbreviation": "CAR",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Soldier Field",
+    "city": "Chicago",
+    "state": "Illinois",
+    "isIndoor": false,
+    "teamAbbreviation": "CHI",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Paycor Stadium",
+    "city": "Cincinnati",
+    "state": "Ohio",
+    "isIndoor": false,
+    "teamAbbreviation": "CIN",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["Paul Brown Stadium"]
+  },
+  {
+    "name": "Huntington Bank Field",
+    "city": "Cleveland",
+    "state": "Ohio",
+    "isIndoor": false,
+    "teamAbbreviation": "CLE",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["Cleveland Browns Stadium", "FirstEnergy Stadium"]
+  },
+  {
+    "name": "AT&T Stadium",
+    "city": "Arlington",
+    "state": "Texas",
+    "isIndoor": true,
+    "teamAbbreviation": "DAL",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Empower Field at Mile High",
+    "city": "Denver",
+    "state": "Colorado",
+    "isIndoor": false,
+    "teamAbbreviation": "DEN",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["Sports Authority Field at Mile High", "Broncos Stadium at Mile High", "Invesco Field at Mile High"]
+  },
+  {
+    "name": "Ford Field",
+    "city": "Detroit",
+    "state": "Michigan",
+    "isIndoor": true,
+    "teamAbbreviation": "DET",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Lambeau Field",
+    "city": "Green Bay",
+    "state": "Wisconsin",
+    "isIndoor": false,
+    "teamAbbreviation": "GB",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "NRG Stadium",
+    "city": "Houston",
+    "state": "Texas",
+    "isIndoor": true,
+    "teamAbbreviation": "HOU",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["Reliant Stadium"]
+  },
+  {
+    "name": "Lucas Oil Stadium",
+    "city": "Indianapolis",
+    "state": "Indiana",
+    "isIndoor": true,
+    "teamAbbreviation": "IND",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "EverBank Stadium",
+    "city": "Jacksonville",
+    "state": "Florida",
+    "isIndoor": false,
+    "teamAbbreviation": "JAX",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["TIAA Bank Field", "EverBank Field", "Alltel Stadium"]
+  },
+  {
+    "name": "Arrowhead Stadium",
+    "city": "Kansas City",
+    "state": "Missouri",
+    "isIndoor": false,
+    "teamAbbreviation": "KC",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["GEHA Field at Arrowhead Stadium"]
+  },
+  {
+    "name": "Allegiant Stadium",
+    "city": "Las Vegas",
+    "state": "Nevada",
+    "isIndoor": true,
+    "teamAbbreviation": "LV",
+    "activeFromSeason": 2020,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Oakland Coliseum",
+    "city": "Oakland",
+    "state": "California",
+    "isIndoor": false,
+    "teamAbbreviation": "LV",
+    "activeFromSeason": 2016,
+    "activeToSeason": 2019,
+    "aliases": ["O.co Coliseum", "RingCentral Coliseum", "Network Associates Coliseum"]
+  },
+  {
+    "name": "SoFi Stadium",
+    "city": "Inglewood",
+    "state": "California",
+    "isIndoor": true,
+    "teamAbbreviation": "LAC",
+    "activeFromSeason": 2020,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Dignity Health Sports Park",
+    "city": "Carson",
+    "state": "California",
+    "isIndoor": false,
+    "teamAbbreviation": "LAC",
+    "activeFromSeason": 2017,
+    "activeToSeason": 2019,
+    "aliases": ["StubHub Center"]
+  },
+  {
+    "name": "Qualcomm Stadium",
+    "city": "San Diego",
+    "state": "California",
+    "isIndoor": false,
+    "teamAbbreviation": "LAC",
+    "activeFromSeason": 2016,
+    "activeToSeason": 2016,
+    "aliases": ["SDCCU Stadium", "San Diego Stadium"]
+  },
+  {
+    "name": "SoFi Stadium",
+    "city": "Inglewood",
+    "state": "California",
+    "isIndoor": true,
+    "teamAbbreviation": "LAR",
+    "activeFromSeason": 2020,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Los Angeles Memorial Coliseum",
+    "city": "Los Angeles",
+    "state": "California",
+    "isIndoor": false,
+    "teamAbbreviation": "LAR",
+    "activeFromSeason": 2016,
+    "activeToSeason": 2019,
+    "aliases": ["LA Memorial Coliseum"]
+  },
+  {
+    "name": "Hard Rock Stadium",
+    "city": "Miami Gardens",
+    "state": "Florida",
+    "isIndoor": false,
+    "teamAbbreviation": "MIA",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["Sun Life Stadium", "Joe Robbie Stadium", "Pro Player Stadium", "Dolphin Stadium", "Land Shark Stadium"]
+  },
+  {
+    "name": "U.S. Bank Stadium",
+    "city": "Minneapolis",
+    "state": "Minnesota",
+    "isIndoor": true,
+    "teamAbbreviation": "MIN",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Gillette Stadium",
+    "city": "Foxborough",
+    "state": "Massachusetts",
+    "isIndoor": false,
+    "teamAbbreviation": "NE",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Caesars Superdome",
+    "city": "New Orleans",
+    "state": "Louisiana",
+    "isIndoor": true,
+    "teamAbbreviation": "NO",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["Mercedes-Benz Superdome", "Louisiana Superdome", "The Superdome"]
+  },
+  {
+    "name": "MetLife Stadium",
+    "city": "East Rutherford",
+    "state": "New Jersey",
+    "isIndoor": false,
+    "teamAbbreviation": "NYG",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "MetLife Stadium",
+    "city": "East Rutherford",
+    "state": "New Jersey",
+    "isIndoor": false,
+    "teamAbbreviation": "NYJ",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Lincoln Financial Field",
+    "city": "Philadelphia",
+    "state": "Pennsylvania",
+    "isIndoor": false,
+    "teamAbbreviation": "PHI",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["The Linc"]
+  },
+  {
+    "name": "Acrisure Stadium",
+    "city": "Pittsburgh",
+    "state": "Pennsylvania",
+    "isIndoor": false,
+    "teamAbbreviation": "PIT",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["Heinz Field"]
+  },
+  {
+    "name": "Levi's Stadium",
+    "city": "Santa Clara",
+    "state": "California",
+    "isIndoor": false,
+    "teamAbbreviation": "SF",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": []
+  },
+  {
+    "name": "Lumen Field",
+    "city": "Seattle",
+    "state": "Washington",
+    "isIndoor": false,
+    "teamAbbreviation": "SEA",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["CenturyLink Field", "Qwest Field"]
+  },
+  {
+    "name": "Raymond James Stadium",
+    "city": "Tampa",
+    "state": "Florida",
+    "isIndoor": false,
+    "teamAbbreviation": "TB",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["Ray Jay"]
+  },
+  {
+    "name": "Nissan Stadium",
+    "city": "Nashville",
+    "state": "Tennessee",
+    "isIndoor": false,
+    "teamAbbreviation": "TEN",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["LP Field", "Adelphia Coliseum"]
+  },
+  {
+    "name": "Northwest Stadium",
+    "city": "Landover",
+    "state": "Maryland",
+    "isIndoor": false,
+    "teamAbbreviation": "WAS",
+    "activeFromSeason": 2016,
+    "activeToSeason": null,
+    "aliases": ["FedExField", "Commanders Field", "Jack Kent Cooke Stadium"]
+  }
+]
