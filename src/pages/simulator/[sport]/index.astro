@@ -1,0 +1,142 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { mockSlates } from "../../../data/simulator/mockSlates";
+
+const { sport } = Astro.params;
+const sportSlug = (sport ?? "nfl").toLowerCase();
+const title = `Simulator | ${sport ?? "Sport"}`;
+const sites = [
+  { key: "draftkings", label: "DraftKings" },
+];
+const slates = mockSlates.filter((slate) => slate.sport === sportSlug);
+const firstSlate = slates[0];
+---
+
+<Layout title={title} fullBleed>
+  <main class="page">
+    <header class="hero">
+      <h1 class="title">Simulator: {sport ?? "Sport"}</h1>
+      <p class="sub">Choose a site to continue.</p>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Simulator navigation">
+      <a href="/simulator">Simulator</a>
+      <span>/</span>
+      <span>{sportSlug}</span>
+    </nav>
+
+    <section class="panel" aria-label="Available sites">
+      <h2 class="panel-title">Sites</h2>
+      <ul class="link-list">
+        {sites.map((site) => (
+          <li>
+            <a href={`/simulator/${sportSlug}/${site.key}`}>{site.label}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="panel" aria-label="Quick start">
+      <h2 class="panel-title">Quick Start</h2>
+      {firstSlate ? (
+        <a href={`/simulator/${sportSlug}/draftkings/${firstSlate.id}`}>
+          Open {firstSlate.name}
+        </a>
+      ) : (
+        <p class="sub">No slates available yet.</p>
+      )}
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 28px 16px 64px;
+  }
+
+  .hero {
+    margin: 8px 0 18px;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .sub {
+    margin: 10px 0 0;
+    color: var(--muted);
+  }
+
+  .panel {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    background: var(--surface);
+  }
+
+  .breadcrumbs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+  }
+
+  .breadcrumbs a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+
+  .link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .link-list a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .link-list a:hover {
+    text-decoration: underline;
+  }
+
+  .panel-title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .params {
+    margin: 0;
+  }
+
+  .params div {
+    display: flex;
+    gap: 12px;
+  }
+
+  dt {
+    min-width: 80px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  dd {
+    margin: 0;
+    color: var(--text-2);
+  }
+</style>

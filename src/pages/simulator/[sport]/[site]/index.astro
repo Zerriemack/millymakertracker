@@ -1,0 +1,190 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import { mockSlates } from "../../../../data/simulator/mockSlates";
+
+const { sport, site } = Astro.params;
+const sportSlug = (sport ?? "nfl").toLowerCase();
+const siteSlug = (site ?? "draftkings").toLowerCase();
+const title = `Simulator | ${sport ?? "Sport"} | ${site ?? "Site"}`;
+const slates = mockSlates.filter(
+  (slate) => slate.sport === sportSlug && slate.site === siteSlug,
+);
+---
+
+<Layout title={title} fullBleed>
+  <main class="page">
+    <header class="hero">
+      <h1 class="title">Simulator: {sport ?? "Sport"} · {site ?? "Site"}</h1>
+      <p class="sub">Pick a slate to open the simulator.</p>
+    </header>
+
+    <nav class="breadcrumbs" aria-label="Simulator navigation">
+      <a href="/simulator">Simulator</a>
+      <span>/</span>
+      <a href={`/simulator/${sportSlug}`}>{sportSlug}</a>
+      <span>/</span>
+      <span>{siteSlug}</span>
+    </nav>
+
+    <section class="panel" aria-label="Available slates">
+      <h2 class="panel-title">Slates</h2>
+      <div class="slate-grid">
+        {slates.map((slate) => (
+          <div class="slate-card">
+            <div class="slate-title">{slate.name}</div>
+            <div class="slate-meta">
+              <span>{slate.gameType}</span>
+              <span>·</span>
+              <span>{slate.games} games</span>
+              <span>·</span>
+              <span>${slate.salaryCap.toLocaleString()}</span>
+            </div>
+            <div class="slate-links">
+              <a href={`/simulator/${sportSlug}/${siteSlug}/${slate.id}?tab=slates`}>Slates</a>
+              <a href={`/simulator/${sportSlug}/${siteSlug}/${slate.id}?tab=inputs`}>Inputs</a>
+              <a href={`/simulator/${sportSlug}/${siteSlug}/${slate.id}?tab=settings`}>Settings</a>
+              <a href={`/simulator/${sportSlug}/${siteSlug}/${slate.id}?tab=results&subtab=ev`}>Results EV</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 28px 16px 64px;
+  }
+
+  .hero {
+    margin: 8px 0 18px;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .sub {
+    margin: 10px 0 0;
+    color: var(--muted);
+  }
+
+  .panel {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    background: var(--surface);
+  }
+
+  .breadcrumbs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+  }
+
+  .breadcrumbs a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+
+  .link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .link-list a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .link-list a:hover {
+    text-decoration: underline;
+  }
+
+  .panel-title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .slate-grid {
+    display: grid;
+    gap: 12px;
+  }
+
+  .slate-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    background: var(--surface);
+  }
+
+  .slate-title {
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .slate-meta {
+    font-size: 0.9rem;
+    color: var(--text-2);
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .slate-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .slate-links a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .slate-links a:hover {
+    text-decoration: underline;
+  }
+
+  .params {
+    margin: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .params div {
+    display: flex;
+    gap: 12px;
+  }
+
+  dt {
+    min-width: 80px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  dd {
+    margin: 0;
+    color: var(--text-2);
+  }
+</style>
