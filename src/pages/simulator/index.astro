@@ -48,6 +48,14 @@ const siteLabel =
       : selectedSlate?.site
         ? selectedSlate.site.toUpperCase()
         : "DraftKings";
+const formatGameTypeLabel = (slate?: { site?: string; gameType?: string } | null) => {
+  if (!slate?.gameType) return "Classic";
+  const gameType = slate.gameType;
+  if (slate.site === "fanduel" && gameType.toLowerCase() === "showdown") {
+    return "MVP";
+  }
+  return gameType;
+};
 
 const buildSimulatorUrl = ({
   slate,
@@ -99,7 +107,7 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
           <div class="meta-line">
             <span>{siteLabel} {selectedSlate?.name ?? "3 Game Main"}</span>
             <span class="meta-sep">•</span>
-            <span>{selectedSlate?.gameType ?? "Classic"}</span>
+            <span>{formatGameTypeLabel(selectedSlate)}</span>
             <span class="meta-sep">•</span>
             <span>{selectedSlate?.games ?? 3} games</span>
             <span class="meta-sep">•</span>
@@ -191,7 +199,7 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
               operator: activeOperator,
             })}
           >
-            Showdown/Single
+            Showdown/MVP
           </a>
         </div>
 
@@ -272,7 +280,7 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
                       </span>
                     </div>
                   </td>
-                  <td>{slate.gameType}</td>
+                  <td>{formatGameTypeLabel(slate)}</td>
                   <td>{slate.games}</td>
                   <td>${slate.salaryCap.toLocaleString()}</td>
                   <td>{new Date(slate.startTime).toLocaleString()}</td>
@@ -470,7 +478,10 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
 
 <style>
   :global(body) {
-    background: #050505;
+    background:
+      radial-gradient(circle at 12% 10%, rgba(28, 86, 232, 0.08), transparent 22%),
+      radial-gradient(circle at 88% 14%, rgba(18, 58, 153, 0.08), transparent 24%),
+      #000;
     color: #f3f3f3;
   }
 
@@ -484,6 +495,13 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
     --sim-surface: #050505;
     --sim-surface-2: #0b0d12;
     --sim-surface-3: #10141d;
+    --sim-electric-blue: #1c56e8;
+    --sim-electric-blue-2: #2563eb;
+    --sim-electric-blue-3: #123a99;
+    --sim-electric-blue-glow: rgba(37, 99, 235, 0.26);
+    --sim-header-blue-top: #1f4fcf;
+    --sim-header-blue-mid: #123a99;
+    --sim-header-blue-bottom: #071a4d;
     padding: 0.7rem 0 1.75rem;
   }
 
@@ -496,6 +514,9 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
   .sim-page {
     width: min(100%, 1520px);
     margin: 0 auto;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
     border: 0 !important;
     outline: 0 !important;
     box-shadow: none !important;
@@ -505,13 +526,25 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
   width: 100%;
   box-sizing: border-box;
   padding: 1rem 1.35rem 1.2rem;
-  background:
-      radial-gradient(circle at top right, rgba(17, 52, 138, 0.12), transparent 26%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, rgba(255, 255, 255, 0) 100%),
-      #050505;
+  margin-top: 0.85rem;
+  position: relative;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
     border: 0 !important;
     outline: 0 !important;
     box-shadow: none !important;
+  }
+
+  .sim-panel::before {
+    content: none !important;
+  }
+
+  .sim-page::before,
+  .sim-page::after,
+  .sim-panel::after {
+    content: none !important;
+    display: none !important;
   }
 
   .sim-page,
@@ -531,13 +564,29 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
   }
 
   .brand-row {
+    position: relative;
     display: flex;
     align-items: flex-end;
     gap: 0.7rem;
     flex-wrap: wrap;
   }
 
+  .brand-row::before {
+    content: "";
+    position: absolute;
+    inset: -2.4rem -3.5rem;
+    background:
+      radial-gradient(circle at 45% 40%, rgba(18, 58, 154, 0.12), transparent 62%),
+      radial-gradient(circle at 60% 20%, rgba(18, 58, 154, 0.08), transparent 55%);
+    opacity: 0.32;
+    pointer-events: none;
+    filter: blur(1.2px);
+    z-index: 0;
+  }
+
   .title {
+    position: relative;
+    z-index: 1;
     margin: 0;
     display: flex;
     align-items: baseline;
@@ -546,15 +595,16 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
     line-height: 0.92;
     font-weight: 900;
     letter-spacing: -0.07em;
-    color: #f5f5f5;
+    color: #f7f7fb;
     text-transform: none;
+    text-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
   }
 
   .title-accent {
-    color: #123a9a;
+    color: var(--sim-electric-blue);
     text-shadow:
-      0 0 24px rgba(18, 58, 154, 0.22),
-      0 0 48px rgba(18, 58, 154, 0.08);
+      0 0 16px rgba(28, 86, 232, 0.14),
+      0 0 28px rgba(28, 86, 232, 0.08);
   }
 
   .week-text {
@@ -574,9 +624,10 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
     margin-left: 0.35rem;
     background: linear-gradient(
       90deg,
-      rgba(18, 58, 154, 0.95) 0%,
-      rgba(18, 58, 154, 0.18) 100%
+      rgba(28, 86, 232, 0.96) 0%,
+      rgba(37, 99, 235, 0.82) 100%
     );
+    box-shadow: 0 0 12px rgba(28, 86, 232, 0.14);
     align-self: center;
     transform: translateY(-0.12rem);
   }
@@ -609,46 +660,108 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
   }
 
   .tool-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-height: 38px;
     padding: 0 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 0;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 100%);
+      linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.04) 55%),
+      linear-gradient(180deg, rgba(8, 14, 28, 0.92) 0%, rgba(7, 10, 18, 0.96) 100%);
     color: #f4f4f4;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
-    border-radius: 10px !important;
+    text-decoration: none;
+    border-radius: 12px !important;
     transition:
       border-color 140ms ease,
       background 140ms ease,
       color 140ms ease,
       transform 140ms ease,
       box-shadow 140ms ease;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 8px 18px rgba(255, 255, 255, 0.04),
+      inset 0 -10px 20px rgba(0, 0, 0, 0.45),
+      0 10px 22px rgba(0, 0, 0, 0.35);
   }
 
   .tool-btn:hover,
   .tool-btn:focus-visible {
-    border-color: rgba(17, 52, 138, 0.38);
     background:
-      linear-gradient(180deg, rgba(17, 52, 138, 0.2) 0%, rgba(17, 52, 138, 0.08) 100%);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+      linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.06) 55%),
+      linear-gradient(180deg, rgba(14, 26, 56, 0.92) 0%, rgba(8, 12, 22, 0.97) 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.26),
+      inset 0 10px 18px rgba(255, 255, 255, 0.06),
+      inset 0 -12px 24px rgba(0, 0, 0, 0.5),
+      0 14px 28px rgba(0, 0, 0, 0.48);
     outline: none;
     transform: translateY(-1px);
   }
 
+  .tool-btn:active {
+    transform: translateY(1px);
+    box-shadow:
+      inset 0 2px 10px rgba(0, 0, 0, 0.55),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 6px 14px rgba(0, 0, 0, 0.35);
+  }
+
   .tool-btn-secondary {
-    color: rgba(255, 255, 255, 0.92);
+    color: rgba(255, 255, 255, 0.94);
   }
 
   .tool-btn-primary {
-    border-color: rgba(17, 52, 138, 0.34);
+    border: 0;
     background:
-      linear-gradient(180deg, rgba(17, 52, 138, 0.24) 0%, rgba(17, 52, 138, 0.1) 100%);
-    color: #ffffff;
+      linear-gradient(
+        180deg,
+        #3a74ff 0%,
+        #1f4fcf 46%,
+        #123a99 100%
+      );
+    color: #f5f8ff;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.26),
+      0 10px 22px rgba(7, 26, 77, 0.28),
+      0 0 18px rgba(18, 58, 153, 0.14);
+  }
+
+  .tool-btn-primary:hover,
+  .tool-btn-primary:focus-visible {
+    background:
+      linear-gradient(
+        180deg,
+        #4a7eff 0%,
+        #2563eb 42%,
+        #1848bf 100%
+      );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.22),
+      0 14px 28px rgba(7, 26, 77, 0.32),
+      0 0 22px rgba(28, 86, 232, 0.18);
+  }
+
+  .tool-btn-primary:active {
+    transform: translateY(1px);
+    background:
+      linear-gradient(
+        180deg,
+        #2563eb 0%,
+        #1f4fcf 44%,
+        #10348a 100%
+      );
+    box-shadow:
+      inset 0 2px 5px rgba(0, 0, 0, 0.2),
+      0 6px 12px rgba(7, 26, 77, 0.22);
   }
 
   .tabs {
@@ -717,10 +830,11 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
       linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.015) 100%),
       linear-gradient(90deg, rgba(17, 52, 138, 0.10) 0%, rgba(17, 52, 138, 0.04) 22%, rgba(255, 255, 255, 0.01) 50%, rgba(17, 52, 138, 0.04) 78%, rgba(17, 52, 138, 0.08) 100%),
       #141414;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 0;
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.03),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      inset 0 12px 24px rgba(255, 255, 255, 0.02),
+      inset 0 -14px 28px rgba(0, 0, 0, 0.4);
   }
 
   .filters::before {
@@ -763,40 +877,71 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
   .filter-btn {
     min-height: 28px;
     padding: 0 0.72rem;
-    border: 1px solid transparent;
+    border: 0;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.74rem;
-    font-weight: 700;
+      linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 55%),
+      linear-gradient(180deg, rgba(8, 14, 28, 0.9) 0%, rgba(8, 10, 18, 0.96) 100%);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
-    border-radius: 8px !important;
+    text-decoration: none;
+    border-radius: 10px !important;
     transition:
       border-color 140ms ease,
       background 140ms ease,
       color 140ms ease,
-      transform 140ms ease;
+      transform 140ms ease,
+      box-shadow 140ms ease;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 8px 18px rgba(255, 255, 255, 0.05),
+      inset 0 -10px 20px rgba(0, 0, 0, 0.45),
+      0 8px 18px rgba(0, 0, 0, 0.36);
   }
 
   .filter-btn:hover,
   .filter-btn:focus-visible {
-    border-color: rgba(17, 52, 138, 0.3);
-    background: rgba(17, 52, 138, 0.12);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.06) 55%),
+      linear-gradient(180deg, rgba(14, 26, 56, 0.9) 0%, rgba(8, 12, 22, 0.97) 100%);
     color: #ffffff;
     outline: none;
     transform: translateY(-1px);
+    text-decoration: none;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.26),
+      inset 0 10px 18px rgba(255, 255, 255, 0.06),
+      inset 0 -12px 24px rgba(0, 0, 0, 0.5),
+      0 12px 24px rgba(0, 0, 0, 0.48);
+  }
+
+  .filter-btn:active {
+    transform: translateY(1px);
+    box-shadow:
+      inset 0 2px 10px rgba(0, 0, 0, 0.55),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 5px 12px rgba(0, 0, 0, 0.35);
   }
 
   .filter-btn.active {
-    border-color: rgba(17, 52, 138, 0.5);
+    border: 0;
     background:
-      linear-gradient(180deg, rgba(17, 52, 138, 0.26) 0%, rgba(17, 52, 138, 0.12) 100%);
-    color: #ffffff;
+      linear-gradient(
+        180deg,
+        rgba(58, 116, 255, 0.26) 0%,
+        rgba(31, 79, 207, 0.2) 52%,
+        rgba(18, 58, 153, 0.18) 100%
+      );
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.04),
-      0 0 0 1px rgba(17, 52, 138, 0.08);
+      inset 0 1px 0 rgba(255, 255, 255, 0.14),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.32),
+      0 0 0 1px rgba(37, 99, 235, 0.08),
+      0 8px 18px rgba(7, 26, 77, 0.14);
+    color: #ffffff;
   }
 
   .settings-panel {
@@ -871,14 +1016,32 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
     table-layout: auto;
   }
 
+  .slates-table thead tr {
+    background:
+      linear-gradient(
+        180deg,
+        #2b63eb 0%,
+        #1848bf 34%,
+        #0f3288 68%,
+        #071a4d 100%
+      );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -10px 18px rgba(0, 0, 0, 0.16),
+      0 0 18px rgba(18, 58, 153, 0.1);
+  }
+
   .slates-table thead th {
     padding: 0.56rem 0.85rem;
     text-align: left;
     font-size: 0.68rem;
     font-weight: 800;
     color: #ffffff;
-    background: var(--sim-blue);
+    background: transparent;
     white-space: nowrap;
+    border: 0;
+    box-shadow: none;
+    outline: none;
   }
 
   .slates-table tbody td {
@@ -886,7 +1049,7 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
     font-size: 0.72rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid var(--sim-line);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.025);
     background: transparent;
     vertical-align: middle;
   }

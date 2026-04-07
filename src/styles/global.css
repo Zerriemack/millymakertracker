@@ -40,7 +40,8 @@ body {
   padding: 0;
   text-align: left;
 
-  background: var(--bg);
+  background: #000000 !important;
+  background-color: #000000 !important;
   color: var(--text);
 
   word-wrap: break-word;

@@ -47,10 +47,11 @@ const accentVar = `var(--accent-${accent})`;
     --muted-2: rgba(255, 255, 255, 0.42);
     --shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
     --shadow-soft: 0 16px 34px rgba(0, 0, 0, 0.45);
-    background:
-      radial-gradient(1200px 600px at 8% -10%, rgba(60, 110, 255, 0.1), transparent 65%),
-      radial-gradient(1100px 620px at 95% 0%, rgba(216, 181, 102, 0.06), transparent 62%),
-      #0f0f0f;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
   }
 
   .classic-frame :global(*) {
