@@ -38,7 +38,7 @@ const clamp = (v) => Math.max(6, Math.min(100, Number(v) || 0));
 
 <style>
   .panel {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 0;
     border-radius: 18px;
     padding: 12px;
     background: linear-gradient(180deg, rgba(25, 25, 25, 0.95) 0%, rgba(16, 16, 16, 0.98) 100%);
@@ -51,12 +51,7 @@ const clamp = (v) => Math.max(6, Math.min(100, Number(v) || 0));
   }
 
   .panel::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 2px;
-    background: color-mix(in srgb, var(--accent, #3c6eff) 70%, transparent);
-    opacity: 0.55;
+    content: none;
   }
 
   .panelLead {
@@ -91,7 +86,7 @@ const clamp = (v) => Math.max(6, Math.min(100, Number(v) || 0));
   .pill {
     padding: 2px 8px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 0;
     background: #141414;
     font-size: 9px;
     font-weight: 900;
@@ -102,12 +97,10 @@ const clamp = (v) => Math.max(6, Math.min(100, Number(v) || 0));
 
   .panel[data-accent="gold"] .pill {
     color: color-mix(in srgb, var(--accent) 70%, #fff 30%);
-    border-color: color-mix(in srgb, var(--accent) 35%, rgba(255, 255, 255, 0.18));
   }
 
   .panel[data-accent="green"] .pill {
     color: color-mix(in srgb, var(--accent) 65%, #fff 35%);
-    border-color: color-mix(in srgb, var(--accent) 30%, rgba(255, 255, 255, 0.18));
   }
 
   .chart {
@@ -115,7 +108,7 @@ const clamp = (v) => Math.max(6, Math.min(100, Number(v) || 0));
     height: 140px;
     border-radius: 14px;
     background: radial-gradient(120px 180px at 20% 20%, rgba(255, 255, 255, 0.06), transparent 70%), #101010;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 0;
     overflow: hidden;
   }
 

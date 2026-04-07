@@ -29,14 +29,14 @@ function buildHref(tagValue) {
     name="q"
     value={currentQ}
     placeholder="Search week, teams, winner, contest..."
-    style="flex: 1; min-width: 260px; padding:10px 12px; border:1px solid #eaeaea; border-radius:10px;"
+    style="flex: 1; min-width: 260px; padding:10px 12px; border:0; border-radius:10px;"
   />
   {mode === "showdown" ? (
     <input type="hidden" name="tag" value={currentTag} />
   ) : null}
   <button
     type="submit"
-    style="padding:10px 12px; border:1px solid #eaeaea; border-radius:10px; background:#fff; cursor:pointer;"
+    style="padding:10px 12px; border:0; border-radius:10px; background:#fff; cursor:pointer;"
   >
     Search
   </button>
@@ -53,7 +53,7 @@ function buildHref(tagValue) {
       return (
         <a
           href={buildHref(t.value)}
-          style={`display:inline-block; padding:8px 10px; border:1px solid #eaeaea; border-radius:999px; text-decoration:none; color:#111; background:${active ? "#f5f5f5" : "#fff"};`}
+          style={`display:inline-block; padding:8px 10px; border:0; border-radius:999px; text-decoration:none; color:#111; background:${active ? "#f5f5f5" : "#fff"};`}
         >
           {t.label}
         </a>

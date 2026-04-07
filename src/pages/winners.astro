@@ -539,7 +539,14 @@ const recentGlobal = rows
     .label{font-size:12px;color:var(--muted2);font-weight:900;letter-spacing:.02em}
     .value{margin-top:6px;font-size:20px;font-weight:950}
 
-    .stickyBar{position:sticky;top:10px;z-index:5;margin:14px 0 18px}
+    .stickyBar{position:sticky;top:10px;z-index:5;margin:14px 0 26px}
+    .stickyBar::after{
+      content:"";
+      display:block;
+      margin-top:18px;
+      height:1px;
+      background:rgba(255,255,255,.06);
+    }
     .pillBar{
       display:flex;
       gap:10px;
@@ -547,7 +554,7 @@ const recentGlobal = rows
       flex-wrap:wrap;
       padding:10px;
       border-radius:16px;
-      background:var(--surface);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01) 65%), var(--surface);
       border:1px solid var(--border);
       box-shadow:var(--shadow);
     }
@@ -604,7 +611,7 @@ const recentGlobal = rows
       display:grid;
       grid-template-columns:1.15fr .85fr;
       gap:14px;
-      margin-top:10px;
+      margin-top:6px;
       background:transparent;
       border:none;
       border-radius:0;

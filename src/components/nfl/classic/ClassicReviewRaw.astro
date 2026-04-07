@@ -686,15 +686,15 @@ const navItems = [
     min-width: 0;
   }
   .titleBlock { min-width: 0; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
-  .backLink { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 4px; padding: 5px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.10); background: #1f1f1f; color: rgba(255,255,255,0.88); text-decoration: none; font-weight: 900; font-size: 10px; letter-spacing: 0.02em; box-shadow: 0 10px 30px rgba(0,0,0,0.35); width: fit-content; max-width: max-content; }
-  .backLink:hover { color: #fff; background: #232323; border-color: rgba(255,255,255,0.16); }
+  .backLink { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 4px; padding: 5px 8px; border-radius: 999px; border: 0; background: #1f1f1f; color: rgba(255,255,255,0.88); text-decoration: none; font-weight: 900; font-size: 10px; letter-spacing: 0.02em; box-shadow: 0 10px 30px rgba(0,0,0,0.35); width: fit-content; max-width: max-content; }
+  .backLink:hover { color: #fff; background: #232323; }
   .h1 { margin: 0; font-size: 23px; font-weight: 950; line-height: 1.1; letter-spacing: -0.02em; }
   .sub { margin-top: 2px; color: rgba(255,255,255,0.55); font-size: 11px; }
 
   .searchWrap { display: flex; justify-content: flex-end; gap: 6px; align-items: center; min-width: 0; }
-  .search { width: min(480px, 100%); padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); background: #141414; color: rgba(255,255,255,0.92); font-size: 12px; outline: none; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  .search { width: min(480px, 100%); padding: 8px 10px; border-radius: 10px; border: 0; background: #141414; color: rgba(255,255,255,0.92); font-size: 12px; outline: none; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
   .search::placeholder { color: rgba(255,255,255,0.45); }
-  .resetAll { padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); background: #1f1f1f; color: rgba(255,255,255,0.88); font-weight: 900; cursor: pointer; white-space: nowrap; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  .resetAll { padding: 8px 10px; border-radius: 10px; border: 0; background: #1f1f1f; color: rgba(255,255,255,0.88); font-weight: 900; cursor: pointer; white-space: nowrap; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
   .srOnly { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .main {
     min-height: 0;
@@ -721,7 +721,7 @@ const navItems = [
     min-height: 36px;
     padding: 0 14px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 0;
     background:
       linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 100%),
       rgba(11, 14, 20, 0.92);
@@ -738,7 +738,6 @@ const navItems = [
     white-space: nowrap;
     transition:
       transform 140ms ease,
-      border-color 140ms ease,
       background 140ms ease,
       color 140ms ease,
       box-shadow 140ms ease;
@@ -746,7 +745,6 @@ const navItems = [
 
   .rawNavLink:hover {
     transform: translateY(-1px);
-    border-color: rgba(122, 162, 255, 0.32);
     background:
       linear-gradient(180deg, rgba(122, 162, 255, 0.12) 0%, rgba(122, 162, 255, 0.04) 100%),
       rgba(14, 18, 26, 0.96);
@@ -759,14 +757,12 @@ const navItems = [
 
   .rawNavLink:focus-visible {
     outline: none;
-    border-color: rgba(122, 162, 255, 0.5);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.08),
       0 0 0 3px rgba(64, 105, 255, 0.2);
   }
 
   .rawNavLink.is-active {
-    border-color: rgba(92, 130, 255, 0.5);
     background:
       linear-gradient(180deg, rgba(88, 128, 255, 0.3) 0%, rgba(44, 83, 209, 0.2) 100%),
       rgba(22, 34, 74, 0.95);
@@ -793,10 +789,11 @@ const navItems = [
 
   .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-weight: 700; }
 
-  .tableWrap { width: 100%; max-width: 100%; min-width: 0; border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; overflow: auto; background: #181818; box-shadow: 0 22px 50px rgba(0,0,0,0.5); }
+  .tableWrap { width: 100%; max-width: 100%; min-width: 0; border: 0; border-radius: 14px; overflow: auto; background: #181818; box-shadow: 0 22px 50px rgba(0,0,0,0.5); }
   table { width: 100%; border-collapse: collapse; }
-  thead th { position: sticky; top: 0; background: #141414; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 10px 8px; z-index: 2; text-align: left; }
-  tbody td { border-bottom: 1px solid rgba(255,255,255,0.06); padding: 10px 8px; vertical-align: top; font-size: 12px; color: rgba(255,255,255,0.88); }
+  thead th { position: sticky; top: 0; background: #141414; border-bottom: 0; padding: 10px 8px; z-index: 2; text-align: left; }
+  tbody td { border-bottom: 0; padding: 10px 8px; vertical-align: top; font-size: 12px; color: rgba(255,255,255,0.88); }
+  tbody tr { box-shadow: inset 0 -1px 0 rgba(255,255,255,0.04); }
   tbody tr:hover td { background: #202020; }
 
   .bad { color: #ffb3b3; }
@@ -807,14 +804,14 @@ const navItems = [
 
   .thBtn { width: 100%; text-align: left; border: 0; background: transparent; padding: 0; font-size: 10px; color: var(--text-2, rgba(255,255,255,0.78)); font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; }
 
-  .menu { position: fixed; width: 320px; background: #141414; border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; box-shadow: 0 18px 44px rgba(0,0,0,0.6); padding: 12px; z-index: 9999; color: rgba(255,255,255,0.88); }
+  .menu { position: fixed; width: 320px; background: #141414; border: 0; border-radius: 14px; box-shadow: 0 18px 44px rgba(0,0,0,0.6); padding: 12px; z-index: 9999; color: rgba(255,255,255,0.88); }
   .menuTitle { font-weight: 900; margin-bottom: 10px; color: rgba(255,255,255,0.92); }
   .menuRow { display: flex; gap: 8px; margin-bottom: 10px; }
-  .menuBtn { flex: 1 1 auto; padding: 9px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.10); background: #1f1f1f; color: rgba(255,255,255,0.88); font-weight: 900; cursor: pointer; font-size: 13px; }
+  .menuBtn { flex: 1 1 auto; padding: 9px 10px; border-radius: 10px; border: 0; background: #1f1f1f; color: rgba(255,255,255,0.88); font-weight: 900; cursor: pointer; font-size: 13px; box-shadow: 0 10px 24px rgba(0,0,0,0.35); }
   .menuBtn.secondary { background: #141414; }
   .menuBlock { margin-bottom: 10px; }
   .menuLabel { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; }
-  .menuInput { width: 100%; padding: 9px 10px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.10); background: #141414; color: rgba(255,255,255,0.92); font-size: 13px; outline: none; }
+  .menuInput { width: 100%; padding: 9px 10px; border-radius: 10px; border: 0; background: #141414; color: rgba(255,255,255,0.92); font-size: 13px; outline: none; box-shadow: 0 10px 24px rgba(0,0,0,0.35); }
   .menuGrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; align-items: end; }
   .mini { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; font-weight: 900; }
 

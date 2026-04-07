@@ -90,7 +90,7 @@ const groups = [
     gap: 8px;
     padding: 5px 9px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 0;
     background: rgba(255, 255, 255, 0.02);
     color: rgba(255, 255, 255, 0.52);
     text-decoration: none;
@@ -98,19 +98,17 @@ const groups = [
     font-size: 9px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    transition: border-color 120ms ease, background 120ms ease, color 120ms ease;
+    transition: background 120ms ease, color 120ms ease;
   }
 
   .tab:hover {
     color: rgba(255, 255, 255, 0.82);
-    border-color: rgba(255, 255, 255, 0.14);
     background: rgba(255, 255, 255, 0.06);
   }
 
   .tabActive {
     color: rgba(255, 255, 255, 0.92);
     background: color-mix(in srgb, var(--accent, #3c6eff) 18%, rgba(255, 255, 255, 0.04));
-    border-color: color-mix(in srgb, var(--accent, #3c6eff) 40%, rgba(255, 255, 255, 0.1));
   }
 
   @media (max-width: 700px) {

@@ -437,6 +437,35 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
     padding: 18px 24px;
     font-weight: 700;
     color: rgba(255,255,255,0.88);
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .page::before,
+  .page::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .page section {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .page section::before,
+  .page section::after {
+    content: none !important;
+    display: none !important;
   }
 
   .sub,
@@ -485,6 +514,22 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
   }
 
   .shotCard {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .shotCard::before,
+  .shotCard::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .shotCard {
     display: flex;
     flex-direction: column;
   }
@@ -500,6 +545,23 @@ const metaSecondaryLever = meta?.secondaryLever ? String(meta.secondaryLever) : 
     cursor: zoom-in;
     justify-content: center;
     align-items: flex-start;
+  }
+
+  .shotLink {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+  }
+
+  .shotLink::before,
+  .shotLink::after {
+    content: none !important;
+    display: none !important;
   }
 
   .shotImg {

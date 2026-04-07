@@ -64,6 +64,11 @@ main {
   padding: 3em 1em;
 }
 
+main.shell,
+main.shell * {
+  border-color: transparent !important;
+}
+
 h1,
 h2,
 h3,
@@ -126,11 +131,14 @@ input,
 select,
 textarea {
   background: #141414;
-  border: 1px solid var(--border);
+  border: 0;
   color: var(--text);
   outline: none;
   border-radius: 10px;
   padding: 10px 12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 10px 26px rgba(0, 0, 0, 0.38);
 }
 
 input::placeholder,
@@ -141,26 +149,33 @@ textarea::placeholder {
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0 3px rgba(255, 255, 255, 0.08),
+    0 10px 26px rgba(0, 0, 0, 0.38);
 }
 
 button,
 .btn,
 input[type="submit"] {
   background: #1b1b1b;
-  border: 1px solid var(--border);
+  border: 0;
   color: var(--text);
   border-radius: 10px;
   padding: 10px 14px;
   cursor: pointer;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 10px 26px rgba(0, 0, 0, 0.38);
 }
 
 button:hover,
 .btn:hover,
 input[type="submit"]:hover {
   background: #222222;
-  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
 table {
@@ -171,14 +186,18 @@ table {
 
 thead th {
   color: var(--text-2);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 0;
   text-align: left;
   padding: 10px 8px;
 }
 
 tbody td {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  border-bottom: 0;
   padding: 10px 8px;
+}
+
+tbody tr {
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04);
 }
 
 tbody tr:hover {
@@ -194,7 +213,7 @@ img {
 code {
   padding: 2px 6px;
   background-color: var(--code-bg);
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 6px;
   color: var(--text);
 }
@@ -203,7 +222,7 @@ pre {
   padding: 1.5em;
   border-radius: 12px;
   background: #141414;
-  border: 1px solid var(--border);
+  border: 0;
   box-shadow: var(--shadow);
 }
 
@@ -220,8 +239,9 @@ blockquote {
 }
 
 hr {
-  border: none;
-  border-top: 1px solid var(--border);
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 /* Force any “card” style containers to be dark (this kills the big white box) */
@@ -240,8 +260,8 @@ main .content,
 main .container,
 main .wrapper {
   background: var(--surface);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  border: 0;
+  box-shadow: var(--shadow-soft);
   border-radius: 14px;
 }
 
@@ -323,11 +343,12 @@ main.nflHub {
   max-width: 680px;
   margin: 32px auto;
   padding: 18px;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 16px;
   text-align: center;
   background: var(--surface);
   color: var(--text-2);
+  box-shadow: var(--shadow-soft);
 }
 
 .nflHub .yearBar {
@@ -344,24 +365,25 @@ main.nflHub {
   justify-content: center;
   padding: 10px 14px;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 0;
   text-decoration: none;
   font-weight: 600;
   background: #141414;
   color: var(--text);
   transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease,
     background 0.12s ease;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 8px 18px rgba(0, 0, 0, 0.35);
 }
 
 .nflHub .yearPill:hover {
-  border-color: rgba(255, 255, 255, 0.18);
   transform: translateY(-1px);
   background: var(--surface-2);
   box-shadow: var(--shadow);
 }
 
 .nflHub .yearPill.active {
-  border-color: rgba(255, 255, 255, 0.28);
   background: #1f1f1f;
   box-shadow: var(--shadow);
 }
@@ -383,18 +405,18 @@ main.nflHub {
   display: block;
   padding: 26px;
   border-radius: 20px;
-  border: 1px solid var(--border);
+  border: 0;
   background: #141414;
   text-decoration: none;
   color: var(--text);
   transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease,
     background 0.12s ease;
   min-height: 170px;
+  box-shadow: var(--shadow-soft);
 }
 
 .nflHub .bigCard:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.18);
   background: var(--surface-2);
   box-shadow: var(--shadow);
 }

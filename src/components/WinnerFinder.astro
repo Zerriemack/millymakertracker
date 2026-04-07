@@ -331,52 +331,54 @@ const defaultSport = "NFL";
 
 <style is:global>
   .wf {
-    max-width: 980px;
+    max-width: 1075px;
     margin: 22px auto 0;
-    padding: 44px 16px 64px;
+    padding: 55px 20px 80px;
     position: relative;
+    background: transparent;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    border-radius: 0;
   }
 
   /* subtle section break under the header */
   .wf::before {
-    content: "";
-    position: absolute;
-    left: 16px;
-    right: 16px;
-    top: 0;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.06);
+    content: none;
   }
-.wf__hero {
-    margin-bottom: 18px;
+  .wf__hero {
+    margin-bottom: 24px;
   }
 
   .wf__title {
-    font-size: 44px;
-    margin: 0 0 8px;
+    font-size: 70px;
+    margin: 0 0 10px;
     letter-spacing: -0.03em;
-    color: rgba(255, 255, 255, 0.96);
     font-weight: 900;
+    color: rgba(255, 255, 255, 0.96);
   }
 
   .wf__sub {
     margin: 0;
     color: rgba(255, 255, 255, 0.72);
     font-weight: 650;
+    font-size: 20px;
   }
 
   .wf__form {
     background: #1f1f1f;
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 0;
     border-radius: 16px;
-    padding: 16px;
+    padding: 20px;
     box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
     margin: 0 auto;
   }
 
   .wf__row {
     display: flex;
-    gap: 12px;
+    gap: 14px;
     flex-wrap: wrap;
     align-items: end;
   }
@@ -384,8 +386,8 @@ const defaultSport = "NFL";
   .wf__label {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    font-size: 12px;
+    gap: 7px;
+    font-size: 15px;
     color: rgba(255, 255, 255, 0.78);
     font-weight: 650;
   }
@@ -397,15 +399,18 @@ const defaultSport = "NFL";
 
   .wf__input,
   .wf__select {
-    height: 40px;
+    height: 48px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 0;
     padding: 0 12px;
-    font-size: 14px;
+    font-size: 17px;
     background: #141414;
     color: rgba(255, 255, 255, 0.92);
     outline: none;
     font-weight: 600;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 8px 18px rgba(0, 0, 0, 0.35);
   }
 
   .wf__input::placeholder {
@@ -414,70 +419,80 @@ const defaultSport = "NFL";
 
   .wf__input:focus,
   .wf__select:focus {
-    border-color: rgba(255, 255, 255, 0.22);
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 0 0 3px rgba(255, 255, 255, 0.08),
+      0 8px 18px rgba(0, 0, 0, 0.35);
   }
 
   .wf__btn {
-    height: 40px;
+    height: 48px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 0 14px;
-    font-size: 14px;
+    border: 0;
+    padding: 0 18px;
+    font-size: 17px;
     cursor: pointer;
     background: #1b1b1b;
     color: rgba(255, 255, 255, 0.92);
-    transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
+    transition: background 120ms ease, transform 120ms ease, box-shadow 120ms ease;
     font-weight: 750;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 10px 24px rgba(0, 0, 0, 0.4);
   }
 
   .wf__btn:hover {
     background: #232323;
-    border-color: rgba(255, 255, 255, 0.18);
     transform: translateY(-1px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 14px 30px rgba(0, 0, 0, 0.45);
   }
 
   .wf__small {
-    margin-top: 10px;
+    margin-top: 12px;
   }
 
   .wf__linkBtn {
-    border: 1px solid transparent;
+    border: 0;
     background: transparent;
     cursor: pointer;
-    padding: 6px 10px;
+    padding: 8px 12px;
     border-radius: 10px;
-    font-size: 13px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.82);
-    transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+    transition: background 120ms ease, color 120ms ease;
     font-weight: 650;
   }
 
   .wf__linkBtn:hover {
     background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.08);
     color: rgba(255, 255, 255, 0.92);
   }
 
   .wf__results {
-    max-width: 980px;
-    margin: 18px auto 0;
+    max-width: 860px;
+    margin: 22px auto 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
   }
 
   .wf__resultsHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0;
+    margin: 12px 0;
   }
 
   .wf__meta {
-    font-size: 13px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.70);
   }
 
   .wf__open {
-    font-size: 13px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.84);
     text-decoration: none;
   }
@@ -488,8 +503,8 @@ const defaultSport = "NFL";
 
   .wf__list {
     display: grid;
-    gap: 12px;
-    margin-top: 12px;
+    gap: 16px;
+    margin-top: 16px;
   }
 
   a.wf__card,
@@ -497,17 +512,17 @@ const defaultSport = "NFL";
     display: block;
     text-decoration: none;
     color: inherit;
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    border-radius: 16px;
-    padding: 14px 16px;
+    border: 0;
+    border-radius: 18px;
+    padding: 18px 20px;
     background: #1f1f1f;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.34);
     transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease,
       background 120ms ease;
   }
 
   a.wf__card:hover {
     transform: translateY(-1px);
-    border-color: rgba(255, 255, 255, 0.16);
     background: #232323;
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.50);
   }
@@ -515,58 +530,58 @@ const defaultSport = "NFL";
   .wf__cardGrid {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 12px;
+    gap: 14px;
     align-items: center;
   }
 
   .wf__hrow {
     display: flex;
     justify-content: space-between;
-    gap: 12px;
+    gap: 14px;
     align-items: baseline;
   }
 
   .wf__cardTitle {
     font-weight: 800;
-    font-size: 15px;
+    font-size: 19px;
     letter-spacing: -0.01em;
     color: rgba(255, 255, 255, 0.94);
   }
 
   .wf__right {
     display: inline-flex;
-    gap: 10px;
+    gap: 12px;
     align-items: baseline;
     white-space: nowrap;
   }
 
   .wf__money {
-    font-size: 13px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.86);
     font-weight: 650;
   }
 
   .wf__pts {
-    font-size: 13px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.68);
     font-weight: 650;
   }
 
   .wf__badges {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 12px;
   }
 
   .wf__badge {
     display: inline-flex;
     align-items: center;
-    padding: 6px 10px;
+    padding: 8px 12px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 0;
     background: rgba(255, 255, 255, 0.06);
-    font-size: 12.5px;
+    font-size: 15px;
     color: rgba(255, 255, 255, 0.82);
     font-weight: 700;
   }
@@ -577,39 +592,41 @@ const defaultSport = "NFL";
   }
 
   .wf__winner {
-    margin-top: 10px;
-    font-size: 13px;
+    margin-top: 12px;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.70);
     line-height: 1.35;
     font-weight: 650;
   }
 
   .wf__chev {
-    font-size: 22px;
+    font-size: 26px;
     color: rgba(255, 255, 255, 0.35);
     line-height: 1;
     transform: translateY(-1px);
   }
 
   .wf__empty {
-    margin-top: 10px;
-    padding: 14px 4px;
+    margin-top: 12px;
+    padding: 18px 6px;
   }
 
   .wf__emptyTitle {
     font-weight: 900;
     color: rgba(255, 255, 255, 0.92);
+    font-size: 18px;
   }
 
   .wf__emptySub {
     color: rgba(255, 255, 255, 0.70);
-    margin-top: 4px;
+    margin-top: 6px;
     font-weight: 650;
+    font-size: 15px;
   }
 
   .wf__hint {
-    margin-top: 12px;
-    font-size: 12px;
+    margin-top: 16px;
+    font-size: 15px;
     color: rgba(255, 255, 255, 0.60);
     font-weight: 650;
   }

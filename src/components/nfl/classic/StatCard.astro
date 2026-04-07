@@ -11,7 +11,7 @@ const { label, value, note, pill, accent = "slate", class: className = "" } = As
 
 <style>
   .stat {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 0;
     border-radius: 16px;
     padding: 12px;
     background: linear-gradient(180deg, rgba(24, 24, 24, 0.95), rgba(16, 16, 16, 0.98));
@@ -50,7 +50,7 @@ const { label, value, note, pill, accent = "slate", class: className = "" } = As
     align-self: flex-start;
     padding: 2px 8px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 0;
     background: #151515;
     color: rgba(255, 255, 255, 0.78);
     font-weight: 900;
@@ -60,14 +60,7 @@ const { label, value, note, pill, accent = "slate", class: className = "" } = As
   }
 
   .stat::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: color-mix(in srgb, var(--accent, #8c93a1) 65%, transparent);
-    opacity: 0.65;
+    content: none;
   }
 
   .stat[data-accent="blue"] { --accent: var(--accent-blue, #3c6eff); }
