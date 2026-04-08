@@ -1,0 +1,32 @@
+[
+  {
+    "id": "buf-nyj-2026-w02",
+    "slateId": "nfl-2026-week-02-draftkings-classic-main",
+    "awayTeam": "BUF",
+    "homeTeam": "NYJ",
+    "gameLabel": "BUF @ NYJ",
+    "spread": "NYJ -2.5",
+    "total": 44.5,
+    "startTime": "2026-09-13T13:00:00-04:00"
+  },
+  {
+    "id": "jax-atl-2026-w02",
+    "slateId": "nfl-2026-week-02-draftkings-classic-main",
+    "awayTeam": "JAX",
+    "homeTeam": "ATL",
+    "gameLabel": "JAX @ ATL",
+    "spread": "ATL -1.5",
+    "total": 46.0,
+    "startTime": "2026-09-13T13:00:00-04:00"
+  },
+  {
+    "id": "no-min-2026-w02",
+    "slateId": "nfl-2026-week-02-draftkings-classic-main",
+    "awayTeam": "NO",
+    "homeTeam": "MIN",
+    "gameLabel": "NO @ MIN",
+    "spread": "MIN -3.0",
+    "total": 43.0,
+    "startTime": "2026-09-13T16:05:00-04:00"
+  }
+]

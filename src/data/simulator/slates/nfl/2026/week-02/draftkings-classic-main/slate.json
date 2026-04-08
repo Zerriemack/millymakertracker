@@ -1,0 +1,13 @@
+{
+  "id": "nfl-2026-week-02-draftkings-classic-main",
+  "sport": "nfl",
+  "season": 2026,
+  "week": 2,
+  "site": "draftkings",
+  "gameType": "classic",
+  "slateType": "main",
+  "name": "DraftKings Classic Main",
+  "salaryCap": 50000,
+  "rosterSize": 9,
+  "startTime": "2026-09-13T13:00:00-04:00"
+}

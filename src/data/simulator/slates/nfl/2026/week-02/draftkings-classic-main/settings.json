@@ -1,0 +1,17 @@
+{
+  "slateId": "nfl-2026-week-02-draftkings-classic-main",
+  "lineupCount": 150,
+  "fieldSize": 23456,
+  "simulationCount": 2000,
+  "salaryCap": 50000,
+  "payoutProfile": "standard",
+  "gradingFieldMode": "expandedField",
+  "gradingFieldSize": 23456,
+  "gradingFieldExtraLineupCount": 300,
+  "minSalary": null,
+  "maxSalary": null,
+  "minSumOwnership": null,
+  "maxSumOwnership": null,
+  "minAvgOptimalRate": null,
+  "maxAvgOptimalRate": null
+}

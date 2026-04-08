@@ -1,15 +1,16 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { mockSlates, getSlateById } from "../../data/simulator/mockSlates";
-import { getPlayersBySlate } from "../../data/simulator/mockPlayers";
-import { getSettingsBySlate } from "../../data/simulator/mockSettings";
-import { getResultsBySlate } from "../../data/simulator/mockResults";
-
-const weekLabel = "Week 2";
+import { listSlatePackages } from "../../lib/simulator/listSlatePackages";
+import { loadSlatePackage } from "../../lib/simulator/loadSlatePackage";
+import { loadJson } from "../../lib/simulator/loadJson";
+import { resolveSlatePackagePath } from "../../lib/simulator/paths";
+import type { SimulatorSlatePackage } from "../../lib/simulator/types";
+import path from "path";
 
 const tab = (Astro.url.searchParams.get("tab") || "slates").toLowerCase();
 const subtab = (Astro.url.searchParams.get("subtab") || "ev").toLowerCase();
-const slateParam = Astro.url.searchParams.get("slate") || "3-game-main";
+const slateParam = Astro.url.searchParams.get("slate");
+const gameParam = Astro.url.searchParams.get("game");
 const gameTypeParam = Astro.url.searchParams.get("gameType");
 const operatorParam = Astro.url.searchParams.get("operator");
 
@@ -28,18 +29,163 @@ const activeOperator =
     ? operatorParam.toLowerCase()
     : null;
 
-const slates = mockSlates.filter((slate) => slate.sport === "nfl");
-const filteredSlates = slates.filter((slate) => {
+const slateKeys = await listSlatePackages();
+const defaultSlateKey = slateKeys[0] ?? null;
+const requestedSlateKey = slateParam ?? defaultSlateKey;
+
+let selectedPackage: SimulatorSlatePackage | null = null;
+let slateError: string | null = null;
+
+if (requestedSlateKey) {
+  try {
+    selectedPackage = await loadSlatePackage(requestedSlateKey);
+  } catch (error) {
+    slateError = `Slate package not found for key "${requestedSlateKey}".`;
+  }
+} else {
+  slateError = "No slate packages are available.";
+}
+
+const slatePackages = await Promise.all(
+  slateKeys.map(async (key) => {
+    try {
+      const pkg = await loadSlatePackage(key);
+      return { key, ...pkg };
+    } catch (error) {
+      return null;
+    }
+  })
+);
+
+const availableSlates = slatePackages.filter(Boolean) as Array<
+  SimulatorSlatePackage & { key: string }
+>;
+
+const slates = availableSlates
+  .map((pkg) => ({
+    key: pkg.key,
+    slate: pkg.slate,
+    gamesCount: pkg.games.length,
+  }))
+  .filter((entry) => entry.slate.sport === "nfl");
+
+const filteredSlates = slates.filter(({ slate }) => {
   const slateGameType = slate.gameType.toLowerCase();
   const matchesGameType = activeGameType ? slateGameType === activeGameType : true;
   const matchesOperator = activeOperator ? slate.site === activeOperator : true;
   return matchesGameType && matchesOperator;
 });
-const selectedSlate = getSlateById(slateParam) ?? getSlateById("3-game-main");
-const activeSlateId = selectedSlate?.id ?? "3-game-main";
-const players = getPlayersBySlate(activeSlateId);
-const settings = getSettingsBySlate(activeSlateId);
-const results = getResultsBySlate(activeSlateId);
+
+const selectedSlate = selectedPackage?.slate ?? null;
+const activeSlateKey = requestedSlateKey ?? "";
+const games = selectedPackage?.games ?? [];
+const teamInputs = selectedPackage?.teamInputs ?? [];
+const playerInputs = selectedPackage?.playerInputs ?? [];
+const settings = selectedPackage?.settings
+  ? {
+      ...selectedPackage.settings,
+      payoutProfile: selectedPackage.settings.payoutProfile ?? "standard",
+      gradingFieldMode: selectedPackage.settings.gradingFieldMode ?? "expandedField",
+      gradingFieldSize: selectedPackage.settings.gradingFieldSize ?? selectedPackage.settings.fieldSize,
+      gradingFieldExtraLineupCount:
+        selectedPackage.settings.gradingFieldExtraLineupCount ?? Math.max(selectedPackage.settings.lineupCount, 300),
+    }
+  : null;
+let results: {
+  slateId: string;
+  generatedAt: string;
+  simulationCount: number;
+  settingsSnapshot: {
+    lineupCount: number;
+    fieldSize: number;
+    simulationCount: number;
+    salaryCap: number;
+    payoutProfile?: "topHeavy" | "standard" | "flat";
+    gradingFieldMode?: "retainedOnly" | "expandedField";
+    gradingFieldSize?: number;
+    gradingFieldExtraLineupCount?: number;
+  };
+  players: Array<{
+    id: string;
+    name: string;
+    team: string;
+    position: string;
+    salary: number;
+    projection: number;
+    ownership: number;
+    optimalLineupCount: number;
+    optimalSimRate: number;
+    optimalLeverage: number;
+    averageSimScore: number;
+    maxSimScore: number;
+    retainedLineupCount: number;
+    retainedExposureRate: number;
+    filteredLineupCount: number;
+    filteredExposureRate: number;
+    plusEvScore: number;
+    minusEvScore: number;
+  }>;
+  lineups?: Array<{
+    lineupKey: string;
+    players: Array<{
+      id: string;
+      name: string;
+      team: string;
+      position: string;
+      salary: number;
+      ownership: number;
+    }>;
+    salaryUsed: number;
+    sumOwnership: number;
+    frequencyCount: number;
+    frequencyRate: number;
+    averageSimTotal: number;
+    maxSimTotal: number;
+    averageOptimalRate: number;
+    passedFilters: boolean;
+    topPointOnePctRate?: number;
+    topOnePctRate?: number;
+    itmRate?: number;
+    evScore?: number;
+  }>;
+  poolSummary?: {
+    distinctLineupCount: number;
+    retainedLineupCount: number;
+    filteredLineupCount: number;
+  };
+  gradingSummary?: {
+    gradingFieldMode: "retainedOnly" | "expandedField";
+    gradingFieldSize: number;
+    gradingUniverseSize: number;
+    retainedPoolSize: number;
+    filteredPoolSize: number;
+    gradingFieldExtraLineupCount: number;
+    payoutProfile: "topHeavy" | "standard" | "flat";
+  };
+} | null = null;
+
+if (selectedPackage && activeSlateKey) {
+  try {
+    const resultsPath = path.join(resolveSlatePackagePath(activeSlateKey), "results.json");
+    results = await loadJson(resultsPath);
+  } catch (error) {
+    results = null;
+  }
+}
+
+const activeGameId = gameParam && games.some((game) => game.id === gameParam)
+  ? gameParam
+  : games[0]?.id ?? null;
+const selectedGame = games.find((game) => game.id === activeGameId) ?? null;
+const selectedGameTeamInputs = teamInputs.filter((input) => input.gameId === activeGameId);
+const awayTeamInputs = selectedGameTeamInputs.find((input) => input.team === selectedGame?.awayTeam) ?? null;
+const homeTeamInputs = selectedGameTeamInputs.find((input) => input.team === selectedGame?.homeTeam) ?? null;
+const awayPlayers = playerInputs.filter(
+  (player) => player.gameId === activeGameId && player.team === selectedGame?.awayTeam
+);
+const homePlayers = playerInputs.filter(
+  (player) => player.gameId === activeGameId && player.team === selectedGame?.homeTeam
+);
 const siteLabel =
   selectedSlate?.site === "draftkings"
     ? "DraftKings"
@@ -63,12 +209,14 @@ const buildSimulatorUrl = ({
   subtabParam,
   gameType,
   operator,
+  game,
 }: {
   slate?: string | null;
   tabParam?: string | null;
   subtabParam?: string | null;
   gameType?: string | null;
   operator?: string | null;
+  game?: string | null;
 }) => {
   const params = new URLSearchParams();
   if (slate) params.set("slate", slate);
@@ -76,20 +224,15 @@ const buildSimulatorUrl = ({
   if (subtabParam) params.set("subtab", subtabParam);
   if (gameType) params.set("gameType", gameType);
   if (operator) params.set("operator", operator);
+  if (game) params.set("game", game);
   const query = params.toString();
   return query ? `/simulator?${query}` : "/simulator";
 };
 
-const topTabs = [
-  "Slates",
-  "Inputs",
-  "Settings",
-  "Optimal Results",
-  "Your Custom Lineups",
-  "Your Projections",
-];
-
-const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).toUpperCase() + activeTab.slice(1);
+const weekLabel = selectedSlate ? `Week ${selectedSlate.week}` : "Week";
+const startTimeLabel = selectedSlate?.startTime
+  ? new Date(selectedSlate.startTime).toLocaleString()
+  : "TBD";
 ---
 
 <Layout title="Simulator | Milly Maker Tracker">
@@ -105,31 +248,35 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
 
         <div class="meta-block">
           <div class="meta-line">
-            <span>{siteLabel} {selectedSlate?.name ?? "3 Game Main"}</span>
+            <span>{siteLabel} {selectedSlate?.name ?? "Unknown Slate"}</span>
             <span class="meta-sep">•</span>
             <span>{formatGameTypeLabel(selectedSlate)}</span>
             <span class="meta-sep">•</span>
-            <span>{selectedSlate?.games ?? 3} games</span>
+            <span>{games.length} games</span>
             <span class="meta-sep">•</span>
-            <span>Start time: {selectedSlate?.startTime ?? "TBD"}</span>
+            <span>Start time: {startTimeLabel}</span>
           </div>
         </div>
       </div>
 
       <div class="action-row">
-        <button type="button" class="tool-btn tool-btn-secondary">SAVE</button>
-        <a class="tool-btn tool-btn-secondary" href="/simulator?slate=3-game-main&tab=slates">RESET ALL</a>
+        <button type="button" class="tool-btn tool-btn-secondary" id="sim-save-btn">SAVE</button>
+        <button type="button" class="tool-btn tool-btn-secondary" id="sim-reset-btn">RESET ALL</button>
+        <button type="button" class="tool-btn tool-btn-secondary" id="sim-run-btn">RUN SIMS</button>
         <button type="button" class="tool-btn tool-btn-primary">UPLOAD PROJECTIONS</button>
       </div>
+      <div class="sim-status" id="sim-status" aria-live="polite"></div>
+      <div class="sim-status sim-status-validation" id="sim-validation-summary" aria-live="polite"></div>
 
     <nav class="tabs" aria-label="Simulator sections">
       <a
         class:list={["tab-btn", { active: activeTab === "slates" }]}
         href={buildSimulatorUrl({
-          slate: activeSlateId,
+          slate: activeSlateKey,
           tabParam: "slates",
           gameType: activeGameType,
           operator: activeOperator,
+          game: activeGameId,
         })}
       >
         Slates
@@ -137,10 +284,11 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
       <a
         class:list={["tab-btn", { active: activeTab === "inputs" }]}
         href={buildSimulatorUrl({
-          slate: activeSlateId,
+          slate: activeSlateKey,
           tabParam: "inputs",
           gameType: activeGameType,
           operator: activeOperator,
+          game: activeGameId,
         })}
       >
         Inputs
@@ -148,10 +296,11 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
       <a
         class:list={["tab-btn", { active: activeTab === "settings" }]}
         href={buildSimulatorUrl({
-          slate: activeSlateId,
+          slate: activeSlateKey,
           tabParam: "settings",
           gameType: activeGameType,
           operator: activeOperator,
+          game: activeGameId,
         })}
       >
         Settings
@@ -159,16 +308,23 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
       <a
         class:list={["tab-btn", { active: activeTab === "results" }]}
         href={buildSimulatorUrl({
-          slate: activeSlateId,
+          slate: activeSlateKey,
           tabParam: "results",
           subtabParam: activeSubtab,
           gameType: activeGameType,
           operator: activeOperator,
+          game: activeGameId,
         })}
       >
         Results
       </a>
     </nav>
+
+    {slateError && (
+      <div class="section-head">
+        <p class="empty-state">{slateError}</p>
+      </div>
+    )}
 
     <div class="section-head">
       <h2>Available Slates</h2>
@@ -182,7 +338,7 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
           <a
             class:list={["filter-btn", { active: activeGameType === "classic" }]}
             href={buildSimulatorUrl({
-              slate: activeSlateId,
+              slate: activeSlateKey,
               tabParam: "slates",
               gameType: activeGameType === "classic" ? null : "classic",
               operator: activeOperator,
@@ -193,7 +349,7 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
           <a
             class:list={["filter-btn", { active: activeGameType === "showdown" }]}
             href={buildSimulatorUrl({
-              slate: activeSlateId,
+              slate: activeSlateKey,
               tabParam: "slates",
               gameType: activeGameType === "showdown" ? null : "showdown",
               operator: activeOperator,
@@ -208,7 +364,7 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
           <a
             class:list={["filter-btn", { active: activeOperator === "draftkings" }]}
             href={buildSimulatorUrl({
-              slate: activeSlateId,
+              slate: activeSlateKey,
               tabParam: "slates",
               gameType: activeGameType,
               operator: activeOperator === "draftkings" ? null : "draftkings",
@@ -219,7 +375,7 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
           <a
             class:list={["filter-btn", { active: activeOperator === "fanduel" }]}
             href={buildSimulatorUrl({
-              slate: activeSlateId,
+              slate: activeSlateKey,
               tabParam: "slates",
               gameType: activeGameType,
               operator: activeOperator === "fanduel" ? null : "fanduel",
@@ -249,9 +405,10 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
                   <td colSpan={6}>No slates match the current filters.</td>
                 </tr>
               )}
-              {filteredSlates.map((slate) => {
+              {filteredSlates.map((entry) => {
+                const { slate, key, gamesCount } = entry;
                 const rowHref = buildSimulatorUrl({
-                  slate: slate.id,
+                  slate: key,
                   tabParam: "inputs",
                   gameType: activeGameType,
                   operator: activeOperator,
@@ -261,7 +418,7 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
                   <td>
                     <a
                       href={rowHref}
-                      class:list={["slate-link", { active: slate.id === activeSlateId }]}
+                      class:list={["slate-link", { active: key === activeSlateKey }]}
                     >
                       {slate.name}
                     </a>
@@ -281,7 +438,7 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
                     </div>
                   </td>
                   <td>{formatGameTypeLabel(slate)}</td>
-                  <td>{slate.games}</td>
+                  <td>{gamesCount}</td>
                   <td>${slate.salaryCap.toLocaleString()}</td>
                   <td>{new Date(slate.startTime).toLocaleString()}</td>
                 </tr>
@@ -294,55 +451,694 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
     )}
 
     {activeTab === "inputs" && (
-      <div class="table-area">
-        <table class="slates-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Team</th>
-              <th>Pos</th>
-              <th>Salary</th>
-              <th>Proj</th>
-              <th>Own%</th>
-            </tr>
-          </thead>
-          <tbody>
-            {players.map((player) => (
-              <tr>
-                <td>{player.name}</td>
-                <td>{player.team}</td>
-                <td>{player.position}</td>
-                <td>${player.salary.toLocaleString()}</td>
-                <td>{player.projection.toFixed(1)}</td>
-                <td>{player.ownership.toFixed(1)}%</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div class="inputs-panel">
+        {games.length === 0 ? (
+          <p class="empty-state">No games found for this slate.</p>
+        ) : (
+          <>
+            <nav class="subtabs" aria-label="Slate games">
+              {games.map((game) => (
+                <a
+                  class:list={["subtab", { active: game.id === activeGameId }]}
+                  href={buildSimulatorUrl({
+                    slate: activeSlateKey,
+                    tabParam: "inputs",
+                    gameType: activeGameType,
+                    operator: activeOperator,
+                    game: game.id,
+                  })}
+                >
+                  {game.gameLabel}
+                </a>
+              ))}
+            </nav>
+
+            {selectedGame && (
+              <div class="section-head">
+                <h2>{selectedGame.gameLabel}</h2>
+              </div>
+            )}
+
+            <div class="inputs-team-grid">
+              <div class="settings-panel">
+                <h3>{selectedGame?.awayTeam ?? "Away Team"}</h3>
+                <div class="team-validation" data-team-key={`team:${awayTeamInputs?.gameId ?? ""}:${awayTeamInputs?.team ?? ""}`}>
+                  <div class="team-validation-title">Team Checks</div>
+                  <div class="team-validation-messages"></div>
+                </div>
+                {awayTeamInputs ? (
+                  <dl class="settings-list">
+                    <div>
+                      <dt>Points</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={awayTeamInputs.pointsScored}
+                          data-kind="team"
+                          data-game-id={awayTeamInputs.gameId}
+                          data-team={awayTeamInputs.team}
+                          data-field="pointsScored"
+                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:pointsScored`}
+                        />
+                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:pointsScored`}></span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Pace</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={awayTeamInputs.pace}
+                          data-kind="team"
+                          data-game-id={awayTeamInputs.gameId}
+                          data-team={awayTeamInputs.team}
+                          data-field="pace"
+                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:pace`}
+                        />
+                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:pace`}></span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Rush Rate</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={(awayTeamInputs.rushRate * 100).toFixed(1)}
+                          data-kind="team"
+                          data-game-id={awayTeamInputs.gameId}
+                          data-team={awayTeamInputs.team}
+                          data-field="rushRate"
+                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:rushRate`}
+                        />
+                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:rushRate`}></span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Rush TD Ratio</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={(awayTeamInputs.rushTdRatio * 100).toFixed(1)}
+                          data-kind="team"
+                          data-game-id={awayTeamInputs.gameId}
+                          data-team={awayTeamInputs.team}
+                          data-field="rushTdRatio"
+                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:rushTdRatio`}
+                        />
+                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:rushTdRatio`}></span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>DST Salary</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="1"
+                          value={awayTeamInputs.dstSalary}
+                          data-kind="team"
+                          data-game-id={awayTeamInputs.gameId}
+                          data-team={awayTeamInputs.team}
+                          data-field="dstSalary"
+                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:dstSalary`}
+                        />
+                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:dstSalary`}></span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Sack Rate</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={(awayTeamInputs.sackRate * 100).toFixed(1)}
+                          data-kind="team"
+                          data-game-id={awayTeamInputs.gameId}
+                          data-team={awayTeamInputs.team}
+                          data-field="sackRate"
+                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:sackRate`}
+                        />
+                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:sackRate`}></span>
+                      </dd>
+                    </div>
+                  </dl>
+                ) : (
+                  <p class="empty-state">No team inputs found.</p>
+                )}
+
+                <div class="table-area">
+                  <table class="slates-table">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Team</th>
+                        <th>Pos</th>
+                        <th>Salary</th>
+                        <th>Proj</th>
+                        <th>Own%</th>
+                        <th>Rush MS</th>
+                        <th>Rush TD MS</th>
+                        <th>Rec MS</th>
+                        <th>Rec TD MS</th>
+                        <th>Catch%</th>
+                        <th>Pass MS</th>
+                        <th>INT%</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {awayPlayers.map((player) => (
+                        <tr>
+                          <td>{player.name}</td>
+                          <td>{player.team}</td>
+                          <td>{player.position}</td>
+                          <td>${player.salary.toLocaleString()}</td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.projection}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="projection"
+                              data-key={`player:${player.id}:projection`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:projection`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.ownership}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="ownership"
+                              data-key={`player:${player.id}:ownership`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:ownership`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.rushMarketShare}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="rushMarketShare"
+                              data-key={`player:${player.id}:rushMarketShare`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:rushMarketShare`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.rushTdMarketShare}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="rushTdMarketShare"
+                              data-key={`player:${player.id}:rushTdMarketShare`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:rushTdMarketShare`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.receivingMarketShare}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="receivingMarketShare"
+                              data-key={`player:${player.id}:receivingMarketShare`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:receivingMarketShare`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.receivingTdMarketShare}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="receivingTdMarketShare"
+                              data-key={`player:${player.id}:receivingTdMarketShare`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:receivingTdMarketShare`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.catchRate}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="catchRate"
+                              data-key={`player:${player.id}:catchRate`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:catchRate`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.passMarketShare}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="passMarketShare"
+                              data-key={`player:${player.id}:passMarketShare`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:passMarketShare`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.intRate}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="intRate"
+                              data-key={`player:${player.id}:intRate`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:intRate`}></span>
+                          </td>
+                        </tr>
+                      ))}
+                      {awayPlayers.length === 0 && (
+                        <tr>
+                          <td colSpan={13}>No players found.</td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="settings-panel">
+                <h3>{selectedGame?.homeTeam ?? "Home Team"}</h3>
+                <div class="team-validation" data-team-key={`team:${homeTeamInputs?.gameId ?? ""}:${homeTeamInputs?.team ?? ""}`}>
+                  <div class="team-validation-title">Team Checks</div>
+                  <div class="team-validation-messages"></div>
+                </div>
+                {homeTeamInputs ? (
+                  <dl class="settings-list">
+                    <div>
+                      <dt>Points</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={homeTeamInputs.pointsScored}
+                          data-kind="team"
+                          data-game-id={homeTeamInputs.gameId}
+                          data-team={homeTeamInputs.team}
+                          data-field="pointsScored"
+                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:pointsScored`}
+                        />
+                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:pointsScored`}></span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Pace</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={homeTeamInputs.pace}
+                          data-kind="team"
+                          data-game-id={homeTeamInputs.gameId}
+                          data-team={homeTeamInputs.team}
+                          data-field="pace"
+                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:pace`}
+                        />
+                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:pace`}></span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Rush Rate</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={(homeTeamInputs.rushRate * 100).toFixed(1)}
+                          data-kind="team"
+                          data-game-id={homeTeamInputs.gameId}
+                          data-team={homeTeamInputs.team}
+                          data-field="rushRate"
+                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:rushRate`}
+                        />
+                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:rushRate`}></span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Rush TD Ratio</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={(homeTeamInputs.rushTdRatio * 100).toFixed(1)}
+                          data-kind="team"
+                          data-game-id={homeTeamInputs.gameId}
+                          data-team={homeTeamInputs.team}
+                          data-field="rushTdRatio"
+                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:rushTdRatio`}
+                        />
+                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:rushTdRatio`}></span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>DST Salary</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="1"
+                          value={homeTeamInputs.dstSalary}
+                          data-kind="team"
+                          data-game-id={homeTeamInputs.gameId}
+                          data-team={homeTeamInputs.team}
+                          data-field="dstSalary"
+                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:dstSalary`}
+                        />
+                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:dstSalary`}></span>
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Sack Rate</dt>
+                      <dd>
+                        <input
+                          type="number"
+                          step="0.1"
+                          value={(homeTeamInputs.sackRate * 100).toFixed(1)}
+                          data-kind="team"
+                          data-game-id={homeTeamInputs.gameId}
+                          data-team={homeTeamInputs.team}
+                          data-field="sackRate"
+                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:sackRate`}
+                        />
+                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:sackRate`}></span>
+                      </dd>
+                    </div>
+                  </dl>
+                ) : (
+                  <p class="empty-state">No team inputs found.</p>
+                )}
+
+                <div class="table-area">
+                  <table class="slates-table">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Team</th>
+                        <th>Pos</th>
+                        <th>Salary</th>
+                        <th>Proj</th>
+                        <th>Own%</th>
+                        <th>Rush MS</th>
+                        <th>Rush TD MS</th>
+                        <th>Rec MS</th>
+                        <th>Rec TD MS</th>
+                        <th>Catch%</th>
+                        <th>Pass MS</th>
+                        <th>INT%</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {homePlayers.map((player) => (
+                        <tr>
+                          <td>{player.name}</td>
+                          <td>{player.team}</td>
+                          <td>{player.position}</td>
+                          <td>${player.salary.toLocaleString()}</td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.projection}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="projection"
+                              data-key={`player:${player.id}:projection`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:projection`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.ownership}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="ownership"
+                              data-key={`player:${player.id}:ownership`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:ownership`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.rushMarketShare}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="rushMarketShare"
+                              data-key={`player:${player.id}:rushMarketShare`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:rushMarketShare`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.rushTdMarketShare}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="rushTdMarketShare"
+                              data-key={`player:${player.id}:rushTdMarketShare`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:rushTdMarketShare`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.receivingMarketShare}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="receivingMarketShare"
+                              data-key={`player:${player.id}:receivingMarketShare`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:receivingMarketShare`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.receivingTdMarketShare}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="receivingTdMarketShare"
+                              data-key={`player:${player.id}:receivingTdMarketShare`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:receivingTdMarketShare`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.catchRate}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="catchRate"
+                              data-key={`player:${player.id}:catchRate`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:catchRate`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.passMarketShare}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="passMarketShare"
+                              data-key={`player:${player.id}:passMarketShare`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:passMarketShare`}></span>
+                          </td>
+                          <td>
+                            <input
+                              type="number"
+                              step="0.1"
+                              value={player.intRate}
+                              data-kind="player"
+                              data-player-id={player.id}
+                              data-field="intRate"
+                              data-key={`player:${player.id}:intRate`}
+                            />
+                            <span class="field-error" data-error-key={`player:${player.id}:intRate`}></span>
+                          </td>
+                        </tr>
+                      ))}
+                      {homePlayers.length === 0 && (
+                        <tr>
+                          <td colSpan={13}>No players found.</td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     )}
 
     {activeTab === "settings" && (
       <div class="settings-panel">
         {settings ? (
-          <dl class="settings-list">
-            <div>
-              <dt>Lineups</dt>
-              <dd>{settings.lineupCount}</dd>
+          <>
+            <dl class="settings-list">
+              <div>
+                <dt>Lineups</dt>
+                <dd>
+                  <input type="number" step="1" value={settings.lineupCount} data-setting-field="lineupCount" />
+                </dd>
+              </div>
+              <div>
+                <dt>Field Size</dt>
+                <dd>
+                  <input type="number" step="1" value={settings.fieldSize} data-setting-field="fieldSize" />
+                </dd>
+              </div>
+              <div>
+                <dt>Simulations</dt>
+                <dd>
+                  <input type="number" step="1" value={settings.simulationCount} data-setting-field="simulationCount" />
+                </dd>
+              </div>
+              <div>
+                <dt>Salary Cap</dt>
+                <dd>
+                  <input type="number" step="1" value={settings.salaryCap} data-setting-field="salaryCap" />
+                </dd>
+              </div>
+              <div>
+                <dt>Payout Profile</dt>
+                <dd>
+                  <select data-setting-field="payoutProfile">
+                    <option value="standard" selected={settings.payoutProfile === "standard" || !settings.payoutProfile}>
+                      Standard
+                    </option>
+                    <option value="topHeavy" selected={settings.payoutProfile === "topHeavy"}>
+                      Top Heavy
+                    </option>
+                    <option value="flat" selected={settings.payoutProfile === "flat"}>
+                      Flat
+                    </option>
+                  </select>
+                </dd>
+              </div>
+              <div>
+                <dt>Grading Mode</dt>
+                <dd>
+                  <select data-setting-field="gradingFieldMode">
+                    <option value="expandedField" selected={settings.gradingFieldMode === "expandedField"}>
+                      Expanded Field
+                    </option>
+                    <option value="retainedOnly" selected={settings.gradingFieldMode === "retainedOnly"}>
+                      Retained Only
+                    </option>
+                  </select>
+                </dd>
+              </div>
+              <div>
+                <dt>Grading Field Size</dt>
+                <dd>
+                  <input
+                    type="number"
+                    step="1"
+                    value={settings.gradingFieldSize ?? settings.fieldSize}
+                    data-setting-field="gradingFieldSize"
+                  />
+                </dd>
+              </div>
+              <div>
+                <dt>Extra Grading Lineups</dt>
+                <dd>
+                  <input
+                    type="number"
+                    step="1"
+                    value={settings.gradingFieldExtraLineupCount ?? Math.max(settings.lineupCount, 300)}
+                    data-setting-field="gradingFieldExtraLineupCount"
+                  />
+                </dd>
+              </div>
+              <div>
+                <dt>Min Salary</dt>
+                <dd>
+                  <input type="number" step="1" value={settings.minSalary ?? ""} data-setting-field="minSalary" />
+                </dd>
+              </div>
+              <div>
+                <dt>Max Salary</dt>
+                <dd>
+                  <input type="number" step="1" value={settings.maxSalary ?? ""} data-setting-field="maxSalary" />
+                </dd>
+              </div>
+              <div>
+                <dt>Min Sum Own%</dt>
+                <dd>
+                  <input
+                    type="number"
+                    step="0.1"
+                    value={settings.minSumOwnership ?? ""}
+                    data-setting-field="minSumOwnership"
+                  />
+                </dd>
+              </div>
+              <div>
+                <dt>Max Sum Own%</dt>
+                <dd>
+                  <input
+                    type="number"
+                    step="0.1"
+                    value={settings.maxSumOwnership ?? ""}
+                    data-setting-field="maxSumOwnership"
+                  />
+                </dd>
+              </div>
+              <div>
+                <dt>Min Avg Opt%</dt>
+                <dd>
+                  <input
+                    type="number"
+                    step="0.1"
+                    value={settings.minAvgOptimalRate ?? ""}
+                    data-setting-field="minAvgOptimalRate"
+                  />
+                </dd>
+              </div>
+              <div>
+                <dt>Max Avg Opt%</dt>
+                <dd>
+                  <input
+                    type="number"
+                    step="0.1"
+                    value={settings.maxAvgOptimalRate ?? ""}
+                    data-setting-field="maxAvgOptimalRate"
+                  />
+                </dd>
+              </div>
+            </dl>
+            <div class="settings-actions">
+              <button type="button" class="tool-btn tool-btn-secondary" id="sim-save-settings">
+                SAVE SETTINGS
+              </button>
+              <div class="sim-status" id="sim-settings-status" aria-live="polite"></div>
             </div>
-            <div>
-              <dt>Field Size</dt>
-              <dd>{settings.fieldSize.toLocaleString()}</dd>
-            </div>
-            <div>
-              <dt>Simulations</dt>
-              <dd>{settings.simulationCount.toLocaleString()}</dd>
-            </div>
-            <div>
-              <dt>Salary Cap</dt>
-              <dd>${settings.salaryCap.toLocaleString()}</dd>
-            </div>
-          </dl>
+          </>
         ) : (
           <p class="empty-state">No settings found for this slate.</p>
         )}
@@ -355,11 +1151,12 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
           <a
             class:list={["subtab", { active: activeSubtab === "ev" }]}
             href={buildSimulatorUrl({
-              slate: activeSlateId,
+              slate: activeSlateKey,
               tabParam: "results",
               subtabParam: "ev",
               gameType: activeGameType,
               operator: activeOperator,
+              game: activeGameId,
             })}
           >
             Plus EV
@@ -367,11 +1164,12 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
           <a
             class:list={["subtab", { active: activeSubtab === "exp" }]}
             href={buildSimulatorUrl({
-              slate: activeSlateId,
+              slate: activeSlateKey,
               tabParam: "results",
               subtabParam: "exp",
               gameType: activeGameType,
               operator: activeOperator,
+              game: activeGameId,
             })}
           >
             Exposure
@@ -379,18 +1177,43 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
           <a
             class:list={["subtab", { active: activeSubtab === "graded" }]}
             href={buildSimulatorUrl({
-              slate: activeSlateId,
+              slate: activeSlateKey,
               tabParam: "results",
               subtabParam: "graded",
               gameType: activeGameType,
               operator: activeOperator,
+              game: activeGameId,
             })}
           >
             Graded
           </a>
         </nav>
 
-        {activeSubtab === "ev" && (
+        {!results && <p class="empty-state">No results yet. Run sims to generate results.</p>}
+
+        {results && (
+          <div class="results-summary">
+            <span>
+              Grading: {results.gradingSummary?.gradingFieldMode === "expandedField" ? "Expanded Field" : "Retained Only"}
+            </span>
+            <span class="meta-sep">•</span>
+            <span>
+              Assumed field: {(results.gradingSummary?.gradingFieldSize ?? results.settingsSnapshot.fieldSize).toLocaleString()}
+            </span>
+            <span class="meta-sep">•</span>
+            <span>
+              Grading universe: {(results.gradingSummary?.gradingUniverseSize ?? results.poolSummary?.retainedLineupCount ?? 0).toLocaleString()}
+            </span>
+            <span class="meta-sep">•</span>
+            <span>
+              Retained pool: {(results.gradingSummary?.retainedPoolSize ?? results.poolSummary?.retainedLineupCount ?? 0).toLocaleString()}
+            </span>
+            <span class="meta-sep">•</span>
+            <span>Payout: {results.gradingSummary?.payoutProfile ?? results.settingsSnapshot.payoutProfile ?? "standard"}</span>
+          </div>
+        )}
+
+        {results && activeSubtab === "ev" && (
           <div class="table-area">
             <table class="slates-table">
               <thead>
@@ -398,20 +1221,34 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
                   <th>Player</th>
                   <th>Team</th>
                   <th>Pos</th>
-                  <th>EV</th>
+                  <th>Salary</th>
+                  <th>Own%</th>
+                  <th>Optimal Count</th>
+                  <th>Optimal%</th>
+                  <th>Opt Lev</th>
+                  <th>Plus EV</th>
                 </tr>
               </thead>
               <tbody>
-                {results?.plusEv.map((row) => (
+                {results.players
+                  .slice()
+                  .sort((a, b) => b.plusEvScore - a.plusEvScore || b.optimalLeverage - a.optimalLeverage)
+                  .map((row) => (
                   <tr>
                     <td>{row.name}</td>
                     <td>{row.team}</td>
                     <td>{row.position}</td>
-                    <td>{row.ev.toFixed(1)}</td>
+                    <td>${row.salary.toLocaleString()}</td>
+                    <td>{row.ownership.toFixed(1)}%</td>
+                    <td>{row.optimalLineupCount}</td>
+                    <td>{row.optimalSimRate.toFixed(1)}%</td>
+                    <td>{row.optimalLeverage.toFixed(1)}%</td>
+                    <td>{row.plusEvScore.toFixed(2)}</td>
                   </tr>
-                )) ?? (
+                ))}
+                {results.players.length === 0 && (
                   <tr>
-                    <td colSpan={4}>No results.</td>
+                    <td colSpan={9}>No results.</td>
                   </tr>
                 )}
               </tbody>
@@ -419,24 +1256,49 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
           </div>
         )}
 
-        {activeSubtab === "exp" && (
+        {results && activeSubtab === "exp" && (
           <div class="table-area">
+            {results.poolSummary && results.poolSummary.filteredLineupCount === 0 && (
+              <p class="empty-state">All retained lineups failed the current filters.</p>
+            )}
             <table class="slates-table">
               <thead>
                 <tr>
                   <th>Player</th>
-                  <th>Exposure</th>
+                  <th>Team</th>
+                  <th>Pos</th>
+                  <th>Salary</th>
+                  <th>Own%</th>
+                  <th>Opt Rate</th>
+                  <th>Opt Lev</th>
+                  <th>Retained Exp</th>
+                  <th>Filtered Exp</th>
                 </tr>
               </thead>
               <tbody>
-                {results?.exposures.map((row) => (
+                {results.players
+                  .slice()
+                  .sort(
+                    (a, b) =>
+                      b.filteredExposureRate - a.filteredExposureRate ||
+                      b.retainedExposureRate - a.retainedExposureRate
+                  )
+                  .map((row) => (
                   <tr>
                     <td>{row.name}</td>
-                    <td>{row.exposure}%</td>
+                    <td>{row.team}</td>
+                    <td>{row.position}</td>
+                    <td>${row.salary.toLocaleString()}</td>
+                    <td>{row.ownership.toFixed(1)}%</td>
+                    <td>{row.optimalSimRate.toFixed(1)}%</td>
+                    <td>{row.optimalLeverage.toFixed(1)}%</td>
+                    <td>{row.retainedExposureRate.toFixed(1)}%</td>
+                    <td>{row.filteredExposureRate.toFixed(1)}%</td>
                   </tr>
-                )) ?? (
+                ))}
+                {results.players.length === 0 && (
                   <tr>
-                    <td colSpan={2}>No exposures.</td>
+                    <td colSpan={9}>No exposures.</td>
                   </tr>
                 )}
               </tbody>
@@ -444,26 +1306,56 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
           </div>
         )}
 
-        {activeSubtab === "graded" && (
+        {results && activeSubtab === "graded" && (
           <div class="table-area">
+            {results.poolSummary && results.poolSummary.filteredLineupCount === 0 && (
+              <p class="empty-state">All retained lineups failed the current filters.</p>
+            )}
             <table class="slates-table">
               <thead>
                 <tr>
+                  <th>EV</th>
+                  <th>Top 0.1%</th>
+                  <th>Top 1%</th>
+                  <th>ITM</th>
+                  <th>Salary Used</th>
+                  <th>Avg Sim Total</th>
+                  <th>Sum Own%</th>
+                  <th>Frequency%</th>
+                  <th>Passed</th>
                   <th>Lineup</th>
-                  <th>Projected</th>
-                  <th>Grade</th>
                 </tr>
               </thead>
               <tbody>
-                {results?.gradedLineups.map((row) => (
+                {(results.lineups ?? [])
+                  .slice()
+                  .sort(
+                    (a, b) =>
+                      (b.evScore ?? 0) - (a.evScore ?? 0) ||
+                      (b.topPointOnePctRate ?? 0) - (a.topPointOnePctRate ?? 0) ||
+                      (b.topOnePctRate ?? 0) - (a.topOnePctRate ?? 0) ||
+                      (b.itmRate ?? 0) - (a.itmRate ?? 0)
+                  )
+                  .slice(0, 20)
+                  .map((row) => (
                   <tr>
-                    <td>{row.lineup}</td>
-                    <td>{row.projected.toFixed(1)}</td>
-                    <td>{row.grade}</td>
+                    <td>{(row.evScore ?? 0).toFixed(2)}</td>
+                    <td>{(row.topPointOnePctRate ?? 0).toFixed(2)}%</td>
+                    <td>{(row.topOnePctRate ?? 0).toFixed(2)}%</td>
+                    <td>{(row.itmRate ?? 0).toFixed(2)}%</td>
+                    <td>${row.salaryUsed.toLocaleString()}</td>
+                    <td>{row.averageSimTotal.toFixed(1)}</td>
+                    <td>{row.sumOwnership.toFixed(1)}%</td>
+                    <td>{row.frequencyRate.toFixed(1)}%</td>
+                    <td>{row.passedFilters ? "Yes" : "No"}</td>
+                    <td class="lineup-cell">
+                      {row.players.map((player) => `${player.position} ${player.name}`).join(" / ")}
+                    </td>
                   </tr>
-                )) ?? (
+                ))}
+                {(results.lineups ?? []).length === 0 && (
                   <tr>
-                    <td colSpan={3}>No graded lineups.</td>
+                    <td colSpan={10}>No lineup aggregates available.</td>
                   </tr>
                 )}
               </tbody>
@@ -475,6 +1367,587 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
     </div>
   </section>
 </Layout>
+
+<script is:inline>
+  const SIM_SLATE_KEY = ${JSON.stringify(activeSlateKey)};
+  const SIM_TEAM_INPUTS = ${JSON.stringify(teamInputs)};
+  const SIM_PLAYER_INPUTS = ${JSON.stringify(playerInputs)};
+  const SIM_SETTINGS = ${JSON.stringify(settings)};
+</script>
+<script is:inline>
+  const statusEl = document.getElementById("sim-status");
+  const validationEl = document.getElementById("sim-validation-summary");
+  const saveBtn = document.getElementById("sim-save-btn");
+  const resetBtn = document.getElementById("sim-reset-btn");
+  const runBtn = document.getElementById("sim-run-btn");
+  const saveSettingsBtn = document.getElementById("sim-save-settings");
+  const settingsStatusEl = document.getElementById("sim-settings-status");
+
+  const percentFields = new Set(["rushRate", "rushTdRatio", "sackRate"]);
+  const rangeRules = {
+    pointsScored: { min: 0 },
+    pace: { min: 0 },
+    rushRate: { min: 0, max: 100 },
+    rushTdRatio: { min: 0, max: 100 },
+    dstSalary: { min: 0 },
+    sackRate: { min: 0, max: 100 },
+    projection: { min: 0 },
+    ownership: { min: 0, max: 100 },
+    rushMarketShare: { min: 0, max: 100 },
+    rushTdMarketShare: { min: 0, max: 100 },
+    receivingMarketShare: { min: 0, max: 100 },
+    receivingTdMarketShare: { min: 0, max: 100 },
+    catchRate: { min: 0, max: 100 },
+    passMarketShare: { min: 0, max: 100 },
+    intRate: { min: 0, max: 100 },
+  };
+  const state = {
+    teamInputs: structuredClone(SIM_TEAM_INPUTS || []),
+    playerInputs: structuredClone(SIM_PLAYER_INPUTS || []),
+  };
+  let settingsState = structuredClone(SIM_SETTINGS || null);
+  let settingsBaseline = settingsState ? structuredClone(settingsState) : null;
+  let settingsDirty = false;
+  let settingsInvalid = false;
+  let baseline = {
+    teamInputs: structuredClone(state.teamInputs),
+    playerInputs: structuredClone(state.playerInputs),
+  };
+  let dirty = false;
+  let invalidCount = 0;
+  let teamBlockingCount = 0;
+  let teamWarningCount = 0;
+  const fieldErrors = new Map();
+
+  const teamIndex = new Map(state.teamInputs.map((row) => [`${row.gameId}-${row.team}`, row]));
+  const playerIndex = new Map(state.playerInputs.map((row) => [row.id, row]));
+
+  const setStatus = (message, tone) => {
+    if (!statusEl) return;
+    statusEl.textContent = message || "";
+    statusEl.dataset.tone = tone || "";
+  };
+
+  const setSettingsStatus = (message, tone) => {
+    if (!settingsStatusEl) return;
+    settingsStatusEl.textContent = message || "";
+    settingsStatusEl.dataset.tone = tone || "";
+  };
+
+  const updateValidationSummary = () => {
+    if (!validationEl) return;
+    if (invalidCount > 0 || teamBlockingCount > 0) {
+      const parts = [];
+      if (invalidCount > 0) {
+        parts.push(`${invalidCount} field error${invalidCount === 1 ? "" : "s"}`);
+      }
+      if (teamBlockingCount > 0) {
+        parts.push(`${teamBlockingCount} team logic error${teamBlockingCount === 1 ? "" : "s"}`);
+      }
+      validationEl.textContent = `Fix ${parts.join(" and ")} before saving.`;
+      validationEl.dataset.tone = "error";
+      return;
+    }
+    if (teamWarningCount > 0) {
+      validationEl.textContent = `${teamWarningCount} team warning${teamWarningCount === 1 ? "" : "s"} (save allowed).`;
+      validationEl.dataset.tone = "info";
+      return;
+    }
+    validationEl.textContent = "";
+    validationEl.dataset.tone = "";
+  };
+
+  const setDirty = (value) => {
+    dirty = value;
+    if (saveBtn) saveBtn.disabled = !dirty || invalidCount > 0 || teamBlockingCount > 0;
+  };
+
+  const updateSaveState = () => {
+    if (saveBtn) saveBtn.disabled = !dirty || invalidCount > 0 || teamBlockingCount > 0;
+  };
+
+  const updateSettingsSaveState = () => {
+    if (saveSettingsBtn) saveSettingsBtn.disabled = !settingsDirty || settingsInvalid;
+  };
+
+  const validateSettingsInputs = () => {
+    const requiredFields = [
+      "lineupCount",
+      "fieldSize",
+      "simulationCount",
+      "salaryCap",
+      "gradingFieldSize",
+      "gradingFieldExtraLineupCount",
+    ];
+    const inputs = Array.from(document.querySelectorAll("[data-setting-field]"));
+    let invalid = false;
+    inputs.forEach((input) => {
+      const field = input.dataset.settingField;
+      if (!field) return;
+      if (input.tagName === "SELECT") {
+        input.classList.remove("input-error");
+        return;
+      }
+      const raw = input.value.trim();
+      if (requiredFields.includes(field) && !raw) {
+        invalid = true;
+        input.classList.add("input-error");
+        return;
+      }
+      if (!raw) {
+        input.classList.remove("input-error");
+        return;
+      }
+      const num = Number(raw);
+      if (!Number.isFinite(num)) {
+        invalid = true;
+        input.classList.add("input-error");
+      } else {
+        input.classList.remove("input-error");
+      }
+    });
+
+    if (settingsState) {
+      const {
+        minSalary,
+        maxSalary,
+        minSumOwnership,
+        maxSumOwnership,
+        minAvgOptimalRate,
+        maxAvgOptimalRate,
+        gradingFieldSize,
+        gradingFieldExtraLineupCount,
+      } = settingsState;
+      if (minSalary !== null && maxSalary !== null && minSalary > maxSalary) invalid = true;
+      if (minSumOwnership !== null && maxSumOwnership !== null && minSumOwnership > maxSumOwnership) invalid = true;
+      if (minAvgOptimalRate !== null && maxAvgOptimalRate !== null && minAvgOptimalRate > maxAvgOptimalRate) invalid = true;
+      if (gradingFieldSize !== null && gradingFieldSize <= 0) invalid = true;
+      if (
+        gradingFieldExtraLineupCount !== null &&
+        (!Number.isInteger(gradingFieldExtraLineupCount) || gradingFieldExtraLineupCount < 0)
+      ) {
+        invalid = true;
+      }
+    }
+    settingsInvalid = invalid;
+    updateSettingsSaveState();
+  };
+
+  const handleSettingsInput = (event) => {
+    const input = event.target;
+    if (!input || !input.dataset.settingField) return;
+    if (!settingsState) return;
+    const field = input.dataset.settingField;
+    if (input.tagName === "SELECT") {
+      settingsState[field] = input.value;
+    } else {
+      const raw = input.value.trim();
+      if (!raw) {
+        settingsState[field] = null;
+      } else {
+        const parsed = Number(raw);
+        settingsState[field] = Number.isFinite(parsed) ? parsed : null;
+      }
+    }
+    settingsDirty = true;
+    validateSettingsInputs();
+    setSettingsStatus("", "");
+  };
+
+  const setFieldError = (input, message) => {
+    const key = input.dataset.key;
+    if (!key) return;
+    const errorEl = document.querySelector(`[data-error-key="${key}"]`);
+    if (message) {
+      fieldErrors.set(key, message);
+      input.classList.add("input-error");
+      if (errorEl) errorEl.textContent = message;
+    } else {
+      fieldErrors.delete(key);
+      input.classList.remove("input-error");
+      if (errorEl) errorEl.textContent = "";
+    }
+    invalidCount = fieldErrors.size;
+    updateValidationSummary();
+    updateSaveState();
+  };
+
+  const sumBy = (players, positions, field) =>
+    players
+      .filter((player) => positions.has(player.position))
+      .reduce((total, player) => total + (Number(player[field]) || 0), 0);
+
+  const teamValidationRules = [
+    {
+      key: "rushMarketShare",
+      label: "Rush share",
+      positions: new Set(["QB", "RB", "WR", "TE"]),
+    },
+    {
+      key: "rushTdMarketShare",
+      label: "Rush TD share",
+      positions: new Set(["QB", "RB", "WR", "TE"]),
+    },
+    {
+      key: "receivingMarketShare",
+      label: "Receiving share",
+      positions: new Set(["RB", "WR", "TE"]),
+    },
+    {
+      key: "receivingTdMarketShare",
+      label: "Receiving TD share",
+      positions: new Set(["RB", "WR", "TE"]),
+    },
+  ];
+
+  const classifyShare = (total) => {
+    if (total < 80 || total > 120) return "error";
+    if ((total >= 80 && total < 90) || (total > 110 && total <= 120)) return "warning";
+    return "ok";
+  };
+
+  const computeTeamValidation = () => {
+    const teamNodes = Array.from(document.querySelectorAll(".team-validation[data-team-key]"));
+    const validationMap = new Map();
+    teamBlockingCount = 0;
+    teamWarningCount = 0;
+
+    teamNodes.forEach((node) => {
+      const key = node.dataset.teamKey;
+      if (!key) return;
+      const [, gameId, team] = key.split(":");
+      if (!gameId || !team) return;
+      const players = state.playerInputs.filter(
+        (player) => player.gameId === gameId && player.team === team
+      );
+
+      const errors = [];
+      const warnings = [];
+
+      teamValidationRules.forEach((rule) => {
+        const total = sumBy(players, rule.positions, rule.key);
+        const status = classifyShare(total);
+        if (status === "error") {
+          errors.push(`${rule.label} total is ${total.toFixed(1)}. Keep it closer to 100.`);
+        } else if (status === "warning") {
+          warnings.push(`${rule.label} total is ${total.toFixed(1)}. This looks off.`);
+        }
+      });
+
+      const qbTotal = sumBy(players, new Set(["QB"]), "passMarketShare");
+      if (players.filter((player) => player.position === "QB").length === 0) {
+        warnings.push("No QB found for this team.");
+      } else if (qbTotal <= 0) {
+        errors.push(`QB pass share total is ${qbTotal.toFixed(1)}. Must be greater than 0.`);
+      } else if (qbTotal < 95 || qbTotal > 105) {
+        warnings.push(`QB pass share totals ${qbTotal.toFixed(1)}. Keep it closer to 100.`);
+      }
+
+      if (errors.length > 0) teamBlockingCount += 1;
+      if (warnings.length > 0) teamWarningCount += 1;
+      validationMap.set(key, { errors, warnings });
+    });
+
+    teamNodes.forEach((node) => {
+      const key = node.dataset.teamKey;
+      const messagesEl = node.querySelector(".team-validation-messages");
+      if (!key || !messagesEl) return;
+      const result = validationMap.get(key);
+      messagesEl.innerHTML = "";
+      if (!result) return;
+      if (result.errors.length === 0 && result.warnings.length === 0) {
+        messagesEl.innerHTML = "<div class=\"team-validation-ok\">No issues detected.</div>";
+        return;
+      }
+      result.errors.forEach((message) => {
+        const div = document.createElement("div");
+        div.className = "team-validation-msg error";
+        div.textContent = message;
+        messagesEl.appendChild(div);
+      });
+      result.warnings.forEach((message) => {
+        const div = document.createElement("div");
+        div.className = "team-validation-msg warning";
+        div.textContent = message;
+        messagesEl.appendChild(div);
+      });
+    });
+
+    updateValidationSummary();
+    updateSaveState();
+  };
+
+  const validateInput = (input) => {
+    const raw = input.value.trim();
+    const field = input.dataset.field;
+    if (!field) return;
+    if (!raw) {
+      setFieldError(input, "Required");
+      return;
+    }
+    const num = Number(raw);
+    if (!Number.isFinite(num)) {
+      setFieldError(input, "Must be a number");
+      return;
+    }
+    const rule = rangeRules[field];
+    if (rule?.min !== undefined && num < rule.min) {
+      setFieldError(input, "Must be 0 or greater");
+      return;
+    }
+    if (rule?.max !== undefined && num > rule.max) {
+      setFieldError(input, "Must be between 0 and 100");
+      return;
+    }
+    setFieldError(input, "");
+  };
+
+  const updateInputsFromState = () => {
+    document.querySelectorAll('input[data-kind="team"]').forEach((input) => {
+      const field = input.dataset.field;
+      const gameId = input.dataset.gameId;
+      const team = input.dataset.team;
+      const row = teamIndex.get(`${gameId}-${team}`);
+      if (!row || !field) return;
+      const value = row[field];
+      if (percentFields.has(field)) {
+        input.value = Number(value * 100).toFixed(1);
+      } else {
+        input.value = value;
+      }
+      validateInput(input);
+    });
+
+    document.querySelectorAll('input[data-kind="player"]').forEach((input) => {
+      const field = input.dataset.field;
+      const playerId = input.dataset.playerId;
+      const row = playerIndex.get(playerId);
+      if (!row || !field) return;
+      input.value = row[field];
+      validateInput(input);
+    });
+    computeTeamValidation();
+  };
+
+  const handleTeamInput = (event) => {
+    const input = event.target;
+    if (!input || input.dataset.kind !== "team") return;
+    const field = input.dataset.field;
+    const gameId = input.dataset.gameId;
+    const team = input.dataset.team;
+    const row = teamIndex.get(`${gameId}-${team}`);
+    if (!row || !field) return;
+    const parsed = Number(input.value);
+    if (Number.isFinite(parsed)) {
+      row[field] = percentFields.has(field) ? parsed / 100 : parsed;
+    } else {
+      row[field] = null;
+    }
+    validateInput(input);
+    computeTeamValidation();
+    setDirty(true);
+    setStatus("", "");
+  };
+
+  const handlePlayerInput = (event) => {
+    const input = event.target;
+    if (!input || input.dataset.kind !== "player") return;
+    const field = input.dataset.field;
+    const playerId = input.dataset.playerId;
+    const row = playerIndex.get(playerId);
+    if (!row || !field) return;
+    const parsed = Number(input.value);
+    if (Number.isFinite(parsed)) {
+      row[field] = parsed;
+    } else {
+      row[field] = null;
+    }
+    validateInput(input);
+    computeTeamValidation();
+    setDirty(true);
+    setStatus("", "");
+  };
+
+  document.addEventListener("input", (event) => {
+    handleTeamInput(event);
+    handlePlayerInput(event);
+    handleSettingsInput(event);
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      state.teamInputs = structuredClone(baseline.teamInputs);
+      state.playerInputs = structuredClone(baseline.playerInputs);
+      teamIndex.clear();
+      state.teamInputs.forEach((row) => teamIndex.set(`${row.gameId}-${row.team}`, row));
+      playerIndex.clear();
+      state.playerInputs.forEach((row) => playerIndex.set(row.id, row));
+      fieldErrors.clear();
+      invalidCount = 0;
+      teamBlockingCount = 0;
+      teamWarningCount = 0;
+      if (settingsBaseline) {
+        settingsState = structuredClone(settingsBaseline);
+        settingsDirty = false;
+        document.querySelectorAll("input[data-setting-field]").forEach((input) => {
+          const field = input.dataset.settingField;
+          if (!field || !settingsState) return;
+          const value = settingsState[field];
+          input.value = value === null || value === undefined ? "" : value;
+          input.classList.remove("input-error");
+        });
+        document.querySelectorAll("select[data-setting-field]").forEach((select) => {
+          const field = select.dataset.settingField;
+          if (!field || !settingsState) return;
+          const value =
+            settingsState[field] ||
+            (field === "gradingFieldMode" ? "expandedField" : "standard");
+          select.value = value;
+        });
+        validateSettingsInputs();
+        updateSettingsSaveState();
+      }
+      updateInputsFromState();
+      setDirty(false);
+      setStatus("Inputs reset to last saved values.", "info");
+    });
+  }
+
+  const savePayload = async (url, payload) => {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      const message = data?.error || "Save failed.";
+      const details = Array.isArray(data?.details) ? data.details.join(" ") : "";
+      throw new Error(`${message}${details ? " " + details : ""}`);
+    }
+    return data;
+  };
+
+  if (saveBtn) {
+    saveBtn.addEventListener("click", async () => {
+      if (!SIM_SLATE_KEY) {
+        setStatus("No slate selected. Unable to save.", "error");
+        return;
+      }
+      if (teamBlockingCount > 0) {
+        setStatus(`Fix ${teamBlockingCount} team logic error${teamBlockingCount === 1 ? "" : "s"} before saving.`, "error");
+        return;
+      }
+      if (invalidCount > 0) {
+        setStatus(`Fix ${invalidCount} invalid value${invalidCount === 1 ? "" : "s"} before saving.`, "error");
+        return;
+      }
+      if (!dirty) {
+        setStatus("No changes to save.", "info");
+        return;
+      }
+      saveBtn.disabled = true;
+      setStatus("Saving inputs...", "info");
+      try {
+        await savePayload("/api/simulator/save-team-inputs", {
+          slate: SIM_SLATE_KEY,
+          teamInputs: state.teamInputs,
+        });
+        await savePayload("/api/simulator/save-player-inputs", {
+          slate: SIM_SLATE_KEY,
+          playerInputs: state.playerInputs,
+        });
+        baseline = {
+          teamInputs: structuredClone(state.teamInputs),
+          playerInputs: structuredClone(state.playerInputs),
+        };
+        fieldErrors.clear();
+        invalidCount = 0;
+        teamBlockingCount = 0;
+        teamWarningCount = 0;
+        updateInputsFromState();
+        setDirty(false);
+        setStatus("Inputs saved successfully.", "success");
+      } catch (error) {
+        setStatus(error.message || "Save failed.", "error");
+        saveBtn.disabled = false;
+      }
+    });
+  }
+
+  if (runBtn) {
+    runBtn.addEventListener("click", async () => {
+      if (!SIM_SLATE_KEY) {
+        setStatus("No slate selected. Unable to run sims.", "error");
+        return;
+      }
+      runBtn.disabled = true;
+      setStatus("Running sims...", "info");
+      try {
+        const response = await fetch("/api/simulator/run-sims", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ slate: SIM_SLATE_KEY }),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          const message = data?.error || "Simulation failed.";
+          throw new Error(message);
+        }
+        setStatus("Sims complete. Loading results...", "success");
+        setTimeout(() => {
+          window.location.reload();
+        }, 400);
+      } catch (error) {
+        setStatus(error.message || "Simulation failed.", "error");
+        runBtn.disabled = false;
+      }
+    });
+  }
+
+  if (saveSettingsBtn) {
+    saveSettingsBtn.addEventListener("click", async () => {
+      if (!SIM_SLATE_KEY || !settingsState) {
+        setSettingsStatus("No settings loaded.", "error");
+        return;
+      }
+      if (settingsInvalid) {
+        setSettingsStatus("Fix settings errors before saving.", "error");
+        return;
+      }
+      if (!settingsDirty) {
+        setSettingsStatus("No settings changes to save.", "info");
+        return;
+      }
+      saveSettingsBtn.disabled = true;
+      setSettingsStatus("Saving settings...", "info");
+      try {
+        const response = await fetch("/api/simulator/save-settings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ slate: SIM_SLATE_KEY, settings: settingsState }),
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          const message = data?.error || "Save failed.";
+          throw new Error(message);
+        }
+        settingsBaseline = structuredClone(settingsState);
+        settingsDirty = false;
+        updateSettingsSaveState();
+        setSettingsStatus("Settings saved.", "success");
+      } catch (error) {
+        setSettingsStatus(error.message || "Save failed.", "error");
+        saveSettingsBtn.disabled = false;
+      }
+    });
+  }
+
+  updateInputsFromState();
+  setDirty(false);
+  validateSettingsInputs();
+  updateSettingsSaveState();
+</script>
 
 <style>
   :global(body) {
@@ -947,6 +2420,144 @@ const activeTopTab = activeTab === "results" ? "Results" : activeTab.charAt(0).t
   .settings-panel {
     border: 1px solid var(--sim-line);
     padding: 12px;
+  }
+
+  .settings-actions {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .settings-panel input[type="number"] {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--sim-line);
+    color: inherit;
+    padding: 4px 6px;
+    font-size: 0.85rem;
+  }
+
+  .settings-panel select {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--sim-line);
+    color: inherit;
+    padding: 4px 6px;
+    font-size: 0.85rem;
+  }
+
+  .results-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+    color: var(--muted-text);
+  }
+
+  .slates-table input[type="number"] {
+    width: 100%;
+    min-width: 72px;
+    background: transparent;
+    border: 1px solid var(--sim-line);
+    color: inherit;
+    padding: 4px 6px;
+    font-size: 0.8rem;
+  }
+
+  .lineup-cell {
+    font-size: 0.78rem;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .team-validation {
+    border: 1px solid var(--sim-line);
+    background: rgba(7, 26, 77, 0.18);
+    padding: 8px 10px;
+    margin-bottom: 10px;
+  }
+
+  .team-validation-title {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 6px;
+  }
+
+  .team-validation-messages {
+    display: grid;
+    gap: 4px;
+    font-size: 0.74rem;
+  }
+
+  .team-validation-msg.error {
+    color: #fca5a5;
+  }
+
+  .team-validation-msg.warning {
+    color: #fcd34d;
+  }
+
+  .team-validation-ok {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  input.input-error {
+    border-color: rgba(248, 113, 113, 0.9);
+    background: rgba(248, 113, 113, 0.08);
+  }
+
+  .field-error {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.68rem;
+    color: #fca5a5;
+    min-height: 0.8rem;
+  }
+
+  .sim-status {
+    margin-top: 8px;
+    min-height: 20px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .sim-status[data-tone="success"] {
+    color: #9ae6b4;
+  }
+
+  .sim-status[data-tone="error"] {
+    color: #fca5a5;
+  }
+
+  .sim-status[data-tone="info"] {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .tool-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .inputs-panel {
+    display: grid;
+    gap: 16px;
+  }
+
+  .inputs-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+  }
+
+  .inputs-team-grid h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
   }
 
   .settings-list {
