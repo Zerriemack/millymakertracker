@@ -124,60 +124,130 @@ function insertTopRankedLineup(
   }
 }
 
-function buildTopLineups(players: SimPlayer[], salaryCap: number, limit: number): RankedSimLineup[] {
-  const byPosition = (pos: string) => players.filter((p) => p.position === pos);
-  const qbs = byPosition("QB");
-  const rbs = byPosition("RB");
-  const wrs = byPosition("WR");
-  const tes = byPosition("TE");
-  const dsts = byPosition("DST");
+type PrecomputedCombos = {
+  qbIdx: number[];
+  rbIdx: number[];
+  wrIdx: number[];
+  teIdx: number[];
+  dstIdx: number[];
+  flexIdx: number[];
+  rbPairs: Array<{ i: number; j: number; salary: number }>;
+  wrTriples: Array<{ a: number; b: number; c: number; salary: number }>;
+};
 
-  if (qbs.length < 1 || rbs.length < 2 || wrs.length < 3 || tes.length < 1 || dsts.length < 1) {
-    return [];
-  }
+function buildPrecomputedCombos(players: SimPlayer[]): PrecomputedCombos {
+  const qbIdx: number[] = [];
+  const rbIdx: number[] = [];
+  const wrIdx: number[] = [];
+  const teIdx: number[] = [];
+  const dstIdx: number[] = [];
+  const flexIdx: number[] = [];
 
-  const rbPairs: Array<{ ids: Set<string>; salary: number; score: number; players: SimPlayer[] }> = [];
-  for (let i = 0; i < rbs.length; i += 1) {
-    for (let j = i + 1; j < rbs.length; j += 1) {
-      const salary = rbs[i].salary + rbs[j].salary;
-      const score = rbs[i].simScore + rbs[j].simScore;
-      rbPairs.push({
-        ids: new Set([rbs[i].id, rbs[j].id]),
-        salary,
-        score,
-        players: [rbs[i], rbs[j]],
-      });
+  players.forEach((player, index) => {
+    switch (player.position) {
+      case "QB":
+        qbIdx.push(index);
+        break;
+      case "RB":
+        rbIdx.push(index);
+        flexIdx.push(index);
+        break;
+      case "WR":
+        wrIdx.push(index);
+        flexIdx.push(index);
+        break;
+      case "TE":
+        teIdx.push(index);
+        flexIdx.push(index);
+        break;
+      case "DST":
+        dstIdx.push(index);
+        break;
+      default:
+        break;
+    }
+  });
+
+  const rbPairs: Array<{ i: number; j: number; salary: number }> = [];
+  for (let i = 0; i < rbIdx.length; i += 1) {
+    for (let j = i + 1; j < rbIdx.length; j += 1) {
+      const p1 = players[rbIdx[i]];
+      const p2 = players[rbIdx[j]];
+      rbPairs.push({ i: rbIdx[i], j: rbIdx[j], salary: p1.salary + p2.salary });
     }
   }
 
-  const wrTriples: Array<{ ids: Set<string>; salary: number; score: number; players: SimPlayer[] }> = [];
-  for (let i = 0; i < wrs.length; i += 1) {
-    for (let j = i + 1; j < wrs.length; j += 1) {
-      for (let k = j + 1; k < wrs.length; k += 1) {
-        const salary = wrs[i].salary + wrs[j].salary + wrs[k].salary;
-        const score = wrs[i].simScore + wrs[j].simScore + wrs[k].simScore;
+  const wrTriples: Array<{ a: number; b: number; c: number; salary: number }> = [];
+  for (let i = 0; i < wrIdx.length; i += 1) {
+    for (let j = i + 1; j < wrIdx.length; j += 1) {
+      for (let k = j + 1; k < wrIdx.length; k += 1) {
+        const p1 = players[wrIdx[i]];
+        const p2 = players[wrIdx[j]];
+        const p3 = players[wrIdx[k]];
         wrTriples.push({
-          ids: new Set([wrs[i].id, wrs[j].id, wrs[k].id]),
-          salary,
-          score,
-          players: [wrs[i], wrs[j], wrs[k]],
+          a: wrIdx[i],
+          b: wrIdx[j],
+          c: wrIdx[k],
+          salary: p1.salary + p2.salary + p3.salary,
         });
       }
     }
   }
 
-  const flexPool = players.filter((p) => p.position === "RB" || p.position === "WR" || p.position === "TE");
+  return { qbIdx, rbIdx, wrIdx, teIdx, dstIdx, flexIdx, rbPairs, wrTriples };
+}
+
+function buildTopLineups(
+  players: SimPlayer[],
+  salaryCap: number,
+  limit: number,
+  combos: PrecomputedCombos
+): RankedSimLineup[] {
+  const { qbIdx, teIdx, dstIdx, flexIdx, rbPairs, wrTriples } = combos;
+
+  if (qbIdx.length < 1 || rbPairs.length < 1 || wrTriples.length < 1 || teIdx.length < 1 || dstIdx.length < 1) {
+    return [];
+  }
+
   const flexCandidatesPerBuild = limit <= 1 ? 1 : limit <= 10 ? 2 : 3;
   const bestLineups: RankedSimLineup[] = [];
 
-  for (const qb of qbs) {
-    for (const dst of dsts) {
-      for (const te of tes) {
+  for (const qbIndex of qbIdx) {
+    const qb = players[qbIndex];
+    for (const dstIndex of dstIdx) {
+      const dst = players[dstIndex];
+      for (const teIndex of teIdx) {
+        const te = players[teIndex];
         for (const rbPair of rbPairs) {
-          if (rbPair.ids.has(te.id) || rbPair.ids.has(qb.id) || rbPair.ids.has(dst.id)) continue;
+          const rb1 = players[rbPair.i];
+          const rb2 = players[rbPair.j];
+          if (rbPair.i === teIndex || rbPair.j === teIndex) continue;
+          if (rbPair.i === qbIndex || rbPair.j === qbIndex) continue;
+          if (rbPair.i === dstIndex || rbPair.j === dstIndex) continue;
           for (const wrTriple of wrTriples) {
-            if (wrTriple.ids.has(te.id) || wrTriple.ids.has(qb.id) || wrTriple.ids.has(dst.id)) continue;
-            if ([...rbPair.ids].some((id) => wrTriple.ids.has(id))) continue;
+            if (
+              wrTriple.a === teIndex ||
+              wrTriple.b === teIndex ||
+              wrTriple.c === teIndex ||
+              wrTriple.a === qbIndex ||
+              wrTriple.b === qbIndex ||
+              wrTriple.c === qbIndex ||
+              wrTriple.a === dstIndex ||
+              wrTriple.b === dstIndex ||
+              wrTriple.c === dstIndex
+            ) {
+              continue;
+            }
+            if (
+              wrTriple.a === rbPair.i ||
+              wrTriple.a === rbPair.j ||
+              wrTriple.b === rbPair.i ||
+              wrTriple.b === rbPair.j ||
+              wrTriple.c === rbPair.i ||
+              wrTriple.c === rbPair.j
+            ) {
+              continue;
+            }
 
             const baseSalary =
               qb.salary +
@@ -189,10 +259,11 @@ function buildTopLineups(players: SimPlayer[], salaryCap: number, limit: number)
 
             const remainingSalary = salaryCap - baseSalary;
             const flexOptions: SimPlayer[] = [];
-            for (const flex of flexPool) {
-              if (flex.id === qb.id || flex.id === dst.id || flex.id === te.id) continue;
-              if (rbPair.ids.has(flex.id)) continue;
-              if (wrTriple.ids.has(flex.id)) continue;
+            for (const flexIndex of flexIdx) {
+              if (flexIndex === qbIndex || flexIndex === dstIndex || flexIndex === teIndex) continue;
+              if (flexIndex === rbPair.i || flexIndex === rbPair.j) continue;
+              if (flexIndex === wrTriple.a || flexIndex === wrTriple.b || flexIndex === wrTriple.c) continue;
+              const flex = players[flexIndex];
               if (flex.salary > remainingSalary) continue;
               if (flexOptions.length < flexCandidatesPerBuild) {
                 flexOptions.push(flex);
@@ -211,30 +282,43 @@ function buildTopLineups(players: SimPlayer[], salaryCap: number, limit: number)
               }
             }
 
+            const rbPairScore = rb1.simScore + rb2.simScore;
+            const wrTripleScore =
+              players[wrTriple.a].simScore +
+              players[wrTriple.b].simScore +
+              players[wrTriple.c].simScore;
+
             for (const flex of flexOptions) {
               const slots = [
                 qb,
-                ...rbPair.players,
-                ...wrTriple.players,
+                rb1,
+                rb2,
+                players[wrTriple.a],
+                players[wrTriple.b],
+                players[wrTriple.c],
                 te,
                 flex,
                 dst,
               ];
               const salaryUsed = slots.reduce((sum, p) => sum + p.salary, 0);
               const sumOwnership = slots.reduce((sum, p) => sum + p.ownership, 0);
-              insertTopRankedLineup(bestLineups, {
-                lineupKey: buildLineupKey(slots),
-                slots,
-                salaryUsed,
-                sumOwnership,
-                simTotal:
-                  qb.simScore +
-                  dst.simScore +
-                  te.simScore +
-                  rbPair.score +
-                  wrTriple.score +
-                  flex.simScore,
-              }, limit);
+              insertTopRankedLineup(
+                bestLineups,
+                {
+                  lineupKey: buildLineupKey(slots),
+                  slots,
+                  salaryUsed,
+                  sumOwnership,
+                  simTotal:
+                    qb.simScore +
+                    dst.simScore +
+                    te.simScore +
+                    rbPairScore +
+                    wrTripleScore +
+                    flex.simScore,
+                },
+                limit
+              );
             }
           }
         }
@@ -273,6 +357,7 @@ function buildContestRank(rank: number, universeSize: number, fieldSize: number)
 }
 
 export const POST: APIRoute = async ({ request }) => {
+  console.log("[sim-api] request received");
   let body: unknown;
   try {
     body = await request.json();
@@ -288,6 +373,7 @@ export const POST: APIRoute = async ({ request }) => {
   if (!slate) {
     return jsonResponse(400, { error: "Missing slate key." });
   }
+  console.log("[sim-api] slate", slate);
 
   const slateDir = resolveSlatePackagePath(slate);
   const slatePath = path.join(slateDir, "slate.json");
@@ -320,6 +406,10 @@ export const POST: APIRoute = async ({ request }) => {
   } catch {
     return jsonResponse(400, { error: "Slate package files are invalid." });
   }
+  console.log("[sim-api] slate loaded", {
+    players: Array.isArray(playerInputs) ? playerInputs.length : 0,
+    settingsLoaded: Boolean(settings),
+  });
 
   if (!Array.isArray(playerInputs) || playerInputs.length === 0) {
     return jsonResponse(400, { error: "player-inputs.json is empty." });
@@ -352,6 +442,10 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse(400, { error: "simulationCount must be greater than 0." });
   }
   const lineupCount = settings.lineupCount || 0;
+  console.log("[sim-api] simulation starting", {
+    simulationCount,
+    lineupCount,
+  });
   const fieldSize = settings.fieldSize || 0;
   if (!fieldSize || fieldSize <= 0) {
     return jsonResponse(400, { error: "fieldSize must be greater than 0." });
@@ -390,11 +484,12 @@ export const POST: APIRoute = async ({ request }) => {
       maxSimScore: number;
     }
   >();
-  const playerIds = playerInputs.map((player) => player.id);
+  const simPlayers: SimPlayer[] = playerInputs.map((player) => ({ ...player, simScore: 0 }));
+  const playerIds = simPlayers.map((player) => player.id);
   const playerIndexMap = new Map<string, number>();
   playerIds.forEach((id, index) => playerIndexMap.set(id, index));
   const scoreMatrix = playerIds.map(() => new Float64Array(simulationCount));
-  playerInputs.forEach((player) => {
+  simPlayers.forEach((player) => {
     playerStats.set(player.id, {
       optimalLineupCount: 0,
       totalSimScore: 0,
@@ -404,9 +499,13 @@ export const POST: APIRoute = async ({ request }) => {
 
   const retainedLineupStats = new Map<string, LineupAggregate>();
   const gradingUniverseStats = new Map<string, LineupAggregate>();
+  const progressStep = Math.max(1, Math.floor(simulationCount / 10));
+  const combos = buildPrecomputedCombos(simPlayers);
+  const simPlayerCount = simPlayers.length;
 
   for (let sim = 0; sim < simulationCount; sim += 1) {
-    const simPlayers: SimPlayer[] = playerInputs.map((player) => {
+    for (let idx = 0; idx < simPlayerCount; idx += 1) {
+      const player = simPlayers[idx];
       const teamInput = teamInputMap.get(player.team);
       const multiplier = computeTeamMultiplier(teamInput, player.position);
       const mean = player.projection * multiplier;
@@ -417,14 +516,11 @@ export const POST: APIRoute = async ({ request }) => {
         stats.totalSimScore += simScore;
         if (simScore > stats.maxSimScore) stats.maxSimScore = simScore;
       }
-      const idx = playerIndexMap.get(player.id);
-      if (idx !== undefined) {
-        scoreMatrix[idx][sim] = simScore;
-      }
-      return { ...player, simScore };
-    });
+      scoreMatrix[idx][sim] = simScore;
+      player.simScore = simScore;
+    }
 
-    const simLineups = buildTopLineups(simPlayers, salaryCap, candidateLineupLimitPerSim);
+    const simLineups = buildTopLineups(simPlayers, salaryCap, candidateLineupLimitPerSim, combos);
     const optimalLineup = simLineups[0];
     if (!optimalLineup) {
       return jsonResponse(400, { error: "Unable to build a legal lineup with current player pool." });
@@ -438,7 +534,12 @@ export const POST: APIRoute = async ({ request }) => {
     for (const simLineup of simLineups) {
       upsertLineupAggregate(gradingUniverseStats, simLineup);
     }
+
+    if ((sim + 1) % progressStep === 0 || sim === simulationCount - 1) {
+      console.log(`[sim-api] progress ${sim + 1} / ${simulationCount}`);
+    }
   }
+  console.log("[sim-api] simulation completed");
 
   const resultsPlayers = playerInputs.map((player) => {
     const stats = playerStats.get(player.id)!;
@@ -692,13 +793,13 @@ export const POST: APIRoute = async ({ request }) => {
     const plusEvScore = filteredPool.reduce((sum, lineup) => {
       if (!lineup.players.some((p) => p.id === player.id)) return sum;
       const diff = (lineup.evScore ?? 0) - averageFilteredEv;
-      const weight = lineup.frequencyRate / 100;
+      const weight = lineup.frequencyRate;
       return sum + (diff > 0 ? diff * weight : 0);
     }, 0);
     const minusEvScore = filteredPool.reduce((sum, lineup) => {
       if (!lineup.players.some((p) => p.id === player.id)) return sum;
       const diff = averageFilteredEv - (lineup.evScore ?? 0);
-      const weight = lineup.frequencyRate / 100;
+      const weight = lineup.frequencyRate;
       return sum + (diff > 0 ? diff * weight : 0);
     }, 0);
     return {
@@ -752,8 +853,10 @@ export const POST: APIRoute = async ({ request }) => {
       itmCutoff,
     },
   };
+  console.log("[sim-api] writing results", resultsPath);
 
   await writeFile(resultsPath, `${JSON.stringify(resultsPayload, null, 2)}\n`, "utf8");
+  console.log("[sim-api] response returned");
 
   return jsonResponse(200, {
     ok: true,

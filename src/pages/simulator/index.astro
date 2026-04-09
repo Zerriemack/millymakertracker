@@ -233,10 +233,71 @@ const weekLabel = selectedSlate ? `Week ${selectedSlate.week}` : "Week";
 const startTimeLabel = selectedSlate?.startTime
   ? new Date(selectedSlate.startTime).toLocaleString()
   : "TBD";
+
+const formatCurrencyCompact = (value: number | null | undefined) =>
+  typeof value === "number" && Number.isFinite(value) ? `$${value.toLocaleString()}` : "—";
+const formatNumberCompact = (value: number | null | undefined, digits = 1) =>
+  typeof value === "number" && Number.isFinite(value) ? value.toFixed(digits) : "—";
+const formatPct = (value: number | null | undefined, digits = 1, assumeWhole = true) => {
+  if (value === null || value === undefined || Number.isNaN(value)) return "0.0%";
+  if (!Number.isFinite(value)) return "0.0%";
+  const normalized = !assumeWhole && value >= 0 && value <= 1 ? value * 100 : value;
+  return `${normalized.toFixed(digits)}%`;
+};
+const formatPctFromRate = (value: number | null | undefined, digits = 1) =>
+  typeof value === "number" && Number.isFinite(value) ? `${value.toFixed(digits)}%` : "0.0%";
+
+const isInjuredPlayer = (player: Record<string, unknown>) => {
+  const raw =
+    (player.status as string | undefined) ||
+    (player.injuryStatus as string | undefined) ||
+    (player.gameStatus as string | undefined);
+  const inactive = player.inactive === true;
+  const value = typeof raw === "string" ? raw.toLowerCase() : "";
+  if (inactive) return true;
+  return ["out", "questionable", "doubtful", "ir", "inactive", "suspended", "pup"].some((flag) =>
+    value.includes(flag)
+  );
+};
+
+const getTeamLogoSrc = (abbrev: string | null | undefined) =>
+  abbrev ? `/simulator/team-logos/${abbrev.toUpperCase()}.png` : "";
+const getOperatorLogoSrc = (site: string | null | undefined) =>
+  site ? `/simulator/operators/${site}.png` : "";
+const formatGameDateShort = (game?: { startTime?: string | null } | null) => {
+  const value = game?.startTime;
+  if (!value) return "TBD";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime())
+    ? "TBD"
+    : date.toLocaleDateString([], { month: "numeric", day: "numeric" });
+};
+const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
+  const value = game?.startTime;
+  if (!value) return "TBD";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime())
+    ? "TBD"
+    : `${date.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })} ET`;
+};
 ---
 
 <Layout title="Simulator | Milly Maker Tracker">
   <section class="sim-page">
+    <div class="sim-run-overlay" id="sim-run-overlay" aria-hidden="true">
+      <div class="sim-run-card" role="status" aria-live="polite">
+        <div class="sim-run-logo">
+          <span class="sim-run-logo-glow" aria-hidden="true"></span>
+          <span class="sim-run-logo-text">MMT</span>
+        </div>
+        <div class="sim-run-title">Simulating the Slate</div>
+        <div class="sim-run-subtitle">Generating lineups and grading the field.</div>
+        <div class="sim-run-status" id="sim-run-status">Starting simulation...</div>
+        <div class="sim-run-bar" aria-hidden="true">
+          <span></span>
+        </div>
+      </div>
+    </div>
     <div class="sim-panel">
       <div class="top-row">
         <div class="brand-row">
@@ -326,12 +387,11 @@ const startTimeLabel = selectedSlate?.startTime
       </div>
     )}
 
-    <div class="section-head">
-      <h2>Available Slates</h2>
-    </div>
-
     {activeTab === "slates" && (
       <>
+        <div class="section-head">
+          <h2>Available Slates</h2>
+        </div>
         <div class="filters">
           <div class="filters-left">
             <span class="filter-label">GameType:</span>
@@ -456,539 +516,200 @@ const startTimeLabel = selectedSlate?.startTime
           <p class="empty-state">No games found for this slate.</p>
         ) : (
           <>
-            <nav class="subtabs" aria-label="Slate games">
-              {games.map((game) => (
-                <a
-                  class:list={["subtab", { active: game.id === activeGameId }]}
-                  href={buildSimulatorUrl({
-                    slate: activeSlateKey,
-                    tabParam: "inputs",
-                    gameType: activeGameType,
-                    operator: activeOperator,
-                    game: game.id,
-                  })}
-                >
-                  {game.gameLabel}
-                </a>
-              ))}
-            </nav>
-
             {selectedGame && (
-              <div class="section-head">
+              <div class="section-head inputs-game-title">
                 <h2>{selectedGame.gameLabel}</h2>
               </div>
             )}
 
-            <div class="inputs-team-grid">
-              <div class="settings-panel">
-                <h3>{selectedGame?.awayTeam ?? "Away Team"}</h3>
-                <div class="team-validation" data-team-key={`team:${awayTeamInputs?.gameId ?? ""}:${awayTeamInputs?.team ?? ""}`}>
-                  <div class="team-validation-title">Team Checks</div>
-                  <div class="team-validation-messages"></div>
-                </div>
-                {awayTeamInputs ? (
-                  <dl class="settings-list">
-                    <div>
-                      <dt>Points</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={awayTeamInputs.pointsScored}
-                          data-kind="team"
-                          data-game-id={awayTeamInputs.gameId}
-                          data-team={awayTeamInputs.team}
-                          data-field="pointsScored"
-                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:pointsScored`}
-                        />
-                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:pointsScored`}></span>
-                      </dd>
+            <nav class="inputs-slate-strip" aria-label="Slate game snapshot">
+              {games.map((game) => {
+                const cardTeamInputs = teamInputs.filter((input) => input.gameId === game.id);
+                const cardAwayTeam = cardTeamInputs.find((input) => input.team === game.awayTeam) ?? null;
+                const cardHomeTeam = cardTeamInputs.find((input) => input.team === game.homeTeam) ?? null;
+                return (
+                  <a
+                    class:list={["inputs-slate-card", { active: game.id === activeGameId }]}
+                    href={buildSimulatorUrl({
+                      slate: activeSlateKey,
+                      tabParam: "inputs",
+                      gameType: activeGameType,
+                      operator: activeOperator,
+                      game: game.id,
+                    })}
+                  >
+                    <div class="inputs-slate-card-rows">
+                      <div class="inputs-slate-team-row">
+                        <span class="inputs-slate-logo">
+                          <img
+                            src={getTeamLogoSrc(game.awayTeam)}
+                            alt={`${game.awayTeam} logo`}
+                            loading="lazy"
+                            onload="this.nextElementSibling.style.display='none';"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                          />
+                          <span class="inputs-slate-logo-fallback">{game.awayTeam}</span>
+                        </span>
+                        <span class="inputs-slate-team-code">{game.awayTeam}</span>
+                        <span class="inputs-slate-team-total">{formatNumberCompact(cardAwayTeam?.pointsScored ?? null)}</span>
+                      </div>
+                      <div class="inputs-slate-team-row">
+                        <span class="inputs-slate-logo">
+                          <img
+                            src={getTeamLogoSrc(game.homeTeam)}
+                            alt={`${game.homeTeam} logo`}
+                            loading="lazy"
+                            onload="this.nextElementSibling.style.display='none';"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                          />
+                          <span class="inputs-slate-logo-fallback">{game.homeTeam}</span>
+                        </span>
+                        <span class="inputs-slate-team-code">{game.homeTeam}</span>
+                        <span class="inputs-slate-team-total">{formatNumberCompact(cardHomeTeam?.pointsScored ?? null)}</span>
+                      </div>
                     </div>
-                    <div>
-                      <dt>Pace</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={awayTeamInputs.pace}
-                          data-kind="team"
-                          data-game-id={awayTeamInputs.gameId}
-                          data-team={awayTeamInputs.team}
-                          data-field="pace"
-                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:pace`}
-                        />
-                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:pace`}></span>
-                      </dd>
+                    <div class="inputs-slate-card-meta">
+                      <span>{formatGameDateShort(game)}</span>
+                      <span>{formatGameTimeEt(game)}</span>
                     </div>
-                    <div>
-                      <dt>Rush Rate</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={(awayTeamInputs.rushRate * 100).toFixed(1)}
-                          data-kind="team"
-                          data-game-id={awayTeamInputs.gameId}
-                          data-team={awayTeamInputs.team}
-                          data-field="rushRate"
-                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:rushRate`}
-                        />
-                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:rushRate`}></span>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Rush TD Ratio</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={(awayTeamInputs.rushTdRatio * 100).toFixed(1)}
-                          data-kind="team"
-                          data-game-id={awayTeamInputs.gameId}
-                          data-team={awayTeamInputs.team}
-                          data-field="rushTdRatio"
-                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:rushTdRatio`}
-                        />
-                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:rushTdRatio`}></span>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>DST Salary</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="1"
-                          value={awayTeamInputs.dstSalary}
-                          data-kind="team"
-                          data-game-id={awayTeamInputs.gameId}
-                          data-team={awayTeamInputs.team}
-                          data-field="dstSalary"
-                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:dstSalary`}
-                        />
-                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:dstSalary`}></span>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Sack Rate</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={(awayTeamInputs.sackRate * 100).toFixed(1)}
-                          data-kind="team"
-                          data-game-id={awayTeamInputs.gameId}
-                          data-team={awayTeamInputs.team}
-                          data-field="sackRate"
-                          data-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:sackRate`}
-                        />
-                        <span class="field-error" data-error-key={`team:${awayTeamInputs.gameId}:${awayTeamInputs.team}:sackRate`}></span>
-                      </dd>
-                    </div>
-                  </dl>
-                ) : (
-                  <p class="empty-state">No team inputs found.</p>
-                )}
+                  </a>
+                );
+              })}
+            </nav>
 
-                <div class="table-area">
-                  <table class="slates-table">
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Team</th>
-                        <th>Pos</th>
-                        <th>Salary</th>
-                        <th>Proj</th>
-                        <th>Own%</th>
-                        <th>Rush MS</th>
-                        <th>Rush TD MS</th>
-                        <th>Rec MS</th>
-                        <th>Rec TD MS</th>
-                        <th>Catch%</th>
-                        <th>Pass MS</th>
-                        <th>INT%</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {awayPlayers.map((player) => (
-                        <tr>
-                          <td>{player.name}</td>
-                          <td>{player.team}</td>
-                          <td>{player.position}</td>
-                          <td>${player.salary.toLocaleString()}</td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.projection}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="projection"
-                              data-key={`player:${player.id}:projection`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:projection`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.ownership}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="ownership"
-                              data-key={`player:${player.id}:ownership`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:ownership`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.rushMarketShare}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="rushMarketShare"
-                              data-key={`player:${player.id}:rushMarketShare`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:rushMarketShare`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.rushTdMarketShare}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="rushTdMarketShare"
-                              data-key={`player:${player.id}:rushTdMarketShare`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:rushTdMarketShare`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.receivingMarketShare}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="receivingMarketShare"
-                              data-key={`player:${player.id}:receivingMarketShare`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:receivingMarketShare`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.receivingTdMarketShare}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="receivingTdMarketShare"
-                              data-key={`player:${player.id}:receivingTdMarketShare`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:receivingTdMarketShare`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.catchRate}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="catchRate"
-                              data-key={`player:${player.id}:catchRate`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:catchRate`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.passMarketShare}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="passMarketShare"
-                              data-key={`player:${player.id}:passMarketShare`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:passMarketShare`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.intRate}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="intRate"
-                              data-key={`player:${player.id}:intRate`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:intRate`}></span>
-                          </td>
-                        </tr>
-                      ))}
-                      {awayPlayers.length === 0 && (
-                        <tr>
-                          <td colSpan={13}>No players found.</td>
-                        </tr>
-                      )}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+            <div class="inputs-team-stack">
+              {[
+                {
+                  side: "Away",
+                  teamCode: selectedGame?.awayTeam ?? "Away Team",
+                  teamInput: awayTeamInputs,
+                  players: awayPlayers,
+                },
+                {
+                  side: "Home",
+                  teamCode: selectedGame?.homeTeam ?? "Home Team",
+                  teamInput: homeTeamInputs,
+                  players: homePlayers,
+                },
+              ].map(({ side, teamCode, teamInput, players }) => (
+                <section class="inputs-team-section">
+                  <div class="inputs-team-head">
+                    <div class="inputs-team-head-main">
+                      <span class="team-logo team-logo-large">
+                        <img
+                          src={getTeamLogoSrc(teamCode)}
+                          alt={`${teamCode} logo`}
+                          loading="lazy"
+                          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                        />
+                        <span class="team-logo-placeholder">{teamCode}</span>
+                      </span>
+                      <div>
+                        <div class="inputs-team-kicker">{side}</div>
+                        <h3>{teamCode}</h3>
+                      </div>
+                    </div>
+                  </div>
 
-              <div class="settings-panel">
-                <h3>{selectedGame?.homeTeam ?? "Home Team"}</h3>
-                <div class="team-validation" data-team-key={`team:${homeTeamInputs?.gameId ?? ""}:${homeTeamInputs?.team ?? ""}`}>
-                  <div class="team-validation-title">Team Checks</div>
-                  <div class="team-validation-messages"></div>
-                </div>
-                {homeTeamInputs ? (
-                  <dl class="settings-list">
-                    <div>
-                      <dt>Points</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={homeTeamInputs.pointsScored}
-                          data-kind="team"
-                          data-game-id={homeTeamInputs.gameId}
-                          data-team={homeTeamInputs.team}
-                          data-field="pointsScored"
-                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:pointsScored`}
-                        />
-                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:pointsScored`}></span>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Pace</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={homeTeamInputs.pace}
-                          data-kind="team"
-                          data-game-id={homeTeamInputs.gameId}
-                          data-team={homeTeamInputs.team}
-                          data-field="pace"
-                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:pace`}
-                        />
-                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:pace`}></span>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Rush Rate</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={(homeTeamInputs.rushRate * 100).toFixed(1)}
-                          data-kind="team"
-                          data-game-id={homeTeamInputs.gameId}
-                          data-team={homeTeamInputs.team}
-                          data-field="rushRate"
-                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:rushRate`}
-                        />
-                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:rushRate`}></span>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Rush TD Ratio</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={(homeTeamInputs.rushTdRatio * 100).toFixed(1)}
-                          data-kind="team"
-                          data-game-id={homeTeamInputs.gameId}
-                          data-team={homeTeamInputs.team}
-                          data-field="rushTdRatio"
-                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:rushTdRatio`}
-                        />
-                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:rushTdRatio`}></span>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>DST Salary</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="1"
-                          value={homeTeamInputs.dstSalary}
-                          data-kind="team"
-                          data-game-id={homeTeamInputs.gameId}
-                          data-team={homeTeamInputs.team}
-                          data-field="dstSalary"
-                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:dstSalary`}
-                        />
-                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:dstSalary`}></span>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Sack Rate</dt>
-                      <dd>
-                        <input
-                          type="number"
-                          step="0.1"
-                          value={(homeTeamInputs.sackRate * 100).toFixed(1)}
-                          data-kind="team"
-                          data-game-id={homeTeamInputs.gameId}
-                          data-team={homeTeamInputs.team}
-                          data-field="sackRate"
-                          data-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:sackRate`}
-                        />
-                        <span class="field-error" data-error-key={`team:${homeTeamInputs.gameId}:${homeTeamInputs.team}:sackRate`}></span>
-                      </dd>
-                    </div>
-                  </dl>
-                ) : (
-                  <p class="empty-state">No team inputs found.</p>
-                )}
+                  <div class="team-validation" data-team-key={`team:${teamInput?.gameId ?? ""}:${teamInput?.team ?? ""}`}>
+                    <div class="team-validation-title">Team Checks</div>
+                    <div class="team-validation-messages"></div>
+                  </div>
 
-                <div class="table-area">
-                  <table class="slates-table">
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Team</th>
-                        <th>Pos</th>
-                        <th>Salary</th>
-                        <th>Proj</th>
-                        <th>Own%</th>
-                        <th>Rush MS</th>
-                        <th>Rush TD MS</th>
-                        <th>Rec MS</th>
-                        <th>Rec TD MS</th>
-                        <th>Catch%</th>
-                        <th>Pass MS</th>
-                        <th>INT%</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {homePlayers.map((player) => (
-                        <tr>
-                          <td>{player.name}</td>
-                          <td>{player.team}</td>
-                          <td>{player.position}</td>
-                          <td>${player.salary.toLocaleString()}</td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.projection}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="projection"
-                              data-key={`player:${player.id}:projection`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:projection`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.ownership}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="ownership"
-                              data-key={`player:${player.id}:ownership`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:ownership`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.rushMarketShare}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="rushMarketShare"
-                              data-key={`player:${player.id}:rushMarketShare`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:rushMarketShare`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.rushTdMarketShare}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="rushTdMarketShare"
-                              data-key={`player:${player.id}:rushTdMarketShare`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:rushTdMarketShare`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.receivingMarketShare}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="receivingMarketShare"
-                              data-key={`player:${player.id}:receivingMarketShare`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:receivingMarketShare`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.receivingTdMarketShare}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="receivingTdMarketShare"
-                              data-key={`player:${player.id}:receivingTdMarketShare`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:receivingTdMarketShare`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.catchRate}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="catchRate"
-                              data-key={`player:${player.id}:catchRate`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:catchRate`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.passMarketShare}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="passMarketShare"
-                              data-key={`player:${player.id}:passMarketShare`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:passMarketShare`}></span>
-                          </td>
-                          <td>
-                            <input
-                              type="number"
-                              step="0.1"
-                              value={player.intRate}
-                              data-kind="player"
-                              data-player-id={player.id}
-                              data-field="intRate"
-                              data-key={`player:${player.id}:intRate`}
-                            />
-                            <span class="field-error" data-error-key={`player:${player.id}:intRate`}></span>
-                          </td>
-                        </tr>
-                      ))}
-                      {homePlayers.length === 0 && (
-                        <tr>
-                          <td colSpan={13}>No players found.</td>
-                        </tr>
-                      )}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+                  {teamInput ? (
+                    <>
+                      <div class="readonly-stat-row">
+                        <div class="readonly-stat">
+                          <span class="readonly-stat-label">Points Scored</span>
+                          <span class="readonly-stat-value">{formatNumberCompact(teamInput.pointsScored)}</span>
+                        </div>
+                        <div class="readonly-stat">
+                          <span class="readonly-stat-label">Pace</span>
+                          <span class="readonly-stat-value">{formatNumberCompact(teamInput.pace)}</span>
+                        </div>
+                        <div class="readonly-stat">
+                          <span class="readonly-stat-label">Rush Rate</span>
+                          <span class="readonly-stat-value">{formatPct(teamInput.rushRate, 1, false)}</span>
+                        </div>
+                        <div class="readonly-stat">
+                          <span class="readonly-stat-label">Rush TD Ratio</span>
+                          <span class="readonly-stat-value">{formatPct(teamInput.rushTdRatio, 1, false)}</span>
+                        </div>
+                        <div class="readonly-stat">
+                          <span class="readonly-stat-label">DST Salary</span>
+                          <span class="readonly-stat-value">{formatCurrencyCompact(teamInput.dstSalary)}</span>
+                        </div>
+                        <div class="readonly-stat">
+                          <span class="readonly-stat-label">Sack Rate</span>
+                          <span class="readonly-stat-value">{formatPct(teamInput.sackRate, 1, false)}</span>
+                        </div>
+                      </div>
+
+                      <div class="readonly-table-wrap table-area">
+                        <table class="readonly-table">
+                          <thead>
+                            <tr class="metric-group-row">
+                              <th colSpan={6}></th>
+                              <th colSpan={2}>Rushing</th>
+                              <th colSpan={3}>Receiving</th>
+                              <th colSpan={2}>Passing</th>
+                            </tr>
+                            <tr>
+                              <th class="injury-cell"></th>
+                              <th>Pos</th>
+                              <th>Player</th>
+                              <th>Salary</th>
+                              <th>Proj</th>
+                              <th>Own</th>
+                              <th>Rushing Mkt Share</th>
+                              <th>Rushing TD Mkt Share</th>
+                              <th>Receiving Mkt Share</th>
+                              <th>Receiving TD Mkt Share</th>
+                              <th>Catch Rate</th>
+                              <th>Passing Mkt Share</th>
+                              <th>Int Rate</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {players.map((player) => (
+                              <tr>
+                                <td class="injury-cell">
+                                  {isInjuredPlayer(player) && (
+                                    <span class="injury-icon" aria-label="Injury status">
+                                      <svg viewBox="0 0 16 16" aria-hidden="true">
+                                        <path d="M8 1.5 1.75 14h12.5L8 1.5Zm0 3.1 1.74 4.07H6.26L8 4.6Zm0 6.43a.92.92 0 1 1 0 1.84.92.92 0 0 1 0-1.84Z"></path>
+                                      </svg>
+                                    </span>
+                                  )}
+                                </td>
+                                <td><span class="value-chip">{player.position || "—"}</span></td>
+                                <td class="player-name-cell">{player.name || "—"}</td>
+                                <td><span class="value-chip">{formatCurrencyCompact(player.salary)}</span></td>
+                                <td><span class="value-chip">{formatNumberCompact(player.projection)}</span></td>
+                                <td><span class="value-chip">{formatPct(player.ownership)}</span></td>
+                                <td><span class="value-chip">{formatPct(player.rushMarketShare)}</span></td>
+                                <td><span class="value-chip">{formatPct(player.rushTdMarketShare)}</span></td>
+                                <td><span class="value-chip">{formatPct(player.receivingMarketShare)}</span></td>
+                                <td><span class="value-chip">{formatPct(player.receivingTdMarketShare)}</span></td>
+                                <td><span class="value-chip">{formatPct(player.catchRate)}</span></td>
+                                <td><span class="value-chip">{formatPct(player.passMarketShare)}</span></td>
+                                <td><span class="value-chip">{formatPct(player.intRate)}</span></td>
+                              </tr>
+                            ))}
+                            {players.length === 0 && (
+                              <tr>
+                                <td colSpan={13}>No players found.</td>
+                              </tr>
+                            )}
+                          </tbody>
+                        </table>
+                      </div>
+                    </>
+                  ) : (
+                    <p class="empty-state">No team inputs found.</p>
+                  )}
+                </section>
+              ))}
             </div>
           </>
         )}
@@ -1135,6 +856,9 @@ const startTimeLabel = selectedSlate?.startTime
             <div class="settings-actions">
               <button type="button" class="tool-btn tool-btn-secondary" id="sim-save-settings">
                 SAVE SETTINGS
+              </button>
+              <button type="button" class="tool-btn tool-btn-primary" id="sim-run-settings-btn">
+                RUN SIMULATION
               </button>
               <div class="sim-status" id="sim-settings-status" aria-live="polite"></div>
             </div>
@@ -1368,20 +1092,49 @@ const startTimeLabel = selectedSlate?.startTime
   </section>
 </Layout>
 
+<script
+  type="application/json"
+  id="sim-data"
+  set:html={JSON.stringify({
+    slateKey: activeSlateKey,
+    teamInputs,
+    playerInputs,
+    settings,
+    activeTab,
+    activeSubtab,
+  })}
+></script>
 <script is:inline>
-  const SIM_SLATE_KEY = ${JSON.stringify(activeSlateKey)};
-  const SIM_TEAM_INPUTS = ${JSON.stringify(teamInputs)};
-  const SIM_PLAYER_INPUTS = ${JSON.stringify(playerInputs)};
-  const SIM_SETTINGS = ${JSON.stringify(settings)};
-</script>
-<script is:inline>
+  const initSimulator = () => {
+  console.log("[sim] boot");
+  const simDataEl = document.getElementById("sim-data");
+  const simData = simDataEl ? JSON.parse(simDataEl.textContent || "{}") : {};
+  const SIM_SLATE_KEY = simData.slateKey || "";
+  const SIM_TEAM_INPUTS = Array.isArray(simData.teamInputs) ? simData.teamInputs : [];
+  const SIM_PLAYER_INPUTS = Array.isArray(simData.playerInputs) ? simData.playerInputs : [];
+  const SIM_SETTINGS = simData.settings || null;
+  const SIM_ACTIVE_TAB = simData.activeTab || "slates";
+  const SIM_ACTIVE_SUBTAB = simData.activeSubtab || "ev";
+  console.log("[sim] active tab", SIM_ACTIVE_TAB);
+  console.log("[sim] active subtab", SIM_ACTIVE_SUBTAB);
   const statusEl = document.getElementById("sim-status");
   const validationEl = document.getElementById("sim-validation-summary");
   const saveBtn = document.getElementById("sim-save-btn");
   const resetBtn = document.getElementById("sim-reset-btn");
   const runBtn = document.getElementById("sim-run-btn");
   const saveSettingsBtn = document.getElementById("sim-save-settings");
+  const runSettingsBtn = document.getElementById("sim-run-settings-btn");
   const settingsStatusEl = document.getElementById("sim-settings-status");
+  const runOverlay = document.getElementById("sim-run-overlay");
+  const runStatusEl = document.getElementById("sim-run-status");
+  let runInProgress = false;
+  const clone = (value) => {
+    if (typeof structuredClone === "function") {
+      return structuredClone(value);
+    }
+    if (value === undefined) return undefined;
+    return JSON.parse(JSON.stringify(value));
+  };
 
   const percentFields = new Set(["rushRate", "rushTdRatio", "sackRate"]);
   const rangeRules = {
@@ -1402,16 +1155,16 @@ const startTimeLabel = selectedSlate?.startTime
     intRate: { min: 0, max: 100 },
   };
   const state = {
-    teamInputs: structuredClone(SIM_TEAM_INPUTS || []),
-    playerInputs: structuredClone(SIM_PLAYER_INPUTS || []),
+    teamInputs: clone(SIM_TEAM_INPUTS || []),
+    playerInputs: clone(SIM_PLAYER_INPUTS || []),
   };
-  let settingsState = structuredClone(SIM_SETTINGS || null);
-  let settingsBaseline = settingsState ? structuredClone(settingsState) : null;
+  let settingsState = clone(SIM_SETTINGS || null);
+  let settingsBaseline = settingsState ? clone(settingsState) : null;
   let settingsDirty = false;
   let settingsInvalid = false;
   let baseline = {
-    teamInputs: structuredClone(state.teamInputs),
-    playerInputs: structuredClone(state.playerInputs),
+    teamInputs: clone(state.teamInputs),
+    playerInputs: clone(state.playerInputs),
   };
   let dirty = false;
   let invalidCount = 0;
@@ -1432,6 +1185,102 @@ const startTimeLabel = selectedSlate?.startTime
     if (!settingsStatusEl) return;
     settingsStatusEl.textContent = message || "";
     settingsStatusEl.dataset.tone = tone || "";
+  };
+
+  const showRunOverlay = () => {
+    if (!runOverlay) return;
+    console.log("[sim] overlay shown");
+    if (runStatusEl) runStatusEl.textContent = "Starting simulation...";
+    runOverlay.classList.add("is-visible");
+    runOverlay.setAttribute("aria-hidden", "false");
+    document.body.classList.add("sim-running");
+  };
+
+  const hideRunOverlay = () => {
+    if (!runOverlay) return;
+    runOverlay.classList.remove("is-visible");
+    runOverlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("sim-running");
+  };
+
+  const runSimulation = async (context) => {
+    if (runInProgress) return;
+    const { statusTarget } = context || {};
+    if (!SIM_SLATE_KEY) {
+      setStatus("No slate selected. Unable to run sims.", "error");
+      setSettingsStatus("No slate selected. Unable to run sims.", "error");
+      return;
+    }
+    if (settingsInvalid) {
+      const message = "Fix settings errors before running this simulation.";
+      if (statusTarget === "settings") {
+        setSettingsStatus(message, "error");
+      } else {
+        setStatus(message, "error");
+      }
+      return;
+    }
+    if (settingsDirty) {
+      const message = "Save your settings to run this simulation.";
+      if (statusTarget === "settings") {
+        setSettingsStatus(message, "error");
+      } else {
+        setStatus(message, "error");
+      }
+      return;
+    }
+    runInProgress = true;
+    if (runBtn) runBtn.disabled = true;
+    if (runSettingsBtn) runSettingsBtn.disabled = true;
+    showRunOverlay();
+    if (statusTarget === "settings") {
+      setSettingsStatus("Simulation in progress...", "info");
+    } else {
+      setStatus("Simulation in progress...", "info");
+    }
+    try {
+      if (runStatusEl) runStatusEl.textContent = "Sending request...";
+      const runUrl = `${window.location.origin}/api/simulator/run-sims`;
+      console.log("[sim] fetch start", runUrl);
+      const fetchPromise = fetch(runUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slate: SIM_SLATE_KEY }),
+      });
+      if (runStatusEl && settingsState?.simulationCount) {
+        runStatusEl.textContent = `Request sent. Running ${settingsState.simulationCount.toLocaleString()} simulations...`;
+      } else if (runStatusEl) {
+        runStatusEl.textContent = "Request sent. Simulator running...";
+      }
+      console.log("[sim] fetch promise created");
+      const response = await fetchPromise;
+      if (runStatusEl) runStatusEl.textContent = "Processing results...";
+      console.log("[sim] fetch response received", response.status);
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        const message = data?.error || "Simulation run failed. Check settings and try again.";
+        throw new Error(message);
+      }
+      if (runStatusEl) runStatusEl.textContent = "Writing results...";
+      console.log("[sim] response ok");
+      const targetUrl = `/simulator?slate=${encodeURIComponent(SIM_SLATE_KEY)}&tab=results&subtab=ev`;
+      if (runStatusEl) runStatusEl.textContent = "Simulation complete. Opening results...";
+      console.log("[sim] redirecting", targetUrl);
+      window.location.assign(targetUrl);
+    } catch (error) {
+      if (runStatusEl) runStatusEl.textContent = "Simulation failed.";
+      console.log("[sim] run error", error);
+      hideRunOverlay();
+      const message = error.message || "Simulation run failed. Check settings and try again.";
+      if (statusTarget === "settings") {
+        setSettingsStatus(message, "error");
+      } else {
+        setStatus(message, "error");
+      }
+      if (runBtn) runBtn.disabled = false;
+      if (runSettingsBtn) runSettingsBtn.disabled = false;
+      runInProgress = false;
+    }
   };
 
   const updateValidationSummary = () => {
@@ -1468,6 +1317,7 @@ const startTimeLabel = selectedSlate?.startTime
 
   const updateSettingsSaveState = () => {
     if (saveSettingsBtn) saveSettingsBtn.disabled = !settingsDirty || settingsInvalid;
+    if (runSettingsBtn) runSettingsBtn.disabled = false;
   };
 
   const validateSettingsInputs = () => {
@@ -1775,9 +1625,11 @@ const startTimeLabel = selectedSlate?.startTime
   });
 
   if (resetBtn) {
+    console.log("[sim] reset listener attached");
     resetBtn.addEventListener("click", () => {
-      state.teamInputs = structuredClone(baseline.teamInputs);
-      state.playerInputs = structuredClone(baseline.playerInputs);
+      console.log("[sim] reset clicked");
+      state.teamInputs = clone(baseline.teamInputs);
+      state.playerInputs = clone(baseline.playerInputs);
       teamIndex.clear();
       state.teamInputs.forEach((row) => teamIndex.set(`${row.gameId}-${row.team}`, row));
       playerIndex.clear();
@@ -1787,7 +1639,7 @@ const startTimeLabel = selectedSlate?.startTime
       teamBlockingCount = 0;
       teamWarningCount = 0;
       if (settingsBaseline) {
-        settingsState = structuredClone(settingsBaseline);
+        settingsState = clone(settingsBaseline);
         settingsDirty = false;
         document.querySelectorAll("input[data-setting-field]").forEach((input) => {
           const field = input.dataset.settingField;
@@ -1829,7 +1681,9 @@ const startTimeLabel = selectedSlate?.startTime
   };
 
   if (saveBtn) {
+    console.log("[sim] save inputs listener attached");
     saveBtn.addEventListener("click", async () => {
+      console.log("[sim] save clicked");
       if (!SIM_SLATE_KEY) {
         setStatus("No slate selected. Unable to save.", "error");
         return;
@@ -1858,8 +1712,8 @@ const startTimeLabel = selectedSlate?.startTime
           playerInputs: state.playerInputs,
         });
         baseline = {
-          teamInputs: structuredClone(state.teamInputs),
-          playerInputs: structuredClone(state.playerInputs),
+          teamInputs: clone(state.teamInputs),
+          playerInputs: clone(state.playerInputs),
         };
         fieldErrors.clear();
         invalidCount = 0;
@@ -1876,37 +1730,25 @@ const startTimeLabel = selectedSlate?.startTime
   }
 
   if (runBtn) {
+    console.log("[sim] run listener attached");
     runBtn.addEventListener("click", async () => {
-      if (!SIM_SLATE_KEY) {
-        setStatus("No slate selected. Unable to run sims.", "error");
-        return;
-      }
-      runBtn.disabled = true;
-      setStatus("Running sims...", "info");
-      try {
-        const response = await fetch("/api/simulator/run-sims", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ slate: SIM_SLATE_KEY }),
-        });
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok) {
-          const message = data?.error || "Simulation failed.";
-          throw new Error(message);
-        }
-        setStatus("Sims complete. Loading results...", "success");
-        setTimeout(() => {
-          window.location.reload();
-        }, 400);
-      } catch (error) {
-        setStatus(error.message || "Simulation failed.", "error");
-        runBtn.disabled = false;
-      }
+      console.log("[sim] run clicked");
+      await runSimulation({ statusTarget: "main" });
+    });
+  }
+
+  if (runSettingsBtn) {
+    console.log("[sim] settings run listener attached");
+    runSettingsBtn.addEventListener("click", async () => {
+      console.log("[sim] settings run clicked");
+      await runSimulation({ statusTarget: "settings" });
     });
   }
 
   if (saveSettingsBtn) {
+    console.log("[sim] save settings listener attached");
     saveSettingsBtn.addEventListener("click", async () => {
+      console.log("[sim] save settings clicked");
       if (!SIM_SLATE_KEY || !settingsState) {
         setSettingsStatus("No settings loaded.", "error");
         return;
@@ -1932,7 +1774,7 @@ const startTimeLabel = selectedSlate?.startTime
           const message = data?.error || "Save failed.";
           throw new Error(message);
         }
-        settingsBaseline = structuredClone(settingsState);
+        settingsBaseline = clone(settingsState);
         settingsDirty = false;
         updateSettingsSaveState();
         setSettingsStatus("Settings saved.", "success");
@@ -1947,6 +1789,14 @@ const startTimeLabel = selectedSlate?.startTime
   setDirty(false);
   validateSettingsInputs();
   updateSettingsSaveState();
+  console.log("[sim] init complete");
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSimulator);
+  } else {
+    initSimulator();
+  }
 </script>
 
 <style>
@@ -1976,6 +1826,130 @@ const startTimeLabel = selectedSlate?.startTime
     --sim-header-blue-mid: #123a99;
     --sim-header-blue-bottom: #071a4d;
     padding: 0.7rem 0 1.75rem;
+  }
+
+  :global(body.sim-running) {
+    overflow: hidden;
+  }
+
+  .sim-run-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.18), transparent 35%),
+      radial-gradient(circle at 85% 80%, rgba(184, 146, 47, 0.16), transparent 45%),
+      rgba(3, 6, 14, 0.92);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .sim-run-overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .sim-run-card {
+    width: min(420px, 90vw);
+    padding: 2.5rem 2.2rem;
+    text-align: center;
+    background: rgba(7, 10, 20, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .sim-run-logo {
+    position: relative;
+    margin: 0 auto 1.5rem;
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sim-header-blue-top), var(--sim-header-blue-bottom));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.2rem;
+    animation: sim-float 2.2s ease-in-out infinite;
+  }
+
+  .sim-run-logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f5f5f5;
+  }
+
+  .sim-run-logo-glow {
+    position: absolute;
+    inset: -18px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.35), transparent 65%);
+    filter: blur(1px);
+    animation: sim-pulse 1.6s ease-in-out infinite;
+  }
+
+  .sim-run-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .sim-run-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .sim-run-bar {
+    width: min(260px, 70vw);
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .sim-run-bar span {
+    display: block;
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(90deg, rgba(184, 146, 47, 0.2), rgba(184, 146, 47, 0.9));
+    border-radius: 999px;
+    animation: sim-sweep 1.2s ease-in-out infinite;
+  }
+
+  @keyframes sim-pulse {
+    0%,
+    100% {
+      transform: scale(0.9);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+
+  @keyframes sim-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes sim-sweep {
+    0% {
+      transform: translateX(-110%);
+    }
+    100% {
+      transform: translateX(260%);
+    }
   }
 
   .sim-page,
@@ -2474,23 +2448,25 @@ const startTimeLabel = selectedSlate?.startTime
 
   .team-validation {
     border: 1px solid var(--sim-line);
-    background: rgba(7, 26, 77, 0.18);
-    padding: 8px 10px;
-    margin-bottom: 10px;
+    background: rgba(7, 26, 77, 0.08);
+    padding: 6px 8px;
+    margin-bottom: 2px;
   }
 
   .team-validation-title {
-    font-size: 0.72rem;
+    font-size: 0.64rem;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.55);
-    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.46);
+    margin-bottom: 4px;
   }
 
   .team-validation-messages {
     display: grid;
-    gap: 4px;
-    font-size: 0.74rem;
+    gap: 2px;
+    font-size: 0.68rem;
+    font-weight: 800;
   }
 
   .team-validation-msg.error {
@@ -2544,7 +2520,7 @@ const startTimeLabel = selectedSlate?.startTime
 
   .inputs-panel {
     display: grid;
-    gap: 16px;
+    gap: 11px;
   }
 
   .inputs-team-grid {
@@ -2558,6 +2534,357 @@ const startTimeLabel = selectedSlate?.startTime
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+  }
+
+  .inputs-game-title {
+    margin-bottom: 0;
+  }
+
+  .inputs-game-title h2 {
+    font-size: 0.98rem;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .inputs-slate-strip {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-self: flex-start;
+    width: fit-content;
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  .inputs-slate-card {
+    display: grid;
+    gap: 2px;
+    width: 134px;
+    min-width: 134px;
+    max-width: 134px;
+    flex: 0 0 134px;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(8, 12, 22, 0.46);
+    box-sizing: border-box;
+  }
+
+  .inputs-slate-card:hover,
+  .inputs-slate-card:focus-visible {
+    border-color: rgba(37, 99, 235, 0.42);
+    outline: none;
+  }
+
+  .inputs-slate-card.active {
+    border-color: rgba(37, 99, 235, 0.64);
+    background:
+      linear-gradient(180deg, rgba(18, 58, 153, 0.12) 0%, rgba(8, 12, 22, 0.62) 100%);
+  }
+
+  .inputs-slate-card-rows {
+    display: grid;
+    gap: 6px;
+  }
+
+  .inputs-slate-team-row {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr) auto;
+    gap: 6px;
+    align-items: center;
+    line-height: 1;
+  }
+
+  .inputs-slate-logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+  }
+
+  .inputs-slate-logo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .inputs-slate-logo-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.42rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.72);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .inputs-slate-team-code {
+    font-size: 0.81rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.94);
+    text-transform: uppercase;
+    min-width: 0;
+  }
+
+  .inputs-slate-team-total {
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.66);
+    text-align: right;
+  }
+
+  .inputs-slate-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    padding-top: 7px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.69rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.58);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .team-logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+    flex: 0 0 auto;
+  }
+
+  .team-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .team-logo-large {
+    width: 50px;
+    height: 50px;
+  }
+
+  .team-logo-placeholder {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    font-size: 0.56rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.72);
+    text-align: center;
+  }
+
+  .inputs-team-stack {
+    display: grid;
+    gap: 12px;
+  }
+
+  .inputs-team-section {
+    display: grid;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .inputs-team-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 2px;
+  }
+
+  .inputs-team-head-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .inputs-team-kicker {
+    font-size: 0.66rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .inputs-team-section h3 {
+    margin: 0;
+    font-size: 0.94rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .value-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    padding: 0 8px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  .readonly-stat-row {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 6px;
+    align-items: stretch;
+  }
+
+  .readonly-stat {
+    display: grid;
+    gap: 3px;
+    padding: 6px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .readonly-stat-label {
+    font-size: 0.58rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+  }
+
+  .readonly-stat-value {
+    font-size: 0.78rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.92);
+  }
+
+  .readonly-table-wrap {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: transparent;
+  }
+
+  .readonly-table {
+    width: 100%;
+    min-width: 1420px;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .readonly-table thead {
+    background:
+      linear-gradient(
+        180deg,
+        #2b63eb 0%,
+        #1848bf 34%,
+        #0f3288 68%,
+        #071a4d 100%
+      );
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -10px 18px rgba(0, 0, 0, 0.16),
+      0 0 18px rgba(18, 58, 153, 0.1);
+  }
+
+  .readonly-table th {
+    padding: 0.46rem 0.5rem;
+    text-align: left;
+    font-size: 0.61rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    background: transparent;
+    text-transform: uppercase;
+    border-bottom: 0;
+  }
+
+  .readonly-table td {
+    padding: 0.34rem 0.5rem;
+    font-size: 0.69rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    vertical-align: middle;
+  }
+
+  .metric-group-row th {
+    padding-top: 0.22rem;
+    padding-bottom: 0.22rem;
+    font-size: 0.54rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    color: rgba(255, 255, 255, 0.46);
+    text-align: center;
+  }
+
+  .metric-group-row th:first-child {
+    color: transparent;
+  }
+
+  .injury-cell {
+    width: 28px;
+    min-width: 28px;
+    text-align: center;
+    padding-left: 8px !important;
+    padding-right: 6px !important;
+  }
+
+  .injury-icon {
+    display: inline-flex;
+    width: 14px;
+    height: 14px;
+    color: #ef4444;
+  }
+
+  .injury-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  .player-name-cell {
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .value-chip {
+    width: 100%;
+    justify-content: flex-start;
+    min-height: 24px;
+    padding: 0 7px;
+    color: rgba(255, 255, 255, 0.82);
   }
 
   .settings-list {
@@ -2731,6 +3058,11 @@ const startTimeLabel = selectedSlate?.startTime
     .filters {
       justify-content: flex-start;
     }
+
+    .readonly-stat-row {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
   }
 
   @media (max-width: 640px) {
@@ -2780,6 +3112,10 @@ const startTimeLabel = selectedSlate?.startTime
     .filters-left,
     .filters-right {
       width: 100%;
+    }
+
+    .readonly-stat-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 </style>
