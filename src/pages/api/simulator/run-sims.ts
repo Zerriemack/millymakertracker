@@ -419,9 +419,9 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse(400, { error: "Version 1 supports DraftKings classic only." });
   }
 
-  const salaryCap = settings.salaryCap || slateJson.salaryCap;
+  const salaryCap = slateJson.salaryCap;
   if (!salaryCap) {
-    return jsonResponse(400, { error: "Salary cap is missing from settings." });
+    return jsonResponse(400, { error: "Salary cap is missing from slate." });
   }
   if (slateJson.rosterSize && slateJson.rosterSize !== 9) {
     return jsonResponse(400, { error: "Version 1 supports 9-player DraftKings classic only." });
@@ -450,31 +450,17 @@ export const POST: APIRoute = async ({ request }) => {
   if (!fieldSize || fieldSize <= 0) {
     return jsonResponse(400, { error: "fieldSize must be greater than 0." });
   }
-  const gradingFieldMode = settings.gradingFieldMode ?? "expandedField";
-  if (!["retainedOnly", "expandedField"].includes(gradingFieldMode)) {
-    return jsonResponse(400, { error: "gradingFieldMode must be retainedOnly or expandedField." });
+  if (fieldSize > 500000) {
+    return jsonResponse(400, { error: "fieldSize must be 500000 or smaller." });
   }
-  const gradingFieldSize = settings.gradingFieldSize ?? fieldSize;
-  if (!gradingFieldSize || gradingFieldSize <= 0) {
-    return jsonResponse(400, { error: "gradingFieldSize must be greater than 0." });
-  }
-  const gradingFieldExtraLineupCount = settings.gradingFieldExtraLineupCount ?? Math.max(lineupCount, 300);
-  if (!Number.isInteger(gradingFieldExtraLineupCount) || gradingFieldExtraLineupCount < 0) {
-    return jsonResponse(400, { error: "gradingFieldExtraLineupCount must be an integer 0 or greater." });
-  }
+  const gradingFieldMode = "expandedField";
+  const gradingFieldSize = fieldSize;
+  const gradingFieldExtraLineupCount = Math.max(lineupCount, 300);
   const targetGradingUniverseSize = Math.max(lineupCount + gradingFieldExtraLineupCount, lineupCount, 1);
   const candidateLineupLimitPerSim =
     gradingFieldMode === "expandedField"
       ? Math.min(32, Math.max(4, Math.ceil(targetGradingUniverseSize / Math.max(1, Math.min(simulationCount, 50)))))
       : 1;
-
-  const normalizeOptional = (value: unknown, label: string) => {
-    if (value === null || value === undefined) return null;
-    if (typeof value !== "number" || !Number.isFinite(value)) {
-      throw new Error(`${label} must be a number or null.`);
-    }
-    return value;
-  };
 
   const playerStats = new Map<
     string,
@@ -586,7 +572,6 @@ export const POST: APIRoute = async ({ request }) => {
         averageSimTotal: lineup.totalSimTotal / lineup.frequencyCount,
         maxSimTotal: lineup.maxSimTotal,
         averageOptimalRate: avgOptimalRate,
-        passedFilters: true,
       };
     });
 
@@ -611,50 +596,6 @@ export const POST: APIRoute = async ({ request }) => {
 
   const retainedLineups = lineupCount > 0 ? sortedLineups.slice(0, lineupCount) : sortedLineups;
 
-  let minSalary: number | null = null;
-  let maxSalary: number | null = null;
-  let minSumOwnership: number | null = null;
-  let maxSumOwnership: number | null = null;
-  let minAvgOptimalRate: number | null = null;
-  let maxAvgOptimalRate: number | null = null;
-  try {
-    minSalary = normalizeOptional(settings.minSalary, "minSalary");
-    maxSalary = normalizeOptional(settings.maxSalary, "maxSalary");
-    minSumOwnership = normalizeOptional(settings.minSumOwnership, "minSumOwnership");
-    maxSumOwnership = normalizeOptional(settings.maxSumOwnership, "maxSumOwnership");
-    minAvgOptimalRate = normalizeOptional(settings.minAvgOptimalRate, "minAvgOptimalRate");
-    maxAvgOptimalRate = normalizeOptional(settings.maxAvgOptimalRate, "maxAvgOptimalRate");
-  } catch (error) {
-    return jsonResponse(400, { error: error.message || "Invalid settings filters." });
-  }
-  if (minSalary !== null && maxSalary !== null && minSalary > maxSalary) {
-    return jsonResponse(400, { error: "minSalary cannot exceed maxSalary." });
-  }
-  if (minSumOwnership !== null && maxSumOwnership !== null && minSumOwnership > maxSumOwnership) {
-    return jsonResponse(400, { error: "minSumOwnership cannot exceed maxSumOwnership." });
-  }
-  if (minAvgOptimalRate !== null && maxAvgOptimalRate !== null && minAvgOptimalRate > maxAvgOptimalRate) {
-    return jsonResponse(400, { error: "minAvgOptimalRate cannot exceed maxAvgOptimalRate." });
-  }
-
-  const filteredLineups = retainedLineups.map((lineup) => {
-    const salaryPass =
-      (minSalary === null || lineup.salaryUsed >= minSalary) &&
-      (maxSalary === null || lineup.salaryUsed <= maxSalary);
-    const ownershipPass =
-      (minSumOwnership === null || lineup.sumOwnership >= minSumOwnership) &&
-      (maxSumOwnership === null || lineup.sumOwnership <= maxSumOwnership);
-    const optimalRatePass =
-      (minAvgOptimalRate === null || lineup.averageOptimalRate >= minAvgOptimalRate) &&
-      (maxAvgOptimalRate === null || lineup.averageOptimalRate <= maxAvgOptimalRate);
-
-    return {
-      ...lineup,
-      passedFilters: salaryPass && ownershipPass && optimalRatePass,
-    };
-  });
-
-  const filteredCount = filteredLineups.filter((lineup) => lineup.passedFilters).length;
   const retainedLineupKeySet = new Set(retainedLineups.map((lineup) => lineup.lineupKey));
   const extraGradingLineups =
     gradingFieldMode === "expandedField"
@@ -671,11 +612,13 @@ export const POST: APIRoute = async ({ request }) => {
   );
   const gradingUniverseLineupKeys = gradingUniverseLineups.map((lineup) => lineup.lineupKey);
 
-  const payoutProfile = settings.payoutProfile ?? "standard";
+  const rawPayoutProfile = settings.payoutProfile === "flat" ? "cash" : settings.payoutProfile;
+  const payoutProfile =
+    rawPayoutProfile === "topHeavy" || rawPayoutProfile === "cash" ? rawPayoutProfile : "standard";
   const payoutWeights =
     payoutProfile === "topHeavy"
       ? { topPointOne: 10, topOne: 4, itm: 1 }
-      : payoutProfile === "flat"
+      : payoutProfile === "cash"
         ? { topPointOne: 2, topOne: 1.5, itm: 1 }
         : { topPointOne: 6, topOne: 3, itm: 1 };
 
@@ -750,7 +693,7 @@ export const POST: APIRoute = async ({ request }) => {
     });
   }
 
-  const gradedLineups = filteredLineups.map((lineup) => {
+  const gradedLineups = retainedLineups.map((lineup) => {
     const grade = lineupGradeMap.get(lineup.lineupKey);
     if (!grade) return lineup;
     return {
@@ -765,40 +708,30 @@ export const POST: APIRoute = async ({ request }) => {
   });
 
   const retainedCounts = new Map<string, number>();
-  const filteredCounts = new Map<string, number>();
   retainedLineups.forEach((lineup) => {
     lineup.players.forEach((player) => {
       retainedCounts.set(player.id, (retainedCounts.get(player.id) || 0) + 1);
     });
   });
-  filteredLineups.forEach((lineup) => {
-    if (!lineup.passedFilters) return;
-    lineup.players.forEach((player) => {
-      filteredCounts.set(player.id, (filteredCounts.get(player.id) || 0) + 1);
-    });
-  });
 
   const retainedDenom = retainedLineups.length;
-  const filteredDenom = filteredCount;
 
-  const filteredPool = gradedLineups.filter((lineup) => lineup.passedFilters);
-  const averageFilteredEv =
-    filteredPool.length > 0
-      ? filteredPool.reduce((sum, lineup) => sum + (lineup.evScore ?? 0), 0) / filteredPool.length
+  const averageEv =
+    gradedLineups.length > 0
+      ? gradedLineups.reduce((sum, lineup) => sum + (lineup.evScore ?? 0), 0) / gradedLineups.length
       : 0;
 
   const resultsPlayersWithExposure = resultsPlayers.map((player) => {
     const retainedLineupCount = retainedCounts.get(player.id) || 0;
-    const filteredLineupCount = filteredCounts.get(player.id) || 0;
-    const plusEvScore = filteredPool.reduce((sum, lineup) => {
+    const plusEvScore = gradedLineups.reduce((sum, lineup) => {
       if (!lineup.players.some((p) => p.id === player.id)) return sum;
-      const diff = (lineup.evScore ?? 0) - averageFilteredEv;
+      const diff = (lineup.evScore ?? 0) - averageEv;
       const weight = lineup.frequencyRate;
       return sum + (diff > 0 ? diff * weight : 0);
     }, 0);
-    const minusEvScore = filteredPool.reduce((sum, lineup) => {
+    const minusEvScore = gradedLineups.reduce((sum, lineup) => {
       if (!lineup.players.some((p) => p.id === player.id)) return sum;
-      const diff = averageFilteredEv - (lineup.evScore ?? 0);
+      const diff = averageEv - (lineup.evScore ?? 0);
       const weight = lineup.frequencyRate;
       return sum + (diff > 0 ? diff * weight : 0);
     }, 0);
@@ -806,8 +739,6 @@ export const POST: APIRoute = async ({ request }) => {
       ...player,
       retainedLineupCount,
       retainedExposureRate: retainedDenom > 0 ? (retainedLineupCount / retainedDenom) * 100 : 0,
-      filteredLineupCount,
-      filteredExposureRate: filteredDenom > 0 ? (filteredLineupCount / filteredDenom) * 100 : 0,
       plusEvScore,
       minusEvScore,
     };
@@ -821,31 +752,19 @@ export const POST: APIRoute = async ({ request }) => {
       lineupCount: settings.lineupCount,
       fieldSize: settings.fieldSize,
       simulationCount: settings.simulationCount,
-      salaryCap,
       payoutProfile,
-      gradingFieldMode,
-      gradingFieldSize,
-      gradingFieldExtraLineupCount,
-      minSalary,
-      maxSalary,
-      minSumOwnership,
-      maxSumOwnership,
-      minAvgOptimalRate,
-      maxAvgOptimalRate,
     },
     players: resultsPlayersWithExposure,
     lineups: gradedLineups,
     poolSummary: {
       distinctLineupCount: allLineups.length,
       retainedLineupCount: retainedLineups.length,
-      filteredLineupCount: filteredCount,
     },
     gradingSummary: {
       gradingFieldMode,
       gradingFieldSize: contestFieldSize,
       gradingUniverseSize: gradingUniverseLineups.length,
       retainedPoolSize: retainedLineups.length,
-      filteredPoolSize: filteredCount,
       gradingFieldExtraLineupCount,
       payoutProfile,
       topPointOneCutoff,

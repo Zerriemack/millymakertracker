@@ -61,17 +61,7 @@ export type SimulatorSettings = {
   lineupCount: number;
   fieldSize: number;
   simulationCount: number;
-  salaryCap: number;
-  payoutProfile?: "topHeavy" | "standard" | "flat";
-  gradingFieldMode?: "retainedOnly" | "expandedField";
-  gradingFieldSize?: number;
-  gradingFieldExtraLineupCount?: number;
-  minSalary?: number | null;
-  maxSalary?: number | null;
-  minSumOwnership?: number | null;
-  maxSumOwnership?: number | null;
-  minAvgOptimalRate?: number | null;
-  maxAvgOptimalRate?: number | null;
+  payoutProfile?: "topHeavy" | "standard" | "cash";
 };
 
 export type SimulatorSlatePackage = {

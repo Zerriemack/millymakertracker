@@ -84,11 +84,10 @@ const playerInputs = selectedPackage?.playerInputs ?? [];
 const settings = selectedPackage?.settings
   ? {
       ...selectedPackage.settings,
-      payoutProfile: selectedPackage.settings.payoutProfile ?? "standard",
-      gradingFieldMode: selectedPackage.settings.gradingFieldMode ?? "expandedField",
-      gradingFieldSize: selectedPackage.settings.gradingFieldSize ?? selectedPackage.settings.fieldSize,
-      gradingFieldExtraLineupCount:
-        selectedPackage.settings.gradingFieldExtraLineupCount ?? Math.max(selectedPackage.settings.lineupCount, 300),
+      payoutProfile:
+        selectedPackage.settings.payoutProfile === "flat"
+          ? "cash"
+          : selectedPackage.settings.payoutProfile ?? "standard",
     }
   : null;
 let results: {
@@ -99,11 +98,7 @@ let results: {
     lineupCount: number;
     fieldSize: number;
     simulationCount: number;
-    salaryCap: number;
-    payoutProfile?: "topHeavy" | "standard" | "flat";
-    gradingFieldMode?: "retainedOnly" | "expandedField";
-    gradingFieldSize?: number;
-    gradingFieldExtraLineupCount?: number;
+    payoutProfile?: "topHeavy" | "standard" | "cash";
   };
   players: Array<{
     id: string;
@@ -120,8 +115,6 @@ let results: {
     maxSimScore: number;
     retainedLineupCount: number;
     retainedExposureRate: number;
-    filteredLineupCount: number;
-    filteredExposureRate: number;
     plusEvScore: number;
     minusEvScore: number;
   }>;
@@ -142,7 +135,6 @@ let results: {
     averageSimTotal: number;
     maxSimTotal: number;
     averageOptimalRate: number;
-    passedFilters: boolean;
     topPointOnePctRate?: number;
     topOnePctRate?: number;
     itmRate?: number;
@@ -151,16 +143,14 @@ let results: {
   poolSummary?: {
     distinctLineupCount: number;
     retainedLineupCount: number;
-    filteredLineupCount: number;
   };
   gradingSummary?: {
     gradingFieldMode: "retainedOnly" | "expandedField";
     gradingFieldSize: number;
     gradingUniverseSize: number;
     retainedPoolSize: number;
-    filteredPoolSize: number;
     gradingFieldExtraLineupCount: number;
-    payoutProfile: "topHeavy" | "standard" | "flat";
+    payoutProfile: "topHeavy" | "standard" | "cash";
   };
 } | null = null;
 
@@ -201,6 +191,12 @@ const formatGameTypeLabel = (slate?: { site?: string; gameType?: string } | null
     return "MVP";
   }
   return gameType;
+};
+
+const formatPayoutLabel = (profile: string) => {
+  if (profile === "topHeavy") return "Top Heavy";
+  if (profile === "cash" || profile === "flat") return "Cash";
+  return "Standard";
 };
 
 const buildSimulatorUrl = ({
@@ -246,6 +242,13 @@ const formatPct = (value: number | null | undefined, digits = 1, assumeWhole = t
 };
 const formatPctFromRate = (value: number | null | undefined, digits = 1) =>
   typeof value === "number" && Number.isFinite(value) ? `${value.toFixed(digits)}%` : "0.0%";
+
+const formatOptLevDisplay = (value: number | null | undefined) => {
+  if (value === null || value === undefined || Number.isNaN(value)) return "—";
+  if (!Number.isFinite(value)) return "—";
+  const normalized = Math.abs(value) >= 10 ? value / 10 : value;
+  return `${normalized.toFixed(1)}%`;
+};
 
 const isInjuredPlayer = (player: Record<string, unknown>) => {
   const raw =
@@ -720,148 +723,127 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       <div class="settings-panel">
         {settings ? (
           <>
-            <dl class="settings-list">
-              <div>
-                <dt>Lineups</dt>
-                <dd>
-                  <input type="number" step="1" value={settings.lineupCount} data-setting-field="lineupCount" />
-                </dd>
+            <section class="sim-settings-shell">
+              <div class="sim-settings-grid">
+                <div class="sim-settings-panel sim-settings-panel--controls">
+                  <div class="sim-settings-eyebrow">Simulator</div>
+                  <div class="sim-slider-stack">
+                    <div class="sim-slider-row">
+                      <div class="sim-slider-row__top">
+                        <label class="sim-slider-label">Number of lineups</label>
+                        <div class="sim-slider-value" data-setting-value="lineupCount">
+                          {settings.lineupCount.toLocaleString()}
+                        </div>
+                      </div>
+                      <input
+                        type="range"
+                        min="1"
+                        max="300"
+                        step="1"
+                        value={settings.lineupCount}
+                        data-setting-field="lineupCount"
+                        class="sim-slider-input"
+                      />
+                    </div>
+                    <div class="sim-slider-row">
+                      <div class="sim-slider-row__top">
+                        <label class="sim-slider-label">Size of contest field</label>
+                        <div class="sim-slider-value" data-setting-value="fieldSize">
+                          {settings.fieldSize.toLocaleString()}
+                        </div>
+                      </div>
+                      <input
+                        type="range"
+                        min="100"
+                        max="500000"
+                        step="100"
+                        value={settings.fieldSize}
+                        data-setting-field="fieldSize"
+                        class="sim-slider-input"
+                      />
+                    </div>
+                    <div class="sim-slider-row">
+                      <div class="sim-slider-row__top">
+                        <label class="sim-slider-label">Number of simulations</label>
+                        <div class="sim-slider-value" data-setting-value="simulationCount">
+                          {settings.simulationCount.toLocaleString()}
+                        </div>
+                      </div>
+                      <input
+                        type="range"
+                        min="100"
+                        max="50000"
+                        step="100"
+                        value={settings.simulationCount}
+                        data-setting-field="simulationCount"
+                        class="sim-slider-input"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="sim-settings-panel sim-settings-panel--payout">
+                  <div class="sim-settings-eyebrow">Payout structure</div>
+                  <div class="sim-payout-group" role="radiogroup" aria-label="Payout structure">
+                    <label class="sim-payout-option">
+                      <input
+                        type="radio"
+                        name="payoutProfile"
+                        value="topHeavy"
+                        class="sim-payout-input"
+                        data-setting-field="payoutProfile"
+                      />
+                      <span class="sim-payout-card">
+                        <span class="sim-payout-title">Top Heavy</span>
+                        <span class="sim-payout-copy">Large-field GPPs</span>
+                      </span>
+                    </label>
+                    <label class="sim-payout-option">
+                      <input
+                        type="radio"
+                        name="payoutProfile"
+                        value="standard"
+                        class="sim-payout-input"
+                        data-setting-field="payoutProfile"
+                      />
+                      <span class="sim-payout-card">
+                        <span class="sim-payout-title">Standard</span>
+                        <span class="sim-payout-copy">Balanced tournament</span>
+                      </span>
+                    </label>
+                    <label class="sim-payout-option">
+                      <input
+                        type="radio"
+                        name="payoutProfile"
+                        value="cash"
+                        class="sim-payout-input"
+                        data-setting-field="payoutProfile"
+                      />
+                      <span class="sim-payout-card">
+                        <span class="sim-payout-title">Cash</span>
+                        <span class="sim-payout-copy">50/50s and double-ups</span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
               </div>
-              <div>
-                <dt>Field Size</dt>
-                <dd>
-                  <input type="number" step="1" value={settings.fieldSize} data-setting-field="fieldSize" />
-                </dd>
+              <div class="sim-settings-actions">
+                <button
+                  type="button"
+                  class="tool-btn sim-settings-action-secondary"
+                  id="sim-save-settings"
+                >
+                  Save Settings
+                </button>
+                <button
+                  type="button"
+                  class="tool-btn sim-settings-action-primary"
+                  id="sim-run-settings-btn"
+                >
+                  Run Simulation
+                </button>
               </div>
-              <div>
-                <dt>Simulations</dt>
-                <dd>
-                  <input type="number" step="1" value={settings.simulationCount} data-setting-field="simulationCount" />
-                </dd>
-              </div>
-              <div>
-                <dt>Salary Cap</dt>
-                <dd>
-                  <input type="number" step="1" value={settings.salaryCap} data-setting-field="salaryCap" />
-                </dd>
-              </div>
-              <div>
-                <dt>Payout Profile</dt>
-                <dd>
-                  <select data-setting-field="payoutProfile">
-                    <option value="standard" selected={settings.payoutProfile === "standard" || !settings.payoutProfile}>
-                      Standard
-                    </option>
-                    <option value="topHeavy" selected={settings.payoutProfile === "topHeavy"}>
-                      Top Heavy
-                    </option>
-                    <option value="flat" selected={settings.payoutProfile === "flat"}>
-                      Flat
-                    </option>
-                  </select>
-                </dd>
-              </div>
-              <div>
-                <dt>Grading Mode</dt>
-                <dd>
-                  <select data-setting-field="gradingFieldMode">
-                    <option value="expandedField" selected={settings.gradingFieldMode === "expandedField"}>
-                      Expanded Field
-                    </option>
-                    <option value="retainedOnly" selected={settings.gradingFieldMode === "retainedOnly"}>
-                      Retained Only
-                    </option>
-                  </select>
-                </dd>
-              </div>
-              <div>
-                <dt>Grading Field Size</dt>
-                <dd>
-                  <input
-                    type="number"
-                    step="1"
-                    value={settings.gradingFieldSize ?? settings.fieldSize}
-                    data-setting-field="gradingFieldSize"
-                  />
-                </dd>
-              </div>
-              <div>
-                <dt>Extra Grading Lineups</dt>
-                <dd>
-                  <input
-                    type="number"
-                    step="1"
-                    value={settings.gradingFieldExtraLineupCount ?? Math.max(settings.lineupCount, 300)}
-                    data-setting-field="gradingFieldExtraLineupCount"
-                  />
-                </dd>
-              </div>
-              <div>
-                <dt>Min Salary</dt>
-                <dd>
-                  <input type="number" step="1" value={settings.minSalary ?? ""} data-setting-field="minSalary" />
-                </dd>
-              </div>
-              <div>
-                <dt>Max Salary</dt>
-                <dd>
-                  <input type="number" step="1" value={settings.maxSalary ?? ""} data-setting-field="maxSalary" />
-                </dd>
-              </div>
-              <div>
-                <dt>Min Sum Own%</dt>
-                <dd>
-                  <input
-                    type="number"
-                    step="0.1"
-                    value={settings.minSumOwnership ?? ""}
-                    data-setting-field="minSumOwnership"
-                  />
-                </dd>
-              </div>
-              <div>
-                <dt>Max Sum Own%</dt>
-                <dd>
-                  <input
-                    type="number"
-                    step="0.1"
-                    value={settings.maxSumOwnership ?? ""}
-                    data-setting-field="maxSumOwnership"
-                  />
-                </dd>
-              </div>
-              <div>
-                <dt>Min Avg Opt%</dt>
-                <dd>
-                  <input
-                    type="number"
-                    step="0.1"
-                    value={settings.minAvgOptimalRate ?? ""}
-                    data-setting-field="minAvgOptimalRate"
-                  />
-                </dd>
-              </div>
-              <div>
-                <dt>Max Avg Opt%</dt>
-                <dd>
-                  <input
-                    type="number"
-                    step="0.1"
-                    value={settings.maxAvgOptimalRate ?? ""}
-                    data-setting-field="maxAvgOptimalRate"
-                  />
-                </dd>
-              </div>
-            </dl>
-            <div class="settings-actions">
-              <button type="button" class="tool-btn tool-btn-secondary" id="sim-save-settings">
-                SAVE SETTINGS
-              </button>
-              <button type="button" class="tool-btn tool-btn-primary" id="sim-run-settings-btn">
-                RUN SIMULATION
-              </button>
               <div class="sim-status" id="sim-settings-status" aria-live="polite"></div>
-            </div>
+            </section>
           </>
         ) : (
           <p class="empty-state">No settings found for this slate.</p>
@@ -871,105 +853,227 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
 
     {activeTab === "results" && (
       <div class="results-panel">
-        <nav class="subtabs" aria-label="Results subtabs">
-          <a
-            class:list={["subtab", { active: activeSubtab === "ev" }]}
-            href={buildSimulatorUrl({
-              slate: activeSlateKey,
-              tabParam: "results",
-              subtabParam: "ev",
-              gameType: activeGameType,
-              operator: activeOperator,
-              game: activeGameId,
-            })}
-          >
-            Plus EV
-          </a>
-          <a
-            class:list={["subtab", { active: activeSubtab === "exp" }]}
-            href={buildSimulatorUrl({
-              slate: activeSlateKey,
-              tabParam: "results",
-              subtabParam: "exp",
-              gameType: activeGameType,
-              operator: activeOperator,
-              game: activeGameId,
-            })}
-          >
-            Exposure
-          </a>
-          <a
-            class:list={["subtab", { active: activeSubtab === "graded" }]}
-            href={buildSimulatorUrl({
-              slate: activeSlateKey,
-              tabParam: "results",
-              subtabParam: "graded",
-              gameType: activeGameType,
-              operator: activeOperator,
-              game: activeGameId,
-            })}
-          >
-            Graded
-          </a>
-        </nav>
+        <div class="results-controls">
+          <nav class="results-tabs" aria-label="Results subtabs">
+            <a
+              class:list={["results-tab", { active: activeSubtab === "ev" }]}
+              href={buildSimulatorUrl({
+                slate: activeSlateKey,
+                tabParam: "results",
+                subtabParam: "ev",
+                gameType: activeGameType,
+                operator: activeOperator,
+                game: activeGameId,
+              })}
+            >
+              Optimal Rate
+            </a>
+            <a
+              class:list={["results-tab", { active: activeSubtab === "exp" }]}
+              href={buildSimulatorUrl({
+                slate: activeSlateKey,
+                tabParam: "results",
+                subtabParam: "exp",
+                gameType: activeGameType,
+                operator: activeOperator,
+                game: activeGameId,
+              })}
+            >
+              Exposure
+            </a>
+            <a
+              class:list={["results-tab", { active: activeSubtab === "graded" }]}
+              href={buildSimulatorUrl({
+                slate: activeSlateKey,
+                tabParam: "results",
+                subtabParam: "graded",
+                gameType: activeGameType,
+                operator: activeOperator,
+                game: activeGameId,
+              })}
+            >
+              Graded
+            </a>
+          </nav>
+        </div>
 
         {!results && <p class="empty-state">No results yet. Run sims to generate results.</p>}
 
         {results && (
-          <div class="results-summary">
-            <span>
-              Grading: {results.gradingSummary?.gradingFieldMode === "expandedField" ? "Expanded Field" : "Retained Only"}
-            </span>
-            <span class="meta-sep">•</span>
-            <span>
-              Assumed field: {(results.gradingSummary?.gradingFieldSize ?? results.settingsSnapshot.fieldSize).toLocaleString()}
-            </span>
-            <span class="meta-sep">•</span>
-            <span>
-              Grading universe: {(results.gradingSummary?.gradingUniverseSize ?? results.poolSummary?.retainedLineupCount ?? 0).toLocaleString()}
-            </span>
-            <span class="meta-sep">•</span>
-            <span>
-              Retained pool: {(results.gradingSummary?.retainedPoolSize ?? results.poolSummary?.retainedLineupCount ?? 0).toLocaleString()}
-            </span>
-            <span class="meta-sep">•</span>
-            <span>Payout: {results.gradingSummary?.payoutProfile ?? results.settingsSnapshot.payoutProfile ?? "standard"}</span>
+          <div class="results-summary-strip">
+            <div class="summary-item">
+              <span class="summary-label">Field</span>
+              <span class="summary-value">
+                {results.settingsSnapshot.fieldSize.toLocaleString()}
+              </span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Retained Pool</span>
+              <span class="summary-value">
+                {(results.poolSummary?.retainedLineupCount ?? 0).toLocaleString()}
+              </span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Simulations</span>
+              <span class="summary-value">
+                {(results.simulationCount ?? results.settingsSnapshot.simulationCount ?? 0).toLocaleString()}
+              </span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Payout</span>
+              <span class="summary-value">
+                {formatPayoutLabel(results.settingsSnapshot.payoutProfile ?? "standard")}
+              </span>
+            </div>
+          </div>
+        )}
+
+        {results && (activeSubtab === "ev" || activeSubtab === "exp") && (
+          <div class="results-filter-row" data-pos-filter>
+            <span class="results-filter-label">Position</span>
+            <div class="results-filter-group">
+              <button type="button" class="results-filter-btn active" data-pos="ALL">
+                ALL
+              </button>
+              <button type="button" class="results-filter-btn" data-pos="QB">
+                QB
+              </button>
+              <button type="button" class="results-filter-btn" data-pos="RB">
+                RB
+              </button>
+              <button type="button" class="results-filter-btn" data-pos="WR">
+                WR
+              </button>
+              <button type="button" class="results-filter-btn" data-pos="TE">
+                TE
+              </button>
+              <button type="button" class="results-filter-btn" data-pos="DST">
+                DST
+              </button>
+            </div>
           </div>
         )}
 
         {results && activeSubtab === "ev" && (
-          <div class="table-area">
-            <table class="slates-table">
-              <thead>
-                <tr>
-                  <th>Player</th>
-                  <th>Team</th>
-                  <th>Pos</th>
-                  <th>Salary</th>
-                  <th>Own%</th>
-                  <th>Optimal Count</th>
-                  <th>Optimal%</th>
-                  <th>Opt Lev</th>
-                  <th>Plus EV</th>
-                </tr>
-              </thead>
+          <div class="results-table-shell">
+            <div class="results-table-head-wrap">
+              <table class="slates-table results-table results-table-head results-table-optimal-head">
+                <colgroup>
+                  <col class="col-player" />
+                  <col class="col-pos" />
+                  <col class="col-team" />
+                  <col class="col-salary" />
+                  <col class="col-own" />
+                  <col class="col-optimal-rate-value" />
+                  <col class="col-opt-lev" />
+                  <col class="col-plus-ev" />
+                  <col class="col-bar-lane" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="th-player">
+                      <button type="button" class="results-header-filter-btn" data-filter-trigger="name">Player</button>
+                    </th>
+                    <th class="th-pos">
+                      <button type="button" class="results-header-filter-btn" data-filter-trigger="position">Pos</button>
+                    </th>
+                    <th class="th-team">
+                      <button type="button" class="results-header-filter-btn" data-filter-trigger="team">Team</button>
+                    </th>
+                    <th class="th-num">
+                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button>
+                    </th>
+                    <th class="th-num">
+                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button>
+                    </th>
+                    <th class="th-num th-optimal-value">
+                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button>
+                    </th>
+                    <th class="th-num th-opt-lev">
+                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button>
+                    </th>
+                    <th class="th-num">
+                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="plusEv">Plus EV</button>
+                    </th>
+                    <th class="th-bar-lane"></th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+
+            <div class="results-table-wrap">
+            <table
+              class="slates-table results-table results-table-body results-table-optimal"
+              data-results-table
+              data-bar-metric="optimalSimRate"
+              data-results-kind="ev"
+            >
+              <colgroup>
+                <col class="col-player" />
+                <col class="col-pos" />
+                <col class="col-team" />
+                <col class="col-salary" />
+                <col class="col-own" />
+                <col class="col-optimal-rate-value" />
+                <col class="col-opt-lev" />
+                <col class="col-plus-ev" />
+                <col class="col-bar-lane" />
+              </colgroup>
               <tbody>
                 {results.players
                   .slice()
-                  .sort((a, b) => b.plusEvScore - a.plusEvScore || b.optimalLeverage - a.optimalLeverage)
+                  .sort(
+                    (a, b) =>
+                      b.optimalSimRate - a.optimalSimRate ||
+                      b.plusEvScore - a.plusEvScore ||
+                      b.optimalLeverage - a.optimalLeverage
+                  )
                   .map((row) => (
-                  <tr>
-                    <td>{row.name}</td>
-                    <td>{row.team}</td>
-                    <td>{row.position}</td>
-                    <td>${row.salary.toLocaleString()}</td>
-                    <td>{row.ownership.toFixed(1)}%</td>
-                    <td>{row.optimalLineupCount}</td>
-                    <td>{row.optimalSimRate.toFixed(1)}%</td>
-                    <td>{row.optimalLeverage.toFixed(1)}%</td>
-                    <td>{row.plusEvScore.toFixed(2)}</td>
+                    <tr
+                      data-pos={row.position}
+                      data-name={row.name}
+                      data-position={row.position}
+                      data-team={row.team}
+                      data-salary={row.salary}
+                      data-own={row.ownership}
+                      data-optimal={row.optimalSimRate}
+                      data-lev={Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage}
+                      data-plusev={row.plusEvScore}
+                    >
+                      <td class="player-name-cell">{row.name}</td>
+                      <td class="pos-cell">{row.position}</td>
+                      <td class="team-cell">
+                        <span class="team-cell-inner">
+                          <span class="results-team-logo">
+                            <img
+                              src={`/simulator/team-logos/${row.team}.png`}
+                              alt={`${row.team} logo`}
+                              loading="lazy"
+                              onerror="this.style.display='none';"
+                            />
+                          </span>
+                          <span class="team-code">{row.team}</span>
+                        </span>
+                      </td>
+                      <td class="num-cell salary-cell">${row.salary.toLocaleString()}</td>
+                      <td class="num-cell own-cell">{row.ownership.toFixed(1)}%</td>
+                      <td class="num-cell optimal-rate-value-cell">{row.optimalSimRate.toFixed(1)}%</td>
+                      <td class="num-cell opt-lev-cell">{formatOptLevDisplay(row.optimalLeverage)}</td>
+                      <td class="num-cell plus-ev-cell">{row.plusEvScore.toFixed(2)}</td>
+                      <td class="bar-lane-cell" data-bar-value={row.optimalSimRate}>
+                        <div class="bar-lane-shell">
+                          <span class="bar-lane-track">
+                            <span class="bar-lane-fill"></span>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                {results.players.length > 0 && (
+                  <tr class="results-empty-row" data-empty-row="filter" style="display:none">
+                    <td colSpan={9}>No players match this position filter.</td>
                   </tr>
-                ))}
+                )}
                 {results.players.length === 0 && (
                   <tr>
                     <td colSpan={9}>No results.</td>
@@ -977,49 +1081,130 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 )}
               </tbody>
             </table>
+            <div class="results-header-filter-popover" data-header-filter-popover hidden></div>
+            </div>
           </div>
         )}
 
         {results && activeSubtab === "exp" && (
-          <div class="table-area">
-            {results.poolSummary && results.poolSummary.filteredLineupCount === 0 && (
-              <p class="empty-state">All retained lineups failed the current filters.</p>
-            )}
-            <table class="slates-table">
-              <thead>
-                <tr>
-                  <th>Player</th>
-                  <th>Team</th>
-                  <th>Pos</th>
-                  <th>Salary</th>
-                  <th>Own%</th>
-                  <th>Opt Rate</th>
-                  <th>Opt Lev</th>
-                  <th>Retained Exp</th>
-                  <th>Filtered Exp</th>
-                </tr>
-              </thead>
+          <div class="results-table-shell">
+            <div class="results-table-head-wrap">
+              <table class="slates-table results-table results-table-head">
+                <colgroup>
+                  <col class="col-player" />
+                  <col class="col-pos" />
+                  <col class="col-team" />
+                  <col class="col-salary" />
+                  <col class="col-own" />
+                  <col class="col-optimal-rate-value" />
+                  <col class="col-opt-lev" />
+                  <col class="col-retained-exp" />
+                  <col class="col-bar-lane" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="th-player">
+                      <button type="button" class="results-header-filter-btn" data-filter-trigger="name">Player</button>
+                    </th>
+                    <th class="th-pos">
+                      <button type="button" class="results-header-filter-btn" data-filter-trigger="position">Pos</button>
+                    </th>
+                    <th class="th-team">
+                      <button type="button" class="results-header-filter-btn" data-filter-trigger="team">Team</button>
+                    </th>
+                    <th class="th-num">
+                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button>
+                    </th>
+                    <th class="th-num">
+                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button>
+                    </th>
+                    <th class="th-num th-optimal-value">
+                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button>
+                    </th>
+                    <th class="th-num th-opt-lev">
+                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button>
+                    </th>
+                    <th class="th-num">
+                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="retainedExp">Retained Exp</button>
+                    </th>
+                    <th class="th-bar-lane"></th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+
+            <div class="results-table-wrap">
+            <table
+              class="slates-table results-table results-table-body"
+              data-results-table
+              data-bar-metric="retainedExposureRate"
+              data-results-kind="exp"
+            >
+              <colgroup>
+                <col class="col-player" />
+                <col class="col-pos" />
+                <col class="col-team" />
+                <col class="col-salary" />
+                <col class="col-own" />
+                <col class="col-optimal-rate-value" />
+                <col class="col-opt-lev" />
+                <col class="col-retained-exp" />
+                <col class="col-bar-lane" />
+              </colgroup>
               <tbody>
                 {results.players
                   .slice()
                   .sort(
                     (a, b) =>
-                      b.filteredExposureRate - a.filteredExposureRate ||
-                      b.retainedExposureRate - a.retainedExposureRate
+                      b.retainedExposureRate - a.retainedExposureRate ||
+                      b.optimalLeverage - a.optimalLeverage
                   )
                   .map((row) => (
-                  <tr>
-                    <td>{row.name}</td>
-                    <td>{row.team}</td>
-                    <td>{row.position}</td>
-                    <td>${row.salary.toLocaleString()}</td>
-                    <td>{row.ownership.toFixed(1)}%</td>
-                    <td>{row.optimalSimRate.toFixed(1)}%</td>
-                    <td>{row.optimalLeverage.toFixed(1)}%</td>
-                    <td>{row.retainedExposureRate.toFixed(1)}%</td>
-                    <td>{row.filteredExposureRate.toFixed(1)}%</td>
+                  <tr
+                    data-pos={row.position}
+                    data-name={row.name}
+                    data-position={row.position}
+                    data-team={row.team}
+                    data-salary={row.salary}
+                    data-own={row.ownership}
+                    data-optimal={row.optimalSimRate}
+                    data-lev={Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage}
+                    data-retainedexp={row.retainedExposureRate}
+                  >
+                    <td class="player-name-cell">{row.name}</td>
+                    <td class="pos-cell">{row.position}</td>
+                    <td class="team-cell">
+                      <span class="team-cell-inner">
+                        <span class="results-team-logo">
+                          <img
+                            src={`/simulator/team-logos/${row.team}.png`}
+                            alt={`${row.team} logo`}
+                            loading="lazy"
+                            onerror="this.style.display='none';"
+                          />
+                        </span>
+                        <span class="team-code">{row.team}</span>
+                      </span>
+                    </td>
+                    <td class="num-cell salary-cell">${row.salary.toLocaleString()}</td>
+                    <td class="num-cell own-cell">{row.ownership.toFixed(1)}%</td>
+                    <td class="num-cell optimal-rate-value-cell">{row.optimalSimRate.toFixed(1)}%</td>
+                    <td class="num-cell opt-lev-cell">{formatOptLevDisplay(row.optimalLeverage)}</td>
+                    <td class="num-cell retained-exp-value-cell">{row.retainedExposureRate.toFixed(1)}%</td>
+                    <td class="bar-lane-cell" data-bar-value={row.retainedExposureRate}>
+                      <div class="bar-lane-shell">
+                        <span class="bar-lane-track">
+                          <span class="bar-lane-fill"></span>
+                        </span>
+                      </div>
+                    </td>
                   </tr>
                 ))}
+                {results.players.length > 0 && (
+                  <tr class="results-empty-row" data-empty-row="filter" style="display:none">
+                    <td colSpan={9}>No players match this position filter.</td>
+                  </tr>
+                )}
                 {results.players.length === 0 && (
                   <tr>
                     <td colSpan={9}>No exposures.</td>
@@ -1027,15 +1212,18 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 )}
               </tbody>
             </table>
+            <div class="results-header-filter-popover" data-header-filter-popover hidden></div>
+            </div>
           </div>
         )}
 
         {results && activeSubtab === "graded" && (
-          <div class="table-area">
-            {results.poolSummary && results.poolSummary.filteredLineupCount === 0 && (
-              <p class="empty-state">All retained lineups failed the current filters.</p>
-            )}
-            <table class="slates-table">
+          <div class="results-table-wrap">
+            <table
+              class="slates-table results-table"
+              data-results-table
+              data-bar-metric="frequencyRate"
+            >
               <thead>
                 <tr>
                   <th>EV</th>
@@ -1046,7 +1234,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                   <th>Avg Sim Total</th>
                   <th>Sum Own%</th>
                   <th>Frequency%</th>
-                  <th>Passed</th>
                   <th>Lineup</th>
                 </tr>
               </thead>
@@ -1063,15 +1250,19 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                   .slice(0, 20)
                   .map((row) => (
                   <tr>
-                    <td>{(row.evScore ?? 0).toFixed(2)}</td>
-                    <td>{(row.topPointOnePctRate ?? 0).toFixed(2)}%</td>
-                    <td>{(row.topOnePctRate ?? 0).toFixed(2)}%</td>
-                    <td>{(row.itmRate ?? 0).toFixed(2)}%</td>
-                    <td>${row.salaryUsed.toLocaleString()}</td>
-                    <td>{row.averageSimTotal.toFixed(1)}</td>
-                    <td>{row.sumOwnership.toFixed(1)}%</td>
-                    <td>{row.frequencyRate.toFixed(1)}%</td>
-                    <td>{row.passedFilters ? "Yes" : "No"}</td>
+                    <td class="num-cell">{(row.evScore ?? 0).toFixed(2)}</td>
+                    <td class="num-cell">{(row.topPointOnePctRate ?? 0).toFixed(2)}%</td>
+                    <td class="num-cell">{(row.topOnePctRate ?? 0).toFixed(2)}%</td>
+                    <td class="num-cell">{(row.itmRate ?? 0).toFixed(2)}%</td>
+                    <td class="num-cell">${row.salaryUsed.toLocaleString()}</td>
+                    <td class="num-cell">{row.averageSimTotal.toFixed(1)}</td>
+                    <td class="num-cell">{row.sumOwnership.toFixed(1)}%</td>
+                    <td class="bar-cell num-cell" data-bar-value={row.frequencyRate ?? 0}>
+                      <div class="bar-track" aria-hidden="true">
+                        <div class="bar-fill"></div>
+                      </div>
+                      <span class="bar-label">{row.frequencyRate.toFixed(1)}%</span>
+                    </td>
                     <td class="lineup-cell">
                       {row.players.map((player) => `${player.position} ${player.name}`).join(" / ")}
                     </td>
@@ -1079,7 +1270,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 ))}
                 {(results.lineups ?? []).length === 0 && (
                   <tr>
-                    <td colSpan={10}>No lineup aggregates available.</td>
+                    <td colSpan={9}>No lineup aggregates available.</td>
                   </tr>
                 )}
               </tbody>
@@ -1162,6 +1353,44 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   let settingsBaseline = settingsState ? clone(settingsState) : null;
   let settingsDirty = false;
   let settingsInvalid = false;
+
+  const formatSettingValue = (field, value) => {
+    if (value === null || value === undefined || !Number.isFinite(value)) return "";
+    return Number(value).toLocaleString();
+  };
+
+  const syncSliderValues = () => {
+    if (!settingsState) return;
+    document.querySelectorAll("[data-setting-value]").forEach((node) => {
+      const field = node.dataset.settingValue;
+      if (!field || !(field in settingsState)) return;
+      const value = settingsState[field];
+      node.textContent = formatSettingValue(field, value);
+    });
+    document.querySelectorAll("input[data-setting-field]").forEach((input) => {
+      if (!(input instanceof HTMLInputElement)) return;
+      if (!settingsState) return;
+      const field = input.dataset.settingField;
+      if (!field || !(field in settingsState)) return;
+      if (input.type === "range") {
+        const value = settingsState[field];
+        if (Number.isFinite(value)) input.value = String(value);
+      }
+    });
+  };
+
+  const syncPayoutProfileUI = () => {
+    if (!settingsState) return;
+    const current = settingsState.payoutProfile ?? "standard";
+    document.querySelectorAll("input[name='payoutProfile']").forEach((input) => {
+      if (!(input instanceof HTMLInputElement)) return;
+      input.checked = input.value === current;
+      input.closest(".sim-payout-option")?.classList.toggle("is-selected", input.checked);
+    });
+  };
+
+  syncPayoutProfileUI();
+  syncSliderValues();
   let baseline = {
     teamInputs: clone(state.teamInputs),
     playerInputs: clone(state.playerInputs),
@@ -1321,20 +1550,13 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   };
 
   const validateSettingsInputs = () => {
-    const requiredFields = [
-      "lineupCount",
-      "fieldSize",
-      "simulationCount",
-      "salaryCap",
-      "gradingFieldSize",
-      "gradingFieldExtraLineupCount",
-    ];
+    const requiredFields = ["lineupCount", "fieldSize", "simulationCount"];
     const inputs = Array.from(document.querySelectorAll("[data-setting-field]"));
     let invalid = false;
     inputs.forEach((input) => {
       const field = input.dataset.settingField;
       if (!field) return;
-      if (input.tagName === "SELECT") {
+      if (input.tagName === "SELECT" || input.type === "radio") {
         input.classList.remove("input-error");
         return;
       }
@@ -1358,26 +1580,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     });
 
     if (settingsState) {
-      const {
-        minSalary,
-        maxSalary,
-        minSumOwnership,
-        maxSumOwnership,
-        minAvgOptimalRate,
-        maxAvgOptimalRate,
-        gradingFieldSize,
-        gradingFieldExtraLineupCount,
-      } = settingsState;
-      if (minSalary !== null && maxSalary !== null && minSalary > maxSalary) invalid = true;
-      if (minSumOwnership !== null && maxSumOwnership !== null && minSumOwnership > maxSumOwnership) invalid = true;
-      if (minAvgOptimalRate !== null && maxAvgOptimalRate !== null && minAvgOptimalRate > maxAvgOptimalRate) invalid = true;
-      if (gradingFieldSize !== null && gradingFieldSize <= 0) invalid = true;
-      if (
-        gradingFieldExtraLineupCount !== null &&
-        (!Number.isInteger(gradingFieldExtraLineupCount) || gradingFieldExtraLineupCount < 0)
-      ) {
-        invalid = true;
-      }
+      if (settingsState.fieldSize > 500000) invalid = true;
     }
     settingsInvalid = invalid;
     updateSettingsSaveState();
@@ -1388,8 +1591,9 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     if (!input || !input.dataset.settingField) return;
     if (!settingsState) return;
     const field = input.dataset.settingField;
-    if (input.tagName === "SELECT") {
+    if (input.tagName === "SELECT" || input.type === "radio") {
       settingsState[field] = input.value;
+      if (field === "payoutProfile") syncPayoutProfileUI();
     } else {
       const raw = input.value.trim();
       if (!raw) {
@@ -1401,8 +1605,24 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     }
     settingsDirty = true;
     validateSettingsInputs();
+    syncSliderValues();
     setSettingsStatus("", "");
   };
+
+  const payoutInputs = Array.from(document.querySelectorAll("input[name='payoutProfile']"));
+  payoutInputs.forEach((input) => {
+    input.addEventListener("change", (event) => {
+      const target = event.currentTarget;
+      if (!(target instanceof HTMLInputElement)) return;
+      if (!settingsState) return;
+      settingsState.payoutProfile = target.value;
+      settingsDirty = true;
+      syncPayoutProfileUI();
+      validateSettingsInputs();
+      syncSliderValues();
+      setSettingsStatus("", "");
+    });
+  });
 
   const setFieldError = (input, message) => {
     const key = input.dataset.key;
@@ -1645,17 +1865,15 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
           const field = input.dataset.settingField;
           if (!field || !settingsState) return;
           const value = settingsState[field];
-          input.value = value === null || value === undefined ? "" : value;
+          if (input.type === "radio") {
+            input.checked = value === input.value;
+          } else {
+            input.value = value === null || value === undefined ? "" : value;
+          }
           input.classList.remove("input-error");
         });
-        document.querySelectorAll("select[data-setting-field]").forEach((select) => {
-          const field = select.dataset.settingField;
-          if (!field || !settingsState) return;
-          const value =
-            settingsState[field] ||
-            (field === "gradingFieldMode" ? "expandedField" : "standard");
-          select.value = value;
-        });
+        syncPayoutProfileUI();
+        syncSliderValues();
         validateSettingsInputs();
         updateSettingsSaveState();
       }
@@ -1785,10 +2003,387 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     });
   }
 
+  const initResultsTools = () => {
+    const panel = document.querySelector(".results-panel");
+    if (!panel) return;
+
+    const filterRow = panel.querySelector("[data-pos-filter]");
+    const tables = Array.from(panel.querySelectorAll("table[data-results-table]"));
+    if (!tables.length) return;
+
+    const updateBars = (table) => {
+      const cells = Array.from(table.querySelectorAll("[data-bar-value]"));
+      const visibleValues = cells
+        .filter((cell) => {
+          const row = cell.closest("tr");
+          return row && row.style.display !== "none";
+        })
+        .map((cell) => Number(cell.dataset.barValue || 0))
+        .filter((value) => Number.isFinite(value));
+
+      const maxValue = visibleValues.length ? Math.max(...visibleValues) : 0;
+
+      cells.forEach((cell) => {
+        const value = Number(cell.dataset.barValue || 0);
+        const pct = maxValue > 0 ? Math.max(0, (value / maxValue) * 100) : 0;
+        cell.style.setProperty("--metric-bar-width", `${pct}%`);
+      });
+    };
+
+    const tableStates = new WeakMap();
+
+    const getInitialTableState = () => ({
+      posSet: new Set(["ALL"]),
+      columnFilters: {
+        name: "",
+        position: "",
+        team: ""
+      },
+      sort: {
+        key: "",
+        direction: ""
+      }
+    });
+
+    tables.forEach((table) => {
+      tableStates.set(table, getInitialTableState());
+    });
+
+    const getTableShell = (table) => table.closest(".results-table-shell") || table.parentElement;
+    const getTableWrap = (table) => table.closest(".results-table-wrap") || table.parentElement;
+    const getTablePopover = (table) => getTableWrap(table)?.querySelector("[data-header-filter-popover]");
+    const getTableHeaderButtons = (table) => getTableShell(table)?.querySelectorAll(".results-header-filter-btn") || [];
+
+    panel.querySelectorAll(".results-table-shell").forEach((shell) => {
+      const headWrap = shell.querySelector(".results-table-head-wrap");
+      const bodyWrap = shell.querySelector(".results-table-wrap");
+      if (!headWrap || !bodyWrap) return;
+      bodyWrap.addEventListener("scroll", () => {
+        headWrap.scrollLeft = bodyWrap.scrollLeft;
+      });
+    });
+
+    const rowMatchesColumnFilters = (row, filters) => {
+      const name = (row.dataset.name || "").toLowerCase();
+      const position = (row.dataset.position || "").toUpperCase();
+      const team = (row.dataset.team || "").toLowerCase();
+
+      if (filters.name && !name.includes(filters.name.toLowerCase())) return false;
+      if (filters.position && position !== filters.position.toUpperCase()) return false;
+      if (filters.team && !team.includes(filters.team.toLowerCase())) return false;
+
+      return true;
+    };
+
+    const sortRows = (table, state) => {
+      const { key, direction } = state.sort;
+      if (!key || !direction) return;
+      const tbody = table.querySelector("tbody");
+      if (!tbody) return;
+      const rows = Array.from(tbody.querySelectorAll("tr[data-pos]"));
+      const visibleRows = rows.filter((row) => row.style.display !== "none");
+      const hiddenRows = rows.filter((row) => row.style.display === "none");
+      const getDatasetValue = (row, sortKey) => {
+        if (sortKey === "plusEv") return row.dataset.plusev;
+        if (sortKey === "retainedExp") return row.dataset.retainedexp;
+        return row.dataset[sortKey];
+      };
+      const compare = (a, b) => {
+        if (key === "name" || key === "position" || key === "team") {
+          const aVal = (getDatasetValue(a, key) || "").toLowerCase();
+          const bVal = (getDatasetValue(b, key) || "").toLowerCase();
+          return direction === "asc"
+            ? aVal.localeCompare(bVal)
+            : bVal.localeCompare(aVal);
+        }
+        const aNum = Number(getDatasetValue(a, key) || 0);
+        const bNum = Number(getDatasetValue(b, key) || 0);
+        return direction === "asc" ? aNum - bNum : bNum - aNum;
+      };
+      visibleRows.sort(compare);
+      visibleRows.forEach((row) => tbody.appendChild(row));
+      hiddenRows.forEach((row) => tbody.appendChild(row));
+    };
+
+    const applyFilterToTable = (table) => {
+      const state = tableStates.get(table) || getInitialTableState();
+      const rows = Array.from(table.querySelectorAll("tbody tr[data-pos]"));
+      let visibleCount = 0;
+
+      rows.forEach((row) => {
+        const rowPos = (row.dataset.pos || "ALL").toUpperCase();
+        const matchesPills =
+          state.posSet.has("ALL") || state.posSet.has(rowPos);
+        const matchesColumns = rowMatchesColumnFilters(row, state.columnFilters);
+        const show = matchesPills && matchesColumns;
+        row.style.display = show ? "" : "none";
+        if (show) visibleCount += 1;
+      });
+
+      sortRows(table, state);
+
+      const emptyRow = table.querySelector("[data-empty-row='filter']");
+      if (emptyRow) {
+        emptyRow.style.display = visibleCount === 0 ? "" : "none";
+      }
+
+      updateBars(table);
+    };
+
+    const syncAllButtons = () => {
+      if (!filterRow) return;
+      const activeTable = tables[0];
+      if (!activeTable) return;
+      const state = tableStates.get(activeTable) || getInitialTableState();
+
+      filterRow.querySelectorAll("button[data-pos]").forEach((node) => {
+        const value = (node.dataset.pos || "").toUpperCase();
+        const active = state.posSet.has("ALL")
+          ? value === "ALL"
+          : state.posSet.has(value);
+        node.classList.toggle("active", active);
+        node.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+    };
+
+    const openPopover = (table, trigger, key) => {
+      const popover = getTablePopover(table);
+      if (!popover) return;
+
+      const state = tableStates.get(table) || getInitialTableState();
+      const filters = state.columnFilters;
+
+      const buildText = (label, field) => `
+        <div class="results-header-filter-stack">
+          <div class="results-header-filter-label">${label}</div>
+          <input type="text" class="results-header-filter-input" data-filter-field="${field}" value="${filters[field] || ""}" />
+          <div class="results-header-filter-actions">
+            <button type="button" class="results-header-filter-action" data-filter-clear="${field}">Clear</button>
+            <button type="button" class="results-header-filter-action" data-filter-clear-all>Clear All</button>
+            <button type="button" class="results-header-filter-action results-header-filter-action--primary" data-filter-apply>Apply</button>
+          </div>
+        </div>
+      `;
+
+      const buildSelect = (label, field) => `
+        <div class="results-header-filter-stack">
+          <div class="results-header-filter-label">${label}</div>
+          <select class="results-header-filter-select" data-filter-field="${field}">
+            <option value="">All</option>
+            <option value="QB" ${filters[field] === "QB" ? "selected" : ""}>QB</option>
+            <option value="RB" ${filters[field] === "RB" ? "selected" : ""}>RB</option>
+            <option value="WR" ${filters[field] === "WR" ? "selected" : ""}>WR</option>
+            <option value="TE" ${filters[field] === "TE" ? "selected" : ""}>TE</option>
+            <option value="DST" ${filters[field] === "DST" ? "selected" : ""}>DST</option>
+          </select>
+          <div class="results-header-filter-actions">
+            <button type="button" class="results-header-filter-action" data-filter-clear="${field}">Clear</button>
+            <button type="button" class="results-header-filter-action" data-filter-clear-all>Clear All</button>
+            <button type="button" class="results-header-filter-action results-header-filter-action--primary" data-filter-apply>Apply</button>
+          </div>
+        </div>
+      `;
+
+      const buildSort = (label, sortKey) => `
+        <div class="results-header-filter-stack">
+          <div class="results-header-filter-label">${label}</div>
+          <div class="results-header-filter-actions">
+            <button type="button" class="results-header-filter-action ${state.sort.key === sortKey && state.sort.direction === "asc" ? "is-active-sort" : ""}" data-sort-key="${sortKey}" data-sort-direction="asc">Low \u2192 High</button>
+            <button type="button" class="results-header-filter-action ${state.sort.key === sortKey && state.sort.direction === "desc" ? "is-active-sort" : ""}" data-sort-key="${sortKey}" data-sort-direction="desc">High \u2192 Low</button>
+            <button type="button" class="results-header-filter-action" data-sort-clear>Clear sort</button>
+          </div>
+        </div>
+      `;
+
+      let html = "";
+      if (key === "name") html = buildText("Player", "name");
+      if (key === "position") html = buildSelect("Position", "position");
+      if (key === "team") html = buildText("Team", "team");
+      if (key === "salary") html = buildSort("Salary", "salary");
+      if (key === "own") html = buildSort("Ownership %", "own");
+      if (key === "optimal") html = buildSort("Optimal Rate %", "optimal");
+      if (key === "lev") html = buildSort("Opt Lev %", "lev");
+      if (key === "plusEv") html = buildSort("Plus EV", "plusEv");
+      if (key === "retainedExp") html = buildSort("Retained Exp", "retainedExp");
+
+      popover.innerHTML = html;
+      popover.hidden = false;
+      popover.dataset.filterKey = key;
+      popover.dataset.tableMetric = table.dataset.barMetric || "";
+
+      const wrapRect = getTableWrap(table).getBoundingClientRect();
+      const triggerRect = trigger.getBoundingClientRect();
+      popover.style.left = `${Math.max(0, triggerRect.left - wrapRect.left - 6)}px`;
+      popover.style.top = `${triggerRect.bottom - wrapRect.top + 4}px`;
+
+      getTableHeaderButtons(table).forEach((btn) => {
+        btn.classList.toggle("is-active", btn === trigger);
+      });
+
+      const applyFromPopover = () => {
+        const nextState = tableStates.get(table) || getInitialTableState();
+        popover.querySelectorAll("[data-filter-field]").forEach((input) => {
+          const field = input.getAttribute("data-filter-field");
+          if (!field) return;
+          nextState.columnFilters[field] = input.value.trim();
+        });
+        tableStates.set(table, nextState);
+        applyFilterToTable(table);
+      };
+
+      popover.oninput = (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) return;
+        if (!target.hasAttribute("data-filter-field")) return;
+        applyFromPopover();
+      };
+
+      popover.onchange = (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) return;
+        if (!target.hasAttribute("data-filter-field")) return;
+        applyFromPopover();
+      };
+
+      popover.onclick = (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) return;
+
+        if (target.hasAttribute("data-filter-clear")) {
+          const field = target.getAttribute("data-filter-clear");
+          const nextState = tableStates.get(table) || getInitialTableState();
+          nextState.columnFilters[field] = "";
+          tableStates.set(table, nextState);
+          openPopover(table, trigger, key);
+          applyFilterToTable(table);
+          return;
+        }
+
+        if (target.hasAttribute("data-filter-clear-all")) {
+          const nextState = tableStates.get(table) || getInitialTableState();
+          Object.keys(nextState.columnFilters).forEach((field) => {
+            nextState.columnFilters[field] = "";
+          });
+          tableStates.set(table, nextState);
+          openPopover(table, trigger, key);
+          applyFilterToTable(table);
+          return;
+        }
+
+        if (target.hasAttribute("data-sort-key")) {
+          const sortKey = target.getAttribute("data-sort-key") || "";
+          const sortDirection = target.getAttribute("data-sort-direction") || "";
+          const nextState = tableStates.get(table) || getInitialTableState();
+          nextState.sort.key = sortKey;
+          nextState.sort.direction = sortDirection;
+          tableStates.set(table, nextState);
+          popover.hidden = true;
+          getTableHeaderButtons(table).forEach((btn) => {
+            btn.classList.remove("is-active");
+          });
+          applyFilterToTable(table);
+          return;
+        }
+
+        if (target.hasAttribute("data-sort-clear")) {
+          const nextState = tableStates.get(table) || getInitialTableState();
+          nextState.sort.key = "";
+          nextState.sort.direction = "";
+          tableStates.set(table, nextState);
+          popover.hidden = true;
+          getTableHeaderButtons(table).forEach((btn) => {
+            btn.classList.remove("is-active");
+          });
+          applyFilterToTable(table);
+          return;
+        }
+
+        if (target.hasAttribute("data-filter-apply")) {
+          applyFromPopover();
+          popover.hidden = true;
+          getTableHeaderButtons(table).forEach((btn) => {
+            btn.classList.remove("is-active");
+          });
+        }
+      };
+    };
+
+    const closeAllPopovers = () => {
+      panel.querySelectorAll("[data-header-filter-popover]").forEach((node) => {
+        node.hidden = true;
+      });
+      panel.querySelectorAll(".results-header-filter-btn").forEach((btn) => {
+        btn.classList.remove("is-active");
+      });
+    };
+
+    if (filterRow) {
+      filterRow.addEventListener("click", (event) => {
+        const target = event.target;
+        const btn = target instanceof HTMLElement ? target.closest("button[data-pos]") : null;
+        if (!btn) return;
+
+        const value = (btn.dataset.pos || "ALL").toUpperCase();
+
+        tables.forEach((table) => {
+          const state = tableStates.get(table) || getInitialTableState();
+
+          if (value === "ALL") {
+            state.posSet = new Set(["ALL"]);
+          } else {
+            state.posSet.delete("ALL");
+            if (state.posSet.has(value)) {
+              state.posSet.delete(value);
+            } else {
+              state.posSet.add(value);
+            }
+            if (!state.posSet.size) {
+              state.posSet = new Set(["ALL"]);
+            }
+          }
+
+          tableStates.set(table, state);
+          applyFilterToTable(table);
+        });
+
+        syncAllButtons();
+      });
+
+      syncAllButtons();
+    }
+
+    tables.forEach((table) => {
+      getTableHeaderButtons(table).forEach((trigger) => {
+        trigger.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const key = trigger.getAttribute("data-filter-trigger");
+          if (!key) return;
+          const popover = getTablePopover(table);
+          const alreadyOpen = popover && !popover.hidden && trigger.classList.contains("is-active");
+          closeAllPopovers();
+          if (!alreadyOpen) {
+            openPopover(table, trigger, key);
+          }
+        });
+      });
+
+      applyFilterToTable(table);
+    });
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+      if (target.closest(".results-header-filter-popover")) return;
+      if (target.closest(".results-header-filter-btn")) return;
+      closeAllPopovers();
+    });
+  };
+
   updateInputsFromState();
   setDirty(false);
   validateSettingsInputs();
   updateSettingsSaveState();
+  initResultsTools();
   console.log("[sim] init complete");
   };
 
@@ -1825,6 +2420,19 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     --sim-header-blue-top: #1f4fcf;
     --sim-header-blue-mid: #123a99;
     --sim-header-blue-bottom: #071a4d;
+    --sim-radius-xl: 28px;
+    --sim-radius-lg: 22px;
+    --sim-radius-md: 16px;
+    --sim-radius-sm: 12px;
+    --sim-panel-bg:
+      radial-gradient(circle at top left, rgba(60, 110, 255, 0.12), transparent 38%),
+      linear-gradient(180deg, rgba(18, 24, 40, 0.96) 0%, rgba(7, 10, 18, 0.98) 100%);
+    --sim-panel-border: rgba(255, 255, 255, 0.08);
+    --sim-panel-highlight: rgba(255, 255, 255, 0.11);
+    --sim-panel-shadow:
+      0 24px 60px rgba(0, 0, 0, 0.42);
+    --sim-panel-shadow-soft:
+      0 14px 34px rgba(0, 0, 0, 0.28);
     padding: 0.7rem 0 1.75rem;
   }
 
@@ -1857,9 +2465,9 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     width: min(420px, 90vw);
     padding: 2.5rem 2.2rem;
     text-align: center;
-    background: rgba(7, 10, 20, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    background: rgba(7, 10, 20, 0.94);
+    border: 0;
+    box-shadow: 0 22px 52px rgba(0, 0, 0, 0.38);
   }
 
   .sim-run-logo {
@@ -1952,21 +2560,11 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     }
   }
 
-  .sim-page,
-  .sim-page * {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-
   .sim-page {
     width: min(100%, 1520px);
     margin: 0 auto;
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    border: 0 !important;
-    outline: 0 !important;
-    box-shadow: none !important;
+    background: transparent;
+    border-radius: 0;
   }
 
 .sim-panel {
@@ -1975,16 +2573,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   padding: 1rem 1.35rem 1.2rem;
   margin-top: 0.85rem;
   position: relative;
-  background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-    border: 0 !important;
-    outline: 0 !important;
-    box-shadow: none !important;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
   }
 
   .sim-panel::before {
-    content: none !important;
+    content: none;
   }
 
   .sim-page::before,
@@ -2112,42 +2708,33 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     justify-content: center;
     min-height: 38px;
     padding: 0 1rem;
+    border-radius: var(--sim-radius-sm);
     border: 0;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.04) 55%),
-      linear-gradient(180deg, rgba(8, 14, 28, 0.92) 0%, rgba(7, 10, 18, 0.96) 100%);
-    color: #f4f4f4;
-    font-size: 0.76rem;
+      linear-gradient(180deg, rgba(18, 25, 42, 0.96) 0%, rgba(11, 15, 25, 0.98) 100%);
+    color: #f6f7fb;
+    font-size: 0.75rem;
     font-weight: 900;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
     text-decoration: none;
-    border-radius: 12px !important;
     transition:
-      border-color 140ms ease,
       background 140ms ease,
       color 140ms ease,
       transform 140ms ease,
       box-shadow 140ms ease;
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.22),
-      inset 0 8px 18px rgba(255, 255, 255, 0.04),
-      inset 0 -10px 20px rgba(0, 0, 0, 0.45),
-      0 10px 22px rgba(0, 0, 0, 0.35);
+      0 12px 24px rgba(0, 0, 0, 0.3);
   }
 
   .tool-btn:hover,
   .tool-btn:focus-visible {
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.06) 55%),
-      linear-gradient(180deg, rgba(14, 26, 56, 0.92) 0%, rgba(8, 12, 22, 0.97) 100%);
+      linear-gradient(180deg, rgba(22, 33, 58, 0.96) 0%, rgba(13, 18, 30, 0.98) 100%);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.26),
-      inset 0 10px 18px rgba(255, 255, 255, 0.06),
-      inset 0 -12px 24px rgba(0, 0, 0, 0.5),
-      0 14px 28px rgba(0, 0, 0, 0.48);
+      0 14px 28px rgba(0, 0, 0, 0.34);
     outline: none;
     transform: translateY(-1px);
   }
@@ -2155,9 +2742,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   .tool-btn:active {
     transform: translateY(1px);
     box-shadow:
-      inset 0 2px 10px rgba(0, 0, 0, 0.55),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08),
-      0 6px 14px rgba(0, 0, 0, 0.35);
+      0 8px 18px rgba(0, 0, 0, 0.28);
   }
 
   .tool-btn-secondary {
@@ -2169,16 +2754,13 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     background:
       linear-gradient(
         180deg,
-        #3a74ff 0%,
-        #1f4fcf 46%,
-        #123a99 100%
+        rgba(42, 96, 222, 0.98) 0%,
+        rgba(31, 75, 190, 0.98) 52%,
+        rgba(20, 55, 146, 0.98) 100%
       );
     color: #f5f8ff;
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.26),
-      0 10px 22px rgba(7, 26, 77, 0.28),
-      0 0 18px rgba(18, 58, 153, 0.14);
+      0 14px 28px rgba(10, 28, 80, 0.32);
   }
 
   .tool-btn-primary:hover,
@@ -2186,15 +2768,12 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     background:
       linear-gradient(
         180deg,
-        #4a7eff 0%,
-        #2563eb 42%,
-        #1848bf 100%
+        rgba(48, 105, 232, 0.98) 0%,
+        rgba(35, 86, 207, 0.98) 48%,
+        rgba(24, 68, 172, 0.98) 100%
       );
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.22),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.22),
-      0 14px 28px rgba(7, 26, 77, 0.32),
-      0 0 22px rgba(28, 86, 232, 0.18);
+      0 16px 30px rgba(7, 26, 77, 0.3);
   }
 
   .tool-btn-primary:active {
@@ -2202,13 +2781,12 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     background:
       linear-gradient(
         180deg,
-        #2563eb 0%,
-        #1f4fcf 44%,
-        #10348a 100%
+        rgba(35, 82, 198, 0.98) 0%,
+        rgba(29, 68, 172, 0.98) 48%,
+        rgba(18, 48, 128, 0.98) 100%
       );
     box-shadow:
-      inset 0 2px 5px rgba(0, 0, 0, 0.2),
-      0 6px 12px rgba(7, 26, 77, 0.22);
+      0 8px 18px rgba(7, 26, 77, 0.24);
   }
 
   .tabs {
@@ -2217,7 +2795,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     gap: 1rem;
     flex-wrap: wrap;
     padding-bottom: 0.42rem;
-    border-bottom: 1px solid var(--sim-line);
     margin-bottom: 0.45rem;
   }
 
@@ -2239,16 +2816,11 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
 
   .tab-btn.active {
     color: #ffffff;
+    font-weight: 900;
   }
 
   .tab-btn.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -0.44rem;
-    width: 100%;
-    height: 1px;
-    background: var(--sim-blue);
+    content: none;
   }
 
   .section-head {
@@ -2272,33 +2844,21 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     gap: 0.45rem 1rem;
     flex-wrap: wrap;
     margin-bottom: 0.45rem;
-    padding: 0.42rem 0.55rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: var(--sim-radius-lg);
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.015) 100%),
-      linear-gradient(90deg, rgba(17, 52, 138, 0.10) 0%, rgba(17, 52, 138, 0.04) 22%, rgba(255, 255, 255, 0.01) 50%, rgba(17, 52, 138, 0.04) 78%, rgba(17, 52, 138, 0.08) 100%),
-      #141414;
+      linear-gradient(
+        180deg,
+        #2b63eb 0%,
+        #1848bf 34%,
+        #0f3288 68%,
+        #071a4d 100%
+      );
     border: 0;
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.08),
-      inset 0 12px 24px rgba(255, 255, 255, 0.02),
-      inset 0 -14px 28px rgba(0, 0, 0, 0.4);
-  }
-
-  .filters::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 45%),
-      repeating-linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.008) 0,
-        rgba(255, 255, 255, 0.008) 1px,
-        transparent 1px,
-        transparent 12px
-      );
-    opacity: 0.6;
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -10px 18px rgba(0, 0, 0, 0.16),
+      0 0 18px rgba(18, 58, 153, 0.1);
   }
 
   .filters > * {
@@ -2317,109 +2877,354 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   .filter-label {
     font-size: 0.74rem;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.86);
+    color: rgba(255, 255, 255, 0.94);
     letter-spacing: 0.01em;
   }
 
   .filter-btn {
-    min-height: 28px;
-    padding: 0 0.72rem;
+    min-height: 30px;
+    padding: 0 0.85rem;
+    border-radius: var(--sim-radius-sm) !important;
     border: 0;
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 55%),
-      linear-gradient(180deg, rgba(8, 14, 28, 0.9) 0%, rgba(8, 10, 18, 0.96) 100%);
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.72rem;
+      linear-gradient(180deg, rgba(16, 23, 42, 0.96) 0%, rgba(9, 13, 22, 0.98) 100%);
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.7rem;
     font-weight: 800;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
     text-decoration: none;
-    border-radius: 10px !important;
     transition:
-      border-color 140ms ease,
       background 140ms ease,
       color 140ms ease,
       transform 140ms ease,
       box-shadow 140ms ease;
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 8px 18px rgba(255, 255, 255, 0.05),
-      inset 0 -10px 20px rgba(0, 0, 0, 0.45),
-      0 8px 18px rgba(0, 0, 0, 0.36);
+      0 8px 16px rgba(0, 0, 0, 0.24);
   }
 
   .filter-btn:hover,
   .filter-btn:focus-visible {
     background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.06) 55%),
-      linear-gradient(180deg, rgba(14, 26, 56, 0.9) 0%, rgba(8, 12, 22, 0.97) 100%);
+      linear-gradient(180deg, rgba(19, 30, 56, 0.96) 0%, rgba(10, 16, 28, 0.98) 100%);
     color: #ffffff;
     outline: none;
     transform: translateY(-1px);
     text-decoration: none;
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.26),
-      inset 0 10px 18px rgba(255, 255, 255, 0.06),
-      inset 0 -12px 24px rgba(0, 0, 0, 0.5),
-      0 12px 24px rgba(0, 0, 0, 0.48);
+      0 10px 20px rgba(0, 0, 0, 0.28);
   }
 
   .filter-btn:active {
     transform: translateY(1px);
     box-shadow:
-      inset 0 2px 10px rgba(0, 0, 0, 0.55),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08),
-      0 5px 12px rgba(0, 0, 0, 0.35);
+      0 6px 14px rgba(0, 0, 0, 0.24);
   }
 
   .filter-btn.active {
-    border: 0;
     background:
-      linear-gradient(
-        180deg,
-        rgba(58, 116, 255, 0.26) 0%,
-        rgba(31, 79, 207, 0.2) 52%,
-        rgba(18, 58, 153, 0.18) 100%
-      );
+      linear-gradient(180deg, rgba(46, 91, 205, 0.5) 0%, rgba(22, 49, 122, 0.42) 100%);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.14),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.32),
-      0 0 0 1px rgba(37, 99, 235, 0.08),
-      0 8px 18px rgba(7, 26, 77, 0.14);
+      0 9px 18px rgba(10, 26, 70, 0.28);
     color: #ffffff;
   }
 
   .settings-panel {
-    border: 1px solid var(--sim-line);
-    padding: 12px;
+    border: 0;
+    padding: 0;
+    background: transparent !important;
+    box-shadow: none !important;
   }
 
-  .settings-actions {
-    margin-top: 12px;
+  .sim-settings-shell {
+    margin-top: 16px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .sim-settings-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.9fr);
+    gap: 14px;
+    align-items: start;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .sim-settings-panel {
+    position: relative;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .sim-settings-panel--controls,
+  .sim-settings-panel--payout {
+    padding: 0;
+    border-radius: 0;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .settings-panel .sim-settings-shell,
+  .settings-panel .sim-settings-grid,
+  .settings-panel .sim-settings-panel,
+  .settings-panel .sim-settings-panel--controls,
+  .settings-panel .sim-settings-panel--payout {
+    background-image: none;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .sim-settings-eyebrow {
+    margin: 0 0 10px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(180, 199, 255, 0.88);
+  }
+
+  .sim-slider-stack,
+  .sim-payout-group {
+    display: grid;
+    gap: 10px;
+  }
+
+  .sim-slider-row {
+    display: grid;
+    gap: 10px;
+    padding: 14px 18px 12px 14px;
+    position: relative;
+    overflow: visible;
+    border-radius: var(--sim-radius-lg);
+    border: 0;
+    background: linear-gradient(180deg, rgba(12, 18, 32, 0.98) 0%, rgba(8, 12, 21, 0.98) 100%);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.23);
+  }
+
+  .sim-slider-row::before {
+    content: none;
+  }
+
+  .sim-slider-row__top {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
   }
 
-  .settings-panel input[type="number"] {
-    width: 100%;
-    background: transparent;
-    border: 1px solid var(--sim-line);
-    color: inherit;
-    padding: 4px 6px;
-    font-size: 0.85rem;
+  .sim-slider-label {
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: rgba(238, 244, 255, 0.94);
   }
 
-  .settings-panel select {
-    width: 100%;
-    background: transparent;
-    border: 1px solid var(--sim-line);
-    color: inherit;
-    padding: 4px 6px;
-    font-size: 0.85rem;
+  .sim-slider-value {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.02em;
   }
+
+  .sim-slider-input {
+    width: 100%;
+    height: 18px;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .sim-slider-row .sim-slider-input {
+    width: calc(100% - 4px);
+    margin-right: 4px;
+  }
+
+  .sim-slider-input::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 0;
+    background: linear-gradient(90deg, rgba(86, 128, 255, 0.95), rgba(86, 128, 255, 0.42));
+  }
+
+  .sim-slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: #f7f9ff;
+    border: 2px solid rgba(86, 128, 255, 0.98);
+    margin-top: -6px;
+    box-shadow:
+      0 0 0 3px rgba(86, 128, 255, 0.18),
+      0 0 14px rgba(58, 116, 255, 0.22);
+  }
+
+  .sim-slider-input::-moz-range-track {
+    height: 4px;
+    border-radius: 0;
+    background: linear-gradient(90deg, rgba(86, 128, 255, 0.95), rgba(86, 128, 255, 0.42));
+  }
+
+  .sim-slider-input::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: #f7f9ff;
+    border: 2px solid rgba(86, 128, 255, 0.98);
+    box-shadow:
+      0 0 0 3px rgba(86, 128, 255, 0.18),
+      0 0 14px rgba(58, 116, 255, 0.22);
+  }
+
+  .sim-slider-input:focus-visible::-webkit-slider-thumb {
+    box-shadow:
+      0 0 0 5px rgba(86, 128, 255, 0.2);
+  }
+
+  .sim-slider-input:focus-visible::-moz-range-thumb {
+    box-shadow:
+      0 0 0 5px rgba(86, 128, 255, 0.2);
+  }
+
+  .sim-payout-option {
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+
+  .sim-payout-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .sim-payout-card {
+    display: grid;
+    gap: 4px;
+    position: relative;
+    padding: 16px 16px;
+    border-radius: var(--sim-radius-lg);
+    border: 0;
+    background: linear-gradient(180deg, rgba(12, 18, 32, 0.98) 0%, rgba(8, 12, 21, 0.98) 100%);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.23);
+    transition:
+      box-shadow 140ms ease,
+      background 140ms ease;
+  }
+
+  .sim-payout-option:hover .sim-payout-card {
+    background: linear-gradient(180deg, rgba(14, 22, 40, 0.98) 0%, rgba(9, 14, 24, 0.98) 100%);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.27);
+  }
+
+  .sim-payout-option.is-selected .sim-payout-card {
+    background:
+      radial-gradient(circle at 82% 38%, rgba(88, 138, 255, 0.34), transparent 52%),
+      linear-gradient(180deg, rgba(22, 42, 88, 0.98) 0%, rgba(12, 20, 38, 0.99) 100%);
+    box-shadow:
+      0 20px 40px rgba(8, 22, 62, 0.38),
+      0 0 30px rgba(58, 116, 255, 0.14);
+  }
+
+  .sim-payout-option.is-selected .sim-payout-title {
+    color: #ffffff;
+    text-shadow: 0 0 16px rgba(88, 138, 255, 0.12);
+  }
+
+  .sim-payout-option.is-selected .sim-payout-copy {
+    color: rgba(236, 243, 255, 0.92);
+  }
+
+  .sim-payout-card::before {
+    content: none;
+  }
+
+  .sim-payout-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 900;
+    color: #ffffff;
+  }
+
+  .sim-payout-copy {
+    margin: 0;
+    font-size: 0.84rem;
+    color: rgba(228, 236, 255, 0.82);
+  }
+
+  .sim-settings-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .sim-settings-action-secondary,
+  .sim-settings-action-primary {
+    min-width: 180px;
+    min-height: 44px;
+    border-radius: var(--sim-radius-md);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition:
+      transform 140ms ease,
+      box-shadow 140ms ease,
+      background 140ms ease;
+  }
+
+  .sim-settings-action-secondary {
+    border: 0;
+    background:
+      linear-gradient(180deg, rgba(20, 26, 38, 0.96) 0%, rgba(12, 16, 25, 0.96) 100%);
+    color: #edf2ff;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
+  }
+
+  .sim-settings-action-primary {
+    border: 0;
+    background:
+      linear-gradient(180deg, rgba(45, 94, 214, 0.98) 0%, rgba(32, 72, 184, 0.98) 100%);
+    color: #ffffff;
+    box-shadow: 0 12px 26px rgba(9, 28, 82, 0.28);
+  }
+
+  .sim-settings-action-secondary:hover,
+  .sim-settings-action-primary:hover {
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 980px) {
+    .sim-settings-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .sim-settings-actions {
+      flex-direction: column;
+    }
+
+    .sim-settings-action-secondary,
+    .sim-settings-action-primary {
+      width: 100%;
+    }
+  }
+
 
   .results-summary {
     display: flex;
@@ -2446,12 +3251,17 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     white-space: normal;
   }
 
-  .team-validation {
-    border: 1px solid var(--sim-line);
-    background: rgba(7, 26, 77, 0.08);
-    padding: 6px 8px;
-    margin-bottom: 2px;
-  }
+.team-validation {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: var(--sim-radius-md);
+  border: 0;
+  background:
+    linear-gradient(180deg, rgba(12, 19, 37, 0.96) 0%, rgba(7, 10, 18, 0.98) 100%);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
+  margin-bottom: 2px;
+}
 
   .team-validation-title {
     font-size: 0.64rem;
@@ -2568,21 +3378,33 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     padding: 8px 10px;
     text-decoration: none;
     color: inherit;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(8, 12, 22, 0.46);
+    border-radius: var(--sim-radius-md);
+    border: 0;
+    background:
+      radial-gradient(circle at 78% 42%, rgba(58, 116, 255, 0.1), transparent 58%),
+      linear-gradient(180deg, rgba(13, 20, 38, 0.96) 0%, rgba(7, 10, 18, 0.98) 100%);
     box-sizing: border-box;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
+    transition:
+      transform 140ms ease,
+      background 140ms ease,
+      box-shadow 140ms ease;
   }
 
   .inputs-slate-card:hover,
   .inputs-slate-card:focus-visible {
-    border-color: rgba(37, 99, 235, 0.42);
     outline: none;
+    transform: translateY(-1px);
+    background:
+      radial-gradient(circle at 78% 42%, rgba(58, 116, 255, 0.12), transparent 58%),
+      linear-gradient(180deg, rgba(15, 24, 45, 0.96) 0%, rgba(8, 12, 20, 0.98) 100%);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
   }
 
   .inputs-slate-card.active {
-    border-color: rgba(37, 99, 235, 0.64);
     background:
-      linear-gradient(180deg, rgba(18, 58, 153, 0.12) 0%, rgba(8, 12, 22, 0.62) 100%);
+      radial-gradient(circle at 78% 42%, rgba(58, 116, 255, 0.16), transparent 58%),
+      linear-gradient(180deg, rgba(18, 34, 74, 0.96) 0%, rgba(9, 14, 26, 0.98) 100%);
   }
 
   .inputs-slate-card-rows {
@@ -2605,14 +3427,12 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     justify-content: center;
     width: 20px;
     height: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid transparent;
     background: rgba(255, 255, 255, 0.02);
     overflow: hidden;
   }
 
   .inputs-slate-logo img {
-    position: absolute;
-    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -2655,7 +3475,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     justify-content: space-between;
     gap: 7px;
     padding-top: 7px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 0.69rem;
     font-weight: 900;
     letter-spacing: 0.04em;
@@ -2671,7 +3490,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     justify-content: center;
     width: 28px;
     height: 28px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid transparent;
     background: rgba(255, 255, 255, 0.02);
     overflow: hidden;
     flex: 0 0 auto;
@@ -2769,13 +3588,16 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     align-items: stretch;
   }
 
-  .readonly-stat {
-    display: grid;
-    gap: 3px;
-    padding: 6px 8px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.02);
-  }
+.readonly-stat {
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: var(--sim-radius-sm);
+  border: 0;
+  background:
+    linear-gradient(180deg, rgba(13, 20, 37, 0.96) 0%, rgba(8, 12, 20, 0.98) 100%);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.23);
+}
 
   .readonly-stat-label {
     font-size: 0.58rem;
@@ -2792,14 +3614,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   }
 
   .readonly-table-wrap {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
     background: transparent;
   }
 
   .readonly-table {
     width: 100%;
     min-width: 1420px;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     table-layout: fixed;
   }
 
@@ -2826,8 +3648,19 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     letter-spacing: 0.05em;
     color: #ffffff;
     background: transparent;
+    background-clip: padding-box;
     text-transform: uppercase;
     border-bottom: 0;
+  }
+
+  .readonly-table thead tr:first-child th:first-child,
+  .readonly-table thead tr:last-child th:first-child {
+    border-top-left-radius: var(--sim-radius-sm);
+  }
+
+  .readonly-table thead tr:first-child th:last-child,
+  .readonly-table thead tr:last-child th:last-child {
+    border-top-right-radius: var(--sim-radius-sm);
   }
 
   .readonly-table td {
@@ -2835,7 +3668,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     font-size: 0.69rem;
     font-weight: 800;
     color: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     vertical-align: middle;
   }
 
@@ -2847,6 +3679,10 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     letter-spacing: 0.16em;
     color: rgba(255, 255, 255, 0.46);
     text-align: center;
+  }
+
+  .readonly-table thead .metric-group-row th {
+    background-clip: padding-box;
   }
 
   .metric-group-row th:first-child {
@@ -2887,110 +3723,599 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     color: rgba(255, 255, 255, 0.82);
   }
 
-  .settings-list {
-    margin: 0;
-    display: grid;
-    gap: 8px;
-  }
 
-  .settings-list div {
-    display: flex;
-    gap: 12px;
-  }
 
-  .settings-list dt {
-    min-width: 140px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.9);
-  }
+.results-panel {
+  display: grid;
+  gap: 9px;
+  background: transparent;
+  isolation: isolate;
+}
 
-  .settings-list dd {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.8);
-  }
+.results-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: transparent;
+}
 
-  .results-panel {
-    display: grid;
-    gap: 10px;
-  }
+.results-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
 
-  .subtabs {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    font-size: 0.82rem;
-    font-weight: 700;
-  }
+.results-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 0 16px;
+  border-radius: var(--sim-radius-sm);
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.56);
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+}
 
-  .subtab {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
-  }
+.results-tab.active {
+  color: #ffffff;
+  background: linear-gradient(180deg, #3a74ff 0%, #1a4cc7 100%);
+}
 
-  .subtab.active {
-    color: #ffffff;
-    border-color: var(--sim-blue);
-  }
+.results-summary-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  padding: 0;
+  margin-bottom: 4px;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  position: static;
+  top: auto;
+  z-index: auto;
+}
 
-  .empty-state {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.72);
-  }
+.summary-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
+}
 
-  .table-area {
-    overflow-x: auto;
-    overflow-y: hidden;
-    border: 0 !important;
-    outline: 0 !important;
-    box-shadow: none !important;
-  }
+.summary-item + .summary-item::before {
+  content: none;
+}
 
-  .slates-table {
-    width: 100%;
-    min-width: 930px;
-    border-collapse: collapse;
-    table-layout: auto;
-  }
+.summary-label {
+  font-size: 0.54rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.46);
+}
 
-  .slates-table thead tr {
-    background:
-      linear-gradient(
-        180deg,
-        #2b63eb 0%,
-        #1848bf 34%,
-        #0f3288 68%,
-        #071a4d 100%
-      );
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 -10px 18px rgba(0, 0, 0, 0.16),
-      0 0 18px rgba(18, 58, 153, 0.1);
-  }
+.summary-value {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.94);
+}
 
-  .slates-table thead th {
-    padding: 0.56rem 0.85rem;
-    text-align: left;
-    font-size: 0.68rem;
-    font-weight: 800;
-    color: #ffffff;
-    background: transparent;
-    white-space: nowrap;
-    border: 0;
-    box-shadow: none;
-    outline: none;
-  }
+.results-filter-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 1px 0 0;
+  width: fit-content;
+  position: relative;
+  z-index: 18;
+  background: transparent;
+  margin-bottom: 6px;
+}
 
-  .slates-table tbody td {
-    padding: 0.62rem 0.85rem;
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.025);
-    background: transparent;
-    vertical-align: middle;
-  }
+.results-filter-label {
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.results-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.results-filter-btn {
+  min-height: 24px;
+  padding: 0 10px;
+  border-radius: var(--sim-radius-sm);
+  border: 0;
+  background:
+    linear-gradient(180deg, rgba(16, 22, 37, 0.96) 0%, rgba(9, 12, 20, 0.98) 100%);
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+  box-shadow: 0 9px 18px rgba(0, 0, 0, 0.22);
+}
+
+.results-filter-btn.active {
+  background: linear-gradient(180deg, rgba(48, 98, 220, 0.98) 0%, rgba(27, 72, 184, 0.98) 100%);
+  color: #ffffff;
+}
+
+.results-table-shell {
+  display: grid;
+  gap: 0;
+}
+
+.results-table-head-wrap {
+  position: relative;
+  z-index: 22;
+  overflow: hidden;
+  background: transparent;
+}
+
+.results-table-wrap {
+  position: relative;
+  z-index: 1;
+  max-height: 560px;
+  overflow-x: auto;
+  overflow-y: auto;
+  margin-top: 0;
+  padding-top: 0;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  overscroll-behavior: contain;
+}
+
+.results-panel .results-table-wrap,
+.results-panel .results-table-wrap.table-area,
+.results-panel .results-table-wrap::after {
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.results-table {
+  --player-pad-left: 12px;
+  --cell-pad-x: 0.58rem;
+  --num-pad-right: 0.24rem;
+  --bar-lane-inset: 0.12rem;
+  width: 100%;
+  min-width: 1136px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: transparent !important;
+}
+
+.results-table-optimal {
+  min-width: 1136px;
+}
+
+.results-table col.col-player { width: 230px; }
+.results-table col.col-pos { width: 52px; }
+.results-table col.col-team { width: 68px; }
+.results-table col.col-salary { width: 84px; }
+.results-table col.col-own { width: 76px; }
+.results-table col.col-optimal-rate-value { width: 108px; }
+.results-table col.col-opt-lev { width: 78px; }
+.results-table col.col-plus-ev { width: 74px; }
+.results-table col.col-retained-exp { width: 92px; }
+.results-table col.col-bar-lane { width: 290px; }
+
+.results-table thead tr,
+.results-table thead th {
+  box-shadow: none;
+}
+
+.results-table thead,
+.results-table thead tr {
+  background: #0b2b78;
+}
+
+.results-table thead {
+  position: static;
+  z-index: auto;
+}
+
+.results-table thead th {
+  position: static;
+  top: auto;
+  z-index: auto;
+  padding-top: 0.64rem;
+  padding-bottom: 0.64rem;
+  padding-left: var(--cell-pad-x);
+  padding-right: var(--cell-pad-x);
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(180deg, #2f67ff 0%, #1847bc 44%, #0b2b78 100%);
+  white-space: nowrap;
+  background-clip: padding-box;
+  box-shadow: none;
+}
+
+.results-table thead th:first-child {
+  border-top-left-radius: var(--sim-radius-sm);
+}
+
+.results-table thead th + th {
+  box-shadow: inset 1px 0 0 rgba(214, 226, 255, 0.08);
+}
+
+.results-table thead th:last-child {
+  border-top-right-radius: var(--sim-radius-sm);
+  background-clip: padding-box;
+}
+
+.th-player {
+  padding-left: var(--player-pad-left) !important;
+  text-align: left;
+}
+
+.th-pos,
+.th-team {
+  text-align: left;
+}
+
+.th-num,
+.num-cell {
+  text-align: right;
+}
+
+.results-table thead th.th-num,
+.results-table thead th.th-optimal-value,
+.results-table thead th.th-opt-lev,
+.results-table thead th:nth-child(8) {
+  padding-right: var(--num-pad-right) !important;
+}
+
+.th-opt-lev {
+  font-size: 0.56rem;
+}
+
+.th-bar-lane {
+  padding-left: var(--bar-lane-inset) !important;
+  padding-right: 0 !important;
+  background:
+    linear-gradient(180deg, #2a61f2 0%, #1643b0 44%, #092970 100%) !important;
+  box-shadow:
+    inset 1px 0 0 rgba(226, 236, 255, 0.16),
+    inset 8px 0 14px rgba(3, 12, 38, 0.1) !important;
+}
+
+.results-table tbody {
+  position: relative;
+  z-index: 1;
+}
+
+.results-table tbody tr {
+  height: 34px;
+}
+
+.results-table-body tbody tr:first-child td {
+  padding-top: 0.72rem;
+}
+
+.results-table tbody td {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: var(--cell-pad-x);
+  padding-right: var(--cell-pad-x);
+  font-size: 0.71rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+}
+
+.results-table tbody tr:hover {
+  background: #071632;
+}
+
+.player-name-cell {
+  text-align: left;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.results-table tbody td.player-name-cell {
+  padding-left: var(--player-pad-left);
+  padding-right: 0.34rem;
+}
+
+.results-table tbody td.pos-cell,
+.results-table tbody td.team-cell {
+  text-align: left;
+}
+
+.results-table tbody td.pos-cell {
+  padding-left: 0.3rem;
+  padding-right: 0.24rem;
+}
+
+.results-table tbody td.team-cell {
+  padding-left: 0.2rem;
+  padding-right: 0.12rem;
+}
+
+.results-table tbody td.salary-cell,
+.results-table tbody td.own-cell,
+.results-table tbody td.optimal-rate-value-cell,
+.results-table tbody td.retained-exp-value-cell,
+.results-table tbody td.opt-lev-cell,
+.results-table tbody td.plus-ev-cell {
+  text-align: right;
+  padding-right: var(--num-pad-right);
+}
+
+.results-table tbody td.salary-cell {
+  padding-left: 0.04rem;
+}
+
+.results-table tbody td.own-cell {
+  padding-left: 0.08rem;
+}
+
+.results-table tbody td.optimal-rate-value-cell,
+.results-table tbody td.retained-exp-value-cell {
+  padding-left: 0.12rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.pos-cell {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.team-cell-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.results-team-logo {
+  width: 15px;
+  height: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.results-team-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.team-code {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.salary-cell,
+.own-cell,
+.plus-ev-cell {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.opt-lev-cell {
+  font-size: 0.63rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.66);
+  letter-spacing: 0.01em;
+}
+
+.bar-lane-cell {
+  padding-top: 0.12rem !important;
+  padding-bottom: 0.12rem !important;
+  padding-left: 0.12rem !important;
+  padding-right: 0.08rem !important;
+  vertical-align: middle;
+}
+
+.bar-lane-shell {
+  display: block;
+  width: 100%;
+}
+
+.bar-lane-track {
+  display: block;
+  width: 100%;
+  height: 10px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.bar-lane-fill {
+  display: block;
+  width: var(--metric-bar-width, 0%);
+  height: 100%;
+  min-width: 0;
+  background: linear-gradient(90deg, rgba(47, 103, 255, 1) 0%, rgba(88, 150, 255, 0.94) 58%, rgba(150, 205, 255, 0.36) 100%);
+}
+
+.results-header-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.28rem;
+  width: 100%;
+  min-height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.results-header-filter-btn--num {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.results-header-filter-btn::after {
+  content: "▾";
+  display: inline-block;
+  font-size: 0.46rem;
+  color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  transition: color 140ms ease, transform 140ms ease;
+}
+
+.results-header-filter-btn:hover::after {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.results-header-filter-btn.is-active::after {
+  color: #ffffff;
+  transform: translateY(-1px) rotate(180deg);
+}
+
+.results-header-filter-popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 156px;
+  max-width: 196px;
+  padding: 8px;
+  border-radius: var(--sim-radius-md);
+  background: linear-gradient(180deg, rgba(10, 15, 27, 0.98) 0%, rgba(7, 10, 18, 0.98) 100%);
+  border: 0;
+  z-index: 30;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(6px);
+}
+
+.results-header-filter-popover[hidden] {
+  display: none;
+}
+
+.results-header-filter-stack {
+  display: grid;
+  gap: 7px;
+}
+
+.results-header-filter-label {
+  font-size: 0.52rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.46);
+  line-height: 1;
+}
+
+.results-header-filter-input,
+.results-header-filter-select {
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.025);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.results-header-filter-input:focus,
+.results-header-filter-select:focus {
+  outline: none;
+  border-color: rgba(58, 116, 255, 0.42);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.results-header-filter-actions {
+  display: grid;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.results-header-filter-action {
+  min-height: 28px;
+  padding: 0 10px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: left;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.results-header-filter-action:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.results-header-filter-action--primary {
+  background: linear-gradient(180deg, #3a74ff 0%, #1a4cc7 100%);
+  color: #ffffff;
+}
+
+.results-header-filter-action--primary:hover {
+  background: linear-gradient(180deg, #4b82ff 0%, #2458d8 100%);
+}
+
+.results-header-filter-action.is-active-sort {
+  background: rgba(58, 116, 255, 0.16);
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(10, 26, 70, 0.35);
+}
+
+.results-empty-row td {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.68rem;
+  padding: 0.8rem;
+}
+
+
+
+
+
+
+
+
 
   .operator-cell {
     display: inline-flex;
@@ -3117,5 +4442,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     .readonly-stat-row {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
   }
 </style>

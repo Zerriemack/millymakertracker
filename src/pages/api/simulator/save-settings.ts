@@ -16,13 +16,6 @@ function isNumber(value: unknown): value is number {
   return typeof value === "number" && Number.isFinite(value);
 }
 
-function normalizeOptionalNumber(value: unknown) {
-  if (value === null || value === undefined) return null;
-  if (value === "") return null;
-  if (!isNumber(value)) return null;
-  return value;
-}
-
 export const POST: APIRoute = async ({ request }) => {
   let body: unknown;
   try {
@@ -71,32 +64,11 @@ export const POST: APIRoute = async ({ request }) => {
   if (!isNumber(settings.lineupCount)) errors.push("settings.lineupCount must be numeric");
   if (!isNumber(settings.fieldSize)) errors.push("settings.fieldSize must be numeric");
   if (!isNumber(settings.simulationCount)) errors.push("settings.simulationCount must be numeric");
-  if (!isNumber(settings.salaryCap)) errors.push("settings.salaryCap must be numeric");
-  if (isNumber(settings.salaryCap) && settings.salaryCap !== slateJson.salaryCap) {
-    errors.push("settings.salaryCap must match slate.salaryCap");
+  if (isNumber(settings.fieldSize) && settings.fieldSize > 500000) {
+    errors.push("settings.fieldSize must be 500000 or smaller");
   }
-  if (settings.payoutProfile && !["topHeavy", "standard", "flat"].includes(settings.payoutProfile)) {
-    errors.push("settings.payoutProfile must be topHeavy, standard, or flat");
-  }
-  if (
-    settings.gradingFieldMode &&
-    !["retainedOnly", "expandedField"].includes(settings.gradingFieldMode)
-  ) {
-    errors.push("settings.gradingFieldMode must be retainedOnly or expandedField");
-  }
-  if (
-    settings.gradingFieldSize !== undefined &&
-    settings.gradingFieldSize !== null &&
-    !isNumber(settings.gradingFieldSize)
-  ) {
-    errors.push("settings.gradingFieldSize must be numeric");
-  }
-  if (
-    settings.gradingFieldExtraLineupCount !== undefined &&
-    settings.gradingFieldExtraLineupCount !== null &&
-    !isNumber(settings.gradingFieldExtraLineupCount)
-  ) {
-    errors.push("settings.gradingFieldExtraLineupCount must be numeric");
+  if (settings.payoutProfile && !["topHeavy", "standard", "cash"].includes(settings.payoutProfile)) {
+    errors.push("settings.payoutProfile must be topHeavy, standard, or cash");
   }
 
   const normalized: SimulatorSettings = {
@@ -104,49 +76,7 @@ export const POST: APIRoute = async ({ request }) => {
     lineupCount: settings.lineupCount,
     fieldSize: settings.fieldSize,
     simulationCount: settings.simulationCount,
-    salaryCap: settings.salaryCap,
     payoutProfile: settings.payoutProfile ?? "standard",
-    gradingFieldMode: settings.gradingFieldMode ?? "expandedField",
-    gradingFieldSize: settings.gradingFieldSize ?? settings.fieldSize,
-    gradingFieldExtraLineupCount: settings.gradingFieldExtraLineupCount ?? Math.max(settings.lineupCount, 300),
-    minSalary: normalizeOptionalNumber(settings.minSalary),
-    maxSalary: normalizeOptionalNumber(settings.maxSalary),
-    minSumOwnership: normalizeOptionalNumber(settings.minSumOwnership),
-    maxSumOwnership: normalizeOptionalNumber(settings.maxSumOwnership),
-    minAvgOptimalRate: normalizeOptionalNumber(settings.minAvgOptimalRate),
-    maxAvgOptimalRate: normalizeOptionalNumber(settings.maxAvgOptimalRate),
-  };
-
-  if (
-    isNumber(normalized.minSalary) &&
-    isNumber(normalized.maxSalary) &&
-    normalized.minSalary > normalized.maxSalary
-  ) {
-    errors.push("minSalary cannot exceed maxSalary");
-  }
-  if (
-    isNumber(normalized.minSumOwnership) &&
-    isNumber(normalized.maxSumOwnership) &&
-    normalized.minSumOwnership > normalized.maxSumOwnership
-  ) {
-    errors.push("minSumOwnership cannot exceed maxSumOwnership");
-  }
-  if (
-    isNumber(normalized.minAvgOptimalRate) &&
-    isNumber(normalized.maxAvgOptimalRate) &&
-    normalized.minAvgOptimalRate > normalized.maxAvgOptimalRate
-  ) {
-    errors.push("minAvgOptimalRate cannot exceed maxAvgOptimalRate");
-  }
-  if (!isNumber(normalized.gradingFieldSize) || normalized.gradingFieldSize <= 0) {
-    errors.push("gradingFieldSize must be greater than 0");
-  }
-  if (
-    !isNumber(normalized.gradingFieldExtraLineupCount) ||
-    !Number.isInteger(normalized.gradingFieldExtraLineupCount) ||
-    normalized.gradingFieldExtraLineupCount < 0
-  ) {
-    errors.push("gradingFieldExtraLineupCount must be an integer 0 or greater");
   }
 
   if (errors.length > 0) {

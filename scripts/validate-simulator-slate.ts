@@ -285,101 +285,15 @@ async function run() {
   if (!isNumber(settings.lineupCount)) addError("settings.lineupCount must be a number");
   if (!isNumber(settings.fieldSize)) addError("settings.fieldSize must be a number");
   if (!isNumber(settings.simulationCount)) addError("settings.simulationCount must be a number");
-  if (!isNumber(settings.salaryCap)) addError("settings.salaryCap must be a number");
   if (
     settings.payoutProfile &&
-    !["topHeavy", "standard", "flat"].includes(settings.payoutProfile)
+    !["topHeavy", "standard", "cash"].includes(settings.payoutProfile)
   ) {
-    addError("settings.payoutProfile must be topHeavy, standard, or flat");
-  }
-  if (
-    settings.gradingFieldMode &&
-    !["retainedOnly", "expandedField"].includes(settings.gradingFieldMode)
-  ) {
-    addError("settings.gradingFieldMode must be retainedOnly or expandedField");
-  }
-  if (
-    settings.gradingFieldSize !== null &&
-    settings.gradingFieldSize !== undefined &&
-    !isNumber(settings.gradingFieldSize)
-  ) {
-    addError("settings.gradingFieldSize must be a number");
-  }
-  if (
-    settings.gradingFieldExtraLineupCount !== null &&
-    settings.gradingFieldExtraLineupCount !== undefined &&
-    !isNumber(settings.gradingFieldExtraLineupCount)
-  ) {
-    addError("settings.gradingFieldExtraLineupCount must be a number");
-  }
-  if (settings.minSalary !== null && settings.minSalary !== undefined && !isNumber(settings.minSalary)) {
-    addError("settings.minSalary must be a number or null");
-  }
-  if (settings.maxSalary !== null && settings.maxSalary !== undefined && !isNumber(settings.maxSalary)) {
-    addError("settings.maxSalary must be a number or null");
-  }
-  if (
-    settings.minSumOwnership !== null &&
-    settings.minSumOwnership !== undefined &&
-    !isNumber(settings.minSumOwnership)
-  ) {
-    addError("settings.minSumOwnership must be a number or null");
-  }
-  if (
-    settings.maxSumOwnership !== null &&
-    settings.maxSumOwnership !== undefined &&
-    !isNumber(settings.maxSumOwnership)
-  ) {
-    addError("settings.maxSumOwnership must be a number or null");
-  }
-  if (
-    settings.minAvgOptimalRate !== null &&
-    settings.minAvgOptimalRate !== undefined &&
-    !isNumber(settings.minAvgOptimalRate)
-  ) {
-    addError("settings.minAvgOptimalRate must be a number or null");
-  }
-  if (
-    settings.maxAvgOptimalRate !== null &&
-    settings.maxAvgOptimalRate !== undefined &&
-    !isNumber(settings.maxAvgOptimalRate)
-  ) {
-    addError("settings.maxAvgOptimalRate must be a number or null");
-  }
-
-  if (
-    isNumber(settings.minSalary) &&
-    isNumber(settings.maxSalary) &&
-    settings.minSalary > settings.maxSalary
-  ) {
-    addError("settings.minSalary cannot exceed settings.maxSalary");
-  }
-  if (
-    isNumber(settings.minSumOwnership) &&
-    isNumber(settings.maxSumOwnership) &&
-    settings.minSumOwnership > settings.maxSumOwnership
-  ) {
-    addError("settings.minSumOwnership cannot exceed settings.maxSumOwnership");
-  }
-  if (
-    isNumber(settings.minAvgOptimalRate) &&
-    isNumber(settings.maxAvgOptimalRate) &&
-    settings.minAvgOptimalRate > settings.maxAvgOptimalRate
-  ) {
-    addError("settings.minAvgOptimalRate cannot exceed settings.maxAvgOptimalRate");
+    addError("settings.payoutProfile must be topHeavy, standard, or cash");
   }
   if (settings.slateId !== slate.id) addError("settings.slateId does not match slate.id");
-  if (isNumber(settings.salaryCap) && isNumber(slate.salaryCap) && settings.salaryCap !== slate.salaryCap) {
-    addError("settings.salaryCap does not match slate.salaryCap");
-  }
-  if (isNumber(settings.gradingFieldSize) && settings.gradingFieldSize <= 0) {
-    addError("settings.gradingFieldSize must be greater than 0");
-  }
-  if (
-    isNumber(settings.gradingFieldExtraLineupCount) &&
-    (!Number.isInteger(settings.gradingFieldExtraLineupCount) || settings.gradingFieldExtraLineupCount < 0)
-  ) {
-    addError("settings.gradingFieldExtraLineupCount must be an integer 0 or greater");
+  if (isNumber(settings.fieldSize) && settings.fieldSize > 500000) {
+    addError("settings.fieldSize must be 500000 or smaller");
   }
 
   const pathParts = parseSlatePath(slateKey);

@@ -62,17 +62,7 @@ type Settings = {
   lineupCount: number;
   fieldSize: number;
   simulationCount: number;
-  salaryCap: number;
-  payoutProfile: "topHeavy" | "standard" | "flat";
-  gradingFieldMode: "retainedOnly" | "expandedField";
-  gradingFieldSize: number;
-  gradingFieldExtraLineupCount: number;
-  minSalary: number | null;
-  maxSalary: number | null;
-  minSumOwnership: number | null;
-  maxSumOwnership: number | null;
-  minAvgOptimalRate: number | null;
-  maxAvgOptimalRate: number | null;
+  payoutProfile: "topHeavy" | "standard" | "cash";
 };
 
 const argv = process.argv.slice(2);
@@ -426,17 +416,7 @@ async function run(): Promise<void> {
     lineupCount,
     fieldSize,
     simulationCount,
-    salaryCap,
     payoutProfile: "standard",
-    gradingFieldMode: "expandedField",
-    gradingFieldSize: fieldSize,
-    gradingFieldExtraLineupCount: Math.max(lineupCount, 300),
-    minSalary: null,
-    maxSalary: null,
-    minSumOwnership: null,
-    maxSumOwnership: null,
-    minAvgOptimalRate: null,
-    maxAvgOptimalRate: null,
   };
 
   const files: Array<{ name: string; data: unknown }> = [
