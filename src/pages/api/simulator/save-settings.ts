@@ -5,6 +5,8 @@ import { resolveSlatePackagePath } from "../../../lib/simulator/paths";
 import { loadJson } from "../../../lib/simulator/loadJson";
 import type { SimulatorSettings, SimulatorSlate } from "../../../lib/simulator/types";
 
+const allowFileWrites = import.meta.env.DEV;
+
 function jsonResponse(status: number, payload: Record<string, unknown>) {
   return new Response(JSON.stringify(payload), {
     status,
@@ -83,9 +85,18 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse(400, { error: "Validation failed.", details: errors });
   }
 
-  await writeFile(settingsPath, `${JSON.stringify(normalized, null, 2)}\n`, "utf8");
+  if (allowFileWrites) {
+    try {
+      await writeFile(settingsPath, `${JSON.stringify(normalized, null, 2)}\n`, "utf8");
+    } catch (error) {
+      return jsonResponse(500, {
+        error: "Failed to write settings.json.",
+        details: [error instanceof Error ? error.message : String(error)],
+      });
+    }
+  }
 
-  return jsonResponse(200, { ok: true, slate: slateJson.id });
+  return jsonResponse(200, { ok: true, slate: slateJson.id, wroteSettings: allowFileWrites });
 };
 
 export const ALL: APIRoute = async () => {

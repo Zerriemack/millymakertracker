@@ -28,6 +28,8 @@ type LineupAggregate = {
   maxSimTotal: number;
 };
 
+const allowFileWrites = import.meta.env.DEV;
+
 function jsonResponse(status: number, payload: Record<string, unknown>) {
   return new Response(JSON.stringify(payload), {
     status,
@@ -772,9 +774,19 @@ export const POST: APIRoute = async ({ request }) => {
       itmCutoff,
     },
   };
-  console.log("[sim-api] writing results", resultsPath);
-
-  await writeFile(resultsPath, `${JSON.stringify(resultsPayload, null, 2)}\n`, "utf8");
+  if (allowFileWrites) {
+    console.log("[sim-api] writing results", resultsPath);
+    try {
+      await writeFile(resultsPath, `${JSON.stringify(resultsPayload, null, 2)}\n`, "utf8");
+    } catch (error) {
+      return jsonResponse(500, {
+        error: "Failed to write results.json.",
+        details: [error instanceof Error ? error.message : String(error)],
+      });
+    }
+  } else {
+    console.log("[sim-api] production mode: results not written to disk");
+  }
   console.log("[sim-api] response returned");
 
   return jsonResponse(200, {
@@ -782,7 +794,8 @@ export const POST: APIRoute = async ({ request }) => {
     slate,
     slateId: slateJson.id,
     simulationCount,
-    resultsPath,
+    results: resultsPayload,
+    wroteResults: allowFileWrites,
     supportedGameType: "draftkings-classic",
     playerCount: playerInputs.length,
   });

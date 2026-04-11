@@ -897,6 +897,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
           </nav>
         </div>
 
+        <div id="sim-results-content" data-has-results={results ? "true" : "false"}>
         {!results && <p class="empty-state">No results yet. Run sims to generate results.</p>}
 
         {results && (
@@ -1277,6 +1278,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
             </table>
           </div>
         )}
+        </div>
       </div>
     )}
     </div>
@@ -1308,6 +1310,8 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const SIM_ACTIVE_SUBTAB = simData.activeSubtab || "ev";
   console.log("[sim] active tab", SIM_ACTIVE_TAB);
   console.log("[sim] active subtab", SIM_ACTIVE_SUBTAB);
+  const SETTINGS_STORAGE_KEY = SIM_SLATE_KEY ? `sim-settings:${SIM_SLATE_KEY}` : "";
+  const RESULTS_STORAGE_KEY = SIM_SLATE_KEY ? `sim-results:${SIM_SLATE_KEY}` : "";
   const statusEl = document.getElementById("sim-status");
   const validationEl = document.getElementById("sim-validation-summary");
   const saveBtn = document.getElementById("sim-save-btn");
@@ -1319,6 +1323,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const runOverlay = document.getElementById("sim-run-overlay");
   const runStatusEl = document.getElementById("sim-run-status");
   let runInProgress = false;
+  let latestResults = null;
   const clone = (value) => {
     if (typeof structuredClone === "function") {
       return structuredClone(value);
@@ -1353,6 +1358,66 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   let settingsBaseline = settingsState ? clone(settingsState) : null;
   let settingsDirty = false;
   let settingsInvalid = false;
+
+  const safeJsonParse = (value) => {
+    if (!value) return null;
+    try {
+      return JSON.parse(value);
+    } catch {
+      return null;
+    }
+  };
+
+  const loadStoredSettings = () => {
+    if (!SETTINGS_STORAGE_KEY) return null;
+    const raw = safeJsonParse(localStorage.getItem(SETTINGS_STORAGE_KEY));
+    if (!raw || typeof raw !== "object") return null;
+    return raw;
+  };
+
+  const persistSettings = () => {
+    if (!SETTINGS_STORAGE_KEY || !settingsState) return;
+    try {
+      localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(settingsState));
+    } catch {
+      // Ignore storage errors (private mode / quota)
+    }
+  };
+
+  const persistResults = (resultsPayload) => {
+    if (!RESULTS_STORAGE_KEY || !resultsPayload) return;
+    try {
+      sessionStorage.setItem(RESULTS_STORAGE_KEY, JSON.stringify(resultsPayload));
+    } catch {
+      // Ignore storage errors (private mode / quota)
+    }
+  };
+
+  const loadStoredResults = () => {
+    if (!RESULTS_STORAGE_KEY) return null;
+    const raw = safeJsonParse(sessionStorage.getItem(RESULTS_STORAGE_KEY));
+    if (!raw || typeof raw !== "object") return null;
+    return raw;
+  };
+
+  const mergeSettings = (base, overrides) => {
+    if (!base) return base;
+    if (!overrides || typeof overrides !== "object") return base;
+    const normalizedProfile =
+      overrides.payoutProfile === "flat" ? "cash" : overrides.payoutProfile ?? base.payoutProfile;
+    return {
+      ...base,
+      ...overrides,
+      slateId: base.slateId,
+      payoutProfile: normalizedProfile ?? "standard",
+    };
+  };
+
+  const storedSettings = loadStoredSettings();
+  if (storedSettings && settingsState) {
+    settingsState = mergeSettings(settingsState, storedSettings);
+    settingsBaseline = settingsState ? clone(settingsState) : null;
+  }
 
   const formatSettingValue = (field, value) => {
     if (value === null || value === undefined || !Number.isFinite(value)) return "";
@@ -1389,8 +1454,25 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     });
   };
 
-  syncPayoutProfileUI();
-  syncSliderValues();
+  const applySettingsStateToInputs = () => {
+    if (!settingsState) return;
+    document.querySelectorAll("input[data-setting-field]").forEach((input) => {
+      if (!(input instanceof HTMLInputElement)) return;
+      const field = input.dataset.settingField;
+      if (!field || !(field in settingsState)) return;
+      const value = settingsState[field];
+      if (input.type === "radio") {
+        input.checked = value === input.value;
+      } else {
+        input.value = value === null || value === undefined ? "" : value;
+      }
+      input.classList.remove("input-error");
+    });
+    syncPayoutProfileUI();
+    syncSliderValues();
+  };
+
+  applySettingsStateToInputs();
   let baseline = {
     teamInputs: clone(state.teamInputs),
     playerInputs: clone(state.playerInputs),
@@ -1430,6 +1512,387 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     runOverlay.classList.remove("is-visible");
     runOverlay.setAttribute("aria-hidden", "true");
     document.body.classList.remove("sim-running");
+  };
+
+  const escapeHtml = (value) =>
+    String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+
+  const formatPayoutLabel = (profile) => {
+    if (profile === "topHeavy") return "Top Heavy";
+    if (profile === "cash" || profile === "flat") return "Cash";
+    return "Standard";
+  };
+
+  const formatOptLevDisplay = (value) => {
+    if (value === null || value === undefined || Number.isNaN(value)) return "—";
+    if (!Number.isFinite(value)) return "—";
+    const normalized = Math.abs(value) >= 10 ? value / 10 : value;
+    return `${normalized.toFixed(1)}%`;
+  };
+
+  const formatNumber = (value, digits, fallback = "0.0") =>
+    Number.isFinite(value) ? value.toFixed(digits) : fallback;
+  const formatInteger = (value, fallback = "0") =>
+    Number.isFinite(value) ? Number(value).toLocaleString() : fallback;
+
+  const renderResultsFromPayload = (resultsPayload) => {
+    if (SIM_ACTIVE_TAB !== "results") return false;
+    const resultsContent = document.getElementById("sim-results-content");
+    if (!resultsContent) return false;
+    if (!resultsPayload || !Array.isArray(resultsPayload.players)) {
+      resultsContent.dataset.hasResults = "false";
+      resultsContent.innerHTML = `<p class="empty-state">No results yet. Run sims to generate results.</p>`;
+      return false;
+    }
+
+    const summaryHtml = `
+      <div class="results-summary-strip">
+        <div class="summary-item">
+          <span class="summary-label">Field</span>
+          <span class="summary-value">${formatInteger(resultsPayload.settingsSnapshot?.fieldSize)}</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Retained Pool</span>
+          <span class="summary-value">${formatInteger(resultsPayload.poolSummary?.retainedLineupCount ?? 0)}</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Simulations</span>
+          <span class="summary-value">${formatInteger(resultsPayload.simulationCount ?? resultsPayload.settingsSnapshot?.simulationCount ?? 0)}</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">Payout</span>
+          <span class="summary-value">${formatPayoutLabel(resultsPayload.settingsSnapshot?.payoutProfile ?? "standard")}</span>
+        </div>
+      </div>
+    `;
+
+    const filterRowHtml =
+      SIM_ACTIVE_SUBTAB === "ev" || SIM_ACTIVE_SUBTAB === "exp"
+        ? `
+      <div class="results-filter-row" data-pos-filter>
+        <span class="results-filter-label">Position</span>
+        <div class="results-filter-group">
+          <button type="button" class="results-filter-btn active" data-pos="ALL">ALL</button>
+          <button type="button" class="results-filter-btn" data-pos="QB">QB</button>
+          <button type="button" class="results-filter-btn" data-pos="RB">RB</button>
+          <button type="button" class="results-filter-btn" data-pos="WR">WR</button>
+          <button type="button" class="results-filter-btn" data-pos="TE">TE</button>
+          <button type="button" class="results-filter-btn" data-pos="DST">DST</button>
+        </div>
+      </div>
+    `
+        : "";
+
+    const buildEvRows = () => {
+      const rows = resultsPayload.players
+        .slice()
+        .sort(
+          (a, b) =>
+            b.optimalSimRate - a.optimalSimRate ||
+            b.plusEvScore - a.plusEvScore ||
+            b.optimalLeverage - a.optimalLeverage
+        )
+        .map((row) => {
+          const levValue = Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage;
+          return `
+            <tr
+              data-pos="${escapeHtml(row.position)}"
+              data-name="${escapeHtml(row.name)}"
+              data-position="${escapeHtml(row.position)}"
+              data-team="${escapeHtml(row.team)}"
+              data-salary="${row.salary}"
+              data-own="${row.ownership}"
+              data-optimal="${row.optimalSimRate}"
+              data-lev="${levValue}"
+              data-plusev="${row.plusEvScore}"
+            >
+              <td class="player-name-cell">${escapeHtml(row.name)}</td>
+              <td class="pos-cell">${escapeHtml(row.position)}</td>
+              <td class="team-cell">
+                <span class="team-cell-inner">
+                  <span class="results-team-logo">
+                    <img
+                      src="/simulator/team-logos/${escapeHtml(row.team)}.png"
+                      alt="${escapeHtml(row.team)} logo"
+                      loading="lazy"
+                      onerror="this.style.display='none';"
+                    />
+                  </span>
+                  <span class="team-code">${escapeHtml(row.team)}</span>
+                </span>
+              </td>
+              <td class="num-cell salary-cell">$${formatInteger(row.salary)}</td>
+              <td class="num-cell own-cell">${formatNumber(row.ownership, 1)}%</td>
+              <td class="num-cell optimal-rate-value-cell">${formatNumber(row.optimalSimRate, 1)}%</td>
+              <td class="num-cell opt-lev-cell">${formatOptLevDisplay(row.optimalLeverage)}</td>
+              <td class="num-cell plus-ev-cell">${formatNumber(row.plusEvScore, 2)}</td>
+              <td class="bar-lane-cell" data-bar-value="${row.optimalSimRate}">
+                <div class="bar-lane-shell">
+                  <span class="bar-lane-track">
+                    <span class="bar-lane-fill"></span>
+                  </span>
+                </div>
+              </td>
+            </tr>
+          `;
+        })
+        .join("");
+      const emptyFilterRow =
+        resultsPayload.players.length > 0
+          ? `<tr class="results-empty-row" data-empty-row="filter" style="display:none"><td colSpan="9">No players match this position filter.</td></tr>`
+          : "";
+      const emptyDataRow =
+        resultsPayload.players.length === 0 ? `<tr><td colSpan="9">No results.</td></tr>` : "";
+      return `${rows}${emptyFilterRow}${emptyDataRow}`;
+    };
+
+    const buildExpRows = () => {
+      const rows = resultsPayload.players
+        .slice()
+        .sort(
+          (a, b) =>
+            b.retainedExposureRate - a.retainedExposureRate ||
+            b.optimalLeverage - a.optimalLeverage
+        )
+        .map((row) => {
+          const levValue = Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage;
+          return `
+            <tr
+              data-pos="${escapeHtml(row.position)}"
+              data-name="${escapeHtml(row.name)}"
+              data-position="${escapeHtml(row.position)}"
+              data-team="${escapeHtml(row.team)}"
+              data-salary="${row.salary}"
+              data-own="${row.ownership}"
+              data-optimal="${row.optimalSimRate}"
+              data-lev="${levValue}"
+              data-retainedexp="${row.retainedExposureRate}"
+            >
+              <td class="player-name-cell">${escapeHtml(row.name)}</td>
+              <td class="pos-cell">${escapeHtml(row.position)}</td>
+              <td class="team-cell">
+                <span class="team-cell-inner">
+                  <span class="results-team-logo">
+                    <img
+                      src="/simulator/team-logos/${escapeHtml(row.team)}.png"
+                      alt="${escapeHtml(row.team)} logo"
+                      loading="lazy"
+                      onerror="this.style.display='none';"
+                    />
+                  </span>
+                  <span class="team-code">${escapeHtml(row.team)}</span>
+                </span>
+              </td>
+              <td class="num-cell salary-cell">$${formatInteger(row.salary)}</td>
+              <td class="num-cell own-cell">${formatNumber(row.ownership, 1)}%</td>
+              <td class="num-cell optimal-rate-value-cell">${formatNumber(row.optimalSimRate, 1)}%</td>
+              <td class="num-cell opt-lev-cell">${formatOptLevDisplay(row.optimalLeverage)}</td>
+              <td class="num-cell retained-exp-value-cell">${formatNumber(row.retainedExposureRate, 1)}%</td>
+              <td class="bar-lane-cell" data-bar-value="${row.retainedExposureRate}">
+                <div class="bar-lane-shell">
+                  <span class="bar-lane-track">
+                    <span class="bar-lane-fill"></span>
+                  </span>
+                </div>
+              </td>
+            </tr>
+          `;
+        })
+        .join("");
+      const emptyFilterRow =
+        resultsPayload.players.length > 0
+          ? `<tr class="results-empty-row" data-empty-row="filter" style="display:none"><td colSpan="9">No players match this position filter.</td></tr>`
+          : "";
+      const emptyDataRow =
+        resultsPayload.players.length === 0 ? `<tr><td colSpan="9">No exposures.</td></tr>` : "";
+      return `${rows}${emptyFilterRow}${emptyDataRow}`;
+    };
+
+    const buildGradedRows = () => {
+      const lineups = Array.isArray(resultsPayload.lineups) ? resultsPayload.lineups : [];
+      const rows = lineups
+        .slice()
+        .sort(
+          (a, b) =>
+            (b.evScore ?? 0) - (a.evScore ?? 0) ||
+            (b.topPointOnePctRate ?? 0) - (a.topPointOnePctRate ?? 0) ||
+            (b.topOnePctRate ?? 0) - (a.topOnePctRate ?? 0) ||
+            (b.itmRate ?? 0) - (a.itmRate ?? 0)
+        )
+        .slice(0, 20)
+        .map((row) => {
+          const lineupText = Array.isArray(row.players)
+            ? row.players.map((player) => `${player.position} ${player.name}`).join(" / ")
+            : "";
+          return `
+            <tr>
+              <td class="num-cell">${formatNumber(row.evScore ?? 0, 2)}</td>
+              <td class="num-cell">${formatNumber(row.topPointOnePctRate ?? 0, 2)}%</td>
+              <td class="num-cell">${formatNumber(row.topOnePctRate ?? 0, 2)}%</td>
+              <td class="num-cell">${formatNumber(row.itmRate ?? 0, 2)}%</td>
+              <td class="num-cell">$${formatInteger(row.salaryUsed)}</td>
+              <td class="num-cell">${formatNumber(row.averageSimTotal, 1)}</td>
+              <td class="num-cell">${formatNumber(row.sumOwnership, 1)}%</td>
+              <td class="bar-cell num-cell" data-bar-value="${row.frequencyRate ?? 0}">
+                <div class="bar-track" aria-hidden="true">
+                  <div class="bar-fill"></div>
+                </div>
+                <span class="bar-label">${formatNumber(row.frequencyRate, 1)}%</span>
+              </td>
+              <td class="lineup-cell">${escapeHtml(lineupText)}</td>
+            </tr>
+          `;
+        })
+        .join("");
+      if (!rows) {
+        return `<tr><td colSpan="9">No lineup aggregates available.</td></tr>`;
+      }
+      return rows;
+    };
+
+    let tableHtml = "";
+    if (SIM_ACTIVE_SUBTAB === "ev") {
+      tableHtml = `
+        <div class="results-table-shell">
+          <div class="results-table-head-wrap">
+            <table class="slates-table results-table results-table-head results-table-optimal-head">
+              <colgroup>
+                <col class="col-player" />
+                <col class="col-pos" />
+                <col class="col-team" />
+                <col class="col-salary" />
+                <col class="col-own" />
+                <col class="col-optimal-rate-value" />
+                <col class="col-opt-lev" />
+                <col class="col-plus-ev" />
+                <col class="col-bar-lane" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="th-player"><button type="button" class="results-header-filter-btn" data-filter-trigger="name">Player</button></th>
+                  <th class="th-pos"><button type="button" class="results-header-filter-btn" data-filter-trigger="position">Pos</button></th>
+                  <th class="th-team"><button type="button" class="results-header-filter-btn" data-filter-trigger="team">Team</button></th>
+                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button></th>
+                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button></th>
+                  <th class="th-num th-optimal-value"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button></th>
+                  <th class="th-num th-opt-lev"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button></th>
+                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="plusEv">Plus EV</button></th>
+                  <th class="th-bar-lane"></th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="results-table-wrap">
+            <table class="slates-table results-table results-table-body results-table-optimal" data-results-table data-bar-metric="optimalSimRate" data-results-kind="ev">
+              <colgroup>
+                <col class="col-player" />
+                <col class="col-pos" />
+                <col class="col-team" />
+                <col class="col-salary" />
+                <col class="col-own" />
+                <col class="col-optimal-rate-value" />
+                <col class="col-opt-lev" />
+                <col class="col-plus-ev" />
+                <col class="col-bar-lane" />
+              </colgroup>
+              <tbody>
+                ${buildEvRows()}
+              </tbody>
+            </table>
+            <div class="results-header-filter-popover" data-header-filter-popover hidden></div>
+          </div>
+        </div>
+      `;
+    }
+
+    if (SIM_ACTIVE_SUBTAB === "exp") {
+      tableHtml = `
+        <div class="results-table-shell">
+          <div class="results-table-head-wrap">
+            <table class="slates-table results-table results-table-head">
+              <colgroup>
+                <col class="col-player" />
+                <col class="col-pos" />
+                <col class="col-team" />
+                <col class="col-salary" />
+                <col class="col-own" />
+                <col class="col-optimal-rate-value" />
+                <col class="col-opt-lev" />
+                <col class="col-retained-exp" />
+                <col class="col-bar-lane" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="th-player"><button type="button" class="results-header-filter-btn" data-filter-trigger="name">Player</button></th>
+                  <th class="th-pos"><button type="button" class="results-header-filter-btn" data-filter-trigger="position">Pos</button></th>
+                  <th class="th-team"><button type="button" class="results-header-filter-btn" data-filter-trigger="team">Team</button></th>
+                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button></th>
+                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button></th>
+                  <th class="th-num th-optimal-value"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button></th>
+                  <th class="th-num th-opt-lev"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button></th>
+                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="retainedExp">Retained Exp</button></th>
+                  <th class="th-bar-lane"></th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="results-table-wrap">
+            <table class="slates-table results-table results-table-body" data-results-table data-bar-metric="retainedExposureRate" data-results-kind="exp">
+              <colgroup>
+                <col class="col-player" />
+                <col class="col-pos" />
+                <col class="col-team" />
+                <col class="col-salary" />
+                <col class="col-own" />
+                <col class="col-optimal-rate-value" />
+                <col class="col-opt-lev" />
+                <col class="col-retained-exp" />
+                <col class="col-bar-lane" />
+              </colgroup>
+              <tbody>
+                ${buildExpRows()}
+              </tbody>
+            </table>
+            <div class="results-header-filter-popover" data-header-filter-popover hidden></div>
+          </div>
+        </div>
+      `;
+    }
+
+    if (SIM_ACTIVE_SUBTAB === "graded") {
+      tableHtml = `
+        <div class="results-table-wrap">
+          <table class="slates-table results-table" data-results-table data-bar-metric="frequencyRate">
+            <thead>
+              <tr>
+                <th>EV</th>
+                <th>Top 0.1%</th>
+                <th>Top 1%</th>
+                <th>ITM</th>
+                <th>Salary Used</th>
+                <th>Avg Sim Total</th>
+                <th>Sum Own%</th>
+                <th>Frequency%</th>
+                <th>Lineup</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${buildGradedRows()}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    resultsContent.dataset.hasResults = "true";
+    resultsContent.innerHTML = `${summaryHtml}${filterRowHtml}${tableHtml}`;
+    initResultsTools();
+    return true;
   };
 
   const runSimulation = async (context) => {
@@ -1488,10 +1951,25 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       const data = await response.json().catch(() => ({}));
       if (!response.ok) {
         const message = data?.error || "Simulation run failed. Check settings and try again.";
-        throw new Error(message);
+        const details = Array.isArray(data?.details) ? data.details.join(" ") : data?.details;
+        throw new Error(`${message}${details ? " " + details : ""}`);
       }
-      if (runStatusEl) runStatusEl.textContent = "Writing results...";
+      if (!data?.results) {
+        throw new Error("Simulation completed but results are missing.");
+      }
+      latestResults = data.results;
+      persistResults(data.results);
+      if (runStatusEl) runStatusEl.textContent = "Loading results...";
       console.log("[sim] response ok");
+      if (SIM_ACTIVE_TAB === "results") {
+        renderResultsFromPayload(latestResults);
+        hideRunOverlay();
+        if (runBtn) runBtn.disabled = false;
+        if (runSettingsBtn) runSettingsBtn.disabled = false;
+        runInProgress = false;
+        setStatus("Simulation complete.", "success");
+        return;
+      }
       const targetUrl = `/simulator?slate=${encodeURIComponent(SIM_SLATE_KEY)}&tab=results&subtab=ev`;
       if (runStatusEl) runStatusEl.textContent = "Simulation complete. Opening results...";
       console.log("[sim] redirecting", targetUrl);
@@ -1861,19 +2339,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       if (settingsBaseline) {
         settingsState = clone(settingsBaseline);
         settingsDirty = false;
-        document.querySelectorAll("input[data-setting-field]").forEach((input) => {
-          const field = input.dataset.settingField;
-          if (!field || !settingsState) return;
-          const value = settingsState[field];
-          if (input.type === "radio") {
-            input.checked = value === input.value;
-          } else {
-            input.value = value === null || value === undefined ? "" : value;
-          }
-          input.classList.remove("input-error");
-        });
-        syncPayoutProfileUI();
-        syncSliderValues();
+        applySettingsStateToInputs();
         validateSettingsInputs();
         updateSettingsSaveState();
       }
@@ -1982,6 +2448,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       saveSettingsBtn.disabled = true;
       setSettingsStatus("Saving settings...", "info");
       try {
+        persistSettings();
         const response = await fetch("/api/simulator/save-settings", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -1990,7 +2457,8 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         const data = await response.json().catch(() => ({}));
         if (!response.ok) {
           const message = data?.error || "Save failed.";
-          throw new Error(message);
+          const details = Array.isArray(data?.details) ? data.details.join(" ") : data?.details;
+          throw new Error(`${message}${details ? " " + details : ""}`);
         }
         settingsBaseline = clone(settingsState);
         settingsDirty = false;
@@ -2383,7 +2851,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   setDirty(false);
   validateSettingsInputs();
   updateSettingsSaveState();
-  initResultsTools();
+  const storedResults = loadStoredResults();
+  const didRenderStoredResults =
+    storedResults && storedResults.slateId === SIM_SLATE_KEY
+      ? renderResultsFromPayload(storedResults)
+      : false;
+  if (!didRenderStoredResults) {
+    initResultsTools();
+  }
   console.log("[sim] init complete");
   };
 
