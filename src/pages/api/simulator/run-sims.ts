@@ -545,6 +545,8 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse(400, { error: "Invalid JSON body." });
   }
 
+  console.log("[sim-api-debug-v1] raw request body", body);
+
   if (!body || typeof body !== "object") {
     return jsonResponse(400, { error: "Payload must be an object." });
   }
@@ -557,6 +559,13 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse(400, { error: "Missing slate key." });
   }
   console.log("[sim-api] slate", slate);
+  console.log("[sim-api-debug-v1] request received", {
+    slate,
+    lineupCount: requestSettings?.lineupCount ?? null,
+    fieldSize: requestSettings?.fieldSize ?? null,
+    simulationCount: requestSettings?.simulationCount ?? null,
+    payoutProfile: requestSettings?.payoutProfile ?? null,
+  });
 
   const slateDir = resolveSlatePackagePath(slate);
   const slatePath = path.join(slateDir, "slate.json");
@@ -617,6 +626,13 @@ export const POST: APIRoute = async ({ request }) => {
     simulationCount: mergedSettings.simulationCount,
     payoutProfile: mergedSettings.payoutProfile,
   });
+  console.log("[sim-api-debug-v1] normalized settings used", {
+    slateId: mergedSettings.slateId,
+    lineupCount: mergedSettings.lineupCount,
+    fieldSize: mergedSettings.fieldSize,
+    simulationCount: mergedSettings.simulationCount,
+    payoutProfile: mergedSettings.payoutProfile,
+  });
 
   if (!Array.isArray(playerInputs) || playerInputs.length === 0) {
     return jsonResponse(400, { error: "player-inputs.json is empty." });
@@ -661,6 +677,13 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse(400, { error: "fieldSize must be 500000 or smaller." });
   }
   const maxProdSimulations = 1500;
+  console.log("[sim-api-debug-v1] production rules", {
+    isProdRuntime,
+    requestedSimulationCount: simulationCount,
+    maxProdSimulations,
+    willRejectForProdLimit: isProdRuntime && simulationCount > maxProdSimulations,
+    productionBehavior: isProdRuntime ? "reject-over-limit" : "no-prod-limit",
+  });
   if (isProdRuntime && simulationCount > maxProdSimulations) {
     return jsonResponse(400, {
       error: "Simulation count exceeds production limit.",
@@ -1076,6 +1099,14 @@ export const POST: APIRoute = async ({ request }) => {
     lineups: resultsPayload.lineups.length,
     players: resultsPayload.players.length,
     ms: Math.round(nowMs() - serializeStart),
+  });
+  console.log("[sim-api-debug-v1] final results summary", {
+    slateId: resultsPayload.slateId,
+    simulationCount: resultsPayload.simulationCount,
+    settingsSnapshotLineupCount: resultsPayload.settingsSnapshot.lineupCount,
+    settingsSnapshotFieldSize: resultsPayload.settingsSnapshot.fieldSize,
+    settingsSnapshotSimulationCount: resultsPayload.settingsSnapshot.simulationCount,
+    settingsSnapshotPayoutProfile: resultsPayload.settingsSnapshot.payoutProfile,
   });
   console.log("[sim-api] response returned", {
     totalMs: Math.round(nowMs() - requestStart),

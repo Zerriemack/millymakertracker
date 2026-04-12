@@ -26,6 +26,8 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse(400, { error: "Invalid JSON body." });
   }
 
+  console.log("[sim-save-debug-v1] raw request body", body);
+
   if (!body || typeof body !== "object") {
     return jsonResponse(400, { error: "Payload must be an object." });
   }
@@ -33,6 +35,13 @@ export const POST: APIRoute = async ({ request }) => {
   const { slate, settings } = body as { slate?: string; settings?: SimulatorSettings };
   if (!slate) return jsonResponse(400, { error: "Missing slate key." });
   if (!settings) return jsonResponse(400, { error: "Missing settings payload." });
+  console.log("[sim-save-debug-v1] request received", {
+    slate,
+    lineupCount: settings.lineupCount ?? null,
+    fieldSize: settings.fieldSize ?? null,
+    simulationCount: settings.simulationCount ?? null,
+    payoutProfile: settings.payoutProfile ?? null,
+  });
 
   const slateDir = resolveSlatePackagePath(slate);
   const slatePath = path.join(slateDir, "slate.json");
@@ -79,7 +88,16 @@ export const POST: APIRoute = async ({ request }) => {
     fieldSize: settings.fieldSize,
     simulationCount: settings.simulationCount,
     payoutProfile: settings.payoutProfile ?? "standard",
-  }
+  };
+
+  console.log("[sim-save-debug-v1] normalized settings", {
+    slateId: normalized.slateId,
+    lineupCount: normalized.lineupCount,
+    fieldSize: normalized.fieldSize,
+    simulationCount: normalized.simulationCount,
+    payoutProfile: normalized.payoutProfile,
+    willWriteFile: allowFileWrites,
+  });
 
   if (errors.length > 0) {
     return jsonResponse(400, { error: "Validation failed.", details: errors });

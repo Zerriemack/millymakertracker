@@ -1409,6 +1409,21 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     return { data, rawText };
   };
 
+  const summarizeResultsPayload = (resultsPayload) => ({
+    slateId: resultsPayload?.slateId ?? null,
+    simulationCount: resultsPayload?.simulationCount ?? null,
+    settingsSnapshot: resultsPayload?.settingsSnapshot
+      ? {
+          lineupCount: resultsPayload.settingsSnapshot.lineupCount ?? null,
+          fieldSize: resultsPayload.settingsSnapshot.fieldSize ?? null,
+          simulationCount: resultsPayload.settingsSnapshot.simulationCount ?? null,
+          payoutProfile: resultsPayload.settingsSnapshot.payoutProfile ?? null,
+        }
+      : null,
+    players: Array.isArray(resultsPayload?.players) ? resultsPayload.players.length : null,
+    lineups: Array.isArray(resultsPayload?.lineups) ? resultsPayload.lineups.length : null,
+  });
+
   const loadStoredSettings = () => {
     if (!SETTINGS_STORAGE_KEY) return null;
     const raw = safeJsonParse(localStorage.getItem(SETTINGS_STORAGE_KEY));
@@ -2057,11 +2072,22 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     try {
       if (runStatusEl) runStatusEl.textContent = "Sending request...";
       const runUrl = `${window.location.origin}/api/simulator/run-sims`;
+      const requestPayload = {
+        slate: SIM_SLATE_KEY,
+        settings: settingsState,
+      };
+      console.log("[sim-live-debug-v2] run request payload", {
+        slate: requestPayload.slate,
+        lineupCount: requestPayload.settings?.lineupCount ?? null,
+        fieldSize: requestPayload.settings?.fieldSize ?? null,
+        simulationCount: requestPayload.settings?.simulationCount ?? null,
+        payoutProfile: requestPayload.settings?.payoutProfile ?? null,
+      });
       console.log("[sim] fetch start", runUrl);
       const fetchPromise = fetch(runUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slate: SIM_SLATE_KEY, settings: settingsState }),
+        body: JSON.stringify(requestPayload),
       });
       if (runStatusEl && settingsState?.simulationCount) {
         runStatusEl.textContent = `Request sent. Running ${settingsState.simulationCount.toLocaleString()} simulations...`;
@@ -2083,10 +2109,23 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       console.log("[sim-live-debug-v2] run response received", {
         slateId: data.results?.slateId ?? null,
         simulationCount: data.results?.simulationCount ?? null,
+        settingsSnapshotLineupCount: data.results?.settingsSnapshot?.lineupCount ?? null,
+        settingsSnapshotFieldSize: data.results?.settingsSnapshot?.fieldSize ?? null,
+        settingsSnapshotSimulationCount: data.results?.settingsSnapshot?.simulationCount ?? null,
+        settingsSnapshotPayoutProfile: data.results?.settingsSnapshot?.payoutProfile ?? null,
         players: Array.isArray(data.results?.players) ? data.results.players.length : null,
         lineups: Array.isArray(data.results?.lineups) ? data.results.lineups.length : null,
       });
       persistResults(data.results);
+      const storedAfterPersist = loadStoredResults();
+      console.log("[sim-live-debug-v2] stored results after persist", {
+        slateId: storedAfterPersist?.slateId ?? null,
+        simulationCount: storedAfterPersist?.simulationCount ?? null,
+        settingsSnapshotSimulationCount:
+          storedAfterPersist?.settingsSnapshot?.simulationCount ?? null,
+        players: Array.isArray(storedAfterPersist?.players) ? storedAfterPersist.players.length : null,
+        lineups: Array.isArray(storedAfterPersist?.lineups) ? storedAfterPersist.lineups.length : null,
+      });
       if (runStatusEl) runStatusEl.textContent = "Loading results...";
       console.log("[sim] response ok");
       if (SIM_ACTIVE_TAB === "results") {
@@ -2578,6 +2617,13 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       setSettingsStatus("Saving settings...", "info");
       try {
         persistSettings();
+        console.log("[sim-live-debug-v2] save settings request payload", {
+          slate: SIM_SLATE_KEY,
+          lineupCount: settingsState?.lineupCount ?? null,
+          fieldSize: settingsState?.fieldSize ?? null,
+          simulationCount: settingsState?.simulationCount ?? null,
+          payoutProfile: settingsState?.payoutProfile ?? null,
+        });
         const response = await fetch("/api/simulator/save-settings", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -2981,12 +3027,25 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const storedResults = loadStoredResults();
   const storedResultsMeta = loadStoredResultsMeta();
 
+  console.log("[sim-live-debug-v2] boot server results meta", SIM_RESULTS_META);
   console.log("[sim-live-debug-v2] boot stored results", {
     hasStoredResults: Boolean(storedResults),
     storedSlateId: storedResults?.slateId ?? null,
     storedSimulationCount: storedResults?.simulationCount ?? null,
+    storedSettingsSnapshotLineupCount: storedResults?.settingsSnapshot?.lineupCount ?? null,
+    storedSettingsSnapshotFieldSize: storedResults?.settingsSnapshot?.fieldSize ?? null,
+    storedSettingsSnapshotSimulationCount: storedResults?.settingsSnapshot?.simulationCount ?? null,
+    storedSettingsSnapshotPayoutProfile: storedResults?.settingsSnapshot?.payoutProfile ?? null,
     serverSimulationCount: SIM_RESULTS_META?.simulationCount ?? null,
     hasMeta: Boolean(storedResultsMeta),
+  });
+  console.log("[sim-live-debug-v2] boot payload comparison", {
+    serverResultsMeta: SIM_RESULTS_META
+      ? {
+          simulationCount: SIM_RESULTS_META.simulationCount ?? null,
+        }
+      : null,
+    storedResults: summarizeResultsPayload(storedResults),
   });
 
   console.log("[sim] active slate", SIM_SLATE_KEY);
