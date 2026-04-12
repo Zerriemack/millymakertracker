@@ -162,7 +162,7 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
   <main class="page">
     <header class="topbar">
       <div class="titleBlock">
-        <a class="back" href="/analysis/nfl/classic-positions">Back to Positions</a>
+        <a class="backLink" href="/analysis/nfl/classic-positions">Back to Positions</a>
         <h1 class="h1">{pageTitle}</h1>
         <div class="sub">
           Rows: <span id="shownCount">{rows.length}</span> / {rows.length}
@@ -802,6 +802,8 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
   .page { width: 100%; max-width: 100%; padding: 18px 18px; }
   .topbar { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; margin-bottom: 14px; }
   .titleBlock { min-width: 320px; }
+  .backLink { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 8px; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.10); background: #1f1f1f; color: rgba(255,255,255,0.88); text-decoration: none; font-weight: 900; font-size: 12px; letter-spacing: 0.02em; box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  .backLink:hover { color: #fff; background: #232323; border-color: rgba(255,255,255,0.16); }
   .h1 { margin: 0; font-size: 28px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em; }
   .sub { margin-top: 6px; color: rgba(255,255,255,0.55); font-size: 13px; }
 
@@ -812,6 +814,7 @@ const pageTitle = `Classic ${spotRaw} Micro Analysis`;
   .srOnly { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
   .grid { display: grid; grid-template-columns: 370px 1fr; gap: 12px; min-height: 0; }
+  main.page > section.grid { background: transparent; border: 0; border-radius: 0; box-shadow: none; }
   .sidebar { overflow: auto; padding-right: 4px; }
   .main { min-height: 0; display: flex; flex-direction: column; }
 

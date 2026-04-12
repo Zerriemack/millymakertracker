@@ -202,8 +202,29 @@ const formatPayoutLabel = (profile: string) => {
 const isShowdownSlate = selectedSlate?.gameType?.toLowerCase() === "showdown";
 const showdownMultiplierLabel = selectedSlate?.site === "fanduel" ? "MVP" : "Captain";
 const evColSpan = isShowdownSlate ? 12 : 9;
-const expColSpan = isShowdownSlate ? 11 : 8;
+const expColSpan = isShowdownSlate ? 10 : 7;
 const showdownRoleShort = selectedSlate?.site === "fanduel" ? "MVP" : "Capt";
+
+const classicLineupSlots = ["QB", "RB", "RB", "WR", "WR", "WR", "TE", "FLEX", "DST"];
+const buildLineupSlots = (
+  players: Array<{ id: string; name: string; team: string; position: string }>,
+  isShowdown: boolean,
+  multiplierPlayerId: string | null
+) => {
+  if (!Array.isArray(players) || players.length === 0) return [];
+  if (isShowdown) {
+    const captain =
+      (multiplierPlayerId && players.find((player) => player.id === multiplierPlayerId)) || players[0];
+    const flexPlayers = players.filter((player) => player !== captain);
+    const slots = captain ? [{ slot: "CAPT", player: captain }] : [];
+    flexPlayers.forEach((player) => slots.push({ slot: "FLEX", player }));
+    return slots;
+  }
+  return players.map((player, index) => ({
+    slot: classicLineupSlots[index] || player.position || "FLEX",
+    player,
+  }));
+};
 
 const buildSimulatorUrl = ({
   slate,
@@ -1281,13 +1302,11 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                       <col class="col-optimal-rate-value" />
                       <col class="col-optimal-rate-value" />
                       <col class="col-opt-lev" />
-                      <col class="col-bar-lane" />
                     </>
                   ) : (
                     <>
                       <col class="col-opt-lev" />
                       <col class="col-retained-exp" />
-                      <col class="col-bar-lane" />
                     </>
                   )}
                 </colgroup>
@@ -1362,7 +1381,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                         <th class="th-num th-opt-lev results-showdown-metric-head">
                           <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="lev">Opt Lev</button>
                         </th>
-                        <th class="th-bar-lane"></th>
                       </>
                     ) : (
                       <>
@@ -1372,7 +1390,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                         <th class="th-num">
                           <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="retainedExp">Retained Exp</button>
                         </th>
-                        <th class="th-bar-lane"></th>
                       </>
                     )}
                   </tr>
@@ -1406,13 +1423,11 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                     <col class="col-optimal-rate-value" />
                     <col class="col-optimal-rate-value" />
                     <col class="col-opt-lev" />
-                    <col class="col-bar-lane" />
                   </>
                 ) : (
                   <>
                     <col class="col-opt-lev" />
                     <col class="col-retained-exp" />
-                    <col class="col-bar-lane" />
                   </>
                 )}
               </colgroup>
@@ -1524,29 +1539,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                       {isShowdownSlate && (
                         <td class="num-cell opt-lev-cell">{formatOptLevDisplay(row.optimalLeverage)}</td>
                       )}
-                      {isShowdownSlate ? (
-                        <td class="bar-lane-cell bar-lane-cell--role" data-bar-value={retainedTotalExp}>
-                          <div class="bar-lane-shell">
-                            <span class="bar-lane-track">
-                              <span
-                                class="bar-lane-role-bar"
-                                style={`--role-cap-pct:${captainShare}%; --role-flex-pct:${flexShare}%;`}
-                              >
-                                <span class="bar-lane-seg bar-lane-seg-captain"></span>
-                                <span class="bar-lane-seg bar-lane-seg-flex"></span>
-                              </span>
-                            </span>
-                          </div>
-                        </td>
-                      ) : (
-                        <td class="bar-lane-cell" data-bar-value={row.retainedExposureRate}>
-                          <div class="bar-lane-shell">
-                            <span class="bar-lane-track">
-                              <span class="bar-lane-fill"></span>
-                            </span>
-                          </div>
-                        </td>
-                      )}
                     </tr>
                   );
                 })}
@@ -1614,7 +1606,24 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                       <span class="bar-label">{row.frequencyRate.toFixed(1)}%</span>
                     </td>
                     <td class="lineup-cell">
-                      {row.players.map((player) => `${player.position} ${player.name}`).join(" / ")}
+                      <div class="lineup-list">
+                        {buildLineupSlots(row.players ?? [], isShowdownSlate, row.multiplierPlayerId ?? null).map(({ slot, player }) => (
+                          <div class="lineup-item">
+                            <span class="lineup-slot">{slot}</span>
+                            <span class="lineup-player">
+                              <span class="results-team-logo lineup-team-logo">
+                                <img
+                                  src={`/simulator/team-logos/${player.team}.png`}
+                                  alt={`${player.team} logo`}
+                                  loading="lazy"
+                                  onerror="this.style.display='none';"
+                                />
+                              </span>
+                              <span class="lineup-name">{player.name}</span>
+                            </span>
+                          </div>
+                        ))}
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -2047,7 +2056,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     const multiplierLabel = resultsSite === "fanduel" ? "MVP" : "Captain";
     const multiplierShort = resultsSite === "fanduel" ? "MVP" : "Capt";
     const resultsColSpanEv = isShowdown ? 12 : 9;
-    const resultsColSpanExp = isShowdown ? 11 : 8;
+    const resultsColSpanExp = isShowdown ? 10 : 7;
     const legendHtml = isShowdown
       ? `
       <div class="results-role-legend" data-role-legend>
@@ -2298,28 +2307,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
               <td class="num-cell opt-lev-cell">${formatOptLevDisplay(row.optimalLeverage)}</td>
               <td class="num-cell retained-exp-value-cell">${formatNumber(row.retainedExposureRate, 1)}%</td>
             `;
-          const barLaneCell = isShowdown
-            ? `
-              <td class="bar-lane-cell bar-lane-cell--role" data-bar-value="${retainedTotalExp}">
-                <div class="bar-lane-shell">
-                  <span class="bar-lane-track">
-                    <span class="bar-lane-role-bar" style="--role-cap-pct:${captainShare}%; --role-flex-pct:${flexShare}%; ">
-                      <span class="bar-lane-seg bar-lane-seg-captain"></span>
-                      <span class="bar-lane-seg bar-lane-seg-flex"></span>
-                    </span>
-                  </span>
-                </div>
-              </td>
-            `
-            : `
-              <td class="bar-lane-cell" data-bar-value="${row.retainedExposureRate}">
-                <div class="bar-lane-shell">
-                  <span class="bar-lane-track">
-                    <span class="bar-lane-fill"></span>
-                  </span>
-                </div>
-              </td>
-            `;
+          const barLaneCell = isShowdown ? "" : "";
           return `
             <tr
               data-pos="${escapeHtml(row.position)}"
@@ -2369,6 +2357,50 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       return `${rows}${emptyFilterRow}${emptyDataRow}`;
     };
 
+    const buildLineupHtml = (row) => {
+      const players = Array.isArray(row.players) ? row.players : [];
+      if (!players.length) return "";
+      const classicSlots = ["QB", "RB", "RB", "WR", "WR", "WR", "TE", "FLEX", "DST"];
+      let slots = [];
+      if (isShowdown) {
+        const captainId = row.multiplierPlayerId || null;
+        const captain =
+          (captainId && players.find((player) => player.id === captainId)) || players[0];
+        const flexPlayers = players.filter((player) => player !== captain);
+        if (captain) slots.push({ slot: "CAPT", player: captain });
+        flexPlayers.forEach((player) => slots.push({ slot: "FLEX", player }));
+      } else {
+        slots = players.map((player, index) => ({
+          slot: classicSlots[index] || player.position || "FLEX",
+          player,
+        }));
+      }
+      return `
+        <div class="lineup-list">
+          ${slots
+            .map(
+              ({ slot, player }) => `
+                <div class="lineup-item">
+                  <span class="lineup-slot">${escapeHtml(slot)}</span>
+                  <span class="lineup-player">
+                    <span class="results-team-logo lineup-team-logo">
+                      <img
+                        src="/simulator/team-logos/${escapeHtml(player.team)}.png"
+                        alt="${escapeHtml(player.team)} logo"
+                        loading="lazy"
+                        onerror="this.style.display='none';"
+                      />
+                    </span>
+                    <span class="lineup-name">${escapeHtml(player.name)}</span>
+                  </span>
+                </div>
+              `
+            )
+            .join("")}
+        </div>
+      `;
+    };
+
     const buildGradedRows = () => {
       const lineups = Array.isArray(resultsPayload.lineups) ? resultsPayload.lineups : [];
       const rows = lineups
@@ -2382,9 +2414,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         )
         .slice(0, 20)
         .map((row) => {
-          const lineupText = Array.isArray(row.players)
-            ? row.players.map((player) => `${player.position} ${player.name}`).join(" / ")
-            : "";
           return `
             <tr>
               <td class="num-cell">${formatNumber(row.evScore ?? 0, 2)}</td>
@@ -2400,7 +2429,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 </div>
                 <span class="bar-label">${formatNumber(row.frequencyRate, 1)}%</span>
               </td>
-              <td class="lineup-cell">${escapeHtml(lineupText)}</td>
+              <td class="lineup-cell">${buildLineupHtml(row)}</td>
             </tr>
           `;
         })
@@ -2580,7 +2609,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 ${isShowdown ? exposureRateColgroup : ""}
                 <col class="col-opt-lev" />
                 ${isShowdown ? "" : `<col class="col-retained-exp" />`}
-                <col class="col-bar-lane" />
               </colgroup>
               <thead>
                 <tr>
@@ -2617,7 +2645,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                       : `<th class="th-num th-opt-lev"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button></th>`
                   }
                   ${isShowdown ? "" : `<th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="retainedExp">Retained Exp</button></th>`}
-                  <th class="th-bar-lane"></th>
                 </tr>
               </thead>
             </table>
@@ -2633,7 +2660,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 ${isShowdown ? exposureRateColgroup : ""}
                 <col class="col-opt-lev" />
                 ${isShowdown ? "" : `<col class="col-retained-exp" />`}
-                <col class="col-bar-lane" />
               </colgroup>
               <tbody>
                 ${buildExpRows()}
@@ -4554,6 +4580,34 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     font-size: 0.78rem;
     line-height: 1.3;
     white-space: normal;
+  }
+
+  .lineup-list {
+    display: grid;
+    gap: 2px;
+  }
+
+  .lineup-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .lineup-slot {
+    font-weight: 700;
+    min-width: 40px;
+  }
+
+  .lineup-player {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .lineup-team-logo img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
   }
 
   input.input-error {

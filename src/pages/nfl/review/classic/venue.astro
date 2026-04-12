@@ -583,7 +583,7 @@ const chartRows = stadiumRowsWithVenue.map((row, index) => {
       }
 
       if (wheelCenterEyebrow) wheelCenterEyebrow.textContent = slice.getAttribute("data-type") || "Venue";
-      if (wheelCenterTitle) wheelCenterTitle.textContent = slice.getAttribute("data-team") || "Hover";
+      if (wheelCenterTitle) wheelCenterTitle.textContent = slice.getAttribute("data-stadium") || "Hover";
       if (wheelCenterSub) {
         const rank = slice.getAttribute("data-rank") || "--";
         const signal = slice.getAttribute("data-signal") || "--";
@@ -1202,7 +1202,7 @@ const chartRows = stadiumRowsWithVenue.map((row, index) => {
 
   .pocketCard {
     display: grid;
-    grid-template-columns: 48px 1fr auto;
+    grid-template-columns: 72px 1fr auto;
     gap: 10px;
     align-items: center;
     padding: 12px 14px;
@@ -1210,6 +1210,13 @@ const chartRows = stadiumRowsWithVenue.map((row, index) => {
 
   .pocketCard strong {
     font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .pocketCard span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .pocketCard b {
@@ -1264,7 +1271,7 @@ const chartRows = stadiumRowsWithVenue.map((row, index) => {
     }
 
     .pocketCard {
-      grid-template-columns: 42px 1fr auto;
+      grid-template-columns: 64px 1fr auto;
     }
   }
 
