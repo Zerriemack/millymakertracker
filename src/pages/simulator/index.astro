@@ -1306,7 +1306,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
 ></script>
 <script is:inline>
   const initSimulator = () => {
-  console.log("[sim] boot");
   const simDataEl = document.getElementById("sim-data");
   const simData = simDataEl ? JSON.parse(simDataEl.textContent || "{}") : {};
   const SIM_SLATE_KEY = simData.slateKey || "";
@@ -1321,6 +1320,12 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   console.log("[sim] active subtab", SIM_ACTIVE_SUBTAB);
   const SETTINGS_STORAGE_KEY = SIM_SLATE_KEY ? `sim-settings:${SIM_SLATE_KEY}` : "";
   const RESULTS_STORAGE_KEY = SIM_SLATE_KEY ? `sim-results:${SIM_SLATE_KEY}` : "";
+  console.log("[sim-live-debug-v2] boot", {
+    slate: SIM_SLATE_KEY,
+    tab: SIM_ACTIVE_TAB,
+    subtab: SIM_ACTIVE_SUBTAB,
+    storageKey: RESULTS_STORAGE_KEY,
+  });
   const statusEl = document.getElementById("sim-status");
   const validationEl = document.getElementById("sim-validation-summary");
   const saveBtn = document.getElementById("sim-save-btn");
@@ -1421,7 +1426,13 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   };
 
   const persistResults = (resultsPayload) => {
-    if (!RESULTS_STORAGE_KEY || !resultsPayload) return;
+    if (!RESULTS_STORAGE_KEY || !resultsPayload) {
+      console.log("[sim-live-debug-v2] persistResults skipped", {
+        hasKey: Boolean(RESULTS_STORAGE_KEY),
+        hasPayload: Boolean(resultsPayload),
+      });
+      return;
+    }
     try {
       const metaKey = `${RESULTS_STORAGE_KEY}:meta`;
       const metaPayload = {
@@ -1438,18 +1449,38 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       };
       const trimmedPayload = trimResultsForStorage(resultsPayload);
       const serialized = JSON.stringify(trimmedPayload);
-      const bytes = typeof TextEncoder !== "undefined"
-        ? new TextEncoder().encode(serialized).length
-        : serialized.length;
+      const bytes =
+        typeof TextEncoder !== "undefined"
+          ? new TextEncoder().encode(serialized).length
+          : serialized.length;
+      console.log("[sim-live-debug-v2] persistResults start", {
+        key: RESULTS_STORAGE_KEY,
+        slateId: trimmedPayload?.slateId,
+        simulationCount: trimmedPayload?.simulationCount,
+        players: Array.isArray(trimmedPayload?.players) ? trimmedPayload.players.length : null,
+        lineups: Array.isArray(trimmedPayload?.lineups) ? trimmedPayload.lineups.length : null,
+        bytes,
+      });
       const maxBytes = 2_500_000;
       if (bytes > maxBytes) {
-        console.warn("[sim] results payload too large for sessionStorage", { bytes });
+        console.warn("[sim-live-debug-v2] persistResults too large", {
+          key: RESULTS_STORAGE_KEY,
+          bytes,
+          maxBytes,
+        });
         return;
       }
       sessionStorage.removeItem(RESULTS_STORAGE_KEY);
       sessionStorage.setItem(RESULTS_STORAGE_KEY, serialized);
-    } catch {
-      // Ignore storage errors (private mode / quota)
+      const readBack = sessionStorage.getItem(RESULTS_STORAGE_KEY);
+
+      console.log("[sim-live-debug-v2] persistResults done", {
+        key: RESULTS_STORAGE_KEY,
+        wrote: Boolean(readBack),
+        readBackBytes: readBack ? readBack.length : 0,
+      });
+    } catch (error) {
+      console.error("[sim-live-debug-v2] persistResults failed", error);
     }
   };
 
@@ -1608,10 +1639,27 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     Number.isFinite(value) ? Number(value).toLocaleString() : fallback;
 
   const renderResultsFromPayload = (resultsPayload) => {
-    if (SIM_ACTIVE_TAB !== "results") return false;
+    console.log("[sim-live-debug-v2] renderResultsFromPayload called", {
+      tab: SIM_ACTIVE_TAB,
+      subtab: SIM_ACTIVE_SUBTAB,
+      hasPayload: Boolean(resultsPayload),
+      simulationCount: resultsPayload?.simulationCount ?? null,
+    });
+
+    if (SIM_ACTIVE_TAB !== "results") {
+      console.log("[sim-live-debug-v2] renderResultsFromPayload aborted: not results tab");
+      return false;
+    }
     const resultsContent = document.getElementById("sim-results-content");
+
+    console.log("[sim-live-debug-v2] results node", {
+      found: Boolean(resultsContent),
+    });
+
     if (!resultsContent) return false;
+
     if (!resultsPayload || !Array.isArray(resultsPayload.players)) {
+      console.log("[sim-live-debug-v2] renderResultsFromPayload aborted: invalid payload");
       resultsContent.dataset.hasResults = "false";
       resultsContent.innerHTML = `<p class="empty-state">No results yet. Run sims to generate results.</p>`;
       return false;
@@ -1956,8 +2004,17 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       `;
     }
 
+    console.log("[sim-live-debug-v2] replacing results HTML", {
+      simulationCount: resultsPayload.simulationCount ?? null,
+      players: resultsPayload.players.length,
+      lineups: Array.isArray(resultsPayload.lineups) ? resultsPayload.lineups.length : null,
+    });
+
     resultsContent.dataset.hasResults = "true";
     resultsContent.innerHTML = `${summaryHtml}${filterRowHtml}${tableHtml}`;
+
+    console.log("[sim-live-debug-v2] results HTML replaced");
+
     initResultsTools();
     return true;
   };
@@ -2023,6 +2080,12 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         throw new Error("Simulation completed but results are missing.");
       }
       latestResults = data.results;
+      console.log("[sim-live-debug-v2] run response received", {
+        slateId: data.results?.slateId ?? null,
+        simulationCount: data.results?.simulationCount ?? null,
+        players: Array.isArray(data.results?.players) ? data.results.players.length : null,
+        lineups: Array.isArray(data.results?.lineups) ? data.results.lineups.length : null,
+      });
       persistResults(data.results);
       if (runStatusEl) runStatusEl.textContent = "Loading results...";
       console.log("[sim] response ok");
@@ -2037,6 +2100,9 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       }
       const targetUrl = `/simulator?slate=${encodeURIComponent(SIM_SLATE_KEY)}&tab=results&subtab=ev`;
       if (runStatusEl) runStatusEl.textContent = "Simulation complete. Opening results...";
+      console.log("[sim-live-debug-v2] redirect happens", {
+        targetUrl,
+      });
       console.log("[sim] redirecting", targetUrl);
       window.location.assign(targetUrl);
     } catch (error) {
@@ -2915,6 +2981,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const storedResults = loadStoredResults();
   const storedResultsMeta = loadStoredResultsMeta();
 
+  console.log("[sim-live-debug-v2] boot stored results", {
+    hasStoredResults: Boolean(storedResults),
+    storedSlateId: storedResults?.slateId ?? null,
+    storedSimulationCount: storedResults?.simulationCount ?? null,
+    serverSimulationCount: SIM_RESULTS_META?.simulationCount ?? null,
+    hasMeta: Boolean(storedResultsMeta),
+  });
+
   console.log("[sim] active slate", SIM_SLATE_KEY);
   console.log("[sim] results storage key", RESULTS_STORAGE_KEY);
   console.log("[sim] stored results found", Boolean(storedResults));
@@ -2929,6 +3003,10 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const shouldUseStoredResults =
     storedResults &&
     storedResults.slateId === SIM_SLATE_KEY;
+
+  console.log("[sim-live-debug-v2] shouldUseStoredResults", {
+    value: Boolean(shouldUseStoredResults),
+  });
 
   const didRenderStoredResults = shouldUseStoredResults
     ? renderResultsFromPayload(storedResults)
