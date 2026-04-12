@@ -1389,6 +1389,15 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     return { data, rawText };
   };
 
+  const normalizeSlateIdentifier = (value) => {
+    if (!value || typeof value !== "string") return "";
+    return value
+      .trim()
+      .toLowerCase()
+      .replace(/\//g, "-")
+      .replace(/^-+|-+$/g, "");
+  };
+
   const loadStoredSettings = () => {
     if (!SETTINGS_STORAGE_KEY) return null;
     const raw = safeJsonParse(localStorage.getItem(SETTINGS_STORAGE_KEY));
@@ -1415,9 +1424,15 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     }
     try {
       const metaKey = `${RESULTS_STORAGE_KEY}:meta`;
+      const generatedAtMs =
+        typeof resultsPayload.generatedAt === "string"
+          ? Date.parse(resultsPayload.generatedAt)
+          : Number.NaN;
+      const storedAt = Number.isFinite(generatedAtMs) ? generatedAtMs : Date.now();
       const metaPayload = {
         slateId: resultsPayload.slateId,
         generatedAt: resultsPayload.generatedAt,
+        storedAt,
         simulationCount: resultsPayload.simulationCount,
       };
       sessionStorage.setItem(metaKey, JSON.stringify(metaPayload));
@@ -1467,6 +1482,13 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const loadStoredResults = () => {
     if (!RESULTS_STORAGE_KEY) return null;
     const raw = safeJsonParse(sessionStorage.getItem(RESULTS_STORAGE_KEY));
+    if (!raw || typeof raw !== "object") return null;
+    return raw;
+  };
+
+  const loadStoredResultsMeta = () => {
+    if (!RESULTS_STORAGE_KEY) return null;
+    const raw = safeJsonParse(sessionStorage.getItem(`${RESULTS_STORAGE_KEY}:meta`));
     if (!raw || typeof raw !== "object") return null;
     return raw;
   };
@@ -3003,11 +3025,55 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   setDirty(false);
   validateSettingsInputs();
   updateSettingsSaveState();
+  const RESULTS_TTL_MS = 5 * 60 * 1000;
+  const storedResults = loadStoredResults();
+  const storedResultsMeta = loadStoredResultsMeta();
+  const normalizedActiveSlateId = normalizeSlateIdentifier(
+    SIM_SETTINGS?.slateId || SIM_SLATE_KEY
+  );
+  const normalizedStoredSlateId = normalizeSlateIdentifier(
+    storedResults?.slateId || storedResultsMeta?.slateId
+  );
+  const storedAt = storedResultsMeta?.storedAt ?? null;
+  const storedAgeMs =
+    typeof storedAt === "number" && Number.isFinite(storedAt) ? Date.now() - storedAt : null;
+  const isStoredFresh =
+    typeof storedAgeMs === "number" && Number.isFinite(storedAgeMs)
+      ? storedAgeMs >= 0 && storedAgeMs <= RESULTS_TTL_MS
+      : false;
+  const shouldUseStoredResults =
+    Boolean(storedResults) &&
+    normalizedStoredSlateId !== "" &&
+    normalizedStoredSlateId === normalizedActiveSlateId &&
+    isStoredFresh;
+
   console.log("[sim] active slate", SIM_SLATE_KEY);
   console.log("[sim] results storage key", RESULTS_STORAGE_KEY);
-  clearStoredResults("boot");
-  resetResultsUI("boot");
-  initResultsTools();
+  console.log("[sim-live-debug-v2] boot stored results", {
+    hasStoredResults: Boolean(storedResults),
+    storedSlateId: storedResults?.slateId ?? null,
+    storedSimulationCount: storedResults?.simulationCount ?? null,
+    storedAt: storedResultsMeta?.storedAt ?? null,
+    storedAgeMs,
+    isStoredFresh,
+  });
+  console.log("[sim-live-debug-v2] normalized slate comparison", {
+    activeSlateKey: SIM_SLATE_KEY,
+    activeSlateId: SIM_SETTINGS?.slateId || null,
+    storedSlateId: storedResults?.slateId || storedResultsMeta?.slateId || null,
+    normalizedActiveSlateId,
+    normalizedStoredSlateId,
+  });
+  if (!shouldUseStoredResults && (storedResults || storedResultsMeta)) {
+    clearStoredResults("boot-invalid");
+  }
+  const didRenderStoredResults = shouldUseStoredResults
+    ? renderResultsFromPayload(storedResults)
+    : false;
+  if (!didRenderStoredResults) {
+    resetResultsUI("boot");
+    initResultsTools();
+  }
   console.log("[sim] init complete");
   };
 
