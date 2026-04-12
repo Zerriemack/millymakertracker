@@ -2914,22 +2914,33 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   updateSettingsSaveState();
   const storedResults = loadStoredResults();
   const storedResultsMeta = loadStoredResultsMeta();
+
+  console.log("[sim] active slate", SIM_SLATE_KEY);
   console.log("[sim] results storage key", RESULTS_STORAGE_KEY);
   console.log("[sim] stored results found", Boolean(storedResults));
   console.log("[sim] stored simulationCount", storedResults?.simulationCount ?? null);
   console.log("[sim] server simulationCount", SIM_RESULTS_META?.simulationCount ?? null);
+
   if (storedResultsMeta && storedResultsMeta.slateId && storedResultsMeta.slateId !== SIM_SLATE_KEY) {
     sessionStorage.removeItem(RESULTS_STORAGE_KEY);
     sessionStorage.removeItem(`${RESULTS_STORAGE_KEY}:meta`);
   }
-  const shouldUseStoredResults = storedResults && storedResults.slateId === SIM_SLATE_KEY;
+
+  const shouldUseStoredResults =
+    storedResults &&
+    storedResults.slateId === SIM_SLATE_KEY;
+
   const didRenderStoredResults = shouldUseStoredResults
     ? renderResultsFromPayload(storedResults)
     : false;
+
   console.log(
     "[sim] resolved simulationCount",
-    didRenderStoredResults ? storedResults?.simulationCount ?? null : SIM_RESULTS_META?.simulationCount ?? null
+    shouldUseStoredResults
+      ? storedResults?.simulationCount ?? null
+      : SIM_RESULTS_META?.simulationCount ?? null
   );
+
   if (!didRenderStoredResults) {
     initResultsTools();
   }
