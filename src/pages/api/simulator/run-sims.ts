@@ -549,7 +549,10 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse(400, { error: "Payload must be an object." });
   }
 
-  const { slate } = body as { slate?: string };
+  const { slate, settings: requestSettings } = body as {
+    slate?: string;
+    settings?: Partial<SimulatorSettings>;
+  };
   if (!slate) {
     return jsonResponse(400, { error: "Missing slate key." });
   }
@@ -587,16 +590,32 @@ export const POST: APIRoute = async ({ request }) => {
   } catch {
     return jsonResponse(400, { error: "Slate package files are invalid." });
   }
+  const defaultSettings = settings;
+  const mergedSettings: SimulatorSettings = {
+    ...defaultSettings,
+    ...(requestSettings ?? {}),
+    slateId: slateJson.id,
+    payoutProfile:
+      requestSettings?.payoutProfile ??
+      (defaultSettings.payoutProfile === "flat" ? "cash" : defaultSettings.payoutProfile) ??
+      "standard",
+  };
   console.log("[sim-api] slate load ms", Math.round(nowMs() - loadStart));
   console.log("[sim-api] slate loaded", {
     players: Array.isArray(playerInputs) ? playerInputs.length : 0,
     settingsLoaded: Boolean(settings),
   });
-  console.log("[sim-api] settings", {
-    lineupCount: settings.lineupCount,
-    fieldSize: settings.fieldSize,
-    simulationCount: settings.simulationCount,
-    payoutProfile: settings.payoutProfile,
+  console.log("[sim-api] default settings", {
+    lineupCount: defaultSettings.lineupCount,
+    fieldSize: defaultSettings.fieldSize,
+    simulationCount: defaultSettings.simulationCount,
+    payoutProfile: defaultSettings.payoutProfile,
+  });
+  console.log("[sim-api] effective settings", {
+    lineupCount: mergedSettings.lineupCount,
+    fieldSize: mergedSettings.fieldSize,
+    simulationCount: mergedSettings.simulationCount,
+    payoutProfile: mergedSettings.payoutProfile,
   });
 
   if (!Array.isArray(playerInputs) || playerInputs.length === 0) {
@@ -625,16 +644,16 @@ export const POST: APIRoute = async ({ request }) => {
   const teamInputMap = new Map<string, SimulatorTeamInput>();
   teamInputs.forEach((row) => teamInputMap.set(row.team, row));
 
-  const simulationCount = settings.simulationCount || 0;
+  const simulationCount = mergedSettings.simulationCount || 0;
   if (!simulationCount || simulationCount <= 0) {
     return jsonResponse(400, { error: "simulationCount must be greater than 0." });
   }
-  const lineupCount = settings.lineupCount || 0;
+  const lineupCount = mergedSettings.lineupCount || 0;
   console.log("[sim-api] simulation starting", {
     simulationCount,
     lineupCount,
   });
-  const fieldSize = settings.fieldSize || 0;
+  const fieldSize = mergedSettings.fieldSize || 0;
   if (!fieldSize || fieldSize <= 0) {
     return jsonResponse(400, { error: "fieldSize must be greater than 0." });
   }
@@ -849,7 +868,7 @@ export const POST: APIRoute = async ({ request }) => {
   );
   const gradingUniverseLineupKeys = gradingUniverseLineups.map((lineup) => lineup.lineupKey);
 
-  const rawPayoutProfile = settings.payoutProfile === "flat" ? "cash" : settings.payoutProfile;
+  const rawPayoutProfile = mergedSettings.payoutProfile === "flat" ? "cash" : mergedSettings.payoutProfile;
   const payoutProfile =
     rawPayoutProfile === "topHeavy" || rawPayoutProfile === "cash" ? rawPayoutProfile : "standard";
   const payoutWeights =
@@ -992,9 +1011,9 @@ export const POST: APIRoute = async ({ request }) => {
     generatedAt: new Date().toISOString(),
     simulationCount,
     settingsSnapshot: {
-      lineupCount: settings.lineupCount,
-      fieldSize: settings.fieldSize,
-      simulationCount: settings.simulationCount,
+      lineupCount: mergedSettings.lineupCount,
+      fieldSize: mergedSettings.fieldSize,
+      simulationCount: mergedSettings.simulationCount,
       payoutProfile,
     },
     players: resultsPlayersWithExposure,

@@ -1980,7 +1980,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       const fetchPromise = fetch(runUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slate: SIM_SLATE_KEY }),
+        body: JSON.stringify({ slate: SIM_SLATE_KEY, settings: settingsState }),
       });
       if (runStatusEl && settingsState?.simulationCount) {
         runStatusEl.textContent = `Request sent. Running ${settingsState.simulationCount.toLocaleString()} simulations...`;
