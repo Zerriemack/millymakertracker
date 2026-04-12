@@ -1160,9 +1160,18 @@ export const POST: APIRoute = async ({ request }) => {
   });
 
   const retainedCounts = new Map<string, number>();
+  const retainedCaptainCounts = new Map<string, number>();
+  const retainedFlexCounts = new Map<string, number>();
   retainedLineups.forEach((lineup) => {
+    const multiplierPlayerId = lineup.multiplierPlayerId ?? null;
     lineup.players.forEach((player) => {
       retainedCounts.set(player.id, (retainedCounts.get(player.id) || 0) + 1);
+      if (!isShowdown) return;
+      if (player.id === multiplierPlayerId) {
+        retainedCaptainCounts.set(player.id, (retainedCaptainCounts.get(player.id) || 0) + 1);
+      } else {
+        retainedFlexCounts.set(player.id, (retainedFlexCounts.get(player.id) || 0) + 1);
+      }
     });
   });
 
@@ -1179,6 +1188,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   const resultsPlayersWithExposure = resultsPlayers.map((player) => {
     const retainedLineupCount = retainedCounts.get(player.id) || 0;
+    const retainedCaptainCount = retainedCaptainCounts.get(player.id) || 0;
+    const retainedFlexCount = retainedFlexCounts.get(player.id) || 0;
     const plusEvScore = gradedLineups.reduce((sum, lineup) => {
       if (!lineup.players.some((p) => p.id === player.id)) return sum;
       const diff = (lineup.evScore ?? 0) - averageEv;
@@ -1195,6 +1206,10 @@ export const POST: APIRoute = async ({ request }) => {
       ...player,
       retainedLineupCount,
       retainedExposureRate: retainedDenom > 0 ? (retainedLineupCount / retainedDenom) * 100 : 0,
+      captainOwnershipPercent:
+        isShowdown && retainedDenom > 0 ? (retainedCaptainCount / retainedDenom) * 100 : undefined,
+      flexOwnershipPercent:
+        isShowdown && retainedDenom > 0 ? (retainedFlexCount / retainedDenom) * 100 : undefined,
       plusEvScore,
       minusEvScore,
     };

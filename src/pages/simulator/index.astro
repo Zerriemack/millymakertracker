@@ -114,6 +114,8 @@ let results: {
     flexOptimalCount?: number;
     captainOptimalRate?: number;
     flexOptimalRate?: number;
+    captainOwnershipPercent?: number;
+    flexOwnershipPercent?: number;
     totalOptimalCount?: number;
     totalOptimalRate?: number;
     averageSimScore: number;
@@ -199,8 +201,9 @@ const formatPayoutLabel = (profile: string) => {
 
 const isShowdownSlate = selectedSlate?.gameType?.toLowerCase() === "showdown";
 const showdownMultiplierLabel = selectedSlate?.site === "fanduel" ? "MVP" : "Captain";
-const evColSpan = isShowdownSlate ? 10 : 9;
-const expColSpan = isShowdownSlate ? 10 : 9;
+const evColSpan = isShowdownSlate ? 12 : 9;
+const expColSpan = isShowdownSlate ? 11 : 8;
+const showdownRoleShort = selectedSlate?.site === "fanduel" ? "MVP" : "Capt";
 
 const buildSimulatorUrl = ({
   slate,
@@ -333,7 +336,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         <button type="button" class="tool-btn tool-btn-primary">UPLOAD PROJECTIONS</button>
       </div>
       <div class="sim-status" id="sim-status" aria-live="polite"></div>
-      <div class="sim-status sim-status-validation" id="sim-validation-summary" aria-live="polite"></div>
 
     <nav class="tabs" aria-label="Simulator sections">
       <a
@@ -615,11 +617,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                         <h3>{teamCode}</h3>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="team-validation" data-team-key={`team:${teamInput?.gameId ?? ""}:${teamInput?.team ?? ""}`}>
-                    <div class="team-validation-title">Team Checks</div>
-                    <div class="team-validation-messages"></div>
                   </div>
 
                   {teamInput ? (
@@ -957,19 +954,39 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
             </div>
           </div>
         )}
+        {results && (activeSubtab === "ev" || activeSubtab === "exp") && isShowdownSlate && (
+          <div class="results-role-legend" data-role-legend>
+            <span class="legend-item">
+              <span class="legend-swatch legend-swatch-captain" aria-hidden="true"></span>
+              {showdownMultiplierLabel} {activeSubtab === "exp" ? "Retained Exp" : "Optimal"}
+            </span>
+            <span class="legend-item">
+              <span class="legend-swatch legend-swatch-flex" aria-hidden="true"></span>
+              Flex {activeSubtab === "exp" ? "Retained Exp" : "Optimal"}
+            </span>
+          </div>
+        )}
 
         {results && activeSubtab === "ev" && (
           <div class="results-table-shell">
             <div class="results-table-head-wrap">
-              <table class="slates-table results-table results-table-head results-table-optimal-head">
+              <table class={`slates-table results-table results-table-head results-table-optimal-head${isShowdownSlate ? " results-table--showdown" : ""}`}>
                 <colgroup>
                   <col class="col-player" />
                   <col class="col-pos" />
                   <col class="col-team" />
                   <col class="col-salary" />
-                  <col class="col-own" />
                   {isShowdownSlate ? (
                     <>
+                      <col class="col-own" />
+                      <col class="col-own" />
+                    </>
+                  ) : (
+                    <col class="col-own" />
+                  )}
+                  {isShowdownSlate ? (
+                    <>
+                      <col class="col-optimal-rate-value" />
                       <col class="col-optimal-rate-value" />
                       <col class="col-optimal-rate-value" />
                     </>
@@ -991,29 +1008,82 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                     <th class="th-team">
                       <button type="button" class="results-header-filter-btn" data-filter-trigger="team">Team</button>
                     </th>
-                    <th class="th-num">
-                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button>
-                    </th>
-                    <th class="th-num">
-                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button>
+                    <th class:list={["th-num", { "results-showdown-metric-head": isShowdownSlate }]}>
+                      {isShowdownSlate ? (
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="salary">Salary</button>
+                      ) : (
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button>
+                      )}
                     </th>
                     {isShowdownSlate ? (
                       <>
-                        <th class="th-num th-optimal-value">
-                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">{showdownMultiplierLabel} Optimal %</button>
+                        <th class="th-num results-showdown-metric-head">
+                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="own">
+                            <span class="results-optimal-stack-wrap">
+                              <span class="results-optimal-stack">{showdownRoleShort}</span>
+                              <span class="results-optimal-stack">Own</span>
+                            </span>
+                          </button>
                         </th>
-                        <th class="th-num th-optimal-value">Flex Optimal %</th>
+                        <th class="th-num results-showdown-metric-head">
+                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="own">
+                            <span class="results-optimal-stack-wrap">
+                              <span class="results-optimal-stack">Flex</span>
+                              <span class="results-optimal-stack">Own</span>
+                            </span>
+                          </button>
+                        </th>
+                      </>
+                    ) : (
+                      <th class="th-num">
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button>
+                      </th>
+                    )}
+                    {isShowdownSlate ? (
+                      <>
+                        <th class="th-num th-optimal-value results-showdown-metric-head">
+                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="optimal">
+                            <span class="results-optimal-stack-wrap">
+                              <span class="results-optimal-stack">{showdownRoleShort}</span>
+                              <span class="results-optimal-stack">Optimal Rate</span>
+                            </span>
+                          </button>
+                        </th>
+                        <th class="th-num th-optimal-value results-showdown-metric-head">
+                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="optimal">
+                            <span class="results-optimal-stack-wrap">
+                              <span class="results-optimal-stack">Flex</span>
+                              <span class="results-optimal-stack">Optimal Rate</span>
+                            </span>
+                          </button>
+                        </th>
+                        <th class="th-num th-optimal-value results-showdown-metric-head">
+                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="optimal">
+                            <span class="results-optimal-stack-wrap">
+                              <span class="results-optimal-stack">Total</span>
+                              <span class="results-optimal-stack">Rate</span>
+                            </span>
+                          </button>
+                        </th>
                       </>
                     ) : (
                       <th class="th-num th-optimal-value">
                         <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button>
                       </th>
                     )}
-                    <th class="th-num th-opt-lev">
-                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button>
+                    <th class:list={["th-num", "th-opt-lev", { "results-showdown-metric-head": isShowdownSlate }]}>
+                      {isShowdownSlate ? (
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="lev">Opt Lev</button>
+                      ) : (
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button>
+                      )}
                     </th>
-                    <th class="th-num">
-                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="plusEv">Plus EV</button>
+                    <th class:list={["th-num", { "results-showdown-metric-head": isShowdownSlate }]}>
+                      {isShowdownSlate ? (
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="plusEv">Plus EV</button>
+                      ) : (
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="plusEv">Plus EV</button>
+                      )}
                     </th>
                     <th class="th-bar-lane"></th>
                   </tr>
@@ -1023,7 +1093,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
 
             <div class="results-table-wrap">
             <table
-              class="slates-table results-table results-table-body results-table-optimal"
+              class={`slates-table results-table results-table-body results-table-optimal${isShowdownSlate ? " results-table--showdown" : ""}`}
               data-results-table
               data-bar-metric="optimalSimRate"
               data-results-kind="ev"
@@ -1033,9 +1103,17 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 <col class="col-pos" />
                 <col class="col-team" />
                 <col class="col-salary" />
-                <col class="col-own" />
                 {isShowdownSlate ? (
                   <>
+                    <col class="col-own" />
+                    <col class="col-own" />
+                  </>
+                ) : (
+                  <col class="col-own" />
+                )}
+                {isShowdownSlate ? (
+                  <>
+                    <col class="col-optimal-rate-value" />
                     <col class="col-optimal-rate-value" />
                     <col class="col-optimal-rate-value" />
                   </>
@@ -1049,21 +1127,54 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
               <tbody>
                 {results.players
                   .slice()
-                  .sort((a, b) =>
-                    isShowdownSlate
-                      ? (b.totalOptimalRate ?? b.optimalSimRate) - (a.totalOptimalRate ?? a.optimalSimRate) ||
-                        (b.captainOptimalRate ?? 0) - (a.captainOptimalRate ?? 0) ||
-                        (b.flexOptimalRate ?? 0) - (a.flexOptimalRate ?? 0) ||
+                  .sort((a, b) => {
+                    if (isShowdownSlate) {
+                      const aCap = a.captainOptimalRate ?? 0;
+                      const bCap = b.captainOptimalRate ?? 0;
+                      const aFlex = a.flexOptimalRate ?? 0;
+                      const bFlex = b.flexOptimalRate ?? 0;
+                      const aTotal =
+                        Number.isFinite(a.totalOptimalRate) ? a.totalOptimalRate : aCap + aFlex;
+                      const bTotal =
+                        Number.isFinite(b.totalOptimalRate) ? b.totalOptimalRate : bCap + bFlex;
+                      return (
+                        bTotal - aTotal ||
+                        bCap - aCap ||
+                        bFlex - aFlex ||
                         b.plusEvScore - a.plusEvScore ||
                         b.optimalLeverage - a.optimalLeverage
-                      : b.optimalSimRate - a.optimalSimRate ||
-                        b.plusEvScore - a.plusEvScore ||
-                        b.optimalLeverage - a.optimalLeverage
-                  )
+                      );
+                    }
+                    return (
+                      b.optimalSimRate - a.optimalSimRate ||
+                      b.plusEvScore - a.plusEvScore ||
+                      b.optimalLeverage - a.optimalLeverage
+                    );
+                  })
                   .map((row) => {
-                    const totalOptimalRate = row.totalOptimalRate ?? row.optimalSimRate;
+                    const captainOwn =
+                      row.captainOwnershipPercent ??
+                      row.captainOwn ??
+                      row.captOwn ??
+                      row.captainOwnership ??
+                      row.cptOwn ??
+                      0;
+                    const flexOwn =
+                      row.flexOwnershipPercent ??
+                      row.flexOwn ??
+                      row.flexOwnership ??
+                      0;
                     const captainOptimalRate = row.captainOptimalRate ?? 0;
                     const flexOptimalRate = row.flexOptimalRate ?? 0;
+                    const totalOptimalRate = Number.isFinite(row.totalOptimalRate)
+                      ? row.totalOptimalRate
+                      : captainOptimalRate + flexOptimalRate;
+                    const totalRoleRate = Number.isFinite(row.totalOptimalRate)
+                      ? row.totalOptimalRate
+                      : captainOptimalRate + flexOptimalRate;
+                    const roleSum = captainOptimalRate + flexOptimalRate;
+                    const captainShare = roleSum > 0 ? (captainOptimalRate / roleSum) * 100 : 0;
+                    const flexShare = roleSum > 0 ? (flexOptimalRate / roleSum) * 100 : 0;
                     return (
                       <tr
                         data-pos={row.position}
@@ -1071,8 +1182,8 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                         data-position={row.position}
                         data-team={row.team}
                         data-salary={row.salary}
-                        data-own={row.ownership}
-                        data-optimal={totalOptimalRate}
+                      data-own={isShowdownSlate ? captainOwn + flexOwn : row.ownership}
+                      data-optimal={totalOptimalRate}
                         data-lev={Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage}
                         data-plusev={row.plusEvScore}
                       >
@@ -1092,24 +1203,48 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                           </span>
                         </td>
                         <td class="num-cell salary-cell">${row.salary.toLocaleString()}</td>
-                        <td class="num-cell own-cell">{row.ownership.toFixed(1)}%</td>
+                        {isShowdownSlate ? (
+                          <>
+                            <td class="num-cell own-cell">{captainOwn.toFixed(1)}%</td>
+                            <td class="num-cell own-cell">{flexOwn.toFixed(1)}%</td>
+                          </>
+                        ) : (
+                          <td class="num-cell own-cell">{row.ownership.toFixed(1)}%</td>
+                        )}
                         {isShowdownSlate ? (
                           <>
                             <td class="num-cell optimal-rate-value-cell">{captainOptimalRate.toFixed(1)}%</td>
                             <td class="num-cell optimal-rate-value-cell">{flexOptimalRate.toFixed(1)}%</td>
+                            <td class="num-cell optimal-rate-value-cell">{totalOptimalRate.toFixed(1)}%</td>
                           </>
                         ) : (
                           <td class="num-cell optimal-rate-value-cell">{row.optimalSimRate.toFixed(1)}%</td>
                         )}
                         <td class="num-cell opt-lev-cell">{formatOptLevDisplay(row.optimalLeverage)}</td>
                         <td class="num-cell plus-ev-cell">{row.plusEvScore.toFixed(2)}</td>
-                        <td class="bar-lane-cell" data-bar-value={totalOptimalRate}>
-                          <div class="bar-lane-shell">
-                            <span class="bar-lane-track">
-                              <span class="bar-lane-fill"></span>
-                            </span>
-                          </div>
-                        </td>
+                        {isShowdownSlate ? (
+                          <td class="bar-lane-cell bar-lane-cell--role" data-bar-value={totalRoleRate}>
+                            <div class="bar-lane-shell">
+                              <span class="bar-lane-track">
+                                <span
+                                  class="bar-lane-role-bar"
+                                  style={`--role-cap-pct:${captainShare}%; --role-flex-pct:${flexShare}%;`}
+                                >
+                                  <span class="bar-lane-seg bar-lane-seg-captain"></span>
+                                  <span class="bar-lane-seg bar-lane-seg-flex"></span>
+                                </span>
+                              </span>
+                            </div>
+                          </td>
+                        ) : (
+                          <td class="bar-lane-cell" data-bar-value={totalOptimalRate}>
+                            <div class="bar-lane-shell">
+                              <span class="bar-lane-track">
+                                <span class="bar-lane-fill"></span>
+                              </span>
+                            </div>
+                          </td>
+                        )}
                       </tr>
                     );
                   })}
@@ -1133,7 +1268,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         {results && activeSubtab === "exp" && (
           <div class="results-table-shell">
             <div class="results-table-head-wrap">
-              <table class="slates-table results-table results-table-head">
+              <table class={`slates-table results-table results-table-head${isShowdownSlate ? " results-table--showdown" : ""}`}>
                 <colgroup>
                   <col class="col-player" />
                   <col class="col-pos" />
@@ -1144,13 +1279,17 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                     <>
                       <col class="col-optimal-rate-value" />
                       <col class="col-optimal-rate-value" />
+                      <col class="col-optimal-rate-value" />
+                      <col class="col-opt-lev" />
+                      <col class="col-bar-lane" />
                     </>
                   ) : (
-                    <col class="col-optimal-rate-value" />
+                    <>
+                      <col class="col-opt-lev" />
+                      <col class="col-retained-exp" />
+                      <col class="col-bar-lane" />
+                    </>
                   )}
-                  <col class="col-opt-lev" />
-                  <col class="col-retained-exp" />
-                  <col class="col-bar-lane" />
                 </colgroup>
                 <thead>
                   <tr>
@@ -1163,31 +1302,79 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                     <th class="th-team">
                       <button type="button" class="results-header-filter-btn" data-filter-trigger="team">Team</button>
                     </th>
-                    <th class="th-num">
-                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button>
-                    </th>
-                    <th class="th-num">
-                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button>
+                    <th class:list={["th-num", { "results-showdown-metric-head": isShowdownSlate }]}>
+                      {isShowdownSlate ? (
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="salary">Salary</button>
+                      ) : (
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button>
+                      )}
                     </th>
                     {isShowdownSlate ? (
                       <>
-                        <th class="th-num th-optimal-value">
-                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">{showdownMultiplierLabel} Optimal %</button>
+                        <th class="th-num results-showdown-metric-head">
+                          <span class="results-showdown-metric-control">
+                            <span class="results-optimal-stack-wrap">
+                              <span class="results-optimal-stack">{showdownRoleShort}</span>
+                              <span class="results-optimal-stack">Own</span>
+                            </span>
+                          </span>
                         </th>
-                        <th class="th-num th-optimal-value">Flex Optimal %</th>
+                        <th class="th-num results-showdown-metric-head">
+                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="own">
+                            <span class="results-optimal-stack-wrap">
+                              <span class="results-optimal-stack">Flex</span>
+                              <span class="results-optimal-stack">Own</span>
+                            </span>
+                          </button>
+                        </th>
                       </>
                     ) : (
-                      <th class="th-num th-optimal-value">
-                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button>
+                      <th class="th-num">
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button>
                       </th>
                     )}
-                    <th class="th-num th-opt-lev">
-                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button>
-                    </th>
-                    <th class="th-num">
-                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="retainedExp">Retained Exp</button>
-                    </th>
-                    <th class="th-bar-lane"></th>
+                    {isShowdownSlate ? (
+                      <>
+                        <th class="th-num th-optimal-value results-showdown-metric-head">
+                          <span class="results-showdown-metric-control">
+                            <span class="results-optimal-stack-wrap">
+                              <span class="results-optimal-stack">{showdownRoleShort}</span>
+                              <span class="results-optimal-stack">Retained Exp</span>
+                            </span>
+                          </span>
+                        </th>
+                        <th class="th-num th-optimal-value results-showdown-metric-head">
+                          <span class="results-showdown-metric-control">
+                            <span class="results-optimal-stack-wrap">
+                              <span class="results-optimal-stack">Flex</span>
+                              <span class="results-optimal-stack">Retained Exp</span>
+                            </span>
+                          </span>
+                        </th>
+                        <th class="th-num th-optimal-value results-showdown-metric-head">
+                          <span class="results-showdown-metric-control">
+                            <span class="results-optimal-stack-wrap">
+                              <span class="results-optimal-stack">Total</span>
+                              <span class="results-optimal-stack">Retained Exp</span>
+                            </span>
+                          </span>
+                        </th>
+                        <th class="th-num th-opt-lev results-showdown-metric-head">
+                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="lev">Opt Lev</button>
+                        </th>
+                        <th class="th-bar-lane"></th>
+                      </>
+                    ) : (
+                      <>
+                        <th class="th-num th-opt-lev">
+                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button>
+                        </th>
+                        <th class="th-num">
+                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="retainedExp">Retained Exp</button>
+                        </th>
+                        <th class="th-bar-lane"></th>
+                      </>
+                    )}
                   </tr>
                 </thead>
               </table>
@@ -1195,7 +1382,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
 
             <div class="results-table-wrap">
             <table
-              class="slates-table results-table results-table-body"
+              class={`slates-table results-table results-table-body${isShowdownSlate ? " results-table--showdown" : ""}`}
               data-results-table
               data-bar-metric="retainedExposureRate"
               data-results-kind="exp"
@@ -1205,36 +1392,87 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 <col class="col-pos" />
                 <col class="col-team" />
                 <col class="col-salary" />
-                <col class="col-own" />
+                {isShowdownSlate ? (
+                  <>
+                    <col class="col-own" />
+                    <col class="col-own" />
+                  </>
+                ) : (
+                  <col class="col-own" />
+                )}
                 {isShowdownSlate ? (
                   <>
                     <col class="col-optimal-rate-value" />
                     <col class="col-optimal-rate-value" />
+                    <col class="col-optimal-rate-value" />
+                    <col class="col-opt-lev" />
+                    <col class="col-bar-lane" />
                   </>
                 ) : (
-                  <col class="col-optimal-rate-value" />
+                  <>
+                    <col class="col-opt-lev" />
+                    <col class="col-retained-exp" />
+                    <col class="col-bar-lane" />
+                  </>
                 )}
-                <col class="col-opt-lev" />
-                <col class="col-retained-exp" />
-                <col class="col-bar-lane" />
               </colgroup>
               <tbody>
                 {results.players
                   .slice()
-                  .sort((a, b) =>
-                    isShowdownSlate
-                      ? b.retainedExposureRate - a.retainedExposureRate ||
-                        (b.totalOptimalRate ?? b.optimalSimRate) - (a.totalOptimalRate ?? a.optimalSimRate) ||
-                        (b.captainOptimalRate ?? 0) - (a.captainOptimalRate ?? 0) ||
-                        (b.flexOptimalRate ?? 0) - (a.flexOptimalRate ?? 0) ||
+                  .sort((a, b) => {
+                    if (isShowdownSlate) {
+                      const aCap =
+                        a.retainedCaptainExposureRate ?? a.captainExposureRate ?? 0;
+                      const bCap =
+                        b.retainedCaptainExposureRate ?? b.captainExposureRate ?? 0;
+                      const aFlex =
+                        a.retainedFlexExposureRate ?? a.flexExposureRate ?? 0;
+                      const bFlex =
+                        b.retainedFlexExposureRate ?? b.flexExposureRate ?? 0;
+                      const aTotal =
+                        a.retainedTotalExposureRate ??
+                        a.retainedExposureRate ??
+                        aCap + aFlex;
+                      const bTotal =
+                        b.retainedTotalExposureRate ??
+                        b.retainedExposureRate ??
+                        bCap + bFlex;
+                      return (
+                        bTotal - aTotal ||
+                        bCap - aCap ||
+                        bFlex - aFlex ||
                         b.optimalLeverage - a.optimalLeverage
-                      : b.retainedExposureRate - a.retainedExposureRate ||
-                        b.optimalLeverage - a.optimalLeverage
-                  )
+                      );
+                    }
+                    return (
+                      b.retainedExposureRate - a.retainedExposureRate ||
+                      b.optimalLeverage - a.optimalLeverage
+                    );
+                  })
                   .map((row) => {
-                    const totalOptimalRate = row.totalOptimalRate ?? row.optimalSimRate;
-                    const captainOptimalRate = row.captainOptimalRate ?? 0;
-                    const flexOptimalRate = row.flexOptimalRate ?? 0;
+                    const captainOwn =
+                      row.captainOwnershipPercent ??
+                      row.captainOwn ??
+                      row.captOwn ??
+                      row.captainOwnership ??
+                      row.cptOwn ??
+                      0;
+                    const flexOwn =
+                      row.flexOwnershipPercent ??
+                      row.flexOwn ??
+                      row.flexOwnership ??
+                      0;
+                    const retainedCaptainExp =
+                      row.retainedCaptainExposureRate ?? row.captainExposureRate ?? 0;
+                    const retainedFlexExp =
+                      row.retainedFlexExposureRate ?? row.flexExposureRate ?? 0;
+                    const retainedTotalExp =
+                      row.retainedTotalExposureRate ??
+                      row.retainedExposureRate ??
+                      retainedCaptainExp + retainedFlexExp;
+                    const roleSum = retainedCaptainExp + retainedFlexExp;
+                    const captainShare = roleSum > 0 ? (retainedCaptainExp / roleSum) * 100 : 0;
+                    const flexShare = roleSum > 0 ? (retainedFlexExp / roleSum) * 100 : 0;
                     return (
                     <tr
                       data-pos={row.position}
@@ -1242,8 +1480,8 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                       data-position={row.position}
                       data-team={row.team}
                       data-salary={row.salary}
-                      data-own={row.ownership}
-                      data-optimal={totalOptimalRate}
+                      data-own={isShowdownSlate ? captainOwn + flexOwn : row.ownership}
+                      data-optimal={isShowdownSlate ? retainedTotalExp : row.optimalSimRate}
                       data-lev={Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage}
                       data-retainedexp={row.retainedExposureRate}
                     >
@@ -1263,24 +1501,52 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                         </span>
                       </td>
                       <td class="num-cell salary-cell">${row.salary.toLocaleString()}</td>
-                      <td class="num-cell own-cell">{row.ownership.toFixed(1)}%</td>
                       {isShowdownSlate ? (
                         <>
-                          <td class="num-cell optimal-rate-value-cell">{captainOptimalRate.toFixed(1)}%</td>
-                          <td class="num-cell optimal-rate-value-cell">{flexOptimalRate.toFixed(1)}%</td>
+                          <td class="num-cell own-cell">{captainOwn.toFixed(1)}%</td>
+                          <td class="num-cell own-cell">{flexOwn.toFixed(1)}%</td>
                         </>
                       ) : (
-                        <td class="num-cell optimal-rate-value-cell">{row.optimalSimRate.toFixed(1)}%</td>
+                        <td class="num-cell own-cell">{row.ownership.toFixed(1)}%</td>
                       )}
-                      <td class="num-cell opt-lev-cell">{formatOptLevDisplay(row.optimalLeverage)}</td>
-                      <td class="num-cell retained-exp-value-cell">{row.retainedExposureRate.toFixed(1)}%</td>
-                      <td class="bar-lane-cell" data-bar-value={row.retainedExposureRate}>
-                        <div class="bar-lane-shell">
-                          <span class="bar-lane-track">
-                            <span class="bar-lane-fill"></span>
-                          </span>
-                        </div>
-                      </td>
+                      {isShowdownSlate ? (
+                        <>
+                          <td class="num-cell optimal-rate-value-cell">{retainedCaptainExp.toFixed(1)}%</td>
+                          <td class="num-cell optimal-rate-value-cell">{retainedFlexExp.toFixed(1)}%</td>
+                          <td class="num-cell optimal-rate-value-cell">{retainedTotalExp.toFixed(1)}%</td>
+                        </>
+                      ) : (
+                        <>
+                          <td class="num-cell opt-lev-cell">{formatOptLevDisplay(row.optimalLeverage)}</td>
+                          <td class="num-cell retained-exp-value-cell">{row.retainedExposureRate.toFixed(1)}%</td>
+                        </>
+                      )}
+                      {isShowdownSlate && (
+                        <td class="num-cell opt-lev-cell">{formatOptLevDisplay(row.optimalLeverage)}</td>
+                      )}
+                      {isShowdownSlate ? (
+                        <td class="bar-lane-cell bar-lane-cell--role" data-bar-value={retainedTotalExp}>
+                          <div class="bar-lane-shell">
+                            <span class="bar-lane-track">
+                              <span
+                                class="bar-lane-role-bar"
+                                style={`--role-cap-pct:${captainShare}%; --role-flex-pct:${flexShare}%;`}
+                              >
+                                <span class="bar-lane-seg bar-lane-seg-captain"></span>
+                                <span class="bar-lane-seg bar-lane-seg-flex"></span>
+                              </span>
+                            </span>
+                          </div>
+                        </td>
+                      ) : (
+                        <td class="bar-lane-cell" data-bar-value={row.retainedExposureRate}>
+                          <div class="bar-lane-shell">
+                            <span class="bar-lane-track">
+                              <span class="bar-lane-fill"></span>
+                            </span>
+                          </div>
+                        </td>
+                      )}
                     </tr>
                   );
                 })}
@@ -1411,7 +1677,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     storageKey: RESULTS_STORAGE_KEY,
   });
   const statusEl = document.getElementById("sim-status");
-  const validationEl = document.getElementById("sim-validation-summary");
   const saveBtn = document.getElementById("sim-save-btn");
   const resetBtn = document.getElementById("sim-reset-btn");
   const runBtn = document.getElementById("sim-run-btn");
@@ -1780,9 +2045,23 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     const isShowdown = resultsGameType === "showdown";
     const resultsSite = String(resultsPayload?.site || SIM_SLATE_META?.site || "").toLowerCase();
     const multiplierLabel = resultsSite === "fanduel" ? "MVP" : "Captain";
-    const getTotalOptimalRate = (row) =>
-      Number.isFinite(row?.totalOptimalRate) ? row.totalOptimalRate : row.optimalSimRate;
-    const resultsColSpan = isShowdown ? 10 : 9;
+    const multiplierShort = resultsSite === "fanduel" ? "MVP" : "Capt";
+    const resultsColSpanEv = isShowdown ? 12 : 9;
+    const resultsColSpanExp = isShowdown ? 11 : 8;
+    const legendHtml = isShowdown
+      ? `
+      <div class="results-role-legend" data-role-legend>
+        <span class="legend-item">
+          <span class="legend-swatch legend-swatch-captain" aria-hidden="true"></span>
+          ${multiplierLabel} ${SIM_ACTIVE_SUBTAB === "exp" ? "Retained Exp" : "Optimal"}
+        </span>
+        <span class="legend-item">
+          <span class="legend-swatch legend-swatch-flex" aria-hidden="true"></span>
+          Flex ${SIM_ACTIVE_SUBTAB === "exp" ? "Retained Exp" : "Optimal"}
+        </span>
+      </div>
+    `
+      : "";
 
     const summaryHtml = `
       <div class="results-summary-strip">
@@ -1827,12 +2106,16 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         .slice()
         .sort((a, b) => {
           if (isShowdown) {
-            const aTotal = getTotalOptimalRate(a);
-            const bTotal = getTotalOptimalRate(b);
+            const aCap = a.captainOptimalRate ?? 0;
+            const bCap = b.captainOptimalRate ?? 0;
+            const aFlex = a.flexOptimalRate ?? 0;
+            const bFlex = b.flexOptimalRate ?? 0;
+            const aTotal = Number.isFinite(a.totalOptimalRate) ? a.totalOptimalRate : aCap + aFlex;
+            const bTotal = Number.isFinite(b.totalOptimalRate) ? b.totalOptimalRate : bCap + bFlex;
             return (
               bTotal - aTotal ||
-              (b.captainOptimalRate ?? 0) - (a.captainOptimalRate ?? 0) ||
-              (b.flexOptimalRate ?? 0) - (a.flexOptimalRate ?? 0) ||
+              bCap - aCap ||
+              bFlex - aFlex ||
               b.plusEvScore - a.plusEvScore ||
               b.optimalLeverage - a.optimalLeverage
             );
@@ -1845,15 +2128,58 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         })
         .map((row) => {
           const levValue = Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage;
-          const totalOptimalRate = getTotalOptimalRate(row);
+          const captainOwn =
+            row.captainOwnershipPercent ??
+            row.captainOwn ??
+            row.captOwn ??
+            row.captainOwnership ??
+            row.cptOwn ??
+            0;
+          const flexOwn =
+            row.flexOwnershipPercent ??
+            row.flexOwn ??
+            row.flexOwnership ??
+            0;
           const captainOptimalRate = Number.isFinite(row.captainOptimalRate) ? row.captainOptimalRate : 0;
           const flexOptimalRate = Number.isFinite(row.flexOptimalRate) ? row.flexOptimalRate : 0;
+          const totalOptimalRate = Number.isFinite(row.totalOptimalRate)
+            ? row.totalOptimalRate
+            : captainOptimalRate + flexOptimalRate;
+          const totalRoleRate = Number.isFinite(row.totalOptimalRate)
+            ? row.totalOptimalRate
+            : captainOptimalRate + flexOptimalRate;
+          const roleSum = captainOptimalRate + flexOptimalRate;
+          const captainShare = roleSum > 0 ? (captainOptimalRate / roleSum) * 100 : 0;
+          const flexShare = roleSum > 0 ? (flexOptimalRate / roleSum) * 100 : 0;
           const optimalCells = isShowdown
             ? `
               <td class="num-cell optimal-rate-value-cell">${formatNumber(captainOptimalRate, 1)}%</td>
               <td class="num-cell optimal-rate-value-cell">${formatNumber(flexOptimalRate, 1)}%</td>
+              <td class="num-cell optimal-rate-value-cell">${formatNumber(totalOptimalRate, 1)}%</td>
             `
             : `<td class="num-cell optimal-rate-value-cell">${formatNumber(row.optimalSimRate, 1)}%</td>`;
+          const barLaneCell = isShowdown
+            ? `
+              <td class="bar-lane-cell bar-lane-cell--role" data-bar-value="${totalRoleRate}">
+                <div class="bar-lane-shell">
+                  <span class="bar-lane-track">
+                    <span class="bar-lane-role-bar" style="--role-cap-pct:${captainShare}%; --role-flex-pct:${flexShare}%; ">
+                      <span class="bar-lane-seg bar-lane-seg-captain"></span>
+                      <span class="bar-lane-seg bar-lane-seg-flex"></span>
+                    </span>
+                  </span>
+                </div>
+              </td>
+            `
+            : `
+              <td class="bar-lane-cell" data-bar-value="${totalOptimalRate}">
+                <div class="bar-lane-shell">
+                  <span class="bar-lane-track">
+                    <span class="bar-lane-fill"></span>
+                  </span>
+                </div>
+              </td>
+            `;
           return `
             <tr
               data-pos="${escapeHtml(row.position)}"
@@ -1861,7 +2187,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
               data-position="${escapeHtml(row.position)}"
               data-team="${escapeHtml(row.team)}"
               data-salary="${row.salary}"
-              data-own="${row.ownership}"
+              data-own="${isShowdown ? captainOwn + flexOwn : row.ownership}"
               data-optimal="${totalOptimalRate}"
               data-lev="${levValue}"
               data-plusev="${row.plusEvScore}"
@@ -1882,27 +2208,25 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 </span>
               </td>
               <td class="num-cell salary-cell">$${formatInteger(row.salary)}</td>
-              <td class="num-cell own-cell">${formatNumber(row.ownership, 1)}%</td>
+              ${
+                isShowdown
+                  ? `<td class="num-cell own-cell">${formatNumber(captainOwn, 1)}%</td><td class="num-cell own-cell">${formatNumber(flexOwn, 1)}%</td>`
+                  : `<td class="num-cell own-cell">${formatNumber(row.ownership, 1)}%</td>`
+              }
               ${optimalCells}
               <td class="num-cell opt-lev-cell">${formatOptLevDisplay(row.optimalLeverage)}</td>
               <td class="num-cell plus-ev-cell">${formatNumber(row.plusEvScore, 2)}</td>
-              <td class="bar-lane-cell" data-bar-value="${totalOptimalRate}">
-                <div class="bar-lane-shell">
-                  <span class="bar-lane-track">
-                    <span class="bar-lane-fill"></span>
-                  </span>
-                </div>
-              </td>
+              ${barLaneCell}
             </tr>
           `;
         })
         .join("");
       const emptyFilterRow =
         resultsPayload.players.length > 0
-          ? `<tr class="results-empty-row" data-empty-row="filter" style="display:none"><td colSpan="${resultsColSpan}">No players match this position filter.</td></tr>`
+          ? `<tr class="results-empty-row" data-empty-row="filter" style="display:none"><td colSpan="${resultsColSpanEv}">No players match this position filter.</td></tr>`
           : "";
       const emptyDataRow =
-        resultsPayload.players.length === 0 ? `<tr><td colSpan="${resultsColSpan}">No results.</td></tr>` : "";
+        resultsPayload.players.length === 0 ? `<tr><td colSpan="${resultsColSpanEv}">No results.</td></tr>` : "";
       return `${rows}${emptyFilterRow}${emptyDataRow}`;
     };
 
@@ -1911,13 +2235,26 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         .slice()
         .sort((a, b) => {
           if (isShowdown) {
-            const aTotal = getTotalOptimalRate(a);
-            const bTotal = getTotalOptimalRate(b);
+            const aCap =
+              a.retainedCaptainExposureRate ?? a.captainExposureRate ?? 0;
+            const bCap =
+              b.retainedCaptainExposureRate ?? b.captainExposureRate ?? 0;
+            const aFlex =
+              a.retainedFlexExposureRate ?? a.flexExposureRate ?? 0;
+            const bFlex =
+              b.retainedFlexExposureRate ?? b.flexExposureRate ?? 0;
+            const aTotal =
+              a.retainedTotalExposureRate ??
+              a.retainedExposureRate ??
+              aCap + aFlex;
+            const bTotal =
+              b.retainedTotalExposureRate ??
+              b.retainedExposureRate ??
+              bCap + bFlex;
             return (
-              b.retainedExposureRate - a.retainedExposureRate ||
               bTotal - aTotal ||
-              (b.captainOptimalRate ?? 0) - (a.captainOptimalRate ?? 0) ||
-              (b.flexOptimalRate ?? 0) - (a.flexOptimalRate ?? 0) ||
+              bCap - aCap ||
+              bFlex - aFlex ||
               b.optimalLeverage - a.optimalLeverage
             );
           }
@@ -1928,15 +2265,61 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         })
         .map((row) => {
           const levValue = Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage;
-          const totalOptimalRate = getTotalOptimalRate(row);
-          const captainOptimalRate = Number.isFinite(row.captainOptimalRate) ? row.captainOptimalRate : 0;
-          const flexOptimalRate = Number.isFinite(row.flexOptimalRate) ? row.flexOptimalRate : 0;
-          const optimalCells = isShowdown
+          const captainOwn =
+            row.captainOwnershipPercent ??
+            row.captainOwn ??
+            row.captOwn ??
+            row.captainOwnership ??
+            row.cptOwn ??
+            0;
+          const flexOwn =
+            row.flexOwnershipPercent ??
+            row.flexOwn ??
+            row.flexOwnership ??
+            0;
+          const retainedCaptainExp =
+            row.retainedCaptainExposureRate ?? row.captainExposureRate ?? 0;
+          const retainedFlexExp =
+            row.retainedFlexExposureRate ?? row.flexExposureRate ?? 0;
+          const retainedTotalExp =
+            row.retainedTotalExposureRate ??
+            row.retainedExposureRate ??
+            retainedCaptainExp + retainedFlexExp;
+          const roleSum = retainedCaptainExp + retainedFlexExp;
+          const captainShare = roleSum > 0 ? (retainedCaptainExp / roleSum) * 100 : 0;
+          const flexShare = roleSum > 0 ? (retainedFlexExp / roleSum) * 100 : 0;
+          const exposureCells = isShowdown
             ? `
-              <td class="num-cell optimal-rate-value-cell">${formatNumber(captainOptimalRate, 1)}%</td>
-              <td class="num-cell optimal-rate-value-cell">${formatNumber(flexOptimalRate, 1)}%</td>
+              <td class="num-cell optimal-rate-value-cell">${formatNumber(retainedCaptainExp, 1)}%</td>
+              <td class="num-cell optimal-rate-value-cell">${formatNumber(retainedFlexExp, 1)}%</td>
+              <td class="num-cell optimal-rate-value-cell">${formatNumber(retainedTotalExp, 1)}%</td>
             `
-            : `<td class="num-cell optimal-rate-value-cell">${formatNumber(row.optimalSimRate, 1)}%</td>`;
+            : `
+              <td class="num-cell opt-lev-cell">${formatOptLevDisplay(row.optimalLeverage)}</td>
+              <td class="num-cell retained-exp-value-cell">${formatNumber(row.retainedExposureRate, 1)}%</td>
+            `;
+          const barLaneCell = isShowdown
+            ? `
+              <td class="bar-lane-cell bar-lane-cell--role" data-bar-value="${retainedTotalExp}">
+                <div class="bar-lane-shell">
+                  <span class="bar-lane-track">
+                    <span class="bar-lane-role-bar" style="--role-cap-pct:${captainShare}%; --role-flex-pct:${flexShare}%; ">
+                      <span class="bar-lane-seg bar-lane-seg-captain"></span>
+                      <span class="bar-lane-seg bar-lane-seg-flex"></span>
+                    </span>
+                  </span>
+                </div>
+              </td>
+            `
+            : `
+              <td class="bar-lane-cell" data-bar-value="${row.retainedExposureRate}">
+                <div class="bar-lane-shell">
+                  <span class="bar-lane-track">
+                    <span class="bar-lane-fill"></span>
+                  </span>
+                </div>
+              </td>
+            `;
           return `
             <tr
               data-pos="${escapeHtml(row.position)}"
@@ -1944,8 +2327,8 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
               data-position="${escapeHtml(row.position)}"
               data-team="${escapeHtml(row.team)}"
               data-salary="${row.salary}"
-              data-own="${row.ownership}"
-              data-optimal="${totalOptimalRate}"
+              data-own="${isShowdown ? captainOwn + flexOwn : row.ownership}"
+              data-optimal="${isShowdown ? retainedTotalExp : row.optimalSimRate}"
               data-lev="${levValue}"
               data-retainedexp="${row.retainedExposureRate}"
             >
@@ -1965,27 +2348,24 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 </span>
               </td>
               <td class="num-cell salary-cell">$${formatInteger(row.salary)}</td>
-              <td class="num-cell own-cell">${formatNumber(row.ownership, 1)}%</td>
-              ${optimalCells}
-              <td class="num-cell opt-lev-cell">${formatOptLevDisplay(row.optimalLeverage)}</td>
-              <td class="num-cell retained-exp-value-cell">${formatNumber(row.retainedExposureRate, 1)}%</td>
-              <td class="bar-lane-cell" data-bar-value="${row.retainedExposureRate}">
-                <div class="bar-lane-shell">
-                  <span class="bar-lane-track">
-                    <span class="bar-lane-fill"></span>
-                  </span>
-                </div>
-              </td>
+              ${
+                isShowdown
+                  ? `<td class="num-cell own-cell">${formatNumber(captainOwn, 1)}%</td><td class="num-cell own-cell">${formatNumber(flexOwn, 1)}%</td>`
+                  : `<td class="num-cell own-cell">${formatNumber(row.ownership, 1)}%</td>`
+              }
+              ${exposureCells}
+              ${isShowdown ? `<td class="num-cell opt-lev-cell">${formatOptLevDisplay(row.optimalLeverage)}</td>` : ""}
+              ${barLaneCell}
             </tr>
           `;
         })
         .join("");
       const emptyFilterRow =
         resultsPayload.players.length > 0
-          ? `<tr class="results-empty-row" data-empty-row="filter" style="display:none"><td colSpan="${resultsColSpan}">No players match this position filter.</td></tr>`
+          ? `<tr class="results-empty-row" data-empty-row="filter" style="display:none"><td colSpan="${resultsColSpanExp}">No players match this position filter.</td></tr>`
           : "";
       const emptyDataRow =
-        resultsPayload.players.length === 0 ? `<tr><td colSpan="${resultsColSpan}">No exposures.</td></tr>` : "";
+        resultsPayload.players.length === 0 ? `<tr><td colSpan="${resultsColSpanExp}">No exposures.</td></tr>` : "";
       return `${rows}${emptyFilterRow}${emptyDataRow}`;
     };
 
@@ -2032,33 +2412,84 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     };
 
     const optimalRateColgroup = isShowdown
-      ? `<col class="col-optimal-rate-value" /><col class="col-optimal-rate-value" />`
+      ? `<col class="col-optimal-rate-value" /><col class="col-optimal-rate-value" /><col class="col-optimal-rate-value" />`
       : `<col class="col-optimal-rate-value" />`;
     const optimalRateHeader = isShowdown
       ? `
-        <th class="th-num th-optimal-value">
-          <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">${multiplierLabel} Optimal %</button>
+        <th class="th-num th-optimal-value results-showdown-metric-head">
+          <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="optimal">
+            <span class="results-optimal-stack-wrap">
+              <span class="results-optimal-stack">${multiplierShort}</span>
+              <span class="results-optimal-stack">Optimal Rate</span>
+            </span>
+          </button>
         </th>
-        <th class="th-num th-optimal-value">${"Flex"} Optimal %</th>
+        <th class="th-num th-optimal-value results-showdown-metric-head">
+          <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="optimal">
+            <span class="results-optimal-stack-wrap">
+              <span class="results-optimal-stack">Flex</span>
+              <span class="results-optimal-stack">Optimal Rate</span>
+            </span>
+          </button>
+        </th>
+        <th class="th-num th-optimal-value results-showdown-metric-head">
+          <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="optimal">
+            <span class="results-optimal-stack-wrap">
+              <span class="results-optimal-stack">Total</span>
+              <span class="results-optimal-stack">Rate</span>
+            </span>
+          </button>
+        </th>
       `
       : `
         <th class="th-num th-optimal-value">
           <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button>
         </th>
       `;
+    const exposureRateColgroup = isShowdown
+      ? `<col class="col-optimal-rate-value" /><col class="col-optimal-rate-value" /><col class="col-optimal-rate-value" />`
+      : `<col class="col-optimal-rate-value" />`;
+    const exposureRateHeader = isShowdown
+      ? `
+        <th class="th-num th-optimal-value results-showdown-metric-head">
+          <span class="results-showdown-metric-control">
+            <span class="results-optimal-stack-wrap">
+              <span class="results-optimal-stack">${multiplierShort}</span>
+              <span class="results-optimal-stack">Retained Exp</span>
+            </span>
+          </span>
+        </th>
+        <th class="th-num th-optimal-value results-showdown-metric-head">
+          <span class="results-showdown-metric-control">
+            <span class="results-optimal-stack-wrap">
+              <span class="results-optimal-stack">Flex</span>
+              <span class="results-optimal-stack">Retained Exp</span>
+            </span>
+          </span>
+        </th>
+        <th class="th-num th-optimal-value results-showdown-metric-head">
+          <span class="results-showdown-metric-control">
+            <span class="results-optimal-stack-wrap">
+              <span class="results-optimal-stack">Total</span>
+              <span class="results-optimal-stack">Retained Exp</span>
+            </span>
+          </span>
+        </th>
+      `
+      : optimalRateHeader;
 
     let tableHtml = "";
     if (SIM_ACTIVE_SUBTAB === "ev") {
       tableHtml = `
         <div class="results-table-shell">
           <div class="results-table-head-wrap">
-            <table class="slates-table results-table results-table-head results-table-optimal-head">
+            <table class="slates-table results-table results-table-head results-table-optimal-head${isShowdown ? " results-table--showdown" : ""}">
               <colgroup>
                 <col class="col-player" />
                 <col class="col-pos" />
                 <col class="col-team" />
                 <col class="col-salary" />
-                <col class="col-own" />
+                ${isShowdown ? `<col class="col-own" /><col class="col-own" />` : `<col class="col-own" />`}
                 ${optimalRateColgroup}
                 <col class="col-opt-lev" />
                 <col class="col-plus-ev" />
@@ -2069,24 +2500,57 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                   <th class="th-player"><button type="button" class="results-header-filter-btn" data-filter-trigger="name">Player</button></th>
                   <th class="th-pos"><button type="button" class="results-header-filter-btn" data-filter-trigger="position">Pos</button></th>
                   <th class="th-team"><button type="button" class="results-header-filter-btn" data-filter-trigger="team">Team</button></th>
-                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button></th>
-                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button></th>
+                  ${
+                    isShowdown
+                      ? `<th class="th-num results-showdown-metric-head"><button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="salary">Salary</button></th>`
+                      : `<th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button></th>`
+                  }
+                  ${
+                    isShowdown
+                      ? `
+                  <th class="th-num results-showdown-metric-head">
+                    <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="own">
+                      <span class="results-optimal-stack-wrap">
+                        <span class="results-optimal-stack">${multiplierShort}</span>
+                        <span class="results-optimal-stack">Own</span>
+                      </span>
+                    </button>
+                  </th>
+                  <th class="th-num results-showdown-metric-head">
+                    <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="own">
+                      <span class="results-optimal-stack-wrap">
+                        <span class="results-optimal-stack">Flex</span>
+                        <span class="results-optimal-stack">Own</span>
+                      </span>
+                    </button>
+                  </th>
+                  `
+                      : `<th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button></th>`
+                  }
                   ${optimalRateHeader}
-                  <th class="th-num th-opt-lev"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button></th>
-                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="plusEv">Plus EV</button></th>
+                  ${
+                    isShowdown
+                      ? `<th class="th-num th-opt-lev results-showdown-metric-head"><button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="lev">Opt Lev</button></th>`
+                      : `<th class="th-num th-opt-lev"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button></th>`
+                  }
+                  ${
+                    isShowdown
+                      ? `<th class="th-num results-showdown-metric-head"><button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="plusEv">Plus EV</button></th>`
+                      : `<th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="plusEv">Plus EV</button></th>`
+                  }
                   <th class="th-bar-lane"></th>
                 </tr>
               </thead>
             </table>
           </div>
           <div class="results-table-wrap">
-            <table class="slates-table results-table results-table-body results-table-optimal" data-results-table data-bar-metric="optimalSimRate" data-results-kind="ev">
+            <table class="slates-table results-table results-table-body results-table-optimal${isShowdown ? " results-table--showdown" : ""}" data-results-table data-bar-metric="optimalSimRate" data-results-kind="ev">
               <colgroup>
                 <col class="col-player" />
                 <col class="col-pos" />
                 <col class="col-team" />
                 <col class="col-salary" />
-                <col class="col-own" />
+                ${isShowdown ? `<col class="col-own" /><col class="col-own" />` : `<col class="col-own" />`}
                 ${optimalRateColgroup}
                 <col class="col-opt-lev" />
                 <col class="col-plus-ev" />
@@ -2106,16 +2570,16 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       tableHtml = `
         <div class="results-table-shell">
           <div class="results-table-head-wrap">
-            <table class="slates-table results-table results-table-head">
+            <table class="slates-table results-table results-table-head${isShowdown ? " results-table--showdown" : ""}">
               <colgroup>
                 <col class="col-player" />
                 <col class="col-pos" />
                 <col class="col-team" />
                 <col class="col-salary" />
-                <col class="col-own" />
-                ${optimalRateColgroup}
+                ${isShowdown ? `<col class="col-own" /><col class="col-own" />` : `<col class="col-own" />`}
+                ${isShowdown ? exposureRateColgroup : ""}
                 <col class="col-opt-lev" />
-                <col class="col-retained-exp" />
+                ${isShowdown ? "" : `<col class="col-retained-exp" />`}
                 <col class="col-bar-lane" />
               </colgroup>
               <thead>
@@ -2123,27 +2587,52 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                   <th class="th-player"><button type="button" class="results-header-filter-btn" data-filter-trigger="name">Player</button></th>
                   <th class="th-pos"><button type="button" class="results-header-filter-btn" data-filter-trigger="position">Pos</button></th>
                   <th class="th-team"><button type="button" class="results-header-filter-btn" data-filter-trigger="team">Team</button></th>
-                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button></th>
-                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button></th>
-                  ${optimalRateHeader}
-                  <th class="th-num th-opt-lev"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button></th>
-                  <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="retainedExp">Retained Exp</button></th>
+                  <th class="${isShowdown ? "th-num results-showdown-metric-head" : "th-num"}">${isShowdown ? `<button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="salary">Salary</button>` : `<button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button>`}</th>
+                  ${
+                    isShowdown
+                      ? `
+                  <th class="th-num results-showdown-metric-head">
+                    <span class="results-showdown-metric-control">
+                      <span class="results-optimal-stack-wrap">
+                        <span class="results-optimal-stack">${multiplierShort}</span>
+                        <span class="results-optimal-stack">Own</span>
+                      </span>
+                    </span>
+                  </th>
+                  <th class="th-num results-showdown-metric-head">
+                    <button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="own">
+                      <span class="results-optimal-stack-wrap">
+                        <span class="results-optimal-stack">Flex</span>
+                        <span class="results-optimal-stack">Own</span>
+                      </span>
+                    </button>
+                  </th>
+                  `
+                      : `<th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button></th>`
+                  }
+                  ${isShowdown ? exposureRateHeader : ""}
+                  ${
+                    isShowdown
+                      ? `<th class="th-num th-opt-lev results-showdown-metric-head"><button type="button" class="results-header-filter-btn results-header-filter-btn--num results-showdown-metric-control" data-filter-trigger="lev">Opt Lev</button></th>`
+                      : `<th class="th-num th-opt-lev"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button></th>`
+                  }
+                  ${isShowdown ? "" : `<th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="retainedExp">Retained Exp</button></th>`}
                   <th class="th-bar-lane"></th>
                 </tr>
               </thead>
             </table>
           </div>
           <div class="results-table-wrap">
-            <table class="slates-table results-table results-table-body" data-results-table data-bar-metric="retainedExposureRate" data-results-kind="exp">
+            <table class="slates-table results-table results-table-body${isShowdown ? " results-table--showdown" : ""}" data-results-table data-bar-metric="retainedExposureRate" data-results-kind="exp">
               <colgroup>
                 <col class="col-player" />
                 <col class="col-pos" />
                 <col class="col-team" />
                 <col class="col-salary" />
-                <col class="col-own" />
-                ${optimalRateColgroup}
+                ${isShowdown ? `<col class="col-own" /><col class="col-own" />` : `<col class="col-own" />`}
+                ${isShowdown ? exposureRateColgroup : ""}
                 <col class="col-opt-lev" />
-                <col class="col-retained-exp" />
+                ${isShowdown ? "" : `<col class="col-retained-exp" />`}
                 <col class="col-bar-lane" />
               </colgroup>
               <tbody>
@@ -2188,7 +2677,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     });
 
     resultsContent.dataset.hasResults = "true";
-    resultsContent.innerHTML = `${summaryHtml}${filterRowHtml}${tableHtml}`;
+    resultsContent.innerHTML = `${summaryHtml}${filterRowHtml}${legendHtml}${tableHtml}`;
 
     console.log("[sim-live-debug-v2] results HTML replaced");
 
@@ -2333,28 +2822,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     }
   };
 
-  const updateValidationSummary = () => {
-    if (!validationEl) return;
-    if (invalidCount > 0 || teamBlockingCount > 0) {
-      const parts = [];
-      if (invalidCount > 0) {
-        parts.push(`${invalidCount} field error${invalidCount === 1 ? "" : "s"}`);
-      }
-      if (teamBlockingCount > 0) {
-        parts.push(`${teamBlockingCount} team logic error${teamBlockingCount === 1 ? "" : "s"}`);
-      }
-      validationEl.textContent = `Fix ${parts.join(" and ")} before saving.`;
-      validationEl.dataset.tone = "error";
-      return;
-    }
-    if (teamWarningCount > 0) {
-      validationEl.textContent = `${teamWarningCount} team warning${teamWarningCount === 1 ? "" : "s"} (save allowed).`;
-      validationEl.dataset.tone = "info";
-      return;
-    }
-    validationEl.textContent = "";
-    validationEl.dataset.tone = "";
-  };
+  const updateValidationSummary = () => {};
 
   const setDirty = (value) => {
     dirty = value;
@@ -2498,15 +2966,12 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   };
 
   const computeTeamValidation = () => {
-    const teamNodes = Array.from(document.querySelectorAll(".team-validation[data-team-key]"));
-    const validationMap = new Map();
     teamBlockingCount = 0;
     teamWarningCount = 0;
 
-    teamNodes.forEach((node) => {
-      const key = node.dataset.teamKey;
-      if (!key) return;
-      const [, gameId, team] = key.split(":");
+    state.teamInputs.forEach((row) => {
+      const gameId = row.gameId;
+      const team = row.team;
       if (!gameId || !team) return;
       const players = state.playerInputs.filter(
         (player) => player.gameId === gameId && player.team === team
@@ -2536,32 +3001,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
 
       if (errors.length > 0) teamBlockingCount += 1;
       if (warnings.length > 0) teamWarningCount += 1;
-      validationMap.set(key, { errors, warnings });
-    });
-
-    teamNodes.forEach((node) => {
-      const key = node.dataset.teamKey;
-      const messagesEl = node.querySelector(".team-validation-messages");
-      if (!key || !messagesEl) return;
-      const result = validationMap.get(key);
-      messagesEl.innerHTML = "";
-      if (!result) return;
-      if (result.errors.length === 0 && result.warnings.length === 0) {
-        messagesEl.innerHTML = "<div class=\"team-validation-ok\">No issues detected.</div>";
-        return;
-      }
-      result.errors.forEach((message) => {
-        const div = document.createElement("div");
-        div.className = "team-validation-msg error";
-        div.textContent = message;
-        messagesEl.appendChild(div);
-      });
-      result.warnings.forEach((message) => {
-        const div = document.createElement("div");
-        div.className = "team-validation-msg warning";
-        div.textContent = message;
-        messagesEl.appendChild(div);
-      });
     });
 
     updateValidationSummary();
@@ -3737,6 +4176,10 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   }
 
   .filter-label {
+    display: inline-block;
+    line-height: 1;
+    align-self: center;
+    transform: translateY(1px);
     font-size: 0.74rem;
     font-weight: 800;
     color: rgba(255, 255, 255, 0.94);
@@ -4111,46 +4554,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     font-size: 0.78rem;
     line-height: 1.3;
     white-space: normal;
-  }
-
-.team-validation {
-  display: grid;
-  gap: 8px;
-  padding: 12px 14px;
-  border-radius: var(--sim-radius-md);
-  border: 0;
-  background:
-    linear-gradient(180deg, rgba(12, 19, 37, 0.96) 0%, rgba(7, 10, 18, 0.98) 100%);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
-  margin-bottom: 2px;
-}
-
-  .team-validation-title {
-    font-size: 0.64rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.46);
-    margin-bottom: 4px;
-  }
-
-  .team-validation-messages {
-    display: grid;
-    gap: 2px;
-    font-size: 0.68rem;
-    font-weight: 800;
-  }
-
-  .team-validation-msg.error {
-    color: #fca5a5;
-  }
-
-  .team-validation-msg.warning {
-    color: #fcd34d;
-  }
-
-  .team-validation-ok {
-    color: rgba(255, 255, 255, 0.6);
   }
 
   input.input-error {
@@ -4766,6 +5169,8 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   --cell-pad-x: 0.58rem;
   --num-pad-right: 0.24rem;
   --bar-lane-inset: 0.12rem;
+  --role-captain-color: rgba(98, 224, 255, 1);
+  --role-flex-color: rgba(255, 206, 109, 1);
   width: 100%;
   min-width: 1136px;
   border-collapse: collapse;
@@ -4787,6 +5192,11 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
 :global(.sim-panel .results-table col.col-plus-ev) { width: 74px; }
 :global(.sim-panel .results-table col.col-retained-exp) { width: 92px; }
 :global(.sim-panel .results-table col.col-bar-lane) { width: 290px; }
+:global(.sim-panel .results-table--showdown col.col-optimal-rate-value) { width: 132px; }
+:global(.sim-panel .results-table--showdown col.col-pos) { width: 46px; }
+:global(.sim-panel .results-table--showdown col.col-team) { width: 60px; }
+:global(.sim-panel .results-table--showdown col.col-opt-lev) { width: 68px; }
+:global(.sim-panel .results-table--showdown col.col-own) { width: 64px; }
 
 :global(.sim-panel .results-table thead tr),
 :global(.sim-panel .results-table thead th) {
@@ -5032,6 +5442,65 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   background: linear-gradient(90deg, rgba(47, 103, 255, 1) 0%, rgba(88, 150, 255, 0.94) 58%, rgba(150, 205, 255, 0.36) 100%);
 }
 
+:global(.sim-panel .bar-lane-role-bar) {
+  display: flex;
+  width: var(--metric-bar-width, 0%);
+  height: 100%;
+  min-width: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(18, 38, 85, 0.6);
+}
+
+:global(.sim-panel .bar-lane-seg) {
+  display: block;
+  height: 100%;
+  min-width: 0;
+}
+
+:global(.sim-panel .bar-lane-seg-captain) {
+  width: var(--role-cap-pct, 0%);
+  background: linear-gradient(90deg, rgba(86, 214, 255, 1) 0%, rgba(68, 176, 255, 0.92) 60%, rgba(68, 176, 255, 0.55) 100%);
+}
+
+:global(.sim-panel .bar-lane-seg-flex) {
+  width: var(--role-flex-pct, 0%);
+  background: linear-gradient(90deg, rgba(255, 206, 109, 1) 0%, rgba(252, 171, 80, 0.9) 60%, rgba(252, 171, 80, 0.6) 100%);
+}
+
+:global(.sim-panel .results-role-legend) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 2px 0 4px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+:global(.sim-panel .results-role-legend .legend-item) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+:global(.sim-panel .results-role-legend .legend-swatch) {
+  width: 14px;
+  height: 6px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(15, 30, 70, 0.6);
+}
+
+:global(.sim-panel .results-role-legend .legend-swatch-captain) {
+  background: linear-gradient(90deg, rgba(86, 214, 255, 1) 0%, rgba(68, 176, 255, 0.92) 100%);
+}
+
+:global(.sim-panel .results-role-legend .legend-swatch-flex) {
+  background: linear-gradient(90deg, rgba(255, 206, 109, 1) 0%, rgba(252, 171, 80, 0.9) 100%);
+}
+
 :global(.sim-panel .results-header-filter-btn) {
   display: inline-flex;
   align-items: center;
@@ -5052,6 +5521,65 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
 :global(.sim-panel .results-header-filter-btn--num) {
   justify-content: flex-end;
   text-align: right;
+}
+
+:global(.sim-panel .results-table--showdown th.th-optimal-value) {
+  text-align: center;
+}
+
+:global(.sim-panel .results-table--showdown th.th-num) {
+  text-align: center;
+  vertical-align: middle;
+}
+
+:global(.sim-panel .results-table--showdown th.results-showdown-metric-head .results-showdown-metric-control) {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  outline: none;
+}
+
+:global(.sim-panel .results-table--showdown th.results-showdown-metric-head .results-showdown-metric-control) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+:global(.sim-panel .results-table--showdown th.results-showdown-metric-head .results-header-filter-btn--num) {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+:global(.sim-panel .results-table--showdown th.results-showdown-metric-head.th-optimal-value .results-header-filter-btn--num) {
+  justify-content: center;
+  text-align: center;
+}
+
+:global(.sim-panel .results-table--showdown th.results-showdown-metric-head .results-header-filter-btn--num .results-optimal-stack-wrap),
+:global(.sim-panel .results-table--showdown th.results-showdown-metric-head .results-optimal-stack-wrap) {
+  margin: 0 auto;
+}
+
+:global(.sim-panel .results-optimal-stack-wrap) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.05;
+  white-space: nowrap;
+  min-height: 1.6rem;
+}
+
+:global(.sim-panel .results-optimal-stack) {
+  display: block;
+  line-height: 1.05;
+  white-space: nowrap;
 }
 
 :global(.sim-panel .results-header-filter-btn::after) {

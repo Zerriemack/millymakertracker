@@ -1,0 +1,24 @@
+[
+  {
+    "slateId": "nfl-2026-week-02-draftkings-showdown-main",
+    "gameId": "buf-nyj-2026-w02",
+    "team": "BUF",
+    "pointsScored": 24.5,
+    "pace": 66.2,
+    "rushRate": 0.42,
+    "rushTdRatio": 0.48,
+    "dstSalary": 3100,
+    "sackRate": 0.072
+  },
+  {
+    "slateId": "nfl-2026-week-02-draftkings-showdown-main",
+    "gameId": "buf-nyj-2026-w02",
+    "team": "NYJ",
+    "pointsScored": 22.0,
+    "pace": 64.8,
+    "rushRate": 0.45,
+    "rushTdRatio": 0.52,
+    "dstSalary": 3000,
+    "sackRate": 0.069
+  }
+]
