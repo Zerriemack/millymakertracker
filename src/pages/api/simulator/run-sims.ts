@@ -676,7 +676,7 @@ export const POST: APIRoute = async ({ request }) => {
   if (fieldSize > 500000) {
     return jsonResponse(400, { error: "fieldSize must be 500000 or smaller." });
   }
-  const maxProdSimulations = 1500;
+  const maxProdSimulations = 50000;
   console.log("[sim-api-debug-v1] production rules", {
     isProdRuntime,
     requestedSimulationCount: simulationCount,
