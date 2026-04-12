@@ -12,11 +12,15 @@ import type {
 } from "../../../lib/simulator/types";
 
 type SimPlayer = SimulatorPlayerInput & { simScore: number };
+type ShowdownRole = "captain" | "mvp" | "flex";
 type SimLineup = {
   slots: SimPlayer[];
   salaryUsed: number;
   sumOwnership: number;
   simTotal: number;
+  roleByPlayerId?: Record<string, ShowdownRole>;
+  multiplierPlayerId?: string;
+  multiplier?: number;
 };
 type RankedSimLineup = SimLineup & { lineupKey: string };
 type LineupAggregate = {
@@ -26,6 +30,9 @@ type LineupAggregate = {
   frequencyCount: number;
   totalSimTotal: number;
   maxSimTotal: number;
+  roleByPlayerId?: Record<string, ShowdownRole>;
+  multiplierPlayerId?: string;
+  multiplier?: number;
 };
 
 const isProdRuntime = !import.meta.env.DEV;
@@ -87,6 +94,11 @@ function buildLineupKey(players: Pick<SimPlayer, "id">[]) {
     .map((player) => player.id)
     .sort()
     .join("|");
+}
+
+function buildShowdownLineupKey(multiplierPlayerId: string, flexIds: string[]) {
+  const sortedFlex = flexIds.slice().sort();
+  return `M:${multiplierPlayerId}|F:${sortedFlex.join("|")}`;
 }
 
 function compareRankedLineups(a: RankedSimLineup, b: RankedSimLineup) {
@@ -508,6 +520,85 @@ function buildTopLineups(
   return bestLineups.sort(compareRankedLineups);
 }
 
+function buildTopShowdownLineupsSampled(
+  players: SimPlayer[],
+  salaryCap: number,
+  limit: number,
+  config: {
+    flexCount: number;
+    salaryMultiplier: number;
+    scoreMultiplier: number;
+    multiplierRole: ShowdownRole;
+    captainPoolSize: number;
+    flexPoolSize: number;
+    attempts: number;
+  }
+): RankedSimLineup[] {
+  const {
+    flexCount,
+    salaryMultiplier,
+    scoreMultiplier,
+    multiplierRole,
+    captainPoolSize,
+    flexPoolSize,
+    attempts,
+  } = config;
+  if (players.length < flexCount + 1) return [];
+
+  const captainPool = selectTopIndices(players, () => true, captainPoolSize);
+  const flexPool = selectTopIndices(players, () => true, flexPoolSize);
+  if (captainPool.length < 1 || flexPool.length < flexCount) return [];
+
+  const bestLineups: RankedSimLineup[] = [];
+  const randomPick = (arr: number[]) => arr[Math.floor(Math.random() * arr.length)];
+
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    const captainIndex = randomPick(captainPool);
+    const chosenFlex = new Set<number>();
+    let guard = 0;
+    while (chosenFlex.size < flexCount && guard < flexCount * 6) {
+      const flexIndex = randomPick(flexPool);
+      if (flexIndex !== captainIndex) chosenFlex.add(flexIndex);
+      guard += 1;
+    }
+    if (chosenFlex.size < flexCount) continue;
+
+    const captain = players[captainIndex];
+    const flexPlayers = Array.from(chosenFlex).map((idx) => players[idx]);
+    const salaryUsed =
+      captain.salary * salaryMultiplier + flexPlayers.reduce((sum, player) => sum + player.salary, 0);
+    if (salaryUsed > salaryCap) continue;
+
+    const sumOwnership =
+      captain.ownership + flexPlayers.reduce((sum, player) => sum + player.ownership, 0);
+    const simTotal =
+      captain.simScore * scoreMultiplier + flexPlayers.reduce((sum, player) => sum + player.simScore, 0);
+    const slots = [captain, ...flexPlayers];
+    const roleByPlayerId: Record<string, ShowdownRole> = {
+      [captain.id]: multiplierRole,
+    };
+    flexPlayers.forEach((player) => {
+      roleByPlayerId[player.id] = "flex";
+    });
+    insertTopRankedLineup(
+      bestLineups,
+      {
+        lineupKey: buildShowdownLineupKey(captain.id, flexPlayers.map((player) => player.id)),
+        slots,
+        salaryUsed,
+        sumOwnership,
+        simTotal,
+        roleByPlayerId,
+        multiplierPlayerId: captain.id,
+        multiplier: scoreMultiplier,
+      },
+      limit
+    );
+  }
+
+  return bestLineups.sort(compareRankedLineups);
+}
+
 function upsertLineupAggregate(
   lineupStats: Map<string, LineupAggregate>,
   lineup: RankedSimLineup
@@ -527,6 +618,9 @@ function upsertLineupAggregate(
     frequencyCount: 1,
     totalSimTotal: lineup.simTotal,
     maxSimTotal: lineup.simTotal,
+    roleByPlayerId: lineup.roleByPlayerId,
+    multiplierPlayerId: lineup.multiplierPlayerId,
+    multiplier: lineup.multiplier,
   });
 }
 
@@ -638,22 +732,40 @@ export const POST: APIRoute = async ({ request }) => {
     return jsonResponse(400, { error: "player-inputs.json is empty." });
   }
 
-  if (slateJson.site !== "draftkings" || slateJson.gameType !== "classic") {
-    return jsonResponse(400, { error: "Version 1 supports DraftKings classic only." });
+  const isDraftKings = slateJson.site === "draftkings";
+  const isFanDuel = slateJson.site === "fanduel";
+  const isClassic = slateJson.gameType === "classic";
+  const isShowdown = slateJson.gameType === "showdown";
+  if (isClassic && !isDraftKings) {
+    return jsonResponse(400, { error: "Classic simulator currently supports DraftKings only." });
+  }
+  if (isShowdown && !(isDraftKings || isFanDuel)) {
+    return jsonResponse(400, { error: "Showdown simulator supports DraftKings and FanDuel only." });
+  }
+  if (!isClassic && !isShowdown) {
+    return jsonResponse(400, { error: "Unsupported slate game type." });
   }
 
   const salaryCap = slateJson.salaryCap;
   if (!salaryCap) {
     return jsonResponse(400, { error: "Salary cap is missing from slate." });
   }
-  if (slateJson.rosterSize && slateJson.rosterSize !== 9) {
-    return jsonResponse(400, { error: "Version 1 supports 9-player DraftKings classic only." });
-  }
-
-  const requiredPositions = ["QB", "RB", "WR", "TE", "DST"];
-  for (const pos of requiredPositions) {
-    if (!playerInputs.some((p) => p.position === pos)) {
-      return jsonResponse(400, { error: `Missing required position: ${pos}` });
+  if (isClassic) {
+    if (slateJson.rosterSize && slateJson.rosterSize !== 9) {
+      return jsonResponse(400, { error: "Classic simulator supports 9-player DraftKings only." });
+    }
+    const requiredPositions = ["QB", "RB", "WR", "TE", "DST"];
+    for (const pos of requiredPositions) {
+      if (!playerInputs.some((p) => p.position === pos)) {
+        return jsonResponse(400, { error: `Missing required position: ${pos}` });
+      }
+    }
+  } else {
+    const expectedRosterSize = isDraftKings ? 6 : 5;
+    if (slateJson.rosterSize && slateJson.rosterSize !== expectedRosterSize) {
+      return jsonResponse(400, {
+        error: `Showdown simulator expects ${expectedRosterSize} roster spots for ${slateJson.site}.`,
+      });
     }
   }
 
@@ -705,6 +817,8 @@ export const POST: APIRoute = async ({ request }) => {
     string,
     {
       optimalLineupCount: number;
+      captainOptimalCount: number;
+      flexOptimalCount: number;
       totalSimScore: number;
       maxSimScore: number;
     }
@@ -717,6 +831,8 @@ export const POST: APIRoute = async ({ request }) => {
   simPlayers.forEach((player) => {
     playerStats.set(player.id, {
       optimalLineupCount: 0,
+      captainOptimalCount: 0,
+      flexOptimalCount: 0,
       totalSimScore: 0,
       maxSimScore: 0,
     });
@@ -725,10 +841,14 @@ export const POST: APIRoute = async ({ request }) => {
   const retainedLineupStats = new Map<string, LineupAggregate>();
   const gradingUniverseStats = new Map<string, LineupAggregate>();
   const progressStep = Math.max(1, Math.floor(simulationCount / 10));
-  const comboStart = nowMs();
-  const combos = buildPrecomputedCombos(simPlayers);
-  console.log("[sim-api] combo precompute ms", Math.round(nowMs() - comboStart));
   const simPlayerCount = simPlayers.length;
+
+  let combos: PrecomputedCombos | null = null;
+  if (isClassic && !isProdRuntime) {
+    const comboStart = nowMs();
+    combos = buildPrecomputedCombos(simPlayers);
+    console.log("[sim-api] combo precompute ms", Math.round(nowMs() - comboStart));
+  }
 
   const prodPoolCaps = {
     qb: 3,
@@ -739,6 +859,18 @@ export const POST: APIRoute = async ({ request }) => {
     flex: 12,
   };
   const prodAttemptsPerSim = 2500;
+
+  const showdownConfig = isShowdown
+    ? {
+        flexCount: isDraftKings ? 5 : 4,
+        salaryMultiplier: isDraftKings ? 1.5 : 1,
+        scoreMultiplier: 1.5,
+        multiplierRole: isDraftKings ? "captain" : "mvp",
+        captainPoolSize: isProdRuntime ? 10 : 14,
+        flexPoolSize: isProdRuntime ? 18 : 24,
+        attempts: isProdRuntime ? 2000 : 4500,
+      }
+    : null;
 
   const simStart = nowMs();
   for (let sim = 0; sim < simulationCount; sim += 1) {
@@ -759,7 +891,17 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     let simLineups: RankedSimLineup[] = [];
-    if (isProdRuntime) {
+    if (isShowdown) {
+      if (!showdownConfig) {
+        return jsonResponse(400, { error: "Showdown configuration missing." });
+      }
+      simLineups = buildTopShowdownLineupsSampled(
+        simPlayers,
+        salaryCap,
+        candidateLineupLimitPerSim,
+        showdownConfig
+      );
+    } else if (isProdRuntime) {
       const pools = {
         qbIdx: selectTopIndices(simPlayers, (p) => p.position === "QB", prodPoolCaps.qb),
         rbIdx: selectTopIndices(simPlayers, (p) => p.position === "RB", prodPoolCaps.rb),
@@ -779,16 +921,23 @@ export const POST: APIRoute = async ({ request }) => {
         pools,
         prodAttemptsPerSim
       );
-    } else {
+    } else if (combos) {
       simLineups = buildTopLineups(simPlayers, salaryCap, candidateLineupLimitPerSim, combos);
     }
     const optimalLineup = simLineups[0];
     if (!optimalLineup) {
       return jsonResponse(400, { error: "Unable to build a legal lineup with current player pool." });
     }
+    const roleMap = optimalLineup.roleByPlayerId;
     optimalLineup.slots.forEach((player) => {
       const stats = playerStats.get(player.id);
-      if (stats) stats.optimalLineupCount += 1;
+      if (!stats) return;
+      stats.optimalLineupCount += 1;
+      if (isShowdown && roleMap) {
+        const role = roleMap[player.id];
+        if (role === "flex") stats.flexOptimalCount += 1;
+        else stats.captainOptimalCount += 1;
+      }
     });
     upsertLineupAggregate(retainedLineupStats, optimalLineup);
 
@@ -808,6 +957,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   const resultsPlayers = playerInputs.map((player) => {
     const stats = playerStats.get(player.id)!;
+    const totalOptimalRate = (stats.optimalLineupCount / simulationCount) * 100;
     return {
       id: player.id,
       name: player.name,
@@ -817,8 +967,14 @@ export const POST: APIRoute = async ({ request }) => {
       projection: player.projection,
       ownership: player.ownership,
       optimalLineupCount: stats.optimalLineupCount,
-      optimalSimRate: (stats.optimalLineupCount / simulationCount) * 100,
-      optimalLeverage: (stats.optimalLineupCount / simulationCount) * 100 - player.ownership,
+      optimalSimRate: totalOptimalRate,
+      optimalLeverage: totalOptimalRate - player.ownership,
+      captainOptimalCount: stats.captainOptimalCount,
+      flexOptimalCount: stats.flexOptimalCount,
+      captainOptimalRate: (stats.captainOptimalCount / simulationCount) * 100,
+      flexOptimalRate: (stats.flexOptimalCount / simulationCount) * 100,
+      totalOptimalCount: stats.optimalLineupCount,
+      totalOptimalRate,
       averageSimScore: stats.totalSimScore / simulationCount,
       maxSimScore: stats.maxSimScore,
     };
@@ -844,6 +1000,8 @@ export const POST: APIRoute = async ({ request }) => {
           salary: player.salary,
           ownership: player.ownership,
         })),
+        multiplierPlayerId: lineup.multiplierPlayerId ?? null,
+        multiplier: lineup.multiplier ?? null,
         salaryUsed: lineup.salaryUsed,
         sumOwnership: lineup.sumOwnership,
         frequencyCount: lineup.frequencyCount,
@@ -886,9 +1044,16 @@ export const POST: APIRoute = async ({ request }) => {
     gradingFieldMode === "expandedField" ? [...retainedLineups, ...extraGradingLineups] : retainedLineups;
 
   const retainedLineupKeys = retainedLineups.map((lineup) => lineup.lineupKey);
-  const gradingUniverseLineupIndices = gradingUniverseLineups.map((lineup) =>
-    lineup.players.map((player) => playerIndexMap.get(player.id) ?? -1)
-  );
+  const gradingUniverseLineupEntries = gradingUniverseLineups.map((lineup) => {
+    const indices = lineup.players.map((player) => playerIndexMap.get(player.id) ?? -1);
+    const multiplierPlayerId = lineup.multiplierPlayerId;
+    const multiplierIndex =
+      multiplierPlayerId && lineup.players
+        ? lineup.players.findIndex((player) => player.id === multiplierPlayerId)
+        : -1;
+    const multiplier = typeof lineup.multiplier === "number" ? lineup.multiplier : 1;
+    return { indices, multiplierIndex, multiplier };
+  });
   const gradingUniverseLineupKeys = gradingUniverseLineups.map((lineup) => lineup.lineupKey);
 
   const rawPayoutProfile = mergedSettings.payoutProfile === "flat" ? "cash" : mergedSettings.payoutProfile;
@@ -932,10 +1097,16 @@ export const POST: APIRoute = async ({ request }) => {
   const gradingStart = nowMs();
   for (let sim = 0; sim < simulationCount; sim += 1) {
     const totals: Array<{ key: string; total: number }> = [];
-    gradingUniverseLineupIndices.forEach((indices, idx) => {
+    gradingUniverseLineupEntries.forEach((entry, idx) => {
       let total = 0;
-      for (const playerIdx of indices) {
+      for (const playerIdx of entry.indices) {
         if (playerIdx >= 0) total += scoreMatrix[playerIdx][sim];
+      }
+      if (entry.multiplierIndex >= 0 && entry.multiplier > 1) {
+        const idxToBoost = entry.indices[entry.multiplierIndex];
+        if (idxToBoost >= 0) {
+          total += scoreMatrix[idxToBoost][sim] * (entry.multiplier - 1);
+        }
       }
       const key = gradingUniverseLineupKeys[idx];
       totals.push({ key, total });
@@ -1031,6 +1202,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   const resultsPayload = {
     slateId: slateJson.id,
+    gameType: slateJson.gameType,
+    site: slateJson.site,
     generatedAt: new Date().toISOString(),
     simulationCount,
     settingsSnapshot: {
@@ -1080,7 +1253,11 @@ export const POST: APIRoute = async ({ request }) => {
     simulationCount,
     results: resultsPayload,
     wroteResults: allowFileWrites,
-    supportedGameType: "draftkings-classic",
+    supportedGameType: isClassic
+      ? "draftkings-classic"
+      : isDraftKings
+        ? "draftkings-showdown"
+        : "fanduel-mvp",
     playerCount: playerInputs.length,
   };
   const serializeStart = nowMs();

@@ -89,6 +89,8 @@ const settings = selectedPackage?.settings
   : null;
 let results: {
   slateId: string;
+  gameType?: "classic" | "showdown";
+  site?: "draftkings" | "fanduel";
   generatedAt: string;
   simulationCount: number;
   settingsSnapshot: {
@@ -108,6 +110,12 @@ let results: {
     optimalLineupCount: number;
     optimalSimRate: number;
     optimalLeverage: number;
+    captainOptimalCount?: number;
+    flexOptimalCount?: number;
+    captainOptimalRate?: number;
+    flexOptimalRate?: number;
+    totalOptimalCount?: number;
+    totalOptimalRate?: number;
     averageSimScore: number;
     maxSimScore: number;
     retainedLineupCount: number;
@@ -125,6 +133,8 @@ let results: {
       salary: number;
       ownership: number;
     }>;
+    multiplierPlayerId?: string | null;
+    multiplier?: number | null;
     salaryUsed: number;
     sumOwnership: number;
     frequencyCount: number;
@@ -186,6 +196,11 @@ const formatPayoutLabel = (profile: string) => {
   if (profile === "cash" || profile === "flat") return "Cash";
   return "Standard";
 };
+
+const isShowdownSlate = selectedSlate?.gameType?.toLowerCase() === "showdown";
+const showdownMultiplierLabel = selectedSlate?.site === "fanduel" ? "MVP" : "Captain";
+const evColSpan = isShowdownSlate ? 10 : 9;
+const expColSpan = isShowdownSlate ? 10 : 9;
 
 const buildSimulatorUrl = ({
   slate,
@@ -953,7 +968,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                   <col class="col-team" />
                   <col class="col-salary" />
                   <col class="col-own" />
-                  <col class="col-optimal-rate-value" />
+                  {isShowdownSlate ? (
+                    <>
+                      <col class="col-optimal-rate-value" />
+                      <col class="col-optimal-rate-value" />
+                    </>
+                  ) : (
+                    <col class="col-optimal-rate-value" />
+                  )}
                   <col class="col-opt-lev" />
                   <col class="col-plus-ev" />
                   <col class="col-bar-lane" />
@@ -975,9 +997,18 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                     <th class="th-num">
                       <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button>
                     </th>
-                    <th class="th-num th-optimal-value">
-                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button>
-                    </th>
+                    {isShowdownSlate ? (
+                      <>
+                        <th class="th-num th-optimal-value">
+                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">{showdownMultiplierLabel} Optimal %</button>
+                        </th>
+                        <th class="th-num th-optimal-value">Flex Optimal %</th>
+                      </>
+                    ) : (
+                      <th class="th-num th-optimal-value">
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button>
+                      </th>
+                    )}
                     <th class="th-num th-opt-lev">
                       <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button>
                     </th>
@@ -1003,7 +1034,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 <col class="col-team" />
                 <col class="col-salary" />
                 <col class="col-own" />
-                <col class="col-optimal-rate-value" />
+                {isShowdownSlate ? (
+                  <>
+                    <col class="col-optimal-rate-value" />
+                    <col class="col-optimal-rate-value" />
+                  </>
+                ) : (
+                  <col class="col-optimal-rate-value" />
+                )}
                 <col class="col-opt-lev" />
                 <col class="col-plus-ev" />
                 <col class="col-bar-lane" />
@@ -1011,61 +1049,78 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
               <tbody>
                 {results.players
                   .slice()
-                  .sort(
-                    (a, b) =>
-                      b.optimalSimRate - a.optimalSimRate ||
-                      b.plusEvScore - a.plusEvScore ||
-                      b.optimalLeverage - a.optimalLeverage
+                  .sort((a, b) =>
+                    isShowdownSlate
+                      ? (b.totalOptimalRate ?? b.optimalSimRate) - (a.totalOptimalRate ?? a.optimalSimRate) ||
+                        (b.captainOptimalRate ?? 0) - (a.captainOptimalRate ?? 0) ||
+                        (b.flexOptimalRate ?? 0) - (a.flexOptimalRate ?? 0) ||
+                        b.plusEvScore - a.plusEvScore ||
+                        b.optimalLeverage - a.optimalLeverage
+                      : b.optimalSimRate - a.optimalSimRate ||
+                        b.plusEvScore - a.plusEvScore ||
+                        b.optimalLeverage - a.optimalLeverage
                   )
-                  .map((row) => (
-                    <tr
-                      data-pos={row.position}
-                      data-name={row.name}
-                      data-position={row.position}
-                      data-team={row.team}
-                      data-salary={row.salary}
-                      data-own={row.ownership}
-                      data-optimal={row.optimalSimRate}
-                      data-lev={Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage}
-                      data-plusev={row.plusEvScore}
-                    >
-                      <td class="player-name-cell">{row.name}</td>
-                      <td class="pos-cell">{row.position}</td>
-                      <td class="team-cell">
-                        <span class="team-cell-inner">
-                          <span class="results-team-logo">
-                            <img
-                              src={`/simulator/team-logos/${row.team}.png`}
-                              alt={`${row.team} logo`}
-                              loading="lazy"
-                              onerror="this.style.display='none';"
-                            />
+                  .map((row) => {
+                    const totalOptimalRate = row.totalOptimalRate ?? row.optimalSimRate;
+                    const captainOptimalRate = row.captainOptimalRate ?? 0;
+                    const flexOptimalRate = row.flexOptimalRate ?? 0;
+                    return (
+                      <tr
+                        data-pos={row.position}
+                        data-name={row.name}
+                        data-position={row.position}
+                        data-team={row.team}
+                        data-salary={row.salary}
+                        data-own={row.ownership}
+                        data-optimal={totalOptimalRate}
+                        data-lev={Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage}
+                        data-plusev={row.plusEvScore}
+                      >
+                        <td class="player-name-cell">{row.name}</td>
+                        <td class="pos-cell">{row.position}</td>
+                        <td class="team-cell">
+                          <span class="team-cell-inner">
+                            <span class="results-team-logo">
+                              <img
+                                src={`/simulator/team-logos/${row.team}.png`}
+                                alt={`${row.team} logo`}
+                                loading="lazy"
+                                onerror="this.style.display='none';"
+                              />
+                            </span>
+                            <span class="team-code">{row.team}</span>
                           </span>
-                          <span class="team-code">{row.team}</span>
-                        </span>
-                      </td>
-                      <td class="num-cell salary-cell">${row.salary.toLocaleString()}</td>
-                      <td class="num-cell own-cell">{row.ownership.toFixed(1)}%</td>
-                      <td class="num-cell optimal-rate-value-cell">{row.optimalSimRate.toFixed(1)}%</td>
-                      <td class="num-cell opt-lev-cell">{formatOptLevDisplay(row.optimalLeverage)}</td>
-                      <td class="num-cell plus-ev-cell">{row.plusEvScore.toFixed(2)}</td>
-                      <td class="bar-lane-cell" data-bar-value={row.optimalSimRate}>
-                        <div class="bar-lane-shell">
-                          <span class="bar-lane-track">
-                            <span class="bar-lane-fill"></span>
-                          </span>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
+                        </td>
+                        <td class="num-cell salary-cell">${row.salary.toLocaleString()}</td>
+                        <td class="num-cell own-cell">{row.ownership.toFixed(1)}%</td>
+                        {isShowdownSlate ? (
+                          <>
+                            <td class="num-cell optimal-rate-value-cell">{captainOptimalRate.toFixed(1)}%</td>
+                            <td class="num-cell optimal-rate-value-cell">{flexOptimalRate.toFixed(1)}%</td>
+                          </>
+                        ) : (
+                          <td class="num-cell optimal-rate-value-cell">{row.optimalSimRate.toFixed(1)}%</td>
+                        )}
+                        <td class="num-cell opt-lev-cell">{formatOptLevDisplay(row.optimalLeverage)}</td>
+                        <td class="num-cell plus-ev-cell">{row.plusEvScore.toFixed(2)}</td>
+                        <td class="bar-lane-cell" data-bar-value={totalOptimalRate}>
+                          <div class="bar-lane-shell">
+                            <span class="bar-lane-track">
+                              <span class="bar-lane-fill"></span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 {results.players.length > 0 && (
                   <tr class="results-empty-row" data-empty-row="filter" style="display:none">
-                    <td colSpan={9}>No players match this position filter.</td>
+                    <td colSpan={evColSpan}>No players match this position filter.</td>
                   </tr>
                 )}
                 {results.players.length === 0 && (
                   <tr>
-                    <td colSpan={9}>No results.</td>
+                    <td colSpan={evColSpan}>No results.</td>
                   </tr>
                 )}
               </tbody>
@@ -1085,7 +1140,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                   <col class="col-team" />
                   <col class="col-salary" />
                   <col class="col-own" />
-                  <col class="col-optimal-rate-value" />
+                  {isShowdownSlate ? (
+                    <>
+                      <col class="col-optimal-rate-value" />
+                      <col class="col-optimal-rate-value" />
+                    </>
+                  ) : (
+                    <col class="col-optimal-rate-value" />
+                  )}
                   <col class="col-opt-lev" />
                   <col class="col-retained-exp" />
                   <col class="col-bar-lane" />
@@ -1107,9 +1169,18 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                     <th class="th-num">
                       <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button>
                     </th>
-                    <th class="th-num th-optimal-value">
-                      <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button>
-                    </th>
+                    {isShowdownSlate ? (
+                      <>
+                        <th class="th-num th-optimal-value">
+                          <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">{showdownMultiplierLabel} Optimal %</button>
+                        </th>
+                        <th class="th-num th-optimal-value">Flex Optimal %</th>
+                      </>
+                    ) : (
+                      <th class="th-num th-optimal-value">
+                        <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button>
+                      </th>
+                    )}
                     <th class="th-num th-opt-lev">
                       <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button>
                     </th>
@@ -1135,7 +1206,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 <col class="col-team" />
                 <col class="col-salary" />
                 <col class="col-own" />
-                <col class="col-optimal-rate-value" />
+                {isShowdownSlate ? (
+                  <>
+                    <col class="col-optimal-rate-value" />
+                    <col class="col-optimal-rate-value" />
+                  </>
+                ) : (
+                  <col class="col-optimal-rate-value" />
+                )}
                 <col class="col-opt-lev" />
                 <col class="col-retained-exp" />
                 <col class="col-bar-lane" />
@@ -1143,60 +1221,77 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
               <tbody>
                 {results.players
                   .slice()
-                  .sort(
-                    (a, b) =>
-                      b.retainedExposureRate - a.retainedExposureRate ||
-                      b.optimalLeverage - a.optimalLeverage
+                  .sort((a, b) =>
+                    isShowdownSlate
+                      ? b.retainedExposureRate - a.retainedExposureRate ||
+                        (b.totalOptimalRate ?? b.optimalSimRate) - (a.totalOptimalRate ?? a.optimalSimRate) ||
+                        (b.captainOptimalRate ?? 0) - (a.captainOptimalRate ?? 0) ||
+                        (b.flexOptimalRate ?? 0) - (a.flexOptimalRate ?? 0) ||
+                        b.optimalLeverage - a.optimalLeverage
+                      : b.retainedExposureRate - a.retainedExposureRate ||
+                        b.optimalLeverage - a.optimalLeverage
                   )
-                  .map((row) => (
-                  <tr
-                    data-pos={row.position}
-                    data-name={row.name}
-                    data-position={row.position}
-                    data-team={row.team}
-                    data-salary={row.salary}
-                    data-own={row.ownership}
-                    data-optimal={row.optimalSimRate}
-                    data-lev={Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage}
-                    data-retainedexp={row.retainedExposureRate}
-                  >
-                    <td class="player-name-cell">{row.name}</td>
-                    <td class="pos-cell">{row.position}</td>
-                    <td class="team-cell">
-                      <span class="team-cell-inner">
-                        <span class="results-team-logo">
-                          <img
-                            src={`/simulator/team-logos/${row.team}.png`}
-                            alt={`${row.team} logo`}
-                            loading="lazy"
-                            onerror="this.style.display='none';"
-                          />
+                  .map((row) => {
+                    const totalOptimalRate = row.totalOptimalRate ?? row.optimalSimRate;
+                    const captainOptimalRate = row.captainOptimalRate ?? 0;
+                    const flexOptimalRate = row.flexOptimalRate ?? 0;
+                    return (
+                    <tr
+                      data-pos={row.position}
+                      data-name={row.name}
+                      data-position={row.position}
+                      data-team={row.team}
+                      data-salary={row.salary}
+                      data-own={row.ownership}
+                      data-optimal={totalOptimalRate}
+                      data-lev={Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage}
+                      data-retainedexp={row.retainedExposureRate}
+                    >
+                      <td class="player-name-cell">{row.name}</td>
+                      <td class="pos-cell">{row.position}</td>
+                      <td class="team-cell">
+                        <span class="team-cell-inner">
+                          <span class="results-team-logo">
+                            <img
+                              src={`/simulator/team-logos/${row.team}.png`}
+                              alt={`${row.team} logo`}
+                              loading="lazy"
+                              onerror="this.style.display='none';"
+                            />
+                          </span>
+                          <span class="team-code">{row.team}</span>
                         </span>
-                        <span class="team-code">{row.team}</span>
-                      </span>
-                    </td>
-                    <td class="num-cell salary-cell">${row.salary.toLocaleString()}</td>
-                    <td class="num-cell own-cell">{row.ownership.toFixed(1)}%</td>
-                    <td class="num-cell optimal-rate-value-cell">{row.optimalSimRate.toFixed(1)}%</td>
-                    <td class="num-cell opt-lev-cell">{formatOptLevDisplay(row.optimalLeverage)}</td>
-                    <td class="num-cell retained-exp-value-cell">{row.retainedExposureRate.toFixed(1)}%</td>
-                    <td class="bar-lane-cell" data-bar-value={row.retainedExposureRate}>
-                      <div class="bar-lane-shell">
-                        <span class="bar-lane-track">
-                          <span class="bar-lane-fill"></span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                      </td>
+                      <td class="num-cell salary-cell">${row.salary.toLocaleString()}</td>
+                      <td class="num-cell own-cell">{row.ownership.toFixed(1)}%</td>
+                      {isShowdownSlate ? (
+                        <>
+                          <td class="num-cell optimal-rate-value-cell">{captainOptimalRate.toFixed(1)}%</td>
+                          <td class="num-cell optimal-rate-value-cell">{flexOptimalRate.toFixed(1)}%</td>
+                        </>
+                      ) : (
+                        <td class="num-cell optimal-rate-value-cell">{row.optimalSimRate.toFixed(1)}%</td>
+                      )}
+                      <td class="num-cell opt-lev-cell">{formatOptLevDisplay(row.optimalLeverage)}</td>
+                      <td class="num-cell retained-exp-value-cell">{row.retainedExposureRate.toFixed(1)}%</td>
+                      <td class="bar-lane-cell" data-bar-value={row.retainedExposureRate}>
+                        <div class="bar-lane-shell">
+                          <span class="bar-lane-track">
+                            <span class="bar-lane-fill"></span>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
                 {results.players.length > 0 && (
                   <tr class="results-empty-row" data-empty-row="filter" style="display:none">
-                    <td colSpan={9}>No players match this position filter.</td>
+                    <td colSpan={expColSpan}>No players match this position filter.</td>
                   </tr>
                 )}
                 {results.players.length === 0 && (
                   <tr>
-                    <td colSpan={9}>No exposures.</td>
+                    <td colSpan={expColSpan}>No exposures.</td>
                   </tr>
                 )}
               </tbody>
@@ -1278,11 +1373,18 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   id="sim-data"
   set:html={JSON.stringify({
     slateKey: activeSlateKey,
+    slateMeta: selectedSlate
+      ? {
+          gameType: selectedSlate.gameType,
+          site: selectedSlate.site,
+        }
+      : null,
     teamInputs,
     playerInputs,
     settings,
     activeTab,
     activeSubtab,
+    activeGameType,
   })}
 ></script>
 <script is:inline>
@@ -1290,11 +1392,13 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const simDataEl = document.getElementById("sim-data");
   const simData = simDataEl ? JSON.parse(simDataEl.textContent || "{}") : {};
   const SIM_SLATE_KEY = simData.slateKey || "";
+  const SIM_SLATE_META = simData.slateMeta || null;
   const SIM_TEAM_INPUTS = Array.isArray(simData.teamInputs) ? simData.teamInputs : [];
   const SIM_PLAYER_INPUTS = Array.isArray(simData.playerInputs) ? simData.playerInputs : [];
   const SIM_SETTINGS = simData.settings || null;
   const SIM_ACTIVE_TAB = simData.activeTab || "slates";
   const SIM_ACTIVE_SUBTAB = simData.activeSubtab || "ev";
+  const SIM_ACTIVE_GAME_TYPE = simData.activeGameType || null;
   console.log("[sim] active slate", SIM_SLATE_KEY);
   console.log("[sim] active tab", SIM_ACTIVE_TAB);
   console.log("[sim] active subtab", SIM_ACTIVE_SUBTAB);
@@ -1670,6 +1774,16 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       return false;
     }
 
+    const resultsGameType = String(
+      resultsPayload?.gameType || SIM_SLATE_META?.gameType || SIM_ACTIVE_GAME_TYPE || "classic"
+    ).toLowerCase();
+    const isShowdown = resultsGameType === "showdown";
+    const resultsSite = String(resultsPayload?.site || SIM_SLATE_META?.site || "").toLowerCase();
+    const multiplierLabel = resultsSite === "fanduel" ? "MVP" : "Captain";
+    const getTotalOptimalRate = (row) =>
+      Number.isFinite(row?.totalOptimalRate) ? row.totalOptimalRate : row.optimalSimRate;
+    const resultsColSpan = isShowdown ? 10 : 9;
+
     const summaryHtml = `
       <div class="results-summary-strip">
         <div class="summary-item">
@@ -1711,14 +1825,35 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     const buildEvRows = () => {
       const rows = resultsPayload.players
         .slice()
-        .sort(
-          (a, b) =>
+        .sort((a, b) => {
+          if (isShowdown) {
+            const aTotal = getTotalOptimalRate(a);
+            const bTotal = getTotalOptimalRate(b);
+            return (
+              bTotal - aTotal ||
+              (b.captainOptimalRate ?? 0) - (a.captainOptimalRate ?? 0) ||
+              (b.flexOptimalRate ?? 0) - (a.flexOptimalRate ?? 0) ||
+              b.plusEvScore - a.plusEvScore ||
+              b.optimalLeverage - a.optimalLeverage
+            );
+          }
+          return (
             b.optimalSimRate - a.optimalSimRate ||
             b.plusEvScore - a.plusEvScore ||
             b.optimalLeverage - a.optimalLeverage
-        )
+          );
+        })
         .map((row) => {
           const levValue = Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage;
+          const totalOptimalRate = getTotalOptimalRate(row);
+          const captainOptimalRate = Number.isFinite(row.captainOptimalRate) ? row.captainOptimalRate : 0;
+          const flexOptimalRate = Number.isFinite(row.flexOptimalRate) ? row.flexOptimalRate : 0;
+          const optimalCells = isShowdown
+            ? `
+              <td class="num-cell optimal-rate-value-cell">${formatNumber(captainOptimalRate, 1)}%</td>
+              <td class="num-cell optimal-rate-value-cell">${formatNumber(flexOptimalRate, 1)}%</td>
+            `
+            : `<td class="num-cell optimal-rate-value-cell">${formatNumber(row.optimalSimRate, 1)}%</td>`;
           return `
             <tr
               data-pos="${escapeHtml(row.position)}"
@@ -1727,7 +1862,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
               data-team="${escapeHtml(row.team)}"
               data-salary="${row.salary}"
               data-own="${row.ownership}"
-              data-optimal="${row.optimalSimRate}"
+              data-optimal="${totalOptimalRate}"
               data-lev="${levValue}"
               data-plusev="${row.plusEvScore}"
             >
@@ -1748,10 +1883,10 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
               </td>
               <td class="num-cell salary-cell">$${formatInteger(row.salary)}</td>
               <td class="num-cell own-cell">${formatNumber(row.ownership, 1)}%</td>
-              <td class="num-cell optimal-rate-value-cell">${formatNumber(row.optimalSimRate, 1)}%</td>
+              ${optimalCells}
               <td class="num-cell opt-lev-cell">${formatOptLevDisplay(row.optimalLeverage)}</td>
               <td class="num-cell plus-ev-cell">${formatNumber(row.plusEvScore, 2)}</td>
-              <td class="bar-lane-cell" data-bar-value="${row.optimalSimRate}">
+              <td class="bar-lane-cell" data-bar-value="${totalOptimalRate}">
                 <div class="bar-lane-shell">
                   <span class="bar-lane-track">
                     <span class="bar-lane-fill"></span>
@@ -1764,23 +1899,44 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         .join("");
       const emptyFilterRow =
         resultsPayload.players.length > 0
-          ? `<tr class="results-empty-row" data-empty-row="filter" style="display:none"><td colSpan="9">No players match this position filter.</td></tr>`
+          ? `<tr class="results-empty-row" data-empty-row="filter" style="display:none"><td colSpan="${resultsColSpan}">No players match this position filter.</td></tr>`
           : "";
       const emptyDataRow =
-        resultsPayload.players.length === 0 ? `<tr><td colSpan="9">No results.</td></tr>` : "";
+        resultsPayload.players.length === 0 ? `<tr><td colSpan="${resultsColSpan}">No results.</td></tr>` : "";
       return `${rows}${emptyFilterRow}${emptyDataRow}`;
     };
 
     const buildExpRows = () => {
       const rows = resultsPayload.players
         .slice()
-        .sort(
-          (a, b) =>
+        .sort((a, b) => {
+          if (isShowdown) {
+            const aTotal = getTotalOptimalRate(a);
+            const bTotal = getTotalOptimalRate(b);
+            return (
+              b.retainedExposureRate - a.retainedExposureRate ||
+              bTotal - aTotal ||
+              (b.captainOptimalRate ?? 0) - (a.captainOptimalRate ?? 0) ||
+              (b.flexOptimalRate ?? 0) - (a.flexOptimalRate ?? 0) ||
+              b.optimalLeverage - a.optimalLeverage
+            );
+          }
+          return (
             b.retainedExposureRate - a.retainedExposureRate ||
             b.optimalLeverage - a.optimalLeverage
-        )
+          );
+        })
         .map((row) => {
           const levValue = Math.abs(row.optimalLeverage) >= 10 ? row.optimalLeverage / 10 : row.optimalLeverage;
+          const totalOptimalRate = getTotalOptimalRate(row);
+          const captainOptimalRate = Number.isFinite(row.captainOptimalRate) ? row.captainOptimalRate : 0;
+          const flexOptimalRate = Number.isFinite(row.flexOptimalRate) ? row.flexOptimalRate : 0;
+          const optimalCells = isShowdown
+            ? `
+              <td class="num-cell optimal-rate-value-cell">${formatNumber(captainOptimalRate, 1)}%</td>
+              <td class="num-cell optimal-rate-value-cell">${formatNumber(flexOptimalRate, 1)}%</td>
+            `
+            : `<td class="num-cell optimal-rate-value-cell">${formatNumber(row.optimalSimRate, 1)}%</td>`;
           return `
             <tr
               data-pos="${escapeHtml(row.position)}"
@@ -1789,7 +1945,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
               data-team="${escapeHtml(row.team)}"
               data-salary="${row.salary}"
               data-own="${row.ownership}"
-              data-optimal="${row.optimalSimRate}"
+              data-optimal="${totalOptimalRate}"
               data-lev="${levValue}"
               data-retainedexp="${row.retainedExposureRate}"
             >
@@ -1810,7 +1966,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
               </td>
               <td class="num-cell salary-cell">$${formatInteger(row.salary)}</td>
               <td class="num-cell own-cell">${formatNumber(row.ownership, 1)}%</td>
-              <td class="num-cell optimal-rate-value-cell">${formatNumber(row.optimalSimRate, 1)}%</td>
+              ${optimalCells}
               <td class="num-cell opt-lev-cell">${formatOptLevDisplay(row.optimalLeverage)}</td>
               <td class="num-cell retained-exp-value-cell">${formatNumber(row.retainedExposureRate, 1)}%</td>
               <td class="bar-lane-cell" data-bar-value="${row.retainedExposureRate}">
@@ -1826,10 +1982,10 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         .join("");
       const emptyFilterRow =
         resultsPayload.players.length > 0
-          ? `<tr class="results-empty-row" data-empty-row="filter" style="display:none"><td colSpan="9">No players match this position filter.</td></tr>`
+          ? `<tr class="results-empty-row" data-empty-row="filter" style="display:none"><td colSpan="${resultsColSpan}">No players match this position filter.</td></tr>`
           : "";
       const emptyDataRow =
-        resultsPayload.players.length === 0 ? `<tr><td colSpan="9">No exposures.</td></tr>` : "";
+        resultsPayload.players.length === 0 ? `<tr><td colSpan="${resultsColSpan}">No exposures.</td></tr>` : "";
       return `${rows}${emptyFilterRow}${emptyDataRow}`;
     };
 
@@ -1875,6 +2031,22 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       return rows;
     };
 
+    const optimalRateColgroup = isShowdown
+      ? `<col class="col-optimal-rate-value" /><col class="col-optimal-rate-value" />`
+      : `<col class="col-optimal-rate-value" />`;
+    const optimalRateHeader = isShowdown
+      ? `
+        <th class="th-num th-optimal-value">
+          <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">${multiplierLabel} Optimal %</button>
+        </th>
+        <th class="th-num th-optimal-value">${"Flex"} Optimal %</th>
+      `
+      : `
+        <th class="th-num th-optimal-value">
+          <button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button>
+        </th>
+      `;
+
     let tableHtml = "";
     if (SIM_ACTIVE_SUBTAB === "ev") {
       tableHtml = `
@@ -1887,7 +2059,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 <col class="col-team" />
                 <col class="col-salary" />
                 <col class="col-own" />
-                <col class="col-optimal-rate-value" />
+                ${optimalRateColgroup}
                 <col class="col-opt-lev" />
                 <col class="col-plus-ev" />
                 <col class="col-bar-lane" />
@@ -1899,7 +2071,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                   <th class="th-team"><button type="button" class="results-header-filter-btn" data-filter-trigger="team">Team</button></th>
                   <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button></th>
                   <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button></th>
-                  <th class="th-num th-optimal-value"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button></th>
+                  ${optimalRateHeader}
                   <th class="th-num th-opt-lev"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button></th>
                   <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="plusEv">Plus EV</button></th>
                   <th class="th-bar-lane"></th>
@@ -1915,7 +2087,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 <col class="col-team" />
                 <col class="col-salary" />
                 <col class="col-own" />
-                <col class="col-optimal-rate-value" />
+                ${optimalRateColgroup}
                 <col class="col-opt-lev" />
                 <col class="col-plus-ev" />
                 <col class="col-bar-lane" />
@@ -1941,7 +2113,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 <col class="col-team" />
                 <col class="col-salary" />
                 <col class="col-own" />
-                <col class="col-optimal-rate-value" />
+                ${optimalRateColgroup}
                 <col class="col-opt-lev" />
                 <col class="col-retained-exp" />
                 <col class="col-bar-lane" />
@@ -1953,7 +2125,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                   <th class="th-team"><button type="button" class="results-header-filter-btn" data-filter-trigger="team">Team</button></th>
                   <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="salary">Salary</button></th>
                   <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="own">Own%</button></th>
-                  <th class="th-num th-optimal-value"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="optimal">Optimal Rate %</button></th>
+                  ${optimalRateHeader}
                   <th class="th-num th-opt-lev"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="lev">Opt Lev</button></th>
                   <th class="th-num"><button type="button" class="results-header-filter-btn results-header-filter-btn--num" data-filter-trigger="retainedExp">Retained Exp</button></th>
                   <th class="th-bar-lane"></th>
@@ -1969,7 +2141,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
                 <col class="col-team" />
                 <col class="col-salary" />
                 <col class="col-own" />
-                <col class="col-optimal-rate-value" />
+                ${optimalRateColgroup}
                 <col class="col-opt-lev" />
                 <col class="col-retained-exp" />
                 <col class="col-bar-lane" />
