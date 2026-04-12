@@ -2,10 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { listSlatePackages } from "../../lib/simulator/listSlatePackages";
 import { loadSlatePackage } from "../../lib/simulator/loadSlatePackage";
-import { loadJson } from "../../lib/simulator/loadJson";
-import { resolveSlatePackagePath } from "../../lib/simulator/paths";
 import type { SimulatorSlatePackage } from "../../lib/simulator/types";
-import path from "path";
 
 const tab = (Astro.url.searchParams.get("tab") || "slates").toLowerCase();
 const subtab = (Astro.url.searchParams.get("subtab") || "ev").toLowerCase();
@@ -153,15 +150,6 @@ let results: {
     payoutProfile: "topHeavy" | "standard" | "cash";
   };
 } | null = null;
-
-if (selectedPackage && activeSlateKey) {
-  try {
-    const resultsPath = path.join(resolveSlatePackagePath(activeSlateKey), "results.json");
-    results = await loadJson(resultsPath);
-  } catch (error) {
-    results = null;
-  }
-}
 
 const activeGameId = gameParam && games.some((game) => game.id === gameParam)
   ? gameParam
@@ -1293,13 +1281,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     teamInputs,
     playerInputs,
     settings,
-    resultsMeta: results
-      ? {
-          slateId: results.slateId,
-          generatedAt: results.generatedAt,
-          simulationCount: results.simulationCount,
-        }
-      : null,
     activeTab,
     activeSubtab,
   })}
@@ -1314,7 +1295,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const SIM_SETTINGS = simData.settings || null;
   const SIM_ACTIVE_TAB = simData.activeTab || "slates";
   const SIM_ACTIVE_SUBTAB = simData.activeSubtab || "ev";
-  const SIM_RESULTS_META = simData.resultsMeta || null;
   console.log("[sim] active slate", SIM_SLATE_KEY);
   console.log("[sim] active tab", SIM_ACTIVE_TAB);
   console.log("[sim] active subtab", SIM_ACTIVE_SUBTAB);
@@ -1409,30 +1389,6 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     return { data, rawText };
   };
 
-  const summarizeResultsPayload = (resultsPayload) => ({
-    slateId: resultsPayload?.slateId ?? null,
-    simulationCount: resultsPayload?.simulationCount ?? null,
-    settingsSnapshot: resultsPayload?.settingsSnapshot
-      ? {
-          lineupCount: resultsPayload.settingsSnapshot.lineupCount ?? null,
-          fieldSize: resultsPayload.settingsSnapshot.fieldSize ?? null,
-          simulationCount: resultsPayload.settingsSnapshot.simulationCount ?? null,
-          payoutProfile: resultsPayload.settingsSnapshot.payoutProfile ?? null,
-        }
-      : null,
-    players: Array.isArray(resultsPayload?.players) ? resultsPayload.players.length : null,
-    lineups: Array.isArray(resultsPayload?.lineups) ? resultsPayload.lineups.length : null,
-  });
-
-  const normalizeSlateIdentifier = (value) => {
-    if (!value || typeof value !== "string") return "";
-    return value
-      .trim()
-      .toLowerCase()
-      .replace(/\//g, "-")
-      .replace(/^-+|-+$/g, "");
-  };
-
   const loadStoredSettings = () => {
     if (!SETTINGS_STORAGE_KEY) return null;
     const raw = safeJsonParse(localStorage.getItem(SETTINGS_STORAGE_KEY));
@@ -1515,11 +1471,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     return raw;
   };
 
-  const loadStoredResultsMeta = () => {
-    if (!RESULTS_STORAGE_KEY) return null;
-    const raw = safeJsonParse(sessionStorage.getItem(`${RESULTS_STORAGE_KEY}:meta`));
-    if (!raw || typeof raw !== "object") return null;
-    return raw;
+  const clearStoredResults = (reason) => {
+    if (!RESULTS_STORAGE_KEY) return;
+    sessionStorage.removeItem(RESULTS_STORAGE_KEY);
+    sessionStorage.removeItem(`${RESULTS_STORAGE_KEY}:meta`);
+    console.log("[sim-live-debug-v2] cleared stored results", {
+      key: RESULTS_STORAGE_KEY,
+      reason,
+    });
   };
 
   const mergeSettings = (base, overrides) => {
@@ -2043,6 +2002,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     return true;
   };
 
+  const resetResultsUI = (reason) => {
+    const resultsContent = document.getElementById("sim-results-content");
+    if (!resultsContent) return;
+    resultsContent.dataset.hasResults = "false";
+    resultsContent.innerHTML = `<p class="empty-state">No results yet. Run sims to generate results.</p>`;
+    console.log("[sim-live-debug-v2] results UI reset", { reason });
+  };
+
   const runSimulation = async (context) => {
     if (runInProgress) return;
     const { statusTarget } = context || {};
@@ -2069,6 +2036,9 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       }
       return;
     }
+    latestResults = null;
+    resetResultsUI("run-start");
+    clearStoredResults("run-start");
     runInProgress = true;
     if (runBtn) runBtn.disabled = true;
     if (runSettingsBtn) runSettingsBtn.disabled = true;
@@ -3033,84 +3003,11 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   setDirty(false);
   validateSettingsInputs();
   updateSettingsSaveState();
-  const storedResults = loadStoredResults();
-  const storedResultsMeta = loadStoredResultsMeta();
-
-  console.log("[sim-live-debug-v2] boot server results meta", SIM_RESULTS_META);
-  console.log("[sim-live-debug-v2] boot stored results", {
-    hasStoredResults: Boolean(storedResults),
-    storedSlateId: storedResults?.slateId ?? null,
-    storedSimulationCount: storedResults?.simulationCount ?? null,
-    storedSettingsSnapshotLineupCount: storedResults?.settingsSnapshot?.lineupCount ?? null,
-    storedSettingsSnapshotFieldSize: storedResults?.settingsSnapshot?.fieldSize ?? null,
-    storedSettingsSnapshotSimulationCount: storedResults?.settingsSnapshot?.simulationCount ?? null,
-    storedSettingsSnapshotPayoutProfile: storedResults?.settingsSnapshot?.payoutProfile ?? null,
-    serverSimulationCount: SIM_RESULTS_META?.simulationCount ?? null,
-    hasMeta: Boolean(storedResultsMeta),
-  });
-  console.log("[sim-live-debug-v2] boot payload comparison", {
-    serverResultsMeta: SIM_RESULTS_META
-      ? {
-          simulationCount: SIM_RESULTS_META.simulationCount ?? null,
-        }
-      : null,
-    storedResults: summarizeResultsPayload(storedResults),
-  });
-
   console.log("[sim] active slate", SIM_SLATE_KEY);
   console.log("[sim] results storage key", RESULTS_STORAGE_KEY);
-  console.log("[sim] stored results found", Boolean(storedResults));
-  console.log("[sim] stored simulationCount", storedResults?.simulationCount ?? null);
-  console.log("[sim] server simulationCount", SIM_RESULTS_META?.simulationCount ?? null);
-
-  const normalizedActiveSlateId = normalizeSlateIdentifier(
-    SIM_SETTINGS?.slateId || SIM_RESULTS_META?.slateId || SIM_SLATE_KEY
-  );
-
-  const normalizedStoredSlateId = normalizeSlateIdentifier(
-    storedResults?.slateId || storedResultsMeta?.slateId
-  );
-
-  if (
-    storedResultsMeta &&
-    storedResultsMeta.slateId &&
-    normalizeSlateIdentifier(storedResultsMeta.slateId) !== normalizedActiveSlateId
-  ) {
-    sessionStorage.removeItem(RESULTS_STORAGE_KEY);
-    sessionStorage.removeItem(`${RESULTS_STORAGE_KEY}:meta`);
-  }
-
-  console.log("[sim-live-debug-v2] normalized slate comparison", {
-    activeSlateKey: SIM_SLATE_KEY,
-    activeSlateId: SIM_SETTINGS?.slateId || SIM_RESULTS_META?.slateId || null,
-    storedSlateId: storedResults?.slateId || storedResultsMeta?.slateId || null,
-    normalizedActiveSlateId,
-    normalizedStoredSlateId,
-  });
-
-  const shouldUseStoredResults =
-    Boolean(storedResults) &&
-    normalizedStoredSlateId !== "" &&
-    normalizedStoredSlateId === normalizedActiveSlateId;
-
-  console.log("[sim-live-debug-v2] shouldUseStoredResults", {
-    value: Boolean(shouldUseStoredResults),
-  });
-
-  const didRenderStoredResults = shouldUseStoredResults
-    ? renderResultsFromPayload(storedResults)
-    : false;
-
-  console.log(
-    "[sim] resolved simulationCount",
-    shouldUseStoredResults
-      ? storedResults?.simulationCount ?? null
-      : SIM_RESULTS_META?.simulationCount ?? null
-  );
-
-  if (!didRenderStoredResults) {
-    initResultsTools();
-  }
+  clearStoredResults("boot");
+  resetResultsUI("boot");
+  initResultsTools();
   console.log("[sim] init complete");
   };
 
