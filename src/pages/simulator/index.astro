@@ -1293,6 +1293,13 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     teamInputs,
     playerInputs,
     settings,
+    resultsMeta: results
+      ? {
+          slateId: results.slateId,
+          generatedAt: results.generatedAt,
+          simulationCount: results.simulationCount,
+        }
+      : null,
     activeTab,
     activeSubtab,
   })}
@@ -1308,6 +1315,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const SIM_SETTINGS = simData.settings || null;
   const SIM_ACTIVE_TAB = simData.activeTab || "slates";
   const SIM_ACTIVE_SUBTAB = simData.activeSubtab || "ev";
+  const SIM_RESULTS_META = simData.resultsMeta || null;
   console.log("[sim] active tab", SIM_ACTIVE_TAB);
   console.log("[sim] active subtab", SIM_ACTIVE_SUBTAB);
   const SETTINGS_STORAGE_KEY = SIM_SLATE_KEY ? `sim-settings:${SIM_SLATE_KEY}` : "";
@@ -1414,6 +1422,13 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const persistResults = (resultsPayload) => {
     if (!RESULTS_STORAGE_KEY || !resultsPayload) return;
     try {
+      const metaKey = `${RESULTS_STORAGE_KEY}:meta`;
+      const metaPayload = {
+        slateId: resultsPayload.slateId,
+        generatedAt: resultsPayload.generatedAt,
+        simulationCount: resultsPayload.simulationCount,
+      };
+      sessionStorage.setItem(metaKey, JSON.stringify(metaPayload));
       const trimResultsForStorage = (payload) => {
         if (!payload || !Array.isArray(payload.lineups)) return payload;
         const maxLineups = 200;
@@ -1430,6 +1445,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
         console.warn("[sim] results payload too large for sessionStorage", { bytes });
         return;
       }
+      sessionStorage.removeItem(RESULTS_STORAGE_KEY);
       sessionStorage.setItem(RESULTS_STORAGE_KEY, serialized);
     } catch {
       // Ignore storage errors (private mode / quota)
@@ -1439,6 +1455,13 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const loadStoredResults = () => {
     if (!RESULTS_STORAGE_KEY) return null;
     const raw = safeJsonParse(sessionStorage.getItem(RESULTS_STORAGE_KEY));
+    if (!raw || typeof raw !== "object") return null;
+    return raw;
+  };
+
+  const loadStoredResultsMeta = () => {
+    if (!RESULTS_STORAGE_KEY) return null;
+    const raw = safeJsonParse(sessionStorage.getItem(`${RESULTS_STORAGE_KEY}:meta`));
     if (!raw || typeof raw !== "object") return null;
     return raw;
   };
@@ -2889,10 +2912,24 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   validateSettingsInputs();
   updateSettingsSaveState();
   const storedResults = loadStoredResults();
-  const didRenderStoredResults =
-    storedResults && storedResults.slateId === SIM_SLATE_KEY
-      ? renderResultsFromPayload(storedResults)
-      : false;
+  const storedResultsMeta = loadStoredResultsMeta();
+  if (storedResultsMeta && storedResultsMeta.slateId && storedResultsMeta.slateId !== SIM_SLATE_KEY) {
+    sessionStorage.removeItem(RESULTS_STORAGE_KEY);
+    sessionStorage.removeItem(`${RESULTS_STORAGE_KEY}:meta`);
+  }
+  const serverGeneratedAt = SIM_RESULTS_META?.generatedAt
+    ? new Date(SIM_RESULTS_META.generatedAt).getTime()
+    : 0;
+  const storedGeneratedAt = storedResults?.generatedAt
+    ? new Date(storedResults.generatedAt).getTime()
+    : 0;
+  const shouldUseStoredResults =
+    storedResults &&
+    storedResults.slateId === SIM_SLATE_KEY &&
+    (serverGeneratedAt === 0 || storedGeneratedAt > serverGeneratedAt);
+  const didRenderStoredResults = shouldUseStoredResults
+    ? renderResultsFromPayload(storedResults)
+    : false;
   if (!didRenderStoredResults) {
     initResultsTools();
   }
