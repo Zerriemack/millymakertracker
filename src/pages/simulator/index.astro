@@ -1424,6 +1424,15 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     lineups: Array.isArray(resultsPayload?.lineups) ? resultsPayload.lineups.length : null,
   });
 
+  const normalizeSlateIdentifier = (value) => {
+    if (!value || typeof value !== "string") return "";
+    return value
+      .trim()
+      .toLowerCase()
+      .replace(/\//g, "-")
+      .replace(/^-+|-+$/g, "");
+  };
+
   const loadStoredSettings = () => {
     if (!SETTINGS_STORAGE_KEY) return null;
     const raw = safeJsonParse(localStorage.getItem(SETTINGS_STORAGE_KEY));
@@ -3054,14 +3063,35 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   console.log("[sim] stored simulationCount", storedResults?.simulationCount ?? null);
   console.log("[sim] server simulationCount", SIM_RESULTS_META?.simulationCount ?? null);
 
-  if (storedResultsMeta && storedResultsMeta.slateId && storedResultsMeta.slateId !== SIM_SLATE_KEY) {
+  const normalizedActiveSlateId = normalizeSlateIdentifier(
+    SIM_SETTINGS?.slateId || SIM_RESULTS_META?.slateId || SIM_SLATE_KEY
+  );
+
+  const normalizedStoredSlateId = normalizeSlateIdentifier(
+    storedResults?.slateId || storedResultsMeta?.slateId
+  );
+
+  if (
+    storedResultsMeta &&
+    storedResultsMeta.slateId &&
+    normalizeSlateIdentifier(storedResultsMeta.slateId) !== normalizedActiveSlateId
+  ) {
     sessionStorage.removeItem(RESULTS_STORAGE_KEY);
     sessionStorage.removeItem(`${RESULTS_STORAGE_KEY}:meta`);
   }
 
+  console.log("[sim-live-debug-v2] normalized slate comparison", {
+    activeSlateKey: SIM_SLATE_KEY,
+    activeSlateId: SIM_SETTINGS?.slateId || SIM_RESULTS_META?.slateId || null,
+    storedSlateId: storedResults?.slateId || storedResultsMeta?.slateId || null,
+    normalizedActiveSlateId,
+    normalizedStoredSlateId,
+  });
+
   const shouldUseStoredResults =
-    storedResults &&
-    storedResults.slateId === SIM_SLATE_KEY;
+    Boolean(storedResults) &&
+    normalizedStoredSlateId !== "" &&
+    normalizedStoredSlateId === normalizedActiveSlateId;
 
   console.log("[sim-live-debug-v2] shouldUseStoredResults", {
     value: Boolean(shouldUseStoredResults),
