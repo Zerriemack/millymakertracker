@@ -4452,14 +4452,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
 
 
 
-.results-panel {
+:global(.sim-panel .results-panel) {
   display: grid;
   gap: 9px;
   background: transparent;
   isolation: isolate;
 }
 
-.results-controls {
+:global(.sim-panel .results-controls) {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -4467,7 +4467,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   background: transparent;
 }
 
-.results-tabs {
+:global(.sim-panel .results-tabs) {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -4478,7 +4478,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   box-shadow: none;
 }
 
-.results-tab {
+:global(.sim-panel .results-tab) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -4494,12 +4494,12 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   transition: background 160ms ease, color 160ms ease;
 }
 
-.results-tab.active {
+:global(.sim-panel .results-tab.active) {
   color: #ffffff;
   background: linear-gradient(180deg, #3a74ff 0%, #1a4cc7 100%);
 }
 
-.results-summary-strip {
+:global(.sim-panel .results-summary-strip) {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -4515,18 +4515,18 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   z-index: auto;
 }
 
-.summary-item {
+:global(.sim-panel .summary-item) {
   display: inline-flex;
   align-items: center;
   gap: 7px;
   padding: 0;
 }
 
-.summary-item + .summary-item::before {
+:global(.sim-panel .summary-item + .summary-item::before) {
   content: none;
 }
 
-.summary-label {
+:global(.sim-panel .summary-label) {
   font-size: 0.54rem;
   font-weight: 900;
   letter-spacing: 0.18em;
@@ -4534,13 +4534,13 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   color: rgba(255, 255, 255, 0.46);
 }
 
-.summary-value {
+:global(.sim-panel .summary-value) {
   font-size: 0.74rem;
   font-weight: 800;
   color: rgba(255, 255, 255, 0.94);
 }
 
-.results-filter-row {
+:global(.sim-panel .results-filter-row) {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -4553,7 +4553,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   margin-bottom: 6px;
 }
 
-.results-filter-label {
+:global(.sim-panel .results-filter-label) {
   font-size: 0.58rem;
   font-weight: 900;
   letter-spacing: 0.18em;
@@ -4561,13 +4561,13 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   color: rgba(255, 255, 255, 0.46);
 }
 
-.results-filter-group {
+:global(.sim-panel .results-filter-group) {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
 }
 
-.results-filter-btn {
+:global(.sim-panel .results-filter-btn) {
   min-height: 24px;
   padding: 0 10px;
   border-radius: var(--sim-radius-sm);
@@ -4584,24 +4584,24 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   box-shadow: 0 9px 18px rgba(0, 0, 0, 0.22);
 }
 
-.results-filter-btn.active {
+:global(.sim-panel .results-filter-btn.active) {
   background: linear-gradient(180deg, rgba(48, 98, 220, 0.98) 0%, rgba(27, 72, 184, 0.98) 100%);
   color: #ffffff;
 }
 
-.results-table-shell {
+:global(.sim-panel .results-table-shell) {
   display: grid;
   gap: 0;
 }
 
-.results-table-head-wrap {
+:global(.sim-panel .results-table-head-wrap) {
   position: relative;
   z-index: 22;
   overflow: hidden;
   background: transparent;
 }
 
-.results-table-wrap {
+:global(.sim-panel .results-table-wrap) {
   position: relative;
   z-index: 1;
   max-height: 560px;
@@ -4617,16 +4617,16 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   overscroll-behavior: contain;
 }
 
-.results-panel .results-table-wrap,
-.results-panel .results-table-wrap.table-area,
-.results-panel .results-table-wrap::after {
+:global(.sim-panel .results-panel .results-table-wrap),
+:global(.sim-panel .results-panel .results-table-wrap.table-area),
+:global(.sim-panel .results-panel .results-table-wrap::after) {
   background-image: none !important;
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
 
-.results-table {
+:global(.sim-panel .results-table) {
   --player-pad-left: 12px;
   --cell-pad-x: 0.58rem;
   --num-pad-right: 0.24rem;
@@ -4638,37 +4638,37 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   background: transparent !important;
 }
 
-.results-table-optimal {
+:global(.sim-panel .results-table-optimal) {
   min-width: 1136px;
 }
 
-.results-table col.col-player { width: 230px; }
-.results-table col.col-pos { width: 52px; }
-.results-table col.col-team { width: 68px; }
-.results-table col.col-salary { width: 84px; }
-.results-table col.col-own { width: 76px; }
-.results-table col.col-optimal-rate-value { width: 108px; }
-.results-table col.col-opt-lev { width: 78px; }
-.results-table col.col-plus-ev { width: 74px; }
-.results-table col.col-retained-exp { width: 92px; }
-.results-table col.col-bar-lane { width: 290px; }
+:global(.sim-panel .results-table col.col-player) { width: 230px; }
+:global(.sim-panel .results-table col.col-pos) { width: 52px; }
+:global(.sim-panel .results-table col.col-team) { width: 68px; }
+:global(.sim-panel .results-table col.col-salary) { width: 84px; }
+:global(.sim-panel .results-table col.col-own) { width: 76px; }
+:global(.sim-panel .results-table col.col-optimal-rate-value) { width: 108px; }
+:global(.sim-panel .results-table col.col-opt-lev) { width: 78px; }
+:global(.sim-panel .results-table col.col-plus-ev) { width: 74px; }
+:global(.sim-panel .results-table col.col-retained-exp) { width: 92px; }
+:global(.sim-panel .results-table col.col-bar-lane) { width: 290px; }
 
-.results-table thead tr,
-.results-table thead th {
+:global(.sim-panel .results-table thead tr),
+:global(.sim-panel .results-table thead th) {
   box-shadow: none;
 }
 
-.results-table thead,
-.results-table thead tr {
+:global(.sim-panel .results-table thead),
+:global(.sim-panel .results-table thead tr) {
   background: #0b2b78;
 }
 
-.results-table thead {
+:global(.sim-panel .results-table thead) {
   position: static;
   z-index: auto;
 }
 
-.results-table thead th {
+:global(.sim-panel .results-table thead th) {
   position: static;
   top: auto;
   z-index: auto;
@@ -4687,46 +4687,46 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   box-shadow: none;
 }
 
-.results-table thead th:first-child {
+:global(.sim-panel .results-table thead th:first-child) {
   border-top-left-radius: var(--sim-radius-sm);
 }
 
-.results-table thead th + th {
+:global(.sim-panel .results-table thead th + th) {
   box-shadow: inset 1px 0 0 rgba(214, 226, 255, 0.08);
 }
 
-.results-table thead th:last-child {
+:global(.sim-panel .results-table thead th:last-child) {
   border-top-right-radius: var(--sim-radius-sm);
   background-clip: padding-box;
 }
 
-.th-player {
+:global(.sim-panel .th-player) {
   padding-left: var(--player-pad-left) !important;
   text-align: left;
 }
 
-.th-pos,
-.th-team {
+:global(.sim-panel .th-pos),
+:global(.sim-panel .th-team) {
   text-align: left;
 }
 
-.th-num,
-.num-cell {
+:global(.sim-panel .th-num),
+:global(.sim-panel .num-cell) {
   text-align: right;
 }
 
-.results-table thead th.th-num,
-.results-table thead th.th-optimal-value,
-.results-table thead th.th-opt-lev,
-.results-table thead th:nth-child(8) {
+:global(.sim-panel .results-table thead th.th-num),
+:global(.sim-panel .results-table thead th.th-optimal-value),
+:global(.sim-panel .results-table thead th.th-opt-lev),
+:global(.sim-panel .results-table thead th:nth-child(8)) {
   padding-right: var(--num-pad-right) !important;
 }
 
-.th-opt-lev {
+:global(.sim-panel .th-opt-lev) {
   font-size: 0.56rem;
 }
 
-.th-bar-lane {
+:global(.sim-panel .th-bar-lane) {
   padding-left: var(--bar-lane-inset) !important;
   padding-right: 0 !important;
   background:
@@ -4736,20 +4736,20 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     inset 8px 0 14px rgba(3, 12, 38, 0.1) !important;
 }
 
-.results-table tbody {
+:global(.sim-panel .results-table tbody) {
   position: relative;
   z-index: 1;
 }
 
-.results-table tbody tr {
+:global(.sim-panel .results-table tbody tr) {
   height: 34px;
 }
 
-.results-table-body tbody tr:first-child td {
+:global(.sim-panel .results-table-body tbody tr:first-child td) {
   padding-top: 0.72rem;
 }
 
-.results-table tbody td {
+:global(.sim-panel .results-table tbody td) {
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
   padding-left: var(--cell-pad-x);
@@ -4761,75 +4761,75 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   font-variant-numeric: tabular-nums;
 }
 
-.results-table tbody tr:hover {
+:global(.sim-panel .results-table tbody tr:hover) {
   background: #071632;
 }
 
-.player-name-cell {
+:global(.sim-panel .player-name-cell) {
   text-align: left;
   font-weight: 800;
   color: #ffffff;
 }
 
-.results-table tbody td.player-name-cell {
+:global(.sim-panel .results-table tbody td.player-name-cell) {
   padding-left: var(--player-pad-left);
   padding-right: 0.34rem;
 }
 
-.results-table tbody td.pos-cell,
-.results-table tbody td.team-cell {
+:global(.sim-panel .results-table tbody td.pos-cell),
+:global(.sim-panel .results-table tbody td.team-cell) {
   text-align: left;
 }
 
-.results-table tbody td.pos-cell {
+:global(.sim-panel .results-table tbody td.pos-cell) {
   padding-left: 0.3rem;
   padding-right: 0.24rem;
 }
 
-.results-table tbody td.team-cell {
+:global(.sim-panel .results-table tbody td.team-cell) {
   padding-left: 0.2rem;
   padding-right: 0.12rem;
 }
 
-.results-table tbody td.salary-cell,
-.results-table tbody td.own-cell,
-.results-table tbody td.optimal-rate-value-cell,
-.results-table tbody td.retained-exp-value-cell,
-.results-table tbody td.opt-lev-cell,
-.results-table tbody td.plus-ev-cell {
+:global(.sim-panel .results-table tbody td.salary-cell),
+:global(.sim-panel .results-table tbody td.own-cell),
+:global(.sim-panel .results-table tbody td.optimal-rate-value-cell),
+:global(.sim-panel .results-table tbody td.retained-exp-value-cell),
+:global(.sim-panel .results-table tbody td.opt-lev-cell),
+:global(.sim-panel .results-table tbody td.plus-ev-cell) {
   text-align: right;
   padding-right: var(--num-pad-right);
 }
 
-.results-table tbody td.salary-cell {
+:global(.sim-panel .results-table tbody td.salary-cell) {
   padding-left: 0.04rem;
 }
 
-.results-table tbody td.own-cell {
+:global(.sim-panel .results-table tbody td.own-cell) {
   padding-left: 0.08rem;
 }
 
-.results-table tbody td.optimal-rate-value-cell,
-.results-table tbody td.retained-exp-value-cell {
+:global(.sim-panel .results-table tbody td.optimal-rate-value-cell),
+:global(.sim-panel .results-table tbody td.retained-exp-value-cell) {
   padding-left: 0.12rem;
   font-weight: 900;
   color: #ffffff;
 }
 
-.pos-cell {
+:global(.sim-panel .pos-cell) {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.84);
 }
 
-.team-cell-inner {
+:global(.sim-panel .team-cell-inner) {
   display: inline-flex;
   align-items: center;
   gap: 4px;
 }
 
-.results-team-logo {
+:global(.sim-panel .results-team-logo) {
   width: 15px;
   height: 15px;
   display: inline-flex;
@@ -4839,14 +4839,14 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   flex: 0 0 auto;
 }
 
-.results-team-logo img {
+:global(.sim-panel .results-team-logo img) {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
 }
 
-.team-code {
+:global(.sim-panel .team-code) {
   display: inline-flex;
   align-items: center;
   font-weight: 800;
@@ -4855,20 +4855,20 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   color: rgba(255, 255, 255, 0.92);
 }
 
-.salary-cell,
-.own-cell,
-.plus-ev-cell {
+:global(.sim-panel .salary-cell),
+:global(.sim-panel .own-cell),
+:global(.sim-panel .plus-ev-cell) {
   color: rgba(255, 255, 255, 0.92);
 }
 
-.opt-lev-cell {
+:global(.sim-panel .opt-lev-cell) {
   font-size: 0.63rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.66);
   letter-spacing: 0.01em;
 }
 
-.bar-lane-cell {
+:global(.sim-panel .bar-lane-cell) {
   padding-top: 0.12rem !important;
   padding-bottom: 0.12rem !important;
   padding-left: 0.12rem !important;
@@ -4876,12 +4876,12 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   vertical-align: middle;
 }
 
-.bar-lane-shell {
+:global(.sim-panel .bar-lane-shell) {
   display: block;
   width: 100%;
 }
 
-.bar-lane-track {
+:global(.sim-panel .bar-lane-track) {
   display: block;
   width: 100%;
   height: 10px;
@@ -4889,7 +4889,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   overflow: hidden;
 }
 
-.bar-lane-fill {
+:global(.sim-panel .bar-lane-fill) {
   display: block;
   width: var(--metric-bar-width, 0%);
   height: 100%;
@@ -4897,7 +4897,7 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   background: linear-gradient(90deg, rgba(47, 103, 255, 1) 0%, rgba(88, 150, 255, 0.94) 58%, rgba(150, 205, 255, 0.36) 100%);
 }
 
-.results-header-filter-btn {
+:global(.sim-panel .results-header-filter-btn) {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -4914,12 +4914,12 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   cursor: pointer;
 }
 
-.results-header-filter-btn--num {
+:global(.sim-panel .results-header-filter-btn--num) {
   justify-content: flex-end;
   text-align: right;
 }
 
-.results-header-filter-btn::after {
+:global(.sim-panel .results-header-filter-btn::after) {
   content: "▾";
   display: inline-block;
   font-size: 0.46rem;
@@ -4928,16 +4928,16 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   transition: color 140ms ease, transform 140ms ease;
 }
 
-.results-header-filter-btn:hover::after {
+:global(.sim-panel .results-header-filter-btn:hover::after) {
   color: rgba(255, 255, 255, 0.68);
 }
 
-.results-header-filter-btn.is-active::after {
+:global(.sim-panel .results-header-filter-btn.is-active::after) {
   color: #ffffff;
   transform: translateY(-1px) rotate(180deg);
 }
 
-.results-header-filter-popover {
+:global(.sim-panel .results-header-filter-popover) {
   position: absolute;
   top: 0;
   left: 0;
@@ -4952,16 +4952,16 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   backdrop-filter: blur(6px);
 }
 
-.results-header-filter-popover[hidden] {
+:global(.sim-panel .results-header-filter-popover[hidden]) {
   display: none;
 }
 
-.results-header-filter-stack {
+:global(.sim-panel .results-header-filter-stack) {
   display: grid;
   gap: 7px;
 }
 
-.results-header-filter-label {
+:global(.sim-panel .results-header-filter-label) {
   font-size: 0.52rem;
   font-weight: 900;
   letter-spacing: 0.16em;
@@ -4970,8 +4970,8 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   line-height: 1;
 }
 
-.results-header-filter-input,
-.results-header-filter-select {
+:global(.sim-panel .results-header-filter-input),
+:global(.sim-panel .results-header-filter-select) {
   width: 100%;
   min-height: 28px;
   padding: 0 8px;
@@ -4982,20 +4982,20 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   font-weight: 700;
 }
 
-.results-header-filter-input:focus,
-.results-header-filter-select:focus {
+:global(.sim-panel .results-header-filter-input:focus),
+:global(.sim-panel .results-header-filter-select:focus) {
   outline: none;
   border-color: rgba(58, 116, 255, 0.42);
   background: rgba(255, 255, 255, 0.04);
 }
 
-.results-header-filter-actions {
+:global(.sim-panel .results-header-filter-actions) {
   display: grid;
   gap: 5px;
   margin-top: 2px;
 }
 
-.results-header-filter-action {
+:global(.sim-panel .results-header-filter-action) {
   min-height: 28px;
   padding: 0 10px;
   border: 0;
@@ -5010,26 +5010,26 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   transition: background 140ms ease, color 140ms ease;
 }
 
-.results-header-filter-action:hover {
+:global(.sim-panel .results-header-filter-action:hover) {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.results-header-filter-action--primary {
+:global(.sim-panel .results-header-filter-action--primary) {
   background: linear-gradient(180deg, #3a74ff 0%, #1a4cc7 100%);
   color: #ffffff;
 }
 
-.results-header-filter-action--primary:hover {
+:global(.sim-panel .results-header-filter-action--primary:hover) {
   background: linear-gradient(180deg, #4b82ff 0%, #2458d8 100%);
 }
 
-.results-header-filter-action.is-active-sort {
+:global(.sim-panel .results-header-filter-action.is-active-sort) {
   background: rgba(58, 116, 255, 0.16);
   color: #ffffff;
   box-shadow: 0 10px 20px rgba(10, 26, 70, 0.35);
 }
 
-.results-empty-row td {
+:global(.sim-panel .results-empty-row td) {
   text-align: center;
   color: rgba(255, 255, 255, 0.62);
   font-size: 0.68rem;
