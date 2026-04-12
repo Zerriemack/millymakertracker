@@ -1368,6 +1368,33 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
     }
   };
 
+  const safeJsonParseText = (value) => {
+    if (!value) return null;
+    try {
+      return JSON.parse(value);
+    } catch {
+      return null;
+    }
+  };
+
+  const formatApiError = (response, data, rawText) => {
+    const parts = [`HTTP ${response.status}${response.statusText ? " " + response.statusText : ""}`];
+    if (data?.error) parts.push(data.error);
+    if (Array.isArray(data?.details)) parts.push(data.details.join(" "));
+    else if (typeof data?.details === "string" && data.details) parts.push(data.details);
+    if (!data && rawText) {
+      const snippet = rawText.length > 600 ? `${rawText.slice(0, 600)}...` : rawText;
+      parts.push(`Raw: ${snippet}`);
+    }
+    return parts.join(" - ");
+  };
+
+  const readApiResponse = async (response) => {
+    const rawText = await response.text();
+    const data = safeJsonParseText(rawText);
+    return { data, rawText };
+  };
+
   const loadStoredSettings = () => {
     if (!SETTINGS_STORAGE_KEY) return null;
     const raw = safeJsonParse(localStorage.getItem(SETTINGS_STORAGE_KEY));
@@ -1387,7 +1414,23 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
   const persistResults = (resultsPayload) => {
     if (!RESULTS_STORAGE_KEY || !resultsPayload) return;
     try {
-      sessionStorage.setItem(RESULTS_STORAGE_KEY, JSON.stringify(resultsPayload));
+      const trimResultsForStorage = (payload) => {
+        if (!payload || !Array.isArray(payload.lineups)) return payload;
+        const maxLineups = 200;
+        if (payload.lineups.length <= maxLineups) return payload;
+        return { ...payload, lineups: payload.lineups.slice(0, maxLineups) };
+      };
+      const trimmedPayload = trimResultsForStorage(resultsPayload);
+      const serialized = JSON.stringify(trimmedPayload);
+      const bytes = typeof TextEncoder !== "undefined"
+        ? new TextEncoder().encode(serialized).length
+        : serialized.length;
+      const maxBytes = 2_500_000;
+      if (bytes > maxBytes) {
+        console.warn("[sim] results payload too large for sessionStorage", { bytes });
+        return;
+      }
+      sessionStorage.setItem(RESULTS_STORAGE_KEY, serialized);
     } catch {
       // Ignore storage errors (private mode / quota)
     }
@@ -1948,11 +1991,9 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       const response = await fetchPromise;
       if (runStatusEl) runStatusEl.textContent = "Processing results...";
       console.log("[sim] fetch response received", response.status);
-      const data = await response.json().catch(() => ({}));
+      const { data, rawText } = await readApiResponse(response);
       if (!response.ok) {
-        const message = data?.error || "Simulation run failed. Check settings and try again.";
-        const details = Array.isArray(data?.details) ? data.details.join(" ") : data?.details;
-        throw new Error(`${message}${details ? " " + details : ""}`);
+        throw new Error(formatApiError(response, data, rawText));
       }
       if (!data?.results) {
         throw new Error("Simulation completed but results are missing.");
@@ -2355,11 +2396,9 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
-    const data = await response.json().catch(() => ({}));
+    const { data, rawText } = await readApiResponse(response);
     if (!response.ok) {
-      const message = data?.error || "Save failed.";
-      const details = Array.isArray(data?.details) ? data.details.join(" ") : "";
-      throw new Error(`${message}${details ? " " + details : ""}`);
+      throw new Error(formatApiError(response, data, rawText));
     }
     return data;
   };
@@ -2454,11 +2493,9 @@ const formatGameTimeEt = (game?: { startTime?: string | null } | null) => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ slate: SIM_SLATE_KEY, settings: settingsState }),
         });
-        const data = await response.json().catch(() => ({}));
+        const { data, rawText } = await readApiResponse(response);
         if (!response.ok) {
-          const message = data?.error || "Save failed.";
-          const details = Array.isArray(data?.details) ? data.details.join(" ") : data?.details;
-          throw new Error(`${message}${details ? " " + details : ""}`);
+          throw new Error(formatApiError(response, data, rawText));
         }
         settingsBaseline = clone(settingsState);
         settingsDirty = false;

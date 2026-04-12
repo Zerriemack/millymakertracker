@@ -412,6 +412,12 @@ export const POST: APIRoute = async ({ request }) => {
     players: Array.isArray(playerInputs) ? playerInputs.length : 0,
     settingsLoaded: Boolean(settings),
   });
+  console.log("[sim-api] settings", {
+    lineupCount: settings.lineupCount,
+    fieldSize: settings.fieldSize,
+    simulationCount: settings.simulationCount,
+    payoutProfile: settings.payoutProfile,
+  });
 
   if (!Array.isArray(playerInputs) || playerInputs.length === 0) {
     return jsonResponse(400, { error: "player-inputs.json is empty." });
@@ -528,6 +534,10 @@ export const POST: APIRoute = async ({ request }) => {
     }
   }
   console.log("[sim-api] simulation completed");
+  console.log("[sim-api] lineup generation completed", {
+    retainedPool: retainedLineupStats.size,
+    gradingUniverse: gradingUniverseStats.size,
+  });
 
   const resultsPlayers = playerInputs.map((player) => {
     const stats = playerStats.get(player.id)!;
@@ -722,6 +732,10 @@ export const POST: APIRoute = async ({ request }) => {
     gradedLineups.length > 0
       ? gradedLineups.reduce((sum, lineup) => sum + (lineup.evScore ?? 0), 0) / gradedLineups.length
       : 0;
+  console.log("[sim-api] grading completed", {
+    gradedLineups: gradedLineups.length,
+    averageEv,
+  });
 
   const resultsPlayersWithExposure = resultsPlayers.map((player) => {
     const retainedLineupCount = retainedCounts.get(player.id) || 0;
@@ -757,7 +771,10 @@ export const POST: APIRoute = async ({ request }) => {
       payoutProfile,
     },
     players: resultsPlayersWithExposure,
-    lineups: gradedLineups,
+    lineups: gradedLineups
+      .slice()
+      .sort((a, b) => (b.evScore ?? 0) - (a.evScore ?? 0))
+      .slice(0, 200),
     poolSummary: {
       distinctLineupCount: allLineups.length,
       retainedLineupCount: retainedLineups.length,
@@ -787,9 +804,7 @@ export const POST: APIRoute = async ({ request }) => {
   } else {
     console.log("[sim-api] production mode: results not written to disk");
   }
-  console.log("[sim-api] response returned");
-
-  return jsonResponse(200, {
+  const responsePayload = {
     ok: true,
     slate,
     slateId: slateJson.id,
@@ -798,6 +813,27 @@ export const POST: APIRoute = async ({ request }) => {
     wroteResults: allowFileWrites,
     supportedGameType: "draftkings-classic",
     playerCount: playerInputs.length,
+  };
+  console.log("[sim-api] response serialization start");
+  let responseBody = "";
+  try {
+    responseBody = JSON.stringify(responsePayload);
+  } catch (error) {
+    return jsonResponse(500, {
+      error: "Failed to serialize response payload.",
+      details: [error instanceof Error ? error.message : String(error)],
+    });
+  }
+  console.log("[sim-api] response serialization complete", {
+    bytes: Buffer.byteLength(responseBody, "utf8"),
+    lineups: resultsPayload.lineups.length,
+    players: resultsPayload.players.length,
+  });
+  console.log("[sim-api] response returned");
+
+  return new Response(responseBody, {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
   });
 };
 
