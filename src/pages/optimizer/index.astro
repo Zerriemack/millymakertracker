@@ -1,0 +1,243 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="MMT Optimizer | Milly Maker Tracker">
+  <div class="optimizer-page">
+    <div class="optimizer-wrap">
+      <header class="optimizer-hero">
+        <h1 class="optimizer-wordmark">
+          <span class="optimizer-wordmark-accent">MMT</span><span class="optimizer-wordmark-main">Optimizer</span>
+        </h1>
+      </header>
+
+      <div class="optimizer-grid" aria-label="Football optimizer links">
+        <a class="optimizer-card" href="/optimizer/classic?sport=nfl&site=draftkings">
+          <span class="optimizer-card-sport">NFL</span>
+          <span class="optimizer-card-main">
+            <img
+              src="/simulator/operators/draftkings.png"
+              alt="DraftKings logo"
+              class="optimizer-card-logo"
+              loading="lazy"
+              onerror="this.style.display='none';"
+            />
+            <span class="optimizer-card-title">DraftKings</span>
+          </span>
+        </a>
+
+        <a class="optimizer-card" href="/optimizer/classic?sport=nfl&site=fanduel">
+          <span class="optimizer-card-sport">NFL</span>
+          <span class="optimizer-card-main">
+            <img
+              src="/simulator/operators/fanduel.png"
+              alt="FanDuel logo"
+              class="optimizer-card-logo"
+              loading="lazy"
+              onerror="this.style.display='none';"
+            />
+            <span class="optimizer-card-title">FanDuel</span>
+          </span>
+        </a>
+
+        <a class="optimizer-card" href="/optimizer/classic?sport=cfb&site=draftkings">
+          <span class="optimizer-card-sport">CFB</span>
+          <span class="optimizer-card-main">
+            <img
+              src="/simulator/operators/draftkings.png"
+              alt="DraftKings logo"
+              class="optimizer-card-logo"
+              loading="lazy"
+              onerror="this.style.display='none';"
+            />
+            <span class="optimizer-card-title">DraftKings</span>
+          </span>
+        </a>
+
+        <a class="optimizer-card" href="/optimizer/classic?sport=cfb&site=fanduel">
+          <span class="optimizer-card-sport">CFB</span>
+          <span class="optimizer-card-main">
+            <img
+              src="/simulator/operators/fanduel.png"
+              alt="FanDuel logo"
+              class="optimizer-card-logo"
+              loading="lazy"
+              onerror="this.style.display='none';"
+            />
+            <span class="optimizer-card-title">FanDuel</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    :global(html),
+    :global(body) {
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: #000;
+    }
+
+    :global(main.shell) {
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #000 !important;
+      min-height: 0 !important;
+      overflow: visible;
+    }
+
+    .optimizer-page {
+      background: #000;
+      color: #fff;
+      padding: 34px 24px 40px;
+    }
+
+    .optimizer-wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .optimizer-hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0 22px;
+    }
+
+    .optimizer-wordmark {
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      font-size: clamp(3.3rem, 6vw, 5.5rem);
+      line-height: 0.9;
+      font-weight: 900;
+      letter-spacing: -0.085em;
+      color: #fff;
+    }
+
+    .optimizer-wordmark-accent {
+      color: #1f5fff;
+    }
+
+    .optimizer-wordmark-main {
+      color: #fff;
+    }
+
+    .optimizer-wordmark::after {
+      content: "";
+      display: inline-block;
+      width: 64px;
+      height: 2px;
+      margin-left: 12px;
+      background: #1f5fff;
+      transform: translateY(6px);
+    }
+
+    .optimizer-grid {
+      width: min(740px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .optimizer-card {
+      min-height: 74px;
+      padding: 14px 16px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #f5f5f5;
+      background: #10141b;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      transition:
+        transform 0.15s ease,
+        border-color 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .optimizer-card:hover {
+      transform: translateY(-1px);
+      border-color: rgba(31, 95, 255, 0.24);
+      background: #131924;
+    }
+
+    .optimizer-card-sport {
+      font-size: 0.72rem;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+    }
+
+    .optimizer-card-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .optimizer-card-logo {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .optimizer-card-title {
+      font-size: 1.08rem;
+      line-height: 1;
+      font-weight: 800;
+      color: #fff;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      :global(html),
+      :global(body),
+      :global(main.shell) {
+        overflow: auto;
+      }
+
+      .optimizer-page {
+        padding: 24px 18px 24px;
+      }
+
+      .optimizer-wordmark {
+        font-size: clamp(2.8rem, 12vw, 4.8rem);
+      }
+
+      .optimizer-wordmark::after {
+        width: 42px;
+        margin-left: 10px;
+        transform: translateY(4px);
+      }
+
+      .optimizer-hero {
+        justify-content: flex-start;
+        margin-bottom: 18px;
+      }
+
+      .optimizer-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .optimizer-card {
+        min-height: 72px;
+      }
+    }
+  </style>
+</Layout>

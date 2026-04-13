@@ -1,0 +1,570 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const sportParam = (Astro.url.searchParams.get("sport") || "nfl").toUpperCase();
+const siteParam = (Astro.url.searchParams.get("site") || "draftkings")
+  .replace(/(^|\\s|_)([a-z])/g, (_match, p1, p2) => `${p1}${p2.toUpperCase()}`)
+  .replace(/_/g, " ");
+---
+
+<Layout title="Optimizer Classic | Milly Maker Tracker">
+  <div class="optimizer-shell">
+    <h1>Optimizer Classic</h1>
+    <p class="context-label">{sportParam} · {siteParam}</p>
+
+    <form id="optimizer-form" class="form">
+      <div class="field">
+        <label for="lineup-count">Lineup count</label>
+        <input id="lineup-count" name="lineupCount" type="number" min="1" step="1" value="3" />
+      </div>
+      <div class="field">
+        <label for="min-salary">Min salary</label>
+        <input id="min-salary" name="minSalary" type="number" min="0" step="100" value="49000" />
+      </div>
+      <div class="field">
+        <label for="max-repeating-players">Max repeating players</label>
+        <input id="max-repeating-players" name="maxRepeatingPlayers" type="number" min="0" step="1" value="7" />
+      </div>
+      <button id="run-btn" type="submit">Run Optimizer</button>
+    </form>
+
+    <p id="status" class="status">Idle</p>
+
+    <section id="results" class="results">
+      <div id="summary" class="panel">
+        <h2>Summary</h2>
+        <div class="summary-grid">
+          <div>
+            <div class="summary-label">lineup_count_requested</div>
+            <div id="summary-requested" class="summary-value">-</div>
+          </div>
+          <div>
+            <div class="summary-label">lineup_count_returned</div>
+            <div id="summary-returned" class="summary-value">-</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="lineups" class="panel panel-gap">
+        <h2>Lineups</h2>
+        <div id="lineups-content" class="stack"></div>
+      </div>
+
+      <div id="exposures" class="panel panel-gap">
+        <h2>Exposures</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Pos</th>
+                <th>Team</th>
+                <th>Exposure</th>
+              </tr>
+            </thead>
+            <tbody id="exposures-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <details id="raw" class="panel panel-gap">
+        <summary>Raw response</summary>
+        <pre id="raw-output" class="raw-output">(no output yet)</pre>
+      </details>
+    </section>
+  </div>
+
+  <script>
+    const players = [
+      {
+        id: "1",
+        first_name: "Josh",
+        last_name: "Allen",
+        positions: ["QB"],
+        team: "BUF",
+        salary: 7800,
+        fppg: 24.5,
+      },
+      {
+        id: "2",
+        first_name: "Brock",
+        last_name: "Purdy",
+        positions: ["QB"],
+        team: "SF",
+        salary: 6500,
+        fppg: 20.1,
+      },
+      {
+        id: "3",
+        first_name: "James",
+        last_name: "Cook",
+        positions: ["RB"],
+        team: "BUF",
+        salary: 6200,
+        fppg: 15.4,
+      },
+      {
+        id: "4",
+        first_name: "Breece",
+        last_name: "Hall",
+        positions: ["RB"],
+        team: "NYJ",
+        salary: 5900,
+        fppg: 17.8,
+      },
+      {
+        id: "5",
+        first_name: "Tyjae",
+        last_name: "Spears",
+        positions: ["RB"],
+        team: "TEN",
+        salary: 4800,
+        fppg: 11.2,
+      },
+      {
+        id: "6",
+        first_name: "Stefon",
+        last_name: "Diggs",
+        positions: ["WR"],
+        team: "BUF",
+        salary: 7200,
+        fppg: 19.6,
+      },
+      {
+        id: "7",
+        first_name: "Jaylen",
+        last_name: "Waddle",
+        positions: ["WR"],
+        team: "MIA",
+        salary: 6100,
+        fppg: 16.9,
+      },
+      {
+        id: "8",
+        first_name: "Puka",
+        last_name: "Nacua",
+        positions: ["WR"],
+        team: "LAR",
+        salary: 5800,
+        fppg: 18.1,
+      },
+      {
+        id: "9",
+        first_name: "Tank",
+        last_name: "Dell",
+        positions: ["WR"],
+        team: "HOU",
+        salary: 4700,
+        fppg: 12.8,
+      },
+      {
+        id: "10",
+        first_name: "George",
+        last_name: "Kittle",
+        positions: ["TE"],
+        team: "SF",
+        salary: 5200,
+        fppg: 14.3,
+      },
+      {
+        id: "11",
+        first_name: "Dalton",
+        last_name: "Kincaid",
+        positions: ["TE"],
+        team: "BUF",
+        salary: 3900,
+        fppg: 10.1,
+      },
+      {
+        id: "12",
+        first_name: "Bills",
+        last_name: "DST",
+        positions: ["DST"],
+        team: "BUF",
+        salary: 2900,
+        fppg: 8.2,
+      },
+      {
+        id: "13",
+        first_name: "Jets",
+        last_name: "DST",
+        positions: ["DST"],
+        team: "NYJ",
+        salary: 2500,
+        fppg: 7.4,
+      },
+    ];
+
+    const formEl = document.getElementById("optimizer-form");
+    const runButton = document.getElementById("run-btn");
+    const statusEl = document.getElementById("status");
+    const lineupCountInput = document.getElementById("lineup-count");
+    const minSalaryInput = document.getElementById("min-salary");
+    const maxRepeatingPlayersInput = document.getElementById("max-repeating-players");
+    const summaryRequestedEl = document.getElementById("summary-requested");
+    const summaryReturnedEl = document.getElementById("summary-returned");
+    const lineupsContentEl = document.getElementById("lineups-content");
+    const exposuresBodyEl = document.getElementById("exposures-body");
+    const rawOutputEl = document.getElementById("raw-output");
+
+    const getLineups = (data) => {
+      if (!data || typeof data !== "object") return [];
+      return data.lineups || data.results?.lineups || data.optimized_lineups || data.data?.lineups || [];
+    };
+
+    const getExposureRows = (data) => {
+      if (!data || typeof data !== "object") return [];
+      const raw = data.exposures || data.player_exposures || data.results?.exposures || [];
+      if (Array.isArray(raw)) return raw;
+      if (raw && typeof raw === "object") {
+        return Object.entries(raw).map(([player, exposure]) => ({ player, exposure }));
+      }
+      return [];
+    };
+
+    const formatPlayerName = (player) => {
+      if (!player || typeof player !== "object") return "-";
+      if (player.name) return player.name;
+      if (player.first_name || player.last_name) {
+        return `${player.first_name || ""} ${player.last_name || ""}`.trim();
+      }
+      if (player.firstName || player.lastName) {
+        return `${player.firstName || ""} ${player.lastName || ""}`.trim();
+      }
+      return player.id || "-";
+    };
+
+    const formatPositions = (player) => {
+      if (!player || typeof player !== "object") return "-";
+      if (Array.isArray(player.positions)) return player.positions.join(", ");
+      return player.position || player.pos || "-";
+    };
+
+    const formatNumber = (value) => {
+      if (value === null || value === undefined || Number.isNaN(value)) return "-";
+      return typeof value === "number" ? value.toFixed(2).replace(/\.00$/, "") : value;
+    };
+
+    const renderLineups = (lineups) => {
+      lineupsContentEl.innerHTML = "";
+      if (!lineups.length) {
+        const empty = document.createElement("p");
+        empty.textContent = "No lineups returned.";
+        lineupsContentEl.appendChild(empty);
+        return;
+      }
+
+      lineups.forEach((lineup, index) => {
+        const card = document.createElement("div");
+        card.className = "lineup-card";
+
+        const header = document.createElement("div");
+        header.className = "lineup-header";
+
+        const title = document.createElement("div");
+        title.className = "lineup-title";
+        title.textContent = `Lineup ${index + 1}`;
+
+        const meta = document.createElement("div");
+        meta.className = "lineup-meta";
+
+        const totalSalary = lineup.total_salary ?? lineup.salary_total ?? lineup.totalSalary ?? lineup.salary_costs;
+        const projectedPoints =
+          lineup.projected_points ?? lineup.projection ?? lineup.points ?? lineup.total_points ?? lineup.fantasy_points_projection;
+
+        meta.textContent = `Salary: ${formatNumber(totalSalary)} | Projected: ${formatNumber(projectedPoints)}`;
+
+        header.appendChild(title);
+        header.appendChild(meta);
+
+        const tableWrap = document.createElement("div");
+        tableWrap.className = "table-wrap";
+
+        const table = document.createElement("table");
+        table.innerHTML = `
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Pos</th>
+              <th>Team</th>
+              <th>Salary</th>
+              <th>Proj</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        `;
+
+        const tbody = table.querySelector("tbody");
+        const playersList = lineup.players || lineup.lineup || lineup.roster || [];
+
+        if (Array.isArray(playersList) && playersList.length) {
+          playersList.forEach((player) => {
+            const row = document.createElement("tr");
+            const name = formatPlayerName(player);
+            const pos = formatPositions(player);
+            const team = player.team || player.team_abbr || player.teamAbbr || "-";
+            const salary = player.salary ?? player.cost ?? "-";
+            const proj = player.projection ?? player.fppg ?? player.points ?? "-";
+
+            row.innerHTML = `
+              <td>${name}</td>
+              <td>${pos}</td>
+              <td>${team}</td>
+              <td>${formatNumber(salary)}</td>
+              <td>${formatNumber(proj)}</td>
+            `;
+            tbody.appendChild(row);
+          });
+        } else {
+          const row = document.createElement("tr");
+          row.innerHTML = `<td colspan="5">No players returned for this lineup.</td>`;
+          tbody.appendChild(row);
+        }
+
+        tableWrap.appendChild(table);
+        card.appendChild(header);
+        card.appendChild(tableWrap);
+        lineupsContentEl.appendChild(card);
+      });
+    };
+
+    const renderExposures = (exposures) => {
+      exposuresBodyEl.innerHTML = "";
+      if (!exposures.length) {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td colspan="4">No exposure data returned.</td>`;
+        exposuresBodyEl.appendChild(row);
+        return;
+      }
+
+      exposures.forEach((item) => {
+        const row = document.createElement("tr");
+        const name = item.name || item.player || formatPlayerName(item) || "-";
+        const pos = item.primary_position || item.position || item.pos || formatPositions(item) || "-";
+        const team = item.team || item.team_abbr || item.teamAbbr || "-";
+        const exposure = item.exposure ?? item.rate ?? item.share ?? "-";
+
+        row.innerHTML = `
+          <td>${name}</td>
+          <td>${pos}</td>
+          <td>${team}</td>
+          <td>${formatNumber(exposure)}</td>
+        `;
+        exposuresBodyEl.appendChild(row);
+      });
+    };
+
+    formEl.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const lineupCount = Number(lineupCountInput.value);
+      const minSalary = Number(minSalaryInput.value);
+      const maxRepeatingPlayers = Number(maxRepeatingPlayersInput.value);
+
+      const payload = {
+        players,
+        lineup_count: lineupCount,
+        min_salary: minSalary,
+        max_salary: null,
+        max_repeating_players: maxRepeatingPlayers,
+        locked_player_ids: [],
+        excluded_player_ids: [],
+        team_limit: null,
+        randomness: null,
+        stacks: [],
+      };
+
+      statusEl.textContent = "Running...";
+      runButton.disabled = true;
+      summaryRequestedEl.textContent = "-";
+      summaryReturnedEl.textContent = "-";
+      lineupsContentEl.innerHTML = "";
+      exposuresBodyEl.innerHTML = "";
+      rawOutputEl.textContent = "";
+
+      try {
+        const response = await fetch("/api/optimizer/run", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+        rawOutputEl.textContent = JSON.stringify(data, null, 2);
+
+        const lineups = getLineups(data);
+        const exposures = getExposureRows(data);
+
+        summaryRequestedEl.textContent = lineupCount;
+        summaryReturnedEl.textContent = Array.isArray(lineups) ? lineups.length : 0;
+
+        renderLineups(Array.isArray(lineups) ? lineups : []);
+        renderExposures(exposures);
+
+        if (response.ok) {
+          statusEl.textContent = "Success";
+        } else {
+          statusEl.textContent = "Error";
+        }
+      } catch (error) {
+        statusEl.textContent = "Error";
+        rawOutputEl.textContent = error instanceof Error ? error.message : "Unknown error";
+        lineupsContentEl.innerHTML = "";
+        exposuresBodyEl.innerHTML = "";
+        summaryRequestedEl.textContent = "-";
+        summaryReturnedEl.textContent = "-";
+      } finally {
+        runButton.disabled = false;
+      }
+    });
+  </script>
+
+  <style>
+    .optimizer-shell {
+      padding: 16px;
+      color: #f5f5f5;
+    }
+
+    .context-label {
+      margin: 6px 0 0;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .form {
+      margin-top: 16px;
+      max-width: 420px;
+    }
+
+    .field {
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: #f5f5f5;
+    }
+
+    input {
+      width: 100%;
+      background: #111;
+      color: #f5f5f5;
+      border: 1px solid #333;
+      padding: 8px 10px;
+    }
+
+    button {
+      background: #1b1b1b;
+      color: #f5f5f5;
+      border: 1px solid #333;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: 0.7;
+      cursor: default;
+    }
+
+    .status {
+      margin-top: 12px;
+    }
+
+    .results {
+      margin-top: 16px;
+    }
+
+    .panel {
+      border: 1px solid #222;
+      background: #0f0f0f;
+      padding: 12px;
+    }
+
+    .panel-gap {
+      margin-top: 16px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .summary-label {
+      font-size: 0.85rem;
+      color: #bdbdbd;
+    }
+
+    .summary-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .lineup-card {
+      border: 1px solid #222;
+      background: #0c0c0c;
+      padding: 12px;
+    }
+
+    .lineup-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .lineup-title {
+      font-weight: 700;
+    }
+
+    .lineup-meta {
+      color: #c9c9c9;
+      font-size: 0.9rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #f5f5f5;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 6px 8px;
+      border-bottom: 1px solid #1f1f1f;
+    }
+
+    th {
+      font-weight: 700;
+      color: #d6d6d6;
+    }
+
+    details summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .raw-output {
+      margin-top: 8px;
+      padding: 12px;
+      border: 1px solid #333;
+      background: #111;
+      color: #f5f5f5;
+      white-space: pre-wrap;
+    }
+  </style>
+</Layout>
