@@ -1,5 +1,6 @@
 import type {
   OptimizeRequest,
+  OptimizerConstraints,
   OptimizerExposure,
   OptimizerLineup,
   OptimizerPlayer,
@@ -11,7 +12,16 @@ import type {
 } from "./types";
 
 const FLEX_POSITIONS = new Set(["RB", "WR", "TE"]);
+const FLEX_NO_TE_POSITIONS = new Set(["RB", "WR"]);
+const SKILL_POSITIONS = new Set(["RB", "WR", "TE"]);
 const ROSTER_SLOTS = ["QB", "RB", "RB", "WR", "WR", "WR", "TE", "FLEX", "DST"] as const;
+const DEFAULT_CONSTRAINTS: OptimizerConstraints = {
+  qb_stack: false,
+  game_stack: false,
+  avoid_opposing_defense: false,
+  avoid_te_in_flex: false,
+  one_skill_player_per_team: false,
+};
 
 export class GenerateLineupError extends Error {
   code: string;
@@ -56,7 +66,7 @@ const validatePlayer = (value: unknown, index: number, errors: ValidationError[]
 
   ensureNoExtraKeys(
     value,
-    ["id", "first_name", "last_name", "positions", "team", "salary", "fppg"],
+    ["id", "first_name", "last_name", "positions", "team", "opponent", "game_id", "salary", "fppg"],
     errors,
     `players[${index}]`
   );
@@ -65,6 +75,18 @@ const validatePlayer = (value: unknown, index: number, errors: ValidationError[]
   const firstName = isNonEmptyString(value.first_name) ? value.first_name.trim() : null;
   const lastName = isNonEmptyString(value.last_name) ? value.last_name.trim() : null;
   const team = isNonEmptyString(value.team) ? value.team.trim() : null;
+  const opponent =
+    value.opponent === undefined || value.opponent === null
+      ? null
+      : isNonEmptyString(value.opponent)
+        ? value.opponent.trim()
+        : null;
+  const gameId =
+    value.game_id === undefined || value.game_id === null
+      ? null
+      : isNonEmptyString(value.game_id)
+        ? value.game_id.trim()
+        : null;
   const positionsRaw = Array.isArray(value.positions) ? value.positions : null;
   const salary = typeof value.salary === "number" ? value.salary : null;
   const fppg = typeof value.fppg === "number" ? value.fppg : null;
@@ -75,6 +97,12 @@ const validatePlayer = (value: unknown, index: number, errors: ValidationError[]
   if (!lastName)
     errors.push({ field: `players[${index}].last_name`, message: "must be a non-empty string" });
   if (!team) errors.push({ field: `players[${index}].team`, message: "must be a non-empty string" });
+  if (value.opponent !== undefined && value.opponent !== null && !opponent) {
+    errors.push({ field: `players[${index}].opponent`, message: "must be a non-empty string" });
+  }
+  if (value.game_id !== undefined && value.game_id !== null && !gameId) {
+    errors.push({ field: `players[${index}].game_id`, message: "must be a non-empty string" });
+  }
 
   if (!positionsRaw) {
     errors.push({ field: `players[${index}].positions`, message: "must be a non-empty list" });
@@ -109,6 +137,8 @@ const validatePlayer = (value: unknown, index: number, errors: ValidationError[]
     last_name: lastName,
     positions,
     team,
+    opponent,
+    game_id: gameId,
     salary,
     fppg,
   };
@@ -120,15 +150,30 @@ const validateStack = (value: unknown, index: number, errors: ValidationError[])
     return null;
   }
 
-  ensureNoExtraKeys(value, ["team", "positions", "count"], errors, `stacks[${index}]`);
+  ensureNoExtraKeys(value, ["type", "team", "positions", "for_positions", "count"], errors, `stacks[${index}]`);
 
+  const type =
+    value.type === undefined
+      ? "team"
+      : value.type === "team" || value.type === "qb_stack" || value.type === "game_stack"
+        ? value.type
+        : null;
   const team = value.team === undefined || value.team === null ? null : isNonEmptyString(value.team) ? value.team.trim() : null;
   const positionsRaw = Array.isArray(value.positions) ? value.positions : [];
   const positions = positionsRaw
     .filter((pos) => typeof pos === "string")
     .map((pos) => pos.trim())
     .filter((pos) => pos.length > 0);
+  const forPositionsRaw = Array.isArray(value.for_positions) ? value.for_positions : [];
+  const forPositions = forPositionsRaw
+    .filter((pos) => typeof pos === "string")
+    .map((pos) => pos.trim())
+    .filter((pos) => pos.length > 0);
   const count = typeof value.count === "number" && Number.isFinite(value.count) ? value.count : 0;
+
+  if (value.type !== undefined && type === null) {
+    errors.push({ field: `stacks[${index}].type`, message: "must be one of: team, qb_stack, game_stack" });
+  }
 
   if (value.team !== undefined && value.team !== null && !team) {
     errors.push({ field: `stacks[${index}].team`, message: "must be a non-empty string" });
@@ -138,7 +183,49 @@ const validateStack = (value: unknown, index: number, errors: ValidationError[])
     errors.push({ field: `stacks[${index}].count`, message: "must be >= 0" });
   }
 
-  return { team, positions, count };
+  return { type: type ?? "team", team, positions, for_positions: forPositions, count };
+};
+
+const validateConstraints = (value: unknown, errors: ValidationError[]): OptimizerConstraints => {
+  if (value === undefined) {
+    return { ...DEFAULT_CONSTRAINTS };
+  }
+
+  if (!isObject(value)) {
+    errors.push({ field: "constraints", message: "must be an object" });
+    return { ...DEFAULT_CONSTRAINTS };
+  }
+
+  ensureNoExtraKeys(
+    value,
+    [
+      "qb_stack",
+      "game_stack",
+      "avoid_opposing_defense",
+      "avoid_te_in_flex",
+      "one_skill_player_per_team",
+    ],
+    errors,
+    "constraints"
+  );
+
+  const readBoolean = (key: keyof OptimizerConstraints): boolean => {
+    const raw = value[key];
+    if (raw === undefined) return DEFAULT_CONSTRAINTS[key];
+    if (typeof raw !== "boolean") {
+      errors.push({ field: `constraints.${key}`, message: "must be a boolean" });
+      return DEFAULT_CONSTRAINTS[key];
+    }
+    return raw;
+  };
+
+  return {
+    qb_stack: readBoolean("qb_stack"),
+    game_stack: readBoolean("game_stack"),
+    avoid_opposing_defense: readBoolean("avoid_opposing_defense"),
+    avoid_te_in_flex: readBoolean("avoid_te_in_flex"),
+    one_skill_player_per_team: readBoolean("one_skill_player_per_team"),
+  };
 };
 
 export const validateOptimizeRequest = (input: unknown): ValidationResult<OptimizeRequest> => {
@@ -161,6 +248,7 @@ export const validateOptimizeRequest = (input: unknown): ValidationResult<Optimi
       "team_limit",
       "randomness",
       "stacks",
+      "constraints",
     ],
     errors,
     "body"
@@ -237,6 +325,7 @@ export const validateOptimizeRequest = (input: unknown): ValidationResult<Optimi
   const stacks: StackRule[] = stacksRaw
     .map((stack, index) => validateStack(stack, index, errors))
     .filter((stack): stack is StackRule => !!stack);
+  const constraints = validateConstraints(input.constraints, errors);
 
   const playerIds = new Set(players.map((player) => player.id));
   if (playerIds.size !== players.length) {
@@ -274,6 +363,7 @@ export const validateOptimizeRequest = (input: unknown): ValidationResult<Optimi
       team_limit: teamLimit,
       randomness,
       stacks,
+      constraints,
     },
   };
 };
@@ -283,10 +373,16 @@ type InternalPlayer = PlayerInput & {
   score: number;
 };
 
+type AssignedPlayer = {
+  player: InternalPlayer;
+  slot: string;
+};
+
 const assignLockedPlayers = (
   lockedPlayers: InternalPlayer[],
-  slots: string[]
-): { locked: InternalPlayer[]; remainingSlots: string[] } => {
+  slots: string[],
+  constraints: OptimizerConstraints
+): { locked: AssignedPlayer[]; remainingSlots: string[] } => {
   if (!lockedPlayers.length) {
     return { locked: [], remainingSlots: [...slots] };
   }
@@ -298,25 +394,20 @@ const assignLockedPlayers = (
   const backtrack = (
     index: number,
     availableSlots: string[],
-    assigned: InternalPlayer[]
-  ): { locked: InternalPlayer[]; remainingSlots: string[] } | null => {
+    assigned: AssignedPlayer[]
+  ): { locked: AssignedPlayer[]; remainingSlots: string[] } | null => {
     if (index >= sortedLocked.length) {
       return { locked: assigned, remainingSlots: availableSlots };
     }
 
     const player = sortedLocked[index];
-    const possibleSlots = availableSlots.filter((slot) => {
-      if (slot === "FLEX") {
-        return player.positions.some((pos) => FLEX_POSITIONS.has(pos));
-      }
-      return player.positions.includes(slot);
-    });
+    const possibleSlots = availableSlots.filter((slot) => isPlayerEligibleForSlot(player, slot, constraints));
 
     for (const slot of possibleSlots) {
       const nextSlots = [...availableSlots];
       const slotIndex = nextSlots.indexOf(slot);
       nextSlots.splice(slotIndex, 1);
-      const result = backtrack(index + 1, nextSlots, [...assigned, player]);
+      const result = backtrack(index + 1, nextSlots, [...assigned, { player, slot }]);
       if (result) {
         return result;
       }
@@ -343,15 +434,201 @@ const buildLineupPlayers = (players: InternalPlayer[]): OptimizerPlayer[] =>
     fppg: player.fppg,
   }));
 
+const isPlayerEligibleForSlot = (
+  player: InternalPlayer,
+  slot: string,
+  constraints: OptimizerConstraints
+): boolean => {
+  if (slot === "FLEX") {
+    const allowed = constraints.avoid_te_in_flex ? FLEX_NO_TE_POSITIONS : FLEX_POSITIONS;
+    return player.positions.some((pos) => allowed.has(pos));
+  }
+  return player.positions.includes(slot);
+};
+
+const isSkillPlayer = (player: InternalPlayer): boolean =>
+  player.positions.some((pos) => SKILL_POSITIONS.has(pos));
+
+const matchesAnyPosition = (player: InternalPlayer, positions?: string[]): boolean => {
+  if (!positions?.length) return true;
+  return player.positions.some((pos) => positions.includes(pos));
+};
+
+const getPlayersFromAssignments = (assigned: AssignedPlayer[]): InternalPlayer[] =>
+  assigned.map(({ player }) => player);
+
+const normalizeStacks = (
+  stacks: StackRule[],
+  constraints: OptimizerConstraints
+): StackRule[] => {
+  const normalized = [...stacks];
+  const hasType = (type: StackRule["type"]) => normalized.some((stack) => stack.type === type);
+
+  if (constraints.qb_stack && !hasType("qb_stack")) {
+    normalized.push({
+      type: "qb_stack",
+      for_positions: ["QB"],
+      positions: ["RB", "WR", "TE"],
+      count: 1,
+    });
+  }
+
+  if (constraints.game_stack && !hasType("game_stack")) {
+    normalized.push({
+      type: "game_stack",
+      for_positions: ["QB"],
+      positions: ["RB", "WR", "TE"],
+      count: 1,
+    });
+  }
+
+  return normalized;
+};
+
 const satisfiesStacks = (players: InternalPlayer[], stacks: StackRule[]): boolean => {
   if (!stacks.length) return true;
   for (const stack of stacks) {
-    if (!stack.team || stack.count <= 0) continue;
-    const count = players.filter((player) => player.team === stack.team).length;
+    if (stack.count <= 0) continue;
+
+    if (stack.type === "qb_stack") {
+      const keyPositions = stack.for_positions?.length ? stack.for_positions : ["QB"];
+      const qbs = players.filter((player) => matchesAnyPosition(player, keyPositions));
+      if (
+        qbs.some((qb) =>
+          players.filter(
+            (player) =>
+              player.id !== qb.id &&
+              player.team === qb.team &&
+              matchesAnyPosition(player, stack.positions)
+          ).length < stack.count
+        )
+      ) {
+        return false;
+      }
+      continue;
+    }
+
+    if (stack.type === "game_stack") {
+      const keyPositions = stack.for_positions?.length ? stack.for_positions : ["QB"];
+      const qbs = players.filter((player) => matchesAnyPosition(player, keyPositions));
+      if (
+        qbs.some((qb) => {
+          if (!qb.opponent) return true;
+          return (
+            players.filter(
+              (player) =>
+                player.team === qb.opponent &&
+                matchesAnyPosition(player, stack.positions)
+            ).length < stack.count
+          );
+        })
+      ) {
+        return false;
+      }
+      continue;
+    }
+
+    if (!stack.team) continue;
+    const count = players.filter(
+      (player) => player.team === stack.team && matchesAnyPosition(player, stack.positions)
+    ).length;
     if (count < stack.count) {
       return false;
     }
   }
+  return true;
+};
+
+const satisfiesConstraints = (
+  assigned: AssignedPlayer[],
+  constraints: OptimizerConstraints
+): boolean => {
+  const players = getPlayersFromAssignments(assigned);
+
+  if (constraints.avoid_opposing_defense) {
+    const dstTeams = new Set(players.filter((player) => player.positions.includes("DST")).map((player) => player.team));
+    if (
+      players.some(
+        (player) =>
+          !player.positions.includes("DST") &&
+          !!player.opponent &&
+          dstTeams.has(player.opponent)
+      )
+    ) {
+      return false;
+    }
+  }
+
+  if (constraints.one_skill_player_per_team) {
+    const qbTeams = new Set(players.filter((player) => player.positions.includes("QB")).map((player) => player.team));
+    const skillCounts = new Map<string, number>();
+    players.forEach((player) => {
+      if (isSkillPlayer(player)) {
+        skillCounts.set(player.team, (skillCounts.get(player.team) || 0) + 1);
+      }
+    });
+
+    for (const [team, count] of skillCounts.entries()) {
+      const allowed = qbTeams.has(team) ? 2 : 1;
+      if (count > allowed) {
+        return false;
+      }
+    }
+  }
+
+  if (constraints.avoid_te_in_flex) {
+    const flexEntry = assigned.find(({ slot }) => slot === "FLEX");
+    if (flexEntry && flexEntry.player.positions.every((pos) => !FLEX_NO_TE_POSITIONS.has(pos))) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+const canAddPlayerToLineup = (
+  assigned: AssignedPlayer[],
+  candidate: InternalPlayer,
+  constraints: OptimizerConstraints
+): boolean => {
+  if (constraints.one_skill_player_per_team && isSkillPlayer(candidate)) {
+    const players = getPlayersFromAssignments(assigned);
+    const qbTeams = new Set(players.filter((player) => player.positions.includes("QB")).map((player) => player.team));
+    const existingCount = players.filter(
+      (player) => player.team === candidate.team && isSkillPlayer(player)
+    ).length;
+    const allowed = qbTeams.has(candidate.team) ? 2 : 1;
+    if (existingCount + 1 > allowed) {
+      return false;
+    }
+  }
+
+  if (constraints.avoid_opposing_defense) {
+    const players = getPlayersFromAssignments(assigned);
+    if (
+      candidate.positions.includes("DST") &&
+      players.some(
+        (player) =>
+          !player.positions.includes("DST") &&
+          player.opponent === candidate.team
+      )
+    ) {
+      return false;
+    }
+
+    if (
+      !candidate.positions.includes("DST") &&
+      candidate.opponent &&
+      players.some(
+        (player) =>
+          player.positions.includes("DST") &&
+          player.team === candidate.opponent
+      )
+    ) {
+      return false;
+    }
+  }
+
   return true;
 };
 
@@ -371,27 +648,26 @@ const isOverlapValid = (
 const getCandidatePlayers = (
   players: InternalPlayer[],
   usedIds: Set<string>,
-  slot: string
+  slot: string,
+  constraints: OptimizerConstraints
 ): InternalPlayer[] => {
   return players.filter((player) => {
     if (usedIds.has(player.id)) return false;
-    if (slot === "FLEX") {
-      return player.positions.some((pos) => FLEX_POSITIONS.has(pos));
-    }
-    return player.positions.includes(slot);
+    return isPlayerEligibleForSlot(player, slot, constraints);
   });
 };
 
 const getRemainingSalaryBounds = (
   players: InternalPlayer[],
   usedIds: Set<string>,
-  remainingSlots: string[]
+  remainingSlots: string[],
+  constraints: OptimizerConstraints
 ): { min: number; max: number; feasible: boolean } => {
   let min = 0;
   let max = 0;
 
   for (const slot of remainingSlots) {
-    const candidates = getCandidatePlayers(players, usedIds, slot);
+    const candidates = getCandidatePlayers(players, usedIds, slot, constraints);
     if (!candidates.length) {
       return { min: 0, max: 0, feasible: false };
     }
@@ -406,22 +682,23 @@ const getRemainingSalaryBounds = (
 const findBestLineup = (
   players: InternalPlayer[],
   remainingSlots: string[],
-  lockedPlayers: InternalPlayer[],
+  lockedPlayers: AssignedPlayer[],
   minSalary: number | null,
   maxSalary: number | null,
   teamLimit: number | null,
   stacks: StackRule[],
+  constraints: OptimizerConstraints,
   previousLineups: OptimizerLineup[],
   maxRepeatingPlayers: number | null
 ): OptimizerLineup | null => {
-  let best: { score: number; lineup: InternalPlayer[] } | null = null;
+  let best: { score: number; lineup: AssignedPlayer[] } | null = null;
 
-  const usedIds = new Set(lockedPlayers.map((player) => player.id));
-  const initialSalary = lockedPlayers.reduce((sum, player) => sum + player.salary, 0);
-  const initialScore = lockedPlayers.reduce((sum, player) => sum + player.score, 0);
+  const usedIds = new Set(lockedPlayers.map(({ player }) => player.id));
+  const initialSalary = lockedPlayers.reduce((sum, { player }) => sum + player.salary, 0);
+  const initialScore = lockedPlayers.reduce((sum, { player }) => sum + player.score, 0);
 
   const teamCounts = new Map<string, number>();
-  lockedPlayers.forEach((player) => {
+  lockedPlayers.forEach(({ player }) => {
     teamCounts.set(player.team, (teamCounts.get(player.team) || 0) + 1);
   });
 
@@ -432,7 +709,7 @@ const findBestLineup = (
   });
 
   const search = (
-    chosen: InternalPlayer[],
+    chosen: AssignedPlayer[],
     slots: string[],
     totalSalary: number,
     totalScore: number
@@ -440,8 +717,10 @@ const findBestLineup = (
     if (!slots.length) {
       if (minSalary !== null && totalSalary < minSalary) return;
       if (maxSalary !== null && totalSalary > maxSalary) return;
-      if (!satisfiesStacks(chosen, stacks)) return;
-      if (!isOverlapValid(chosen, previousLineups, maxRepeatingPlayers)) return;
+      const chosenPlayers = getPlayersFromAssignments(chosen);
+      if (!satisfiesStacks(chosenPlayers, stacks)) return;
+      if (!satisfiesConstraints(chosen, constraints)) return;
+      if (!isOverlapValid(chosenPlayers, previousLineups, maxRepeatingPlayers)) return;
 
       if (!best || totalScore > best.score) {
         best = { score: totalScore, lineup: [...chosen] };
@@ -453,7 +732,12 @@ const findBestLineup = (
       return;
     }
 
-    const bounds = getRemainingSalaryBounds(sortedPlayers, new Set(chosen.map((p) => p.id)), slots);
+    const bounds = getRemainingSalaryBounds(
+      sortedPlayers,
+      new Set(chosen.map(({ player }) => player.id)),
+      slots,
+      constraints
+    );
     if (!bounds.feasible) return;
     if (maxSalary !== null && totalSalary + bounds.min > maxSalary) return;
     if (minSalary !== null && totalSalary + bounds.max < minSalary) return;
@@ -463,7 +747,12 @@ const findBestLineup = (
     let smallestCount = Number.POSITIVE_INFINITY;
 
     slots.forEach((slot, index) => {
-      const slotCandidates = getCandidatePlayers(sortedPlayers, new Set(chosen.map((p) => p.id)), slot);
+      const slotCandidates = getCandidatePlayers(
+        sortedPlayers,
+        new Set(chosen.map(({ player }) => player.id)),
+        slot,
+        constraints
+      );
       if (slotCandidates.length < smallestCount) {
         smallestCount = slotCandidates.length;
         slotIndex = index;
@@ -471,6 +760,7 @@ const findBestLineup = (
       }
     });
 
+    const slot = slots[slotIndex];
     const nextSlots = [...slots];
     nextSlots.splice(slotIndex, 1);
 
@@ -481,10 +771,13 @@ const findBestLineup = (
       if (teamLimit !== null && currentTeamCount + 1 > teamLimit) {
         continue;
       }
+      if (!canAddPlayerToLineup(chosen, candidate, constraints)) {
+        continue;
+      }
 
       usedIds.add(candidate.id);
       teamCounts.set(candidate.team, currentTeamCount + 1);
-      chosen.push(candidate);
+      chosen.push({ player: candidate, slot });
 
       search(chosen, nextSlots, totalSalary + candidate.salary, totalScore + candidate.score);
 
@@ -498,7 +791,7 @@ const findBestLineup = (
 
   if (!best) return null;
 
-  const lineupPlayers = best.lineup;
+  const lineupPlayers = getPlayersFromAssignments(best!.lineup);
   const salary = lineupPlayers.reduce((sum, player) => sum + player.salary, 0);
   const projection = lineupPlayers.reduce((sum, player) => sum + player.fppg, 0);
 
@@ -541,6 +834,7 @@ const buildExposures = (lineups: OptimizerLineup[]): OptimizerExposure[] => {
 };
 
 export const buildOptimizerResponse = (request: OptimizeRequest): OptimizerResponse => {
+  const effectiveStacks = normalizeStacks(request.stacks, request.constraints);
   const excluded = new Set(request.excluded_player_ids);
   const lockedIds = new Set(request.locked_player_ids);
 
@@ -557,7 +851,11 @@ export const buildOptimizerResponse = (request: OptimizeRequest): OptimizerRespo
     });
 
   const lockedPlayers = playerPool.filter((player) => lockedIds.has(player.id));
-  const { locked, remainingSlots } = assignLockedPlayers(lockedPlayers, [...ROSTER_SLOTS]);
+  const { locked, remainingSlots } = assignLockedPlayers(
+    lockedPlayers,
+    [...ROSTER_SLOTS],
+    request.constraints
+  );
 
   const lineups: OptimizerLineup[] = [];
   for (let i = 0; i < request.lineup_count; i += 1) {
@@ -568,7 +866,8 @@ export const buildOptimizerResponse = (request: OptimizeRequest): OptimizerRespo
       request.min_salary,
       request.max_salary,
       request.team_limit,
-      request.stacks,
+      effectiveStacks,
+      request.constraints,
       lineups,
       request.max_repeating_players
     );
@@ -594,7 +893,8 @@ export const buildOptimizerResponse = (request: OptimizeRequest): OptimizerRespo
       excluded_player_ids: request.excluded_player_ids,
       team_limit: request.team_limit,
       randomness: request.randomness,
-      stacks: request.stacks,
+      stacks: effectiveStacks,
+      constraints: request.constraints,
     },
     lineup_count_requested: request.lineup_count,
     lineup_count_returned: lineups.length,

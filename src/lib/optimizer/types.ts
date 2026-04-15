@@ -4,14 +4,26 @@ export type PlayerInput = {
   last_name: string;
   positions: string[];
   team: string;
+  opponent?: string | null;
+  game_id?: string | null;
   salary: number;
   fppg: number;
 };
 
 export type StackRule = {
+  type?: "team" | "qb_stack" | "game_stack";
   team?: string | null;
   positions?: string[];
+  for_positions?: string[];
   count: number;
+};
+
+export type OptimizerConstraints = {
+  qb_stack: boolean;
+  game_stack: boolean;
+  avoid_opposing_defense: boolean;
+  avoid_te_in_flex: boolean;
+  one_skill_player_per_team: boolean;
 };
 
 export type OptimizeRequest = {
@@ -25,6 +37,7 @@ export type OptimizeRequest = {
   team_limit: number | null;
   randomness: number | null;
   stacks: StackRule[];
+  constraints: OptimizerConstraints;
 };
 
 export type OptimizerPlayer = {
@@ -62,6 +75,7 @@ export type OptimizerResponse = {
     team_limit: number | null;
     randomness: number | null;
     stacks: StackRule[];
+    constraints: OptimizerConstraints;
   };
   lineup_count_requested: number;
   lineup_count_returned: number;

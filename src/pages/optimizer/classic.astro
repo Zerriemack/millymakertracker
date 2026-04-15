@@ -1,570 +1,4187 @@
+
 ---
 import Layout from "../../layouts/Layout.astro";
+import { listSlatePackages } from "../../lib/simulator/listSlatePackages";
+import { loadSlatePackage } from "../../lib/simulator/loadSlatePackage";
 
-const sportParam = (Astro.url.searchParams.get("sport") || "nfl").toUpperCase();
-const siteParam = (Astro.url.searchParams.get("site") || "draftkings")
-  .replace(/(^|\\s|_)([a-z])/g, (_match, p1, p2) => `${p1}${p2.toUpperCase()}`)
-  .replace(/_/g, " ");
+const pageTitle = "Optimizer Classic";
+const operatorMeta = {
+  draftkings: {
+    label: "DraftKings",
+    logo: "/simulator/operators/draftkings.png",
+  },
+  fanduel: {
+    label: "FanDuel",
+    logo: "/simulator/operators/fanduel.png",
+  },
+};
+
+const topTabs = [
+  "Optimizer",
+  "My Lineups",
+  "Sim Results",
+  "Late Swap/Entry Mgr",
+  "My Projections",
+];
+
+const settingsToggles = [
+  {
+    id: "qbStack",
+    title: "QB Stack",
+    note: "Stack your QB with a pass catcher from the same team",
+    checked: true,
+  },
+  {
+    id: "gameStack",
+    title: "Game Stack",
+    note: "Stack your QB with a skill player from the opponent",
+    checked: true,
+  },
+  {
+    id: "avoidOppDefense",
+    title: "Avoid Opposing Defense",
+    note: "Avoid using the opposing Defense against your players",
+    checked: true,
+  },
+  {
+    id: "avoidTeFlex",
+    title: "Avoid TE in FLEX",
+    note: "Only use RB or WR in the FLEX position",
+    checked: false,
+  },
+  {
+    id: "maximizeSalary",
+    title: "Maximize Salary Cap",
+    note: "Use at least 99% of the available salary cap",
+    checked: false,
+  },
+  {
+    id: "oneSkillPerTeam",
+    title: "One Skill Player per Team",
+    note: "Only use 1 skill player per team except QB stacks",
+    checked: true,
+  },
+];
+
+const builderSlots = ["QB", "RB", "RB", "WR", "WR", "WR", "TE", "FLEX", "DST"];
+
+const allSlateKeys = await listSlatePackages();
+const classicKeys = allSlateKeys.filter((key) => key.includes("classic"));
+const packages = await Promise.all(
+  classicKeys.map(async (key) => ({ key, ...(await loadSlatePackage(key)) }))
+);
+const selectedKeyParam = Astro.url.searchParams.get("slate") || "";
+const selectedKey = classicKeys.includes(selectedKeyParam) ? selectedKeyParam : classicKeys[0] || "";
+const selectedPackage = packages.find((pack) => pack.key === selectedKey) || packages[0] || null;
+
+const salaryFormatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0,
+});
+
+function formatSalary(value) {
+  return salaryFormatter.format(value || 0);
+}
+
+function formatTime(value) {
+  if (!value) return "—";
+  const d = new Date(value);
+  if (Number.isNaN(d.valueOf())) return "—";
+  return d.toLocaleString("en-US", {
+    weekday: "short",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+}
+
+function getWeekValue(pack) {
+  return `${pack.slate.season}-W${pack.slate.week}`;
+}
+
+function getSiteValue(pack) {
+  return `${pack.slate.site}-${pack.slate.gameType}`;
+}
+
+function getSiteLabel(site, gameType) {
+  const siteLabel = operatorMeta[site]?.label || site;
+  const gameLabel = gameType === "classic" ? "Classic" : "Showdown";
+  return `${siteLabel} - ${gameLabel}`;
+}
+
+function getTeamLogoPath(team) {
+  return `/simulator/team-logos/${team}.png`;
+}
+
+function formatGameTotal(value) {
+  return Number.isFinite(value) ? value.toFixed(1).replace(/\.0$/, "") : "—";
+}
+
+function formatGameDayShort(game) {
+  const value = game?.startTime;
+  if (!value) return "TBD";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime())
+    ? "TBD"
+    : date.toLocaleDateString("en-US", { weekday: "short" });
+}
+
+function formatGameTimeLabel(game) {
+  const value = game?.startTime;
+  if (!value) return "TBD";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime())
+    ? "TBD"
+    : date.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+}
+
+function parseSpread(raw, homeTeam) {
+  const spread = String(raw || "").trim();
+  if (!spread) return 0;
+  const parts = spread.split(" ");
+  if (parts.length < 2) return 0;
+  const team = parts[0];
+  const value = Number(parts[1]);
+  if (!Number.isFinite(value)) return 0;
+  if (team === homeTeam) return value;
+  return -value;
+}
+
+function impliedTotals(game) {
+  const total = Number(game.total);
+  if (!Number.isFinite(total)) return { away: null, home: null };
+  const spread = parseSpread(game.spread, game.homeTeam);
+  const home = total / 2 + spread / 2;
+  const away = total / 2 - spread / 2;
+  return {
+    away: Math.round(away * 100) / 100,
+    home: Math.round(home * 100) / 100,
+  };
+}
+
+const initialGames = selectedPackage?.games || [];
+const initialPlayers = selectedPackage?.playerInputs || [];
+const initialGameMap = new Map(initialGames.map((game) => [game.id, game]));
+const initialPlayerRows = initialPlayers.map((player) => {
+  const game = initialGameMap.get(player.gameId);
+  return {
+    id: player.id,
+    pos: player.position,
+    team: player.team,
+    name: player.name,
+    matchup: game?.gameLabel || `${player.team} @ ${player.opponent}`,
+    salary: formatSalary(player.salary),
+    proj: player.projection,
+    actual: null,
+    own: player.ownership,
+    ceiling: player.projection * 1.6,
+    floor: player.projection * 0.6,
+    variance: player.projection * 0.25,
+  };
+});
+
+const slateOptions = packages.map((pack) => ({
+  key: pack.key,
+  slate: pack.slate,
+  games: pack.games,
+}));
+
+const weekOptions = Array.from(
+  new Map(
+    slateOptions.map((option) => {
+      const key = `${option.slate.season}-W${option.slate.week}`;
+      return [key, option];
+    })
+  ).values()
+).map((option) => ({
+  label: `Week ${option.slate.week} - ${option.slate.season}`,
+  value: getWeekValue(option),
+}));
+
+const siteOptions = Array.from(
+  new Map(
+    slateOptions.map((option) => {
+      const key = `${option.slate.site}-${option.slate.gameType}`;
+      return [key, option];
+    })
+  ).values()
+).map((option) => ({
+  label: getSiteLabel(option.slate.site, option.slate.gameType),
+  value: getSiteValue(option),
+}));
+
+const initialWeekValue = selectedPackage ? getWeekValue(selectedPackage) : "";
+const initialSiteValue = selectedPackage ? getSiteValue(selectedPackage) : "";
+const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.site] || null : null;
 ---
 
-<Layout title="Optimizer Classic | Milly Maker Tracker">
-  <div class="optimizer-shell">
-    <h1>Optimizer Classic</h1>
-    <p class="context-label">{sportParam} · {siteParam}</p>
+<Layout title={`${pageTitle} | Milly Maker Tracker`}>
+  <section class="optimizer-page">
+    <div class="optimizer-shell">
+      <header class="optimizer-topbar">
+        <div class="optimizer-brand">NFL Optimizer</div>
 
-    <form id="optimizer-form" class="form">
-      <div class="field">
-        <label for="lineup-count">Lineup count</label>
-        <input id="lineup-count" name="lineupCount" type="number" min="1" step="1" value="3" />
-      </div>
-      <div class="field">
-        <label for="min-salary">Min salary</label>
-        <input id="min-salary" name="minSalary" type="number" min="0" step="100" value="49000" />
-      </div>
-      <div class="field">
-        <label for="max-repeating-players">Max repeating players</label>
-        <input id="max-repeating-players" name="maxRepeatingPlayers" type="number" min="0" step="1" value="7" />
-      </div>
-      <button id="run-btn" type="submit">Run Optimizer</button>
-    </form>
+        <div class="optimizer-toolbar">
+          <label class="toolbar-field toolbar-week">
+            <span>Week</span>
+            <select data-control="week">
+              {weekOptions.map((option) => (
+                <option value={option.value} selected={option.value === initialWeekValue}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
 
-    <p id="status" class="status">Idle</p>
+          <label class="toolbar-field toolbar-site">
+            <span>Site - Game Type</span>
+            <div class="toolbar-select site-select-shell">
+              {initialSiteMeta && (
+                <img
+                  src={initialSiteMeta.logo}
+                  alt=""
+                  class="site-select-logo"
+                  data-site-selected-logo
+                  loading="lazy"
+                />
+              )}
+              <select data-control="site" class="site-select-control">
+                {siteOptions.map((option) => (
+                  <option value={option.value} selected={option.value === initialSiteValue}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </label>
 
-    <section id="results" class="results">
-      <div id="summary" class="panel">
-        <h2>Summary</h2>
-        <div class="summary-grid">
-          <div>
-            <div class="summary-label">lineup_count_requested</div>
-            <div id="summary-requested" class="summary-value">-</div>
-          </div>
-          <div>
-            <div class="summary-label">lineup_count_returned</div>
-            <div id="summary-returned" class="summary-value">-</div>
-          </div>
+          <label class="toolbar-field toolbar-slate">
+            <span>Slate</span>
+            <select data-control="slate">
+              {slateOptions.map((option) => (
+                <option value={option.key} selected={option.key === selectedKey}>
+                  {option.slate.name} · {option.games.length} Games
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label class="toolbar-field toolbar-settings">
+            <span>Settings</span>
+            <select data-control="settings">
+              <option value="custom">Custom</option>
+            </select>
+          </label>
+        </div>
+
+        <nav class="optimizer-tabs">
+          {topTabs.map((tab, index) => (
+            <button class:list={["top-tab", { active: index === 0 }]} type="button" data-top-tab={index}>
+              {tab}
+            </button>
+          ))}
+        </nav>
+      </header>
+
+      <div class="optimizer-games-row">
+        <div class="games-rail">
+          <span>Games</span>
+          <button type="button" class="games-link active" data-games-action="all">all</button>
+          <button type="button" class="games-link" data-games-action="none">none</button>
+        </div>
+
+        <div class="games-strip" data-games-strip>
+          {initialGames.map((game) => {
+            const totals = impliedTotals(game);
+            return (
+              <article class="game-chip inputs-slate-card" data-game-id={game.id}>
+                <div class="inputs-slate-card-rows">
+                  <div class="inputs-slate-team-row" data-team={game.awayTeam} role="button" tabindex="0">
+                    <span class="inputs-slate-logo">
+                      <img
+                        src={getTeamLogoPath(game.awayTeam)}
+                        alt={`${game.awayTeam} logo`}
+                        loading="lazy"
+                        onload="this.nextElementSibling.style.display='none';"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                      />
+                      <span class="inputs-slate-logo-fallback">{game.awayTeam}</span>
+                    </span>
+                    <span class="inputs-slate-team-code">{game.awayTeam}</span>
+                    <span class="inputs-slate-team-total">{formatGameTotal(totals.away)}</span>
+                  </div>
+                  <div class="inputs-slate-team-row" data-team={game.homeTeam} role="button" tabindex="0">
+                    <span class="inputs-slate-logo">
+                      <img
+                        src={getTeamLogoPath(game.homeTeam)}
+                        alt={`${game.homeTeam} logo`}
+                        loading="lazy"
+                        onload="this.nextElementSibling.style.display='none';"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                      />
+                      <span class="inputs-slate-logo-fallback">{game.homeTeam}</span>
+                    </span>
+                    <span class="inputs-slate-team-code">{game.homeTeam}</span>
+                    <span class="inputs-slate-team-total">{formatGameTotal(totals.home)}</span>
+                  </div>
+                </div>
+                <div class="inputs-slate-card-meta">
+                  <span>{formatGameDayShort(game)}</span>
+                  <span>{formatGameTimeLabel(game)}</span>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
 
-      <div id="lineups" class="panel panel-gap">
-        <h2>Lineups</h2>
-        <div id="lineups-content" class="stack"></div>
-      </div>
+      <div class="optimizer-workspace">
+        <div class="optimizer-upper">
+          <section class="pool-panel">
+            <div class="pool-top">
+              <div class="pool-pos-tabs">
+                {[["ALL", "ALL"], ["QB", "QB"], ["RB", "RB"], ["WR", "WR"], ["TE", "TE"], ["FLEX", "FLEX"], ["DST", "DST"]].map(
+                  ([label, value], index) => (
+                    <button
+                      class:list={["pool-pos-tab", { active: index === 0 }]}
+                      type="button"
+                      data-pos-tab={value}
+                    >
+                      {label}
+                    </button>
+                  )
+                )}
+              </div>
 
-      <div id="exposures" class="panel panel-gap">
-        <h2>Exposures</h2>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Player</th>
-                <th>Pos</th>
-                <th>Team</th>
-                <th>Exposure</th>
-              </tr>
-            </thead>
-            <tbody id="exposures-body"></tbody>
-          </table>
+              <div class="pool-controls">
+                <label class="mini-field">
+                  <span>Projections</span>
+                  <select data-control="projections">
+                    <option value="default">Default</option>
+                  </select>
+                </label>
+
+                <label class="mini-field">
+                  <span>Variance</span>
+                  <select data-control="variance">
+                    <option value="default">Default</option>
+                  </select>
+                </label>
+
+                <button type="button" class="reset-button" data-control="reset-columns">Reset Columns</button>
+
+                <label class="search-wrap">
+                  <input type="search" placeholder="Search..." data-control="search" />
+                </label>
+              </div>
+            </div>
+
+            <div class="pool-table-wrap">
+              <table class="pool-table">
+                <thead>
+                  <tr>
+                    <th class="check-col"></th>
+                    <th class="icon-col"></th>
+                    <th class="name-col">Name</th>
+                    <th>Boost/Do...</th>
+                    <th>Team</th>
+                    <th>Salary</th>
+                    <th>Proj</th>
+                    <th>Actual</th>
+                    <th>Own %</th>
+                    <th>Ceiling</th>
+                    <th>Floor</th>
+                    <th>Var</th>
+                    <th>Min %</th>
+                    <th>Max %</th>
+                    <th>Opto %</th>
+                  </tr>
+                </thead>
+                <tbody data-player-rows>
+                  {initialPlayerRows.map((player) => (
+                    <tr data-player-id={player.id}>
+                      <td class="check-col">
+                        <span class="fake-check"></span>
+                      </td>
+                      <td class="icon-col">
+                        <div class="tiny-icons">
+                          <span class="tiny-lock" data-action="lock"></span>
+                          <span class="tiny-key" data-action="key"></span>
+                        </div>
+                      </td>
+                      <td class="name-col">
+                        <div class="player-cell">
+                          <span class={`pos-pill pos-${player.pos.toLowerCase().replace("/", "")}`}>
+                            {player.pos}
+                          </span>
+                          <span class="team-dot">{player.team}</span>
+                          <span class="player-name">{player.name}</span>
+                        </div>
+                      </td>
+                      <td class="boost-col">
+                        <div class="boost-icons">
+                          <span class="boost up" data-action="boost-up">↑</span>
+                          <span class="boost down" data-action="boost-down">↓</span>
+                          <span class="boost-zero" data-action="boost-zero">0</span>
+                        </div>
+                      </td>
+                      <td>{player.matchup}</td>
+                      <td>{player.salary}</td>
+                      <td>{player.proj.toFixed(2)}</td>
+                      <td>{player.actual ?? "—"}</td>
+                      <td>{player.own.toFixed(2)}</td>
+                      <td>{player.ceiling.toFixed(2)}</td>
+                      <td>{player.floor.toFixed(2)}</td>
+                      <td>{player.variance.toFixed(2)}</td>
+                      <td><input type="number" value="0" min="0" max="100" data-action="min-exposure" /></td>
+                      <td><input type="number" value="100" min="0" max="100" data-action="max-exposure" /></td>
+                      <td data-cell="opto">0</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div class="pool-footer">
+              <div class="pool-footer-left">
+                <label class="footer-select">
+                  <select data-control="pool-scope">
+                    <option value="all">All Players</option>
+                  </select>
+                </label>
+
+                <label class="under-proj-toggle">
+                  <span class="blue-check" data-control="hide-under-toggle"></span>
+                  <span>Hide players projected under</span>
+                  <input type="number" value="0.1" min="0" step="0.1" data-control="hide-under" />
+                  <span>pts</span>
+                </label>
+              </div>
+
+              <div class="pool-footer-right">
+                <span data-player-count>0/0 Players Selected</span>
+                <span class="pool-status" data-pool-status></span>
+              </div>
+            </div>
+          </section>
+
+          <aside class="settings-builder-panel">
+            <section class="optimizer-settings-card">
+              <div class="settings-head">
+                <h2>Optimizer Settings</h2>
+
+                <label class="exclude-toggle">
+                  <span class="toggle-pill" data-control="exclude-locked-games"></span>
+                  <div>
+                    <strong>Exclude Locked Games</strong>
+                    <small>Unless Players are Locked</small>
+                  </div>
+                </label>
+
+                <button type="button" class="advanced-btn" data-control="advanced-open">
+                  <span class="advanced-count" data-advanced-count>0</span>
+                  <span>Advanced</span>
+                  <span class="arrow">→</span>
+                </button>
+              </div>
+
+              <div class="settings-grid">
+                {settingsToggles.map((item) => (
+                  <label class="settings-item" data-setting-id={item.id}>
+                    <span class:list={["settings-check", { checked: item.checked }]}></span>
+                    <div>
+                      <strong>{item.title}</strong>
+                      <small>{item.note}</small>
+                    </div>
+                  </label>
+                ))}
+              </div>
+
+              <div class="advanced-panel" data-advanced-panel>
+                <div class="advanced-grid">
+                  <label class="advanced-field">
+                    <span>Randomness %</span>
+                    <input type="number" min="0" max="50" step="1" value="0" data-advanced="randomness" />
+                  </label>
+                  <label class="advanced-field">
+                    <span>Team Limit</span>
+                    <input type="number" min="1" step="1" value="0" data-advanced="teamLimit" />
+                  </label>
+                  <label class="advanced-field">
+                    <span>Max Repeating Players</span>
+                    <input type="number" min="0" step="1" value="0" data-advanced="maxRepeating" />
+                  </label>
+                  <label class="advanced-field">
+                    <span>Min Salary</span>
+                    <input type="number" min="0" step="100" value="0" data-advanced="minSalary" />
+                  </label>
+                  <label class="advanced-field">
+                    <span>Max Salary</span>
+                    <input type="number" min="0" step="100" value="0" data-advanced="maxSalary" />
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section class="builder-card">
+              <div class="builder-head">
+                <h2>Optimizer</h2>
+
+                <div class="builder-summary" data-builder-summary>
+                  <span>Rem/Player: $0.0K</span>
+                  <span>Rem: $0</span>
+                  <span>Proj 0.00</span>
+                  <span>Act 0.00</span>
+                  <span>Ceil 0.00</span>
+                  <span>Own 0% (0.0%)</span>
+                </div>
+              </div>
+
+              <div class="builder-slots" data-builder-slots>
+                {builderSlots.map((slot) => (
+                  <div class="builder-slot" data-slot={slot}>
+                    <span class="slot-label">{slot}</span>
+                    <span class="slot-fill"></span>
+                  </div>
+                ))}
+              </div>
+
+              <div class="builder-actions">
+                <div class="builder-action-left">
+                  <button type="button" class="ghost-btn save" data-action="builder-save">Save</button>
+                  <button type="button" class="ghost-btn clear" data-action="builder-clear">Clear</button>
+                  <button type="button" class="ghost-btn tag" data-action="builder-tag">Tag</button>
+                </div>
+
+                <div class="builder-action-right">
+                  <label class="builder-select">
+                    <span>Optimize By:</span>
+                    <select data-control="optimize-by">
+                      <option value="projection">Projection</option>
+                    </select>
+                  </label>
+
+                  <label class="builder-input">
+                    <span>Lineups:</span>
+                    <input type="number" value="1" min="1" data-control="lineup-count" />
+                  </label>
+
+                  <button type="button" class="primary-btn" data-action="optimize">Optimize</button>
+                </div>
+              </div>
+            </section>
+          </aside>
         </div>
+
+        <section class="optimizer-results-shell">
+          <div class="results-header">
+            <div class="results-title-group">
+              <div class="results-title-tab">Optimizer Results</div>
+              <div class="results-count-pill" data-results-count>0</div>
+              <div class="results-subtitle" data-results-subtitle>Results 1</div>
+              <button type="button" class="results-x" data-action="results-clear">×</button>
+            </div>
+
+            <button type="button" class="advanced-btn results-advanced" data-control="advanced-open">
+              <span>Advanced Settings</span>
+              <span class="arrow">→</span>
+            </button>
+          </div>
+
+          <div class="results-toolbar-row">
+            <div class="results-toolbar-left">
+              <label class="results-compact-field">
+                <span>Optimize By:</span>
+                <select data-control="optimize-by">
+                  <option value="projection">Projection</option>
+                </select>
+              </label>
+
+              <label class="results-compact-field narrow">
+                <span>Lineups:</span>
+                <input type="number" value="10" min="1" data-control="results-lineups" />
+              </label>
+
+              <button type="button" class="solid-blue" data-action="results-add-more">Add More</button>
+              <button type="button" class="outline-green" data-action="results-simulate">$ Simulate</button>
+              <button type="button" class="outline-muted" data-action="results-clear">Clear</button>
+              <button type="button" class="outline-green" data-action="results-save">Save</button>
+              <button type="button" class="outline-green" data-action="results-download">Download</button>
+              <button type="button" class="outline-blue" data-action="results-copy">Copy</button>
+              <button type="button" class="outline-red" data-action="results-delete">Delete</button>
+              <button type="button" class="outline-muted" data-action="results-tag">Tag</button>
+            </div>
+          </div>
+
+          <div class="results-meta-row">
+            <div class="meta-left">
+              <span data-results-filtered>Filtered 0 of 0 Lineups</span>
+              <span class="results-status" data-results-status></span>
+              <button type="button" data-action="results-select-all">Select All</button>
+              <button type="button" data-action="results-select-none">Select None</button>
+            </div>
+
+            <div class="meta-center">
+              <label class="results-compact-field mini">
+                <span>Sort</span>
+                <select data-control="results-sort">
+                  <option value="projection">Proj Points</option>
+                  <option value="salary">Salary</option>
+                  <option value="ownership">Own</option>
+                </select>
+              </label>
+
+              <label class="results-compact-field mini jump">
+                <span>Jump To Lineup:</span>
+                <input type="number" value="0" min="1" data-control="results-jump" />
+              </label>
+
+              <button type="button" class="go-bubble" data-action="results-jump">➜</button>
+
+              <label class="tag-filter-pill">
+                <span>Filter by Tag:</span>
+                <button type="button" data-action="results-filter-tag">No Tag (0)</button>
+              </label>
+
+              <label class="results-compact-field mini own-mode">
+                <span>Own</span>
+                <select data-control="results-own-mode">
+                  <option value="sum">Sum</option>
+                  <option value="avg">Avg</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="meta-right">
+              <div class="sidebar-tabs" data-sidebar-tabs>
+                <button class="sidebar-tab active" type="button" data-panel="players">Players <span data-tab-count="players">(0)</span></button>
+                <button class="sidebar-tab" type="button" data-panel="player-stacks">Player Stacks <span data-tab-count="player-stacks">(0)</span></button>
+                <button class="sidebar-tab" type="button" data-panel="game-stacks">Game Stacks <span data-tab-count="game-stacks">(0)</span></button>
+                <button class="sidebar-tab" type="button" data-panel="team-stacks">Team Stacks <span data-tab-count="team-stacks">(0)</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="results-content">
+            <div class="lineups-grid" data-lineups-grid></div>
+
+            <aside class="results-sidebar">
+              <div class="sidebar-panel active" data-panel-view="players">
+                <div class="sidebar-search-row">
+                  <input type="search" placeholder="Search..." data-control="sidebar-search" />
+                  <label class="sidebar-flex-toggle">
+                    <input type="checkbox" data-control="sidebar-flex" />
+                    <span>Show FLEX</span>
+                  </label>
+                </div>
+
+                <div class="sidebar-table-head">
+                  <span>Min</span>
+                  <span>Max</span>
+                  <span>Proj</span>
+                  <span>Act</span>
+                </div>
+
+                <div class="sidebar-player-list" data-sidebar-players></div>
+              </div>
+
+              <div class="sidebar-panel" data-panel-view="player-stacks">
+                <div class="stack-list" data-sidebar-player-stacks></div>
+              </div>
+
+              <div class="sidebar-panel" data-panel-view="game-stacks">
+                <div class="stack-placeholder" data-sidebar-game-stacks></div>
+              </div>
+
+              <div class="sidebar-panel" data-panel-view="team-stacks">
+                <div class="stack-placeholder" data-sidebar-team-stacks></div>
+              </div>
+            </aside>
+          </div>
+        </section>
       </div>
+    </div>
+  </section>
 
-      <details id="raw" class="panel panel-gap">
-        <summary>Raw response</summary>
-        <pre id="raw-output" class="raw-output">(no output yet)</pre>
-      </details>
-    </section>
-  </div>
-
-  <script>
-    const players = [
-      {
-        id: "1",
-        first_name: "Josh",
-        last_name: "Allen",
-        positions: ["QB"],
-        team: "BUF",
-        salary: 7800,
-        fppg: 24.5,
-      },
-      {
-        id: "2",
-        first_name: "Brock",
-        last_name: "Purdy",
-        positions: ["QB"],
-        team: "SF",
-        salary: 6500,
-        fppg: 20.1,
-      },
-      {
-        id: "3",
-        first_name: "James",
-        last_name: "Cook",
-        positions: ["RB"],
-        team: "BUF",
-        salary: 6200,
-        fppg: 15.4,
-      },
-      {
-        id: "4",
-        first_name: "Breece",
-        last_name: "Hall",
-        positions: ["RB"],
-        team: "NYJ",
-        salary: 5900,
-        fppg: 17.8,
-      },
-      {
-        id: "5",
-        first_name: "Tyjae",
-        last_name: "Spears",
-        positions: ["RB"],
-        team: "TEN",
-        salary: 4800,
-        fppg: 11.2,
-      },
-      {
-        id: "6",
-        first_name: "Stefon",
-        last_name: "Diggs",
-        positions: ["WR"],
-        team: "BUF",
-        salary: 7200,
-        fppg: 19.6,
-      },
-      {
-        id: "7",
-        first_name: "Jaylen",
-        last_name: "Waddle",
-        positions: ["WR"],
-        team: "MIA",
-        salary: 6100,
-        fppg: 16.9,
-      },
-      {
-        id: "8",
-        first_name: "Puka",
-        last_name: "Nacua",
-        positions: ["WR"],
-        team: "LAR",
-        salary: 5800,
-        fppg: 18.1,
-      },
-      {
-        id: "9",
-        first_name: "Tank",
-        last_name: "Dell",
-        positions: ["WR"],
-        team: "HOU",
-        salary: 4700,
-        fppg: 12.8,
-      },
-      {
-        id: "10",
-        first_name: "George",
-        last_name: "Kittle",
-        positions: ["TE"],
-        team: "SF",
-        salary: 5200,
-        fppg: 14.3,
-      },
-      {
-        id: "11",
-        first_name: "Dalton",
-        last_name: "Kincaid",
-        positions: ["TE"],
-        team: "BUF",
-        salary: 3900,
-        fppg: 10.1,
-      },
-      {
-        id: "12",
-        first_name: "Bills",
-        last_name: "DST",
-        positions: ["DST"],
-        team: "BUF",
-        salary: 2900,
-        fppg: 8.2,
-      },
-      {
-        id: "13",
-        first_name: "Jets",
-        last_name: "DST",
-        positions: ["DST"],
-        team: "NYJ",
-        salary: 2500,
-        fppg: 7.4,
-      },
-    ];
-
-    const formEl = document.getElementById("optimizer-form");
-    const runButton = document.getElementById("run-btn");
-    const statusEl = document.getElementById("status");
-    const lineupCountInput = document.getElementById("lineup-count");
-    const minSalaryInput = document.getElementById("min-salary");
-    const maxRepeatingPlayersInput = document.getElementById("max-repeating-players");
-    const summaryRequestedEl = document.getElementById("summary-requested");
-    const summaryReturnedEl = document.getElementById("summary-returned");
-    const lineupsContentEl = document.getElementById("lineups-content");
-    const exposuresBodyEl = document.getElementById("exposures-body");
-    const rawOutputEl = document.getElementById("raw-output");
-
-    const getLineups = (data) => {
-      if (!data || typeof data !== "object") return [];
-      return data.lineups || data.results?.lineups || data.optimized_lineups || data.data?.lineups || [];
-    };
-
-    const getExposureRows = (data) => {
-      if (!data || typeof data !== "object") return [];
-      const raw = data.exposures || data.player_exposures || data.results?.exposures || [];
-      if (Array.isArray(raw)) return raw;
-      if (raw && typeof raw === "object") {
-        return Object.entries(raw).map(([player, exposure]) => ({ player, exposure }));
-      }
-      return [];
-    };
-
-    const formatPlayerName = (player) => {
-      if (!player || typeof player !== "object") return "-";
-      if (player.name) return player.name;
-      if (player.first_name || player.last_name) {
-        return `${player.first_name || ""} ${player.last_name || ""}`.trim();
-      }
-      if (player.firstName || player.lastName) {
-        return `${player.firstName || ""} ${player.lastName || ""}`.trim();
-      }
-      return player.id || "-";
-    };
-
-    const formatPositions = (player) => {
-      if (!player || typeof player !== "object") return "-";
-      if (Array.isArray(player.positions)) return player.positions.join(", ");
-      return player.position || player.pos || "-";
-    };
-
-    const formatNumber = (value) => {
-      if (value === null || value === undefined || Number.isNaN(value)) return "-";
-      return typeof value === "number" ? value.toFixed(2).replace(/\.00$/, "") : value;
-    };
-
-    const renderLineups = (lineups) => {
-      lineupsContentEl.innerHTML = "";
-      if (!lineups.length) {
-        const empty = document.createElement("p");
-        empty.textContent = "No lineups returned.";
-        lineupsContentEl.appendChild(empty);
-        return;
-      }
-
-      lineups.forEach((lineup, index) => {
-        const card = document.createElement("div");
-        card.className = "lineup-card";
-
-        const header = document.createElement("div");
-        header.className = "lineup-header";
-
-        const title = document.createElement("div");
-        title.className = "lineup-title";
-        title.textContent = `Lineup ${index + 1}`;
-
-        const meta = document.createElement("div");
-        meta.className = "lineup-meta";
-
-        const totalSalary = lineup.total_salary ?? lineup.salary_total ?? lineup.totalSalary ?? lineup.salary_costs;
-        const projectedPoints =
-          lineup.projected_points ?? lineup.projection ?? lineup.points ?? lineup.total_points ?? lineup.fantasy_points_projection;
-
-        meta.textContent = `Salary: ${formatNumber(totalSalary)} | Projected: ${formatNumber(projectedPoints)}`;
-
-        header.appendChild(title);
-        header.appendChild(meta);
-
-        const tableWrap = document.createElement("div");
-        tableWrap.className = "table-wrap";
-
-        const table = document.createElement("table");
-        table.innerHTML = `
-          <thead>
-            <tr>
-              <th>Player</th>
-              <th>Pos</th>
-              <th>Team</th>
-              <th>Salary</th>
-              <th>Proj</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        `;
-
-        const tbody = table.querySelector("tbody");
-        const playersList = lineup.players || lineup.lineup || lineup.roster || [];
-
-        if (Array.isArray(playersList) && playersList.length) {
-          playersList.forEach((player) => {
-            const row = document.createElement("tr");
-            const name = formatPlayerName(player);
-            const pos = formatPositions(player);
-            const team = player.team || player.team_abbr || player.teamAbbr || "-";
-            const salary = player.salary ?? player.cost ?? "-";
-            const proj = player.projection ?? player.fppg ?? player.points ?? "-";
-
-            row.innerHTML = `
-              <td>${name}</td>
-              <td>${pos}</td>
-              <td>${team}</td>
-              <td>${formatNumber(salary)}</td>
-              <td>${formatNumber(proj)}</td>
-            `;
-            tbody.appendChild(row);
-          });
-        } else {
-          const row = document.createElement("tr");
-          row.innerHTML = `<td colspan="5">No players returned for this lineup.</td>`;
-          tbody.appendChild(row);
-        }
-
-        tableWrap.appendChild(table);
-        card.appendChild(header);
-        card.appendChild(tableWrap);
-        lineupsContentEl.appendChild(card);
-      });
-    };
-
-    const renderExposures = (exposures) => {
-      exposuresBodyEl.innerHTML = "";
-      if (!exposures.length) {
-        const row = document.createElement("tr");
-        row.innerHTML = `<td colspan="4">No exposure data returned.</td>`;
-        exposuresBodyEl.appendChild(row);
-        return;
-      }
-
-      exposures.forEach((item) => {
-        const row = document.createElement("tr");
-        const name = item.name || item.player || formatPlayerName(item) || "-";
-        const pos = item.primary_position || item.position || item.pos || formatPositions(item) || "-";
-        const team = item.team || item.team_abbr || item.teamAbbr || "-";
-        const exposure = item.exposure ?? item.rate ?? item.share ?? "-";
-
-        row.innerHTML = `
-          <td>${name}</td>
-          <td>${pos}</td>
-          <td>${team}</td>
-          <td>${formatNumber(exposure)}</td>
-        `;
-        exposuresBodyEl.appendChild(row);
-      });
-    };
-
-    formEl.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      const lineupCount = Number(lineupCountInput.value);
-      const minSalary = Number(minSalaryInput.value);
-      const maxRepeatingPlayers = Number(maxRepeatingPlayersInput.value);
-
-      const payload = {
-        players,
-        lineup_count: lineupCount,
-        min_salary: minSalary,
-        max_salary: null,
-        max_repeating_players: maxRepeatingPlayers,
-        locked_player_ids: [],
-        excluded_player_ids: [],
-        team_limit: null,
-        randomness: null,
-        stacks: [],
-      };
-
-      statusEl.textContent = "Running...";
-      runButton.disabled = true;
-      summaryRequestedEl.textContent = "-";
-      summaryReturnedEl.textContent = "-";
-      lineupsContentEl.innerHTML = "";
-      exposuresBodyEl.innerHTML = "";
-      rawOutputEl.textContent = "";
-
-      try {
-        const response = await fetch("/api/optimizer/run", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        });
-
-        const data = await response.json();
-        rawOutputEl.textContent = JSON.stringify(data, null, 2);
-
-        const lineups = getLineups(data);
-        const exposures = getExposureRows(data);
-
-        summaryRequestedEl.textContent = lineupCount;
-        summaryReturnedEl.textContent = Array.isArray(lineups) ? lineups.length : 0;
-
-        renderLineups(Array.isArray(lineups) ? lineups : []);
-        renderExposures(exposures);
-
-        if (response.ok) {
-          statusEl.textContent = "Success";
-        } else {
-          statusEl.textContent = "Error";
-        }
-      } catch (error) {
-        statusEl.textContent = "Error";
-        rawOutputEl.textContent = error instanceof Error ? error.message : "Unknown error";
-        lineupsContentEl.innerHTML = "";
-        exposuresBodyEl.innerHTML = "";
-        summaryRequestedEl.textContent = "-";
-        summaryReturnedEl.textContent = "-";
-      } finally {
-        runButton.disabled = false;
-      }
-    });
+  <script type="application/json" id="classic-optimizer-data">
+    {JSON.stringify({
+      selectedKey,
+      packages: packages.map((pack) => ({
+        key: pack.key,
+        slate: pack.slate,
+        games: pack.games,
+        teamInputs: pack.teamInputs,
+        playerInputs: pack.playerInputs,
+        settings: pack.settings,
+      })),
+      builderSlots,
+      settingsToggles,
+      defaultLineupCount: 1,
+      defaultResultsLineups: 10,
+      operatorMeta,
+    })}
   </script>
 
-  <style>
-    .optimizer-shell {
-      padding: 16px;
-      color: #f5f5f5;
+  <script is:inline>
+    const dataEl = document.getElementById("classic-optimizer-data");
+    const data = dataEl ? JSON.parse(dataEl.textContent || "{}") : { packages: [] };
+
+    const state = {
+      packages: data.packages || [],
+      selectedKey: data.selectedKey || (data.packages?.[0]?.key ?? ""),
+      weekValue: "",
+      siteValue: "",
+      positionFilter: "ALL",
+      search: "",
+      hideUnder: 0.1,
+      hideUnderEnabled: false,
+      includePlayers: new Set(),
+      includeInitialized: false,
+      lockedPlayers: new Set(),
+      keyPlayers: new Set(),
+      boost: new Map(),
+      minExposure: new Map(),
+      maxExposure: new Map(),
+      teamInclude: new Map(),
+      teamInitialized: false,
+      projectionMode: "default",
+      varianceMode: "default",
+      poolScope: "all",
+      settings: Object.fromEntries((data.settingsToggles || []).map((s) => [s.id, s.checked])),
+      excludeLockedGames: false,
+      advanced: {
+        randomness: 0,
+        teamLimit: 0,
+        maxRepeating: 0,
+        minSalary: 0,
+        maxSalary: 0,
+      },
+      optimizeBy: "projection",
+      lineupCount: data.defaultLineupCount || 1,
+      resultsLineups: data.defaultResultsLineups || 10,
+      results: [],
+      resultTags: new Map(),
+      selectedLineups: new Set(),
+      activeTag: null,
+      resultsSort: "projection",
+      ownMode: "sum",
+      sidebarSearch: "",
+      sidebarFlex: false,
+      activeSidebarPanel: "",
+      activeTopTab: "",
+      builderTag: "",
+      statusMessage: "",
+      simResults: null,
+    };
+
+    const safeStorageGet = (key) => {
+      try {
+        return localStorage.getItem(key);
+      } catch (error) {
+        console.warn("[optimizer-storage-get-failed]", key, error);
+        return null;
+      }
+    };
+
+    const safeStorageSet = (key, value) => {
+      try {
+        localStorage.setItem(key, value);
+        return true;
+      } catch (error) {
+        console.warn("[optimizer-storage-set-failed]", key, error);
+        return false;
+      }
+    };
+
+    try {
+      const saved = JSON.parse(safeStorageGet("classic-optimizer-builder") || "null");
+      if (saved) {
+        if (Array.isArray(saved.locked)) state.lockedPlayers = new Set(saved.locked);
+        if (Array.isArray(saved.include)) {
+          state.includePlayers = new Set(saved.include);
+          state.includeInitialized = true;
+        }
+        if (saved.settings && typeof saved.settings === "object") {
+          state.settings = { ...state.settings, ...saved.settings };
+        }
+        if (saved.tag) state.builderTag = String(saved.tag);
+      }
+    } catch (error) {
+      console.warn("Failed to load saved builder state", error);
     }
 
-    .context-label {
-      margin: 6px 0 0;
-      color: rgba(255, 255, 255, 0.7);
+    const savedBuilderTag = safeStorageGet("classic-optimizer-builder-tag");
+    if (savedBuilderTag) state.builderTag = savedBuilderTag;
+
+    const qs = (sel) => document.querySelector(sel);
+    const qsa = (sel) => Array.from(document.querySelectorAll(sel));
+
+    const elements = {
+      week: qs("[data-control=week]"),
+      site: qs("[data-control=site]"),
+      siteSelectedLogo: qs("[data-site-selected-logo]"),
+      slate: qs("[data-control=slate]"),
+      gamesStrip: qs("[data-games-strip]"),
+      gamesLinks: qsa("[data-games-action]"),
+      posTabs: qsa("[data-pos-tab]"),
+      search: qs("[data-control=search]"),
+      hideUnder: qs("[data-control=hide-under]"),
+      hideUnderToggle: qs("[data-control=hide-under-toggle]"),
+      hideUnderWrap: qs(".under-proj-toggle"),
+      projections: qs("[data-control=projections]"),
+      variance: qs("[data-control=variance]"),
+      resetColumns: qs("[data-control=reset-columns]"),
+      poolScope: qs("[data-control=pool-scope]"),
+      playerRows: qs("[data-player-rows]"),
+      playerCount: qs("[data-player-count]"),
+      poolStatus: qs("[data-pool-status]"),
+      settingsItems: qsa("[data-setting-id]"),
+      excludeLockedToggle: qs("[data-control=exclude-locked-games]"),
+      excludeLockedWrap: qs(".exclude-toggle"),
+      advancedOpen: qsa("[data-control=advanced-open]"),
+      advancedPanel: qs("[data-advanced-panel]"),
+      advancedCount: qs("[data-advanced-count]"),
+      advancedFields: qsa("[data-advanced]"),
+      builderSummary: qs("[data-builder-summary]"),
+      builderSlots: qsa("[data-builder-slots] .builder-slot"),
+      optimizeButtons: qsa("[data-action=optimize]"),
+      lineupCount: qsa("[data-control=lineup-count]"),
+      optimizeBy: qsa("[data-control=optimize-by]"),
+      resultsLineups: qs("[data-control=results-lineups]"),
+      resultsCount: qs("[data-results-count]"),
+      resultsFiltered: qs("[data-results-filtered]"),
+      resultsStatus: qs("[data-results-status]"),
+      resultsSubtitle: qs("[data-results-subtitle]"),
+      resultsSort: qs("[data-control=results-sort]"),
+      resultsJump: qs("[data-control=results-jump]"),
+      resultsOwnMode: qs("[data-control=results-own-mode]"),
+      resultsFilterTag: qs("[data-action=results-filter-tag]"),
+      lineupsGrid: qs("[data-lineups-grid]"),
+      sidebarPlayers: qs("[data-sidebar-players]"),
+      sidebarPlayerStacks: qs("[data-sidebar-player-stacks]"),
+      sidebarGameStacks: qs("[data-sidebar-game-stacks]"),
+      sidebarTeamStacks: qs("[data-sidebar-team-stacks]"),
+      sidebarSearch: qs("[data-control=sidebar-search]"),
+      sidebarFlex: qs("[data-control=sidebar-flex]"),
+      sidebarTabs: qsa("[data-sidebar-tabs] .sidebar-tab"),
+      sidebarPanels: qsa("[data-panel-view]"),
+      topTabs: qsa("[data-top-tab]"),
+      resultsActions: qsa("[data-action^=results-]"),
+      builderActions: qsa("[data-action^=builder-]"),
+    };
+
+    const formatSalary = (value) => new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0,
+    }).format(value || 0);
+
+    const formatAbbrevMoney = (value) => `$${(value / 1000).toFixed(1)}K`;
+
+    const formatNumber = (value, digits = 2) =>
+      Number.isFinite(value) ? Number(value).toFixed(digits) : "—";
+
+    const operatorMeta = data.operatorMeta || {};
+    const getWeekValue = (pack) => `${pack.slate.season}-W${pack.slate.week}`;
+    const getSiteValue = (pack) => `${pack.slate.site}-${pack.slate.gameType}`;
+    const getSiteLabel = (site, gameType) => {
+      const siteLabel = operatorMeta[site]?.label || site;
+      return `${siteLabel} - ${gameType === "classic" ? "Classic" : "Showdown"}`;
+    };
+    const getTeamLogoPath = (team) => `/simulator/team-logos/${team}.png`;
+    const formatGameTotal = (value) => Number.isFinite(value) ? Number(value).toFixed(1).replace(/\.0$/, "") : "—";
+    const formatGameDayShort = (game) => {
+      const value = game?.startTime;
+      if (!value) return "TBD";
+      const date = new Date(value);
+      return Number.isNaN(date.getTime())
+        ? "TBD"
+        : date.toLocaleDateString("en-US", { weekday: "short" });
+    };
+    const formatGameTimeLabel = (game) => {
+      const value = game?.startTime;
+      if (!value) return "TBD";
+      const date = new Date(value);
+      return Number.isNaN(date.getTime())
+        ? "TBD"
+        : date.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+    };
+
+    const getSelectedPackage = () => state.packages.find((pack) => pack.key === state.selectedKey) || state.packages[0];
+
+    const getUniqueOptions = (packages, getValue, getLabel) =>
+      Array.from(
+        new Map(
+          packages.map((pack) => [getValue(pack), { value: getValue(pack), label: getLabel(pack), pack }])
+        ).values()
+      );
+
+    const getWeekOptionsForSite = (siteValue) => {
+      const packages = siteValue
+        ? state.packages.filter((pack) => getSiteValue(pack) === siteValue)
+        : state.packages;
+      return getUniqueOptions(packages, getWeekValue, (pack) => `Week ${pack.slate.week} - ${pack.slate.season}`);
+    };
+
+    const getSiteOptionsForWeek = (weekValue) => {
+      const packages = weekValue
+        ? state.packages.filter((pack) => getWeekValue(pack) === weekValue)
+        : state.packages;
+      return getUniqueOptions(packages, getSiteValue, (pack) => getSiteLabel(pack.slate.site, pack.slate.gameType));
+    };
+
+    const getSlateOptions = (weekValue, siteValue) =>
+      state.packages.filter((pack) => {
+        if (weekValue && getWeekValue(pack) !== weekValue) return false;
+        if (siteValue && getSiteValue(pack) !== siteValue) return false;
+        return true;
+      });
+
+    const normalizeSelection = (next = {}) => {
+      let weekValue = next.weekValue ?? state.weekValue;
+      let siteValue = next.siteValue ?? state.siteValue;
+      let selectedKey = next.selectedKey ?? state.selectedKey;
+
+      let weekOptions = getWeekOptionsForSite(siteValue);
+      if (!weekOptions.some((option) => option.value === weekValue)) {
+        weekValue = weekOptions[0]?.value || "";
+      }
+
+      let siteOptions = getSiteOptionsForWeek(weekValue);
+      if (!siteOptions.some((option) => option.value === siteValue)) {
+        siteValue = siteOptions[0]?.value || "";
+      }
+
+      weekOptions = getWeekOptionsForSite(siteValue);
+      if (!weekOptions.some((option) => option.value === weekValue)) {
+        weekValue = weekOptions[0]?.value || "";
+      }
+
+      siteOptions = getSiteOptionsForWeek(weekValue);
+      if (!siteOptions.some((option) => option.value === siteValue)) {
+        siteValue = siteOptions[0]?.value || "";
+      }
+
+      const slateOptions = getSlateOptions(weekValue, siteValue);
+      if (!slateOptions.some((pack) => pack.key === selectedKey)) {
+        selectedKey = slateOptions[0]?.key || "";
+      }
+
+      const selectedPack = state.packages.find((pack) => pack.key === selectedKey) || slateOptions[0] || null;
+      if (selectedPack) {
+        weekValue = getWeekValue(selectedPack);
+        siteValue = getSiteValue(selectedPack);
+      }
+
+      return {
+        weekValue,
+        siteValue,
+        selectedKey,
+        selectedPack,
+        weekOptions: getWeekOptionsForSite(siteValue),
+        siteOptions: getSiteOptionsForWeek(weekValue),
+        slateOptions: getSlateOptions(weekValue, siteValue),
+      };
+    };
+
+    const replaceSelectOptions = (select, options, value, getLabel) => {
+      if (!select) return;
+      select.innerHTML = options
+        .map((option) => `<option value="${option.value}" ${option.value === value ? "selected" : ""}>${getLabel(option)}</option>`)
+        .join("");
+      select.value = value;
+    };
+
+    const buildGameTotals = (game) => {
+      const total = Number(game.total);
+      if (!Number.isFinite(total)) return { away: null, home: null };
+      const spreadRaw = String(game.spread || "").trim();
+      const parts = spreadRaw.split(" ");
+      let spread = 0;
+      if (parts.length >= 2) {
+        const spreadTeam = parts[0];
+        const spreadValue = Number(parts[1]);
+        if (Number.isFinite(spreadValue)) spread = spreadTeam === game.homeTeam ? spreadValue : -spreadValue;
+      }
+      const home = total / 2 + spread / 2;
+      const away = total / 2 - spread / 2;
+      return { away: Math.round(away * 100) / 100, home: Math.round(home * 100) / 100 };
+    };
+
+    const formatGameTime = (value) => {
+      if (!value) return "—";
+      const d = new Date(value);
+      if (Number.isNaN(d.valueOf())) return "—";
+      return d.toLocaleString("en-US", { weekday: "short", hour: "numeric", minute: "2-digit" });
+    };
+
+    const splitName = (name) => {
+      const parts = String(name || "").trim().split(/\s+/).filter(Boolean);
+      if (!parts.length) return { first_name: "", last_name: "" };
+      if (parts.length === 1) return { first_name: parts[0], last_name: "" };
+      return { first_name: parts.slice(0, -1).join(" "), last_name: parts[parts.length - 1] };
+    };
+
+    const rosterSlots = data.builderSlots || ["QB", "RB", "RB", "WR", "WR", "WR", "TE", "FLEX", "DST"];
+
+    const assignSlots = (players, avoidTeFlex) => {
+      const slots = [...rosterSlots];
+      const assigned = [];
+      const flexEligible = (pos) => ["RB", "WR", "TE"].includes(pos);
+      const candidates = players.map((player) => ({
+        ...player,
+        positions: Array.isArray(player.positions) ? player.positions : [player.position],
+      }));
+
+      const backtrack = (index, remainingSlots) => {
+        if (index >= candidates.length) return true;
+        const player = candidates[index];
+        const posList = player.positions || [];
+        const possibleSlots = remainingSlots.filter((slot) => {
+          if (slot === "FLEX") {
+            if (avoidTeFlex && posList.includes("TE")) return posList.some((p) => ["RB", "WR"].includes(p));
+            return posList.some((p) => flexEligible(p));
+          }
+          return posList.includes(slot);
+        });
+        for (const slot of possibleSlots) {
+          const updated = [...remainingSlots];
+          const idx = updated.indexOf(slot);
+          updated.splice(idx, 1);
+          assigned.push({ slot, player });
+          if (backtrack(index + 1, updated)) return true;
+          assigned.pop();
+        }
+        return false;
+      };
+
+      const ordered = [...candidates].sort((a, b) => (a.positions?.length || 1) - (b.positions?.length || 1));
+      const ok = backtrack(0, slots);
+      return ok ? assigned : null;
+    };
+
+    const buildPlayerMap = (pack) => {
+      const games = new Map(pack.games.map((g) => [g.id, g]));
+      return new Map(
+        pack.playerInputs.map((p) => {
+          const game = games.get(p.gameId);
+          const positions = [p.position];
+          return [
+            p.id,
+            {
+              ...p,
+              positions,
+              matchup: game?.gameLabel || `${p.team} @ ${p.opponent}`,
+              gameLabel: game?.gameLabel || "",
+              totals: buildGameTotals(game || {}),
+              startTime: game?.startTime || null,
+            },
+          ];
+        })
+      );
+    };
+
+    const getEffectiveGames = () => {
+      const pack = getSelectedPackage();
+      if (!pack) return [];
+      return pack.games;
+    };
+
+    const getEffectivePlayers = () => {
+      const pack = getSelectedPackage();
+      if (!pack) return [];
+      return pack.playerInputs;
+    };
+
+    const getTeamsFromGames = (games) => {
+      const teams = new Set();
+      games.forEach((game) => {
+        if (game.awayTeam) teams.add(game.awayTeam);
+        if (game.homeTeam) teams.add(game.homeTeam);
+      });
+      return [...teams];
+    };
+
+    const syncTeamInclude = () => {
+      const teams = getTeamsFromGames(getEffectiveGames());
+      const next = new Map();
+      teams.forEach((team) => {
+        if (!state.teamInitialized && !state.teamInclude.has(team)) {
+          next.set(team, true);
+        } else {
+          next.set(team, state.teamInclude.get(team));
+        }
+      });
+      state.teamInclude = next;
+      state.teamInitialized = true;
+    };
+
+    const syncPlayerIncludes = () => {
+      const players = getEffectivePlayers();
+      const ids = new Set(players.map((p) => p.id));
+      const next = new Set();
+      players.forEach((p) => {
+        if (!state.includeInitialized || state.includePlayers.has(p.id)) {
+          next.add(p.id);
+        }
+      });
+      state.includePlayers = next;
+      state.lockedPlayers = new Set([...state.lockedPlayers].filter((id) => ids.has(id)));
+      state.keyPlayers = new Set([...state.keyPlayers].filter((id) => ids.has(id)));
+      state.includeInitialized = true;
+    };
+
+    const getFilteredPlayers = () => {
+      const pack = getSelectedPackage();
+      if (!pack) return [];
+      const players = pack.playerInputs;
+      const teamsAllowed = new Set(
+        getTeamsFromGames(getEffectiveGames()).filter((team) => state.teamInclude.get(team))
+      );
+      const lockGames = new Set(
+        pack.playerInputs
+          .filter((p) => state.lockedPlayers.has(p.id))
+          .map((p) => p.gameId)
+      );
+      return players.filter((player) => {
+        if (!state.includePlayers.has(player.id)) return false;
+        if (!teamsAllowed.has(player.team)) return false;
+        if (state.excludeLockedGames && lockGames.size) {
+          if (!lockGames.has(player.gameId) && !state.lockedPlayers.has(player.id)) return false;
+        }
+        if (state.hideUnderEnabled && player.projection < state.hideUnder && !state.lockedPlayers.has(player.id)) {
+          return false;
+        }
+        if (state.positionFilter !== "ALL") {
+          if (state.positionFilter === "FLEX") {
+            if (!["RB", "WR", "TE"].includes(player.position)) return false;
+          } else if (player.position !== state.positionFilter) {
+            return false;
+          }
+        }
+        if (state.search) {
+          const query = state.search.toLowerCase();
+          if (!player.name.toLowerCase().includes(query) && !player.team.toLowerCase().includes(query)) {
+            return false;
+          }
+        }
+        return true;
+      });
+    };
+
+    const updateAdvancedCount = () => {
+      const count = Object.values(state.advanced).filter((value) => Number(value) > 0).length;
+      if (elements.advancedCount) elements.advancedCount.textContent = String(count);
+    };
+
+    const filterLineupsByExposure = (lineups, minMap, maxMap) => {
+      if (![...minMap.values()].some((v) => v > 0) && ![...maxMap.values()].some((v) => v < 100)) {
+        return lineups;
+      }
+      const targetCount = lineups.length;
+      const minTargets = new Map(
+        [...minMap.entries()]
+          .filter(([, value]) => value > 0)
+          .map(([id, value]) => [id, Math.ceil((value / 100) * targetCount)])
+      );
+      const sorted = [...lineups].sort((a, b) => {
+        const aProjection = a.players.reduce((sum, player) => sum + (player.fppg || 0), 0);
+        const bProjection = b.players.reduce((sum, player) => sum + (player.fppg || 0), 0);
+        return bProjection - aProjection;
+      });
+      const filtered = [];
+      const counts = new Map();
+      const canAdd = (lineup, nextCount) => {
+        for (const player of lineup.players) {
+          const max = maxMap.get(player.id) ?? 100;
+          const next = (counts.get(player.id) || 0) + 1;
+          if ((next / nextCount) * 100 > max) return false;
+        }
+        return true;
+      };
+      const helpsMin = (lineup) =>
+        lineup.players.some((player) => (minTargets.get(player.id) || 0) > (counts.get(player.id) || 0));
+
+      for (const lineup of sorted) {
+        if (filtered.length >= targetCount) break;
+        if (!helpsMin(lineup)) continue;
+        if (!canAdd(lineup, filtered.length + 1)) continue;
+        filtered.push(lineup);
+        lineup.players.forEach((player) => counts.set(player.id, (counts.get(player.id) || 0) + 1));
+      }
+
+      for (const lineup of sorted) {
+        if (filtered.length >= targetCount) break;
+        if (filtered.includes(lineup)) continue;
+        if (!canAdd(lineup, filtered.length + 1)) continue;
+        filtered.push(lineup);
+        lineup.players.forEach((player) => counts.set(player.id, (counts.get(player.id) || 0) + 1));
+      }
+
+      return filtered;
+    };
+
+    const getLineupMetrics = (lineup, playerMap) => {
+      const salary = lineup.players.reduce((sum, p) => sum + p.salary, 0);
+      const projection = lineup.players.reduce((sum, p) => sum + p.fppg, 0);
+      const ceiling = lineup.players.reduce((sum, p) => sum + (playerMap.get(p.id)?.projection || p.fppg) * 1.6, 0);
+      const ownership = lineup.players.reduce((sum, p) => sum + (playerMap.get(p.id)?.ownership || 0), 0);
+      return { salary, projection, ceiling, ownership };
+    };
+
+    const buildExposureMap = (lineups) => {
+      const counts = new Map();
+      lineups.forEach((lineup) => {
+        lineup.players.forEach((player) => {
+          counts.set(player.id, (counts.get(player.id) || 0) + 1);
+        });
+      });
+      return counts;
+    };
+
+    const buildExposureRows = (players, exposureMap, total, search, showFlex) =>
+      players
+        .filter((player) => {
+          if (showFlex && !["RB", "WR", "TE"].includes(player.position)) return false;
+          if (search && !player.name.toLowerCase().includes(search) && !player.team.toLowerCase().includes(search)) return false;
+          return true;
+        })
+        .map((player) => {
+          const count = exposureMap.get(player.id) || 0;
+          const exposure = total ? Math.round((count / total) * 10000) / 100 : 0;
+          return {
+            player,
+            exposure,
+            count,
+          };
+        })
+        .sort((a, b) => b.exposure - a.exposure || a.player.name.localeCompare(b.player.name));
+
+    const buildStacks = (results, playerMap) => {
+      const playerStacks = new Map();
+      const gameStacks = new Map();
+      const teamStacks = new Map();
+
+      results.forEach((lineup) => {
+        const byTeam = new Map();
+        lineup.players.forEach((player) => {
+          const list = byTeam.get(player.team) || [];
+          list.push(player);
+          byTeam.set(player.team, list);
+        });
+
+        byTeam.forEach((players, team) => {
+          if (players.length >= 2) {
+            const label = `${team}`;
+            const names = players.map((p) => `${p.name} - ${p.positions[0]} ${formatAbbrevMoney(p.salary)}`);
+            const key = `${team}:${names.join("|")}`;
+            teamStacks.set(key, { label, names, count: (teamStacks.get(key)?.count || 0) + 1 });
+          }
+        });
+
+        const qbTeams = new Set(lineup.players.filter((p) => p.positions.includes("QB")).map((p) => p.team));
+        qbTeams.forEach((team) => {
+          const stackPlayers = lineup.players.filter(
+            (p) => p.team === team && (p.positions.includes("QB") || p.positions.some((pos) => ["WR", "TE", "RB"].includes(pos)))
+          );
+          if (stackPlayers.length >= 2) {
+            const names = stackPlayers.map((p) => `${p.name} - ${p.positions[0]} ${formatAbbrevMoney(p.salary)}`);
+            const key = `${team}:${names.join("|")}`;
+            playerStacks.set(key, { names, count: (playerStacks.get(key)?.count || 0) + 1 });
+          }
+        });
+
+        const games = new Map();
+        lineup.players.forEach((p) => {
+          const game = playerMap.get(p.id)?.gameLabel || "";
+          if (!game) return;
+          const list = games.get(game) || [];
+          list.push(p);
+          games.set(game, list);
+        });
+
+        games.forEach((players, gameLabel) => {
+          if (players.length >= 3) {
+            const names = players.map((p) => p.name).join(" + ");
+            const key = `${gameLabel}:${names}`;
+            gameStacks.set(key, { gameLabel, names, count: (gameStacks.get(key)?.count || 0) + 1 });
+          }
+        });
+      });
+
+      const toRows = (map) =>
+        [...map.values()]
+          .map((row) => ({ ...row, pct: results.length ? Math.round((row.count / results.length) * 100) : 0 }))
+          .sort((a, b) => b.count - a.count);
+
+      return {
+        playerStacks: toRows(playerStacks),
+        gameStacks: toRows(gameStacks),
+        teamStacks: toRows(teamStacks),
+      };
+    };
+
+    const controller = (() => {
+      let derived = {
+        selection: null,
+        selectedPack: null,
+        games: [],
+        players: [],
+        teams: [],
+        teamsAllowed: new Set(),
+        lockGames: new Set(),
+        playerMap: new Map(),
+        poolPlayers: [],
+        visiblePlayers: [],
+        teamVisiblePlayers: [],
+        playerCount: { total: 0, selected: 0 },
+        builder: null,
+        resultsSorted: [],
+        resultsVisible: [],
+        exposureMap: new Map(),
+        stacks: { playerStacks: [], gameStacks: [], teamStacks: [] },
+      };
+
+      const clampPercent = (value, fallback) => {
+        if (!Number.isFinite(value)) return fallback;
+        return Math.min(Math.max(value, 0), 100);
+      };
+
+      const syncTeamInclude = (teams) => {
+        const next = new Map();
+        teams.forEach((team) => {
+          if (!state.teamInitialized && !state.teamInclude.has(team)) {
+            next.set(team, true);
+          } else {
+            next.set(team, state.teamInclude.get(team));
+          }
+        });
+        state.teamInclude = next;
+        state.teamInitialized = true;
+      };
+
+      const syncPlayerIncludes = (players) => {
+        const ids = new Set(players.map((p) => p.id));
+        const next = new Set();
+        players.forEach((p) => {
+          if (!state.includeInitialized || state.includePlayers.has(p.id)) {
+            next.add(p.id);
+          }
+        });
+        state.includePlayers = next;
+        state.lockedPlayers = new Set([...state.lockedPlayers].filter((id) => ids.has(id)));
+        state.keyPlayers = new Set([...state.keyPlayers].filter((id) => ids.has(id)));
+        state.includeInitialized = true;
+      };
+
+      const resetSlateState = () => {
+        state.includePlayers.clear();
+        state.includeInitialized = false;
+        state.teamInclude.clear();
+        state.teamInitialized = false;
+        state.lockedPlayers.clear();
+        state.keyPlayers.clear();
+        state.boost.clear();
+        state.minExposure.clear();
+        state.maxExposure.clear();
+        state.results = [];
+        state.resultTags.clear();
+        state.selectedLineups.clear();
+        state.activeTag = null;
+      };
+
+      const computeDerived = () => {
+        const selection = normalizeSelection();
+        const selectionChanged = selection.selectedKey !== state.selectedKey;
+        state.weekValue = selection.weekValue;
+        state.siteValue = selection.siteValue;
+        state.selectedKey = selection.selectedKey;
+        if (selectionChanged) resetSlateState();
+
+        const selectedPack = selection.selectedPack;
+        const games = selectedPack?.games || [];
+        const players = selectedPack?.playerInputs || [];
+        const teams = getTeamsFromGames(games);
+
+        syncTeamInclude(teams);
+        syncPlayerIncludes(players);
+
+        const teamsAllowed = new Set(teams.filter((team) => state.teamInclude.get(team)));
+        const lockGames = new Set(players.filter((p) => state.lockedPlayers.has(p.id)).map((p) => p.gameId));
+        const poolPlayers = players.filter((player) => {
+          if (!state.includePlayers.has(player.id)) return false;
+          if (!teamsAllowed.has(player.team)) return false;
+          if (state.excludeLockedGames && lockGames.size) {
+            if (!lockGames.has(player.gameId) && !state.lockedPlayers.has(player.id)) return false;
+          }
+          if (state.hideUnderEnabled && player.projection < state.hideUnder && !state.lockedPlayers.has(player.id)) {
+            return false;
+          }
+          return true;
+        });
+        const visiblePlayers = poolPlayers.filter((player) => {
+          if (state.positionFilter !== "ALL") {
+            if (state.positionFilter === "FLEX") {
+              if (!["RB", "WR", "TE"].includes(player.position)) return false;
+            } else if (player.position !== state.positionFilter) {
+              return false;
+            }
+          }
+          if (state.search) {
+            const query = state.search.toLowerCase();
+            if (!player.name.toLowerCase().includes(query) && !player.team.toLowerCase().includes(query)) {
+              return false;
+            }
+          }
+          return true;
+        });
+
+        const playerMap = selectedPack ? buildPlayerMap(selectedPack) : new Map();
+        const teamVisiblePlayers = players.filter((player) => teamsAllowed.has(player.team));
+        const playerCount = {
+          total: teamVisiblePlayers.length,
+          selected: teamVisiblePlayers.filter((player) => state.includePlayers.has(player.id)).length,
+        };
+
+        const lockedPlayers = players.filter((p) => state.lockedPlayers.has(p.id));
+        const salary = lockedPlayers.reduce((sum, p) => sum + p.salary, 0);
+        const projection = lockedPlayers.reduce((sum, p) => sum + p.projection, 0);
+        const ownership = lockedPlayers.reduce((sum, p) => sum + p.ownership, 0);
+        const salaryCap = selectedPack?.slate?.salaryCap || 0;
+        const rosterSize = selectedPack?.slate?.rosterSize || 0;
+        const remaining = Math.max(0, salaryCap - salary);
+        const remPer = rosterSize ? remaining / rosterSize : 0;
+        const assigned = assignSlots(
+          lockedPlayers.map((p) => ({
+            id: p.id,
+            name: p.name,
+            team: p.team,
+            position: p.position,
+            positions: [p.position],
+            salary: p.salary,
+          })),
+          state.settings.avoidTeFlex
+        );
+        const assignedOk = Boolean(assigned);
+        const slotMap = new Map();
+        if (assignedOk) {
+          assigned.forEach(({ slot, player }) => slotMap.set(slot, player));
+        }
+
+        const resultsSorted = [...state.results];
+        resultsSorted.sort((a, b) => {
+          const am = getLineupMetrics(a, playerMap);
+          const bm = getLineupMetrics(b, playerMap);
+          if (state.resultsSort === "salary") return bm.salary - am.salary;
+          if (state.resultsSort === "ownership") return bm.ownership - am.ownership;
+          return bm.projection - am.projection;
+        });
+        const resultsVisible = state.activeTag
+          ? resultsSorted.filter((lineup) => (state.resultTags.get(lineup.id) || "") === state.activeTag)
+          : resultsSorted;
+
+        const exposureMap = buildExposureMap(state.results);
+        const stacks = buildStacks(state.results, playerMap);
+
+        derived = {
+          selection,
+          selectedPack,
+          games,
+          players,
+          teams,
+          teamsAllowed,
+          lockGames,
+          playerMap,
+          poolPlayers,
+          visiblePlayers,
+          teamVisiblePlayers,
+          playerCount,
+          builder: {
+            lockedPlayers,
+            salary,
+            projection,
+            ownership,
+            remaining,
+            remPer,
+            assigned: assignedOk ? assigned : [],
+            assignedOk,
+            slotMap,
+            salaryCap,
+          },
+          resultsSorted,
+          resultsVisible,
+          exposureMap,
+          stacks,
+        };
+      };
+
+      const buildOptimizerPayload = (lineupCount) => {
+        if (!derived.selectedPack) return null;
+        const players = derived.players
+          .filter((player) => {
+            if (!state.includePlayers.has(player.id)) return false;
+            if (!derived.teamsAllowed.has(player.team)) return false;
+            if (state.excludeLockedGames && derived.lockGames.size) {
+              if (!derived.lockGames.has(player.gameId) && !state.lockedPlayers.has(player.id)) return false;
+            }
+            if (state.hideUnderEnabled && player.projection < state.hideUnder && !state.lockedPlayers.has(player.id)) {
+              return false;
+            }
+            return true;
+          })
+          .map((player) => {
+            const boost = state.boost.get(player.id) || 0;
+            const keyBoost = state.keyPlayers.has(player.id) ? 0.08 : 0;
+            const multiplier = 1 + boost * 0.05 + keyBoost;
+            const nameParts = splitName(player.name);
+            return {
+              id: player.id,
+              first_name: nameParts.first_name || player.name,
+              last_name: nameParts.last_name || "",
+              positions: [player.position],
+              team: player.team,
+              opponent: player.opponent,
+              game_id: player.gameId,
+              salary: player.salary,
+              fppg: player.projection * multiplier,
+            };
+          });
+
+        const excludedIds = derived.players
+          .filter((player) => !state.includePlayers.has(player.id))
+          .map((player) => player.id);
+
+        const maxSalary = state.advanced.maxSalary > 0 ? state.advanced.maxSalary : null;
+        const minSalaryDefault = state.settings.maximizeSalary
+          ? Math.floor((derived.selectedPack?.slate?.salaryCap || 0) * 0.99)
+          : null;
+        const minSalary = state.advanced.minSalary > 0 ? state.advanced.minSalary : minSalaryDefault;
+        const stacks = [];
+        if (state.settings.qbStack) {
+          stacks.push({
+            type: "qb_stack",
+            for_positions: ["QB"],
+            positions: ["RB", "WR", "TE"],
+            count: 1,
+          });
+        }
+        if (state.settings.gameStack) {
+          stacks.push({
+            type: "game_stack",
+            for_positions: ["QB"],
+            positions: ["RB", "WR", "TE"],
+            count: 1,
+          });
+        }
+
+        return {
+          players,
+          lineup_count: lineupCount,
+          min_salary: minSalary,
+          max_salary: maxSalary,
+          max_repeating_players: state.advanced.maxRepeating > 0 ? state.advanced.maxRepeating : null,
+          locked_player_ids: [...state.lockedPlayers],
+          excluded_player_ids: excludedIds,
+          team_limit: state.advanced.teamLimit > 0 ? state.advanced.teamLimit : null,
+          randomness: state.advanced.randomness > 0 ? state.advanced.randomness : null,
+          stacks,
+          constraints: {
+            qb_stack: state.settings.qbStack,
+            game_stack: state.settings.gameStack,
+            avoid_opposing_defense: state.settings.avoidOppDefense,
+            avoid_te_in_flex: state.settings.avoidTeFlex,
+            one_skill_player_per_team: state.settings.oneSkillPerTeam,
+          },
+        };
+      };
+
+      const renderToolbarControls = () => {
+        if (!derived.selection) return;
+        replaceSelectOptions(elements.week, derived.selection.weekOptions, derived.selection.weekValue, (option) => option.label);
+        replaceSelectOptions(elements.site, derived.selection.siteOptions, derived.selection.siteValue, (option) => option.label);
+        const slateOptions = derived.selection.slateOptions.map((pack) => ({
+          value: pack.key,
+          label: `${pack.slate.name} · ${pack.games.length} Games`,
+        }));
+        replaceSelectOptions(elements.slate, slateOptions, derived.selection.selectedKey, (option) => option.label);
+
+        const site = derived.selection.selectedPack?.slate?.site || "";
+        const logo = operatorMeta[site]?.logo || "";
+        if (elements.siteSelectedLogo) {
+          elements.siteSelectedLogo.src = logo;
+          elements.siteSelectedLogo.style.display = logo ? "" : "none";
+        }
+      };
+
+      const renderControls = () => {
+        if (elements.search && elements.search.value !== state.search) elements.search.value = state.search;
+        if (elements.hideUnder) elements.hideUnder.value = String(state.hideUnder);
+        elements.hideUnderToggle?.classList.toggle("checked", state.hideUnderEnabled);
+        if (elements.projections && elements.projections.value !== state.projectionMode) {
+          elements.projections.value = state.projectionMode;
+        }
+        if (elements.variance && elements.variance.value !== state.varianceMode) {
+          elements.variance.value = state.varianceMode;
+        }
+        if (elements.poolScope && elements.poolScope.value !== state.poolScope) {
+          elements.poolScope.value = state.poolScope;
+        }
+        if (elements.resultsLineups && elements.resultsLineups.value !== String(state.resultsLineups)) {
+          elements.resultsLineups.value = String(state.resultsLineups);
+        }
+
+        elements.posTabs.forEach((btn) => {
+          const pos = btn.getAttribute("data-pos-tab") || "ALL";
+          btn.classList.toggle("active", pos === state.positionFilter);
+        });
+
+        elements.optimizeBy.forEach((sel) => {
+          if (sel.value !== state.optimizeBy) sel.value = state.optimizeBy;
+        });
+
+        elements.lineupCount.forEach((input) => {
+          if (input.value !== String(state.lineupCount)) input.value = String(state.lineupCount);
+        });
+
+        if (elements.resultsSort && elements.resultsSort.value !== state.resultsSort) {
+          elements.resultsSort.value = state.resultsSort;
+        }
+        if (elements.resultsOwnMode && elements.resultsOwnMode.value !== state.ownMode) {
+          elements.resultsOwnMode.value = state.ownMode;
+        }
+        if (elements.sidebarSearch && elements.sidebarSearch.value !== state.sidebarSearch) {
+          elements.sidebarSearch.value = state.sidebarSearch;
+        }
+        if (elements.sidebarFlex) elements.sidebarFlex.checked = state.sidebarFlex;
+
+        if (elements.resultsStatus) {
+          elements.resultsStatus.textContent = state.statusMessage ? `• ${state.statusMessage}` : "";
+          elements.resultsStatus.style.display = state.statusMessage ? "" : "none";
+        }
+
+        if (elements.poolStatus) {
+          const poolMessage = derived.poolPlayers.length
+            ? ""
+            : derived.teamsAllowed.size
+              ? "No players in current pool."
+              : "No teams selected.";
+          elements.poolStatus.textContent = poolMessage ? `• ${poolMessage}` : "";
+          elements.poolStatus.style.display = poolMessage ? "" : "none";
+        }
+
+        elements.hideUnderWrap?.classList.toggle("active", state.hideUnderEnabled);
+        elements.excludeLockedWrap?.classList.toggle("active", state.excludeLockedGames);
+
+        if (state.activeSidebarPanel) {
+          elements.sidebarTabs.forEach((item) =>
+            item.classList.toggle("active", item.getAttribute("data-panel") === state.activeSidebarPanel)
+          );
+          elements.sidebarPanels.forEach((panel) =>
+            panel.classList.toggle("active", panel.getAttribute("data-panel-view") === state.activeSidebarPanel)
+          );
+        }
+        if (state.activeTopTab) {
+          elements.topTabs.forEach((item) =>
+            item.classList.toggle("active", item.getAttribute("data-top-tab") === state.activeTopTab)
+          );
+        }
+      };
+
+      const renderSettings = () => {
+        elements.settingsItems.forEach((item) => {
+          const id = item.getAttribute("data-setting-id");
+          if (!id) return;
+          const isChecked = Boolean(state.settings[id]);
+          item.querySelector(".settings-check")?.classList.toggle("checked", isChecked);
+          item.classList.toggle("active", isChecked);
+        });
+        elements.excludeLockedToggle?.classList.toggle("active", state.excludeLockedGames);
+      };
+
+      const renderGames = () => {
+        if (!elements.gamesStrip) return;
+        elements.gamesStrip.innerHTML = derived.games
+          .map((game) => {
+            const totals = buildGameTotals(game);
+            const awaySelected = !!state.teamInclude.get(game.awayTeam);
+            const homeSelected = !!state.teamInclude.get(game.homeTeam);
+
+            return `
+        <article class="game-chip inputs-slate-card" data-game-id="${game.id}">
+          <div class="inputs-slate-card-rows">
+            <div
+              class="inputs-slate-team-row ${awaySelected ? "is-selected" : "team-excluded"}"
+              data-team="${game.awayTeam}"
+              role="button"
+              tabindex="0"
+              aria-pressed="${awaySelected ? "true" : "false"}"
+            >
+              <span class="inputs-slate-logo">
+                <img
+                  src="${getTeamLogoPath(game.awayTeam)}"
+                  alt="${game.awayTeam} logo"
+                  loading="lazy"
+                  onload="this.nextElementSibling.style.display='none';"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <span class="inputs-slate-logo-fallback">${game.awayTeam}</span>
+              </span>
+              <span class="inputs-slate-team-code">${game.awayTeam}</span>
+              <span class="inputs-slate-team-total">${formatGameTotal(totals.away)}</span>
+            </div>
+
+            <div
+              class="inputs-slate-team-row ${homeSelected ? "is-selected" : "team-excluded"}"
+              data-team="${game.homeTeam}"
+              role="button"
+              tabindex="0"
+              aria-pressed="${homeSelected ? "true" : "false"}"
+            >
+              <span class="inputs-slate-logo">
+                <img
+                  src="${getTeamLogoPath(game.homeTeam)}"
+                  alt="${game.homeTeam} logo"
+                  loading="lazy"
+                  onload="this.nextElementSibling.style.display='none';"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                />
+                <span class="inputs-slate-logo-fallback">${game.homeTeam}</span>
+              </span>
+              <span class="inputs-slate-team-code">${game.homeTeam}</span>
+              <span class="inputs-slate-team-total">${formatGameTotal(totals.home)}</span>
+            </div>
+          </div>
+
+          <div class="inputs-slate-card-meta">
+            <span>${formatGameDayShort(game)}</span>
+            <span>${formatGameTimeLabel(game)}</span>
+          </div>
+        </article>
+      `;
+          })
+          .join("");
+
+        const teamValues = [...state.teamInclude.values()];
+        const allActive = teamValues.length > 0 && teamValues.every(Boolean);
+        const noneActive = teamValues.length > 0 && teamValues.every((value) => !value);
+
+        elements.gamesLinks.forEach((button) => {
+          const action = button.getAttribute("data-games-action");
+          button.classList.toggle("active", action === "all" ? allActive : noneActive);
+        });
+      };
+
+      const renderPlayerRows = () => {
+        if (!elements.playerRows || !derived.selectedPack) return;
+        const exposureTotal = state.results.length || 1;
+        elements.playerRows.innerHTML = derived.visiblePlayers
+          .map((player) => {
+            const game = derived.selectedPack?.games?.find((g) => g.id === player.gameId);
+            const boost = state.boost.get(player.id) || 0;
+            const locked = state.lockedPlayers.has(player.id);
+            const keyed = state.keyPlayers.has(player.id);
+            const boostClass = boost > 0 ? "boost-up" : boost < 0 ? "boost-down" : "";
+            const exposureCount = derived.exposureMap.get(player.id) || 0;
+            const exposurePct = exposureTotal ? Math.round((exposureCount / exposureTotal) * 10000) / 100 : 0;
+            return `
+            <tr data-player-id="${player.id}" class="player-row ${locked ? "is-locked" : ""} ${keyed ? "is-keyed" : ""} ${boostClass}">
+              <td class="check-col"><span class="fake-check ${state.includePlayers.has(player.id) ? "checked" : ""}"></span></td>
+              <td class="icon-col">
+                <div class="tiny-icons">
+                  <span class="tiny-lock ${locked ? "active" : ""}" data-action="lock"></span>
+                  <span class="tiny-key ${keyed ? "active" : ""}" data-action="key"></span>
+                </div>
+              </td>
+              <td class="name-col">
+                <div class="player-cell">
+                  <span class="pos-pill pos-${player.position.toLowerCase().replace("/", "")}">${player.position}</span>
+                  <span class="team-dot">${player.team}</span>
+                  <span class="player-name">${player.name}</span>
+                </div>
+              </td>
+              <td class="boost-col">
+                <div class="boost-icons">
+                  <span class="boost up ${boost > 0 ? "active" : ""}" data-action="boost-up">↑</span>
+                  <span class="boost down ${boost < 0 ? "active" : ""}" data-action="boost-down">↓</span>
+                  <span class="boost-zero ${boost === 0 ? "active" : ""}" data-action="boost-zero">0</span>
+                </div>
+              </td>
+              <td>${game?.gameLabel || `${player.team} @ ${player.opponent}`}</td>
+              <td>${formatSalary(player.salary)}</td>
+              <td>${formatNumber(player.projection)}</td>
+              <td>—</td>
+              <td>${formatNumber(player.ownership)}</td>
+              <td>${formatNumber(player.projection * 1.6)}</td>
+              <td>${formatNumber(player.projection * 0.6)}</td>
+              <td>${formatNumber(player.projection * 0.25)}</td>
+              <td><input type="number" value="${state.minExposure.get(player.id) ?? 0}" min="0" max="100" data-action="min-exposure" /></td>
+              <td><input type="number" value="${state.maxExposure.get(player.id) ?? 100}" min="0" max="100" data-action="max-exposure" /></td>
+              <td data-cell="opto">${formatNumber(exposurePct)}</td>
+            </tr>
+          `;
+          })
+          .join("");
+
+        if (elements.playerCount) {
+          elements.playerCount.textContent = `${derived.playerCount.selected}/${derived.playerCount.total} Players Selected`;
+        }
+      };
+
+      const renderBuilder = () => {
+        if (!derived.selectedPack || !derived.builder) return;
+        if (elements.builderSummary) {
+          const builderStatus =
+            derived.builder.lockedPlayers.length && !derived.builder.assignedOk
+              ? `<span class="builder-status error">Locked players don't fit slots.</span>`
+              : "";
+          elements.builderSummary.innerHTML = `
+          <span>Rem/Player: ${formatAbbrevMoney(derived.builder.remPer)}</span>
+          <span>Rem: ${formatSalary(derived.builder.remaining)}</span>
+          <span>Proj ${formatNumber(derived.builder.projection)}</span>
+          <span>Act 0.00</span>
+          <span>Ceil ${formatNumber(derived.builder.projection * 1.6)}</span>
+          <span>Own ${formatNumber(derived.builder.ownership)}% (${formatNumber(derived.builder.ownership)}%)</span>
+          ${builderStatus}
+        `;
+        }
+
+        elements.builderSlots.forEach((slotEl) => {
+          const slot = slotEl.getAttribute("data-slot");
+          const player = slot ? derived.builder.slotMap.get(slot) : null;
+          const fill = slotEl.querySelector(".slot-fill");
+          if (!fill) return;
+          slotEl.onclick = null;
+          if (player) {
+            slotEl.classList.add("filled");
+            fill.textContent = `${player.name} · ${formatAbbrevMoney(player.salary)}`;
+            slotEl.onclick = () => actions.togglePlayerLock(player.id);
+          } else {
+            slotEl.classList.remove("filled");
+            fill.textContent = "";
+          }
+        });
+      };
+
+      const renderLineups = () => {
+        if (!elements.lineupsGrid || !derived.selectedPack) return;
+        const filteredCount = derived.resultsVisible.length;
+        const totalCount = derived.resultsSorted.length;
+        if (elements.resultsFiltered) {
+          elements.resultsFiltered.textContent = `Filtered ${filteredCount} of ${totalCount} Lineups`;
+        }
+        if (elements.resultsCount) elements.resultsCount.textContent = `${totalCount}`;
+        if (elements.resultsSubtitle) elements.resultsSubtitle.textContent = totalCount ? `Results ${totalCount}` : "Results 1";
+        if (elements.resultsFilterTag) {
+          elements.resultsFilterTag.textContent = state.activeTag ? `${state.activeTag} (${filteredCount})` : `No Tag (${totalCount})`;
+        }
+
+        elements.lineupsGrid.innerHTML = derived.resultsVisible
+          .map((lineup, index) => {
+            const metrics = getLineupMetrics(lineup, derived.playerMap);
+            const assigned = assignSlots(lineup.players, state.settings.avoidTeFlex) || [];
+            const rows = assigned.map((entry) => {
+              const p = derived.playerMap.get(entry.player.id);
+              return `
+              <div class="lineup-row">
+                <span class="lineup-slot">${entry.slot}</span>
+                <span class="lineup-name">${entry.player.name}</span>
+                <span class="lineup-game">${p?.gameLabel || ""}</span>
+                <span class="lineup-salary">${formatAbbrevMoney(entry.player.salary)}</span>
+              </div>
+            `;
+            });
+            const selected = state.selectedLineups.has(lineup.id);
+            return `
+            <article class="lineup-card ${selected ? "selected" : ""}" data-lineup-id="${lineup.id}">
+              <div class="lineup-card-head">
+                <div class="lineup-rank-score">
+                  <span class="lineup-rank">${index + 1}</span>
+                  <span class="lineup-score">${formatNumber(metrics.projection)}</span>
+                </div>
+
+                <div class="lineup-metrics">
+                  <span>Salary ${formatAbbrevMoney(metrics.salary)}</span>
+                  <span>Proj ${formatNumber(metrics.projection)}</span>
+                  <span>Act —</span>
+                  <span>Ceil ${formatNumber(metrics.ceiling)}</span>
+                  <span>Own ${formatNumber(metrics.ownership)}%</span>
+                </div>
+              </div>
+
+              <div class="lineup-rows">
+                ${rows.join("")}
+              </div>
+
+              <div class="lineup-card-foot">
+                <button type="button" class="tag-chip" data-action="lineup-tag">🏷</button>
+                <div class="lineup-scrollbar"></div>
+                <button type="button" class="trash-chip" data-action="lineup-delete">🗑</button>
+              </div>
+            </article>
+          `;
+          })
+          .join("");
+
+      };
+
+      const renderSidebarPlayers = () => {
+        if (!elements.sidebarPlayers) return;
+        const rows = buildExposureRows(
+          derived.players,
+          derived.exposureMap,
+          state.results.length || 1,
+          state.sidebarSearch.toLowerCase(),
+          state.sidebarFlex
+        );
+        elements.sidebarPlayers.innerHTML = rows
+          .map(({ player, exposure, count }) => {
+            const min = state.minExposure.get(player.id) ?? 0;
+            const max = state.maxExposure.get(player.id) ?? 100;
+            return `
+            <div class="sidebar-player-row" data-player-id="${player.id}">
+              <div class="sidebar-player-main">
+                <span class="funnel-icon"></span>
+                <span class="player-bullet">${player.team}</span>
+                <span class="sidebar-player-name">${player.name}</span>
+                <span class="sidebar-player-pos">${player.position}</span>
+                <span class="sidebar-player-salary">${formatAbbrevMoney(player.salary)}</span>
+              </div>
+              <div class="sidebar-player-controls">
+                <input type="number" value="${min}" min="0" max="100" data-action="min-exposure" />
+                <input type="number" value="${max}" min="0" max="100" data-action="max-exposure" />
+                <span>${formatNumber(exposure)}%</span>
+                <span>${count}</span>
+              </div>
+            </div>
+          `;
+          })
+          .join("");
+
+        qsa("[data-tab-count=players]").forEach((el) => (el.textContent = `(${rows.length})`));
+      };
+
+      const renderStacks = () => {
+        if (elements.sidebarPlayerStacks) {
+          elements.sidebarPlayerStacks.innerHTML = derived.stacks.playerStacks
+            .map((stack) => {
+              return `
+              <div class="stack-row">
+                <div class="stack-left">
+                  <span class="funnel-icon"></span>
+                  <div class="stack-players">
+                    ${stack.names.map((name) => `<span>${name}</span>`).join("")}
+                  </div>
+                </div>
+                <div class="stack-right">
+                  <div class="stack-bar"><span></span></div>
+                  <span>${stack.pct}%</span>
+                  <span>${stack.count}</span>
+                </div>
+              </div>
+            `;
+            })
+            .join("");
+          qsa("[data-tab-count=player-stacks]").forEach((el) => (el.textContent = `(${derived.stacks.playerStacks.length})`));
+        }
+        if (elements.sidebarGameStacks) {
+          elements.sidebarGameStacks.innerHTML = derived.stacks.gameStacks
+            .map((stack) => {
+              return `
+              <div class="stack-row">
+                <div class="stack-left">
+                  <span class="funnel-icon"></span>
+                  <div class="stack-players">
+                    <span>${stack.gameLabel}</span>
+                    <span>${stack.names}</span>
+                  </div>
+                </div>
+                <div class="stack-right">
+                  <div class="stack-bar"><span></span></div>
+                  <span>${stack.pct}%</span>
+                  <span>${stack.count}</span>
+                </div>
+              </div>
+            `;
+            })
+            .join("");
+          qsa("[data-tab-count=game-stacks]").forEach((el) => (el.textContent = `(${derived.stacks.gameStacks.length})`));
+        }
+        if (elements.sidebarTeamStacks) {
+          elements.sidebarTeamStacks.innerHTML = derived.stacks.teamStacks
+            .map((stack) => {
+              return `
+              <div class="stack-row">
+                <div class="stack-left">
+                  <span class="funnel-icon"></span>
+                  <div class="stack-players">
+                    <span>${stack.label}</span>
+                    <span>${stack.names.join(" + ")}</span>
+                  </div>
+                </div>
+                <div class="stack-right">
+                  <div class="stack-bar"><span></span></div>
+                  <span>${stack.pct}%</span>
+                  <span>${stack.count}</span>
+                </div>
+              </div>
+            `;
+            })
+            .join("");
+          qsa("[data-tab-count=team-stacks]").forEach((el) => (el.textContent = `(${derived.stacks.teamStacks.length})`));
+        }
+      };
+
+      const renderAll = () => {
+        computeDerived();
+        renderToolbarControls();
+        renderControls();
+        renderGames();
+        renderPlayerRows();
+        renderBuilder();
+        renderLineups();
+        renderSidebarPlayers();
+        renderStacks();
+        renderSettings();
+        updateAdvancedCount();
+      };
+
+      const commit = (mutate) => {
+        mutate();
+        renderAll();
+      };
+
+      const actions = {
+        selectWeek: (value) =>
+          commit(() => {
+            state.weekValue = value || "";
+          }),
+        selectSiteGameType: (value) =>
+          commit(() => {
+            state.siteValue = value || "";
+          }),
+        selectSlate: (key) =>
+          commit(() => {
+            state.selectedKey = key || "";
+          }),
+        selectAllTeams: () =>
+          commit(() => {
+            derived.teams.forEach((team) => state.teamInclude.set(team, true));
+          }),
+        deselectAllTeams: () =>
+          commit(() => {
+            derived.teams.forEach((team) => state.teamInclude.set(team, false));
+          }),
+        toggleTeam: (team) =>
+          commit(() => {
+            if (!team) return;
+            state.teamInclude.set(team, !state.teamInclude.get(team));
+          }),
+        togglePlayerInclude: (playerId) =>
+          commit(() => {
+            if (state.includePlayers.has(playerId)) {
+              state.includePlayers.delete(playerId);
+            } else {
+              state.includePlayers.add(playerId);
+            }
+          }),
+        togglePlayerLock: (playerId) =>
+          commit(() => {
+            if (state.lockedPlayers.has(playerId)) {
+              state.lockedPlayers.delete(playerId);
+            } else {
+              state.lockedPlayers.add(playerId);
+              state.includePlayers.add(playerId);
+            }
+          }),
+        togglePlayerKey: (playerId) =>
+          commit(() => {
+            if (state.keyPlayers.has(playerId)) {
+              state.keyPlayers.delete(playerId);
+            } else {
+              state.keyPlayers.add(playerId);
+              state.includePlayers.add(playerId);
+            }
+          }),
+        setPlayerBoost: (playerId, value) =>
+          commit(() => {
+            state.boost.set(playerId, value);
+          }),
+        setPlayerMinExposure: (playerId, value) =>
+          commit(() => {
+            state.minExposure.set(playerId, clampPercent(value, 0));
+          }),
+        setPlayerMaxExposure: (playerId, value) =>
+          commit(() => {
+            state.maxExposure.set(playerId, clampPercent(value, 100));
+          }),
+        setPositionFilter: (pos) =>
+          commit(() => {
+            state.positionFilter = pos || "ALL";
+          }),
+        setSearch: (value) =>
+          commit(() => {
+            state.search = value || "";
+          }),
+        toggleHideUnder: () =>
+          commit(() => {
+            state.hideUnderEnabled = !state.hideUnderEnabled;
+          }),
+        setHideUnderValue: (value) =>
+          commit(() => {
+            state.hideUnder = Number(value) || 0;
+          }),
+        toggleSetting: (id) =>
+          commit(() => {
+            if (!id) return;
+            state.settings[id] = !state.settings[id];
+          }),
+        toggleExcludeLockedGames: () =>
+          commit(() => {
+            state.excludeLockedGames = !state.excludeLockedGames;
+          }),
+        setAdvancedField: (key, value) =>
+          commit(() => {
+            if (!key) return;
+            state.advanced[key] = Number(value) || 0;
+          }),
+        setProjectionMode: (value) =>
+          commit(() => {
+            state.projectionMode = value || "default";
+          }),
+        setVarianceMode: (value) =>
+          commit(() => {
+            state.varianceMode = value || "default";
+          }),
+        setPoolScope: (value) =>
+          commit(() => {
+            state.poolScope = value || "all";
+          }),
+        resetColumns: () =>
+          commit(() => {
+            state.boost.clear();
+            state.minExposure.clear();
+            state.maxExposure.clear();
+          }),
+        setOptimizeBy: (value) =>
+          commit(() => {
+            state.optimizeBy = value || "projection";
+          }),
+        setLineupCount: (value) =>
+          commit(() => {
+            state.lineupCount = Math.max(1, Number(value) || 1);
+          }),
+        setResultsLineups: (value) =>
+          commit(() => {
+            state.resultsLineups = Math.max(1, Number(value) || 1);
+          }),
+        setResultsSort: (value) =>
+          commit(() => {
+            state.resultsSort = value || "projection";
+          }),
+        setResultsOwnMode: (value) =>
+          commit(() => {
+            state.ownMode = value || "sum";
+          }),
+        toggleResultsFilterTag: () =>
+          commit(() => {
+            const tags = [...new Set(state.results.map((lineup) => state.resultTags.get(lineup.id)).filter(Boolean))];
+            if (!tags.length) {
+              state.activeTag = null;
+            } else {
+              const currentIndex = state.activeTag ? tags.indexOf(state.activeTag) : -1;
+              const nextIndex = (currentIndex + 1) % (tags.length + 1);
+              state.activeTag = nextIndex === tags.length ? null : tags[nextIndex];
+            }
+          }),
+        selectAllResults: () =>
+          commit(() => {
+            derived.resultsVisible.forEach((lineup) => state.selectedLineups.add(lineup.id));
+          }),
+        selectNoResults: () =>
+          commit(() => {
+            state.selectedLineups.clear();
+          }),
+        toggleSelectLineup: (id) =>
+          commit(() => {
+            if (state.selectedLineups.has(id)) {
+              state.selectedLineups.delete(id);
+            } else {
+              state.selectedLineups.add(id);
+            }
+          }),
+        deleteSelectedResults: () =>
+          commit(() => {
+            state.results = state.results.filter((lineup) => !state.selectedLineups.has(lineup.id));
+            state.selectedLineups.clear();
+            state.resultTags = new Map(
+              [...state.resultTags.entries()].filter(([id]) => state.results.some((lineup) => lineup.id === id))
+            );
+            state.activeTag = null;
+          }),
+        tagSelectedResults: () =>
+          commit(() => {
+            const tag = prompt("Tag selected lineups:");
+            if (!tag) return;
+            state.selectedLineups.forEach((id) => state.resultTags.set(id, tag));
+          }),
+        deleteLineup: (id) =>
+          commit(() => {
+            state.results = state.results.filter((lineup) => lineup.id !== id);
+            state.selectedLineups.delete(id);
+            state.resultTags.delete(id);
+          }),
+        tagLineup: (id) =>
+          commit(() => {
+            const tag = prompt("Tag lineup:");
+            if (!tag) return;
+            state.resultTags.set(id, tag);
+          }),
+        setSidebarPanel: (panel) =>
+          commit(() => {
+            state.activeSidebarPanel = panel || state.activeSidebarPanel;
+          }),
+        setTopTab: (tab) =>
+          commit(() => {
+            state.activeTopTab = tab || state.activeTopTab;
+          }),
+        setSidebarSearch: (value) =>
+          commit(() => {
+            state.sidebarSearch = value || "";
+          }),
+        setSidebarFlex: (checked) =>
+          commit(() => {
+            state.sidebarFlex = Boolean(checked);
+          }),
+        clearBuilder: () =>
+          commit(() => {
+            state.lockedPlayers.clear();
+            state.keyPlayers.clear();
+            state.boost.clear();
+          }),
+        saveBuilder: () =>
+          commit(() => {
+            safeStorageSet(
+              "classic-optimizer-builder",
+              JSON.stringify({
+                locked: [...state.lockedPlayers],
+                include: [...state.includePlayers],
+                settings: state.settings,
+                tag: state.builderTag || "",
+                savedAt: Date.now(),
+              })
+            );
+          }),
+        tagBuilder: () =>
+          commit(() => {
+            const tag = prompt("Tag this build:");
+            if (!tag) return;
+            state.builderTag = tag;
+            safeStorageSet("classic-optimizer-builder-tag", tag);
+            safeStorageSet(
+              "classic-optimizer-builder",
+              JSON.stringify({
+                locked: [...state.lockedPlayers],
+                include: [...state.includePlayers],
+                settings: state.settings,
+                tag,
+                savedAt: Date.now(),
+              })
+            );
+          }),
+        clearResults: () =>
+          commit(() => {
+            state.results = [];
+            state.resultTags.clear();
+            state.selectedLineups.clear();
+            state.activeTag = null;
+            state.statusMessage = "";
+          }),
+        saveResults: () =>
+          commit(() => {
+            safeStorageSet(
+              "classic-optimizer-results",
+              JSON.stringify({
+                results: state.results,
+                resultTags: Object.fromEntries(state.resultTags.entries()),
+                savedAt: Date.now(),
+              })
+            );
+          }),
+        downloadResults: () =>
+          commit(() => {
+            const blob = new Blob([JSON.stringify(state.results, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "optimizer-lineups.json";
+            link.click();
+            URL.revokeObjectURL(url);
+          }),
+        copyResults: async () => {
+          const text = derived.resultsVisible
+            .map((lineup, index) => `#${index + 1}: ${lineup.players.map((p) => p.name).join(", ")}`)
+            .join("\n");
+          await navigator.clipboard.writeText(text);
+        },
+        jumpToResult: () => {
+          const index = Math.max(1, Number(elements.resultsJump?.value || 1));
+          const cards = elements.lineupsGrid?.querySelectorAll(".lineup-card");
+          const card = cards ? cards[index - 1] : null;
+          card?.scrollIntoView({ behavior: "smooth", block: "center" });
+        },
+        runOptimizer: async () => {
+          try {
+            const payload = buildOptimizerPayload(state.lineupCount);
+            if (!payload || !payload.players.length) {
+              commit(() => {
+                state.statusMessage = "No players available in the current pool.";
+              });
+              return;
+            }
+            const response = await fetch("/api/optimizer/run", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+            if (!response.ok) {
+              const err = await response.json().catch(() => ({}));
+              commit(() => {
+                state.statusMessage = err.message || "Unable to run optimizer.";
+              });
+              return;
+            }
+            const payloadData = await response.json();
+            const lineups = (payloadData.lineups || []).map((lineup, index) => ({
+              id: `${Date.now()}-${index}-${Math.random().toString(36).slice(2, 7)}`,
+              ...lineup,
+            }));
+            const filtered = filterLineupsByExposure(lineups, state.minExposure, state.maxExposure);
+            commit(() => {
+              state.results = filtered;
+              state.selectedLineups.clear();
+              state.statusMessage = "";
+            });
+          } catch (error) {
+            commit(() => {
+              state.statusMessage = error?.message || "Optimizer failed.";
+            });
+          }
+        },
+        addMoreLineups: async () => {
+          try {
+            const payload = buildOptimizerPayload(state.resultsLineups);
+            if (!payload || !payload.players.length) {
+              commit(() => {
+                state.statusMessage = "No players available in the current pool.";
+              });
+              return;
+            }
+            const response = await fetch("/api/optimizer/run", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+            if (!response.ok) {
+              const err = await response.json().catch(() => ({}));
+              commit(() => {
+                state.statusMessage = err.message || "Unable to run optimizer.";
+              });
+              return;
+            }
+            const payloadData = await response.json();
+            const lineups = (payloadData.lineups || []).map((lineup, index) => ({
+              id: `${Date.now()}-${index}-${Math.random().toString(36).slice(2, 7)}`,
+              ...lineup,
+            }));
+            const filtered = filterLineupsByExposure(lineups, state.minExposure, state.maxExposure);
+            commit(() => {
+              state.results = [...state.results, ...filtered];
+              state.statusMessage = "";
+            });
+          } catch (error) {
+            commit(() => {
+              state.statusMessage = error?.message || "Add more failed.";
+            });
+          }
+        },
+        runSimulations: async () => {
+          if (!derived.selectedPack) return;
+          const response = await fetch("/api/simulator/run-sims", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              slate: derived.selectedPack.key,
+              settings: {
+                lineupCount: state.resultsLineups,
+              },
+            }),
+          });
+          if (!response.ok) {
+            const err = await response.json().catch(() => ({}));
+            alert(err.error || "Simulation failed.");
+            return;
+          }
+          const payload = await response.json();
+          commit(() => {
+            state.simResults = payload.results || null;
+            safeStorageSet("classic-optimizer-sim-results", JSON.stringify(payload.results || {}));
+          });
+          alert(`Simulation complete: ${payload.results?.lineups?.length || 0} lineups.`);
+        },
+      };
+
+      const bindEvents = () => {
+        elements.week?.addEventListener("change", (event) => actions.selectWeek(event.target.value));
+        elements.site?.addEventListener("change", (event) => actions.selectSiteGameType(event.target.value));
+        elements.slate?.addEventListener("change", (event) => actions.selectSlate(event.target.value));
+
+        elements.gamesStrip?.addEventListener("click", (event) => {
+          const row = event.target.closest("[data-team]");
+          if (!row || !elements.gamesStrip.contains(row)) return;
+          event.preventDefault();
+          event.stopPropagation();
+          actions.toggleTeam(row.getAttribute("data-team"));
+        });
+
+        elements.gamesStrip?.addEventListener("keydown", (event) => {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          const row = event.target.closest("[data-team]");
+          if (!row || !elements.gamesStrip.contains(row)) return;
+          event.preventDefault();
+          event.stopPropagation();
+          actions.toggleTeam(row.getAttribute("data-team"));
+        });
+
+        elements.playerRows?.addEventListener("click", (event) => {
+          const row = event.target.closest("tr[data-player-id]");
+          if (!row || !elements.playerRows.contains(row)) return;
+          const playerId = row.getAttribute("data-player-id");
+          if (!playerId) return;
+          if (event.target.closest(".fake-check")) {
+            actions.togglePlayerInclude(playerId);
+            return;
+          }
+          if (event.target.closest("[data-action=lock]")) {
+            actions.togglePlayerLock(playerId);
+            return;
+          }
+          if (event.target.closest("[data-action=key]")) {
+            actions.togglePlayerKey(playerId);
+            return;
+          }
+          if (event.target.closest("[data-action=boost-up]")) {
+            actions.setPlayerBoost(playerId, 1);
+            return;
+          }
+          if (event.target.closest("[data-action=boost-down]")) {
+            actions.setPlayerBoost(playerId, -1);
+            return;
+          }
+          if (event.target.closest("[data-action=boost-zero]")) {
+            actions.setPlayerBoost(playerId, 0);
+          }
+        });
+
+        elements.playerRows?.addEventListener("change", (event) => {
+          const row = event.target.closest("tr[data-player-id]");
+          if (!row || !elements.playerRows.contains(row)) return;
+          const playerId = row.getAttribute("data-player-id");
+          if (!playerId) return;
+          if (event.target.closest("[data-action=min-exposure]")) {
+            actions.setPlayerMinExposure(playerId, Number(event.target.value));
+          }
+          if (event.target.closest("[data-action=max-exposure]")) {
+            actions.setPlayerMaxExposure(playerId, Number(event.target.value));
+          }
+        });
+
+        elements.lineupsGrid?.addEventListener("click", (event) => {
+          const card = event.target.closest(".lineup-card");
+          if (!card || !elements.lineupsGrid.contains(card)) return;
+          const id = card.getAttribute("data-lineup-id");
+          if (!id) return;
+          if (event.target.closest("[data-action=lineup-tag]")) {
+            actions.tagLineup(id);
+            return;
+          }
+          if (event.target.closest("[data-action=lineup-delete]")) {
+            actions.deleteLineup(id);
+            return;
+          }
+          actions.toggleSelectLineup(id);
+        });
+
+        elements.sidebarPlayers?.addEventListener("change", (event) => {
+          const row = event.target.closest(".sidebar-player-row");
+          if (!row || !elements.sidebarPlayers.contains(row)) return;
+          const id = row.getAttribute("data-player-id");
+          if (!id) return;
+          if (event.target.closest("[data-action=min-exposure]")) {
+            actions.setPlayerMinExposure(id, Number(event.target.value));
+          }
+          if (event.target.closest("[data-action=max-exposure]")) {
+            actions.setPlayerMaxExposure(id, Number(event.target.value));
+          }
+        });
+
+        elements.gamesLinks.forEach((button) => {
+          button.addEventListener("click", () => {
+            const action = button.getAttribute("data-games-action");
+            if (action === "all") actions.selectAllTeams();
+            if (action === "none") actions.deselectAllTeams();
+          });
+        });
+
+        elements.posTabs.forEach((button) => {
+          button.addEventListener("click", () => {
+            const pos = button.getAttribute("data-pos-tab") || "ALL";
+            actions.setPositionFilter(pos);
+          });
+        });
+
+        elements.search?.addEventListener("input", (event) => actions.setSearch(event.target.value));
+        elements.hideUnder?.addEventListener("input", (event) => actions.setHideUnderValue(event.target.value));
+        elements.hideUnderWrap?.addEventListener("click", (event) => {
+          if (event.target.closest("input")) return;
+          actions.toggleHideUnder();
+        });
+        elements.projections?.addEventListener("change", (event) => actions.setProjectionMode(event.target.value));
+        elements.variance?.addEventListener("change", (event) => actions.setVarianceMode(event.target.value));
+        elements.poolScope?.addEventListener("change", (event) => actions.setPoolScope(event.target.value));
+        elements.resetColumns?.addEventListener("click", () => actions.resetColumns());
+
+        elements.settingsItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            const id = item.getAttribute("data-setting-id");
+            actions.toggleSetting(id);
+          });
+        });
+
+        elements.excludeLockedWrap?.addEventListener("click", () => actions.toggleExcludeLockedGames());
+
+        elements.advancedOpen.forEach((button) => {
+          button.addEventListener("click", () => {
+            if (!elements.advancedPanel) return;
+            elements.advancedPanel.classList.toggle("open");
+          });
+        });
+
+        elements.advancedFields.forEach((field) => {
+          field.addEventListener("change", (event) => {
+            const key = field.getAttribute("data-advanced");
+            actions.setAdvancedField(key, event.target.value);
+          });
+        });
+
+        elements.optimizeBy.forEach((select) => {
+          select.addEventListener("change", (event) => actions.setOptimizeBy(event.target.value));
+        });
+
+        elements.lineupCount.forEach((input) => {
+          input.addEventListener("change", (event) => actions.setLineupCount(event.target.value));
+        });
+
+        elements.resultsLineups?.addEventListener("change", (event) => actions.setResultsLineups(event.target.value));
+        elements.optimizeButtons.forEach((button) => button.addEventListener("click", () => actions.runOptimizer()));
+        qsa("[data-action=results-add-more]").forEach((button) => button.addEventListener("click", () => actions.addMoreLineups()));
+        qsa("[data-action=results-simulate]").forEach((button) => button.addEventListener("click", () => actions.runSimulations()));
+        qsa("[data-action=results-clear]").forEach((button) => button.addEventListener("click", () => actions.clearResults()));
+        qsa("[data-action=results-save]").forEach((button) => button.addEventListener("click", () => actions.saveResults()));
+        qsa("[data-action=results-download]").forEach((button) => button.addEventListener("click", () => actions.downloadResults()));
+        qsa("[data-action=results-copy]").forEach((button) => button.addEventListener("click", () => actions.copyResults()));
+        qsa("[data-action=results-delete]").forEach((button) => button.addEventListener("click", () => actions.deleteSelectedResults()));
+        qsa("[data-action=results-tag]").forEach((button) => button.addEventListener("click", () => actions.tagSelectedResults()));
+        qsa("[data-action=results-select-all]").forEach((button) =>
+          button.addEventListener("click", () => actions.selectAllResults())
+        );
+        qsa("[data-action=results-select-none]").forEach((button) =>
+          button.addEventListener("click", () => actions.selectNoResults())
+        );
+        qsa("[data-action=results-jump]").forEach((button) => button.addEventListener("click", () => actions.jumpToResult()));
+        elements.resultsFilterTag?.addEventListener("click", () => actions.toggleResultsFilterTag());
+        elements.resultsSort?.addEventListener("change", (event) => actions.setResultsSort(event.target.value));
+        elements.resultsOwnMode?.addEventListener("change", (event) => actions.setResultsOwnMode(event.target.value));
+
+        elements.sidebarSearch?.addEventListener("input", (event) => actions.setSidebarSearch(event.target.value));
+        elements.sidebarFlex?.addEventListener("change", (event) => actions.setSidebarFlex(event.target.checked));
+
+        elements.sidebarTabs.forEach((button) => {
+          button.addEventListener("click", () => actions.setSidebarPanel(button.getAttribute("data-panel")));
+        });
+
+        elements.topTabs.forEach((button) => {
+          button.addEventListener("click", () => actions.setTopTab(button.getAttribute("data-top-tab")));
+        });
+
+        elements.builderActions.forEach((button) => {
+          const action = button.getAttribute("data-action");
+          if (action === "builder-save") button.addEventListener("click", () => actions.saveBuilder());
+          if (action === "builder-clear") button.addEventListener("click", () => actions.clearBuilder());
+          if (action === "builder-tag") button.addEventListener("click", () => actions.tagBuilder());
+        });
+      };
+
+      const init = () => {
+        const sidebarActive = elements.sidebarTabs.find((tab) => tab.classList.contains("active"));
+        const topActive = elements.topTabs.find((tab) => tab.classList.contains("active"));
+        state.activeSidebarPanel = sidebarActive?.getAttribute("data-panel") || state.activeSidebarPanel;
+        state.activeTopTab = topActive?.getAttribute("data-top-tab") || state.activeTopTab;
+        state.resultsSort = elements.resultsSort?.value || state.resultsSort;
+        state.ownMode = elements.resultsOwnMode?.value || state.ownMode;
+        state.sidebarSearch = elements.sidebarSearch?.value || "";
+        state.sidebarFlex = Boolean(elements.sidebarFlex?.checked);
+
+        bindEvents();
+        renderAll();
+      };
+
+      return {
+        init,
+        actions,
+      };
+    })();
+
+    try {
+      controller.init();
+    } catch (error) {
+      console.error("[optimizer-init-failed]", error);
+      const statusEl = document.querySelector("[data-results-status]");
+      if (statusEl) {
+        statusEl.textContent = `• ${error?.message || "Optimizer failed to initialize."}`;
+        statusEl.style.display = "";
+      }
+      const poolStatusEl = document.querySelector("[data-pool-status]");
+      if (poolStatusEl) {
+        poolStatusEl.textContent = `• ${error?.message || "Optimizer failed to initialize."}`;
+        poolStatusEl.style.display = "";
+      }
+    }
+  </script>
+</Layout>
+
+<style>
+
+  :global(body) {
+    background: #020816;
+  }
+
+  .optimizer-page {
+    background:
+      linear-gradient(180deg, rgba(6, 16, 36, 0.9) 0%, rgba(3, 10, 24, 0.98) 100%),
+      #020816;
+    color: #dbe5f4;
+  }
+
+  .optimizer-shell {
+    width: 100%;
+    min-height: calc(100vh - 72px);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background:
+      radial-gradient(circle at top center, rgba(46, 110, 220, 0.14), transparent 28%),
+      linear-gradient(180deg, #041126 0%, #02101f 100%);
+  }
+
+  .optimizer-topbar {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 10px;
+    padding: 8px 10px 6px;
+    background: linear-gradient(180deg, #102542 0%, #0b1d36 100%);
+    border-bottom: 1px solid rgba(117, 153, 212, 0.18);
+  }
+
+  .optimizer-brand {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #edf4ff;
+    white-space: nowrap;
+    padding: 0 2px 10px 2px;
+  }
+
+  .optimizer-toolbar {
+    display: grid;
+    grid-template-columns: 1.1fr 1.15fr 1.5fr 0.75fr;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .toolbar-field,
+  .mini-field,
+  .results-compact-field,
+  .builder-select,
+  .builder-input {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .toolbar-field span,
+  .mini-field span,
+  .results-compact-field span,
+  .builder-select span,
+  .builder-input span {
+    font-size: 0.72rem;
+    color: #93a7c8;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .toolbar-field select,
+  .mini-field select,
+  .results-compact-field select,
+  .builder-select select,
+  .footer-select select,
+  .results-compact-field input,
+  .builder-input input,
+  .toolbar-field input,
+  .under-proj-toggle input,
+  .search-wrap input,
+  .sidebar-search-row input,
+  .sidebar-player-controls input {
+    appearance: none;
+    border: 1px solid rgba(129, 163, 220, 0.22);
+    background: linear-gradient(180deg, #10213d 0%, #0d1a31 100%);
+    color: #edf3ff;
+    border-radius: 4px;
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 0.95rem;
+    outline: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  }
+
+  .toolbar-select {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 38px;
+    overflow: hidden;
+  }
+
+  .site-select-control {
+    min-height: 38px;
+    padding-left: 36px !important;
+  }
+
+  .site-select-logo {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    max-width: 16px;
+    max-height: 16px;
+    object-fit: contain;
+    transform: translateY(-50%);
+    display: block;
+    flex: 0 0 auto;
+    pointer-events: none;
+  }
+
+  .toolbar-field select:focus,
+  .mini-field select:focus,
+  .results-compact-field select:focus,
+  .builder-select select:focus,
+  .builder-input input:focus,
+  .search-wrap input:focus,
+  .sidebar-search-row input:focus,
+  .sidebar-player-controls input:focus {
+    border-color: rgba(83, 145, 255, 0.5);
+  }
+
+  .optimizer-tabs {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    min-height: 44px;
+  }
+
+  .top-tab {
+    border: 0;
+    border-left: 1px solid rgba(124, 154, 205, 0.12);
+    background: transparent;
+    color: #2f8cff;
+    padding: 0 14px;
+    font-size: 0.96rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .top-tab.active {
+    background: rgba(7, 18, 36, 0.78);
+    color: #e8f1ff;
+    box-shadow: inset 0 -1px 0 rgba(79, 132, 227, 0.28);
+  }
+
+  .optimizer-games-row {
+    display: grid;
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 10px;
+    align-items: stretch;
+    padding: 8px 10px;
+    background: linear-gradient(180deg, rgba(4, 19, 40, 0.96), rgba(2, 16, 33, 0.96));
+    border-bottom: 1px solid rgba(101, 131, 178, 0.12);
+  }
+
+  .games-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 8px 0;
+    color: #94a9c9;
+    font-size: 0.9rem;
+  }
+
+  .games-link {
+    border: 0;
+    background: transparent;
+    color: #2f8cff;
+    text-align: left;
+    padding: 0;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .games-link.active {
+    color: #eef4ff;
+    font-weight: 800;
+  }
+
+  .games-strip {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-width: 0;
+    padding-right: 2px;
+    scrollbar-width: none;
+  }
+
+  .games-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  .game-chip {
+    cursor: pointer;
+  }
+
+  .inputs-slate-card {
+    display: grid;
+    gap: 2px;
+    width: 140px;
+    min-width: 140px;
+    max-width: 140px;
+    flex: 0 0 140px;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 8px;
+    border: 0;
+    background:
+      radial-gradient(circle at 78% 42%, rgba(58, 116, 255, 0.1), transparent 58%),
+      linear-gradient(180deg, rgba(13, 20, 38, 0.96) 0%, rgba(7, 10, 18, 0.98) 100%);
+    box-sizing: border-box;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
+    transition:
+      transform 140ms ease,
+      background 140ms ease,
+      box-shadow 140ms ease;
+  }
+
+  .inputs-slate-card:hover,
+  .inputs-slate-card:focus-visible {
+    outline: none;
+    transform: translateY(-1px);
+    background:
+      radial-gradient(circle at 78% 42%, rgba(58, 116, 255, 0.12), transparent 58%),
+      linear-gradient(180deg, rgba(15, 24, 45, 0.96) 0%, rgba(8, 12, 20, 0.98) 100%);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
+  }
+
+  .inputs-slate-card-rows {
+    display: grid;
+    gap: 6px;
+  }
+
+  .inputs-slate-team-row {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr) auto;
+    gap: 6px;
+    align-items: center;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      opacity 140ms ease,
+      color 140ms ease,
+      background 140ms ease,
+      box-shadow 140ms ease;
+    padding: 4px 6px;
+    border-radius: 6px;
+  }
+
+  .inputs-slate-team-row.is-selected {
+    opacity: 1;
+    background: rgba(47, 140, 255, 0.18);
+    box-shadow: inset 0 0 0 1px rgba(47, 140, 255, 0.55);
+  }
+
+  .inputs-slate-team-row.team-excluded {
+    opacity: 0.2;
+    filter: grayscale(1);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .inputs-slate-logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+  }
+
+  .inputs-slate-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .inputs-slate-logo-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.42rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.72);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .inputs-slate-team-code {
+    font-size: 0.81rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.94);
+    text-transform: uppercase;
+    min-width: 0;
+  }
+
+  .inputs-slate-team-total {
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.66);
+    text-align: right;
+  }
+
+  .inputs-slate-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    padding-top: 7px;
+    font-size: 0.69rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.58);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .optimizer-workspace {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+  }
+
+  .optimizer-upper {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(360px, 0.9fr);
+    gap: 10px;
+    padding: 0 8px 10px;
+    min-height: 0;
+  }
+
+  .pool-panel,
+  .optimizer-settings-card,
+  .builder-card,
+  .optimizer-results-shell,
+  .results-sidebar,
+  .lineup-card {
+    background: linear-gradient(180deg, rgba(5, 22, 44, 0.98) 0%, rgba(5, 20, 39, 0.98) 100%);
+    border: 1px solid rgba(113, 148, 208, 0.11);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.018);
+  }
+
+  .pool-panel {
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .pool-top {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 10px 10px 0;
+    background: linear-gradient(180deg, rgba(7, 24, 47, 0.98), rgba(6, 22, 43, 0.98));
+  }
+
+  .pool-pos-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(116, 148, 202, 0.09);
+  }
+
+  .pool-pos-tab {
+    border: 0;
+    background: transparent;
+    color: #f2f7ff;
+    font-size: 0.98rem;
+    font-weight: 700;
+    min-width: 56px;
+    height: 42px;
+    padding: 0 14px;
+    cursor: pointer;
+  }
+
+  .pool-pos-tab.active {
+    background: #2b7bf0;
+    color: #fff;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  }
+
+  .pool-controls {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    gap: 10px;
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .mini-field select {
+    min-width: 140px;
+  }
+
+  .reset-button,
+  .advanced-btn,
+  .solid-blue,
+  .outline-green,
+  .outline-blue,
+  .outline-red,
+  .outline-muted,
+  .primary-btn,
+  .ghost-btn,
+  .go-bubble {
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.18s ease;
+  }
+
+  .reset-button {
+    height: 40px;
+    padding: 0 18px;
+    border: 1px solid rgba(68, 138, 255, 0.4);
+    background: #2e7ff0;
+    color: #fff;
+  }
+
+  .search-wrap input {
+    min-width: 220px;
+  }
+
+  .pool-table-wrap {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding: 0 0 2px;
+  }
+
+  .pool-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1500px;
+  }
+
+  .pool-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #132645;
+    color: #9dafc9;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 10px 8px;
+    border-bottom: 1px solid rgba(110, 142, 196, 0.14);
+    white-space: nowrap;
+  }
+
+  .pool-table tbody td {
+    padding: 11px 8px;
+    border-bottom: 1px solid rgba(103, 132, 181, 0.09);
+    color: #d9e3f4;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .pool-table tbody tr:hover td {
+    background: rgba(36, 73, 126, 0.18);
+  }
+
+  .check-col {
+    width: 34px;
+    text-align: center;
+  }
+
+  .icon-col {
+    width: 44px;
+  }
+
+  .name-col {
+    min-width: 255px;
+  }
+
+  .fake-check,
+  .blue-check {
+    display: inline-flex;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 0 2px rgba(86, 112, 155, 0.4);
+  }
+
+  .blue-check.checked {
+    background: #2f8cff;
+    box-shadow: inset 0 0 0 2px rgba(6, 19, 40, 0.6);
+  }
+
+  .tiny-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: #6a7f9f;
+  }
+
+  .tiny-lock,
+  .tiny-key {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 999px;
+    background: rgba(146, 166, 199, 0.22);
+  }
+
+  .player-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .pos-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 22px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(118, 149, 201, 0.12);
+    color: #f2f7ff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+  }
+
+  .team-dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 22px;
+    border-radius: 999px;
+    background: rgba(34, 77, 141, 0.34);
+    color: #cfe0ff;
+    font-size: 0.74rem;
+    font-weight: 800;
+  }
+
+  .player-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .boost-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6f829f;
+  }
+
+  .boost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 900;
+  }
+
+  .boost.up {
+    background: rgba(30, 158, 90, 0.22);
+    color: #29d27f;
+  }
+
+  .boost.down {
+    background: rgba(167, 43, 90, 0.18);
+    color: #cb4f8d;
+  }
+
+  .boost-zero {
+    font-size: 0.82rem;
+    color: #617492;
+  }
+
+  .player-row.is-locked td {
+    background: rgba(47, 140, 255, 0.08);
+  }
+
+  .player-row.is-keyed td {
+    background: rgba(65, 230, 135, 0.08);
+  }
+
+  .player-row.boost-up td {
+    box-shadow: inset 3px 0 0 rgba(41, 210, 127, 0.75);
+  }
+
+  .player-row.boost-down td {
+    box-shadow: inset 3px 0 0 rgba(203, 79, 141, 0.75);
+  }
+
+  .pool-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid rgba(117, 149, 204, 0.08);
+    background: rgba(7, 21, 41, 0.9);
+  }
+
+  .pool-footer-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .footer-select select {
+    min-width: 150px;
+    min-height: 38px;
+  }
+
+  .under-proj-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #a8b8d3;
+    font-size: 0.94rem;
+  }
+
+  .under-proj-toggle.active {
+    color: #eef4ff;
+  }
+
+  .under-proj-toggle input {
+    width: 68px;
+    min-height: 38px;
+    padding: 0 10px;
+  }
+
+  .pool-footer-right {
+    color: #9fafca;
+    font-size: 0.94rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pool-status {
+    font-size: 0.82rem;
+    color: #7f94b6;
+  }
+
+  .settings-builder-panel {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+
+  .optimizer-settings-card {
+    padding: 14px 16px;
+  }
+
+  .settings-head {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+    align-items: start;
+    margin-bottom: 14px;
+  }
+
+  .settings-head h2,
+  .builder-head h2 {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1;
+    color: #edf4ff;
+    font-weight: 800;
+  }
+
+  .exclude-toggle {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    color: #dce7f8;
+  }
+
+  .toggle-pill {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    border-radius: 999px;
+    background: #d8dde6;
+  }
+
+  .toggle-pill.active {
+    background: #2f8cff;
+    box-shadow: inset 0 0 0 2px rgba(6, 19, 40, 0.6);
+  }
+
+  .exclude-toggle strong {
+    display: block;
+    font-size: 0.98rem;
+  }
+
+  .exclude-toggle.active strong {
+    color: #eef4ff;
+  }
+
+  .exclude-toggle small {
+    display: block;
+    color: #6d83a5;
+    font-size: 0.82rem;
+    margin-top: 2px;
+  }
+
+  .advanced-btn {
+    min-height: 42px;
+    padding: 0 16px;
+    border: 1px solid rgba(65, 230, 135, 0.65);
+    background: rgba(8, 28, 28, 0.65);
+    color: #41dd84;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .advanced-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    padding: 0 7px;
+    background: rgba(65, 230, 135, 0.2);
+    color: #4ef694;
+    font-size: 0.88rem;
+  }
+
+  .arrow {
+    font-size: 1rem;
+  }
+
+  .settings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 24px;
+  }
+
+  .settings-item {
+    display: flex;
+    gap: 12px;
+    align-items: start;
+    cursor: pointer;
+    min-width: 0;
+    padding: 6px;
+    border-radius: 8px;
+  }
+
+  .settings-item.active {
+    background: rgba(47, 140, 255, 0.12);
+  }
+
+  .settings-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(154, 179, 216, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+    margin-top: 4px;
+    flex: 0 0 auto;
+  }
+
+  .settings-check.checked {
+    background: #3d82ef;
+    border-color: #3d82ef;
+    box-shadow: inset 0 0 0 4px rgba(6, 19, 40, 0.85);
+  }
+
+  .settings-item strong {
+    display: block;
+    color: #dce7f8;
+    font-size: 0.96rem;
+  }
+
+  .settings-item small {
+    display: block;
+    color: #6d83a5;
+    line-height: 1.25;
+    margin-top: 2px;
+  }
+
+  .builder-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .builder-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: start;
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid rgba(113, 148, 208, 0.1);
+  }
+
+  .builder-summary {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 14px;
+    color: #d7e3f4;
+    font-size: 0.98rem;
+  }
+
+  .builder-status {
+    font-size: 0.9rem;
+    color: #ff7b95;
+    font-weight: 600;
+  }
+
+  .builder-slots {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: repeat(9, minmax(36px, 1fr));
+  }
+
+  .builder-slot {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(110, 141, 192, 0.1);
+  }
+
+  .slot-label {
+    color: #aab9d2;
+    font-size: 1.12rem;
+    letter-spacing: 0.02em;
+  }
+
+  .slot-fill {
+    min-height: 28px;
+  }
+
+  .builder-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(11, 28, 52, 0.95);
+    border-top: 1px solid rgba(109, 143, 198, 0.1);
+    flex-wrap: wrap;
+  }
+
+  .builder-action-left,
+  .builder-action-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .ghost-btn {
+    height: 38px;
+    padding: 0 14px;
+    border: 1px solid rgba(113, 148, 208, 0.22);
+    background: rgba(255, 255, 255, 0.02);
+    color: #dbe6f7;
+  }
+
+  .ghost-btn.save {
+    color: #34dd80;
+  }
+
+  .ghost-btn.clear {
+    color: #ff5a76;
+  }
+
+  .ghost-btn.tag {
+    color: #54a1ff;
+  }
+
+  .builder-input input {
+    width: 84px;
+  }
+
+  .primary-btn {
+    height: 42px;
+    padding: 0 20px;
+    border: 1px solid rgba(76, 138, 255, 0.42);
+    background: #3a84ef;
+    color: #fff;
+  }
+
+  .optimizer-results-shell {
+    margin: 0 8px 8px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    background: #132745;
+    border-bottom: 1px solid rgba(111, 144, 198, 0.11);
+  }
+
+  .results-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .results-title-tab {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #eff5ff;
+  }
+
+  .results-count-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 22px;
+    padding: 0 8px;
+    border-radius: 999px;
+    background: #3ed276;
+    color: #081e11;
+    font-size: 0.82rem;
+    font-weight: 900;
+  }
+
+  .results-subtitle {
+    color: #a8bad7;
+    font-weight: 600;
+  }
+
+  .results-x {
+    border: 0;
+    background: transparent;
+    color: #9cb0ce;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+
+  .results-advanced {
+    min-height: 30px;
+    padding: 0 14px;
+  }
+
+  .results-toolbar-row,
+  .results-meta-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+
+  .results-toolbar-row {
+    border-bottom: 1px solid rgba(111, 144, 198, 0.08);
+  }
+
+  .results-toolbar-left,
+  .meta-left,
+  .meta-center,
+  .meta-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .results-compact-field {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .results-compact-field select,
+  .results-compact-field input {
+    min-height: 34px;
+    padding: 0 10px;
+  }
+
+  .results-compact-field.narrow input,
+  .results-compact-field.mini input {
+    width: 68px;
+  }
+
+  .solid-blue,
+  .outline-green,
+  .outline-blue,
+  .outline-red,
+  .outline-muted {
+    height: 38px;
+    padding: 0 14px;
+    background: transparent;
+  }
+
+  .solid-blue {
+    background: #3a84ef;
+    color: #fff;
+    border: 1px solid rgba(78, 144, 255, 0.42);
+  }
+
+  .outline-green {
+    color: #34dd80;
+    border: 1px solid rgba(65, 230, 135, 0.55);
+  }
+
+  .outline-blue {
+    color: #54a1ff;
+    border: 1px solid rgba(84, 161, 255, 0.5);
+  }
+
+  .outline-red {
+    color: #ff5070;
+    border: 1px solid rgba(255, 80, 112, 0.45);
+  }
+
+  .outline-muted {
+    color: #b6c5dc;
+    border: 1px solid rgba(116, 146, 193, 0.24);
+  }
+
+  .meta-left {
+    color: #aab9d2;
+  }
+
+  .results-status {
+    font-size: 0.82rem;
+    color: #7f94b6;
+  }
+
+  .meta-left button {
+    border: 0;
+    background: transparent;
+    color: #2f8cff;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 600;
+  }
+
+  .go-bubble {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: #32d274;
+    color: #062010;
+  }
+
+  .tag-filter-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #aab9d2;
+  }
+
+  .tag-filter-pill button {
+    min-height: 34px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(110, 144, 198, 0.22);
+    background: rgba(255, 255, 255, 0.02);
+    color: #eef5ff;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .sidebar-tabs {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .sidebar-tab {
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    color: #2f8cff;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .sidebar-tab span {
+    color: #7aaeff;
+  }
+
+  .sidebar-tab.active {
+    color: #eef5ff;
+    background: rgba(0, 0, 0, 0.18);
+    box-shadow: inset 0 0 0 1px rgba(110, 144, 198, 0.18);
+  }
+
+  .results-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 10px;
+    padding: 0 10px 10px;
+    min-height: 0;
+    flex: 1;
+  }
+
+  .lineups-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    align-content: start;
+    min-height: 0;
+  }
+
+  .lineup-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 340px;
+  }
+
+  .lineup-card-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 12px 8px;
+    border-bottom: 1px solid rgba(111, 144, 198, 0.1);
+  }
+
+  .lineup-rank-score {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lineup-rank {
+    color: #aab9d2;
+    font-weight: 700;
+  }
+
+  .lineup-score {
+    color: #eff5ff;
+    font-size: 1.15rem;
+    font-weight: 800;
+  }
+
+  .lineup-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    color: #d3def0;
+    font-size: 0.86rem;
+  }
+
+  .lineup-rows {
+    display: grid;
+    grid-template-rows: repeat(9, minmax(0, 1fr));
+    padding: 6px 0;
+    flex: 1;
+  }
+
+  .lineup-row {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(111, 144, 198, 0.08);
+    color: #dbe6f7;
+    font-size: 0.94rem;
+  }
+
+  .lineup-slot {
+    color: #9fb2cf;
+    font-weight: 700;
+  }
+
+  .lineup-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .lineup-game {
+    color: #9db0cc;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .lineup-salary {
+    color: #a8b8d2;
+    white-space: nowrap;
+  }
+
+  .lineup-card-foot {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 12px;
+  }
+
+  .tag-chip,
+  .trash-chip {
+    border: 0;
+    background: transparent;
+    color: #93a8c9;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .lineup-scrollbar {
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+  }
+
+  .results-sidebar {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .sidebar-panel {
+    display: none;
+    min-height: 0;
+    flex: 1;
+    overflow: auto;
+  }
+
+  .sidebar-panel.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-search-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .sidebar-search-row input {
+    flex: 1;
+    min-height: 36px;
+  }
+
+  .sidebar-flex-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #acbdd8;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .sidebar-table-head {
+    display: grid;
+    grid-template-columns: 1fr 56px 56px 56px 56px;
+    gap: 8px;
+    padding: 0 10px 10px;
+    color: #97a9c6;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .sidebar-player-list,
+  .stack-list,
+  .stack-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 10px 10px;
+  }
+
+  .sidebar-player-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid rgba(111, 144, 198, 0.08);
+  }
+
+  .sidebar-player-main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .funnel-icon {
+    width: 10px;
+    height: 10px;
+    background: rgba(135, 156, 190, 0.28);
+    clip-path: polygon(0 0, 100% 0, 65% 45%, 65% 100%, 35% 100%, 35% 45%);
+    flex: 0 0 auto;
+  }
+
+  .player-bullet {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 20px;
+    border-radius: 999px;
+    background: rgba(34, 77, 141, 0.34);
+    color: #d3e3ff;
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+
+  .sidebar-player-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sidebar-player-pos,
+  .sidebar-player-salary {
+    color: #9eb1ce;
+    white-space: nowrap;
+  }
+
+  .sidebar-player-controls {
+    display: grid;
+    grid-template-columns: 48px 48px 44px 44px;
+    gap: 6px;
+    align-items: center;
+    color: #c9d7ec;
+    font-size: 0.88rem;
+    text-align: center;
+  }
+
+  .sidebar-player-controls input {
+    min-height: 30px;
+    padding: 0 6px;
+  }
+
+  .stack-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid rgba(111, 144, 198, 0.08);
+  }
+
+  .stack-left {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .stack-players {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .stack-players span {
+    color: #dce7f8;
+    font-size: 0.92rem;
+    line-height: 1.2;
+  }
+
+  .stack-right {
+    display: grid;
+    grid-template-columns: 34px 44px 28px;
+    gap: 8px;
+    align-items: center;
+    color: #cfe0ff;
+    font-size: 0.88rem;
+    text-align: right;
+  }
+
+  .stack-bar {
+    width: 34px;
+    height: 14px;
+    border-radius: 2px;
+    background: rgba(74, 136, 241, 0.12);
+    overflow: hidden;
+  }
+
+  .stack-bar span {
+    display: block;
+    width: 65%;
+    height: 100%;
+    background: linear-gradient(90deg, #2f7df0 0%, #4d97ff 100%);
+  }
+
+  @media (max-width: 1600px) {
+    .results-content {
+      grid-template-columns: minmax(0, 1fr) 330px;
     }
 
-    .form {
-      margin-top: 16px;
-      max-width: 420px;
+    .lineups-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 1320px) {
+    .optimizer-topbar {
+      grid-template-columns: 1fr;
     }
 
-    .field {
-      margin-bottom: 12px;
+    .optimizer-brand {
+      padding-bottom: 0;
     }
 
-    label {
-      display: block;
-      margin-bottom: 6px;
-      color: #f5f5f5;
-    }
-
-    input {
-      width: 100%;
-      background: #111;
-      color: #f5f5f5;
-      border: 1px solid #333;
-      padding: 8px 10px;
-    }
-
-    button {
-      background: #1b1b1b;
-      color: #f5f5f5;
-      border: 1px solid #333;
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-
-    button:disabled {
-      opacity: 0.7;
-      cursor: default;
-    }
-
-    .status {
-      margin-top: 12px;
-    }
-
-    .results {
-      margin-top: 16px;
-    }
-
-    .panel {
-      border: 1px solid #222;
-      background: #0f0f0f;
-      padding: 12px;
-    }
-
-    .panel-gap {
-      margin-top: 16px;
-    }
-
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-    }
-
-    .summary-label {
-      font-size: 0.85rem;
-      color: #bdbdbd;
-    }
-
-    .summary-value {
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .stack {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .lineup-card {
-      border: 1px solid #222;
-      background: #0c0c0c;
-      padding: 12px;
-    }
-
-    .lineup-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 8px;
-      flex-wrap: wrap;
-    }
-
-    .lineup-title {
-      font-weight: 700;
-    }
-
-    .lineup-meta {
-      color: #c9c9c9;
-      font-size: 0.9rem;
-    }
-
-    .table-wrap {
+    .optimizer-tabs {
       overflow-x: auto;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      color: #f5f5f5;
+    .optimizer-upper,
+    .results-content {
+      grid-template-columns: 1fr;
     }
 
-    th,
-    td {
-      text-align: left;
-      padding: 6px 8px;
-      border-bottom: 1px solid #1f1f1f;
+    .lineups-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 980px) {
+    .optimizer-toolbar {
+      grid-template-columns: 1fr 1fr;
     }
 
-    th {
-      font-weight: 700;
-      color: #d6d6d6;
+    .lineups-grid,
+    .settings-grid {
+      grid-template-columns: 1fr;
     }
 
-    details summary {
-      cursor: pointer;
-      font-weight: 600;
+    .pool-top,
+    .settings-head,
+    .builder-head {
+      grid-template-columns: 1fr;
     }
 
-    .raw-output {
-      margin-top: 8px;
-      padding: 12px;
-      border: 1px solid #333;
-      background: #111;
-      color: #f5f5f5;
-      white-space: pre-wrap;
+    .builder-summary {
+      justify-content: flex-start;
     }
-  </style>
-</Layout>
+  }
+
+  @media (max-width: 720px) {
+    .optimizer-games-row {
+      grid-template-columns: 1fr;
+    }
+
+    .games-rail {
+      flex-direction: row;
+      align-items: center;
+      padding: 0;
+    }
+
+    .optimizer-toolbar {
+      grid-template-columns: 1fr;
+    }
+
+    .lineups-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .results-toolbar-left,
+    .meta-center {
+      align-items: stretch;
+    }
+  }
+
+  .game-chip.excluded { opacity: 0.45; filter: saturate(0.6); }
+  .fake-check.checked { background: #2f8cff; border-color: rgba(47, 140, 255, 0.6); }
+  .tiny-lock.active, .tiny-key.active { background: rgba(47, 140, 255, 0.2); border-color: rgba(47, 140, 255, 0.6); }
+  .boost.active { color: #e8f1ff; }
+  .builder-slot.filled .slot-fill { color: #e8f1ff; }
+  .lineup-card.selected { outline: 1px solid rgba(47, 140, 255, 0.6); box-shadow: 0 0 0 1px rgba(47, 140, 255, 0.2); }
+  .advanced-panel { display: none; margin-top: 12px; padding: 12px; border: 1px solid rgba(117, 153, 212, 0.18); border-radius: 8px; background: rgba(5, 18, 38, 0.9); }
+  .advanced-panel.open { display: block; }
+  .advanced-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+  .advanced-field { display: flex; flex-direction: column; gap: 4px; }
+  .advanced-field span { font-size: 0.72rem; color: #93a7c8; font-weight: 600; letter-spacing: 0.02em; }
+
+
+</style>
