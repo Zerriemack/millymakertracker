@@ -1,7 +1,7 @@
 {
   "slateId": "nfl-2026-week-02-draftkings-classic-main",
   "lineupCount": 300,
-  "fieldSize": 23456,
-  "simulationCount": 1500,
+  "fieldSize": 148400,
+  "simulationCount": 5100,
   "payoutProfile": "topHeavy"
 }

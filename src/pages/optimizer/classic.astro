@@ -17,11 +17,10 @@ const operatorMeta = {
 };
 
 const topTabs = [
-  "Optimizer",
-  "My Lineups",
-  "Sim Results",
-  "Late Swap/Entry Mgr",
-  "My Projections",
+  { id: "optimizer", label: "Optimizer" },
+  { id: "lineups", label: "My Lineups" },
+  { id: "late-swap", label: "Late Swap/Entry Mgr" },
+  { id: "projections", label: "My Projections" },
 ];
 
 const settingsToggles = [
@@ -276,436 +275,610 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
 
         <nav class="optimizer-tabs">
           {topTabs.map((tab, index) => (
-            <button class:list={["top-tab", { active: index === 0 }]} type="button" data-top-tab={index}>
-              {tab}
+            <button class:list={["top-tab", { active: index === 0 }]} type="button" data-top-tab={tab.id}>
+              {tab.label}
             </button>
           ))}
         </nav>
       </header>
 
-      <div class="optimizer-games-row">
-        <div class="games-rail">
-          <span>Games</span>
-          <button type="button" class="games-link active" data-games-action="all">all</button>
-          <button type="button" class="games-link" data-games-action="none">none</button>
-        </div>
+      <div class="optimizer-top-panels">
+        <section class="top-section-panel active" data-top-panel="optimizer">
+          <div class="optimizer-games-row">
+            <div class="games-rail">
+              <span>Games</span>
+              <button type="button" class="games-link active" data-games-action="all">all</button>
+              <button type="button" class="games-link" data-games-action="none">none</button>
+            </div>
 
-        <div class="games-strip" data-games-strip>
-          {initialGames.map((game) => {
-            const totals = impliedTotals(game);
-            return (
-              <article class="game-chip inputs-slate-card" data-game-id={game.id}>
-                <div class="inputs-slate-card-rows">
-                  <div class="inputs-slate-team-row" data-team={game.awayTeam} role="button" tabindex="0">
-                    <span class="inputs-slate-logo">
-                      <img
-                        src={getTeamLogoPath(game.awayTeam)}
-                        alt={`${game.awayTeam} logo`}
-                        loading="lazy"
-                        onload="this.nextElementSibling.style.display='none';"
-                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-                      />
-                      <span class="inputs-slate-logo-fallback">{game.awayTeam}</span>
-                    </span>
-                    <span class="inputs-slate-team-code">{game.awayTeam}</span>
-                    <span class="inputs-slate-team-total">{formatGameTotal(totals.away)}</span>
+            <div class="games-strip" data-games-strip>
+              {initialGames.map((game) => {
+                const totals = impliedTotals(game);
+                return (
+                  <article class="game-chip inputs-slate-card" data-game-id={game.id}>
+                    <div class="inputs-slate-card-rows">
+                      <div class="inputs-slate-team-row" data-team={game.awayTeam} role="button" tabindex="0">
+                        <span class="inputs-slate-logo">
+                          <img
+                            src={getTeamLogoPath(game.awayTeam)}
+                            alt={`${game.awayTeam} logo`}
+                            loading="lazy"
+                            onload="this.nextElementSibling.style.display='none';"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                          />
+                          <span class="inputs-slate-logo-fallback">{game.awayTeam}</span>
+                        </span>
+                        <span class="inputs-slate-team-code">{game.awayTeam}</span>
+                        <span class="inputs-slate-team-total">{formatGameTotal(totals.away)}</span>
+                      </div>
+                      <div class="inputs-slate-team-row" data-team={game.homeTeam} role="button" tabindex="0">
+                        <span class="inputs-slate-logo">
+                          <img
+                            src={getTeamLogoPath(game.homeTeam)}
+                            alt={`${game.homeTeam} logo`}
+                            loading="lazy"
+                            onload="this.nextElementSibling.style.display='none';"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                          />
+                          <span class="inputs-slate-logo-fallback">{game.homeTeam}</span>
+                        </span>
+                        <span class="inputs-slate-team-code">{game.homeTeam}</span>
+                        <span class="inputs-slate-team-total">{formatGameTotal(totals.home)}</span>
+                      </div>
+                    </div>
+                    <div class="inputs-slate-card-meta">
+                      <span>{formatGameDayShort(game)}</span>
+                      <span>{formatGameTimeLabel(game)}</span>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+
+          <div class="optimizer-workspace">
+            <div class="optimizer-upper">
+              <section class="pool-panel">
+                <div class="pool-top">
+                  <div class="pool-pos-tabs">
+                    {[["ALL", "ALL"], ["QB", "QB"], ["RB", "RB"], ["WR", "WR"], ["TE", "TE"], ["FLEX", "FLEX"], ["DST", "DST"]].map(
+                      ([label, value], index) => (
+                        <button
+                          class:list={["pool-pos-tab", { active: index === 0 }]}
+                          type="button"
+                          data-pos-tab={value}
+                        >
+                          {label}
+                        </button>
+                      )
+                    )}
                   </div>
-                  <div class="inputs-slate-team-row" data-team={game.homeTeam} role="button" tabindex="0">
-                    <span class="inputs-slate-logo">
-                      <img
-                        src={getTeamLogoPath(game.homeTeam)}
-                        alt={`${game.homeTeam} logo`}
-                        loading="lazy"
-                        onload="this.nextElementSibling.style.display='none';"
-                        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-                      />
-                      <span class="inputs-slate-logo-fallback">{game.homeTeam}</span>
-                    </span>
-                    <span class="inputs-slate-team-code">{game.homeTeam}</span>
-                    <span class="inputs-slate-team-total">{formatGameTotal(totals.home)}</span>
+
+                  <div class="pool-controls">
+                    <label class="mini-field">
+                      <span>Projections</span>
+                      <select data-control="projections">
+                        <option value="default">Default</option>
+                        <option value="uploaded">Uploaded</option>
+                      </select>
+                    </label>
+
+                    <label class="mini-field">
+                      <span>Variance</span>
+                      <select data-control="variance">
+                        <option value="default">Default</option>
+                      </select>
+                    </label>
+
+                    <button type="button" class="reset-button" data-control="reset-columns">Reset Columns</button>
+
+                    <label class="search-wrap">
+                      <input type="search" placeholder="Search..." data-control="search" />
+                    </label>
                   </div>
                 </div>
-                <div class="inputs-slate-card-meta">
-                  <span>{formatGameDayShort(game)}</span>
-                  <span>{formatGameTimeLabel(game)}</span>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </div>
 
-      <div class="optimizer-workspace">
-        <div class="optimizer-upper">
-          <section class="pool-panel">
-            <div class="pool-top">
-              <div class="pool-pos-tabs">
-                {[["ALL", "ALL"], ["QB", "QB"], ["RB", "RB"], ["WR", "WR"], ["TE", "TE"], ["FLEX", "FLEX"], ["DST", "DST"]].map(
-                  ([label, value], index) => (
-                    <button
-                      class:list={["pool-pos-tab", { active: index === 0 }]}
-                      type="button"
-                      data-pos-tab={value}
-                    >
-                      {label}
+                <div class="pool-table-wrap">
+                  <table class="pool-table">
+                    <thead>
+                      <tr>
+                        <th class="check-col"></th>
+                        <th class="icon-col"></th>
+                        <th class="name-col">Name</th>
+                        <th>Boost/Do...</th>
+                        <th>Team</th>
+                        <th>Salary</th>
+                        <th>Proj</th>
+                        <th>Actual</th>
+                        <th>Own %</th>
+                        <th>Ceiling</th>
+                        <th>Floor</th>
+                        <th>Var</th>
+                        <th>Min %</th>
+                        <th>Max %</th>
+                        <th>Opto %</th>
+                      </tr>
+                    </thead>
+                    <tbody data-player-rows>
+                      {initialPlayerRows.map((player) => (
+                        <tr data-player-id={player.id}>
+                          <td class="check-col">
+                            <span class="fake-check"></span>
+                          </td>
+                          <td class="icon-col">
+                            <div class="tiny-icons">
+                              <span class="tiny-lock" data-action="lock"></span>
+                              <span class="tiny-key" data-action="key"></span>
+                            </div>
+                          </td>
+                          <td class="name-col">
+                            <div class="player-cell">
+                              <span class={`pos-pill pos-${player.pos.toLowerCase().replace("/", "")}`}>
+                                {player.pos}
+                              </span>
+                              <span class="player-team-logo">
+                                <img
+                                  src={`/simulator/team-logos/${player.team}.png`}
+                                  class="player-team-logo-img"
+                                  alt={`${player.team} logo`}
+                                  loading="lazy"
+                                  onload="this.nextElementSibling.style.display='none';"
+                                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+                                />
+                                <span class="player-team-logo-fallback">{player.team}</span>
+                              </span>
+                              <span class="player-name">{player.name}</span>
+                            </div>
+                          </td>
+                          <td class="boost-col">
+                            <div class="boost-icons">
+                              <span class="boost up" data-action="boost-up">↑</span>
+                              <span class="boost down" data-action="boost-down">↓</span>
+                              <span class="boost-zero" data-action="boost-zero">0</span>
+                            </div>
+                          </td>
+                          <td>{player.matchup}</td>
+                          <td>{player.salary}</td>
+                          <td><input type="number" value={player.proj.toFixed(2)} min="0" step="0.01" data-action="edit-projection" /></td>
+                          <td>{player.actual ?? "—"}</td>
+                          <td><input type="number" value={player.own.toFixed(2)} min="0" max="100" step="0.01" data-action="edit-ownership" /></td>
+                          <td><input type="number" value={player.ceiling.toFixed(2)} min="0" step="0.01" data-action="edit-ceiling" /></td>
+                          <td><input type="number" value={player.floor.toFixed(2)} min="0" step="0.01" data-action="edit-floor" /></td>
+                          <td>{player.variance.toFixed(2)}</td>
+                          <td><input type="number" value="0" min="0" max="100" data-action="min-exposure" /></td>
+                          <td><input type="number" value="100" min="0" max="100" data-action="max-exposure" /></td>
+                          <td data-cell="opto">0</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="pool-footer">
+                  <div class="pool-footer-left">
+                    <label class="footer-select">
+                      <select data-control="pool-scope">
+                        <option value="all">All Players</option>
+                      </select>
+                    </label>
+
+                    <label class="under-proj-toggle">
+                      <span class="blue-check" data-control="hide-under-toggle"></span>
+                      <span>Hide players projected under</span>
+                      <input type="number" value="0.1" min="0" step="0.1" data-control="hide-under" />
+                      <span>pts</span>
+                    </label>
+                  </div>
+
+                  <div class="pool-footer-right">
+                    <span data-player-count>0/0 Players Selected</span>
+                    <span class="pool-status" data-pool-status></span>
+                  </div>
+                </div>
+              </section>
+
+              <aside class="settings-builder-panel">
+                <section class="builder-card">
+                  <div class="builder-head">
+                    <h2>Optimizer</h2>
+
+                    <div class="builder-summary" data-builder-summary>
+                      <span>Rem/Player: $0.0K</span>
+                      <span>Rem: $0</span>
+                      <span>Proj 0.00</span>
+                      <span>Ceil 0.00</span>
+                      <span>Own 0.00%</span>
+                    </div>
+                  </div>
+
+                  <div class="builder-slots" data-builder-slots>
+                    {builderSlots.map((slot) => (
+                      <div class="builder-slot" data-slot={slot}>
+                        <span class="slot-label">{slot}</span>
+                        <span class="slot-fill"></span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div class="builder-actions">
+                    <div class="builder-action-left">
+                      <button type="button" class="ghost-btn save" data-action="builder-save">Save</button>
+                      <button type="button" class="ghost-btn clear" data-action="builder-clear">Clear</button>
+                      <button type="button" class="ghost-btn tag" data-action="builder-tag">Tag</button>
+                    </div>
+
+                    <div class="builder-action-right">
+                      <label class="builder-select">
+                        <span>Optimize By:</span>
+                        <select data-control="optimize-by">
+                          <option value="projection">Projection</option>
+                        </select>
+                      </label>
+
+                      <label class="builder-input">
+                        <span>Lineups:</span>
+                        <input type="number" value="1" min="1" data-control="lineup-count" />
+                      </label>
+
+                      <button type="button" class="primary-btn" data-action="optimize">Optimize</button>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="optimizer-settings-card">
+                  <div class="settings-head">
+                    <h2>Optimizer Settings</h2>
+
+                    <label class="exclude-toggle">
+                      <span class="toggle-pill" data-control="exclude-locked-games"></span>
+                      <div>
+                        <strong>Exclude Locked Games</strong>
+                        <small>Unless Players are Locked</small>
+                      </div>
+                    </label>
+
+                    <button type="button" class="advanced-btn" data-control="advanced-open">
+                      <span class="advanced-count" data-advanced-count>0</span>
+                      <span>Advanced</span>
+                      <span class="arrow">→</span>
                     </button>
-                  )
-                )}
-              </div>
-
-              <div class="pool-controls">
-                <label class="mini-field">
-                  <span>Projections</span>
-                  <select data-control="projections">
-                    <option value="default">Default</option>
-                  </select>
-                </label>
-
-                <label class="mini-field">
-                  <span>Variance</span>
-                  <select data-control="variance">
-                    <option value="default">Default</option>
-                  </select>
-                </label>
-
-                <button type="button" class="reset-button" data-control="reset-columns">Reset Columns</button>
-
-                <label class="search-wrap">
-                  <input type="search" placeholder="Search..." data-control="search" />
-                </label>
-              </div>
-            </div>
-
-            <div class="pool-table-wrap">
-              <table class="pool-table">
-                <thead>
-                  <tr>
-                    <th class="check-col"></th>
-                    <th class="icon-col"></th>
-                    <th class="name-col">Name</th>
-                    <th>Boost/Do...</th>
-                    <th>Team</th>
-                    <th>Salary</th>
-                    <th>Proj</th>
-                    <th>Actual</th>
-                    <th>Own %</th>
-                    <th>Ceiling</th>
-                    <th>Floor</th>
-                    <th>Var</th>
-                    <th>Min %</th>
-                    <th>Max %</th>
-                    <th>Opto %</th>
-                  </tr>
-                </thead>
-                <tbody data-player-rows>
-                  {initialPlayerRows.map((player) => (
-                    <tr data-player-id={player.id}>
-                      <td class="check-col">
-                        <span class="fake-check"></span>
-                      </td>
-                      <td class="icon-col">
-                        <div class="tiny-icons">
-                          <span class="tiny-lock" data-action="lock"></span>
-                          <span class="tiny-key" data-action="key"></span>
-                        </div>
-                      </td>
-                      <td class="name-col">
-                        <div class="player-cell">
-                          <span class={`pos-pill pos-${player.pos.toLowerCase().replace("/", "")}`}>
-                            {player.pos}
-                          </span>
-                          <span class="team-dot">{player.team}</span>
-                          <span class="player-name">{player.name}</span>
-                        </div>
-                      </td>
-                      <td class="boost-col">
-                        <div class="boost-icons">
-                          <span class="boost up" data-action="boost-up">↑</span>
-                          <span class="boost down" data-action="boost-down">↓</span>
-                          <span class="boost-zero" data-action="boost-zero">0</span>
-                        </div>
-                      </td>
-                      <td>{player.matchup}</td>
-                      <td>{player.salary}</td>
-                      <td>{player.proj.toFixed(2)}</td>
-                      <td>{player.actual ?? "—"}</td>
-                      <td>{player.own.toFixed(2)}</td>
-                      <td>{player.ceiling.toFixed(2)}</td>
-                      <td>{player.floor.toFixed(2)}</td>
-                      <td>{player.variance.toFixed(2)}</td>
-                      <td><input type="number" value="0" min="0" max="100" data-action="min-exposure" /></td>
-                      <td><input type="number" value="100" min="0" max="100" data-action="max-exposure" /></td>
-                      <td data-cell="opto">0</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div class="pool-footer">
-              <div class="pool-footer-left">
-                <label class="footer-select">
-                  <select data-control="pool-scope">
-                    <option value="all">All Players</option>
-                  </select>
-                </label>
-
-                <label class="under-proj-toggle">
-                  <span class="blue-check" data-control="hide-under-toggle"></span>
-                  <span>Hide players projected under</span>
-                  <input type="number" value="0.1" min="0" step="0.1" data-control="hide-under" />
-                  <span>pts</span>
-                </label>
-              </div>
-
-              <div class="pool-footer-right">
-                <span data-player-count>0/0 Players Selected</span>
-                <span class="pool-status" data-pool-status></span>
-              </div>
-            </div>
-          </section>
-
-          <aside class="settings-builder-panel">
-            <section class="optimizer-settings-card">
-              <div class="settings-head">
-                <h2>Optimizer Settings</h2>
-
-                <label class="exclude-toggle">
-                  <span class="toggle-pill" data-control="exclude-locked-games"></span>
-                  <div>
-                    <strong>Exclude Locked Games</strong>
-                    <small>Unless Players are Locked</small>
                   </div>
-                </label>
 
-                <button type="button" class="advanced-btn" data-control="advanced-open">
-                  <span class="advanced-count" data-advanced-count>0</span>
-                  <span>Advanced</span>
+                  <div class="settings-grid">
+                    {settingsToggles.map((item) => (
+                      <label class="settings-item" data-setting-id={item.id}>
+                        <span class:list={["settings-check", { checked: item.checked }]}></span>
+                        <div>
+                          <strong>{item.title}</strong>
+                          <small>{item.note}</small>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+
+                  <div class="advanced-panel" data-advanced-panel>
+                    <div class="advanced-section-tabs">
+                      <button type="button" class="advanced-section-tab active" data-advanced-section-btn="roster">Roster</button>
+                      <button type="button" class="advanced-section-tab" data-advanced-section-btn="stacks">Stacks</button>
+                      <button type="button" class="advanced-section-tab" data-advanced-section-btn="restrictions">Restrictions</button>
+                      <button type="button" class="advanced-section-tab" data-advanced-section-btn="player-groups">Player Groups / If-Then</button>
+                    </div>
+
+                    <section class="advanced-section-pane active" data-advanced-section-pane="roster">
+                      <div class="advanced-section-head">
+                        <strong>Roster</strong>
+                        <span>Salary and lineup-level thresholds.</span>
+                      </div>
+                      <div class="advanced-grid">
+                        <label class="advanced-field">
+                          <span>Min Salary</span>
+                          <input type="number" min="0" step="100" value="0" data-advanced="minSalary" />
+                        </label>
+                        <label class="advanced-field">
+                          <span>Max Salary</span>
+                          <input type="number" min="0" step="100" value="0" data-advanced="maxSalary" />
+                        </label>
+                        <label class="advanced-field">
+                          <span>Minimum Lineup Projection</span>
+                          <input type="number" min="0" step="0.1" value="0" data-advanced="minProjection" />
+                        </label>
+                        <label class="advanced-field">
+                          <span>Maximum Lineup Ownership</span>
+                          <input type="number" min="0" max="1000" step="0.1" value="0" data-advanced="maxOwnership" />
+                        </label>
+                      </div>
+                    </section>
+
+                    <section class="advanced-section-pane" data-advanced-section-pane="stacks">
+                      <div class="advanced-section-head">
+                        <strong>Stacks</strong>
+                        <span>Only currently supported stack flags are shown here.</span>
+                      </div>
+                      <div class="advanced-toggle-grid">
+                        <label class="advanced-toggle" data-setting-id="qbStack">
+                          <span class="settings-check"></span>
+                          <div>
+                            <strong>QB Stack</strong>
+                            <small>Require QB with at least one teammate.</small>
+                          </div>
+                        </label>
+                        <label class="advanced-toggle" data-setting-id="gameStack">
+                          <span class="settings-check"></span>
+                          <div>
+                            <strong>Game Stack</strong>
+                            <small>Add a bring-back style game stack.</small>
+                          </div>
+                        </label>
+                      </div>
+                    </section>
+
+                    <section class="advanced-section-pane" data-advanced-section-pane="restrictions">
+                      <div class="advanced-section-head">
+                        <strong>Restrictions</strong>
+                        <span>Only active restrictions that map to payload are editable here.</span>
+                      </div>
+                      <div class="advanced-toggle-grid">
+                        <label class="advanced-toggle" data-setting-id="avoidOppDefense">
+                          <span class="settings-check"></span>
+                          <div>
+                            <strong>Avoid Opposing Defense</strong>
+                            <small>Keep DST away from opposing offensive players.</small>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="advanced-grid">
+                        <label class="advanced-field">
+                          <span>Team Limit</span>
+                          <input type="number" min="1" step="1" value="0" data-advanced="teamLimit" />
+                        </label>
+                        <label class="advanced-field">
+                          <span>Max Repeating Players</span>
+                          <input type="number" min="0" step="1" value="0" data-advanced="maxRepeating" />
+                        </label>
+                        <label class="advanced-field">
+                          <span>Randomness %</span>
+                          <input type="number" min="0" max="50" step="1" value="0" data-advanced="randomness" />
+                        </label>
+                      </div>
+                    </section>
+
+                    <section class="advanced-section-pane" data-advanced-section-pane="player-groups">
+                      <div class="advanced-section-head">
+                        <strong>Player Groups / If-Then</strong>
+                        <span>Keying a player opens this section and seeds a draft rule.</span>
+                      </div>
+                      <div data-advanced-player-groups></div>
+                    </section>
+                  </div>
+                </section>
+              </aside>
+            </div>
+
+            <section class="optimizer-results-shell">
+              <div class="results-header">
+                <div class="results-title-group">
+                  <div class="results-title-tab">Optimizer Results</div>
+                  <div class="results-count-pill" data-results-count>0</div>
+                  <div class="results-subtitle" data-results-subtitle>Results 1</div>
+                  <button type="button" class="results-x" data-action="results-clear">×</button>
+                </div>
+
+                <button type="button" class="advanced-btn results-advanced" data-control="advanced-open">
+                  <span>Advanced Settings</span>
                   <span class="arrow">→</span>
                 </button>
               </div>
 
-              <div class="settings-grid">
-                {settingsToggles.map((item) => (
-                  <label class="settings-item" data-setting-id={item.id}>
-                    <span class:list={["settings-check", { checked: item.checked }]}></span>
-                    <div>
-                      <strong>{item.title}</strong>
-                      <small>{item.note}</small>
-                    </div>
-                  </label>
-                ))}
-              </div>
-
-              <div class="advanced-panel" data-advanced-panel>
-                <div class="advanced-grid">
-                  <label class="advanced-field">
-                    <span>Randomness %</span>
-                    <input type="number" min="0" max="50" step="1" value="0" data-advanced="randomness" />
-                  </label>
-                  <label class="advanced-field">
-                    <span>Team Limit</span>
-                    <input type="number" min="1" step="1" value="0" data-advanced="teamLimit" />
-                  </label>
-                  <label class="advanced-field">
-                    <span>Max Repeating Players</span>
-                    <input type="number" min="0" step="1" value="0" data-advanced="maxRepeating" />
-                  </label>
-                  <label class="advanced-field">
-                    <span>Min Salary</span>
-                    <input type="number" min="0" step="100" value="0" data-advanced="minSalary" />
-                  </label>
-                  <label class="advanced-field">
-                    <span>Max Salary</span>
-                    <input type="number" min="0" step="100" value="0" data-advanced="maxSalary" />
-                  </label>
-                </div>
-              </div>
-            </section>
-
-            <section class="builder-card">
-              <div class="builder-head">
-                <h2>Optimizer</h2>
-
-                <div class="builder-summary" data-builder-summary>
-                  <span>Rem/Player: $0.0K</span>
-                  <span>Rem: $0</span>
-                  <span>Proj 0.00</span>
-                  <span>Act 0.00</span>
-                  <span>Ceil 0.00</span>
-                  <span>Own 0% (0.0%)</span>
-                </div>
-              </div>
-
-              <div class="builder-slots" data-builder-slots>
-                {builderSlots.map((slot) => (
-                  <div class="builder-slot" data-slot={slot}>
-                    <span class="slot-label">{slot}</span>
-                    <span class="slot-fill"></span>
-                  </div>
-                ))}
-              </div>
-
-              <div class="builder-actions">
-                <div class="builder-action-left">
-                  <button type="button" class="ghost-btn save" data-action="builder-save">Save</button>
-                  <button type="button" class="ghost-btn clear" data-action="builder-clear">Clear</button>
-                  <button type="button" class="ghost-btn tag" data-action="builder-tag">Tag</button>
-                </div>
-
-                <div class="builder-action-right">
-                  <label class="builder-select">
+              <div class="results-toolbar-row">
+                <div class="results-toolbar-left">
+                  <label class="results-compact-field">
                     <span>Optimize By:</span>
                     <select data-control="optimize-by">
                       <option value="projection">Projection</option>
                     </select>
                   </label>
 
-                  <label class="builder-input">
+                  <label class="results-compact-field narrow">
                     <span>Lineups:</span>
-                    <input type="number" value="1" min="1" data-control="lineup-count" />
+                    <input type="number" value="10" min="1" data-control="results-lineups" />
                   </label>
 
-                  <button type="button" class="primary-btn" data-action="optimize">Optimize</button>
+                  <button type="button" class="solid-blue" data-action="results-add-more">Add More</button>
+                  <button type="button" class="outline-green" data-action="results-simulate">$ Simulate</button>
+                  <button type="button" class="outline-muted" data-action="results-clear">Clear</button>
+                  <button type="button" class="outline-green" data-action="results-save">Save</button>
+                  <button type="button" class="outline-green" data-action="results-download">Download</button>
+                  <button type="button" class="outline-blue" data-action="results-copy">Copy</button>
+                  <button type="button" class="outline-red" data-action="results-delete">Delete</button>
+                  <button type="button" class="outline-muted" data-action="results-tag">Tag</button>
                 </div>
+              </div>
+
+              <div class="results-meta-row">
+                <div class="meta-left">
+                  <span data-results-filtered>Filtered 0 of 0 Lineups</span>
+                  <span class="results-status" data-results-status></span>
+                  <button type="button" data-action="results-select-all">Select All</button>
+                  <button type="button" data-action="results-select-none">Select None</button>
+                </div>
+
+                <div class="meta-center">
+                  <label class="results-compact-field mini">
+                    <span>Sort</span>
+                    <select data-control="results-sort">
+                      <option value="projection">Proj Points</option>
+                      <option value="salary">Salary</option>
+                      <option value="ownership">Own</option>
+                    </select>
+                  </label>
+
+                  <label class="results-compact-field mini jump">
+                    <span>Jump To Lineup:</span>
+                    <input type="number" value="0" min="1" data-control="results-jump" />
+                  </label>
+
+                  <button type="button" class="go-bubble" data-action="results-jump">➜</button>
+
+                  <label class="tag-filter-pill">
+                    <span>Filter by Tag:</span>
+                    <button type="button" data-action="results-filter-tag">No Tag (0)</button>
+                  </label>
+
+                  <label class="results-compact-field mini own-mode">
+                    <span>Own</span>
+                    <select data-control="results-own-mode">
+                      <option value="sum">Sum</option>
+                      <option value="avg">Avg</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="meta-right">
+                  <div class="sidebar-tabs" data-sidebar-tabs>
+                    <button class="sidebar-tab active" type="button" data-panel="players">Players <span data-tab-count="players">(0)</span></button>
+                    <button class="sidebar-tab" type="button" data-panel="player-stacks">Player Stacks <span data-tab-count="player-stacks">(0)</span></button>
+                    <button class="sidebar-tab" type="button" data-panel="game-stacks">Game Stacks <span data-tab-count="game-stacks">(0)</span></button>
+                    <button class="sidebar-tab" type="button" data-panel="team-stacks">Team Stacks <span data-tab-count="team-stacks">(0)</span></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="results-content">
+                <div class="lineups-grid" data-lineups-grid></div>
+
+                <aside class="results-sidebar">
+                  <div class="sidebar-panel active" data-panel-view="players">
+                    <div class="sidebar-search-row">
+                      <input type="search" placeholder="Search..." data-control="sidebar-search" />
+                      <label class="sidebar-flex-toggle">
+                        <input type="checkbox" data-control="sidebar-flex" />
+                        <span>Show FLEX</span>
+                      </label>
+                    </div>
+
+                    <div class="sidebar-table-head">
+                      <span>Min</span>
+                      <span>Max</span>
+                      <span>Proj</span>
+                      <span>Act</span>
+                    </div>
+
+                    <div class="sidebar-player-list" data-sidebar-players></div>
+                  </div>
+
+                  <div class="sidebar-panel" data-panel-view="player-stacks">
+                    <div class="stack-list" data-sidebar-player-stacks></div>
+                  </div>
+
+                  <div class="sidebar-panel" data-panel-view="game-stacks">
+                    <div class="stack-placeholder" data-sidebar-game-stacks></div>
+                  </div>
+
+                  <div class="sidebar-panel" data-panel-view="team-stacks">
+                    <div class="stack-placeholder" data-sidebar-team-stacks></div>
+                  </div>
+                </aside>
               </div>
             </section>
-          </aside>
-        </div>
-
-        <section class="optimizer-results-shell">
-          <div class="results-header">
-            <div class="results-title-group">
-              <div class="results-title-tab">Optimizer Results</div>
-              <div class="results-count-pill" data-results-count>0</div>
-              <div class="results-subtitle" data-results-subtitle>Results 1</div>
-              <button type="button" class="results-x" data-action="results-clear">×</button>
-            </div>
-
-            <button type="button" class="advanced-btn results-advanced" data-control="advanced-open">
-              <span>Advanced Settings</span>
-              <span class="arrow">→</span>
-            </button>
           </div>
+        </section>
 
-          <div class="results-toolbar-row">
-            <div class="results-toolbar-left">
-              <label class="results-compact-field">
-                <span>Optimize By:</span>
-                <select data-control="optimize-by">
-                  <option value="projection">Projection</option>
-                </select>
-              </label>
-
-              <label class="results-compact-field narrow">
-                <span>Lineups:</span>
-                <input type="number" value="10" min="1" data-control="results-lineups" />
-              </label>
-
-              <button type="button" class="solid-blue" data-action="results-add-more">Add More</button>
-              <button type="button" class="outline-green" data-action="results-simulate">$ Simulate</button>
-              <button type="button" class="outline-muted" data-action="results-clear">Clear</button>
-              <button type="button" class="outline-green" data-action="results-save">Save</button>
-              <button type="button" class="outline-green" data-action="results-download">Download</button>
-              <button type="button" class="outline-blue" data-action="results-copy">Copy</button>
-              <button type="button" class="outline-red" data-action="results-delete">Delete</button>
-              <button type="button" class="outline-muted" data-action="results-tag">Tag</button>
+        <section class="top-section-panel" data-top-panel="lineups">
+          <div class="tab-panel-shell">
+            <div class="tab-panel-header">
+              <div>
+                <h2>My Lineups</h2>
+                <p>Saved lineups generated from optimizer runs.</p>
+              </div>
+              <button type="button" class="outline-red" data-action="saved-lineups-clear">Clear All Saved Lineups</button>
             </div>
+            <div class="saved-lineups-grid" data-saved-lineups></div>
           </div>
+        </section>
 
-          <div class="results-meta-row">
-            <div class="meta-left">
-              <span data-results-filtered>Filtered 0 of 0 Lineups</span>
-              <span class="results-status" data-results-status></span>
-              <button type="button" data-action="results-select-all">Select All</button>
-              <button type="button" data-action="results-select-none">Select None</button>
-            </div>
-
-            <div class="meta-center">
-              <label class="results-compact-field mini">
-                <span>Sort</span>
-                <select data-control="results-sort">
-                  <option value="projection">Proj Points</option>
-                  <option value="salary">Salary</option>
-                  <option value="ownership">Own</option>
-                </select>
-              </label>
-
-              <label class="results-compact-field mini jump">
-                <span>Jump To Lineup:</span>
-                <input type="number" value="0" min="1" data-control="results-jump" />
-              </label>
-
-              <button type="button" class="go-bubble" data-action="results-jump">➜</button>
-
-              <label class="tag-filter-pill">
-                <span>Filter by Tag:</span>
-                <button type="button" data-action="results-filter-tag">No Tag (0)</button>
-              </label>
-
-              <label class="results-compact-field mini own-mode">
-                <span>Own</span>
-                <select data-control="results-own-mode">
-                  <option value="sum">Sum</option>
-                  <option value="avg">Avg</option>
-                </select>
-              </label>
-            </div>
-
-            <div class="meta-right">
-              <div class="sidebar-tabs" data-sidebar-tabs>
-                <button class="sidebar-tab active" type="button" data-panel="players">Players <span data-tab-count="players">(0)</span></button>
-                <button class="sidebar-tab" type="button" data-panel="player-stacks">Player Stacks <span data-tab-count="player-stacks">(0)</span></button>
-                <button class="sidebar-tab" type="button" data-panel="game-stacks">Game Stacks <span data-tab-count="game-stacks">(0)</span></button>
-                <button class="sidebar-tab" type="button" data-panel="team-stacks">Team Stacks <span data-tab-count="team-stacks">(0)</span></button>
+        <section class="top-section-panel" data-top-panel="late-swap">
+          <div class="tab-panel-shell">
+            <div class="tab-panel-header">
+              <div>
+                <h2>Late Swap/Entry Mgr</h2>
+                <p>Upload existing entries, review locked/live players, and prep late swap runs.</p>
               </div>
             </div>
+
+            <div class="tab-panel-controls">
+              <label class="upload-field">
+                <span>Entries CSV</span>
+                <input type="file" accept=".csv,text/csv" data-control="entries-upload" />
+              </label>
+              <button type="button" class="solid-blue" data-action="entries-load">Load Entries</button>
+              <button type="button" class="outline-green" data-action="late-swap-run">Run Late Swap</button>
+            </div>
+
+            <div class="tab-panel-status" data-entries-status>Upload a CSV to preview entries.</div>
+            <div class="late-swap-summary" data-late-swap-summary></div>
+            <div class="table-panel">
+              <div class="table-panel-title">Parsed Entries Preview</div>
+              <div class="table-scroll">
+                <table class="simple-table">
+                  <thead data-entries-preview-head></thead>
+                  <tbody data-entries-preview-body></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="placeholder-result" data-late-swap-result></div>
           </div>
+        </section>
 
-          <div class="results-content">
-            <div class="lineups-grid" data-lineups-grid></div>
-
-            <aside class="results-sidebar">
-              <div class="sidebar-panel active" data-panel-view="players">
-                <div class="sidebar-search-row">
-                  <input type="search" placeholder="Search..." data-control="sidebar-search" />
-                  <label class="sidebar-flex-toggle">
-                    <input type="checkbox" data-control="sidebar-flex" />
-                    <span>Show FLEX</span>
-                  </label>
-                </div>
-
-                <div class="sidebar-table-head">
-                  <span>Min</span>
-                  <span>Max</span>
-                  <span>Proj</span>
-                  <span>Act</span>
-                </div>
-
-                <div class="sidebar-player-list" data-sidebar-players></div>
+        <section class="top-section-panel" data-top-panel="projections">
+          <div class="tab-panel-shell">
+            <div class="tab-panel-header">
+              <div>
+                <h2>My Projections</h2>
+                <p>Upload your own projections and optionally use them in the optimizer.</p>
               </div>
+              <div class="projection-badge" data-projections-active-indicator>Uploaded projections inactive</div>
+            </div>
 
-              <div class="sidebar-panel" data-panel-view="player-stacks">
-                <div class="stack-list" data-sidebar-player-stacks></div>
-              </div>
+            <div class="tab-panel-controls">
+              <label class="upload-field">
+                <span>Projections CSV</span>
+                <input type="file" accept=".csv,text/csv" data-control="projections-upload" />
+              </label>
+              <button type="button" class="solid-blue" data-action="projections-load">Load Projections</button>
+              <button type="button" class="outline-green" data-action="projections-toggle">Activate Uploaded Projections</button>
+              <button type="button" class="outline-red" data-action="projections-clear">Clear Uploaded Projections</button>
+            </div>
 
-              <div class="sidebar-panel" data-panel-view="game-stacks">
-                <div class="stack-placeholder" data-sidebar-game-stacks></div>
+            <div class="tab-panel-status" data-projections-status>No uploaded projections yet.</div>
+            <div class="table-panel">
+              <div class="table-panel-title">Projections Preview</div>
+              <div class="table-scroll">
+                <table class="simple-table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Team</th>
+                      <th>Position</th>
+                      <th>Projection</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody data-projections-preview-body></tbody>
+                </table>
               </div>
-
-              <div class="sidebar-panel" data-panel-view="team-stacks">
-                <div class="stack-placeholder" data-sidebar-team-stacks></div>
-              </div>
-            </aside>
+            </div>
           </div>
         </section>
       </div>
     </div>
   </section>
 
-  <script type="application/json" id="classic-optimizer-data">
-    {JSON.stringify({
+  <script
+    type="application/json"
+    id="classic-optimizer-data"
+    set:html={JSON.stringify({
       selectedKey,
+      topTabs,
       packages: packages.map((pack) => ({
         key: pack.key,
         slate: pack.slate,
@@ -720,11 +893,34 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       defaultResultsLineups: 10,
       operatorMeta,
     })}
-  </script>
+  />
 
-  <script is:inline>
-    const dataEl = document.getElementById("classic-optimizer-data");
-    const data = dataEl ? JSON.parse(dataEl.textContent || "{}") : { packages: [] };
+  <script is:inline data-astro-rerun>
+    const initClassicOptimizerPage = () => {
+      const root = document.querySelector(".optimizer-page");
+      if (!root) return;
+      if (root.dataset.optimizerInitialized === "true") return;
+
+      const markInitFailed = (error) => {
+        console.error("[optimizer-init-failed]", error);
+        root.dataset.optimizerInitialized = "false";
+
+        const statusEl = document.querySelector("[data-results-status]");
+        if (statusEl) {
+          statusEl.textContent = `• ${error?.message || "Optimizer failed to initialize."}`;
+          statusEl.style.display = "";
+        }
+
+        const poolStatusEl = document.querySelector("[data-pool-status]");
+        if (poolStatusEl) {
+          poolStatusEl.textContent = `• ${error?.message || "Optimizer failed to initialize."}`;
+          poolStatusEl.style.display = "";
+        }
+      };
+
+      const dataEl = document.getElementById("classic-optimizer-data");
+      const data = dataEl ? JSON.parse(dataEl.textContent || "{}") : { packages: [] };
+      const topTabs = Array.isArray(data.topTabs) ? data.topTabs : [];
 
     const state = {
       packages: data.packages || [],
@@ -739,7 +935,11 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       includeInitialized: false,
       lockedPlayers: new Set(),
       keyPlayers: new Set(),
-      boost: new Map(),
+      boostUnits: new Map(),
+      manualProjection: new Map(),
+      manualOwnership: new Map(),
+      manualCeiling: new Map(),
+      manualFloor: new Map(),
       minExposure: new Map(),
       maxExposure: new Map(),
       teamInclude: new Map(),
@@ -755,7 +955,14 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         maxRepeating: 0,
         minSalary: 0,
         maxSalary: 0,
+        minProjection: 0,
+        maxOwnership: 0,
       },
+      advancedPanelOpen: false,
+      focusedKeyPlayerId: null,
+      advancedOpenSection: "roster",
+      advancedRules: [],
+      advancedDraftRule: null,
       optimizeBy: "projection",
       lineupCount: data.defaultLineupCount || 1,
       resultsLineups: data.defaultResultsLineups || 10,
@@ -768,10 +975,33 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       sidebarSearch: "",
       sidebarFlex: false,
       activeSidebarPanel: "",
-      activeTopTab: "",
+      activeTopTab: "optimizer",
       builderTag: "",
+      builderMessage: "",
       statusMessage: "",
       simResults: null,
+      savedLineups: [],
+      uploadedEntries: [],
+      uploadedEntriesFile: null,
+      entriesStatus: "",
+      lateSwapResult: "",
+      uploadedProjections: [],
+      uploadedProjectionsMap: new Map(),
+      uploadedProjectionsFile: null,
+      projectionsStatus: "",
+      useUploadedProjections: false,
+    };
+
+    const STORAGE_KEYS = {
+      builder: "classic-optimizer-builder",
+      builderTag: "classic-optimizer-builder-tag",
+      results: "classic-optimizer-results",
+      simResults: "classic-optimizer-sim-results",
+      activeTopTab: "classic-optimizer-active-top-tab",
+      savedLineups: "classic-optimizer-saved-lineups",
+      uploadedEntries: "classic-optimizer-uploaded-entries",
+      uploadedProjections: "classic-optimizer-uploaded-projections",
+      useUploadedProjections: "classic-optimizer-use-uploaded-projections",
     };
 
     const safeStorageGet = (key) => {
@@ -794,7 +1024,7 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     };
 
     try {
-      const saved = JSON.parse(safeStorageGet("classic-optimizer-builder") || "null");
+      const saved = JSON.parse(safeStorageGet(STORAGE_KEYS.builder) || "null");
       if (saved) {
         if (Array.isArray(saved.locked)) state.lockedPlayers = new Set(saved.locked);
         if (Array.isArray(saved.include)) {
@@ -810,8 +1040,59 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       console.warn("Failed to load saved builder state", error);
     }
 
-    const savedBuilderTag = safeStorageGet("classic-optimizer-builder-tag");
+    const savedBuilderTag = safeStorageGet(STORAGE_KEYS.builderTag);
     if (savedBuilderTag) state.builderTag = savedBuilderTag;
+
+    try {
+      const savedTopTab = safeStorageGet(STORAGE_KEYS.activeTopTab);
+      if (savedTopTab && topTabs.some((tab) => tab.id === savedTopTab)) {
+        state.activeTopTab = savedTopTab;
+      }
+    } catch (error) {
+      console.warn("Failed to load active top tab", error);
+    }
+
+    try {
+      const savedResults = JSON.parse(safeStorageGet(STORAGE_KEYS.results) || "null");
+      if (savedResults && Array.isArray(savedResults.results)) {
+        state.savedLineups = savedResults.results;
+        if (savedResults.resultTags && typeof savedResults.resultTags === "object") {
+          state.resultTags = new Map(Object.entries(savedResults.resultTags));
+        }
+      }
+    } catch (error) {
+      console.warn("Failed to load saved optimizer results", error);
+    }
+
+    try {
+      const savedDedicatedLineups = JSON.parse(safeStorageGet(STORAGE_KEYS.savedLineups) || "null");
+      if (Array.isArray(savedDedicatedLineups)) {
+        state.savedLineups = savedDedicatedLineups;
+      }
+    } catch (error) {
+      console.warn("Failed to load saved lineups", error);
+    }
+
+    try {
+      const savedEntries = JSON.parse(safeStorageGet(STORAGE_KEYS.uploadedEntries) || "null");
+      if (Array.isArray(savedEntries)) {
+        state.uploadedEntries = savedEntries;
+        state.entriesStatus = savedEntries.length ? `Loaded ${savedEntries.length} parsed entries.` : "";
+      }
+    } catch (error) {
+      console.warn("Failed to load uploaded entries", error);
+    }
+
+    try {
+      const savedProjectionState = JSON.parse(safeStorageGet(STORAGE_KEYS.uploadedProjections) || "null");
+      if (savedProjectionState && Array.isArray(savedProjectionState.rows)) {
+        state.uploadedProjections = savedProjectionState.rows;
+      }
+    } catch (error) {
+      console.warn("Failed to load uploaded projections", error);
+    }
+
+    state.useUploadedProjections = safeStorageGet(STORAGE_KEYS.useUploadedProjections) === "true";
 
     const qs = (sel) => document.querySelector(sel);
     const qsa = (sel) => Array.from(document.querySelectorAll(sel));
@@ -836,14 +1117,21 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       playerCount: qs("[data-player-count]"),
       poolStatus: qs("[data-pool-status]"),
       settingsItems: qsa("[data-setting-id]"),
+      settingsCard: qs(".optimizer-settings-card"),
       excludeLockedToggle: qs("[data-control=exclude-locked-games]"),
       excludeLockedWrap: qs(".exclude-toggle"),
       advancedOpen: qsa("[data-control=advanced-open]"),
       advancedPanel: qs("[data-advanced-panel]"),
+      advancedSectionButtons: qsa("[data-advanced-section-btn]"),
+      advancedSectionPanes: qsa("[data-advanced-section-pane]"),
+      advancedPlayerGroups: qs("[data-advanced-player-groups]"),
       advancedCount: qs("[data-advanced-count]"),
       advancedFields: qsa("[data-advanced]"),
       builderSummary: qs("[data-builder-summary]"),
+      builderCard: qs(".builder-card"),
+      builderSlotsWrap: qs("[data-builder-slots]"),
       builderSlots: qsa("[data-builder-slots] .builder-slot"),
+      resultsShell: qs(".optimizer-results-shell"),
       optimizeButtons: qsa("[data-action=optimize]"),
       lineupCount: qsa("[data-control=lineup-count]"),
       optimizeBy: qsa("[data-control=optimize-by]"),
@@ -866,8 +1154,20 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       sidebarTabs: qsa("[data-sidebar-tabs] .sidebar-tab"),
       sidebarPanels: qsa("[data-panel-view]"),
       topTabs: qsa("[data-top-tab]"),
+      topPanels: qsa("[data-top-panel]"),
       resultsActions: qsa("[data-action^=results-]"),
       builderActions: qsa("[data-action^=builder-]"),
+      savedLineups: qs("[data-saved-lineups]"),
+      entriesUpload: qs("[data-control=entries-upload]"),
+      entriesStatus: qs("[data-entries-status]"),
+      entriesPreviewHead: qs("[data-entries-preview-head]"),
+      entriesPreviewBody: qs("[data-entries-preview-body]"),
+      lateSwapSummary: qs("[data-late-swap-summary]"),
+      lateSwapResult: qs("[data-late-swap-result]"),
+      projectionsUpload: qs("[data-control=projections-upload]"),
+      projectionsStatus: qs("[data-projections-status]"),
+      projectionsPreviewBody: qs("[data-projections-preview-body]"),
+      projectionsActiveIndicator: qs("[data-projections-active-indicator]"),
     };
 
     const formatSalary = (value) => new Intl.NumberFormat("en-US", {
@@ -880,6 +1180,229 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
 
     const formatNumber = (value, digits = 2) =>
       Number.isFinite(value) ? Number(value).toFixed(digits) : "—";
+
+    const normalizeName = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    const normalizeToken = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
+    const parseCsvLine = (line) => {
+      const cells = [];
+      let current = "";
+      let quoted = false;
+      for (let index = 0; index < line.length; index += 1) {
+        const char = line[index];
+        if (char === '"') {
+          if (quoted && line[index + 1] === '"') {
+            current += '"';
+            index += 1;
+          } else {
+            quoted = !quoted;
+          }
+          continue;
+        }
+        if (char === "," && !quoted) {
+          cells.push(current.trim());
+          current = "";
+          continue;
+        }
+        current += char;
+      }
+      cells.push(current.trim());
+      return cells;
+    };
+
+    const parseCsv = (text) => {
+      const lines = String(text || "").split(/\r?\n/).filter((line) => line.trim());
+      if (!lines.length) return [];
+      const headers = parseCsvLine(lines[0]).map((header, index) => header || `column_${index + 1}`);
+      return lines.slice(1).map((line) => {
+        const values = parseCsvLine(line);
+        return headers.reduce((row, header, index) => {
+          row[header] = values[index] ?? "";
+          return row;
+        }, {});
+      });
+    };
+
+    const getRowValue = (row, keys) => {
+      const entries = Object.entries(row || {});
+      const lowered = entries.reduce((acc, [key, value]) => {
+        acc[key.toLowerCase()] = value;
+        return acc;
+      }, {});
+      for (const key of keys) {
+        const value = lowered[key];
+        if (value !== undefined && value !== null && String(value).trim() !== "") return String(value).trim();
+      }
+      return "";
+    };
+
+    const clampValue = (value, min, max, fallback = min) => {
+      if (!Number.isFinite(value)) return fallback;
+      return Math.min(Math.max(value, min), max);
+    };
+
+    const getUploadedProjectionValue = (player) => {
+      if (!state.useUploadedProjections) return null;
+      const nameKey = normalizeName(player.name);
+      const teamKey = normalizeToken(player.team);
+      const positionKey = normalizeToken(player.position);
+      const exact = state.uploadedProjectionsMap.get(`${nameKey}|${teamKey}|${positionKey}`)
+        || state.uploadedProjectionsMap.get(`${nameKey}|${teamKey}|`)
+        || state.uploadedProjectionsMap.get(`${nameKey}||${positionKey}`)
+        || state.uploadedProjectionsMap.get(`${nameKey}||`);
+      return Number.isFinite(exact) ? exact : null;
+    };
+
+    const getPlayerBoostUnits = (playerId) => clampValue(Number(state.boostUnits.get(playerId) || 0), -5, 5, 0);
+
+    const setPlayerBoostUnits = (playerId, value) => {
+      state.boostUnits.set(playerId, clampValue(Number(value), -5, 5, 0));
+    };
+
+    const getEffectiveProjection = (player) => {
+      const manual = Number(state.manualProjection.get(player.id));
+      if (Number.isFinite(manual)) return Math.max(0, manual);
+      const uploaded = getUploadedProjectionValue(player);
+      if (Number.isFinite(uploaded)) return Math.max(0, uploaded);
+      return Math.max(0, Number(player.projection) || 0);
+    };
+
+    const getEffectiveOwnership = (player) => {
+      const manual = Number(state.manualOwnership.get(player.id));
+      if (Number.isFinite(manual)) return clampValue(manual, 0, 100, 0);
+      return clampValue(Number(player.ownership) || 0, 0, 100, 0);
+    };
+
+    const getEffectiveCeiling = (player) => {
+      const manual = Number(state.manualCeiling.get(player.id));
+      if (Number.isFinite(manual)) return Math.max(0, manual);
+      return getEffectiveProjection(player) * 1.6;
+    };
+
+    const getEffectiveFloor = (player) => {
+      const manual = Number(state.manualFloor.get(player.id));
+      if (Number.isFinite(manual)) return Math.max(0, manual);
+      return getEffectiveProjection(player) * 0.6;
+    };
+
+    const getPlayerProjection = (player) => getEffectiveProjection(player);
+
+    const buildTeamLogoCell = (team) => `
+      <span class="player-team-logo">
+        <img
+          src="/simulator/team-logos/${team}.png"
+          class="player-team-logo-img"
+          alt="${team} logo"
+          loading="lazy"
+          onload="this.nextElementSibling.style.display='none';"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+        <span class="player-team-logo-fallback">${team}</span>
+      </span>
+    `;
+
+    const createDraftRule = (playerId) => ({
+      type: "if_then",
+      enabled: true,
+      trigger: { playerId: playerId || "" },
+      operator: "require_one_of",
+      targetType: "player",
+      targetValue: "",
+      count: 1,
+    });
+
+    const getPlayerById = (playerId) => getEffectivePlayers().find((player) => player.id === playerId) || null;
+
+    const describeAdvancedRule = (rule) => {
+      if (!rule) return "";
+      const triggerPlayer = getPlayerById(rule.trigger?.playerId);
+      const triggerLabel = triggerPlayer?.name || "Unknown player";
+      if (rule.operator === "exclude_player") {
+        const targetPlayer = getPlayerById(rule.targetValue);
+        return `If lineup contains ${triggerLabel}, exclude ${targetPlayer?.name || "selected player"}.`;
+      }
+      const targetLabel =
+        rule.targetType === "player"
+          ? getPlayerById(rule.targetValue)?.name || "selected player"
+          : rule.targetValue || rule.targetType;
+      return `If lineup contains ${triggerLabel}, require at least ${rule.count || 1} ${targetLabel}.`;
+    };
+
+    const isValidAdvancedRule = (rule) => {
+      if (!rule || !rule.enabled || rule.type !== "if_then") return false;
+      if (!rule.trigger?.playerId) return false;
+      if (rule.operator === "exclude_player") {
+        return rule.targetType === "player" && !!rule.targetValue && rule.targetValue !== rule.trigger.playerId;
+      }
+      if (rule.operator === "require_one_of") {
+        if (!["player", "team", "position"].includes(rule.targetType)) return false;
+        if (!rule.targetValue) return false;
+        return Number(rule.count) > 0;
+      }
+      return false;
+    };
+
+    const rebuildUploadedProjectionsMap = () => {
+      state.uploadedProjectionsMap = new Map();
+      state.uploadedProjections.forEach((row) => {
+        const projection = Number(row.projection);
+        if (!Number.isFinite(projection)) return;
+        const key = `${normalizeName(row.name)}|${normalizeToken(row.team)}|${normalizeToken(row.position)}`;
+        const fallbackKey = `${normalizeName(row.name)}||`;
+        state.uploadedProjectionsMap.set(key, projection);
+        if (!state.uploadedProjectionsMap.has(fallbackKey)) {
+          state.uploadedProjectionsMap.set(fallbackKey, projection);
+        }
+      });
+    };
+
+    const persistSavedLineups = () => {
+      safeStorageSet(STORAGE_KEYS.savedLineups, JSON.stringify(state.savedLineups));
+      safeStorageSet(
+        STORAGE_KEYS.results,
+        JSON.stringify({
+          results: state.savedLineups,
+          resultTags: Object.fromEntries(state.resultTags.entries()),
+          savedAt: Date.now(),
+        })
+      );
+    };
+
+    const persistUploadedEntries = () => {
+      safeStorageSet(STORAGE_KEYS.uploadedEntries, JSON.stringify(state.uploadedEntries));
+    };
+
+    const persistUploadedProjections = () => {
+      safeStorageSet(
+        STORAGE_KEYS.uploadedProjections,
+        JSON.stringify({
+          rows: state.uploadedProjections,
+          savedAt: Date.now(),
+        })
+      );
+      safeStorageSet(STORAGE_KEYS.useUploadedProjections, String(state.useUploadedProjections));
+    };
+
+    const readFileText = (file) =>
+      new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result || ""));
+        reader.onerror = () => reject(reader.error || new Error("Unable to read file."));
+        reader.readAsText(file);
+      });
+
+    const inferLockedPlayersFromEntry = (entry, playerMap) => {
+      const values = Object.values(entry || {}).map((value) => String(value || ""));
+      const locked = [];
+      playerMap.forEach((player) => {
+        if (values.some((value) => value.toLowerCase().includes(player.name.toLowerCase()))) {
+          const gameDate = player.startTime ? new Date(player.startTime) : null;
+          const isLive = gameDate && !Number.isNaN(gameDate.getTime()) ? gameDate.getTime() <= Date.now() : false;
+          if (isLive) locked.push(player);
+        }
+      });
+      return locked;
+    };
 
     const operatorMeta = data.operatorMeta || {};
     const getWeekValue = (pack) => `${pack.slate.season}-W${pack.slate.week}`;
@@ -1023,41 +1546,102 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     };
 
     const rosterSlots = data.builderSlots || ["QB", "RB", "RB", "WR", "WR", "WR", "TE", "FLEX", "DST"];
+    const rosterSlotDefinitions = rosterSlots.map((slot, index) => ({
+      index,
+      label: slot,
+      allows(position, avoidTeFlex) {
+        if (slot === "QB") return position === "QB";
+        if (slot === "DST") return position === "DST";
+        if (slot === "RB") return position === "RB";
+        if (slot === "WR") return position === "WR";
+        if (slot === "TE") return position === "TE";
+        if (slot === "FLEX") {
+          if (avoidTeFlex) return position === "RB" || position === "WR";
+          return position === "RB" || position === "WR" || position === "TE";
+        }
+        return false;
+      },
+    }));
 
     const assignSlots = (players, avoidTeFlex) => {
-      const slots = [...rosterSlots];
-      const assigned = [];
-      const flexEligible = (pos) => ["RB", "WR", "TE"].includes(pos);
+      const assignments = new Array(rosterSlotDefinitions.length).fill(null);
       const candidates = players.map((player) => ({
         ...player,
-        positions: Array.isArray(player.positions) ? player.positions : [player.position],
+        positions: Array.isArray(player.positions) && player.positions.length ? player.positions : [player.position],
       }));
+      const uniqueIds = new Set();
+      for (const player of candidates) {
+        if (!player?.id || uniqueIds.has(player.id)) return null;
+        uniqueIds.add(player.id);
+      }
 
-      const backtrack = (index, remainingSlots) => {
-        if (index >= candidates.length) return true;
-        const player = candidates[index];
-        const posList = player.positions || [];
-        const possibleSlots = remainingSlots.filter((slot) => {
-          if (slot === "FLEX") {
-            if (avoidTeFlex && posList.includes("TE")) return posList.some((p) => ["RB", "WR"].includes(p));
-            return posList.some((p) => flexEligible(p));
-          }
-          return posList.includes(slot);
-        });
-        for (const slot of possibleSlots) {
-          const updated = [...remainingSlots];
-          const idx = updated.indexOf(slot);
-          updated.splice(idx, 1);
-          assigned.push({ slot, player });
-          if (backtrack(index + 1, updated)) return true;
-          assigned.pop();
+      const ordered = [...candidates]
+        .map((player) => {
+          const eligibleSlots = rosterSlotDefinitions
+            .filter((slot) => player.positions.some((position) => slot.allows(position, avoidTeFlex)))
+            .map((slot) => slot.index);
+          return { player, eligibleSlots };
+        })
+        .sort((a, b) => a.eligibleSlots.length - b.eligibleSlots.length);
+
+      if (ordered.some((entry) => entry.eligibleSlots.length === 0)) return null;
+
+      const backtrack = (index, usedPlayerIds) => {
+        if (index >= ordered.length) return true;
+        const { player, eligibleSlots } = ordered[index];
+        if (usedPlayerIds.has(player.id)) return false;
+
+        for (const slotIndex of eligibleSlots) {
+          if (assignments[slotIndex]) continue;
+          assignments[slotIndex] = {
+            slot: rosterSlotDefinitions[slotIndex].label,
+            slotIndex,
+            player,
+          };
+          usedPlayerIds.add(player.id);
+          if (backtrack(index + 1, usedPlayerIds)) return true;
+          usedPlayerIds.delete(player.id);
+          assignments[slotIndex] = null;
         }
         return false;
       };
 
-      const ordered = [...candidates].sort((a, b) => (a.positions?.length || 1) - (b.positions?.length || 1));
-      const ok = backtrack(0, slots);
-      return ok ? assigned : null;
+      return backtrack(0, new Set()) ? assignments.filter(Boolean) : null;
+    };
+
+    const evaluateLockedSet = (lockedPlayers, selectedPack, avoidTeFlex) => {
+      const salaryCap = selectedPack?.slate?.salaryCap || 0;
+      const rosterSize = selectedPack?.slate?.rosterSize || rosterSlotDefinitions.length;
+      const assigned = assignSlots(
+        lockedPlayers.map((player) => ({
+          id: player.id,
+          name: player.name,
+          team: player.team,
+          position: player.position,
+          positions: Array.isArray(player.positions) && player.positions.length ? player.positions : [player.position],
+          salary: player.salary,
+        })),
+        avoidTeFlex
+      );
+      const salary = lockedPlayers.reduce((sum, player) => sum + (Number(player.salary) || 0), 0);
+      const errors = [];
+      if (lockedPlayers.length > rosterSize) {
+        errors.push("Too many locked players.");
+      }
+      if (salary > salaryCap) {
+        errors.push("That lock would exceed the salary cap.");
+      }
+      if (lockedPlayers.length && !assigned) {
+        errors.push("That lock would create an illegal DraftKings lineup.");
+      }
+      return {
+        assigned,
+        salary,
+        salaryCap,
+        rosterSize,
+        isLegal: errors.length === 0,
+        errors,
+      };
     };
 
     const buildPlayerMap = (pack) => {
@@ -1144,12 +1728,11 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           .map((p) => p.gameId)
       );
       return players.filter((player) => {
-        if (!state.includePlayers.has(player.id)) return false;
         if (!teamsAllowed.has(player.team)) return false;
         if (state.excludeLockedGames && lockGames.size) {
           if (!lockGames.has(player.gameId) && !state.lockedPlayers.has(player.id)) return false;
         }
-        if (state.hideUnderEnabled && player.projection < state.hideUnder && !state.lockedPlayers.has(player.id)) {
+        if (state.hideUnderEnabled && getPlayerProjection(player) < state.hideUnder && !state.lockedPlayers.has(player.id)) {
           return false;
         }
         if (state.positionFilter !== "ALL") {
@@ -1221,13 +1804,21 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       return filtered;
     };
 
-    const getLineupMetrics = (lineup, playerMap) => {
-      const salary = lineup.players.reduce((sum, p) => sum + p.salary, 0);
-      const projection = lineup.players.reduce((sum, p) => sum + p.fppg, 0);
-      const ceiling = lineup.players.reduce((sum, p) => sum + (playerMap.get(p.id)?.projection || p.fppg) * 1.6, 0);
-      const ownership = lineup.players.reduce((sum, p) => sum + (playerMap.get(p.id)?.ownership || 0), 0);
-      return { salary, projection, ceiling, ownership };
-    };
+      const getLineupMetrics = (lineup, playerMap) => {
+        const salary = lineup.players.reduce((sum, p) => sum + p.salary, 0);
+        const projection = lineup.players.reduce((sum, p) => sum + p.fppg, 0);
+        const ceiling = lineup.players.reduce((sum, p) => {
+          const source = playerMap.get(p.id) || p;
+          const value = Number(p.ceiling);
+          return sum + (Number.isFinite(value) ? value : getEffectiveCeiling(source));
+        }, 0);
+        const ownership = lineup.players.reduce((sum, p) => {
+          const source = playerMap.get(p.id) || p;
+          const value = Number(p.ownership);
+          return sum + (Number.isFinite(value) ? value : getEffectiveOwnership(source));
+        }, 0);
+        return { salary, projection, ceiling, ownership };
+      };
 
     const buildExposureMap = (lineups) => {
       const counts = new Map();
@@ -1347,6 +1938,27 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         return Math.min(Math.max(value, 0), 100);
       };
 
+      const clampEditableNumber = (value, fallback = 0) => {
+        if (!Number.isFinite(value)) return fallback;
+        return Math.max(0, value);
+      };
+
+      const pruneStateMap = (map, ids) => {
+        [...map.keys()].forEach((id) => {
+          if (!ids.has(id)) map.delete(id);
+        });
+      };
+
+      const getNextBoostUpValue = (playerId) => {
+        const current = getPlayerBoostUnits(playerId);
+        return Math.min(5, current + 1);
+      };
+
+      const getNextBoostDownValue = (playerId) => {
+        const current = getPlayerBoostUnits(playerId);
+        return Math.max(-5, current - 1);
+      };
+
       const syncTeamInclude = (teams) => {
         const next = new Map();
         teams.forEach((team) => {
@@ -1371,6 +1983,13 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         state.includePlayers = next;
         state.lockedPlayers = new Set([...state.lockedPlayers].filter((id) => ids.has(id)));
         state.keyPlayers = new Set([...state.keyPlayers].filter((id) => ids.has(id)));
+        pruneStateMap(state.boostUnits, ids);
+        pruneStateMap(state.manualProjection, ids);
+        pruneStateMap(state.manualOwnership, ids);
+        pruneStateMap(state.manualCeiling, ids);
+        pruneStateMap(state.manualFloor, ids);
+        pruneStateMap(state.minExposure, ids);
+        pruneStateMap(state.maxExposure, ids);
         state.includeInitialized = true;
       };
 
@@ -1381,7 +2000,11 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         state.teamInitialized = false;
         state.lockedPlayers.clear();
         state.keyPlayers.clear();
-        state.boost.clear();
+        state.boostUnits.clear();
+        state.manualProjection.clear();
+        state.manualOwnership.clear();
+        state.manualCeiling.clear();
+        state.manualFloor.clear();
         state.minExposure.clear();
         state.maxExposure.clear();
         state.results = [];
@@ -1409,12 +2032,11 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         const teamsAllowed = new Set(teams.filter((team) => state.teamInclude.get(team)));
         const lockGames = new Set(players.filter((p) => state.lockedPlayers.has(p.id)).map((p) => p.gameId));
         const poolPlayers = players.filter((player) => {
-          if (!state.includePlayers.has(player.id)) return false;
           if (!teamsAllowed.has(player.team)) return false;
           if (state.excludeLockedGames && lockGames.size) {
             if (!lockGames.has(player.gameId) && !state.lockedPlayers.has(player.id)) return false;
           }
-          if (state.hideUnderEnabled && player.projection < state.hideUnder && !state.lockedPlayers.has(player.id)) {
+          if (state.hideUnderEnabled && getEffectiveProjection(player) < state.hideUnder && !state.lockedPlayers.has(player.id)) {
             return false;
           }
           return true;
@@ -1445,27 +2067,23 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
 
         const lockedPlayers = players.filter((p) => state.lockedPlayers.has(p.id));
         const salary = lockedPlayers.reduce((sum, p) => sum + p.salary, 0);
-        const projection = lockedPlayers.reduce((sum, p) => sum + p.projection, 0);
-        const ownership = lockedPlayers.reduce((sum, p) => sum + p.ownership, 0);
+        const projection = lockedPlayers.reduce((sum, p) => sum + getEffectiveProjection(p), 0);
+        const ownership = lockedPlayers.reduce((sum, p) => sum + getEffectiveOwnership(p), 0);
+        const ceiling = lockedPlayers.reduce((sum, p) => sum + getEffectiveCeiling(p), 0);
         const salaryCap = selectedPack?.slate?.salaryCap || 0;
         const rosterSize = selectedPack?.slate?.rosterSize || 0;
-        const remaining = Math.max(0, salaryCap - salary);
-        const remPer = rosterSize ? remaining / rosterSize : 0;
-        const assigned = assignSlots(
-          lockedPlayers.map((p) => ({
-            id: p.id,
-            name: p.name,
-            team: p.team,
-            position: p.position,
-            positions: [p.position],
-            salary: p.salary,
-          })),
-          state.settings.avoidTeFlex
-        );
+        const salaryRemaining = salaryCap - salary;
+        const lockEvaluation = evaluateLockedSet(lockedPlayers, selectedPack, state.settings.avoidTeFlex);
+        const assigned = lockEvaluation.assigned;
         const assignedOk = Boolean(assigned);
+        const errors = lockEvaluation.errors;
+        const isLegal = lockEvaluation.isLegal;
+        const openSlots = Math.max(0, rosterSize - lockedPlayers.length);
+        const remPer = openSlots ? salaryRemaining / openSlots : 0;
+        const unassignedLockedPlayers = assignedOk ? [] : [...lockedPlayers];
         const slotMap = new Map();
         if (assignedOk) {
-          assigned.forEach(({ slot, player }) => slotMap.set(slot, player));
+          assigned.forEach(({ slotIndex, player }) => slotMap.set(slotIndex, player));
         }
 
         const resultsSorted = [...state.results];
@@ -1498,15 +2116,23 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           playerCount,
           builder: {
             lockedPlayers,
+            isLegal,
+            errors,
+            salaryUsed: salary,
             salary,
             projection,
             ownership,
-            remaining,
+            ceiling,
+            salaryRemaining,
+            remaining: salaryRemaining,
+            openSlots,
             remPer,
             assigned: assignedOk ? assigned : [],
             assignedOk,
             slotMap,
             salaryCap,
+            rosterSize,
+            unassignedLockedPlayers,
           },
           resultsSorted,
           resultsVisible,
@@ -1516,7 +2142,7 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       };
 
       const buildOptimizerPayload = (lineupCount) => {
-        if (!derived.selectedPack) return null;
+        if (!derived.selectedPack || !derived.builder?.isLegal) return null;
         const players = derived.players
           .filter((player) => {
             if (!state.includePlayers.has(player.id)) return false;
@@ -1524,15 +2150,15 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
             if (state.excludeLockedGames && derived.lockGames.size) {
               if (!derived.lockGames.has(player.gameId) && !state.lockedPlayers.has(player.id)) return false;
             }
-            if (state.hideUnderEnabled && player.projection < state.hideUnder && !state.lockedPlayers.has(player.id)) {
+            if (state.hideUnderEnabled && getEffectiveProjection(player) < state.hideUnder && !state.lockedPlayers.has(player.id)) {
               return false;
             }
             return true;
           })
           .map((player) => {
-            const boost = state.boost.get(player.id) || 0;
-            const keyBoost = state.keyPlayers.has(player.id) ? 0.08 : 0;
-            const multiplier = 1 + boost * 0.05 + keyBoost;
+            const boostUnits = getPlayerBoostUnits(player.id);
+            const boostMultiplier = 1 + boostUnits * 0.12;
+            const adjustedProjection = getEffectiveProjection(player) * boostMultiplier;
             const nameParts = splitName(player.name);
             return {
               id: player.id,
@@ -1543,7 +2169,10 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
               opponent: player.opponent,
               game_id: player.gameId,
               salary: player.salary,
-              fppg: player.projection * multiplier,
+              fppg: adjustedProjection,
+              ownership: getEffectiveOwnership(player),
+              ceiling: getEffectiveCeiling(player),
+              floor: getEffectiveFloor(player),
             };
           });
 
@@ -1574,6 +2203,51 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           });
         }
 
+        const rosterRules = [];
+        if (Number(state.advanced.minSalary) > 0) {
+          rosterRules.push({ type: "min_salary", value: Number(state.advanced.minSalary) });
+        }
+        if (Number(state.advanced.maxSalary) > 0) {
+          rosterRules.push({ type: "max_salary", value: Number(state.advanced.maxSalary) });
+        }
+        if (Number(state.advanced.minProjection) > 0) {
+          rosterRules.push({ type: "min_lineup_projection", value: Number(state.advanced.minProjection) });
+        }
+        if (Number(state.advanced.maxOwnership) > 0) {
+          rosterRules.push({ type: "max_lineup_ownership", value: Number(state.advanced.maxOwnership) });
+        }
+
+        const stackRules = [];
+        if (state.settings.qbStack) {
+          stackRules.push({ type: "qb_stack", count: 1, positions: ["RB", "WR", "TE"] });
+        }
+        if (state.settings.gameStack) {
+          stackRules.push({ type: "game_stack", count: 1, positions: ["RB", "WR", "TE"] });
+        }
+
+        const restrictionRules = [];
+        if (state.settings.avoidOppDefense) {
+          restrictionRules.push({ type: "avoid_opposing_defense", enabled: true });
+        }
+        if (Number(state.advanced.teamLimit) > 0) {
+          restrictionRules.push({ type: "team_limit", value: Number(state.advanced.teamLimit) });
+        }
+        if (Number(state.advanced.maxRepeating) > 0) {
+          restrictionRules.push({ type: "max_repeating_players", value: Number(state.advanced.maxRepeating) });
+        }
+
+        const playerGroupRules = state.advancedRules
+          .filter((rule) => isValidAdvancedRule(rule))
+          .map((rule) => ({
+            type: rule.type,
+            enabled: rule.enabled,
+            trigger: rule.trigger,
+            operator: rule.operator,
+            targetType: rule.targetType,
+            targetValue: rule.targetValue,
+            count: Number(rule.count) || 1,
+          }));
+
         return {
           players,
           lineup_count: lineupCount,
@@ -1585,6 +2259,10 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           team_limit: state.advanced.teamLimit > 0 ? state.advanced.teamLimit : null,
           randomness: state.advanced.randomness > 0 ? state.advanced.randomness : null,
           stacks,
+          roster_rules: rosterRules,
+          stack_rules: stackRules,
+          restriction_rules: restrictionRules,
+          player_group_rules: playerGroupRules,
           constraints: {
             qb_stack: state.settings.qbStack,
             game_stack: state.settings.gameStack,
@@ -1617,8 +2295,9 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         if (elements.search && elements.search.value !== state.search) elements.search.value = state.search;
         if (elements.hideUnder) elements.hideUnder.value = String(state.hideUnder);
         elements.hideUnderToggle?.classList.toggle("checked", state.hideUnderEnabled);
-        if (elements.projections && elements.projections.value !== state.projectionMode) {
-          elements.projections.value = state.projectionMode;
+        if (elements.projections) {
+          const nextProjectionMode = state.useUploadedProjections && state.uploadedProjections.length ? "uploaded" : "default";
+          if (elements.projections.value !== nextProjectionMode) elements.projections.value = nextProjectionMode;
         }
         if (elements.variance && elements.variance.value !== state.varianceMode) {
           elements.variance.value = state.varianceMode;
@@ -1684,6 +2363,9 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           elements.topTabs.forEach((item) =>
             item.classList.toggle("active", item.getAttribute("data-top-tab") === state.activeTopTab)
           );
+          elements.topPanels.forEach((item) =>
+            item.classList.toggle("active", item.getAttribute("data-top-panel") === state.activeTopTab)
+          );
         }
       };
 
@@ -1696,6 +2378,100 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           item.classList.toggle("active", isChecked);
         });
         elements.excludeLockedToggle?.classList.toggle("active", state.excludeLockedGames);
+      };
+
+      const renderAdvancedPanel = () => {
+        elements.advancedPanel?.classList.toggle("open", state.advancedPanelOpen);
+        elements.advancedSectionButtons.forEach((button) => {
+          button.classList.toggle("active", button.getAttribute("data-advanced-section-btn") === state.advancedOpenSection);
+        });
+        elements.advancedSectionPanes.forEach((pane) => {
+          pane.classList.toggle("active", pane.getAttribute("data-advanced-section-pane") === state.advancedOpenSection);
+        });
+        if (!elements.advancedPlayerGroups) return;
+
+        const players = derived.players || [];
+        const teams = [...new Set(players.map((player) => player.team))].sort();
+        const positions = [...new Set(players.map((player) => player.position))].sort();
+        const draft = state.advancedDraftRule;
+        const focusedPlayer = getPlayerById(state.focusedKeyPlayerId);
+        const targetType = draft?.targetType || "player";
+        const targetOptions = targetType === "team"
+          ? teams.map((team) => ({ value: team, label: team }))
+          : targetType === "position"
+            ? positions.map((position) => ({ value: position, label: position }))
+            : players.map((player) => ({ value: player.id, label: player.name }));
+
+        const triggerOptions = players
+          .filter((player) => state.keyPlayers.has(player.id))
+          .map((player) => `<option value="${player.id}" ${draft?.trigger?.playerId === player.id ? "selected" : ""}>${player.name}</option>`)
+          .join("");
+        const targetValueOptions = targetOptions
+          .map((option) => `<option value="${option.value}" ${draft?.targetValue === option.value ? "selected" : ""}>${option.label}</option>`)
+          .join("");
+        const rulesMarkup = state.advancedRules.length
+          ? state.advancedRules
+              .map((rule, index) => `
+                <div class="advanced-rule-row ${rule.enabled ? "enabled" : ""}">
+                  <label class="advanced-rule-toggle">
+                    <input type="checkbox" ${rule.enabled ? "checked" : ""} data-action="advanced-rule-toggle" data-rule-index="${index}" />
+                    <span>${describeAdvancedRule(rule)}</span>
+                  </label>
+                  <button type="button" class="outline-red" data-action="advanced-rule-remove" data-rule-index="${index}">Remove</button>
+                </div>
+              `)
+              .join("")
+          : `<div class="empty-state">No if-then rules yet.</div>`;
+
+        elements.advancedPlayerGroups.innerHTML = `
+          <div class="advanced-focused-player">
+            <strong>Focused Key Player</strong>
+            <span>${focusedPlayer ? focusedPlayer.name : "Select a key player to seed a rule."}</span>
+          </div>
+          <div class="advanced-rule-draft">
+            <div class="advanced-grid">
+              <label class="advanced-field">
+                <span>IF lineup contains</span>
+                <select data-action="advanced-draft-trigger">
+                  <option value="">Select keyed player</option>
+                  ${triggerOptions}
+                </select>
+              </label>
+              <label class="advanced-field">
+                <span>Then</span>
+                <select data-action="advanced-draft-operator">
+                  <option value="require_one_of" ${draft?.operator === "require_one_of" ? "selected" : ""}>Require at least one</option>
+                  <option value="exclude_player" ${draft?.operator === "exclude_player" ? "selected" : ""}>Exclude player</option>
+                </select>
+              </label>
+              <label class="advanced-field">
+                <span>Target Type</span>
+                <select data-action="advanced-draft-target-type">
+                  <option value="player" ${targetType === "player" ? "selected" : ""}>Player</option>
+                  <option value="team" ${targetType === "team" ? "selected" : ""}>Team</option>
+                  <option value="position" ${targetType === "position" ? "selected" : ""}>Position</option>
+                </select>
+              </label>
+              <label class="advanced-field">
+                <span>Target</span>
+                <select data-action="advanced-draft-target-value">
+                  <option value="">Select target</option>
+                  ${targetValueOptions}
+                </select>
+              </label>
+              <label class="advanced-field">
+                <span>Count</span>
+                <input type="number" min="1" step="1" value="${draft?.count || 1}" data-action="advanced-draft-count" ${draft?.operator === "exclude_player" ? "disabled" : ""} />
+              </label>
+            </div>
+            <div class="advanced-rule-actions">
+              <button type="button" class="solid-blue" data-action="advanced-rule-add">Add Rule</button>
+            </div>
+          </div>
+          <div class="advanced-rule-list">
+            ${rulesMarkup}
+          </div>
+        `;
       };
 
       const renderGames = () => {
@@ -1777,15 +2553,20 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         elements.playerRows.innerHTML = derived.visiblePlayers
           .map((player) => {
             const game = derived.selectedPack?.games?.find((g) => g.id === player.gameId);
-            const boost = state.boost.get(player.id) || 0;
+            const boost = getPlayerBoostUnits(player.id);
             const locked = state.lockedPlayers.has(player.id);
             const keyed = state.keyPlayers.has(player.id);
+            const included = state.includePlayers.has(player.id);
             const boostClass = boost > 0 ? "boost-up" : boost < 0 ? "boost-down" : "";
+            const effectiveProjection = getEffectiveProjection(player);
+            const effectiveOwnership = getEffectiveOwnership(player);
+            const effectiveCeiling = getEffectiveCeiling(player);
+            const effectiveFloor = getEffectiveFloor(player);
             const exposureCount = derived.exposureMap.get(player.id) || 0;
             const exposurePct = exposureTotal ? Math.round((exposureCount / exposureTotal) * 10000) / 100 : 0;
             return `
-            <tr data-player-id="${player.id}" class="player-row ${locked ? "is-locked" : ""} ${keyed ? "is-keyed" : ""} ${boostClass}">
-              <td class="check-col"><span class="fake-check ${state.includePlayers.has(player.id) ? "checked" : ""}"></span></td>
+            <tr data-player-id="${player.id}" class="player-row ${included ? "is-in-pool" : "is-out-of-pool"} ${locked ? "is-locked" : ""} ${keyed ? "is-keyed" : ""} ${boostClass}">
+              <td class="check-col"><span class="fake-check ${included ? "checked" : ""}"></span></td>
               <td class="icon-col">
                 <div class="tiny-icons">
                   <span class="tiny-lock ${locked ? "active" : ""}" data-action="lock"></span>
@@ -1795,7 +2576,7 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
               <td class="name-col">
                 <div class="player-cell">
                   <span class="pos-pill pos-${player.position.toLowerCase().replace("/", "")}">${player.position}</span>
-                  <span class="team-dot">${player.team}</span>
+                  ${buildTeamLogoCell(player.team)}
                   <span class="player-name">${player.name}</span>
                 </div>
               </td>
@@ -1803,17 +2584,17 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
                 <div class="boost-icons">
                   <span class="boost up ${boost > 0 ? "active" : ""}" data-action="boost-up">↑</span>
                   <span class="boost down ${boost < 0 ? "active" : ""}" data-action="boost-down">↓</span>
-                  <span class="boost-zero ${boost === 0 ? "active" : ""}" data-action="boost-zero">0</span>
+                  <span class="boost-zero ${boost === 0 ? "active" : ""}" data-action="boost-zero">${boost}</span>
                 </div>
               </td>
               <td>${game?.gameLabel || `${player.team} @ ${player.opponent}`}</td>
               <td>${formatSalary(player.salary)}</td>
-              <td>${formatNumber(player.projection)}</td>
+              <td><input type="number" value="${formatNumber(effectiveProjection)}" min="0" step="0.01" data-action="edit-projection" /></td>
               <td>—</td>
-              <td>${formatNumber(player.ownership)}</td>
-              <td>${formatNumber(player.projection * 1.6)}</td>
-              <td>${formatNumber(player.projection * 0.6)}</td>
-              <td>${formatNumber(player.projection * 0.25)}</td>
+              <td><input type="number" value="${formatNumber(effectiveOwnership)}" min="0" max="100" step="0.01" data-action="edit-ownership" /></td>
+              <td><input type="number" value="${formatNumber(effectiveCeiling)}" min="0" step="0.01" data-action="edit-ceiling" /></td>
+              <td><input type="number" value="${formatNumber(effectiveFloor)}" min="0" step="0.01" data-action="edit-floor" /></td>
+              <td>${formatNumber(effectiveProjection * 0.25)}</td>
               <td><input type="number" value="${state.minExposure.get(player.id) ?? 0}" min="0" max="100" data-action="min-exposure" /></td>
               <td><input type="number" value="${state.maxExposure.get(player.id) ?? 100}" min="0" max="100" data-action="max-exposure" /></td>
               <td data-cell="opto">${formatNumber(exposurePct)}</td>
@@ -1829,41 +2610,59 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
 
       const renderBuilder = () => {
         if (!derived.selectedPack || !derived.builder) return;
+        elements.builderCard?.classList.toggle("invalid", !derived.builder.isLegal);
         if (elements.builderSummary) {
-          const builderStatus =
-            derived.builder.lockedPlayers.length && !derived.builder.assignedOk
-              ? `<span class="builder-status error">Locked players don't fit slots.</span>`
+          const builderStatus = state.builderMessage
+            ? `<span class="builder-status error">${state.builderMessage}</span>`
+            : !derived.builder.isLegal
+            ? `<span class="builder-status error">${derived.builder.errors.join(" ")}</span>`
+            : state.useUploadedProjections && state.uploadedProjections.length
+              ? `<span class="builder-status active">Uploaded projections active.</span>`
               : "";
           elements.builderSummary.innerHTML = `
           <span>Rem/Player: ${formatAbbrevMoney(derived.builder.remPer)}</span>
-          <span>Rem: ${formatSalary(derived.builder.remaining)}</span>
+          <span>Rem: ${formatSalary(derived.builder.salaryRemaining)}</span>
           <span>Proj ${formatNumber(derived.builder.projection)}</span>
-          <span>Act 0.00</span>
-          <span>Ceil ${formatNumber(derived.builder.projection * 1.6)}</span>
-          <span>Own ${formatNumber(derived.builder.ownership)}% (${formatNumber(derived.builder.ownership)}%)</span>
+          <span>Ceil ${formatNumber(derived.builder.ceiling)}</span>
+          <span>Own ${formatNumber(derived.builder.ownership)}%</span>
           ${builderStatus}
         `;
         }
 
-        elements.builderSlots.forEach((slotEl) => {
-          const slot = slotEl.getAttribute("data-slot");
-          const player = slot ? derived.builder.slotMap.get(slot) : null;
+        elements.builderSlots.forEach((slotEl, index) => {
+          const player = derived.builder.slotMap.get(index) || null;
           const fill = slotEl.querySelector(".slot-fill");
           if (!fill) return;
-          slotEl.onclick = null;
           if (player) {
             slotEl.classList.add("filled");
-            fill.textContent = `${player.name} · ${formatAbbrevMoney(player.salary)}`;
-            slotEl.onclick = () => actions.togglePlayerLock(player.id);
+            const source = derived.playerMap.get(player.id) || player;
+            fill.innerHTML = `
+              <div class="builder-player-card">
+                <div class="builder-player-main">
+                  <div class="builder-player-heading">
+                    <span class="builder-player-name">${player.name}</span>
+                    <span class="builder-player-team">${player.team}</span>
+                  </div>
+                  <button type="button" class="builder-remove" data-action="builder-remove" data-player-id="${player.id}">Remove</button>
+                </div>
+                <div class="builder-player-meta">
+                  <span>${formatSalary(player.salary)}</span>
+                  <span>Proj ${formatNumber(getEffectiveProjection(source))}</span>
+                  <span>Own ${formatNumber(getEffectiveOwnership(source))}%</span>
+                  <span>Ceil ${formatNumber(getEffectiveCeiling(source))}</span>
+                </div>
+              </div>
+            `;
           } else {
             slotEl.classList.remove("filled");
-            fill.textContent = "";
+            fill.innerHTML = `<span class="builder-empty">Open slot</span>`;
           }
         });
       };
 
       const renderLineups = () => {
         if (!elements.lineupsGrid || !derived.selectedPack) return;
+        elements.resultsShell?.classList.toggle("is-hidden", state.results.length === 0);
         const filteredCount = derived.resultsVisible.length;
         const totalCount = derived.resultsSorted.length;
         if (elements.resultsFiltered) {
@@ -1922,6 +2721,113 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           })
           .join("");
 
+      };
+
+      const renderSavedLineups = () => {
+        if (!elements.savedLineups) return;
+        if (!state.savedLineups.length) {
+          elements.savedLineups.innerHTML = `<div class="empty-state">No saved lineups yet.</div>`;
+          return;
+        }
+        elements.savedLineups.innerHTML = state.savedLineups
+          .map((lineup, index) => {
+            const metrics = getLineupMetrics(lineup, derived.playerMap);
+            const tag = state.resultTags.get(lineup.id) || "";
+            const players = lineup.players.map((player) => player.name).join(", ");
+            return `
+            <article class="saved-lineup-card ${state.selectedLineups.has(lineup.id) ? "selected" : ""}" data-saved-lineup-id="${lineup.id}">
+              <div class="saved-lineup-head">
+                <strong>Lineup ${index + 1}</strong>
+                ${tag ? `<span class="saved-lineup-tag">${tag}</span>` : ""}
+              </div>
+              <div class="saved-lineup-players">${players}</div>
+              <div class="saved-lineup-metrics">
+                <span>Salary ${formatAbbrevMoney(metrics.salary)}</span>
+                <span>Projection ${formatNumber(metrics.projection)}</span>
+                <span>Ownership ${formatNumber(metrics.ownership)}%</span>
+              </div>
+              <div class="saved-lineup-actions">
+                <button type="button" class="outline-blue" data-action="saved-lineup-select">Select Lineup</button>
+                <button type="button" class="outline-red" data-action="saved-lineup-delete">Delete Lineup</button>
+              </div>
+            </article>
+          `;
+          })
+          .join("");
+      };
+
+      const renderEntries = () => {
+        if (elements.entriesStatus) {
+          elements.entriesStatus.textContent = state.entriesStatus || "Upload a CSV to preview entries.";
+        }
+        if (elements.entriesPreviewHead && elements.entriesPreviewBody) {
+          if (!state.uploadedEntries.length) {
+            elements.entriesPreviewHead.innerHTML = "";
+            elements.entriesPreviewBody.innerHTML = `<tr><td colspan="99" class="empty-row">No entries loaded.</td></tr>`;
+          } else {
+            const headers = Object.keys(state.uploadedEntries[0]);
+            elements.entriesPreviewHead.innerHTML = `<tr>${headers.map((header) => `<th>${header}</th>`).join("")}</tr>`;
+            elements.entriesPreviewBody.innerHTML = state.uploadedEntries
+              .slice(0, 10)
+              .map((row) => `<tr>${headers.map((header) => `<td>${row[header] || ""}</td>`).join("")}</tr>`)
+              .join("");
+          }
+        }
+        if (elements.lateSwapSummary) {
+          const firstEntry = state.uploadedEntries[0];
+          const locked = firstEntry ? inferLockedPlayersFromEntry(firstEntry, derived.playerMap) : [];
+          const openSlots = Math.max(0, rosterSlots.length - locked.length);
+          elements.lateSwapSummary.innerHTML = `
+            <div class="summary-card">
+              <strong>Locked/Live Players</strong>
+              <span>${locked.length ? locked.map((player) => player.name).join(", ") : "None detected yet."}</span>
+            </div>
+            <div class="summary-card">
+              <strong>Open Swap Slots</strong>
+              <span>${openSlots}</span>
+            </div>
+          `;
+        }
+        if (elements.lateSwapResult) {
+          elements.lateSwapResult.textContent = state.lateSwapResult || "";
+        }
+      };
+
+      const renderProjections = () => {
+        if (elements.projectionsStatus) {
+          const status = state.projectionsStatus
+            || (state.uploadedProjections.length
+              ? `${state.uploadedProjections.length} uploaded projection rows loaded.`
+              : "No uploaded projections yet.");
+          elements.projectionsStatus.textContent = status;
+        }
+        if (elements.projectionsActiveIndicator) {
+          elements.projectionsActiveIndicator.textContent = state.useUploadedProjections && state.uploadedProjections.length
+            ? "Uploaded projections active"
+            : "Uploaded projections inactive";
+          elements.projectionsActiveIndicator.classList.toggle("active", state.useUploadedProjections && state.uploadedProjections.length);
+        }
+        if (elements.projectionsPreviewBody) {
+          if (!state.uploadedProjections.length) {
+            elements.projectionsPreviewBody.innerHTML = `<tr><td colspan="5" class="empty-row">No projections loaded.</td></tr>`;
+            return;
+          }
+          elements.projectionsPreviewBody.innerHTML = state.uploadedProjections
+            .slice(0, 25)
+            .map((row) => {
+              const matched = derived.players.some((player) => normalizeName(player.name) === normalizeName(row.name));
+              return `
+                <tr>
+                  <td>${row.name || ""}</td>
+                  <td>${row.team || "—"}</td>
+                  <td>${row.position || "—"}</td>
+                  <td>${formatNumber(row.projection)}</td>
+                  <td>${matched ? "Matched" : "Fallback"}</td>
+                </tr>
+              `;
+            })
+            .join("");
+        }
       };
 
       const renderSidebarPlayers = () => {
@@ -2032,22 +2938,37 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       };
 
       const renderAll = () => {
-        computeDerived();
-        renderToolbarControls();
-        renderControls();
-        renderGames();
-        renderPlayerRows();
-        renderBuilder();
-        renderLineups();
-        renderSidebarPlayers();
-        renderStacks();
-        renderSettings();
-        updateAdvancedCount();
+        try { computeDerived(); } catch (e) { console.error("[renderAll:computeDerived]", e); }
+        try { renderToolbarControls(); } catch (e) { console.error("[renderAll:renderToolbarControls]", e); }
+        try { renderControls(); } catch (e) { console.error("[renderAll:renderControls]", e); }
+        try { renderGames(); } catch (e) { console.error("[renderAll:renderGames]", e); }
+        try { renderPlayerRows(); } catch (e) { console.error("[renderAll:renderPlayerRows]", e); }
+        try { renderBuilder(); } catch (e) { console.error("[renderAll:renderBuilder]", e); }
+        try { renderLineups(); } catch (e) { console.error("[renderAll:renderLineups]", e); }
+        try { renderSavedLineups(); } catch (e) { console.error("[renderAll:renderSavedLineups]", e); }
+        try { renderSidebarPlayers(); } catch (e) { console.error("[renderAll:renderSidebarPlayers]", e); }
+        try { renderStacks(); } catch (e) { console.error("[renderAll:renderStacks]", e); }
+        try { renderSettings(); } catch (e) { console.error("[renderAll:renderSettings]", e); }
+        try { renderEntries(); } catch (e) { console.error("[renderAll:renderEntries]", e); }
+        try { renderProjections(); } catch (e) { console.error("[renderAll:renderProjections]", e); }
+        try { renderAdvancedPanel(); } catch (e) { console.error("[renderAll:renderAdvancedPanel]", e); }
+        try { updateAdvancedCount(); } catch (e) { console.error("[renderAll:updateAdvancedCount]", e); }
       };
 
       const commit = (mutate) => {
         mutate();
         renderAll();
+      };
+
+      const scrollSettingsCardIntoView = () => {
+        requestAnimationFrame(() => {
+          elements.settingsCard?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        });
+      };
+
+      const getBuilderErrorMessage = () => {
+        if (!derived.builder || derived.builder.isLegal) return "";
+        return derived.builder.errors.join(" ");
       };
 
       const actions = {
@@ -2078,8 +2999,10 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           }),
         togglePlayerInclude: (playerId) =>
           commit(() => {
+            state.builderMessage = "";
             if (state.includePlayers.has(playerId)) {
               state.includePlayers.delete(playerId);
+              state.lockedPlayers.delete(playerId);
             } else {
               state.includePlayers.add(playerId);
             }
@@ -2087,24 +3010,60 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         togglePlayerLock: (playerId) =>
           commit(() => {
             if (state.lockedPlayers.has(playerId)) {
+              state.builderMessage = "";
               state.lockedPlayers.delete(playerId);
-            } else {
-              state.lockedPlayers.add(playerId);
-              state.includePlayers.add(playerId);
+              return;
             }
+            const player = derived.playerMap.get(playerId);
+            if (!player) return;
+            const nextLockedIds = new Set(state.lockedPlayers);
+            nextLockedIds.add(playerId);
+            const nextLockedPlayers = [...nextLockedIds].map((id) => derived.playerMap.get(id)).filter(Boolean);
+            const nextEvaluation = evaluateLockedSet(nextLockedPlayers, derived.selectedPack, state.settings.avoidTeFlex);
+            if (!nextEvaluation.isLegal) {
+              state.builderMessage = nextEvaluation.errors[0] || "That lock would create an illegal DraftKings lineup.";
+              return;
+            }
+            state.builderMessage = "";
+            state.lockedPlayers.add(playerId);
+            state.includePlayers.add(playerId);
           }),
         togglePlayerKey: (playerId) =>
           commit(() => {
             if (state.keyPlayers.has(playerId)) {
               state.keyPlayers.delete(playerId);
+              if (state.focusedKeyPlayerId === playerId) {
+                state.focusedKeyPlayerId = null;
+                if (state.advancedDraftRule?.trigger?.playerId === playerId) {
+                  state.advancedDraftRule = null;
+                }
+              }
             } else {
               state.keyPlayers.add(playerId);
               state.includePlayers.add(playerId);
+              state.focusedKeyPlayerId = playerId;
+              state.advancedPanelOpen = true;
+              state.advancedOpenSection = "player-groups";
+              state.advancedDraftRule = createDraftRule(playerId);
+              scrollSettingsCardIntoView();
             }
           }),
-        setPlayerBoost: (playerId, value) =>
+        openAdvancedSettings: () =>
           commit(() => {
-            state.boost.set(playerId, value);
+            state.advancedPanelOpen = true;
+            scrollSettingsCardIntoView();
+          }),
+        incrementPlayerBoost: (playerId) =>
+          commit(() => {
+            setPlayerBoostUnits(playerId, getNextBoostUpValue(playerId));
+          }),
+        decrementPlayerBoost: (playerId) =>
+          commit(() => {
+            setPlayerBoostUnits(playerId, getNextBoostDownValue(playerId));
+          }),
+        resetPlayerBoost: (playerId) =>
+          commit(() => {
+            setPlayerBoostUnits(playerId, 0);
           }),
         setPlayerMinExposure: (playerId, value) =>
           commit(() => {
@@ -2113,6 +3072,22 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         setPlayerMaxExposure: (playerId, value) =>
           commit(() => {
             state.maxExposure.set(playerId, clampPercent(value, 100));
+          }),
+        setManualProjection: (playerId, value) =>
+          commit(() => {
+            state.manualProjection.set(playerId, clampEditableNumber(value, 0));
+          }),
+        setManualOwnership: (playerId, value) =>
+          commit(() => {
+            state.manualOwnership.set(playerId, clampPercent(value, 0));
+          }),
+        setManualCeiling: (playerId, value) =>
+          commit(() => {
+            state.manualCeiling.set(playerId, clampEditableNumber(value, 0));
+          }),
+        setManualFloor: (playerId, value) =>
+          commit(() => {
+            state.manualFloor.set(playerId, clampEditableNumber(value, 0));
           }),
         setPositionFilter: (pos) =>
           commit(() => {
@@ -2139,14 +3114,53 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           commit(() => {
             state.excludeLockedGames = !state.excludeLockedGames;
           }),
+        setAdvancedSection: (section) =>
+          commit(() => {
+            state.advancedPanelOpen = true;
+            state.advancedOpenSection = section || "roster";
+          }),
         setAdvancedField: (key, value) =>
           commit(() => {
             if (!key) return;
             state.advanced[key] = Number(value) || 0;
           }),
+        updateAdvancedDraftRule: (patch) =>
+          commit(() => {
+            const current = state.advancedDraftRule || createDraftRule(state.focusedKeyPlayerId);
+            state.advancedDraftRule = {
+              ...current,
+              ...patch,
+              trigger: {
+                ...(current.trigger || {}),
+                ...(patch.trigger || {}),
+              },
+            };
+            if (patch.targetType) {
+              state.advancedDraftRule.targetValue = "";
+            }
+          }),
+        addAdvancedDraftRule: () =>
+          commit(() => {
+            const draft = state.advancedDraftRule || createDraftRule(state.focusedKeyPlayerId);
+            if (!isValidAdvancedRule(draft)) return;
+            state.advancedRules = [...state.advancedRules, { ...draft }];
+            state.advancedDraftRule = createDraftRule(draft.trigger?.playerId || state.focusedKeyPlayerId);
+          }),
+        removeAdvancedRule: (index) =>
+          commit(() => {
+            state.advancedRules = state.advancedRules.filter((_, ruleIndex) => ruleIndex !== index);
+          }),
+        toggleAdvancedRuleEnabled: (index, enabled) =>
+          commit(() => {
+            state.advancedRules = state.advancedRules.map((rule, ruleIndex) =>
+              ruleIndex === index ? { ...rule, enabled } : rule
+            );
+          }),
         setProjectionMode: (value) =>
           commit(() => {
             state.projectionMode = value || "default";
+            state.useUploadedProjections = state.projectionMode === "uploaded" && state.uploadedProjections.length > 0;
+            persistUploadedProjections();
           }),
         setVarianceMode: (value) =>
           commit(() => {
@@ -2158,7 +3172,11 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           }),
         resetColumns: () =>
           commit(() => {
-            state.boost.clear();
+            state.boostUnits.clear();
+            state.manualProjection.clear();
+            state.manualOwnership.clear();
+            state.manualCeiling.clear();
+            state.manualFloor.clear();
             state.minExposure.clear();
             state.maxExposure.clear();
           }),
@@ -2243,6 +3261,7 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         setTopTab: (tab) =>
           commit(() => {
             state.activeTopTab = tab || state.activeTopTab;
+            safeStorageSet(STORAGE_KEYS.activeTopTab, state.activeTopTab);
           }),
         setSidebarSearch: (value) =>
           commit(() => {
@@ -2254,14 +3273,19 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           }),
         clearBuilder: () =>
           commit(() => {
+            state.builderMessage = "";
             state.lockedPlayers.clear();
             state.keyPlayers.clear();
-            state.boost.clear();
+            state.boostUnits.clear();
+            state.manualProjection.clear();
+            state.manualOwnership.clear();
+            state.manualCeiling.clear();
+            state.manualFloor.clear();
           }),
         saveBuilder: () =>
           commit(() => {
             safeStorageSet(
-              "classic-optimizer-builder",
+              STORAGE_KEYS.builder,
               JSON.stringify({
                 locked: [...state.lockedPlayers],
                 include: [...state.includePlayers],
@@ -2276,9 +3300,9 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
             const tag = prompt("Tag this build:");
             if (!tag) return;
             state.builderTag = tag;
-            safeStorageSet("classic-optimizer-builder-tag", tag);
+            safeStorageSet(STORAGE_KEYS.builderTag, tag);
             safeStorageSet(
-              "classic-optimizer-builder",
+              STORAGE_KEYS.builder,
               JSON.stringify({
                 locked: [...state.lockedPlayers],
                 include: [...state.includePlayers],
@@ -2291,21 +3315,14 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         clearResults: () =>
           commit(() => {
             state.results = [];
-            state.resultTags.clear();
             state.selectedLineups.clear();
             state.activeTag = null;
             state.statusMessage = "";
           }),
         saveResults: () =>
           commit(() => {
-            safeStorageSet(
-              "classic-optimizer-results",
-              JSON.stringify({
-                results: state.results,
-                resultTags: Object.fromEntries(state.resultTags.entries()),
-                savedAt: Date.now(),
-              })
-            );
+            state.savedLineups = [...state.results];
+            persistSavedLineups();
           }),
         downloadResults: () =>
           commit(() => {
@@ -2330,6 +3347,13 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           card?.scrollIntoView({ behavior: "smooth", block: "center" });
         },
         runOptimizer: async () => {
+          console.log("[optimizer] runOptimizer reached");
+          if (!derived.builder?.isLegal) {
+            commit(() => {
+              state.statusMessage = getBuilderErrorMessage() || "Builder is invalid.";
+            });
+            return;
+          }
           try {
             const payload = buildOptimizerPayload(state.lineupCount);
             if (!payload || !payload.players.length) {
@@ -2358,8 +3382,10 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
             const filtered = filterLineupsByExposure(lineups, state.minExposure, state.maxExposure);
             commit(() => {
               state.results = filtered;
+              state.savedLineups = [...filtered, ...state.savedLineups.filter((saved) => !filtered.some((next) => next.id === saved.id))];
               state.selectedLineups.clear();
               state.statusMessage = "";
+              persistSavedLineups();
             });
           } catch (error) {
             commit(() => {
@@ -2368,6 +3394,12 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           }
         },
         addMoreLineups: async () => {
+          if (!derived.builder?.isLegal) {
+            commit(() => {
+              state.statusMessage = getBuilderErrorMessage() || "Builder is invalid.";
+            });
+            return;
+          }
           try {
             const payload = buildOptimizerPayload(state.resultsLineups);
             if (!payload || !payload.players.length) {
@@ -2396,7 +3428,9 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
             const filtered = filterLineupsByExposure(lineups, state.minExposure, state.maxExposure);
             commit(() => {
               state.results = [...state.results, ...filtered];
+              state.savedLineups = [...state.savedLineups, ...filtered];
               state.statusMessage = "";
+              persistSavedLineups();
             });
           } catch (error) {
             commit(() => {
@@ -2424,13 +3458,151 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           const payload = await response.json();
           commit(() => {
             state.simResults = payload.results || null;
-            safeStorageSet("classic-optimizer-sim-results", JSON.stringify(payload.results || {}));
+            safeStorageSet(STORAGE_KEYS.simResults, JSON.stringify(payload.results || {}));
           });
           alert(`Simulation complete: ${payload.results?.lineups?.length || 0} lineups.`);
         },
+        selectSavedLineup: (id) =>
+          commit(() => {
+            const lineup = state.savedLineups.find((item) => item.id === id);
+            if (!lineup) return;
+            state.results = [lineup];
+            state.selectedLineups = new Set([id]);
+            state.activeTopTab = "optimizer";
+            safeStorageSet(STORAGE_KEYS.activeTopTab, state.activeTopTab);
+          }),
+        deleteSavedLineup: (id) =>
+          commit(() => {
+            state.savedLineups = state.savedLineups.filter((lineup) => lineup.id !== id);
+            state.results = state.results.filter((lineup) => lineup.id !== id);
+            state.selectedLineups.delete(id);
+            state.resultTags.delete(id);
+            persistSavedLineups();
+          }),
+        clearSavedLineups: () =>
+          commit(() => {
+            state.savedLineups = [];
+            state.results = [];
+            state.selectedLineups.clear();
+            state.activeTag = null;
+            persistSavedLineups();
+          }),
+        setEntriesFile: (file) =>
+          commit(() => {
+            state.uploadedEntriesFile = file || null;
+            state.entriesStatus = file ? `Ready to load ${file.name}.` : "Upload a CSV to preview entries.";
+          }),
+        loadEntries: async () => {
+          if (!state.uploadedEntriesFile) {
+            commit(() => {
+              state.entriesStatus = "Choose a CSV file first.";
+            });
+            return;
+          }
+          try {
+            const text = await readFileText(state.uploadedEntriesFile);
+            const rows = parseCsv(text);
+            commit(() => {
+              state.uploadedEntries = rows;
+              state.entriesStatus = rows.length ? `Loaded ${rows.length} entries from ${state.uploadedEntriesFile.name}.` : "No rows found in CSV.";
+              state.lateSwapResult = "";
+              persistUploadedEntries();
+            });
+          } catch (error) {
+            commit(() => {
+              state.entriesStatus = error?.message || "Unable to parse entries CSV.";
+            });
+          }
+        },
+        runLateSwap: async () => {
+          const firstEntry = state.uploadedEntries[0];
+          if (!firstEntry) {
+            commit(() => {
+              state.lateSwapResult = "Late swap foundation is loaded, but no parsed entries are available yet.";
+            });
+            return;
+          }
+          const locked = inferLockedPlayersFromEntry(firstEntry, derived.playerMap).map((player) => player.id);
+          let foundationLoaded = false;
+          try {
+            const payload = buildOptimizerPayload(Math.max(1, state.uploadedEntries.length));
+            if (payload) {
+              payload.locked_player_ids = [...new Set([...payload.locked_player_ids, ...locked])];
+              foundationLoaded = true;
+            }
+          } catch (error) {
+            foundationLoaded = false;
+          }
+          commit(() => {
+            state.lateSwapResult = foundationLoaded
+              ? `Late swap foundation is loaded and ${state.uploadedEntries.length} entries were parsed. Locked/live players are preserved and remaining open slots are ready for true late swap logic.`
+              : "Late swap foundation is loaded and entries were parsed.";
+          });
+        },
+        setProjectionsFile: (file) =>
+          commit(() => {
+            state.uploadedProjectionsFile = file || null;
+            state.projectionsStatus = file ? `Ready to load ${file.name}.` : "No uploaded projections yet.";
+          }),
+        loadUploadedProjections: async () => {
+          if (!state.uploadedProjectionsFile) {
+            commit(() => {
+              state.projectionsStatus = "Choose a CSV file first.";
+            });
+            return;
+          }
+          try {
+            const text = await readFileText(state.uploadedProjectionsFile);
+            const rows = parseCsv(text)
+              .map((row) => ({
+                name: getRowValue(row, ["name", "player", "player name"]),
+                team: getRowValue(row, ["team", "tm"]),
+                position: getRowValue(row, ["position", "pos"]),
+                projection: Number(getRowValue(row, ["projection", "proj", "fpts", "points"])),
+              }))
+              .filter((row) => row.name && Number.isFinite(row.projection));
+            commit(() => {
+              state.uploadedProjections = rows;
+              rebuildUploadedProjectionsMap();
+              state.projectionsStatus = rows.length
+                ? `Loaded ${rows.length} uploaded projection rows from ${state.uploadedProjectionsFile.name}.`
+                : "No usable projection rows found.";
+              if (!rows.length) state.useUploadedProjections = false;
+              persistUploadedProjections();
+            });
+          } catch (error) {
+            commit(() => {
+              state.projectionsStatus = error?.message || "Unable to parse projections CSV.";
+            });
+          }
+        },
+        toggleUploadedProjections: () =>
+          commit(() => {
+            if (!state.uploadedProjections.length) {
+              state.projectionsStatus = "Load projection rows before activating them.";
+              state.useUploadedProjections = false;
+            } else {
+              state.useUploadedProjections = !state.useUploadedProjections;
+              state.projectionMode = state.useUploadedProjections ? "uploaded" : "default";
+              state.projectionsStatus = state.useUploadedProjections
+                ? "Uploaded projections are active."
+                : "Uploaded projections are inactive.";
+            }
+            persistUploadedProjections();
+          }),
+        clearUploadedProjections: () =>
+          commit(() => {
+            state.uploadedProjections = [];
+            state.uploadedProjectionsMap = new Map();
+            state.useUploadedProjections = false;
+            state.projectionMode = "default";
+            state.projectionsStatus = "Uploaded projections cleared.";
+            persistUploadedProjections();
+          }),
       };
 
       const bindEvents = () => {
+        console.log("[optimizer] bindEvents start");
         elements.week?.addEventListener("change", (event) => actions.selectWeek(event.target.value));
         elements.site?.addEventListener("change", (event) => actions.selectSiteGameType(event.target.value));
         elements.slate?.addEventListener("change", (event) => actions.selectSlate(event.target.value));
@@ -2470,15 +3642,15 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
             return;
           }
           if (event.target.closest("[data-action=boost-up]")) {
-            actions.setPlayerBoost(playerId, 1);
+            actions.incrementPlayerBoost(playerId);
             return;
           }
           if (event.target.closest("[data-action=boost-down]")) {
-            actions.setPlayerBoost(playerId, -1);
+            actions.decrementPlayerBoost(playerId);
             return;
           }
           if (event.target.closest("[data-action=boost-zero]")) {
-            actions.setPlayerBoost(playerId, 0);
+            actions.resetPlayerBoost(playerId);
           }
         });
 
@@ -2489,10 +3661,34 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           if (!playerId) return;
           if (event.target.closest("[data-action=min-exposure]")) {
             actions.setPlayerMinExposure(playerId, Number(event.target.value));
+            return;
           }
           if (event.target.closest("[data-action=max-exposure]")) {
             actions.setPlayerMaxExposure(playerId, Number(event.target.value));
+            return;
           }
+          if (event.target.closest("[data-action=edit-projection]")) {
+            actions.setManualProjection(playerId, Number(event.target.value));
+            return;
+          }
+          if (event.target.closest("[data-action=edit-ownership]")) {
+            actions.setManualOwnership(playerId, Number(event.target.value));
+            return;
+          }
+          if (event.target.closest("[data-action=edit-ceiling]")) {
+            actions.setManualCeiling(playerId, Number(event.target.value));
+            return;
+          }
+          if (event.target.closest("[data-action=edit-floor]")) {
+            actions.setManualFloor(playerId, Number(event.target.value));
+          }
+        });
+
+        elements.builderSlotsWrap?.addEventListener("click", (event) => {
+          const removeButton = event.target.closest("[data-action=builder-remove]");
+          if (!removeButton || !elements.builderSlotsWrap.contains(removeButton)) return;
+          event.preventDefault();
+          actions.togglePlayerLock(removeButton.getAttribute("data-player-id"));
         });
 
         elements.lineupsGrid?.addEventListener("click", (event) => {
@@ -2560,10 +3756,15 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         elements.excludeLockedWrap?.addEventListener("click", () => actions.toggleExcludeLockedGames());
 
         elements.advancedOpen.forEach((button) => {
-          button.addEventListener("click", () => {
-            if (!elements.advancedPanel) return;
-            elements.advancedPanel.classList.toggle("open");
+          button.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            actions.openAdvancedSettings();
           });
+        });
+
+        elements.advancedSectionButtons.forEach((button) => {
+          button.addEventListener("click", () => actions.setAdvancedSection(button.getAttribute("data-advanced-section-btn")));
         });
 
         elements.advancedFields.forEach((field) => {
@@ -2613,6 +3814,47 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
           button.addEventListener("click", () => actions.setTopTab(button.getAttribute("data-top-tab")));
         });
 
+        elements.savedLineups?.addEventListener("click", (event) => {
+          const card = event.target.closest("[data-saved-lineup-id]");
+          if (!card || !elements.savedLineups.contains(card)) return;
+          const id = card.getAttribute("data-saved-lineup-id");
+          if (!id) return;
+          if (event.target.closest("[data-action=saved-lineup-delete]")) {
+            actions.deleteSavedLineup(id);
+            return;
+          }
+          if (event.target.closest("[data-action=saved-lineup-select]")) {
+            actions.selectSavedLineup(id);
+          }
+        });
+
+        qsa("[data-action=saved-lineups-clear]").forEach((button) =>
+          button.addEventListener("click", () => actions.clearSavedLineups())
+        );
+
+        elements.entriesUpload?.addEventListener("change", (event) => {
+          actions.setEntriesFile(event.target.files?.[0] || null);
+        });
+        qsa("[data-action=entries-load]").forEach((button) =>
+          button.addEventListener("click", () => actions.loadEntries())
+        );
+        qsa("[data-action=late-swap-run]").forEach((button) =>
+          button.addEventListener("click", () => actions.runLateSwap())
+        );
+
+        elements.projectionsUpload?.addEventListener("change", (event) => {
+          actions.setProjectionsFile(event.target.files?.[0] || null);
+        });
+        qsa("[data-action=projections-load]").forEach((button) =>
+          button.addEventListener("click", () => actions.loadUploadedProjections())
+        );
+        qsa("[data-action=projections-toggle]").forEach((button) =>
+          button.addEventListener("click", () => actions.toggleUploadedProjections())
+        );
+        qsa("[data-action=projections-clear]").forEach((button) =>
+          button.addEventListener("click", () => actions.clearUploadedProjections())
+        );
+
         elements.builderActions.forEach((button) => {
           const action = button.getAttribute("data-action");
           if (action === "builder-save") button.addEventListener("click", () => actions.saveBuilder());
@@ -2622,14 +3864,17 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       };
 
       const init = () => {
+        console.log("[optimizer] controller.init start");
+        rebuildUploadedProjectionsMap();
         const sidebarActive = elements.sidebarTabs.find((tab) => tab.classList.contains("active"));
         const topActive = elements.topTabs.find((tab) => tab.classList.contains("active"));
         state.activeSidebarPanel = sidebarActive?.getAttribute("data-panel") || state.activeSidebarPanel;
-        state.activeTopTab = topActive?.getAttribute("data-top-tab") || state.activeTopTab;
+        state.activeTopTab = state.activeTopTab || topActive?.getAttribute("data-top-tab") || "optimizer";
         state.resultsSort = elements.resultsSort?.value || state.resultsSort;
         state.ownMode = elements.resultsOwnMode?.value || state.ownMode;
         state.sidebarSearch = elements.sidebarSearch?.value || "";
         state.sidebarFlex = Boolean(elements.sidebarFlex?.checked);
+        state.projectionMode = state.useUploadedProjections && state.uploadedProjections.length ? "uploaded" : "default";
 
         bindEvents();
         renderAll();
@@ -2641,21 +3886,21 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       };
     })();
 
-    try {
-      controller.init();
-    } catch (error) {
-      console.error("[optimizer-init-failed]", error);
-      const statusEl = document.querySelector("[data-results-status]");
-      if (statusEl) {
-        statusEl.textContent = `• ${error?.message || "Optimizer failed to initialize."}`;
-        statusEl.style.display = "";
+      try {
+        controller.init();
+        root.dataset.optimizerInitialized = "true";
+      } catch (error) {
+        markInitFailed(error);
       }
-      const poolStatusEl = document.querySelector("[data-pool-status]");
-      if (poolStatusEl) {
-        poolStatusEl.textContent = `• ${error?.message || "Optimizer failed to initialize."}`;
-        poolStatusEl.style.display = "";
-      }
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initClassicOptimizerPage, { once: true });
+    } else {
+      initClassicOptimizerPage();
     }
+
+    document.addEventListener("astro:page-load", initClassicOptimizerPage);
   </script>
 </Layout>
 
@@ -2816,7 +4061,7 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     box-shadow: inset 0 -1px 0 rgba(79, 132, 227, 0.28);
   }
 
-  .optimizer-games-row {
+  :global(.optimizer-games-row) {
     display: grid;
     grid-template-columns: 84px minmax(0, 1fr);
     gap: 10px;
@@ -2826,7 +4071,7 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     border-bottom: 1px solid rgba(101, 131, 178, 0.12);
   }
 
-  .games-rail {
+  :global(.games-rail) {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -2835,7 +4080,7 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     font-size: 0.9rem;
   }
 
-  .games-link {
+  :global(.games-link) {
     border: 0;
     background: transparent;
     color: #2f8cff;
@@ -2846,12 +4091,12 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     font-weight: 500;
   }
 
-  .games-link.active {
+  :global(.games-link.active) {
     color: #eef4ff;
     font-weight: 800;
   }
 
-  .games-strip {
+  :global(.games-strip) {
     display: flex;
     align-items: stretch;
     gap: 8px;
@@ -2862,15 +4107,15 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     scrollbar-width: none;
   }
 
-  .games-strip::-webkit-scrollbar {
+  :global(.games-strip)::-webkit-scrollbar {
     display: none;
   }
 
-  .game-chip {
+  :global(.game-chip) {
     cursor: pointer;
   }
 
-  .inputs-slate-card {
+  :global(.inputs-slate-card) {
     display: grid;
     gap: 2px;
     width: 140px;
@@ -2893,8 +4138,8 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
       box-shadow 140ms ease;
   }
 
-  .inputs-slate-card:hover,
-  .inputs-slate-card:focus-visible {
+  :global(.inputs-slate-card:hover),
+  :global(.inputs-slate-card:focus-visible) {
     outline: none;
     transform: translateY(-1px);
     background:
@@ -2903,12 +4148,12 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     box-shadow: 0 16px 34px rgba(0, 0, 0, 0.3);
   }
 
-  .inputs-slate-card-rows {
+  :global(.inputs-slate-card-rows) {
     display: grid;
     gap: 6px;
   }
 
-  .inputs-slate-team-row {
+  :global(.inputs-slate-team-row) {
     display: grid;
     grid-template-columns: 20px minmax(0, 1fr) auto;
     gap: 6px;
@@ -2924,19 +4169,19 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     border-radius: 6px;
   }
 
-  .inputs-slate-team-row.is-selected {
+  :global(.inputs-slate-team-row.is-selected) {
     opacity: 1;
     background: rgba(47, 140, 255, 0.18);
     box-shadow: inset 0 0 0 1px rgba(47, 140, 255, 0.55);
   }
 
-  .inputs-slate-team-row.team-excluded {
+  :global(.inputs-slate-team-row.team-excluded) {
     opacity: 0.2;
     filter: grayscale(1);
     background: rgba(255, 255, 255, 0.04);
   }
 
-  .inputs-slate-logo {
+  :global(.inputs-slate-logo) {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -2948,14 +4193,14 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     overflow: hidden;
   }
 
-  .inputs-slate-logo img {
+  :global(.inputs-slate-logo img) {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
   }
 
-  .inputs-slate-logo-fallback {
+  :global(.inputs-slate-logo-fallback) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2969,7 +4214,7 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     line-height: 1;
   }
 
-  .inputs-slate-team-code {
+  :global(.inputs-slate-team-code) {
     font-size: 0.81rem;
     font-weight: 900;
     letter-spacing: 0.04em;
@@ -2978,14 +4223,14 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     min-width: 0;
   }
 
-  .inputs-slate-team-total {
+  :global(.inputs-slate-team-total) {
     font-size: 0.75rem;
     font-weight: 900;
     color: rgba(255, 255, 255, 0.66);
     text-align: right;
   }
 
-  .inputs-slate-card-meta {
+  :global(.inputs-slate-card-meta) {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -3004,6 +4249,239 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     flex-direction: column;
     min-height: 0;
     flex: 1;
+  }
+
+  .optimizer-top-panels {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .top-section-panel {
+    display: none;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .top-section-panel.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab-panel-shell {
+    margin: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 0;
+    background: linear-gradient(180deg, rgba(5, 22, 44, 0.98) 0%, rgba(5, 20, 39, 0.98) 100%);
+    border: 1px solid rgba(113, 148, 208, 0.11);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.018);
+  }
+
+  .tab-panel-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: start;
+    flex-wrap: wrap;
+  }
+
+  .tab-panel-header h2,
+  .table-panel-title {
+    margin: 0;
+    color: #edf4ff;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  .tab-panel-header p,
+  .tab-panel-status {
+    margin: 0;
+    color: #9fb4d2;
+  }
+
+  .tab-panel-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: end;
+  }
+
+  .upload-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: min(100%, 340px);
+  }
+
+  .upload-field span {
+    font-size: 0.72rem;
+    color: #93a7c8;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .upload-field input[type="file"] {
+    min-height: 38px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(129, 163, 220, 0.22);
+    background: linear-gradient(180deg, #10213d 0%, #0d1a31 100%);
+    color: #edf3ff;
+  }
+
+  .table-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 0;
+  }
+
+  .table-scroll {
+    overflow: auto;
+    min-height: 0;
+  }
+
+  .simple-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+  }
+
+  .simple-table th,
+  .simple-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(103, 132, 181, 0.09);
+    text-align: left;
+    color: #d9e3f4;
+    white-space: nowrap;
+  }
+
+  .simple-table th {
+    background: #132645;
+    color: #9dafc9;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+  }
+
+  .empty-row,
+  .empty-state {
+    color: #9fb4d2;
+    text-align: center;
+    padding: 24px 12px;
+  }
+
+  .saved-lineups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+  }
+
+  .saved-lineup-card,
+  .summary-card,
+  .placeholder-result {
+    background: rgba(7, 21, 41, 0.9);
+    border: 1px solid rgba(117, 149, 204, 0.08);
+    border-radius: 8px;
+  }
+
+  .saved-lineup-card {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .saved-lineup-head,
+  .saved-lineup-metrics,
+  .saved-lineup-actions,
+  .late-swap-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .saved-lineup-tag,
+  .projection-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #dbe6f7;
+    font-weight: 700;
+  }
+
+  .projection-badge.active {
+    background: rgba(65, 230, 135, 0.16);
+    color: #41dd84;
+  }
+
+  .saved-lineup-players {
+    color: #dbe6f7;
+    line-height: 1.4;
+  }
+
+  .saved-lineup-metrics {
+    color: #9fb4d2;
+    font-size: 0.92rem;
+  }
+
+  .saved-lineup-actions .outline-blue,
+  .saved-lineup-actions .outline-red {
+    flex: 1 1 0;
+  }
+
+  .builder-card.invalid {
+    border-color: rgba(203, 79, 141, 0.55);
+    box-shadow: inset 0 0 0 1px rgba(203, 79, 141, 0.18);
+  }
+
+  .builder-status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 0 8px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .builder-status.error {
+    background: rgba(167, 43, 90, 0.18);
+    color: #f4b7cf;
+  }
+
+  .builder-status.active {
+    background: rgba(41, 210, 127, 0.14);
+    color: #8af0b8;
+  }
+
+  .summary-card {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 260px;
+  }
+
+  .summary-card strong {
+    color: #edf4ff;
+  }
+
+  .summary-card span,
+  .placeholder-result {
+    color: #9fb4d2;
+  }
+
+  .placeholder-result {
+    min-height: 48px;
+    padding: 14px;
   }
 
   .optimizer-upper {
@@ -3149,12 +4627,12 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     background: rgba(36, 73, 126, 0.18);
   }
 
-  .check-col {
+  :global(.check-col) {
     width: 34px;
     text-align: center;
   }
 
-  .icon-col {
+  :global(.icon-col) {
     width: 44px;
   }
 
@@ -3162,45 +4640,136 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     min-width: 255px;
   }
 
-  .fake-check,
-  .blue-check {
+  :global(.fake-check),
+  :global(.blue-check) {
+    position: relative;
     display: inline-flex;
-    width: 14px;
-    height: 14px;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
     border-radius: 3px;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: inset 0 0 0 2px rgba(86, 112, 155, 0.4);
+    border: 1px solid rgba(114, 143, 192, 0.7);
+    background: rgba(8, 21, 42, 0.92);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
   }
 
-  .blue-check.checked {
+  :global(.fake-check)::after,
+  :global(.blue-check)::after {
+    content: "";
+    width: 9px;
+    height: 5px;
+    border-left: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    transform: rotate(-45deg) scale(0);
+    transform-origin: center;
+    transition: transform 120ms ease, border-color 120ms ease;
+  }
+
+  :global(.fake-check.checked),
+  :global(.blue-check.checked) {
     background: #2f8cff;
-    box-shadow: inset 0 0 0 2px rgba(6, 19, 40, 0.6);
+    border-color: rgba(47, 140, 255, 0.95);
+    box-shadow:
+      inset 0 0 0 1px rgba(6, 19, 40, 0.35),
+      0 0 0 1px rgba(47, 140, 255, 0.16);
   }
 
-  .tiny-icons {
+  :global(.fake-check.checked)::after,
+  :global(.blue-check.checked)::after {
+    border-color: #eef5ff;
+    transform: rotate(-45deg) scale(1);
+  }
+
+  :global(.tiny-icons) {
     display: flex;
     gap: 8px;
     align-items: center;
     color: #6a7f9f;
   }
 
-  .tiny-lock,
-  .tiny-key {
-    width: 14px;
-    height: 14px;
-    display: inline-block;
-    border-radius: 999px;
-    background: rgba(146, 166, 199, 0.22);
+  :global(.tiny-lock),
+  :global(.tiny-key) {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: rgba(146, 166, 199, 0.08);
+    color: #89a0c5;
+    cursor: pointer;
+    transition: background 120ms ease, color 120ms ease, transform 120ms ease;
   }
 
-  .player-cell {
+  :global(.tiny-lock)::before,
+  :global(.tiny-key)::before {
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+  }
+
+  :global(.tiny-lock)::before {
+    content: "🔓";
+  }
+
+  :global(.tiny-lock.active)::before {
+    content: "🔒";
+  }
+
+  :global(.tiny-key)::before {
+    content: "🔑";
+  }
+
+  :global(.tiny-lock.active),
+  :global(.tiny-key.active) {
+    background: rgba(47, 140, 255, 0.16);
+    color: #eef5ff;
+    transform: translateY(-1px);
+  }
+
+  :global(.player-cell) {
     display: flex;
     align-items: center;
     gap: 8px;
     min-width: 0;
+    flex-wrap: nowrap;
   }
 
-  .pos-pill {
+  :global(.player-team-logo) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+  }
+
+  :global(.player-team-logo-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  :global(.player-team-logo-fallback) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.42rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.72);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  :global(.pos-pill) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3215,7 +4784,7 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     letter-spacing: 0.03em;
   }
 
-  .team-dot {
+  :global(.team-dot) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3228,19 +4797,48 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     font-weight: 800;
   }
 
-  .player-name {
+  :global(.player-name) {
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  .boost-icons {
-    display: flex;
+  :global(.pool-table tbody input[type="number"]) {
+    min-height: 28px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(129, 163, 220, 0.22);
+    background: linear-gradient(180deg, #10213d 0%, #0d1a31 100%);
+    color: #edf3ff;
+    font-size: 0.84rem;
+    outline: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  }
+
+  :global(.pool-table tbody input[type="number"]:focus) {
+    border-color: rgba(83, 145, 255, 0.5);
+  }
+
+  :global(.pool-table tbody input[data-action="edit-projection"]),
+  :global(.pool-table tbody input[data-action="edit-ceiling"]),
+  :global(.pool-table tbody input[data-action="edit-floor"]) {
+    width: 78px;
+  }
+
+  :global(.pool-table tbody input[data-action="edit-ownership"]) {
+    width: 72px;
+  }
+
+  :global(.boost-icons) {
+    display: inline-flex;
     align-items: center;
     gap: 6px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
     color: #6f829f;
   }
 
-  .boost {
+  :global(.boost) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3251,34 +4849,49 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     font-weight: 900;
   }
 
-  .boost.up {
+  :global(.boost.up) {
     background: rgba(30, 158, 90, 0.22);
     color: #29d27f;
   }
 
-  .boost.down {
+  :global(.boost.down) {
     background: rgba(167, 43, 90, 0.18);
     color: #cb4f8d;
   }
 
-  .boost-zero {
+  :global(.boost-zero) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
     font-size: 0.82rem;
     color: #617492;
+    font-weight: 800;
   }
 
-  .player-row.is-locked td {
+  :global(.player-row.is-locked) td {
     background: rgba(47, 140, 255, 0.08);
   }
 
-  .player-row.is-keyed td {
+  :global(.player-row.is-keyed) td {
     background: rgba(65, 230, 135, 0.08);
   }
 
-  .player-row.boost-up td {
+  :global(.player-row.is-out-of-pool) td {
+    opacity: 0.55;
+  }
+
+  :global(.player-row.is-out-of-pool .player-name),
+  :global(.player-row.is-out-of-pool .player-team-logo),
+  :global(.player-row.is-out-of-pool .pos-pill) {
+    filter: saturate(0.65);
+  }
+
+  :global(.player-row.boost-up) td {
     box-shadow: inset 3px 0 0 rgba(41, 210, 127, 0.75);
   }
 
-  .player-row.boost-down td {
+  :global(.player-row.boost-down) td {
     box-shadow: inset 3px 0 0 rgba(203, 79, 141, 0.75);
   }
 
@@ -3511,14 +5124,15 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     flex: 1;
     min-height: 0;
     display: grid;
-    grid-template-rows: repeat(9, minmax(36px, 1fr));
+    grid-template-rows: repeat(9, minmax(64px, auto));
   }
 
   .builder-slot {
     display: grid;
     grid-template-columns: 60px 1fr;
-    align-items: center;
-    padding: 0 16px;
+    align-items: start;
+    gap: 10px;
+    padding: 10px 16px;
     border-bottom: 1px solid rgba(110, 141, 192, 0.1);
   }
 
@@ -3529,7 +5143,78 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
   }
 
   .slot-fill {
+    min-height: 42px;
+  }
+
+  :global(.builder-empty) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    color: #7f95b8;
+    font-size: 0.92rem;
+  }
+
+  :global(.builder-player-card) {
+    display: grid;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(47, 140, 255, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(47, 140, 255, 0.22);
+  }
+
+  :global(.builder-player-main) {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  :global(.builder-player-heading) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  :global(.builder-player-name) {
+    color: #eef5ff;
+    font-weight: 800;
+  }
+
+  :global(.builder-player-team) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 22px;
+    padding: 0 8px;
+    border-radius: 999px;
+    background: rgba(12, 30, 57, 0.92);
+    color: #9ec3ff;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+
+  :global(.builder-player-meta) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    color: #c9d8ee;
+    font-size: 0.84rem;
+  }
+
+  :global(.builder-remove) {
+    border: 1px solid rgba(255, 90, 118, 0.42);
+    background: rgba(79, 16, 33, 0.34);
+    color: #ffc2cd;
+    border-radius: 6px;
     min-height: 28px;
+    padding: 0 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
   }
 
   .builder-actions {
@@ -3590,6 +5275,10 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     min-height: 0;
     flex: 1;
     overflow: hidden;
+  }
+
+  .optimizer-results-shell.is-hidden {
+    display: none;
   }
 
   .results-header {
@@ -4144,14 +5833,20 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     .builder-summary {
       justify-content: flex-start;
     }
+
+    .tab-panel-header,
+    .tab-panel-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
 
   @media (max-width: 720px) {
-    .optimizer-games-row {
+    :global(.optimizer-games-row) {
       grid-template-columns: 1fr;
     }
 
-    .games-rail {
+    :global(.games-rail) {
       flex-direction: row;
       align-items: center;
       padding: 0;
@@ -4171,10 +5866,8 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     }
   }
 
-  .game-chip.excluded { opacity: 0.45; filter: saturate(0.6); }
-  .fake-check.checked { background: #2f8cff; border-color: rgba(47, 140, 255, 0.6); }
-  .tiny-lock.active, .tiny-key.active { background: rgba(47, 140, 255, 0.2); border-color: rgba(47, 140, 255, 0.6); }
-  .boost.active { color: #e8f1ff; }
+  :global(.game-chip.excluded) { opacity: 0.45; filter: saturate(0.6); }
+  :global(.boost.active) { color: #e8f1ff; }
   .builder-slot.filled .slot-fill { color: #e8f1ff; }
   .lineup-card.selected { outline: 1px solid rgba(47, 140, 255, 0.6); box-shadow: 0 0 0 1px rgba(47, 140, 255, 0.2); }
   .advanced-panel { display: none; margin-top: 12px; padding: 12px; border: 1px solid rgba(117, 153, 212, 0.18); border-radius: 8px; background: rgba(5, 18, 38, 0.9); }
