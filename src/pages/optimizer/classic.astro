@@ -2632,30 +2632,53 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
         elements.builderSlots.forEach((slotEl, index) => {
           const player = derived.builder.slotMap.get(index) || null;
           const fill = slotEl.querySelector(".slot-fill");
-          if (!fill) return;
+          const label = slotEl.querySelector(".slot-label");
+          if (!fill || !label) return;
           if (player) {
             slotEl.classList.add("filled");
             const source = derived.playerMap.get(player.id) || player;
+            const matchupLabel = source?.matchup || source?.gameLabel || `${player.team} @ ${player.opponent || ""}`;
+            const isLocked = state.lockedPlayers.has(player.id);
+
+            label.innerHTML = `
+              <span class="slot-label-inner">
+                <span class="slot-lock ${isLocked ? "is-visible" : ""}" aria-hidden="true"></span>
+                <span class="slot-label-text">${slotEl.getAttribute("data-slot") || ""}</span>
+              </span>
+            `;
+
             fill.innerHTML = `
               <div class="builder-player-card">
                 <div class="builder-player-main">
                   <div class="builder-player-heading">
+                    ${buildTeamLogoCell(player.team)}
                     <span class="builder-player-name">${player.name}</span>
-                    <span class="builder-player-team">${player.team}</span>
                   </div>
-                  <button type="button" class="builder-remove" data-action="builder-remove" data-player-id="${player.id}">Remove</button>
-                </div>
-                <div class="builder-player-meta">
-                  <span>${formatSalary(player.salary)}</span>
-                  <span>Proj ${formatNumber(getEffectiveProjection(source))}</span>
-                  <span>Own ${formatNumber(getEffectiveOwnership(source))}%</span>
-                  <span>Ceil ${formatNumber(getEffectiveCeiling(source))}</span>
+                  <span class="builder-player-matchup" title="${matchupLabel}">${matchupLabel}</span>
+                  <span class="builder-metric builder-metric-salary">${formatSalary(player.salary)}</span>
+                  <span class="builder-metric builder-metric-proj">${formatNumber(getEffectiveProjection(source))}</span>
+                  <span class="builder-metric builder-metric-own">${formatNumber(getEffectiveOwnership(source))}%</span>
+                  <span class="builder-metric builder-metric-ceil">${formatNumber(getEffectiveCeiling(source))}</span>
+                  <button
+                    type="button"
+                    class="builder-remove"
+                    aria-label="Remove ${player.name}"
+                    title="Remove ${player.name}"
+                    data-action="builder-remove"
+                    data-player-id="${player.id}"
+                  >×</button>
                 </div>
               </div>
             `;
           } else {
             slotEl.classList.remove("filled");
-            fill.innerHTML = `<span class="builder-empty">Open slot</span>`;
+            label.innerHTML = `
+              <span class="slot-label-inner">
+                <span class="slot-lock" aria-hidden="true"></span>
+                <span class="slot-label-text">${slotEl.getAttribute("data-slot") || ""}</span>
+              </span>
+            `;
+            fill.innerHTML = "";
           }
         });
       };
@@ -4552,7 +4575,7 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
 
   .optimizer-upper {
     display: grid;
-    grid-template-columns: minmax(0, 1.6fr) minmax(360px, 0.9fr);
+    grid-template-columns: minmax(0, 1.52fr) minmax(560px, 1.02fr);
     gap: 10px;
     padding: 0 8px 10px;
     min-height: 0;
@@ -4707,14 +4730,15 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
   .pool-table-wrap {
     flex: 1;
     min-height: 0;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
     padding: 0 0 2px;
   }
 
   .pool-table {
-    width: 100%;
+    width: max-content;
     border-collapse: collapse;
-    min-width: 1500px;
+    min-width: 1480px;
   }
 
   .pool-table thead th {
@@ -4742,6 +4766,31 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     color: #d9e3f4;
     font-size: 0.95rem;
     white-space: nowrap;
+  }
+
+  .pool-table th,
+  .pool-table td {
+    white-space: nowrap;
+  }
+
+  .pool-table th:nth-child(9),
+  .pool-table td:nth-child(9) {
+    min-width: 92px;
+  }
+
+  .pool-table th:nth-child(10),
+  .pool-table td:nth-child(10),
+  .pool-table th:nth-child(11),
+  .pool-table td:nth-child(11),
+  .pool-table th:nth-child(12),
+  .pool-table td:nth-child(12),
+  .pool-table th:nth-child(13),
+  .pool-table td:nth-child(13),
+  .pool-table th:nth-child(14),
+  .pool-table td:nth-child(14),
+  .pool-table th:nth-child(15),
+  .pool-table td:nth-child(15) {
+    min-width: 96px;
   }
 
   .pool-table tbody tr:hover td {
@@ -5114,9 +5163,11 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
 
   .settings-builder-panel {
     display: grid;
-    grid-template-rows: auto 1fr;
-    gap: 10px;
+    grid-template-rows: auto auto;
+    align-content: start;
+    gap: 8px;
     min-height: 0;
+    min-width: 0;
   }
 
   .optimizer-settings-card {
@@ -5131,13 +5182,20 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     margin-bottom: 14px;
   }
 
-  .settings-head h2,
-  .builder-head h2 {
+  .settings-head h2 {
     margin: 0;
     font-size: 2rem;
     line-height: 1;
     color: #edf4ff;
     font-weight: 800;
+  }
+
+  .builder-head h2 {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1;
+    color: #edf4ff;
+    font-weight: 700;
   }
 
   .exclude-toggle {
@@ -5278,52 +5336,119 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
 
   .builder-head {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 12px;
-    align-items: start;
-    padding: 14px 16px 12px;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 10px 24px;
+    align-items: center;
+    padding: 10px 16px 8px;
     border-bottom: 1px solid rgba(113, 148, 208, 0.04);
   }
 
   .builder-summary {
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 14px;
+    display: grid;
+    grid-template-columns: 128px 92px 64px 72px 68px;
+    justify-content: end;
+    column-gap: 8px;
+    row-gap: 2px;
+    align-items: start;
     color: #d7e3f4;
-    font-size: 0.98rem;
+    font-size: 0.84rem;
+    min-width: 0;
+  }
+
+  .builder-summary span:nth-child(1),
+  .builder-summary span:nth-child(2) {
+    text-align: left;
+  }
+
+  .builder-summary span:nth-child(3),
+  .builder-summary span:nth-child(4),
+  .builder-summary span:nth-child(5) {
+    text-align: right;
+  }
+
+  .builder-summary span {
+    white-space: nowrap;
   }
 
   .builder-status {
-    font-size: 0.9rem;
+    font-size: 0.78rem;
     color: #ff7b95;
     font-weight: 600;
+    grid-column: 1 / -1;
+    justify-self: end;
   }
 
   .builder-slots {
-    flex: 1;
-    min-height: 0;
     display: grid;
-    grid-template-rows: repeat(9, minmax(64px, auto));
+    grid-template-rows: repeat(9, minmax(50px, auto));
   }
 
   .builder-slot {
     display: grid;
-    grid-template-columns: 60px 1fr;
-    align-items: start;
-    gap: 10px;
-    padding: 10px 16px;
+    grid-template-columns: 54px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    padding: 6px 16px;
     border-bottom: 1px solid rgba(110, 141, 192, 0.04);
+    min-width: 0;
   }
 
   .slot-label {
     color: #aab9d2;
-    font-size: 1.12rem;
+    font-size: 0.92rem;
+    font-weight: 700;
     letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .slot-label-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .slot-label-text {
+    display: inline-block;
+  }
+
+  .slot-lock {
+    width: 12px;
+    height: 12px;
+    flex: 0 0 12px;
+    opacity: 0;
+    visibility: hidden;
+    color: #9cb2cf;
+  }
+
+  .slot-lock.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .slot-lock.is-visible::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: currentColor;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.35' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='6' y='11' width='12' height='9' rx='2' ry='2'/%3E%3Cpath d='M9 11V8.5a3 3 0 0 1 6 0V11'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.35' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='6' y='11' width='12' height='9' rx='2' ry='2'/%3E%3Cpath d='M9 11V8.5a3 3 0 0 1 6 0V11'/%3E%3C/svg%3E");
   }
 
   .slot-fill {
-    min-height: 42px;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+    overflow: hidden;
   }
 
   :global(.builder-empty) {
@@ -5336,92 +5461,131 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
 
   :global(.builder-player-card) {
     display: grid;
-    gap: 6px;
-    padding: 8px 10px;
-    border-radius: 8px;
-    background: rgba(47, 140, 255, 0.1);
-    box-shadow: inset 0 0 0 1px rgba(47, 140, 255, 0.1);
+    gap: 4px;
+    width: 100%;
+    min-width: 0;
+    padding: 3px 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: hidden;
   }
 
   :global(.builder-player-main) {
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(84px, 0.82fr) 74px 64px 72px 68px 16px;
+    align-items: center;
+    column-gap: 8px;
+    width: 100%;
+    min-width: 0;
   }
 
   :global(.builder-player-heading) {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     min-width: 0;
-    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  :global(.builder-player-matchup) {
+    min-width: 0;
+    color: #9cb2cf;
+    font-size: 0.72rem;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
   }
 
   :global(.builder-player-name) {
     color: #eef5ff;
-    font-weight: 800;
+    font-weight: 700;
+    font-size: 0.83rem;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
   }
 
   :global(.builder-player-team) {
-    display: inline-flex;
-    align-items: center;
-    min-height: 22px;
-    padding: 0 8px;
-    border-radius: 999px;
-    background: rgba(12, 30, 57, 0.92);
-    color: #9ec3ff;
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
+    display: none;
   }
 
-  :global(.builder-player-meta) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 12px;
+  :global(.builder-metric) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: center;
     color: #c9d8ee;
-    font-size: 0.84rem;
+    font-size: 0.74rem;
+    line-height: 1;
+    min-width: 0;
+  }
+
+  :global(.builder-metric-salary) {
+    text-align: left;
+  }
+
+  :global(.builder-metric-proj),
+  :global(.builder-metric-own),
+  :global(.builder-metric-ceil) {
+    text-align: right;
   }
 
   :global(.builder-remove) {
-    border: 1px solid rgba(255, 90, 118, 0.16);
-    background: rgba(79, 16, 33, 0.34);
-    color: #ffc2cd;
-    border-radius: 6px;
-    min-height: 28px;
-    padding: 0 10px;
-    font-size: 0.78rem;
-    font-weight: 700;
+    border: 0;
+    background: transparent;
+    color: #ff5a76;
+    border-radius: 0;
+    width: 16px;
+    height: 16px;
+    min-height: 16px;
+    padding: 0;
+    font-size: 0.92rem;
+    line-height: 1;
+    font-weight: 800;
     cursor: pointer;
-    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .builder-actions {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
+    gap: 10px 14px;
+    padding: 8px 14px;
     background: rgba(11, 28, 52, 0.95);
     border-top: 1px solid rgba(109, 143, 198, 0.04);
-    flex-wrap: wrap;
+  }
+
+  :global(.builder-player-heading .player-team-logo) {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
   }
 
   .builder-action-left,
   .builder-action-right {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    align-items: end;
+    gap: 8px;
+    flex-wrap: nowrap;
   }
 
   .ghost-btn {
-    height: 38px;
-    padding: 0 14px;
+    height: 30px;
+    padding: 0 10px;
     border: 1px solid rgba(113, 148, 208, 0.08);
     background: rgba(255, 255, 255, 0.02);
     color: #dbe6f7;
+    font-size: 0.72rem;
   }
 
   .ghost-btn.save {
@@ -5437,15 +5601,31 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
   }
 
   .builder-input input {
-    width: 84px;
+    width: 64px;
+  }
+
+  .builder-select span,
+  .builder-input span {
+    font-size: 0.68rem;
+  }
+
+  .builder-select select,
+  .builder-input input {
+    min-height: 34px;
+  }
+
+  .builder-select select {
+    min-width: 106px;
+    padding: 0 10px;
   }
 
   .primary-btn {
-    height: 42px;
-    padding: 0 20px;
+    height: 36px;
+    padding: 0 14px;
     border: 1px solid rgba(76, 138, 255, 0.14);
     background: #3a84ef;
     color: #fff;
+    font-size: 0.82rem;
   }
 
   .optimizer-results-shell {
@@ -6065,6 +6245,22 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
     }
   }
 
+  @media (min-width: 1280px) {
+    .optimizer-upper {
+      grid-template-columns: minmax(0, 1.42fr) minmax(700px, 1.16fr);
+    }
+
+    .builder-summary {
+      grid-template-columns: 128px 92px 64px 72px 68px;
+      column-gap: 8px;
+    }
+
+    :global(.builder-player-main) {
+      grid-template-columns: minmax(0, 1.04fr) minmax(92px, 0.86fr) 78px 66px 74px 70px 16px;
+      column-gap: 8px;
+    }
+  }
+
   :global(.game-chip.excluded) { opacity: 0.45; filter: saturate(0.6); }
   :global(.boost.active) { color: #e8f1ff; }
   .builder-slot.filled .slot-fill { color: #e8f1ff; }
@@ -6074,6 +6270,27 @@ const initialSiteMeta = selectedPackage ? operatorMeta[selectedPackage.slate.sit
   .advanced-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
   .advanced-field { display: flex; flex-direction: column; gap: 4px; }
   .advanced-field span { font-size: 0.72rem; color: #93a7c8; font-weight: 600; letter-spacing: 0.02em; }
+
+  @media (min-width: 1280px) {
+    .optimizer-upper {
+      grid-template-columns: minmax(0, 1.42fr) minmax(700px, 1.16fr);
+    }
+
+    .builder-summary {
+      grid-template-columns: 128px 92px 64px 72px 68px;
+      column-gap: 8px;
+    }
+
+    :global(.builder-player-row) {
+      grid-template-columns: minmax(0, 1fr) 96px 80px 80px 80px 20px;
+      column-gap: 14px;
+    }
+
+    :global(.builder-player-main) {
+      grid-template-columns: minmax(0, 1.04fr) minmax(92px, 0.86fr) 78px 66px 74px 70px 16px;
+      column-gap: 8px;
+    }
+  }
 
 
 </style>
