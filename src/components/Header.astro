@@ -33,7 +33,13 @@ import HeaderLink from "./HeaderLink.astro";
         </div>
       </div>
 
-      <a href="/simulator">Simulator</a>
+      <div class="nav-dropdown nav-dropdown-simulator">
+        <HeaderLink class="nav-link" href="/simulator">Simulator</HeaderLink>
+        <div class="nav-dropdown-menu">
+          <a class="nav-dropdown-item" href="/simulator">Run Simulator</a>
+          <a class="nav-dropdown-item" href="/simulator/audit">Sim Audit</a>
+        </div>
+      </div>
       <a href="/optimizer">Optimizer</a>
       <a href="/full-tilt">Full Tilt</a>
       <a href="/subscribe">Subscribe</a>
@@ -234,6 +240,14 @@ import HeaderLink from "./HeaderLink.astro";
     display: block;
   }
 
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: block;
+  }
+
+  .nav-dropdown-simulator .nav-link {
+    display: inline-block;
+  }
+
   .nav-dropdown-item {
     display: block;
     padding: 10px 10px;
@@ -247,6 +261,13 @@ import HeaderLink from "./HeaderLink.astro";
   }
 
   .nav-dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  .nav-dropdown-item:focus-visible {
+    outline: 2px solid rgba(59, 130, 246, 0.75);
+    outline-offset: 2px;
     background: rgba(255, 255, 255, 0.06);
     color: rgba(255, 255, 255, 0.96);
   }

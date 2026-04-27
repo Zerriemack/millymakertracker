@@ -1,0 +1,203 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const auditRows = [
+  {
+    spot: "QB",
+    player: "Josh Allen",
+    team: "BUF",
+    salary: "$8,200",
+    ownership: "14.2%",
+    optimalRate: "43.8%",
+  },
+  {
+    spot: "WR",
+    player: "Khalil Shakir",
+    team: "BUF",
+    salary: "$4,100",
+    ownership: "7.4%",
+    optimalRate: "64.1%",
+  },
+  {
+    spot: "TE",
+    player: "Dalton Kincaid",
+    team: "BUF",
+    salary: "$3,600",
+    ownership: "6.2%",
+    optimalRate: "55.0%",
+  },
+];
+---
+
+<Layout title="MMT Sim Audit | Milly Maker Tracker">
+  <section class="sim-audit-page">
+    <div class="sim-audit-panel">
+      <div class="sim-audit-head">
+        <h1 class="sim-audit-title"><span>MMT</span> Sim Audit</h1>
+        <p class="sim-audit-subtitle">
+          Track actual Milly winning players against their pre-lock simulator Optimal Rate.
+        </p>
+        <p class="sim-audit-copy">
+          This page is separate from the historical Milly Maker winner database. It is designed
+          for post-contest review of simulator performance so older tracked contests do not feel
+          incomplete.
+        </p>
+      </div>
+
+      <div class="sim-audit-section">
+        <div class="sim-audit-section-head">
+          <h2>Winner Sim Rate Audit</h2>
+        </div>
+
+        <div class="sim-audit-table-wrap">
+          <table class="sim-audit-table">
+            <thead>
+              <tr>
+                <th>Spot</th>
+                <th>Player</th>
+                <th>Team</th>
+                <th>Salary</th>
+                <th>Ownership</th>
+                <th>Pre Lock Optimal Rate</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {auditRows.map((row) => (
+                <tr>
+                  <td>{row.spot}</td>
+                  <td>{row.player}</td>
+                  <td>{row.team}</td>
+                  <td>{row.salary}</td>
+                  <td>{row.ownership}</td>
+                  <td>{row.optimalRate}</td>
+                  <td>From saved simulator results</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sim-audit-callout">
+          Future version: upload or enter the actual winning lineup after contest completion and
+          match each player to the final saved simulator results before lock.
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .sim-audit-page {
+    background: #05070b;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 34px 22px 56px;
+  }
+
+  .sim-audit-panel {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+  }
+
+  .sim-audit-head {
+    margin-bottom: 28px;
+  }
+
+  .sim-audit-title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #f8fafc;
+  }
+
+  .sim-audit-title span {
+    color: #4ea1ff;
+  }
+
+  .sim-audit-subtitle {
+    margin: 12px 0 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .sim-audit-copy {
+    max-width: 860px;
+    margin: 12px 0 0;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.6;
+  }
+
+  .sim-audit-section-head {
+    margin-bottom: 12px;
+  }
+
+  .sim-audit-section-head h2 {
+    margin: 0;
+    font-size: 0.92rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #4ea1ff;
+  }
+
+  .sim-audit-table-wrap {
+    overflow-x: auto;
+    background: transparent;
+  }
+
+  .sim-audit-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #0c1118;
+  }
+
+  .sim-audit-table thead th {
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #d9ecff;
+    background: #101722;
+    border-bottom: 1px solid rgba(78, 161, 255, 0.22);
+  }
+
+  .sim-audit-table tbody td {
+    padding: 12px 14px;
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.88);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .sim-audit-table tbody tr:hover {
+    background: rgba(78, 161, 255, 0.08);
+  }
+
+  .sim-audit-table tbody td:nth-child(1),
+  .sim-audit-table tbody td:nth-child(3) {
+    font-weight: 800;
+    color: #f8fafc;
+  }
+
+  .sim-audit-callout {
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: rgba(78, 161, 255, 0.08);
+    color: rgba(255, 255, 255, 0.74);
+    border-left: 2px solid rgba(78, 161, 255, 0.65);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 720px) {
+    .sim-audit-page {
+      padding: 28px 14px 42px;
+    }
+
+    .sim-audit-table {
+      min-width: 860px;
+    }
+  }
+</style>
